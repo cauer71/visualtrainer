@@ -382,6 +382,13 @@ class Punktlandung implements Exercise {
     ghost.moveTo(rest.x, rest.y, { delay: 380, move: 420 });
   }
 
+  /** Tastatur: Leertaste/Enter wirkt wie ein Tipp (Computer ohne Touch). */
+  keyDown(key: string, t: number): void {
+    if (key !== ' ' && key !== 'Enter') return;
+    const { w, h } = this.ctx.stage;
+    this.pointerDown({ id: -2, x: w / 2, y: h / 2, t, type: 'mouse' });
+  }
+
   pointerDown(p: PointerInfo): void {
     if (this.phase === 'pre' || (this.phase === 'fly' && p.t - this.tStart < APPEAR_GRACE)) {
       // Noch keine Kugel (bzw. gerade erst erschienen) → ignorieren, einmal freundlich Bescheid geben

@@ -87,9 +87,14 @@ export class Staircase {
     return tr.reduce((a, b) => a + b, 0) / tr.length;
   }
 
-  /** Höchste erreichte Stufe */
+  /** Höchste erreichte Stufe (inkl. der nächsten, noch nicht gespielten) */
   get maxLevel(): number {
     return Math.max(this.level, ...this.trace);
+  }
+
+  /** Höchste Stufe, auf der tatsächlich ein Durchgang gespielt wurde */
+  get maxPlayed(): number {
+    return this.trace.length ? Math.max(...this.trace) : this.level;
   }
 }
 

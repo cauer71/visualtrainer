@@ -11,12 +11,13 @@ const vp = process.env.VP === 'port' ? { width: 820, height: 1180 } : process.en
 fs.mkdirSync(out, { recursive: true });
 
 const browser = await chromium.launch();
-const ctx = await browser.newContext({ viewport: vp, hasTouch: true, locale: 'de-DE' });
+const ctx = await browser.newContext({ viewport: vp, hasTouch: true, locale: process.env.LANG_UI === 'it' ? 'it-IT' : 'de-DE' });
 const page = await ctx.newPage();
 const errors = [];
 page.on('console', (m) => { if (m.type() === 'error') errors.push(`console: ${m.text()}`); });
 page.on('pageerror', (e) => errors.push(`pageerror: ${e.message}`));
-const q = process.env.NOQUICK ? '?autoplay=1' : '?quick=1&autoplay=1';
+const lang = process.env.LANG_UI ? `&lang=${process.env.LANG_UI}` : '';
+const q = (process.env.NOQUICK ? '?autoplay=1' : '?quick=1&autoplay=1') + lang;
 await page.goto(`${base}${q}#/uebung/${id}`, { waitUntil: 'networkidle' });
 await page.click('.intro .btn-primary');
 const t0 = Date.now();

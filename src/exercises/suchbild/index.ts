@@ -637,9 +637,11 @@ class Suchbild implements Exercise {
   private drawField(g: CanvasRenderingContext2D, t: number): void {
     const L = this.lay!;
     const { u } = this.ctx.stage;
+    const still = this.ctx.reducedMotion;
     const ph = this.phase;
     const showFound = ph === 'found' || ph === 'end' || (ph === 'done' && this.demo);
-    const kFound = ph === 'found' ? clamp((t - this.phaseT) / FOUND_MS, 0, 1) : 1;
+    const kFound = ph === 'found' && !still ? clamp((t - this.phaseT) / FOUND_MS, 0, 1) : 1;
+    const lw = Math.max(3, u * 0.55);
     let others = 1;
     if (showFound) others = 1 - 0.62 * easeOut(kFound * 1.6);
     else if (ph === 'reveal') others = 1 - 0.7 * easeOut((t - this.phaseT) / 260);
@@ -660,23 +662,23 @@ class Suchbild implements Exercise {
         alpha = others;
         const dt = t - it.wrongT;
         if (dt >= 0 && dt < WRONG_MS) {
-          // kurz rot + leichtes Wackeln (nur dieses Zeichen)
+          // kurz rot + leichtes Wackeln (nur dieses Zeichen); ohne Bewegung: dünner roter Ring als Formsignal
           const k = dt / WRONG_MS;
-          dx = Math.sin(k * Math.PI * 5) * (1 - k) * L.elem * 0.2;
+          if (still) ring(g, q.x, q.y, L.elem * 0.62, withAlpha(C.bad, 1 - k), Math.max(2, lw * 0.6));
+          else dx = Math.sin(k * Math.PI * 5) * (1 - k) * L.elem * 0.2;
           if (k < 0.8) color = C.bad;
         }
       }
       drawShape(g, it.shape, q.x + dx, q.y, L.elem, it.angle, color, alpha);
     }
 
-    const lw = Math.max(3, u * 0.55);
     if (showFound) {
       ring(g, tq.x, tq.y, L.hitR * (1.28 - 0.3 * easeOut(kFound)), C.good, lw);
     } else if (ph === 'reveal') {
       const dt = t - this.phaseT;
       const a = clamp(dt / 260, 0, 1);
-      // sanftes Pulsieren (1,4 Hz, sinusförmig)
-      const pulse = 1 + 0.07 * Math.sin((dt / 1000) * Math.PI * 2 * 1.4);
+      // sanftes Pulsieren (1,4 Hz, sinusförmig) – bei „Bewegung reduzieren“ ruhig
+      const pulse = still ? 1 : 1 + 0.07 * Math.sin((dt / 1000) * Math.PI * 2 * 1.4);
       ring(g, tq.x, tq.y, L.hitR * 0.98 * pulse, withAlpha(C.light, a), lw);
     }
   }
@@ -702,9 +704,9 @@ class Suchbild implements Exercise {
     const cy = L.pillCy;
     const x0 = cx - pw / 2;
     const gx = x0 + padL + lw + gap + box / 2;
-    // Neues Zielzeichen: kurz größer + Leuchten
+    // Neues Zielzeichen: kurz größer + Leuchten (bei „Bewegung reduzieren“ nur Leuchten)
     const k = clamp((t - this.popT) / 550, 0, 1);
-    const pop = 1 + 0.16 * (1 - easeOut(k));
+    const pop = this.ctx.reducedMotion ? 1 : 1 + 0.16 * (1 - easeOut(k));
     g.save();
     g.translate(cx, cy);
     g.scale(pop, pop);

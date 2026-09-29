@@ -50,3 +50,13 @@ describe('Staircase', () => {
     expect(nextStartLevel(1.2, 1, 20)).toBe(1);
   });
 });
+
+describe('Staircase.maxPlayed', () => {
+  it('zählt nur tatsächlich gespielte Stufen', () => {
+    const s = new Staircase({ start: 1, min: 1, max: 10, down: 1, up: 1, initialBoost: 1 });
+    s.update(true); // gespielt auf 1 → nächste 2
+    s.update(true); // gespielt auf 2 → nächste 3
+    expect(s.maxPlayed).toBe(2);
+    expect(s.maxLevel).toBe(3);
+  });
+});

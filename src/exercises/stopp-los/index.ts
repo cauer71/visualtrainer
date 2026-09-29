@@ -305,6 +305,13 @@ class StoppLos implements Exercise {
     if (this.demo) this.captionAt = t + 300;
   }
 
+  /** Tastatur: Leertaste/Enter wirkt wie ein Tipp (Computer ohne Touch). */
+  keyDown(key: string, t: number): void {
+    if (key !== ' ' && key !== 'Enter') return;
+    const { w, h } = this.ctx.stage;
+    this.pointerDown({ id: -2, x: w / 2, y: h / 2, t, type: 'mouse' });
+  }
+
   pointerDown(p: PointerInfo): void {
     if (this.phase === 'done') return;
     if (this.phase === 'isi') {

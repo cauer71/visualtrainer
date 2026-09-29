@@ -244,6 +244,15 @@ class ScharfInBewegung implements Exercise {
     return d;
   }
 
+  /** Tastatur: Pfeiltasten wählen die Öffnungsrichtung. */
+  keyDown(key: string, t: number): void {
+    const dir = key === 'ArrowRight' ? 0 : key === 'ArrowDown' ? 1 : key === 'ArrowLeft' ? 2 : key === 'ArrowUp' ? 3 : -1;
+    if (dir < 0) return;
+    if ((this.phase !== 'show' && this.phase !== 'answer') || t < this.onset) return;
+    const btn = BUTTON_DIRS.indexOf(dir as (typeof BUTTON_DIRS)[number]);
+    if (btn >= 0) this.respond(btn, t);
+  }
+
   pointerDown(p: PointerInfo): void {
     // Außerhalb der Antwortphase zählen die Buttons nicht. Wer schon während der
     // Anzeige antwortet, wird gewertet (die Buttons leuchten erst danach auf,

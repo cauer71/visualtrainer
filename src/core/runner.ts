@@ -447,6 +447,21 @@ export class Runner {
     const block = (e: Event) => {
       if (e.cancelable) e.preventDefault();
     };
+    const KEYS = [' ', 'Enter', 'ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown'];
+    const key = (e: KeyboardEvent) => {
+      if (!this.ex.keyDown || e.repeat || e.altKey || e.ctrlKey || e.metaKey || !KEYS.includes(e.key)) return;
+      e.preventDefault();
+      if (this.paused || this.finished || !this.started) return;
+      const pn = performance.now();
+      let ts = e.timeStamp;
+      if (!(ts > 0) || ts > pn + 50 || pn - ts > 3000) ts = pn;
+      try {
+        this.ex.keyDown(e.key, ts - this.pauseTotal);
+      } catch (err) {
+        this.fail(err);
+      }
+    };
+    window.addEventListener('keydown', key);
     el.addEventListener('pointerdown', down, { passive: false });
     el.addEventListener('pointermove', move);
     el.addEventListener('pointerup', up);
@@ -460,6 +475,7 @@ export class Runner {
       el.removeEventListener('pointercancel', up);
       el.removeEventListener('touchstart', block);
       el.removeEventListener('contextmenu', block);
+      window.removeEventListener('keydown', key);
     });
   }
 

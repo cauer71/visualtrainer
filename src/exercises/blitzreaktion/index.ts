@@ -193,6 +193,13 @@ class Blitzreaktion implements Exercise {
     this.goal = clamp(this.goal + (success ? -10 : 40), GOAL_MIN, GOAL_MAX);
   }
 
+  /** Tastatur: Leertaste/Enter wirkt wie ein Tipp (Computer ohne Touch). */
+  keyDown(key: string, t: number): void {
+    if (key !== ' ' && key !== 'Enter') return;
+    const { w, h } = this.ctx.stage;
+    this.pointerDown({ id: -2, x: w / 2, y: h / 2, t, type: 'mouse' });
+  }
+
   pointerDown(p: PointerInfo): void {
     const { sfx, hud, texts, fmt } = this.ctx;
     if (this.phase === 'wait' || (this.phase === 'stim' && p.t - this.onset < ANTICIPATION_MS)) {
