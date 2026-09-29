@@ -1,0 +1,115 @@
+# Blickfit – Augen- & Reaktionstraining für Tablet und Browser
+
+Eine Web-Plattform mit kurzen visuellen Trainingsübungen, gedacht für die Homepage eines Optikers
+(voreingestellt: **Bio-Optik Flaim**, Farben von optikflaim.com). Optimiert für Tablets mit Touchscreen,
+funktioniert aber auch am Handy und am Computer. Sprachen: **Deutsch** und **Italienisch**.
+
+- keine Anmeldung, keine Cookies, kein Tracking – Ergebnisse bleiben nur auf dem Gerät (localStorage)
+- jede Übung hat einen **Intro-Film**: Die echte Übung läuft im Demo-Modus, eine animierte Hand macht vor, was zu tun ist
+- adaptive Schwierigkeit (Staircase-Verfahren), Verlauf, Bestwerte, persönliche Tipps
+- **Tagestraining**: jeden Tag 3 Übungen (eine je Bereich)
+- statische Seite (~30 kB gzip JS), läuft auf jedem Webspace, in Unterordnern und im iframe
+
+## Die Übungen
+
+| Bereich | Übung | Was geübt wird |
+|---|---|---|
+| Reaktion | **Blitzreaktion** | schnell auf ein Licht reagieren – in der Mitte und am Rand |
+| Reaktion | **Stopp & Los** | schnell reagieren und im richtigen Moment bremsen (Go/No-Go) |
+| Bewegung verfolgen | **Zielfang** | bewegte Ziele antippen (Auge-Hand-Koordination, Vorhalt) |
+| Bewegung verfolgen | **Scharf in Bewegung** | Details auf bewegten Objekten erkennen |
+| Bewegung verfolgen | **Kugel-Detektiv** | mehrere bewegte Objekte gleichzeitig verfolgen |
+| Wahrnehmen & Erfassen | **Punktlandung** | den Moment treffen, in dem etwas ankommt |
+| Wahrnehmen & Erfassen | **Suchbild** | Gesuchtes zwischen ähnlichen Zeichen finden |
+| Wahrnehmen & Erfassen | **Blitzblick** | Mitte und Rand auf einen Blick erfassen |
+| Wahrnehmen & Erfassen | **Aus dem Takt** | feine zeitliche Unterschiede bemerken |
+
+Hintergrund, Studienlage und Quellen: Seite „Hintergrund & Studien“ in der App sowie
+[`docs/wissenschaft/`](docs/wissenschaft/). Die Übungen sind ein Training, **kein Sehtest und kein Medizinprodukt**.
+
+## Schnellstart (Entwicklung)
+
+```bash
+npm install
+npm run dev          # http://localhost:5173
+npm test             # Unit-Tests (vitest)
+npm run build        # Typecheck + Build nach dist/
+npm run preview      # gebaute Seite lokal ansehen
+```
+
+Hilfreiche URL-Schalter: `?lang=it` (Sprache), `?embed=1` (kompakte Darstellung für iframes),
+`?quick=1&autoplay=1` (Testmodus: kurze Sitzungen, die Übung spielt sich selbst).
+
+## Anpassen an den Optiker (Branding)
+
+Alles Wichtige steht in [`src/config/brand.ts`](src/config/brand.ts):
+
+- `appName`, `opticianName`, `logoUrl` (z. B. Logo nach `public/logo.svg` legen und `'./logo.svg'` eintragen)
+- `homepageUrl`, `appointmentUrl` (Button „Termin vereinbaren“), `privacyUrl`, `imprintUrl`
+- `colors`: `brand` = Original-Markenfarbe (#79AC2B), `primary` = etwas tieferes Grün für Buttons mit
+  weißer Schrift (#5A7F20, Kontrast 4,7 : 1 – Weiß auf #79AC2B hätte nur 2,7 : 1), `accent` = Holz-Braun (#8C6D4A)
+
+Danach `npm run build`.
+
+## Auf der Homepage einbinden
+
+**Variante A – eigener Link/Unterseite (empfohlen):** Die Seite unter einer eigenen Adresse veröffentlichen
+(z. B. `training.optikflaim.com`) und von der Homepage verlinken. Vollbild und „Bildschirm bleibt an“ funktionieren so am besten.
+
+**Variante B – iframe:**
+
+```html
+<iframe
+  src="https://blickfit.example.workers.dev/?embed=1"
+  title="Blickfit – Augen- und Reaktionstraining"
+  style="width:100%; height:900px; border:0; border-radius:16px"
+  allow="fullscreen; screen-wake-lock"
+  allowfullscreen
+  loading="lazy"></iframe>
+```
+
+Die Seite nutzt Hash-Routing (`#/uebung/…`) und relative Pfade – sie läuft ohne Server-Konfiguration
+auch in einem Unterordner.
+
+## Veröffentlichen (Cloudflare)
+
+Die Seite ist als statischer Cloudflare Worker konfiguriert ([`wrangler.jsonc`](wrangler.jsonc)):
+
+```bash
+export CLOUDFLARE_API_TOKEN=…   # niemals ins Repository schreiben
+npm run deploy
+```
+
+Sicherheits- und Cache-Header stehen in [`public/_headers`](public/_headers). Jeder andere statische
+Webspace funktioniert ebenfalls: einfach den Inhalt von `dist/` hochladen.
+
+## Neue Übungen hinzufügen
+
+Siehe [`docs/entwicklung/neue-uebung.md`](docs/entwicklung/neue-uebung.md). Kurz: Ordner
+`src/exercises/<id>/` mit Logik (`index.ts`) und Texten (`texts.ts`, de + it) anlegen, in
+`src/exercises/registry.ts` eintragen – Intro, Countdown, Ergebnis, Verlauf und Speichern gibt es automatisch.
+
+## Aufbau
+
+```
+src/
+  config/brand.ts        Branding (Name, Farben, Links)
+  core/                  Engine: runner.ts (Canvas, Zeit, Eingabe, Demo-Hand), staircase.ts, draw.ts, storage.ts, sound.ts …
+  exercises/             eine Übung pro Ordner + registry.ts
+  i18n/                  Oberflächentexte de/it
+  content/science.ts     Hintergrundtexte & Quellen
+  ui/                    Preact-Oberfläche (Startseite, Intro, Übung, Ergebnis, Hintergrund)
+docs/
+  wissenschaft/          Recherche zu den Übungen (mit Quellen)
+  entwicklung/           Anleitung für neue Übungen
+tests/
+  unit/                  vitest
+  e2e/                   Playwright-Skripte (Screenshots, Autoplay-Durchläufe)
+```
+
+## Datenschutz & Sicherheit
+
+- Keine Server-Kommunikation, keine externen Schriften oder Skripte (DSGVO-freundlich).
+- Gespeichert werden nur Ergebnisse und Einstellungen im `localStorage` des Geräts; Löschen über „Meine Ergebnisse löschen“.
+- Flackernde Inhalte bleiben unter 3 Hz (WCAG 2.3.1); die Übung „Aus dem Takt“ zeigt zusätzlich einen Hinweis.
+- Unterscheidungen nie nur über Farbe (Rot-Grün-Schwäche).
