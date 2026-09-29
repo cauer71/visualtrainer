@@ -501,7 +501,7 @@ class DoppeltGefordert implements Exercise {
     const L = this.layout();
     const text = this.ctx.texts.feedback.prioSign;
     // Schriftgröße so wählen, dass der Hinweis ins Zeichen-Feld passt
-    const size = Math.min(clamp(this.ctx.stage.u * 3.6, 15, 28), (L.B.w * 0.92) / (text.length * 0.56));
+    const size = Math.min(clamp(this.ctx.stage.u * 3.6, 15, 28), (L.B.w * 0.92) / (text.length * 0.62));
     this.ctx.hud.toast(text, 'info', {
       x: L.B.x + L.B.w / 2,
       y: L.B.y + L.head + size * 1.2,

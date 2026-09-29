@@ -1,4 +1,5 @@
 import { describe, expect, it } from 'vitest';
+import { SCIENCE } from '../../src/content/science';
 import { CATEGORIES, dailySet, EXERCISES } from '../../src/exercises/registry';
 
 describe('registry', () => {
@@ -26,5 +27,21 @@ describe('registry', () => {
     const d2 = dailySet(new Date(2026, 8, 30));
     expect(d1.length).toBe(CATEGORIES.length);
     expect(d1).not.toEqual(d2);
+  });
+
+  it('jede Übung hat einen Hintergrundtext mit Quellen in beiden Sprachen', () => {
+    for (const ex of EXERCISES) {
+      const e = SCIENCE[ex.id];
+      expect(e, ex.id).toBeTruthy();
+      expect(e.sources.length).toBeGreaterThanOrEqual(3);
+      for (const s of e.sources) expect(s.url).toMatch(/^https:\/\//);
+      for (const lang of ['de', 'it'] as const) {
+        for (const k of ['trains', 'daily', 'research', 'improved'] as const) expect(e.texts[lang][k].length).toBeGreaterThan(20);
+      }
+    }
+  });
+
+  it('jeder Bereich hat mindestens eine Übung', () => {
+    for (const c of CATEGORIES) expect(EXERCISES.some((e) => e.category === c.id), c.id).toBe(true);
   });
 });

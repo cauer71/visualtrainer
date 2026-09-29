@@ -9,8 +9,8 @@ funktioniert aber auch am Handy und am Computer. Sprachen: **Deutsch** und **Ita
 - keine Anmeldung, keine Cookies, kein Tracking – Ergebnisse bleiben nur auf dem Gerät (localStorage)
 - jede Übung hat einen **Intro-Film**: Die echte Übung läuft im Demo-Modus, eine animierte Hand macht vor, was zu tun ist
 - adaptive Schwierigkeit (Staircase-Verfahren), Verlauf, Bestwerte, persönliche Tipps
-- **Tagestraining**: jeden Tag 3 Übungen (eine je Bereich)
-- statische Seite (~30 kB gzip JS), läuft auf jedem Webspace, in Unterordnern und im iframe
+- **Tagestraining**: jeden Tag 4 Übungen (eine je Bereich)
+- statische Seite (~130 kB gzip JS), läuft auf jedem Webspace, in Unterordnern und im iframe
 
 ## Die Übungen
 
@@ -25,6 +25,13 @@ funktioniert aber auch am Handy und am Computer. Sprachen: **Deutsch** und **Ita
 | Wahrnehmen & Erfassen | **Suchbild** | Gesuchtes zwischen ähnlichen Zeichen finden |
 | Wahrnehmen & Erfassen | **Blitzblick** | Mitte und Rand auf einen Blick erfassen |
 | Wahrnehmen & Erfassen | **Aus dem Takt** | feine zeitliche Unterschiede bemerken |
+| Konzentration & Denken | **Pfeil-Duell** | nur auf die Pfeilrichtung achten, Platz und Nachbarn ausblenden |
+| Konzentration & Denken | **Weichensteller** | zwischen zwei Regeln hin- und herschalten |
+| Konzentration & Denken | **Wachposten** | ein paar Minuten auf ein seltenes Zeichen aufpassen |
+| Konzentration & Denken | **Doppelt gefordert** | zwei Aufgaben gleichzeitig (Kugel steuern + Formen beantworten) |
+| Konzentration & Denken | **Zeichen-Code** | Zeichen schnell in Zahlen übersetzen (Schlüssel jedes Mal neu) |
+| Konzentration & Denken | **Zahlenjagd** | Zahlen (und Buchstaben) der Reihe nach finden |
+| Konzentration & Denken | **Reihen-Rätsel** | die Regel hinter einer Reihe finden – ohne Zeitdruck |
 
 Hintergrund, Studienlage und Quellen: Seite „Hintergrund & Studien“ in der App sowie
 [`docs/wissenschaft/`](docs/wissenschaft/). Die Übungen sind ein Training, **kein Sehtest und kein Medizinprodukt**.

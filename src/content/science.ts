@@ -1,7 +1,7 @@
 /**
  * Hintergrundtexte zu den Übungen (Seite "Hintergrund & Studien").
  *
- * Grundlage: docs/wissenschaft/01–03 (Recherche mit geprüften Quellen, Stand 29.09.2026).
+ * Grundlage: docs/wissenschaft/01–04 (Recherche mit geprüften Quellen, Stand 29.09.2026).
  * Formulierungsregeln: nur beschreiben, was geübt wird und dass man in der Übung besser wird;
  * keine Wirk- oder Heilversprechen, keine Diagnose, keine Vergleiche mit anderen
  * (siehe docs/wissenschaft/01-reaktion-und-impulskontrolle.md, Abschnitt 4).
@@ -297,6 +297,215 @@ export const SCIENCE: Record<string, ScienceEntry> = {
       src('Harding et al. (2005). Photic- and pattern-induced seizures: Expert consensus of the Epilepsy Foundation of America Working Group. Epilepsia', 'https://doi.org/10.1111/j.1528-1167.2005.31305.x'),
       src('W3C (2023). Web Content Accessibility Guidelines (WCAG) 2.2 – Success Criterion 2.3.1 Three Flashes or Below Threshold', 'https://www.w3.org/TR/WCAG22/'),
       src('ITU-R BT.1702. Guidance for the reduction of photosensitive epileptic seizures caused by television', 'https://www.itu.int/rec/R-REC-BT.1702/en'),
+    ],
+  },
+  'pfeil-duell': {
+    id: 'pfeil-duell',
+    evidence: 'medium',
+    texts: {
+      de: {
+        trains: 'Nur auf das Wichtige achten: Es zählt, wohin der Pfeil zeigt – nicht, wo er steht oder wohin seine Nachbarn zeigen.',
+        daily: 'Überall, wo Nebensächliches ablenkt: ein Schild lesen, während daneben etwas blinkt, oder bei der Arbeit Störendes ausblenden.',
+        research:
+          'Die Übung beruht auf bekannten Aufgaben aus der Forschung (räumlicher Stroop- und Flanker-Effekt). In der geübten Aufgabe wird man mit Übung schneller, auch im höheren Alter. Dass sich das auf „Konzentration allgemein“ oder den Alltag überträgt, ist nicht belegt. Der Unterschied zwischen passenden und widersprüchlichen Pfeilen schwankt von Tag zu Tag stark – deshalb ist er nur ein Zusatzwert.',
+        improved:
+          'Farbfrei und sprachfrei statt Farbwörter (für Menschen mit Rot-Grün-Schwäche und in beiden Sprachen gleich), passende und widersprüchliche Durchgänge je zur Hälfte gemischt, keine direkten Wiederholungen, frame-genaue Reaktionszeit, Raten unter 150 ms wird nicht gewertet, Antwortfrist passt sich an (≈ 80 % richtig).',
+      },
+      it: {
+        trains: 'Badare solo a ciò che conta: vale la direzione della freccia – non dove si trova o dove puntano le vicine.',
+        daily: 'Ovunque i dettagli secondari distraggano: leggere un cartello mentre accanto qualcosa lampeggia, o ignorare le interruzioni al lavoro.',
+        research:
+          'L’esercizio si basa su compiti noti della ricerca (effetto Stroop spaziale ed effetto flanker). Nel compito allenato si diventa più veloci con la pratica, anche in età avanzata. Che questo si trasferisca alla “concentrazione in generale” o alla vita quotidiana non è dimostrato. La differenza tra frecce concordi e discordanti varia molto da un giorno all’altro – per questo è solo un valore aggiuntivo.',
+        improved:
+          'Senza colori e senza parole invece delle parole-colore (adatto a chi confonde rosso e verde e uguale in entrambe le lingue), metà prove concordi e metà discordanti mescolate, nessuna ripetizione diretta, tempo di reazione preciso al fotogramma, risposte sotto i 150 ms non contano, il tempo a disposizione si adatta (≈ 80 % di risposte giuste).',
+      },
+    },
+    sources: [
+      src('Viviani et al. (2024). The Stroop legacy: A cautionary tale on methodological issues and a proposed spatial solution. Behavior Research Methods', 'https://doi.org/10.3758/s13428-023-02215-0'),
+      src('Eriksen & Eriksen (1974). Effects of noise letters upon the identification of a target letter in a nonsearch task. Perception & Psychophysics', 'https://doi.org/10.3758/BF03203267'),
+      src('Lu & Proctor (1995). The influence of irrelevant location information on performance: A review of the Simon and spatial Stroop effects. Psychonomic Bulletin & Review', 'https://doi.org/10.3758/BF03210959'),
+      src('Wilkinson & Yang (2012). Plasticity of inhibition in older adults: Retest practice and transfer effects. Psychology and Aging', 'https://doi.org/10.1037/a0025926'),
+      src('Hedge, Powell & Sumner (2018). The reliability paradox: Why robust cognitive tasks do not produce reliable individual differences. Behavior Research Methods', 'https://doi.org/10.3758/s13428-017-0935-1'),
+      src('Birch (2012). Worldwide prevalence of red-green color deficiency. J Opt Soc Am A', 'https://doi.org/10.1364/JOSAA.29.000313'),
+    ],
+  },
+
+  wachposten: {
+    id: 'wachposten',
+    evidence: 'medium',
+    texts: {
+      de: {
+        trains: 'Ein paar Minuten aufmerksam bleiben und ein seltenes Zeichen nicht verpassen – auch wenn lange nichts passiert.',
+        daily: 'Überall, wo man lange aufpassen muss, obwohl selten etwas geschieht: lange Autobahnfahrten, Überwachungs- und Kontrollaufgaben.',
+        research:
+          'Aufgaben dieser Art („Vigilanz“) werden seit Jahrzehnten erforscht. Fast allen fällt das Aufpassen mit der Zeit schwerer – das ist normal und zeigt, warum Pausen wichtig sind. Dass ein solches Training die Aufmerksamkeit im Alltag verbessert, ist nicht belegt. Die Übung ist kein Aufmerksamkeits- oder ADHS-Test.',
+        improved:
+          'Klassisches Format mit seltenen Zielen (keine Dublette zu „Stopp & Los“), feste Dauer ohne Zeitbonus, farbfreie Zeichen, weiches Ein- und Ausblenden statt Blitzen. Getrennt ausgewertet werden Treffer, Auslassungen, Fehlalarme und richtig ausgelassene Zeichen – je Hälfte, damit man sieht, wie gut man durchhält. Kein Alarmton bei Fehlern.',
+      },
+      it: {
+        trains: 'Restare attenti per qualche minuto e non perdere un segnale raro – anche quando a lungo non succede nulla.',
+        daily: 'Ovunque si debba stare attenti a lungo anche se accade raramente qualcosa: lunghi viaggi in autostrada, compiti di sorveglianza e controllo.',
+        research:
+          'I compiti di questo tipo (“vigilanza”) sono studiati da decenni. Quasi a tutti con il tempo diventa più difficile restare attenti – è normale e mostra perché le pause sono importanti. Che un allenamento del genere migliori l’attenzione nella vita quotidiana non è dimostrato. L’esercizio non è un test dell’attenzione né dell’ADHD.',
+        improved:
+          'Formato classico con bersagli rari (nessun doppione di “Stop o via”), durata fissa senza bonus di tempo, segni senza colori, comparsa e scomparsa morbide invece di lampi. Vengono valutati separatamente colpi, omissioni, falsi allarmi e segni giustamente ignorati – per ogni metà, così si vede quanto si tiene duro. Nessun suono d’allarme in caso di errore.',
+      },
+    },
+    sources: [
+      src('Rosvold et al. (1956). A continuous performance test of brain damage. Journal of Consulting Psychology', 'https://doi.org/10.1037/h0043220'),
+      src('Warm, Parasuraman & Matthews (2008). Vigilance requires hard mental work and is stressful. Human Factors', 'https://doi.org/10.1518/001872008X312152'),
+      src('Helton (2009). Impulsive responding and the sustained attention to response task. J Clin Exp Neuropsychology', 'https://doi.org/10.1080/13803390801978856'),
+      src('Fortenbaugh et al. (2015). Sustained attention across the life span in a sample of 10,000: Dissociating ability and strategy. Psychological Science', 'https://doi.org/10.1177/0956797615594896'),
+      src('Esterman et al. (2013). In the zone or zoning out? Tracking behavioral and neural fluctuations during sustained attention. Cerebral Cortex', 'https://doi.org/10.1093/cercor/bhs261'),
+    ],
+  },
+
+  'zeichen-code': {
+    id: 'zeichen-code',
+    evidence: 'medium',
+    texts: {
+      de: {
+        trains: 'Zeichen so schnell und sicher wie möglich in Zahlen übersetzen – mit einem Schlüssel, der jedes Mal neu ist.',
+        daily: 'Überall, wo man Zeichen rasch zuordnet: Symbole auf Schildern und Geräten, Tabellen, Fahrpläne.',
+        research:
+          'Symbol-Zahl-Aufgaben werden in der Forschung genutzt, um das Verarbeitungstempo zu beschreiben – sie reagieren empfindlich auf Müdigkeit und Alter. Anfangs wird man spürbar schneller, danach erreicht man ein persönliches Niveau; das ist normal. Eine Übertragung auf andere Fähigkeiten oder den Alltag ist kaum belegt. Die Werte sind kein medizinischer Test.',
+        improved:
+          'Der Schlüssel steht nie in der Reihenfolge der Tasten (das Vorbild war rein über die Position lösbar), wird jede Sitzung neu gemischt und nutzt eigene, gut unterscheidbare Formen. Große Tasten, feste Dauer ohne Zeitbonus, Stufen mit 3, 6 und 9 Paaren, Hauptwert = richtige Zuordnungen pro Minute auf der erreichten Stufe.',
+      },
+      it: {
+        trains: 'Tradurre simboli in numeri nel modo più rapido e sicuro possibile – con una chiave che cambia ogni volta.',
+        daily: 'Ovunque si abbinino segni in fretta: simboli su cartelli e apparecchi, tabelle, orari.',
+        research:
+          'I compiti simbolo-numero sono usati nella ricerca per descrivere la velocità di elaborazione – sono sensibili alla stanchezza e all’età. All’inizio si diventa nettamente più veloci, poi si raggiunge un livello personale; è normale. Un trasferimento ad altre capacità o alla vita quotidiana è poco dimostrato. I valori non sono un test medico.',
+        improved:
+          'La chiave non è mai nell’ordine dei tasti (l’originale si risolveva solo con la posizione), viene rimescolata a ogni sessione e usa forme proprie ben distinguibili. Tasti grandi, durata fissa senza bonus di tempo, livelli con 3, 6 e 9 coppie, valore principale = abbinamenti corretti al minuto al livello raggiunto.',
+      },
+    },
+    sources: [
+      src('Hoyer et al. (2004). Adult age and digit symbol substitution performance: A meta-analysis. Psychology and Aging', 'https://doi.org/10.1037/0882-7974.19.1.211'),
+      src('Jaeger (2018). Digit Symbol Substitution Test: The case for sensitivity over specificity in neuropsychological testing. J Clin Psychopharmacology', 'https://doi.org/10.1097/JCP.0000000000000941'),
+      src('Pham et al. (2021). Smartphone-based symbol-digit modalities test reliably captures brain damage in multiple sclerosis. npj Digital Medicine', 'https://doi.org/10.1038/s41746-021-00401-y'),
+      src('Benedict et al. (2012). Reliability and equivalence of alternate forms for the Symbol Digit Modalities Test. Multiple Sclerosis Journal', 'https://doi.org/10.1177/1352458511435717'),
+      src('Calamia, Markon & Tranel (2012). Scoring higher the second time around: Meta-analyses of practice effects in neuropsychological assessment. The Clinical Neuropsychologist', 'https://doi.org/10.1080/13854046.2012.680913'),
+    ],
+  },
+
+  zahlenjagd: {
+    id: 'zahlenjagd',
+    evidence: 'weak',
+    texts: {
+      de: {
+        trains: 'Geordnet suchen: Zahlen der Reihe nach finden – später abwechselnd mit Buchstaben (1 – A – 2 – B …).',
+        daily: 'Überall, wo man in einer unübersichtlichen Fläche Dinge der Reihe nach sucht: Regale, Formulare, Tastenfelder.',
+        research:
+          'Die Übung verbindet die bekannte Schulte-Tabelle mit dem Prinzip des „Trail Making“ (abwechselnder Pfad). Solche Aufgaben werden vor allem zum Messen verwendet; mit Wiederholung wird man darin schneller. Behauptungen, solche Tabellen würden das periphere Sehen oder das Schnelllesen trainieren, sind wissenschaftlich nicht belegt.',
+        improved:
+          'Große Felder und Ziffern (keine Mini-Schrift), gefundene Zahlen bleiben sichtbar (die Suche wird nicht mit jeder Zahl leichter), aufeinanderfolgende Zahlen liegen nie direkt nebeneinander, Zahlen im Kreis und Buchstaben im Quadrat (Form statt Farbe), jede Tafel neu gemischt, feste Dauer ohne Zeitbonus.',
+      },
+      it: {
+        trains: 'Cercare con ordine: trovare i numeri in sequenza – più avanti alternati a lettere (1 – A – 2 – B …).',
+        daily: 'Ovunque si cerchino cose in ordine in un’area confusa: scaffali, moduli, tastiere.',
+        research:
+          'L’esercizio unisce la nota tabella di Schulte al principio del “Trail Making” (percorso alternato). Compiti del genere si usano soprattutto per misurare; ripetendoli si diventa più veloci. Le affermazioni secondo cui queste tabelle allenerebbero la visione periferica o la lettura veloce non sono dimostrate scientificamente.',
+        improved:
+          'Caselle e cifre grandi (niente caratteri minuscoli), i numeri trovati restano visibili (la ricerca non diventa più facile a ogni numero), numeri consecutivi mai uno accanto all’altro, numeri nel cerchio e lettere nel quadrato (forma invece del colore), ogni tabella rimescolata, durata fissa senza bonus di tempo.',
+      },
+    },
+    sources: [
+      src('Reitan (1958). Validity of the Trail Making Test as an indicator of organic brain damage. Perceptual and Motor Skills', 'https://doi.org/10.2466/pms.1958.8.3.271'),
+      src('Salthouse (2011). What cognitive abilities are involved in trail-making performance? Intelligence', 'https://doi.org/10.1016/j.intell.2011.03.001'),
+      src('Buck, Atkinson & Ryan (2008). Evidence of practice effects in variants of the Trail Making Test during serial assessment. J Clin Exp Neuropsychology', 'https://doi.org/10.1080/13803390701390483'),
+      src('Rayner et al. (2016). So much to read, so little time: How do we read, and can speed reading help? Psychological Science in the Public Interest', 'https://doi.org/10.1177/1529100615623267'),
+    ],
+  },
+
+  weichensteller: {
+    id: 'weichensteller',
+    evidence: 'medium',
+    texts: {
+      de: {
+        trains: 'Zwischen zwei Regeln hin- und herschalten: Mal zählt „gerade oder ungerade“, mal „kleiner oder größer als 5“ – der Rahmen zeigt, welche Regel gilt.',
+        daily: 'Überall, wo man rasch umdenken muss: zwischen Aufgaben wechseln, auf neue Anweisungen reagieren.',
+        research:
+          'Jeder Regelwechsel kostet ein paar hundert Millisekunden – das geht allen so, mit dem Alter oft etwas mehr. Mit Übung werden die Wechsel in der Übung flüssiger, und ähnliche Wechselaufgaben profitieren teilweise mit. Dass das die Konzentration oder Intelligenz allgemein verbessert, ist nicht belegt.',
+        improved:
+          'Echter Aufgabenwechsel statt zweier gleichzeitiger Ströme, Regelwechsel immer angekündigt und nie nur über Farbe (Rahmenform, Symbol, Frage und Tastenform), Einzelblöcke und gemischter Block, Vorwarnzeit passt sich an. Wechsel- und Mischkosten in Millisekunden als Zusatzwerte.',
+      },
+      it: {
+        trains: 'Passare da una regola all’altra: a volte conta “pari o dispari”, a volte “minore o maggiore di 5” – la cornice dice quale regola vale.',
+        daily: 'Ovunque si debba cambiare idea in fretta: passare da un compito all’altro, reagire a nuove istruzioni.',
+        research:
+          'Ogni cambio di regola costa qualche centinaio di millisecondi – succede a tutti, con l’età spesso un po’ di più. Con la pratica i cambi nell’esercizio diventano più fluidi e in parte ne beneficiano anche compiti simili. Che questo migliori la concentrazione o l’intelligenza in generale non è dimostrato.',
+        improved:
+          'Vero cambio di compito invece di due flussi contemporanei, cambio di regola sempre annunciato e mai solo tramite il colore (forma della cornice, simbolo, domanda e forma dei tasti), blocchi singoli e blocco misto, tempo di preavviso adattivo. Costi di cambio e di mescolanza in millisecondi come valori aggiuntivi.',
+      },
+    },
+    sources: [
+      src('Rogers & Monsell (1995). Costs of a predictable switch between simple cognitive tasks. J Exp Psychology: General', 'https://doi.org/10.1037/0096-3445.124.2.207'),
+      src('Kiesel et al. (2010). Control and interference in task switching – A review. Psychological Bulletin', 'https://doi.org/10.1037/a0019842'),
+      src('Wasylyshyn, Verhaeghen & Sliwinski (2011). Aging and task switching: A meta-analysis. Psychology and Aging', 'https://doi.org/10.1037/a0020912'),
+      src('Karbach & Kray (2009). How useful is executive control training? Age differences in near and far transfer of task-switching training. Developmental Science', 'https://doi.org/10.1111/j.1467-7687.2009.00846.x'),
+      src('Karbach & Verhaeghen (2014). Making working memory work: A meta-analysis of executive-control and working memory training in older adults. Psychological Science', 'https://doi.org/10.1177/0956797614548725'),
+    ],
+  },
+
+  'doppelt-gefordert': {
+    id: 'doppelt-gefordert',
+    evidence: 'medium',
+    texts: {
+      de: {
+        trains: 'Zwei Dinge gleichzeitig: eine Kugel auf der Spur halten und nebenbei kurz auftauchende Formen beantworten.',
+        daily: 'Überall, wo zwei Dinge auf einmal gefragt sind – beim Gehen reden, beim Kochen zuhören. (Am Steuer gilt trotzdem: nicht telefonieren.)',
+        research:
+          'Fast jeder wird bei zwei gleichzeitigen Aufgaben langsamer oder ungenauer – mit dem Alter oft mehr. In Laborstudien gelingt das Zusammenspiel mit Übung besser, vor allem in der geübten Aufgabe. Ob sich das auf Gehen, Autofahren oder den Alltag überträgt, ist nicht belegt.',
+        improved:
+          'Jede Sitzung misst erst beide Teile einzeln und dann zusammen – so zeigt der Wert „Zusammenspiel“ die echten Kosten der Doppelaufgabe statt nur Punkte. Die versprochene Bewegung ist da (fortlaufende Steueraufgabe), Schwierigkeit passt sich in den Einzelteilen an, Formen statt Farben, Mehrfinger-Bedienung.',
+      },
+      it: {
+        trains: 'Due cose insieme: tenere una pallina sul percorso e intanto rispondere a forme che compaiono per un attimo.',
+        daily: 'Ovunque servano due cose alla volta – parlare camminando, ascoltare mentre si cucina. (Al volante vale comunque: niente telefono.)',
+        research:
+          'Quasi tutti con due compiti contemporanei diventano più lenti o meno precisi – con l’età spesso di più. Negli studi di laboratorio con la pratica il gioco di squadra migliora, soprattutto nel compito allenato. Se questo si trasferisca al camminare, alla guida o alla vita quotidiana non è dimostrato.',
+        improved:
+          'Ogni sessione misura prima le due parti da sole e poi insieme – così il valore “gioco di squadra” mostra i veri costi del doppio compito invece di soli punti. Il movimento promesso c’è (compito di guida continuo), la difficoltà si adatta nelle parti singole, forme invece di colori, uso con più dita.',
+      },
+    },
+    sources: [
+      src('Pashler (1994). Dual-task interference in simple tasks: Data and theory. Psychological Bulletin', 'https://doi.org/10.1037/0033-2909.116.2.220'),
+      src('Verhaeghen et al. (2003). Aging and dual-task performance: A meta-analysis. Psychology and Aging', 'https://doi.org/10.1037/0882-7974.18.3.443'),
+      src('Bherer et al. (2005). Training effects on dual-task performance: Are there age-related differences in plasticity of attentional control? Psychology and Aging', 'https://doi.org/10.1037/0882-7974.20.4.695'),
+      src('Anguera et al. (2013). Video game training enhances cognitive control in older adults. Nature', 'https://doi.org/10.1038/nature12486'),
+      src('Strayer & Johnston (2001). Driven to distraction: Dual-task studies of simulated driving and conversing on a cellular telephone. Psychological Science', 'https://doi.org/10.1111/1467-9280.00386'),
+    ],
+  },
+
+  'reihen-raetsel': {
+    id: 'reihen-raetsel',
+    evidence: 'strong',
+    texts: {
+      de: {
+        trains: 'Die Regel hinter einer Zahlen-, Buchstaben- oder Formenreihe finden und die Reihe fortsetzen – in Ruhe, ohne Zeitdruck.',
+        daily: 'Überall, wo man Muster erkennt und daraus schließt: Pläne und Abläufe verstehen, Regelmäßigkeiten bemerken.',
+        research:
+          'Ähnliche Reihen-Aufgaben wurden in einer großen Studie mit älteren Menschen (ACTIVE) in einem betreuten Kurs geübt – die geübte Fähigkeit blieb über Jahre besser. Im Alltag berichteten die Teilnehmenden nur selbst von kleinen Vorteilen; eine allgemeine Verbesserung des Denkens ist nicht belegt. Unsere Version ist davon inspiriert, aber selbst nicht untersucht.',
+        improved:
+          'Neu in dieser Kategorie (beim Vorbild fehlt „Denken“ ganz). Die Aufgaben werden jedes Mal neu erzeugt, die falschen Antworten entsprechen typischen Denkfehlern, und nach jeder Antwort wird die Regel in Alltagssprache erklärt – wie im Studienkurs, der Strategien vermittelte. Kein Zeitdruck, Schwierigkeit passt sich an (≈ 70 % richtig).',
+      },
+      it: {
+        trains: 'Trovare la regola dietro una serie di numeri, lettere o forme e continuarla – con calma, senza fretta.',
+        daily: 'Ovunque si riconoscano schemi e se ne traggano conclusioni: capire piani e procedure, notare regolarità.',
+        research:
+          'Compiti simili con serie sono stati allenati in un grande studio con persone anziane (ACTIVE) in un corso guidato – la capacità allenata è rimasta migliore per anni. Nella vita quotidiana i partecipanti hanno riferito solo piccoli vantaggi percepiti; un miglioramento generale del pensiero non è dimostrato. La nostra versione ne è ispirata, ma non è stata studiata.',
+        improved:
+          'Nuovo in questa categoria (nell’originale il “pensiero” manca del tutto). I compiti vengono generati ogni volta, le risposte sbagliate corrispondono a tipici errori di ragionamento e dopo ogni risposta la regola viene spiegata con parole semplici – come nel corso dello studio, che insegnava strategie. Nessuna fretta, la difficoltà si adatta (≈ 70 % di risposte giuste).',
+      },
+    },
+    sources: [
+      src('Ball et al. (2002). Effects of cognitive training interventions with older adults: A randomized controlled trial (ACTIVE). JAMA', 'https://doi.org/10.1001/jama.288.18.2271'),
+      src('Willis et al. (2006). Long-term effects of cognitive training on everyday functional outcomes in older adults. JAMA', 'https://doi.org/10.1001/jama.296.23.2805'),
+      src('Rebok et al. (2014). Ten-year effects of the ACTIVE cognitive training trial on cognition and everyday functioning in older adults. J Am Geriatr Soc', 'https://doi.org/10.1111/jgs.12607'),
+      src('Basak, Qin & O’Connell (2020). Differential effects of cognitive training modules in healthy aging and mild cognitive impairment: A comprehensive meta-analysis. Psychology and Aging', 'https://doi.org/10.1037/pag0000442'),
+      src('Stojanoski et al. (2018). Targeted training: Converging evidence against the transferable benefits of online brain training on cognitive function. Neuropsychologia', 'https://doi.org/10.1016/j.neuropsychologia.2018.07.013'),
     ],
   },
 };

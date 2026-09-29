@@ -530,13 +530,22 @@ export class Runner {
     for (const it of this.toasts) {
       const k = (t - it.t0) / it.ms;
       const alpha = Math.min(1, (t - it.t0) / 90) * (k > 0.7 ? 1 - (k - 0.7) / 0.3 : 1);
-      const size = it.size ?? clamp(u * (it.kind === 'big' ? 8 : 5), 18, it.kind === 'big' ? 72 : 44);
-      const x = it.x ?? w / 2;
+      let size = it.size ?? clamp(u * (it.kind === 'big' ? 8 : 5), 18, it.kind === 'big' ? 72 : 44);
+      g.save();
+      g.font = font(size, 800);
+      // Nie über den Bühnenrand hinaus: bei Bedarf verkleinern und nach innen schieben
+      let tw = g.measureText(it.text).width;
+      const maxW = w * 0.94;
+      if (tw > maxW) {
+        size *= maxW / tw;
+        tw = maxW;
+        g.font = font(size, 800);
+      }
+      const half = tw / 2 + size * 0.2;
+      const x = clamp(it.x ?? w / 2, half, Math.max(half, w - half));
       const y = (it.y ?? h * 0.2) - k * size * 0.5;
       const color = it.kind === 'good' ? '#4ADE80' : it.kind === 'bad' ? '#F87171' : '#FFFFFF';
-      g.save();
       g.globalAlpha = Math.max(0, alpha);
-      g.font = font(size, 800);
       g.textAlign = 'center';
       g.textBaseline = 'middle';
       g.lineJoin = 'round';
