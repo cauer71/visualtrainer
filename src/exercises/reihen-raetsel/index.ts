@@ -646,7 +646,7 @@ export const reihenRaetsel: ExerciseDefinition = {
   color: '#7A5195',
   showsLevel: true,
   icon:
-    '<rect x="3" y="29" width="8" height="11" rx="1.6" fill="currentColor"/><rect x="13.5" y="23" width="8" height="17" rx="1.6" fill="currentColor"/><rect x="24" y="17" width="8" height="23" rx="1.6" fill="currentColor"/><rect x="35" y="9.5" width="10.5" height="30.5" rx="2.2" fill="none" stroke="currentColor" stroke-width="2.6" stroke-dasharray="3.6 2.8"/><path d="M37.6 20.6a2.7 2.7 0 1 1 4 2.4c-.9.5-1.4 1.1-1.4 2.2v.6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><circle cx="40.2" cy="30.3" r="1.5" fill="currentColor"/>',
+    '<rect x="2.5" y="29" width="8" height="11" rx="1.6" fill="currentColor"/><rect x="12.5" y="23" width="8" height="17" rx="1.6" fill="currentColor"/><rect x="22.5" y="17" width="8" height="23" rx="1.6" fill="currentColor"/><rect x="33.5" y="8.5" width="12.5" height="31.5" rx="2.4" fill="none" stroke="currentColor" stroke-width="3"/><path d="M36.3 19a3.45 3.45 0 1 1 5.2 3c-1.15.65-1.75 1.35-1.75 2.75v1" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"/><circle cx="39.75" cy="31" r="1.9" fill="currentColor"/>',
   texts: { de, it },
   create: (ctx) => new ReihenRaetsel(ctx),
 };

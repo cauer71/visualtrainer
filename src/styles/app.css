@@ -871,6 +871,7 @@ p {
 }
 .hud-progress {
   flex: 1;
+  min-width: 72px;
   height: 10px;
   border-radius: 99px;
   background: rgba(255, 255, 255, 0.12);
@@ -886,6 +887,10 @@ p {
   transition: transform 0.2s linear;
 }
 .hud-label {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 40vw;
   font-weight: 700;
   font-size: 17px;
   font-variant-numeric: tabular-nums;
