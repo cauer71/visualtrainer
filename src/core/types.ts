@@ -8,7 +8,7 @@
 import type { Lang } from '../i18n/lang';
 import type { Rng } from './rng';
 
-export type CategoryId = 'reaktion' | 'bewegung' | 'wahrnehmung';
+export type CategoryId = 'reaktion' | 'bewegung' | 'wahrnehmung' | 'konzentration';
 export type Mode = 'play' | 'demo';
 
 /**

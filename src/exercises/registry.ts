@@ -56,6 +56,12 @@ export const CATEGORIES: CategoryMeta[] = [
     soft: '#F4EEE6',
     icon: '<path d="M4 24s7-12 20-12 20 12 20 12-7 12-20 12S4 24 4 24z" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linejoin="round"/><circle cx="24" cy="24" r="6" fill="currentColor"/>',
   },
+  {
+    id: 'konzentration',
+    color: '#7A5195',
+    soft: '#F3EDF7',
+    icon: '<circle cx="24" cy="24" r="17" fill="none" stroke="currentColor" stroke-width="3.5"/><circle cx="24" cy="24" r="9" fill="none" stroke="currentColor" stroke-width="3.5"/><circle cx="24" cy="24" r="3" fill="currentColor"/>',
+  },
 ];
 
 export function getExercise(id: string | undefined): ExerciseDefinition | undefined {
