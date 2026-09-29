@@ -260,7 +260,7 @@ class Weichensteller implements Exercise {
   }
 
   private bannerMs(b: BlockKind): number {
-    if (this.ctx.quick) return 800;
+    if (this.ctx.quick) return 600;
     return b === 'pureA' ? 2600 : b === 'pureB' ? 2000 : 2600;
   }
 
@@ -447,7 +447,7 @@ class Weichensteller implements Exercise {
       this.updateLabel();
     }
     const L = this.layout();
-    const ty = L.cy - L.R - L.badgeH - L.fsQ * 0.2;
+    const ty = this.toastY(L);
     const size = clamp(ctx.stage.u * 4.4, 17, 34);
     if (tr.correct) {
       sfx.good();
@@ -503,10 +503,15 @@ class Weichensteller implements Exercise {
     const L = this.layout();
     this.ctx.hud.toast(this.ctx.texts.feedback[key], 'info', {
       x: L.cx,
-      y: L.cy - L.R - L.badgeH - L.fsQ * 0.2,
+      y: this.toastY(L),
       ms: 700,
       size: clamp(this.ctx.stage.u * 3.8, 16, 30),
     });
+  }
+
+  /** Rückmeldungen unter dem Rahmen – die Frage oben bleibt lesbar */
+  private toastY(L: Layout): number {
+    return Math.min(L.cy + L.R + L.fsQ * 1.25, this.ctx.stage.h - L.fsQ);
   }
 
   // ------------------------------------------------------------------ Geister-Hand

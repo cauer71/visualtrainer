@@ -18,7 +18,7 @@ export const de: ExerciseTexts = {
   },
   metrics: {
     level: 'Erreichte Stufe',
-    correct: 'Richtig gelöst',
+    correct: 'Richtig gelöst (von 10)',
     hardest: 'Schwerste gelöste Stufe',
     time: 'Zeit pro Aufgabe (Mittel)',
   },
@@ -76,7 +76,7 @@ export const it: ExerciseTexts = {
   },
   metrics: {
     level: 'Livello raggiunto',
-    correct: 'Risolti correttamente',
+    correct: 'Risolti (su 10)',
     hardest: 'Livello più difficile risolto',
     time: 'Tempo per esercizio (medio)',
   },

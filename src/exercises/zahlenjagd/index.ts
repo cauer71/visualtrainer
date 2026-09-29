@@ -14,7 +14,7 @@
  * - Wechselpfad (Prinzip von Trail Making B): 1 – A – 2 – B – 3 – C … Zahlen stehen in Kreisen,
  *   Buchstaben in Quadraten – Unterscheidung über die Form, nicht über Farbe. Buchstaben nur A–L
  *   (in DE und IT gleich).
- * - Adaptiv je Tafel: Zeitziel = Felder × (0,30 s + 0,028 s × Felder), beim Wechselpfad × 1,4.
+ * - Adaptiv je Tafel: Zeitziel = Felder × (0,45 s + 0,025 s × Felder), beim Wechselpfad × 1,4.
  *   Im Zeitziel und mit wenigen Fehlern → nächste Stufe; deutlich langsamer (> 1,6 × Ziel) oder
  *   viele Fehler → leichter. Stufenfolge: 3×3, 4×4, 5×5, 4×4 Wechsel, 6×6, 5×5 Wechsel, 7×7,
  *   5×5 Wechsel Profi.
@@ -75,7 +75,7 @@ const DEMO_ALT_TAPS = 5;
 /** Zeitziel einer Tafel in ms */
 function targetMs(b: Board, n: number): number {
   const cells = n * n;
-  return cells * (300 + 28 * cells) * (b.alt ? 1.4 : 1) * (b.pro ? 1.1 : 1);
+  return cells * (450 + 25 * cells) * (b.alt ? 1.4 : 1) * (b.pro ? 1.1 : 1);
 }
 
 type Phase = 'play' | 'clear' | 'end' | 'done';
@@ -252,8 +252,8 @@ class Zahlenjagd implements Exercise {
     const availH = Math.max(1, h - fieldTop - bottom);
     const n = this.n;
     const pitch = Math.min(availW, availH) / n;
-    // Große Tafeln nicht unnötig aufblähen: höchstens 120 px pro Zelle
-    const p = Math.min(pitch, 120);
+    // Große Tafeln nicht unnötig aufblähen: höchstens 130 px pro Zelle
+    const p = Math.min(pitch, 130);
     const gap = Math.max(4, p * 0.1);
     const size = p * n;
     // Anzeige „Nächste“ direkt über dem Raster, beides zusammen senkrecht mittig
@@ -342,7 +342,7 @@ class Zahlenjagd implements Exercise {
       return;
     }
     // Spielmodus (nur Tests): Suchzeit wächst mit der Tafel, ab und zu ein Fehltipp
-    const search = (220 + 20 * N) * rng.range(0.6, 1.4) * (this.board.alt ? 1.25 : 1);
+    const search = (100 + 14 * N) * rng.range(0.6, 1.4) * (this.board.alt ? 1.25 : 1);
     if (rng.chance(0.05) && N > 4) {
       const c = rng.int(N);
       if (c !== this.pathCell[this.next]) {
@@ -350,7 +350,7 @@ class Zahlenjagd implements Exercise {
         ghost.tap(r.cx, r.cy, { delay: search * 0.5, move: 260 });
       }
     }
-    ghost.tap(target.cx + rng.range(-0.2, 0.2) * target.s, target.cy + rng.range(-0.2, 0.2) * target.s, { delay: search, move: 260 });
+    ghost.tap(target.cx + rng.range(-0.2, 0.2) * target.s, target.cy + rng.range(-0.2, 0.2) * target.s, { delay: search, move: 200 });
   }
 
   // ------------------------------------------------------------------ Eingabe

@@ -214,7 +214,7 @@ function drawArrow(g: CanvasRenderingContext2D, x: number, y: number, size: numb
 }
 
 /** Ein Element der Reihe zentriert in einem Feld der Größe size zeichnen */
-function drawItem(g: CanvasRenderingContext2D, it: Item, x: number, y: number, size: number, color: string = C.white): void {
+function drawItem(g: CanvasRenderingContext2D, it: Item, x: number, y: number, size: number, color: string = C.white, counting = false): void {
   if (it.t === 'n' || it.t === 'l') {
     const s = it.t === 'n' ? String(it.v) : letter(it.v);
     let fs = size * (it.t === 'l' ? 0.56 : 0.52);
@@ -226,7 +226,8 @@ function drawItem(g: CanvasRenderingContext2D, it: Item, x: number, y: number, s
     text(g, s, x, y + fs * 0.04, fs, color, { weight: 800 });
   } else if (it.t === 's') {
     const pips = PIPS[clamp(it.n, 1, 9)];
-    if (it.n === 1) drawShape(g, it.s, x, y, size * 0.3);
+    // Bei Anzahl-Reihen alle Formen gleich groß zeichnen, sonst wirkt „eine“ wie „eine große“
+    if (it.n === 1 && !counting) drawShape(g, it.s, x, y, size * 0.3);
     else {
       const sp = size * 0.27;
       const r = size * (it.n <= 4 ? 0.13 : 0.105);
@@ -309,7 +310,7 @@ class ReihenRaetsel implements Exercise {
     let rows = 1;
     let per = n;
     let cs = Math.min((W - gapS * (n - 1)) / n, 132);
-    if (cs < 60 && n > 4) {
+    if (cs < 60 * k && n > 4) {
       rows = 2;
       per = Math.ceil(n / 2);
       cs = Math.min((W - gapS * (per - 1)) / per, 110);
@@ -435,16 +436,17 @@ class ReihenRaetsel implements Exercise {
     if (this.demo) {
       if (this.phase === 'ask') {
         const c = center(L.opts[ansIdx]);
-        ghost.tap(c.x, c.y, { delay: this.idx === 0 ? 1500 : 1300, move: 700 });
+        ghost.tap(c.x, c.y, { delay: this.idx === 0 ? 1900 : 1500, move: 700 });
       } else if (this.phase === 'answered') {
         if (this.idx === 0) {
           const c = center(L.next);
           ghost.tap(c.x, c.y, { delay: 1700, move: 600 });
+          ghost.moveTo(L.rest.x, L.rest.y, { delay: 250, move: 500 });
         } else {
           // Film endet nach der zweiten Erklärung
           ghost.moveTo(L.rest.x, L.rest.y, { delay: 300, move: 600 });
           this.phase = 'done';
-          this.doneAt = t + 2200;
+          this.doneAt = t + 2600;
         }
       }
       return;
@@ -469,6 +471,7 @@ class ReihenRaetsel implements Exercise {
     const L = this.layout();
     const p = this.puzzle;
     const answered = this.phase !== 'ask';
+    const counting = [...p.seq, ...p.options].some((o) => o.t === 's' && o.n > 1);
     const lw = Math.max(2, u * 0.35);
 
     // Reihe
@@ -483,7 +486,7 @@ class ReihenRaetsel implements Exercise {
         g.lineWidth = 1;
         g.stroke();
         g.restore();
-        drawItem(g, p.seq[i], r.x + r.w / 2, r.y + r.h / 2, r.w);
+        drawItem(g, p.seq[i], r.x + r.w / 2, r.y + r.h / 2, r.w, C.white, counting);
         return;
       }
       if (answered) {
@@ -497,7 +500,7 @@ class ReihenRaetsel implements Exercise {
         g.restore();
         g.save();
         g.globalAlpha = k;
-        drawItem(g, p.answer, r.x + r.w / 2, r.y + r.h / 2, r.w * (0.85 + 0.15 * k));
+        drawItem(g, p.answer, r.x + r.w / 2, r.y + r.h / 2, r.w * (0.85 + 0.15 * k), C.white, counting);
         g.restore();
       } else {
         fillRR(g, r.x, r.y, r.w, r.h, rad, withAlpha(ACCENT, 0.12));
@@ -532,7 +535,7 @@ class ReihenRaetsel implements Exercise {
       const dim = answered && !chosen && !isAns;
       g.save();
       if (dim) g.globalAlpha = 0.45;
-      drawItem(g, p.options[i], r.x + r.w / 2, r.y + r.h / 2, Math.min(r.h * 1.05, r.w * 0.8));
+      drawItem(g, p.options[i], r.x + r.w / 2, r.y + r.h / 2, Math.min(r.h * 1.05, r.w * 0.8), C.white, counting);
       g.restore();
       if (!this.demo && !answered) text(g, String(i + 1), r.x + clamp(u * 1.8, 10, 16), r.y + clamp(u * 2, 11, 18), clamp(u * 2.2, 11, 16), C.faint, { weight: 700 });
       if (answered && chosen) {
@@ -586,7 +589,14 @@ class ReihenRaetsel implements Exercise {
       y += lh;
       text(g, ln, tx, y, size, C.fg, { weight: 700, align: 'left' });
     }
-    button(g, L.next, 'active');
+    const nr = Math.min(L.next.h, L.next.w) * 0.22;
+    fillRR(g, L.next.x, L.next.y, L.next.w, L.next.h, nr, '#7A5195');
+    g.save();
+    rrPath(g, L.next.x + 0.75, L.next.y + 0.75, L.next.w - 1.5, L.next.h - 1.5, nr);
+    g.strokeStyle = withAlpha(ACCENT, 0.9);
+    g.lineWidth = 1.5;
+    g.stroke();
+    g.restore();
     text(g, `${f.next} →`, L.next.x + L.next.w / 2, L.next.y + L.next.h / 2 + 1, clamp(L.next.h * 0.34, 15, 24), C.white, { weight: 800 });
   }
 

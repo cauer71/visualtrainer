@@ -29,7 +29,6 @@ export const de: ExerciseTexts = {
     level: 'Stufe',
     up: 'Nächste Stufe!',
     done: 'Geschafft!',
-    pro: 'Profi',
     proHint: 'Profi: Merk dir selbst, wo du bist',
   },
 };
@@ -63,7 +62,6 @@ export const it: ExerciseTexts = {
     level: 'Livello',
     up: 'Livello successivo!',
     done: 'Fatto!',
-    pro: 'Esperto',
     proHint: 'Esperto: ricorda tu dove sei arrivato',
   },
 };

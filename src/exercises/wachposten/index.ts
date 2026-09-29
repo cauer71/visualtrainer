@@ -248,6 +248,15 @@ class Wachposten implements Exercise {
     return { cx: w / 2, cy: (top + bottom) / 2, d, plate: d * 0.82 };
   }
 
+  resize(): void {
+    // Positionen werden live berechnet; nur die Geister-Hand muss neu an ihren Platz
+    if (this.ctx.autoplay) {
+      this.ctx.ghost.clear();
+      const r = this.restPos();
+      this.ctx.ghost.moveTo(r.x, r.y, { move: 250 });
+    }
+  }
+
   private restPos(): { x: number; y: number } {
     const { w, h } = this.ctx.stage;
     const G = this.geo();

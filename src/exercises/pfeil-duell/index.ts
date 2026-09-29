@@ -443,6 +443,13 @@ class PfeilDuell implements Exercise {
 
   resize(): void {
     this.lay = null;
+    // Geplante Tipps der Geister-Hand zeigen noch auf die alten Tasten → neu planen
+    if (this.ctx.autoplay) {
+      this.ctx.ghost.clear();
+      const L = this.layout();
+      this.ctx.ghost.moveTo(L.rest.x, L.rest.y, { move: 250 });
+      this.autoPlanned = false;
+    }
   }
 
   /** Aktuelle Anzahl Richtungen (bestimmt die Tasten) */
@@ -836,7 +843,7 @@ class PfeilDuell implements Exercise {
     const secondary: Metric[] = [
       { key: 'accuracy', value: Math.round(accuracy), unit: 'percent' },
       ...(rtAll.length ? [{ key: 'rt', value: Math.round(median(rtAll)), unit: 'time' as const }] : []),
-      ...(Number.isFinite(interference) ? [{ key: 'interference', value: Math.round(interference), unit: 'ms' as const }] : []),
+      ...(Number.isFinite(interference) ? [{ key: 'interference', value: Math.round(interference), unit: 'msSigned' as const }] : []),
     ];
     this.ctx.sfx.done();
     this.ctx.finish({
