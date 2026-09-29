@@ -1,0 +1,103 @@
+import type { ExerciseTexts } from '../../core/types';
+
+export const de: ExerciseTexts = {
+  title: 'Doppelt gefordert',
+  tagline: 'Zwei Dinge auf einmal – sieh, wie gut das Zusammenspiel klappt.',
+  steps: [
+    'Ein Finger hält die Kugel auf der Spur.',
+    'Die andere Hand tippt: Kreis oder Quadrat?',
+    'Erst jedes für sich, dann beides zugleich.',
+  ],
+  why:
+    'Gehen und reden, fahren und telefonieren: Wer zwei Dinge zugleich macht, wird meist bei beidem etwas schlechter – darum am Steuer nicht telefonieren. Hier siehst du – bitte im Sitzen –, was dich das Doppelte kostet, und übst das Zusammenspiel. Ob sich das aufs Gehen oder Autofahren überträgt, ist nicht belegt.',
+  goodFor: ['Gehen und dabei reden', 'Zwei Dinge im Blick', 'Den Überblick behalten'],
+  captions: {
+    track: 'Halte die Kugel auf der Spur',
+    sign: 'Kreis oder Quadrat? Tippe die Taste',
+    both: 'Jetzt beides zugleich!',
+    end: 'Klappt beides gleich gut?',
+  },
+  metrics: {
+    together: 'Zusammenspiel',
+    costTrack: 'Einbuße Kugel',
+    costSign: 'Einbuße Zeichen',
+    onRoad: 'Kugel auf der Spur',
+    signOk: 'Zeichen richtig',
+    rtSign: 'Antwortzeit Zeichen',
+  },
+  tips: {
+    finger: 'Lass einen Finger die ganze Zeit im Kugel-Feld liegen – auch während die andere Hand tippt.',
+    track: 'Beim Tippen ist dir die Kugel öfter von der Spur gerutscht. Halte den Finger ruhig und schau immer wieder kurz zur Spur.',
+    signs: 'Beim Steuern sind dir einige Zeichen entgangen. Behalte das Zeichen-Feld aus dem Augenwinkel im Blick.',
+    balance: 'Beides zusammen kostet dich noch etwas. Wechsle den Blick in ruhigem Takt zwischen Kugel und Zeichen.',
+    great: 'Stark! Beides zusammen klappt fast so gut wie einzeln. Bleib locker – dann gelingt das auch bei mehr Tempo.',
+  },
+  feedback: {
+    level: 'Stufe',
+    part: 'Teil',
+    partOf: 'Teil {n} von 3',
+    introTrack: 'Halte die Kugel auf der Spur',
+    introSign: 'Kreis oder Quadrat? Tippe die passende Taste',
+    introBoth: 'Jetzt beides zugleich',
+    prioTrack: 'Achte besonders auf die Kugel',
+    prioSign: 'Achte besonders auf die Zeichen',
+    panelTrack: 'Kugel',
+    panelSign: 'Zeichen',
+    priority: 'Vorrang',
+    finger: 'Finger ins Feld legen',
+    late: 'Zu spät',
+    circle: 'Kreis',
+    square: 'Quadrat',
+  },
+};
+
+export const it: ExerciseTexts = {
+  title: 'Doppio compito',
+  tagline: 'Due cose insieme – guarda come va il gioco di squadra.',
+  steps: [
+    'Un dito tiene la pallina sulla pista.',
+    'L’altra mano tocca: cerchio o quadrato?',
+    'Prima una cosa alla volta, poi tutte e due.',
+  ],
+  why:
+    'Camminare e parlare, guidare e telefonare: chi fa due cose insieme di solito le fa entrambe un po’ peggio – per questo al volante niente telefono. Qui vedi – per favore da seduto – quanto ti costa fare due cose insieme e ti eserciti a coordinarle. Non è dimostrato che questo si trasferisca al camminare o alla guida.',
+  goodFor: ['Camminare parlando', 'Due cose sotto controllo', 'Tenere la visione d’insieme'],
+  captions: {
+    track: 'Tieni la pallina sulla pista',
+    sign: 'Cerchio o quadrato? Tocca il tasto',
+    both: 'Ora tutte e due insieme!',
+    end: 'Riesci bene in entrambe?',
+  },
+  metrics: {
+    together: 'Gioco di squadra',
+    costTrack: 'Calo pallina',
+    costSign: 'Calo simboli',
+    onRoad: 'Pallina sulla pista',
+    signOk: 'Simboli giusti',
+    rtSign: 'Tempo di risposta',
+  },
+  tips: {
+    finger: 'Tieni un dito sempre nel campo della pallina – anche mentre l’altra mano tocca.',
+    track: 'Mentre toccavi, la pallina è uscita spesso dalla pista. Tieni fermo il dito e ogni tanto dai un’occhiata alla pista.',
+    signs: 'Mentre guidavi la pallina ti sono sfuggiti alcuni simboli. Tieni d’occhio il campo dei simboli con la coda dell’occhio.',
+    balance: 'Fare le due cose insieme ti costa ancora un po’. Sposta lo sguardo con calma tra pallina e simboli.',
+    great: 'Ottimo! Insieme ti riesce quasi come separatamente. Resta rilassato – così ce la fai anche a velocità più alte.',
+  },
+  feedback: {
+    level: 'Livello',
+    part: 'Parte',
+    partOf: 'Parte {n} di 3',
+    introTrack: 'Tieni la pallina sulla pista',
+    introSign: 'Cerchio o quadrato? Tocca il tasto giusto',
+    introBoth: 'Ora tutte e due insieme',
+    prioTrack: 'Fai più attenzione alla pallina',
+    prioSign: 'Fai più attenzione ai simboli',
+    panelTrack: 'Pallina',
+    panelSign: 'Simboli',
+    priority: 'Priorità',
+    finger: 'Appoggia un dito qui',
+    late: 'Troppo tardi',
+    circle: 'Cerchio',
+    square: 'Quadrato',
+  },
+};
