@@ -1,4 +1,6 @@
-# Blickfit – Augen- & Reaktionstraining für Tablet und Browser
+# Blickfit – Übungen für Reaktion & Wahrnehmung
+
+**Live:** https://blickfit.christian-auer-71.workers.dev
 
 Eine Web-Plattform mit kurzen visuellen Trainingsübungen, gedacht für die Homepage eines Optikers
 (voreingestellt: **Bio-Optik Flaim**, Farben von optikflaim.com). Optimiert für Tablets mit Touchscreen,
@@ -60,7 +62,7 @@ Danach `npm run build`.
 
 ```html
 <iframe
-  src="https://blickfit.example.workers.dev/?embed=1"
+  src="https://blickfit.christian-auer-71.workers.dev/?embed=1"
   title="Blickfit – Augen- und Reaktionstraining"
   style="width:100%; height:900px; border:0; border-radius:16px"
   allow="fullscreen; screen-wake-lock"
@@ -82,6 +84,13 @@ npm run deploy
 
 Sicherheits- und Cache-Header stehen in [`public/_headers`](public/_headers). Jeder andere statische
 Webspace funktioniert ebenfalls: einfach den Inhalt von `dist/` hochladen.
+
+**Automatisch per GitHub:** [`.github/workflows/ci.yml`](.github/workflows/ci.yml) prüft jeden Push
+(Tests + Build). Wird auf `main` gepusht und sind im Repository die Secrets `CLOUDFLARE_API_TOKEN`
+(Berechtigung „Workers Scripts: Edit“) und `CLOUDFLARE_ACCOUNT_ID` hinterlegt, wird automatisch veröffentlicht.
+
+**Tests im Browser:** `npm run build && npx vite preview --port 4173` und dann
+`npm run test:e2e` (spielt jede Übung im Schnellmodus in drei Bildschirmgrößen durch).
 
 ## Neue Übungen hinzufügen
 
