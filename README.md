@@ -1,6 +1,6 @@
 # Blickfit – Übungen für Reaktion & Wahrnehmung
 
-**Live:** https://blickfit.christian-auer-71.workers.dev
+**Live:** https://visual.auer.page (Alternativ: https://blickfit.christian-auer-71.workers.dev)
 
 Eine Web-Plattform mit kurzen visuellen Trainingsübungen, gedacht für die Homepage eines Optikers
 (voreingestellt: **Bio-Optik Flaim**, Farben von optikflaim.com). Optimiert für Tablets mit Touchscreen,
@@ -62,7 +62,7 @@ Danach `npm run build`.
 
 ```html
 <iframe
-  src="https://blickfit.christian-auer-71.workers.dev/?embed=1"
+  src="https://visual.auer.page/?embed=1"
   title="Blickfit – Augen- und Reaktionstraining"
   style="width:100%; height:900px; border:0; border-radius:16px"
   allow="fullscreen; screen-wake-lock"
