@@ -15,12 +15,13 @@ export type Mode = 'play' | 'demo';
  * Einheiten für Kennzahlen:
  * - time:    Wert in ms, angezeigt als Sekunden ("0,31 s")
  * - ms:      Wert in ms, angezeigt als Millisekunden ("48 ms")
+ * - msSigned: Wert in ms mit Vorzeichen ("+48 ms" / "−48 ms"), z. B. Tendenz zu früh/zu spät
  * - percent: 0–100
  * - count:   ganze Zahl
  * - points:  Punkte
  * - level:   Stufe
  */
-export type MetricUnit = 'time' | 'ms' | 'percent' | 'count' | 'points' | 'level';
+export type MetricUnit = 'time' | 'ms' | 'msSigned' | 'percent' | 'count' | 'points' | 'level';
 export type Better = 'higher' | 'lower';
 
 export interface Metric {
@@ -158,6 +159,8 @@ export interface ExerciseContext {
   readonly autoplay: boolean;
   /** Test-Modus: sehr kurze Sitzungen */
   readonly quick: boolean;
+  /** Systemeinstellung "Bewegung reduzieren": Effekt-Animationen (Aufploppen, Ausbreiten) weglassen */
+  readonly reducedMotion: boolean;
   /** Gespeicherte Schwierigkeitsstufe (null = erster Durchgang) */
   readonly startLevel: number | null;
   readonly lang: Lang;

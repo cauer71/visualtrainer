@@ -52,6 +52,7 @@ const MS = {
   trackQuick: 2500,
   reveal: 1600,
   fade: 250,
+  ramp: 250,
   doubleTap: 250,
 };
 
@@ -373,10 +374,13 @@ class KugelDetektiv implements Exercise {
       case 'blend':
         if (el >= MS.blend) this.enter('track', t);
         break;
-      case 'track':
-        this.simulate(dt);
+      case 'track': {
+        // sanft anfahren und abbremsen (je 250 ms), dazwischen konstantes Tempo
+        const ramp = Math.min(1, el / MS.ramp, (this.trackMs - el) / MS.ramp);
+        this.simulate(dt * easeInOut(ramp));
         if (el >= this.trackMs) this.enter('select', t);
         break;
+      }
       case 'reveal':
         if (el >= this.revealMs) this.nextRound(t);
         break;
@@ -832,7 +836,8 @@ class KugelDetektiv implements Exercise {
       secondary: [
         { key: 'perfectRounds', value: this.perfectRounds, unit: 'count' },
         { key: 'accuracy', value: Math.round(accuracy), unit: 'percent' },
-        { key: 'maxLevel', value: this.levels.length ? Math.max(...this.levels) : this.stair.level, unit: 'level' },
+        // höchste tatsächlich gespielte Stufe, gerundet wie die Hauptkennzahl
+        { key: 'maxLevel', value: Math.round(this.levels.length ? Math.max(...this.levels) : this.stair.level), unit: 'level' },
       ],
       score: this.score,
       level: nextStartLevel(thr, LEVEL_MIN, LEVEL_MAX),

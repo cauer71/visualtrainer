@@ -118,7 +118,7 @@ function Intro({ def, series, onStart }: { def: ExerciseDefinition; series: Seri
             </span>
             {def.showsLevel && rec.level !== null ? (
               <span>
-                <Icon name="trophy" size={16} /> {ui.intro.level(Math.max(1, Math.floor(rec.level)))}
+                <Icon name="trophy" size={16} /> {ui.intro.level(Math.max(1, Math.round(rec.level)))}
               </span>
             ) : null}
           </p>
@@ -467,7 +467,7 @@ function ResultView({
             </div>
           </div>
         ) : null}
-        {def.showsLevel ? <p class="muted small">{ui.result.levelNow(Math.max(1, Math.floor(result.level)))}</p> : null}
+        {def.showsLevel ? <p class="muted small">{ui.result.levelNow(Math.max(1, Math.round(result.level)))}</p> : null}
         {seriesFinished ? (
           <div class="series-done">
             <Icon name="check" size={22} stroke={3} />

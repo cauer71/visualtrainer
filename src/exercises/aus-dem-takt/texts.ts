@@ -33,7 +33,7 @@ export const de: ExerciseTexts = {
   },
   feedback: {
     level: 'Stufe {n}',
-    timeout: 'Hier war es!',
+    timeout: 'Zeit um!',
     early: 'Erst kurz zuschauen …',
   },
 };
@@ -67,7 +67,7 @@ export const it: ExerciseTexts = {
   },
   feedback: {
     level: 'Livello {n}',
-    timeout: 'Era qui!',
+    timeout: 'Tempo scaduto!',
     early: 'Osserva ancora un attimo …',
   },
 };

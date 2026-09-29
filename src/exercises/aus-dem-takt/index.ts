@@ -211,13 +211,19 @@ class AusDemTakt implements Exercise {
     const availW = Math.max(0, w - 2 * m);
     const availH = Math.max(0, h - m - bottom);
     const S = Math.min(availW, availH);
-    // Größte Feldgröße, die ins Quadrat passt (Lücke = max(18 px, 20 % der Feldgröße)) …
-    let fitCell = S / (n + 0.2 * (n - 1));
-    if (fitCell * 0.2 < MIN_GAP) fitCell = (S - MIN_GAP * (n - 1)) / n;
+    // Im Intro-Film tippt niemand → dort dürfen Felder und Lücken kleiner sein. Auf sehr kleinen
+    // Handys hat die Flächengrenze (< 25 %) Vorrang vor 60 px – Tippfläche inkl. Lücke bleibt ≥ 66 px.
+    const safeCell = Math.sqrt(0.25 * w * h) / n;
+    const minCell = this.demo ? 36 : Math.min(MIN_CELL, Math.max(48, safeCell));
+    const minGap = this.demo ? 10 : MIN_GAP;
+    // Größte Feldgröße, bei der Raster + dunkler Rand (je eine Lücke) ins Quadrat passen
+    // (Lücke = max(minGap, 20 % der Feldgröße)) …
+    let fitCell = S / (n + 0.2 * (n + 1));
+    if (fitCell * 0.2 < minGap) fitCell = (S - minGap * (n + 1)) / n;
     // … aber die pulsierende Fläche bleibt klein; Touch-Mindestgröße 60 px
     const areaCell = Math.sqrt(AREA_MAX * w * h) / n;
-    const cell = Math.max(MIN_CELL, Math.min(fitCell, areaCell));
-    const gap = Math.max(MIN_GAP, cell * 0.2);
+    const cell = Math.max(minCell, Math.min(fitCell, areaCell));
+    const gap = Math.max(minGap, cell * 0.2);
     const side = n * cell + (n - 1) * gap;
     return { n, x0: (w - side) / 2, y0: m + (availH - side) / 2, cell, gap, side, rad: cell * 0.16 };
   }
@@ -304,10 +310,7 @@ class AusDemTakt implements Exercise {
     this.phaseT = t;
     if (tr.correct) sfx.good();
     else sfx.bad();
-    if (tr.timeout) {
-      const c = this.center(this.layout(), tr.odd);
-      hud.toast(texts.feedback.timeout, 'info', { x: c.x, y: c.y, ms: 1200 });
-    }
+    if (tr.timeout) this.hint(texts.feedback.timeout, 1300);
     if (this.demo) {
       hud.caption(texts.captions.good);
       this.park(350, 600);
@@ -344,14 +347,18 @@ class AusDemTakt implements Exercise {
       tr.early++;
       if (p.t - this.lastHint >= MS.earlyHint) {
         this.lastHint = p.t;
-        const L = this.layout();
-        const y = Math.max(28, (L.y0 - L.gap) / 2);
-        this.ctx.hud.toast(this.ctx.texts.feedback.early, 'info', { x: this.ctx.stage.w / 2, y, ms: 1100 });
+        this.hint(this.ctx.texts.feedback.early, 1100);
       }
       return;
     }
     // Nur die erste gültige Antwort pro Durchgang zählt (Phase wechselt sofort)
     this.answer(cell, p.t);
+  }
+
+  /** Kurzer Hinweistext über dem Raster */
+  private hint(text: string, ms: number): void {
+    const L = this.layout();
+    this.ctx.hud.toast(text, 'info', { x: this.ctx.stage.w / 2, y: Math.max(28, (L.y0 - L.gap) / 2), ms });
   }
 
   // --- Geister-Hand ---------------------------------------------------------
@@ -450,9 +457,9 @@ class AusDemTakt implements Exercise {
         frame(tr.tapped, C.bad);
         badge(tr.tapped, C.bad, false);
       }
+      // richtiges Feld immer mit Rahmen + ✓ (auch wenn die Zeit abgelaufen ist)
       frame(tr.odd, C.good);
-      // Zeit abgelaufen: nur Rahmen + „Hier war es!“; sonst zusätzlich ✓ am richtigen Feld
-      if (!tr.timeout) badge(tr.odd, C.good, true);
+      badge(tr.odd, C.good, true);
     }
     g.restore();
   }

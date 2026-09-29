@@ -144,6 +144,18 @@ function ratingColor(r: Rating): string {
   return '#FBBF24';
 }
 
+/**
+ * Systemeinstellung „Bewegung reduzieren“: Die Annäherung selbst gehört zur Aufgabe und bleibt,
+ * aber die Kugel wächst nach dem Ring nicht weiter, und Effekte ploppen/gleiten nicht.
+ */
+function prefersReducedMotion(): boolean {
+  try {
+    return typeof matchMedia === 'function' && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  } catch {
+    return false;
+  }
+}
+
 // ---------------------------------------------------------------------------
 // Zeichnen
 
@@ -213,6 +225,7 @@ class Punktlandung implements Exercise {
   private readonly demo: boolean;
   private readonly total: number;
   private readonly stair: Staircase;
+  private readonly calm = prefersReducedMotion();
   private phase: Phase = 'pre';
   private phaseT = 0;
   private idx = 0;
@@ -306,11 +319,12 @@ class Punktlandung implements Exercise {
 
   /** Bildgröße relativ zum Ring: r / R = 1 / z (nach dem Kontakt höchstens 1,3) */
   private sizeAt(t: number): number {
-    return Math.min(MAX_SIZE, 1 / Math.max(1e-6, this.zAt(t)));
+    return Math.min(this.calm ? 1 : MAX_SIZE, 1 / Math.max(1e-6, this.zAt(t)));
   }
 
   private ballAlpha(t: number): number {
-    let a = clamp((t - this.tStart) / APPEAR_FADE, 0, 1);
+    // Weiches Einblenden, aber schon im ersten Frame sichtbar
+    let a = clamp(0.25 + (t - this.tStart) / APPEAR_FADE, 0, 1);
     if (this.trial.occ > 0) a *= 1 - clamp((t - (this.tContact - this.trial.occ)) / OCC_FADE, 0, 1);
     else a *= 1 - clamp((t - this.tContact - PASS_GROW) / PASS_FADE, 0, 1);
     return a;
@@ -380,6 +394,11 @@ class Punktlandung implements Exercise {
     }
     if (this.phase !== 'fly') return; // nur der erste Tipp pro Durchgang zählt
     let err = p.t - this.tContact;
+    if (err > MISS_AFTER) {
+      // Frist schon vorbei, nur der Frame kam noch nicht dran → wie „verpasst“
+      this.resolve(null, this.tContact + MISS_AFTER);
+      return;
+    }
     // Intro-Film: gezeigte Abweichung unabhängig vom Bildraster des Browsers
     if (this.demo && p.type === 'ghost') err = DEMO[this.idx].err;
     this.resolve(err, this.tContact + err);
@@ -487,7 +506,7 @@ class Punktlandung implements Exercise {
       if (k < 1) {
         g.save();
         g.globalAlpha = 0.7 * (1 - k);
-        ring(g, cx, cy, R * (1 + 0.06 * easeOut(k)), ratingColor(o.rating), lw * 1.6);
+        ring(g, cx, cy, R * (1 + (this.calm ? 0 : 0.06 * easeOut(k))), ratingColor(o.rating), lw * 1.6);
         g.restore();
       }
     }
@@ -512,7 +531,7 @@ class Punktlandung implements Exercise {
     const big = o.rating === 'perfect';
     const fsT = clamp(u * (big ? 7.6 : 6.6), 24, big ? 66 : 58);
     const fsM = clamp(u * 3.9, 15, 30);
-    const pop = 0.86 + 0.14 * easeOut(age / 180);
+    const pop = this.calm ? 1 : 0.86 + 0.14 * easeOut(age / 180);
     const hasMs = o.err !== null;
     const blockH = fsT + (hasMs ? fsM * 1.35 : 0);
     const yT = cy - blockH / 2 + fsT / 2;
@@ -566,7 +585,7 @@ class Punktlandung implements Exercise {
     g.textAlign = 'right';
     g.fillText(`${texts.feedback.lateShort} →`, x0 + bw, y + th * 0.9 + 4);
     // Markierung gleitet von der Mitte an ihren Platz
-    const mx = cx + (X(err) - cx) * easeOut(age / 240);
+    const mx = cx + (X(err) - cx) * (this.calm ? 1 : easeOut(age / 240));
     const s = Math.max(6, th * 0.95);
     g.beginPath();
     g.moveTo(mx - s, y - th / 2 - s * 1.9);
@@ -601,7 +620,7 @@ class Punktlandung implements Exercise {
       ...(errs.length
         ? [
             { key: 'meanError', value: Math.round(meanErr) || 0, unit: 'ms' as const },
-            { key: 'bias', value: Math.round(bias) || 0, unit: 'ms' as const },
+            { key: 'bias', value: Math.round(bias) || 0, unit: 'msSigned' as const },
           ]
         : []),
       { key: 'perfect', value: this.hits, unit: 'count' },

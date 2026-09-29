@@ -95,6 +95,15 @@ export function makePlan(n: number, rng: Rng): Kind[] {
   return out.slice(0, n);
 }
 
+/** Systemeinstellung „Bewegung reduzieren“ → keine Effekt-Animationen (Aufploppen, sich ausbreitende Ringe) */
+function prefersReducedMotion(): boolean {
+  try {
+    return typeof matchMedia === 'function' && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  } catch {
+    return false;
+  }
+}
+
 // ---------------------------------------------------------------------------
 // Zeichnen
 
@@ -150,6 +159,7 @@ class StoppLos implements Exercise {
   private readonly demo: boolean;
   private readonly total: number;
   private readonly stair: Staircase;
+  private readonly calm = prefersReducedMotion();
   private plan: Kind[] = [];
   private phase: Phase = 'isi';
   private idx = 0;
@@ -396,13 +406,15 @@ class StoppLos implements Exercise {
     if (!this.demo) this.drawLegend(g, t);
 
     if (this.phase === 'stim') {
-      const s = 0.9 + 0.1 * easeOut((t - this.onset) / 70);
+      const s = this.calm ? 1 : 0.9 + 0.1 * easeOut((t - this.onset) / 70);
       if (this.plan[this.idx] === 'go') drawGo(g, cx, cy, r * s, 1);
       else drawStop(g, cx, cy, r * s, 1);
     } else {
-      // Fixationspunkt
+      // Fixationspunkt (kurz ausgeblendet, solange das Häkchen zu sehen ist)
+      const fx = this.fx;
+      const a = fx && fx.kind === 'hit' ? clamp((t - fx.t0 - 260) / 160, 0, 1) : 1;
       g.save();
-      g.globalAlpha = 0.85;
+      g.globalAlpha = 0.85 * a;
       circle(g, cx, cy, Math.max(3, u * 0.8), C.fg);
       g.restore();
     }
@@ -415,22 +427,23 @@ class StoppLos implements Exercise {
     if (!fx) return;
     const u = this.ctx.stage.u;
     const age = t - fx.t0;
+    const grow = this.calm ? 0 : 1;
     if (fx.kind === 'hit') {
       const k = age / 460;
       if (k >= 1) return;
       g.save();
       g.globalAlpha = 0.6 * (1 - k);
-      ring(g, cx, cy, r * (1 + 0.4 * easeOut(k)), GO_COLOR, Math.max(2.5, u * 0.6));
+      ring(g, cx, cy, r * (1 + 0.4 * grow * easeOut(k)), GO_COLOR, Math.max(2.5, u * 0.6));
       g.restore();
       const a = k < 0.55 ? 1 : 1 - (k - 0.55) / 0.45;
-      drawCheck(g, cx, cy, r * (0.92 + 0.1 * easeOut(k * 2)), GO_LIGHT, Math.max(5, r * 0.17), a);
+      drawCheck(g, cx, cy, r * (0.92 + 0.1 * grow * easeOut(k * 2)), GO_LIGHT, Math.max(5, r * 0.17), a);
     } else if (fx.kind === 'withhold') {
       // Richtig gebremst: kurzer, ruhiger grüner Ring
       const k = age / 520;
       if (k >= 1) return;
       g.save();
       g.globalAlpha = 0.7 * (1 - k);
-      ring(g, cx, cy, r * (1.02 + 0.3 * easeOut(k)), GO_LIGHT, Math.max(2.5, u * 0.55));
+      ring(g, cx, cy, r * (1.02 + 0.3 * grow * easeOut(k)), GO_LIGHT, Math.max(2.5, u * 0.55));
       g.restore();
     } else {
       // Zeichen verschwindet sehr schnell (kein hartes Blitzen)

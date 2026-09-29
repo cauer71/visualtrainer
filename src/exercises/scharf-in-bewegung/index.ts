@@ -117,6 +117,8 @@ class ScharfInBewegung implements Exercise {
   private phi2 = 0;
   private lay: Layout | null = null;
   private followCaption = true;
+  /** Zeitpunkt des Endes – danach steht das Bild still */
+  private endT = Infinity;
 
   constructor(private readonly ctx: ExerciseContext) {
     this.stair = new Staircase({ start: ctx.startLevel ?? 1, min: MIN_LEVEL, max: MAX_LEVEL, down: 3, up: 1 });
@@ -295,7 +297,8 @@ class ScharfInBewegung implements Exercise {
   private toastAtBall(text: string, kind: ToastKind): void {
     const { w, u } = this.ctx.stage;
     const L = this.layout();
-    const size = clamp(u * 5, 18, 40);
+    // ✓ groß und deutlich, Text etwas kleiner
+    const size = text.length === 1 ? clamp(u * 7, 26, 52) : clamp(u * 5, 18, 40);
     const half = Math.min(w / 2, text.length * size * 0.3 + 8);
     this.ctx.hud.toast(text, kind, {
       x: clamp(this.ball.x, half, w - half),
@@ -346,6 +349,7 @@ class ScharfInBewegung implements Exercise {
 
   private end(): void {
     this.phase = 'done';
+    this.endT = this.ctx.now();
     if (this.demo) {
       this.ctx.finish({
         primary: { key: 'level', value: DEMO_LEVEL, unit: 'level', better: 'higher' },
@@ -429,9 +433,10 @@ class ScharfInBewegung implements Exercise {
   // -------------------------------------------------------------------------
   // Zeichnen
 
-  render(g: CanvasRenderingContext2D, t: number): void {
+  render(g: CanvasRenderingContext2D, now: number): void {
     const { w, h, dpr } = this.ctx.stage;
     const L = this.layout();
+    const t = Math.min(now, this.endT);
     background(g, w, h, dpr);
     // Antwortleiste
     g.fillStyle = 'rgba(3,8,18,0.4)';
@@ -475,7 +480,7 @@ class ScharfInBewegung implements Exercise {
       }
       const ink = state === 'disabled' ? 'rgba(232,238,247,0.34)' : state === 'good' || state === 'bad' ? '#FFFFFF' : C.fg;
       const s = Math.min(R.w, R.h);
-      landoltC(g, R.x + R.w / 2, R.y + R.h / 2, s * 0.46, BUTTON_DIRS[i], ink);
+      landoltC(g, R.x + R.w / 2, R.y + R.h / 2, s * 0.5, BUTTON_DIRS[i], ink);
       // Zusätzlich zur Farbe ein Symbol (✓ / ✗) – auch bei Rot-Grün-Schwäche eindeutig
       if (badge) {
         const rad = clamp(s * 0.14, 9, 15);

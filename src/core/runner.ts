@@ -30,6 +30,14 @@ import type {
 
 // ---------------------------------------------------------------------------
 
+function prefersReducedMotion(): boolean {
+  try {
+    return typeof matchMedia === 'function' && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  } catch {
+    return false;
+  }
+}
+
 export class Stage implements StageInfo {
   readonly canvas: HTMLCanvasElement;
   readonly g: CanvasRenderingContext2D;
@@ -269,6 +277,7 @@ export class Runner {
       mode: o.mode,
       autoplay,
       quick: !!o.quick,
+      reducedMotion: prefersReducedMotion(),
       startLevel: o.startLevel,
       lang: o.lang,
       texts: o.def.texts[o.lang],

@@ -39,6 +39,7 @@ interface Exercise {
 | `ctx.mode` | `'play'` (echte Übung) oder `'demo'` (Intro-Film) |
 | `ctx.autoplay` | `true` im Demo-Modus **und** in automatischen Tests (`?autoplay=1`): Die Übung steuert dann selbst die Geister-Hand |
 | `ctx.quick` | Test-Modus (`?quick=1`): extrem kurze Sitzung (2–3 Durchgänge bzw. ~8 s) |
+| `ctx.reducedMotion` | Systemeinstellung „Bewegung reduzieren“: Effekt-Animationen (Aufploppen, Ausbreiten) weglassen – die Aufgabe selbst darf sich bewegen |
 | `ctx.startLevel` | gespeicherte Stufe der letzten Sitzung oder `null` |
 | `ctx.stage` | Live-Maße: `w`, `h`, `u` (= 1 % der kürzeren Seite), `dpr` |
 | `ctx.rng` | Zufallsgenerator (im Demo-Modus mit festem Startwert) – **immer diesen verwenden, nie `Math.random`** |
@@ -84,7 +85,7 @@ ctx.finish({
 });
 ```
 
-Einheiten: `time` (ms → „0,31 s“), `ms`, `percent`, `count`, `points`, `level`.
+Einheiten: `time` (ms → „0,31 s“), `ms`, `msSigned` (→ „+48 ms“ / „−48 ms“), `percent`, `count`, `points`, `level`.
 
 **Demo-Modus (Intro-Film):** Ein kurzer, fest geskripteter Ablauf (8–14 s) mit leichten Parametern,
 der zeigt, *was* zu tun ist. Die Geister-Hand macht es vor (`ctx.ghost.tap(...)` rechtzeitig vorher

@@ -155,6 +155,8 @@ class Zielfang implements Exercise {
   private autoAt = 0;
   private demoAct = 0;
   private demoEndAt = 0;
+  /** Zeitpunkt des Endes – danach steht das Bild still (Pause vor dem nächsten Filmdurchlauf) */
+  private endT = Infinity;
 
   constructor(private readonly ctx: ExerciseContext) {
     this.stair = new Staircase({ start: ctx.startLevel ?? 1, min: MIN_LEVEL, max: MAX_LEVEL, down: 3, up: 1 });
@@ -457,6 +459,7 @@ class Zielfang implements Exercise {
     }
     if (this.demoEndAt && t >= this.demoEndAt) {
       this.phase = 'done';
+      this.endT = t;
       this.ctx.finish({
         primary: { key: 'points', value: this.points, unit: 'points', better: 'higher' },
         secondary: [{ key: 'caught', value: this.caught, unit: 'count' }],
@@ -492,6 +495,7 @@ class Zielfang implements Exercise {
 
   private end(): void {
     this.phase = 'done';
+    this.endT = this.ctx.now();
     const { sfx, hud } = this.ctx;
     hud.setProgress(1);
     sfx.done();
@@ -540,8 +544,9 @@ class Zielfang implements Exercise {
 
   // -------------------------------------------------------------------------
 
-  render(g: CanvasRenderingContext2D, t: number): void {
+  render(g: CanvasRenderingContext2D, now: number): void {
     const { w, h, u, dpr } = this.ctx.stage;
+    const t = Math.min(now, this.endT);
     background(g, w, h, dpr, 'grid');
     for (const f of this.fades) {
       const k = clamp((t - f.t0) / FADE_MS, 0, 1);
@@ -648,8 +653,8 @@ function drawBurst(g: CanvasRenderingContext2D, b: Fx, k: number): void {
 
 /** Fehltipp: kleines ✗, das verblasst */
 function drawMark(g: CanvasRenderingContext2D, x: number, y: number, k: number, u: number): void {
-  const s = Math.max(8, u * 1.6) * (0.85 + 0.15 * easeOut(Math.min(1, k * 4)));
-  const lw = Math.max(3, u * 0.55);
+  const s = Math.max(9, u * 1.8) * (0.85 + 0.15 * easeOut(Math.min(1, k * 4)));
+  const lw = Math.max(3.5, u * 0.6);
   g.save();
   g.globalAlpha = 1 - k;
   g.lineCap = 'round';
@@ -673,7 +678,7 @@ export const zielfang: ExerciseDefinition = {
   minutes: 1,
   color: '#2E6DB4',
   icon:
-    '<circle cx="29" cy="20" r="12" fill="none" stroke="currentColor" stroke-width="3.4"/><circle cx="29" cy="20" r="4.6" fill="currentColor"/><path d="M5 38.5c5.5-1.2 10.5-4.4 14-9.2" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-dasharray="1 6.5"/>',
+    '<circle cx="28" cy="20" r="10" fill="none" stroke="currentColor" stroke-width="3.2"/><circle cx="28" cy="20" r="3.8" fill="currentColor"/><path d="M28 4.5v4.5M28 31v4.5M12.5 20H17M39 20h4.5" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/><circle cx="14.5" cy="35" r="2.8" fill="currentColor"/><circle cx="9" cy="40" r="2.1" fill="currentColor" opacity=".7"/><circle cx="4.8" cy="43.8" r="1.5" fill="currentColor" opacity=".45"/>',
   texts: { de, it },
   showsLevel: true,
   create: (ctx) => new Zielfang(ctx),

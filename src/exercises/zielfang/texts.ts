@@ -35,7 +35,7 @@ export const de: ExerciseTexts = {
 
 export const it: ExerciseTexts = {
   title: 'Acchiappa il punto',
-  tagline: 'Acchiappa il punto veloce – occhio e mano in squadra.',
+  tagline: 'Prendi al volo il punto veloce – occhio e mano in squadra.',
   steps: [
     'Un punto sfreccia sullo schermo.',
     'Toccalo prima che sparisca.',

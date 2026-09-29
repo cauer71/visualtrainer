@@ -14,6 +14,11 @@ export function metricParts(value: number, unit: MetricUnit, fmt: Formatter, ui:
       return { value: fmt.num(value / 1000, 2), unit: ui.units.s };
     case 'ms':
       return { value: fmt.num(Math.round(value)), unit: ui.units.ms };
+    case 'msSigned': {
+      const r = Math.round(value);
+      const sign = r > 0 ? '+' : r < 0 ? '\u2212' : '±';
+      return { value: `${sign}${fmt.num(Math.abs(r))}`, unit: ui.units.ms };
+    }
     case 'percent':
       return { value: fmt.num(Math.round(value)), unit: '%' };
     case 'points':
