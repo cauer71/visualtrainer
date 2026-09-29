@@ -189,7 +189,7 @@ export interface Exercise {
   pointerUp?(p: PointerInfo): void;
   /**
    * Optionale Tastatursteuerung (Computer): ' ' (Leertaste), 'Enter', 'ArrowLeft', 'ArrowRight',
-   * 'ArrowUp', 'ArrowDown'. t = virtuelle Zeit des Tastendrucks.
+   * 'ArrowUp', 'ArrowDown' sowie Ziffern '1'–'9'. t = virtuelle Zeit des Tastendrucks.
    */
   keyDown?(key: string, t: number): void;
   /** Bühne hat sich in der Größe geändert */

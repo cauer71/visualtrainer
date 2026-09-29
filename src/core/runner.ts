@@ -447,7 +447,7 @@ export class Runner {
     const block = (e: Event) => {
       if (e.cancelable) e.preventDefault();
     };
-    const KEYS = [' ', 'Enter', 'ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown'];
+    const KEYS = [' ', 'Enter', 'ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
     const key = (e: KeyboardEvent) => {
       if (!this.ex.keyDown || e.repeat || e.altKey || e.ctrlKey || e.metaKey || !KEYS.includes(e.key)) return;
       e.preventDefault();

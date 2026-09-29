@@ -9,6 +9,13 @@
 import type { CategoryId, ExerciseDefinition } from '../core/types';
 import { ausDemTakt } from './aus-dem-takt';
 import { blitzblick } from './blitzblick';
+import { doppeltGefordert } from './doppelt-gefordert';
+import { pfeilDuell } from './pfeil-duell';
+import { reihenRaetsel } from './reihen-raetsel';
+import { wachposten } from './wachposten';
+import { weichensteller } from './weichensteller';
+import { zahlenjagd } from './zahlenjagd';
+import { zeichenCode } from './zeichen-code';
 import { blitzreaktion } from './blitzreaktion';
 import { kugelDetektiv } from './kugel-detektiv';
 import { punktlandung } from './punktlandung';
@@ -28,6 +35,13 @@ export const EXERCISES: ExerciseDefinition[] = [
   suchbild,
   blitzblick,
   ausDemTakt,
+  pfeilDuell,
+  weichensteller,
+  wachposten,
+  doppeltGefordert,
+  zeichenCode,
+  zahlenjagd,
+  reihenRaetsel,
 ];
 
 export interface CategoryMeta {
