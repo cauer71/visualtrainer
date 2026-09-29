@@ -138,6 +138,22 @@ export function countToday(): number {
   return n;
 }
 
+/** Wochenziel: Trainingstage (Mo–So) in der aktuellen Woche. */
+export const WEEK_GOAL = 3;
+
+export function daysThisWeek(now = new Date()): number {
+  const monday = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  monday.setDate(monday.getDate() - ((monday.getDay() + 6) % 7));
+  const set = new Set(load().days);
+  let n = 0;
+  for (let i = 0; i < 7; i++) {
+    const d = new Date(monday);
+    d.setDate(monday.getDate() + i);
+    if (set.has(localDay(d))) n++;
+  }
+  return n;
+}
+
 /** Tage in Folge (heute oder gestern als letzter Tag zählt noch). */
 export function streak(): number {
   const set = new Set(load().days);

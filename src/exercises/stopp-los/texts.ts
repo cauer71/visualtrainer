@@ -1,18 +1,21 @@
 import type { ExerciseTexts } from '../../core/types';
 
+// Formulierungsregeln (docs/wissenschaft/01-…, 4.4): nur beschreiben, was man in der Übung tut –
+// keine Wirkversprechen für Alltag, Verkehr oder Gesundheit.
+
 export const de: ExerciseTexts = {
   title: 'Stopp & Los',
-  tagline: 'Blitzschnell reagieren – und im richtigen Moment bremsen.',
+  tagline: 'Bei Grün los, bei Rot stopp – schnell sein und trotzdem bremsen.',
   steps: ['Grüner Kreis: sofort tippen – egal wo.', 'Rotes Stoppschild: Finger weg!', 'Es wird immer flotter – bleib wachsam.'],
   why:
-    'Oft musst du in Sekundenbruchteilen entscheiden: losfahren oder stehen bleiben, zugreifen oder abwarten. Hier übst du beides zugleich – schnell sein und dich im richtigen Moment bremsen. So reagierst du flott, ohne vorschnell zu handeln.',
-  goodFor: ['Straßenverkehr', 'Ballsport', 'Konzentration'],
+    'Bei Grün tippst du blitzschnell, bei Rot hältst du still. Weil fast immer Grün kommt, wird das Tippen zur Gewohnheit – deshalb ist das Bremsen bei Rot so knifflig. Mit etwas Übung wirst du darin besser; ob sich das auf Verkehr oder Sport überträgt, ist nicht belegt.',
+  goodFor: ['Anfahren an der Ampel', 'Bremsen im Verkehr', 'Ballspiele'],
   captions: {
     go: 'Grün: sofort tippen!',
     stop: 'Rot: Finger weg!',
   },
   metrics: {
-    level: 'Stufe',
+    level: 'Erreichte Stufe',
     accuracy: 'Treffsicherheit',
     stopErrors: 'Bei Rot getippt',
     rt: 'Reaktionszeit bei Grün',
@@ -35,17 +38,17 @@ export const de: ExerciseTexts = {
 
 export const it: ExerciseTexts = {
   title: 'Stop o via',
-  tagline: 'Reagire in un lampo – e fermarsi al momento giusto.',
+  tagline: 'Col verde vai, col rosso ti fermi – veloce, ma pronto a frenare.',
   steps: ['Cerchio verde: tocca subito, dove vuoi.', 'Segnale rosso: non toccare!', 'Si va sempre più veloci – resta attento.'],
   why:
-    'Spesso devi decidere in una frazione di secondo: partire o restare fermo, afferrare o aspettare. Qui alleni entrambe le cose insieme – essere veloce e frenarti al momento giusto. Così reagisci in fretta, senza agire d’impulso.',
-  goodFor: ['Traffico', 'Sport con la palla', 'Concentrazione'],
+    'Col verde tocchi in un lampo, col rosso resti fermo. Visto che arriva quasi sempre il verde, toccare diventa un’abitudine – per questo frenarsi sul rosso è così difficile. Con un po’ di pratica migliori in questo esercizio; che serva anche nel traffico o nello sport, non è dimostrato.',
+  goodFor: ['Partire al semaforo', 'Frenare nel traffico', 'Giochi con la palla'],
   captions: {
     go: 'Verde: tocca subito!',
     stop: 'Rosso: non toccare!',
   },
   metrics: {
-    level: 'Livello',
+    level: 'Livello raggiunto',
     accuracy: 'Precisione',
     stopErrors: 'Toccato sul rosso',
     rt: 'Tempo di reazione sul verde',

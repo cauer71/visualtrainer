@@ -1,5 +1,5 @@
 import { createFormatter } from '../../core/format';
-import { countToday, doneToday, getRecord, streak } from '../../core/storage';
+import { countToday, daysThisWeek, doneToday, getRecord, WEEK_GOAL } from '../../core/storage';
 import type { ExerciseDefinition } from '../../core/types';
 import { byCategory, CATEGORIES, categoryMeta, dailySet, getExercise } from '../../exercises/registry';
 import { useApp } from '../app-context';
@@ -14,7 +14,7 @@ export function Home() {
   const dailyDone = daily.every((id) => doneToday(id));
   const firstOpen = daily.findIndex((id) => !doneToday(id));
   const startIndex = dailyDone ? 0 : Math.max(0, firstOpen);
-  const days = streak();
+  const week = daysThisWeek();
   const today = countToday();
   const dailyMinutes = daily.reduce((sum, id) => sum + (getExercise(id)?.minutes ?? 1), 0) + 1;
 
@@ -35,11 +35,14 @@ export function Home() {
             </span>
           </div>
           <div class="hero-stats">
-            {days > 0 ? (
-              <span class="chip chip-flame">
-                <Icon name="flame" size={16} /> {ui.home.streak(days)}
+            <span class={`chip ${week >= WEEK_GOAL ? 'chip-good' : 'chip-week'}`} title={ui.home.week(week, WEEK_GOAL)}>
+              <span class="week-dots" aria-hidden="true">
+                {Array.from({ length: WEEK_GOAL }, (_, i) => (
+                  <span key={i} class={`week-dot${i < week ? ' is-on' : ''}`} />
+                ))}
               </span>
-            ) : null}
+              {week >= WEEK_GOAL ? ui.home.weekDone : ui.home.week(week, WEEK_GOAL)}
+            </span>
             <span class="chip">
               <Icon name="calendar" size={16} /> {ui.home.today(today)}
             </span>

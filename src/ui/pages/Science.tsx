@@ -1,5 +1,5 @@
 import { useEffect } from 'preact/hooks';
-import { SCIENCE } from '../../content/science';
+import { GENERAL_SOURCES, SCIENCE } from '../../content/science';
 import { categoryMeta, EXERCISES } from '../../exercises/registry';
 import { useApp } from '../app-context';
 import { ArtIcon, Icon } from '../components/Icon';
@@ -39,6 +39,20 @@ export function Science({ focus }: { focus?: string }) {
             </li>
           ))}
         </ul>
+        <details class="sources">
+          <summary>
+            {s.sources} ({GENERAL_SOURCES.length})
+          </summary>
+          <ul>
+            {GENERAL_SOURCES.map((src) => (
+              <li key={src.url}>
+                <a href={src.url} target="_blank" rel="noopener">
+                  {src.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </details>
       </section>
       {EXERCISES.map((def) => {
         const entry = SCIENCE[def.id];

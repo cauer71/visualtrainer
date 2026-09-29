@@ -82,8 +82,8 @@ fast allen Bildschirmtrainings am schwächsten.
   oder Nichtsportlern. Zwei Jahre Schlagtraining bei Schülern verbesserten die
   Go/No-Go-Reaktionszeit, die einfache Reaktionszeit blieb gleich (Kida et al., 2005;
   Querschnitt n = 99, Längsschnitt n = 94).
-- **Lichtwände zeigen klare Übungseffekte, dann ein Plateau.** Die von Ihnen genannte Studie von
-  Wells et al. (2014) ist eigentlich eine *Reliabilitätsstudie* (n = 42, 6 Durchgänge im
+- **Lichtwände zeigen klare Übungseffekte, dann ein Plateau.** Die oft als Trainingsstudie
+  zitierte Arbeit von Wells et al. (2014) ist eigentlich eine *Reliabilitätsstudie* (n = 42, 6 Durchgänge im
   Abstand von ≥ 48 h). Sie fand deutliche Übungseffekte in allen Reaktionstests: Ein
   (Wahlreaktion) bzw. drei (reaktive Modi) Eingewöhnungsdurchgänge waren nötig, bevor eine
   verlässliche Basislinie entstand. Bei 24 Erwachsenen mit 30 Tests über 15 Sitzungen stieg die
@@ -313,7 +313,7 @@ Ergebnis.
 | Reiz | erscheint schlagartig, hoher Kontrast, Durchmesser ≥ 1 cm, immer gleich. Bleibt bis zur Antwort, höchstens 1.500 ms | vergleichbare Messung; gut sichtbar für Senioren |
 | Frühstart | Tipp vor dem Reiz oder Reaktion < 100 ms: Hinweis „Zu früh“, zählt nicht; neuer Durchgang mit neuer Wartezeit. Tippen im Catch-Durchgang = Frühstart | PVT-Standard (Basner & Dinges, 2011) |
 | Verpasst | keine Antwort innerhalb von 1.500 ms | – |
-| Aussetzer | Reaktion langsamer als die persönliche Schwelle: Median + 3 × 1,4826 × MAD der Basislinie (Median der letzten 5 Checks auf diesem Gerät). In den ersten Sitzungen gilt: > 2 × Sitzungsmedian | die PVT-Grenzen von 500/355 ms hängen von Test und Gerät ab (Basner et al., 2011); robuste Ausreißerregel (Leys et al., 2013). *Eigene Heuristik* |
+| Aussetzer | Reaktion langsamer als die persönliche Schwelle: Median + 3 × 1,4826 × MAD, berechnet über alle gültigen Einzelreaktionen der letzten 5 Checks auf diesem Gerät. In den ersten Sitzungen gilt: > 2 × Sitzungsmedian | die PVT-Grenzen von 500/355 ms hängen von Test und Gerät ab (Basner et al., 2011); robuste Ausreißerregel (Leys et al., 2013). *Eigene Heuristik* |
 | Anzeige für Nutzer | Median (ms), Gleichmäßigkeit (Interquartilsabstand in ms), Frühstarts, Aussetzer. Den Trend zeigen, nicht den Einzelwert | robuste Kennwerte (Ratcliff, 1993) |
 | Interne Werte | Mittelwert von 1/RT, schnellste und langsamste 10 %. Zentrum und Peripherie **getrennt** auswerten | Basner & Dinges, 2011. Sonst verfälscht ein steigender Anteil peripherer Reize den Median |
 | Anzahl Durchgänge | pro Check immer gleich | der Median verzerrt bei ungleicher Anzahl (Miller, 1988) |
@@ -567,7 +567,7 @@ nur mit sich selbst vergleichen.
 | Antwortfrist bei Los | Start 1.000 ms, dann adaptiv nach dem gewichteten Up-Down-Verfahren über die Los-Durchgänge (Ziel 80–85 % rechtzeitig): rechtzeitig getippt → 10 ms kürzer, zu spät → 40 ms länger (Ziel 80 %) bzw. ≈ 57 ms länger (Ziel 85 %). Bereich 400–1.200 ms | Benikos et al., 2013; Kaernbach, 1991; siehe 3.1 |
 | Fehler bei Stopp | ändern die Frist **nicht**. Kurze, neutrale Rückmeldung („Stopp!“), keine drastische Strafe | die Frist soll Impulsivität nicht belohnen (*eigene Ableitung*) |
 | Reihenfolge | zufällig, aber höchstens 2 Stopp-Reize hintereinander; keine festen Muster | der Ablauf soll nicht vorhersehbar sein (*eigene Ableitung*) |
-| Blocklänge | mindestens 30 Stopp-Durchgänge pro Block, z. B. 120 Durchgänge à ~1,3 s ≈ 2,5–3 min | stabile Fehlalarmrate; Wessel, 2018, nutzte 50 Stopp-Durchgänge je Bedingung |
+| Blocklänge | mindestens 30 Stopp-Durchgänge pro Block: 120 Durchgänge bei 25 % Stopp bzw. 150 bei 20 %, à ~1,3 s ≈ 2,6–3,3 min | stabile Fehlalarmrate; Wessel, 2018, nutzte 50 Stopp-Durchgänge je Bedingung |
 | Reize | Los = grüner Kreis, Stopp = rotes Achteck oder „✕“ bzw. Hand. Zusätzlich unterschiedlich hell, Größe ≥ 1,5 cm, hoher Kontrast. Die Form allein muss reichen | Birch, 2012; WCAG 2.2, Kriterium 1.4.1 |
 | Höhere Stufen | mehrere Los-Formen oder -Farben; kürzere Anzeige; Regelwechsel zwischen Runden („Heute ist Blau Stopp“) | Young et al., 2018; Spierer et al., 2013 |
 | Kennwerte | Fehlalarmrate, Verpasserrate, Median der Reaktionszeit bei Los (nur Treffer), d′ und c mit Loglinear-Korrektur | Stanislaw & Todorov, 1999; Hautus, 1995 |
@@ -609,7 +609,7 @@ Diese Formulierungen vermeiden:
 - Hatfield, J., Williamson, A., Kehoe, E. J., & Prabhakharan, P. (2017). An examination of the relationship between measures of impulsivity and risky simulated driving amongst young drivers. *Accident Analysis & Prevention*, *103*, 37–43. https://doi.org/10.1016/j.aap.2017.03.019
 - Hatfield, J., Williamson, A., Kehoe, E. J., Lemon, J., Arguel, A., Prabhakharan, P., & Job, R. F. S. (2018). The effects of training impulse control on simulated driving. *Accident Analysis & Prevention*, *119*, 1–15. https://doi.org/10.1016/j.aap.2018.06.012
 - Hautus, M. J. (1995). Corrections for extreme proportions and their biasing effects on estimated values of d′. *Behavior Research Methods, Instruments, & Computers*, *27*(1), 46–51. https://doi.org/10.3758/BF03203619
-- Jones, A., Di Lemma, L. C. G., Robinson, E., Christiansen, P., Nolan, S., Tudur-Smith, C., & Field, M. (2016). Inhibitory control training for appetitive behaviour change: A meta-analytic investigation of mechanisms of action and moderators of effectiveness. *Appetite*, *97*, 16–28. https://doi.org/10.1016/j.appet.2015.11.013
+- Jones, A., Di Lemma, L. C., Robinson, E., Christiansen, P., Nolan, S., Tudur-Smith, C., & Field, M. (2016). Inhibitory control training for appetitive behaviour change: A meta-analytic investigation of mechanisms of action and moderators of effectiveness. *Appetite*, *97*, 16–28. https://doi.org/10.1016/j.appet.2015.11.013
 - Kaernbach, C. (1991). Simple adaptive testing with the weighted up-down method. *Perception & Psychophysics*, *49*(3), 227–229. https://doi.org/10.3758/BF03214307
 - Kida, N., Oda, S., & Matsumura, M. (2005). Intensive baseball practice improves the Go/Nogo reaction time, but not the simple reaction time. *Cognitive Brain Research*, *22*(2), 257–264. https://doi.org/10.1016/j.cogbrainres.2004.09.003
 - O'Brien, F., & Gormley, M. (2013). The contribution of inhibitory deficits to dangerous driving among young people. *Accident Analysis & Prevention*, *51*, 238–242. https://doi.org/10.1016/j.aap.2012.11.024
@@ -655,8 +655,8 @@ Diese Formulierungen vermeiden:
 **Empfehlungen:**
 1. **Zielquote 80–85 %:** gewichtetes Up-Down-Verfahren mit einem Schrittverhältnis von 4 : 1
    bis 5,7 : 1.
-2. **Schrittgröße und Grenzen:** Schritte von ~2–5 % des Startwerts (z. B. 10 ms beim
-   Antwortfenster), feste Grenzen. In den ersten 5–10 Durchgängen doppelte Schrittgröße, damit
+2. **Schrittgröße und Grenzen:** Schritte von ~1–5 % des Startwerts (z. B. 10 ms bei einem
+   Antwortfenster von 1.000 ms), feste Grenzen. In den ersten 5–10 Durchgängen doppelte Schrittgröße, damit
    sich der Wert schnell einpendelt.
 3. **Startwert:** der Endwert der letzten Sitzung, etwas leichter (zum Aufwärmen).
 4. **Messen und Trainieren trennen:** Level und Punkte passen sich an. Der Verlaufs-„Check“
@@ -690,9 +690,9 @@ function naechstesFenster(fensterMs, erfolg, min = 250, max = 1500) {
     (g = 0,31).
   - **Mehr als 3 Sitzungen pro Woche** und **unbeaufsichtigtes Training zu Hause** brachten
     nichts.
-  - Für Sitzungen unter 30 min gab es nur schwache Evidenz. Studien mit messbaren Effekten hatten
-    also meist längere Sitzungen. Auf einer Freizeit-Website sind kurze Einheiten realistischer,
-    dann aber ohne Versprechen einer Wirkung.
+  - Für Sitzungen unter 30 min gab es nur schwache Evidenz. Die Belege für eine Wirkung stammen
+    also eher aus längeren Sitzungen. Auf einer Freizeit-Website sind kurze Einheiten
+    realistischer, dann aber ohne Versprechen einer Wirkung.
 - **Lichtwand:** Nach ~15 Tests kam ein Plateau, und 1–2 Wochen Pause kosteten nichts (Wells &
   Johnson, 2022).
 
@@ -849,9 +849,9 @@ function naechstesFenster(fensterMs, erfolg, min = 250, max = 1500) {
     Behandlungen und Gegenstände“ gilt es nur, „soweit sich die Werbeaussage … auf die Erkennung,
     Beseitigung oder Linderung von Krankheiten, Leiden, Körperschäden oder krankhaften
     Beschwerden“ bezieht (§ 1).
-  - Irreführend ist es unter anderem, einer Sache eine „therapeutische Wirksamkeit oder Wirkungen
-    beizulegen, die sie nicht haben“, oder den Eindruck zu wecken, „daß ein Erfolg mit Sicherheit
-    erwartet werden kann“ (§ 3).
+  - Irreführend ist es unter anderem, wenn „eine therapeutische Wirksamkeit oder Wirkungen
+    beigelegt werden, die sie nicht haben“, oder wenn fälschlich der Eindruck erweckt wird, „daß
+    […] ein Erfolg mit Sicherheit erwartet werden kann“ (§ 3).
   - In Werbung für Laien verbietet § 11 unter anderem den Hinweis auf Empfehlungen von
     Wissenschaftlern oder Gesundheitsberufen (Nr. 2). Verboten sind auch Äußerungen Dritter wie
     Dankschreiben, wenn sie missbräuchlich oder irreführend sind (Nr. 11).

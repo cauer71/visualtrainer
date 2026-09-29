@@ -3,16 +3,20 @@
  *
  * Trainiert schnelles Reagieren und das Bremsen einer schon „geplanten“ Bewegung.
  * - 75 % Grün: Das Tippen wird zur Gewohnheit – genau deshalb fordert Rot heraus.
- * - Form + Farbe (runder Kreis vs. Achteck mit Balken) → auch bei Rot-Grün-Schwäche eindeutig.
- * - Adaptives Antwortfenster (3-down/1-up ≈ 79 % richtig): Je besser es läuft, desto kürzer
- *   bleibt das Zeichen stehen – man muss schneller entscheiden, ohne vorschnell zu tippen.
+ * - Form + Farbe + Helligkeit (heller runder Kreis vs. dunkleres Achteck mit Balken) → auch bei
+ *   Rot-Grün-Schwäche eindeutig.
+ * - Adaptives Antwortfenster nur über die grünen Durchgänge (3-down/1-up ≈ 79 % rechtzeitig):
+ *   Je besser es läuft, desto kürzer bleibt das Zeichen stehen. Tippen bei Rot ändert die Frist
+ *   nicht (wird getrennt gezählt) – sonst würde vorschnelles Tippen belohnt.
+ *   (docs/wissenschaft/01-reaktion-und-impulskontrolle.md, Abschnitt 2.4)
  * - Tipps in der Pause werden nicht bestraft (nur gezählt); Tipps < 100 ms nach dem Erscheinen
  *   gelten als geraten und zählen weder als Treffer noch als Fehler.
+ * - Auswertung mit Signalentdeckung (d′, Loglinear-Korrektur) – nur intern für den Tipp.
  */
 import { background, C, circle, fillRR, font, glow, octagon, ring } from '../../core/draw';
 import type { Rng } from '../../core/rng';
 import { nextStartLevel, Staircase } from '../../core/staircase';
-import { clamp, easeOut, median } from '../../core/stats';
+import { clamp, dPrime, easeOut, median } from '../../core/stats';
 import type { Exercise, ExerciseContext, ExerciseDefinition, Metric, PointerInfo } from '../../core/types';
 import { de, it } from './texts';
 
@@ -33,6 +37,7 @@ const LEVEL_MIN = 1;
 const LEVEL_MAX = 18;
 const GO_COLOR = '#22C55E';
 const GO_LIGHT = '#4ADE80';
+const GO_BRIGHT = '#BBF7D0';
 const STOP_COLOR = '#EF4444';
 const DEMO_WINDOW = 1100;
 const DEMO_ISI = 700;
@@ -93,14 +98,15 @@ export function makePlan(n: number, rng: Rng): Kind[] {
 // ---------------------------------------------------------------------------
 // Zeichnen
 
+/** Grüner Kreis – bewusst heller als das rote Zeichen (Helligkeit als zusätzliches Merkmal) */
 function drawGo(g: CanvasRenderingContext2D, x: number, y: number, r: number, alpha: number): void {
-  glow(g, x, y, r, GO_COLOR, 0.9 * alpha);
+  glow(g, x, y, r, GO_LIGHT, alpha);
   g.save();
   g.globalAlpha = alpha;
-  const grad = g.createRadialGradient(x - r * 0.35, y - r * 0.4, r * 0.05, x, y, r);
-  grad.addColorStop(0, '#86EFAC');
-  grad.addColorStop(0.45, GO_COLOR);
-  grad.addColorStop(1, '#16A34A');
+  const grad = g.createRadialGradient(x - r * 0.3, y - r * 0.35, r * 0.05, x, y, r);
+  grad.addColorStop(0, GO_BRIGHT);
+  grad.addColorStop(0.5, GO_LIGHT);
+  grad.addColorStop(1, GO_COLOR);
   g.beginPath();
   g.arc(x, y, r, 0, Math.PI * 2);
   g.fillStyle = grad;
@@ -108,14 +114,13 @@ function drawGo(g: CanvasRenderingContext2D, x: number, y: number, r: number, al
   g.restore();
 }
 
-/** Rotes Achteck mit weißem Rand und weißem Querbalken – wie ein Verbotsschild */
+/** Rotes Achteck mit weißem Querbalken – wie ein Verbotsschild; dunkler als der grüne Kreis */
 function drawStop(g: CanvasRenderingContext2D, x: number, y: number, r: number, alpha: number): void {
-  glow(g, x, y, r, STOP_COLOR, 0.55 * alpha);
+  glow(g, x, y, r, STOP_COLOR, 0.35 * alpha);
   g.save();
   g.globalAlpha = alpha;
-  octagon(g, x, y, r, '#FFFFFF');
-  octagon(g, x, y, r * 0.9, STOP_COLOR);
-  const bw = r * 1.16;
+  octagon(g, x, y, r, STOP_COLOR);
+  const bw = r * 1.2;
   const bh = r * 0.3;
   fillRR(g, x - bw / 2, y - bh / 2, bw, bh, bh * 0.18, '#FFFFFF');
   g.restore();
@@ -194,8 +199,9 @@ class StoppLos implements Exercise {
 
   // --- Geometrie (immer live aus der Bühne → robust bei Drehen/Größenwechsel) ---
 
+  /** Mindestens 40 px (≈ 1,5 cm Durchmesser auf dem Tablet) */
   private radius(): number {
-    return Math.max(34, this.ctx.stage.u * 9);
+    return Math.max(40, this.ctx.stage.u * 9);
   }
 
   private center(): { x: number; y: number } {
@@ -266,7 +272,8 @@ class StoppLos implements Exercise {
   }
 
   private endTrial(correct: boolean, t: number): void {
-    this.stair.update(correct);
+    // Die Frist passt sich nur über Grün an: rechtzeitig → schwerer, verpasst → leichter
+    if (this.plan[this.idx] === 'go') this.stair.update(correct);
     if (correct) this.points += 10 + Math.floor(this.trialLevel + 1e-9);
     this.idx++;
     this.lastEnd = t;
@@ -278,7 +285,7 @@ class StoppLos implements Exercise {
     this.updateHud();
     if (this.idx >= this.total) {
       this.phase = 'done';
-      this.doneAt = t + (this.demo ? 1500 : 800);
+      this.doneAt = t + (this.demo ? 1000 : 800);
       return;
     }
     this.phase = 'isi';
@@ -477,9 +484,13 @@ class StoppLos implements Exercise {
     const accuracy = this.plan.length ? ((this.hits + this.withholds) / this.plan.length) * 100 : 0;
     const commissionRate = nStop ? this.commissions / nStop : 0;
     const omissionRate = nGo ? this.misses / nGo : 0;
+    // d′ (Loglinear-Korrektur): trennt „gut unterschieden“ von „einfach vorsichtig“ – nur intern
+    const sensitivity = dPrime(this.hits, nGo, this.commissions, nStop);
+    // Die Frist pendelt sich auf ≈ 79 % rechtzeitig ein → ≈ 20 % Verpasser sind normal
     let tip = 'great';
     if (commissionRate > 0.25) tip = 'brake';
-    else if (omissionRate > 0.2) tip = 'faster';
+    else if (omissionRate > 0.3) tip = 'faster';
+    else if (sensitivity < 1.3) tip = commissionRate >= 0.15 ? 'brake' : 'faster';
     const secondary: Metric[] = [
       { key: 'accuracy', value: Math.round(accuracy), unit: 'percent' },
       { key: 'stopErrors', value: this.commissions, unit: 'count' },

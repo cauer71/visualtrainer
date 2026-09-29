@@ -14,15 +14,16 @@ const de = {
     home: 'Zur Startseite',
   },
   home: {
-    kicker: 'Training für Augen & Reaktion',
-    title: 'Fit für den Blick',
+    kicker: 'Übungen für Reaktion & Wahrnehmung',
+    title: 'Wach im Blick',
     subtitle:
-      'Kurze Übungen für schnelle Reaktion, einen wachen Blick und gute Übersicht. Antippen, zuschauen, loslegen – am besten auf dem Tablet.',
+      'Kurze Übungen für schnelles Reagieren, Konzentration und Übersicht. Antippen, zuschauen, loslegen – am besten auf dem Tablet.',
     daily: 'Tagestraining starten',
     dailyInfo: (n: number, min: number) => `${n} Übungen · ca. ${min} Minuten`,
     dailyDone: 'Tagestraining für heute geschafft!',
     dailyAgain: 'Tagestraining nochmal',
-    streak: (n: number) => (n === 1 ? '1 Tag dabei' : `${n} Tage in Folge`),
+    week: (n: number, goal: number) => `Diese Woche: ${Math.min(n, goal)} von ${goal} Trainingstagen`,
+    weekDone: 'Wochenziel geschafft!',
     today: (n: number) => (n === 0 ? 'Heute noch nicht trainiert' : n === 1 ? 'Heute: 1 Übung' : `Heute: ${n} Übungen`),
     all: 'Alle Übungen',
     minutes: (n: number) => `${n} Min.`,
@@ -45,12 +46,12 @@ const de = {
   intro: {
     start: 'Los geht’s',
     howTo: 'So geht’s',
-    goodFor: 'Hilft zum Beispiel',
+    goodFor: 'Im Alltag gefragt, z. B.',
     curious: 'Für Neugierige: Was bringt das?',
     moreScience: 'Hintergrund & Studien',
     posture: 'Tablet ruhig halten, etwa eine Unterarmlänge entfernt. Brille aufsetzen, falls du eine hast.',
     flicker:
-      'Hinweis: Diese Übung enthält sanft pulsierende Felder. Bei Lichtempfindlichkeit oder Epilepsie bitte nicht durchführen.',
+      'Hinweis: Diese Übung enthält sanft pulsierende Felder. Wenn du lichtempfindlich bist oder schon einmal einen epileptischen Anfall hattest, verzichte bitte darauf.',
     back: 'Alle Übungen',
     series: (i: number, n: number) => `Tagestraining · Übung ${i} von ${n}`,
     level: (n: number) => `Du startest auf Stufe ${n}`,
@@ -87,7 +88,8 @@ const de = {
     overview: 'Zur Übersicht',
     seriesDone: 'Tagestraining geschafft!',
     seriesDoneText: 'Super! Morgen gibt es eine neue Mischung.',
-    practice: 'Am meisten bringt es, regelmäßig ein paar Minuten zu üben – am besten täglich.',
+    practice: 'Am meisten bringt regelmäßiges Üben: zum Beispiel an 3 Tagen pro Woche ein paar Minuten.',
+    deviceNote: 'Deine Werte hängen auch vom Gerät ab – vergleiche sie nur mit deinen eigenen Ergebnissen auf diesem Gerät.',
     levelNow: (n: number) => `Nächstes Mal startest du auf Stufe ${n}.`,
   },
   units: {
@@ -98,7 +100,11 @@ const de = {
   },
   footer: {
     disclaimer:
-      'Die Übungen sind ein Training für Reaktion und Wahrnehmung. Sie sind kein Sehtest und ersetzen keine Untersuchung beim Optiker oder Augenarzt.',
+      'Die Übungen sind ein kostenloses Trainings- und Freizeitangebot. Sie sind kein Medizinprodukt, stellen keine Diagnose und ersetzen keinen Sehtest und keine augenärztliche Untersuchung.',
+    light:
+      'Die Übungen zeigen aufleuchtende und bewegte Bilder. Wenn du lichtempfindlich bist oder schon einmal einen epileptischen Anfall hattest, verzichte bitte darauf oder sprich vorher mit deiner Ärztin oder deinem Arzt.',
+    symptoms:
+      'Fällt dir beim Üben etwas auf, etwa verschwommenes Sehen, Doppelbilder oder Kopfschmerzen? Mach eine Pause und lass deine Augen prüfen.',
     privacy: 'Deine Ergebnisse bleiben nur auf diesem Gerät. Keine Anmeldung, keine Cookies, kein Tracking.',
     reset: 'Meine Ergebnisse löschen',
     resetConfirm: 'Alle gespeicherten Ergebnisse auf diesem Gerät löschen?',
@@ -114,7 +120,7 @@ const de = {
     lead:
       'Was steckt hinter den Übungen? Hier erklären wir in einfachen Worten, was jede Übung trainiert und was die Forschung dazu sagt – ehrlich, auch dort, wo die Beweislage dünn ist.',
     honest:
-      'Wichtig: Wer übt, wird in der geübten Aufgabe besser. Ob sich das auch auf den Alltag überträgt, ist je nach Übung unterschiedlich gut untersucht. Die Übungen sind kein Medizinprodukt, stellen keine Diagnose und behandeln keine Augenerkrankung.',
+      'Die Übungen beruhen auf Aufgaben, die in der Forschung seit Jahrzehnten verwendet werden. Studien zeigen: In solchen Aufgaben wird man durch Üben besser. Ob sich das auf Alltag, Straßenverkehr oder Sport überträgt, ist meist nicht belegt. Die Übungen sind kein Medizinprodukt, stellen keine Diagnose und behandeln keine Augenerkrankung.',
     trains: 'Trainiert',
     daily: 'Im Alltag',
     research: 'Was die Forschung sagt',
@@ -129,9 +135,10 @@ const de = {
     principlesTitle: 'Wie die Übungen aufgebaut sind',
     principles: [
       'Jede Übung passt die Schwierigkeit laufend an: So übst du immer knapp an deiner Grenze – dort lernt man am meisten.',
-      'Kurze Einheiten (1–2 Minuten) und regelmäßiges Üben wirken besser als seltenes, langes Training.',
+      'Kurze Einheiten und regelmäßiges Üben – etwa an 2 bis 4 Tagen pro Woche einige Minuten – sind sinnvoller als seltenes, langes Training.',
       'Gemessen wird so, dass Raten nicht hilft: zufällige Wartezeiten, zu frühe Antworten werden erkannt.',
-      'Ergebnisse vergleichen wir nur mit dir selbst – Tablets reagieren unterschiedlich schnell, daher gibt es keine Ranglisten.',
+      'Ergebnisse vergleichen wir nur mit dir selbst: Touchscreens messen je nach Gerät 30 bis über 100 Millisekunden zu spät – deshalb gibt es keine Normwerte und keine Ranglisten.',
+      'Punkte sorgen für Spaß – die eigentlichen Messwerte (z. B. der Median deiner Reaktionszeiten) werden getrennt davon ausgewertet.',
     ],
     back: 'Zurück zu den Übungen',
   },
@@ -155,15 +162,16 @@ const it: UiStrings = {
     home: 'Alla pagina iniziale',
   },
   home: {
-    kicker: 'Allenamento per occhi e riflessi',
-    title: 'Sguardo in forma',
+    kicker: 'Esercizi per riflessi e percezione',
+    title: 'Sguardo attento',
     subtitle:
-      'Brevi esercizi per reagire più in fretta, avere uno sguardo attento e una buona visione d’insieme. Tocca, guarda, inizia – meglio sul tablet.',
+      'Brevi esercizi per reagire in fretta, concentrarsi e avere una buona visione d’insieme. Tocca, guarda, inizia – meglio sul tablet.',
     daily: 'Inizia l’allenamento del giorno',
     dailyInfo: (n: number, min: number) => `${n} esercizi · circa ${min} minuti`,
     dailyDone: 'Allenamento di oggi completato!',
     dailyAgain: 'Ripeti l’allenamento del giorno',
-    streak: (n: number) => (n === 1 ? '1 giorno' : `${n} giorni di fila`),
+    week: (n: number, goal: number) => `Questa settimana: ${Math.min(n, goal)} di ${goal} giorni di allenamento`,
+    weekDone: 'Obiettivo settimanale raggiunto!',
     today: (n: number) => (n === 0 ? 'Oggi non ti sei ancora allenato' : n === 1 ? 'Oggi: 1 esercizio' : `Oggi: ${n} esercizi`),
     all: 'Tutti gli esercizi',
     minutes: (n: number) => `${n} min`,
@@ -186,12 +194,12 @@ const it: UiStrings = {
   intro: {
     start: 'Iniziamo',
     howTo: 'Come si fa',
-    goodFor: 'Utile per esempio',
+    goodFor: 'Nella vita di tutti i giorni, ad esempio',
     curious: 'Per i curiosi: a cosa serve?',
     moreScience: 'Approfondimento e studi',
     posture: 'Tieni il tablet fermo, a circa un avambraccio di distanza. Se porti gli occhiali, indossali.',
     flicker:
-      'Nota: questo esercizio contiene riquadri che pulsano dolcemente. In caso di fotosensibilità o epilessia non eseguirlo.',
+      'Nota: questo esercizio contiene riquadri che pulsano dolcemente. Se sei fotosensibile o hai già avuto una crisi epilettica, per favore non eseguirlo.',
     back: 'Tutti gli esercizi',
     series: (i: number, n: number) => `Allenamento del giorno · esercizio ${i} di ${n}`,
     level: (n: number) => `Inizi dal livello ${n}`,
@@ -228,7 +236,8 @@ const it: UiStrings = {
     overview: 'Alla panoramica',
     seriesDone: 'Allenamento del giorno completato!',
     seriesDoneText: 'Ottimo! Domani ti aspetta un nuovo mix.',
-    practice: 'Il massimo si ottiene allenandosi regolarmente qualche minuto – meglio ogni giorno.',
+    practice: 'Il massimo si ottiene allenandosi con regolarità: per esempio qualche minuto per 3 giorni alla settimana.',
+    deviceNote: 'I tuoi valori dipendono anche dal dispositivo – confrontali solo con i tuoi risultati su questo dispositivo.',
     levelNow: (n: number) => `La prossima volta inizi dal livello ${n}.`,
   },
   units: {
@@ -239,7 +248,11 @@ const it: UiStrings = {
   },
   footer: {
     disclaimer:
-      'Gli esercizi sono un allenamento per riflessi e percezione. Non sono un esame della vista e non sostituiscono una visita dall’ottico o dall’oculista.',
+      'Gli esercizi sono un’offerta gratuita di allenamento e svago. Non sono un dispositivo medico, non forniscono diagnosi e non sostituiscono un esame della vista né una visita oculistica.',
+    light:
+      'Gli esercizi mostrano immagini luminose e in movimento. Se sei fotosensibile o hai già avuto una crisi epilettica, non eseguirli oppure parlane prima con il tuo medico.',
+    symptoms:
+      'Noti qualcosa durante l’esercizio, come vista annebbiata, visione doppia o mal di testa? Fai una pausa e fatti controllare gli occhi.',
     privacy: 'I tuoi risultati restano solo su questo dispositivo. Nessuna registrazione, nessun cookie, nessun tracciamento.',
     reset: 'Cancella i miei risultati',
     resetConfirm: 'Cancellare tutti i risultati salvati su questo dispositivo?',
@@ -255,7 +268,7 @@ const it: UiStrings = {
     lead:
       'Cosa c’è dietro agli esercizi? Qui spieghiamo con parole semplici cosa allena ogni esercizio e cosa dice la ricerca – con onestà, anche dove le prove sono poche.',
     honest:
-      'Importante: chi si allena migliora nel compito allenato. Quanto questo si trasferisca alla vita quotidiana è studiato in modo diverso a seconda dell’esercizio. Gli esercizi non sono un dispositivo medico, non fanno diagnosi e non curano malattie degli occhi.',
+      'Gli esercizi si basano su compiti usati nella ricerca da decenni. Gli studi mostrano che in questi compiti ci si migliora con l’allenamento. Se questo si trasferisca alla vita quotidiana, al traffico o allo sport, di solito non è dimostrato. Gli esercizi non sono un dispositivo medico, non fanno diagnosi e non curano malattie degli occhi.',
     trains: 'Allena',
     daily: 'Nella vita quotidiana',
     research: 'Cosa dice la ricerca',
@@ -270,9 +283,10 @@ const it: UiStrings = {
     principlesTitle: 'Come sono costruiti gli esercizi',
     principles: [
       'Ogni esercizio adatta continuamente la difficoltà: così ti alleni sempre vicino al tuo limite – dove si impara di più.',
-      'Sessioni brevi (1–2 minuti) e regolari funzionano meglio di allenamenti lunghi e rari.',
+      'Sessioni brevi e regolari – per esempio qualche minuto per 2–4 giorni alla settimana – sono più sensate di allenamenti lunghi e rari.',
       'La misura è pensata in modo che tirare a indovinare non serva: attese casuali, risposte anticipate vengono riconosciute.',
-      'Confrontiamo i risultati solo con te stesso – i tablet reagiscono con velocità diverse, per questo non ci sono classifiche.',
+      'Confrontiamo i risultati solo con te stesso: a seconda del dispositivo, i touchscreen misurano da 30 a oltre 100 millisecondi in ritardo – per questo non ci sono valori di riferimento né classifiche.',
+      'I punti servono per divertirsi – i veri valori misurati (per esempio la mediana dei tuoi tempi di reazione) vengono valutati separatamente.',
     ],
     back: 'Torna agli esercizi',
   },

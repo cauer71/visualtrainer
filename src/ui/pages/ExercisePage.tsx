@@ -457,6 +457,7 @@ function ResultView({
             <Sparkline values={history} better={p.better} color={meta.color} />
           </div>
         ) : null}
+        {p.unit === 'time' || p.unit === 'ms' ? <p class="muted small">{ui.result.deviceNote}</p> : null}
         {result.tip && tx.tips[result.tip] ? (
           <div class="tip">
             <Icon name="bulb" size={22} />

@@ -86,6 +86,12 @@ export function Footer() {
           <p class="footer-note">
             <Icon name="check" size={18} /> {ui.footer.privacy}
           </p>
+          <p class="footer-note">
+            <Icon name="eye" size={18} /> {ui.footer.symptoms}
+          </p>
+          <p class="footer-note">
+            <Icon name="warn" size={18} /> {ui.footer.light}
+          </p>
         </div>
         <div class="footer-links">
           <a href={href('/hintergrund')}>{ui.footer.science}</a>

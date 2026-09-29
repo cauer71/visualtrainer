@@ -205,9 +205,25 @@ p {
   padding: 3px 10px;
   font-size: 13px;
 }
-.chip-flame {
-  background: #fff1e6;
-  color: #c2410c;
+.chip-week {
+  background: var(--primary-soft);
+  color: var(--primary-dark);
+}
+.week-dots {
+  display: inline-flex;
+  gap: 4px;
+  margin-right: 2px;
+}
+.week-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid currentColor;
+  opacity: 0.55;
+}
+.week-dot.is-on {
+  background: currentColor;
+  opacity: 1;
 }
 .chip-good {
   background: var(--good-soft);
