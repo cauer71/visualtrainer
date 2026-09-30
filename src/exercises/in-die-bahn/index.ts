@@ -353,7 +353,7 @@ class InDieBahn implements Exercise {
     const R = this.route;
     if (!R || this.judged || this.held) return;
     if (this.phase !== 'gap' && this.phase !== 'fang') {
-      if (this.phase === 'show') this.hint(p, this.ctx.texts.feedback.watch);
+      if (this.phase === 'show') this.hint(p, this.ctx.texts.feedback.wait);
       return;
     }
     const pt = { x: p.x, y: p.y };
@@ -371,8 +371,7 @@ class InDieBahn implements Exercise {
     this.lifted = false;
     this.drifted = false;
     this.ctx.sfx.tap();
-    if (this.demo && this.phase === 'fang') this.setCaption('hold', this.ctx.texts.captions.hold);
-    else if (this.demo) this.setCaption('hold', this.ctx.texts.captions.hold);
+    if (this.demo) this.setCaption('hold', this.ctx.texts.captions.hold);
   }
 
   pointerMove(p: PointerInfo): void {
@@ -472,19 +471,18 @@ class InDieBahn implements Exercise {
   // -------------------------------------------------------------------------
   // Zeichnen
 
-  render(g: CanvasRenderingContext2D, t: number): void {
+  render(g: CanvasRenderingContext2D): void {
     const { w, h, dpr } = this.ctx.stage;
     const G = this.layout();
     background(g, w, h, dpr);
     const R = this.route;
     if (!R) return;
     const sT = clamp(this.passS, 0, Infinity) * this.speed;
-    this.drawRoute(g, G, R, sT);
+    this.drawRoute(g, R, sT);
     if (this.phase === 'reveal') this.drawReveal(g, G);
     else this.drawHoldMark(g, G);
     if (this.phase === 'gap' || this.phase === 'fang' || this.phase === 'show') this.drawCue(g, G);
     this.drawTarget(g, G, R, sT);
-    void t;
   }
 
   private visiblePass(): boolean {
@@ -494,7 +492,7 @@ class InDieBahn implements Exercise {
   }
 
   /** Linie: auf niedrigen Stufen die ganze Bahn, sonst nur eine Spur hinter dem Ziel */
-  private drawRoute(g: CanvasRenderingContext2D, G: Geo, R: Route, sT: number): void {
+  private drawRoute(g: CanvasRenderingContext2D, R: Route, sT: number): void {
     const { u } = this.ctx.stage;
     const guide = this.curLevel <= GUIDE_UNTIL_LEVEL;
     const trace = traceSecondsFor(this.curLevel);
@@ -513,7 +511,6 @@ class InDieBahn implements Exercise {
         this.strokeRoute(g, R, Math.max(0, s0), Math.max(0, s1), Math.max(3, u * 0.7), withAlpha(TARGET, a));
       }
     }
-    void G;
   }
 
   private strokeRoute(g: CanvasRenderingContext2D, R: Route, s0: number, s1: number, width: number, color: string, dash?: number[]): void {
