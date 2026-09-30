@@ -35,8 +35,9 @@ const SAMPLES = 260;
 /** Zeitkonstante für das Nachführen der Bahnform (s) */
 const MORPH_TAU = 0.7;
 
-export function wavePoint(x: number, width: number, amp: number, waves: number): number {
-  return amp * Math.sin((2 * Math.PI * waves * x) / width);
+/** Höhe der Welle an der Stelle x (psi = Phasenversatz, damit die Form beim Nachführen nicht springt) */
+export function wavePoint(x: number, width: number, amp: number, waves: number, psi = 0): number {
+  return amp * Math.sin((2 * Math.PI * waves * x) / width + psi);
 }
 
 export class WaveTrack implements PursuitTrack {
@@ -51,6 +52,7 @@ export class WaveTrack implements PursuitTrack {
   private level = 1;
   private amp = 10;
   private waves = 1;
+  private psi = 0;
   private speedNow = 1;
   private current: Point = { x: 0, y: 0 };
 
@@ -82,6 +84,7 @@ export class WaveTrack implements PursuitTrack {
     // Start nahe dem linken oder rechten Ende, dann geht es in Laufrichtung los
     const k = r - Math.floor(r);
     this.phase = dir === 1 ? k * 0.25 : 0.5 + k * 0.25;
+    this.psi = 0;
     this.snap();
   }
 
@@ -89,8 +92,12 @@ export class WaveTrack implements PursuitTrack {
     const target = this.targetAmp();
     const wantWaves = wavesFor(this.level);
     if (Math.abs(target - this.amp) > 1e-4 || Math.abs(wantWaves - this.waves) > 1e-5) {
+      // Die Welle „dreht“ sich um das Ziel: Wellenzahl ändern, ohne dass dessen Höhe springt
+      const x = pingPong01(this.phase, TURN_FRACTION).pos * this.width;
+      const theta = (2 * Math.PI * this.waves * x) / this.width + this.psi;
       this.amp = approach(this.amp, target, dt, MORPH_TAU);
       this.waves = approach(this.waves, wantWaves, dt, MORPH_TAU);
+      this.psi = theta - (2 * Math.PI * this.waves * x) / this.width;
       this.rebuildOutline();
     }
     // Tempo entlang der Kurve konstant: x-Tempo = v · g' / √(1 + y'²) (Mittelpunktsverfahren)
@@ -98,7 +105,7 @@ export class WaveTrack implements PursuitTrack {
     const rate = (ph: number): number => {
       const pp = pingPong01(ph, TURN_FRACTION);
       const x = pp.pos * this.width;
-      const slope = ((this.amp * 2 * Math.PI * this.waves) / this.width) * Math.cos((2 * Math.PI * this.waves * x) / this.width);
+      const slope = ((this.amp * 2 * Math.PI * this.waves) / this.width) * Math.cos((2 * Math.PI * this.waves * x) / this.width + this.psi);
       return 1 / (cycle * Math.sqrt(1 + slope * slope));
     };
     const k1 = rate(this.phase);
@@ -129,7 +136,7 @@ export class WaveTrack implements PursuitTrack {
     const pts: Point[] = [];
     for (let i = 0; i <= SAMPLES; i++) {
       const x = (i / SAMPLES) * this.width;
-      pts.push({ x: this.left + x, y: this.cy + wavePoint(x, this.width, this.amp, this.waves) });
+      pts.push({ x: this.left + x, y: this.cy + wavePoint(x, this.width, this.amp, this.waves, this.psi) });
     }
     this.pts = pts;
   }
@@ -138,6 +145,6 @@ export class WaveTrack implements PursuitTrack {
     const pp = pingPong01(this.phase, TURN_FRACTION);
     this.speedNow = pp.speed;
     const x = pp.pos * this.width;
-    this.current = { x: this.left + x, y: this.cy + wavePoint(x, this.width, this.amp, this.waves) };
+    this.current = { x: this.left + x, y: this.cy + wavePoint(x, this.width, this.amp, this.waves, this.psi) };
   }
 }
