@@ -392,7 +392,7 @@ class Leuchtpfad implements Exercise {
     if (this.phase === 'show') filled = Math.min(n, Math.floor((t - this.phaseT) / (LIT_MS + GAP_MS)) + 1);
     else if (this.phase === 'input') filled = this.tapIdx;
     else if (this.phase === 'feedback') filled = this.lastOk ? n : this.tapIdx;
-    const r = clamp(L.pipsY > 0 ? L.pillH * 0.11 : 4, 4, 8);
+    const r = clamp(L.pillH * 0.11, 4, 8);
     const step = r * 3.2;
     const x0 = w / 2 - ((n - 1) * step) / 2;
     for (let i = 0; i < n; i++) {

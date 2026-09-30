@@ -50,7 +50,7 @@ export class LemniscateTrack implements PursuitTrack {
     return this.current;
   }
 
-  layout(area: Bounds, stageW: number): void {
+  layout(area: Bounds, stageW: number, _u?: number): void {
     this.a = lemniscateHalfWidth(area, stageW);
     this.cx = (area.minX + area.maxX) / 2;
     this.cy = (area.minY + area.maxY) / 2;
