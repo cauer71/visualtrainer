@@ -2469,7 +2469,11 @@
    "kapitel_original": "reaction-speed",
    "unterkapitel_original": "",
    "quelle_url": "https://skilldrills.online/de/drills/reaction-speed/reaction-time-test",
-   "blickfit_umsetzung": null,
+   "blickfit_umsetzung": {
+    "kennung": "sekunden-gefuehl",
+    "name": "Sekundengefühl",
+    "unterschiede": "Tablet-Umsetzung für Touch: große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/sekunden-gefuehl/)."
+   },
    "stand": "2026-09-30",
    "kurzbeschreibung": "Eine Zielzeit wie '3,482 s' wird kurz angezeigt und verschwindet; dann läuft die Zeit unsichtbar, und man tippt oder klickt in dem Moment, in dem man glaubt, dass genau diese Zeit vergangen ist. Trotz des Namens ist es kein Reaktionstest, sondern eine Übung für das Zeitgefühl (Zeitproduktion im Sekundenbereich).",
    "ziel_funktionen": [
@@ -2769,7 +2773,11 @@
    "kapitel_original": "reaction-speed",
    "unterkapitel_original": "",
    "quelle_url": "https://skilldrills.online/de/drills/reaction-speed/saccadic-gallery",
-   "blickfit_umsetzung": null,
+   "blickfit_umsetzung": {
+    "kennung": "blicksprung-galerie",
+    "name": "Blicksprung-Galerie",
+    "unterschiede": "Tablet-Umsetzung für Touch: große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/blicksprung-galerie/)."
+   },
    "stand": "2026-09-30",
    "kurzbeschreibung": "Auf dunklem Feld leuchtet immer nur ein roter Punkt auf, jedes Mal an einem anderen von 12 festen Rasterpunkten (am Touchgerät 9). Man springt mit dem Blick hin und klickt bzw. tippt ihn an, bevor er nach einer mit dem Level schrumpfenden Zeit wieder verschwindet.",
    "ziel_funktionen": [
@@ -3246,7 +3254,11 @@
    "kapitel_original": "reaction-speed",
    "unterkapitel_original": "",
    "quelle_url": "https://skilldrills.online/de/drills/reaction-speed/reaction-game",
-   "blickfit_umsetzung": null,
+   "blickfit_umsetzung": {
+    "kennung": "fallende-ziele",
+    "name": "Fallende Ziele",
+    "unterschiede": "Tablet-Umsetzung für Touch: große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/fallende-ziele/)."
+   },
    "stand": "2026-09-30",
    "kurzbeschreibung": "Von oben fallen rote Punkte an zufälligen Stellen über das dunkle Spielfeld, mehrere gleichzeitig. Man klickt oder tippt sie an, bevor sie unten verschwinden; mit den Punkten steigt das Level, und die Punkte werden schneller, kleiner und kommen dichter.",
    "ziel_funktionen": [
@@ -3404,7 +3416,11 @@
    "kapitel_original": "reaction-speed",
    "unterkapitel_original": "",
    "quelle_url": "https://skilldrills.online/de/drills/reaction-speed/market-doors-pursuit",
-   "blickfit_umsetzung": null,
+   "blickfit_umsetzung": {
+    "kennung": "fuenf-tueren",
+    "name": "Fünf Türen",
+    "unterschiede": "Tablet-Umsetzung für Touch: große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/fuenf-tueren/)."
+   },
    "stand": "2026-09-30",
    "kurzbeschreibung": "In einer Reihe stehen fünf dunkle Türöffnungen. In einer zufällig gewählten Tür erscheint plötzlich ein roter Punkt; man bringt den Zeiger hin und klickt oder tippt ihn an, bevor er wieder verschwindet. Mit den Punkten werden die Ziele kleiner, kürzer sichtbar und folgen dichter aufeinander.",
    "ziel_funktionen": [
@@ -3859,7 +3875,11 @@
    "kapitel_original": "visual-tracking",
    "unterkapitel_original": "",
    "quelle_url": "https://skilldrills.online/de/drills/visual-tracking/infinity-pursuit",
-   "blickfit_umsetzung": null,
+   "blickfit_umsetzung": {
+    "kennung": "liegende-acht",
+    "name": "Liegende Acht",
+    "unterschiede": "Tablet-Umsetzung für Touch: große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/liegende-acht/)."
+   },
    "stand": "2026-09-29",
    "kurzbeschreibung": "Ein leuchtender Punkt läuft im Vollbild gleichmäßig auf einer liegenden Acht (∞) über den Bildschirm. Man folgt ihm nur mit den Augen, möglichst ohne Blicksprünge und ohne den Kopf zu drehen – auch durch den Kreuzungspunkt in der Mitte.",
    "ziel_funktionen": [
@@ -4005,7 +4025,11 @@
    "kapitel_original": "visual-tracking",
    "unterkapitel_original": "",
    "quelle_url": "https://skilldrills.online/de/drills/visual-tracking/sine-wave-pursuit",
-   "blickfit_umsetzung": null,
+   "blickfit_umsetzung": {
+    "kennung": "wellenbahn",
+    "name": "Wellenbahn",
+    "unterschiede": "Tablet-Umsetzung für Touch: große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/wellenbahn/)."
+   },
    "stand": "2026-09-29",
    "kurzbeschreibung": "Ein leuchtender Punkt wandert im Vollbild auf einer Wellenlinie von links nach rechts und wieder zurück und schwingt dabei ständig auf und ab. Man folgt ihm nur mit den Augen, möglichst ohne Blicksprünge – an den Wellenbergen wird er langsam, beim Durchqueren der Mittellinie schnell.",
    "ziel_funktionen": [
@@ -4735,7 +4759,11 @@
    "kapitel_original": "visual-tracking",
    "unterkapitel_original": "",
    "quelle_url": "https://skilldrills.online/de/drills/visual-tracking/split-screen-tracking",
-   "blickfit_umsetzung": null,
+   "blickfit_umsetzung": {
+    "kennung": "zwei-ziele",
+    "name": "Zwei Ziele",
+    "unterschiede": "Tablet-Umsetzung für Touch: große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/zwei-ziele/)."
+   },
    "stand": "2026-09-29",
    "kurzbeschreibung": "Links pendelt ein Leuchtpunkt gleichmäßig auf und ab, rechts einer hin und her. Man soll den Blick ruhig zur Bildmitte richten und beide Bewegungen gleichzeitig aus dem Augenwinkel mitverfolgen; das Original stellt keine Aufgabe, gibt keine Rückmeldung und misst nichts.",
    "ziel_funktionen": [
@@ -6978,7 +7006,11 @@
    "kapitel_original": "fps",
    "unterkapitel_original": "",
    "quelle_url": "https://skilldrills.online/de/drills/fps/target-acquisition",
-   "blickfit_umsetzung": null,
+   "blickfit_umsetzung": {
+    "kennung": "hellste-kugel",
+    "name": "Hellste Kugel",
+    "unterschiede": "Tablet-Umsetzung für Touch: große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/hellste-kugel/)."
+   },
    "stand": "2026-09-30",
    "kurzbeschreibung": "Auf fast schwarzem Grund liegen drei bis acht bernsteinfarbene Kugeln verstreut, die unterschiedlich hell (deckend) sind. Man führt ein Fadenkreuz mit der Maus und klickt die Kugeln streng in absteigender Helligkeit ab; ist der Satz leer, erscheint sofort der nächste. Ein Klick auf eine falsche Kugel oder daneben kostet die Combo.",
    "ziel_funktionen": [
@@ -8140,7 +8172,11 @@
    "kapitel_original": "memory",
    "unterkapitel_original": "short-term-memory",
    "quelle_url": "https://skilldrills.online/de/drills/memory/short-term-memory/color-sequence",
-   "blickfit_umsetzung": null,
+   "blickfit_umsetzung": {
+    "kennung": "leuchtfolge",
+    "name": "Leuchtfolge",
+    "unterschiede": "Tablet-Umsetzung für Touch: große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/leuchtfolge/)."
+   },
    "stand": "2026-09-29",
    "kurzbeschreibung": "Ein großer Kreis in der Bildmitte leuchtet nacheinander in verschiedenen Farben auf. Danach tippt man die Farbfolge auf sechs Farbfeldern in derselben Reihenfolge nach; nach jedem Erfolg wird die Folge um eine Farbe länger, nach einem Fehler um eine kürzer.",
    "ziel_funktionen": [
@@ -8277,7 +8313,11 @@
    "kapitel_original": "memory",
    "unterkapitel_original": "short-term-memory",
    "quelle_url": "https://skilldrills.online/de/drills/memory/short-term-memory/digit-span",
-   "blickfit_umsetzung": null,
+   "blickfit_umsetzung": {
+    "kennung": "zahlenspanne",
+    "name": "Zahlenspanne",
+    "unterschiede": "Tablet-Umsetzung für Touch: große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/zahlenspanne/)."
+   },
    "stand": "2026-09-29",
    "kurzbeschreibung": "Eine Ziffernfolge erscheint kurz als Ganzes auf dem Bildschirm; danach tippt man sie aus dem Gedächtnis in derselben Reihenfolge auf einem Ziffernfeld ein. Jede richtige Folge wird um eine Ziffer länger, jeder Fehler macht sie um eine Ziffer kürzer.",
    "ziel_funktionen": [
@@ -8419,7 +8459,11 @@
    "kapitel_original": "memory",
    "unterkapitel_original": "spatial-memory",
    "quelle_url": "https://skilldrills.online/de/drills/memory/spatial-memory/grid-memorization",
-   "blickfit_umsetzung": null,
+   "blickfit_umsetzung": {
+    "kennung": "rastermuster",
+    "name": "Rastermuster",
+    "unterschiede": "Tablet-Umsetzung für Touch: große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/rastermuster/)."
+   },
    "stand": "2026-09-29",
    "kurzbeschreibung": "In einem 4×4- oder 5×5-Raster leuchten 1,5 Sekunden lang mehrere Felder gleichzeitig auf. Danach tippt man alle Felder an, die geleuchtet haben (Reihenfolge egal); jedes richtige Muster ist ein Feld größer (beim Wechsel auf 5×5 wieder 5 Felder), ein falsches Feld beendet den Versuch ohne Abzug.",
    "ziel_funktionen": [
@@ -8560,7 +8604,11 @@
    "kapitel_original": "memory",
    "unterkapitel_original": "working-memory",
    "quelle_url": "https://skilldrills.online/de/drills/memory/working-memory/n-back",
-   "blickfit_umsetzung": null,
+   "blickfit_umsetzung": {
+    "kennung": "rueckblick",
+    "name": "Rückblick",
+    "unterschiede": "Tablet-Umsetzung für Touch: große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/rueckblick/)."
+   },
    "stand": "2026-09-29",
    "kurzbeschreibung": "In der Bildschirmmitte erscheint ein großer Buchstabe nach dem anderen. Bei jedem Buchstaben entscheidet man per Knopfdruck, ob er derselbe ist wie der Buchstabe vor N Schritten (Start: 3 Schritte zurück) – man muss also laufend die letzten Buchstaben im Kopf behalten und nachschieben.",
    "ziel_funktionen": [
@@ -8705,7 +8753,11 @@
    "kapitel_original": "memory",
    "unterkapitel_original": "spatial-memory",
    "quelle_url": "https://skilldrills.online/de/drills/memory/spatial-memory/object-location",
-   "blickfit_umsetzung": null,
+   "blickfit_umsetzung": {
+    "kennung": "wo-war-es",
+    "name": "Wo war es?",
+    "unterschiede": "Tablet-Umsetzung für Touch: große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/wo-war-es/)."
+   },
    "stand": "2026-09-29",
    "kurzbeschreibung": "In einem Raster erscheinen 1,5 Sekunden lang mehrere verschiedene Emoji-Symbole. Danach ist das Raster leer, oben wird eines der Symbole als Ziel gezeigt, und man tippt das Feld an, auf dem es lag; jeder Treffer bringt ein Symbol mehr, später ein größeres Raster.",
    "ziel_funktionen": [
@@ -8997,7 +9049,11 @@
    "kapitel_original": "memory",
    "unterkapitel_original": "spatial-memory",
    "quelle_url": "https://skilldrills.online/de/drills/memory/spatial-memory/path-tracing",
-   "blickfit_umsetzung": null,
+   "blickfit_umsetzung": {
+    "kennung": "leuchtpfad",
+    "name": "Leuchtpfad",
+    "unterschiede": "Tablet-Umsetzung für Touch: große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/leuchtpfad/)."
+   },
    "stand": "2026-09-29",
    "kurzbeschreibung": "In einem Raster leuchtet ein Feld nach dem anderen auf und bildet einen zusammenhängenden Weg. Danach tippt man die Felder in derselben Reihenfolge nach; jeder fehlerfreie Weg ist einen Schritt länger, das Raster wächst von 3×3 bis (theoretisch) 7×7.",
    "ziel_funktionen": [
@@ -9856,7 +9912,11 @@
    "kapitel_original": "motor",
    "unterkapitel_original": "hand-eye-coordination",
    "quelle_url": "https://skilldrills.online/de/drills/motor/hand-eye-coordination/drag-and-drop",
-   "blickfit_umsetzung": null,
+   "blickfit_umsetzung": {
+    "kennung": "ziehen-ablegen",
+    "name": "Ziehen & Ablegen",
+    "unterschiede": "Tablet-Umsetzung für Touch: große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/ziehen-ablegen/)."
+   },
    "stand": "2026-09-29",
    "kurzbeschreibung": "Ein grüner Ball und ein ringförmiger Behälter erscheinen an zufälligen Stellen; der Behälter wandert ständig umher. Man greift den Ball mit gedrückter Maustaste, zieht ihn zum Behälter und lässt ihn darin los – mit steigendem Level werden Behälter und Ball kleiner, der Behälter schneller und das Zeitfenster pro Runde kürzer.",
    "ziel_funktionen": [

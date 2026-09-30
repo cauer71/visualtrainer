@@ -8,7 +8,7 @@ kapitel: "Gedächtnis"
 kapitel_original: "memory"
 unterkapitel_original: "short-term-memory"
 quelle_url: "https://skilldrills.online/de/drills/memory/short-term-memory/color-sequence"
-blickfit_umsetzung: null
+blickfit_umsetzung: {kennung: "leuchtfolge", name: "Leuchtfolge", unterschiede: "Tablet-Umsetzung für Touch: große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/leuchtfolge/)."}
 stand: 2026-09-29
 
 # ===== Überblick =====

@@ -8,7 +8,7 @@ kapitel: "Gedächtnis"
 kapitel_original: "memory"
 unterkapitel_original: "spatial-memory"
 quelle_url: "https://skilldrills.online/de/drills/memory/spatial-memory/object-location"
-blickfit_umsetzung: null
+blickfit_umsetzung: {kennung: "wo-war-es", name: "Wo war es?", unterschiede: "Tablet-Umsetzung für Touch: große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/wo-war-es/)."}
 stand: 2026-09-29
 
 # ===== Überblick =====

@@ -8,7 +8,7 @@ kapitel: "Reaktionsgeschwindigkeit"
 kapitel_original: "reaction-speed"
 unterkapitel_original: ""
 quelle_url: "https://skilldrills.online/de/drills/reaction-speed/market-doors-pursuit"
-blickfit_umsetzung: null
+blickfit_umsetzung: {kennung: "fuenf-tueren", name: "Fünf Türen", unterschiede: "Tablet-Umsetzung für Touch: große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/fuenf-tueren/)."}
 stand: 2026-09-30
 
 # ===== Überblick =====

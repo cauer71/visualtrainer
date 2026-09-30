@@ -10,6 +10,8 @@ import {
   isLure,
   makeBlock,
   maxRun,
+  MAX_PLAIN_RUN,
+  MAX_TARGET_RUN,
   scoreBlock,
   SYMBOLS,
   targetCount,
@@ -41,13 +43,14 @@ describe('Rückblick: Reizfolgen', () => {
     }
   });
 
-  it('hat den vorgesehenen Treffer-Anteil und keine langen Antwortserien', () => {
+  it('hat den vorgesehenen Treffer-Anteil und keine langen Serien', () => {
     expect(targetCount(20)).toBe(6);
     for (let seed = 1; seed <= 40; seed++) {
       const b = makeBlock(createRng(seed), 2, 20);
       const flags = b.target.slice(2);
       expect(flags.filter(Boolean).length).toBe(6);
-      expect(maxRun(flags)).toBeLessThanOrEqual(3);
+      expect(maxRun(flags, true)).toBeLessThanOrEqual(MAX_TARGET_RUN);
+      expect(maxRun(flags, false)).toBeLessThanOrEqual(MAX_PLAIN_RUN);
     }
   });
 

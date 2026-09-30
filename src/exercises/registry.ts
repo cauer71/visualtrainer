@@ -23,6 +23,21 @@ import { scharfInBewegung } from './scharf-in-bewegung';
 import { stoppLos } from './stopp-los';
 import { suchbild } from './suchbild';
 import { zielfang } from './zielfang';
+import { leuchtfolge } from './leuchtfolge';
+import { zahlenspanne } from './zahlenspanne';
+import { rastermuster } from './rastermuster';
+import { rueckblick } from './rueckblick';
+import { woWarEs } from './wo-war-es';
+import { leuchtpfad } from './leuchtpfad';
+import { liegendeAcht } from './liegende-acht';
+import { wellenbahn } from './wellenbahn';
+import { zweiZiele } from './zwei-ziele';
+import { sekundenGefuehl } from './sekunden-gefuehl';
+import { blicksprungGalerie } from './blicksprung-galerie';
+import { fuenfTueren } from './fuenf-tueren';
+import { fallendeZiele } from './fallende-ziele';
+import { hellsteKugel } from './hellste-kugel';
+import { ziehenAblegen } from './ziehen-ablegen';
 
 /** Reihenfolge = Anzeige-Reihenfolge innerhalb der Bereiche */
 export const EXERCISES: ExerciseDefinition[] = [
@@ -42,6 +57,21 @@ export const EXERCISES: ExerciseDefinition[] = [
   zeichenCode,
   zahlenjagd,
   reihenRaetsel,
+  leuchtfolge,
+  zahlenspanne,
+  rastermuster,
+  rueckblick,
+  woWarEs,
+  leuchtpfad,
+  liegendeAcht,
+  wellenbahn,
+  zweiZiele,
+  sekundenGefuehl,
+  blicksprungGalerie,
+  fuenfTueren,
+  fallendeZiele,
+  hellsteKugel,
+  ziehenAblegen,
 ];
 
 export interface CategoryMeta {

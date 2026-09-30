@@ -8,7 +8,7 @@ kapitel: "Reaktionsgeschwindigkeit"
 kapitel_original: "reaction-speed"
 unterkapitel_original: ""
 quelle_url: "https://skilldrills.online/de/drills/reaction-speed/reaction-game"
-blickfit_umsetzung: null
+blickfit_umsetzung: {kennung: "fallende-ziele", name: "Fallende Ziele", unterschiede: "Tablet-Umsetzung für Touch: große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/fallende-ziele/)."}
 stand: 2026-09-30
 
 # ===== Überblick =====

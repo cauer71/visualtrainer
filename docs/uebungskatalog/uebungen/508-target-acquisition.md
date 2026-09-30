@@ -8,7 +8,7 @@ kapitel: "Zielen (FPS)"
 kapitel_original: "fps"
 unterkapitel_original: ""
 quelle_url: "https://skilldrills.online/de/drills/fps/target-acquisition"
-blickfit_umsetzung: null
+blickfit_umsetzung: {kennung: "hellste-kugel", name: "Hellste Kugel", unterschiede: "Tablet-Umsetzung für Touch: große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/hellste-kugel/)."}
 stand: 2026-09-30
 
 # ===== Überblick =====

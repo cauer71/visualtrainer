@@ -8,7 +8,7 @@ kapitel: "Reaktionsgeschwindigkeit"
 kapitel_original: "reaction-speed"
 unterkapitel_original: ""
 quelle_url: "https://skilldrills.online/de/drills/reaction-speed/reaction-time-test"
-blickfit_umsetzung: null
+blickfit_umsetzung: {kennung: "sekunden-gefuehl", name: "Sekundengefühl", unterschiede: "Tablet-Umsetzung für Touch: große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/sekunden-gefuehl/)."}
 stand: 2026-09-30
 
 # ===== Überblick =====

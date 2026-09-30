@@ -7,6 +7,21 @@
  * (siehe docs/wissenschaft/01-reaktion-und-impulskontrolle.md, Abschnitt 4).
  */
 import type { Lang } from '../i18n/lang';
+import { science as leuchtfolgeScience } from '../exercises/leuchtfolge/science';
+import { science as zahlenspanneScience } from '../exercises/zahlenspanne/science';
+import { science as rastermusterScience } from '../exercises/rastermuster/science';
+import { science as rueckblickScience } from '../exercises/rueckblick/science';
+import { science as woWarEsScience } from '../exercises/wo-war-es/science';
+import { science as leuchtpfadScience } from '../exercises/leuchtpfad/science';
+import { science as liegendeAchtScience } from '../exercises/liegende-acht/science';
+import { science as wellenbahnScience } from '../exercises/wellenbahn/science';
+import { science as zweiZieleScience } from '../exercises/zwei-ziele/science';
+import { science as sekundenGefuehlScience } from '../exercises/sekunden-gefuehl/science';
+import { science as blicksprungGalerieScience } from '../exercises/blicksprung-galerie/science';
+import { science as fuenfTuerenScience } from '../exercises/fuenf-tueren/science';
+import { science as fallendeZieleScience } from '../exercises/fallende-ziele/science';
+import { science as hellsteKugelScience } from '../exercises/hellste-kugel/science';
+import { science as ziehenAblegenScience } from '../exercises/ziehen-ablegen/science';
 
 export type EvidenceLevel = 'strong' | 'medium' | 'weak';
 
@@ -508,6 +523,9 @@ export const SCIENCE: Record<string, ScienceEntry> = {
       src('Stojanoski et al. (2018). Targeted training: Converging evidence against the transferable benefits of online brain training on cognitive function. Neuropsychologia', 'https://doi.org/10.1016/j.neuropsychologia.2018.07.013'),
     ],
   },
+  ...Object.fromEntries(
+    [leuchtfolgeScience, zahlenspanneScience, rastermusterScience, rueckblickScience, woWarEsScience, leuchtpfadScience, liegendeAchtScience, wellenbahnScience, zweiZieleScience, sekundenGefuehlScience, blicksprungGalerieScience, fuenfTuerenScience, fallendeZieleScience, hellsteKugelScience, ziehenAblegenScience].map((e) => [e.id, e]),
+  ),
 };
 
 /** Allgemeine Quellen zu Aufbau und Grenzen der Übungen */

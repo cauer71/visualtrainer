@@ -3,7 +3,7 @@
  *
  * - Ein Block besteht aus `n` Einpräg-Reizen (keine Antwort gefragt) und `scored` Reizen mit Antwort.
  * - Treffer („Gleich“): Reiz i ist gleich Reiz i − n. Genau `round(scored · targetRate)` Treffer je Block,
- *   nie mehr als 3 gleiche Antworten hintereinander.
+ *   nie mehr als 2 Treffer und nie mehr als 4 Nicht-Treffer hintereinander.
  * - Nicht-Treffer sind nie gleich Reiz i − n; ab 2-Back sind manche „Köder“ (gleich wie vor n − 1 oder
  *   n + 1 Schritten), damit Raten und „gleich wie eben“ nicht reichen.
  * - Wertung mit Trefferquote, Fehlalarmen und d′ (Signalentdeckung), Stufenwechsel nach Blockgenauigkeit.
@@ -18,7 +18,9 @@ export const MAX_N = 4;
 export const BLOCK_TRIALS = 20;
 export const TARGET_RATE = 0.3;
 export const LURE_RATE = 0.25;
-export const MAX_RUN = 3;
+/** Höchstens so viele „Gleich“ bzw. „Anders“ in Folge */
+export const MAX_TARGET_RUN = 2;
+export const MAX_PLAIN_RUN = 4;
 
 export type Answer = 'same' | 'diff' | null;
 
@@ -38,14 +40,12 @@ export interface BlockOptions {
   lureRate?: number;
 }
 
-/** Längste Serie gleicher Werte */
-export function maxRun(flags: readonly boolean[]): number {
+/** Längste Serie des Werts `value` */
+export function maxRun(flags: readonly boolean[], value = true): number {
   let best = 0;
   let run = 0;
-  let prev: boolean | null = null;
   for (const f of flags) {
-    run = f === prev ? run + 1 : 1;
-    prev = f;
+    run = f === value ? run + 1 : 0;
     if (run > best) best = run;
   }
   return best;
@@ -62,9 +62,9 @@ export function makeBlock(rng: Rng, n: number, scored = BLOCK_TRIALS, opts: Bloc
 
   // Verteilung der Treffer: gemischt, aber keine langen Serien
   let pattern: boolean[] = [];
-  for (let attempt = 0; attempt < 80; attempt++) {
+  for (let attempt = 0; attempt < 400; attempt++) {
     pattern = rng.shuffle(Array.from({ length: scored }, (_, i) => i < nTargets));
-    if (maxRun(pattern) <= MAX_RUN) break;
+    if (maxRun(pattern, true) <= MAX_TARGET_RUN && maxRun(pattern, false) <= MAX_PLAIN_RUN) break;
   }
 
   const total = n + scored;
@@ -109,7 +109,7 @@ export function expectedAnswer(block: Block, i: number): 'same' | 'diff' | null 
 
 /** Köder: Reiz entspricht n − 1 oder n + 1 Schritte zurück (aber nicht n) */
 export function isLure(block: Block, i: number): boolean {
-  if (i < block.n || block.target[i]) return false;
+  if (block.n < 2 || i < block.n || block.target[i]) return false;
   const s = block.stimuli[i];
   return block.stimuli[i - block.n + 1] === s || (i - block.n - 1 >= 0 && block.stimuli[i - block.n - 1] === s);
 }

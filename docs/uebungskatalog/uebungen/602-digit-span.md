@@ -8,7 +8,7 @@ kapitel: "Gedächtnis"
 kapitel_original: "memory"
 unterkapitel_original: "short-term-memory"
 quelle_url: "https://skilldrills.online/de/drills/memory/short-term-memory/digit-span"
-blickfit_umsetzung: null
+blickfit_umsetzung: {kennung: "zahlenspanne", name: "Zahlenspanne", unterschiede: "Tablet-Umsetzung für Touch: große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/zahlenspanne/)."}
 stand: 2026-09-29
 
 # ===== Überblick =====

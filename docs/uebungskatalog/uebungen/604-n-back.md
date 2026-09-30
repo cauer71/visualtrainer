@@ -8,7 +8,7 @@ kapitel: "Gedächtnis"
 kapitel_original: "memory"
 unterkapitel_original: "working-memory"
 quelle_url: "https://skilldrills.online/de/drills/memory/working-memory/n-back"
-blickfit_umsetzung: null
+blickfit_umsetzung: {kennung: "rueckblick", name: "Rückblick", unterschiede: "Tablet-Umsetzung für Touch: große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/rueckblick/)."}
 stand: 2026-09-29
 
 # ===== Überblick =====

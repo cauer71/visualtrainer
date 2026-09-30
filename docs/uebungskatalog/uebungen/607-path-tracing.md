@@ -8,7 +8,7 @@ kapitel: "Gedächtnis"
 kapitel_original: "memory"
 unterkapitel_original: "spatial-memory"
 quelle_url: "https://skilldrills.online/de/drills/memory/spatial-memory/path-tracing"
-blickfit_umsetzung: null
+blickfit_umsetzung: {kennung: "leuchtpfad", name: "Leuchtpfad", unterschiede: "Tablet-Umsetzung für Touch: große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/leuchtpfad/)."}
 stand: 2026-09-29
 
 # ===== Überblick =====
