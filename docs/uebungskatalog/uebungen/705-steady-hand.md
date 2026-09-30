@@ -81,7 +81,7 @@ evidenz:
   naher_transfer: schwach
   alltag_transfer: fehlend
   kommentar: "Steuerleistung in Korridoren folgt gut dem Steuerungsgesetz und verbessert sich wie andere motorische Fertigkeiten durch Üben; eine Studie zu genau dieser Aufgabe fehlt. Motorisches Lernen ist aufgabenspezifisch, eine Minderung von Tremor oder ein Nutzen für Chirurgie, Grafik oder E-Sport ist nicht belegt."
-aehnliche_uebungen: [707, 706, 808, 509, 514, 405, 702]
+aehnliche_uebungen: [707, 810, 706, 808, 509, 514, 405]
 stichworte: ["Heißer Draht", "Steady Hand", "buzz wire", "Steuerungsgesetz", "steering law", "Accot-Zhai", "physiologischer Tremor", "Feinmotorik", "Pfadführung", "Pointer Lock"]
 ---
 
@@ -154,6 +154,7 @@ Das Führen entlang einer Linie ist ein geschlossener Regelkreis: Das Sehsystem 
 - **Weniger passend, wenn …** nur ein Tablet mit Finger vorhanden ist; wenig Frustrationstoleranz besteht (ein Fehler = zurück zum Start); eine feste, kurze Dauer gebraucht wird; das Ziel Blickmotorik ohne Hand ist.
 - **Vorsicht / anpassen bei …** `tremor_parkinson` (Toleranz in der Größenordnung des normalen Zitterns – nicht als Tremortest verwenden, nichts daraus ableiten); `hand_arm_beschwerden` (Haltearbeit, offene Dauer, Verkrampfen); `presbyopie_gleitsicht` (sub-mm-Details über die ganze Bildbreite); `sehbehinderung_niedriger_visus` (Punkt-auf-Linie-Entscheidung im Bereich weniger Bogenminuten); `trockenes_auge_bildschirm`, `kopfschmerz_asthenopie` (Starren, lange Runden); `photosensitive_epilepsie`, `migraene_lichtempfindlich` (roter Blitz und Bildwackeln bei jedem Fehler, Fehler können schnell hintereinander kommen – Blitz abschalten).
 - **Kombiniert gut mit …** 707 (Pfad mit vorgegebenem Tempo), 706 (Ziehen), 808 (Zeiger ruhig halten), 509/514 (Feinkorrektur, glattes Tracking), 405 (Zickzack nur mit dem Blick), 702/704 als schnelle Gegenstücke.
+- **Überschneidungen / Unterschiede:** 705 und 707 fordern dieselbe Grundfunktion (`kontinuierliche_steuerung` = 3), sind aber keine Dubletten: 705 ist **selbst getaktet** mit sehr schmaler Toleranz (±2,5 px) und Rücksprung zum Start – begrenzend sind ruhige Hand und Genauigkeit (`ruhige_hand` = 3, höchster Wert der Gruppe); 707 ist **fremd getaktet** (laufende Welle) mit breitem Band (±22 px) – begrenzend sind Auge-Hand-Kopplung und Vorausschauen. 808 (Zeiger gegen Drift im Ring halten) ist die Halte-Variante ohne Weg. **Nahe Dublette außerhalb der Gruppe: 810** – Zeiger ohne Klick durch eine gerade, schmale Bahn (Toleranz ±10 → ±4 px) von Rand zu Rand führen; Unterschied: gerade Strecke statt Zickzack, etwas breitere Toleranz, bei Fehler neues Punktepaar statt Rücksprung auf derselben Linie.
 
 Keine Diagnose, kein Heil-, Seh- oder Leistungsversprechen; Ergebnisse sind keine Messung von Tremor oder Krankheitszeichen.
 

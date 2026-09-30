@@ -17,7 +17,7 @@ ziel_funktionen: [kurzzeitgedaechtnis_visuell_raeumlich, kurzzeitgedaechtnis_ver
 eingabe: [touch, maus]
 tablet_geeignet: ja
 dauer_sekunden: 45
-schwierigkeit_anpassung: "1-auf-1-ab-Treppe (Code): Folgenlänge = Stufe + 2 (Start 3 Farben). Richtig → Stufe +1, Fehler oder 8 s ohne Tipp → Stufe −1 (Minimum 1). Mit der Stufe werden Anzeige (750 − 35 × Stufe ms, min. 250 ms) und Pause (300 − 15 × Stufe ms, min. 150 ms) kürzer. Jede Runde ist eine neue Zufallsfolge aus 6 Farben."
+schwierigkeit_anpassung: "1-up/1-down-Treppe (Code): Folgenlänge = Stufe + 2 (Start 3 Farben). Richtig → Stufe +1, Fehler oder 8 s ohne Tipp → Stufe −1 (Minimum 1). Mit der Stufe werden Anzeige (750 − 35 × Stufe ms, min. 250 ms) und Pause (300 − 15 × Stufe ms, min. 150 ms) kürzer. Jede Runde ist eine neue Zufallsfolge aus 6 Farben."
 messgroessen: ["Original: Punkte (100 × (1 + 0,1 × Stufe) je fehlerfreie Folge), erreichte Stufe, Anteil fehlerfreier Runden, Note F–S+", "sinnvoll: längste fehlerfrei wiedergegebene Folge (Spanne) über mehrere Durchgänge je Länge", "sinnvoll: Fehlerposition in der Folge (Anfang/Mitte/Ende) und Fehlerart (Farbverwechslung vs. Reihenfolge)"]
 
 # ===== Anforderungsprofil 0–3 (alle Schlüssel angeben) =====
@@ -39,16 +39,16 @@ anforderungsprofil:
     naharbeit_dauer: 1
   kognitiv:
     daueraufmerksamkeit: 1
-    selektive_aufmerksamkeit: 1
-    inhibition: 1
+    selektive_aufmerksamkeit: 0
+    inhibition: 0
     geteilte_aufmerksamkeit: 0
     kognitive_flexibilitaet: 0
     arbeitsgedaechtnis: 1
-    kurzzeitgedaechtnis_verbal: 2
+    kurzzeitgedaechtnis_verbal: 3
     kurzzeitgedaechtnis_visuell_raeumlich: 3
     verarbeitungsgeschwindigkeit: 1
     antizipation: 0
-    entscheidung_wahlreaktion: 1
+    entscheidung_wahlreaktion: 0
     lesen_sprache: 0
     schlussfolgern: 0
   motorisch:
@@ -73,7 +73,7 @@ belastung:
 
 # ===== Auswahlhilfe =====
 voraussetzungen: ["sicheres Unterscheiden von sechs Farben (Rot, Orange, Gelb, Grün, Blau, Lila) – die Farbe ist beim Einprägen die einzige Information", "Folgen von mindestens 3 Elementen kurz behalten können (kürzeste Folge = 3)", "Tippen oder Klicken auf große Felder (Tablet ≈ 26 mm, Smartphone ≈ 17 mm)"]
-vorsicht_bei: [farbsehschwaeche, kognitive_einschraenkung, kinder_unter_6, aufmerksamkeitsprobleme, migraene_lichtempfindlich]
+vorsicht_bei: [farbsehschwaeche, kognitive_einschraenkung, kinder_unter_6, aufmerksamkeitsprobleme, migraene_lichtempfindlich, photosensitive_epilepsie, tremor_parkinson]
 geeignet_fuer: ["kurzes Behalten und geordnetes Wiedergeben von Reihenfolgen üben (serielles Erinnern)", "Merkstrategien ausprobieren: Farben innerlich benennen, in Zweier-/Dreiergruppen bündeln", "Gedächtnisübung ohne Lesen, ohne Zahlen und ohne feine Details", "Tablet mit Touch, auch bei Alterssichtigkeit ohne Nahkorrektur (große Reize)"]
 weniger_geeignet_fuer: ["Menschen mit Farbsehschwäche (Blau/Lila bei Deuteranopie praktisch gleich, Rot/Orange erschwert)", "Personen, für die schon 3 Elemente zu viel sind (keine leichtere Stufe)", "Ziele im Bereich Blickmotorik, Reaktion oder Handgenauigkeit", "Fortschrittsmessung über Wochen (45 s ergeben nur ≈ 5–8 Runden, sehr unzuverlässig)"]
 evidenz:
@@ -81,8 +81,8 @@ evidenz:
   naher_transfer: schwach
   alltag_transfer: fehlend
   kommentar: "Geübte Aufgaben werden verlässlich besser, auch durch Strategien (Owen et al., 2010; Gathercole et al., 2019). Übertragung zeigt sich fast nur auf Aufgaben mit gleicher Struktur; ferner Transfer und Alltagsnutzen sind mit aktiven Kontrollgruppen nicht belegt (Melby-Lervåg et al., 2016). Zu dieser konkreten Senso-Variante gibt es keine Studien."
-aehnliche_uebungen: [607, 602, 603, 811, 606, 605, 604]
-stichworte: ["Senso", "Simon", "Farbfolge", "serielles Erinnern", "Merkspanne", "Kurzzeitgedächtnis", "Chunking", "Farbsehschwäche", "Treppenverfahren"]
+aehnliche_uebungen: [607, 602, 603, 605, 606, 604, 811]
+stichworte: ["Senso", "Simon", "Farbfolge", "serielles Erinnern", "Merkspanne", "Kurzzeitgedächtnis", "Chunking", "Farbsehschwäche", "Treppenverfahren", "1-up/1-down"]
 ---
 
 # 601 · Farbfolge merken (Senso)
@@ -143,7 +143,7 @@ Quelle: Seitentext und ausgelieferter Spielcode (Chunk `23629-…js`, Tonmodul i
 
 ## 5. Neurowissenschaftliche Grundlagen
 
-- **Modell:** Im Mehrkomponentenmodell (Baddeley & Hitch, 1974; Baddeley, 2000) werden Farben visuell eingeprägt. Weil sie benennbar sind, übersetzen Erwachsene sie meist zusätzlich in Wörter („rot – blau – grün“), die phonologisch gespeichert und innerlich wiederholt werden. Bei Farbfolgen dürften also **beide Speicher** mitwirken; welcher überwiegt, hängt von der Strategie ab (Herleitung; für diese Aufgabe nicht direkt untersucht).
+- **Modell:** Im Mehrkomponentenmodell (Baddeley & Hitch, 1974; Baddeley, 2000) werden Farben visuell eingeprägt. Weil sie benennbar sind, übersetzen Erwachsene sie meist zusätzlich in Wörter („rot – blau – grün“), die phonologisch gespeichert und innerlich wiederholt werden. Bei Farbfolgen dürften also **beide Speicher** mitwirken; welcher überwiegt, hängt von der Strategie ab (Herleitung; für diese Aufgabe nicht direkt untersucht). Im Profil stehen deshalb `kurzzeitgedaechtnis_visuell_raeumlich` und `kurzzeitgedaechtnis_verbal` beide auf 3. Der visuelle Anteil ist hier reines Farbgedächtnis: Anders als bei 607 (Leuchtpfad) und 603 (Rastermuster) tragen die Orte beim Einprägen keine Information.
 - **Visueller Anteil:** Die Aktivität im hinteren Parietalkortex (Todd & Marois, 2004) und die EEG-Kennwerte des visuellen Arbeitsgedächtnisses (Vogel & Machizawa, 2004) steigen bis zur persönlichen Kapazitätsgrenze. Das gilt für gleichzeitig gezeigte Farbfelder. Bei *sequenzieller* Darbietung werden Merkmale schlechter gebunden, vor allem die frühen Elemente (Allen et al., 2006).
 - **Verbaler Anteil:** Phonologischer Speicher (linker Gyrus supramarginalis) und inneres Wiederholen (Broca-Areal) lassen sich auch bei visuell gezeigtem Material nachweisen (Paulesu et al., 1993).
 - **Reihenfolge und Lernen:** Wiederholte oder regelhafte Folgen werden mit der Zeit gelernt (Hebb-Effekt, auch räumlich: Couture & Tremblay, 2006; regelhafte Farbknopf-Folgen: Karpicke & Pisoni, 2004). Im Original ist jede Folge neu und zufällig. Die Übung prüft deshalb eher die momentane Spanne als Sequenzlernen – im Unterschied zum klassischen Senso, dessen Kette wächst.
@@ -155,7 +155,7 @@ Motorisch ist die Übung anspruchslos: Man tippt 3–9 Felder nacheinander an, m
 
 ## 7. Einflussfaktoren und Messgrenzen
 
-- **Wenige Runden:** 45 s ergeben ≈ 5–8 Runden. Eine 1-auf-1-ab-Treppe schwankt um die Länge mit ≈ 50 % Erfolg (Levitt, 1971), braucht dafür aber viele Umkehrpunkte. Die „Stufe“ nach 45 s spiegelt daher vor allem Tippzeit und Zufall wider. Kurze Messungen des Arbeitsgedächtnisses sind wenig zuverlässig (vgl. Xu et al., 2018: sehr hohe Zuverlässigkeit, α > 0,9, mit 540 Durchgängen einer anderen Aufgabe, der Änderungserkennung; bei weniger Durchgängen entsprechend geringer).
+- **Wenige Runden:** 45 s ergeben ≈ 5–8 Runden. Eine 1-up/1-down-Treppe schwankt um die Länge mit ≈ 50 % Erfolg (Levitt, 1971), braucht dafür aber viele Umkehrpunkte. Die „Stufe“ nach 45 s spiegelt daher vor allem Tippzeit und Zufall wider. Kurze Messungen des Arbeitsgedächtnisses sind wenig zuverlässig (vgl. Xu et al., 2018: sehr hohe Zuverlässigkeit, α > 0,9, mit 540 Durchgängen einer anderen Aufgabe, der Änderungserkennung; bei weniger Durchgängen entsprechend geringer).
 - **Tempo verfälscht die Spanne:** Wer langsamer tippt, kommt bei gleicher Gedächtnisleistung auf weniger Stufen und Punkte. Eine Gedächtnismessung sollte nicht durch Zeit begrenzt werden.
 - **Farbsehen, Alter, Müdigkeit:** Farbsehschwäche (Abschnitt 4) senkt die Punktzahl, ohne dass das Gedächtnis schlechter ist. Das visuelle Arbeitsgedächtnis ist mit ≈ 20 Jahren am besten und nimmt dann stetig ab (Brockmole & Logie, 2013). Bei jüngeren Kindern sind die Speicher deutlich kleiner; sie wachsen ab 4 Jahren bis in die Jugend etwa linear (Gathercole et al., 2004). Ob 3 Farben für Vorschulkinder schon zu viel sind, ist für diese Aufgabe nicht untersucht.
 - **Sprache:** Benennen ist die naheliegende Strategie. Deutsche Farbnamen sind kurz (Rot, Blau, Grün, Gelb: 1 Silbe), italienische länger (rosso, verde, giallo, viola, arancione: 2–4 Silben). Nach dem Wortlängeneffekt ist mit italienischen Namen eine etwas kleinere Spanne zu *erwarten* (Herleitung, nicht untersucht). Die englischen Feldbeschriftungen sind nicht nötig, können aber verwirren.
@@ -164,7 +164,7 @@ Motorisch ist die Übung anspruchslos: Man tippt 3–9 Felder nacheinander an, m
 ## 8. Studienlage: Trainierbarkeit und Übertragung
 
 - **Übungseffekt: stark.** Geübte Gedächtnisaufgaben werden zuverlässig besser (Owen et al., 2010). Nach Gathercole et al. (2019) beruht das zu einem wesentlichen Teil auf neu erlernten Vorgehensweisen (Routinen) für die Aufgabe; dass es hier konkret Benennen und Gruppieren sind, ist eine Vermutung.
-- **Naher Transfer: schwach.** Übertragung zeigt sich vor allem auf Aufgaben mit gleicher Struktur, z. B. andere Folgen-Wiedergabe-Aufgaben. Für visuell-räumliches serielles Erinnern ist sie etwas größer als für verbales (Gathercole et al., 2019). Für Senso-Varianten selbst gibt es keine Trainingsstudien.
+- **Naher Transfer: schwach.** Übertragung zeigt sich vor allem auf Aufgaben mit gleicher Struktur, z. B. andere Folgen-Wiedergabe-Aufgaben. Für visuell-räumliches serielles Erinnern ist sie etwas größer als für verbales (Gathercole et al., 2019). Diese Übung zeigt aber keine Orte, und die Farben werden meist benannt; sie ähnelt deshalb eher dem verbalen seriellen Erinnern (Herleitung). Daher „schwach“ statt „mittel“ wie beim räumlichen Gegenstück 607. Für Senso-Varianten selbst gibt es keine Trainingsstudien.
 - **Alltagstransfer: fehlend.** Mit aktiven Kontrollgruppen gibt es keinen Nachweis für Verbesserungen bei Intelligenz, Lesen, Rechnen oder im Alltag (Melby-Lervåg et al., 2016; Owen et al., 2010). Aussagen wie „gegen Vergesslichkeit“ oder „für Telefonnummern“ sind unzulässig.
 - **Seriöse Formulierung:** „Du übst, dir kurze Farbfolgen zu merken. Mit etwas Übung wirst du in dieser Aufgabe besser; ob das im Alltag hilft, ist nicht belegt.“
 
@@ -176,8 +176,10 @@ Motorisch ist die Übung anspruchslos: Man tippt 3–9 Felder nacheinander an, m
   - `farbsehschwaeche`: Blau/Lila ist bei ausgeprägter Grünschwäche praktisch nicht unterscheidbar, Rot/Orange erschwert; beim Einprägen gibt es kein anderes Merkmal. Eher 607 (Orte statt Farben) wählen.
   - `kognitive_einschraenkung`, `kinder_unter_6`: Die kürzeste Folge hat 3 Elemente, die Uhr läuft; das kann frustrieren.
   - `aufmerksamkeitsprobleme`: Ein kurzes Abschweifen während der Anzeige kostet die ganze Runde; Kinder mit ADHS zeigen im Mittel Nachteile im räumlichen Arbeitsgedächtnis (Martinussen et al., 2005). Kein Therapie- oder Testanspruch.
-  - `migraene_lichtempfindlich`: kräftige Farbwechsel (≈ 1/s) auf Schwarz und roter Fehlerschimmer; die Blitzgrenze wird nicht erreicht, deshalb ist `photosensitive_epilepsie` nicht gelistet.
+  - `migraene_lichtempfindlich`, `photosensitive_epilepsie`: kräftige Farbwechsel des Kreises (≈ 1–1,4/s) auf Schwarz und bei jedem Fehler ein roter Schimmer über der Spielfläche (0,45 s, Schalter „Miss Flash“, standardmäßig an). Die WCAG-Grenze von 3 Blitzen/s wird nicht erreicht. Beide Schlüssel stehen vorsorglich hier, so wie bei allen Übungen des Kapitels mit demselben Fehler-Schimmer (602–607). Den Schimmer vorher abschalten.
+  - `tremor_parkinson`: Die Felder sind groß (≈ 26 mm am Tablet), aber jede Berührung zählt schon beim Aufsetzen (`pointerdown`). Eine versehentliche Berührung bricht die ganze Folge ab, wie bei 603, 605 und 607. Das Risiko ist hier wegen der großen Felder geringer.
 - **Kombiniert gut mit …** 607 (Corsi-Pfad, räumliche Folge), 602 (Zahlenspanne, verbale Folge), 603 (statische Muster), 811 (Muster merken).
+- **Abgrenzung in der Gruppe (keine Dublette):** Am nächsten verwandt ist 607. Beide zeigen eine Folge, die man in derselben Reihenfolge nachtippt. Bei 607 ist die Information aber der **Ort** (farbfrei, auch bei Farbsehschwäche), bei 601 allein die **Farbe** an einem festen Punkt. 602 hat denselben Ablauf mit Ziffern, die als ganze Zeile gleichzeitig erscheinen. Das klassische Senso mit aufleuchtenden, fest angeordneten Feldern wäre eine Mischung aus 601 und 607.
 
 ## 10. Schwächen des Originals und Empfehlungen für eine Blickfit-Umsetzung
 
@@ -210,7 +212,7 @@ Motorisch ist die Übung anspruchslos: Man tippt 3–9 Felder nacheinander an, m
 - Gathercole, S. E., Dunning, D. L., Holmes, J., & Norris, D. (2019). Working memory training involves learning new skills. *Journal of Memory and Language*, 105, 19–42. https://doi.org/10.1016/j.jml.2018.10.003 – Transfer nur bei gleicher Aufgabenstruktur
 - Gathercole, S. E., Pickering, S. J., Ambridge, B., & Wearing, H. (2004). The structure of working memory from 4 to 15 years of age. *Developmental Psychology*, 40(2), 177–190. https://doi.org/10.1037/0012-1649.40.2.177 – Entwicklung bei Kindern
 - Karpicke, J. D., & Pisoni, D. B. (2004). Using immediate memory span to measure implicit learning. *Memory & Cognition*, 32(6), 956–964. https://doi.org/10.3758/BF03196873 – Spanne für regelhafte Knopffolgen steigt durch implizites Lernen
-- Levitt, H. (1971). Transformed up-down methods in psychoacoustics. *The Journal of the Acoustical Society of America*, 49(2B), 467–477. https://doi.org/10.1121/1.1912375 – 1-auf-1-ab-Treppe konvergiert auf 50 %
+- Levitt, H. (1971). Transformed up-down methods in psychoacoustics. *The Journal of the Acoustical Society of America*, 49(2B), 467–477. https://doi.org/10.1121/1.1912375 – 1-up/1-down-Treppe konvergiert auf 50 %
 - Machado, G. M., Oliveira, M. M., & Fernandes, L. A. F. (2009). A physiologically-based model for simulation of color vision deficiency. *IEEE Transactions on Visualization and Computer Graphics*, 15(6), 1291–1298. https://doi.org/10.1109/TVCG.2009.113 – Simulationsmodell für die Palettenprüfung
 - Martinussen, R., Hayden, J., Hogg-Johnson, S., & Tannock, R. (2005). A meta-analysis of working memory impairments in children with attention-deficit/hyperactivity disorder. *Journal of the American Academy of Child & Adolescent Psychiatry*, 44(4), 377–384. https://doi.org/10.1097/01.chi.0000153228.72591.73 – Vorsichtshinweis ADHS
 - Melby-Lervåg, M., Redick, T. S., & Hulme, C. (2016). Working memory training does not improve performance on measures of intelligence or other measures of "far transfer". *Perspectives on Psychological Science*, 11(4), 512–534. https://doi.org/10.1177/1745691616635612 – kein ferner Transfer

@@ -66,14 +66,14 @@ anforderungsprofil:
 belastung:
   zeitdruck: 2
   flimmern_lichtreize: 1
-  bewegungsreize_schwindel: 0
+  bewegungsreize_schwindel: 1
   koerperliche_belastung: 1
   sturzrisiko: 0
   sprachabhaengigkeit: 0
 
 # ===== Auswahlhilfe =====
 voraussetzungen: ["Beschwerdefreie Finger, Hand und Unterarm (45 s Tippen mit Höchsttempo)", "Maus mit fester Unterlage oder Tablet stabil aufgestellt (nicht in der Hand halten)", "Keine Farb- oder Detailwahrnehmung nötig; Kugel ist groß (Ø ≈ 2,6° zu Beginn)"]
-vorsicht_bei: [hand_arm_beschwerden, tremor_parkinson, photosensitive_epilepsie, gelenk_ruecken]
+vorsicht_bei: [hand_arm_beschwerden, tremor_parkinson, photosensitive_epilepsie, migraene_lichtempfindlich, gelenk_ruecken]
 geeignet_fuer: ["einfaches, sprachfreies Motorik-Spiel zum Einstieg: Tipp- oder Klicktempo spielerisch erleben", "eigenen Fortschritt im Tipptempo am selben Gerät verfolgen (Übungseffekt ist belegt)", "kurzer Einstieg vor anderen Maus-/Touch-Übungen (702, 704, 708) – dann besser in kurzen Blöcken statt 45 s Höchsttempo, weil schnelles Tippen rasch ermüdet", "Kinder ab Schulalter und Jugendliche mit Spaß an schnellen Wettbewerben"]
 weniger_geeignet_fuer: ["Menschen mit Sehnenscheiden-, Karpaltunnel-, Daumen- oder Handgelenkbeschwerden", "Menschen mit Tremor oder Parkinson (Frust; Tippen ist dort ein klinisches Untersuchungsitem, Blickfit darf nichts daraus ableiten)", "Ziele im Bereich Sehen oder Blickmotorik (die Übung fordert die Augen praktisch nicht)", "Vergleich mit anderen Personen oder Geräten (Mehrfinger-/Zwei-Tasten-Techniken und Geräteunterschiede verfälschen)"]
 evidenz:
@@ -81,7 +81,7 @@ evidenz:
   naher_transfer: schwach
   alltag_transfer: fehlend
   kommentar: "Tipptempo verbessert sich bei Gesunden schon nach drei Durchgängen und steigt mit stündlichem Üben über 26 h weiter (Nutt et al., 2000; Wechseltippen) und ist zuverlässig messbar (r = 0,91; Hubel, Yund et al., 2013); dass Tipptraining andere Fertigkeiten oder den Alltag verbessert, ist nicht untersucht bzw. nicht belegt (Lernspezifität: Karni et al., 1995)."
-aehnliche_uebungen: [804, 708, 703, 702, 704, 705, 808]
+aehnliche_uebungen: [703, 708]
 stichworte: ["Finger-Tapping", "CPS", "Klicks pro Sekunde", "Klickgeschwindigkeit", "Tipptempo", "motorische Ermüdung", "Jitter-Clicking", "Butterfly-Clicking", "Fingerausdauer", "Touch-Tippen"]
 ---
 
@@ -101,12 +101,12 @@ Quelle: Seitentext und ausgelieferter Spielcode (Chunks `98840-…js`, `26081-�
 - **Kugel:** immer in der Mitte der Zeichenfläche (Standard 800 × 450 logische px, passt sich der Containerbreite an). Startradius 50 px (Ø 100 px), Höchstradius 140 px, schwacher Umrissring bei 140 px **[Code]**. Farbe grün (#10b981; heller #34d399 ab ≥ 10 Klicks/s oder ≥ 20 Punkten), **rot**, sobald der Radius < 28 % des Maximums (< 39 px) fällt – die Größe zeigt dieselbe Information, Farbe ist also nicht allein tragend **[Code]**.
 - **Treffer:** zählt, wenn der Zeiger ≤ Radius + 18 px vom Mittelpunkt entfernt ist (Trefferzone mindestens 18 px Radius, auch bei „leerer“ Kugel). Treffer: Radius +10 px, Zeitstempel über `performance.now()` **[Code]**. Daneben: Fehlerton und roter Blitz, aber **kein Abzug** **[Code]**.
 - **Punkte und Schwierigkeit:** 1 Punkt je 10 Treffer. Schrumpftempo startet bei 45 px/s; bei Punkteständen, die durch 30/20/10/5 teilbar sind, ×1,15/×1,12/×1,10/×1,08, gedeckelt bei 600 px/s **[Code]**. Gleichgewicht (Kugel bleibt gleich groß) bei Klickrate = Schrumpftempo ÷ 10 px, also anfangs **4,5 Klicks/s**, nach 200 Treffern ≈ 6,5/s [eigene Berechnung]. Nach eigener Simulation der Code-Regeln erreicht man bei konstant 3/6/10/14 Klicks/s ein Endtempo von ≈ 54/70/105/143 px/s; die auf der Seite beworbenen **600 px/s werden bei realistischen Raten nie erreicht** [eigene Simulation].
-- **„Straf-Reset“:** Erreicht der Radius 0, springt er auf 45 px zurück (nur bei aktiver globaler Zeitdruck-Einstellung „timeout“, Standard an; ist sie aus, schrumpft die Kugel gar nicht) **[Code]**, mit Fehlerton, rotem Blitz und Bildschütteln (12 px). Der englische Regeltext verspricht einen „time penalty“ – **im Code gibt es weder Zeit- noch Punktabzug** (Widerspruch Text ↔ Code). Die Punkte hängen damit **nur von der Zahl der Treffer** ab; das Schrumpfen ist reine Rückmeldung, außer dass die Trefferzone kleiner wird.
+- **„Straf-Reset“:** Erreicht der Radius 0, springt er auf 45 px zurück (nur bei aktiver globaler Zeitdruck-Einstellung „timeout“, Standard an; ist sie aus, schrumpft die Kugel gar nicht) **[Code]**, mit Fehlerton, rotem Blitz und Bildwackeln (12 px). Der englische Regeltext verspricht einen „time penalty“ – **im Code gibt es weder Zeit- noch Punktabzug** (Widerspruch Text ↔ Code). Die Punkte hängen damit **nur von der Zahl der Treffer** ab; das Schrumpfen ist reine Rückmeldung, außer dass die Trefferzone kleiner wird.
 - **Auswertung:** Mittel-CPS = Treffer ÷ 45 s; die angezeigte **„Spitzen-CPS“ ist im Code identisch mit dem Mittelwert** (keine echte Spitze, kein 5-s-Wert wie in der Tabelle der Seite). Laufende Anzeige: Treffer der letzten 2 s ÷ 2. Bestwerte nur lokal im Browser (localStorage) **[Code]**.
 - **Noten [Code]:** S+ bei ≥ 60 Punkten oder ≥ 11 CPS; S ≥ 40 P. oder ≥ 9; A ≥ 25 P. oder ≥ 7; B ≥ 15 P. oder ≥ 5; C ≥ 5 P. oder ≥ 3; sonst D. Da 25 Punkte = 250 Treffer = 5,6 CPS sind, entscheidet faktisch die Punktschwelle: „PRO TAPPER“ (A) schon ab ≈ 5,6 CPS, S ab ≈ 8,9, B ab ≈ 3,3 [eigene Berechnung]. Diese Noten passen nicht zur „Tier“-Tabelle der Seite (dort 6–8,9 CPS = „Top 50 % Durchschnitt“).
 - **Eingabe [Code]:** `pointerdown` auf der Zeichenfläche, **ohne Prüfung der Maustaste** – linke und rechte Taste zählen gleich (Kontextmenü wird unterdrückt), wechselseitiges Klicken mit zwei Tasten erhöht also die Rate. Am Desktop Zeigersperre (Pointer Lock), Fadenkreuz startet in der Mitte und bewegt sich mit der Maus (Empfindlichkeit 0,1–3). Auf Geräten mit Touch und ohne feinen Zeiger keine Sperre: der Tipport ist der Zielort. **Jeder Finger erzeugt ein eigenes `pointerdown`** – Mehrfinger-Trommeln zählt voll (FAQ wirbt ausdrücklich mit Multitouch).
 - **Zeitbasis:** Schrumpfen und Uhr rechnen mit der echten Bildzeit (Δt, begrenzt auf 0,1 s) → unabhängig von 60/144 Hz. Nur bei stark ruckelnden Geräten (> 100 ms pro Bild) läuft die Spieluhr langsamer als die echte Zeit.
-- **Effekte:** Partikel, Trefferringe, Bildschütteln 6 px je Punkt; roter Blitz = halbtransparenter radialer Rotverlauf (50 % Deckkraft) über dem Spielfeld, 0,45 s Ausblendung, bei **jedem** Fehlklick – bei schnellem Danebenklicken also mehrere Blitze pro Sekunde (abschaltbar über eine globale Einstellung) **[Code/CSS]**.
+- **Effekte:** Partikel, Trefferringe, Bildwackeln 6 px je Punkt; roter Blitz = halbtransparenter radialer Rotverlauf (50 % Deckkraft) über dem Spielfeld, 0,45 s Ausblendung, bei **jedem** Fehlklick – bei schnellem Danebenklicken also mehrere Blitze pro Sekunde (abschaltbar über eine globale Einstellung) **[Code/CSS]**.
 
 ## 3. Was die Website sagt – und wie das einzuordnen ist
 
@@ -163,9 +163,10 @@ Fingertippen aktiviert zuverlässig den primären sensomotorischen Kortex (gegen
 - **Vorsicht / anpassen bei …**
   - `hand_arm_beschwerden`: 45 s Höchsttempo belasten Sehnen und Handgelenk; bei Schmerz abbrechen, kurze Blöcke.
   - `tremor_parkinson`: Tippen ist dort ein Untersuchungsitem und oft verlangsamt → Frustgefahr; keine Bewertung.
-  - `photosensitive_epilepsie`: rote Fehlerblitze können > 3/s auftreten (im Original); Blitze abschalten.
+  - `photosensitive_epilepsie`, `migraene_lichtempfindlich`: rote Fehlerblitze können > 3/s auftreten (im Original), dazu Bildwackeln bei jedem Punkt (6 px) und beim Zurücksetzen (12 px); Blitze abschalten.
   - `gelenk_ruecken`: Fingergelenk-Arthrose/Rheuma – nur ohne Kraft und mit Pausen.
-- **Kombiniert gut mit …** 804 (Klick-Tempo mit Zielen), 708 (Zielwechsel in Reihenfolge), 702/704 (Zielen), 703 (Tastenreaktion), 705/808 (ruhige Hand als ruhiger Gegenpol).
+- **Kombiniert gut mit …** 703 (Tastenreaktion, ebenfalls Unterkapitel „movement-speed“), 708 (schnelle Klickfolge auf ruhende Ziele), 702/704/804 (Zielen unter Zeitdruck – dort begrenzt die Zielbewegung, nicht das Fingertempo), 705/808 (ruhige Hand als ruhiger Gegenpol).
+- **Abgrenzung:** Im Katalog ist 701 die einzige Übung, in der das reine Fingertempo (`fingergeschwindigkeit` = 3) begrenzt; in 708 und 804 wird zwar schnell geklickt, begrenzend sind dort aber Zielbewegung und Zeitlimit. Eine Dublette gibt es nicht.
 
 ## 10. Schwächen des Originals und Empfehlungen für eine Blickfit-Umsetzung
 
@@ -173,7 +174,7 @@ Fingertippen aktiviert zuverlässig den primären sensomotorischen Kortex (gegen
 - **Kürzer und dosiert:** z. B. 3 × 10 s je Hand mit 20–30 s Pause (angelehnt an Hubel, Reed et al., 2013) statt 45 s Dauerbelastung; Hinweis „bei Schmerz aufhören“; keine Jitter-/Butterfly-/Debounce-Tipps.
 - **Keine Ranglisten, keine „Elite“-Noten:** nur eigener Verlauf am selben Gerät; Gerät (Maus/Touch) mitspeichern.
 - **Tablet (Hauptgerät):** Tippen funktioniert auf Touch gut – große Trefferzone (Ø ≥ 20 mm, nicht schrumpfend unter ≈ 10 mm), Kugel so groß, dass sie seitlich unter dem Finger sichtbar bleibt; Tablet auf stabile Unterlage (Tippen bringt stehende Tablets ins Wackeln); Doppeltipp-Zoom unterdrücken. Der Finger verdeckt die Kugelmitte – die Rückmeldung sollte über den Rand/Ring und Ton kommen.
-- **Sicherheit/Barrierefreiheit:** keine roten Vollflächenblitze, kein Bildschütteln; Fehler leise anzeigen; Farbe nie allein tragend; Beschreibung ohne Gesundheitsversprechen („trainiert Sehnen“ streichen).
+- **Sicherheit/Barrierefreiheit:** keine roten Vollflächenblitze, kein Bildwackeln; Fehler leise anzeigen; Farbe nie allein tragend; Beschreibung ohne Gesundheitsversprechen („trainiert Sehnen“ streichen).
 - **Keine Diagnostik:** keine Aussagen zu Parkinson, Tremor oder „neuromuskulärer Feuerrate“.
 
 ## 11. Quellen

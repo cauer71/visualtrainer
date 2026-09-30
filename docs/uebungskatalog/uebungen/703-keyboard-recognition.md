@@ -81,7 +81,7 @@ evidenz:
   naher_transfer: schwach
   alltag_transfer: fehlend
   kommentar: "Übung verkleinert den Einfluss der Alternativenzahl auf die Wahlreaktionszeit bei gleichbleibender Zuordnung (Proctor & Schneider, 2018; Logan et al., 2016), das Gelernte bleibt aber an Zuordnung und Aufgabe gebunden (Karni et al., 1995); Hemmungstraining zeigt keinen echten Transfer (Enge et al., 2014); Nutzen für Spielleistung oder Alltag ist nicht untersucht."
-aehnliche_uebungen: [202, 102, 805, 301, 708, 701, 207, 602, 601]
+aehnliche_uebungen: [202, 102, 802, 101, 701, 207, 602, 601]
 stichworte: ["Wahlreaktion", "Hick'sches Gesetz", "Tastatur", "Keybinds", "Hotkeys", "Blindschreiben", "Go/No-go", "Reiz-Reaktions-Zuordnung", "Sequenz", "Tastenbelegung", "Impulskontrolle"]
 ---
 
@@ -171,7 +171,8 @@ Die Seite nennt die Übung ein „hochpräzises neuro-motorisches Trainingsinstr
   - `presbyopie_gleitsicht`: wer noch nicht blind tippt, blickt ständig zwischen Monitor und Tastatur hin und her; mit Gleitsichtglas heißt das jedes Mal Kopf-/Blickwechsel zwischen Zwischen- und Nahzone. Das verlangsamt und benachteiligt – eher mit wenigen, vertrauten Tasten beginnen; eine Arbeitsplatzbrille ist angenehmer. Keine Aussage über Sehen oder Sehkorrektur.
   - `kinder_unter_6`: setzt Zeichenkenntnis und Tastaturerfahrung voraus.
   - Farbsehschwäche ist **kein** Ausschluss (Fallen mehrfach kodiert, Orange hebt sich von Weiß ab).
-- **Kombiniert gut mit …** 202 (Wahlreaktion am Bildschirm), 102 und 805 (Go/No-go, Impulskontrolle), 301 (einfache Reaktion als Vergleich: Wahlkosten = Differenz), 701 (Klicktempo) und 708 (Zielfolge mit der Maus) als motorische Ergänzung, 602 und 601 (Merkspanne statt Merkfolge unter Zeitdruck), 207 (Symbol-Zuordnung).
+- **Kombiniert gut mit …** 202 (Wahlreaktion am Bildschirm), 102 (Go/No-go, Impulskontrolle) und 802 (Abfangen mit der Maus mit Go/No-go-Regel), 101 (einfache Reaktion als Vergleich: Wahlkosten ≈ Differenz der Reaktionszeiten; 301 ist trotz seines Namens eine Zeitschätzaufgabe und dafür ungeeignet), 701 (Klicktempo) und 708 (Zielfolge mit der Maus) als motorische Ergänzung, 602 und 601 (Merkspanne statt Merkfolge unter Zeitdruck), 207 (Symbol-Zuordnung).
+- **Abgrenzung:** 703 ist im Katalog die einzige Übung mit echter Tastenzuordnung (`fingersequenz_bimanual` = 3). 708 heißt im Original „Finger Sequencing“, ist aber eine Maus-Zielübung ohne Fingerfolgen – keine Dublette.
 
 ## 10. Schwächen des Originals und Empfehlungen für eine Blickfit-Umsetzung
 

@@ -23,7 +23,7 @@ messgroessen: ["Punkte", "vollständige Ketten", "Präzision (richtige Klicks/Ak
 # ===== Anforderungsprofil 0–3 (alle Schlüssel angeben) =====
 anforderungsprofil:
   visuell:
-    sehschaerfe_detail: 0
+    sehschaerfe_detail: 1
     kontrast: 1
     farbunterscheidung: 1
     stereosehen: 0
@@ -81,7 +81,7 @@ evidenz:
   naher_transfer: schwach
   alltag_transfer: fehlend
   kommentar: "Serielle Zielbewegungen werden durch Übung in der geübten Aufgabe schneller (allgemeine Übungskurven, Fitts-Aufgaben); da jede Kette zufällig neu ist, entsteht kein Sequenzlernen im Sinne von Chunking. Übertragung auf andere Aufgaben ist gering, ein Nutzen für Spiele (osu!, CS2, Valorant) oder den Alltag ist nicht untersucht."
-aehnliche_uebungen: [702, 704, 502, 501, 508, 204, 303, 302, 701, 607]
+aehnliche_uebungen: [702, 704, 502, 501, 508, 204, 303, 302, 701]
 stichworte: ["Sequence Aim", "Zielkette", "serielles Zielen", "Fitts'sches Gesetz", "one-target advantage", "Blickvorlauf", "Auge-Hand-Koordination", "Trail Making", "Mauspräzision", "Pointer Lock", "Combo"]
 ---
 
@@ -109,7 +109,7 @@ Quelle: Seitentext und ausgelieferter Spielcode (seitenspezifischer Chunk 31824,
 
 - **Fallen (Code):** ab Level 6 mit steigender Wahrscheinlichkeit ein rotes Kreisziel mit „!“ in 110 px + Streuung Abstand vom ersten Ziel, so groß wie das erste Ziel. Die Fallen-Prüfung kommt vor der Zielprüfung.
 - **Punkte und Level (Code):** Punkte **nur für vollständige Ketten**: 150 × Combo-Faktor × (1 + 0,5·(Level − 1)/14). Combo = Zahl der Ketten in Folge; Faktor 1,1 (ab 3) … 1,5 (ab 10) … 3,0 (ab 50). Level = Punkte/1.750 + 1, sinkt nie. Ohne Fehler braucht man ≈ 10 Ketten für Level 2, 32 für Level 6, 53 für Level 12 [eigene Simulation].
-- **Zeit und Strafen (Code):** Start 45 s, jedes richtige Ziel **+2 s** (höchstens 60 s Restzeit). Fehlklick, Fallen-Treffer und abgelaufene Kette: Combo auf 0, **−1 s** (die Abfrage erzwingt die Strafe immer), Bildschirmwackeln (12 px), roter Vollbild-Blitz 480 ms (Standard: an), neue Kette. Der Kettentimer läuft über die ganze Kette, nicht je Ziel, und lässt sich in den Einstellungen abschalten.
+- **Zeit und Strafen (Code):** Start 45 s, jedes richtige Ziel **+2 s** (höchstens 60 s Restzeit). Fehlklick, Fallen-Treffer und abgelaufene Kette: Combo auf 0, **−1 s** (die Abfrage erzwingt die Strafe immer), Bildwackeln (12 px), roter Vollbild-Blitz 480 ms (Standard: an), neue Kette. Der Kettentimer läuft über die ganze Kette, nicht je Ziel, und lässt sich in den Einstellungen abschalten.
 - **Folge der Zeitregel [eigene Ableitung, nicht gemessen]:** Wer mehr als ≈ 0,5 richtige Ziele pro Sekunde trifft, gewinnt Zeit – eine abgelaufene Kette mit zwei Treffern bringt z. B. +4 s Bonus bei −1 s Strafe (die dabei verstrichene Zeit geht natürlich ab). Die „45-s-Übung“ läuft daher für geübte Personen praktisch unbegrenzt, bis man selbst aufhört oder die Fehler überwiegen.
 - **Bildfrequenz (Code):** nichts bewegt sich; Timer laufen mit Zeitschritt dt (auf 100 ms begrenzt) – kein Frame-Problem.
 - **Auswertung (Code):** Endbildschirm mit Präzision, Zahl vollständiger Ketten, Level, beste Combo; Note S+ … F nach 100·√(Punkte/24.000). Präzision = richtige Klicks/Aktionen – ein Fehlklick erhöht den Nenner **zweimal** (Klick + Strafe), eine abgelaufene Kette einmal; 90 Treffer und 10 Fehlklicks ergeben 82 % statt 90 %. Eine „Reaktionszeit“ wird zwar gespeichert, aber ab dem Erscheinen der ganzen Kette gemessen (kumulativ) und nicht angezeigt – eine **Übergangszeit** zwischen zwei Zielen misst das Spiel nicht.
@@ -125,7 +125,7 @@ Die Seite bewirbt einen „Sequenz Aim Trainer“ für taktische Shooter (Valora
 - **Messgenauigkeit:** 16,7 ms (60 Hz) und 4,1 ms (240 Hz) sind reine Arithmetik; Woods et al. (2015) maßen nur an 60 Hz. Der Hinweis „immer am selben Gerät vergleichen“ ist richtig.
 
 ## 4. Optische und okulomotorische Grundlagen
-- **Sehwinkel** [eigene Berechnung; 24″ Full-HD, 0,274 mm/px, 60 cm]: erstes Ziel Level 1 Ø 50 px = 13,7 mm ≈ 1,3°; ab Level 10 Ø 30 px = 8,2 mm ≈ 0,8°; kleinstes Folgeziel Ø 20 px ≈ 0,5° (30′). Trefferzone Ø 86 → 52 px ≈ 2,3° → 1,4°. Abstände 100–620 px ≈ 2,6°–16°. Die Sehschärfe begrenzt bei korrigiertem Sehen nicht.
+- **Sehwinkel** [eigene Berechnung; 24″ Full-HD, 0,274 mm/px, 60 cm]: erstes Ziel Level 1 Ø 50 px = 13,7 mm ≈ 1,3°; ab Level 10 Ø 30 px = 8,2 mm ≈ 0,8°; kleinstes Folgeziel Ø 20 px ≈ 0,5° (30′). Trefferzone Ø 86 → 52 px ≈ 2,3° → 1,4°. Abstände 100–620 px ≈ 2,6°–16°. Die Sehschärfe begrenzt bei korrigiertem Sehen nicht; bei niedrigem Visus werden die kleinen, blassen Folgeziele und das Fadenkreuz-Zentrum (Ø 4 px ≈ 0,1°) schwer erkennbar (daher `sehschaerfe_detail` = 1, wie bei 702, 704, 706).
 - **Kontrast:** Die Vorschau (violette Umrisse bis 15 % Deckkraft, gestrichelte Linie 25 %) ist auf fast schwarzem Grund kontrastarm – bei niedrigem Visus, Katarakt oder Blendung ist der Pfad schwer zu sehen; das aktive Ziel selbst ist kontrastreich.
 - **Blickverhalten:** Der Blick springt per Sakkade zum Ziel, die Hand folgt ≈ 100 ms später (Prablanc et al., 1979); während der Zeigebewegung bleibt der Blick am Ziel verankert (Neggers & Bekkering, 2000). Bei Handlungsfolgen verlässt der Blick ein Ziel etwa dann, wenn dort das Teilziel (z. B. der Kontakt) erreicht ist, und springt zum nächsten (Johansson et al., 2001); gelegentliche Vorausfixationen auf spätere Ziele sind eine aufgabenabhängige Strategie (Pelz & Canosa, 2001). Die Übung fordert also eine Folge gezielter Sakkaden mit Blickvorlauf.
 - **Peripherie:** Jede neue Kette erscheint an zufälliger Stelle im Feld (bis ≈ 25° breit); das Auffinden des Startziels verlangt peripheres Entdecken und kurze Suche, Fallen liegen nahe am Start.
@@ -160,7 +160,8 @@ Serielle Zielbewegungen nutzen das Sakkadensystem (frontales Augenfeld, Collicul
 - **Passt, wenn …** schnelle Zeigebewegungen zu ruhenden Zielen mit der Maus geübt werden sollen; ein leichter Einstieg in Zielübungen gesucht wird (große, unbewegte Ziele, Trefferzone deutlich größer als das Ziel); Blickvorlauf und flüssige Übergänge spielerisch geübt werden sollen.
 - **Weniger passend, wenn …** nur ein Tablet vorhanden ist; eine feste Dauer nötig ist; Stress durch Zeitdruck besteht; Sequenz- oder Merkfähigkeit (607, 601) oder echte Fingerfolgen (703) das Ziel sind.
 - **Vorsicht / anpassen bei …** `hand_arm_beschwerden` (viele schnelle Zielbewegungen, offene Dauer); `tremor_parkinson` (Kettentimer bis 0,7 s, Fallen, Fehlklicks bestraft – frustrierend); `presbyopie_gleitsicht` (Ziele im ganzen Feld, seitliche Unschärfe); `sehbehinderung_niedriger_visus` (kontrastarme Vorschau, Folgeziele bis ≈ 0,5°); `gesichtsfeldausfall` (neue Ketten erscheinen irgendwo, Abstände bis ≈ 16°); `trockenes_auge_bildschirm` (Starren, lange Runden); `photosensitive_epilepsie`, `migraene_lichtempfindlich` (roter Vollbild-Blitz und Wackeln bei jedem Fehler, bei schnellen Fehlerfolgen mehrere pro Sekunde möglich – Blitz abschalten); `kognitive_einschraenkung` (Fallen-Regel und Tempo ab Level 6).
-- **Kombiniert gut mit …** 704 (Präzisions-Flick) und 702 (bewegte Ziele) als Steigerung, 502/501 für Zielwechsel und Flicks, 204 (Schulte-Tafel) für die Suchkomponente ohne Zielmotorik-Druck, 303 (Blicksprünge ohne Hand).
+- **Kombiniert gut mit …** 704 (Präzisions-Flick) und 702 (bewegte Ziele) als Steigerung, 502/501 für Zielwechsel und Flicks, 204 (Schulte-Tafel) für die Suchkomponente ohne Zielmotorik-Druck, 303 (Blicksprünge mit Klick auf einzelne Punkte).
+- **Überschneidungen / Unterschiede:** 708 ist ein **naher Verwandter** von 702 und 704 (gleiches Spielgerüst: Fadenkreuz mit Pointer Lock, +2 s/−1 s, Serienfaktor bis 3,0, offene Rundendauer). Unterschied: ruhende, nicht schrumpfende Ziele in Ketten mit Zeitlimit je Kette – gefordert sind vor allem Tempo und Blickvorlauf (`zielbewegung_tempo` = 3), die Genauigkeit weniger als bei 704 (`zielbewegung_praezision` = 2). Mehrere Ziele nacheinander unter Zeitdruck verlangen auch 302 und 502. Mit 703 hat 708 trotz des Namens „Finger Sequencing“ nichts gemeinsam; für Reihenfolge-Gedächtnis passen 607/601.
 
 Keine Diagnose, kein Heil-, Seh- oder Leistungsversprechen; Ergebnisse sind keine Messung von Krankheitszeichen.
 

@@ -48,7 +48,7 @@ anforderungsprofil:
     kurzzeitgedaechtnis_visuell_raeumlich: 3
     verarbeitungsgeschwindigkeit: 1
     antizipation: 0
-    entscheidung_wahlreaktion: 1
+    entscheidung_wahlreaktion: 0
     lesen_sprache: 0
     schlussfolgern: 0
   motorisch:
@@ -81,7 +81,7 @@ evidenz:
   naher_transfer: schwach
   alltag_transfer: fehlend
   kommentar: "Geübte Gedächtnisaufgaben werden regelmäßig besser (Owen et al. 2010), aber im selben Großversuch gab es keinen Transfer auf ein untrainiertes Paar-Assoziationslernen; Transfer von AG-Training auf entfernte Fähigkeiten ist mit aktiven Kontrollgruppen nicht belegt (Melby-Lervåg et al. 2016). Studien speziell zum Training des Objekt-Ort-Gedächtnisses fehlen."
-aehnliche_uebungen: [603, 607, 811, 601, 106, 604, 103]
+aehnliche_uebungen: [603, 607, 811, 601, 606, 602, 604, 106, 103]
 stichworte: ["Object Location Memory", "Objekt-Ort-Gedächtnis", "Positionsgedächtnis", "Merkmalsbindung", "Feature Binding", "visuell-räumliches Kurzzeitgedächtnis", "Emoji", "Raster", "Hinweisreiz-Abruf", "Swap-Fehler", "Touch", "sprachfrei"]
 ---
 
@@ -251,12 +251,16 @@ Schlüsseln und Parkplätzen. Eine Tabelle ordnet Level, Raster, Punkte und „Z
   - Farbsehschwäche: kein Ausschluss (Formen tragen die Information), aber Rückmeldung grün/rot schwer lesbar.
 - **Kombiniert gut mit …** 603 (statische Muster), 607 (Sequenzen), 811 (komplexe Muster), 106 (mehrere Objekte
   verfolgen), 103 (visuelle Suche mit Symbolen).
+- **Abgrenzung in der Gruppe (keine Dublette):** Am nächsten verwandt ist 603. Beide nutzen dasselbe Raster und dieselbe
+  Einprägezeit von 1,5 s. 603 fragt nur nach Orten (alle Felder antippen), 605 nach der **Verknüpfung von Symbol und
+  Ort** (ein Hinweisreiz, ein Tipp). Deshalb sind hier Symbolerkennung (`sehschaerfe_detail` 1) und paralleles Erfassen
+  (`nutzbares_sehfeld` 2, `sakkaden` 2) stärker gefordert als bei 603. 607 fragt nach der Reihenfolge von Orten.
 
 ## 10. Schwächen des Originals und Empfehlungen für eine Blickfit-Umsetzung
 
 - **Symbolsatz:** Ein eigenes Set aus SVG-Symbolen verwenden, gleich auf allen Geräten, klar verschiedene Umrisse,
   kein Paar wie 🌟/⭐. Farbe nur als Zusatz, kontrastreich (WCAG 1.4.1). Größe an die Zelle koppeln (≥ 1,5° bei 40 cm).
-- **Stufen:** 1-up/2-down-Treppe statt „nur aufwärts“; Rastergröße höchstens 5×5 am Smartphone. Stufen, die in der
+- **Stufen:** Treppe mit Abstieg statt „nur aufwärts“ (2 Treffer in Folge → +1 Symbol, 1 Fehler → −1 Symbol; konvergiert auf ≈ 71 % Treffer; Levitt, 1971); Rastergröße höchstens 5×5 am Smartphone. Stufen, die in der
   Rundenzeit unerreichbar sind, nicht ankündigen; feste Zahl von Versuchen (z. B. 20) statt 45-s-Uhr.
 - **Einprägezeit wählbar** (1,5 / 2,5 / 4 s) für Ältere und Einsteiger:innen; Pause zwischen den Versuchen ohne
   laufende Uhr.
@@ -315,6 +319,8 @@ Schlüsseln und Parkplätzen. Eine Tabelle ordnet Level, Raster, Punkte und „Z
   207–225. https://doi.org/10.1111/j.1444-0938.2008.00256.x – Alterssichtigkeit.
 - Johansson, R., & Johansson, M. (2014). Look here, eye movements play a functional role in memory retrieval.
   *Psychological Science*, *25*(1), 236–242. https://doi.org/10.1177/0956797613498260 – Blick zum Ort hilft beim Abruf.
+- Levitt, H. (1971). Transformed up-down methods in psychoacoustics. *The Journal of the Acoustical Society of America*,
+  *49*(2B), 467–477. https://doi.org/10.1121/1.1912375 – Treppenverfahren, 2 richtig/1 falsch → ≈ 71 %.
 - Melby-Lervåg, M., Redick, T. S., & Hulme, C. (2016). Working memory training does not improve performance on measures
   of intelligence or other measures of "far transfer": Evidence from a meta-analytic review. *Perspectives on
   Psychological Science*, *11*(4), 512–534. https://doi.org/10.1177/1745691616635612 – Transfer.

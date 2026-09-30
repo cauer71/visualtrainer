@@ -12,7 +12,7 @@ blickfit_umsetzung: null
 stand: 2026-09-29
 
 # ===== Überblick =====
-kurzbeschreibung: "Ein leuchtender Punkt schnellt im festen Takt (Standardtempo alle 2,2 s) von seiner Ruheposition zu einem zufälligen neuen Ort, bremst dabei gleichmäßig ab und bleibt kurz stehen. Man springt mit dem Blick hinterher und versucht – ohne die abschaltbare Hilfslinie – schon beim Start vorherzusehen, wo er landet; anders als der Seitentext verspricht, wird das Ziel nie verdeckt und nichts gemessen."
+kurzbeschreibung: "Ein leuchtender Punkt schnellt im festen Takt (Standardtempo alle 2,2 s) von seiner Ruheposition zu einem zufälligen neuen Ort, wird dabei stetig langsamer (anfangs am schnellsten) und bleibt kurz stehen. Man springt mit dem Blick hinterher und versucht – ohne die abschaltbare Hilfslinie – schon beim Start vorherzusehen, wo er landet; anders als der Seitentext verspricht, wird das Ziel nie verdeckt und nichts gemessen."
 ziel_funktionen: [sakkaden]
 eingabe: [maus, touch]
 tablet_geeignet: mit_anpassung
@@ -54,7 +54,7 @@ anforderungsprofil:
   motorisch:
     einfache_reaktion: 0
     auge_hand_koordination: 1
-    zielbewegung_tempo: 1
+    zielbewegung_tempo: 0
     zielbewegung_praezision: 0
     kontinuierliche_steuerung: 0
     ruhige_hand: 0
@@ -73,9 +73,9 @@ belastung:
 
 # ===== Auswahlhilfe =====
 voraussetzungen: ["Bildschirm oder Tablet (quer) auf fester Unterlage, Abstand 40–70 cm, Kopf möglichst ruhig", "Scharfes Sehen im Zwischenbereich über fast die ganze Bildbreite (Monitor ≈ 48° × 17°) – Bildschirmbrille oder Einstärkenglas günstiger als Gleitsicht", "Maus oder Finger nur zum Starten; Mitführen des Fadenkreuzes freiwillig und ohne Wertung", "Bereitschaft, ohne Rückmeldung 30–120 s konzentriert mitzugehen"]
-vorsicht_bei: [presbyopie_gleitsicht, schwindel_vestibulaer, nystagmus, schielen_binokular, trockenes_auge_bildschirm, kopfschmerz_asthenopie, kinder_unter_6]
+vorsicht_bei: [presbyopie_gleitsicht, schwindel_vestibulaer, reisekrankheit, nystagmus, schielen_binokular, trockenes_auge_bildschirm, kopfschmerz_asthenopie, kinder_unter_6]
 geeignet_fuer: ["Blicksprünge auf ein sich bewegendes, abbremsendes Ziel mit anschließendem kurzem Nachfolgen üben", "Vorausschauendes Zielen mit dem Blick: Landepunkt aus Richtung und Anfangstempo schätzen (mit ausgeblendeter Linie)", "Steigerung nach 303 (ruhende Sprungziele) und vor 414/409 (Sprünge bzw. Dunkelphasen während laufender Bewegung)", "kurze Augenübung ohne Blitzreize und ohne Hand- oder Körpereinsatz"]
-weniger_geeignet_fuer: ["alle, die Rückmeldung oder einen Leistungswert erwarten (das Original misst nichts)", "Ziel 'Verfolgen hinter einer Verdeckung' – das Original verdeckt nie; dafür 409", "Ziel glatte, lange Blickfolge (Bewegungen dauern < 1 s und beginnen ruckartig; dafür 402–404)", "Gleitsichtträger:innen am großen Monitor (Landepunkte über fast die ganze Bildbreite, oben/unten in Fern- und Nahteil)", "Tempo ab ≈ 3× (Ziel ist meist schon angekommen, bevor der Blick startet – reine Reaktionssprünge, ruckendes Bild)"]
+weniger_geeignet_fuer: ["alle, die Rückmeldung oder einen Leistungswert erwarten (das Original misst nichts)", "Ziel 'Verfolgen hinter einer Verdeckung' – das Original verdeckt nie; dafür 409", "Ziel glatte, lange Blickfolge (Bewegungen dauern < 1 s und beginnen ruckartig; dafür 402–404)", "Gleitsichtträger:innen am großen Monitor (Landepunkte über fast die ganze Bildbreite, oben/unten in Fern- und Nahteil)", "Tempo ab ≈ 3× (Ziel hat ≈ 80 % der Strecke hinter sich, bevor der Blick startet – fast reine Reaktionssprünge, ruckendes Bild)"]
 evidenz:
   uebungseffekt: schwach
   naher_transfer: fehlend
@@ -163,19 +163,20 @@ Vorhersage (Woods et al., 2015); Vorwärtsmodelle blieben im Alter „hochgradig
 
 - **Was das Auge tatsächlich tut:** Die Bewegung beginnt ruckartig mit hohem Tempo (1× am Monitor ≈ 64°/s im Mittel) –
   deutlich über dem, was die glatte Folge aus dem Stand erreicht (Latenz ≈ 100 ms, Anfangsbeschleunigung begrenzt:
-  Carl & Gellman, 1987). Das Auge antwortet daher mit einem **Blicksprung** (reguläre Latenz ≈ 150 ms: Fischer &
+  Carl & Gellman, 1987). Das Auge antwortet daher mit einem **Blicksprung** (reguläre Latenz ≈ 150 ms und mehr, Express-Sakkaden ≈ 100 ms: Fischer &
   Ramsperger, 1984); bis dahin hat das Ziel bei 1× schon ≈ 40–50 % der Strecke zurückgelegt, bei 3× ≈ 80 %. Die langsame
   Endphase kann glatt mitverfolgt werden, die Ruhephase ist Fixation.
 - **Vorhersage im Blicksprung:** Aufholsakkaden verrechnen Positionsfehler **und** Zieltempo, brauchen ≈ 90 ms, um
   Bahnänderungen einzubeziehen; der Tempo-Anteil sättigt oberhalb ≈ 15°/s (de Brouwer et al., 2002b). Ob der Blick beim
   abbremsenden Ziel vor- oder nachläuft, ist nicht untersucht. Sakkade und Folge arbeiten als ein Prozess (Orban de
   Xivry & Lefèvre, 2007).
-- **Sehwinkel/Tempo:** Ziel Ø ≈ 0,84–0,9°, Visus kaum gefordert; die Linie ist kontrastarm (22 %). Ab ≈ 3× ist das Ziel
-  meist angekommen, bevor der Blick startet – dann reine Reaktionssakkade wie in 303; sinnvoll sind 0,5–2×.
-- **Gleitsicht/Arbeitsplatz:** Landepunkte über ≈ 48° × 17° (Monitor, 60 cm); der scharfe Zwischenbereich der
-  Gleitsicht ist in 60 cm nur ≈ 13–18° breit, Träger:innen bewegen mehr den Kopf (Han et al., 2003). Punkte oben
+- **Sehwinkel/Tempo:** Ziel Ø ≈ 0,84–0,9°, Visus kaum gefordert; die Linie ist kontrastarm (22 %). Ab ≈ 3× hat das Ziel
+  ≈ 80 % der Strecke hinter sich, bevor der Blick startet – dann fast reine Reaktionssakkade wie in 303; sinnvoll sind 0,5–2×.
+- **Gleitsicht/Arbeitsplatz:** Landepunkte über ≈ 48° × 17° (Monitor, 60 cm); der scharfe Bereich der zwei
+  untersuchten Gleitsichtgläser war in 60 cm nur ≈ 13–18° breit (Einstärkenglas ≈ 60°); Blick und Kopf brauchten
+  damit länger, bis das Bild ruhig stand (Han et al., 2003, n = 11). Punkte oben
   fallen Richtung Fernteil, unten Richtung Nahteil – Bildschirmbrille, kleineres Feld, Kopfbewegung zulassen; Tablet in
-  40 cm ≈ 2,5 dpt. **Trockenes Auge:** ≈ 11,6 Lidschläge/min am Bildschirm, viele unvollständig (Portello et al., 2013)
+  40 cm ≈ 2,5 dpt. **Trockenes Auge:** ≈ 11,6 Lidschläge/min beim Lesen am Bildschirm, im Mittel 16 % unvollständig (Portello et al., 2013)
   → Ruhephasen zum Blinzeln nutzen. **Alter:** Folge lässt nach, Vorhersage bleibt (Sprenger et al., 2011) → 0,5–1×.
 
 ## 5. Neurowissenschaftliche Grundlagen
@@ -188,7 +189,7 @@ Vorhersage (Woods et al., 2015); Vorwärtsmodelle blieben im Alter „hochgradig
 ## 6. Motorische Grundlagen
 
 Keine Handaufgabe; wer das (ungewertete) Fadenkreuz mitführt, macht je Zyklus eine schnelle Abfangbewegung, deren
-Genauigkeit von den Augenbewegungen mitbestimmt wird (Fooken et al., 2021) – Nebenrolle (Profil 1).
+Genauigkeit von den Augenbewegungen mitbestimmt wird (Fooken et al., 2021) – freiwillig und ungewertet, daher nur Auge-Hand-Koordination 1, Zieltempo 0.
 
 ## 7. Einflussfaktoren und Messgrenzen
 
@@ -212,8 +213,8 @@ Genauigkeit von den Augenbewegungen mitbestimmt wird (Fooken et al., 2021) – N
 - **Weniger passend, wenn …** Verdeckung (→ 409), lange glatte Folge (→ 402–404), Rückmeldung oder Handgenauigkeit
   (→ 501, 104) gesucht sind.
 - **Vorsicht / anpassen bei …** `presbyopie_gleitsicht` (Landepunkte in Fern-, Nah- und seitlichen Unschärfezonen →
-  Bildschirmbrille, kleineres Feld, Kopf mitbewegen); `schwindel_vestibulaer` (ruckartige Bewegungsstarts; langsam
-  beginnen, bei Übelkeit abbrechen); `nystagmus`, `schielen_binokular` (Blicksprünge/Folge oft verändert – keine
+  Bildschirmbrille, kleineres Feld, Kopf mitbewegen); `schwindel_vestibulaer`, `reisekrankheit` (ruckartige Bewegungsstarts über fast die ganze Bildbreite; langsam
+  beginnen, kleineres Feld, bei Übelkeit abbrechen); `nystagmus`, `schielen_binokular` (Blicksprünge/Folge oft verändert – keine
   Rückschlüsse ziehen); `trockenes_auge_bildschirm`, `kopfschmerz_asthenopie` (Pausen, blinzeln); `kinder_unter_6`
   (Folgebewegung reift bis ins Jugendalter; Katsanis et al., 1998).
 - **Kombiniert gut mit …** 303 (Sprungziele), 414 (Sprung während der Bewegung), 409 (echte Dunkelphasen), 410/415
@@ -238,7 +239,7 @@ Genauigkeit von den Augenbewegungen mitbestimmt wird (Fooken et al., 2021) – N
 - Bennett, S. J., & Barnes, G. R. (2003). Human ocular pursuit during the transient disappearance of a visual target. *Journal of Neurophysiology, 90*(4), 2504–2520. https://doi.org/10.1152/jn.01145.2002 – **Prüfung:** DOI falsch (Website: 10.1152/jn.00843.2002, gehört zu einer TRPM8-Studie von Nealen et al.), übrige Angaben richtig; **stützt:** teilweise (vorausschauende Wiederbeschleunigung ja; Tempo wird aber nicht „autonom gehalten“, keine Hirndaten zu FEF/SEF-„Speicher“; für die Übung ohne Verdeckung nicht einschlägig)
 - „Kowler, E. (1989). Cognitive expectations, not work, determine the direction of smooth pursuit eye movements. *Vision Research, 29*(12), 1769–1777.“ – **Prüfung:** Titel, Heft, Seiten und DOI falsch (10.1016/0042-6989(89)90161-2 gehört zu Dosher et al., kinetischer Tiefeneffekt). Reale Arbeit: Kowler, E. (1989). Cognitive expectations, not habits, control anticipatory smooth oculomotor pursuit. *Vision Research, 29*(9), 1049–1057. https://doi.org/10.1016/0042-6989(89)90052-7; **stützt:** nein (Erwartung steuert antizipatorische Folge; nichts zu Alter oder Kleinhirn-Plastizität)
 - Krauzlis, R. J. (2004). Recasting the smooth pursuit eye movement system. *Journal of Neurophysiology, 91*(2), 591–603. https://doi.org/10.1152/jn.00801.2003 – **Prüfung:** DOI stimmt ✓; **stützt:** teilweise (Netzwerk, gemeinsame Architektur mit Sakkaden ja; „weiß exakt, wo das Objekt in 200/500 ms ist“ nein)
-- Robinson, D. A. (1965). The mechanics of human smooth pursuit eye movement. *The Journal of Physiology, 180*(3), 569–591. https://doi.org/10.1113/jphysiol.1965.sp007718 – **Prüfung:** DOI stimmt ✓ (Inhalt nur über Kurzfassung geprüft); **stützt:** nein (Mechanik und ≈ 130 ms bis zur neuen Folgegeschwindigkeit; nichts zu Kleinhirn, FEF oder Vorwärtsmodell)
+- Robinson, D. A. (1965). The mechanics of human smooth pursuit eye movement. *The Journal of Physiology, 180*(3), 569–591. https://doi.org/10.1113/jphysiol.1965.sp007718 – **Prüfung:** DOI stimmt ✓ (keine Kurzfassung verfügbar, Inhalt nicht im Volltext geprüft); **stützt:** vermutlich nein (Arbeit zur Mechanik der glatten Folge; ein Beleg für ein Kleinhirn-/FEF-Vorwärtsmodell ist nicht erkennbar – mangels Volltextprüfung unsicher)
 - Woods, D. L., Wyma, J. M., Yund, E. W., Herron, T. J., & Reed, B. (2015). Factors influencing the latency of simple reaction time. *Frontiers in Human Neuroscience, 9*, 131. https://doi.org/10.3389/fnhum.2015.00131 – **Prüfung:** DOI stimmt ✓; **stützt:** nein (einfache Reaktionszeit und Hardware-Verzögerung; nichts zu 144 Hz oder Bahnvorhersage)
 
 ### Weitere Fachliteratur

@@ -80,7 +80,7 @@ evidenz:
   uebungseffekt: stark
   naher_transfer: schwach
   alltag_transfer: fehlend
-  kommentar: "Die Übung selbst ist nicht untersucht; in verwandten Aufgaben – visueller Suche (Wahrnehmungslernen in wenigen hundert Durchgängen) und Maus-Zielaufgaben (Aim-Lab-Längsschnitt N = 7.174; Laborstudie N = 86) – verbessert man sich mit Übung deutlich. Übertragung auf andere Such- oder Zeigeaufgaben ist uneinheitlich, auf Spielleistung oder Alltag nicht untersucht."
+  kommentar: "Die Übung selbst ist nicht untersucht; in verwandten Aufgaben – visueller Suche (Wahrnehmungslernen in wenigen hundert Durchgängen) und Maus-Zielaufgaben (Aim-Lab-Längsschnitt N = 7.174; Online-Experiment N = 86) – verbessert man sich mit Übung deutlich. Übertragung auf andere Such- oder Zeigeaufgaben ist uneinheitlich, auf Spielleistung oder Alltag nicht untersucht."
 aehnliche_uebungen: [510, 502, 501, 103, 108, 204, 509, 702, 704, 302, 804, 801]
 stichworte: ["target acquisition", "Zielerfassung", "visuelle Suche", "Helligkeitsvergleich", "Leuchtdichtekontrast", "Reihenfolge", "Aim-Trainer", "Fitts'sches Gesetz", "Blick-Hand-Koordination", "First Shot", "Pointer Lock", "Maus"]
 ---
@@ -122,12 +122,12 @@ Die Seite verspricht Training von „Zielerkennung, Bedrohungsentscheidung und F
 **Einordnung:**
 - **Suche:** Einfache Merkmale werden parallel verarbeitet, Kombinationen brauchen gebündelte Aufmerksamkeit (Treisman & Gelade, 1980). Leuchtdichte-Polarität gilt aber nur als *wahrscheinliches* Leitmerkmal der Suche (Wolfe & Horowitz, 2017). Hier ist ohnehin nicht „ein helles Ziel unter dunklen“ gesucht, sondern eine **Rangfolge** fast gleicher Reize. Je ähnlicher Ziel und Ablenker und je uneinheitlicher die Ablenker sind, desto ineffizienter wird die Suche (Duncan & Humphreys, 1989). Ab mittleren Levels ist also serielles Vergleichen zu erwarten, kein „Pop-out“.
 - **V1-Lernen, „unfehlbare Reflexe“, „Latenz sinkt signifikant“:** in den genannten Quellen nicht enthalten. Wahrnehmungslernen in Suchaufgaben gibt es (Sireteanu & Rettenbach, 1995), der Ort im Gehirn ist dabei offen.
-- **„Augen 30–50 ms vor dem Fadenkreuz“:** widerspricht der Evidenz. Der Blick erreicht das Ziel etwa ≈ 100 ms vor dem Handstart (Prablanc et al., 1979), und die Primärsakkade endet etwa zur maximalen Handbeschleunigung (Helsen et al., 1998), also viel früher.
+- **„Augen 30–50 ms vor dem Fadenkreuz“:** widerspricht der Evidenz. Die Sakkade startet innerhalb von ≈ 250 ms, die Hand folgt erst ≈ 100 ms später (Prablanc et al., 1979), und die Primärsakkade endet etwa zur maximalen Handbeschleunigung (Helsen et al., 1998). Der Blick ist also deutlich mehr als 30–50 ms vor dem Fadenkreuz am Ziel.
 - **„Soft Focus“:** Peripher sinken Auflösung und Unterscheidungsleistung stark (Strasburger et al., 2011). Die hellste Kugel fällt peripher auf, feine Helligkeitsstufen muss man aber meist nacheinander anschauen.
-- **„Visual Clutter kostet 100–200 ms“:** grob plausibel. Ineffiziente Suche kostet ≈ 25–35 ms je Element (Wolfe, 2001); der Gesamtwert hängt von der Elementzahl ab.
+- **„Visual Clutter kostet 100–200 ms“:** als feste Zahl nicht belegt. Die Größenordnung ist mit Laborwerten vereinbar – ineffiziente Suche kostet ≈ 25–35 ms je Element (Wolfe, 2001) –, der tatsächliche Wert hängt aber von Elementzahl und Ähnlichkeit ab.
 - **Black eQualizer, Mausgriff, „300 ms Sichtkontakt entscheiden“:** ohne Quelle, nicht belegt.
 - **Tier-Tabelle:** **keine Datengrundlage.** Woods et al. (2015) untersuchten einfache Tastenreaktionen, keine Zielerfassung, und das Spiel misst die angegebene Latenz gar nicht.
-- **Messtechnik:** Die Angaben zu Bildintervall (16,7/6,9/4,2 ms bei 60/144/240 Hz) und USB-Abfrage (8 ms bei 125 Hz) sind korrekt. „Mikrosekundenauflösung“ stimmt nur eingeschränkt (100 µs bzw. 5 µs je nach Isolierung; MDN, o. J.) und ist hier bedeutungslos. „Kein Upload“ stimmt (nur `localStorage`).
+- **Messtechnik:** Die Angaben zu Bildintervall (16,7/6,9/4,1 ms bei 60/144/240 Hz; genau 4,17 ms) und USB-Abfrage (8 ms bei 125 Hz) sind im Kern korrekt; Woods et al. (2015) ist dafür aber nur allgemeiner Beleg für Hardware-Verzögerungen. „Mikrosekundenauflösung“ stimmt nur eingeschränkt (100 µs ohne bzw. 5 µs mit Cross-Origin-Isolierung; MDN, o. J.) und widerspricht der eigenen Angabe „auf rund 1 ms gerundet“; für dieses Spiel ist es ohnehin bedeutungslos, weil es keine Zeiten misst. „Kein Upload“ stimmt (nur `localStorage`).
 
 ## 4. Optische und okulomotorische Grundlagen
 - **Reizgröße [ER]:** Kugeldurchmesser 56 → 24 px ≈ 1,5° → 0,63°, Trefferfläche 72 → ≈ 28 px (1,9° → 0,74°). Für Sehschärfe ist das anspruchslos (Visus-Optotypen 1,0 ≈ 5′ = 0,08°); die Übung prüft Kontrast, nicht Detail.
@@ -135,7 +135,7 @@ Die Seite verspricht Training von „Zielerkennung, Bedrohungsentscheidung und F
 - **Alter:** Die Kontrastempfindlichkeit sinkt ab etwa 40–50 Jahren, vor allem für feine Muster (Owsley et al., 1983). Die großen Kugeln sind davon weniger betroffen, die schwachen Kugeln und feinen Stufen dagegen mehr. Eine Linsentrübung senkt den Kontrast zusätzlich; dazu gibt es hier keine eigene Zahl.
 - **Gesichtsfeld [ER]:** Im Vollbild liegen Kugeln bis ≈ 22° (später ≈ 24°) seitlich und ≈ 11–13° über/unter der Mitte. Die Zapfendichte fällt schon 1 mm neben der Fovea um eine Größenordnung (Curcio et al., 1990). Wer ein Gesichtsfeld mit Ausfällen hat, übersieht Kugeln am Rand.
 - **Sakkaden:** Latenz typisch 180–250 ms (Darrien et al., 2001), im Alter länger und variabler (Munoz et al., 1998). Jede Suche mit Vergleich braucht mehrere Blicksprünge.
-- **Gleitsicht:** Der klare Zwischenbereich einer Gleitsichtbrille ist bei 60 cm nur 13–18° breit (Han et al., 2003). Kugeln außen und oben/unten verlangen Kopfbewegungen oder den Blick durch unscharfe Glaszonen – gerade bei feinen Helligkeitsvergleichen störend. Günstiger sind Arbeitsplatz-/Bildschirmbrille oder ein kleineres Spielfeld.
+- **Gleitsicht:** Bei den zwei untersuchten Gleitsichtgläsern war das klare Blickfeld im Zwischenbereich bei 60 cm nur 13° bzw. 18° breit, beim Einstärkenglas 60° (Han et al., 2003; N = 11). Kugeln außen und oben/unten verlangen Kopfbewegungen oder den Blick durch unscharfe Glaszonen – gerade bei feinen Helligkeitsvergleichen störend. Günstiger sind Arbeitsplatz-/Bildschirmbrille oder ein kleineres Spielfeld.
 - **Farbsehschwäche:** Alle Kugeln haben denselben Farbton; nur die Helligkeit trägt die Information. Das ist für die ≈ 8 % Männer mit Rot-Grün-Schwäche günstig (Birch, 2012). Bernstein wirkt bei Protanopie dunkler, die Rangfolge bleibt erhalten [ER]. Die Rückmeldung Rot/Grün ist Nebensache.
 - **Trockenes Auge:** Bei schnellen Bildschirmspielen sinkt die Lidschlagrate auf ≈ ⅓ des Ruhewerts (Cardona et al., 2011); Blinzel-/Pausenhinweis sinnvoll.
 
@@ -148,9 +148,9 @@ Die Seite verspricht Training von „Zielerkennung, Bedrohungsentscheidung und F
 - **Ablauf je Kugel:** suchen/vergleichen → Blicksprung → Zielbewegung → Klick. Der Blick bleibt während der Zeigebewegung am Ziel „verankert“; Sakkaden zum nächsten Ziel werden bis zum Abbremsen der Hand aufgeschoben (+155 ms; Neggers & Bekkering, 2000). Suche und Zielen laufen also weitgehend **nacheinander**; das passt zur Regel, erst sicher zu vergleichen und dann zu klicken.
 - **Fitts:** Die Bewegungszeit steigt mit dem Schwierigkeitsindex log₂(D/W + 1) (Fitts, 1954; Soukoreff & MacKenzie, 2004). Mit kleineren Kugeln und längeren Wegen über den ganzen Bildschirm steigt er von ≈ 3–4 auf ≈ 5–6 bit [ER]. Primärbewegung plus Korrekturen (Meyer et al., 1988).
 - **Kinematik im FPS-Kontext:** Nach 20 Übungsrunden sanken Reaktionszeit (−70 ms), Korrekturzeit (−134 ms) und Klick-Verweilzeit (−72 ms); mit der Maus war man schneller als mit dem Trackpad (Warburton et al., 2023). Auch Toth et al. (2023) zerlegen die Zielerfassung in solche Phasen.
-- **Tempo vor Genauigkeit:** FPS-Spieler waren im Stroop schneller, aber fehleranfälliger (Kowal et al., 2018). Die Combo-Strafe belohnt hier das Gegenteil.
-- **Tremor:** Die kleinste Trefferzone (≈ 14 px Radius ≈ 0,37°) fordert eine ruhige Hand; bei Älteren verschiebt sich der physiologische Tremor teils zu 5–7 Hz (Elble, 2003).
-- **Touch:** Tippen ist schneller als Maus, aber ungenauer (Cockburn et al., 2012); Ziele sollten ≥ 9 mm groß sein (Parhi et al., 2006). Ältere profitieren von Touch stärker als Jüngere (−35 % vs. −16 % Bewegungszeit; Findlater et al., 2013).
+- **Tempo vor Genauigkeit:** Actionspieler (FPS/MOBA) waren im Stroop-Test schneller, aber fehleranfälliger als Nichtspieler (Kowal et al., 2018; Querschnitt, keine Ursache belegt). Die Combo-Strafe belohnt hier das Gegenteil.
+- **Tremor:** Die kleinste Trefferzone (≈ 14 px Radius ≈ 0,37°) fordert eine ruhige Hand; bei einzelnen älteren Menschen (5 von 100 über 70 Jahren) lag die tremorbezogene Muskelaktivität bei 5–7 Hz statt 9–12 Hz, und etwa 8 % gesunder Erwachsener zeigten ein Muster wie ein leichter essenzieller Tremor (Elble, 2003).
+- **Touch:** Tippen mit dem Finger ist schneller als Maus, bei kleinen Zielen aber fehleranfälliger (Cockburn et al., 2012); Ziele sollten ≥ 9 mm groß sein (Parhi et al., 2006). Ältere profitieren von Touch stärker als Jüngere (−35 % vs. −16 % Bewegungszeit; Findlater et al., 2013).
 
 ## 7. Einflussfaktoren und Messgrenzen
 - **Keine Zeitmessung:** Punkte mischen Such- und Bewegungstempo, Combo und Level-Faktor. „Präzision“ zählt Reihenfolgefehler und Fehlklicks zusammen und enthält die erzwungenen Ratefehler bei gleich hellen Kugeln (Abschnitt 2).
@@ -160,9 +160,9 @@ Die Seite verspricht Training von „Zielerkennung, Bedrohungsentscheidung und F
 - **Übung:** Große Gewinne in digitalen Sehtrainings entstehen vor allem, wenn Trainings- und Testaufgabe gleich sind (Guo et al., 2025) – Anstieg der Punkte ist zunächst Gewöhnung an diese Aufgabe.
 
 ## 8. Studienlage: Trainierbarkeit und Übertragung
-- **Übungseffekt – stark (für verwandte Aufgaben):** Anfangs serielle Suchen wurden nach wenigen hundert Durchgängen effizient; der Effekt hielt Monate (Sireteanu & Rettenbach, 1995). In Aim-Lab-Daten (N = 7.174) verbesserten sich Treffer pro Sekunde deutlich; 90 % des Tagesnutzens entstanden mit ≈ 30 min (Listman et al., 2021; vom Hersteller mitfinanziert). Warburton et al. (2023) fanden bei N = 86 klare Übungsgewinne. Die konkrete Browser-Übung ist nicht untersucht.
-- **Naher Transfer – schwach:** Sucherlernen übertrug sich teils auf andere Aufgaben und Orte (Sireteanu & Rettenbach, 1995), in anderen Studien war es spezifisch oder fehlte (Ellison & Walsh, 1998). Eine Studie „Aim-Trainer → bessere Spielleistung“ wurde nicht gefunden.
-- **Alltagstransfer – fehlend:** Metaanalysen zu Action-Videospielen betreffen ganze Spiele und kognitive Maße (g = 0,30 im Training); motorische Maße wurden mangels Daten ausgeschlossen (Bediou et al., 2023). Für Helligkeitsvergleich + Klicken gibt es keinen Beleg für Nutzen im Verkehr, Beruf oder Sport.
+- **Übungseffekt – stark (für verwandte Aufgaben):** Anfangs serielle Suchen wurden teils schon nach wenigen hundert Durchgängen effizient, der Effekt war dauerhaft (Sireteanu & Rettenbach, 1995). In Aim-Lab-Daten (N = 7.174) verbesserten sich Treffer pro Sekunde deutlich; 90 % des Tagesnutzens entstanden mit ≈ 30 min (Listman et al., 2021; vom Hersteller mitfinanziert). Warburton et al. (2023) fanden in einem Online-Experiment (N = 86, 20 Runden) klare Übungsgewinne (Erfassungszeit −317 ms). Die konkrete Browser-Übung ist nicht untersucht.
+- **Naher Transfer – schwach:** Sucherlernen war in einer Studie wenig spezifisch (Sireteanu & Rettenbach, 1995), in anderen Studien war es spezifisch oder fehlte (Ellison & Walsh, 1998). Eine Studie „Aim-Trainer → bessere Spielleistung“ wurde nicht gefunden.
+- **Alltagstransfer – fehlend:** Die Metaanalyse zu Action-Videospielen betrifft ganze Spiele und kognitive Maße (Interventionsstudien: kleiner Effekt, g = 0,30, 95 %-KI 0,11–0,50; Bediou et al., 2023), nicht Zielmotorik oder Aim-Drills. Für Helligkeitsvergleich + Klicken gibt es keinen Beleg für Nutzen im Verkehr, Beruf oder Sport.
 
 ## 9. Auswahlhinweise für die KI
 - **Passt, wenn …** Suche + gezieltes Anklicken mit Maus geübt werden soll, genaues Vergleichen vor dem Handeln gewünscht ist (Fehler kosten die Combo), mittlerer Zeitdruck ohne ablaufende Ziele passt; auch als Fortsetzung von 103/108 (reine Suche) oder 501/702 (reines Zielen).
@@ -170,7 +170,7 @@ Die Seite verspricht Training von „Zielerkennung, Bedrohungsentscheidung und F
 - **Vorsicht / anpassen bei …**
   - `photosensitive_epilepsie`, `migraene_lichtempfindlich`: roter Vollbildblitz (0,48 s) bei jedem Fehler, Bildwackeln, pulsierende Ringe. Die Fehlerfolge liegt meist unter 3 Blitzen/s; Rot gilt aber als Risikofaktor (Fisher et al., 2005) → Blitz abschalten.
   - `sehbehinderung_niedriger_visus`, `gesichtsfeldausfall`: schwache Kugeln (5–17 %) mit geringem Kontrast, verteilt bis in die Bildschirmecken.
-  - `presbyopie_gleitsicht`: Vergleich feiner Helligkeitsstufen bis ≈ 22° seitlich; Zwischenbereich nur 13–18° (Han et al., 2003).
+  - `presbyopie_gleitsicht`: Vergleich feiner Helligkeitsstufen bis ≈ 22° seitlich; klares Blickfeld im Zwischenbereich bei den untersuchten Gläsern nur 13–18° (Han et al., 2003).
   - `trockenes_auge_bildschirm`, `kopfschmerz_asthenopie`: konzentriertes Starren auf dunklen Bildschirm, weniger Lidschlag (Cardona et al., 2011).
   - `hand_arm_beschwerden`, `tremor_parkinson`: weite Mauswege, Trefferzone bis ≈ 0,37° Radius.
   - `aufmerksamkeitsprobleme`: Combo-Verlust bei jedem Fehlklick, raterzwungene Fehler → Frust.
@@ -193,7 +193,7 @@ Die Seite verspricht Training von „Zielerkennung, Bedrohungsentscheidung und F
 - Im Text genannt, nicht im Verzeichnis: Wolfe, J. M. (1994). Guided Search 2.0: A revised model of visual search. *Psychonomic Bulletin & Review, 1*(2), 202–238. https://doi.org/10.3758/BF03200774 – **Prüfung:** DOI stimmt ✓; **stützt:** teilweise (wie 2007)
 
 ### Weitere Fachliteratur
-- Bediou, B., Rodgers, M. A., Tipton, E., Mayer, R. E., Green, C. S., & Bavelier, D. (2023). Effects of action video game play on cognitive skills: A meta-analysis. *Technology, Mind, and Behavior, 4*(1), 28–48. https://doi.org/10.1037/tmb0000102 – Transfer; motorische Maße ausgeschlossen
+- Bediou, B., Rodgers, M. A., Tipton, E., Mayer, R. E., Green, C. S., & Bavelier, D. (2023). Effects of action video game play on cognitive skills: A meta-analysis. *Technology, Mind, and Behavior, 4*(1), 28–48. https://doi.org/10.1037/tmb0000102 – Transfer (kognitive Maße)
 - Birch, J. (2012). Worldwide prevalence of red-green color deficiency. *Journal of the Optical Society of America A, 29*(3), 313–320. https://doi.org/10.1364/JOSAA.29.000313 – Häufigkeit Farbsehschwäche
 - Bisley, J. W., & Goldberg, M. E. (2010). Attention, intention, and priority in the parietal lobe. *Annual Review of Neuroscience, 33*, 1–21. https://doi.org/10.1146/annurev-neuro-060909-152823 – LIP als Prioritätskarte [Abstract]
 - Cardona, G., García, C., Serés, C., Vilaseca, M., & Gispets, J. (2011). Blink rate, blink amplitude, and tear film integrity during dynamic visual display terminal tasks. *Current Eye Research, 36*(3), 190–197. https://doi.org/10.3109/02713683.2010.544442 – Lidschlag bei schnellen Spielen

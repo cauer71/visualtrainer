@@ -64,7 +64,7 @@ anforderungsprofil:
     gleichgewicht: 0
     ausdauer_belastung: 0
 belastung:
-  zeitdruck: 1
+  zeitdruck: 0
   flimmern_lichtreize: 0
   bewegungsreize_schwindel: 1
   koerperliche_belastung: 0
@@ -140,14 +140,15 @@ von „Elite: 3,5–5×, 0 Sakkaden, Seitendifferenz < 3 %, Top 1,5 %“ bis „
 misst weder Blick noch Wahrnehmung, keine Quelle enthält Tempostufen, Seitendifferenzen oder Populationsanteile.
 - **Richtig im Kern:** Mehrere bewegte Objekte lassen sich ohne Blicksprünge parallel verfolgen (Pylyshyn & Storm, 1988);
   die Halbfelder haben weitgehend getrennte Ressourcen – bei Verteilung links/rechts doppelt so viele Ziele (Alvarez &
-  Cavanagh, 2005) – und eine halbfeldspezifische Steuerung (Strong & Alvarez, 2020); Aufmerksamkeit lässt sich auf zwei
+  Cavanagh, 2005; MOT mit gleich aussehenden Ablenkern) – und eine halbfeldspezifische Steuerung (Strong & Alvarez, 2020); Aufmerksamkeit lässt sich auf zwei
   getrennte Orte verteilen (Awh & Pashler, 2000).
 - **Nur bedingt übertragbar:** Diese Befunde stammen aus Aufgaben mit **gleich aussehenden Ablenkern**; die
   Schwierigkeit entsteht durch Verwechslung. Hier gibt es nur zwei Objekte – „verlieren“ kann man sie nicht, ein Ziel je
-  Halbfeld liegt weit unter jeder Kapazitätsgrenze (das zweite Ziel senkt aber die Grenzgeschwindigkeit um ≈ 30 %;
-  Alvarez & Franconeri, 2007).
-- **Verdreht:** Gruppierung zu einem „virtuellen Objekt“ **erleichtert** das Verfolgen (Yantis, 1992); orthogonale Bahnen
-  machen es schwerer, nicht wirksamer. „Random Speed“ erzeugt zudem gemeinsames Schicksal im Tempo.
+  Halbfeld liegt weit unter jeder Kapazitätsgrenze (in MOT mit Ablenkern senkt schon das zweite Ziel die
+  Grenzgeschwindigkeit um ≈ 30 %; Alvarez & Franconeri, 2007 – auf diese Aufgabe nicht direkt übertragbar).
+- **Fragwürdig:** Gruppierung zu einem „virtuellen Objekt“ **erleichtert** das Verfolgen (Yantis, 1992); orthogonale
+  Bahnen würden es eher erschweren – dass das „wirksamer“ trainiert, ist nicht belegt, und bei nur zwei Zielen ohne
+  Ablenker spielt Gruppierung kaum eine Rolle. „Random Speed“ erzeugt zudem gemeinsames Schicksal im Tempo.
 - **Unbelegt:** „Wer rechts verliert, gibt der linken Hirnhälfte zu wenig Aufmerksamkeit / Führungsauge“ – etwa ein
   Drittel ist linksäugig (Bourassa et al., 1996), ein Zusammenhang mit einseitigem Zielverlust ist nicht gezeigt; eine
   leichte Linksbevorzugung ist bei Gesunden normal (Pseudoneglect; Jewell & McCourt, 2000). Wegen der asymmetrischen
@@ -158,25 +159,27 @@ misst weder Blick noch Wahrnehmung, keine Quelle enthält Tempostufen, Seitendif
 
 - **Peripheres Sehen:** Bei Blick zur Mitte liegen die Ziele 2–22° seitlich. Sehschärfe und Formerkennung fallen zur
   Peripherie stark ab (Strasburger et al., 2011), Geschwindigkeit wird dort aber ähnlich fein unterschieden wie zentral
-  (≈ 6 %; McKee & Nakayama, 1984). Ein kontrastreicher Punkt von Ø ≈ 0,85° ist überall sichtbar – gefordert ist das
+  (≈ 6 % im jeweils günstigen Tempobereich, peripher eher bei höherem Tempo; McKee & Nakayama, 1984). Ein kontrastreicher Punkt von Ø ≈ 0,85° ist überall sichtbar – gefordert ist das
   **Wahrnehmen von Bewegung ohne Hinschauen**, nicht Visus.
 - **Ruhiger Blick:** Er wird nicht kontrolliert; viele blicken spontan abwechselnd zu den Zielen. Beim Mehrfach-Tracking
-  hilft ein Blick ins Zentrum der Ziele (Fehd & Seiffert, 2010), eine vorgeschriebene Fixation eher nicht (Vater et
-  al., 2021). Wer einem Ziel folgt, folgt bei Zweitaufgabe schlechter (Hutton & Tegally, 2005).
+  hilft ein Blick ins Zentrum der Ziele (Fehd & Seiffert, 2010); ein vorgeschriebenes Blickmuster verschlechtert die
+  Leistung eher (Vater et al., 2021, mit Verweis auf Fehd & Seiffert). Wer einem Ziel folgt, folgt bei Zweitaufgabe schlechter (Hutton & Tegally, 2005).
 - **Tempo:** 1× (≈ 6°/s) ist sehr langsam; bei 9× springt ein Ziel am 60-Hz-Bildschirm ≈ 0,9° (ein Durchmesser) pro Bild.
-- **Gleitsicht/Arbeitsplatz:** Der scharfe Zwischenbereich der Gleitsicht ist in 60 cm nur ≈ 13–18° breit, Träger:innen
-  bewegen mehr den Kopf (Han et al., 2003). Beim Mittelblick sieht man die Ziele durch die seitlichen Unschärfezonen –
+- **Gleitsicht/Arbeitsplatz:** Der klare Zwischenbereich war bei zwei untersuchten Gleitsicht-Designs in 60 cm nur
+  ≈ 13–18° breit; Augen- und Kopfbewegungen dauerten länger als mit Einstärkengläsern (Han et al., 2003). Beim Mittelblick sieht man die Ziele durch die seitlichen Unschärfezonen –
   für einen großen Punkt vermutlich unkritisch (nicht untersucht); wer hinspringt, blickt 12–22° zur Seite und beim
   linken Ziel in Fern- bzw. Nahteil. Bildschirmbrille oder kleineres Bild günstiger, Monitor mittig.
 - **Trockenes Auge:** Am Bildschirm ≈ 11,6 Lidschläge/min, viele unvollständig (Portello et al., 2013); Starren zur Mitte
-  kann das verstärken → kurze Durchgänge, blinzeln. Farbe trägt keine Information.
+  kann das verstärken → kurze Durchgänge, blinzeln. Farbe trägt keine Information; bei Rot-Schwäche (Protan-Typ)
+  wirkt der Standard-Rotpunkt auf Schwarz dunkler → hellere Farbe wählen (eigene Einschätzung, nicht untersucht).
 
 ## 5. Neurowissenschaftliche Grundlagen
 
 Aufmerksames Verfolgen bewegter Ziele bei ruhigem Blick aktiviert beidseits Parietalkortex (intraparietaler Sulcus, oberer
-Parietallappen), frontale Augenfelder und den MT-Komplex (MT/MST); parietal und frontal war das Signal mehr als doppelt
+Parietallappen, Präcuneus), frontale Augenfelder und den MT-Komplex (MT/MST); parietal und frontal war das Signal mehr als doppelt
 so groß wie beim bloßen Anschauen, das Muster ähnelt dem bei Aufmerksamkeitswechseln und Augenbewegungen (Culham et al.,
-1998). Getrennte Halbfeld-Ressourcen sind für Kapazität und Wechselkosten belegt (Strong & Alvarez, 2020), ein
+1998; Aufgabe: 3 von 9 gleich aussehenden Kugeln verfolgen, also mit Ablenkern). Getrennte Halbfeld-Ressourcen sind für Kapazität (Alvarez & Cavanagh, 2005) und Wechselkosten beim Halbfeldwechsel
+(Strong & Alvarez, 2020) belegt, ein
 „Hemisphärentraining“ oder „Stärken“ der Netzwerke durch diese Übung nicht.
 
 ## 6. Motorische Grundlagen
@@ -194,9 +197,9 @@ Müdigkeit und Konzentration wirken mit; Seitenunterschiede sind (Pseudoneglect,
 - **Übungseffekt – unklar:** MOT-Aufgaben mit Ablenkern werden durch Üben deutlich besser (Vater et al., 2021); hier
   gibt es weder definierte Leistung noch Rückmeldung – eine Verbesserung ist weder messbar noch untersucht.
 - **Naher Transfer – schwach:** In einer randomisierten Studie (N = 31) stieg die MOT-Leistung stark (ηp² = 0,43),
-  Entscheidungen und naher Transfer nicht (Harenberg et al., 2022); von 16 MOT-Interventionsstudien war keine
-  präregistriert (Vater et al., 2021). Videospiel-Metaanalysen: kleine (g = 0,34, Publikationsbias; Bediou et al.,
-  2018) bis keine Effekte (Sala et al., 2018).
+  Entscheidungen und naher Transfer nicht (Harenberg et al., 2022); von 16 Neurotracker-Interventionsstudien war keine
+  präregistriert (Vater et al., 2021). Videospiel-Metaanalysen: kleine (Interventionen g = 0,34, Publikationsbias, nachträgliches Erratum; Bediou et
+  al., 2018) bis keine Effekte (Sala et al., 2018).
 - **Alltagstransfer – fehlend:** Sport-, E-Sport- oder Verkehrsnutzen ist für keine ähnliche Aufgabe ohne Ablenker belegt.
 
 ## 9. Auswahlhinweise für die KI

@@ -65,7 +65,7 @@ anforderungsprofil:
     ausdauer_belastung: 0
 belastung:
   zeitdruck: 3
-  flimmern_lichtreize: 1
+  flimmern_lichtreize: 2
   bewegungsreize_schwindel: 0
   koerperliche_belastung: 1
   sturzrisiko: 0
@@ -107,9 +107,9 @@ Quelle: Seitentext und Spiel-Chunk `13832-…js` (formatiert, nur Mechanik). **[
   wirksam); Fadenkreuz = Position + `movementX/Y` × Empfindlichkeit (0,1–3, Standard 1), **am Spielfeldrand
   festgeklemmt**. Touch-Geräte ohne feinen Zeiger werden abgewiesen; Verlassen von Pointer Lock/Vollbild bricht ab.
 - **Zielort [CODE]:** Mit Wahrscheinlichkeit 25 % (Level 1) bis 90 % (Level 15, max. 95 %) liegt der Kreis in einem
-  Randstreifen von ≤ 120 px **links oder rechts** (je 50 %, vertikal zufällig), sonst irgendwo. Das Fadenkreuz wird
+  Randstreifen **links oder rechts** (je 50 %, vertikal zufällig): Kreismitte ≈ 30–170 px vom Rand (Abstand Radius + 15 px, Streifenbreite min(15 % der Spielfeldbreite, 120 px)), sonst irgendwo. Das Fadenkreuz wird
   **nicht** zur Mitte zurückgesetzt: Nach einem Randtreffer liegt das nächste Randziel zu 50 % auf derselben Seite
-  (kurzer Weg) oder gegenüber (≈ 1.600–1.750 px ≈ 42–46°). Ton: Randziel 880 Hz, Innenziel 440 Hz – verrät „Rand oder
+  (kurzer Weg) oder gegenüber (≈ 1.600–1.850 px ≈ 40–46° [ER]). Ton: Randziel 880 Hz, Innenziel 440 Hz – verrät „Rand oder
   nicht“, nicht die Seite (keine Stereo-Richtung im Aufruf erkennbar).
 - **Schwierigkeit [CODE]:** gleiche Exponentialkurve wie 501, Level = Punkte/1.750 + 1:
 
@@ -123,7 +123,8 @@ Quelle: Seitentext und Spiel-Chunk `13832-…js` (formatiert, nur Mechanik). **[
 - **Punkte/Zeit [CODE]:** 100 × Combo-Faktor (1,0–3,0) × (1 + 0,5 × (Level−1)/14). Start 45 s; Treffer **+2 s** (max.
   60 s); Fehlklick, Leerklick, Zeitüberschreitung je **−1 s** und Combo-Reset. Spielzeit und Drift laufen mit dt (max.
   0,1 s) → nicht bildfrequenzabhängig; nur Partikel pro Bild (kosmetisch). Fehler: Bildschütteln (6 px), Fehlerton,
-  roter Vollflächen-Schimmer (`fx-flash-red`, 480 ms) – bei schnellen Fehlklicks mehrmals pro Sekunde.
+  roter Vollflächen-Schimmer (`fx-flash-red`, 480 ms; standardmäßig an, per Schalter „Miss Flash“ abschaltbar) – bei
+  schnellen Fehlklicks mehrmals pro Sekunde.
 - **Auswertung [CODE]:** Präzision, Fehlerarten, mittlere Erfassungszeit (Mittelwert über alle Treffer, kurze und
   lange Wege gemischt), maximale Combo, Level; Note S+ bis F nach 100 × √(Punkte/51.000) – ohne Normdaten.
 - **Widersprüche Regeltext ↔ Code:** „+0,6 s“/„−0,8 s“ – Code +2 s/−1 s; „Bildschirmecken“ – Randstreifen links/rechts;
@@ -140,23 +141,24 @@ Schwung 180–260 ms, Bremsung 60–110 ms, Feinjustierung 70–130 ms, gesamt 4
   (Prablanc et al., 1979); eine neue Maus-Skalierung wird schnell gelernt (Krakauer et al., 2000).
 - **Trifft auf diese Übung nicht zu:** keine Drehung, keine 3D-Welt, kein Richtungston, keine Blendgranate [CODE].
   Mit Standard-Empfindlichkeit braucht die Bildschirmquerung nur wenige Zentimeter Mausweg (800 dpi, Zeigertempo 1:1:
-  ≈ 5 cm [ER]); ein festes „cm pro 180°“ gibt es wegen der durchgelassenen Beschleunigung nicht (MDN, o. J.).
-- **Verzerrt:** Das Fadenkreuz stoppt am Rand, Randziele liegen ≤ ≈ 150 px davor [CODE, ER] – undurchdringliche Ränder
+  ≈ 5–6 cm [ER]); ein festes „cm pro 180°“ gibt es wegen der durchgelassenen Beschleunigung nicht (MDN, o. J.).
+- **Verzerrt:** Das Fadenkreuz stoppt am Rand, Randziel-Mitten liegen nur ≈ 30–170 px davor [CODE] – undurchdringliche Ränder
   machen Ziele in Bewegungsrichtung „unendlich tief“ und beschleunigen das Treffen (Walker & Smelcer, 1990). Wer an den
   Rand „wirft“ und zurückzieht, umgeht das angeblich trainierte „saubere Abbremsen“.
 - **Ohne Datengrundlage:** die Phasen-/Elite-Tabelle (keine Quelle enthält Maus- oder FPS-Normwerte); „140–190 ms“
-  liegt unter typischen Sakkadenlatenzen von 180–250 ms (Darrien et al., 2001). „Stäbchen erkennen bis 180°“: Das
+  liegt überwiegend unter typischen Sakkadenlatenzen von 180–250 ms (Darrien et al., 2001). „Stäbchen erkennen bis 180°“: Das
   Gesichtsfeld ist horizontal ≈ 200° weit (Strasburger et al., 2011), der Monitor deckt nur ≈ 48° ab [ER]; ob Stäbchen
   helle Bildschirmreize tragen, ist fraglich (Einschätzung). Sehnenschonung, Pad-Größe, „5–10 min“: unbelegt; sinnvolle
-  Empfindlichkeiten streuen breit (20–80 cm/360°; Boudaoud et al., 2022). Die Messung enthält 23–243 ms Systemlatenz
-  (Ivkovic et al., 2015) – „Mikrosekunden-Präzision“ ist irreführend.
+  Empfindlichkeiten streuen breit (20–80 cm/360°; Boudaoud et al., 2022). Reale Spielsysteme haben 23–243 ms lokale Latenz
+  (Ivkovic et al., 2015), die in jede gemessene Zeit eingeht – „Mikrosekunden-Präzision“ ist irreführend.
 
 ## 4. Optische und okulomotorische Grundlagen
 
 - **Größe/Ort:** Kreis-Ø ≈ 1,7° (Level 1) bis 0,7° (Level 15) – weit über der Auflösungsgrenze. Randziele liegen
-  ≈ 20–24° vom Zentrum, ≈ 42–46° vom Gegenrand (27 Zoll in 60 cm: ±26,5°) [ER].
-- **Randbereich:** Ein kontrastreicher, plötzlich erscheinender Kreis wird auch bei 20–45° sicher bemerkt (Yantis &
-  Jonides, 1984; dazu der Ton); die zum Rand stark abfallende Detailerkennung (Strasburger et al., 2011) wird kaum
+  ≈ 20–23° vom Zentrum, ≈ 40–46° vom Gegenrand (27 Zoll in 60 cm: ±26,5°) [ER].
+- **Randbereich:** Ein kontrastreicher, plötzlich erscheinender Kreis zieht Aufmerksamkeit auf sich (Yantis &
+  Jonides, 1984, dort nahe der Blickmitte untersucht); bei 20–45° dürfte er dank Kontrast und Ton meist bemerkt
+  werden (Einschätzung); die zum Rand stark abfallende Detailerkennung (Strasburger et al., 2011) wird kaum
   gebraucht – daher `peripheres_sehen` = 2.
 - **Große Blicksprünge:** Latenz 180–250 ms, kaum exzentrizitätsabhängig (Darrien et al., 2001); Sakkade und Hand
   unterschießen leicht (Helsen et al., 1998). Bei weiten Sprüngen dreht oft der Kopf mit, individuell sehr verschieden
@@ -185,7 +187,8 @@ Sakkade leitet die Mausbewegung ein“), werden Blick- und Handbefehl weitgehend
 - **Bewegungsablauf:** Schnelle weite Bewegungen streuen stärker (Schmidt et al., 1979); das Geschwindigkeitsmaximum
   liegt etwa bei halber Strecke (Helsen et al., 1998) – „80–90 % ballistisch“ ist unbelegt. Ob Handgelenk oder
   Schulter arbeitet, hängt nur von Empfindlichkeit und DPI ab. Ältere skalieren die Geschwindigkeit bei großen
-  Amplituden weniger (Ketcham et al., 2002); Anhalten auf ≈ 0,9 cm (Level 15) macht Tremor spürbar.
+  Amplituden weniger (Ketcham et al., 2002); die Trefferzone (Level 15: ≈ 0,9 cm am Bildschirm) entspricht bei
+  Standard-Empfindlichkeit nur ≈ 1 mm Mausweg (800 dpi) [ER] – das macht Tremor spürbar.
 
 ## 7. Einflussfaktoren und Messgrenzen
 
@@ -214,7 +217,7 @@ Punkte. Anfangs große Eingewöhnungsgewinne – aussagekräftig ist nur der Ver
 - **Vorsicht / anpassen bei …** Gleitsicht (Randziele außerhalb des Zwischenbereichs → Bildschirmbrille, kleineres
   Fenster); Gesichtsfeldausfall, niedrigem Visus (Randziele später bemerkt); Hand-/Armbeschwerden, Tremor (weite
   schnelle Züge, genaues Anhalten); trockenem Auge, Asthenopie (seltener Lidschlag; gute Spieler verlängern die Runde);
-  Photosensitivität, Migräne (roter Vollflächen-Schimmer, mehrfach pro Sekunde möglich); Aufmerksamkeitsproblemen,
+  Photosensitivität, Migräne (roter Vollflächen-Schimmer, mehrfach pro Sekunde möglich – im Original abschaltbar); Aufmerksamkeitsproblemen,
   kognitiver Einschränkung (Zeitdruck, Strafen).
 - **Kombiniert gut mit …** 501 (kurze Wege), 509 (Feinkorrektur), 511 (Fadenkreuz halten), 805 (Abbremsen), 303
   (Blicksprünge), 801/401 (Wahrnehmung am Rand).

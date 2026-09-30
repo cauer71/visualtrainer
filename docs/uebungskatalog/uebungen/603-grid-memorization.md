@@ -81,7 +81,7 @@ evidenz:
   naher_transfer: schwach
   alltag_transfer: fehlend
   kommentar: "Geübte Gedächtnisaufgaben verbessern sich regelmäßig (Owen et al. 2010; Kable et al. 2017), vieles davon ist aufgabenspezifisches Lernen (Kemps 2001: kein Transfer auf neue Pfade); Transfer tritt eher bei gleicher Aufgabenstruktur auf (Gathercole et al. 2019); ferner oder Alltagstransfer ist mit aktiven Kontrollgruppen nicht belegt (Melby-Lervåg et al. 2016; Kable et al. 2017)."
-aehnliche_uebungen: [811, 607, 605, 601, 106, 604, 602]
+aehnliche_uebungen: [605, 607, 811, 601, 606, 602, 604, 106]
 stichworte: ["Memory Matrix", "Rastergedächtnis", "Mustergedächtnis", "Visual Patterns Test", "Pattern Span", "visuell-räumliches Kurzzeitgedächtnis", "Visual Cache", "Chunking", "Gestalt", "statisches Muster", "Touch", "sprachfrei"]
 ---
 
@@ -198,8 +198,9 @@ samt „Klickfrequenzen“.
 
 - **Übungseffekt – stark:** Im Online-Training wurde jede geübte Aufgabe besser (N = 11.430; Owen et al., 2010), ebenso nach
   10 Wochen kommerziellem Training (Kable et al., 2017). Eingeübte Muster werden gezielt besser (Kemps, 2001).
-- **Naher Transfer – schwach:** Übertragung vor allem bei gleicher Aufgabenstruktur, beim visuell-räumlichen Erinnern eher
-  als beim verbalen (Gathercole et al., 2019). Ein eigener Trainingsnachweis für Rastermuster-Aufgaben fehlt.
+- **Naher Transfer – schwach:** Übertragung vor allem bei gleicher Aufgabenstruktur, beim visuell-räumlichen *seriellen*
+  Erinnern eher als beim verbalen (Gathercole et al., 2019). Das betrifft Corsi-artige Folgen (→ 607, dort „mittel“); diese
+  Übung zeigt ein statisches Muster ohne Reihenfolge. Ein eigener Trainingsnachweis für Rastermuster-Aufgaben fehlt.
 - **Alltagstransfer – fehlend:** Kein ferner Transfer gegen behandelte Kontrollgruppen (Melby-Lervåg et al., 2016). Nach 10
   Wochen kommerziellem Training verbesserten sich Standardtests nicht stärker als nach Videospielen (n = 128; Kable et al.,
   2017). Eine Studie mit 49 gemischten Übungen fand einen kleinen Vorteil gegenüber Kreuzworträtseln (d = 0,26; N = 4.715;
@@ -222,10 +223,15 @@ samt „Klickfrequenzen“.
   Alterssichtigkeit und Gleitsicht sind hier wenig kritisch.
 - **Kombiniert gut mit …** 607 (Corsi-Pfad, sequenzielles Gegenstück), 605 (Objekt-Ort), 811 (Muster merken), 601 (Senso),
   106 (Mehrfach-Objektverfolgung, dynamisch statt statisch).
+- **Abgrenzung in der Gruppe (keine Dublette):** Am nächsten verwandt ist 605. Beide nutzen dasselbe Raster (min(88 vw,
+  44 vh)) und dieselbe Einprägezeit von 1,5 s. Bei 603 merkt man sich nur, *wo* Felder geleuchtet haben, und tippt alle
+  an. Bei 605 muss man sich merken, *was wo* lag (Symbole unterscheiden), und beantwortet nur eine Frage je Anordnung.
+  607 zeigt die Orte nacheinander und verlangt die Reihenfolge. 606 hat denselben Aufbau („alles gleichzeitig zeigen,
+  alles in beliebiger Reihenfolge wiedergeben“) mit Wörtern.
 
 ## 10. Schwächen des Originals und Empfehlungen für eine Blickfit-Umsetzung
 
-- Treppe mit Abstieg statt Einbahnstraße, z. B. 2-down/1-up (konvergiert auf ≈ 71 %; Levitt, 1971); Start mit 3 Feldern;
+- Treppe mit Abstieg statt Einbahnstraße, z. B. 2 fehlerfreie Muster in Folge → +1 Feld, 1 Fehler → −1 Feld (konvergiert auf ≈ 71 % Erfolg; Levitt, 1971); Start mit 3 Feldern;
   Runde nach Versuchen (z. B. 14) statt nach Uhrzeit.
 - Messgrößen: größtes fehlerfreies Muster und Anteil richtiger Felder je Versuch; angezeigte Stufe = tatsächlich gelöste;
   keine Tier-, Perzentil- oder „Top 1 %“-Angaben.

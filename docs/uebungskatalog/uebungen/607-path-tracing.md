@@ -214,7 +214,7 @@ Fingern, Zentralfixation und rhythmisches Tippen – für MOBA-Gamer, MINT-Studi
 ## 10. Schwächen des Originals und Empfehlungen für eine Blickfit-Umsetzung
 
 - Ehrlicher Name („Leuchtpfad“), kein „Test/Assessment“, keine Tier-, Perzentil- oder Corsi-Norm-Angaben.
-- Treppe mit Abstieg (z. B. 2 Versuche je Länge oder 2-down/1-up → ≈ 71 %; Levitt, 1971); Runde nach Versuchen statt Uhr;
+- Treppe mit Abstieg (z. B. 2 Versuche je Länge oder 2 fehlerfreie Wege in Folge → +1 Schritt, 1 Fehler → −1 Schritt, konvergiert auf ≈ 71 % Erfolg; Levitt, 1971); Runde nach Versuchen statt Uhr;
   Messgröße = längste fehlerfreie Folge.
 - Modi „Pfad“ (Nachbarschritte) und „Sprung“ (freie Orte wie Corsi); Nummern optional; Takt wählbar (0,5 / 0,75 / 1 s).
 - Raster unabhängig von der Ausrichtung (≈ 10–12° bei 40 cm), Felder ≥ 10 mm; Auslösen beim Loslassen.

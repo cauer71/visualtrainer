@@ -81,7 +81,7 @@ evidenz:
   naher_transfer: mittel
   alltag_transfer: fehlend
   kommentar: "In N-Back-Trainingsstudien (meist 20+ Sitzungen) verbessert sich die geübte Aufgabe deutlich; auf ungeübte N-Back-Varianten überträgt sich das mittelgroß (g = 0,62), auf andere Arbeitsgedächtnisaufgaben nur klein (g = 0,24) und auf fluide Intelligenz sehr klein (g = 0,16; Soveri et al. 2017); gegen aktive Kontrollgruppen fehlt ferner Transfer (Redick et al. 2013; Melby-Lervåg et al. 2016). Für 45-s-Runden gibt es keine eigenen Studien."
-aehnliche_uebungen: [602, 601, 607, 603, 606, 208, 205, 206, 102, 201]
+aehnliche_uebungen: [602, 606, 601, 607, 603, 605, 208, 205, 206, 102, 201]
 stichworte: ["N-Back", "3-Back", "Arbeitsgedächtnis", "working memory updating", "Aktualisieren", "Buchstabenfolge", "Wiedererkennen", "Kirchner", "Dual N-Back", "Lure", "d prime", "phonologische Schleife", "Daueraufmerksamkeit", "Zeitdruck"]
 ---
 
@@ -216,8 +216,11 @@ normative Basislinie nach Kirchner 1958, 65–79 % Genauigkeit“).
   Aufstieg ohne Abstieg, Regelwechsel ohne Hinweis); `lese_rechtschreib_schwaeche` (schnelles Buchstabenbenennen,
   Arbeitsgedächtnisnachteil d ≈ −0,67; Swanson et al., 2009); `photosensitive_epilepsie` und `migraene_lichtempfindlich` (roter Vollbild-Blitz 480 ms bei
   jedem Fehler, unter 3/s, aber gesättigtes Rot; vorher abschalten); `kinder_unter_6` (Buchstabenkenntnis).
-- **Kombiniert gut mit …** 602 (reines Behalten), 601 und 607 (räumliche Sequenzen), 208 (Daueraufmerksamkeit), 102
-  (Go/No-Go), 205 (geteilte Aufmerksamkeit).
+- **Kombiniert gut mit …** 602 (reines Behalten), 601 (Farbfolgen) und 607 (räumliche Folgen), 208 (Daueraufmerksamkeit),
+  102 (Go/No-Go), 205 (geteilte Aufmerksamkeit).
+- **Abgrenzung in der Gruppe:** Die einzige Übung des Kapitels, die laufendes **Aktualisieren** statt reinem Behalten
+  verlangt (`arbeitsgedaechtnis` 3; bei 601–603 und 605–607 nur 1). Nächste Verwandte sind 602 und 606 (ebenfalls
+  verbales Material, dort aber einmal einprägen und dann wiedergeben). Keine Dublette in der Gruppe.
 
 ## 10. Schwächen des Originals und Empfehlungen für eine Blickfit-Umsetzung
 

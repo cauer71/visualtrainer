@@ -72,7 +72,7 @@ belastung:
   sprachabhaengigkeit: 0
 
 # ===== Auswahlhilfe =====
-voraussetzungen: ["Maus, Touchpad oder Touchscreen; Maus auf ruhiger Unterlage", "ein kleines bewegtes Ziel (≈ 1,5° bis ≈ 0,6° Sehwinkel, 2–16 °/s, mit Combo bis ≈ 22 °/s) sicher sehen und verfolgen können", "scharfes Sehen über das ganze Spielfeld (Vollbild; am Monitor ≈ 40° breit, am Tablet ≈ 27°) in Bildschirmabstand", "kein Farbsehen nötig (roter Punkt mit weißem Kern auf fast Schwarz)", "Vollbildmodus erlaubt; Runde dauert bei guter Trefferquote länger als 45 s"]
+voraussetzungen: ["Maus, Touchpad oder Touchscreen; Maus auf ruhiger Unterlage", "ein kleines bewegtes Ziel (≈ 1,5° bis ≈ 0,6° Sehwinkel, 2–16 °/s, mit Combo bis ≈ 22 °/s) sicher sehen und verfolgen können", "scharfes Sehen über das ganze Spielfeld (Vollbild; am Monitor ≈ 40° breit, am Tablet ≈ 27°) in Bildschirmabstand", "kein Farbsehen nötig (roter Punkt mit weißem Kern auf fast Schwarz; bei Rotschwäche wirkt der rote Rand dunkler, der weiße Kern bleibt sichtbar)", "Vollbildmodus erlaubt; Runde dauert bei guter Trefferquote länger als 45 s"]
 vorsicht_bei: [photosensitive_epilepsie, migraene_lichtempfindlich, presbyopie_gleitsicht, nystagmus, gesichtsfeldausfall, sehbehinderung_niedriger_visus, trockenes_auge_bildschirm, tremor_parkinson, hand_arm_beschwerden, kognitive_einschraenkung, aufmerksamkeitsprobleme]
 geeignet_fuer: ["bewegte Ziele mit Blick und Hand abfangen (Interzeption) in zwei Dimensionen üben", "Vorausschätzen einer geradlinigen Bahn mit Abprallern", "spielerische Auge-Hand-Übung mit steigendem Tempo für Jugendliche und Erwachsene mit Freude an Zeitdruck", "Aufwärmen vor FPS-Tracking- und Abfangübungen (304, 505, 514)"]
 weniger_geeignet_fuer: ["Messung von Reaktionszeit oder Blickfolge (keine Blickmessung; 'Ø Reaktion' enthält Blick- und Handbewegung und zählt nur Treffer)", "kontinuierliches Nachführen eines Zeigers (gewertet wird nur der Klick; dafür 707, 514)", "Menschen, die ohne Zeitdruck üben sollen oder möchten", "Gleitsichtträger:innen im Vollbild am großen Monitor", "Lichtempfindliche: roter Fehlerblitz bei jedem Fehler (abschaltbar)", "Ältere oder Einsteiger:innen ab etwa Level 8 (Lebensdauer < 0,85 s, Tempo > 9 °/s)"]
@@ -81,7 +81,7 @@ evidenz:
   naher_transfer: schwach
   alltag_transfer: fehlend
   kommentar: "Diese Übung wurde nie untersucht; Abfang- und Zeigeaufgaben werden durch Übung deutlich besser (auch Gerätegewöhnung, Guo et al. 2025), die Mechanismen der Interzeption sind gut erforscht (Mrotek & Soechting 2007; de la Malla et al. 2017), ein Nutzen für Sport, E-Sport oder Alltag ist aber nicht belegt (Fransen 2024)."
-aehnliche_uebungen: [304, 104, 306, 105, 410, 415, 505, 512, 514, 515, 303, 302, 503, 101]
+aehnliche_uebungen: [304, 104, 306, 105, 410, 415, 505, 512, 514, 515, 303, 302, 301, 503, 101]
 stichworte: ["Interzeption", "Abfangen bewegter Ziele", "Zielverfolgung", "Blickfolge", "smooth pursuit", "Aufholsakkaden", "Abprallen", "Antizipation", "Auge-Hand-Koordination", "Fitts'sches Gesetz für bewegte Ziele", "Zeitdruck", "Combo", "Test (Name des Originals)"]
 ---
 
@@ -134,16 +134,18 @@ ist zurückhaltend: kein klinischer Wert, keine Augenmessung, FPS-Transfer „ni
 Doppelbildern. Die Stufen (> 330 ms … < 180 ms Ø Reaktion, < 72 % … 98 %+ Genauigkeit) heißen ausdrücklich „keine Normen“. Einordnung:
 - **Stufen unrealistisch, ohne Datengrundlage.** „Ø Reaktion“ umfasst Entdecken (≈ 131 ms; Woods et al., 2015), Blicksprung (Median
   ≈ 177 ms; Bargary et al., 2017) und Handweg zu einem bewegten Ort; *eigene Fitts-Abschätzung* für Level 1 (≈ 600 px, Zone 84 px,
-  3,7–4,9 bit/s; Soukoreff & MacKenzie, 2004): ≈ 0,8–1,0 s. Unter 330 ms gelingt das nur bei Zielen nahe am Zeiger oder über den
+  ≈ 3 bit, 3,7–4,9 bit/s; Soukoreff & MacKenzie, 2004): Handbewegung ≈ 0,6–0,8 s, mit Entdecken insgesamt ≈ 0,8–1,0 s (für
+  ruhende Ziele gerechnet, bei bewegten nur grob; Jagacinski et al., 1980). Unter 330 ms gelingt das nur bei Zielen nahe am Zeiger oder über den
   Auswahleffekt (Abschnitt 7). Kosinski und Woods behandeln einfache Reaktionen auf ruhende Reize.
 - **Blicktipps teils widersprüchlich:** „Ziel im Blick halten“ ist belegt – Verfolgen verbessert die Bahnvorhersage (Spering et al., 2011)
   und vermeidet systematische Abfangfehler (de la Malla et al., 2017); „das gesamte Feld beobachten“ und „weiter Blick“ sind es nicht.
-- **„Tracking ≠ Rückorientierung“** stimmt für Augen (Folgebewegung vs. Sakkade; Krauzlis, 2004); Rashbass ist mit falschem Titel zitiert.
+- **„Tracking ≠ Rückorientierung“** stimmt für Augen im Grundsatz (Folgebewegung vs. Aufhol-/Blicksprung; Rashbass, 1961); Krauzlis
+  (2004) betont allerdings gerade die weitgehend gemeinsame Steuerung beider Systeme. Rashbass ist mit leicht falschem Titel zitiert.
   Gleiches Gerät, 5–10-min-Blöcke und Pausen sind vernünftige Ratschläge, eine optimale Dosis ist nicht belegt.
 
 ## 4. Optische und okulomotorische Grundlagen
 
-- **Auge (Labordaten, im Spiel nicht gemessen):** Ziel erscheint bis ≈ 20° neben dem Blickort → Sakkade (≈ 177 ms; Bargary et al., 2017)
+- **Auge (Labordaten, im Spiel nicht gemessen):** Ziel erscheint oft > 10°, im Extrem ≈ 35° neben dem Blickort (*eigene Rechnung*, Monitor) → Sakkade (≈ 177 ms; Bargary et al., 2017)
   → Folgebewegung mit ≈ 100 ms Latenz (Carl & Gellman, 1987). Aufholsakkaden folgen dem vorhergesagten Positions-/Tempofehler (keine
   Sakkade bei „Eye-Crossing-Time“ 40–180 ms; de Brouwer et al., 2002). Bei 380 ms Lebensdauer (Level 15) bleibt dafür kaum Zeit.
 - **Tempo:** 2–16 °/s (mit Combo ≈ 22 °/s) ist gut verfolgbar; Folgegewinn junger Erwachsener ≈ 0,80 (0,31–1,08; Bargary et al., 2017),
@@ -172,8 +174,9 @@ Augenbewegungsbefehls zusätzliche Bewegungsinformation (Interpretation von Sper
   als den Zeitpunkt an und ist zeitlich sehr präzise (Brenner & Smeets, 2015) – hier darf überall auf der Bahn geklickt werden.
 - **Zwei Strategien:** Zeiger mitführen und klicken, wenn er auf dem Ziel liegt, oder „Hinterhalt“ auf der Bahn. Zeitfenster
   Trefferzone/Tempo: Level 10 ≈ 117 ms, Level 15 ≈ 57 ms, mit maximaler Combo ≈ 31 ms (*eigene Rechnung*).
-- **Fitts für bewegte Ziele:** Der klassische Index sagt die Erfassungszeit bewegter Ziele schlecht voraus, ein Geschwindigkeitsterm
-  passt besser (Jagacinski et al., 1980); Klicks landen hinter dem Ziel, umso mehr, je schneller es ist (Huang et al., 2018).
+- **Fitts für bewegte Ziele:** Bei Positionssteuerung (wie Maus/Finger) sagt der klassische Index die Erfassungszeit bewegter Ziele
+  schlecht voraus, ein Geschwindigkeitsterm passt besser (Jagacinski et al., 1980); Klicks landen hinter dem Ziel, umso mehr, je
+  schneller es ist (Huang et al., 2018; nur waagrechte 1D-Bewegung, Maus).
 - **Touch:** Tippen verkürzte die Bewegungszeit gegenüber der Maus bei Älteren um 35 %, bei Jüngeren um 16 % (Findlater et al., 2013).
   Trefferzone bis Level 15 ≈ 11 mm, mit maximaler Combo ≈ 9,6 mm (Empfehlung 9,2 mm; Parhi et al., 2006), sichtbares Ziel dann nur
   ≈ 4–5 mm (*eigene Rechnung*); Hand und Arm verdecken Teile der Bahn. Tremor stört bei kleinen Zielen (McAuley & Marsden, 2000).
@@ -182,17 +185,18 @@ Augenbewegungsbefehls zusätzliche Bewegungsinformation (Interpretation von Sper
 
 - **Latenz verschiebt Treffer nach hinten:** Maus → Bild ≈ 37 ms bei 60 Hz, ≈ 21 ms bei 120 Hz, Tablet-Tipps 48–276 ms (Casiez et al.,
   2017). Bei 592 px/s (Level 15) sind 37 ms ≈ 22 px – mehr als der Zielradius (12 px), nahe am Trefferradius (≈ 17 px) (*eigene
-  Abschätzung*). Browser verlängern gemessene Zeiten um 58–133 ms (Pronk et al., 2020) – nur Selbstvergleich am selben Gerät.
+  Abschätzung*). Je nach Gerät und Browser werden Zeiten um ≈ 58–133 ms zu lang gemessen (Pronk et al., 2020) – nur Selbstvergleich am selben Gerät.
 - **Auswahleffekt und Selbstregulierung:** „Ø Reaktion“ zählt nur Treffer; mit sinkender Lebensdauer gelingen nur noch Ziele nahe am
   Zeiger, der Mittelwert „verbessert“ sich allein durch den Level (*eigene Analyse*). Nach Fehlern wird das nächste Ziel leichter, das
   Level nie; die Rundendauer ist selbst ein Leistungsmaß.
 - **Alter, Zuverlässigkeit:** Ältere streuen stärker (Moschner & Baloh, 1994). Aim-Trainer können sehr zuverlässig messen (ICC
-  0,947–0,995; Rogers et al., 2024); diese Übung wurde nie geprüft.
+  0,947–0,995; Rogers et al., 2024, Pilotstudie mit 10 E-Sportlern); diese Übung wurde nie geprüft.
 
 ## 8. Studienlage: Trainierbarkeit und Übertragung
 
-- **Übungseffekt (stark):** Abfang- und Zeigeaufgaben werden durch Wiederholung besser; Effekte digitalen Sport-Sehtrainings sind in
-  trainingsähnlichen Tests gut fünfmal so groß wie in unähnlichen (SMD 2,66 vs. 0,50; Guo et al., 2025) – teils Gerätegewöhnung.
+- **Übungseffekt (stark):** Abfang- und Zeigeaufgaben werden durch Wiederholung besser; bei digitalem Sport-Sehtraining war der Effekt auf
+  die Reaktionszeit in trainingsähnlichen Tests gut fünfmal so groß wie in unähnlichen (SMD 2,66 vs. 0,50; Guo et al., 2025) –
+  überwiegend Gewöhnung an Aufgabe und Gerät.
 - **Naher Transfer (schwach):** keine Studie zu diesem Aufgabentyp; Bahnvorhersage passt sich an Erfahrung an (Diaz et al., 2013).
 - **Alltagstransfer (fehlend):** kein Ferntransfer allgemeiner Wahrnehmungstrainings auf Sport belegt (Fransen, 2024), ebenso wenig von
   „Brain Training“ auf den Alltag (Simons et al., 2016); nichts zu Verkehr oder E-Sport.
@@ -212,13 +216,15 @@ Augenbewegungsbefehls zusätzliche Bewegungsinformation (Interpretation von Sper
   sich verschärfender Zeitdruck, Blitz, Ton, Wackeln – als Spiel auf niedriger Stufe, nicht als Test.
 - **Kombiniert gut mit …** 404/105 (Blickfolge ohne Hand), 104 (`zielfang`), 306 (fallende Ziele), 410/415 (Richtungswechsel), 505/514.
 - **Überschneidungen:** 304 = dieselbe Abfang-Mechanik, nur waagrecht mit Richtungswechseln – nicht beide hintereinander vorschlagen.
-  Mit 101/503 nur das Reagieren auf ein erscheinendes (dort ruhendes) Ziel, mit 102 nur die Combo-Logik, mit 202 nichts Wesentliches.
-  302, 303, 306–308, 501, 508 teilen die Engine (Combo bis 3,0×, Level alle 1.750 Punkte).
+  Mit 101/301/503 nur das Reagieren auf ein erscheinendes (dort ruhendes) Ziel – dort wird echte Reaktionszeit gemessen, hier nicht;
+  mit 102 nur die Combo-Logik, mit 202 nichts Wesentliches. 302–304, 306–308 nutzen denselben Baukasten (Combo bis 3,0×, Level alle
+  1.750 Punkte); 501 und 508 sind ähnlich gebaut (1.800 bzw. 1.400 Punkte je Level).
 
 ## 10. Schwächen des Originals und Empfehlungen für eine Blickfit-Umsetzung
 
-- **Keine eigene Umsetzung nötig:** `zielfang` (Blickfit zu 104) deckt den Kern ab – dt-Tempo, Staircase (≈ 79 % Treffer), Tempo ±15 %,
-  Kurven ab Stufe 6, Trefferradius ≥ 32 px, Vor/Hinter-Auswertung. Ergänzbar: Stufe mit **Abprallern an sichtbaren Rändern** (2D-Variante).
+- **Keine eigene Umsetzung nötig:** `zielfang` (Blickfit zu 104) deckt den Kern ab – 2D-Bahn mit Abprallen an den Spielfeldrändern,
+  dt-Tempo, Staircase 3-down/1-up (≈ 79 % Treffer), Tempo ±15 %, Kurven ab Stufe 6, Trefferradius ≥ 32 px, Vor/Hinter-Auswertung, feste
+  45 s. Ergänzbar allenfalls: Rand des Abprallbereichs sichtbar markieren und eine Auswertung „Treffer kurz nach Abprall“.
 - **Ehrlich messen:** „Abfangzeit“ statt „Reaktion“; Median und Trefferquote je Tempoband, Fehlklicks und Abläufe getrennt; keine
   ms-Stufen, keine Noten wie „LEGENDARY“. Tempo/Größe in Sehwinkel, Spielfeld ≈ 20–25° (Gleitsicht), Tablet quer.
 - **Sicherheit:** kein roter Blitz, kein Wackeln (WCAG 2.3.1); feste Rundendauer, Pausenhinweis; DE/IT; „Übung“ statt „Test“.
@@ -231,7 +237,8 @@ Augenbewegungsbefehls zusätzliche Bewegungsinformation (Interpretation von Sper
   https://doi.org/10.1113/jphysiol.1961.sp006811 – **Prüfung:** DOI stimmt ✓, Website-Titel ungenau („pursuit“ statt „tracking“), nur
   Metadaten; **stützt die Aussage der Website:** teilweise (Folgebewegung vs. Sakkade beim Auge; zur Mausaufgabe nichts).
 - Krauzlis, R. J. (2004). Recasting the smooth pursuit eye movement system. *Journal of Neurophysiology, 91*(2), 591–603.
-  https://doi.org/10.1152/jn.00801.2003 – **Prüfung:** DOI stimmt ✓ (Abstract); **stützt:** teilweise (nur Augen-Folgebewegung).
+  https://doi.org/10.1152/jn.00801.2003 – **Prüfung:** DOI stimmt ✓ (Abstract); **stützt:** teilweise (nur Augen-Folgebewegung; der Artikel betont eher Gemeinsamkeiten von
+  Folgebewegung und Sakkaden als ihre Trennung).
 - Woods, D. L., Wyma, J. M., Yund, E. W., Herron, T. J., & Reed, B. (2015). Factors influencing the latency of simple reaction time.
   *Frontiers in Human Neuroscience, 9*, 131. https://doi.org/10.3389/fnhum.2015.00131 – **Prüfung:** DOI stimmt ✓ (Volltext); **stützt:**
   ja für „Hardware beeinflusst den Wert“, nein für die ms-Stufen (einfache Reaktion auf ruhenden Reiz: 231 ms, hardwarekorrigiert 213 ms).

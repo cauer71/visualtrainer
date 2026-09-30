@@ -41,14 +41,14 @@ anforderungsprofil:
     daueraufmerksamkeit: 1
     selektive_aufmerksamkeit: 1
     inhibition: 1
-    geteilte_aufmerksamkeit: 1
+    geteilte_aufmerksamkeit: 0
     kognitive_flexibilitaet: 0
     arbeitsgedaechtnis: 0
     kurzzeitgedaechtnis_verbal: 0
     kurzzeitgedaechtnis_visuell_raeumlich: 0
     verarbeitungsgeschwindigkeit: 2
     antizipation: 1
-    entscheidung_wahlreaktion: 2
+    entscheidung_wahlreaktion: 1
     lesen_sprache: 0
     schlussfolgern: 0
   motorisch:
@@ -65,7 +65,7 @@ anforderungsprofil:
     ausdauer_belastung: 0
 belastung:
   zeitdruck: 3
-  flimmern_lichtreize: 1
+  flimmern_lichtreize: 2
   bewegungsreize_schwindel: 1
   koerperliche_belastung: 0
   sturzrisiko: 0
@@ -113,7 +113,7 @@ Grundlage: Seitentext und ausgelieferter Spielcode (Chunk `74130-…js`, gemeins
 - **Combo:** Faktor 1,1/1,25/1,35/1,5/1,75/2/2,5/3,0 ab 3/5/7/10/15/20/30/50 Treffern in Folge; Punkte je Treffer = 100 × Faktor × (1 + 0,5 p). Bei Faktor 3,0: Anzeigedauer Level 1 884 ms, Level 15 258 ms; Ø Ziel Level 15 18 px ≈ 0,48°.
 - **Fehler:** Klick daneben oder Ablauf der Anzeigedauer → Combo 0, **−1 s**, Bildwackeln (6 px, klingt pro Bild ab), Ton, **roter Fehlerblitz** (gemeinsame Effektkomponente wie in 306: radialer Verlauf, ≈ 0,45 s; standardmäßig an, in der Übung abschaltbar). Das Timeout hängt an einer globalen Einstellung (standardmäßig an, in dieser Übung nicht umschaltbar); ohne sie bliebe das Ziel bis zum Treffer stehen.
 - **Zeit:** Start 45 s, **+2 s je Treffer** (max. 60 s). *Eigene Abschätzung:* Bei Level 1 dauert ein Zyklus (Pause ≈ 0,65 s + Reagieren und Zeigen ≈ 0,5–0,9 s) weniger als 2 s – wer sicher trifft, lässt die Uhr steigen, eine Runde kann dann mehrere Minuten dauern (≈ 70–90 Treffer bis Level 10). Sie endet erst, wenn Timeouts überwiegen.
-- **Eingabe/Timing:** Pointer beim Drücken (Maus, Stift, Finger; ein Fadenkreuz folgt dem Zeiger, am Touchgerät nur am Berührpunkt). Keine Tastatur außer Escape. Anzeigedauer und Uhr rechnen mit der Bildzeit (dt, pro Bild höchstens 100 ms) → bildfrequenzunabhängig; nur Partikel und Wackeln laufen pro Bild (rein optisch). Die Zeit wird ab dem Bild gezählt, in dem das Ziel entsteht.
+- **Eingabe/Timing:** Pointer beim Drücken (Maus, Stift, Finger; ein Fadenkreuz folgt dem Zeiger, am Touchgerät nur am Berührpunkt). Keine Tastatur außer Escape. Die Anzeigedauer wird in Echtzeit ab dem Erscheinen gemessen (Zeitstempel beim Erzeugen des Ziels), die Rundenuhr mit der Bildzeit (dt, pro Bild höchstens 100 ms) → beides bildfrequenzunabhängig; nur Partikel und Wackeln laufen pro Bild (rein optisch).
 - **Note:** 100 × √(Punkte/18.000) → „S+ LEGENDARY“ ab 16.245 Punkten.
 
 **Widersprüche Regeltext ↔ Code:** (1) „+0,6 s“ je Treffer – Code +2 s. (2) „Combo zurück (−0,8 s)“ – Code −1 s, und zwar **immer** (die allgemeine Einstellung „ohne Zeitstrafe“ wird übergangen; der Rat, den „Strafmodus“ konstant zu halten, läuft ins Leere). (3) „Scanroute von links nach rechts festlegen“, „jeden Winkel einzeln prüfen“ – die Tür ist **zufällig**, es gibt keine Reihenfolge. (4) „An der Kante des nächsten Durchgangs warten“ – das Ziel erscheint in der Türmitte, nicht an einer Kante. (5) „fünf Durchgänge, horizontale Sichtwechsel“ – im Hochformat vier Türen im Raster.
@@ -124,7 +124,7 @@ Die Seite beschreibt den Drill als „kompakte visuelle Suchschleife“ für FPS
 
 - **Keine Suche im engeren Sinn:** Es gibt nur ein Ziel, es erscheint schlagartig und hebt sich in Farbe und Helligkeit stark ab. Ein plötzlich erscheinendes Objekt zieht die Aufmerksamkeit von selbst auf sich (Yantis & Jonides, 1984). Die Leistung hängt daher kaum am Absuchen, sondern an Entdecken, Blicksprung und Zeigebewegung.
 - **Die empfohlene Links-rechts-Scanroute schadet eher:** Da jede Tür gleich wahrscheinlich ist, verkürzt Warten **in der Mitte** den mittleren Zeigerweg gegenüber der linken Tür von ≈ 428 auf ≈ 257 px (−40 %, eigene Rechnung). Aufmerksamkeit lässt sich zudem kaum auf mehrere nicht benachbarte Orte zugleich vorbereiten (Posner et al., 1980). Sinnvoll ist dagegen der Rat, den Zeiger **auf Zielhöhe** zu halten – das Ziel erscheint fast immer auf derselben Höhe, die Bewegung wird dadurch rein waagrecht.
-- **Reaktions-Bänder:** „Ø Reaktion“ enthält einfache Reaktionszeit (213–231 ms; Woods et al., 2015), Browser-/Geräteanteil (58–133 ms; Pronk et al., 2020) und die Zeigerbewegung. Werte < 310 ms sind nur möglich, wenn der Zeiger schon an der richtigen Tür steht; < 150 ms ist bei zufälligem Ort und schwankendem Zeitpunkt als echte Reaktion nicht erreichbar. Weil nur Treffer zählen und bei hohem Level vor allem die weit entfernten Ziele verfallen, „verbessert“ sich der Mittelwert zusätzlich von selbst (Auswahlverzerrung, eigene Analyse).
+- **Reaktions-Bänder:** „Ø Reaktion“ enthält einfache Reaktionszeit (213–231 ms; Woods et al., 2015), Browser-/Geräteanteil (58–133 ms; Pronk et al., 2020) und die Zeigerbewegung. Werte < 310 ms sind nach dieser Summe (*eigene Abschätzung*) praktisch nur erreichbar, wenn der Zeiger schon an der richtigen Tür steht; < 150 ms ist bei zufälligem Ort und schwankendem Zeitpunkt als echte Reaktion kaum möglich (schon das reine Entdecken dauert ≈ 131 ms; Woods et al., 2015). Weil nur Treffer zählen und bei hohem Level vor allem die weit entfernten Ziele verfallen, „verbessert“ sich der Mittelwert zusätzlich von selbst (Auswahlverzerrung, eigene Analyse).
 - **Hick/Donders:** Fünf Orte sind fünf Alternativen, aber das Zeigen auf einen sichtbaren Ort ist hoch kompatibel; der Hick-Anstieg ist dann nahezu flach (Proctor & Schneider, 2018), Blicksprünge zu sichtbaren Zielen folgen Hick gar nicht (Kveraga et al., 2002). Die Stufenlogik Wahrnehmen – Auswählen – Ausführen (Donders) ist korrekt.
 - **„Kleine Korrektur statt großer Flick“:** passt zu Fitts (1954) und zum Zwei-Komponenten-Modell (Elliott et al., 2010): Kürzere Wege aus einer guten Ausgangslage sparen Zeit; schnelle weite Bewegungen erhöhen die Streuung (Speed-Accuracy-Trade-off; Heitz, 2014).
 - **Noten „LEGENDARY“** beruhen nur auf dem Punktestand, ohne Datengrundlage. Die Quelle Krauzlis (2004, Folgebewegung) passt nicht, die Ziele stehen still.
@@ -134,7 +134,7 @@ Die Seite beschreibt den Drill als „kompakte visuelle Suchschleife“ für FPS
 - **Sehwinkel:** Ziele 1,5° (Level 1) bis 0,6° (Level 15), bei hoher Combo ≈ 0,5°; für normale Sehschärfe groß und kontrastreich. Begrenzend ist das rasche Entdecken außerhalb der Blickmitte, nicht das Detail.
 - **Exzentrizität und Blicksprünge:** Wartet man in der Mitte, liegen die Ziele in der Seite bei 0°, ≈ 5,7° oder ≈ 11,3° (Vollbild bis ≈ 20°). Die Sakkadenlatenz ist zwischen 0,75° und 12° am kürzesten und steigt nach außen langsam an (Kalesnykas & Hallett, 1994). Eine 10°-Sakkade dauert ≈ 40 ms (Gibaldi & Sabatini, 2021). Bis ≈ 20° dreht sich der Kopf kaum mit (< 5°), darüber zunehmend (Freedman, 2008) – im Vollbild werden Kopfbewegungen nötig.
 - **Bildschirm:** Die Ziele stehen still, Bewegungsunschärfe spielt keine Rolle. Ende-zu-Ende-Latenz Maus → Bild 21–37 ms (120 bzw. 60 Hz), Tippen am Tablet 48–276 ms je nach Gerät und Toolkit (Casiez et al., 2017); das verlängert die gemessene Zeit, verschiebt aber anders als bei bewegten Zielen (306) nicht den Treffpunkt.
-- **Gleitsicht/Alterssichtigkeit:** Die Türreihe ist in der Seite ≈ 23° breit, im Vollbild ≈ 39°. Der klare Zwischenbereich von Gleitsichtgläsern ist nur ≈ 13–18° breit (Han et al., 2003): Die äußeren Türen sieht man durch die unscharfen Seitenzonen, wenn man den Kopf nicht dreht. Gleitsichtträger halten den Kopf am Bildschirm zudem ≈ 7° höher (Jaschinski et al., 2015). Besser: Bildschirm-/Arbeitsplatzbrille, kein Vollbild, Reihe auf Augenhöhe oder leicht darunter. Am Tablet in ≈ 35–40 cm ist Nahkorrektur nötig (Presbyope halten Geräte weiter weg; Boccardo et al., 2023).
+- **Gleitsicht/Alterssichtigkeit:** Die Türreihe ist in der Seite ≈ 23° breit, im Vollbild ≈ 39°. Der klare Zwischenbereich von Gleitsichtgläsern ist nur ≈ 13–18° breit (Han et al., 2003): Die äußeren Türen sieht man durch die unscharfen Seitenzonen, wenn man den Kopf nicht dreht. Gleitsichtträger halten den Kopf am Bildschirm zudem ≈ 7° höher (Jaschinski et al., 2015). Besser: Bildschirm-/Arbeitsplatzbrille, kein Vollbild, Reihe auf Augenhöhe oder leicht darunter. Am Tablet in ≈ 35–40 cm brauchen Alterssichtige eine Nahkorrektur (Presbyope halten schon Smartphones im Mittel weiter weg, ≈ 40 statt ≈ 33 cm; Boccardo et al., 2023).
 - **Trockenes Auge:** Am Bildschirm sinkt die Blinzelrate im Mittel auf ≈ ein Fünftel (Patel et al., 1991); bei kurzen Anzeigezeiten blinzelt man plausibel eher noch seltener (für diese Übung nicht gemessen).
 - **Farbe/Kontrast:** Rot auf Fast-Schwarz mit weißem Kern; bei Rot-Grün-Schwäche (≈ 8 % der Männer; Birch, 2012) wirkt Rot dunkler, der weiße Kern bleibt gut sichtbar (eigene Einschätzung). Die Türen selbst sind sehr kontrastarm, für die Aufgabe aber unwichtig.
 
@@ -152,16 +152,16 @@ Zu dieser Aufgabe gibt es keine Bildgebungs- oder Trainingsstudie; die Website n
 ## 6. Motorische Grundlagen
 
 - **Zielbewegung:** Die Bewegungszeit steigt mit log₂(2A/W) (Fitts, 1954); schneller Anfangsimpuls plus visuelle Endkorrektur (Elliott et al., 2010). Maus-Durchsatz nach ISO-Methode 3,7–4,9 bit/s (Soukoreff & MacKenzie, 2004).
-- **Schwierigkeitsindex je Weg** (*grobe eigene Abschätzung*, Trefferzone als Zielbreite, Monitor in der Seite): Level 1 → Nachbartür 2,4 bit, zwei Türen 3,4 bit, ganze Reihe 4,4 bit; Level 10 → 3,1 / 4,1 / 5,1 bit. Mit Bewegungszeit ≈ ID/Durchsatz plus Reaktion (≈ 0,3 s) reicht die Anzeigedauer ab etwa Level 7–10 für Ziele zwei Türen entfernt kaum noch; bei Level 15 (380 ms) nur noch für Ziele an oder neben der Zeigerposition. Hohe Level belohnen also Ausgangslage und Glück beim Zufallsort.
+- **Schwierigkeitsindex je Weg** (*grobe eigene Abschätzung*, Trefferzone als Zielbreite, Monitor in der Seite): Level 1 → Nachbartür 2,4 bit, zwei Türen 3,4 bit, ganze Reihe 4,4 bit; Level 10 → 3,1 / 4,1 / 5,1 bit. Mit Bewegungszeit ≈ ID/Durchsatz (3,7–4,9 bit/s) plus Reaktion (≈ 0,3 s) ist ein Weg über die ganze Reihe schon bei Level 1 knapp (≈ 1,2–1,5 s gegenüber 1,3 s Anzeigedauer), Ziele zwei Türen entfernt reichen ab etwa Level 5–7 (Anzeigedauer ≈ 1,06–0,91 s) kaum noch; bei Level 15 (380 ms) praktisch nur noch Ziele an der Zeigerposition. Hohe Level belohnen also Ausgangslage und Glück beim Zufallsort.
 - **Touch vs. Maus:** Touch verkürzte die Bewegungszeit bei Älteren um 35 %, bei Jüngeren um 16 % (Findlater et al., 2013); am Tablet entfällt der Zeigerweg zum Teil, die Hand muss aber über die Reihe wandern und verdeckt Türen. Trefferzone am Tablet: Level 1 ≈ 21 mm, Level 15 ≈ 11 mm, mit maximaler Combo ≈ 9,6 mm – über der Empfehlung von 9,2 mm (Parhi et al., 2006); sichtbar sind dann aber nur ≈ 4–5 mm (eigene Rechnung).
-- **Tremor:** physiologisch ≈ 8–12 Hz, Parkinson 3–6 Hz (McAuley & Marsden, 2000); kleine Ziele unter Zeitdruck belasten zitternde oder schmerzende Hände.
+- **Tremor:** physiologisch mit zentralem Anteil um ≈ 10 Hz, Parkinson 3–6 Hz (McAuley & Marsden, 2000); kleine Ziele unter Zeitdruck belasten zitternde oder schmerzende Hände.
 
 ## 7. Einflussfaktoren und Messgrenzen
 
 - **Feldgröße ändert die Aufgabe:** Türgröße ist auf 96 × 160 px begrenzt, der Abstand wächst mit der Breite. Im Vollbild sind die Wege fast doppelt so lang wie in der Seite, im Hochformat gibt es nur vier Türen. Punkte und Level sind nur bei gleicher Darstellung vergleichbar.
 - **Gerät:** Browser-Messungen enthalten 58–133 ms Geräteanteil (Pronk et al., 2020); geringere lokale Latenz verbesserte in einem Shooter die Trefferquote (Liu et al., 2021). Nur Selbstvergleich am selben Gerät ist sinnvoll.
 - **Strategie statt Fähigkeit:** Wo der Zeiger wartet (Mitte, Zielhöhe), bestimmt einen großen Teil der Zeit; der Zufallsort lässt einzelne Durchgänge stark schwanken.
-- **Rückkopplung:** Combo erhöht Punkte (bis × 3), damit Level und Schwierigkeit; das Level sinkt nie, die Rundendauer hängt am Erfolg. „Ø Reaktion“ ist durch die Auswahl der Treffer verzerrt (Abschnitt 3). Aim-Trainer-Kennzahlen können sehr zuverlässig sein (ICC 0,947–0,995), zeigen aber Lerneffekte zwischen Terminen (Rogers et al., 2024).
+- **Rückkopplung:** Combo erhöht Punkte (bis × 3), damit Level und Schwierigkeit; das Level sinkt nie, die Rundendauer hängt am Erfolg. „Ø Reaktion“ ist durch die Auswahl der Treffer verzerrt (Abschnitt 3). Aim-Trainer-Kennzahlen können sehr zuverlässig sein (ICC 0,947–0,995 bei nur 10 Esportlern an 2 Terminen, anderes Programm), zeigen aber teils Lerneffekte zwischen Terminen (Rogers et al., 2024).
 - **Alter:** Das reine Entdecken ist altersunabhängig (≈ 131 ms), die motorischen Anteile werden langsamer (Woods et al., 2015); die Wahl-RT verlangsamt sich über das ganze Erwachsenenalter (Der & Deary, 2006).
 
 ## 8. Studienlage: Trainierbarkeit und Übertragung

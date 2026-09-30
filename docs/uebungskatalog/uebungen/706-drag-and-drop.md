@@ -33,8 +33,8 @@ anforderungsprofil:
     sakkaden: 2
     fixation: 0
     bewegungswahrnehmung: 2
-    visuelle_suche: 0
-    visuelle_verarbeitungsgeschwindigkeit: 0
+    visuelle_suche: 1
+    visuelle_verarbeitungsgeschwindigkeit: 1
     zeitliche_aufloesung: 0
     naharbeit_dauer: 1
   kognitiv:
@@ -52,7 +52,7 @@ anforderungsprofil:
     lesen_sprache: 0
     schlussfolgern: 0
   motorisch:
-    einfache_reaktion: 0
+    einfache_reaktion: 1
     auge_hand_koordination: 3
     zielbewegung_tempo: 2
     zielbewegung_praezision: 3
@@ -73,7 +73,7 @@ belastung:
 
 # ===== Auswahlhilfe =====
 voraussetzungen: ["Maus (oder Touchpad) und Desktop-Browser mit Vollbild und Pointer Lock; auf reinen Touch-Geräten lässt sich das Original nicht starten", "Taste gedrückt halten und gleichzeitig bewegen können (Ziehen)", "Monitor ca. 50–70 cm, passende Korrektion für diesen Abstand", "kein Farbsehen nötig (Ball gefüllt, Behälter als Ring – Unterschied über die Form)", "Esc oder Verlassen von Vollbild/Pointer Lock beendet die Runde"]
-vorsicht_bei: [tremor_parkinson, hand_arm_beschwerden, kinder_unter_6, presbyopie_gleitsicht, gesichtsfeldausfall, trockenes_auge_bildschirm, photosensitive_epilepsie, migraene_lichtempfindlich]
+vorsicht_bei: [tremor_parkinson, hand_arm_beschwerden, kinder_unter_6, presbyopie_gleitsicht, sehbehinderung_niedriger_visus, gesichtsfeldausfall, trockenes_auge_bildschirm, photosensitive_epilepsie, migraene_lichtempfindlich, kognitive_einschraenkung]
 geeignet_fuer: ["Ziehen mit gedrückter Maustaste zu einem bewegten Ziel üben (Auge-Hand-Koordination, Abfangen)", "sauberes Abbremsen und Loslassen im richtigen Moment üben", "Vertrautheit mit Drag-and-Drop am Computer spielerisch aufbauen (in den ersten Levels großzügige Ziele)", "Fortschritt mit sich selbst am selben Gerät vergleichen (Ablagequote, Level)"]
 weniger_geeignet_fuer: ["Tablet ohne Maus (Original blockiert Touch)", "Menschen mit Tremor, Handschmerzen oder wenig Griffkraft (Taste dauerhaft halten, kleine bewegte Ziele)", "Kinder im Vorschulalter und Computer-Neulinge (Ziehen ist schwerer als Klicken; Level steigt sehr schnell)", "wer ruhende Ziele (dafür 708, allerdings ebenfalls unter Zeitdruck) oder wenig Zeitdruck braucht (dafür 705)", "Übungsziel reine Blickmotorik ohne Hand (Kapitel 400)"]
 evidenz:
@@ -81,7 +81,7 @@ evidenz:
   naher_transfer: schwach
   alltag_transfer: fehlend
   kommentar: "Zeige- und Ziehbewegungen werden durch Üben in der geübten Aufgabe schneller und genauer; motorisches Lernen ist aber sehr aufgabenspezifisch, und ein Nutzen für Büroarbeit, Grafik oder Spiele ist für diese Übung nicht untersucht."
-aehnliche_uebungen: [702, 104, 705, 707, 704, 708, 505, 514, 803]
+aehnliche_uebungen: [702, 104, 705, 707, 505, 514, 803]
 stichworte: ["Drag and Drop", "Ziehen und Ablegen", "bewegtes Ziel", "Abfangen", "Fitts'sches Gesetz", "Steering Law", "Auge-Hand-Koordination", "Loslass-Timing", "Pointer Lock", "Maus"]
 ---
 
@@ -152,8 +152,9 @@ Das Abfangen eines bewegten Ziels verbindet Bewegungswahrnehmung mit der Planung
 ## 9. Auswahlhinweise für die KI
 - **Passt, wenn …** das Ziehen mit gedrückter Taste zu einem **bewegten** Ziel geübt werden soll; Abfangen und Loslass-Timing im Vordergrund stehen; eine Maus vorhanden ist; eine Steigerung nach 702 (bewegte Ziele anklicken) gesucht wird.
 - **Weniger passend, wenn …** nur ein Tablet vorhanden ist; wenig Computererfahrung oder Stress durch Zeitdruck besteht; ruhige Ziele gewünscht sind (708); das Ziel reine Blickmotorik ist (Kapitel 400).
-- **Vorsicht / anpassen bei …** `tremor_parkinson` (Taste halten und genau loslassen, kleine bewegte Ziele – frustrierend); `hand_arm_beschwerden` (wiederholtes Halten der Taste unter Zeitdruck); `kinder_unter_6` (Ziehen ist für Kinder schwerer als Klicken, Inkpen, 2001); `presbyopie_gleitsicht` (Behälter wandert zu den Rändern, seitliche Unschärfe); `gesichtsfeldausfall` (Ball und Behälter erscheinen überall, der Behälter kann aus dem Blick laufen); `trockenes_auge_bildschirm` (starrer Blick, wenig Lidschlag); `photosensitive_epilepsie`, `migraene_lichtempfindlich` (roter Vollbild-Blitz und Bildwackeln bei jedem Fehler und jeder Zeitüberschreitung; Blitz abschalten).
+- **Vorsicht / anpassen bei …** `tremor_parkinson` (Taste halten und genau loslassen, kleine bewegte Ziele – frustrierend); `hand_arm_beschwerden` (wiederholtes Halten der Taste unter Zeitdruck); `kinder_unter_6` (Ziehen ist für Kinder schwerer als Klicken, Inkpen, 2001); `presbyopie_gleitsicht` (Behälter wandert zu den Rändern, seitliche Unschärfe); `sehbehinderung_niedriger_visus` (Ball ab höheren Levels ≈ 0,4°, kleines Fadenkreuz – wie bei 702, 704, 708); `gesichtsfeldausfall` (Ball und Behälter erscheinen überall, der Behälter kann aus dem Blick laufen); `trockenes_auge_bildschirm` (starrer Blick, wenig Lidschlag); `photosensitive_epilepsie`, `migraene_lichtempfindlich` (roter Vollbild-Blitz und Bildwackeln bei jedem Fehler und jeder Zeitüberschreitung; Blitz abschalten); `kognitive_einschraenkung` (unsichtbares Zeitfenster bis 1,2 s, sehr schnell steigendes Level – wie bei 702, 704 und 708).
 - **Kombiniert gut mit …** 708 (ruhende Ziele) und 702/104 (bewegte Ziele anklicken) als Vorstufen, 705/707 (kontinuierliches Führen) als Ergänzung, 505/514 (Tracking) als Variante.
+- **Überschneidungen / Unterschiede:** 706 ist die einzige Drag-and-drop-Aufgabe des Katalogs (Objekt greifen, zu einem **bewegten** Ziel ziehen, dort ablegen) – keine Dublette; 811 zieht mit gedrückter Taste einen gemerkten Linienzug nach, 810 führt den Zeiger ohne Klick durch eine schmale Bahn. Am nächsten liegt 702 (gleiche Zielgrößenordnung, bewegtes Ziel, ähnlich hoher Zeitdruck); 706 verlangt aber zusätzlich Greifen, Halten der Taste und genaues Loslassen (daher `kontinuierliche_steuerung` = 2 und `zielbewegung_praezision` = 3), während das reine Zeigetempo etwas weniger zählt als bei 702/704/708 (`zielbewegung_tempo` = 2).
 
 Keine Diagnose, kein Heil-, Seh- oder Leistungsversprechen; Ergebnisse sind keine Messung von Krankheitszeichen.
 

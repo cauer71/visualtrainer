@@ -65,7 +65,7 @@ anforderungsprofil:
     ausdauer_belastung: 0
 belastung:
   zeitdruck: 2
-  flimmern_lichtreize: 0
+  flimmern_lichtreize: 1
   bewegungsreize_schwindel: 0
   koerperliche_belastung: 0
   sturzrisiko: 0
@@ -73,15 +73,15 @@ belastung:
 
 # ===== Auswahlhilfe =====
 voraussetzungen: ["Ziffern 0–9 sicher lesen und benennen können", "Ziffern in 30–60 cm Abstand schnell scharf sehen (bei Alterssichtigkeit passende Nahkorrektur)", "Touch-Ziffernfeld, Maus oder Zifferntasten; keine Farbunterscheidung nötig"]
-vorsicht_bei: [lese_rechtschreib_schwaeche, aufmerksamkeitsprobleme, kognitive_einschraenkung, sehbehinderung_niedriger_visus, kinder_unter_6]
-geeignet_fuer: ["kurzes, spielerisches Üben des Merkens von Ziffernfolgen (Telefon-, PIN-, Kundennummern)", "Merkstrategien ausprobieren: Gruppieren in 2er-/3er-Blöcke, inneres Mitsprechen", "sitzende, ruhige Übung ohne Bewegungs- oder Flimmerreize, gut am Tablet", "Selbstvergleich über Wochen auf demselben Gerät"]
+vorsicht_bei: [lese_rechtschreib_schwaeche, aufmerksamkeitsprobleme, kognitive_einschraenkung, sehbehinderung_niedriger_visus, kinder_unter_6, migraene_lichtempfindlich, photosensitive_epilepsie]
+geeignet_fuer: ["kurzes, spielerisches Üben des Merkens von Ziffernfolgen (Material ähnlich wie Telefon- oder PIN-Nummern; ein Alltagsnutzen ist nicht belegt)", "Merkstrategien ausprobieren: Gruppieren in 2er-/3er-Blöcke, inneres Mitsprechen", "sitzende, ruhige Übung ohne Bewegungsreize, gut am Tablet (nur ein abschaltbarer roter Fehler-Schimmer)", "Selbstvergleich über Wochen auf demselben Gerät"]
 weniger_geeignet_fuer: ["Einschätzung der 'Gedächtnisleistung' oder Vergleich mit Normen/IQ-Werten (nicht normiert, keine Diagnose)", "Arbeitsgedächtnis im engeren Sinn (Umordnen, Rückwärts): im Original nur vorwärts", "Menschen, die unter Zeitdruck schnell frustriert sind (Anzeige bis 0,8 s, Eingabe max. 8 s, Rundenzeit 45 s)", "Menschen mit geringem Visus oder Leseschwäche ohne verlängerte Anzeige oder Vorlesefunktion"]
 evidenz:
   uebungseffekt: stark
   naher_transfer: schwach
   alltag_transfer: fehlend
   kommentar: "Spannenaufgaben verbessern sich mit Übung und Strategie deutlich (Zahlenspanne 7 → 79 Ziffern nach > 230 h Mnemonik-Training, Ericsson et al. 1980); Transfer tritt vor allem bei gleicher Aufgabenstruktur auf und ist beim verbalen seriellen Erinnern schwach (Gathercole et al. 2019); fernen oder Alltagstransfer zeigen Metaanalysen mit aktiven Kontrollgruppen nicht (Melby-Lervåg et al. 2016; Owen et al. 2010)."
-aehnliche_uebungen: [606, 604, 601, 607, 603, 605, 207, 203]
+aehnliche_uebungen: [606, 601, 604, 607, 603, 605, 207, 203]
 stichworte: ["Zahlenspanne", "digit span", "Ziffernfolge", "verbales Kurzzeitgedächtnis", "phonologische Schleife", "serielles Erinnern", "Chunking", "Gruppieren", "adaptive Treppe", "1-up/1-down", "Ziffernfeld", "Zeitdruck"]
 ---
 
@@ -110,7 +110,9 @@ Quelle: Seitentext und ausgelieferter Spielcode (Chunk `1539-…js`, Stand 29.09
 - **Wertung (Code):** Nur exakt richtige Folgen zählen („Alles oder nichts“; der berechnete Editierabstand wird nur auf 0
   geprüft). Punkte je Treffer 100 × (1 + 0,1 × (Länge − 3)): 100 bei 3, 220 bei 15 Ziffern = „bis +120 %“. Fehler kosten
   keine Punkte (wie im Regeltext). Treppe 1-up/1-down zwischen 3 und 15 Ziffern. Die 45-s-Uhr läuft auch während Anzeige,
-  Eingabe und Pausen (0,8 s nach Treffer, 1,0 s nach Fehler).
+  Eingabe und Pausen (0,8 s nach Treffer, 1,0 s nach Fehler). Bei jedem Fehler und jeder Zeitüberschreitung erscheint
+  ein roter Schimmer über der Spielfläche (zur Mitte hin Rot mit 50 % Deckkraft, blendet in 0,45 s aus; Schalter
+  „Miss Flash“, standardmäßig an) – derselbe Effekt wie in den übrigen Gedächtnisübungen 601–607; der Regeltext nennt ihn nicht.
 - **„Spanne“/„Peak Digit Span“ (Code):** Angezeigt und lokal gespeichert wird die **Länge beim Rundenende** – weder die
   längste richtige Folge noch der Höchstwert der Runde. Endnote S+ bis F aus 100 × √(Punkte/1.300).
 - **Obergrenze durch die Rundenzeit (Herleitung):** Bei ≈ 0,35 s pro Tipp dauert ein fehlerfreier Durchgang ≈ 4,7–5,0 s
@@ -153,7 +155,8 @@ zu („9–12+ Ziffern = Top 1 %, Skalenwert 16–19“) samt „Klicktakt“ < 
 - **Brille:** Am Tablet blickt man durch den Nahteil; Anzeige und Feld liegen zentral (≈ ±6°), die seitliche Unschärfe von
   Gleitsichtgläsern (Sheedy, 2004) stört kaum. Am Monitor in 60–70 cm ist eine Arbeitsplatzbrille günstiger. Ab ≈ 40 Jahren
   reicht die Akkommodation für Naharbeit ohne Nahkorrektur oft nicht (Charman, 2008).
-- Kein Farbsehen nötig, keine Flimmer- oder Bewegungsreize. 45-s-Runden belasten wenig; bei trockenem Auge trotzdem Pausen,
+- Kein Farbsehen nötig, keine Bewegungsreize. Lichtreiz nur der rote Fehler-Schimmer (einzeln, weit unter 3 Blitzen/s nach
+  WCAG 2.2, SC 2.3.1; gesättigtes Rot gilt aber als Zusatzfaktor, Fisher et al., 2005) → `flimmern_lichtreize` 1. 45-s-Runden belasten wenig; bei trockenem Auge trotzdem Pausen,
   da der Lidschlag am Bildschirm sinkt (Tsubota & Nakamori, 1993).
 
 ## 5. Neurowissenschaftliche Grundlagen
@@ -208,16 +211,23 @@ zu („9–12+ Ziffern = Top 1 %, Skalenwert 16–19“) samt „Klicktakt“ < 
 ## 9. Auswahlhinweise für die KI
 
 - **Passt, wenn …** jemand kurz und ruhig Ziffernfolgen merken oder Gruppierstrategien ausprobieren möchte; ohne
-  Bewegungs-, Flimmer- oder Farbreize; am Tablet mit Touch.
+  Bewegungs- oder Farbreize (Fehler-Schimmer abschaltbar); am Tablet mit Touch.
 - **Weniger passend, wenn …** Arbeitsgedächtnis im engeren Sinn geübt werden soll (→ 604); Zeitdruck vermieden werden
   soll; eine Leistungs- oder Gedächtnis-„Einstufung“ erwartet wird (keine Normen, keine Diagnose).
 - **Vorsicht / anpassen bei …** `lese_rechtschreib_schwaeche` (Kurzzeitgedächtnisnachteil d ≈ −0,61, besonders bei
   Ziffernfolgen; Swanson et al., 2009 – längere Anzeige oder Vorlesen); `aufmerksamkeitsprobleme` (Anzeige bis 0,8 s,
   Eingabelimit 8 s); `kognitive_einschraenkung` (Zeitdruck, Alles-oder-nichts-Wertung, keine Test-Anmutung);
   `sehbehinderung_niedriger_visus` (schnelles Lesen nötig; Vergrößerung nur mit mehr Anzeigezeit); `kinder_unter_6`
-  (Ziffernkenntnis). Bei Alterssichtigkeit mit passender Nahkorrektur üben.
+  (Ziffernkenntnis); `migraene_lichtempfindlich`, `photosensitive_epilepsie` (roter Fehler-Schimmer bei jedem Fehler,
+  einzeln und unter 3/s – vorsorglich wie bei 601 und 603–607 gelistet; vorher abschalten). Bei Alterssichtigkeit mit
+  passender Nahkorrektur üben.
 - **Kombiniert gut mit …** 606 (Wortliste), 607 (Corsi-Pfad als räumliches Gegenstück), 604 (N-Back), 601 (Senso),
   207 (Zahlen-Symbol-Tempo).
+- **Abgrenzung in der Gruppe (keine Dublette):** Am nächsten verwandt ist 606. Beide zeigen eine Liste gleichzeitig,
+  werten nach „Alles oder nichts“ und haben eine 1-up/1-down-Treppe. 602 verlangt aber die **Reihenfolge** und
+  ein Ziffernfeld, 606 **freie Reihenfolge** und Tippen ganzer Wörter; Lesen und Schreiben fallen bei 602 weg.
+  601 hat denselben Ablauf (Folge merken, in Reihenfolge nachtippen) mit Farben, 607 mit Orten; 604 fordert statt
+  Behalten das laufende Aktualisieren.
 
 ## 10. Schwächen des Originals und Empfehlungen für eine Blickfit-Umsetzung
 
@@ -227,6 +237,7 @@ zu („9–12+ Ziffern = Top 1 %, Skalenwert 16–19“) samt „Klicktakt“ < 
   Perzentil- oder WAIS-Tabelle.
 - Optional rückwärts (dann `arbeitsgedaechtnis` höher). Anzeige nicht unter ≈ 150–200 ms pro Ziffer; Start mit 3–4 Ziffern.
 - Folgen ohne vertraute Muster (keine „1 2 3“, keine Jahreszahlen; Jones & Macken, 2015).
+- Kein roter Fehler-Schimmer als Voreinstellung; Rückmeldung mit ✓/✗.
 - Tablet: Tasten ≥ 12 mm, weiß auf dunkel, Ziffern nicht unter ≈ 0,5° bei 40 cm; Layout wie Nummernblock anbieten oder
   kennzeichnen. Ergebnisse nur innerhalb derselben Sprache vergleichen.
 
@@ -297,4 +308,6 @@ zu („9–12+ Ziffern = Top 1 %, Skalenwert 16–19“) samt „Klicktakt“ < 
 - Aus der geprüften Literaturbasis: Charman (2008), https://doi.org/10.1111/j.1444-0938.2008.00256.x · Sheedy (2004),
   https://doi.org/10.1016/S1529-1839(04)70021-4 · Parhi et al. (2006), https://doi.org/10.1145/1152215.1152260 · Tsubota &
   Nakamori (1993), https://doi.org/10.1056/NEJM199302253280817 · Calamia et al. (2012),
-  https://doi.org/10.1080/13854046.2012.680913 · Lim & Dinges (2010), https://doi.org/10.1037/a0018883.
+  https://doi.org/10.1080/13854046.2012.680913 · Lim & Dinges (2010), https://doi.org/10.1037/a0018883 · Fisher et al.
+  (2005), https://doi.org/10.1111/j.1528-1167.2005.31405.x (Lichtreize, Rot als Zusatzfaktor) · W3C (2024), WCAG 2.2,
+  https://www.w3.org/TR/WCAG22/ (Norm, keine DOI; SC 2.3.1).

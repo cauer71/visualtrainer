@@ -31,7 +31,7 @@ anforderungsprofil:
     nutzbares_sehfeld: 1
     blickfolge: 0
     sakkaden: 2
-    fixation: 1
+    fixation: 0
     bewegungswahrnehmung: 0
     visuelle_suche: 1
     visuelle_verarbeitungsgeschwindigkeit: 1
@@ -73,7 +73,7 @@ belastung:
 
 # ===== Auswahlhilfe =====
 voraussetzungen: ["Maus (oder Touchpad) und Desktop-Browser mit Vollbild und Pointer Lock; auf reinen Touch-Geräten lässt sich das Original nicht starten", "ruhige Unterlage, Monitor ca. 50–70 cm", "passende Korrektion für den Bildschirmabstand (bei Alterssichtigkeit Zwischen-/Nahkorrektur)", "kein Farbsehen nötig (Ziele hell auf fast schwarzem Grund)", "Verlassen von Vollbild/Pointer Lock oder Esc beendet die Runde"]
-vorsicht_bei: [hand_arm_beschwerden, tremor_parkinson, sehbehinderung_niedriger_visus, presbyopie_gleitsicht, gesichtsfeldausfall, trockenes_auge_bildschirm, photosensitive_epilepsie, migraene_lichtempfindlich]
+vorsicht_bei: [hand_arm_beschwerden, tremor_parkinson, sehbehinderung_niedriger_visus, presbyopie_gleitsicht, gesichtsfeldausfall, trockenes_auge_bildschirm, photosensitive_epilepsie, migraene_lichtempfindlich, kognitive_einschraenkung]
 geeignet_fuer: ["schnelle, genaue Zielsprünge mit der Maus zwischen ruhenden Zielen üben (Auge-Hand-Koordination unter Zeitdruck)", "Tempo-Genauigkeits-Abwägung bewusst erleben (Zentrumsbonus gegen Zeitlimit)", "einfache Priorisierung zwischen zwei Zielen (das leuchtende, schneller schrumpfende zuerst)", "Fortschritt mit sich selbst am selben Gerät vergleichen (Trefferquote, Zentrumsquote, Level)"]
 weniger_geeignet_fuer: ["Tablet ohne Maus (Original blockiert Touch; Zentrumszone mit dem Finger nicht gezielt treffbar)", "Menschen mit Tremor oder eingeschränkter Handmotorik (kleine, verfallende Ziele, Fehlklicks bestraft)", "Einsteiger:innen und Ältere mit wenig Computererfahrung (Ziele ab mittlerem Level < 1 s sichtbar)", "wer eine feste, kurze Übungsdauer braucht", "Übungsziel reine Blickmotorik ohne Hand (dafür Kapitel 400) oder bewegte Ziele (702, 104)"]
 evidenz:
@@ -151,10 +151,11 @@ Zielsprünge verbinden das Sakkadensystem (frontales Augenfeld, Colliculus super
 - **Alltagstransfer – fehlend:** Kein Beleg für bessere Spiel-, Alltags- oder Berufsleistung. Videospiel-Training verbessert die allgemeine kognitive Leistung nicht (Sala et al., 2018); positive Action-Spiel-Effekte betreffen Aufmerksamkeit, nicht Mausmotorik, und sind durch Publikationsbias überschätzt (Bediou et al., 2018).
 
 ## 9. Auswahlhinweise für die KI
-- **Passt, wenn …** schnelle, genaue Zeigebewegungen zu ruhenden Zielen mit der Maus geübt werden sollen; jemand die Abwägung „schnell oder genau“ spielerisch üben möchte; eine Stufe zwischen ruhenden Zielen ohne Zeitverfall (708) und bewegten Zielen (702) gesucht wird.
+- **Passt, wenn …** schnelle, genaue Zeigebewegungen zu ruhenden Zielen mit der Maus geübt werden sollen; jemand die Abwägung „schnell oder genau“ spielerisch üben möchte; eine Stufe zwischen ruhenden, nicht schrumpfenden Zielen (708, dort mit Zeitlimit je Kette) und bewegten Zielen (702) gesucht wird.
 - **Weniger passend, wenn …** nur ein Tablet vorhanden ist; wenig Computererfahrung oder Stress durch Zeitdruck besteht; eine feste Dauer nötig ist; das Ziel reine Blickmotorik oder Blickfolge ist (Kapitel 400).
-- **Vorsicht / anpassen bei …** `hand_arm_beschwerden` (viele schnelle Zielbewegungen, Runde kann sich verlängern); `tremor_parkinson` (kleine, verfallende Ziele, Fehlklicks bestraft – frustrierend); `sehbehinderung_niedriger_visus` (verfallende Ziele bis ≈ 0,2°, Fadenkreuzpunkt ≈ 0,1°); `presbyopie_gleitsicht` (Ziele im ganzen Feld, seitliche Unschärfe); `gesichtsfeldausfall` (das zweite Ziel muss peripher entdeckt werden); `trockenes_auge_bildschirm` (Starren, variable Dauer); `photosensitive_epilepsie`, `migraene_lichtempfindlich` (roter Vollbild-Blitz und Bildwackeln bei jedem Fehler und jedem verfallenen Ziel – bei Fehlerserien mehrere Blitze kurz hintereinander möglich; Blitz abschalten).
+- **Vorsicht / anpassen bei …** `hand_arm_beschwerden` (viele schnelle Zielbewegungen, Runde kann sich verlängern); `tremor_parkinson` (kleine, verfallende Ziele, Fehlklicks bestraft – frustrierend); `sehbehinderung_niedriger_visus` (verfallende Ziele bis ≈ 0,2°, Fadenkreuzpunkt ≈ 0,1°); `presbyopie_gleitsicht` (Ziele im ganzen Feld, seitliche Unschärfe); `gesichtsfeldausfall` (das zweite Ziel muss peripher entdeckt werden); `trockenes_auge_bildschirm` (Starren, variable Dauer); `photosensitive_epilepsie`, `migraene_lichtempfindlich` (roter Vollbild-Blitz und Bildwackeln bei jedem Fehler und jedem verfallenen Ziel – bei Fehlerserien mehrere Blitze kurz hintereinander möglich; Blitz abschalten); `kognitive_einschraenkung` (sehr hoher Zeitdruck, aktive Ziele ab mittlerem Level < 1 s sichtbar, Zeitstrafen – wie bei 702 und 708).
 - **Kombiniert gut mit …** 708 (ruhende Ziele, Reihenfolge) als Vorstufe, 702 (bewegte Ziele) und 501/509 (Flick, Mikrokorrektur) als Varianten, 510 (Zielauswahl), 705 als ruhiger Ausgleich.
+- **Überschneidungen / Unterschiede:** 704 ist ein **naher Verwandter** von 702 und 708 (gleiches Spielgerüst: Fadenkreuz mit Pointer Lock, +2 s/−1 s, Serienfaktor bis 3,0, offene Rundendauer). Unterschied: nur 704 hat schrumpfende Ziele und einen Zentrumsbonus – hier ist `zielbewegung_praezision` am stärksten gefordert; 702 fordert zusätzlich das Abfangen bewegter Ziele, 708 Tempo und Blickvorlauf in Ketten. Sehr ähnlich ist außerdem 501 (Flick-Training mit einem einzelnen, zeitlich begrenzten Ziel, ohne Zentrumsbonus). Für eine Auswahl genügt meist eine dieser Übungen.
 
 Keine Diagnose, kein Heil-, Seh- oder Leistungsversprechen; Ergebnisse sind keine Messung von Krankheitszeichen.
 
