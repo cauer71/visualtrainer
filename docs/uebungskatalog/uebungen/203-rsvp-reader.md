@@ -113,6 +113,7 @@ Quelle: Seitentext und ausgelieferter Spielcode (Chunk `54416-….js` mit Spiell
 - FAQ „Sakkaden entfallen vollständig“ und „Bis zu 80 % der Lesezeit gehen für Sakkaden verloren“ widersprechen der Einleitung der Seite selbst („ein Teil der Blicksprünge“, Verständnis kann sinken) und der Fachliteratur (Abschnitt 3).
 - „Stufen steigen, wenn man Wörter mit hoher Genauigkeit trifft“: Im Code entscheidet nur die Punktzahl (alle 200 Punkte), nicht die Genauigkeit.
 - „Fünf Stufen erhöhen das Tempo, während du die Genauigkeit kontrollierst“: Fehlalarme kosten nur 1 s Sperre, verpasste Ziele nichts.
+- Die Anzeige „Tempo 300 WPM“ vor dem Start passt zu keiner der fünf Stufen (Code: 250 bis 850); die Runde beginnt mit 250 WPM.
 - „Erkennungstaste klicken“ / „TARGET DETECTED“: Knopf und Banner bleiben englisch, der Text ohnehin.
 
 ## 3. Was die Website sagt – und wie das einzuordnen ist
@@ -124,10 +125,10 @@ Quelle: Seitentext und ausgelieferter Spielcode (Chunk `54416-….js` mit Spiell
 - **„Sakkaden entfallen vollständig“:** teilweise. Die Blicksprünge von Wort zu Wort entfallen; kleine Fixationsbewegungen (Mikrosakkaden) bleiben (Rolfs, 2009). Fehlende Rücksprünge verschlechtern das Verständnis.
 - **ORP:** In der Forschung heißt es „optimale Blickposition“ (O'Regan & Jacobs, 1992); „ORP“ ist ein Begriff von RSVP-Apps. Wörter werden auch neben dieser Stelle erkannt, nur etwas langsamer (Rayner et al., 2016).
 - **400–600 WPM mit Training:** nicht belegt. Nach einem Schnelllesekurs stieg das Tempo von ≈ 280 auf ≈ 400 Wörter/min, das Verständnis sank von 81 auf 74 % (Calef et al., 1999, berichtet in Rayner et al., 2016). Das mittlere stille Lesetempo Erwachsener liegt bei 238 Wörtern/min (Sachtext) bzw. 260 (Roman) (Brysbaert, 2019); die Angabe 200–250 ist also richtig.
-- **Verständnis bei RSVP:** Im Vergleich Spritz gegen normales Lesen war wörtliches Verständnis 60 gegen 72 % und die Lidschlagrate 4,7 gegen 8,5 pro Minute (Benedetto et al., 2015). Statischer Text war RSVP mit 700 und 1.000 WPM überlegen (Acklin & Papesh, 2017). Reines Entziffern kurzer Passagen ist mit RSVP dagegen sehr schnell möglich (bis ≈ 1.171 Wörter/min, minimal ≈ 69 ms je Wort; Rubin & Turano, 1992). Das erklärt, warum 850 WPM als Anzeigetempo möglich, für Verständnis aber ungeeignet sind.
+- **Verständnis bei RSVP:** Im Vergleich Spritz gegen normales Lesen war wörtliches Verständnis 60 gegen 72 % und die Lidschlagrate 4,7 gegen 8,5 pro Minute (Benedetto et al., 2015). Statischer Text war RSVP mit 700 und 1.000 WPM überlegen; langsameres RSVP half dem wörtlichen, schnelleres dem schlussfolgernden Verständnis (Acklin & Papesh, 2017). Reines Entziffern (lautes Vorlesen) kurzer Passagen ist mit RSVP dagegen sehr schnell möglich (≈ 1.171 Wörter/min im Mittel; minimale Anzeigedauer im Mittel ≈ 69 ms je Wort; Rubin & Turano, 1992). Das erklärt, warum 850 WPM als Anzeigetempo möglich, für Verständnis aber ungeeignet sind.
 - **Visuelles Wortformareal:** das Areal gibt es (Dehaene & Cohen, 2011); dass **dieses Spiel** es trainiert, ist nicht belegt.
 - **144 Hz / Woods et al. (2015):** Woods misst einfache Reaktionszeiten, nicht Bildflackern; die Aussage wird nicht gestützt. Das Spiel taktet ohnehin per Timer, nicht per Bild.
-- **Leistungsstufen (Top 1 % bis Basis):** ohne Datengrundlage. Die Seite schreibt selbst, dass sie keine Nutzerdaten erhebt; keine Quelle enthält Werte für dieses Spiel. Die Stufen sind außerdem nicht als „Leseleistung“ interpretierbar (Abschnitt 2).
+- **Leistungsstufen (Top 1 % bis Basis):** ohne Datengrundlage. Die Seite nennt keine Datengrundlage (Stichprobe, Erhebung) und keine Quelle; auch in der Literatur gibt es keine Werte für dieses Spiel. Die Stufen sind außerdem nicht als „Leseleistung“ interpretierbar (Abschnitt 2).
 
 ## 4. Optische und okulomotorische Grundlagen
 

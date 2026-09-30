@@ -80,8 +80,8 @@ evidenz:
   uebungseffekt: mittel
   naher_transfer: schwach
   alltag_transfer: fehlend
-  kommentar: "Einfache Reaktionszeit ist über Wiederholungen sehr stabil (16 PVT-Sitzungen ohne systematische Änderung, Basner et al. 2018; Sportler nicht schneller, Kida et al. 2005); die Punkte steigen vor allem durch Gewöhnung, Timing und Serien. Große Zugewinne gibt es in Studien nur bei aufgabenähnlichen Tests (SMD 2,66 vs. 0,50; Guo et al. 2025). Die Übung selbst ist nicht untersucht, ein Alltagsnutzen nicht belegt."
-aehnliche_uebungen: [503, 102, 202, 208, 401, 108, 301, 703]
+  kommentar: "Einfache Reaktionszeit ist über Wiederholungen sehr stabil (Mittel- und Medianwert änderten sich über 16 Durchgänge des 3-min-PVT nicht systematisch, nur Randgrößen wie Frühstarts minimal, Basner et al. 2018; Sportler nicht schneller, Kida et al. 2005); die Punkte steigen vor allem durch Gewöhnung, Timing und Serien. Große Zugewinne gibt es in Studien nur bei aufgabenähnlichen Tests (SMD 2,66 vs. 0,50; Guo et al. 2025). Die Übung selbst ist nicht untersucht, ein Alltagsnutzen nicht belegt."
+aehnliche_uebungen: [503, 102, 202, 208, 401, 301, 703, 107]
 stichworte: ["einfache Reaktionszeit", "Simple Reaction Time", "Lichtreiz", "Blitz", "Vorperiode", "Hazardrate", "Frühstart", "Antizipation", "Daueraufmerksamkeit", "PVT", "Combo", "Antwortfenster", "Tippen irgendwo", "Photosensitivität", "Blitzreaktion"]
 ---
 
@@ -122,7 +122,7 @@ Die Seite beschreibt einen Test der „visuomotorischen Latenz“ mit Vier-Phase
 - **Zutreffend:** Reaktion ist kein Reflex; einfache visuelle Reaktionszeit gesunder Erwachsener ≈ 200–250 ms (kalibriert 231 ms, ohne Hardwareanteil 213 ms, n = 1.469; Woods et al., 2015); hellere Reize werden schneller beantwortet (Pins & Bonnet, 1996 – eine Potenzfunktion); auditiv schneller als visuell; Daten bleiben lokal.
 - **Kaskade falsch bzw. unbelegt:** Die Isomerisierung von Rhodopsin dauert ≈ 200 Femtosekunden (Schoenlein et al., 1991); am hellen Bildschirm arbeiten ohnehin die Zapfen. Die „20–40 ms“ stammen aus Kosinski (Zeit, bis ein Lichtreiz das Gehirn erreicht). Gemessen beginnt die Antwort im visuellen Kortex nach ≈ 56 ms, frontal nach ≈ 80 ms (Foxe & Simpson, 2002). Die übrigen Phasenzahlen stehen in keiner genannten Quelle.
 - **Stufentabelle ohne Datengrundlage und in sich widersprüchlich:** Die Seite sammelt nach eigener Aussage keine Daten; keine Quelle enthält Punkte- oder Combo-Normen. [ER] Wer im Mittel 230 ms braucht („Tier 3“), erreicht ≈ 21.400 Punkte („Tier 1“), weil die Punkte vor allem die Rundendauer abbilden. „Kortikospinale Erregbarkeit“, „synaptische Verzögerung“ als Stufenmerkmal: ohne Beleg.
-- **Trainingsversprechen überzogen:** Einfache Reaktionszeit ist kaum übbar (Basner et al., 2018) und bei Sportlern nicht kürzer (Kida et al., 2005). Posner (1980) und Dye et al. (2009) belegen die „Trainierbarkeit dieses Systems“ nicht.
+- **Trainingsversprechen überzogen:** Die einfache Reaktionszeit ändert sich bei Wiederholung kaum (PVT: Mittel/Median stabil, Basner et al., 2018) und bei Sportlern nicht kürzer (Kida et al., 2005). Posner (1980) und Dye et al. (2009) belegen die „Trainierbarkeit dieses Systems“ nicht.
 - **Tipps:** „Fixieren spart 20–30 ms Aufmerksamkeitsverlagerung (Posner)“ – bei einem einzigen zentralen Reiz gibt es keine Verlagerung. „Zimmer abdunkeln, damit sich die Pupillen weiten“ – kein Beleg für schnellere Reaktion; ein weißer Blitz in dunkler Umgebung blendet stärker, für Lichtempfindliche nicht empfehlenswert (Einschätzung, keine Messung). „Finger vorspannen“ – bei der Maus plausibel (kein Leerweg), bei Touch bedeutungslos. „60 Hz bis 16,7 ms, 240 Hz 4,1 ms“ – Bilddauer (Physik, nicht Woods); wichtiger ist die Gesamtlatenz (Spjut et al., 2019).
 - **Nicht geprüft:** „Schlafmangel +30–80 ms, Koffein −10–20 ms“, „Profis 160–190 ms“. Belegt ist nur, dass solche Aufgaben empfindlich auf Schlafmangel reagieren (PVT; Basner & Dinges, 2011).
 
@@ -137,7 +137,7 @@ Die Seite beschreibt einen Test der „visuomotorischen Latenz“ mit Vier-Phase
 
 ## 5. Neurowissenschaftliche Grundlagen
 
-- **Weg des Signals:** Netzhaut → Sehnerv → seitlicher Kniehöcker → V1 (Beginn ≈ 56 ms) → parietale und frontale Areale (≈ 80 ms; Foxe & Simpson, 2002) → prämotorischer/motorischer Kortex → Pyramidenbahn → Fingermuskeln. Das reine Entdecken dauert ≈ 131 ms und altert nicht; der Altersanstieg der Reaktionszeit liegt im motorischen Teil (Woods et al., 2015).
+- **Weg des Signals:** Netzhaut → Sehnerv → seitlicher Kniehöcker → okzipitaler visueller Kortex (C1, Beginn ≈ 56 ms; nur der erste Teil ist V1-dominiert) → parietale und frontale Areale (frontal ≈ 80 ms; Foxe & Simpson, 2002) → prämotorischer/motorischer Kortex → Pyramidenbahn → Fingermuskeln. Das reine Entdecken dauert ≈ 131 ms und altert nicht; der Altersanstieg der Reaktionszeit liegt im motorischen Teil (Woods et al., 2015).
 - **Zeitliche Erwartung:** Bei gleichverteilter Wartezeit steigt mit jeder verstrichenen Millisekunde die bedingte Wahrscheinlichkeit, dass der Reiz jetzt kommt (Hazardrate) – man wird schneller und neigt zum Vorwegnehmen (Niemi & Näätänen, 1981). Neurone im Parietalareal LIP bilden diese Wahrscheinlichkeit ab (Affen, Blicksprungaufgabe; Janssen & Shadlen, 2005). Das Original belohnt diese Vorwegnahme, weil es nach dem Reiz keine Frühstartgrenze gibt.
 - **Hemmung:** Eine vorbereitete Antwort zurückzuhalten ist hier der eigentliche „Fehlerschutz“ (Sperre bei Frühstart); anders als bei 102 gibt es aber keinen Reiz, bei dem nicht getippt werden darf.
 - **Intensität:** Der weiße Blitz auf Schwarz liegt nahe am Optimum der Piéron-Kurve (Pins & Bonnet, 1996); dass die Übung bestimmte Hirnregionen „trainiert“, ist nicht belegt.
@@ -145,7 +145,7 @@ Die Seite beschreibt einen Test der „visuomotorischen Latenz“ mit Vier-Phase
 ## 6. Motorische Grundlagen
 
 - Einfache Reaktion ohne Wahl und ohne Zielbewegung (Tipp irgendwo): Fitts'sches Gesetz und Zielgenauigkeit spielen keine Rolle; motorisch zählen Auslösen der Fingerbewegung und Schalterweg (Maus) bzw. Touch-Erkennung.
-- **Touch vs. Maus:** Web-Apps messen auf Touchgeräten ≈ 58 ms (iPhone) bis ≈ 70 ms (Galaxy) zu lang, auf Laptops 62–133 ms; innerhalb eines Geräts streut der Versatz nur ≈ 7 ms (Pronk et al., 2020). Ende-zu-Ende-Latenz iPad Air 2, Safari mit Canvas ≈ 77 ms (Casiez et al., 2017).
+- **Touch vs. Maus:** Web-Apps überschätzen die Reaktionszeit auf Touchgeräten im Mittel um ≈ 58 ms (iPhone) bis ≈ 66–70 ms (Android), auf Laptops um ≈ 62–133 ms; innerhalb eines Geräts streut der Versatz meist nur ≈ 2–8 ms (Ausnahme MacOS/Firefox ≈ 16 ms; Pronk et al., 2020, Tabellen im Volltext). Ende-zu-Ende-Latenz iPad Air 2, Safari mit Canvas ≈ 77 ms (Casiez et al., 2017).
 - **320-ms-Regel:** Wer zittert oder beim Tippen nachfedert, löst leicht einen ungewollten Doppeltipp aus – er gilt als „Spam“ und kostet Serie und Zeit (eigene Einschätzung).
 - **Tempo-Genauigkeits-Abwägung:** Schrumpfende Fenster belohnen riskantes Timing; die Kosten sind Frühstarts.
 
@@ -159,7 +159,7 @@ Die Seite beschreibt einen Test der „visuomotorischen Latenz“ mit Vier-Phase
 
 ## 8. Studienlage: Trainierbarkeit und Übertragung
 
-- **Übungseffekt – mittel:** In einem 1-min-Lichtwand-Reaktionstest stieg die Leistung nur in den ersten ≈ 15 von 30 Tests, danach nicht mehr; 1–2 Wochen Pause kosteten nichts (n = 24; Wells & Johnson, 2022); die einfache Reaktionszeit selbst änderte sich über 16 PVT-Sitzungen nicht systematisch (Basner et al., 2018). Im Original steigen die Punkte zusätzlich durch Serien und Timing-Strategie.
+- **Übungseffekt – mittel:** In einem 1-min-Lichtwand-Reaktionstest stieg die Leistung nur in den ersten ≈ 15 von 30 Tests, danach nicht mehr; 1–2 Wochen Pause kosteten nichts (n = 24; Wells & Johnson, 2022); Mittel und Median der einfachen Reaktionszeit änderten sich über 16 PVT-Durchgänge nicht systematisch, nur Randgrößen (schnellste 10 %, Frühstarts) minimal (n = 45; Basner et al., 2018). Im Original steigen die Punkte zusätzlich durch Serien und Timing-Strategie.
 - **Naher Transfer – schwach:** Digitales Sehtraining zeigt bei der Reaktionszeit SMD 2,66, wenn Trainings- und Testaufgabe ähnlich sind, aber nur 0,50 bei unähnlichen Tests (Guo et al., 2025); Actionspiele: kleiner Effekt (g = 0,34) mit Publikationsbias (Bediou et al., 2018). Zwei Jahre Schlagtraining verbesserten die Go/No-Go-, nicht die einfache Reaktionszeit (Kida et al., 2005).
 - **Alltagstransfer – fehlend:** Keine Studie zeigt einen Nutzen solcher Tippaufgaben für Verkehr oder Sport; die besten Hinweise gibt es für naturnahes, sportartspezifisches Training (Lochhead et al., 2026). Bremsreaktionen im Verkehr dauern 0,7–1,5 s und hängen vor allem von der Erwartung ab (Green, 2000) – ein Tipp auf ein Licht bildet das nicht ab.
 
@@ -168,7 +168,7 @@ Die Seite beschreibt einen Test der „visuomotorischen Latenz“ mit Vier-Phase
 - **Passt, wenn …** eine einfache, schnell verständliche Reaktionsübung gesucht wird; Frühstarts/Ungeduld Thema sind; schlechte Sehschärfe, Gleitsicht oder Farbsehschwäche andere Übungen erschweren; ein Tablet ohne Maus genutzt wird.
 - **Weniger passend, wenn …** die Reaktionszeit verlässlich gemessen oder verglichen werden soll (dann besser der Blickfit-Messblock), Blickbewegungen, Peripherie oder Entscheidungen geübt werden sollen, oder Zeitdruck und Strafen belasten.
 - **Vorsicht / anpassen bei …** `photosensitive_epilepsie`, `migraene_lichtempfindlich` (voller Weiß-Blitz auf Schwarz, rote Vollflächen-Überblendung; Effekte abschalten, Raum nicht abdunkeln); `trockenes_auge_bildschirm` (starres Warten über Minuten, Blinzelpausen); `aufmerksamkeitsprobleme` (Sperren und Serienverlust eskalieren bei ungeduldigem Tippen); `tremor_parkinson` (ungewollte Doppeltipps werden bestraft; zudem langsamere Reaktionen → sehr kurze, fehlerlastige Runden).
-- **Kombiniert gut mit …** 102 (gleiche Mechanik mit Stopp-Reizen), 202 (Wahlreaktion), 208 (Daueraufmerksamkeit), 401 oder 108/Blitzblick (Reize am Rand), 301 (Zeitgefühl ohne Reiz).
+- **Kombiniert gut mit …** 102 (gleiche Mechanik mit Stopp-Reizen), 202 (Wahlreaktion), 208 (Daueraufmerksamkeit), 401 oder Blitzblick (Reize am Rand), 107 (Timing bei sichtbarer Annäherung), 301 (Zeitgefühl ohne Reiz).
 - **Überschneidungen:** Fast identisch mit 503 (grüner Reiz, nur Maus, Täuschreize) – für Tablet 101 wählen.
 - **Blickfit-Version („Blitzreaktion“) fordert anders:** zusätzlich peripheres Sehen (Reize bis ≈ 13° seitlich) und Fixation der Mitte; weniger Zeitdruck (Reiz bleibt bis 1,5 s), weniger Vorwegnahme (nicht alternde Wartezeit, Durchgänge ohne Licht), schwächere Lichtreize (warmweiß, kein roter Blitz). Sie ist die bessere Wahl für Selbstbeobachtung und für lichtempfindliche oder ältere Nutzer:innen.
 
@@ -200,7 +200,7 @@ Die Seite beschreibt einen Test der „visuomotorischen Latenz“ mit Vier-Phase
 ### Weitere Fachliteratur
 
 - Basner, M., & Dinges, D. F. (2011). Maximizing sensitivity of the Psychomotor Vigilance Test (PVT) to sleep loss. *Sleep, 34*(5), 581–591. https://doi.org/10.1093/sleep/34.5.581 – Frühstart < 100 ms, Aussetzer, Schlafmangel.
-- Basner, M., Hermosillo, E., Nasrini, J., McGuire, S., Saxena, S., Moore, T. M., Gur, R. C., & Dinges, D. F. (2018). Repeated administration effects on Psychomotor Vigilance Test performance. *Sleep, 41*(1), zsx187. https://doi.org/10.1093/sleep/zsx187 – keine Übungseffekte der einfachen Reaktionszeit.
+- Basner, M., Hermosillo, E., Nasrini, J., McGuire, S., Saxena, S., Moore, T. M., Gur, R. C., & Dinges, D. F. (2018). Repeated administration effects on Psychomotor Vigilance Test performance. *Sleep, 41*(1), zsx187. https://doi.org/10.1093/sleep/zsx187 – keine systematischen Übungseffekte auf Mittel/Median der einfachen Reaktionszeit (kleine Änderungen nur bei Randgrößen).
 - Bediou, B., Adams, D. M., Mayer, R. E., Tipton, E., Green, C. S., & Bavelier, D. (2018). Meta-analysis of action video game impact on perceptual, attentional, and cognitive skills. *Psychological Bulletin, 144*(1), 77–110. https://doi.org/10.1037/bul0000130 – kleiner Effekt, Publikationsbias.
 - Casiez, G., Pietrzak, T., Marchal, D., Poulmane, S., Falce, M., & Roussel, N. (2017). Characterizing latency in touch and button-equipped interactive systems. In *Proceedings of UIST '17* (S. 29–39). ACM. https://doi.org/10.1145/3126594.3126606 – Touch-/Mauslatenz.
 - Der, G., & Deary, I. J. (2006). Age and sex differences in reaction time in adulthood: Results from the United Kingdom Health and Lifestyle Survey. *Psychology and Aging, 21*(1), 62–73. https://doi.org/10.1037/0882-7974.21.1.62 – Alter.

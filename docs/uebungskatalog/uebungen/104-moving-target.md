@@ -29,7 +29,7 @@ anforderungsprofil:
     stereosehen: 0
     peripheres_sehen: 1
     nutzbares_sehfeld: 0
-    blickfolge: 2
+    blickfolge: 1
     sakkaden: 2
     fixation: 0
     bewegungswahrnehmung: 2
@@ -73,7 +73,7 @@ belastung:
 
 # ===== Auswahlhilfe =====
 voraussetzungen: ["Maus oder Touchscreen; ausreichend große Zeichenfläche (Vollbild)", "auf hohen Stufen Ziele unter 1° Durchmesser und Treffer in Bruchteilen einer Sekunde", "für Vergleiche von Sitzung zu Sitzung immer dasselbe Gerät und dieselbe Bildwiederholrate (Tempo hängt im Original an der Bildrate)"]
-vorsicht_bei: [tremor_parkinson, hand_arm_beschwerden, sehbehinderung_niedriger_visus, presbyopie_gleitsicht, trockenes_auge_bildschirm, kopfschmerz_asthenopie, aufmerksamkeitsprobleme]
+vorsicht_bei: [photosensitive_epilepsie, tremor_parkinson, hand_arm_beschwerden, sehbehinderung_niedriger_visus, presbyopie_gleitsicht, trockenes_auge_bildschirm, kopfschmerz_asthenopie, aufmerksamkeitsprobleme]
 geeignet_fuer: ["Zusammenspiel von Auge und Hand bei bewegten Zielen üben (Ziel sehen, vorhalten, treffen)", "schnelles Zielen und Blickwechsel zwischen wechselnden Orten unter Zeitdruck", "Mausgeschick und Zeigerkontrolle am Bildschirm", "spielerisches Training mit sofortiger Punkterückmeldung"]
 weniger_geeignet_fuer: ["ruhige, glatte Blickfolge bei gleichmäßiger Bewegung (dafür 105, 402–404)", "Menschen, die kein Zeitlimit und keine Fehlerstrafe wünschen", "kleine Touchgeräte oder Personen mit Handzittern auf hohen Stufen (Ziele bis 16 px)", "Vergleichsmessungen zwischen Geräten (Bildratenabhängigkeit)"]
 evidenz:
@@ -81,7 +81,7 @@ evidenz:
   naher_transfer: schwach
   alltag_transfer: fehlend
   kommentar: "Grundlagenforschung zur Interzeption ist stark, und motorisches Lernen in der geübten Aufgabe ist plausibel; für genau dieses Spiel gibt es keine Studie, und Sehtraining überträgt sich meist nur auf ähnliche Aufgaben (Guo et al., 2025; Simons et al., 2016)."
-aehnliche_uebungen: [105, 106, 501, 508, 509, 702, 305]
+aehnliche_uebungen: [105, 106, 501, 508, 509, 702, 305, 107]
 stichworte: ["Zielfang", "Interzeption", "Auge-Hand-Koordination", "Vorhalt", "smooth pursuit", "Sakkaden", "Fitts", "Maus", "Touch", "Zeitdruck", "Combo"]
 ---
 
@@ -115,7 +115,7 @@ Quelle: Seitentext und ausgelieferter Spielcode (Chunk `36265-…js`, formatiert
 - Der Titel „Zielverfolgung" und der erste Satz beschreiben das Spiel falsch: Der Punkt wird nie länger als eine Sekunde verfolgt.
 
 ## 4. Optische und okulomotorische Grundlagen
-- **Ablauf der Augenbewegung:** Zielsprung → Sakkade (Latenz ≈ 150 ms, Gap-Paradigma bis ≈ 100 ms „Express"; Fischer & Ramsperger, 1984) → Folgebewegung startet nach ≈ 100 ms (Carl & Gellman, 1987; Robinson et al., 1986: Gain ≈ 0,95 bei 5–30°/s) → Korrektursakkaden, wenn der vorhergesagte Kreuzungszeitpunkt nicht passt (de Brouwer et al., 2002). Bei nur 0,2–1 s Lebensdauer bleibt dafür wenig Zeit.
+- **Ablauf der Augenbewegung:** Zielsprung → Sakkade (Latenz ≈ 150 ms, Gap-Paradigma bis ≈ 100 ms „Express"; Fischer & Ramsperger, 1984) → Folgebewegung startet nach ≈ 100 ms (Carl & Gellman, 1987; Robinson et al., 1986: Gain knapp unter 1, höchstens ≈ 0,95, Wert nicht einzeln geprüft) → Korrektursakkaden, wenn der vorhergesagte Kreuzungszeitpunkt nicht passt (de Brouwer et al., 2002). Bei nur 0,2–1 s Lebensdauer bleibt dafür wenig Zeit.
 - **Reiz:** Orange (Leuchtdichteverhältnis ≈ 7 : 1 zum Grund, eigene Rechnung nach WCAG) ist kontrastreich; Farbunterscheidung wird nicht verlangt, Farbsehschwäche (≈ 8 % der Männer) sollte kaum stören, ein Nachweis fehlt. Ziele unter ≈ 0,5° (Level 20+) sind für Menschen mit reduzierter Sehschärfe schwer, aber nicht wegen Detailerkennung (Vollscheibe).
 - **Blickbereich:** Das Ziel erscheint zufällig im ganzen Feld (am Tablet ≈ 33° × 23°): Der Erstblick geht oft in die Peripherie (bis ≈ 15–20° Exzentrizität); Kopfdrehung ist bei Monitoren und Tablets nicht nötig, wird aber bei Gleitsicht gern gemacht (Hutchings et al., 2007).
 - **Bewegungsunschärfe/Bildraten:** 60 Hz = 16,7 ms je Bild; bei 600 px/s wandert der Punkt ≈ 10 px je Bild, sichtbar als Ruckeln. Höhere Bildrate hilft im Original nur bedingt, weil Tempo ∝ Bildrate; eher zählt niedrige Gesamtlatenz (Spjut et al., 2019).
@@ -127,7 +127,7 @@ Bewegungsrichtung und -tempo werden in MT/MST verarbeitet und laufen zu frontale
 
 ## 6. Motorische Grundlagen
 - **Fitts'sches Gesetz:** Bei langer Sprungdistanz (≈ 700 px) und Zonen von 116 bis ≈ 40 px ergibt sich ein Schwierigkeitsindex von ≈ 2,8 bis 4,2 bit (eigene Rechnung nach Fitts, 1954); mit höherem Level werden Zone und Zeit kleiner. Tempo-Genauigkeits-Tausch: Wer schneller ist, streut mehr; darum hängt die Fehlklick-Strafe direkt an schnellem Zielen.
-- **Interzeption:** Die visuomotorische Latenz beim Tippen/Wischen auf bewegte Ziele beträgt ≈ 114 ms (n = 22; Brenner et al., 2026), die Trefferpräzision ≈ 20 ms bzw. 5 mm Streuung (Brenner & Smeets, 2009). Bei schnelleren Zielen wird typischerweise etwas **hinter** dem Ziel getroffen (Brouwer et al., 2002) – ein Vorhalt von wenigen Pixeln ist nur bei ≥ 400 px/s spürbar, entgegen der Website-Behauptung („zwingend nötig") bei Level 1–5 kaum relevant.
+- **Interzeption:** Die visuomotorische Latenz beim Tippen/Wischen auf bewegte Ziele beträgt ≈ 114 ms (n = 22; Brenner et al., 2026), die Trefferpräzision ≈ 20 ms bzw. 5 mm Streuung (Brenner & Smeets, 2009). Bei schnelleren Zielen wird zwar weiter vorn getroffen, aber weniger weit als nötig, also relativ **hinter** dem Ziel (Brouwer et al., 2002) – ein Vorhalt von wenigen Pixeln ist (eigene Abschätzung) erst bei ≥ 400 px/s spürbar, entgegen der Website-Behauptung („zwingend nötig") bei Level 1–5 kaum relevant.
 - **Zeiger und Touch:** Die Trefferzone am Tablet sinkt auf 40–50 px (≈ 8–10 mm); sichere Fingerziele brauchen ≈ 9,2 mm (Parhi et al., 2006). Physiologischer Tremor ≈ 10 Hz (McAuley & Marsden, 2000) wirkt bei Zonen unter ≈ 8 mm.
 
 ## 7. Einflussfaktoren und Messgrenzen
@@ -138,15 +138,15 @@ Bewegungsrichtung und -tempo werden in MT/MST verarbeitet und laufen zu frontale
 - **Übungseffekt:** Klare Lerneffekte innerhalb weniger Runden (Ort, Größe, Timing gewöhnen); unbekannt, welcher Teil Gewöhnung an Gerät/Aufgabe ist.
 
 ## 8. Studienlage: Trainierbarkeit und Übertragung
-- **Übungseffekt (mittel):** Motorisches Lernen (Geschwindigkeit, Vorhalt) ist gut belegt; für dieses Spiel gibt es keine Studie. Zeitgenaues Treffen bleibt mit Übung verbesserbar (Brenner & Smeets, 2018, Grundlagenforschung).
+- **Übungseffekt (mittel):** Motorisches Lernen (Geschwindigkeit, Vorhalt) ist gut belegt; für dieses Spiel gibt es keine Studie. Dass zeitgenaues Treffen mit Übung besser wird, ist plausibel, für diese Aufgabe aber nicht direkt belegt (Brenner & Smeets, 2018, beschreiben nur die laufende Nachsteuerung, keine Lernkurve).
 - **Naher Transfer (schwach):** Große Effekte im digitalen Sehtraining zeigen sich fast nur, wenn Trainings- und Testaufgabe ähnlich sind (Guo et al., 2025: SMD 1,65 vs. 0,07 für Aufmerksamkeit; 33 RCTs, n = 1.048).
 - **Alltagstransfer (fehlend):** Überblicke sehen die stärksten Hinweise bei naturnahem, sportartspezifischem Training, nicht bei Bildschirmspielen (Lochhead et al., 2024; Laby & Appelbaum, 2021; Simons et al., 2016). Aussagen zu Straßenverkehr, Sport oder „Kampfjetpiloten" sind nicht belegt.
 
 ## 9. Auswahlhinweise für die KI
-- **Passt, wenn** jemand Auge und Hand bei schnell wechselnden Zielen üben möchte, gern spielerisch und mit Zeitdruck; wenn Maus/Touch verfügbar sind; wenn die Blickfolge nicht im Vordergrund steht (dafür 105, 402–404). Profil: Auge-Hand-Koordination 3, Zielbewegung_Tempo 3, Sakkaden und Blickfolge 2.
+- **Passt, wenn** jemand Auge und Hand bei schnell wechselnden Zielen üben möchte, gern spielerisch und mit Zeitdruck; wenn Maus/Touch verfügbar sind; wenn die Blickfolge nicht im Vordergrund steht (dafür 105, 402–404). Profil: Auge-Hand-Koordination 3, Zielbewegung_Tempo 3, Sakkaden 2, Blickfolge nur 1 (der Punkt lebt höchstens ≈ 1 s).
 - **Weniger passend, wenn** kein Zeitdruck erwünscht ist, glatte Blickfolge (Kern von 105) gewünscht ist, oder das Gerät klein ist und Zittern/Handbeschwerden bestehen.
-- **Vorsicht / anpassen bei:** Handzittern/Parkinson und Hand-Arm-Beschwerden (kleine Ziele, schnelles Tippen); niedrigem Visus (Ziele unter 0,5°); Gleitsicht/Alterssichtigkeit (Abstand, Brille für Bildschirmabstand, Kopf statt Augen); trockenem Auge und Kopfschmerz bei Bildschirmarbeit (Pausen; Runde kann durch Zeitbonus länger als 45 s dauern); Aufmerksamkeitsproblemen (Zeitdruck und Strafe können frustrieren). Der rote Fehlerblitz ist abschaltbar.
-- **Kombiniert gut mit:** 105 (glatte Blickfolge), 508/509 (Zielen), 702 (Mauspräzision), 305 (Zielverfolgung testen).
+- **Vorsicht / anpassen bei:** Handzittern/Parkinson und Hand-Arm-Beschwerden (kleine Ziele, schnelles Tippen); niedrigem Visus (Ziele unter 0,5°); Gleitsicht/Alterssichtigkeit (Abstand, Brille für Bildschirmabstand, Kopf statt Augen); trockenem Auge und Kopfschmerz bei Bildschirmarbeit (Pausen; Runde kann durch Zeitbonus länger als 45 s dauern); Aufmerksamkeitsproblemen (Zeitdruck und Strafe können frustrieren). Der rote Fehlerblitz ist abschaltbar; wegen möglicher schneller Lichtwechsel bei vielen Fehlern steht photosensitive_epilepsie als Vorsichtshinweis.
+- **Kombiniert gut mit:** 105 (glatte Blickfolge), 508/509 (Zielen), 702 (Mauspräzision), 305 (Zielverfolgung testen), 107 (Timing bei Annäherung, ohne Zielen).
 Keine Diagnose, keine Heilversprechen; „Test" ist nur ein Namensbestandteil des Originals.
 
 ## 10. Schwächen des Originals und Empfehlungen für eine Blickfit-Umsetzung
@@ -179,7 +179,7 @@ Alle DOIs am 29.09.2026 über Crossref geprüft (Titel, Erstautor:in, Jahr, Zeit
 - Brouwer, A.-M., Brenner, E., & Smeets, J. B. J. (2002). Hitting moving objects: Is target speed used in guiding the hand? *Experimental Brain Research, 143*(2), 198–211. https://doi.org/10.1007/s00221-001-0980-x – Treffen hinter dem schnellen Ziel.
 - de la Malla, C., Smeets, J. B. J., & Brenner, E. (2017). Potential systematic interception errors are avoided when tracking the target with one's eyes. *Scientific Reports, 7*, 10793. https://doi.org/10.1038/s41598-017-11200-5 – Blickfolge vermeidet Interzeptionsfehler.
 - Carl, J. R., & Gellman, R. S. (1987). Human smooth pursuit: Stimulus-dependent responses. *Journal of Neurophysiology, 57*(5), 1446–1463. https://doi.org/10.1152/jn.1987.57.5.1446 – Latenz ≈ 100 ms.
-- Robinson, D. A., Gordon, J. L., & Gordon, S. E. (1986). A model of the smooth pursuit eye movement system. *Biological Cybernetics, 55*(1), 43–57. https://doi.org/10.1007/BF00363977 – Step-Ramp, Gain ≈ 0,95.
+- Robinson, D. A., Gordon, J. L., & Gordon, S. E. (1986). A model of the smooth pursuit eye movement system. *Biological Cybernetics, 55*(1), 43–57. https://doi.org/10.1007/BF00363977 – Modell der Folgebewegung (Gain-Angabe nicht einzeln aus dem Volltext geprüft).
 - Meyer, C. H., Lasker, A. G., & Robinson, D. A. (1985). The upper limit of human smooth pursuit velocity. *Vision Research, 25*(4), 561–563. https://doi.org/10.1016/0042-6989(85)90160-9 – Grenze individuell weit über 30°/s.
 - de Brouwer, S., Yuksel, D., Blohm, G., Missal, M., & Lefèvre, P. (2002). What triggers catch-up saccades during visual tracking? *Journal of Neurophysiology, 87*(3), 1646–1650. https://doi.org/10.1152/jn.00432.2001 – Auslöser von Aufholsakkaden.
 - Thier, P., & Ilg, U. J. (2005). The neural basis of smooth-pursuit eye movements. *Current Opinion in Neurobiology, 15*(6), 645–652. https://doi.org/10.1016/j.conb.2005.10.013 – beteiligte Hirnstrukturen.

@@ -73,7 +73,7 @@ belastung:
 
 # ===== Auswahlhilfe =====
 voraussetzungen: ["Buchstaben und Ziffern der lateinischen Schrift kennen", "scharfes Sehen im Nahbereich: Zeichenhöhe im Original nur ≈ 0,25–0,3° (≈ 2 mm bei 40 cm), Brille/Nahkorrektur tragen", "Maus oder Touchscreen (Tablet quer; Tippfläche im Original nur ≈ 4–5 mm)", "Bereitschaft, ohne Rückmeldung zur eigenen Suchstrategie 45 s konzentriert zu suchen"]
-vorsicht_bei: [sehbehinderung_niedriger_visus, presbyopie_gleitsicht, gesichtsfeldausfall, trockenes_auge_bildschirm, kopfschmerz_asthenopie, lese_rechtschreib_schwaeche, aufmerksamkeitsprobleme, kinder_unter_6]
+vorsicht_bei: [photosensitive_epilepsie, sehbehinderung_niedriger_visus, presbyopie_gleitsicht, gesichtsfeldausfall, trockenes_auge_bildschirm, kopfschmerz_asthenopie, lese_rechtschreib_schwaeche, aufmerksamkeitsprobleme, kinder_unter_6]
 geeignet_fuer: ["systematisches Absuchen dichter, ähnlicher Zeichen üben (Schilder, Listen, Tabellen, Fahrpläne, Korrekturlesen)", "selektive Aufmerksamkeit und Unterscheiden ähnlicher Formen bei Zeitdruck ohne Strafe", "kurze, ruhige Sitzung ohne Bewegungs- oder Flimmerreize, ohne Sprachverständnis über Buchstaben hinaus", "Erfahrung, wie stark Zeichengröße und Abstand (Nahkorrektur, Beleuchtung) das Finden beeinflussen"]
 weniger_geeignet_fuer: ["Einstieg für Menschen mit Sehschwäche, Gleitsichtbrille ohne Kopfbewegung oder sehr kleinem Bildschirm (Zeichen zu klein, Raster dicht)", "wer eine steigende Schwierigkeit oder Lernkurve braucht (Original passt sich nicht an; Blickfit „Suchbild“ besser)", "Messung der Sucheffizienz oder Leistungsvergleich (Punkte lassen sich durch Durchtippen des Rasters ohne Suchen erhöhen, keine Suchzeit, keine Norm)", "Ziele wie Blickfolge, Reaktion, Peripherie, Merken oder Sporttransfer"]
 evidenz:
@@ -141,11 +141,11 @@ selektive Aufmerksamkeit, Merkmalsunterscheidung, Zielisolation und Scanning-Aus
 - **Belegt (Grundlagen):** Suchzeit steigt mit der Zeichenzahl, wenn Ziel und Ablenker ähnlich sind; ein einzelnes abweichendes Merkmal springt
   ins Auge, Kombinationen und Ähnlichkeit machen die Suche langsam (Treisman & Gelade, 1980; Duncan & Humphreys, 1989; Wolfe, 1994).
 - **Falsch eingeordnet:** „C zwischen O“ ist keine Konjunktions-, sondern eine Merkmalssuche in der *leichten* Richtung der Suchasymmetrie: das C
-  hat mit Lücke und Linienenden ein Merkmal, das dem O fehlt (Treisman & Souther, 1985). Schwer wird es durch **Ähnlichkeit** (kleine Lücke, ähnliche
+  hat mit Lücke und Linienenden ein Merkmal, das dem O fehlt (Linienenden und Geschlossenheit gelten bei Treisman & Souther, 1985, als funktionale Merkmale; das C/O-Paar selbst ist daraus abgeleitet, dort zeigt das Beispiel Kreis mit Strich zwischen Kreisen). Schwer wird es durch **Ähnlichkeit** (kleine Lücke, ähnliche
   Ablenker Q/G), nicht durch Merkmalsverbindung. Suchen bilden zudem ein Kontinuum, nicht zwei getrennte Modi (Wolfe, 1998).
 - **Ohne Quelle / überzogen:** „Optimales Foveations-Intervall 200–250 ms, Fixation auf das Minimum begrenzen“ – mittlere Fixationsdauern bei
-  Suche liegen bei ≈ 180–275 ms (Rayner, 1998, nach van der Lans et al., 2011), das ist ein Mittelwert, kein Minimum, und die Dauer passt sich der
-  Aufgabe an. „Experten nutzen breitere periphere Fenster“ ist nicht belegt. Die Tier-Tabelle hat keine Datengrundlage (die Seite sagt selbst,
+  Suche liegen grob bei ≈ 200–300 ms (Übersicht: Rayner, 1998; genauer Wert dort nur im Volltext, hier nicht geprüft), das ist ein Mittelwert, kein Minimum, und die Dauer unterscheidet sich zwischen
+  Aufgaben und Personen (van der Lans et al., 2011). „Experten nutzen breitere periphere Fenster“ ist nicht belegt. Die Tier-Tabelle hat keine Datengrundlage (die Seite sagt selbst,
   sie sammle keine Leistungsdaten); die Zuordnungen „Elite Esports“ oder „Tunnelblick / Reizüberflutung“ sind unbegründet und keine
   Diagnose. Gehirn-Aussagen (V1, parietaler Kortex, Augenfelder) stehen nicht in den zitierten Verhaltensstudien. Die Behauptung, hohe
   perzeptive Last „schütze vor mentalem Abschweifen“, geht über Lavie (1995) hinaus. Transfer auf Radiologie, Flugsicherung, Shooter ist
@@ -154,21 +154,21 @@ selektive Aufmerksamkeit, Merkmalsunterscheidung, Zielisolation und Scanning-Aus
 ## 4. Optische und okulomotorische Grundlagen
 
 - **Sakkaden und Fixationen:** Man sucht in Folge von Blicksprüngen (Sakkaden) und kurzen Halten (Fixationen). Mittlere Fixationsdauer bei
-  visueller Suche ≈ 180–275 ms (Rayner, 1998; Werte nach van der Lans et al., 2011). Bei jeder Fixation lässt sich nur ein kleiner Bereich sicher
+  visueller Suche grob ≈ 200–300 ms (Rayner, 1998, Übersichtsarbeit; Zahl nicht am Volltext geprüft; die Dauer schwankt zwischen Aufgaben und Personen, van der Lans et al., 2011). Bei jeder Fixation lässt sich nur ein kleiner Bereich sicher
   auswerten; Zoomlinse (Eriksen & St. James, 1986): kleinerer Fokus = bessere Auflösung, aber weniger Überblick.
 - **Crowding (Verdrängung):** Zeichen werden außerhalb der Blickmitte schlechter erkannt, wenn Nachbarn näher liegen als etwa die Hälfte der
   Exzentrizität (Bouma, 1970; Pelli & Tillman, 2008; Whitney & Levi, 2011). Bei Teilung ≈ 0,85° (iPad quer, 40 cm) sind nur Zeichen
   bis ≈ 1,7° Abstand von der Blickmitte frei erkennbar (eigene Rechnung nach Bouma), das entspricht nur einer Handvoll Zeichen je Fixation.
   Das Original ist damit eng gepackt; Blickfit wählt 1,3–2,0° Teilung.
 - **Zeichengröße:** ≈ 0,25–0,3° hohe Zeichen (≈ 15–18 Bogenminuten) liegen bei fetter Schrift nicht weit über der Erkennungsgrenze normaler bis
-  leicht verminderter Sehschärfe; ohne Nahkorrektur, bei Presbyopie (Akkommodationsreserve reicht ab ≈ 40 Jahren nicht mehr für Naharbeit;
+  leicht verminderter Sehschärfe; ohne Nahkorrektur, bei Presbyopie (Akkommodationsreserve reicht typischerweise ab etwa 40–45 Jahren nicht mehr für entspannte Naharbeit;
   Charman, 2008) oder bei ungünstigem Abstand wird Erkennbarkeit zum Engpass, nicht die Suche. Kontrast hell auf dunkel ist hoch.
-- **Brille:** Das Raster ist ≈ 10–12° breit. Mit Gleitsicht liegt es je nach Kopfhaltung teils im Nahteil, teils im Übergang; Neulinge nutzen mehr
-  Kopfbewegungen (Hutchings et al., 2007). Empfehlung: Tablet/Bildschirm so halten, dass das Raster durch den Nahteil oder die
+- **Brille:** Das Raster ist ≈ 10–12° breit. Mit Gleitsicht liegt es je nach Kopfhaltung teils im Nahteil, teils im Übergang; Neulinge setzen in der Eingewöhnung tendenziell mehr
+  Kopfbewegungen ein (kleine Studie, n = 10, große Unterschiede zwischen Personen: Hutchings et al., 2007). Empfehlung: Tablet/Bildschirm so halten, dass das Raster durch den Nahteil oder die
   Arbeitsplatzbrille gesehen wird, Kopf statt Augen bewegen. Bildschirmarbeit senkt die Lidschlagrate und kann das trockene Auge belasten
   (Patel et al., 1991); 45 s sind kurz, mehrere Runden hintereinander weniger.
 - **Farbe:** nicht gefordert (Zeichen einfarbig; rot/grün nur Rückmeldung nach dem Tipp); Farbsehschwäche (≈ 8 % der Männer) spielt hier keine Rolle.
-- **Alter:** Suche ist früh und spät im Leben verlangsamt, bei Ähnlichkeit/Kombinationen und vielen Ablenkern stärker (Hommel et al., 2004;
+- **Alter:** Suche ist früh und spät im Leben verlangsamt, bei Kombinationssuche stärker als bei Einzelmerkmal; im höheren Alter leidet sie besonders mit wachsender Ablenkerzahl und bei Durchgängen ohne Ziel (Hommel et al., 2004;
   n = 298, 6–89 Jahre).
 
 ## 5. Neurowissenschaftliche Grundlagen
@@ -180,8 +180,8 @@ laterale intraparietale Bereich (LIP) mit seiner Verbindung zu Blickmotorik und 
 (temporo-parietal, unterer Stirnhirnbereich) meldet auffällige oder unerwartete Reize (Corbetta & Shulman, 2002). Aufmerksamkeit verstärkt in der Sehrinde die
 Antwort auf den gesuchten Reiz gegenüber Ablenkern (Kastner & Ungerleider, 2000). Der Colliculus superior beteiligt sich an der Blickzielauswahl (allgemeines
 Wissen; hier nicht durch eine eigene Quelle belegt). Die Website nennt V1 und den posterioren Parietalkortex ohne Beleg aus ihren Quellen;
-dass die Übung „diese Regionen trainiert“, ist nicht gezeigt. Beim Arbeitsgedächtnis („Ziel-Template“) helfen Stirnhirnnetzwerke; die Suche selbst hat kaum
-Gedächtnis für schon besuchte Orte (Horowitz & Wolfe, 1998).
+dass die Übung „diese Regionen trainiert“, ist nicht gezeigt. Beim Arbeitsgedächtnis („Ziel-Template“) helfen Stirnhirnnetzwerke; die Suche selbst hat nach Horowitz & Wolfe (1998) kaum
+Gedächtnis für schon besuchte Orte (Befund umstritten).
 
 ## 6. Motorische Grundlagen
 
@@ -199,7 +199,7 @@ Gedächtnis für schon besuchte Orte (Horowitz & Wolfe, 1998).
 - **Gerät:** Zeichen- und Feldgröße hängen von Fenstergröße und Abstand ab (10–14 px, Raster 10–12°); Tablet und Monitor nicht vergleichbar. Zeitmessung
   erfolgt über Ereignisse im Browser; Bildwiederholrate spielt bei statischem Raster kaum eine Rolle.
 - **Übung und Strategie:** Zeichensätze wiederholen sich, Lerneffekte in der Aufgabe sind groß; systematisches Absuchen (Reihen) bringt oft mehr als
-  „Scannen nach Gefühl“; Anweisungen zur Strategie verbesserten Ältere schon nach wenig Übung (Becic et al., 2008).
+  „Scannen nach Gefühl“; bei Älteren mit ungünstiger Strategie (viele Augenbewegungen) verbesserte eine Anweisung die Leistung in einer Veränderungserkennung an dynamischen Anzeigen (Becic et al., 2008; andere Aufgabe, Übertragbarkeit offen).
 - **Ziel immer vorhanden:** keine Durchgänge ohne Ziel; seltene Ziele würden häufiger übersehen (Wolfe et al., 2005), ein Effekt, der hier nicht auftritt.
 - **Zuverlässigkeit:** Punkte, Trefferquote und „Note“ sind keine Testwerte; die 96-Zeichen-Tabelle hat keine Normstichprobe.
 
@@ -213,7 +213,7 @@ Gedächtnis für schon besuchte Orte (Horowitz & Wolfe, 1998).
 - **Alltag (schwach):** „Gehirntraining“ zeigt viel Evidenz für geübte Aufgaben, wenig für entfernte Aufgaben und Alltag (Simons et al., 2016). Große Effekte
   des Sport-Sehtrainings gibt es fast nur, wenn Trainings- und Testaufgabe ähnlich sind (Guo et al., 2025); Computertraining Älterer: kleiner Gesamteffekt
   g = 0,22 (Lampit et al., 2014). Klinisch (Halbseitenblindheit) verkürzten kompensatorische Suchtrainings Suchzeiten (Pambakian et al., 2004; RCT
-  Roth et al., 2009: −47 % Suchzeit auf der blinden Seite, n = 28), das Gesichtsfeld selbst wuchs nicht – andere Gruppe und Protokoll, nicht übertragbar.
+  Roth et al., 2009: Suchzeit für Ziffern auf der blinden Seite laut Abstract auf 47 % des Ausgangswerts bzw. um 47 % verkürzt (Angabe mehrdeutig), n = 28), das Gesichtsfeld selbst wuchs nicht – andere Gruppe und Protokoll, nicht übertragbar.
 
 ## 9. Auswahlhinweise für die KI
 
@@ -224,7 +224,7 @@ Gedächtnis für schon besuchte Orte (Horowitz & Wolfe, 1998).
 - **Vorsicht / anpassen bei …** niedrigem Visus und Presbyopie/Gleitsicht (Zeichen ≈ 0,3° klein, Raster ≈ 10° breit → Abstand/Brille prüfen, größere Zeichen,
   Kopf bewegen); Gesichtsfeldausfall (Suche verlängert sich, Übung ohne fachliche Begleitung kein Training); trockenem Auge/Asthenopie (Pausen);
   Lese-Rechtschreib-Schwäche (Buchstabenverwechslung, Crowding: eher Ziffern/Formen); Aufmerksamkeitsproblemen und Kindern unter 6 (Zeichenkenntnis, 45 s
-  ohne Rückmeldung); bei Farbschwäche unproblematisch. Ein bildschirmweites Aufleuchten bei jedem Fehlklick ist bei Lichtempfindlichkeit störend, aber nicht blitzend.
+  ohne Rückmeldung); bei Farbschwäche unproblematisch. Jeder Fehlklick löst ein bildschirmweites rotes Aufleuchten (Code: ≈ 0,45 s, weicher Verlauf, kein Vollflächen-Blitz) plus Ton aus; beim schnellen Durchtippen können sich viele davon in Folge ergeben, deshalb Vorsicht bei Lichtempfindlichkeit/photosensitiver Epilepsie (der Schalter „Miss Flash“ unten rechts im Spiel lässt es abschalten).
 - **Kombiniert gut mit …** 108 (Suche im wechselnden Raster), 204 (Schulte-Tabelle: geordnete Suche), 303 (Blicksprünge), 208 (Daueraufmerksamkeit), 207 (Symbolvergleich).
   Keine Diagnose, kein Heil- oder Sehversprechen; keine Aussage zu Verkehrs- oder Berufseignung.
 
@@ -240,7 +240,7 @@ mögliche Mehrdeutigkeit bei gedrehten 6/9 und N/Z; bildschirmweites Aufleuchten
   (leichte Richtung der Suchasymmetrie), **O zwischen C** (schwere Richtung), E/F, P/R/B, gedrehtes T/L, 2/5, b/d/p/q, gemischte Ablenker mit Vierteldrehungen; Erfolg ≙
   gefunden in ≤ 1,2 s + 75 ms je Zeichen, 2-abwärts/1-aufwärts-Treppe (≈ 71 %); höchstens 80 % der Rasterzellen belegt.
 - **Größe und Abstand:** Zeichenhöhe 26–36 px (≈ 0,7–1,0° bei 40 cm), Mittenabstand 2,0 → 1,3 × Höhe (≈ 1,3–2,0°), Touch-Zelle ≥ 48 px, Trefferradius ≥ 26 px, Zufallsversatz
-  ≤ 20 %; das ist ≈ 3,5-mal so hoch wie im Original und vermeidet Crowding weitgehend.
+  ≤ 20 %; das ist ≈ 3-mal so hoch wie im Original und vermeidet Crowding weitgehend.
 - **Wertung:** 10 + 3 je Stufe pro Fund, kein Abzug; Tipps < 150 ms nach dem letzten und Tipps ins Leere werden ignoriert; Fehltipps gezählt (Rückmeldung nur am Zeichen: rot,
   kurzes Wackeln bzw. Ring bei „Bewegung reduzieren“), Zeitlimit 12 s mit Aufdecken des Ziels; Ziel liegt nie direkt neben dem letzten. Dauer 50 s (Kurzform 10 s).
 - **Anzeige/Ergebnis:** Zielzeichen oben mit Drehhinweis; Ergebnis: Punkte, Gefunden, Ø Suchzeit, erreichte Stufe; Hinweis „Reihe für Reihe suchen“ bzw. „erst sicher sein“.
@@ -260,13 +260,13 @@ mögliche Mehrdeutigkeit bei gedrehten 6/9 und N/Z; bildschirmweites Aufleuchten
 - Eriksen, C. W., & St. James, J. D. (1986). Visual attention within and around the field of focal attention: A zoom lens model. *Perception & Psychophysics*, 40(4), 225–240. https://doi.org/10.3758/BF03211502 – **Prüfung:** DOI stimmt ✓ (Crossref); **stützt:** ja (Zoomlinse mit variablem Fokus)
 - Bacon, W. F., & Egeth, H. E. (1994). Overriding stimulus-driven attentional capture. *Perception & Psychophysics*, 55(5), 485–496. https://doi.org/10.3758/BF03205306 – **Prüfung:** DOI stimmt ✓ (Crossref, Abstract); **stützt:** nein (zeigt, dass gezielte Suche nach bekanntem Merkmal Farb-Ausreißer nicht einfangen lässt; nicht „hohe Last fordert selektive Aufmerksamkeit“; das Gitter enthält keine Singletons)
 - Woods, D. L., Wyma, J. M., Yund, E. W., Herron, T. J., & Reed, B. (2015). Factors influencing the latency of simple reaction time. *Frontiers in Human Neuroscience*, 9, 131. https://doi.org/10.3389/fnhum.2015.00131 – **Prüfung:** DOI stimmt ✓ (Crossref); **stützt:** nein (einfache Reaktionszeit und Hardware-Latenz, kein Bezug zur visuellen Suche)
-- *Ohne Quelle:* „optimales Foveations-Intervall 200–250 ms“, „Experten nutzen breitere periphere Fenster“, Tier-Tabelle (Latenz, Punkte, „Elite Esports“) – **Prüfung:** nicht belegt; Fixationsdauer bei Suche ≈ 180–275 ms als Mittelwert (Rayner, 1998)
+- *Ohne Quelle:* „optimales Foveations-Intervall 200–250 ms“, „Experten nutzen breitere periphere Fenster“, Tier-Tabelle (Latenz, Punkte, „Elite Esports“) – **Prüfung:** nicht belegt; Fixationsdauer bei Suche grob ≈ 200–300 ms als Mittelwert (Rayner, 1998; Zahl nicht am Volltext geprüft)
 
 ### Weitere Fachliteratur
-- Treisman, A., & Souther, J. (1985). Search asymmetry: A diagnostic for preattentive processing of separable features. *Journal of Experimental Psychology: General*, 114(3), 285–310. https://doi.org/10.1037/0096-3445.114.3.285 – C zwischen O leicht, O zwischen C schwer (Crossref ✓)
+- Treisman, A., & Souther, J. (1985). Search asymmetry: A diagnostic for preattentive processing of separable features. *Journal of Experimental Psychology: General*, 114(3), 285–310. https://doi.org/10.1037/0096-3445.114.3.285 – Suchasymmetrie: Kreis mit Strich zwischen Kreisen leicht, Umkehrung schwer; Linienenden, Geschlossenheit = Merkmale; C/O daraus abgeleitet (Crossref ✓, Abstract)
 - Wolfe, J. M. (1998). What can 1 million trials tell us about visual search? *Psychological Science*, 9(1), 33–39. https://doi.org/10.1111/1467-9280.00006 – Suchsteigungen bilden ein Kontinuum (Crossref ✓, Abstract)
 - Horowitz, T. S., & Wolfe, J. M. (1998). Visual search has no memory. *Nature*, 394(6693), 575–577. https://doi.org/10.1038/29068 – Suche ohne Gedächtnis für besuchte Orte (Crossref ✓, Abstract)
-- Rayner, K. (1998). Eye movements in reading and information processing: 20 years of research. *Psychological Bulletin*, 124(3), 372–422. https://doi.org/10.1037/0033-2909.124.3.372 – Fixationsdauern (Crossref ✓; Werte über van der Lans, R., Wedel, M., & Pieters, R. (2011). *Behavior Research Methods*, 43(1), 239–257. https://doi.org/10.3758/s13428-010-0031-2)
+- Rayner, K. (1998). Eye movements in reading and information processing: 20 years of research. *Psychological Bulletin*, 124(3), 372–422. https://doi.org/10.1037/0033-2909.124.3.372 – Übersicht zu Fixationsdauern in Suche, Lesen, Szenen (Crossref ✓, Abstract nennt keine Zahlen; van der Lans, R., Wedel, M., & Pieters, R. (2011). *Behavior Research Methods*, 43(1), 239–257. https://doi.org/10.3758/s13428-010-0031-2 zeigt nur, dass sich Fixationsmerkmale zwischen Aufgaben und Personen unterscheiden, Crossref ✓, Abstract)
 - Bouma, H. (1970). Interaction effects in parafoveal letter recognition. *Nature*, 226(5241), 177–178. https://doi.org/10.1038/226177a0 – Crowding-Abstand ≈ 0,5 × Exzentrizität (Crossref ✓)
 - Pelli, D. G., & Tillman, K. A. (2008). The uncrowded window of object recognition. *Nature Neuroscience*, 11(10), 1129–1135. https://doi.org/10.1038/nn.2187 – Crowding begrenzt Erkennen (Crossref ✓)
 - Whitney, D., & Levi, D. M. (2011). Visual crowding: A fundamental limit on conscious perception and object recognition. *Trends in Cognitive Sciences*, 15(4), 160–168. https://doi.org/10.1016/j.tics.2011.02.005 – Crowding, Überblick (Crossref ✓)
@@ -279,13 +279,13 @@ mögliche Mehrdeutigkeit bei gedrehten 6/9 und N/Z; bildschirmweites Aufleuchten
 - Ellison, A., & Walsh, V. (1998). Perceptual learning in visual search: Some evidence of specificities. *Vision Research*, 38(3), 333–345. https://doi.org/10.1016/S0042-6989(97)00195-8 – Spezifität, Gegenbefund (Crossref ✓)
 - Shiffrin, R. M., & Schneider, W. (1977). Controlled and automatic human information processing: II. Perceptual learning, automatic attending and a general theory. *Psychological Review*, 84(2), 127–190. https://doi.org/10.1037/0033-295X.84.2.127 – konsistente Zuordnung macht automatisch und reizgebunden (Crossref ✓)
 - Hommel, B., Li, K. Z. H., & Li, S.-C. (2004). Visual search across the life span. *Developmental Psychology*, 40(4), 545–558. https://doi.org/10.1037/0012-1649.40.4.545 – Alter (Crossref ✓)
-- Becic, E., Boot, W. R., & Kramer, A. F. (2008). Training older adults to search more effectively: Scanning strategy and visual search in dynamic displays. *Psychology and Aging*, 23(2), 461–466. https://doi.org/10.1037/0882-7974.23.2.461 – Strategieanweisung bei Älteren (Crossref ✓)
+- Becic, E., Boot, W. R., & Kramer, A. F. (2008). Training older adults to search more effectively: Scanning strategy and visual search in dynamic displays. *Psychology and Aging*, 23(2), 461–466. https://doi.org/10.1037/0882-7974.23.2.461 – Strategieanweisung bei Älteren, dynamische Anzeigen (Crossref ✓, Abstract)
 - Wolfe, J. M., Horowitz, T. S., & Kenner, N. M. (2005). Rare items often missed in visual searches. *Nature*, 435(7041), 439–440. https://doi.org/10.1038/435439a – Prävalenzeffekt (Crossref ✓)
 - Pambakian, A. L. M., Mannan, S. K., Hodgson, T. L., & Kennard, C. (2004). Saccadic visual search training: A treatment for patients with homonymous hemianopia. *Journal of Neurology, Neurosurgery & Psychiatry*, 75(10), 1443–1448. https://doi.org/10.1136/jnnp.2003.025957 – klinisches Suchtraining (Crossref ✓)
 - Roth, T., Sokolov, A. N., Messias, A., Roth, P., Weller, M., & Trauzettel-Klosinski, S. (2009). Comparing explorative saccade and flicker training in hemianopia: A randomized controlled study. *Neurology*, 72(4), 324–331. https://doi.org/10.1212/01.wnl.0000341276.65721.f2 – RCT Sakkadentraining (Crossref ✓)
 - Simons, D. J., Boot, W. R., Charness, N., Gathercole, S. E., Chabris, C. F., Hambrick, D. Z., & Stine-Morrow, E. A. L. (2016). Do "brain-training" programs work? *Psychological Science in the Public Interest*, 17(3), 103–186. https://doi.org/10.1177/1529100616661983 – Transfer von Gehirntraining (Crossref ✓)
 - Guo, Y., Yuan, T., Yang, M., & Qiu, J. (2025). Does the "learning effect" caused by digital devices exaggerate sports visual training outcomes? A systematic review and meta-analysis. *Frontiers in Physiology*, 16, 1664572. https://doi.org/10.3389/fphys.2025.1664572 – Transfer nur bei ähnlichen Aufgaben (Crossref ✓)
 - Lampit, A., Hallock, H., & Valenzuela, M. (2014). Computerized cognitive training in cognitively healthy older adults: A systematic review and meta-analysis of effect modifiers. *PLoS Medicine*, 11(11), e1001756. https://doi.org/10.1371/journal.pmed.1001756 – g = 0,22 (Crossref ✓)
-- Charman, W. N. (2008). The eye in focus: Accommodation and presbyopia. *Clinical and Experimental Optometry*, 91(3), 207–225. https://doi.org/10.1111/j.1444-0938.2008.00256.x – Presbyopie ≈ 40 Jahre (Crossref ✓)
+- Charman, W. N. (2008). The eye in focus: Accommodation and presbyopia. *Clinical and Experimental Optometry*, 91(3), 207–225. https://doi.org/10.1111/j.1444-0938.2008.00256.x – Presbyopie, Beginn typischerweise ab Anfang/Mitte 40 (Crossref ✓)
 - Hutchings, N., Irving, E. L., Jung, N., Dowling, L. M., & Wells, K. A. (2007). Eye and head movement alterations in naïve progressive addition lens wearers. *Ophthalmic and Physiological Optics*, 27(2), 142–153. https://doi.org/10.1111/j.1475-1313.2006.00460.x – Kopfbewegungen bei Gleitsicht (Crossref ✓)
 - Patel, S., Henderson, R., Bradley, L., Galloway, B., & Hunter, L. (1991). Effect of visual display unit use on blink rate and tear stability. *Optometry and Vision Science*, 68(11), 888–892. https://doi.org/10.1097/00006324-199111000-00010 – Bildschirm senkt Lidschlagrate (Crossref ✓)

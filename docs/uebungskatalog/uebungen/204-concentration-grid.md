@@ -73,12 +73,12 @@ belastung:
 
 # ===== Auswahlhilfe =====
 voraussetzungen: ["Ziffern von ≈ 9 px Höhe (8×8) müssen bei normalem Abstand (≈ 40 cm) erkennbar sein – Lese- oder Nahbrille passend zum Tablet-Abstand", "Zahlen 1–64 kennen (Ziffernreihenfolge)", "Tippen auf einem Touchscreen oder Klicken mit der Maus", "Bereitschaft, unter Zeitdruck (45 s) zu suchen"]
-vorsicht_bei: [presbyopie_gleitsicht, sehbehinderung_niedriger_visus, gesichtsfeldausfall, nystagmus, kopfschmerz_asthenopie, trockenes_auge_bildschirm, aufmerksamkeitsprobleme, kognitive_einschraenkung, kinder_unter_6]
+vorsicht_bei: [photosensitive_epilepsie, migraene_lichtempfindlich, presbyopie_gleitsicht, sehbehinderung_niedriger_visus, gesichtsfeldausfall, nystagmus, kopfschmerz_asthenopie, trockenes_auge_bildschirm, tremor_parkinson, aufmerksamkeitsprobleme, kognitive_einschraenkung, kinder_unter_6]
 geeignet_fuer: ["geordnetes visuelles Absuchen und Tempo bei der Suche nach Zahlen üben", "kurze Konzentrationsübung ohne Blitzreize, Bewegung oder Ton-Zwang", "Vergleich der eigenen Zeiten über Wochen auf demselben Gerät (Übungseffekt)", "als Vorbereitung auf Trail-Making-ähnliche Aufgaben (Zahlenfolge mit Blicksuche)"]
 weniger_geeignet_fuer: ["Ziel „peripheres Sehen“, „Gesichtsfeld erweitern“ oder „Schnelllesen“ – dafür gibt es keinen Beleg", "Personen mit Gleitsicht am Tablet ohne passende Nahbrille (kleine Ziffern am Rand, seitliche Unschärfe)", "Personen, die keine Zeitdruck- oder Wettkampfstimmung wollen", "Verlaufsmessung mit vergleichbaren Zahlen (Punkte hängen von Tempo, Rastergröße und Zufall ab)"]
 evidenz:
   uebungseffekt: stark
-  naher_transfer: schwach
+  naher_transfer: unklar
   alltag_transfer: fehlend
   kommentar: "Für die Schulte-Tabelle selbst gibt es kaum Trainingsstudien; sie wird meist als Messaufgabe eingesetzt. Für das verwandte Trail Making sind deutliche Übungseffekte bei Wiederholung belegt (Buck et al., 2008; Calamia et al., 2012), Suchaufgaben werden mit Übung effizienter (Sireteanu & Rettenbach, 2000). Dass das Gesichtsfeld, das periphere Sehen oder das Lesetempo wächst, ist nicht belegt (Rayner et al., 2016)."
 aehnliche_uebungen: [103, 108, 207, 206, 208, 201, 202, 603, 401]
@@ -126,7 +126,7 @@ Mechanik ausgewertet. Grad-Werte sind eigene Umrechnungen (Tablet ≈ 36 CSS-px 
   Tabs oder Last kann die Sitzung länger als 45 s dauern.
 - **Widersprüche Text ↔ Code:** (1) Die Leistungstabelle (8.000+ Punkte = 7×7, < 300 ms je Ziffer) passt nicht zur
   Punkteformel: 8.000 Punkte erreicht man rechnerisch schon bei ≈ 0,9 s je Zahl im 5×5/6×6-Raster; 300 ms je Ziffer
-  würden 150 Treffer in 45 s bedeuten (Raster 8×8 nach ≈ 100 Treffern), unrealistisch. (2) Die englische
+  würden 150 Treffer in 45 s bedeuten (7×7 wäre nach 86, 8×8 nach 135 Treffern erreicht), sehr unwahrscheinlich. (2) Die englische
   Ersatzbeschreibung im Code spricht von „one careless tap costs a life“ – im Code gibt es kein Leben. (3) „Rotation ab 5×5“
   trifft zu, wird aber ab 7×7 deutlich stärker. (4) „Vergrößert das Gesichtsfeld“ ist nicht Teil der Mechanik.
 
@@ -158,8 +158,8 @@ Durchgänge täglich für „optimale neuroplastische Anpassungen“.
 - **Herkunft „Schulte 1962, Tübingen“:** nicht prüfbar. Walter Schulte (1910–1972) leitete 1960–1972 die Tübinger
   Universitätsnervenklinik; eine Originalveröffentlichung der Tabelle wurde nicht gefunden. In der Literatur erscheint sie
   fast nur als Messinstrument in russischsprachigen Studien.
-- **Trail-Making-Bezug:** Fedotov et al. (2026, 69 Personen) fanden bei Gesunden und Personen mit Schizophrenie einen Zusammenhang
-  zwischen Zeit im Trail Making Test und in der Zahlensuche mit Schulte-Tabellen; das stützt „misst Suchtempo“, nicht „trainiert die Peripherie“.
+- **Trail-Making-Bezug:** Fedotov et al. (2026, 69 Personen: 34 bedingt gesunde Freiwillige, Ø 20,6 Jahre, und 35 Personen mit Schizophrenie) fanden in beiden Gruppen einen positiven Zusammenhang
+  zwischen Zeit im Trail Making Test und in der Zahlensuche (Schulte-Tabellen); das spricht für eine verwandte Messgröße (Suchtempo/Verarbeitungstempo), sagt aber nichts über Training oder „Peripherie“.
 - **Nicht medizinisch:** Die Seite schreibt selbst, sie sei kein Diagnose- oder Screening-Verfahren; das gilt auch für unsere Verwendung.
 
 ## 4. Optische und okulomotorische Grundlagen
@@ -167,9 +167,9 @@ Durchgänge täglich für „optimale neuroplastische Anpassungen“.
 - **Serielle Suche mit Sakkaden:** Bei Suchaufgaben dauern Fixationen im Mittel ≈ 210 ms bei Sakkaden von ≈ 5,7°
   (Lesen: 254 ms, 2,4°; Rayner et al., 2007). Ein Raster von 10–15° Breite wird also mit mehreren Blicksprüngen abgesucht; ein
   Blick starr auf die Mitte ist hier kaum durchhaltbar und nicht belegt hilfreich. Die Sakkadenlatenz ist mit 20–30 Jahren am kürzesten und
-  bei 60–79-Jährigen länger (n = 168; Munoz et al., 1998).
+  bei 60–79-Jährigen länger (n = 168 im Alter 5–79; Munoz et al., 1998).
 - **Sehwinkel:** 8×8-Ziffern am Tablet ≈ 0,24° hoch (≈ 15 Bogenminuten) und damit nur knapp über dem, was gesunde Ältere
-  bequem lesen: kritische Schriftgröße 0,08 logMAR (8–23 J.), 0,21 (68 J.), 0,34 (81 J.) (Calabrèse et al., 2016). Wer
+  für flüssiges Lesen brauchen (MNREAD, Sätze): kritische Schriftgröße 0,08 logMAR (8–23 J.), 0,21 (68 J.), 0,34 (81 J.) (Calabrèse et al., 2016). Wer
   unkorrigiert alterssichtig ist, verliert vor allem bei 7×7 und 8×8 Zeit, und zwar durch Nahschärfe, nicht durch Suchfähigkeit.
 - **Crowding und „Peripherie“:** Der kritische Abstand, in dem Nachbarn die Erkennung stören, beträgt ≈ die Hälfte der Exzentrizität
   (Bouma, 1970; Pelli & Tillman, 2008). Beim 8×8-Raster (Ziffernabstand ≈ 1,3°) sind Zahlen, die ≳ 2,6° neben dem Blickpunkt
@@ -178,17 +178,17 @@ Durchgänge täglich für „optimale neuroplastische Anpassungen“.
 - **Drehung:** Einzeln gedrehte Ziffern (bis ±20°) erschweren vermutlich die Erkennung; eine Studie dazu haben wir nicht gefunden [H].
 - **Brille (Optiker-Bezug):** Das Raster füllt 10–15° des Blickfeldes und liegt unten am Tablet-Ständer. Bei Gleitsicht
   werden Mitte und unteres Raster durch die Zwischen- und Nahzone gesehen; Ränder liegen in seitlichen Unschärfezonen, deren
-  Breite sich zwischen Glasdesigns um mehr als das Doppelte unterscheidet (Sheedy, 2004). Gleitsicht-Neulinge weichen auf Kopfbewegungen aus
-  (Hutchings et al., 2007). Günstig: Arbeitsplatz-/Nahbrille für den Tablet-Abstand (≈ 40 cm angenommen).
+  Breite sich zwischen Glasdesigns um mehr als das Doppelte unterscheidet (Sheedy, 2004). Gleitsicht-Neulinge setzen teils mehr Kopfbewegungen ein
+  (Hutchings et al., 2007; nur 10 Personen, große Streuung zwischen den Personen). Günstig: Arbeitsplatz-/Nahbrille für den Tablet-Abstand (≈ 40 cm angenommen).
 - **Farbsehen, Kontrast:** Keine Farbe im Spiel (weiß auf dunkel), also unproblematisch bei Farbsehschwäche (≈ 8 % der
   Männer).
 
 ## 5. Neurowissenschaftliche Grundlagen
 
-- **Suche und Aufmerksamkeit (Lehrbuchwissen, für diese Übung nicht gemessen):** Visuelle Suche wird durch ein
-  Netzwerk aus frontalem Augenfeld, Scheitellappen (intraparietaler Sulcus) und Colliculus superior gesteuert, das eine „Prioritätskarte“ des
-  Blickfeldes für die nächste Blickbewegung führt; das Guided-Search-Modell beschreibt, wie merkmalsgeführte Hinweise diese
-  Karte formen (Wolfe, 2007). Wer nach „5“ sucht, hält das Ziel im Arbeitsgedächtnis (dorsolateraler präfrontaler Kortex) und
+- **Suche und Aufmerksamkeit (für diese Übung nicht gemessen):** Das Guided-Search-Modell beschreibt, wie merkmalsgeführte
+  Hinweise eine „Prioritätskarte“ des Blickfeldes formen, die die nächste Blickbewegung lenkt (Wolfe, 2007; Modell, keine Hirnmessung).
+  Häufig genannte beteiligte Regionen (frontales Augenfeld, Scheitellappen, Colliculus superior, präfrontaler Kortex) sind Lehrbuchwissen
+  ohne Quelle in diesem Eintrag und für die Schulte-Tabelle nicht belegt. Wer nach „5“ sucht, hält das Ziel im Arbeitsgedächtnis und
   prüft, ob die Zahl passt (Treisman & Gelade, 1980: Merkmalsverbindungen werden seriell geprüft).
 - **Was Studien zur Schulte-Tabelle zeigen:** Lu et al. (2022) fanden bei 27 Kindern in der Reihenfolge-Suche
   längere Suchzeiten als in der Ortssuche; Hirnregionen wurden nicht lokalisiert. In EEG-Studien wird die Tabelle als Aufgabe
@@ -223,7 +223,7 @@ zusätzlicher Verzögerung (Pronk et al., 2020); bei Zeiten von 0,5–1 s je Zah
   gefunden. Für Trail Making sind Übungseffekte bei Wiederholung deutlich, auch mit Parallelformen (Buck et al., 2008; Calamia et
   al., 2012, Metaanalyse). Wahrnehmungslernen in Suchaufgaben ist schnell und langanhaltend; einfache Suche kann mit Übung parallel werden
   (Sireteanu & Rettenbach, 2000). Bei Zahlen im Raster ist vermutlich vor allem Strategie (Reihe für Reihe, Vorausschau) im Spiel [H].
-- **Naher Transfer: schwach.** Übertragung auf andere Suchaufgaben bei Wahrnehmungslernen ist teils breit (Sireteanu & Rettenbach, 2000),
+- **Naher Transfer: unklar.** Übertragung auf andere Suchaufgaben bei Wahrnehmungslernen ist teils breit (Sireteanu & Rettenbach, 2000),
   aber für Zahlen-Raster-Training nicht geprüft; auf Trail Making selbst fehlt der Nachweis.
 - **Alltagstransfer: fehlend.** Kein Beleg für besseres Lesen, Sport, Fahren oder „peripheres Sehen“ (Rayner et al., 2016). Nur
   Analogie: geordnetes Suchen in Fahrplan, Formular, Regal.
@@ -242,7 +242,8 @@ zusätzlicher Verzögerung (Pronk et al., 2020); bei Zeiten von 0,5–1 s je Zah
   - `nystagmus`, `kopfschmerz_asthenopie`, `trockenes_auge_bildschirm`: viele schnelle Blicksprünge bei Zeitdruck.
   - `aufmerksamkeitsprobleme`, `kognitive_einschraenkung`, `kinder_unter_6`: Zeitdruck, feste 45 s, Zahlen bis 64 kennen; kann frustrieren.
     Kein Test- oder Therapieanspruch.
-  - `photosensitive_epilepsie`: nur ein roter Schimmer bei Fehltipps (≈ 480 ms), keine Dauerreize; trotzdem beachten.
+  - `photosensitive_epilepsie`, `migraene_lichtempfindlich`: roter Bildschirmschimmer bei jedem Fehltipp (≈ 480 ms; im Original in den Einstellungen abschaltbar), bei schnellen Fehltipps mehrfach pro Sekunde möglich; sonst keine Dauerreize. Schimmer vorher abschalten.
+  - `tremor_parkinson`: Berührung zählt beim Aufsetzen, Zittern oder Doppeltipp kann ein falsches Feld treffen.
 - **Kombiniert gut mit …** 103 und 108 (visuelle Suche), 207 (Zeichen-Zahl-Zuordnung, Verarbeitungstempo), 206 (Aufgabenwechsel, wie Wechselpfad der Zahlenjagd), 208 (Ausdauer).
 
 ## 10. Schwächen des Originals und Empfehlungen für eine Blickfit-Umsetzung
