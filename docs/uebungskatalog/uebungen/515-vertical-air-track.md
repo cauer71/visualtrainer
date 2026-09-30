@@ -3,7 +3,7 @@
 nr: 515
 kennung: vertical-air-track
 name: "Vertikales Nachführen – Fadenkreuz auf Zielen halten, die auf Wurfparabeln auf- und absteigen"
-name_original: "Aim Trainer: Vertikales Tracking – Y-Achse & Luftziele (im Spiel: Vertical Air-Track)"
+name_original: "Aim Trainer: Vertikales Tracking – Y-Achse & Luftziele (Seitentitel: Aim Trainer: Vertikales Tracking; im Spiel: Vertical Air-Track)"
 kapitel: "Zielen (FPS)"
 kapitel_original: "fps"
 unterkapitel_original: ""
@@ -40,7 +40,7 @@ anforderungsprofil:
   kognitiv:
     daueraufmerksamkeit: 2
     selektive_aufmerksamkeit: 1
-    inhibition: 0
+    inhibition: 1
     geteilte_aufmerksamkeit: 1
     kognitive_flexibilitaet: 0
     arbeitsgedaechtnis: 0
@@ -78,10 +78,10 @@ geeignet_fuer: ["senkrechtes Nachführen eines abbremsenden und wieder beschleun
 weniger_geeignet_fuer: ["Tablet- oder Touch-Nutzung (Original nicht bedienbar)", "Gleitsicht-Trägerinnen und -Träger ohne Bildschirmbrille (Blick wandert ständig durch alle Brillenzonen)", "Menschen mit Zittern, Hand- oder Handgelenkbeschwerden", "ruhiges, gleichmäßiges Blickfolgetraining (Tempo ändert sich laufend, Ausweichsprünge)", "Wunsch nach verlässlichen Norm- oder Leistungsvergleichen"]
 evidenz:
   uebungseffekt: mittel
-  naher_transfer: unklar
+  naher_transfer: schwach
   alltag_transfer: fehlend
-  kommentar: "Auge-Hand-Tracking und Aim-Trainer-Leistung verbessern sich mit Übung (Gauthier et al., 1988; Listman et al., 2021), für diesen Drill gibt es keine Studie; Beschleunigung wird vor allem über Wiederholung derselben Beschleunigung gelernt (Brenner et al., 2016), die hier mit dem Level wechselt; Transfer von Aim-Trainern auf Spiel oder Alltag ist nicht kontrolliert untersucht."
-aehnliche_uebungen: [514, 512, 513, 505, 304, 413, 407, 105, 104, 707, 802]
+  kommentar: "Auge-Hand-Tracking und Aim-Trainer-Leistung verbessern sich mit Übung (Gauthier et al., 1988; Listman et al., 2021), für diesen Drill gibt es keine Studie; Beschleunigung wird vor allem über Wiederholung derselben Beschleunigung gelernt (Brenner et al., 2016), die hier mit dem Level wechselt; für nahen Transfer gibt es nur indirekte Hinweise (Actionspiele verbesserten Nachführaufgaben im Labor; Li et al., 2016), Transfer von Aim-Trainern auf Spiel oder Alltag ist nicht kontrolliert untersucht."
+aehnliche_uebungen: [514, 512, 513, 505, 507, 304, 413, 407, 105, 104, 707, 802]
 stichworte: ["vertikales Tracking", "Parabelbahn", "Schwerkraft", "Beschleunigung", "Scheitelpunkt", "Smooth Pursuit", "Aufholsakkade", "manuelles Nachführen", "Auge-Hand-Koordination", "Aim Trainer", "Maus", "Gleitsicht"]
 ---
 
@@ -100,7 +100,7 @@ Grundlage: Seitentext und ausgelieferter Spielcode (seitenspezifischer Chunk `15
 - **Ausweichmanöver (Code):** Frühestens 0,8–1,4 s nach dem Start, danach alle 0,8–1,5 s, wird geprüft (nur in den oberen 70 % der Fläche und beim Steigen, am Scheitel oder zu Beginn des Falls). Mit Wahrscheinlichkeit 15 % (Level 1) bis 85 % springt das Tempo sofort: 40 % **Aufwärtsstoß** (350–470 px/s nach oben), 35 % **Seitensprung** (350–500 px/s ≈ 9–13°/s), 25 % **Sturz** (400 px/s nach unten). Jeder Sprung wird **gleichzeitig** mit einem kleinen Farbfunken (blau/violett/rot) angezeigt, nicht vorher.
 - **Treffen (Code):** Bei gedrückter Taste und Fadenkreuz innerhalb des Zielradius sinkt die Gesundheit (100) um 300/s (Level 1) → **≈ 0,33 s Haltezeit**; auf hohen Stufen 140/s (≈ 0,71 s, mit Combo bis 0,83 s). Unterbrechen ist erlaubt. Zielradius 32 px (Ø ≈ 1,7°) → 12 px (Ø ≈ 0,63°), mit Combo min. 10 px.
 - **Punkte (Code):** Nur beim Abschuss: (100 + Höhenbonus) × Combo-Faktor × (1 + 0,5 × (Level − 1)/14). Höhenbonus nach Höhe über dem unteren Rand, relativ zur Canvas-Höhe: ≥ 25 % → +25, ≥ 50 % → +50, ≥ 75 % → +75. Combo = Abschüsse in Folge (Faktor 1,1 ab 3 … 3,0 ab 50). +2 s Spielzeit je Abschuss (max. 60 s).
-- **Fehler (Code):** Fällt ein Ziel unten aus dem Bild: Combo → 0, −1 s, Fehlerton, Bildschirmwackeln (10 px, klingt ab) und **roter, bildschirmfüllender Blitz** (≈ 0,5 s; Einstellung „Blitz“ standardmäßig an). Der Zeitabzug ist im Code für diese Übung **fest eingeschaltet** (die Abfrage der Einstellung „Strafen“ erzwingt „an“). Nur wenn man die Einstellung „Timeout“ abschaltet, prallt das Ziel unten ab statt abzustürzen. Schießen neben das Ziel kostet nichts außer Trefferquote.
+- **Fehler (Code):** Fällt ein Ziel unten aus dem Bild: Combo → 0, −1 s, Fehlerton, Bildschirmwackeln (10 px, klingt ab) und **roter Radialblitz über dem Spielfeld** (Mitte 50 % Deckkraft, nach außen auslaufend, 0,45 s; Einstellung „Blitz“ standardmäßig an). Der Zeitabzug ist im Code für diese Übung **fest eingeschaltet** (die Abfrage der Einstellung „Strafen“ erzwingt „an“). Nur wenn man die Einstellung „Timeout“ abschaltet, prallt das Ziel unten ab statt abzustürzen. Schießen neben das Ziel kostet nichts außer Trefferquote.
 - **Schwierigkeit (Code):** Level = Punkte/1 400 + 1; Parameter laufen auf der gemeinsamen Exponentialkurve der Vorlage (Grenzwerte siehe YAML). Level 10 ohne Combo: Radius 21,8 px, 904 px/s², Abwurf 803 px/s, Haltezeit 0,46 s, Ausweichen 57 %; ab Level 5 zwei Ziele gleichzeitig.
 - **Rundendauer (eigene Simulation):** Trifft man nichts, stürzt etwa alle 2 s ein Ziel ab (−1 s) → Ende nach **≈ 30 s**. Ein idealisierter Spieler (perfektes Nachführen, keine Ausweichmanöver, 0,25–0,8 s Erfassungszeit je Ziel) spielt **≈ 85–250 s** und erreicht Level ≈ 6–35. Reale Werte liegen darunter (unsicher, nicht gemessen). Die Sitzungsdauer hängt also stark von der Leistung ab.
 - **Zeitmessung (Code):** Bewegung und Uhr laufen mit Bildzeit (dt), also nahezu gleich bei 60 und 144 Hz; der Euler-Schritt senkt die Scheitelhöhe bei 60 Hz nur um ≈ 5 px. Nur Funkenpartikel bewegen sich pro Bild (rein optisch). „Trefferquote“ = Bilder auf dem Ziel/Bilder mit gedrückter Taste; wer nur feuert, wenn er schon auf dem Ziel ist, erreicht fast 100 %. Note = √(Punkte/54 000). Bestwerte bleiben im Browser.
@@ -133,7 +133,7 @@ Bewegungsinformation stammt vor allem aus den Arealen MT/MST; die Streuung der F
 ## 6. Motorische Grundlagen
 - **Kontinuierliches Nachführen plus Erfassen:** Jedes neue Ziel muss zuerst am unteren Rand „eingefangen“ werden (schnelle Zielbewegung, Primär- plus Korrekturbewegung; Elliott et al., 2010) → `zielbewegung_tempo` 2; danach wird es 0,3–0,8 s lang nachgeführt → `kontinuierliche_steuerung` 3. Trefferzone = Zielradius (≈ 0,85° → 0,26°) → `zielbewegung_praezision` 2.
 - **Auge und Hand:** Wird ein Ziel mit dem Cursor nachgeführt, bleibt der Blick am Ziel, der Pursuit-Gain steigt und Aufholsakkaden werden seltener (Danion & Flanagan, 2018); Auge-Hand-Tracking verbessert sich mit Übung (Gauthier et al., 1988) → `auge_hand_koordination` 3.
-- **Intermittierende Regelung:** Manuelles Tracking korrigiert in Schüben mit ≈ 170 ms Refraktärzeit und toleriert Fehler bis ≈ 0,8° (Miall et al., 1993). Auf hohen Stufen ist die Trefferzone kleiner als diese Totzone. Die Hand reagiert auf eine Geschwindigkeitsänderung nach ≈ 200 ms (Brenner et al., 1998) – bei einem Seitensprung von 10°/s liegt das Fadenkreuz dann ≈ 2° daneben (eigene Rechnung).
+- **Intermittierende Regelung:** Manuelles Tracking korrigiert in Schüben mit ≈ 170 ms Refraktärzeit und toleriert Fehler bis ≈ 0,8° (Miall et al., 1993). Auf hohen Stufen ist die Trefferzone kleiner als diese Totzone. Die Hand reagiert auf eine Geschwindigkeitsänderung nach ≈ 200 ms (Brenner et al., 1998) – bei einem Seitensprung von 10°/s liegt das Fadenkreuz dann ≈ 2° daneben (eigene Rechnung). Weil Ausweichsprünge ohne Vorwarnung kommen, muss die vorausschauend fortgesetzte Bewegung abgebrochen werden (`inhibition` 1, wie bei den Umkehrungen in 512 und 513).
 - **Beschleunigung vorhersagen:** Menschen fangen beschleunigte Objekte gut ab, obwohl sie Beschleunigung schlecht sehen; Fehler sinken, wenn **dieselbe** Beschleunigung wiederholt vorkommt (Brenner et al., 2016). Hier ändert sie sich mit Level und Combo (700 → ≈ 1 265 px/s²) – Lernen der Fallkurve wird dadurch erschwert (eigene Folgerung).
 - **2D-Steuerung:** Fehler werden auf Geschwindigkeit und Richtung bezogen, nicht getrennt in x/y geregelt (Engel & Soechting, 2000) – ein „isoliertes Y-Achsen-Training“ gibt es motorisch nicht.
 - **Maus:** Senkrechte Mausbewegung wird durch Beugen/Strecken der Finger und Vor-/Zurückschieben des Unterarms erzeugt, während der Zeigefinger die Taste hält. Genaues Maus-Tracking gelingt bis ≈ 2 Hz und wird im Alter und bei motorischer Einschränkung ungenauer (Riviere & Thakor, 1996). Mausbeschleunigung erhöht das Überschießen (Casiez et al., 2008). Wiederholtes Maus-Zielen (6 × 5 min) ermüdete die Handgelenkstrecker messbar (Forman et al., 2025).
@@ -147,7 +147,7 @@ Bewegungsinformation stammt vor allem aus den Arealen MT/MST; die Streuung der F
 
 ## 8. Studienlage: Trainierbarkeit und Übertragung
 - **Übungseffekt – mittel:** Auge-Hand-Tracking verbessert sich mit Übung (Gauthier et al., 1988); in Aim-Lab-Daten (N = 7 174) stiegen die Leistungen über Tage (Listman et al., 2021; Beobachtungsdaten, Herstellerfinanzierung). Für diesen Drill gibt es keine Studie; wechselnde Schwerkraft erschwert das Lernen einer festen Fallkurve (Brenner et al., 2016).
-- **Naher Transfer – unklar:** 5–10 h Actionspiel verbesserten bei Nicht-Spielenden das Nachführen im Labor (Li et al., 2016) – ein Spiel, kein Drill. Große Effekte digitalen Sehtrainings entstehen vor allem bei gerätegleichen Test- und Übungsaufgaben (Guo et al., 2025).
+- **Naher Transfer – schwach:** Es gibt nur indirekte Hinweise: 5–10 h Actionspiel verbesserten bei Nicht-Spielenden das Nachführen im Labor (Li et al., 2016) – ein Spiel, kein Drill. Große Effekte digitalen Sehtrainings entstehen vor allem bei gerätegleichen Test- und Übungsaufgaben (Guo et al., 2025).
 - **Alltagstransfer – fehlend:** Kein Beleg für bessere Treffer gegen springende Gegner, für Ballsport, Verkehr oder Beruf; „Brain-Training“ zeigt viel Evidenz für die geübte, wenig für entfernte Aufgaben (Simons et al., 2016).
 
 ## 9. Auswahlhinweise für die KI
@@ -157,17 +157,18 @@ Bewegungsinformation stammt vor allem aus den Arealen MT/MST; die Streuung der F
   - `presbyopie_gleitsicht`: Blick wandert ständig vom unteren Rand nach oben und zurück durch alle Glaszonen → Bildschirmbrille bzw. passende Zwischenkorrektur, Monitor tiefer, kleineres Fenster; Kopf nicht in den Nacken legen.
   - `tremor_parkinson`, `hand_arm_beschwerden`: Nachführen mit gehaltener Taste, Finger- und Unterarmarbeit (Forman et al., 2025) → kurze Runden, größere Ziele.
   - `nystagmus`: die Aufgabe verlangt genau die Folgebewegung, die bei Nystagmus erschwert ist → eher nicht wählen.
-  - `migraene_lichtempfindlich`, `photosensitive_epilepsie`: roter Vollbildblitz bei jedem Absturz (höchstens ≈ 1-mal/s, weit unter den besonders provozierenden 15–25 Hz; Fisher et al., 2005), Bildschirmwackeln, Funken → Blitz in den Einstellungen abschalten; Risiko gering, aber vermeidbar.
+  - `migraene_lichtempfindlich`, `photosensitive_epilepsie`: roter Radialblitz über dem Spielfeld bei jedem Absturz (höchstens ≈ 1-mal/s, weit unter den besonders provozierenden 15–25 Hz; Fisher et al., 2005), Bildschirmwackeln, Funken → Blitz in den Einstellungen abschalten; Risiko gering, aber vermeidbar.
   - `trockenes_auge_bildschirm`, `kopfschmerz_asthenopie`: pausenloses Verfolgen, Runde kann mehrere Minuten dauern → Pausen.
   - `schwindel_vestibulaer`: keine 3D-Kamerabewegung; aber bei jedem Absturz wackelt das ganze Bild kurz (10 px, klingt ab), dazu schnelle Auf-und-ab-Bewegung → kann Empfindliche stören (Belastung Schwindel 1); Wackeln lässt sich im Original nicht abschalten, daher eher kurze Runden.
 - **Kombiniert gut mit …** 514 (Tracking auf vorhersagbarer 2D-Bahn), 512 und 513 (waagrechtes Tracking mit Richtungswechseln), 505, 304, 413 (senkrechte Blickwechsel ohne Maus), 407 (Bahnvorhersage), 105 (glatte Blickfolge), 104, 707, 802 (fallendes Objekt abfangen).
+- **Überschneidungen:** In der Gruppe 509–515 keine Dublette: 515 ist die einzige Übung mit überwiegend senkrechter, beschleunigter Bewegung, gedrückt gehaltener Taste und zwei gleichzeitigen Zielen ab Level 5. 514 enthält eine senkrechte Sinuskomponente, aber ohne Beschleunigungssprünge; 512 und 513 bewegen sich überwiegend waagrecht.
 
 ## 10. Schwächen des Originals und Empfehlungen für eine Blickfit-Umsetzung
 - **Tablet:** Original nicht bedienbar (Pointer Lock, Maustaste). Eine Touch-Fassung als **Finger-Nachführaufgabe** ist möglich (Engel & Soechting, 2000), braucht aber größere Ziele in mm/Grad, einen Ring gegen Verdeckung durch den Finger (beim Aufwärtsziehen verdeckt die Hand das Ziel nicht, beim Abwärtsziehen schon) und Einplanung von 50–200 ms Touch-Latenz (Deber et al., 2015). Hochformat-Tablets vergrößern die senkrechte Strecke – für Gleitsichtträger begrenzbar machen.
 - **Mechanik:** Schwerkraft je Stufe fest halten, damit eine Fallkurve gelernt werden kann (Brenner et al., 2016); Ausweichsprünge optional und vorher angekündigt; Größen in Grad statt Pixeln; oberen Rand begrenzen.
 - **Messung:** Abstand Fadenkreuz–Ziel getrennt für Aufstieg, Scheitel und Fall, Wiedereinfangzeit nach Sprüngen; Trefferquote zeitbasiert und unabhängig vom Feuern; feste Rundendauer; Höhenbonus unabhängig von der Fenstergröße.
 - **Regeltext:** Zeitbonus (+2 s), Zeitabzug (−1 s, immer aktiv), Punkte nur beim Abschuss und die drei Sprungarten korrekt angeben; keine Tier-Tabelle, keine erfundenen Quellen, keine Transferversprechen; Mausbeschleunigung erwähnen bzw. `unadjustedMovement` anbieten.
-- **Barrierefreiheit/Sicherheit:** roten Vollbildblitz standardmäßig aus, Wackeln abschaltbar; Pausenhinweis bei langen Runden; Gleitsicht-Modus mit Bahn nur im mittleren Drittel der Bildhöhe.
+- **Barrierefreiheit/Sicherheit:** roten Radialblitz standardmäßig aus, Wackeln abschaltbar; Pausenhinweis bei langen Runden; Gleitsicht-Modus mit Bahn nur im mittleren Drittel der Bildhöhe.
 
 ## 11. Quellen
 ### Von der Website angegeben

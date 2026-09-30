@@ -34,13 +34,13 @@ anforderungsprofil:
     fixation: 0
     bewegungswahrnehmung: 2
     visuelle_suche: 0
-    visuelle_verarbeitungsgeschwindigkeit: 1
+    visuelle_verarbeitungsgeschwindigkeit: 0
     zeitliche_aufloesung: 0
     naharbeit_dauer: 1
   kognitiv:
     daueraufmerksamkeit: 2
     selektive_aufmerksamkeit: 0
-    inhibition: 0
+    inhibition: 1
     geteilte_aufmerksamkeit: 0
     kognitive_flexibilitaet: 0
     arbeitsgedaechtnis: 0
@@ -65,7 +65,7 @@ anforderungsprofil:
     ausdauer_belastung: 0
 belastung:
   zeitdruck: 1
-  flimmern_lichtreize: 1
+  flimmern_lichtreize: 0
   bewegungsreize_schwindel: 1
   koerperliche_belastung: 0
   sturzrisiko: 0
@@ -73,8 +73,8 @@ belastung:
 
 # ===== Auswahlhilfe =====
 voraussetzungen: ["30–120 s ohne Unterbrechung auf den Bildschirm schauen können", "ruhige Sitzposition: Monitor 50–70 cm, Tablet auf Ständer ca. 40 cm", "passende Korrektion für den Bildschirmabstand (bei Alterssichtigkeit Zwischen- bzw. Nahkorrektur)", "kein Farbsehen nötig (Zielfarbe frei wählbar)", "keine Hand-Eingabe während der Übung (nur Start per Klick/Tipp)", "Folgen von ≈ 40°/s muss bequem möglich sein, sonst kürzere Runden oder Tempo 0,5×"]
-vorsicht_bei: [photosensitive_epilepsie, migraene_lichtempfindlich, schwindel_vestibulaer, reisekrankheit, nystagmus, gesichtsfeldausfall, presbyopie_gleitsicht, trockenes_auge_bildschirm, kopfschmerz_asthenopie]
-geeignet_fuer: ["glatte Blickfolge mit unvorhersagbaren Umkehrungen und kleinen Aufholsakkaden üben (sinnvoll bei Tempo 0,5–1×, Runden 30–60 s)", "Steigerung innerhalb einer Runde erleben: ruhiger Beginn, zunehmend schnelle diagonale Bahnen", "Stufe zwischen 410 (feste Haken-Taktung) und 415 (dauerndes Zufallsdriften)", "rein visuelles Aufwärmen der Augenfolge vor Aim- oder Tracking-Übungen"]
+vorsicht_bei: [schwindel_vestibulaer, reisekrankheit, nystagmus, gesichtsfeldausfall, presbyopie_gleitsicht, trockenes_auge_bildschirm, kopfschmerz_asthenopie, kinder_unter_6]
+geeignet_fuer: ["glatte Blickfolge mit unvorhersagbaren Umkehrungen und kleinen Aufholsakkaden üben (sinnvoll bei Tempo 0,5–1×, Runden 30–60 s)", "Steigerung innerhalb einer Runde erleben: ruhiger Beginn, zunehmend schnelle diagonale Bahnen", "Stufe nach 415 (sanftes Zufallsdriften) und 410 (harte Haken im festen Takt): zufällig getaktete Umkehrungen bei steigendem Tempo", "rein visuelles Aufwärmen der Augenfolge vor Aim- oder Tracking-Übungen"]
 weniger_geeignet_fuer: ["Übungsziel 'Wiederfinden nach Bildsprung/Screen Shake' – das bietet die Übung nicht (dafür eher 414 Positionssprünge)", "wer Rückmeldung, Punkte oder Fortschrittswerte erwartet", "Einsteiger:innen und ältere Menschen bei Tempo ab 2× (Endtempo ≈ 80°/s) oder in 90–120-s-Runden", "Gleitsichtträger:innen im Vollbild bei streng ruhigem Kopf (seitliche Unschärfezonen)", "Übungsziel Auge-Hand-Koordination (dafür 104, 105, 505, 513)"]
 evidenz:
   uebungseffekt: schwach
@@ -104,7 +104,7 @@ Grundlage: Seitentext und Spielcode (seitenspezifischer Chunk `54003-…js` plus
 - **Tempo-Regler (Code):** wirkt **linear** auf den Weg pro Zeit, **nicht** auf die Ereignisrate. Endtempo ≈ 42°/s × Tempo: 0,5× ≈ 20°/s, 2× ≈ 80°/s, 3× ≈ 125°/s, 9× ≈ 380°/s. Sprung pro Bild am Ende (60 Hz): 1× ≈ 0,7°, 2× ≈ 1,4°, 3× ≈ 2,1°.
 - **„Random Speed“ (Code):** Ereignisrate verdoppelt; zusätzlich wird das Tempo mit einer festen Mehrfach-Sinusfunktion der Uhrzeit auf das ≈ 0,4- bis 1,9-Fache moduliert (kein „erratisches“ Beschleunigen, sondern ein gleichmäßig wiederkehrendes An- und Abschwellen).
 - **Richtungslinie (Code):** Standardmäßig zeigt eine blasse Linie (Deckkraft 25 %) in die aktuelle Richtung, Länge = 7 × Schritt (≈ 112 ms Vorausschau bei 1×, am Ende ≈ 4,7° lang); sie dreht im selben Bild wie das Ziel, verrät also Richtung und Tempo, aber keinen kommenden Wechsel. „Hide Line“ entfernt sie. „Gaze Trail“ = Spur der letzten 15 Bilder.
-- **Bildfrequenz (Code + eigene Rechnung):** Bewegung zeitbasiert (Schritt ≤ 100 ms), Bilder < 13 ms nach dem letzten werden übersprungen → 60 Hz: 60, 90 Hz: 45, 120 Hz: 60, 144 Hz: 72, 240 Hz: 60 verarbeitete Bilder/s. Weil das Ereignis **pro Bild** gewürfelt wird, hängt die Wechselrate vom Gerät ab: ≈ 0,9/s (60/120/240 Hz), **0,68/s (90 Hz)**, **1,08/s (144 Hz)**. (Die Gruppen-Literaturbasis nennt 2,2/s bei 144 Hz – das übersieht die 13-ms-Sperre.) Abstände sind zufällig (Mittel ≈ 1,1 s); ≈ 11 % folgen einander schneller als 130 ms, also schneller als das Auge überhaupt auf den ersten reagieren kann.
+- **Bildfrequenz (Code + eigene Rechnung):** Bewegung zeitbasiert (Schritt ≤ 100 ms), Bilder < 13 ms nach dem letzten werden übersprungen → 60 Hz: 60, 90 Hz: 45, 120 Hz: 60, 144 Hz: 72, 240 Hz: 60 verarbeitete Bilder/s. Weil das Ereignis **pro Bild** gewürfelt wird, hängt die Wechselrate vom Gerät ab: ≈ 0,9/s (60/120/240 Hz), **0,68/s (90 Hz)**, **1,08/s (144 Hz)** (ohne die 13-ms-Sperre wären es bei 144 Hz ≈ 2,2/s). Abstände sind zufällig (Mittel ≈ 1,1 s); ≈ 11 % folgen einander schneller als 130 ms, also schneller als das Auge überhaupt auf den ersten reagieren kann.
 - **Eingabe (Code):** keine Auswertung; Maus/Finger zeichnen nur ein Fadenkreuz.
 - **Widersprüche Regeltext ↔ Code:** „unangekündigte Sprünge und Drehungen des Koordinatenrahmens“, „Rotations-Shifts“, „Hintergrund-Verschiebungsvektor“ – nichts davon existiert: Raster und Bildausschnitt stehen still, das Ziel springt nie. „Adapt to velocity shifts“ trifft den Kern. „Durchschnittliche Wiederherstellungszeit (ms)“ und „Genauigkeitswerte“ werden nicht erhoben. „Random Speed – Disabled Velocity“ ist eine sinnlose Beschriftung.
 
@@ -160,16 +160,17 @@ Grundlage: Seitentext und Spielcode (seitenspezifischer Chunk `54003-…js` plus
 
 ## 9. Auswahlhinweise für die KI
 
-- **Passt, wenn …** Blickfolge mit zufälligen Umkehrungen und Wiederfinden per kleiner Sakkade ohne Hand geübt werden soll; als Stufe nach 404/405/410 und vor 415. Einstellung: Tempo 0,5–1×, Runden 30–60 s, „Random Speed“ aus, Linie zuerst an, später aus; 3–5 Runden mit Pausen und bewusstem Blinzeln.
+- **Passt, wenn …** Blickfolge mit zufälligen Umkehrungen und Wiederfinden per kleiner Sakkade ohne Hand geübt werden soll; als Stufe nach 404/412, 415 und 410 – unter 409–415 die am wenigsten vorhersagbare Richtungswechsel-Übung. Einstellung: Tempo 0,5–1×, Runden 30–60 s, „Random Speed“ aus, Linie zuerst an, später aus; 3–5 Runden mit Pausen und bewusstem Blinzeln.
 - **Weniger passend, wenn …** das Ziel „Orientierung nach Bildsprüngen/Kamerawackeln“ ist (die Übung hat keine; Positionssprünge: 414), Rückmeldung gewünscht ist oder Auge-Hand-Koordination geübt werden soll (104, 105, 505, 513).
 - **Vorsicht / anpassen bei …**
-  - `photosensitive_epilepsie`, `migraene_lichtempfindlich`: kein Flackern und keine Vollbildblitze; das helle Ziel liegt mit ≈ 2–8·10⁻⁴ sr (je nach Leuchtschein, eigene Abschätzung) weit unter der Flächenschwelle von 0,006 sr (WCAG 2.3.1; Harding et al., 2005); bei Size 50 px am Tablet aus 30 cm ≈ 2–4·10⁻³ sr (Scheibe und Ring), mit Außenring/Leuchtschein bis nahe an 0,006 sr – also knapp darunter (eigene Abschätzung wie bei 410; ob ein wandernder Punkt nach WCAG als „Blitz“ zählt, ist nicht eindeutig geregelt). Ab ≈ 2–3× springt es pro Bild 1,4–2° und kann als wanderndes Aufblitzen wirken → Tempo ≤ 1×, „Neon Glow“/„Gaze Trail“ aus, Size klein halten, Day Mode meiden.
+  - **Photosensitivität geprüft (kein Vorsichtsschlüssel):** kein Blinken, keine Vollbildblitze, das Ziel bewegt sich stetig (wie 410, 412, 413, 415) → `flimmern_lichtreize` 0. Das helle Ziel liegt mit ≈ 2–8·10⁻⁴ sr (je nach Leuchtschein, eigene Abschätzung) weit unter der Flächenschwelle von 0,006 sr (WCAG 2.3.1; Harding et al., 2005); bei Size 50 px am Tablet aus 30 cm ≈ 2–4·10⁻³ sr (Scheibe und Ring), mit Außenring/Leuchtschein bis nahe an 0,006 sr – also knapp darunter (eigene Abschätzung wie bei 410). Ab ≈ 2–3× springt es pro Bild 1,4–2°; das ist kein Blitz im Sinn von WCAG, kann aber unruhig wirken → bei Licht- oder Reizempfindlichkeit Tempo ≤ 1×, „Neon Glow“/„Gaze Trail“ aus, Size klein halten, Day Mode meiden.
   - `schwindel_vestibulaer`, `reisekrankheit`: dauernde, unvorhersagbare Umkehrungen bei steigendem Tempo; großflächige Bewegung fehlt (ruhiger Hintergrund), daher gering, aber individuell unangenehm möglich (Keshavarz et al., 2015). Kurze Runden, niedriges Tempo.
   - `nystagmus`: Folge und Blickhalten können eingeschränkt sein, Frustgefahr.
   - `gesichtsfeldausfall`: Ziel läuft ständig in die Ecken und kann im ausgefallenen Bereich verloren gehen.
   - `presbyopie_gleitsicht`: Diagonalen durch Rand-, Nah- und Fernzone → kleineres Feld, Bildschirmbrille, Kopfbewegung erlauben.
   - `trockenes_auge_bildschirm`, `kopfschmerz_asthenopie`: wenig Lidschlag beim Dauerfolgen; kurze Blöcke.
-- **Kombiniert gut mit …** 404 → 405 → 410 → 411 → 415 (steigende Unvorhersagbarkeit), 414 (echte Positionssprünge), 407 (Vorhersage bei Verdeckung), 303 (Blicksprünge auf ruhende Ziele), 105/513 (gleiche Idee mit Hand).
+  - `kinder_unter_6`: abstrakte Aufgabe ohne Rückmeldung bei steigendem Tempo – nicht empfohlen.
+- **Kombiniert gut mit …** 412/404 (gleichförmige Grundform) → 415 (sanftes Zufallsdriften) → 410 (harte Haken im festen Takt) → **411** (steigende Unvorhersagbarkeit). **Unterschied zu 410:** dort ≈ 2 Haken/s im festen 0,5-s-Takt bei gleichbleibendem Tempo, hier ≈ 0,9 Wechsel/s zu zufälligen Zeitpunkten (Umkehr, Achsenspiegelung oder Tempowechsel) bei von selbst steigendem Tempo. Daneben 414 (echte Positionssprünge), 407 (Vorhersage bei Verdeckung), 303 (Blicksprünge auf ruhende Ziele), 105/513 (gleiche Idee mit Hand).
 
 Keine Diagnose, keine Heilversprechen: Trainingsaufgabe für gesunde Nutzer:innen, kein Test der Augenbeweglichkeit.
 

@@ -12,7 +12,7 @@ blickfit_umsetzung: null
 stand: 2026-09-29
 
 # ===== Überblick =====
-kurzbeschreibung: "Eine kleine Kugel zieht in weichen, schleifenförmigen Bahnen über den Bildschirm – waagrecht langsam, senkrecht gut doppelt so schnell. Man hält das Mausfadenkreuz ohne zu klicken möglichst ununterbrochen auf der Kugel; gezählt wird die Zeit auf dem Ziel."
+kurzbeschreibung: "Eine kleine Kugel zieht in weichen, schleifenförmigen Bahnen über den Bildschirm – waagrecht schwingt sie langsam, senkrecht gut doppelt so oft hin und her. Man hält das Mausfadenkreuz ohne zu klicken möglichst ununterbrochen auf der Kugel; gezählt wird die Zeit auf dem Ziel."
 ziel_funktionen: [kontinuierliche_steuerung, auge_hand_koordination, blickfolge]
 eingabe: [maus]
 tablet_geeignet: nein
@@ -73,15 +73,15 @@ belastung:
 
 # ===== Auswahlhilfe =====
 voraussetzungen: ["Maus (Touchpad nur eingeschränkt) mit relativer Bewegung und Pointer Lock; kein Tablet", "scharfes Sehen im Bildschirmabstand (Zwischenbereich ≈ 50–75 cm) über große Teile von Bildbreite und -höhe", "Englische Spieloberfläche; Regeln auch deutsch auf der Seite, Spiel ohne Lesen bedienbar"]
-vorsicht_bei: [tremor_parkinson, hand_arm_beschwerden, nystagmus, presbyopie_gleitsicht, trockenes_auge_bildschirm, kopfschmerz_asthenopie, migraene_lichtempfindlich, photosensitive_epilepsie, farbsehschwaeche]
+vorsicht_bei: [tremor_parkinson, hand_arm_beschwerden, nystagmus, presbyopie_gleitsicht, trockenes_auge_bildschirm, kopfschmerz_asthenopie, migraene_lichtempfindlich, photosensitive_epilepsie, farbsehschwaeche, schwindel_vestibulaer]
 geeignet_fuer: ["fortlaufendes, gleichmäßiges Nachführen eines vorhersagbar bewegten Ziels mit der Maus (Auge-Hand-Abstimmung)", "zweidimensionale Blickfolge mit weichen Wendepunkten, waagrecht und senkrecht gleichzeitig", "Tempo vorausschauend anpassen: an Wendepunkten abbremsen, in der Mitte beschleunigen", "Spielerinnen und Spieler, die Tracking in der geübten Aufgabe verbessern wollen"]
 weniger_geeignet_fuer: ["Tablet- oder Touch-Nutzung (Original nicht bedienbar)", "Menschen mit Zittern, Hand- oder Handgelenkbeschwerden", "reaktives Nachführen unvorhersagbarer Bewegungen (eher 512, 513)", "wirklich ruckfreies Folgen auf höheren Stufen: Ab ≈ 20–30 s springt das Ziel bei guter Leistung sichtbar (Programmierfehler, siehe Abschnitt 2)", "Wunsch nach verlässlichen Norm- oder Leistungsvergleichen"]
 evidenz:
   uebungseffekt: mittel
-  naher_transfer: unklar
+  naher_transfer: schwach
   alltag_transfer: fehlend
-  kommentar: "Vorhersagbare Bewegungen werden mit Übung immer besser antizipiert, und Auge-Hand-Tracking wird besser (Kowler et al., 2019; Gauthier et al., 1988; Listman et al., 2021). Für diesen Drill gibt es keine Studie. Transfer von Aim-Trainern auf Spiel oder Alltag ist nicht kontrolliert untersucht."
-aehnliche_uebungen: [402, 403, 105, 104, 505, 512, 513, 515, 304, 707]
+  kommentar: "Vorhersagbare Bewegungen werden antizipiert, und Auge-Hand-Tracking verbessert sich mit Übung (Kowler et al., 2019; Gauthier et al., 1988; Listman et al., 2021). Für diesen Drill gibt es keine Studie; für nahen Transfer gibt es nur indirekte Hinweise (Actionspiele verbesserten Nachführaufgaben im Labor; Li et al., 2016). Transfer von Aim-Trainern auf Spiel oder Alltag ist nicht kontrolliert untersucht."
+aehnliche_uebungen: [402, 403, 105, 104, 505, 507, 512, 513, 515, 304, 707]
 stichworte: ["Smooth Tracking", "Smooth Pursuit", "Lissajous-Kurve", "glatte Augenfolgebewegung", "manuelles Nachführen", "2D-Tracking", "prädiktive Folgebewegung", "Auge-Hand-Koordination", "Aim Trainer", "Maus"]
 ---
 
@@ -110,7 +110,7 @@ Grundlage sind der Seitentext und der ausgelieferte Spielcode (Chunk `45824-…j
   Die volle Combo (Faktor 3) hebt das Tempo auf bis zu ≈ 48 / 64 °/s (senkrecht 1,2 Hz) und senkt den Radius auf ≈ 8 px (Ø ≈ 0,42°).
 - **Treffer (Code):** Ein Treffer liegt vor, wenn die Fadenkreuzmitte höchstens einen Zielradius vom Kugelmittelpunkt entfernt ist. Es gibt keinen Zuschlag. Der Fadenkreuzring (Ø 28 px) ist fast so groß wie die Kugel (Ø 30 → 16 px) und überdeckt deren Rand.
 - **Punkte (Code):** Je 0,25 s ununterbrochen im Ziel gibt es round(50 × Combo-Faktor × (1 + 0,5 × (Level − 1)/14)) Punkte (Start: 200 Punkte/s) und +0,1 s Spielzeit. Das ergibt +0,4 s/s; die Restzeit ist auf höchstens 60 s begrenzt. Die Combo steigt um 1 je volle Sekunde im Ziel. Kurzes Abrutschen setzt nur die Zähler für die laufende Sekunde und die 0,25 s zurück. Der Faktor beträgt 1,1 ab Combo 3 … 3,0 ab 50.
-- **Fehler (Code):** Nach 1 s ununterbrochen neben dem Ziel fällt die Combo auf 0. Nur wenn vorher eine Combo bestand, kommen Fehlerton, rote Partikel, Bildschirmwackeln (6 px) und ein **roter Vollbild-Blitz** (0,48 s). Nach der Analyse des gleichen Moduls in 512 ist der Blitz standardmäßig an und abschaltbar. Die Zeitstrafe −0,6 s greift nur bei eingeschalteter „Strafe“ (Standard: aus).
+- **Fehler (Code):** Nach 1 s ununterbrochen neben dem Ziel fällt die Combo auf 0. Nur wenn vorher eine Combo bestand, kommen Fehlerton, rote Partikel, Bildschirmwackeln (6 px) und ein **roter Radialblitz über dem Spielfeld** (Mitte 50 % Deckkraft, nach außen auslaufend, 0,45 s). Nach der Analyse des gleichen Moduls in 512 ist der Blitz standardmäßig an und abschaltbar. Die Zeitstrafe −0,6 s greift nur bei eingeschalteter „Strafe“ (Standard: aus).
 - **Zeitmessung (Code):** Bahn und Uhr laufen mit echter Bildzeit (dt, gekappt bei 100 ms), also bei 60 und 144 Hz gleich schnell. Nur die Partikel bewegen sich pro Bild. „Präzision“ ist der Anteil der Bilder im Ziel an allen Bildern. Bei Bildeinbrüchen ist dieser Wert nicht zeitgewichtet. Die Note ist √(Punkte/54 000); „S+“ verlangt ≥ 95 %, also ≈ 48 700 Punkte.
 - **Eigene Simulation** (60 Hz, Vollbild, vereinfachtes Trefferschema): 100 % im Ziel ergeben ≈ 75 s, ≈ 55 000 Punkte, Level ≈ 40 und „S+“. 75 % im Ziel ergeben ≈ 60 s, ≈ 14 300 Punkte, Level ≈ 11 und Note ≈ 52 % („C“). 50 % ergeben ≈ 6 600 Punkte, Level ≈ 6 und ≈ 35 % („D“).
 - **Programmierfehler: Das Ziel springt (Code, eigene Simulation):** Die Frequenzen werden in jedem Bild aus dem aktuellen Level und der Combo neu berechnet. Sie werden dann mit der **gesamten bisher aufgelaufenen Phase** multipliziert, statt nur den nächsten Schritt zu verändern. Jede Punktevergabe (Level +0,04–0,1) und jede Combo-Schwelle versetzt die Kugel daher schlagartig. Bei 75–100 % Trefferanteil springt sie ab ≈ 20–25 s bei fast jeder Punktevergabe, im Median um ≈ 53–80 px (≈ 1,4–2,1°) und oft um > 100 px (≈ 2,6°). Bei 50 % sind es im Median ≈ 32 px, bei 25 % kaum Sprünge. Gerade wer gut folgt, bekommt also eine sprunghafte statt einer glatten Bahn.
@@ -156,7 +156,7 @@ Die Bewegungsinformation stammt vor allem aus den Arealen MT/MST. Die Streuung d
 
 ## 8. Studienlage: Trainierbarkeit und Übertragung
 - **Übungseffekt – mittel:** Vorhersagbare Bahnen werden mit Wiederholung besser antizipiert (Kowler et al., 2019), und Auge-Hand-Tracking verbessert sich mit Übung (Gauthier et al., 1988). In Aim-Lab-Daten stiegen die Leistungen über Tage (Listman et al., 2021; Beobachtungsdaten, vom Hersteller finanziert). Für diesen Drill gibt es keine Studie. Weil die Bahn je Achse periodisch ist, dürfte ein Teil des Zugewinns aufgabenspezifisch sein (eigene Einschätzung).
-- **Naher Transfer – unklar:** 5–10 h Actionspiel verbesserten bei Nicht-Spielenden das Spurhalten und Nachführen im Labor (Li et al., 2016). Das war ein Spiel, kein 45-s-Drill. Große Effekte entstehen vor allem, wenn Übung und Test am selben Gerät ähnlich sind (Guo et al., 2025).
+- **Naher Transfer – schwach:** Es gibt nur indirekte Hinweise: 5–10 h Actionspiel verbesserten bei Nicht-Spielenden das Spurhalten und Nachführen im Labor (Li et al., 2016). Das war ein Spiel, kein 45-s-Drill. Große Effekte entstehen vor allem, wenn Übung und Test am selben Gerät ähnlich sind (Guo et al., 2025).
 - **Alltagstransfer – fehlend:** Für Spielduelle, Sport, Verkehr oder Beruf gibt es keinen Beleg. „Brain-Training“ zeigt viel Evidenz für die geübte Aufgabe und wenig für entfernte Aufgaben (Simons et al., 2016).
 
 ## 9. Auswahlhinweise für die KI
@@ -166,12 +166,13 @@ Die Bewegungsinformation stammt vor allem aus den Arealen MT/MST. Die Streuung d
   - `tremor_parkinson`, `hand_arm_beschwerden`: Die Übung verlangt fortlaufendes Feinregeln aus Handgelenk und Unterarm (Forman et al., 2025). Besser kurze Runden, niedrige Level und eine größere Empfindlichkeit.
   - `nystagmus`: Die Aufgabe verlangt genau die Folgebewegung → eher nicht wählen.
   - `presbyopie_gleitsicht`: Die Bahn läuft über viel Höhe und Breite. Hilfreich sind Bildschirmbrille bzw. passende Zwischenkorrektur, ein kleineres Fenster und ein tiefer gestellter Monitor.
-  - `migraene_lichtempfindlich`: Bei Combo-Verlust kommt ein roter Vollbild-Blitz, dazu Bildschirmwackeln und schnelles Rot-Grün-Wechseln der Kugel am Rand der Trefferzone (kleine Fläche) → Blitz abschalten.
-  - `photosensitive_epilepsie`: Einzelner roter Vollbild-Blitz (0,48 s) bei Combo-Verlust, höchstens etwa einmal je 2 s, dazu Bildschirmwackeln; kein periodisches Flimmern, aber gesättigtes Rot großflächig → Blitz und Wackeln abschalten oder eher nicht wählen.
+  - `migraene_lichtempfindlich`: Bei Combo-Verlust kommt ein roter Radialblitz über dem Spielfeld, dazu Bildschirmwackeln und schnelles Rot-Grün-Wechseln der Kugel am Rand der Trefferzone (kleine Fläche) → Blitz abschalten.
+  - `photosensitive_epilepsie`: Einzelner roter Radialblitz (0,45 s) bei Combo-Verlust, höchstens etwa einmal je 2 s, dazu Bildschirmwackeln; kein periodisches Flimmern, aber gesättigtes Rot großflächig → Blitz abschalten (das Wackeln lässt sich im Original nicht abschalten) oder eher nicht wählen.
   - `farbsehschwaeche`: Die Rückmeldung ist nur Grün/Rot, die Aufgabe bleibt aber lösbar.
   - `trockenes_auge_bildschirm`, `kopfschmerz_asthenopie`: Pausenloses Folgen bis ≈ 75 s mit wenig Lidschlag → Pausen zwischen den Runden.
-  - Es gibt keinen 3D-Kameraschwenk. Die großen Schleifen und die Sprünge können Empfindliche dennoch stören (Belastung Schwindel 1).
+  - `schwindel_vestibulaer`: Es gibt keinen 3D-Kameraschwenk und keine großflächige Bewegung; die hohen Reisekrankheitsraten von Konsolenspielen mit Kamerabewegung sind daher nicht direkt übertragbar (eigene Einschätzung). Die großen Schleifen, die Sprünge und das Bildschirmwackeln können Empfindliche dennoch stören (Belastung Schwindel 1, wie 512, 513, 515) → niedrige Level, kurze Runden.
 - **Kombiniert gut mit …** 402 und 403 (Acht- und Sinusbahn nur mit den Augen), 105 (Blickfolge mit Detail-Erkennung; Blickfit „Scharf in Bewegung“), 515 (senkrechte Folge), 512 und 513 (reaktives Tracking), 707 (Pfad nachfahren), 104 (bewegtes Ziel abfangen; Blickfit „Zielfang“).
+- **Überschneidungen:** In der Gruppe 509–515 keine Dublette: 514 ist die einzige vorhersagbare, periodische Bahn (512 und 513 reagieren auf zufällige Wechsel, 515 auf beschleunigte, überwiegend senkrechte Bahnen mit Ausweichsprüngen). Am nächsten verwandt ist 507 (glatte, aber zufällig gekrümmte Bahnstücke) – 514 ist periodisch und damit stärker antizipierbar, dafür springt das Ziel auf höheren Stufen wegen des Programmierfehlers. Nicht 514 und 507 hintereinander vorschlagen, wenn nur „glattes Nachführen“ gefragt ist.
 
 ## 10. Schwächen des Originals und Empfehlungen für eine Blickfit-Umsetzung
 - **Sprungfehler beheben:** Die Phase je Achse muss fortlaufend weitergezählt werden (Phase += 2π · f · dt). Dann bleibt die Bahn auch bei Tempoänderungen stetig. Tempo und Frequenz sollten sich nur langsam ändern, nicht an Combo-Schwellen.
@@ -179,7 +180,7 @@ Die Bewegungsinformation stammt vor allem aus den Arealen MT/MST. Die Streuung d
 - **Messung:** Sinnvoll sind mittlerer Abstand, Nachlauf je Achse und Verluste an Wendepunkten sowie eine zeitgewichtete Präzision. Dazu eine feste Sitzungsdauer ohne Zeitbonus, wählbare Stufen statt Combo-Verschärfung und eine realistische Notenskala.
 - **Vorhersagbarkeit wählbar:** Stufen von reinem Sinus (vorhersagbar) bis zur Summe mehrerer nicht harmonischer Anteile (unvorhersagbar; Barnes et al., 1987) machen ehrlich sichtbar, was geübt wird.
 - **Regeltext:** Keine Stufentabelle, keine Transfer- oder Leistungsversprechen; optionale Strafe und Zeitbonus korrekt angeben; Mausbeschleunigung erwähnen.
-- **Barrierefreiheit/Sicherheit:** Rückmeldung zusätzlich über Form statt nur Rot/Grün. Der Fadenkreuzring sollte kleiner als das Ziel sein. Den roten Vollbild-Blitz standardmäßig aus, das Wackeln abschaltbar machen und einen Pausenhinweis geben. Die Bahnhöhe sollte für Gleitsichtträger:innen begrenzbar sein.
+- **Barrierefreiheit/Sicherheit:** Rückmeldung zusätzlich über Form statt nur Rot/Grün. Der Fadenkreuzring sollte kleiner als das Ziel sein. Den roten Radialblitz standardmäßig aus, das Wackeln abschaltbar machen und einen Pausenhinweis geben. Die Bahnhöhe sollte für Gleitsichtträger:innen begrenzbar sein.
 
 ## 11. Quellen
 ### Von der Website angegeben

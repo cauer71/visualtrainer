@@ -39,8 +39,8 @@ anforderungsprofil:
     naharbeit_dauer: 1
   kognitiv:
     daueraufmerksamkeit: 2
-    selektive_aufmerksamkeit: 1
-    inhibition: 0
+    selektive_aufmerksamkeit: 0
+    inhibition: 1
     geteilte_aufmerksamkeit: 0
     kognitive_flexibilitaet: 0
     arbeitsgedaechtnis: 0
@@ -73,15 +73,15 @@ belastung:
 
 # ===== Auswahlhilfe =====
 voraussetzungen: ["30–120 s ohne Unterbrechung auf den Bildschirm schauen können", "ruhige Sitzposition: Monitor 50–70 cm, Tablet auf Ständer ca. 40 cm, Querformat", "passende Korrektion für den Bildschirmabstand (bei Alterssichtigkeit Zwischen- bzw. Nahkorrektur, möglichst Arbeitsplatzbrille)", "Gesichtsfeld über die ganze Bildschirmfläche nutzbar (Sprünge an beliebige Orte)", "kein Farbsehen nötig (Zielfarbe frei wählbar)", "keine Hand-Eingabe während der Übung (nur Start per Klick/Tipp)"]
-vorsicht_bei: [photosensitive_epilepsie, migraene_lichtempfindlich, nystagmus, schwindel_vestibulaer, gesichtsfeldausfall, presbyopie_gleitsicht, trockenes_auge_bildschirm, kopfschmerz_asthenopie]
-geeignet_fuer: ["Wechsel aus großem Blicksprung und anschließender glatter Blickfolge üben (sinnvoll bei Tempo 0,5–1,5×, ca. 5–25°/s, Sprung alle 2,4–0,8 s)", "Steigerung nach gleichförmiger Folge (404) und vor Übungen mit häufigen Richtungswechseln (410, 415)", "rein visuelles Aufwärmen vor Zielwechsel- oder Tracking-Übungen", "Personen, die für eine Übung keine Hand einsetzen können oder wollen"]
+vorsicht_bei: [photosensitive_epilepsie, migraene_lichtempfindlich, nystagmus, schwindel_vestibulaer, gesichtsfeldausfall, presbyopie_gleitsicht, trockenes_auge_bildschirm, kopfschmerz_asthenopie, kinder_unter_6]
+geeignet_fuer: ["Wechsel aus großem Blicksprung und anschließender glatter Blickfolge üben (sinnvoll bei Tempo 0,5–1,5×, ca. 5–25°/s, Sprung alle 2,4–0,8 s)", "Steigerung nach gleichförmiger Folge (412 = dieselbe Bewegung ohne Sprünge, 404); eigener Zweig neben den Richtungswechsel-Übungen 415 → 410 → 411", "rein visuelles Aufwärmen vor Zielwechsel- oder Tracking-Übungen", "Personen, die für eine Übung keine Hand einsetzen können oder wollen"]
 weniger_geeignet_fuer: ["wer Rückmeldung, Punkte oder einen Fortschrittswert erwartet (das Original misst nichts)", "Übungsziel Auge-Hand-Koordination oder Zielwechsel mit der Hand (dafür 104, 105, 502, 505)", "Gleitsichtträger:innen im Vollbild bei streng ruhigem Kopf (Sprünge führen oft in seitliche Unschärfezonen)", "Menschen mit Gesichtsfeldeinschränkung (Ziel taucht im nicht gesehenen Bereich wieder auf)", "Einsteiger:innen und Ältere bei Tempo ab 2× (Sprung alle 0,6 s, kaum noch Zeit für ruhige Folge)", "Kinder, die ohne Punkte und Rückmeldung schnell die Motivation verlieren"]
 evidenz:
   uebungseffekt: schwach
   naher_transfer: fehlend
   alltag_transfer: fehlend
   kommentar: "Die Übung selbst wurde nie untersucht; die Grundlagen (Sakkaden auf bewegte Ziele, Übergang in die Folgebewegung) sind im Labor gut beschrieben, Folgebewegung ist dort in wenigen Sitzungen trainierbar, mit Belohnung für genaues Folgen deutlich stärker als ohne (Madelain & Krauzlis 2003; Eibenberger et al. 2012) – ohne Rückmeldung und ohne Messung ist ein Übungseffekt nur plausibel, ein Nutzen für Sport, E-Sport oder Alltag nicht belegt."
-aehnliche_uebungen: [410, 415, 411, 407, 404, 303, 401, 501, 502, 508]
+aehnliche_uebungen: [412, 410, 415, 411, 409, 407, 404, 303, 401, 501, 502, 508]
 stichworte: ["Positionssprung", "Step-Ramp", "sakkadische Wiederaufnahme", "Sakkade auf bewegtes Ziel", "smooth pursuit", "Aufholsakkaden", "Geschwindigkeitsgedächtnis", "Teleport", "Blickverfolgung", "rein visuell", "ohne Eingabe"]
 ---
 
@@ -101,7 +101,7 @@ Grundlage: Seitentext und Spielcode (seitenspezifischer Chunk `88915-…js` plus
 - **Darstellung (Code):** Hintergrund #050508 mit 40-px-Raster (2 % Deckkraft; „Day Mode“ weiß). Ziel wie in 410 (Radius 16 px, Scheibe Ø ≈ 26 px, Ring Ø 32 px, Leuchtschein „Neon Glow“), Standardfarbe Rot #ef4444, wählbar Grün, Blau, Orange, Gelb, Weiß. Eine blasse Linie (25 % Deckkraft) zeigt in die aktuelle Bewegungsrichtung, Länge 6 Bewegungsschritte (≈ 100 ms Vorausschau bei 1×).
 - **Bewegung (Code):** Start in der Mitte, je Achse 4–7 px pro 16 ms mit zufälligem Vorzeichen → Betrag 355–618 px/s (Mittel ≈ 490 px/s) ≈ **9–16°/s** bei 1× (Tablet ≈ 10–17°/s). Randabprall ohne Tempoänderung. Bewegung ist zeitbasiert, Tempo wirkt **linear**.
 - **Sprung (Code):** Ein Zeitzähler läuft mit Echtzeit × Tempo; ab 1 200 wird das Ziel an einen gleichverteilt zufälligen Ort gesetzt (mindestens zwei Radien vom Rand), Geschwindigkeitsvektor unverändert. Kein Ausblenden, kein Aufblitzen, keine Vorwarnung – aber ein **strenger Takt**. Die Richtungslinie zeigt am neuen Ort sofort die (alte) Richtung.
-- **Sprungweite (Simulation):** Vollbild 24 Zoll: Mittel ≈ 20° (10–90 %: 7–36°, maximal ≈ 55°); iPad 11 Zoll in 40 cm: ≈ 14° (5–24°).
+- **Sprungweite (Simulation):** Vollbild 24 Zoll: Mittel ≈ 20° (10–90 %: 7–36°, maximal ≈ 55° bei linearer Umrechnung mit 38 px/°; als echter Sehwinkel über die Bilddiagonale ≈ 50°); iPad 11 Zoll in 40 cm: ≈ 14° (5–24°).
 - **„Random Speed“ (Code):** Das Tempo wird mit einer festen Sinusmischung der Uhrzeit auf das 0,4- bis 1,9-Fache moduliert (Mittel 1,15, weich, keine „ruckartige Beschleunigung“); die Sprungschwelle wird jedes Bild neu zwischen 800 und 1 400 gewürfelt → bei 1× Sprünge im Mittel alle ≈ 0,8 s (10–90 %: 0,58–1,1 s). Erst damit wird der **Zeitpunkt** unvorhersagbar.
 - **„Gaze Trail“ (Code):** Kreise an den letzten 15 Bildpositionen (≤ 30 % Deckkraft) – nach einem Sprung bleibt ≈ 250 ms (60 Hz) bzw. ≈ 210 ms (72 Bilder/s) eine Spur am alten Ort.
 - **Bildfrequenz (Code):** Bilder, die < 13 ms nach dem letzten kommen, werden verworfen (gemeinsames Modul, vgl. 410) → höchstens ≈ 77 Aktualisierungen/s; bei 144 Hz effektiv 72. Sprungtakt und Tempo sind davon kaum betroffen (Simulation: 0,82 vs. 0,83 Sprünge/s bei 60 bzw. 144 Hz).
@@ -141,7 +141,7 @@ Grundlage: Seitentext und Spielcode (seitenspezifischer Chunk `88915-…js` plus
 - **Reaktionskette je Sprung (Literatur + eigene Abschätzung):** Sakkadenlatenz auf einen unerwarteten Ort ≈ 150–200 ms (reguläre Sakkaden ≈ 150 ms mit Lücke, Fischer & Ramsperger, 1984), Dauer ≈ 55–100 ms (Baloh et al., 1975). In dieser Zeit fliegt das Ziel bei 1× 3–4° weiter; die Sakkade rechnet das nur teilweise ein (Gellman & Carl, 1991), der Rest wird nach ≈ 125 ms per Aufholsakkade korrigiert (de Brouwer et al., 2002a). Anlauf der Folgebewegung ≈ 100 ms (Carl & Gellman, 1987), nach Sakkaden verstärkt (Lisberger, 1998, an Affen). Summe ≈ 0,3–0,4 s bis zur stabilen Folge → bei 1× bleiben ≈ 0,8 s ruhige Folge, ab 2–3× kaum noch.
 - **Folgebewegung:** 9–16°/s (1×) liegt im gut verfolgbaren Bereich; der glatte Gain ist stets < 0,95 und sinkt mit dem Tempo (Collewijn & Tamminga, 1984); ≈ 90 % Gain bis ≈ 100°/s bei den meisten (Meyer et al., 1985). Ab 5× sind die Strecken kürzer als die Reaktionskette.
 - **Bewegungsunschärfe:** Verschmierung ≈ Geschwindigkeit ÷ Bildfrequenz, bei 1×/60 Hz ≈ 9–16′ (eigene Rechnung), bei 72 Bildern/s etwas weniger.
-- **Blickfeld und Gleitsicht:** Vollbild 24 Zoll in 60 cm ≈ 51° × 29°, Sprünge bis ≈ 55°. Der scharfe Zwischenbereich einer Gleitsichtbrille ist seitlich nur ≈ 13–18° breit statt ≈ 60° bei Einstärkengläsern (Han et al., 2003); neue Träger:innen bewegen mehr den Kopf (Hutchings et al., 2007). Bei ruhigem Kopf landet der Blick nach vielen Sprüngen in der Randunschärfe, unten im zu starken Nahteil → Arbeitsplatzbrille, kleineres Feld oder Kopfbewegung zulassen. Monitoroberkante etwa auf Augenhöhe.
+- **Blickfeld und Gleitsicht:** Vollbild 24 Zoll in 60 cm ≈ 48° × 28° (wie 410/411), Sprünge bis ≈ 50° (Diagonale). Der scharfe Zwischenbereich einer Gleitsichtbrille ist seitlich nur ≈ 13–18° breit statt ≈ 60° bei Einstärkengläsern (Han et al., 2003); neue Träger:innen bewegen mehr den Kopf (Hutchings et al., 2007). Bei ruhigem Kopf landet der Blick nach vielen Sprüngen in der Randunschärfe, unten im zu starken Nahteil → Arbeitsplatzbrille, kleineres Feld oder Kopfbewegung zulassen. Monitoroberkante etwa auf Augenhöhe.
 - **Akkommodation:** 60 cm ≈ 1,7 dpt, 40 cm ≈ 2,5 dpt – bei Alterssichtigkeit passende Zwischen-/Nahkorrektur nötig.
 - **Kontrast/Farbe:** Rot #ef4444 auf #050508 ≈ 5,4 : 1, Weiß 20 : 1, Gelb ≈ 10,6 : 1 (WCAG-Rechnung, vgl. 410). Bei Protan-Schwäche wirkt Rot dunkler; ≈ 8 % der Männer haben eine Rot-Grün-Schwäche (Birch, 2012).
 - **Trockenes Auge:** Bildschirmarbeit senkt die Lidschlagrate im Mittel auf ein Fünftel (Patel et al., 1991).
@@ -170,21 +170,25 @@ Grundlage: Seitentext und Spielcode (seitenspezifischer Chunk `88915-…js` plus
 ## 8. Studienlage: Trainierbarkeit und Übertragung
 
 - **Übungseffekt – schwach:** Keine Studie zu dieser Aufgabe. Analogien: 2 × 6 min Folgen eines quasi-zufällig bewegten Ziels an 3 Tagen verbesserten die Folge noch nach 5 Tagen (Eibenberger et al., 2012; je N = 10). Mit Belohnung für genaues Folgen stieg der Gain bei kurz verdeckten Zielen nach 8–10 Tagessitzungen von 0,59 auf 0,89, mit zufälliger Belohnung nur von 0,60 auf 0,63, ohne Belohnung (reine Wiederholung) von 0,63 auf 0,71 (Madelain & Krauzlis, 2003) – Rückmeldung verstärkt das Lernen deutlich; das Original gibt keine.
-- **Naher Transfer – fehlend:** Nicht untersucht, ob schnelleres Wiederfinden auf andere Blickaufgaben übergeht.
+- **Naher Transfer – fehlend:** Nicht untersucht, ob schnelleres Wiederfinden auf andere Blickaufgaben übergeht. Der
+  schwache Laborhinweis auf Übertrag bei reinem Folgetraining (Eibenberger et al., 2012; Grundlage der Einstufung
+  „schwach“ bei 409–413 und 415) betrifft nur die Folgebewegung, nicht den Kern dieser Übung (Sakkade auf das
+  versetzte Ziel) – daher hier strenger eingestuft, wie bei der Sakkaden-Übung 407.
 - **Alltagstransfer – fehlend:** Kein Beleg für Shooter, Ballsport oder Verkehr (Fransen, 2024; Simons et al., 2016; Guo et al., 2025).
 
 ## 9. Auswahlhinweise für die KI
 
-- **Passt, wenn …** der Übergang von einem großen Blicksprung in eine glatte Folgebewegung geübt werden soll, ohne Hand-Eingabe; als Steigerung nach 404 (gleichförmig) und 303 (Sprünge auf ruhende Ziele), parallel zu 410. Einstellung: Tempo 0,5–1,0× zum Einstieg, bis 1,5× für Geübte; Richtungslinie zuerst an, später „Hide Line“; „Random Speed“ erst als Steigerung; 3–5 × 60 s mit Pausen und bewusstem Blinzeln.
+- **Passt, wenn …** der Übergang von einem großen Blicksprung in eine glatte Folgebewegung geübt werden soll, ohne Hand-Eingabe; als Steigerung nach 412 (dieselbe Bewegung ohne Sprünge), 404 (gleichförmig) und 303 (Sprünge auf ruhende Ziele), parallel zu 410. Unter 409–415 fordert diese Übung Blicksprünge und das Erfassen am Bildrand am stärksten (`sakkaden` 3, `peripheres_sehen` 2). Einstellung: Tempo 0,5–1,0× zum Einstieg, bis 1,5× für Geübte; Richtungslinie zuerst an, später „Hide Line“; „Random Speed“ erst als Steigerung; 3–5 × 60 s mit Pausen und bewusstem Blinzeln.
 - **Weniger passend, wenn …** Rückmeldung gewünscht ist, das Ziel Auge-Hand-Koordination ist (104, 105, 502, 505) oder hohe Tempi gewählt würden (ab 2× für Einsteiger:innen und Ältere, ab 3× für alle).
 - **Vorsicht / anpassen bei …**
-  - `photosensitive_epilepsie`, `migraene_lichtempfindlich`: Jeder Sprung ist ein Hell-Dunkel-Wechsel an zwei Orten; mehr als 3 Sprünge pro Sekunde ab ≈ 4× (mit „Random Speed“ ab ≈ 3×; eigene Simulation), ab ≈ 4× springt das Ziel zudem von Bild zu Bild über seinen Durchmesser hinaus. Die Leuchtfläche liegt bei Standardgröße weit unter der Flächenschwelle 0,006 sr (Harding et al., 2005; WCAG 2.3.1) – formal unkritisch, trotzdem Tempo ≤ 1,5×, „Neon Glow“ aus, Day Mode meiden.
+  - `photosensitive_epilepsie`, `migraene_lichtempfindlich`: Jeder Sprung ist ein Hell-Dunkel-Wechsel an zwei Orten; mehr als 3 Sprünge pro Sekunde ab ≈ 4× (mit „Random Speed“ ab ≈ 3×; eigene Simulation), ab ≈ 4× springt das Ziel zudem von Bild zu Bild über seinen Durchmesser hinaus. Die Leuchtfläche liegt bei Standardgröße weit unter der Flächenschwelle 0,006 sr (Harding et al., 2005; WCAG 2.3.1) – formal unkritisch, trotzdem Tempo ≤ 1,5×, „Neon Glow“ aus, Day Mode meiden. Deshalb `flimmern_lichtreize` 1 (gering) – anders als die stetig bewegten Ziele in 410–413 und 415 (0), aber weit unter dem blinkenden Ziel in 409 (3).
   - `gesichtsfeldausfall`: Das Ziel taucht an beliebigen Orten wieder auf, auch im ausgefallenen Bereich – Frust- und Überforderungsgefahr.
   - `presbyopie_gleitsicht`: Sprünge in seitliche Unschärfezonen → Kopfbewegung erlauben, kleineres Feld, Arbeitsplatzbrille.
   - `nystagmus`: Folge und Zielfinden können eingeschränkt sein.
   - `schwindel_vestibulaer`: plötzliche, große Blickwechsel im Vollbild; kleines Ziel auf ruhigem Grund, daher meist gering.
   - `trockenes_auge_bildschirm`, `kopfschmerz_asthenopie`: 60 s konzentriertes Schauen mit wenig Lidschlag; kurze Blöcke, Pausen.
-- **Kombiniert gut mit …** 303 (Blicksprünge), 404 → 414 → 410 → 415 (steigende Unvorhersagbarkeit), 407 (Verdeckung, Geschwindigkeitsgedächtnis), 401 (peripheres Erkennen), 502/508 (Zielwechsel mit Hand).
+  - `kinder_unter_6`: abstrakte Aufgabe ohne Rückmeldung über 60 s – nicht empfohlen.
+- **Kombiniert gut mit …** 412 (**dieselbe Bewegung** ohne Sprünge – Vorstufe), 409 (dieselbe Bewegung, statt Sprüngen Dunkelphasen: das Ziel taucht auf der vorhergesagten Bahn wieder auf, hier an einem zufälligen Ort), 303 (Blicksprünge auf ruhende Ziele), 407 (Verdeckung, Landepunkt), Richtungswechsel-Reihe 415 → 410 → 411 (Haken statt Sprünge), 401 (peripheres Erkennen), 502/508 (Zielwechsel mit Hand).
 
 Keine Diagnose, keine Heilversprechen: Trainingsaufgabe für gesunde Nutzer:innen, kein Test der Augenbeweglichkeit.
 

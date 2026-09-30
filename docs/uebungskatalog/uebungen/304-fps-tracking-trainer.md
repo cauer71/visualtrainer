@@ -31,17 +31,17 @@ anforderungsprofil:
     nutzbares_sehfeld: 1
     blickfolge: 3
     sakkaden: 2
-    fixation: 1
+    fixation: 0
     bewegungswahrnehmung: 3
     visuelle_suche: 0
     visuelle_verarbeitungsgeschwindigkeit: 1
     zeitliche_aufloesung: 0
     naharbeit_dauer: 1
   kognitiv:
-    daueraufmerksamkeit: 2
+    daueraufmerksamkeit: 1
     selektive_aufmerksamkeit: 1
     inhibition: 1
-    geteilte_aufmerksamkeit: 1
+    geteilte_aufmerksamkeit: 0
     kognitive_flexibilitaet: 0
     arbeitsgedaechtnis: 0
     kurzzeitgedaechtnis_verbal: 0
@@ -52,11 +52,11 @@ anforderungsprofil:
     lesen_sprache: 0
     schlussfolgern: 0
   motorisch:
-    einfache_reaktion: 1
+    einfache_reaktion: 2
     auge_hand_koordination: 3
     zielbewegung_tempo: 2
     zielbewegung_praezision: 2
-    kontinuierliche_steuerung: 2
+    kontinuierliche_steuerung: 1
     ruhige_hand: 1
     fingergeschwindigkeit: 0
     fingersequenz_bimanual: 0

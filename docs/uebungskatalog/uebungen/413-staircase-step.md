@@ -27,12 +27,12 @@ anforderungsprofil:
     kontrast: 0
     farbunterscheidung: 0
     stereosehen: 0
-    peripheres_sehen: 1
+    peripheres_sehen: 0
     nutzbares_sehfeld: 0
     blickfolge: 3
     sakkaden: 2
     fixation: 0
-    bewegungswahrnehmung: 1
+    bewegungswahrnehmung: 2
     visuelle_suche: 0
     visuelle_verarbeitungsgeschwindigkeit: 0
     zeitliche_aufloesung: 0
@@ -40,13 +40,13 @@ anforderungsprofil:
   kognitiv:
     daueraufmerksamkeit: 2
     selektive_aufmerksamkeit: 0
-    inhibition: 0
+    inhibition: 1
     geteilte_aufmerksamkeit: 0
     kognitive_flexibilitaet: 0
     arbeitsgedaechtnis: 0
     kurzzeitgedaechtnis_verbal: 0
-    kurzzeitgedaechtnis_visuell_raeumlich: 1
-    verarbeitungsgeschwindigkeit: 1
+    kurzzeitgedaechtnis_visuell_raeumlich: 0
+    verarbeitungsgeschwindigkeit: 0
     antizipation: 2
     entscheidung_wahlreaktion: 0
     lesen_sprache: 0
@@ -74,21 +74,23 @@ belastung:
 # ===== Auswahlhilfe =====
 voraussetzungen: ["Bildschirm oder Tablet in ruhiger Umgebung, Kopf möglichst ruhig, Abstand 40–70 cm", "Scharfes Sehen im Zwischenbereich über die ganze Breite (≈ 17–19° bei 60 cm) – Bildschirmbrille oder Einstärkenglas günstiger als Gleitsicht", "Maus oder Finger nur zum Starten; während der Übung keine Eingabe", "Tempo anfangs 0,5–1× (≈ 13–30°/s); ab ≈ 3× (≈ 80–90°/s, Umkehr alle 0,22 s) nahe an der Obergrenze der glatten Folgebewegung (≈ 100°/s bei 4 von 5 Laborpersonen; Meyer et al., 1985), das Auge folgt dann zunehmend mit Sakkaden"]
 vorsicht_bei: [presbyopie_gleitsicht, trockenes_auge_bildschirm, kopfschmerz_asthenopie, nystagmus, schwindel_vestibulaer, kinder_unter_6]
-geeignet_fuer: ["glatte Blickfolge auf einer festen, gut vorhersagbaren Bahn üben", "vorausschauendes Umkehren des Blicks an regelmäßig wiederkehrenden Wendepunkten (Timing-Vorhersage)", "ruhige Augenübung ohne Hand- oder Körpereinsatz und ohne Blinkreize", "Zwischenstufe zwischen weicher Welle (403) und zufälligen Richtungswechseln (410, 415)"]
-weniger_geeignet_fuer: ["gezieltes Üben vertikaler Blickfolge oder der Auf-/Ab-Asymmetrie (die Bahn ist zu > 90 % waagerecht)", "alle, die eine Rückmeldung oder einen Leistungswert erwarten (das Original misst nichts)", "Gleitsichtträger:innen an großen Monitoren ohne Kopfbewegung (Ränder und unterer Bereich unscharf)", "Übungsziel Hand-Auge-Koordination oder Reaktion (keine Handlung gefordert)", "Kinder, die abstrakte Aufgaben ohne Rückmeldung nicht durchhalten"]
+geeignet_fuer: ["glatte Blickfolge auf einer festen, gut vorhersagbaren Bahn üben", "vorausschauendes Umkehren des Blicks an regelmäßig wiederkehrenden Wendepunkten (Timing-Vorhersage)", "ruhige Augenübung ohne Hand- oder Körpereinsatz und ohne Blinkreize", "Zwischenstufe zwischen weicher Welle (403) und unvorhersagbaren Richtungswechseln (415 → 410 → 411)", "waagrechtes Gegenstück zum überwiegend senkrechten Zickzack 405 (gleiche Mechanik, Achsen vertauscht)"]
+weniger_geeignet_fuer: ["gezieltes Üben vertikaler Blickfolge oder der Auf-/Ab-Asymmetrie (die Bahn ist zu > 90 % waagerecht; dafür 405, dieselbe Zickzack-Mechanik überwiegend senkrecht)", "alle, die eine Rückmeldung oder einen Leistungswert erwarten (das Original misst nichts)", "Gleitsichtträger:innen an großen Monitoren ohne Kopfbewegung (Ränder und unterer Bereich unscharf)", "Übungsziel Hand-Auge-Koordination oder Reaktion (keine Handlung gefordert)", "Kinder, die abstrakte Aufgaben ohne Rückmeldung nicht durchhalten"]
 evidenz:
-  uebungseffekt: schwach
-  naher_transfer: fehlend
+  uebungseffekt: mittel
+  naher_transfer: schwach
   alltag_transfer: fehlend
-  kommentar: "Das Folgen periodischer Dreieck-/Rampenbahnen verbessert sich im Labor schon innerhalb weniger Zyklen bzw. Minuten (Barnes & Asselman 1991; McHugh & Bahill 1985) – das ist eher kurzfristige Anpassung als Training. Ohne Messung und Rückmeldung (wie im Original) ist ein bleibender Übungseffekt unsicher; Lernen der Folgebewegung ist zudem richtungsspezifisch (Kahlon & Lisberger 1996). Transfer auf Sport, E-Sport oder Alltag ist nicht untersucht."
-aehnliche_uebungen: [405, 406, 407, 403, 404, 402, 105, 515, 409, 414, 410, 707]
+  kommentar: "Das Folgen periodischer Dreieck-/Rampenbahnen wird im Labor schon innerhalb weniger Zyklen bzw. Minuten besser (Barnes & Asselman 1991; McHugh & Bahill 1985) – ein gut belegter, aber vor allem kurzfristiger Übungseffekt in der geübten Aufgabe (gleiche Einstufung wie der Zwilling 405 und 402–406); ob er ohne Messung und Rückmeldung bleibt, ist offen. Naher Transfer nur als schwacher Laborhinweis (kurzes Folgetraining wirkte in einem anderen Test, Eibenberger et al. 2012), Lernen der Folgebewegung ist zudem teils richtungsspezifisch (Kahlon & Lisberger 1996, Affen). Transfer auf Sport, E-Sport oder Alltag ist nicht untersucht."
+aehnliche_uebungen: [405, 406, 403, 404, 402, 407, 410, 105, 515, 707]
 stichworte: ["smooth pursuit", "Blickfolge", "Zickzack", "Dreieckwelle", "Richtungsumkehr", "prädiktive Blickfolge", "Aufholsakkaden", "vertikale Blickfolge", "Auf-Ab-Asymmetrie", "Gleitsicht"]
 ---
 
 # 413 · Zickzack-Blickfolge mit langsamem Höhenwechsel
 
 > Original: „Vertikale Blickverfolgung – Übung für Höhenwechsel und Zielwiedererfassung“ (Staircase Step) –
-> skilldrills.online, Kapitel Blickverfolgung (`visual-tracking`) · Blickfit: noch nicht umgesetzt
+> skilldrills.online, Kapitel Blickverfolgung (`visual-tracking`) · Blickfit: noch nicht umgesetzt · **Dublette:** 405
+> nutzt dieselbe Bahn-Mechanik (8 Punkte, 7 Abschnitte, gleiches Tempo), nur um 90° gedreht – 405 überwiegend senkrecht,
+> 413 überwiegend waagerecht.
 
 ## 1. Kurzbeschreibung
 
@@ -186,23 +188,31 @@ Kopf. Wer mitfährt, übt zusätzlich manuelles Tracking (vgl. 707) – ohne Erf
 
 ## 8. Studienlage: Trainierbarkeit und Übertragung
 
-- **Übungseffekt (schwach):** Kurzfristige Anpassung an periodische Bahnen ist gut belegt (Barnes & Asselman, 1991;
-  McHugh & Bahill, 1985). Bleibende Verbesserungen gab es im Labor mit Belohnung (Gain bei kurz ausgeblendetem Ziel 0,59 → 0,89 nach 8–10 Trainingstagen; Madelain & Krauzlis, 2003) bzw. nach
+- **Übungseffekt (mittel):** Besseres Folgen periodischer Bahnen nach wenigen Zyklen bzw. Minuten ist gut belegt
+  (Barnes & Asselman, 1991; McHugh & Bahill, 1985) – allerdings vor allem kurzfristig und im Labor mit Eyetracker; gleiche
+  Einstufung wie bei der Zwillingsübung 405 und den übrigen vorhersagbaren Bahnen 402–406. Bleibende Verbesserungen gab es im Labor mit Belohnung (Gain bei kurz ausgeblendetem Ziel 0,59 → 0,89 nach 8–10 Trainingstagen; Madelain & Krauzlis, 2003) bzw. nach
   2 × 6 min an drei Tagen mit quasi-zufälligem Ziel, 5 Tage später noch nachweisbar (Eibenberger et al., 2012, N = 10 + 10 Kontrollen) – andere Bahnen, mit Eyetracker.
-- **Naher Transfer (fehlend):** keine Studie zu dieser Bahn; Lernen der Folgebewegung ist richtungsspezifisch (Affen;
-  Kahlon & Lisberger, 1996) – Übertrag auf vertikale oder unvorhersagbare Bewegung fraglich.
+- **Naher Transfer (schwach):** keine Studie zu dieser Bahn; kurzes Folgetraining (quasi-zufälliges Ziel) verbesserte die
+  Folgebewegung in einem anderen Test (Step-Ramp; Eibenberger et al., 2012, N = 10) – ein Laborhinweis wie bei 402–406 und
+  409–412/415. Lernen der Folgebewegung ist aber teils richtungsspezifisch (Affen; Kahlon & Lisberger, 1996) – Übertrag
+  auf vertikale oder unvorhersagbare Bewegung fraglich.
 - **Alltag (fehlend):** kein Beleg für Sport, E-Sport oder Verkehr; Training wirkt v. a. in der geübten Aufgabe (Simons et al., 2016).
 
 ## 9. Auswahlhinweise für die KI
 
 - **Passt, wenn …** ruhige, vorhersagbare Blickfolge geübt werden soll (Aufbau nach 404/403, vor 410/415); Blinkreize
   vermieden werden müssen; Tempo 0,5–1×.
-- **Weniger passend, wenn …** gezielt vertikale Blickfolge (eher 515, dort mit Maus-Tracking) oder eine Leistungsmessung gewünscht ist.
+- **Weniger passend, wenn …** gezielt vertikale Blickfolge (dafür 405 – gleiche Zickzack-Mechanik, überwiegend senkrecht;
+  mit Maus-Tracking 515) oder eine Leistungsmessung gewünscht ist.
 - **Vorsicht / anpassen bei …** `presbyopie_gleitsicht` (Hub und tiefe Zeilen außerhalb des scharfen Korridors → Fenster
   verkleinern, Bildschirmbrille); `trockenes_auge_bildschirm`, `kopfschmerz_asthenopie` (seltenes Blinzeln → Runden 30–45 s,
   Pausen); `nystagmus` (Folgebewegung evtl. eingeschränkt); `schwindel_vestibulaer` (schnelles Hin und Her ab 3× → niedriges
   Tempo); `kinder_unter_6` (abstrakt, ohne Rückmeldung). Keine medizinischen Aussagen.
-- **Kombiniert gut mit …** 404, 403, 405/406 (feste Richtungswechsel), 410/414 (unvorhersagbar), 515, 707.
+- **Photosensitivität geprüft:** kein Blinken, stetig bewegtes Ziel (wie 410–412, 415) → `flimmern_lichtreize` 0; erst ab
+  ≈ 3× springt der Punkt pro Bild um mehr als seinen Durchmesser (≈ 1,3° bei 60 Hz) – kein Blitz im Sinn von WCAG 2.3.1.
+- **Kombiniert gut mit …** 405 (Dublette mit vertauschten Achsen: senkrecht statt waagerecht – beide zusammen decken
+  beide Hauptrichtungen ab), 406 (Dreieck), 403/404 (weichere Bahnen); danach unvorhersagbare Wechsel 415 → 410 → 411;
+  515, 707 (mit Hand).
 
 ## 10. Schwächen des Originals und Empfehlungen für eine Blickfit-Umsetzung
 

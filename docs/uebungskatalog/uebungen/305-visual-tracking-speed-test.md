@@ -27,19 +27,19 @@ anforderungsprofil:
     kontrast: 0
     farbunterscheidung: 0
     stereosehen: 0
-    peripheres_sehen: 1
+    peripheres_sehen: 2
     nutzbares_sehfeld: 1
     blickfolge: 2
     sakkaden: 2
     fixation: 0
     bewegungswahrnehmung: 3
     visuelle_suche: 0
-    visuelle_verarbeitungsgeschwindigkeit: 2
+    visuelle_verarbeitungsgeschwindigkeit: 1
     zeitliche_aufloesung: 0
     naharbeit_dauer: 1
   kognitiv:
     daueraufmerksamkeit: 1
-    selektive_aufmerksamkeit: 0
+    selektive_aufmerksamkeit: 1
     inhibition: 1
     geteilte_aufmerksamkeit: 0
     kognitive_flexibilitaet: 0
@@ -54,7 +54,7 @@ anforderungsprofil:
   motorisch:
     einfache_reaktion: 2
     auge_hand_koordination: 3
-    zielbewegung_tempo: 2
+    zielbewegung_tempo: 3
     zielbewegung_praezision: 2
     kontinuierliche_steuerung: 1
     ruhige_hand: 1

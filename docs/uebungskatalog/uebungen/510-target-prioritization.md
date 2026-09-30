@@ -65,7 +65,7 @@ anforderungsprofil:
     ausdauer_belastung: 0
 belastung:
   zeitdruck: 2
-  flimmern_lichtreize: 1
+  flimmern_lichtreize: 2
   bewegungsreize_schwindel: 1
   koerperliche_belastung: 0
   sturzrisiko: 0
@@ -73,7 +73,7 @@ belastung:
 
 # ===== Auswahlhilfe =====
 voraussetzungen: ["normales Farbsehen für Rot, Gelb und Grün (Farbe ist das einzige Unterscheidungsmerkmal)", "Maus und Desktop-Browser mit Pointer Lock (Mauszeigersperre)", "Monitor im Zwischenbereich (ca. 50–75 cm) scharf sehen", "Regelverständnis: Gelb nur, wenn kein Rot sichtbar ist"]
-vorsicht_bei: [farbsehschwaeche, photosensitive_epilepsie, migraene_lichtempfindlich, gesichtsfeldausfall, presbyopie_gleitsicht, trockenes_auge_bildschirm, hand_arm_beschwerden, tremor_parkinson]
+vorsicht_bei: [farbsehschwaeche, photosensitive_epilepsie, migraene_lichtempfindlich, gesichtsfeldausfall, presbyopie_gleitsicht, trockenes_auge_bildschirm, kopfschmerz_asthenopie, hand_arm_beschwerden, tremor_parkinson]
 geeignet_fuer: ["Auswahl nach Priorität unter mäßigem Zeitdruck üben (welches Ziel zuerst?)", "Nicht-Reagieren auf erlaubte Objekte (Grün) während eines schnellen Klickrhythmus üben", "Überblick über mehrere bewegte Objekte am ganzen Bildschirm behalten und dabei mit der Maus zielen", "spielerisches Aufwärmen für Ego-Shooter-Spielende am PC"]
 weniger_geeignet_fuer: ["Menschen mit Rot-Grün- oder Gelb-Grün-Verwechslung (ca. 8 % der Männer)", "Tablet- oder Smartphone-Nutzung (nur Maus mit Pointer Lock)", "reines Go/No-Go- oder Hemmtraining mit Zeitmessung (dafür 102)", "Kinder und Personen, die Schuss-/Kampfthematik nicht möchten", "Personen, die auf Fehlerrückmeldung mit rotem Aufleuchten und Wackeln empfindlich reagieren"]
 evidenz:
@@ -150,12 +150,13 @@ Quelle: Regeltext der Seite und ausgelieferter Spielcode (Chunk der Seite, forma
 - **Weniger passend, wenn …** nur ein Tablet vorhanden ist; reines Hemmtraining mit Zeitmessung gewünscht ist (102); ruhige, präzise Motorik im Vordergrund steht (705, 509); Kampfthematik unerwünscht ist.
 - **Vorsicht / anpassen bei …**
   - `farbsehschwaeche`: Farbe ist das einzige Merkmal; Rot/Grün (Deutan) bzw. Gelb/Grün (Protan) werden verwechselt – Übung nicht auswählen oder nur mit Formkodierung.
-  - `photosensitive_epilepsie`, `migraene_lichtempfindlich`: bei jedem Fehler rotes Aufleuchten des Felds (0,45 s) und Wackeln; bei schnellen Fehlklickserien mehrmals pro Sekunde möglich. Das Aufleuchten ist standardmäßig an und nur über die Blitz-Einstellung abschaltbar; das Wackeln bleibt auch dann.
+  - `photosensitive_epilepsie`, `migraene_lichtempfindlich`: bei jedem Fehler rotes Aufleuchten des Felds (0,45 s, gesättigtes Rot) und Wackeln; bei schnellen Fehlklickserien mehrmals pro Sekunde möglich, rechnerisch auch über der Grenze von 3 Blitzen pro Sekunde (WCAG 2.2, Kriterium 2.3.1) → Belastung Flimmern 2 (wie 501 und 308, im Unterschied zu 512–515 mit höchstens etwa einem Blitz je Sekunde). Das Aufleuchten ist standardmäßig an und nur über die Blitz-Einstellung abschaltbar; das Wackeln bleibt auch dann.
   - `gesichtsfeldausfall`: Ziele erscheinen zufällig im ganzen Feld und rote verfallen mit Zeitstrafe; bei Gesichtsfeldeinschränkungen werden Ziele übersehen – Feld verkleinern oder Übung nicht auswählen.
   - `presbyopie_gleitsicht`: Ziele am ganzen Bildschirm; Zwischenbereichs- oder Bildschirmbrille bevorzugen, Monitor etwas tiefer stellen.
-  - `trockenes_auge_bildschirm`: Wegen verlängerter Runden bewusst Pausen und Lidschlag einplanen.
+  - `trockenes_auge_bildschirm`, `kopfschmerz_asthenopie`: Wegen verlängerter Runden (Zeitgutschrift) und lidschlagarmen Absuchens bewusst Pausen und Lidschlag einplanen (Patel et al., 1991; Sheppard & Wolffsohn, 2018).
   - `hand_arm_beschwerden`, `tremor_parkinson`: viele schnelle Mauszielbewegungen; Trefferzonen sind mittelgroß, Fehlklicks werden bestraft.
-- **Kombiniert gut mit …** 102 (Go/No-Go mit Zeitmessung), 202 (Wahlreaktion), 103 (visuelle Suche), 502 (Zielwechsel), 801 (periphere Reize).
+- **Kombiniert gut mit …** 102 (Go/No-Go mit Zeitmessung), 202 (Wahlreaktion), 103 (visuelle Suche), 502 (Zielwechsel), 511 (Köder am Bildrand), 801 (periphere Reize).
+- **Überschneidungen:** In der Gruppe 509–515 keine Dublette; 510 ist die einzige Übung mit Priorisieren mehrerer Ziele nach Farbe. 511 teilt die Nicht-Klicken-Komponente (orange Köder), dort aber bei einem einzelnen, kurz sichtbaren Ziel unter Reaktionsdruck. Die Grundmechanik (langsam treibende Kreise mit Lebensdauer anklicken) entspricht 502 – dort ohne Farbregel.
 Keine Diagnose, kein Seh- oder Farbtest; die Ergebnisse sagen nichts über Sehvermögen aus.
 
 ## 10. Schwächen des Originals und Empfehlungen für eine Blickfit-Umsetzung
@@ -191,10 +192,13 @@ Keine Diagnose, kein Seh- oder Farbtest; die Ergebnisse sagen nichts über Sehve
 - Machado, G. M., Oliveira, M. M., & Fernandes, L. A. F. (2009). A physiologically-based model for simulation of color vision deficiency. *IEEE Transactions on Visualization and Computer Graphics, 15*(6), 1291–1298. https://doi.org/10.1109/TVCG.2009.113 – Grundlage der CVD-Simulation.
 - Nieuwenhuys, A., Savelsbergh, G. J. P., & Oudejans, R. R. D. (2012). Shoot or don’t shoot? Why police officers are more inclined to shoot when they are anxious. *Emotion, 12*(4), 827–833. https://doi.org/10.1037/a0025699 – Angst → Schussneigung.
 - Nieuwenhuys, A., & Oudejans, R. R. D. (2011). Training with anxiety: Short- and long-term effects on police officers’ shooting behavior under pressure. *Cognitive Processing, 12*(3), 277–288. https://doi.org/10.1007/s10339-011-0396-x – Training unter echter Angst (N = 27, 4 Monate Retention).
+- Patel, S., Henderson, R., Bradley, L., Galloway, B., & Hunter, L. (1991). Effect of visual display unit use on blink rate and tear stability. *Optometry and Vision Science, 68*(11), 888–892. https://doi.org/10.1097/00006324-199111000-00010 – Lidschlag am Bildschirm.
 - Rey-Mermet, A., & Gade, M. (2018). Inhibition in aging: What is preserved? What declines? A meta-analysis. *Psychonomic Bulletin & Review, 25*(5), 1695–1716. https://doi.org/10.3758/s13423-017-1384-7 – Alter und Go/No-Go.
+- Sheppard, A. L., & Wolffsohn, J. S. (2018). Digital eye strain: Prevalence, measurement and amelioration. *BMJ Open Ophthalmology, 3*(1), e000146. https://doi.org/10.1136/bmjophth-2018-000146 – digitale Augenbelastung.
 - Verbruggen, F., & Logan, G. D. (2008). Response inhibition in the stop-signal paradigm. *Trends in Cognitive Sciences, 12*(11), 418–424. https://doi.org/10.1016/j.tics.2008.07.005 – Stoppen vs. Go/No-Go.
+- W3C. (2024). *Web Content Accessibility Guidelines (WCAG) 2.2*, Kriterien 1.4.1 (Farbe nicht als einziges Merkmal) und 2.3.1 (höchstens 3 Blitze pro Sekunde) (Norm, keine DOI). https://www.w3.org/TR/WCAG22/ – Barrierefreiheit und Blitzgrenzen.
 - Wessel, J. R. (2018). Prepotent motor activity and inhibitory control demands in different variants of the go/no-go paradigm. *Psychophysiology, 55*(3), e12871. https://doi.org/10.1111/psyp.12871 – No-Go ≤ 20 %, Takt ≤ 1 500 ms.
 - Wolfe, J. M. (2021). Guided Search 6.0: An updated model of visual search. *Psychonomic Bulletin & Review, 28*(4), 1060–1092. https://doi.org/10.3758/s13423-020-01859-9 – Prioritätskarte.
 - Yang, L., Huang, Y., Li, P., Tang, H., & Jin, X. (2026). Spatially modulated visuomotor efficiency in FPS players: Eye-tracking evidence from a Go/No-Go target acquisition task. *Cognitive Research: Principles and Implications, 11*, 42. https://doi.org/10.1186/s41235-026-00738-6 – FPS-Spielende in Go/No-Go-Zielerfassung.
 - Young, M. E., Sutherland, S. C., & McCoy, A. W. (2018). Optimal go/no-go ratios to maximize false alarms. *Behavior Research Methods, 50*(3), 1020–1029. https://doi.org/10.3758/s13428-017-0923-5 – No-Go-Anteil und Fehlalarme.
-- Ergänzend (Belege in `lit-W07-fps-b`, alle per Crossref geprüft): Brenner & Smeets (1997), https://doi.org/10.1080/00222899709600017; Collewijn & Tamminga (1984), https://doi.org/10.1113/jphysiol.1984.sp015242; Elliott et al. (2010), https://doi.org/10.1037/a0020958; Guo et al. (2025), https://doi.org/10.3389/fphys.2025.1664572; Ivkovic et al. (2015), https://doi.org/10.1145/2702123.2702432; Jaschinski-Kruza (1991), https://doi.org/10.1177/001872089103300106; Listman et al. (2021), https://doi.org/10.3389/fnhum.2021.777779; Patel et al. (1991), https://doi.org/10.1097/00006324-199111000-00010; Pronk et al. (2020), https://doi.org/10.3758/s13428-019-01321-2; Simons et al. (2016), https://doi.org/10.1177/1529100616661983; Smith et al. (1999), https://doi.org/10.1518/001872099779611102; MDN Web Docs (o. J.). *Element: requestPointerLock()* und *Performance: now()*, abgerufen 29.09.2026, https://developer.mozilla.org/en-US/docs/Web/API/Element/requestPointerLock und https://developer.mozilla.org/en-US/docs/Web/API/Performance/now.
+- Ergänzend (Belege in `lit-W07-fps-b`, alle per Crossref geprüft): Brenner & Smeets (1997), https://doi.org/10.1080/00222899709600017; Collewijn & Tamminga (1984), https://doi.org/10.1113/jphysiol.1984.sp015242; Elliott et al. (2010), https://doi.org/10.1037/a0020958; Guo et al. (2025), https://doi.org/10.3389/fphys.2025.1664572; Ivkovic et al. (2015), https://doi.org/10.1145/2702123.2702432; Jaschinski-Kruza (1991), https://doi.org/10.1177/001872089103300106; Listman et al. (2021), https://doi.org/10.3389/fnhum.2021.777779; Pronk et al. (2020), https://doi.org/10.3758/s13428-019-01321-2; Simons et al. (2016), https://doi.org/10.1177/1529100616661983; Smith et al. (1999), https://doi.org/10.1518/001872099779611102; MDN Web Docs (o. J.). *Element: requestPointerLock()* und *Performance: now()*, abgerufen 29.09.2026, https://developer.mozilla.org/en-US/docs/Web/API/Element/requestPointerLock und https://developer.mozilla.org/en-US/docs/Web/API/Performance/now.

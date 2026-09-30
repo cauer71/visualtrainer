@@ -23,12 +23,12 @@ messgroessen: ["Original: Punkte, Präzision (Treffer/Klicks; Abläufe zählen n
 # ===== Anforderungsprofil 0–3 (alle Schlüssel angeben) =====
 anforderungsprofil:
   visuell:
-    sehschaerfe_detail: 0
+    sehschaerfe_detail: 1
     kontrast: 0
     farbunterscheidung: 0
     stereosehen: 0
     peripheres_sehen: 2
-    nutzbares_sehfeld: 1
+    nutzbares_sehfeld: 2
     blickfolge: 1
     sakkaden: 3
     fixation: 1
@@ -58,7 +58,7 @@ anforderungsprofil:
     zielbewegung_praezision: 2
     kontinuierliche_steuerung: 1
     ruhige_hand: 1
-    fingergeschwindigkeit: 1
+    fingergeschwindigkeit: 0
     fingersequenz_bimanual: 0
     ganzkoerper: 0
     gleichgewicht: 0
@@ -69,11 +69,11 @@ belastung:
   bewegungsreize_schwindel: 1
   koerperliche_belastung: 0
   sturzrisiko: 0
-  sprachabhaengigkeit: 1
+  sprachabhaengigkeit: 0
 
 # ===== Auswahlhilfe =====
 voraussetzungen: ["Maus (oder Touchpad) und Desktop-Browser mit Pointer Lock – auf Touch-Geräten sperrt das Original den Start", "Vollbild; Monitor 50–70 cm entfernt, passende Korrektion für diesen Abstand", "kein Farbsehen nötig (nur eine Zielart, grün auf fast schwarz)", "Frustrationstoleranz: Fehlklicks und Abläufe kosten sofort Zeit und Combo"]
-vorsicht_bei: [photosensitive_epilepsie, migraene_lichtempfindlich, presbyopie_gleitsicht, gesichtsfeldausfall, trockenes_auge_bildschirm, kopfschmerz_asthenopie, hand_arm_beschwerden, tremor_parkinson, aufmerksamkeitsprobleme, kognitive_einschraenkung]
+vorsicht_bei: [photosensitive_epilepsie, migraene_lichtempfindlich, presbyopie_gleitsicht, gesichtsfeldausfall, sehbehinderung_niedriger_visus, trockenes_auge_bildschirm, kopfschmerz_asthenopie, hand_arm_beschwerden, tremor_parkinson, aufmerksamkeitsprobleme, kognitive_einschraenkung]
 geeignet_fuer: ["schnelle Blick-Hand-Wechsel zwischen mehreren Zielen unter Zeitdruck üben", "Maus-Zielbewegungen (Fitts-Aufgabe) mit leicht bewegten Zielen und eigener Reihenfolgewahl", "Fortsetzung nach Einzelziel-Klickübungen (501, 702, 704), bevor Ziel-Priorisierung (510) oder Suche (508) dazukommen", "spielerischer Gesprächsanlass zu Bildschirmsehen (Abstand, Arbeitsplatzbrille, Lidschlag)"]
 weniger_geeignet_fuer: ["Tablet-Nutzung (Original nicht startbar; Touch nur in einer eigenen Umsetzung)", "Gleitsichtträger:innen im Vollbild ohne Arbeitsplatzbrille (Ziele bis ≈ 24° seitlich)", "wer eine feste, kurze Übungsdauer braucht (Runde verlängert sich mit jedem Treffer)", "Einsteiger:innen, ältere oder leicht frustrierbare Menschen ab höheren Levels (5 Ziele, ≈ 1 s Lebensdauer)", "Übungsziel glatte Blickfolge oder Dauertracking (dafür 505, 514, 104, 105)"]
 evidenz:
@@ -81,7 +81,7 @@ evidenz:
   naher_transfer: schwach
   alltag_transfer: fehlend
   kommentar: "Die Übung selbst ist nicht untersucht; in gleichartigen Maus-Zielaufgaben verbessert man sich mit Übung deutlich (Aim-Lab-Längsschnitt N = 7.174; Laborstudie N = 86). Ob das auf Spielleistung oder andere Zeigeaufgaben übergeht, wurde nicht kontrolliert geprüft; Alltagseffekte sind nicht belegt."
-aehnliche_uebungen: [501, 708, 302, 510, 508, 509, 702, 704, 804, 303, 106]
+aehnliche_uebungen: [501, 506, 708, 302, 510, 508, 509, 702, 704, 804, 303, 106]
 stichworte: ["target switching", "Zielwechsel", "Multi-Target", "Aim-Trainer", "Fitts'sches Gesetz", "bewegte Ziele", "Blick-Hand-Koordination", "Sakkaden", "sequenzielles Zielen", "Zeitdruck", "Combo", "Pointer Lock", "Maus"]
 ---
 

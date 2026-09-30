@@ -34,7 +34,7 @@ anforderungsprofil:
     fixation: 0
     bewegungswahrnehmung: 0
     visuelle_suche: 1
-    visuelle_verarbeitungsgeschwindigkeit: 2
+    visuelle_verarbeitungsgeschwindigkeit: 1
     zeitliche_aufloesung: 0
     naharbeit_dauer: 1
   kognitiv:

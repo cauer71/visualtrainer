@@ -65,7 +65,7 @@ anforderungsprofil:
     ausdauer_belastung: 0
 belastung:
   zeitdruck: 3
-  flimmern_lichtreize: 1
+  flimmern_lichtreize: 2
   bewegungsreize_schwindel: 1
   koerperliche_belastung: 0
   sturzrisiko: 0
@@ -73,7 +73,7 @@ belastung:
 
 # ===== Auswahlhilfe =====
 voraussetzungen: ["Maus und Desktop-Browser mit Pointer Lock (Mauszeigersperre), möglichst Vollbild", "beide Bildschirmränder (ca. ±20° bei 24″ in 60 cm) im Gesichtsfeld erfassbar", "Monitor im Zwischenbereich (ca. 50–75 cm) scharf sehen", "ab höheren Stufen Grün von Orange unterscheiden"]
-vorsicht_bei: [gesichtsfeldausfall, photosensitive_epilepsie, migraene_lichtempfindlich, presbyopie_gleitsicht, trockenes_auge_bildschirm, farbsehschwaeche, tremor_parkinson, hand_arm_beschwerden]
+vorsicht_bei: [gesichtsfeldausfall, photosensitive_epilepsie, migraene_lichtempfindlich, presbyopie_gleitsicht, trockenes_auge_bildschirm, kopfschmerz_asthenopie, farbsehschwaeche, tremor_parkinson, hand_arm_beschwerden]
 geeignet_fuer: ["schnelles Reagieren auf plötzlich erscheinende Reize am Bildrand mit anschließender Zielbewegung üben", "Klicken erst bei Reizbeginn statt vorab (Frühschüsse vermeiden) unter Zeitdruck üben", "Blick-Hand-Koordination bei großen, schnellen Zielbewegungen (Flicks) über den ganzen Monitor", "spielerisches Aufwärmen für Ego-Shooter-Spielende am PC"]
 weniger_geeignet_fuer: ["Tablet- oder Smartphone-Nutzung (nur Maus mit Pointer Lock)", "saubere Messung der einfachen Reaktionszeit (dafür 101 oder 301 – hier ist die Zielbewegung eingerechnet)", "echtes ‚Vorhalten‘ mit Koinzidenz-Timing (das setzt der Code nicht um)", "Personen mit einseitigem Gesichtsfeldausfall", "Kinder und Personen, die Schuss-/Kampfthematik nicht möchten"]
 evidenz:
@@ -81,7 +81,7 @@ evidenz:
   naher_transfer: schwach
   alltag_transfer: fehlend
   kommentar: "Zielleistung in Aim-Trainern steigt mit Übung und ist gut reproduzierbar gemessen (Listman et al., 2021; Rogers et al., 2024), die einfache Reaktionszeit selbst ändert sich wenig; Transfer von Aim-Trainern auf Spielleistung oder Alltag ist nicht untersucht, Actionspiele zeigen nur kleine kausale Effekte (g = 0,30; Bediou et al., 2023)."
-aehnliche_uebungen: [308, 307, 503, 508, 501, 101, 301, 102, 801]
+aehnliche_uebungen: [308, 307, 503, 508, 501, 510, 101, 301, 102, 801]
 stichworte: ["Crosshair Placement", "Winkel halten", "Angle Hold", "Pre-Aim", "Peeker's Advantage", "Fake Peek", "Frühschuss", "Reizbeginn peripher", "Flick", "einfache Reaktionszeit", "Go/No-Go", "Aim Trainer"]
 ---
 
@@ -101,7 +101,7 @@ Quelle: Regeltext der Seite und ausgelieferter Spielcode (seitenspezifischer Chu
 - **Zeitfenster:** Sichtbarkeit 1 400 ms (Level 1), ≈ 650 ms (Level 15), Grenzwert 420 ms, mit hoher Combo bis 336 ms. Köder sind nur min(220 ms; 0,45 × Sichtbarkeit) sichtbar. Wartezeit bis zum nächsten Ziel gleichverteilt 900–1 600 ms (Level 1), ≈ 480–880 ms (Level 15), Grenzwerte 350–650 ms, mit hoher Combo bis ≈ 260–490 ms (Untergrenzen 200/400 ms) (Code). Das Verschwinden hängt an einer seitenweiten Einstellung „Zeitlimit“ (Standard: an); ist sie aus, bleiben Ziele und auch Köder stehen, bis geklickt wird – dann gibt es keine entkommenen Ziele, und ein Köder lässt sich nur durch einen Strafklick entfernen (Code).
 - **Wertung:** Treffer = 100 Punkte × Combo-Faktor (1 bis 3 ab 50 Treffern in Folge) × Level-Faktor (1 + 0,5 · [Level − 1]/14, nach oben offen), **+2 s** (Uhr max. 60 s). Fehler setzen die Combo auf 0 und kosten **−1 s**: Klick ohne Ziel oder auf Köder (Frühschuss), Klick daneben (auch während eines Köders), echtes Ziel entkommen. Präzision = Treffer / (Treffer + Fehlklicks + Frühschüsse + Entkommene). Note nach √(Punkte/48 000).
 - **„Reaktionszeit“:** gemessen vom Animationsbild, in dem das Ziel entsteht, bis zum Klick-Ereignis (`performance.now()`); sie enthält Anzeigeverzögerung, Blick- und Zielbewegung und ist damit keine einfache Reaktionszeit.
-- **Rückmeldung:** Ton beim Erscheinen (links 520 Hz, rechts 680 Hz – ein zusätzlicher Seitenhinweis, wenn Ton an ist), Partikel, Bildschirmwackeln 6 px bei jedem Fehler (unabhängig von der Effekt-Einstellung) und nur bei aktivierten Effekten zusätzlich ein rotes Aufleuchten (480 ms).
+- **Rückmeldung:** Ton beim Erscheinen (links 520 Hz, rechts 680 Hz – ein zusätzlicher Seitenhinweis, wenn Ton an ist), Partikel, Bildschirmwackeln 6 px bei jedem Fehler (unabhängig von der Effekt-Einstellung) und nur bei aktivierten Effekten (Standard: an) zusätzlich ein rotes, radial auslaufendes Aufleuchten (Mitte 50 % Deckkraft, 0,45 s; ohne Sperrzeit).
 - **Dauer:** Startzeit 45 s. Da jeder Treffer +2 s bringt und ein Durchgang auf höheren Stufen nur ≈ 1–1,5 s dauert, kann die Runde fast beliebig lange laufen und endet praktisch erst durch Fehler (EIG).
 - **Widersprüche Regeltext ↔ Code:** (1) Deutsche Regeln „+0,6 s“ je Treffer, Code +2 s (englische Regeln korrekt). (2) Strafe „−0,8 s“, Code −1 s; sie greift immer, weil die Abfrage mit erzwungenem „an“ aufgerufen wird. (3) Entkommene Ziele werden bestraft, stehen aber nicht in den Regeln. (4) „Kopfhöhe halten“ und „Wandabstand einstellen“ sind nicht umsetzbar: Höhe und Seite sind zufällig, das Ziel läuft nicht ins Fadenkreuz. (5) „You can't memorize a rhythm“: Die Wartezeit wird mit steigendem Level enger (350–650 ms) und damit zeitlich **vorhersagbarer**. (6) Der Drill „misst Wandabstand“ – im Code nicht vorhanden.
 
@@ -153,12 +153,13 @@ Quelle: Regeltext der Seite und ausgelieferter Spielcode (seitenspezifischer Chu
 - **Weniger passend, wenn …** nur ein Tablet vorhanden ist; eine saubere Reaktionszeitmessung gewünscht ist (101, 301); ruhiges Halten oder Präzision im Vordergrund steht (705, 808, 509); Kampfthematik unerwünscht ist.
 - **Vorsicht / anpassen bei …**
   - `gesichtsfeldausfall`: Ziele erscheinen nur an den äußeren Kanten (≈ ±20°); bei Ausfall einer Seite ist die Übung einseitig kaum lösbar.
-  - `photosensitive_epilepsie`, `migraene_lichtempfindlich`: rotes Aufleuchten (480 ms) und Wackeln bei jedem Fehler, bei Klickserien mehrmals pro Sekunde möglich – Effekte abschalten (das Aufleuchten entfällt dann, das kleine Wackeln bleibt).
+  - `photosensitive_epilepsie`, `migraene_lichtempfindlich`: rotes Aufleuchten (0,45 s, gesättigtes Rot) und Wackeln bei jedem Fehler, bei Klickserien mehrmals pro Sekunde möglich, rechnerisch auch über der Grenze von 3 Blitzen pro Sekunde (WCAG 2.2, Kriterium 2.3.1) → Belastung Flimmern 2 (wie 501 und 308, im Unterschied zu 512–515 mit höchstens etwa einem Blitz je Sekunde) – Effekte abschalten (das Aufleuchten entfällt dann, das kleine Wackeln bleibt).
   - `presbyopie_gleitsicht`: Ziele an den Rändern und oben/unten; Zwischenbereichs- oder Bildschirmbrille bevorzugen, im Fenster statt Vollbild spielen verkleinert die Winkel.
-  - `trockenes_auge_bildschirm`: starrer, lidschlagarmer Blick über verlängerte Runden; Pausen einplanen.
+  - `trockenes_auge_bildschirm`, `kopfschmerz_asthenopie`: starrer, lidschlagarmer Blick über verlängerte Runden (Patel et al., 1991; Sheppard & Wolffsohn, 2018); Pausen einplanen.
   - `farbsehschwaeche`: Köder (Orange) vs. Ziel (Grün) nur über den Farbton; ab Level ≈ 7 relevant.
   - `tremor_parkinson`, `hand_arm_beschwerden`: viele schnelle, weite Mausbewegungen unter Zeitdruck.
-- **Kombiniert gut mit …** 101 (einfache Reaktion ohne Zielen), 102 (Go/No-Go), 308 (Peeks erkennen), 501 (Flick), 801 (periphere Reize).
+- **Kombiniert gut mit …** 101 (einfache Reaktion ohne Zielen), 102 (Go/No-Go), 308 (Peeks erkennen), 501 (Flick), 510 (Nicht-Klicken bei Farbregel), 801 (periphere Reize).
+- **Überschneidungen:** In der Gruppe 509–515 keine Dublette; 510 teilt die Köder-/Nicht-Klicken-Komponente, 509 nur die Form (ruhendes Ziel, Klick). Fachlich fast gleich ist 308 (Kapitel Reaktion: Ziele schieben sich an einer von acht Blockkanten heraus, Reaktion plus Flick, auch per Touch) – nicht beide hintereinander vorschlagen; 511 hat nur zwei, dafür weiter außen liegende Kanten (≈ 20° statt ≤ 17°) und zusätzlich Köder.
 Keine Diagnose, kein Seh- oder Reaktionstest im medizinischen Sinn; die Ergebnisse sagen nichts über Sehvermögen oder Gesichtsfeld aus.
 
 ## 10. Schwächen des Originals und Empfehlungen für eine Blickfit-Umsetzung
@@ -192,5 +193,7 @@ Keine Diagnose, kein Seh- oder Reaktionstest im medizinischen Sinn; die Ergebnis
 - Nobre, A. C., & van Ede, F. (2018). Anticipated moments: Temporal structure in attention. *Nature Reviews Neuroscience, 19*(1), 34–48. https://doi.org/10.1038/nrn.2017.141 – zeitliche Erwartung lenkt Wahrnehmung und Handlung.
 - Rogers, E. J., Trotter, M. G., Johnson, D., Desbrow, B., & King, N. (2024). KovaaK's aim trainer as a reliable metrics platform for assessing shooting proficiency in esports players: A pilot study. *Frontiers in Sports and Active Living, 6*, 1309991. https://doi.org/10.3389/fspor.2024.1309991 – Zuverlässigkeit u. a. „Wall Peeking“ (ICC 0,947–0,995).
 - Warm, J. S., Parasuraman, R., & Matthews, G. (2008). Vigilance requires hard mental work and is stressful. *Human Factors, 50*(3), 433–441. https://doi.org/10.1518/001872008X312152 – Wachsamkeit ist anstrengend.
+- Sheppard, A. L., & Wolffsohn, J. S. (2018). Digital eye strain: Prevalence, measurement and amelioration. *BMJ Open Ophthalmology, 3*(1), e000146. https://doi.org/10.1136/bmjophth-2018-000146 – digitale Augenbelastung.
+- W3C. (2024). *Web Content Accessibility Guidelines (WCAG) 2.2*, Kriterium 2.3.1 „Three Flashes or Below Threshold“ (Norm, keine DOI). https://www.w3.org/TR/WCAG22/ – höchstens 3 Blitze pro Sekunde.
 - Wessel, J. R. (2018). Prepotent motor activity and inhibitory control demands in different variants of the go/no-go paradigm. *Psychophysiology, 55*(3), e12871. https://doi.org/10.1111/psyp.12871 – No-Go ≤ 20 %, Takt ≤ 1 500 ms.
 - Ergänzend (Belege in der Gruppen-Literaturbasis, alle per Crossref geprüft): Brenner & Smeets (1997), https://doi.org/10.1080/00222899709600017; Casiez et al. (2008), https://doi.org/10.1080/07370020802278163; Dahl et al. (2021), https://doi.org/10.3389/fpsyg.2021.676591; Elliott et al. (2010), https://doi.org/10.1037/a0020958; Fisher et al. (2005), https://doi.org/10.1111/j.1528-1167.2005.31405.x; Guo et al. (2025), https://doi.org/10.3389/fphys.2025.1664572; Jaschinski et al. (2015), https://doi.org/10.1111/cxo.12259; Jaschinski-Kruza (1991), https://doi.org/10.1177/001872089103300106; Listman et al. (2021), https://doi.org/10.3389/fnhum.2021.777779; Liu, Claypool et al. (2021), https://doi.org/10.1145/3411764.3445245; MacKenzie (2018), https://doi.org/10.1002/9781118976005.ch17; Patel et al. (1991), https://doi.org/10.1097/00006324-199111000-00010; Pronk et al. (2020), https://doi.org/10.3758/s13428-019-01321-2; Raethjen et al. (2000), https://doi.org/10.1016/S1388-2457(00)00384-9; Simons et al. (2016), https://doi.org/10.1177/1529100616661983; Smith et al. (1999), https://doi.org/10.1518/001872099779611102; MDN Web Docs (o. J.). *Element: requestPointerLock()* und *Performance: now()*, abgerufen 29.09.2026, https://developer.mozilla.org/en-US/docs/Web/API/Element/requestPointerLock.

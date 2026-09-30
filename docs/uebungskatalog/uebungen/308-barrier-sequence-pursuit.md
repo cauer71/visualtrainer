@@ -23,12 +23,12 @@ messgroessen: ["Original: Punkte, Level, Combo/Max-Combo, Genauigkeit = Treffer/
 # ===== Anforderungsprofil 0–3 (alle Schlüssel angeben) =====
 anforderungsprofil:
   visuell:
-    sehschaerfe_detail: 0
+    sehschaerfe_detail: 1
     kontrast: 0
     farbunterscheidung: 0
     stereosehen: 0
     peripheres_sehen: 2
-    nutzbares_sehfeld: 2
+    nutzbares_sehfeld: 1
     blickfolge: 0
     sakkaden: 2
     fixation: 1
@@ -52,7 +52,7 @@ anforderungsprofil:
     lesen_sprache: 0
     schlussfolgern: 0
   motorisch:
-    einfache_reaktion: 3
+    einfache_reaktion: 2
     auge_hand_koordination: 3
     zielbewegung_tempo: 3
     zielbewegung_praezision: 2

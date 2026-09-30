@@ -34,12 +34,12 @@ anforderungsprofil:
     fixation: 0
     bewegungswahrnehmung: 2
     visuelle_suche: 0
-    visuelle_verarbeitungsgeschwindigkeit: 1
+    visuelle_verarbeitungsgeschwindigkeit: 0
     zeitliche_aufloesung: 0
     naharbeit_dauer: 1
   kognitiv:
     daueraufmerksamkeit: 2
-    selektive_aufmerksamkeit: 1
+    selektive_aufmerksamkeit: 0
     inhibition: 1
     geteilte_aufmerksamkeit: 0
     kognitive_flexibilitaet: 0
@@ -65,7 +65,7 @@ anforderungsprofil:
     ausdauer_belastung: 0
 belastung:
   zeitdruck: 1
-  flimmern_lichtreize: 1
+  flimmern_lichtreize: 0
   bewegungsreize_schwindel: 1
   koerperliche_belastung: 0
   sturzrisiko: 0
@@ -73,15 +73,15 @@ belastung:
 
 # ===== Auswahlhilfe =====
 voraussetzungen: ["30–120 s ohne Unterbrechung auf den Bildschirm schauen können", "ruhige Sitzposition: Monitor 50–70 cm, Tablet auf Ständer ca. 40 cm", "passende Korrektion für den Bildschirmabstand (bei Alterssichtigkeit Zwischen- bzw. Nahkorrektur)", "kein Farbsehen nötig (Zielfarbe frei wählbar)", "keine Hand-Eingabe während der Übung (nur Start per Klick/Tipp)"]
-vorsicht_bei: [photosensitive_epilepsie, migraene_lichtempfindlich, nystagmus, schwindel_vestibulaer, gesichtsfeldausfall, presbyopie_gleitsicht, trockenes_auge_bildschirm, kopfschmerz_asthenopie]
-geeignet_fuer: ["glatte Blickfolge mit plötzlichen Richtungswechseln und kleinen Aufholsakkaden üben (sinnvoll bei Tempo 0,5–1,5×, ca. 2–37°/s)", "nächste Stufe nach vorhersagbaren Bahnen (403, 404, 405), vor der vollständig unregelmäßigen Bahn (415)", "rein visuelles Aufwärmen der Augenfolge vor Aim- oder Tracking-Übungen", "Personen, die für eine Übung keine Hand einsetzen können oder wollen"]
+vorsicht_bei: [nystagmus, schwindel_vestibulaer, reisekrankheit, gesichtsfeldausfall, presbyopie_gleitsicht, trockenes_auge_bildschirm, kopfschmerz_asthenopie, kinder_unter_6]
+geeignet_fuer: ["glatte Blickfolge mit plötzlichen Richtungswechseln und kleinen Aufholsakkaden üben (sinnvoll bei Tempo 0,5–1,5×, ca. 2–37°/s)", "nächste Stufe nach vorhersagbaren Bahnen (403, 404, 405, 413) und nach der nur sanft driftenden Bahn 415; danach 411 (zufällig getaktete Umkehrungen bei steigendem Tempo)", "rein visuelles Aufwärmen der Augenfolge vor Aim- oder Tracking-Übungen", "Personen, die für eine Übung keine Hand einsetzen können oder wollen"]
 weniger_geeignet_fuer: ["wer Rückmeldung, Punkte oder einen Fortschrittswert erwartet (das Original misst nichts)", "Übungsziel Auge-Hand-Koordination oder manuelles Nachführen (dafür 104, 105, 505, 513)", "Gleitsichtträger:innen im Vollbild bei streng ruhigem Kopf (seitliche Unschärfezonen)", "Einsteiger:innen und ältere Menschen bei Tempo ab 2× (33–66°/s, Haken alle 250 ms) oder höher", "Kinder, die ohne Punkte und Rückmeldung schnell die Motivation verlieren"]
 evidenz:
   uebungseffekt: schwach
   naher_transfer: schwach
   alltag_transfer: fehlend
   kommentar: "Die Übung selbst wurde nie untersucht; eine kleine Laborstudie (Eibenberger et al. 2012, je N = 10) fand nach 2 × 6 min Folgen eines quasi-zufällig bewegten Ziels an 3 Tagen eine noch nach 5 Tagen messbare Verbesserung der Folgebewegung in einem anderen Testparadigma; ein Nutzen für Sport, E-Sport oder Alltag ist nicht belegt."
-aehnliche_uebungen: [415, 411, 414, 405, 404, 403, 105, 513, 512, 303]
+aehnliche_uebungen: [415, 411, 414, 412, 405, 413, 404, 403, 105, 513, 512, 303]
 stichworte: ["smooth pursuit", "Aufholsakkaden", "catch-up saccades", "Richtungswechsel", "reaktive Blickfolge", "unvorhersagbare Bewegung", "Step-Ramp", "Blickverfolgung", "rein visuell", "ohne Eingabe"]
 ---
 
@@ -170,16 +170,17 @@ Grundlage: Seitentext und Spielcode (seitenspezifischer Chunk `9826-…js` plus 
 
 ## 9. Auswahlhinweise für die KI
 
-- **Passt, wenn …** Blickfolge mit plötzlichen Richtungswechseln und Wiederfinden per kleiner Sakkade geübt werden soll, ohne Hand-Eingabe; als Steigerung nach 403/404/405 und vor 415; als Aufwärmen vor Aim-/Tracking-Übungen. Einstellung: Tempo 0,5–1,0× zum Einstieg, bis 1,5× für Geübte; „Random Speed“ aus; Richtungslinie erst an, später aus; 3–5 × 60 s mit Pausen und bewusstem Blinzeln.
+- **Passt, wenn …** Blickfolge mit plötzlichen Richtungswechseln und Wiederfinden per kleiner Sakkade geübt werden soll, ohne Hand-Eingabe; als Steigerung nach 403/404/405/413 und nach 415, vor 411; als Aufwärmen vor Aim-/Tracking-Übungen. Einstellung: Tempo 0,5–1,0× zum Einstieg, bis 1,5× für Geübte; „Random Speed“ aus; Richtungslinie erst an, später aus; 3–5 × 60 s mit Pausen und bewusstem Blinzeln.
 - **Weniger passend, wenn …** Rückmeldung/Fortschritt gewünscht ist, das Ziel Auge-Hand-Koordination ist (104, 105, 505, 513) oder hohe Tempi gewählt würden (ab 2× für Einsteiger:innen und Ältere, ab 3× für alle).
 - **Vorsicht / anpassen bei …**
-  - `photosensitive_epilepsie`, `migraene_lichtempfindlich`: Bei Standardtempo kein Flackern. Ab ≈ 3× springt das helle Ziel pro Bild an einen neuen Ort und wirkt wie wanderndes Aufblitzen. Die Leuchtfläche liegt bei Standardgröße mit ≈ 1–5·10⁻⁴ sr (ohne/mit Leuchtschein) weit unter der Flächenschwelle von 0,006 sr (WCAG 2.3.1; Harding et al., 2005), bei Size 50 px am Tablet in 30 cm mit ≈ 2–4·10⁻³ sr darunter, aber in derselben Größenordnung (eigene Abschätzung; ob ein wandernder Punkt nach WCAG als „Blitz“ zählt, ist nicht eindeutig geregelt). Tempo ≤ 1,5×, „Neon Glow“/„Gaze Trail“ aus, Day Mode meiden.
+  - **Photosensitivität geprüft (kein Vorsichtsschlüssel):** kein Blinken, keine flächigen Helligkeitswechsel – das Ziel bewegt sich stetig (wie 412, 413 und 402–406) → `flimmern_lichtreize` 0. Die Leuchtfläche liegt bei Standardgröße mit ≈ 1–5·10⁻⁴ sr (ohne/mit Leuchtschein) weit unter der Flächenschwelle von 0,006 sr (WCAG 2.3.1; Harding et al., 2005), bei Size 50 px am Tablet in 30 cm mit ≈ 2–4·10⁻³ sr ebenfalls darunter (eigene Abschätzung). Ab ≈ 3× springt das helle Ziel allerdings pro Bild um mehr als seinen Durchmesser; das ist kein Blitz im Sinn von WCAG, kann aber unruhig wirken – bei Licht- oder Reizempfindlichkeit Tempo ≤ 1,5×, „Neon Glow“/„Gaze Trail“ aus, Day Mode meiden.
   - `nystagmus`: Folge und Blickhalten können eingeschränkt sein, Frustgefahr.
-  - `schwindel_vestibulaer`: unvorhersagbare Richtungswechsel im Vollbild; kleines Ziel auf ruhigem Grund, daher eher gering, bei hohem Tempo mehr.
+  - `schwindel_vestibulaer`, `reisekrankheit`: unvorhersagbare Richtungswechsel im Vollbild (wie 411, 415); kleines Ziel auf ruhigem Grund, daher eher gering, bei hohem Tempo mehr.
   - `gesichtsfeldausfall`: Ziel kann im ausgefallenen Bereich verloren gehen.
   - `presbyopie_gleitsicht`: seitliche Unschärfe im Vollbild → kleineres Feld, Bildschirmbrille, Kopfbewegung erlauben.
   - `trockenes_auge_bildschirm`, `kopfschmerz_asthenopie`: wenig Lidschlag bei 60 s Dauerfolgen; kurze Blöcke, Pausen.
-- **Kombiniert gut mit …** 404 → 405 → 410 → 415 (steigende Unvorhersagbarkeit), 414 (Positionssprünge), 411 (Tempo- und Richtungswechsel), 303 (Blicksprünge auf ruhende Ziele), 105/513 (gleiche Idee mit Hand).
+  - `kinder_unter_6`: abstrakte Aufgabe ohne Rückmeldung über 60 s – nicht empfohlen.
+- **Kombiniert gut mit …** 412/404 (gleichförmige Grundform) → 415 (sanftes Zufallsdriften, harte Wechsel fast nur am Rand) → **410** (harte Haken im festen 0,5-s-Takt) → 411 (zufällig getaktete Umkehrungen, Tempo steigt in der Runde auf ≈ 40°/s): steigende Unvorhersagbarkeit. **Unterschied zu 411:** 410 wechselt häufiger (2/s), aber im festen Takt und bei gleichbleibendem Tempo; 411 wechselt seltener (≈ 0,9/s), zu zufälligen Zeitpunkten und bei steigendem Tempo. Daneben 414 (Positionssprünge statt Haken), 413/405 (vorhersagbare Wendepunkte als Gegenstück), 303 (Blicksprünge auf ruhende Ziele), 105/513 (gleiche Idee mit Hand).
 
 Keine Diagnose, keine Heilversprechen: Trainingsaufgabe für gesunde Nutzer:innen, kein Test der Augenbeweglichkeit.
 

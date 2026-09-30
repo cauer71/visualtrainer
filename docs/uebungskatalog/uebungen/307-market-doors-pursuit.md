@@ -28,12 +28,12 @@ anforderungsprofil:
     farbunterscheidung: 0
     stereosehen: 0
     peripheres_sehen: 2
-    nutzbares_sehfeld: 2
+    nutzbares_sehfeld: 1
     blickfolge: 0
     sakkaden: 2
-    fixation: 0
+    fixation: 1
     bewegungswahrnehmung: 0
-    visuelle_suche: 1
+    visuelle_suche: 0
     visuelle_verarbeitungsgeschwindigkeit: 1
     zeitliche_aufloesung: 0
     naharbeit_dauer: 1
@@ -41,7 +41,7 @@ anforderungsprofil:
     daueraufmerksamkeit: 1
     selektive_aufmerksamkeit: 1
     inhibition: 1
-    geteilte_aufmerksamkeit: 0
+    geteilte_aufmerksamkeit: 1
     kognitive_flexibilitaet: 0
     arbeitsgedaechtnis: 0
     kurzzeitgedaechtnis_verbal: 0

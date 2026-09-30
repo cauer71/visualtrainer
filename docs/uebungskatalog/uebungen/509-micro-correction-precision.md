@@ -33,7 +33,7 @@ anforderungsprofil:
     sakkaden: 2
     fixation: 2
     bewegungswahrnehmung: 0
-    visuelle_suche: 1
+    visuelle_suche: 0
     visuelle_verarbeitungsgeschwindigkeit: 1
     zeitliche_aufloesung: 0
     naharbeit_dauer: 1
@@ -65,7 +65,7 @@ anforderungsprofil:
     ausdauer_belastung: 0
 belastung:
   zeitdruck: 2
-  flimmern_lichtreize: 1
+  flimmern_lichtreize: 2
   bewegungsreize_schwindel: 1
   koerperliche_belastung: 0
   sturzrisiko: 0
@@ -73,14 +73,14 @@ belastung:
 
 # ===== Auswahlhilfe =====
 voraussetzungen: ["Maus (oder Touchpad) mit relativer Bewegung und Pointer Lock; kein Tablet", "scharfes Sehen im Bildschirmabstand (Zwischenbereich ≈ 50–75 cm)", "Englische Bedienoberfläche im Spiel, deutscher Regeltext auf der Seite"]
-vorsicht_bei: [photosensitive_epilepsie, tremor_parkinson, hand_arm_beschwerden, presbyopie_gleitsicht, sehbehinderung_niedriger_visus, trockenes_auge_bildschirm, kopfschmerz_asthenopie]
+vorsicht_bei: [photosensitive_epilepsie, migraene_lichtempfindlich, tremor_parkinson, hand_arm_beschwerden, presbyopie_gleitsicht, sehbehinderung_niedriger_visus, trockenes_auge_bildschirm, kopfschmerz_asthenopie]
 geeignet_fuer: ["kurze, genaue Zielbewegungen mit der Maus nach einem Stopp üben (Abbremsen, Nachsetzen, mittig klicken)", "Auge-Hand-Abstimmung bei kleinen, ruhenden Zielen unter mäßigem Zeitdruck", "Spielerinnen und Spieler, die in der geübten Aufgabe Genauigkeit vor Tempo verbessern wollen"]
 weniger_geeignet_fuer: ["Tablet- oder Touch-Nutzung (Original nicht bedienbar)", "Menschen mit Zittern, Hand- oder Handgelenkbeschwerden", "Blickfolge- oder Bewegungswahrnehmungsziele (Ziele stehen still)", "Wunsch nach verlässlichen Norm- oder Leistungsvergleichen"]
 evidenz:
   uebungseffekt: mittel
-  naher_transfer: unklar
+  naher_transfer: schwach
   alltag_transfer: fehlend
-  kommentar: "Motorisches Lernen in Zielaufgaben und Übungszuwächse in Aim-Trainern sind belegt (Elliott et al., 2010; Listman et al., 2021), für diesen Drill gibt es keine Studie; Transfer von Aim-Trainern auf Spiel oder Alltag ist nicht kontrolliert untersucht."
+  kommentar: "Motorisches Lernen in Zielaufgaben und Übungszuwächse in Aim-Trainern sind belegt (Elliott et al., 2010; Listman et al., 2021), für diesen Drill gibt es keine Studie; für nahen Transfer gibt es nur indirekte Hinweise (gerätegleiche, ähnliche Testaufgaben: Guo et al., 2025), Transfer von Aim-Trainern auf Spiel oder Alltag ist nicht kontrolliert untersucht."
 aehnliche_uebungen: [501, 508, 704, 702, 705, 808, 805, 502, 303]
 stichworte: ["Mikrokorrektur", "Zielbewegung", "Fitts'sches Gesetz", "Korrekturbewegung", "Aim Trainer", "Präzision", "Auge-Hand-Koordination", "Maus"]
 ---
@@ -100,7 +100,7 @@ Grundlage: Seitentext und ausgelieferter Spielcode (seitenspezifischer Chunk `49
 - **Mikroziel (Code):** erscheint im selben Moment des Ankertreffers in gleichverteilt zufälliger Richtung, Abstand 55–90 px (≈ 1,4–2,4°) auf Level 1, ≈ 78–132 px (≈ 2–3,5°) auf Level 15, mindestens 60 px vom Rand. Radius 10 px (Ø 20 px ≈ 0,5°) → ≈ 6,6 px (Level 15) → min. 5 px (Ø ≈ 0,26°); Trefferzuschlag +6 px → +2 px. Anker und Mikroziel sind nie gleichzeitig sichtbar.
 - **Punkte (Code):** Mikrotreffer = (100 + 50 × Präzision) × Combo-Faktor (1–3 ab Combo 3/5/7/10/15/20/30/50) × (1 + 0,5 × (Level − 1)/14). Präzision = 1 − Abstand/(Radius + Zuschlag), also 100 % in der Mitte und 0 % am Rand der erweiterten Trefferfläche. Die Angabe „bis +585 Pkt“ ist keine Obergrenze: Ab Level ≈ 9,4 bei Combo ≥ 50 sind mehr möglich (Level 15: 675). Mikrotreffer geben ebenfalls **+1 s**.
 - **Schwierigkeit (Code):** Level = Punkte/1 400 + 1; Radien, Lebensdauer (1 800 ms → ≈ 810 ms auf Level 15) und Abstände folgen der gemeinsamen Exponentialkurve der Vorlage. Eine hohe Combo verkleinert zusätzlich Radien (bis −15 % bzw. −20 %) und Lebensdauer (bis −25 %; Level 15 + Combo ≥ 50 ≈ 600 ms). Nach einem Fehler wird es daher schlagartig leichter. Die Untergrenze von 380 ms greift nur zusammen mit dem Combo-Abzug und erst weit jenseits von Level 25 (die Kurve allein nähert sich 500 ms).
-- **Fehler (Code):** Fehlklick oder Ablauf der Lebensdauer → Combo auf 0, **−1 s**, Fehlerton, kurzes Bildschirmwackeln (±3 px, klingt in ≈ 15 Bildern ab) und – sofern die Bildeffekte aktiv sind – ein roter, radial auslaufender Schimmer über das Spielfeld (gemeinsame Effektklasse `fx-flash-red`, 480 ms; bei schnellen Fehlklicks mehrmals pro Sekunde möglich). Nach einem **Fehlklick bleibt das aktuelle Ziel stehen** (seine Lebensdauer läuft weiter); erst ein **Timeout** (Anker oder Mikroziel) startet einen neuen Zyklus mit neuem Ankerziel. Timeouts lassen sich in den Einstellungen abschalten; die Zeitstrafe wird in diesem Drill unabhängig von der Einstellung immer angewendet.
+- **Fehler (Code):** Fehlklick oder Ablauf der Lebensdauer → Combo auf 0, **−1 s**, Fehlerton, kurzes Bildschirmwackeln (6 px, d. h. Versatz bis ±3 px, klingt in ≈ 15 Bildern ab) und – sofern die Bildeffekte aktiv sind (Standard: an) – ein roter, radial auslaufender Schimmer über das Spielfeld (gemeinsame Effektklasse `fx-flash-red`: Mitte 50 % Deckkraft, Ausblenden in 0,45 s; ohne Sperrzeit, bei schnellen Fehlklicks also mehrmals pro Sekunde möglich). Nach einem **Fehlklick bleibt das aktuelle Ziel stehen** (seine Lebensdauer läuft weiter); erst ein **Timeout** (Anker oder Mikroziel) startet einen neuen Zyklus mit neuem Ankerziel. Timeouts lassen sich in den Einstellungen abschalten; die Zeitstrafe wird in diesem Drill unabhängig von der Einstellung immer angewendet.
 - **Zeitmessung (Code):** Lebensdauer und Uhr laufen mit der echten Bildzeit (dt; für die Spieluhr auf 100 ms pro Bild gekappt, für die Ziel-Lebensdauer nicht), nicht pro Bild – auf 60- und 144-Hz-Monitoren gleich. Korrekturzeit = `performance.now()` beim Ankerklick bis zum erfolgreichen Mikroklick; nur Treffer gehen ein. Ergebnis: Durchschnitt, Präzisionsstufe (> 85 % „Pixel-Perfect Master“, > 70 % „High Precision“), „Consistency“ = 100 − 8 × Fehlklicks. Bestwerte bleiben im Browser.
 - **Widersprüche Regeltext ↔ Code:** Ankertreffer „+0,2 s“ → real +1 s; Mikrotreffer bringen ebenfalls +1 s (nicht erwähnt); Strafe „−0,6 s“ → real −1 s; „bis +585 Pkt“ → keine Obergrenze. Da jeder gelungene Zyklus +2 s bringt, verlängert sich die Sitzung bei guter Leistung (Uhr maximal 60 s, Spiel endet erst bei 0) – Punkte verschiedener Sitzungen sind daher schlecht vergleichbar.
 
@@ -117,7 +117,7 @@ Die Seite verspricht „Endphasen-Bremskontrolle“ und „tödliche Headshot-Pr
 
 ## 4. Optische und okulomotorische Grundlagen
 - **Sehwinkel:** Mikroziel Ø 20 px (≈ 0,5°, 32′) auf Level 1 bis Ø ≈ 10 px (≈ 0,26°, 16′), Trefferfläche Ø 32 → ≈ 14 px; 1 px ≈ 1,6′ (eigene Rechnung). Das Ziel selbst liegt weit über der Sehschärfegrenze (≈ 1′ bei Visus 1,0); anspruchsvoll ist das Zentrieren des Fadenkreuzpunkts (Ø ≈ 6′) auf wenige Pixel genau → `sehschaerfe_detail` 1. Hoher Kontrast (helle Ziele auf #050508), keine Farbunterscheidung nötig.
-- **Blickmotorik:** Pro Zyklus eine Sakkade zum neuen Ankerziel (irgendwo im Bild, also teils peripher) und eine kleine Sakkade von 1,5–3,5° zum Mikroziel; dann ruhige Fixation bis zum Klick. Bei Aufgaben mit hoher Detailanforderung verlagern Mikrosakkaden den Blick gezielt auf die relevante Stelle (Ko et al., 2010). In FPS-ähnlichen Klickaufgaben ging eine längere letzte Fixation vor dem Klick („Quiet Eye“) mit besserer Leistung einher (Dahl et al., 2021; korrelativ). Keine Blickfolge (Ziele ruhen), kein Stereosehen.
+- **Blickmotorik:** Pro Zyklus eine Sakkade zum neuen Ankerziel (irgendwo im Bild, also teils peripher; als einziges helles Objekt ohne Ablenker, also keine Suche → `visuelle_suche` 0) und eine kleine Sakkade von 1,5–3,5° zum Mikroziel; dann ruhige Fixation bis zum Klick. Bei Aufgaben mit hoher Detailanforderung verlagern Mikrosakkaden den Blick gezielt auf die relevante Stelle (Ko et al., 2010). In FPS-ähnlichen Klickaufgaben ging eine längere letzte Fixation vor dem Klick („Quiet Eye“) mit besserer Leistung einher (Dahl et al., 2021; korrelativ). Keine Blickfolge (Ziele ruhen), kein Stereosehen.
 - **Brille:** Der Monitor liegt im Zwischenbereich (≈ 50–75 cm). Universal-Gleitsichtgläser haben dort eine schmale Zone unterhalb der Blickmitte; Ziele am oberen Rand oder seitlich (Anker bis 120 px, Mikroziel bis 60 px vom Rand) erfordern Kopfneigung oder liegen in der seitlichen Unschärfe – das stört gerade das pixelgenaue Zentrieren. Bildschirm-Gleitsichtgläser senkten die Kopfneigung am Monitor im Mittel um 2,3° und wurden für die Monitorsicht besser bewertet; die Vorliebe war aber individuell verschieden (Jaschinski et al., 2015; N = 23). Eine passende Korrektur für den Zwischenbereich kann das Sehen am Monitor erleichtern, ändert aber nichts an der Handpräzision.
 - **Trockenes Auge:** Konzentriertes Fixieren am Bildschirm senkt die Lidschlagrate deutlich (Patel et al., 1991); digitale Augenbelastung ist häufig (Sheppard & Wolffsohn, 2018) → Pausen zwischen Runden.
 
@@ -141,7 +141,7 @@ Die Aufgabe verbindet Zielentdeckung, Blicksprung, visuomotorische Umrechnung un
 
 ## 8. Studienlage: Trainierbarkeit und Übertragung
 - **Übungseffekt – mittel:** Motorisches Lernen in Zielaufgaben ist gut belegt (Elliott et al., 2010). In Aim-Lab-Daten (N = 7 174) stiegen die Treffer pro Sekunde über Tage deutlich, die Trefferquote nur mäßig (Listman et al., 2021; Beobachtungsdaten, Herstellerfinanzierung). Für diesen Drill gibt es keine Studie.
-- **Naher Transfer – unklar:** Keine kontrollierte Studie prüft, ob Aim-Trainer andere Zielaufgaben oder die Spielleistung verbessern. Bei digitalem Sehtraining entstehen große Effekte vor allem, wenn Übungs- und Testaufgabe am selben Gerät ähnlich sind (Guo et al., 2025).
+- **Naher Transfer – schwach:** Es gibt nur indirekte Hinweise. Keine kontrollierte Studie prüft, ob Aim-Trainer andere Zielaufgaben oder die Spielleistung verbessern. Bei digitalem Sehtraining entstehen große Effekte vor allem, wenn Übungs- und Testaufgabe am selben Gerät ähnlich sind (Guo et al., 2025) – das spricht für aufgabennahe, gerätegebundene Zugewinne. Actionspiele (nicht Aim-Trainer) zeigen kleine kausale Effekte auf kognitive Tests (g = 0,30; Bediou et al., 2023). Gleiche Einstufung wie bei den übrigen Übungen der Gruppe 509–515.
 - **Alltagstransfer – fehlend:** Kein Beleg für Nutzen im Alltag, Sport oder Beruf; „Brain-Training“ zeigt allgemein viel Evidenz für die geübte Aufgabe und wenig für entfernte Aufgaben (Simons et al., 2016).
 
 ## 9. Auswahlhinweise für die KI
@@ -152,8 +152,9 @@ Die Aufgabe verbindet Zielentdeckung, Blicksprung, visuomotorische Umrechnung un
   - `presbyopie_gleitsicht`: pixelgenaues Zentrieren im Zwischenbereich, Ziele bis nahe an den Bildrand → Bildschirmbrille bzw. passende Zwischenkorrektur; Monitor tiefer stellen.
   - `sehbehinderung_niedriger_visus`: Mikroziel bis 0,26°, Fadenkreuzpunkt ≈ 6′ → Größe anpassen.
   - `trockenes_auge_bildschirm`, `kopfschmerz_asthenopie`: intensives Fixieren, wenig Lidschlag → Pausen.
-  - `photosensitive_epilepsie`: bei jedem Fehler ein roter, spielfeldweiter Schimmer (480 ms, bei schnellen Fehlklicks mehrfach pro Sekunde), dazu kurzes Bildschirmwackeln (±3 px) → Bildeffekte abschalten bzw. vorsichtig auswählen. Kein periodisches Flimmern; Treffer-Partikel sind klein.
+  - `photosensitive_epilepsie`, `migraene_lichtempfindlich`: bei jedem Fehler ein roter, spielfeldweiter Schimmer (0,45 s, gesättigtes Rot), bei schnellen Fehlklicks mehrfach pro Sekunde – rechnerisch auch über der Grenze von 3 Blitzen pro Sekunde (WCAG 2.2, Kriterium 2.3.1; Rot als zusätzlicher Risikofaktor: Fisher et al., 2005) –, dazu kurzes Bildschirmwackeln (6 px) → Belastung Flimmern 2 (wie 501 und 308, im Unterschied zu 512–515 mit höchstens etwa einem Blitz je Sekunde); Bildeffekte abschalten bzw. vorsichtig auswählen. Kein periodisches Flimmern; Treffer-Partikel sind klein.
 - **Kombiniert gut mit …** 501 und 704 (große Flicks), 508 (erster Treffer), 705 und 808 (ruhige Hand), 303 (Blicksprünge ohne Maus).
+- **Überschneidungen:** In der Gruppe 509–515 keine Dublette. 511 teilt nur die Form (ruhendes Ziel, Klick, Lebensdauer), fordert aber vor allem Reaktion und weite Flicks statt Feinpräzision. Am nächsten liegt 704 (schrumpfende ruhende Ziele, Zentrumstreffer); 509 unterscheidet sich durch den festen Zwei-Schritt-Zyklus (Anker → kleines Nachziel in zufälliger Richtung).
 
 ## 10. Schwächen des Originals und Empfehlungen für eine Blickfit-Umsetzung
 - **Tablet:** Original nicht bedienbar (Pointer Lock, nur Maus). Eine Touch-Fassung würde zur Tipp-Aufgabe: kein Fadenkreuz, der Finger verdeckt das Ziel, und Fingerberührungen haben eine eigene, tempounabhängige Ungenauigkeit (Bi et al., 2013) sowie haltungsabhängige Versätze (Holz & Baudisch, 2010). Mikroziele von 10–20 CSS-px (≈ 2–4 mm auf einem 11″-Tablet, eigene Rechnung) wären zu klein → Ziele in Millimetern bzw. Grad festlegen und deutlich vergrößern, Trefferzone ehrlich (= sichtbares Ziel) oder Zuschlag offen anzeigen.
@@ -171,6 +172,7 @@ Die Aufgabe verbindet Zielentdeckung, Blicksprung, visuomotorische Umrechnung un
 - Woodworth, R. S. (1899). Accuracy of voluntary movement. *The Psychological Review: Monograph Supplements, 3*(3), i–114. https://doi.org/10.1037/h0092992 – **Prüfung:** DOI stimmt ✓ (Website-Titel mit „The“ leicht abweichend); **stützt:** ja – Zwei-Komponenten-Modell (Inhalt über Elliott et al., 2010).
 
 ### Weitere Fachliteratur
+- Bediou, B., Rodgers, M. A., Tipton, E., Mayer, R. E., Green, C. S., & Bavelier, D. (2023). Effects of action video game play on cognitive skills: A meta-analysis. *Technology, Mind, and Behavior, 4*(1), 28–48. https://doi.org/10.1037/tmb0000102 – kleine kausale Effekte von Actionspielen (g = 0,30).
 - Bi, X., Li, Y., & Zhai, S. (2013). FFitts law: Modeling finger touch with Fitts’ law. In *Proceedings of CHI ’13* (S. 1363–1372). ACM. https://doi.org/10.1145/2470654.2466180 – eigene Ungenauigkeit von Fingereingaben (Tablet).
 - Brenner, E., & Smeets, J. B. J. (1997). Fast responses of the human hand to changes in target position. *Journal of Motor Behavior, 29*(4), 297–310. https://doi.org/10.1080/00222899709600017 – Handkorrektur nach ≈ 110 ms.
 - Casiez, G., Vogel, D., Balakrishnan, R., & Cockburn, A. (2008). The impact of control-display gain on user performance in pointing tasks. *Human–Computer Interaction, 23*(3), 215–250. https://doi.org/10.1080/07370020802278163 – Maus-Übersetzung; Beschleunigung am Desktop 3,3 % schneller, vermutlich mehr Überschießen (Abstract geprüft).
@@ -178,6 +180,7 @@ Die Aufgabe verbindet Zielentdeckung, Blicksprung, visuomotorische Umrechnung un
 - Desmurget, M., Epstein, C. M., Turner, R. S., Prablanc, C., Alexander, G. E., & Grafton, S. T. (1999). Role of the posterior parietal cortex in updating reaching movements to a visual target. *Nature Neuroscience, 2*(6), 563–567. https://doi.org/10.1038/9219 – Parietalkortex und Online-Korrektur (PubMed-Abstract geprüft).
 - Donovan, I., Saul, M. A., DeSimone, K., Listman, J. B., Mackey, W. E., & Heeger, D. J. (2022). Assessment of human expertise and movement kinematics in first-person shooter games. *Frontiers in Human Neuroscience, 16*, 979293. https://doi.org/10.3389/fnhum.2022.979293 – Fitts bei Aim-Lab-Profis (Herstellerbeteiligung).
 - Elliott, D., Hansen, S., Grierson, L. E. M., Lyons, J., Bennett, S. J., & Hayes, S. J. (2010). Goal-directed aiming: Two components but multiple processes. *Psychological Bulletin, 136*(6), 1023–1044. https://doi.org/10.1037/a0020958 – heutiger Stand des Zwei-Komponenten-Modells, Übung.
+- Fisher, R. S., Harding, G., Erba, G., Barkley, G. L., & Wilkins, A. (2005). Photic- and pattern-induced seizures: A review for the Epilepsy Foundation of America Working Group. *Epilepsia, 46*(9), 1426–1441. https://doi.org/10.1111/j.1528-1167.2005.31405.x – Lichtreize, Rot als Risikofaktor.
 - Forman, G. N., Nikitin, S. A., Lang, C. J., Gabriel, D. A., Sonne, M. W., Kociolek, A. M., & Holmes, M. W. R. (2025). Impact of repetitive mouse aiming on muscle fatigue and fine motor performance of the distal upper limb. *Journal of Electromyography and Kinesiology, 82*, 102992. https://doi.org/10.1016/j.jelekin.2025.102992 – Ermüdung.
 - Gribble, P. L., Mullin, L. I., Cothros, N., & Mattar, A. (2003). Role of cocontraction in arm movement accuracy. *Journal of Neurophysiology, 89*(5), 2396–2405. https://doi.org/10.1152/jn.01020.2002 – Co-Kontraktion und Genauigkeit.
 - Guo, Y., Yuan, T., Yang, M., & Qiu, J. (2025). Does the “learning effect” caused by digital devices exaggerate sports visual training outcomes? A systematic review and meta-analysis. *Frontiers in Physiology, 16*, 1664572. https://doi.org/10.3389/fphys.2025.1664572 – gerätegebundene Lerneffekte.
@@ -196,4 +199,5 @@ Die Aufgabe verbindet Zielentdeckung, Blicksprung, visuomotorische Umrechnung un
 - Simons, D. J., Boot, W. R., Charness, N., Gathercole, S. E., Chabris, C. F., Hambrick, D. Z., & Stine-Morrow, E. A. L. (2016). Do “brain-training” programs work? *Psychological Science in the Public Interest, 17*(3), 103–186. https://doi.org/10.1177/1529100616661983 – Transfer allgemein.
 - Smith, M. W., Sharit, J., & Czaja, S. J. (1999). Aging, motor control, and the performance of computer mouse tasks. *Human Factors, 41*(3), 389–396. https://doi.org/10.1518/001872099779611102 – Alter und Maus.
 - Soukoreff, R. W., & MacKenzie, I. S. (2004). Towards a standard for pointing device evaluation, perspectives on 27 years of Fitts’ law research in HCI. *International Journal of Human-Computer Studies, 61*(6), 751–789. https://doi.org/10.1016/j.ijhcs.2004.09.001 – Maus-Durchsatz.
+- W3C. (2024). *Web Content Accessibility Guidelines (WCAG) 2.2*, Kriterium 2.3.1 „Three Flashes or Below Threshold“ (Norm, keine DOI). https://www.w3.org/TR/WCAG22/ – höchstens 3 Blitze pro Sekunde.
 - Warburton, M., Campagnoli, C., Mon-Williams, M., Mushtaq, F., & Morehead, J. R. (2023). Kinematic markers of skill in first-person shooter video games. *PNAS Nexus, 2*(8), pgad249. https://doi.org/10.1093/pnasnexus/pgad249 – Kinematik FPS-Zielen vs. Cursorzeigen.

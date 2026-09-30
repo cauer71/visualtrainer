@@ -33,15 +33,15 @@ anforderungsprofil:
     sakkaden: 3
     fixation: 1
     bewegungswahrnehmung: 0
-    visuelle_suche: 1
-    visuelle_verarbeitungsgeschwindigkeit: 2
+    visuelle_suche: 0
+    visuelle_verarbeitungsgeschwindigkeit: 1
     zeitliche_aufloesung: 0
     naharbeit_dauer: 1
   kognitiv:
     daueraufmerksamkeit: 1
     selektive_aufmerksamkeit: 1
     inhibition: 1
-    geteilte_aufmerksamkeit: 0
+    geteilte_aufmerksamkeit: 1
     kognitive_flexibilitaet: 0
     arbeitsgedaechtnis: 0
     kurzzeitgedaechtnis_verbal: 0

@@ -9,7 +9,7 @@ kapitel_original: "reaction-speed"
 unterkapitel_original: ""
 quelle_url: "https://skilldrills.online/de/drills/reaction-speed/reaction-time-test"
 blickfit_umsetzung: null
-stand: 2026-09-29
+stand: 2026-09-30
 
 # ===== Überblick =====
 kurzbeschreibung: "Eine Zielzeit wie '3,482 s' wird kurz angezeigt und verschwindet; dann läuft die Zeit unsichtbar, und man tippt oder klickt in dem Moment, in dem man glaubt, dass genau diese Zeit vergangen ist. Trotz des Namens ist es kein Reaktionstest, sondern eine Übung für das Zeitgefühl (Zeitproduktion im Sekundenbereich)."
@@ -220,7 +220,12 @@ Relevant ist nur das Timing des Auslösens; Schalterweg bzw. Touch-Erkennung geh
   `farbsehschwaeche` (Stufe nur per Farbe, gering); `kognitive_einschraenkung`, `kinder_unter_6` (abstrakte Zahlen);
   `aufmerksamkeitsprobleme` (bis 8 s Warten ohne Geschehen, Kombo-Frust; kurze Serien).
 - **Kombiniert gut mit …** 101 (echte einfache Reaktion), 107 (Timing auf herankommende Kugel), 409/407 (Vorhersage bei
-  Verdeckung), 109 (Takt-Unterschiede).
+  Verdeckung), 109 (Takt-Unterschiede); als ruhiger Kontrast zu einer schnellen Übung aus 302–308.
+- **Überschneidungen:** Mit 101 (Light Reaction) und 503 (Instant Response) teilt 301 nur den Namen „Reaktionstest“ und die
+  ms-Rückmeldung – dort wird auf einen Reiz reagiert, hier gibt es keinen. Mit 102 (Go/No-Go) und 202 (Wahlreaktion) keine
+  Gemeinsamkeit außer dem Klick; 802 (Lineal-Falltest) misst echte Reaktion. Inhaltlich am nächsten sind 107 (Timing auf einen
+  sichtbar herankommenden Reiz) und 409/407 (Vorhersage während einer Verdeckung). Keine Dublette in 302–308: Diese nutzen eine
+  gemeinsame Zeitdruck-Engine mit Zeigeaufgaben, 301 nicht.
 
 ## 10. Schwächen des Originals und Empfehlungen für eine Blickfit-Umsetzung
 

@@ -34,7 +34,7 @@ anforderungsprofil:
     fixation: 0
     bewegungswahrnehmung: 2
     visuelle_suche: 0
-    visuelle_verarbeitungsgeschwindigkeit: 1
+    visuelle_verarbeitungsgeschwindigkeit: 0
     zeitliche_aufloesung: 0
     naharbeit_dauer: 1
   kognitiv:
@@ -65,7 +65,7 @@ anforderungsprofil:
     ausdauer_belastung: 0
 belastung:
   zeitdruck: 1
-  flimmern_lichtreize: 1
+  flimmern_lichtreize: 0
   bewegungsreize_schwindel: 1
   koerperliche_belastung: 0
   sturzrisiko: 0
@@ -73,7 +73,7 @@ belastung:
 
 # ===== Auswahlhilfe =====
 voraussetzungen: ["30–120 s ohne Unterbrechung auf den Bildschirm schauen können", "ruhige Sitzposition: Monitor 50–70 cm, Tablet auf Ständer ca. 40 cm", "passende Korrektion für den Bildschirmabstand (bei Alterssichtigkeit Zwischen- bzw. Nahkorrektur)", "kein Farbsehen nötig (Zielfarbe frei wählbar)", "keine Hand-Eingabe während der Übung (nur Start per Klick/Tipp)"]
-vorsicht_bei: [photosensitive_epilepsie, migraene_lichtempfindlich, nystagmus, schwindel_vestibulaer, reisekrankheit, gesichtsfeldausfall, presbyopie_gleitsicht, trockenes_auge_bildschirm, kopfschmerz_asthenopie]
+vorsicht_bei: [nystagmus, schwindel_vestibulaer, reisekrankheit, gesichtsfeldausfall, presbyopie_gleitsicht, trockenes_auge_bildschirm, kopfschmerz_asthenopie, kinder_unter_6]
 geeignet_fuer: ["glatte Blickfolge über eine ganze Minute bei langsam wechselnder Richtung und Geschwindigkeit üben (sinnvoll bei Tempo 0,5–1,2×, ca. 4–25°/s)", "Wiederfinden des Ziels nach Randabprallern mit kleinen Aufholsakkaden", "Übergang von der vorhersagbaren, sich wiederholenden Kurvenbahn (404, Lissajous-Figur) zu Bahnen mit harten Haken (410) und Sprüngen (414)", "Personen, die für eine Übung keine Hand einsetzen können oder wollen"]
 weniger_geeignet_fuer: ["wer Rückmeldung, Punkte oder einen Fortschrittswert erwartet (das Original misst nichts)", "wer gezielt harte, unvorhersagbare Richtungswechsel üben will (die Bahn schlingert nur sanft; harte Wechsel gibt es fast nur am Rand – dafür 410)", "Übungsziel Auge-Hand-Koordination oder manuelles Nachführen (dafür 105, 505, 513, 514)", "Gleitsichtträger:innen im Vollbild bei streng ruhigem Kopf (seitliche Unschärfezonen)", "Einsteiger:innen und ältere Menschen ab Tempo 1,5× (bis ≈ 45°/s, steigend) oder höher"]
 evidenz:
@@ -101,7 +101,7 @@ Grundlage: Seitentext und Spielcode (seitenspezifischer Chunk `38156-…js` plus
 - **Darstellung (Code):** wie 410 – Hintergrund #050508, schwaches 40-px-Raster (Day Mode: weiß), Ziel mit Radius „Size“ (Standard 16 px) aus Scheibe, Ring und Leuchtschein („Neon Glow“ standardmäßig an), Standardfarbe Rot #ef4444. Eine blasse Linie zeigt standardmäßig die **aktuelle** Bewegungsrichtung (≈ 80 ms ÷ Tempo voraus); „Hide Line“ blendet sie aus. „Gaze Trail“ = Spur der letzten 15 Bilder. Maus/Finger zeichnen nur ein Fadenkreuz.
 - **Bewegung (Code):** Start in Bildmitte mit je Achse 4–7 px pro 16 ms (Richtung immer schräg). In jedem Bild wird zu jeder Geschwindigkeitskomponente ein gleichverteilter Zufallswert addiert („Zufallsweg der Geschwindigkeit“), Obergrenze je Achse 12 px/16 ms × Tempo. Randabprall kehrt die Komponente um (× 1,05). Tempo steckt sowohl im Zufallsschritt und in der Obergrenze als auch im Zeitschritt → Geschwindigkeit wächst mit Tempo², Obergrenze 750 px/s × Tempo² je Achse (1×: ≈ 20°/s je Achse, ≈ 28°/s schräg).
 - **„Random Speed“ (Code):** kein Zufall, sondern eine feste Mehrfach-Sinusfunktion der Uhrzeit, die das Tempo auf das 0,4- bis 1,9-Fache moduliert (wie 410); die Geschwindigkeit schwankt damit etwa um das 0,15- bis 3,7-Fache.
-- **Bildfrequenz (Code):** Bewegung zeitbasiert (Schritt ≤ 100 ms), aber Bilder < 13 ms nach dem letzten werden verworfen (≤ ≈ 77 Aktualisierungen/s; 60 Hz → 60, 90 Hz → 45, 144 Hz → 72, 240 Hz → 60). Die Stärke des Zufallswegs hängt von der Schrittlänge ab: bei 144 Hz ≈ 0,83-fach, bei 90 Hz ≈ 1,33-fach gegenüber 60 Hz. In der Simulation ändert das die Bahnstatistik kaum (Median 1×: 16,6–17,5°/s). Die Literaturbasis der Gruppe (0,42-fach bei 144 Hz) hatte die 13-ms-Sperre nicht berücksichtigt.
+- **Bildfrequenz (Code):** Bewegung zeitbasiert (Schritt ≤ 100 ms), aber Bilder < 13 ms nach dem letzten werden verworfen (≤ ≈ 77 Aktualisierungen/s; 60 Hz → 60, 90 Hz → 45, 144 Hz → 72, 240 Hz → 60). Die Stärke des Zufallswegs hängt von der Schrittlänge ab: bei 144 Hz ≈ 0,83-fach, bei 90 Hz ≈ 1,33-fach gegenüber 60 Hz. In der Simulation ändert das die Bahnstatistik kaum (Median 1×: 16,6–17,5°/s). Ohne die 13-ms-Sperre wäre der Zufallsweg bei 144 Hz nur ≈ 0,42-fach so stark.
 
 | Tempo | Geschwindigkeit, Median (Beginn → Ende der 60-s-Runde) | Randabpraller pro s (Monitor / Tablet) | Richtungsänderung je 250 ms ohne Rand (Median / 90 %) |
 |---|---|---|---|
@@ -136,12 +136,12 @@ Grundlage: Seitentext und Spielcode (seitenspezifischer Chunk `38156-…js` plus
 - **Folgebewegung:** Anlauf ≈ 100 ms (Carl & Gellman, 1987), glatter Gain stets < 0,95 (Collewijn & Tamminga, 1984). Bei 1× (≈ 9–28°/s, sanft gekrümmt) bleibt die Aufgabe überwiegend glatte Folge mit gelegentlichen Aufholsakkaden – daher `blickfolge` 3, `sakkaden` 2. Nach einem Randabprall (Richtungsumkehr einer Achse) läuft das Auge ≈ 90–130 ms weiter (Soechting et al., 2005): bei 18°/s ≈ 1,5–2,5° Fehler, der per Sakkade korrigiert wird.
 - **Folgerung für das Tempo (eigene Ableitung):** Ab 1,5× steigt die Geschwindigkeit innerhalb der Runde auf ≈ 45°/s, ab 2× auf ≈ 80–110°/s mit ≈ 3 (Monitor) bis 4,5 (Tablet) Abprallern/s – nahe bzw. über der Folgegrenze (Meyer et al., 1985). Sinnvoll: **≈ 0,5–1,2×**.
 - **Bewegungsunschärfe:** Verschmierung am Sample-and-hold-Display ≈ Geschwindigkeit ÷ Bildfrequenz: 1×/60 Hz ≈ 15–18′, 2× bis ≈ 90′ (größer als das Ziel; eigene Rechnung).
-- **Blickfeld und Gleitsicht:** Vollbild 24 Zoll in 60 cm ≈ 51° × 29° (Tablet 40 cm ≈ 33° × 23°), das Ziel erreicht die Ränder regelmäßig. Der scharfe Zwischenbereich einer Gleitsichtbrille ist seitlich nur ≈ 13–18° breit statt ≈ 60° bei Einstärkengläsern (Han et al., 2003); neue Träger:innen bewegen mehr den Kopf (Hutchings et al., 2007). Bei ruhigem Kopf gerät das Ziel seitlich in die Unschärfezone, unten in den Nahteil, oben in den Fernteil → Arbeitsplatzbrille, kleineres Feld oder Kopfbewegung erlauben.
+- **Blickfeld und Gleitsicht:** Vollbild 24 Zoll in 60 cm ≈ 48° × 28° (Tablet 40 cm ≈ 33° × 23°), das Ziel erreicht die Ränder regelmäßig. Der scharfe Zwischenbereich einer Gleitsichtbrille ist seitlich nur ≈ 13–18° breit statt ≈ 60° bei Einstärkengläsern (Han et al., 2003); neue Träger:innen bewegen mehr den Kopf (Hutchings et al., 2007). Bei ruhigem Kopf gerät das Ziel seitlich in die Unschärfezone, unten in den Nahteil, oben in den Fernteil → Arbeitsplatzbrille, kleineres Feld oder Kopfbewegung erlauben.
 - **Akkommodation:** 60 cm ≈ 1,7 dpt, 40 cm ≈ 2,5 dpt – bei Alterssichtigkeit passende Zwischen-/Nahkorrektur.
 - **Kontrast/Farbe:** Rot #ef4444 auf #050508 ≈ 5,4 : 1 (eigene WCAG-Rechnung, wie 410). Bei Protan-Schwäche wirkt Rot dunkler (≈ 8 % der Männer mit Rot-Grün-Schwäche; Birch, 2012) → Weiß oder Gelb robuster.
 - **Trockenes Auge:** Bildschirmarbeit senkte die Lidschlagrate im Mittel etwa auf ein Fünftel (Patel et al., 1991).
 - **Alter:** Bei 75- bis 93-Jährigen ist der Folge-Gain bei allen Geschwindigkeiten niedriger als bei Jüngeren (Unterschied wächst mit Tempo und Beschleunigung), die Sakkaden-Reaktionszeit ist verlängert (Moschner & Baloh, 1994).
-- **Photosensitivität:** Kein Blinken; Standard-Leuchtfläche ≈ 2–8·10⁻⁴ sr (mit Schein), weit unter der Flächenschwelle 0,006 sr (Harding et al., 2005; WCAG 2.3.1). Bei Size 50 px am Tablet in 30 cm nähert sich der Schein der Schwelle; ab ≈ 3× springt das helle Ziel pro Bild mehrere Grad und wirkt wie wanderndes Aufblitzen (eigene Abschätzung) → `flimmern_lichtreize` 1.
+- **Photosensitivität:** Kein Blinken; Standard-Leuchtfläche ≈ 2–8·10⁻⁴ sr (mit Schein), weit unter der Flächenschwelle 0,006 sr (Harding et al., 2005; WCAG 2.3.1). Bei Size 50 px am Tablet in 30 cm nähert sich der Schein der Schwelle, bleibt aber darunter; ab ≈ 2–3× springt das helle Ziel pro Bild um mehr als seinen Durchmesser (eigene Abschätzung) – das ist kein Blitz im Sinn von WCAG, kann aber unruhig wirken. Stetig bewegtes Ziel ohne Blinken wie 410–413 → `flimmern_lichtreize` 0.
 
 ## 5. Neurowissenschaftliche Grundlagen
 
@@ -170,9 +170,9 @@ Grundlage: Seitentext und Spielcode (seitenspezifischer Chunk `38156-…js` plus
 ## 9. Auswahlhinweise für die KI
 
 - **Passt, wenn …** längere, gleichmäßig fordernde Blickfolge mit leichten Richtungs- und Tempowechseln geübt werden soll, ohne Hand-Eingabe; als Stufe zwischen 404 (vorhersagbare, sich wiederholende Kurve) und 410 (harte Haken). Einstellung: Tempo 0,5–1,0× zum Einstieg, bis 1,2× für Geübte; „Random Speed“ aus; Richtungslinie erst an, später aus; 3–5 × 60 s (oder 30 s) mit Pausen und bewusstem Blinzeln.
-- **Weniger passend, wenn …** Rückmeldung/Fortschritt gewünscht ist, harte unvorhersagbare Wechsel das Ziel sind (410, 414), Auge-Hand-Koordination gefragt ist (105, 505, 513, 514) oder hohe Tempi gewählt würden (ab 1,5× für Einsteiger:innen und Ältere, ab 2× für alle).
+- **Weniger passend, wenn …** Rückmeldung/Fortschritt gewünscht ist, harte unvorhersagbare Wechsel das Ziel sind (410, 411; Positionssprünge 414), Auge-Hand-Koordination gefragt ist (105, 505, 513, 514) oder hohe Tempi gewählt würden (ab 1,5× für Einsteiger:innen und Ältere, ab 2× für alle).
 - **Vorsicht / anpassen bei …**
-  - `photosensitive_epilepsie`, `migraene_lichtempfindlich`: bei Standard kein Flackern; ab ≈ 3× und großer Zielgröße wanderndes Aufblitzen → Tempo ≤ 1,2×, „Neon Glow“/„Gaze Trail“ aus, Day Mode meiden.
+  - **Photosensitivität geprüft (kein Vorsichtsschlüssel):** kein Blinken, stetig bewegtes Ziel (Abschnitt 4) → `flimmern_lichtreize` 0; bei Licht- oder Reizempfindlichkeit trotzdem Tempo ≤ 1,2×, kleine Zielgröße, „Neon Glow“/„Gaze Trail“ aus, Day Mode meiden.
   - `nystagmus`: Folge und Blickhalten können eingeschränkt sein, Frustgefahr.
   - `schwindel_vestibulaer`, `reisekrankheit`: ständig wechselnde Bewegung im Vollbild; kleines Ziel auf ruhigem Grund, daher eher gering, bei hohem Tempo mehr.
   - `gesichtsfeldausfall`: Ziel kann im ausgefallenen Bereich verloren gehen, v. a. nach Randabprallern.

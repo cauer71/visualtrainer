@@ -30,7 +30,7 @@ anforderungsprofil:
     peripheres_sehen: 0
     nutzbares_sehfeld: 0
     blickfolge: 3
-    sakkaden: 2
+    sakkaden: 1
     fixation: 1
     bewegungswahrnehmung: 2
     visuelle_suche: 0
@@ -74,14 +74,14 @@ belastung:
 # ===== Auswahlhilfe =====
 voraussetzungen: ["'Gaze Trail' einschalten – sonst bleibt nur einfache Blickfolge auf Geraden mit Randabprallern (gleiche Bewegung wie 409, dort mit Blinken)", "Bildschirm in ruhiger Umgebung, Abstand 40–70 cm, Kopf möglichst ruhig", "Scharfe Sicht im Zwischenbereich (Bildschirmbrille oder Einstärkenglas günstiger als Gleitsicht)", "Maus oder Finger nur zum Starten; während der Übung keine Eingabe"]
 vorsicht_bei: [trockenes_auge_bildschirm, kopfschmerz_asthenopie, nystagmus, presbyopie_gleitsicht, schwindel_vestibulaer, kinder_unter_6]
-geeignet_fuer: ["gleichmäßige Blickfolge auf geraden Bahnen mit Wandabprallern üben, ohne Hand- oder Körpereinsatz", "den Blick bei einer leichten, mitlaufenden Ablenkung auf einem kleinen Zielkern halten", "ruhiger Einstieg in Blickfolge-Übungen ohne Blink- oder Flimmerreize (bei 0,5–2×)", "Alternative zu 409 ohne Blinken (gleiche gerade Bahn mit Randabprallern), Ergänzung zu 404 (Lissajous-Bahn) und Vorstufe zu 414 (Sprünge)"]
+geeignet_fuer: ["gleichmäßige Blickfolge auf geraden Bahnen mit Wandabprallern üben, ohne Hand- oder Körpereinsatz", "den Blick bei einer leichten, mitlaufenden Ablenkung auf einem kleinen Zielkern halten", "ruhiger Einstieg in Blickfolge-Übungen ohne Blink- oder Flimmerreize (bei 0,5–2×)", "Grundform von 409 (+ Dunkelphasen) und 414 (+ Positionssprünge) – dieselbe Bewegung ohne diese Zusätze; Ergänzung zu 404 (Lissajous-Bahn); danach Richtungswechsel 415 → 410 → 411"]
 weniger_geeignet_fuer: ["alle, die eine Rückmeldung oder einen Leistungswert erwarten (das Original misst nichts)", "wer die Qualität des eigenen Monitors prüfen will (der 'Nachzieheffekt' ist gezeichnet, kein Bildschirm-Artefakt)", "Gleitsichtträger:innen an großen Monitoren (Ziel läuft über die ganze Bildbreite in die unscharfe Randzone)", "Kinder, die abstrakte Aufgaben ohne Rückmeldung nicht durchhalten", "Ziel 'Reaktion' oder 'Zielgenauigkeit der Hand'"]
 evidenz:
   uebungseffekt: schwach
   naher_transfer: schwach
   alltag_transfer: fehlend
-  kommentar: "Glatte Blickfolge verbessert sich im Labor mit kurzem Training (Eibenberger et al. 2012), am stärksten mit Rückmeldung (Madelain & Krauzlis 2003, Folgen eines kurz verschwindenden Ziels; dort auch Übertrag auf ungeübte Geschwindigkeiten) – das Original gibt keine. Dass man das 'Unterdrücken von Nachzieh-Spuren' lernen kann oder dass es Sport/E-Sport nützt, wurde nie untersucht."
-aehnliche_uebungen: [409, 404, 414, 410, 415, 403, 405, 407, 105, 514]
+  kommentar: "Glatte Blickfolge verbessert sich im Labor mit kurzem Training, auch ohne Belohnung, und der Effekt zeigte sich in einem anderen Testparadigma (Step-Ramp; Eibenberger et al. 2012, N = 10) – daher naher Transfer schwach wie bei 410/411/415; mit Rückmeldung ist der Lerneffekt deutlich größer (Madelain & Krauzlis 2003, Folgen eines kurz verschwindenden Ziels) – das Original gibt keine. Dass man das 'Unterdrücken von Nachzieh-Spuren' lernen kann oder dass es Sport/E-Sport nützt, wurde nie untersucht."
+aehnliche_uebungen: [409, 414, 404, 415, 410, 411, 403, 405, 407, 105, 514]
 stichworte: ["smooth pursuit", "Blickfolge", "Bewegungsunschärfe", "motion smear", "Ghosting", "Nachbild", "Distraktor", "Sample-and-hold", "Bildwiederholrate", "Fixationsstabilität"]
 ---
 
@@ -157,7 +157,9 @@ dass die Übung **keine** Messung der Panel-Reaktionszeit ist.
   Tamminga, 1984), bei hohen Stufen (etwa ab 5×, eigene Einschätzung) dürften daher mehr Aufholsakkaden nötig sein, obwohl im Labor bei 4 von 5 Personen ≈ 90 %
   Gain bis ≈ 100°/s erreicht wurden (Meyer et al., 1985).
 - **Wandabpraller:** Die Folgebewegung reagiert auf Bewegungsänderungen erst nach ≈ 100 ms (Carl & Gellman, 1987),
-  danach Aufholsakkade; die Abpraller sind aber vorhersehbar (Rand, Richtungslinie).
+  danach Aufholsakkade; die Abpraller sind aber vorhersehbar (Rand, Richtungslinie) und bei 1× selten (≈ 0,5/s am
+  24″-Monitor, ≈ 0,7/s am 11″-Tablet; eigene Rechnung). Aufholsakkaden spielen daher nur eine Nebenrolle (`sakkaden` 1) –
+  anders als bei 409 (Wiederauftauchen nach der Dunkelphase), 410/411 (unvorhersehbare Wechsel) und 414 (Sprünge).
 - **Echtes Bildschirm-„Ghosting“:** Bei Sample-and-hold-Displays wächst die wahrgenommene Unschärfe mit der Haltezeit
   (Geri & Morgan, 2007); 120 statt 60 Bilder/s verbessern deutlich, ab ≈ 240 kaum mehr (Kuroki et al., 2007).
   Faustregel Tempo × Haltezeit: bei 60 Bildern/s 1× ≈ 9–16′, 5× ≈ 47–82′ – mehr als das Ziel (51′). Wegen der Drosselung
@@ -199,9 +201,11 @@ Aufholsakkaden. Wer die Maus mitführt, übt ungewollt Auge-Hand-Tracking, das n
   5 Tage später noch messbar (Eibenberger et al., 2012, N = 10 je Gruppe); mit Belohnung für genaues Folgen deutlich
   stärker (Gain bei kurz verschwindendem Ziel 0,59 → 0,89 nach 8–10 Sitzungen, ohne Belohnung 0,63 → 0,71;
   Madelain & Krauzlis, 2003). Das Original gibt keine Rückmeldung.
-- **Naher Transfer – schwach:** Belohntes Folgetraining (Aufgabe mit kurz verschwindendem Ziel, also eine andere Aufgabe
-  als hier) übertrug sich im Labor auf ungeübte Geschwindigkeiten und strukturierten Hintergrund (Madelain &
-  Krauzlis, 2003); ohne Rückmeldung ist ein solcher Übertrag nicht gezeigt. Dass das „Ausblenden“ gezeichneter Spuren auf
+- **Naher Transfer – schwach:** Kurzes Folgetraining ohne Belohnung (quasi-zufälliges Ziel) verbesserte die
+  Folgebewegung in einem anderen Test (Step-Ramp), 5 Tage später noch messbar (Eibenberger et al., 2012, N = 10) – ein
+  Laborhinweis, der für die glatte Folgebewegung dieser Übung ebenso gilt wie für 409–411 und 415. Belohntes
+  Folgetraining übertrug sich außerdem auf ungeübte Geschwindigkeiten und strukturierten Hintergrund (Madelain &
+  Krauzlis, 2003; andere Aufgabe, nur mit Rückmeldung). Dass das „Ausblenden“ gezeichneter Spuren auf
   Monitor-Schlieren, Rauch oder Partikel in Spielen übergeht, wurde nie untersucht.
 - **Alltagstransfer – fehlend:** kein belastbarer Ferntransfer allgemeinen Wahrnehmungstrainings auf Sport (Fransen,
   2024; Gegenposition Appelbaum et al., 2025); zu dieser Übung keine Studie.
@@ -218,9 +222,12 @@ Aufholsakkaden. Wer die Maus mitführt, übt ungewollt Auge-Hand-Tracking, das n
   „Random Speed“ meiden, klein beginnen); `kinder_unter_6` (abstrakt, ohne Rückmeldung).
 - **Photosensitivität geprüft:** kein Blinken, keine flächigen Helligkeitswechsel; Ziel dauerhaft sichtbar, Ringe in
   der Helligkeit konstant, Scanlines statisch und fast unsichtbar. WCAG 2.3.1 und die Harding-Kriterien (≥ 3 Blitze/s
-  bei ≥ 0,006 sr; Harding et al., 2005) greifen nicht → `flimmern_lichtreize` 0.
-- **Kombiniert gut mit …** 409 (gleiche Bahn, mit Blinken), 404/403/405 (andere Bahnen), 414 (Sprung), 105
-  (Blickfolge mit Messung), 514 (Tracking mit der Maus).
+  bei ≥ 0,006 sr; Harding et al., 2005) greifen nicht → `flimmern_lichtreize` 0 (gleiche Einstufung wie 410, 411, 413,
+  415: stetig bewegtes Ziel ohne Blinken; erst ab ≈ 5× springt es pro Bild um mehr als seinen Durchmesser).
+- **Kombiniert gut mit …** 409 und 414 – **dieselbe Bewegung** (Geraden mit Randabprallern, gleiches Tempo): 409 fügt
+  Dunkelphasen hinzu, 414 Positionssprünge; ohne „Gaze Trail“ ist 412 die reine Grundform, 409 ohne Blinken praktisch
+  eine Dublette. Danach Richtungswechsel 415 → 410 → 411; 404/403/405 (andere Bahnen), 105 (Blickfolge mit Messung), 514
+  (Tracking mit der Maus). Unterschied zu 404: dort geschwungene Lissajous-Bahn ohne Abpraller.
 
 Keine Diagnose, kein Heil- oder Sehversprechen; ein Nutzen für Sehen, Sport oder Verkehr ist nicht belegt.
 

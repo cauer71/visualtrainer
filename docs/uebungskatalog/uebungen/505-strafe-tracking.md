@@ -81,7 +81,7 @@ evidenz:
   naher_transfer: schwach
   alltag_transfer: fehlend
   kommentar: "Auge-Hand-Tracking und Aim-Trainer-Leistung verbessern sich mit Übung (Gauthier et al., 1988; Listman et al., 2021), zu diesem Drill gibt es keine Studie; Actionspiele (nicht Drills) verbesserten eine Labor-Nachführaufgabe (Li et al., 2016), ein Transfer von Aim-Trainern auf Spielleistung oder Alltag ist nicht kontrolliert untersucht."
-aehnliche_uebungen: [512, 513, 514, 515, 507, 304, 305, 104, 105, 404, 410, 415, 707]
+aehnliche_uebungen: [507, 512, 513, 514, 515, 504, 304, 305, 104, 105, 404, 410, 415, 707]
 stichworte: ["Strafe Tracking", "Tracking Aim", "ADAD", "reaktives Tracking", "manuelles Nachführen", "Time on Target", "Richtungsumkehr", "Aufholsakkade", "Smooth Pursuit", "Auge-Hand-Koordination", "Aim Trainer", "Maus", "Pointer Lock"]
 ---
 
@@ -156,6 +156,7 @@ Bewegungssignale stammen vor allem aus MT/MST; die Streuung der Folgebewegung l�
   - `trockenes_auge_bildschirm`, `kopfschmerz_asthenopie`: bis 75 s ohne Pause, wenig Lidschlag (Cardona et al., 2011) → Pausen zwischen Runden.
   - `farbsehschwaeche`: Rückmeldung nur Grün/Rot; Aufgabe bleibt lösbar.
 - **Kombiniert gut mit …** 512 (sprunghafte Tempo-/Richtungswechsel), 513 (Zickzack), 514/105/404 (vorhersagbare Folge), 515 (senkrecht), 410/415 (reaktive Blickfolge ohne Maus), 707 (Pfad nachfahren), 104 (bewegtes Ziel).
+- **Nahe Dublette: 507.** Gleiches Grundgerüst (klickfreies Maus-Nachführen, Serienfaktor bis 3,0, +0,1 s je 0,25 s auf dem Ziel, Level = Punkte/1.400 + 1, dieselbe Notenformel, Profil fast gleich); Unterschied: hier nur waagrechte Zufallsumkehr (Reaktion auf die Umkehr, `einfache_reaktion` 2), dort zweidimensionale Kurvenbahn mit Knicken (Vorausschätzen, `antizipation` 2). Für dasselbe Übungsziel nur eine der beiden vorschlagen. 504 verlangt zusätzlich den Ausgleich einer vorhersagbaren Störung (Rückstoß) bei langsamerem Ziel.
 
 ## 10. Schwächen des Originals und Empfehlungen für eine Blickfit-Umsetzung
 - **Tablet:** Original nicht bedienbar (Pointer Lock). Eine Touch-Fassung als Finger-Nachführaufgabe ist möglich, braucht aber: Größen in mm/Grad, Ziel ≥ 9 mm und nicht vom Finger verdeckt (Ring um die Berührung oder Ziel darüber), Touch-Latenz von 50–200 ms einplanen (Deber et al., 2015), deutlich langsameres Tempo.

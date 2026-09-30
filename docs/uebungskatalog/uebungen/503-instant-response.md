@@ -66,7 +66,7 @@ anforderungsprofil:
 belastung:
   zeitdruck: 3
   flimmern_lichtreize: 2
-  bewegungsreize_schwindel: 0
+  bewegungsreize_schwindel: 1
   koerperliche_belastung: 0
   sturzrisiko: 0
   sprachabhaengigkeit: 0
@@ -81,7 +81,7 @@ evidenz:
   naher_transfer: schwach
   alltag_transfer: fehlend
   kommentar: "Einfache Reaktionszeit ist über Wiederholungen sehr stabil (Basner et al. 2018; Kida et al. 2005), Zugewinne sind überwiegend Gewöhnung an Aufgabe und Gerät (Guo et al. 2025); Punkte steigen eher durch Timing und weniger Fehler. Die Übung selbst und ein Transfer auf Spiel oder Alltag sind nicht untersucht."
-aehnliche_uebungen: [101, 102, 202, 802, 306, 511, 508, 501, 208]
+aehnliche_uebungen: [101, 102, 202, 802, 306, 511, 501, 208]
 stichworte: ["Reaktionszeit", "einfache Reaktion", "Frühstart", "Antizipation", "Täuschreiz", "Go/No-Go", "Impulskontrolle", "Vorperiode", "Aufleuchten", "Ego-Shooter", "FPS", "Maus", "Pointer Lock", "Zeitdruck", "Combo"]
 ---
 

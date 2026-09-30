@@ -65,8 +65,8 @@ anforderungsprofil:
     ausdauer_belastung: 0
 belastung:
   zeitdruck: 3
-  flimmern_lichtreize: 2
-  bewegungsreize_schwindel: 0
+  flimmern_lichtreize: 1
+  bewegungsreize_schwindel: 1
   koerperliche_belastung: 1
   sturzrisiko: 0
   sprachabhaengigkeit: 0
@@ -81,7 +81,7 @@ evidenz:
   naher_transfer: schwach
   alltag_transfer: fehlend
   kommentar: "In Aim-Trainer-Klickaufgaben wird man mit Übung deutlich schneller (Warburton et al. 2023; Aim-Lab-Längsschnitt N = 7.174, Listman et al. 2021), eine neue Maus-Skalierung wird rasch gelernt und verallgemeinert (Krakauer et al. 2000); die Übung selbst, ein Transfer auf 180°-Drehungen im Spiel oder auf den Alltag sind nicht untersucht."
-aehnliche_uebungen: [501, 509, 502, 508, 511, 704, 702, 805, 303, 801, 401]
+aehnliche_uebungen: [501, 509, 502, 511, 704, 702, 805, 303, 801, 401]
 stichworte: ["Flick", "180-Grad-Drehung", "Randziel", "große Amplitude", "Aim Trainer", "Fitts'sches Gesetz", "Sakkade", "Blick-Kopf-Koordination", "peripheres Sehen", "Auge-Hand-Koordination", "Ego-Shooter", "FPS", "Maus", "Pointer Lock", "Zeitdruck", "Combo"]
 ---
 

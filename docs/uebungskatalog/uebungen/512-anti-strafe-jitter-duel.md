@@ -73,15 +73,15 @@ belastung:
 
 # ===== Auswahlhilfe =====
 voraussetzungen: ["Maus (Touchpad nur eingeschränkt) mit relativer Bewegung und Pointer Lock; kein Tablet", "scharfes Sehen im Bildschirmabstand (Zwischenbereich ≈ 50–75 cm) über die ganze Bildbreite", "Englische Spieloberfläche; Regeln auch deutsch auf der Seite, Spiel ohne Lesen bedienbar"]
-vorsicht_bei: [tremor_parkinson, hand_arm_beschwerden, nystagmus, presbyopie_gleitsicht, trockenes_auge_bildschirm, kopfschmerz_asthenopie, migraene_lichtempfindlich, photosensitive_epilepsie, farbsehschwaeche]
+vorsicht_bei: [tremor_parkinson, hand_arm_beschwerden, nystagmus, presbyopie_gleitsicht, trockenes_auge_bildschirm, kopfschmerz_asthenopie, migraene_lichtempfindlich, photosensitive_epilepsie, farbsehschwaeche, schwindel_vestibulaer]
 geeignet_fuer: ["fortlaufendes Nachführen eines bewegten Ziels mit der Maus üben (Auge-Hand-Abstimmung)", "Umgang mit plötzlichen Richtungs- und Tempowechseln: schnell wieder aufs Ziel kommen, ohne weit zu überschießen", "horizontale Blickfolge mit Aufholsakkaden in einer kurzen, klickfreien Aufgabe", "Spielerinnen und Spieler, die Tracking in der geübten Aufgabe verbessern wollen"]
 weniger_geeignet_fuer: ["Tablet- oder Touch-Nutzung (Original nicht bedienbar)", "Menschen mit Zittern, Hand- oder Handgelenkbeschwerden", "ruhiges, vorhersagbares Blickfolgetraining (Bewegung ist absichtlich sprunghaft)", "Wunsch nach verlässlichen Norm- oder Leistungsvergleichen"]
 evidenz:
   uebungseffekt: mittel
-  naher_transfer: unklar
+  naher_transfer: schwach
   alltag_transfer: fehlend
   kommentar: "Auge-Hand-Tracking reift bzw. verbessert sich mit Übung (Gauthier et al., 1988, v. a. bei Kindern) und Aim-Trainer-Leistung steigt mit Übung (Listman et al., 2021, Beobachtungsdaten), für diesen Drill gibt es keine Studie; Transfer von Aim-Trainern auf Spiel oder Alltag ist nicht kontrolliert untersucht, Actionspiele selbst verbesserten Nachführaufgaben im Labor (Li et al., 2016)."
-aehnliche_uebungen: [505, 513, 514, 515, 104, 105, 304, 410, 415, 707]
+aehnliche_uebungen: [505, 513, 514, 515, 507, 104, 105, 304, 410, 415, 707]
 stichworte: ["reaktives Tracking", "manuelles Nachführen", "Richtungswechsel", "Strafe", "ADAD", "Aufholsakkade", "Smooth Pursuit", "Auge-Hand-Koordination", "Aim Trainer", "Maus"]
 ---
 
@@ -129,7 +129,7 @@ Die Bewegungsinformation stammt vor allem aus den Arealen MT/MST; die Streuung d
 
 ## 6. Motorische Grundlagen
 - **Manuelles Tracking ist intermittierend:** Korrekturen kommen in Schüben mit ≈ 170 ms Refraktärzeit, bei langsamen Zielen werden kleine Fehler unter ≈ 0,8° oft toleriert (Miall et al., 1993; Joystick-Aufgabe). Die Trefferzone des Drills (Radius ≈ 0,58° → 0,42°) liegt **unter** dieser Totzone – man muss also ständig nachkorrigieren (eigene Folgerung).
-- **Reaktionsbudget:** Nach einer Umkehr braucht die Hand ≈ 110–200 ms bis zur Gegenreaktion (Brenner & Smeets, 1997; Brenner et al., 1998). Läuft das Fadenkreuz in dieser Zeit in die alte Richtung weiter, wächst der Abstand mit doppeltem Zieltempo: bei 6,6°/s auf ≈ 1,5–2,6°, bei 20°/s auf ≈ 4–8° (Obergrenze; bei ruhender Hand etwa die Hälfte) – in jedem Fall mehr als der Zonenradius (eigene Rechnung). Jede echte Umkehr kostet daher Zeit neben dem Ziel; entscheidend ist das rasche Wiedereinfangen (die Combo verzeiht bis zu 1 s). Auch bei künstlich verzögerter Rückmeldung antizipiert die Hand gleichmäßige Bewegung, plötzliche Wechsel an der Umkehr aber nicht (Vercher & Gauthier, 1992).
+- **Reaktionsbudget:** Nach einer Umkehr braucht die Hand ≈ 110–200 ms bis zur Gegenreaktion (Brenner & Smeets, 1997; Brenner et al., 1998). Läuft das Fadenkreuz in dieser Zeit in die alte Richtung weiter, wächst der Abstand mit doppeltem Zieltempo: bei 6,6°/s auf ≈ 1,5–2,6°, bei 20°/s auf ≈ 4–8° (Obergrenze; bei ruhender Hand etwa die Hälfte) – in jedem Fall mehr als der Zonenradius (eigene Rechnung). Jede echte Umkehr kostet daher Zeit neben dem Ziel; entscheidend ist das rasche Wiedereinfangen (die Combo verzeiht bis zu 1 s). Auch bei künstlich verzögerter Rückmeldung antizipiert die Hand gleichmäßige Bewegung, plötzliche Wechsel an der Umkehr aber nicht (Vercher & Gauthier, 1992). Bei jeder echten Umkehr muss die vorausschauend fortgesetzte Bewegung also abgebrochen werden (`inhibition` 1; gleiche Einstufung wie 513 und 515).
 - **Bandbreite:** Mit der Maus gelingt genaues Tracking periodischer Bewegungen bis ≈ 2 Hz; Alter und motorische Einschränkung senken das (Riviere & Thakor, 1996). Der Drill hat im Mittel ≈ 2,2–3,7 Wechselereignisse bzw. ≈ 1,1–1,8 echte Umkehrungen je s (entspricht ≈ 0,55–0,9 Hz), aber zufällig statt periodisch – nicht direkt vergleichbar (eigene Rechnung). Auf höheren Stufen dürfte „Mitteln statt Jagen“ ökonomischer sein (eigene Einschätzung, nicht untersucht).
 - **Richtung:** Nur waagrechte Handgelenk-/Unterarmbewegung; die Senkrechte muss ruhig gehalten werden (`ruhige_hand` 1). 2D-Tracking wird nicht in x/y getrennt geregelt (Engel & Soechting, 2000).
 - **Maus-Übersetzung:** Betriebssystem-Mausbeschleunigung bleibt aktiv; die Übersetzung Hand → Fadenkreuz hängt damit vom Handtempo ab (zum Einfluss von Übersetzungsverhältnis und Beschleunigung beim Zeigen: Casiez et al., 2008). Ob das bei plötzlichen Umkehrungen das Überschießen erhöht, ist für Tracking nicht untersucht (eigene Vermutung).
@@ -144,7 +144,7 @@ Die Bewegungsinformation stammt vor allem aus den Arealen MT/MST; die Streuung d
 
 ## 8. Studienlage: Trainierbarkeit und Übertragung
 - **Übungseffekt – mittel:** Die Auge-Hand-Koordination beim Nachführen reifte in einer kleinen Laborstudie durch Übung, v. a. bei Kindern (Gauthier et al., 1988). In Aim-Lab-Daten (N = 7 174) stiegen die Leistungen über Tage deutlich (Listman et al., 2021; Beobachtungsdaten, Herstellerfinanzierung). Für diesen Drill gibt es keine Studie.
-- **Naher Transfer – unklar:** 5–10 h Actionspiel verbesserten bei Nicht-Spielenden das Spurhalten/Nachführen im Labor (Li et al., 2016) – das ist ein Spiel, kein 45-s-Drill. Bei digitalem Sehtraining entstehen große Effekte vor allem bei gerätegleichen Test- und Übungsaufgaben (Guo et al., 2025).
+- **Naher Transfer – schwach:** Es gibt nur indirekte Hinweise: 5–10 h Actionspiel verbesserten bei Nicht-Spielenden das Spurhalten/Nachführen im Labor (Li et al., 2016) – das ist ein Spiel, kein 45-s-Drill. Bei digitalem Sehtraining entstehen große Effekte vor allem bei gerätegleichen Test- und Übungsaufgaben (Guo et al., 2025).
 - **Alltagstransfer – fehlend:** Kein Beleg für Nutzen in Spielduellen, Sport, Verkehr oder Beruf; „Brain-Training“ zeigt viel Evidenz für die geübte, wenig für entfernte Aufgaben (Simons et al., 2016).
 
 ## 9. Auswahlhinweise für die KI
@@ -157,15 +157,16 @@ Die Bewegungsinformation stammt vor allem aus den Arealen MT/MST; die Streuung d
   - `migraene_lichtempfindlich`, `photosensitive_epilepsie`: roter, den Spielbereich füllender Radialblitz bei Combo-Verlust (höchstens etwa alle 2 s), Bildschirmwackeln, am Zonenrand schnelles Rot-Grün-Wechseln der Kugel (kleine Fläche) → Blitz in den Einstellungen abschalten. Die Blitzfolge liegt weit unter 3/s, die gesättigte Rotfarbe gilt aber als zusätzlicher Risikofaktor (Einschätzung, keine medizinische Aussage).
   - `farbsehschwaeche`: Treffer-Rückmeldung nur Grün/Rot; Aufgabe bleibt lösbar.
   - `trockenes_auge_bildschirm`, `kopfschmerz_asthenopie`: pausenloses Verfolgen, wenig Lidschlag → Pausen zwischen Runden.
-  - Kein 3D-Kameraschwenk; großflächige Bewegung fehlt. Das schnell hin- und herspringende Ziel kann Empfindliche dennoch stören (Belastung Schwindel 1).
-- **Kombiniert gut mit …** 505 und 513 (Strafe/Zickzack mit längeren Segmenten), 514 und 105 (vorhersagbare Blickfolge), 410 und 415 (reaktive Blickfolge ohne Maus), 707 (Pfad nachfahren), 104 (bewegtes Ziel).
+  - `schwindel_vestibulaer`: Kein 3D-Kameraschwenk, großflächige Bewegung fehlt; die hohen Reisekrankheitsraten von Konsolenspielen mit Kamerabewegung sind daher nicht direkt übertragbar (eigene Einschätzung). Das schnell hin- und herspringende Ziel und das Bildschirmwackeln können Empfindliche dennoch stören (Belastung Schwindel 1, wie 513–515) → kurze Runden, bei Beschwerden abbrechen.
+- **Kombiniert gut mit …** 514 und 105 (vorhersagbare Blickfolge), 515 (senkrechtes Nachführen), 410 und 415 (reaktive Blickfolge ohne Maus), 707 (Pfad nachfahren), 104 (bewegtes Ziel).
+- **Überschneidungen:** Engste Dublette in der Gruppe ist **513** – gleicher Baukasten (gleiche Kugel und Radien, gleiche Punkte je 0,25 s auf dem Ziel, gleiche Combo-, Zeit- und Farbrückmeldung, Richtung bei jedem Ereignis 50 : 50 neu; 513 zusätzlich +25 Punkte je zerstörtem Ziel). Unterschiede: 512 läuft nur waagrecht auf der Bildmitte, wechselt häufiger (Level 1 alle 270–630 ms statt 0,96–1,44 s), springt zusätzlich im Tempo (0,9×/1,6×), hat eine Trefferzone mit Zuschlag (+6 px) und kein Neuerscheinen; 513 wandert frei über die Fläche und verlangt nach jedem „zerstörten“ Ziel einen Flick. Außerhalb der Gruppe zeigt **505** fast dieselbe Bewegung (waagrechte Bahn, zufällige Umkehr), 304 dieselbe Bahnidee mit Klick statt Halten. Nicht mehrere davon hintereinander vorschlagen; 512 ist die Wahl für schnelle, rein waagrechte Umkehr.
 
 ## 10. Schwächen des Originals und Empfehlungen für eine Blickfit-Umsetzung
 - **Tablet:** Original nicht bedienbar (Pointer Lock, nur Maus). Eine Touch-Fassung als **Finger-Nachführaufgabe** ist fachlich sinnvoll (2D-Tracking mit dem Finger ist ein etabliertes Laborparadigma; Engel & Soechting, 2000), braucht aber: Ziel größer (in mm/Grad festlegen), Finger verdeckt das Ziel → Ziel oberhalb der Berührung oder Ring um das Ziel, Touch-Latenz einplanen (kommerzielle Touchgeräte 50–200 ms, zitiert nach Deber et al., 2015), Tempo deutlich niedriger.
 - **Messung:** Wiedereinfangzeit nach jeder Umkehr, mittlerer Abstand und Nachlauf erfassen; Präzision zeitgewichtet; feste Sitzungsdauer ohne Zeitbonus; realistische Notenskala.
 - **Mechanik:** „Umkehr“ ehrlich definieren (jedes Ereignis kehrt um oder Anteil angeben); wählbare Stufen statt Combo-Verschärfung, die gerade nach guten Phasen sprunghaft schwerer wird.
 - **Regeltext:** Punkte (10 je 0,25 s), Zeitbonus (+0,4 s/s) und optionale Strafe korrekt angeben; keine Latenz-Tabelle, keine Transfer- oder Leistungsversprechen; Mausbeschleunigung erwähnen bzw. `unadjustedMovement` anbieten.
-- **Barrierefreiheit/Sicherheit:** Rückmeldung zusätzlich über Form (z. B. Ring) statt nur Rot/Grün; roten Vollbildblitz standardmäßig aus; Wackeln abschaltbar; Pausenhinweis.
+- **Barrierefreiheit/Sicherheit:** Rückmeldung zusätzlich über Form (z. B. Ring) statt nur Rot/Grün; roten Radialblitz standardmäßig aus; Wackeln abschaltbar; Pausenhinweis.
 
 ## 11. Quellen
 ### Von der Website angegeben

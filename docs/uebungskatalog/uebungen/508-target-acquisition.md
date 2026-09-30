@@ -40,7 +40,7 @@ anforderungsprofil:
   kognitiv:
     daueraufmerksamkeit: 1
     selektive_aufmerksamkeit: 2
-    inhibition: 2
+    inhibition: 1
     geteilte_aufmerksamkeit: 0
     kognitive_flexibilitaet: 0
     arbeitsgedaechtnis: 1

@@ -66,7 +66,7 @@ anforderungsprofil:
 belastung:
   zeitdruck: 2
   flimmern_lichtreize: 1
-  bewegungsreize_schwindel: 0
+  bewegungsreize_schwindel: 1
   koerperliche_belastung: 1
   sturzrisiko: 0
   sprachabhaengigkeit: 0
@@ -81,7 +81,7 @@ evidenz:
   naher_transfer: schwach
   alltag_transfer: fehlend
   kommentar: "Das Erlernen vorhersagbarer Störungen über interne Modelle ist in Laborstudien robust belegt (Shadmehr & Mussa-Ivaldi 1994; Tseng et al. 2007), bleibt aber aufgabenspezifisch; zur Original-Übung, zu Rückstoß-Drills allgemein und zu einem Transfer ins Spiel oder in den Alltag gibt es keine Studien."
-aehnliche_uebungen: [505, 509, 514, 512, 515, 707, 705, 808, 104, 304, 501]
+aehnliche_uebungen: [505, 507, 509, 514, 512, 515, 707, 705, 808, 104, 304]
 stichworte: ["Recoil Control", "Rückstoßkontrolle", "Spray Control", "Spray Pattern", "Kompensation", "Vorwärtsmodell", "motorische Adaptation", "manuelles Tracking", "Auge-Hand-Koordination", "Ego-Shooter", "FPS", "Maus", "Pointer Lock", "Combo"]
 ---
 
@@ -155,8 +155,13 @@ Streuung, > 90 % Treffer“) und „2–3 Wochen à 15 min“ bis zur Automatisi
   Fadenkreuz-Ring ≈ 0,75°; Rückstoßhöhe ≈ 1,8–4,1°, Seitenpendeln ≈ 0,4–0,9°. Weit über der Sehschärfegrenze – Detailsehen
   ist Nebensache, unkorrigierte Fehlsichtigkeit macht die kleinen Zonen aber unscharf.
 - **Blickfolge:** Zieltempo ≈ 1,3–2,4°/s (Level 1) bis ≈ 7°/s [ER] – Bereich mit hohem, aber < 0,95 liegendem Folge-Gain
-  (Collewijn & Tamminga, 1984). Beim Handtracking folgt der Blick sogar besser als beim bloßen Zusehen (Danion &
-  Flanagan, 2018); Richtungswechsel erzeugen kleine Aufholsakkaden.
+  (Collewijn & Tamminga, 1984). Beim Handtracking eines glatt, aber unvorhersagbar bewegten Ziels war der Folge-Gain
+  höher und Aufholsakkaden seltener als beim bloßen Zusehen (Danion & Flanagan, 2018); bei pseudozufälliger Bewegung
+  fand sich dieser Vorteil nicht (Koken & Erkelens, 1992) – uneinheitlich, wie bei 505/507 eingeordnet. Richtungswechsel
+  erzeugen kleine Aufholsakkaden. Eine großflächige Bewegung gibt es nicht (kein Bildwackeln, laut Code bleibt der
+  Wackel-Wert immer 0); das ausweichende Ziel und das im 8-Hz-Takt springende Fadenkreuz → `bewegungsreize_schwindel` 1
+  (wie bei den übrigen Nachführaufgaben). Wer Nystagmus hat, dürfte das kleine bewegte Ziel schwerer ruhig halten
+  (Plausibilitätsannahme) → `nystagmus` in `vorsicht_bei`.
 - **Farbe/Kontrast:** alle Zonen grün auf Schwarz, unterschieden durch Lage und Helligkeit → bei Farbsehschwäche (≈ 8 %
   der Männer; Birch, 2012) spielbar; die Beinzone (22 % Deckkraft) ist kontrastarm, im Alter schlechter sichtbar.
 - **Gleitsicht:** Das 16 : 9-Feld (≈ 25–30° breit bei 60 cm, im Vollbild mehr) übersteigt den klaren Zwischenbereich

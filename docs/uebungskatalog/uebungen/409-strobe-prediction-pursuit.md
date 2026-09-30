@@ -40,7 +40,7 @@ anforderungsprofil:
   kognitiv:
     daueraufmerksamkeit: 2
     selektive_aufmerksamkeit: 0
-    inhibition: 0
+    inhibition: 1
     geteilte_aufmerksamkeit: 0
     kognitive_flexibilitaet: 0
     arbeitsgedaechtnis: 1
@@ -72,16 +72,16 @@ belastung:
   sprachabhaengigkeit: 0
 
 # ===== Auswahlhilfe =====
-voraussetzungen: ["Keine bekannte Photosensitivität/Epilepsie (das Ziel blinkt je nach Tempo und Gerät 0,3 bis ≈ 7-mal pro Sekunde, mit 'Random Speed' bis ≈ 12-mal; Standardfarbe ist gesättigtes Rot)", "Bildschirm in ruhiger Umgebung, Kopf möglichst ruhig, Abstand 40–70 cm", "Ausreichende Sicht im Zwischenbereich (Bildschirmbrille oder Einstärkenglas günstiger als Gleitsicht)", "Maus oder Finger nur zum Starten; während der Übung keine Eingabe"]
-vorsicht_bei: [photosensitive_epilepsie, migraene_lichtempfindlich, kopfschmerz_asthenopie, trockenes_auge_bildschirm, nystagmus, presbyopie_gleitsicht, sehbehinderung_niedriger_visus, kinder_unter_6]
-geeignet_fuer: ["vorausschauende (prädiktive) Blickfolge üben: den Blick weiterbewegen, obwohl das Ziel kurz fehlt", "Einstieg in Verdeckungsaufgaben mit regelmäßigem, vorhersagbarem Takt (bei 0,5–2× Tempo lange Dunkelphasen von ≈ 0,3–1 s)", "ruhige Augenübung ohne Hand- oder Körpereinsatz", "Ergänzung zu einfacher Blickfolge (404) und zur Einzelverdeckung (407)"]
+voraussetzungen: ["Keine bekannte Photosensitivität/Epilepsie (das Ziel blinkt je nach Tempo und Gerät 0,3 bis ≈ 7-mal pro Sekunde, mit 'Random Speed' bis ≈ 12-mal; Standardfarbe Rot #ef4444 ist vorsichtshalber als gesättigtes Rot zu werten)", "Bildschirm in ruhiger Umgebung, Kopf möglichst ruhig, Abstand 40–70 cm", "Ausreichende Sicht im Zwischenbereich (Bildschirmbrille oder Einstärkenglas günstiger als Gleitsicht)", "Maus oder Finger nur zum Starten; während der Übung keine Eingabe"]
+vorsicht_bei: [photosensitive_epilepsie, migraene_lichtempfindlich, kopfschmerz_asthenopie, trockenes_auge_bildschirm, nystagmus, schwindel_vestibulaer, gesichtsfeldausfall, presbyopie_gleitsicht, sehbehinderung_niedriger_visus, kinder_unter_6]
+geeignet_fuer: ["vorausschauende (prädiktive) Blickfolge üben: den Blick weiterbewegen, obwohl das Ziel kurz fehlt", "Einstieg in Verdeckungsaufgaben mit regelmäßigem, vorhersagbarem Takt (bei 0,5–2× Tempo lange Dunkelphasen von ≈ 0,3–1 s)", "ruhige Augenübung ohne Hand- oder Körpereinsatz", "Ergänzung zu gleichförmiger Blickfolge (412 = dieselbe Bewegung ohne Dunkelphasen, 404 Lissajous-Bahn) und zur Einzelverdeckung (407)"]
 weniger_geeignet_fuer: ["Menschen mit Photosensitivität, Epilepsie in der Familie oder lichtempfindlicher Migräne", "alle, die eine Rückmeldung oder einen Leistungswert erwarten (das Original misst nichts)", "Gleitsichtträger:innen an großen Monitoren (Ziel läuft über die ganze Bildbreite in die unscharfe Randzone)", "Kinder, die abstrakte Aufgaben ohne Rückmeldung nicht durchhalten", "Ziel 'Reaktion' oder 'Zielgenauigkeit der Hand' (keine Handlung gefordert)"]
 evidenz:
   uebungseffekt: schwach
-  naher_transfer: unklar
+  naher_transfer: schwach
   alltag_transfer: fehlend
-  kommentar: "Blickfolge während einer Verdeckung ist im Labor mit Rückmeldung trainierbar (Gain 0,59 → 0,89, Madelain & Krauzlis 2003), ohne Rückmeldung nur wenig (0,63 → 0,71); das Original gibt keine Rückmeldung. Übertrag auf ungeübte Geschwindigkeiten ist nur für die belohnte Laborgruppe gezeigt. Die zitierte Strobe-Brillen-Forschung (Sportübungen mit Shutterbrille, ganzes Gesichtsfeld) ist auf ein blinkendes Bildschirmziel nicht übertragbar; ein Alltagsnutzen ist nicht untersucht."
-aehnliche_uebungen: [407, 404, 414, 412, 403, 406, 105, 107, 104, 109]
+  kommentar: "Blickfolge während einer Verdeckung ist im Labor mit Rückmeldung trainierbar (Gain 0,59 → 0,89, Madelain & Krauzlis 2003), ohne Rückmeldung nur wenig (0,63 → 0,71); das Original gibt keine Rückmeldung. Naher Transfer nur als schwacher Laborhinweis: Übertrag auf ungeübte Geschwindigkeiten in der belohnten Gruppe (Madelain & Krauzlis 2003), kurzes Folgetraining ohne Belohnung verbesserte die Folgebewegung in einem anderen Test (Eibenberger et al. 2012, N = 10). Die zitierte Strobe-Brillen-Forschung (Sportübungen mit Shutterbrille, ganzes Gesichtsfeld) ist auf ein blinkendes Bildschirmziel nicht übertragbar; ein Alltagsnutzen ist nicht untersucht."
+aehnliche_uebungen: [412, 407, 414, 404, 403, 406, 105, 107, 104, 109]
 stichworte: ["Verdeckung", "Okklusion", "target blanking", "prädiktive Blickfolge", "smooth pursuit", "Antizipation", "extraretinale Signale", "Geschwindigkeitsgedächtnis", "Stroboskop", "Photosensitivität"]
 ---
 
@@ -192,8 +192,11 @@ Tipp-Antwort (Abschnitt 10) brächte Auge-Hand-Koordination, Timing und Touch-La
 - **Übungseffekt – schwach:** Laborgain während Verdeckung mit belohnendem Ton bei genauer Folge 0,59 → 0,89 (8–10
   Tagessitzungen), ohne Ton nur
   0,63 → 0,71 (Madelain & Krauzlis, 2003); das Original gibt keine Rückmeldung.
-- **Naher Transfer – unklar:** Übertrag auf ungeübte Geschwindigkeiten nur in der belohnten Laborgruppe (Madelain &
-  Krauzlis, 2003); für Üben ohne Rückmeldung (wie im Original) nicht untersucht.
+- **Naher Transfer – schwach:** Übertrag auf ungeübte Geschwindigkeiten und strukturierten Hintergrund nur in der
+  belohnten Laborgruppe (Madelain & Krauzlis, 2003); kurzes Folgetraining ohne Belohnung (quasi-zufälliges Ziel,
+  2 × 6 min an 3 Tagen) verbesserte die Folgebewegung in einem anderen Test (Step-Ramp), 5 Tage später noch messbar
+  (Eibenberger et al., 2012, N = 10). Für Dunkelphasen-Folgen ohne Rückmeldung (wie im Original) nicht eigens untersucht
+  – gleiche Einstufung wie bei den übrigen Blickfolge-Übungen 410–413 und 415.
 - **Alltagstransfer – fehlend:** Strobe-Brillen: in sportspezifischen Tests nach längerem Training
   ≈ 5–6 % besser, akut schlechter, uneinheitliche Protokolle (17 Studien; Vera et al., 2026); für ein blinkendes
   Bildschirmziel keine Studie gefunden (PubMed, 09/2026).
@@ -201,14 +204,17 @@ Tipp-Antwort (Abschnitt 10) brächte Auge-Hand-Koordination, Timing und Touch-La
 ## 9. Auswahlhinweise für die KI
 
 - **Passt, wenn …** vorausschauendes Folgen mit den Augen ohne Hand- und Körpereinsatz geübt werden soll, als
-  Schritt nach 404 – nur mit 0,5–2× und „Hide Line“ sinnvoll.
+  Schritt nach 412 (dieselbe Bewegung ohne Dunkelphasen) bzw. 404 – nur mit 0,5–2× und „Hide Line“ sinnvoll. Unter den
+  Übungen 409–415 fordert nur diese die Vorhersage über Sichtlücken (`antizipation` 3).
 - **Weniger passend, wenn …** Rückmeldung/Fortschritt gewünscht oder Reaktion bzw. Handgenauigkeit das Ziel ist.
 - **Vorsicht / anpassen bei …**
   - `photosensitive_epilepsie`: harter Hell-Dunkel-Wechsel (Hub relative Leuchtdichte ≈ 0,17, Kern ≈ 1,0; eigene
     Rechnung), bis ≈ 7, mit „Random Speed“ bis ≈ 12 Blitze/s; auslösend sind 1–65 Hz (am stärksten 15–25 Hz), bei
     5–24-Jährigen häufiger, rote Blitze sind ein eigener Faktor (Fisher et al., 2005). Harding-Grenzen: ≥ 3 Blitze/s,
     ≥ 0,006 sr, ≥ 20 cd/m²; zusätzlich gilt jeder Wechsel zu/von gesättigtem Rot als Risiko (Harding et al., 2005) –
-    das Standardziel ist Rot. WCAG 2.3.1: nicht mehr als 3 Blitze/s oder unter den Flächengrenzen (0,006 sr ≈ 25 % eines
+    das Standardziel ist Rot: #ef4444 erreicht mit linearisierten sRGB-Werten R/(R+G+B) ≈ 0,88 und liegt damit über der
+    WCAG-Arbeitsdefinition für „gesättigtes Rot“ (≥ 0,8); mit 8-Bit-Werten wären es nur 0,64 – die Rechenweise ist in
+    WCAG nicht ausdrücklich festgelegt, daher vorsichtshalber als gesättigtes Rot werten (eigene Rechnung). WCAG 2.3.1: nicht mehr als 3 Blitze/s oder unter den Flächengrenzen (0,006 sr ≈ 25 % eines
     10°-Feldes). Das Standardziel am Monitor erreicht ≈ 3–13 % dieser Fläche, die Maximalgröße samt Leuchtsaum am Tablet
     (30 cm) nähert sich der Grenze. Die Blickfit-Grenze (≤ 2,5 Hz) wird ab ≈ 3,2–3,8×, WCAG 2.3.2 (≤ 3 Blitze/s) ab
     ≈ 3,8–4,7× überschritten (je nach Bildrate 75/60 Bilder/s; eigene Rechnung), mit „Random Speed“ schon ab ≈ 2× →
@@ -216,9 +222,13 @@ Tipp-Antwort (Abschnitt 10) brächte Auge-Hand-Koordination, Timing und Touch-La
   - `migraene_lichtempfindlich`, `kopfschmerz_asthenopie`: kurze Sätze, bei Unwohlsein abbrechen;
     `trockenes_auge_bildschirm`: blinzeln, Pausen; `nystagmus`: Folgebewegung evtl. eingeschränkt;
     `presbyopie_gleitsicht`: kleineres Feld, Kopfbewegung; `sehbehinderung_niedriger_visus`: größer, Weiß/Gelb;
-    `kinder_unter_6`: abstrakt, ohne Rückmeldung, Blinkreiz – nicht empfohlen.
-- **Kombiniert gut mit …** 404 (gleiche Bahn ohne Dunkelphase), 407 (einzelne Verdeckung), 403, 414, 105, 107
-  (Verdeckung mit gemessenem Zeitfehler), 104 (Vorhersage mit der Hand).
+    `schwindel_vestibulaer`: kleines Ziel auf ruhigem Grund, daher meist gering – hohe Tempi meiden (wie 412);
+    `gesichtsfeldausfall`: das Ziel taucht nach der Dunkelphase einige Grad neben dem Blick auf und kann im ausgefallenen
+    Bereich verloren gehen; `kinder_unter_6`: abstrakt, ohne Rückmeldung, Blinkreiz – nicht empfohlen.
+- **Kombiniert gut mit …** 412 (dieselbe Bewegung – Geraden mit Randabprallern, gleiches Tempo – ohne Dunkelphase;
+  ohne Blinken praktisch eine Dublette, daher als Vorstufe), 414 (dieselbe Bewegung, statt Dunkelphasen Sprünge an einen
+  neuen Ort), 407 (einzelne Verdeckung mit Landepunkt), 404/403 (andere Bahnen), 105, 107 (Verdeckung mit gemessenem
+  Zeitfehler), 104 (Vorhersage mit der Hand).
 
 Keine Diagnose, kein Heil- oder Sehversprechen; ein Nutzen für Sehen, Sport oder Verkehr ist nicht belegt.
 
@@ -273,6 +283,9 @@ Keine Diagnose, kein Heil- oder Sehversprechen; ein Nutzen für Sehen, Sport ode
   *Journal of Neurophysiology, 90*(4), 2504–2520. https://doi.org/10.1152/jn.01145.2002 – Wiederbeschleunigung
 - Birch, J. (2012). Worldwide prevalence of red-green color deficiency. *Journal of the Optical Society of America A,
   29*(3), 313–320. https://doi.org/10.1364/JOSAA.29.000313
+- Eibenberger, K., Ring, M., & Haslwanter, T. (2012). Sustained effects for training of smooth pursuit plasticity.
+  *Experimental Brain Research, 218*(1), 81–89. https://doi.org/10.1007/s00221-012-3009-8 – kurzes Folgetraining ohne
+  Belohnung, Test mit anderem Paradigma (Step-Ramp)
 - Fisher, R. S., Harding, G., Erba, G., Barkley, G. L., & Wilkins, A. (2005). Photic- and pattern-induced seizures: A
   review for the Epilepsy Foundation of America Working Group. *Epilepsia, 46*(9), 1426–1441.
   https://doi.org/10.1111/j.1528-1167.2005.31405.x

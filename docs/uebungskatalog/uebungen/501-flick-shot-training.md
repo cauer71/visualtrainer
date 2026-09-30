@@ -65,9 +65,9 @@ anforderungsprofil:
     ausdauer_belastung: 0
 belastung:
   zeitdruck: 3
-  flimmern_lichtreize: 2
-  bewegungsreize_schwindel: 0
-  koerperliche_belastung: 1
+  flimmern_lichtreize: 1
+  bewegungsreize_schwindel: 1
+  koerperliche_belastung: 0
   sturzrisiko: 0
   sprachabhaengigkeit: 0
 
@@ -133,8 +133,11 @@ Quelle: Seitentext und ausgelieferter Spiel-Chunk (`19013-…js`, formatiert; nu
   endet erst, wenn das Zeitlimit die eigene Erfassungszeit unterschreitet. Zeitüberschreitungen lassen sich in den
   Einstellungen abschalten (Standard: an). Zeitrechnung mit Zeitdifferenz je Bild (dt, max. 0,1 s) bzw.
   `performance.now()` → nicht bildfrequenzabhängig; nur Partikel und Bildschütteln laufen pro Bild.
-- **Fehler-Rückmeldung [CODE]:** Bildschütteln (6 px, abklingend), Fehlerton und – sofern eine Effekt-Einstellung aktiv ist (Standardwert nicht
-  geprüft) – ein roter, radial verlaufender Vollflächen-Schimmer (50 % Deckkraft in der Mitte, ≈ 0,45 s). Bei schnellen Fehlklicks können mehrere pro Sekunde folgen.
+- **Fehler-Rückmeldung [CODE]:** Bildschütteln (6 px, abklingend), Fehlerton und ein roter, radial verlaufender
+  Vollflächen-Schimmer (50 % Deckkraft in der Mitte, ≈ 0,45 s; gemeinsames Einstellungsmodul „Miss Flash“ der Vorlage,
+  Standard an, abschaltbar – wie bei 502 und 506). Bei schnellen Fehlklicks können mehrere pro Sekunde folgen. Der
+  Schimmer kommt nur bei Fehlern, nicht periodisch → `flimmern_lichtreize` 1; das Bildschütteln ist eine kleine,
+  kurze Bewegung des ganzen Bildes → `bewegungsreize_schwindel` 1 (gleiche Einstufung wie 502, 506, 509, 702, 704).
 - **Auswertung [CODE]:** Präzision, Treffer, Fehlklicks, Leerklicks, Zeitüberschreitungen, mittlere Flick-Zeit
   (Mittelwert, nicht Median), maximale Combo, Level; Note S+ bis F nach 100 × √(Punkte/50.000) (S+ ab ≈ 45.000 Punkten)
   – eine willkürliche Skala ohne Normdaten. Bestwerte nur im Browser gespeichert.
@@ -220,7 +223,9 @@ dass diese Übung bestimmte Hirnregionen „trainiert“, gibt es nicht.
   bei Jüngeren 9–12 Hz, bei einzelnen Älteren 5–7 Hz; Elble, 2003) kann das Anhalten auf kleinen Zielen stören [Plausibilitätsannahme]; Ältere skalieren Tempo und Primärbewegung weniger an Distanz und Zielgröße an (Ketcham et al., 2002).
 - **Belastung:** schnelle, wiederholte Hand-/Handgelenkbewegungen; in einer Befragung von 65 College-Esportler:innen
   (3–10 h Spielzeit pro Tag) berichteten 36 % Handgelenk- und 32 % Handschmerzen (DiFrancisco-Donoghue et al., 2019) –
-  bei wenigen Minuten Übung nicht übertragbar, aber ein Hinweis auf die Belastungsart.
+  bei wenigen Minuten Übung nicht übertragbar, aber ein Hinweis auf die Belastungsart. Eine 45–60-s-Runde ist
+  körperlich kaum anstrengend → `koerperliche_belastung` 0 (wie 502, 702, 704); nur 506 (weite Armzüge quer über den
+  Bildschirm) und 504 (gehaltene Taste, Dauerzug) sind in dieser Gruppe mit 1 eingestuft.
 
 ## 7. Einflussfaktoren und Messgrenzen
 
@@ -263,6 +268,10 @@ dass diese Übung bestimmte Hirnregionen „trainiert“, gibt es nicht.
   (hoher Zeitdruck, Strafen). Hinweise dienen der Auswahl, nicht der Diagnose.
 - **Kombiniert gut mit …** 303 (Blicksprünge ohne Hand), 301/101 (reine Reaktion), 704 (schrumpfende ruhende Ziele,
   Zentrumstreffer), 702 (bewegte Ziele anklicken), 502 (Zielwechsel zwischen mehreren Zielen), 509 (Feinkorrektur).
+- **Nahe Dublette: 506.** Gleicher Spielaufbau (gleiche Zielgrößen, Sichtbarkeiten, Punkte, Zeitkonto und Strafen); bei
+  506 liegen die Ziele mit steigendem Level fast immer am linken oder rechten Rand, die Wege und Blicksprünge sind also
+  größer. Für dasselbe Übungsziel nur eine der beiden vorschlagen – 506 höchstens als Steigerung. Unterschied zu 502:
+  dort mehrere gleichzeitig sichtbare, bewegte Ziele (mehr Übersicht und Reihenfolgewahl).
 
 ## 10. Schwächen des Originals und Empfehlungen für eine Blickfit-Umsetzung
 
