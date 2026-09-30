@@ -15,7 +15,7 @@ stand: 2026-09-29
 kurzbeschreibung: "Ein Punkt steht unten auf einer Bodenlinie, darüber fliegt ein runder Zielring geradlinig durch das Bild und prallt von den Rändern ab. Man hält die Maustaste auf dem Punkt gedrückt, um „Sprungkraft“ zu laden, lässt los und lenkt den fliegenden Punkt mit der Maus seitlich in den Ring – eine Maus-Übung für Timing und Vorausschätzen, kein Sprungkrafttraining."
 ziel_funktionen: [antizipation, auge_hand_koordination]
 eingabe: [maus, touchpad]
-tablet_geeignet: mit_anpassung
+tablet_geeignet: nein
 dauer_sekunden: 45
 schwierigkeit_anpassung: "Laut Code steigt das (stufenlose) Level mit Punkte/250 + 1 plus 1 Level je 4 Treffer Serie; es sinkt nie und hat keine Obergrenze. Zieltempo = 120 + 680·(Level−1)/14 + 100·min(1; Serie/50) px/s (Level 15 = 800 px/s, mit 50er-Serie 900 px/s, danach weiter steigend), Zielradius 35 → 12 px (ab Level 15 fest), Punkte je Treffer round(5 + 20·(Level−1)/14), also 5 bei Level 1 und 25 bei Level 15, danach weiter steigend, × Serienfaktor bis 3,0. Start immer bei Level 1."
 messgroessen: ["Punkte", "Treffer und Fehlsprünge", "Genauigkeit = Treffer / Sprünge in %", "längste Serie", "erreichtes Level und Spitzentempo in px/s", "sinnvoll: Haltedauer-Fehler (zu kurz/zu lang geladen) in ms, seitlicher Abstand beim Vorbeiflug, Tempo in °/s mit 80 % Treffern"]
@@ -28,7 +28,7 @@ anforderungsprofil:
     farbunterscheidung: 1
     stereosehen: 0
     peripheres_sehen: 1
-    nutzbares_sehfeld: 2
+    nutzbares_sehfeld: 1
     blickfolge: 2
     sakkaden: 1
     fixation: 0
@@ -81,7 +81,7 @@ evidenz:
   naher_transfer: schwach
   alltag_transfer: fehlend
   kommentar: "Abfangleistung und Timing verbessern sich mit Übung in der geübten Aufgabe (allgemeine Motorik-Forschung), Studien zu diesem Spiel fehlen; für Sprungkraft oder Sport-Timing gibt es keinen Beleg, und die Website räumt selbst ein, weder Sprung noch Dehnungs-Verkürzungs-Zyklus zu messen."
-aehnliche_uebungen: [104, 407, 414, 515, 807, 802, 808]
+aehnliche_uebungen: [807, 104, 802, 407, 414, 515]
 stichworte: ["Abfangen", "Interzeption", "Flugparabel", "Timing", "Haltedauer", "Vorausschätzen", "Auge-Hand-Koordination", "Maus", "Sprungspiel", "Combo"]
 ---
 
@@ -126,7 +126,7 @@ Quelle: Seitentext und ausgelieferter Spielcode (Next.js-Chunk des Spiels und ge
 ## 4. Optische und okulomotorische Grundlagen
 - **Sehwinkel [Rechnung, 24″ Full-HD, 60 cm ≈ 37,8 px/°]:** Spielfeld 800 × 450 px ≈ 21° × 12°. Zielring Ø 70 → 24 px ≈ 1,9° → 0,6°; wirksamer Trefferkreis Ø 98 → 52 px ≈ 2,6° → 1,4°; Spielerpunkt Ø 28 px ≈ 0,7°. Detailsehen spielt eine Nebenrolle.
 - **Tempo:** 120–800 px/s ≈ 3–21°/s, 900 px/s ≈ 24°/s (Laptop 15,6″/50 cm ≈ 2,5–18,5°/s). Das ist mit glatter Folgebewegung gut zu verfolgen (Augengeschwindigkeit ≈ 90 % der Zielgeschwindigkeit bis 100°/s bei vier von fünf Personen; Meyer et al., 1985). Ältere (75–93 Jahre) hatten bei allen Zielgeschwindigkeiten eine geringere Folgegenauigkeit (Gain), mit wachsendem Abstand bei höherem Tempo und höherer Beschleunigung des Ziels (Moschner & Baloh, 1994).
-- **Zwei Blickorte:** Ziel (oben, bewegt) und Spielerpunkt mit Ladebalken (unten, links am Rand) liegen bis ≈ 9° senkrecht auseinander. Man muss das Ziel verfolgen und zugleich Punkt/Ladung abschätzen → nutzbares Sehfeld und Blickwechsel. Wer das Ziel mit den Augen verfolgt, ist beim Abfangen weniger anfällig für Täuschungen der Bewegungswahrnehmung (de la Malla et al., 2017, zitiert nach docs/wissenschaft/02, Abschnitt 3.1).
+- **Zwei Blickorte:** Ziel (oben, bewegt) und Spielerpunkt mit Ladebalken (unten, links am Rand) liegen bis ≈ 9° senkrecht auseinander. Man muss das Ziel verfolgen und zugleich Punkt/Ladung abschätzen → Blickwechsel; das nutzbare Sehfeld spielt eine Nebenrolle, weil es keine Frist gibt und man auf einen günstigen Moment warten kann (anders als bei 806). Wer das Ziel mit den Augen verfolgt, ist beim Abfangen weniger anfällig für Täuschungen der Bewegungswahrnehmung (de la Malla et al., 2017, zitiert nach docs/wissenschaft/02, Abschnitt 3.1).
 - **Bildschirm:** Sample-and-hold-Sprünge 13 px pro Bild bei 800 px/s und 60 Hz, 5,6 px bei 144 Hz [Rechnung]; bei 52-px-Trefferkreis unkritisch. Hoher Kontrast (grüne/cyan Linien auf fast Schwarz); Spiegelungen und helle Umgebung verschlechtern die Sicht auf die dünnen Ringe.
 - **Farbe:** Zustände des Spielerpunkts sind grün/orange/rot/cyan codiert – bei Rot-Grün-Schwäche (≈ 8 % der Männer; Birch, 2012) schwer zu unterscheiden, aber durch Ladebalken und Bewegung redundant.
 - **Brille:** Der Blick wechselt oft senkrecht zwischen Ziel und Bodenlinie. Bei Gleitsicht verändert sich dabei der genutzte Glasbereich, und das klare Zwischenfeld am Bildschirm ist schmal (horizontal 13–18°; Han et al., 2003) – Kopf statt Augen bewegen, Bildschirm eher tief, Arbeitsplatzbrille erwägen (Hinweis, keine Beratung). Die Parabel ist ein zweidimensionales Bild: **kein Stereosehen** nötig.
@@ -166,7 +166,7 @@ Quelle: Seitentext und ausgelieferter Spielcode (Next.js-Chunk des Spiels und ge
   - `tremor_parkinson`: Halten der Taste bei gleichzeitiger Lenkung; Trefferkreis zwar groß, aber bewegt.
   - `presbyopie_gleitsicht`: häufige senkrechte Blickwechsel (bis ≈ 9°); Kopf mitbewegen, Arbeitsplatzbrille erwägen.
   - `migraene_lichtempfindlich`, `photosensitive_epilepsie`: roter Vollbild-Blitz (480 ms) und Bildschirm-Wackeln bei jedem Fehlsprung. Im normalen Spiel kommen Blitze seltener als 3-mal pro Sekunde; durch schnelles Klicken ohne Laden sind aber mehrere rote Blitze pro Sekunde möglich. Mehr als 3 Blitze pro Sekunde und Wechsel zu gesättigtem Rot gelten als potenziell anfallsauslösend (Harding et al., 2005). Deshalb Effekte vorher abschalten (Blitz abschaltbar, Wackeln nicht).
-- **Kombiniert gut mit …** 104 (bewegtes Ziel abfangen), 407 (prädiktive Blickfolge), 414 (Sprungziel), 515 (vertikales Tracking), 802 (fallende Kugeln fangen), 807 (Leitersprossen im Zickzack abfangen), 808 (Fadenkreuz gegen Wind halten). Keine Diagnosen, keine Heil- oder Leistungsversprechen.
+- **Kombiniert gut mit …** 104 (bewegtes Ziel abfangen), 407 (prädiktive Blickfolge), 414 (Sprungziel), 515 (vertikales Tracking), 802 (fallende Kugeln fangen), 807 (Leitersprossen im Zickzack abfangen). **Abgrenzung in der Gruppe 806–811:** keine Dublette; nächstverwandt ist 807 (ebenfalls Abfangen bewegter Ziele mit der Maus, dort aber fester Zickzack-Rhythmus unter hohem Zeitdruck, hier Timing einer Haltedauer und Vorhalt ohne Frist). Keine Diagnosen, keine Heil- oder Leistungsversprechen.
 
 ## 10. Schwächen des Originals und Empfehlungen für eine Blickfit-Umsetzung
 - **Ehrlicher Name:** „Sprungkrafttraining“ streichen; z. B. „Wurfbahn-Abfangen“ als Auge-Hand-/Timing-Übung.

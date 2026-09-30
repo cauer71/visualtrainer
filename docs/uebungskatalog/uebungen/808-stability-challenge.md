@@ -12,10 +12,10 @@ blickfit_umsetzung: null
 stand: 2026-09-29
 
 # ===== Überblick =====
-kurzbeschreibung: "Ein unsichtbarer, ständig die Richtung wechselnder „Wind“ schiebt das Fadenkreuz aus der Bildmitte. Man hält es mit Gegenbewegungen der Maus 45 s lang im kleinen grünen Ring – eine Hand-Auge-Übung für fortlaufendes Ausgleichen, keine Gleichgewichtsübung."
+kurzbeschreibung: "Ein unsichtbarer, ständig die Richtung wechselnder „Wind“ schiebt das Fadenkreuz aus der Bildmitte. Man hält es mit Gegenbewegungen der Maus 45 s lang im kleinen grünen Ring – eine Auge-Hand-Übung für fortlaufendes Ausgleichen, keine Gleichgewichtsübung."
 ziel_funktionen: [kontinuierliche_steuerung, auge_hand_koordination]
 eingabe: [maus, touchpad]
-tablet_geeignet: mit_anpassung
+tablet_geeignet: nein
 dauer_sekunden: 45
 schwierigkeit_anpassung: "Laut Code steigt das (stufenlose) Level mit Punkte/250 + 1 plus 1 Level je 4 Punkte-Takte ununterbrochenen Haltens (≈ 0,6 s) und sinkt nie. Ringradius = max(16; 45 − 25·t) px, Windtempo = 250 + 600·t px/s (t = (Level−1)/14; Level 15: 20 px / 850 px/s, darüber Radius 16 px und Wind ohne Obergrenze). Start immer bei Level 1."
 messgroessen: ["Punkte", "Halterate = Anteil der Bilder mit Fadenkreuz im Ring in %", "Anzahl Ausbrüche aus dem Ring", "längste Serie (Combo)", "erreichtes Level", "sinnvoll: mittlerer Abstand zur Mitte in ° Sehwinkel bei festem Windtempo in °/s"]
@@ -39,7 +39,7 @@ anforderungsprofil:
     naharbeit_dauer: 1
   kognitiv:
     daueraufmerksamkeit: 2
-    selektive_aufmerksamkeit: 1
+    selektive_aufmerksamkeit: 0
     inhibition: 0
     geteilte_aufmerksamkeit: 0
     kognitive_flexibilitaet: 0
@@ -66,16 +66,16 @@ anforderungsprofil:
 belastung:
   zeitdruck: 2
   flimmern_lichtreize: 1
-  bewegungsreize_schwindel: 0
+  bewegungsreize_schwindel: 1
   koerperliche_belastung: 0
   sturzrisiko: 0
   sprachabhaengigkeit: 0
 
 # ===== Auswahlhilfe =====
-voraussetzungen: ["Maus (oder Touchpad) am Computer; das Original ist per Touch nicht fortlaufend steuerbar", "45 s ununterbrochen auf die Bildschirmmitte schauen können", "passende Korrektion für den Bildschirmabstand (bei Alterssichtigkeit Zwischenbereich)", "kein Farbsehen zwingend nötig (die Lage des Fadenkreuzes zum Ring zeigt alles)"]
+voraussetzungen: ["Maus (oder Touchpad) am Computer; auf reinen Touch-Geräten lässt sich das Original nicht starten", "45 s ununterbrochen auf die Bildschirmmitte schauen können", "passende Korrektion für den Bildschirmabstand (bei Alterssichtigkeit Zwischenbereich)", "kein Farbsehen zwingend nötig (die Lage des Fadenkreuzes zum Ring zeigt alles)"]
 vorsicht_bei: [tremor_parkinson, hand_arm_beschwerden, presbyopie_gleitsicht, trockenes_auge_bildschirm, migraene_lichtempfindlich, photosensitive_epilepsie]
 geeignet_fuer: ["fortlaufendes Ausgleichen zufälliger Störungen mit der Maus üben (Kompensations-Tracking)", "feine, dosierte Korrekturbewegungen der Hand unter Sichtkontrolle", "kurze, klar verständliche Konzentrationsaufgabe mit einem einzigen Blickpunkt in der Mitte", "Gamer:innen, die ruhiges Halten gegen Störungen üben möchten (ohne Transferversprechen)"]
-weniger_geeignet_fuer: ["Gleichgewichts-, Haltungs- oder Sturzpräventionstraining (dafür echte Übungen im Stehen)", "Tablet-Nutzung ohne Anpassung", "Menschen mit Tremor oder Hand-/Armbeschwerden (Ring bis Ø 32 px, Dauerspannung)", "Einsteiger:innen und Ältere, solange sich das Tempo nicht begrenzen lässt (Level steigt bei jeder Serie und sinkt nie)", "Vergleiche zwischen Geräten (Ergebnis hängt von Bildrate und Spielfeldgröße ab)"]
+weniger_geeignet_fuer: ["Gleichgewichts-, Haltungs- oder Sturzpräventionstraining (dafür echte Übungen im Stehen)", "Tablet ohne Maus (Original startet auf reinen Touch-Geräten nicht)", "Menschen mit Tremor oder Hand-/Armbeschwerden (Ring bis Ø 32 px, Dauerspannung)", "Einsteiger:innen und Ältere, solange sich das Tempo nicht begrenzen lässt (Level steigt bei jeder Serie und sinkt nie)", "Vergleiche zwischen Geräten (Ergebnis hängt von Bildrate und Spielfeldgröße ab)"]
 evidenz:
   uebungseffekt: mittel
   naher_transfer: schwach
@@ -98,9 +98,9 @@ Quelle: Seitentext und ausgelieferter Spielcode (Next.js-Chunk 72478, abgerufen 
 - **Spielfeld [Code]:** Canvas in Containergröße (Vorgabe 800 × 450 logische px, Querformat 16:9). Ring (Radius 45 → 16 px) fest in der Mitte, Mittelpunkt 4 px Radius; Fadenkreuz = Kreis mit 14 px Radius plus Striche, gewertet wird nur sein Mittelpunkt. Das Fadenkreuz startet in der Mitte und bleibt am Spielfeldrand hängen.
 - **Wind [Code]:** Der „Wind“ ist eine **Driftgeschwindigkeit** (Position += Wind · Zeitschritt), also px/s – nicht „Krafteinheiten“. Stärke 250 + 600·t px/s, Richtung zufällig (0–360°). Die Zielrichtung wechselt mit 5 % Wahrscheinlichkeit **pro Bild**; der tatsächliche Wind gleitet mit einer Zeitkonstante von ≈ 0,29 s (Faktor 3,5/s) zur neuen Richtung. Ohne Gegenbewegung verlässt das Fadenkreuz den Ring bei Level 1 nach ≈ 0,18 s (45 px / 250 px/s), bei Level 15 nach ≈ 0,02 s [Rechnung].
 - **Punkte [Code]:** Alle 0,15 s im Ring: Serie + 1 und 15 × Multiplikator Punkte. Multiplikator nach Serienlänge: ab 3 Takten 1,1×, 5 → 1,25×, 7 → 1,35×, 10 → 1,5×, 15 → 1,75×, 20 → 2,0×, 30 → 2,5×, **50 → 3,0×** (= 7,5 s ununterbrochen).
-- **Fehler [Code]:** Verlassen des Rings = „Ausbruch“: Serie = 0, Bildschirm-Wackeln 12 px, Strafton, roter Vollbild-Rahmenblitz 480 ms (über die Effekt-Einstellung abschaltbar). Kein Punkt- und Zeitabzug (wie im Text). Außerhalb des Rings gibt es keine Rückstellkraft.
+- **Fehler [Code]:** Verlassen des Rings = „Ausbruch“: Serie = 0, Bildschirm-Wackeln 12 px, Strafton, roter Vollbild-Blitz 480 ms (radialer Rotverlauf über das Spielfeld, über die Effekt-Einstellung abschaltbar). Kein Punkt- und Zeitabzug (wie im Text). Außerhalb des Rings gibt es keine Rückstellkraft.
 - **Level [Code]:** Level = max(bisher; Punkte/250 + 1 + ⌊Serie/4⌋), stufenlos, sinkt nie. Eine ununterbrochene Serie bringt also allein ≈ 1 Level je 0,6 s, dazu kommt der Punkteanteil: nach ≈ 6 s fehlerfreiem Halten (40 Takte) ist Level 15 erreicht [Rechnung].
-- **Eingabe [Code]:** Maus mit Pointer-Lock (relative Bewegung × Empfindlichkeit 0,1–3, Vorgabe 1), sonst absolute Zeigerposition. Keine Kamera, keine Lagesensoren. Auf reinen Touch-Geräten kein Pointer-Lock, Fingerziehen erzeugt keine fortlaufende Zeigerbewegung (Literaturbasis, F01).
+- **Eingabe [Code]:** Maus mit Pointer-Lock (relative Bewegung × Empfindlichkeit 0,1–3, Vorgabe 1), sonst absolute Zeigerposition. Keine Kamera, keine Lagesensoren. Auf reinen Touch-Geräten (Touch vorhanden, aber kein „feiner Zeiger“ laut `pointer: fine`) ersetzt der gemeinsame Startbildschirm aller sechs Spiele 806–811 den Startknopf durch „Mouse Required for Pointer Lock“ – ohne Maus lässt sich das Original nicht starten (Code geprüft 30.09.2026); ob ein Tablet mit angeschlossener Maus als feiner Zeiger gilt, hängt vom Browser ab (nicht getestet). Fingerziehen würde ohnehin keine fortlaufende Zeigerbewegung erzeugen (Literaturbasis, F01).
 - **Bildfrequenz [Code + Rechnung]:** Bewegung zeitbasiert, aber der Richtungswechsel ist **bildabhängig**: im Mittel 3,0 Wechsel/s bei 60 Hz, 7,2/s bei 144 Hz, 12/s bei 240 Hz. Weil der Wind geglättet wird, heben sich häufige Wechsel teilweise auf: In einer eigenen Simulation (Level 1) betrug das mittlere Windtempo (RMS) 185 px/s bei 60 Hz, 142 px/s bei 144 Hz und 119 px/s bei 240 Hz. Die Aufgabe ist auf schnellen Monitoren also anders (schwächer, aber unruhiger) – Ergebnisse sind zwischen Geräten nicht vergleichbar.
 - **Auswertung [Code]:** Halterate = Bilder im Ring / alle Bilder; Note = 100·√(Punkte/17.000) (S+ ab ≈ 15.300, S ≈ 12.300, A ≈ 9.600 Punkte). Countdown ≈ 2,5 s, dann 45 s.
 - **Rechnerisches Maximum [Rechnung]:** 45 s / 0,15 s = 300 Takte; bei fehlerfreiem Halten ergibt die Multiplikator-Tabelle höchstens **12.755 Punkte** (Level ≈ 127).
@@ -134,7 +134,7 @@ Quelle: Seitentext und ausgelieferter Spielcode (Next.js-Chunk 72478, abgerufen 
 ## 6. Motorische Grundlagen
 - **Bewegungsart:** fortlaufende, kleine Gegenbewegungen der Maus in wechselnde Richtungen; Tempo der Handbewegung muss dem Wind entsprechen (250–850 px/s × Mausübersetzung). Keine Zielbewegungen im Sinne von Fitts, kein Klicken.
 - **Speed-Accuracy / Überkorrektur:** Zu starke Korrekturen schießen über die Mitte hinaus (Oszillation); günstig sind dosierte, eher vorausschauende Bewegungen. Das Glätten des Winds erlaubt eine kurze Extrapolation des aktuellen Trends.
-- **Tremor und Steifigkeit:** Physiologischer Tremor liegt um ≈ 10 Hz, Parkinson-Ruhetremor bei ≈ 4–6 Hz (McAuley & Marsden, 2000); essentieller Tremor betrifft ≈ 4,6 % der über 65-Jährigen (Louis & Ferreira, 2010). Bei 16–20 px Radius werden solche Schwankungen je nach Empfindlichkeit sichtbar. Kokontraktion steigt bei kleinen Zielen und geht mit höherer Genauigkeit einher, kostet aber Energie und nahm im Versuchsverlauf tendenziell ab (Gribble et al., 2003, Zeigeaufgabe).
+- **Tremor und Steifigkeit:** Physiologischer Tremor liegt um ≈ 10 Hz, Parkinson-Tremor bei ≈ 3–6 Hz (McAuley & Marsden, 2000); essentieller Tremor betrifft ≈ 4,6 % der über 65-Jährigen (Louis & Ferreira, 2010). Bei 16–20 px Radius werden solche Schwankungen je nach Empfindlichkeit sichtbar. Kokontraktion steigt bei kleinen Zielen und geht mit höherer Genauigkeit einher, kostet aber Energie und nahm im Versuchsverlauf tendenziell ab (Gribble et al., 2003, Zeigeaufgabe).
 - **Übersetzung:** Sehr niedrige Maus-Übersetzung verschlechtert Zeigen (Umgreifen), Zeigerbeschleunigung war im Mittel sogar leicht vorteilhaft (Casiez et al., 2008) – der DPI-Tipp der Website ist keine belegte Regel.
 - **Belastung:** 45 s Dauerspannung; das Aufdrücken des Handballens („Reibungsbremse“) erhöht die Last im Handgelenk. Längere Mausnutzung hängt mit Hand-Arm-Beschwerden zusammen (mäßige Evidenz, IJmker et al., 2007).
 
@@ -159,8 +159,8 @@ Quelle: Seitentext und ausgelieferter Spielcode (Next.js-Chunk 72478, abgerufen 
   - `hand_arm_beschwerden`: 45 s Dauerspannung, Website-Tipp „Handballen aufdrücken“ nicht übernehmen.
   - `presbyopie_gleitsicht`: kleiner Ring im Zwischenbereich; Kopfhaltung/Arbeitsplatzbrille prüfen lassen.
   - `trockenes_auge_bildschirm`: Dauerfixation; Pausen und bewusstes Blinzeln.
-  - `migraene_lichtempfindlich`, `photosensitive_epilepsie`: rote Rahmenblitze (je 480 ms) und Wackeln bei jedem Ausbruch; kein gleichmäßiges Flackern, aber bei häufigem Ein- und Austreten am Ringrand (hohe Level) können mehrere Blitze pro Sekunde folgen – oberhalb von 3 Blitzen/s gilt ein erhöhtes Risiko (Harding et al., 2005; für dieses Spiel nicht gemessen). Effekte sind abschaltbar.
-- **Kombiniert gut mit …** 705 (ruhige Hand), 509 (Mikrokorrekturen), 504 (Rückstoß ausgleichen), 707 (Pfad folgen), 104/505/514 (Ziel verfolgen statt Störung ausgleichen), 810 (präzises Ziehen). Keine Diagnosen, keine Heil- oder Leistungsversprechen.
+  - `migraene_lichtempfindlich`, `photosensitive_epilepsie`: rote Vollbild-Blitze (je 480 ms) und Bildschirm-Wackeln (12 px) bei jedem Ausbruch; kein gleichmäßiges Flackern, aber bei häufigem Ein- und Austreten am Ringrand (hohe Level) können mehrere Blitze pro Sekunde folgen – oberhalb von 3 Blitzen/s gilt ein erhöhtes Risiko (Harding et al., 2005; für dieses Spiel nicht gemessen). Effekte sind abschaltbar.
+- **Kombiniert gut mit …** 705 (ruhige Hand), 509 (Mikrokorrekturen), 504 (Rückstoß ausgleichen), 707 (Pfad folgen), 104/505/514 (Ziel verfolgen statt Störung ausgleichen), 810 (präzises Ziehen). **Abgrenzung in der Gruppe 806–811:** keine Dublette; nächstverwandt ist 810 (ebenfalls enge Toleranz und fortlaufende Steuerung, dort wird der Zeiger aber aktiv entlang einer Bahn geführt statt an einem Ort gegen Störungen gehalten). Außerhalb der Gruppe ist 705 (Heißer Draht) die nächstverwandte Halte-/Führaufgabe. Keine Diagnosen, keine Heil- oder Leistungsversprechen.
 
 ## 10. Schwächen des Originals und Empfehlungen für eine Blickfit-Umsetzung
 - **Touch:** Original auf dem Tablet nicht steuerbar. Blickfit: Fadenkreuz über einen Griff unterhalb des Fingers ziehen (Finger verdeckt sonst den Ring); Ring ≥ Ø 1,5° (bei 40 cm ≈ 55 CSS-px) als Einstieg. Eine Neige-Variante (Lagesensor) wäre möglich, bleibt aber eine Hand-/Armübung.

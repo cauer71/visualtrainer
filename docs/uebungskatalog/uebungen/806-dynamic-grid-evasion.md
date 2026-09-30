@@ -15,7 +15,7 @@ stand: 2026-09-29
 kurzbeschreibung: "Die Spielfläche ist in 3 × 3 große Felder geteilt. In jeder Welle leuchten einige Felder bernsteinfarben als Warnung auf; bevor sie 'explodieren', muss man den Mauszeiger in ein nicht markiertes Feld bringen. 45 Sekunden lang, mit immer kürzerer Warnzeit und immer mehr bedrohten Feldern."
 ziel_funktionen: [entscheidung_wahlreaktion, verarbeitungsgeschwindigkeit]
 eingabe: [maus, touchpad]
-tablet_geeignet: mit_anpassung
+tablet_geeignet: nein
 dauer_sekunden: 45
 schwierigkeit_anpassung: "Laut Code steigt das Level fortlaufend mit den Punkten (1 + Punkte/250) plus 1 Level je 4 fehlerfreie Wellen in Folge; über Levelanteil t = (Level − 1)/14 sinkt die Warnzeit linear von 1,40 s auf 0,45 s und die Zahl bedrohter Felder steigt von 3 auf 7 von 9. Ab Level 15 keine weitere Steigerung, Start immer bei Level 1."
 messgroessen: ["Original: Punkte, Level, beste Serie (Combo), Treffer durch Explosion, 'Accuracy' (überstandene/gesamte Wellen), kürzeste Warnzeit", "sinnvoll: Anteil überstandener Wellen je Warnzeit und Zahl bedrohter Felder (Schwelle, z. B. 80 %)", "sinnvoll: Zeitpunkt des Zellwechsels nach Warnbeginn (Entscheidungs- plus Bewegungszeit) und Anteil unnötiger Wechsel, getrennt nach Rand-/Eckfeldern"]
@@ -72,10 +72,10 @@ belastung:
   sprachabhaengigkeit: 0
 
 # ===== Auswahlhilfe =====
-voraussetzungen: ["Maus oder Touchpad (Original nutzt Pointer-Lock; auf reinen Touch-Geräten nur per Antippen, ungetestet)", "Spielfläche vollständig und scharf sehen: bei Alterssichtigkeit passende Zwischen-/Bildschirmkorrektur, Abstand 50–70 cm", "Blinkende bernsteinfarbene und rote Großflächen sowie Bildschirm-Wackeln vertragen", "Farbsehen nicht zwingend (Warnfelder sind auch heller als leere Felder)"]
+voraussetzungen: ["Maus oder Touchpad (Original nutzt Pointer-Lock; auf reinen Touch-Geräten lässt es sich nicht starten)", "Spielfläche vollständig und scharf sehen: bei Alterssichtigkeit passende Zwischen-/Bildschirmkorrektur, Abstand 50–70 cm", "Blinkende bernsteinfarbene und rote Großflächen sowie Bildschirm-Wackeln vertragen", "Farbsehen nicht zwingend (Warnfelder sind auch heller als leere Felder)"]
 vorsicht_bei: [photosensitive_epilepsie, migraene_lichtempfindlich, gesichtsfeldausfall, presbyopie_gleitsicht, hand_arm_beschwerden, aufmerksamkeitsprobleme]
 geeignet_fuer: ["schnelles Entscheiden unter Zeitdruck mit räumlicher Antwort üben (Wahlreaktion mit direkt kompatibler Zuordnung: Zeiger dorthin, wo es sicher ist)", "Aufmerksamkeit über eine große Fläche verteilen und markierte Bereiche auf einen Blick erfassen", "spielerischer, kurzer Einstieg für Jugendliche und Gamer, die Punkte und Serien motivieren", "Maus-Zielbewegungen auf große Ziele unter Zeitdruck (geringe Präzisionsanforderung)"]
-weniger_geeignet_fuer: ["Gleichgewicht, Körperkoordination oder Sturzprävention (keine Körperübung trotz Kapitel 'Körper & Reflexe')", "Personen mit Lichtempfindlichkeit, Migräne oder Epilepsie in der Vorgeschichte (Blinkpuls, rote Vollflächen, Rotblitz)", "Tablet-Nutzung im Original", "ältere oder langsam reagierende Menschen ab etwa Level 8 (Warnzeit unter 1 s, bis 6–7 bedrohte Felder)", "wer eine faire Leistungseinstufung erwartet (Normtabelle ohne Datengrundlage und mit dem Code nicht erreichbar)"]
+weniger_geeignet_fuer: ["Gleichgewicht, Körperkoordination oder Sturzprävention (keine Körperübung trotz Kapitel 'Körper & Reflexe')", "Personen mit Lichtempfindlichkeit, Migräne oder Epilepsie in der Vorgeschichte (Blinkpuls, rote Vollflächen, Rotblitz)", "Tablet ohne Maus (Original startet auf reinen Touch-Geräten nicht)", "ältere oder langsam reagierende Menschen ab etwa Level 8 (Warnzeit unter 1 s, bis 6–7 bedrohte Felder)", "wer eine faire Leistungseinstufung erwartet (Normtabelle ohne Datengrundlage und mit dem Code nicht erreichbar)"]
 evidenz:
   uebungseffekt: mittel
   naher_transfer: schwach
@@ -123,8 +123,8 @@ abgerufen 29.09.2026, nur Mechanik). Gradangaben = eigene Umrechnung (24″ Full
   67 % (3 bedrohte Zellen) bis 22 % (7) der Wellen, im Mittel ≈ 1.860 Punkte.
 - **Bildrate:** Spiellogik mit Zeitdifferenz pro Bild (bildratenunabhängig, je Bild auf 0,1 s gedeckelt); Prüfung auf
   ein Bild genau (16,7 ms bei 60 Hz). Partikel und Abklingen des Wackelns laufen pro Bild (nur Optik).
-- **Touch (Code):** Reine Touch-Geräte werden erkannt (dann kein Pointer-Lock). Da die Position aus `mousemove` kommt,
-  dürfte Antippen das Fadenkreuz versetzen, Ziehen nicht fortlaufend – **nicht getestet**.
+- **Touch (Code):** Auf reinen Touch-Geräten (Touch vorhanden, aber kein „feiner Zeiger“ laut `pointer: fine`) ersetzt der gemeinsame Startbildschirm aller sechs Spiele 806–811 den Startknopf durch „Mouse Required for Pointer Lock“ – ohne Maus lässt sich das Original nicht starten (Code geprüft 30.09.2026); ob ein Tablet mit angeschlossener Maus als feiner Zeiger gilt, hängt vom Browser ab (nicht getestet). Die Zeigerposition käme ohnehin nur aus `mousemove`; fortlaufendes Fingerziehen
+  wird nicht ausgewertet.
 - **Widersprüche Regeltext ↔ Code:** Level steigt nicht nur „alle 250 Punkte“, sondern auch je 4 Serienwellen, und über
   15 hinaus (fehlerfrei ≈ Level 45 in der Anzeige). Die Abschlussnote rechnet mit 17.000 Punkten als Bestwert
   (100 · √(Punkte/17.000)) – die besten Noten sind nicht erreichbar.
@@ -231,7 +231,9 @@ erklärten „ballistischen Flick“ und „Reibungsbremsung“; das Training �
   - `hand_arm_beschwerden`: viele schnelle Züge; nicht „explosiv“ und ohne Handballen-Druck spielen.
   - `aufmerksamkeitsprobleme`: sehr hoher Zeitdruck, rote Fehler-Rückmeldung kann frustrieren.
 - **Kombiniert gut mit …** 803 (Maus-Ausweichen), 801/401 (peripheres Erfassen), 202 (Wahlreaktion), 103/108 (Suche ohne
-  Zeitdruck als Vorstufe), 501/702 (Zielbewegungen).
+  Zeitdruck als Vorstufe), 501/702 (Zielbewegungen). **Abgrenzung in der Gruppe 806–811:** keine Dublette – 806 ist die einzige Wahlreaktion
+  mit Ortswahl; die übrigen fünf sind Auge-Hand-, Steuerungs- bzw. Gedächtnisaufgaben. Nächstverwandt ist 803
+  (Ausweichen vor bewegten Geschossen statt Wahl eines sicheren Feldes).
 
 ## 10. Schwächen des Originals und Empfehlungen für eine Blickfit-Umsetzung
 

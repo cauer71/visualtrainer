@@ -15,7 +15,7 @@ stand: 2026-09-29
 kurzbeschreibung: "Ein Linienzug aus Start-, Weg- und Zielpunkten wird 2,0 bis 1,5 s gezeigt und verschwindet. Danach zieht man ihn bei gedrückter Maustaste aus dem Gedächtnis vom Start- zum Zielpunkt nach – eine Übung für das visuell-räumliche Kurzzeitgedächtnis mit Zeichenbewegung, keine Körperübung."
 ziel_funktionen: [kurzzeitgedaechtnis_visuell_raeumlich]
 eingabe: [maus, touchpad]
-tablet_geeignet: mit_anpassung
+tablet_geeignet: nein
 dauer_sekunden: 45
 schwierigkeit_anpassung: "Laut Code stufenloses Level = max(bisher; Punkte/250 + 1 + ⌊Serie/4⌋), sinkt nie, Start immer Level 1. Mit t = (Level−1)/14: Wegpunkte = min(8; round(3 + 5·t)) zwischen Start und Ziel, Einprägezeit = max(0,6 s; 2,0 − 1,4·t), geforderte Ähnlichkeit = min(85; 50 + 35·t), Punkte je Muster = 15 + 45·t. Ab Level 3 auch Zickzack-, ab Level 4 Spiralformen. In 45 s sind nach eigener Simulation nur Level ≈ 4–6 erreichbar (höchstens 5 Wegpunkte, Einprägezeit ≥ ≈ 1,5 s)."
 messgroessen: ["Punkte", "Genauigkeit laut Spiel = 100 − mittlere Abweichung in Pixeln (Mittel aller Versuche)", "gelöste und verfehlte Muster", "längste Serie (Combo)", "erreichtes Level", "sinnvoll: Musterspanne (größte Zahl von Wegpunkten mit ≥ 75 % gelöst) und Abweichung in ° Sehwinkel"]
@@ -57,7 +57,7 @@ anforderungsprofil:
     zielbewegung_tempo: 1
     zielbewegung_praezision: 1
     kontinuierliche_steuerung: 2
-    ruhige_hand: 1
+    ruhige_hand: 0
     fingergeschwindigkeit: 0
     fingersequenz_bimanual: 0
     ganzkoerper: 0
@@ -66,22 +66,22 @@ anforderungsprofil:
 belastung:
   zeitdruck: 2
   flimmern_lichtreize: 1
-  bewegungsreize_schwindel: 0
+  bewegungsreize_schwindel: 1
   koerperliche_belastung: 0
   sturzrisiko: 0
   sprachabhaengigkeit: 0
 
 # ===== Auswahlhilfe =====
-voraussetzungen: ["Maus (Touchpad nur mit gedrückter Taste beim Ziehen); das Original ist per Touch nicht steuerbar", "einen Linienzug von bis zu ≈ 16–26° Breite in 1,5–2 s überblicken können", "passende Korrektion für den Bildschirmabstand (bei Alterssichtigkeit Zwischenbereich)", "Farbsehen hilfreich, aber nicht zwingend (Start = cyan, Ziel = magenta; Start lässt sich auch durch Ausprobieren finden)"]
+voraussetzungen: ["Maus (Touchpad nur mit gedrückter Taste beim Ziehen); auf reinen Touch-Geräten lässt sich das Original nicht starten", "einen Linienzug von bis zu ≈ 16–26° Breite in 1,5–2 s überblicken können", "passende Korrektion für den Bildschirmabstand (bei Alterssichtigkeit Zwischenbereich)", "Farbsehen hilfreich, aber nicht zwingend (Start = cyan, Ziel = magenta; Start lässt sich auch durch Ausprobieren finden)"]
 vorsicht_bei: [kognitive_einschraenkung, presbyopie_gleitsicht, farbsehschwaeche, hand_arm_beschwerden, tremor_parkinson, migraene_lichtempfindlich, photosensitive_epilepsie]
 geeignet_fuer: ["kurz gezeigte räumliche Muster einprägen und aus dem Gedächtnis wiedergeben (visuell-räumliches Kurzzeitgedächtnis)", "Strategien üben: Punkte zu Formen bündeln (Chunking, z. B. Dreieck + Zickzack)", "Umsetzen eines inneren Bildes in eine flüssige Zeichenbewegung (Auge-Hand, ohne Vorlage)", "kurze, sprachfreie Gedächtnisaufgabe mit sofortiger Rückmeldung (Vorlage wird nach jedem Versuch gezeigt)"]
-weniger_geeignet_fuer: ["Körper-, Gleichgewichts- oder Koordinationstraining im eigentlichen Sinn (nur die Hand am Schreibtisch bewegt sich)", "Tablet-Nutzung ohne Anpassung", "Vorbereitung auf TMS/MedAT oder Rückstoß-Training in Spielen (kein Beleg, andere Aufgaben)", "Leistungsvergleiche zwischen Personen oder Geräten (Abweichung in Pixeln, zufällige Musterschwierigkeit)", "Menschen, die ohne Tempodruck üben möchten (Level steigt, sinkt nie)"]
+weniger_geeignet_fuer: ["Körper-, Gleichgewichts- oder Koordinationstraining im eigentlichen Sinn (nur die Hand am Schreibtisch bewegt sich)", "Tablet ohne Maus (Original startet auf reinen Touch-Geräten nicht)", "Vorbereitung auf TMS/MedAT oder Rückstoß-Training in Spielen (kein Beleg, andere Aufgaben)", "Leistungsvergleiche zwischen Personen oder Geräten (Abweichung in Pixeln, zufällige Musterschwierigkeit)", "Menschen, die ohne Tempodruck üben möchten (Level steigt, sinkt nie)"]
 evidenz:
   uebungseffekt: mittel
   naher_transfer: mittel
   alltag_transfer: fehlend
   kommentar: "Arbeitsgedächtnistraining verbessert kurzfristig ungeübte verbale und visuell-räumliche Arbeitsgedächtnisaufgaben, aber nicht Intelligenz, Lesen oder Rechnen (Melby-Lervåg et al., 2016; Simons et al., 2016); für dieses 45-s-Spiel gibt es keine Studie."
-aehnliche_uebungen: [603, 607, 605, 601, 707, 706, 810, 504]
+aehnliche_uebungen: [603, 607, 605, 601, 810, 707, 706]
 stichworte: ["Muster merken", "Pfad nachzeichnen", "visuell-räumliches Kurzzeitgedächtnis", "Visual Patterns Test", "Chunking", "Zeichnen aus dem Gedächtnis", "Maus ziehen", "Complex Pattern", "kein Körpertraining"]
 ---
 
@@ -100,8 +100,8 @@ Quelle: Seitentext und ausgelieferter Spielcode (Chunks 16603 und 6226, abgerufe
 - **Phasen [Code]:** Einprägen (2,0 s bei Level 1, −0,1 s je Level) → Zeichnen **ohne Zeitlimit** (nur die Rundenuhr läuft) → Rückmeldung 0,8 s: Vorlage in Grün zusammen mit der eigenen gelben Linie (die eigene Linie liegt obenauf). Die Einprägezeit zählt zur 45-s-Runde; Countdown ≈ 2,5 s.
 - **Start [Code]:** Zeichnen beginnt nur, wenn die Maustaste höchstens 45 px vom Startpunkt entfernt gedrückt wird; beim Loslassen wird gewertet.
 - **Wertung [Code]:** Vorlage und Zeichnung werden auf je 100 gleichabständige Punkte umgerechnet; für jeden Punkt zählt der Abstand zum nächstgelegenen Punkt der anderen Linie (in beide Richtungen gemittelt). „Ähnlichkeit“ = 100 − mittlerer Abstand **in Pixeln**. Liegt Anfang oder Ende der Zeichnung > 45 px von Start/Ziel, wird der Wert halbiert und der Versuch gilt als verfehlt. Gefordert: 50 → 85 (≈ 50 → 15 px mittlere Abweichung). Die **Reihenfolge** wird nur indirekt geprüft (über Start/Ziel und die Form der Linie), nicht Punkt für Punkt.
-- **Punkte/Serie [Code]:** Gelöst: 15 + 45·t Punkte × Multiplikator nach Serienlänge (ab 3 → 1,1×, 5 → 1,25×, 7 → 1,35×, 10 → 1,5×, 15 → 1,75×, 20 → 2,0×, 30 → 2,5×, 50 → 3,0×). Verfehlt: Serie = 0, Bildschirm-Wackeln 16 px, roter Blitz 480 ms (abschaltbar), Strafton; kein Zeitabzug (wie im Text).
-- **Eingabe [Code]:** `mousedown/mousemove/mouseup`, Pointer-Lock mit relativer Bewegung × einstellbarer Empfindlichkeit, sonst absolute Zeigerposition. Kein Touch-Zeichnen, keine Kamera, keine Lagesensoren (Literaturbasis, F01). Zeitschritt bildunabhängig (dt, max. 0,1 s); Zeichnung wird unabhängig von der Mausabtastrate neu verteilt.
+- **Punkte/Serie [Code]:** Gelöst: 15 + 45·t Punkte × Multiplikator nach Serienlänge (ab 3 → 1,1×, 5 → 1,25×, 7 → 1,35×, 10 → 1,5×, 15 → 1,75×, 20 → 2,0×, 30 → 2,5×, 50 → 3,0×). Verfehlt: Serie = 0, Bildschirm-Wackeln 16 px, roter Vollbild-Blitz 480 ms (abschaltbar), Strafton; kein Zeitabzug (wie im Text). Der im Code zusätzlich vorgesehene grüne Treffer-Blitz hat im Stylesheet der Seite keine Farbdefinition (geprüft 30.09.2026) und dürfte daher unsichtbar sein; sichtbar ist nur der rote Fehler-Blitz.
+- **Eingabe [Code]:** `mousedown/mousemove/mouseup`, Pointer-Lock mit relativer Bewegung × einstellbarer Empfindlichkeit, sonst absolute Zeigerposition. Kein Touch-Zeichnen, keine Kamera, keine Lagesensoren (Literaturbasis, F01). Auf reinen Touch-Geräten (Touch vorhanden, aber kein „feiner Zeiger“ laut `pointer: fine`) ersetzt der gemeinsame Startbildschirm aller sechs Spiele 806–811 den Startknopf durch „Mouse Required for Pointer Lock“ – ohne Maus lässt sich das Original nicht starten (Code geprüft 30.09.2026); ob ein Tablet mit angeschlossener Maus als feiner Zeiger gilt, hängt vom Browser ab (nicht getestet). Zeitschritt bildunabhängig (dt, max. 0,1 s); Zeichnung wird unabhängig von der Mausabtastrate neu verteilt.
 - **Rechnerisches Maximum [Rechnung]:** Bei fehlerfreiem Spiel und 0,5–2,5 s Zeichendauer schafft man 8–14 Muster, **≈ 170–400 Punkte**, Level ≈ 3,7–5,6. Die Endnote (100·√(Punkte/17.000)) liegt damit bei ≈ 10–15 von 100 → immer „F – Needs Practice“.
 
 **Widersprüche Regeltext ↔ Code:** (1) „grüner Vektorpfad“ – beim Einprägen ist er violett, grün erst bei der Rückmeldung. (2) „Combo bis 4,0x“ – im Code höchstens 3,0×, realistisch ≤ 1,5×. (3) „3 bis 8 Wegpunkte, 15 Level, 0,6 s“ – plus Start und Ziel sind es 5–10 Punkte; in einer Runde sind aber nur ≤ 5 Wegpunkte und ≥ ≈ 1,5 s erreichbar. (4) „exakte Reihenfolge“ – nicht einzeln geprüft. (5) „Genauigkeit in %“ ist 100 minus Pixelabstand, kein Prozentwert.
@@ -130,7 +130,7 @@ Quelle: Seitentext und ausgelieferter Spielcode (Chunks 16603 und 6226, abgerufe
 - **Zeichenbewegung:** Beim Zeichnen sinkt das Tempo an stark gekrümmten Stellen automatisch (Zwei-Drittel-Potenzgesetz, Lacquaniti et al., 1983). Das „Abbremsen an Scheitelpunkten“ geschieht also von selbst; Tipps zu Fingerkuppendruck und Handballen sind unbelegt.
 - **Teilstrecken:** Jede Strecke zwischen zwei Wegpunkten ähnelt einer Zielbewegung mit Anfangsimpuls und Feinkorrektur (Woodworth, 1899; Elliott et al., 2001) – allerdings zu einem **erinnerten**, nicht sichtbaren Ziel, daher größere Streuung.
 - **Toleranz:** Es gibt keinen sichtbaren Korridor; die geforderte mittlere Abweichung (≈ 40–50 px) wirkt wie ein breiter unsichtbarer Tunnel. Für Tunnelaufgaben gilt: je breiter, desto schneller (Accot & Zhai, 1997). Weil schnelles Zeichnen mehr Versuche erlaubt, belohnt das Spiel Tempo – ein Speed-Accuracy-Trade-off.
-- **Ziehen mit gedrückter Taste:** Haltearbeit des Zeigefingers plus Armbewegung; bei Tremor (physiologisch ≈ 8–12 Hz, Parkinson-Ruhetremor ≈ 4–6 Hz; McAuley & Marsden, 2000) ist die Toleranz im erreichbaren Bereich großzügig, das Halten der Taste kann aber mühsam sein.
+- **Ziehen mit gedrückter Taste:** Haltearbeit des Zeigefingers plus Armbewegung; bei Tremor (physiologisch im Bereich um 10 Hz, Parkinson-Tremor ≈ 3–6 Hz; McAuley & Marsden, 2000) ist die Toleranz im erreichbaren Bereich großzügig, das Halten der Taste kann aber mühsam sein.
 
 ## 7. Einflussfaktoren und Messgrenzen
 - **Alter:** Visuelles Arbeitsgedächtnis erreicht mit ≈ 20 Jahren sein Maximum und sinkt dann linear; mit 55 Jahren lag es unter dem von 8–9-Jährigen (n = 55.753; Brockmole & Logie, 2013). Ältere haben zudem mehr Mühe mit Maus-Aufgaben (Smith et al., 1999). Ergebnisse nur mit sich selbst vergleichen.
@@ -153,8 +153,8 @@ Quelle: Seitentext und ausgelieferter Spielcode (Chunks 16603 und 6226, abgerufe
   - `presbyopie_gleitsicht`: Muster breiter als das klare Gleitsicht-Zwischenfeld (in einer Studie 13–18°, Han et al., 2003); Kopf mitbewegen, Arbeitsplatzbrille oder kleineres Fenster erwägen.
   - `farbsehschwaeche`: Start/Ziel nur farblich unterschieden, Rückmeldung grün/rot.
   - `hand_arm_beschwerden`, `tremor_parkinson`: Ziehen mit gehaltener Taste, viele schnelle Züge in 45 s; Pausen.
-  - `migraene_lichtempfindlich`, `photosensitive_epilepsie`: einzelne rote/grüne Blitze (480 ms) und Wackeln bei Fehlern; kein periodisches Flackern ≥ 3 Hz (Harding et al., 2005); Effekte abschaltbar.
-- **Kombiniert gut mit …** 603 (Matrixmuster merken), 607 (Corsi-Reihenfolge), 605 (Orte merken), 601 (Farbsequenz), 707 (Pfad mit Vorlage nachfahren), 706 und 810 (präzises Ziehen). Keine Diagnosen, keine Heil- oder Leistungsversprechen.
+  - `migraene_lichtempfindlich`, `photosensitive_epilepsie`: einzelne rote Vollbild-Blitze (480 ms) und Wackeln (16 px) bei Fehlern (der grüne Treffer-Blitz dürfte unsichtbar sein, Abschnitt 2); kein periodisches Flackern ≥ 3 Hz (Harding et al., 2005); Effekte abschaltbar.
+- **Kombiniert gut mit …** 603 (Matrixmuster merken), 607 (Corsi-Reihenfolge), 605 (Orte merken), 601 (Farbsequenz), 707 (Pfad mit Vorlage nachfahren), 706 und 810 (präzises Ziehen). **Abgrenzung in der Gruppe 806–811:** keine Dublette; 810 ist die einzige andere Zieh-Übung der Gruppe, aber mit sichtbarer Bahn, enger Toleranz und ohne Gedächtnislast. Außerhalb der Gruppe prüfen 603 (Rastermuster) und 607 (Corsi-Reihenfolge) das Merken ohne Zeichenbewegung. Keine Diagnosen, keine Heil- oder Leistungsversprechen.
 
 ## 10. Schwächen des Originals und Empfehlungen für eine Blickfit-Umsetzung
 - **Touch:** Nachzeichnen mit dem Finger oder Stift ist auf dem Tablet natürlich – Pointer Events statt Mausereignissen; Start/Ziel ≥ 1° (bei 40 cm ≈ 36 CSS-px) als Fingerziel.
@@ -168,7 +168,7 @@ Quelle: Seitentext und ausgelieferter Spielcode (Chunks 16603 und 6226, abgerufe
 ### Von der Website angegeben
 - Baddeley, A. D., & Hitch, G. (1974). Working memory. In G. H. Bower (Hrsg.), *Psychology of Learning and Motivation* (Bd. 8, S. 47–89). Academic Press. https://doi.org/10.1016/S0079-7421(08)60452-1 – **Prüfung:** DOI stimmt ✓ (Buchkapitel); **stützt die Aussage der Website:** teilweise (Mehrkomponentenmodell ja; der visuell-räumliche Notizblock wurde vor allem später ausgearbeitet; „im parietalen und präfrontalen Kortex“ ist nicht Inhalt dieser Arbeit).
 - Cowan, N. (2001). The magical number 4 in short-term memory: A reconsideration of mental storage capacity. *Behavioral and Brain Sciences, 24*(1), 87–114. https://doi.org/10.1017/S0140525X01003922 – **Prüfung:** DOI stimmt ✓; **stützt die Aussage der Website:** teilweise (Kapazität ≈ 4 Chunks ja; „ab Level 5 bricht das Merken zusammen“ und „neuroplastisch gezwungen“ nicht – ein verbundener Linienzug ist kein Satz unabhängiger Items).
-- Lashley, K. S. (1951). The problem of serial order in behavior. In L. A. Jeffress (Hrsg.), *Cerebral mechanisms in behavior: The Hixon Symposium* (S. 112–131). Wiley. Buch, keine DOI. – **Prüfung:** DOI falsch – 10.1037/11147-006 existiert nicht (Crossref: nicht gefunden, doi.org: 404); Seitenangabe uneinheitlich (112–131 laut Literaturverzeichnis von Rosenbaum et al., 2007; andernorts 112–136 oder 112–146, vermutlich mit Diskussion) – nicht abschließend geprüft; **stützt die Aussage der Website:** teilweise (Vorausplanung schneller Folgen ja; „im Kortex kompilierter Motor-Chunk“ für jedes neue Zufallsmuster nicht).
+- Lashley, K. S. (1951). The problem of serial order in behavior. In L. A. Jeffress (Hrsg.), *Cerebral mechanisms in behavior: The Hixon Symposium* (S. 112–131). Wiley. Buch, keine DOI. – **Prüfung:** DOI falsch – 10.1037/11147-006 existiert nicht (Crossref: nicht gefunden, doi.org: 404); Seitenangabe uneinheitlich: 112–131 laut Literaturverzeichnis von Rosenbaum et al. (2007), andere Verzeichnisse nennen 112–146 (vermutlich mit Diskussion); die Website-Angabe 112–136 konnte nicht bestätigt werden – nicht abschließend geprüft; **stützt die Aussage der Website:** teilweise (Vorausplanung schneller Folgen ja; „im Kortex kompilierter Motor-Chunk“ für jedes neue Zufallsmuster nicht).
 - Woodworth, R. S. (1899). The accuracy of voluntary movement. *The Psychological Review: Monograph Supplements, 3*(3), i–114. https://doi.org/10.1037/h0092992 – **Prüfung:** DOI stimmt ✓; **stützt die Aussage der Website:** teilweise (Anfangsimpuls + Feinkorrektur ja; Tipps zum Bremsen mit Fingerkuppen/Handballen nicht).
 - Woods, D. L., Wyma, J. M., Yund, E. W., Herron, T. J., & Reed, B. (2015). Factors influencing the latency of simple reaction time. *Frontiers in Human Neuroscience, 9*, 131. https://doi.org/10.3389/fnhum.2015.00131 – **Prüfung:** DOI stimmt ✓; **stützt die Aussage der Website:** teilweise (nur Hinweis auf Hardwareverzögerungen; für dieses Spiel ohne Reaktionszeitmessung wenig relevant; keine Normen).
 

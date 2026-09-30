@@ -81,7 +81,7 @@ evidenz:
   naher_transfer: mittel
   alltag_transfer: fehlend
   kommentar: "Geübte Gedächtnisaufgaben verbessern sich regelmäßig (Owen et al. 2010); Übertragung zeigt sich vor allem auf strukturgleiche Aufgaben, beim visuell-räumlichen seriellen Erinnern eher als beim verbalen (Gathercole et al. 2019); ferner oder Alltagstransfer ist mit aktiven Kontrollgruppen nicht belegt (Melby-Lervåg et al. 2016). Für diese Pfad-Variante selbst gibt es keine Trainingsstudie."
-aehnliche_uebungen: [601, 603, 605, 811, 602, 707, 604]
+aehnliche_uebungen: [601, 603, 811, 605, 602, 604, 606]
 stichworte: ["Corsi-Block-Tapping", "Pfadgedächtnis", "räumliche Spanne", "serielles räumliches Erinnern", "Reihenfolgegedächtnis", "Inner Scribe", "visuell-räumliches Kurzzeitgedächtnis", "Chunking", "Pfadstruktur", "Touch", "sprachfrei"]
 ---
 
@@ -209,7 +209,11 @@ Fingern, Zentralfixation und rhythmisches Tippen – für MOBA-Gamer, MINT-Studi
   `tremor_parkinson` (Auslösen beim Aufsetzen, kleine Felder); `photosensitive_epilepsie`, `migraene_lichtempfindlich` (Felder blinken im 2-Hz-Takt, rotes Aufblitzen der Spielfläche bei Fehlern – abschalten).
   Alterssichtigkeit und Farbsehschwäche sind wenig kritisch.
 - **Kombiniert gut mit …** 603 (statisches Gegenstück), 601 (Senso), 602 (verbale Folge), 605 (Objekt-Ort), 811 (Linienzug
-  nachziehen), 707 (Pfad mit dem Zeiger folgen).
+  aus dem Gedächtnis nachziehen); als motorische Ergänzung ohne Gedächtnisanteil 707 (sichtbarem Pfad mit dem Zeiger folgen).
+- **Abgrenzung in der Gruppe (keine Dublette):** Am nächsten verwandt ist 601 (Folge merken und in derselben Reihenfolge
+  nachtippen). Bei 607 trägt der **Ort** die Information (farb- und sprachfrei), bei 601 die **Farbe** an einem festen
+  Punkt. 603 zeigt Orte gleichzeitig und ohne Reihenfolge; 811 verlangt einen ähnlichen Weg als Zeichenbewegung mit der
+  Maus statt als Einzel-Tipps. 602 ist das verbale Gegenstück (Ziffernfolge).
 
 ## 10. Schwächen des Originals und Empfehlungen für eine Blickfit-Umsetzung
 
@@ -245,7 +249,7 @@ Fingern, Zentralfixation und rhythmisches Tippen – für MOBA-Gamer, MINT-Studi
   **stützt:** unsicher/nein (Abstract: n = 70 Gesunde, 70 Patient:innen, Perzentile und Grenzwerte; 5,4 ± 0,9 und „computerisiert“ stehen nicht darin; Volltext nicht eingesehen).
 - Woods, D. L., Wyma, J. M., Yund, E. W., Herron, T. J., & Reed, B. (2015). Factors influencing the latency of simple
   reaction time. *Frontiers in Human Neuroscience*, 9, 131. https://doi.org/10.3389/fnhum.2015.00131 – **Prüfung:** DOI
-  stimmt ✓; **stützt:** kaum (einfache Reaktionszeit; nennt Hardware-Verzögerungen nur allgemein, nicht den 500-ms-Takt; Tippzeiten misst das Spiel ohnehin nicht).
+  stimmt ✓; **stützt:** nein (nur einfache Reaktionszeit; nennt Hardware-Verzögerungen nur allgemein, nicht den 500-ms-Takt; Tippzeiten misst das Spiel ohnehin nicht).
 
 ### Weitere Fachliteratur
 
