@@ -26,9 +26,15 @@ export interface ExerciseRecord {
   history: HistoryEntry[];
 }
 
+export type Role = 'kunde' | 'optiker';
+
 export interface Settings {
   sound: boolean;
   lang: Lang | null;
+  /** Ansicht: Kunde (nur die vom Optiker gewählten Übungen) oder Optiker (alles). null = noch nicht gewählt */
+  role: Role | null;
+  /** Übungen, die der Kunde sieht (vom Optiker gewählt) */
+  customerIds: string[];
 }
 
 export interface StoreData {
@@ -39,6 +45,10 @@ export interface StoreData {
   settings: Settings;
 }
 
+/** Voreinstellung: die drei Übungen, die Kunden sehen */
+export const DEFAULT_CUSTOMER_IDS = ['blitzreaktion', 'kugel-detektiv', 'suchbild'];
+export const CUSTOMER_COUNT = 3;
+
 const KEY = `${brand.storageKey}:v1`;
 const MAX_HISTORY = 40;
 const MAX_DAYS = 400;
@@ -46,7 +56,7 @@ const MAX_DAYS = 400;
 let memory: StoreData | null = null;
 
 function empty(): StoreData {
-  return { v: 1, exercises: {}, days: [], settings: { sound: true, lang: null } };
+  return { v: 1, exercises: {}, days: [], settings: { sound: true, lang: null, role: null, customerIds: [...DEFAULT_CUSTOMER_IDS] } };
 }
 
 export function load(): StoreData {

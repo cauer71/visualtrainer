@@ -1294,3 +1294,311 @@ p {
     animation: none;
   }
 }
+
+/* ---------- Rollenwahl (Kunde / Optiker) ---------- */
+.role-btn {
+  min-height: 40px;
+  padding: 0 14px;
+  border-radius: 999px;
+  border: 2px solid var(--brand);
+  background: #fff;
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+.role-btn:hover {
+  background: var(--primary-soft);
+}
+.role-gate {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: rgba(20, 30, 10, 0.55);
+  overflow: auto;
+}
+.role-card {
+  width: min(680px, 100%);
+  background: #fff;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+.role-card h2 {
+  margin: 0 0 6px;
+}
+.role-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin: 18px 0 10px;
+}
+.role-option {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  min-height: 150px;
+  padding: 18px;
+  text-align: left;
+  border: 2px solid var(--line);
+  border-radius: 16px;
+  background: #fff;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+}
+.role-option:hover,
+.role-option:focus-visible,
+.role-option.is-current {
+  border-color: var(--brand);
+  background: var(--primary-soft);
+}
+.role-option strong {
+  font-size: 1.15rem;
+}
+.role-note {
+  font-size: 0.9rem;
+}
+@media (max-width: 560px) {
+  .role-options {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Optiker-Bereich ---------- */
+.optician h2,
+.catalog h2,
+.catalog-entry h2 {
+  margin: 26px 0 10px;
+}
+.pick-list {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 10px;
+}
+.pick {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 64px;
+  padding: 10px 14px;
+  border: 2px solid var(--line);
+  border-radius: 14px;
+  background: #fff;
+  cursor: pointer;
+}
+.pick.is-on {
+  border-color: var(--cat, var(--brand));
+  background: var(--cat-soft, #eef5e0);
+}
+.pick.is-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.pick input {
+  width: 22px;
+  height: 22px;
+  accent-color: var(--brand);
+}
+.pick-text {
+  display: flex;
+  flex-direction: column;
+}
+.pick-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.optician-hint {
+  margin: 28px 0 0;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* ---------- Katalog ---------- */
+.catalog-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin: 14px 0;
+}
+.input {
+  min-height: 44px;
+  padding: 0 12px;
+  border: 2px solid var(--line);
+  border-radius: 12px;
+  font: inherit;
+  background: #fff;
+}
+.catalog-filters .input[type='search'] {
+  flex: 1 1 240px;
+}
+.check {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.catalog-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 10px;
+}
+.catalog-item {
+  display: flex;
+  gap: 14px;
+  padding: 14px;
+  border: 2px solid var(--line);
+  border-radius: 14px;
+  background: #fff;
+  color: inherit;
+  text-decoration: none;
+}
+.catalog-item:hover,
+.catalog-item:focus-visible {
+  border-color: var(--brand);
+}
+.catalog-nr {
+  flex: 0 0 auto;
+  min-width: 52px;
+  font-weight: 800;
+  font-size: 1.25rem;
+  color: var(--primary);
+}
+.catalog-main {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+.catalog-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+}
+.chip-warn {
+  background: #fff3e0;
+  color: #8a4b00;
+}
+.tablet-nein {
+  background: #fbe9e7;
+}
+.tablet-mit_anpassung {
+  background: #fff8e1;
+}
+.tablet-ja {
+  background: #e8f5e9;
+}
+.entry-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 12px 0;
+}
+.entry-facts,
+.entry-fit {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+@media (max-width: 760px) {
+  .entry-facts,
+  .entry-fit {
+    grid-template-columns: 1fr;
+  }
+}
+.bars {
+  display: grid;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+.bar-row {
+  display: grid;
+  grid-template-columns: minmax(130px, 1.4fr) 54px minmax(60px, 0.8fr);
+  align-items: center;
+  gap: 8px;
+}
+.bar {
+  display: inline-flex;
+  gap: 3px;
+}
+.bar i {
+  width: 14px;
+  height: 10px;
+  border-radius: 3px;
+  background: #e3e0d8;
+}
+.bar-1 i:nth-child(-n + 1),
+.bar-2 i:nth-child(-n + 2),
+.bar-3 i:nth-child(-n + 3) {
+  background: var(--brand);
+}
+.bar-warn.bar-1 i:nth-child(-n + 1),
+.bar-warn.bar-2 i:nth-child(-n + 2),
+.bar-warn.bar-3 i:nth-child(-n + 3) {
+  background: #d9822b;
+}
+.bar-text {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.plain {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 8px;
+}
+.entry-fulltext-title {
+  margin-top: 36px;
+}
+.md {
+  overflow-wrap: anywhere;
+}
+.md h2,
+.md h3,
+.md h4 {
+  margin: 1.4em 0 0.5em;
+}
+.md p,
+.md li {
+  line-height: 1.6;
+}
+.md blockquote {
+  margin: 12px 0;
+  padding: 8px 14px;
+  border-left: 4px solid var(--brand);
+  background: var(--primary-soft);
+}
+.md-table {
+  overflow-x: auto;
+}
+.md table {
+  border-collapse: collapse;
+  min-width: 480px;
+}
+.md th,
+.md td {
+  border: 1px solid var(--line);
+  padding: 6px 10px;
+  vertical-align: top;
+  text-align: left;
+}
+.md code {
+  background: #f1efe8;
+  padding: 1px 5px;
+  border-radius: 4px;
+  font-size: 0.92em;
+}

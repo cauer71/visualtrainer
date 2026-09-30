@@ -9,6 +9,10 @@ funktioniert aber auch am Handy und am Computer. Sprachen: **Deutsch** und **Ita
 - keine Anmeldung, keine Cookies, kein Tracking – Ergebnisse bleiben nur auf dem Gerät (localStorage)
 - jede Übung hat einen **Intro-Film**: Die echte Übung läuft im Demo-Modus, eine animierte Hand macht vor, was zu tun ist
 - adaptive Schwierigkeit (Staircase-Verfahren), Verlauf, Bestwerte, persönliche Tipps
+- **Zwei Ansichten** (Knopf in der Kopfzeile, beim ersten Öffnen Auswahl):
+  **Kunde** sieht nur drei vom Optiker gewählte Übungen (Voreinstellung: Blitzreaktion, Kugel-Detektiv, Suchbild);
+  **Optiker** sieht alle 16 Übungen, „Hintergrund & Studien“, den **Übungskatalog** (82 Einträge mit Anforderungsprofil, Quellen)
+  und wählt im Optiker-Bereich die Kunden-Übungen. Die Wahl ist eine Ansicht, **kein Zugangsschutz** (kein Login, alles im Browser gespeichert).
 - **Tagestraining**: jeden Tag 4 Übungen (eine je Bereich)
 - statische Seite (~130 kB gzip JS), läuft auf jedem Webspace, in Unterordnern und im iframe
 

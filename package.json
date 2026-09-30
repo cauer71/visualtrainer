@@ -5,8 +5,9 @@
   "description": "Blickfit – visuelle Trainingsübungen für Tablet und Browser (für die Homepage eines Optikers)",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc --noEmit && vite build",
+    "sync:katalog": "node scripts/sync-katalog.mjs",
+    "dev": "npm run sync:katalog && vite",
+    "build": "npm run sync:katalog && tsc --noEmit && vite build",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",

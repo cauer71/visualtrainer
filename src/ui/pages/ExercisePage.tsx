@@ -68,7 +68,7 @@ export function ExercisePage({ id, query }: { id: string; query: URLSearchParams
 // ---------------------------------------------------------------------------
 
 function Intro({ def, series, onStart }: { def: ExerciseDefinition; series: Series | null; onStart: () => void }) {
-  const { ui, lang } = useApp();
+  const { ui, lang, isOptician } = useApp();
   const tx = def.texts[lang];
   const meta = categoryMeta(def.category);
   const rec = getRecord(def.id);
@@ -143,7 +143,7 @@ function Intro({ def, series, onStart }: { def: ExerciseDefinition; series: Seri
               <Icon name="bulb" size={18} /> {ui.intro.curious}
             </summary>
             <p>{tx.why}</p>
-            <a href={href(`/hintergrund/${def.id}`)}>{ui.intro.moreScience} →</a>
+            {isOptician ? <a href={href(`/hintergrund/${def.id}`)}>{ui.intro.moreScience} →</a> : null}
           </details>
         </div>
       </div>

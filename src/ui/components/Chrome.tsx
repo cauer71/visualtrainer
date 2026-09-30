@@ -8,7 +8,7 @@ import { flags, href } from '../router';
 import { Icon } from './Icon';
 
 export function Header() {
-  const { ui, lang, setLang } = useApp();
+  const { ui, lang, setLang, opt, isOptician, role, askRole } = useApp();
   const logo = brand.logoUrl ? <img class="brand-logo" src={brand.logoUrl} alt={brand.opticianName || brand.appName} /> : <BrandMark />;
   return (
     <header class="site-header">
@@ -21,10 +21,27 @@ export function Header() {
           </span>
         </a>
         <nav class="header-nav" aria-label={ui.nav.language}>
-          <a class="nav-link hide-sm" href={href('/hintergrund')}>
-            <Icon name="book" size={20} />
-            <span>{ui.nav.science}</span>
-          </a>
+          {isOptician ? (
+            <>
+              <a class="nav-link hide-sm" href={href('/optiker')}>
+                <Icon name="eye" size={20} />
+                <span>{opt.navOptician}</span>
+              </a>
+              <a class="nav-link hide-sm" href={href('/katalog')}>
+                <Icon name="sparkle" size={20} />
+                <span>{opt.navCatalog}</span>
+              </a>
+              <a class="nav-link hide-sm" href={href('/hintergrund')}>
+                <Icon name="book" size={20} />
+                <span>{ui.nav.science}</span>
+              </a>
+            </>
+          ) : null}
+          {role ? (
+            <button type="button" class="role-btn" onClick={askRole} title={opt.roleSwitch} aria-label={`${opt.roleSwitch}: ${isOptician ? opt.roleOpticianShort : opt.roleCustomerShort}`}>
+              {isOptician ? opt.roleOpticianShort : opt.roleCustomerShort}
+            </button>
+          ) : null}
           <div class="lang-switch" role="group" aria-label={ui.nav.language}>
             {LANGS.map((l) => (
               <button
@@ -57,7 +74,7 @@ function BrandMark() {
 }
 
 export function Footer() {
-  const { ui, bumpData } = useApp();
+  const { ui, bumpData, isOptician } = useApp();
   const [msg, setMsg] = useState<string | null>(null);
   const reset = () => {
     if (window.confirm(ui.footer.resetConfirm)) {
@@ -94,7 +111,7 @@ export function Footer() {
           </p>
         </div>
         <div class="footer-links">
-          <a href={href('/hintergrund')}>{ui.footer.science}</a>
+          {isOptician ? <a href={href('/hintergrund')}>{ui.footer.science}</a> : null}
           {brand.privacyUrl ? (
             <a href={brand.privacyUrl} target="_blank" rel="noopener">
               {ui.footer.privacyLink}
@@ -110,7 +127,6 @@ export function Footer() {
           </button>
           {msg ? <span class="footer-msg" role="status">{msg}</span> : null}
         </div>
-        {brand.opticianName ? <p class="footer-copy">© {new Date().getFullYear()} {brand.opticianName}</p> : null}
       </div>
     </footer>
   );

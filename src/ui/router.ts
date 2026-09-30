@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'preact/hooks';
 
-export type RouteName = 'home' | 'exercise' | 'science';
+export type RouteName = 'home' | 'exercise' | 'science' | 'catalog' | 'catalogEntry' | 'optiker';
 
 export interface Route {
   name: RouteName;
@@ -16,6 +16,8 @@ export function parseHash(hash: string = location.hash): Route {
   const query = new URLSearchParams(qs);
   if (parts[0] === 'uebung' && parts[1]) return { name: 'exercise', id: decodeURIComponent(parts[1]), query };
   if (parts[0] === 'hintergrund') return { name: 'science', id: parts[1] ? decodeURIComponent(parts[1]) : undefined, query };
+  if (parts[0] === 'katalog') return parts[1] ? { name: 'catalogEntry', id: decodeURIComponent(parts[1]), query } : { name: 'catalog', query };
+  if (parts[0] === 'optiker') return { name: 'optiker', query };
   return { name: 'home', query };
 }
 

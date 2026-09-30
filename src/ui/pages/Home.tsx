@@ -1,16 +1,18 @@
 import { createFormatter } from '../../core/format';
 import { countToday, daysThisWeek, doneToday, getRecord, WEEK_GOAL } from '../../core/storage';
 import type { ExerciseDefinition } from '../../core/types';
-import { byCategory, CATEGORIES, categoryMeta, dailySet, getExercise } from '../../exercises/registry';
+import { byCategory, CATEGORIES, categoryMeta, getExercise } from '../../exercises/registry';
+import { dailySet } from '../../exercises/registry';
 import { useApp } from '../app-context';
 import { ArtIcon, Icon } from '../components/Icon';
 import { metricText } from '../metrics';
-import { exerciseHref } from '../router';
+import { exerciseHref, href } from '../router';
 
 export function Home() {
-  const { ui, lang, dataVersion } = useApp();
+  const { ui, lang, dataVersion, isOptician, customerIds, opt } = useApp();
   void dataVersion;
-  const daily = dailySet();
+  // Tagestraining: Kunden üben die vom Optiker gewählten Übungen, der Optiker eine je Bereich
+  const daily = isOptician ? dailySet() : customerIds.filter((id) => getExercise(id));
   const dailyDone = daily.every((id) => doneToday(id));
   const firstOpen = daily.findIndex((id) => !doneToday(id));
   const startIndex = dailyDone ? 0 : Math.max(0, firstOpen);
@@ -87,7 +89,34 @@ export function Home() {
         </ol>
       </section>
 
-      {CATEGORIES.map((cat) => {
+      {!isOptician ? (
+        <section class="category customer-list" aria-labelledby="cust-title">
+          <div class="category-head">
+            <div>
+              <h2 id="cust-title">{ui.nav.exercises}</h2>
+            </div>
+          </div>
+          <div class="card-grid">
+            {daily.map((id) => {
+              const def = getExercise(id);
+              return def ? <ExerciseCard key={def.id} def={def} /> : null;
+            })}
+          </div>
+        </section>
+      ) : null}
+
+      {isOptician ? (
+        <p class="optician-hint">
+          <a class="btn btn-ghost btn-sm" href={href('/optiker')}>
+            {opt.navOptician}
+          </a>{' '}
+          <a class="btn btn-ghost btn-sm" href={href('/katalog')}>
+            {opt.shortcutCatalog}
+          </a>
+        </p>
+      ) : null}
+
+      {(isOptician ? CATEGORIES : []).map((cat) => {
         const list = byCategory(cat.id);
         if (!list.length) return null;
         const ct = ui.categories[cat.id];
