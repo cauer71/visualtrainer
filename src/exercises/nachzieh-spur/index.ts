@@ -34,11 +34,11 @@ import { de, it } from './texts';
 
 const TRIALS = 14;
 const QUICK_TRIALS = 3;
-const DEMO_TRIALS = 3;
+const DEMO_TRIALS = 2;
 const FIRST_MS: [number, number] = [1400, 2000];
 const DEMO_FIRST_MS = 2400;
-const DEMO_GAP_MS = 1700;
-/** Demo: Bogen (Grad, mit Vorzeichen) vor dem 2. und 3. Zeichen */
+const DEMO_GAP_MS = 1900;
+/** Demo: Bogen (Grad, mit Vorzeichen) vor dem 2. Zeichen */
 const DEMO_CURVES = [0, 60, -55];
 /** Spurfarbe (hell, leicht bläulich) */
 const TRAIL_RGB = '214,232,255';

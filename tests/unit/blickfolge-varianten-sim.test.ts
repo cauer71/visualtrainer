@@ -236,7 +236,6 @@ describe.each(DEFS)('%s: Intro-Film', (_id, def) => {
       [820, 1180],
     ]) {
       const s = run(def, { mode: 'demo', w, h });
-      require('node:fs').appendFileSync('/tmp/claude-0/-home-user-visualtrainer/5dc0d85d-37c9-5d9e-a652-b93a4af9a804/scratchpad/demo.log', `${_id} ${w}x${h} ${s.seconds.toFixed(1)}\n`);
       expect(s.result).not.toBeNull();
       expect(s.seconds).toBeGreaterThanOrEqual(8);
       expect(s.seconds).toBeLessThanOrEqual(14);
