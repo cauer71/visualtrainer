@@ -17,7 +17,7 @@ ziel_funktionen: [sakkaden, auge_hand_koordination, zielbewegung_tempo]
 eingabe: [maus, touchpad]
 tablet_geeignet: mit_anpassung
 dauer_sekunden: 45
-schwierigkeit_anpassung: "Laut Code stufenlos: Level = Punkte/2.100 + 1. Mit dem Level (und leicht mit der Combo) steigen Zielzahl (2 → 3 ab Level 8 → 4 ab 15 → 5 ab 22) und Tempo (50–100 → bis ≈ 270 px/s), Lebensdauer (2,8 s → ≈ 1,0–1,3 s) und Radius (28 → ≈ 15–18 px) sinken. Uhr startet bei 45 s, +2 s je Treffer (max. 60 s), −1 s je Fehlklick/Ablauf – die Runde dauert, bis man nicht mehr mithält."
+schwierigkeit_anpassung: "Laut Code stufenlos: Level = Punkte/2.100 + 1. Mit dem Level (und leicht mit der Combo) steigen Zielzahl (ohne Combo 2 → 3 ab Level 8 → 4 ab 15 → 5 ab 22; bei fehlerfreiem Spiel mit hoher Combo schon ab ≈ Level 5,5 / 11,7 / 18,7) und Tempo (50–100 → bis ≈ 270 px/s), Lebensdauer (2,8 s → ≈ 1,0–1,3 s) und Radius (28 → ≈ 15–18 px) sinken. Uhr startet bei 45 s, +2 s je Treffer (max. 60 s), −1 s je Fehlklick/Ablauf – die Runde dauert, bis man nicht mehr mithält."
 messgroessen: ["Original: Punkte, Präzision (Treffer/Klicks; Abläufe zählen nicht), Treffer, Fehlklicks, Abläufe, beste Combo, erreichtes Level, Note S+–F (Wurzel aus Punkte/72.000)", "sinnvoll: Zeit vom Treffer bis zum nächsten Treffer (Median), Durchsatz in bit/s nach ISO 9241-9, Ablaufquote, Treffer pro Minute bei fester Dauer"]
 
 # ===== Anforderungsprofil 0–3 (alle Schlüssel angeben) =====
@@ -110,10 +110,11 @@ Grundlage: Seitentext und Spielcode (Chunk `44969-…js` samt Stufen-/Combo-Modu
 - **Lebensdauer (Code):** 2,8 s (Level 1) → ≈ 2,2 s (Level 8) → ≈ 1,6 s (15) → ≈ 1,25 s (30), hohe Combo bis −20 %
   (Untergrenze 0,9 s). Sie wird **nicht angezeigt** – „bevor deren Timer abläuft“ geht nur über das Merken des Kugelalters.
 - **Punkte/Level (Code):** je Treffer 100 × Combo-Faktor (1,0; ab 3 Treffern 1,1 … ab 50 Treffern 3,0) × (1 + 0,5 × (Level
-  − 1)/14); Level = Punkte/2.100 + 1, stufenlos, ohne Obergrenze. Fehlerfrei: 3 Ziele ab ≈ 61, 4 ab ≈ 97, 5 ab ≈ 127
-  Treffern [eigene Rechnung]. Auch eine hohe Combo erschwert leicht (mehr, schnellere, kleinere, kurzlebigere Ziele).
+  − 1)/14); Level = Punkte/2.100 + 1, stufenlos, ohne Obergrenze. Fehlerfrei (Combo zählt mit): 3 Ziele ab ≈ 45, 4 ab ≈ 80,
+  5 ab ≈ 113 Treffern [eigene Rechnung]. Auch eine hohe Combo erschwert leicht (mehr, schnellere, kleinere, kurzlebigere Ziele).
 - **Fehler (Code):** Fehlklick oder Ablauf → Combo 0, **−1 s**, Bildschirmwackeln (± 3–4 px), roter radialer Vollbild-Blitz
-  (50 % Deckkraft, 0,45 s; Standard an, abschaltbar), Ton.
+  (50 % Deckkraft, 0,45 s; Standard an, abschaltbar), Ton. Das Ablaufen der Ziele ist in den Einstellungen abschaltbar
+  (Standard an); der Zeitabzug greift laut Code unabhängig vom Strafen-Schalter immer.
 - **Uhr – Widerspruch Regeltext ↔ Code:** Start 45 s, laut Code **+2 s je Treffer (max. 60 s)**; der deutsche Regeltext nennt
   „+0,35 s“ und bei Fehlern nur „Combo-Reset“, der englische „+2 s“ und „−0,8 s“. Wer mehr als einen Treffer pro 2 s schafft,
   verlängert die Runde praktisch beliebig – sie endet erst, wenn Tempo, Zielzahl und Abläufe die eigene Trefferrate übersteigen.
@@ -127,7 +128,8 @@ Versprochen wird Training für „Multi-Target-Aiming“ und „Spray Transfers�
 - **Belegt:** Jede Zielbewegung folgt Fitts' Gesetz, Kosten fallen pro Wechsel an; schnelle Zielbewegungen bestehen aus
   Primärbewegung plus Korrekturen (Fitts, 1954; Meyer et al., 1988; Elliott et al., 2010). Kürzere Wege sparen Zeit – das
   „Routing“ folgt daraus, ist aber nicht FPS-spezifisch untersucht. Die Messhinweise (16,7/6,9/4,1 ms Bildintervall,
-  Vergleich nur am selben Gerät) sind richtig.
+  Vergleich nur am selben Gerät) sind richtig; „absolut latenzfrei“ stimmt nicht – Eingabe-, Verarbeitungs- und
+  Anzeigelatenz bleiben (Spjut et al., 2019).
 - **Überzogen:** „Primärschub über rund 90 %“ steht nicht in den Quellen; die Hand erreicht ihre Spitzengeschwindigkeit bei
   ≈ 50 % der Strecke und unterschießt leicht (Helsen et al., 1998). Merkmalsintegration und Guided Search (Treisman & Gelade;
   Wolfe) passen schlecht: Es gibt keine Ablenker, alle Ziele sehen gleich aus. „FINST“ (ohne Quelle) meint Pylyshyn & Storm
@@ -150,7 +152,8 @@ Versprochen wird Training für „Multi-Target-Aiming“ und „Spray Transfers�
 - **Gesichtsfeld/Brille:** Vollbild ≈ 48° × 27°; Ziele entstehen bis 40 px vom Rand, also bis ≈ 24° seitlich. Mit Gleitsicht
   ist der scharfe Zwischenbereich bei 60 cm nur ≈ 13–18° breit (Han et al., 2003); Randziele und der obere Bildrand (Blick
   durch den Fernteil) werden unscharf, Kopfbewegungen nehmen zu (Hutchings et al., 2007) → Arbeitsplatzbrille oder kleineres
-  Fenster. Bei Alterssichtigkeit verlangt 60 cm ≈ 1,7 dpt [eigene Rechnung].
+  Fenster. Akkommodationsbedarf bei 60 cm ≈ 1,7 dpt [eigene Rechnung] – bei Alterssichtigkeit
+  ohne passende Zwischenkorrektion nicht mehr aufzubringen.
 - **Trockenes Auge:** Bei schnellen Bildschirmspielen sinkt die Lidschlagrate auf ≈ ⅓ (Cardona et al., 2011); die Runde kann
   sich über Minuten ziehen → Pausen, bewusst blinzeln.
 
@@ -232,7 +235,7 @@ Baldauf & Deubel, 2010). „Zwingt den motorischen Kortex“ oder „neural conf
 - Han, Y., Ciuffreda, K. J., Selenow, A., & Ali, S. R. (2003). Dynamic interactions of eye and head movements when reading with single-vision and progressive lenses in a simulated computer-based environment. *Investigative Ophthalmology & Visual Science, 44*(4), 1534–1545. https://doi.org/10.1167/iovs.02-0507 – Gleitsicht-Zwischenbereich
 - Helsen, W. F., Elliott, D., Starkes, J. L., & Ricker, K. L. (1998). Temporal and spatial coupling of point of gaze and hand movements in aiming. *Journal of Motor Behavior, 30*(3), 249–259. https://doi.org/10.1080/00222899809601340 – Blick-Hand-Kopplung, Unterschießen
 - Helsen, W. F., Adam, J. J., Elliott, D., & Buekers, M. J. (2001). The one-target advantage: A test of the movement integration hypothesis. *Human Movement Science, 20*(4–5), 643–674. https://doi.org/10.1016/S0167-9457(01)00071-9 – Kosten von Zielfolgen
-- Hutchings, N., Irving, E. L., Jung, N., Dowling, L. M., & Wells, K. A. (2007). Eye and head movement alterations in naïve progressive addition lens wearers. *Ophthalmic and Physiological Optics, 27*(2), 142–153. https://doi.org/10.1111/j.1475-1313.2006.00460.x – Kopfbewegungen mit Gleitsicht
+- Hutchings, N., Irving, E. L., Jung, N., Dowling, L. M., Wells, K. A., & Lillakas, L. (2007). Eye and head movement alterations in naïve progressive addition lens wearers. *Ophthalmic and Physiological Optics, 27*(2), 142–153. https://doi.org/10.1111/j.1475-1313.2006.00460.x – Kopfbewegungen mit Gleitsicht (Crossref listet 5 Autor:innen; Lillakas per Erratum ergänzt)
 - Jagacinski, R. J., Repperger, D. W., Ward, S. L., & Moran, M. S. (1980). A test of Fitts' law with moving targets. *Human Factors, 22*(2), 225–233. https://doi.org/10.1177/001872088002200211 – Fitts für bewegte Ziele (nur Kurzfassung eingesehen)
 - Ketcham, C. J., Seidler, R. D., Van Gemmert, A. W. A., & Stelmach, G. E. (2002). Age-related kinematic differences as influenced by task difficulty, target size, and movement amplitude. *The Journals of Gerontology: Series B, 57*(1), P54–P64. https://doi.org/10.1093/geronb/57.1.P54 – Alter
 - Leigh, R. J., & Zee, D. S. (2015). *The neurology of eye movements* (5. Aufl.). Oxford University Press. https://doi.org/10.1093/med/9780199969289.001.0001 – Sakkaden-Netzwerk (Lehrbuch)

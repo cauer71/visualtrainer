@@ -17,7 +17,7 @@ ziel_funktionen: [kontinuierliche_steuerung, auge_hand_koordination]
 eingabe: [maus]
 tablet_geeignet: nein
 dauer_sekunden: 45
-schwierigkeit_anpassung: "Laut Code stufenlos: Level = Punkte / 1.400 + 1 (ohne Obergrenze). Bis Level 15 steigen der Rückstoß-Faktor 1,8 → ≈ 3,5 (maximale Auslenkung ≈ 74 → ≈ 142 px) und das Zieltempo 75 → ≈ 185 px/s, die Zielfigur schrumpft (Radius 16 → ≈ 12 px), Richtungswechsel kommen öfter (1,3 → ≈ 0,8 s) und ab Level ≈ 2,4 weicht das Ziel auch senkrecht aus. Eine lange Trefferserie (Combo) verschärft alles zusätzlich (Rückstoß bis × 1,15, Tempo bis × 1,2)."
+schwierigkeit_anpassung: "Laut Code stufenlos: Level = Punkte / 1.400 + 1 (ohne Obergrenze). Bis Level 15 steigen der Rückstoß-Faktor 1,8 → ≈ 3,5 (maximale Auslenkung ≈ 74 → ≈ 142 px) und das Zieltempo 75 → ≈ 185 px/s, die Zielfigur schrumpft (Radius 16 → ≈ 12 px), Richtungswechsel kommen öfter (1,3 → ≈ 0,8 s) und ab Level ≈ 2,4 weicht das Ziel auch senkrecht aus. Darüber nähern sich die Werte Grenzen (Faktor 4, 220 px/s, Radius 11 px). Eine lange Trefferserie (Combo) verschärft alles zusätzlich (Rückstoß bis × 1,15, Tempo bis × 1,2, Figur bis × 0,85, Trefferzonen-Zuschlag bis × 0,75)."
 messgroessen: ["Punkte (Kopf 100 / Brust 40 / Bein 20 × Combo-Faktor 1–3 × Levelfaktor 1–1,5+)", "Präzision = Treffer / abgegebene Schüsse", "Kopf-, Brust-, Beintreffer", "Magazin-Fehlschläge (< 40 % Treffer in einem Magazin)", "maximale Trefferserie", "erreichtes Level", "sinnvoll zusätzlich: Resthöhenfehler des Fadenkreuzes je Schussnummer (Kompensationsgüte), Anteil Salven vs. Einzelklicks, Lernkurve über Sitzungen"]
 
 # ===== Anforderungsprofil 0–3 (alle Schlüssel angeben) =====
@@ -114,10 +114,10 @@ Quelle: Seitentext und ausgelieferter Spielcode (Chunk `5501-…js`, 29.09.2026;
   Combo-Zuschlag bis × 1,15 → maximale Höhe ≈ 74–164 px, Seitenpendeln ≈ 16–36 px [ER].
 - **Wichtig [CODE]:** Der Rückstoß ist ein Versatz, der zur Mausposition addiert wird (gezeichnetes Fadenkreuz = Maus +
   Versatz). **Loslassen setzt das Muster auf Schuss 1 zurück.** Kurze Salven oder schnelles Einzelklicken umgehen damit
-  fast den ganzen Rückstoß (Schuss 1: −7 bis −16 px) – die Übung belohnt diese Taktik, obwohl sie „Dauerfeuer“ üben will.
+  fast den ganzen Rückstoß (Schuss 1: −7 bis −16 px). Die Seite empfiehlt „gezieltes Absetzen und Zurücksetzen“ zwar selbst, aber weil das Muster ohne Erholzeit sofort zurückspringt, kosten Salven hier nichts – die Übung belohnt diese Taktik stärker als das Ausgleichen langer Serien.
 - **Ziel [CODE]:** Kopf (Radius 0,4 r, 0,75 r über der Mitte, hellstes Grün, weißer Rand), Brust (0,7 r, halbtransparent),
   Beine (0,55 r, 0,75 r darunter, 22 % Deckkraft); r = 16 → ≈ 12 px (Level 15, min. 10 px); Trefferzonen 7 → ≈ 4 px
-  größer als gezeichnet. Waagerechtes Tempo 75 → ≈ 185 px/s (× 0,7–1,3), zufälliger Richtungswechsel alle 1,3 → ≈ 0,8 s
+  größer als gezeichnet. Waagerechtes Tempo 75 → ≈ 185 px/s (× 0,7–1,3), neu ausgeloste Richtung (50 : 50) und Tempo alle 1,3 → ≈ 0,8 s
   (± 30 %), Abprallen am Rand; ab Level ≈ 2,4 bei 65 % der Wechsel auch senkrechte Bewegung.
 - **Punkte [CODE]:** Kopf 100 / Brust 40 / Bein 20 × Combo-Faktor (1,1 ab 3 … 1,5 ab 10 … 3 ab 50 Treffern in Folge) ×
   Levelfaktor 1 + 0,5 × (Level − 1)/14; jeder Fehlschuss setzt die Combo auf 0. Level = Punkte/1.400 + 1 (stufenlos).
@@ -172,8 +172,8 @@ Streuung, > 90 % Treffer“) und „2–3 Wochen à 15 min“ bis zur Automatisi
 - Das Rückstoßmuster ist eine **visuomotorische Störung** (gesehenes Fadenkreuz ≠ Handposition). Die Anpassung daran ist
   **kleinhirnabhängig**; Menschen mit Kleinhirnataxie adaptieren deutlich schwächer (Tseng et al., 2007). Das beschreibt
   die beteiligte Struktur – kein Beleg, dass die Übung das Kleinhirn „trainiert“.
-- **Rückkopplung:** Manuelles Nachführen korrigiert intermittierend (Refraktärzeit ≈ 170 ms, Fehlertoleranz ≈ 0,8° beim
-  Joystick-Tracking; Miall et al., 1993); korrigiert werden vor allem aufgabenrelevante Abweichungen (Todorov & Jordan, 2002).
+- **Rückkopplung:** Manuelles Nachführen korrigiert intermittierend (Fehler-Totzone ≈ 0,8° beim Joystick-Tracking,
+  bei schnellen Zielen Abstände vereinbar mit ≈ 170 ms Refraktärzeit; Miall et al., 1993); korrigiert werden vor allem aufgabenrelevante Abweichungen (Todorov & Jordan, 2002).
 - Beim Verfolgen des Ziels arbeitet das Netzwerk der Folgebewegung (MT/MST, FEF, Kleinhirn; Krauzlis, 2004).
 
 ## 6. Motorische Grundlagen
@@ -183,7 +183,7 @@ Streuung, > 90 % Treffer“) und „2–3 Wochen à 15 min“ bis zur Automatisi
 - **Laborbefund:** Beim Tracking unter einem ablenkenden Kraftfeld wird der Ausgleich rasch gelernt, das intermittierende
   Grundmuster bleibt; Kraftsteuerung und Armsteifigkeit teilen sich die Arbeit (≈ 80 : 20 %; Squeri et al., 2010).
 - **Rauschen und Tremor:** Große, schnelle Korrekturimpulse streuen stärker (Harris & Wolpert, 1998). Physiologischer
-  Tremor (8–12 Hz bei Jüngeren, bei einem Teil Älterer 5–7 Hz; Elble, 2003) wirkt direkt auf Zonen von 0,3–0,7°.
+  Tremor (EMG-Gipfel 9–12 Hz bei Jüngeren, bei einzelnen Älteren 5–7 Hz; Elble, 2003) wirkt direkt auf Zonen von 0,3–0,7°.
 - **Gerät:** Mausweg je Pixel hängt von DPI, Beschleunigung und Empfindlichkeit ab; eine neue Übersetzung (Gain) wird
   rasch gelernt und verallgemeinert (Krakauer et al., 2000).
 - **Belastung:** gehaltene Taste plus dosierter Unterarmzug, ≈ 9 Magazine je Runde [ER]; bei College-Esportlern 36 %
@@ -196,7 +196,7 @@ Streuung, > 90 % Treffer“) und „2–3 Wochen à 15 min“ bis zur Automatisi
 - **Gerät:** bildratenabhängiger Schusstakt; Systemlatenz senkt die Zeit auf dem Ziel (−5,8 % bei 41 ms bis −32,7 % bei
   164 ms; Ivkovic, 2017); Mausbeschleunigung aktiv; Feldgröße ändert Sehwinkel und Mausweg.
 - **Zufall und Übung:** Zielbewegung zufällig → nur Mittel mehrerer Runden am selben Gerät vergleichen. Frühe Zuwächse
-  spiegeln Aufgabenvertrautheit (trainingsgleiche Tests SMD 2,66 vs. unähnliche 0,50; Guo et al., 2025).
+  spiegeln Aufgabenvertrautheit (Reaktionszeit: trainingsgleiche Tests SMD 2,66 vs. unähnliche 0,50; Guo et al., 2025).
 - **Person:** Alter, Müdigkeit, Tremor, Maus-Erfahrung; Normwerte gibt es nicht.
 
 ## 8. Studienlage: Trainierbarkeit und Übertragung

@@ -147,8 +147,10 @@ Die Referenztabelle („Orientierung 0,5–1,0× … Nur Referenz“) nennt ausd
   Hirnregionen-Behauptungen. Fachlich richtig: Ohne Eyetracker lässt sich Blickfolge nicht beurteilen.
 - **Aufholsakkaden:** passt zur Forschung; ausgelöst über Positions- und Geschwindigkeitsfehler (de Brouwer et al.,
   2002), auch bei Gesunden normal, glatter Gain < 0,95 (Collewijn & Tamminga, 1984).
-- **„Pointer als Hilfe“:** plausibel – Mitführen der Hand glättet die Augenfolge bei vorhersagbaren Zielen (Koken &
-  Erkelens, 1992; Danion & Flanagan, 2018). Am Tablet verdeckt der Finger aber den Punkt.
+- **„Pointer als Hilfe“:** teilweise plausibel – beim Mitführen der Hand wurde die Augenfolge glatter, allerdings nur
+  bei Sinusbewegungen über ≈ 1 Hz (Koken & Erkelens, 1992) bzw. bei einer unvorhersehbaren Bahn mit Cursor am
+  Manipulandum (Danion & Flanagan, 2018). Für die langsamen Schwingungen hier (0,1–0,14 Hz bei 1×) ist das nicht
+  gezeigt. Am Tablet verdeckt der Finger außerdem den Punkt.
 - **Lissajous-Bahnen** sind ein Laborparadigma, z. B. in Studien zu klinischen Unterschieden der Blickfolge (Benson et
   al., 2012) – dort stets mit Eyetracker. Ohne Messung erlaubt die Übung keinen Rückschluss auf die eigene Blickfolge.
 - **Quellen:** 4 Angaben; Rashbass-Titel leicht falsch, Kosinski ohne DOI und mit anderen Zahlen; Woods et al. und
@@ -156,20 +158,23 @@ Die Referenztabelle („Orientierung 0,5–1,0× … Nur Referenz“) nennt ausd
 
 ## 4. Optische und okulomotorische Grundlagen
 
-- **Sehwinkel:** Ring Ø 32 px ≈ 0,85–0,9° – Visus kaum gefordert. Kleine, in die Fovea passende Ziele erzeugen mehr
-  Aufholsakkaden als größere (Heinen et al., 2016); Radius 25–50 px erleichtert ruhiges Folgen.
+- **Sehwinkel:** Ring Ø 32 px ≈ 0,85–0,9° – Visus kaum gefordert. Kleine, in die Fovea passende Ziele – und ein
+  zentraler Punkt auf größeren Objekten – gingen mit mehr Aufholsakkaden einher (Heinen et al., 2016). Da das Ziel
+  hier immer einen weißen Mittelpunkt hat, ist offen, ob ein größerer Radius (25–50 px) das Folgen ruhiger macht.
 - **Tempo:** Bei 0,5–1× (3–16°/s) folgen Gesunde gut glatt; Latenz bei unvorhersehbarem Start ≈ 100 ms (Carl &
-  Gellman, 1987). Die Schwingungen (0,1–0,14 Hz bei 1×) sind langsam und gut vorhersagbar; bei Mehrfrequenzreizen
-  hängt der Gain an der höchsten Frequenz (0,92 bei 0,39 Hz, 0,53 bei 1,56 Hz; Barnes et al., 1987). Bei 9×
+  Gellman, 1987). Die Schwingungen (0,1–0,14 Hz bei 1×) sind langsam und gut vorhersagbar; bei pseudozufälligen
+  Mehrfrequenzreizen hing der Gain an der höchsten Frequenz (0,92 bei 0,39 Hz, 0,53 bei 1,56 Hz; Barnes et al.,
+  1987) – die periodische Bahn hier ist leichter vorhersagbar, die Werte sind nur grobe Orientierung. Bei 9×
   (0,95/1,26 Hz, Spitzen 100–140°/s) ist überwiegend sakkadisches Folgen zu erwarten; ≈ 90 % Gain bis 100°/s
-  erreichen nur die meisten Geübten (Meyer et al., 1985).
+  erreichten im Labor 5 von 6 Versuchspersonen, eine nur ≈ 60 % (Meyer et al., 1985).
 - **Richtung und Kurven:** waagrecht wird besser gefolgt als senkrecht (Rottach et al., 1996); die 3 : 4-Figur hat
   einen großen senkrechten Anteil (±10,7° am Monitor, anders als die flache Acht 402). In engen Kurven verlangsamt
   das Auge gesetzmäßig (Zwei-Drittel-Gesetz; de'Sperati & Viviani, 1997).
 - **Hintergrund:** Rot auf Fast-Schwarz ist kontrastreich; strukturierte Hintergründe senken den Gain (Collewijn &
   Tamminga, 1984), Raster und Scanlines sind hier aber sehr schwach. Der helle Modus (weißes Vollbild) kann blenden.
-- **Gleitsicht/Arbeitsplatz:** Der scharfe Zwischenbereich ist bei 60 cm nur ≈ 13–18° breit, Träger:innen bewegen
-  mehr den Kopf (Han et al., 2003). Die 37° × 21° große Bahn führt durch seitliche Unschärfezonen und senkrecht durch
+- **Gleitsicht/Arbeitsplatz:** Das scharfe Sehfeld im Zwischenbereich war bei 60 cm mit zwei
+  Gleitsichtgläsern nur ≈ 13° bzw. 18° breit (Einstärkenglas 60°); Kopfbewegungen dauerten länger, der Blick kam
+  später zur Ruhe (Han et al., 2003; waagrechtes Lesen, n = 11). Die 37° × 21° große Bahn führt durch seitliche Unschärfezonen und senkrecht durch
   verschiedene Wirkungszonen (unten Nahteil, oben Fernteil) → Arbeitsplatzbrille, kleineres Gerät oder mehr Abstand,
   Kopf bewusst mitbewegen.
 - **Nähe, Auge, Farbe, Alter:** 40 cm ≈ 2,5 dpt, 60 cm ≈ 1,7 dpt Akkommodation bzw. Nahkorrektur. Lidschlag am
@@ -255,7 +260,7 @@ bei 8°/s ≈ 0,6° hinterher, und die Fingerkuppe (≈ 1,5–2° in 40 cm, eige
 - Carl, J. R., & Gellman, R. S. (1987). Human smooth pursuit: Stimulus-dependent responses. *Journal of Neurophysiology, 57*(5), 1446–1463. https://doi.org/10.1152/jn.1987.57.5.1446 – Latenz ≈ 100 ms
 - Casiez, G., Pietrzak, T., Marchal, D., Poulmane, S., Falce, M., & Roussel, N. (2017). Characterizing latency in touch and button-equipped interactive systems. In *Proceedings of the 30th Annual ACM Symposium on User Interface Software and Technology (UIST '17)* (S. 29–39). ACM. https://doi.org/10.1145/3126594.3126606 – Touch-Latenz
 - Collewijn, H., & Tamminga, E. P. (1984). Human smooth and saccadic eye movements during voluntary pursuit of different target motions on different backgrounds. *The Journal of Physiology, 351*, 217–250. https://doi.org/10.1113/jphysiol.1984.sp015242 – Gain < 0,95, Hintergrund
-- Danion, F. R., & Flanagan, J. R. (2018). Different gaze strategies during eye versus hand tracking of a moving target. *Scientific Reports, 8*, 10059. https://doi.org/10.1038/s41598-018-28434-6 – Zeigerführung und Blickfolge
+- Danion, F. R., & Flanagan, J. R. (2018). Different gaze strategies during eye versus hand tracking of a moving target. *Scientific Reports, 8*, 10059. https://doi.org/10.1038/s41598-018-28434-6 – Handnachführen erhöht den Folge-Gain (unvorhersehbare Bahn)
 - de Brouwer, S., Yuksel, D., Blohm, G., Missal, M., & Lefèvre, P. (2002). What triggers catch-up saccades during visual tracking? *Journal of Neurophysiology, 87*(3), 1646–1650. https://doi.org/10.1152/jn.00432.2001 – Auslöser von Aufholsakkaden
 - de'Sperati, C., & Viviani, P. (1997). The relationship between curvature and velocity in two-dimensional smooth pursuit eye movements. *The Journal of Neuroscience, 17*(10), 3932–3945. https://doi.org/10.1523/JNEUROSCI.17-10-03932.1997 – Kurven, Zwei-Drittel-Gesetz
 - Eibenberger, K., Ring, M., & Haslwanter, T. (2012). Sustained effects for training of smooth pursuit plasticity. *Experimental Brain Research, 218*(1), 81–89. https://doi.org/10.1007/s00221-012-3009-8 – Trainierbarkeit
@@ -263,7 +268,7 @@ bei 8°/s ≈ 0,6° hinterher, und die Fingerkuppe (≈ 1,5–2° in 40 cm, eige
 - Han, Y., Ciuffreda, K. J., Selenow, A., & Ali, S. R. (2003). Dynamic interactions of eye and head movements when reading with single-vision and progressive lenses in a simulated computer-based environment. *Investigative Ophthalmology & Visual Science, 44*(4), 1534–1545. https://doi.org/10.1167/iovs.02-0507 – Gleitsicht am Bildschirm
 - Heinen, S. J., Potapchuk, E., & Watamaniuk, S. N. J. (2016). A foveal target increases catch-up saccade frequency during smooth pursuit. *Journal of Neurophysiology, 115*(3), 1220–1227. https://doi.org/10.1152/jn.00774.2015 – Zielgröße
 - Kettner, R. E., Leung, H. C., & Peterson, B. W. (1996). Predictive smooth pursuit of complex two-dimensional trajectories in monkey: Component interactions. *Experimental Brain Research, 108*(2), 221–235. https://doi.org/10.1007/BF00228096 – 2D-Summen von Sinusschwingungen (Affen)
-- Koken, P. W., & Erkelens, C. J. (1992). Influences of hand movements on eye movements in tracking tasks in man. *Experimental Brain Research, 88*(3), 657–664. https://doi.org/10.1007/BF00228195 – Hand unterstützt Augenfolge
+- Koken, P. W., & Erkelens, C. J. (1992). Influences of hand movements on eye movements in tracking tasks in man. *Experimental Brain Research, 88*(3), 657–664. https://doi.org/10.1007/BF00228195 – Hand glättet Augenfolge (Sinus > 1 Hz)
 - Lencer, R., & Trillenberg, P. (2008). Neurophysiology and neuroanatomy of smooth pursuit in humans. *Brain and Cognition, 68*(3), 219–228. https://doi.org/10.1016/j.bandc.2008.08.013 – Netzwerk beim Menschen
 - McHugh, D. E., & Bahill, A. T. (1985). Learning to track predictable target waveforms without a time delay. *Investigative Ophthalmology & Visual Science, 26*(7), 932–937. https://pubmed.ncbi.nlm.nih.gov/4008209/ – keine DOI (PubMed geprüft); schnelles Lernen
 - Meyer, C. H., Lasker, A. G., & Robinson, D. A. (1985). The upper limit of human smooth pursuit velocity. *Vision Research, 25*(4), 561–563. https://doi.org/10.1016/0042-6989(85)90160-9 – Höchstgeschwindigkeit

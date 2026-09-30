@@ -58,7 +58,7 @@ anforderungsprofil:
     zielbewegung_praezision: 2
     kontinuierliche_steuerung: 1
     ruhige_hand: 0
-    fingergeschwindigkeit: 1
+    fingergeschwindigkeit: 0
     fingersequenz_bimanual: 0
     ganzkoerper: 0
     gleichgewicht: 0
@@ -73,7 +73,7 @@ belastung:
 
 # ===== Auswahlhilfe =====
 voraussetzungen: ["Maus oder Touchpad (Original sperrt reine Touch-Geräte: 'Mouse Required for Pointer Lock')", "Rot und Grün unterscheiden oder das kleine weiße X auf roten Kugeln erkennen", "Pointer-Lock-fähiger Desktop-Browser"]
-vorsicht_bei: [farbsehschwaeche, presbyopie_gleitsicht, hand_arm_beschwerden, tremor_parkinson, photosensitive_epilepsie, migraene_lichtempfindlich, schwindel_vestibulaer, trockenes_auge_bildschirm, aufmerksamkeitsprobleme]
+vorsicht_bei: [farbsehschwaeche, presbyopie_gleitsicht, hand_arm_beschwerden, tremor_parkinson, photosensitive_epilepsie, migraene_lichtempfindlich, schwindel_vestibulaer, trockenes_auge_bildschirm, gesichtsfeldausfall, sehbehinderung_niedriger_visus, aufmerksamkeitsprobleme, kognitive_einschraenkung, kinder_unter_6]
 geeignet_fuer: ["bewegte Ziele vorausschauend abfangen (Zeitpunkt und Ort abschätzen) unter Tempo", "schnelle Zielbewegungen mit der Maus über das ganze Spielfeld", "Handeln nur auf ein Merkmal (Grün) und Zurückhalten beim anderen (Rot) in einer spielerischen, dynamischen Form", "Personen, die Abwechslung und Punktejagd motiviert"]
 weniger_geeignet_fuer: ["Tablet ohne Maus (Original nicht spielbar)", "Rot-Grün-Farbsehschwäche (Hauptmerkmal ist die Farbe, Formhinweis sehr klein)", "Einsteiger:innen, ältere oder langsame Personen, die ruhiges Tempo brauchen (Tempo und Rot-Anteil steigen automatisch, kein Absenken)", "wer eine echte Reaktionszeit- oder Lineal-Falltest-Messung erwartet"]
 evidenz:
@@ -81,17 +81,17 @@ evidenz:
   naher_transfer: schwach
   alltag_transfer: fehlend
   kommentar: "Keine Studie zu diesem Spiel; Übungseffekte in gerätegleichen Bildschirmaufgaben sind regelmäßig groß, in unähnlichen klein (Guo et al., 2025). Go/No-Go- und Stop-Signal-Training war einer aktiven Kontrolle nicht überlegen und ohne Transfer (Enge et al., 2014); Alltag-/Sport-Transfer ist nicht untersucht."
-aehnliche_uebungen: [102, 104, 302, 515, 801, 803, 804, 805]
+aehnliche_uebungen: [801, 104, 805, 102, 804, 302, 803, 515]
 stichworte: ["Interzeption", "Abfangen bewegter Ziele", "Go/No-Go", "Reaktionshemmung", "Auge-Hand-Koordination", "Lineal-Falltest (nur Name)", "Farbsignal Rot/Grün", "Maus", "Pointer-Lock", "Combo"]
 ---
 
 # 802 · Fallende Kugeln fangen – Grün anklicken, Rot durchlassen
 
-> Original: „Lineal-Falltest & Drop Catch“ – skilldrills.online, Kapitel „physical“ / „reflex-training“ ·
+> Original: „Lineal-Falltest & Drop Catch“ – skilldrills.online, Kapitel Körper & Reflexe (`physical`, Unterkapitel `reflex-training`) ·
 > Blickfit: noch nicht umgesetzt (Bausteine vorhanden: „Zielfang“ zu 104, „Stopp & Los“ zu 102)
 
 ## 1. Kurzbeschreibung
-Auf dunklem Grund fallen Kugeln von oben nach unten, an zufälliger Stelle über die Breite verteilt. Grüne Kugeln klickt man mit dem Fadenkreuz an („fangen“), rote Kugeln mit weißem X lässt man durchfallen. Jeder Fang bringt Punkte und Zeit, jeder Fehler kostet Zeit und setzt die Combo zurück. Mit steigenden Punkten wird alles schneller, dichter und öfter rot. Der Titel „Lineal-Falltest“ ist irreführend: Es wird kein Lineal gegriffen, keine Fallstrecke gemessen und keine Reaktionszeit ausgegeben – geübt wird das Abfangen bewegter Bildschirmziele mit Go/No-Go-Regel.
+Auf dunklem Grund fallen Kugeln von oben nach unten, an zufälliger Stelle über die Breite verteilt. Grüne Kugeln klickt man mit dem Fadenkreuz an („fangen“), rote Kugeln mit weißem X lässt man durchfallen. Jeder Fang bringt Punkte und Zeit, jeder Fehler kostet Zeit und setzt die Combo zurück. Mit steigenden Punkten wird alles schneller, dichter und öfter rot. Der Titel „Lineal-Falltest“ ist irreführend: Es wird kein Lineal gegriffen, keine Fallstrecke gemessen und keine Reaktionszeit ausgegeben – geübt wird das Abfangen bewegter Bildschirmziele mit Go/No-Go-Regel. Trotz Kapitelname **keine Körperübung**, sondern ein Maus-Spiel.
 
 ## 2. Ablauf im Original (Analyse)
 Quelle: Seitentext (29.09.2026) und ausgelieferter Spielcode (Chunk 25193 + Hilfsmodule in 97313, formatiert gelesen). **[Code]** = aus dem Code, sonst Regeltext.
@@ -131,7 +131,7 @@ Die Seite verspricht die „digitale Messung des Lineal-Falltests“ für Sportl
 - **Tempo [Herleitung]:** 400 px/s ≈ 11°/s, 1.047 px/s ≈ 28°/s, bis ≈ 44°/s. Der Folge-Gain liegt stets unter 0,95 und sinkt mit dem Tempo; Aufholsakkaden ergänzen (Collewijn & Tamminga, 1984). Bei hohem Tempo springt der Blick eher zur erwarteten Fangstelle, als der Kugel glatt zu folgen.
 - **Bildwiederholrate:** 20,8 px pro Bild bei 60 Hz, 5,2 px bei 240 Hz für 1.250 px/s **[Herleitung]** – bei Kugeln von 30–35 px ein Sprung von über der Hälfte des Durchmessers. Schnelle Monitore glätten die Bewegung; eine bessere Farberkennung ist dadurch nicht belegt.
 - **Farbe [Herleitung, WCAG-Formel]:** Grün (#10b981) und Rot (#ef4444) unterscheiden sich vor allem im Farbton, kaum in der Helligkeit (Kontrast untereinander 1,5 : 1, bei Combo ≥ 10 mit #34d399 2,0 : 1; gegen den Hintergrund 8,0 : 1 bzw. 5,4 : 1). Bei Rot-Grün-Schwäche (≈ 8 % der Männer, ≈ 0,4 % der Frauen; Birch, 2012) bleibt nur das kleine X. Rot-Grün-Empfindlichkeit fällt zudem zur Peripherie steiler ab als Helligkeits- und Blau-Gelb-Empfindlichkeit, bleibt aber bei ausreichend großen Reizen bis weit in die Peripherie erhalten (Hansen et al., 2009). Für die kleinen, schnellen Kugeln ist daher anzunehmen **[Vermutung, nicht untersucht]**, dass die Farbe am Rand des Blickfelds unsicherer erkannt wird als nach einem Blick zur Kugel.
-- **Brille/Gleitsicht:** Die Kugeln durchqueren die ganze Spielfeldhöhe (≈ 13° bei 500 px in 60 cm **[Herleitung]**). Mit Gleitsichtgläsern führt der vertikale Blickweg durch Zonen unterschiedlicher Wirkung; der scharfe Zwischenbereich ist schmal (13–18° horizontal am Bildschirm; Han et al., 2003), Kopfbewegungen nehmen zu. Der empfohlene Blick ins „obere Drittel“ geht bei Gleitsicht in Richtung Fernteil und wird bei 50–70 cm eher unscharf. Sinnvoll: Arbeitsplatz-/Bildschirmbrille für den Zwischenabstand, Bildschirm etwas tiefer, Abstand ≈ 60 cm. Etwa ab Mitte 40 reicht die Akkommodation für Naharbeit meist nicht mehr (Charman, 2008).
+- **Brille/Gleitsicht:** Die Kugeln durchqueren die ganze Spielfeldhöhe (≈ 13° bei 500 px in 60 cm **[Herleitung]**). Mit Gleitsichtgläsern führt der vertikale Blickweg durch Zonen unterschiedlicher Wirkung; der scharfe Zwischenbereich ist schmal (13–18° horizontal am Bildschirm; Han et al., 2003), Kopfbewegungen nehmen zu. Der empfohlene Blick ins „obere Drittel“ geht bei Gleitsicht in Richtung Fernteil und wird bei 50–70 cm eher unscharf. Sinnvoll: Arbeitsplatz-/Bildschirmbrille für den Zwischenabstand, Bildschirm etwas tiefer, Abstand ≈ 60 cm. Ab ≈ 40 Jahren reicht die Akkommodation für Naharbeit nicht mehr (Charman, 2008).
 
 ## 5. Neurowissenschaftliche Grundlagen
 - **Abfangen bewegter Ziele** beruht auf Bewegungswahrnehmung und fortlaufender visuomotorischer Steuerung: Die Handbewegung wird laufend an die neueste Zielinformation angepasst, statt einmal vorausberechnet zu werden (Brenner & Smeets, 2015). Für echte fallende Objekte nutzt das Gehirn ein inneres Schwerkraftmodell; bei reinen Bildschirmzielen mit Mausklick wurde es nicht angewandt (Zago et al., 2004) – das Spiel spricht es also nicht an.
@@ -141,7 +141,7 @@ Die Seite verspricht die „digitale Messung des Lineal-Falltests“ für Sportl
 ## 6. Motorische Grundlagen
 - **Zielbewegung zu einem bewegten Ziel:** Zwei-Komponenten-Modell (schneller Anfangsimpuls plus Korrektur; Elliott et al., 2001). Der klassische Fitts-Index gilt für bewegte Ziele nur eingeschränkt (Jagacinski et al., 1980). Beim Anklicken bewegter Ziele mit der Maus landen die Klicks systematisch **hinter** dem Ziel, umso mehr, je schneller es ist (Huang et al., 2018).
 - **Zeitfenster [Herleitung]:** Wer das Fadenkreuz in die Fallbahn stellt und wartet, hat die Dauer Ø/Tempo zum Klicken: 140 ms (Level 1), 50 ms (Level 10), 33 ms (Level 15), ≈ 23 ms bei Level 15 mit Höchst-Combo. Die zeitliche Streuung beim Abfangen liegt bei ≈ 20 ms (Brenner & Smeets, 2009) – bei hohen Leveln wird das Zeitfenster also leistungsbegrenzend. Menschen passen lieber den Ort als den Zeitpunkt an (Brenner & Smeets, 2015); das Spiel erlaubt beides.
-- **Geräte-Latenz:** Von der Mausbewegung bis zur Bildänderung vergehen ≈ 55–82 ms, im Browser zusätzlich 15–20 ms (Casiez et al., 2015). Bei 1.047 px/s bewegt sich eine Kugel in 60 ms um ≈ 63 px – mehr als ihr Durchmesser. Man muss also „vorhalten“; Unterschiede zwischen Geräten gehen direkt in die Punkte ein.
+- **Geräte-Latenz:** Die End-to-End-Latenz (Mausbewegung bis Bildänderung) lag im Browser bei ≈ 62–83 ms (Chrome/Firefox auf einem Testrechner von 2015; gegenüber einer nativen Anwendung meist + 15–20 ms; Casiez et al., 2015). Bei 1.047 px/s bewegt sich eine Kugel in 70 ms um ≈ 73 px **[Herleitung]** – mehr als ihr Durchmesser. Man muss also „vorhalten“; Unterschiede zwischen Geräten gehen direkt in die Punkte ein.
 - **Belastung:** Viele schnelle Mausbewegungen und Klicks (bis ≈ 2 grüne Kugeln/s) über lange Runden. Mausnutzungsdauer hängt mit Hand-Arm-Beschwerden zusammen (IJmker et al., 2007).
 
 ## 7. Einflussfaktoren und Messgrenzen
@@ -162,12 +162,15 @@ Die Seite verspricht die „digitale Messung des Lineal-Falltests“ für Sportl
   - `farbsehschwaeche`: Rot/Grün ist die Entscheidungsregel, Helligkeit fast gleich, Formhinweis sehr klein.
   - `presbyopie_gleitsicht`: vertikale Blickwege über die ganze Feldhöhe, Blick nach oben empfohlen – Bildschirmbrille und niedrigere Bildschirmposition erwägen.
   - `hand_arm_beschwerden`, `tremor_parkinson`: schnelle, genaue Klicks auf kleine bewegte Ziele, offene Rundendauer.
-  - `photosensitive_epilepsie`, `migraene_lichtempfindlich`: rotes Overlay (480 ms) und Wackeln bei jedem Fehler; bei vielen Fehlern in kurzer Folge überlagern sich die Blitze (vgl. WCAG-Grenze 3 Blitze/s; W3C, 2024).
-  - `schwindel_vestibulaer`: bei jedem Fehler wackelt das ganze Spielfeld (12 px, abklingend); bei Fehlerserien entsteht eine wiederholte großflächige Bildbewegung.
+  - `photosensitive_epilepsie`, `migraene_lichtempfindlich`: rotes Overlay (480 ms) und Wackeln bei jedem Fehler; bei vielen Fehlern in kurzer Folge überlagern sich die Blitze (vgl. WCAG-Grenze 3 Blitze/s; W3C, 2024). Die Effekt-Einstellung schaltet laut Code nur das Overlay ab.
+  - `schwindel_vestibulaer`: bei jedem Fehler wackelt das ganze Spielfeld (12 px, abklingend, nicht abschaltbar); bei Fehlerserien entsteht eine wiederholte großflächige Bildbewegung.
   - `trockenes_auge_bildschirm`: konzentriertes Starren auf schnelle Ziele über eine nach oben offene Rundendauer; Pausen und Blinzeln einplanen.
-  - `aufmerksamkeitsprobleme`: hoher Zeitdruck, Strafe auch für Leerklicks, schnelle Fehlerspirale.
+  - `gesichtsfeldausfall`, `sehbehinderung_niedriger_visus`: Kugeln erscheinen an beliebiger Stelle über die ganze Spielfeldbreite, das X auf Rot ist nur ≈ 0,26° groß – Kugeln einer Seite werden spät bemerkt, das X ist bei niedrigem Visus als Zusatzmerkmal kaum nutzbar. Keine Aussage über Gesichtsfeld oder Sehschärfe ableiten (kein Test).
+  - `aufmerksamkeitsprobleme`, `kognitive_einschraenkung`, `kinder_unter_6`: hoher, automatisch steigender Zeitdruck, Strafe auch für Leerklicks, schnelle Fehlerspirale.
+  - Keine Sturz- oder Herz-Kreislauf-Vorsicht nötig (keine Körperbewegung).
   - Das sind Auswahl- und Anpassungshinweise, keine medizinischen Aussagen.
 - **Kombiniert gut mit …** 102 (reines Go/No-Go mit Form + Farbe), 104 (Abfangen ohne Täuschziele, ruhiger), 804 (Zielgeschwindigkeit), 805 (Interzeption mit Stillhalten), 515 (vertikales Verfolgen).
+- **Abgrenzung innerhalb 801–805:** keine echte Dublette, aber **801, 802 und 804 teilen dieselbe Spiel-Engine** (Level = Punkte/1.750 + 1, +2 s/−1 s-Zeitkonto, gleiche Combo-Stufen und Note) und ein fast gleiches Profil. Engste Verwandte ist **801** (bewegte Ziele per Klick abfangen, dort radial zur Mitte, langsamer, alle Ziele anklicken). 802 ist die **einzige Übung der Gruppe mit Farb-Entscheidung** (Go/No-Go) und damit die einzige mit Vorsicht bei Farbsehschwäche. **805** fordert ebenfalls Vorhalten auf eine gerade Bahn, aber ohne Klick und mit Stillhalten; 804 hat nur ein, dafür kleineres Ziel. Die drei Engine-Geschwister nicht als „Abwechslung“ hintereinander vorschlagen.
 
 ## 10. Schwächen des Originals und Empfehlungen für eine Blickfit-Umsetzung
 - **Irreführender Name und falsche Physik:** Nicht „Lineal-Falltest“ nennen; wenn „Fallen“ versprochen wird, echte Beschleunigung (y = ½ a t²) verwenden oder ehrlich „gleichmäßig fallend“ sagen.

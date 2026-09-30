@@ -120,7 +120,7 @@ Fläche mit 2 r Randabstand – also auch nahe der Mitte.
 
 **Takt (Code).** Solange kein Ping sichtbar ist, entsteht in **jedem verarbeiteten Bild** mit
 Wahrscheinlichkeit 0,025 × Tempofaktor ein neuer. Seine Dauer ist zeitbasiert: max(15, 45 / Tempo) Einheiten zu
-1/60 s. Die Schleife verarbeitet höchstens ein Bild je 13 ms (60 Hz → 60, 90 Hz → 45, 120 Hz → 60, 144 Hz → 72
+1/60 s (mit „Random Speed“ bei 0,5× bis ≈ 3,8 s). Die Schleife verarbeitet höchstens ein Bild je 13 ms (60 Hz → 60, 90 Hz → 45, 120 Hz → 60, 144 Hz → 72
 Bilder/s). Eigene Berechnung (Mittelwerte):
 
 | Tempo | 0,5× | 1× | 2× | 3× | 5× | 9× |
@@ -164,10 +164,11 @@ Gesichtsfeld, behandle keinen Tunnelblick und belege keinen Nutzen im Straßenve
   ohne Blickbewegung. Ein weiterer Aufmerksamkeitsfokus kostet aber Verarbeitungseffizienz (Zoom-Modell; Eriksen
   & St. James, 1986) – „Bewusstsein wie Nebel über den ganzen Monitor“ ist kein Vorteil an sich.
 - **Blickfang ist real:** Plötzlich erscheinende Objekte ziehen den Blick unwillkürlich an (Findlay & Walker,
-  1999; in etwa 30–40 % der Durchgänge nach Theeuwes et al., 1998). Die Aufgabe „nicht hinschauen“ ist daher
+  1999; Theeuwes et al., 1998: „in vielen Fällen“ startete der Blick zuerst zum neuen Objekt; die oft genannten
+  ≈ 30–40 % der Durchgänge stammen aus Sekundärquellen und sind hier nicht geprüft). Die Aufgabe „nicht hinschauen“ ist daher
   sinnvoll, wird aber nicht kontrolliert.
 - **Stäbchen-Argument:** Außerhalb der Fovea überwiegen Stäbchen zahlenmäßig (92 Mio. gegenüber 4,6 Mio.
-  Zapfen; Curcio et al., 1990). Bei hellem Bildschirm und Raumlicht tragen aber Zapfen das Sehen; dass die Pings
+  Zapfen; Curcio et al., 1990). Bei Bildschirmleuchtdichte und Raumlicht tragen aber vorwiegend Zapfen das Sehen (allgemeines Lehrbuchwissen); dass die Pings
   über Stäbchen entdeckt werden, ist nicht belegt. Die Reaktionszeit steigt mit der Exzentrizität (Osaka, 1976).
 - **Tunnelblick:** Belegt ist, dass eine **zentrale** Zusatzlast die Randwahrnehmung einengt (Ringer et al.,
   2016) – genau diese zentrale Aufgabe fehlt im Code. Atemtechnik, Augeninnendruck und „Sympathikus verengt das
@@ -175,8 +176,9 @@ Gesichtsfeld, behandle keinen Tunnelblick und belege keinen Nutzen im Straßenve
 - **„Stärkt frontoparietale Netzwerke“:** Diese Netzwerke sind an zielgerichteter und reizgetriebener
   Aufmerksamkeit **beteiligt** (Corbetta & Shulman, 2002); eine Stärkung durch diese Übung ist nicht untersucht.
 - **Leistungsstufen ohne Datengrundlage:** Keine der sechs Quellen enthält solche Werte; die Seite sammelt nach
-  eigener Angabe keine Daten. „UFOV %“ ist kein Wert des echten UFOV-Tests (dieser misst Darbietungszeiten in ms;
-  Ball et al., 1988). Woods et al. (2015) fanden für einfache Reaktionen auf Reize 3,6° neben der Mitte
+  eigener Angabe keine Daten. Die „UFOV %“-Stufen sind keinem veröffentlichten UFOV-Verfahren zugeordnet; Ball et
+  al. (1988) bestimmten das nutzbare Sehfeld über die Lokalisationsleistung bei Suche mit Ablenkern, eine Einteilung
+  in „Elite“ bis „Basis“ gibt es dort nicht. Woods et al. (2015) fanden für einfache Reaktionen auf Reize 3,6° neben der Mitte
   231 ms (213 ms nach Abzug der Geräteverzögerung) – ohne Doppelaufgabe und ohne Stufen.
 - **Zielgruppen/Transfer:** Minimap-, Flanken- oder Verkehrsnutzen ist nicht belegt (Abschnitt 8).
 
@@ -196,8 +198,9 @@ nicht. Leistungsfelder sind ungleich: waagrecht besser als senkrecht, unten bess
 Seitenunterschiede sind daher normal und kein Befund.
 
 **Fixation und Blicksprünge.** Die eigentliche Anforderung ist, den Blick **nicht** zum Ping springen zu lassen.
-Reguläre Sakkaden starten nach ≈ 150 ms, Express-Sakkaden nach ≈ 100 ms (Fischer & Ramsperger, 1984) – bei
-Ping-Dauern ≥ 250 ms reicht die Zeit für einen Kontrollblick immer. Ohne Blickerfassung weiß niemand, ob
+Im Gap-Paradigma (Fixierpunkt erlischt vor dem Ziel) starten reguläre Sakkaden nach ≈ 150 ms, Express-Sakkaden
+nach ≈ 100 ms (Fischer & Ramsperger, 1984); bleibt der Fixierpunkt wie hier sichtbar, sind die Latenzen eher
+länger. Bei Ping-Dauern ≥ 250 ms reicht die Zeit für einen Kontrollblick trotzdem fast immer. Ohne Blickerfassung weiß niemand, ob
 peripher gesehen wurde.
 
 **Brille, Alter, Augen.**
@@ -210,8 +213,8 @@ peripher gesehen wurde.
   fixiert werden kann.
 - **Farbsehschwäche** (≈ 8 % der Männer; Birch, 2012): Farbe trägt keine Information, aber Rot wirkt bei
   Protan-Störungen dunkler und damit weniger auffällig; Weiß oder Gelb wählen.
-- **Trockenes Auge:** Bei Bildschirmarbeit sinkt die Lidschlagrate (11,6/min, 16 % unvollständig; Portello et al.,
-  2013); starres Fixieren verstärkt das. Bewusst blinzeln, kurze Sätze.
+- **Trockenes Auge:** Beim 15-minütigen Lesen am Bildschirm lag die Lidschlagrate im Mittel bei 11,6/min, 16 % der
+  Lidschläge waren unvollständig (n = 21; Portello et al., 2013); starres Fixieren verstärkt das. Bewusst blinzeln, kurze Sätze.
 - **Gesichtsfeldausfall:** Nicht bemerkte Pings in einem Bereich können beunruhigen; die Übung ist **kein**
   Gesichtsfeldtest (so auch die Website). Auffälligkeiten gehören in eine augenärztliche Untersuchung.
 
@@ -228,9 +231,10 @@ peripher gesehen wurde.
   sind (Übersicht: Munoz & Everling, 2004).
 - **Verarbeitungswege:** Das Zwei-Pfade-Modell (ventral „was“, dorsal „wo/wie handeln“; Goodale & Milner, 1992)
   existiert; der Tipp „verzichte auf Identifikation zugunsten des dorsalen Systems“ ist daraus nicht ableitbar.
-- **Falls ein bewegtes Ziel ergänzt wird (wie beschrieben):** Aufmerksamkeit liegt während der Blickfolge
-  überwiegend auf dem Ziel (Lovejoy et al., 2009), bevorzugt davor (Khan et al., 2010); beachtete, plötzlich
-  erscheinende Randreize senken die Folgegeschwindigkeit deutlich (Kerzel et al., 2008), ebenso fordernde
+- **Falls ein bewegtes Ziel ergänzt wird (wie beschrieben):** Der Hauptfokus der Aufmerksamkeit liegt während der
+  Blickfolge auf dem Ziel (Lovejoy et al., 2009), daneben besteht eine breite Bevorzugung des Halbfelds in
+  Bewegungsrichtung (Khan et al., 2010); beachtete, plötzlich
+  erscheinende ruhende Randobjekte senken die Folgegeschwindigkeit deutlich (Kerzel et al., 2008), ebenso fordernde
   Zweitaufgaben (Hutton & Tegally, 2005). Belege, dass die Übung Hirnareale „stärkt“, wurden nicht gefunden.
 
 ## 6. Motorische Grundlagen
@@ -239,9 +243,9 @@ peripher gesehen wurde.
   stabiler Fixation.
 - **Beschriebene Variante (Leertaste/Tippen):** Dann käme eine einfache Reaktion hinzu. Einfache visuelle
   Reaktionszeit ≈ 231 ms inklusive ≈ 18 ms Geräteverzögerung im kalibrierten Aufbau (Woods et al., 2015); sie
-  nimmt mit der Exzentrizität zu (innerhalb der ersten 10° sprunghaft, danach ≈ 8–12 ms je 10°; nur 2 geübte
-  Personen, Osaka, 1976). Touch-Geräte verzögern um 48–276 ms, Safari-Canvas am iPad ≈ 77 ms (Casiez et al.,
-  2017) – Reaktionszeiten sind daher nur am selben Gerät vergleichbar.
+  nimmt mit der Exzentrizität zu und mit der Reizgröße ab (Messung bis 50°, nur 2 geübte Personen; Osaka, 1976;
+  genaue Werte je Grad nur im Volltext, nicht geprüft). Die Ende-zu-Ende-Latenz beim Tippen lag je nach Gerät
+  und Software bei 48–276 ms, im Safari-Canvas am iPad Air 2 bei ≈ 77 ms (Casiez et al., 2017) – Reaktionszeiten sind daher nur am selben Gerät vergleichbar.
 
 ## 7. Einflussfaktoren und Messgrenzen
 
@@ -277,8 +281,8 @@ peripher gesehen wurde.
   messbarem Fortschritt.
 - **Vorsicht / anpassen bei …**
   - `photosensitive_epilepsie`, `migraene_lichtempfindlich`: harte rote Onsets mit Leuchtsaum, bei ≥ 7× im Mittel
-    ≈ 3 pro Sekunde, ab 3× in einzelnen Sekunden bis 4; die Fläche (Ø mit Saum ≈ 1,8°) liegt weit unter der WCAG-Flächengrenze (≈ 10°-Feld;
-    W3C, 2024), die besonders gefährlichen 15–25 Hz werden nicht erreicht (Fisher et al., 2005). Trotzdem Tempo
+    ≈ 3 pro Sekunde, ab 3× in einzelnen Sekunden bis 4; die Fläche (Ø mit Saum ≈ 1,8°) liegt weit unter der WCAG-Flächengrenze (0,006 sr, etwa 25 % eines
+    10°-Feldes; W3C, 2024), die besonders gefährlichen 15–25 Hz werden nicht erreicht (Fisher et al., 2005). Trotzdem Tempo
     ≤ 2×, kein „Day Mode“, bei Unwohlsein abbrechen.
   - `gesichtsfeldausfall`: Übung kann Ausfälle weder erkennen noch ausschließen; Ergebnisse nicht deuten.
   - `farbsehschwaeche`: Standard-Rot für Protan-Betroffene dunkler; Weiß/Gelb wählen.
@@ -325,7 +329,8 @@ Keine Diagnose, kein Heil- oder Sehversprechen: Die Übung prüft weder das Gesi
 - Findlay, J. M., & Walker, R. (1999). A model of saccade generation based on parallel processing and competitive
   inhibition. *Behavioral and Brain Sciences, 22*(4), 661–674. https://doi.org/10.1017/S0140525X99002150 –
   **Prüfung:** DOI stimmt ✓; **stützt die Aussage der Website:** ja – Onsets haben automatischen Zugang zur
-  Blicksteuerung („Reflex widerstehen“); „stärkt frontoparietale Netze“ steht nicht darin.
+  Blicksteuerung („Reflex widerstehen“), eine Sakkadenlatenz um 200 ms ist plausibel; „stärkt frontoparietale
+  Netze“ steht nicht darin.
 - Leigh, R. J., & Zee, D. S. (2015). *The neurology of eye movements* (5th ed.). Oxford University Press. Buch.
   https://doi.org/10.1093/med/9780199969289.001.0001 – **Prüfung:** angegebene DOI (…9203…) nicht auffindbar,
   richtig: …9289… ✓ (Crossref); **stützt die Aussage der Website:** teilweise – Standardwerk, aber ohne
@@ -359,6 +364,6 @@ Keine Diagnose, kein Heil- oder Sehversprechen: Die Übung prüft weder das Gesi
 - Ringer, R. V., Throneburg, Z., Johnson, A. P., Kramer, A. F., & Loschky, L. C. (2016). Impairing the useful field of view in natural scenes: Tunnel vision versus general interference. *Journal of Vision, 16*(2), 7. https://doi.org/10.1167/16.2.7 – Tunnelblick
 - Simons, D. J., Boot, W. R., Charness, N., Gathercole, S. E., Chabris, C. F., Hambrick, D. Z., & Stine-Morrow, E. A. L. (2016). Do "brain-training" programs work? *Psychological Science in the Public Interest, 17*(3), 103–186. https://doi.org/10.1177/1529100616661983 – Transfer
 - Strasburger, H., Rentschler, I., & Jüttner, M. (2011). Peripheral vision and pattern recognition: A review. *Journal of Vision, 11*(5), 13. https://doi.org/10.1167/11.5.13 – Gesichtsfeld
-- Theeuwes, J., Kramer, A. F., Hahn, S., & Irwin, D. E. (1998). Our eyes do not always go where we want them to go: Capture of the eyes by new objects. *Psychological Science, 9*(5), 379–385. https://doi.org/10.1111/1467-9280.00071 – Blickfang (Zahl über Sekundärquellen)
+- Theeuwes, J., Kramer, A. F., Hahn, S., & Irwin, D. E. (1998). Our eyes do not always go where we want them to go: Capture of the eyes by new objects. *Psychological Science, 9*(5), 379–385. https://doi.org/10.1111/1467-9280.00071 – Blickfang (Abstract geprüft; Prozentangabe nicht geprüft)
 - Vater, C., & Strasburger, H. (2021). Topical review: The top five peripheral vision tools in sport. *Optometry and Vision Science, 98*(7), 704–722. https://doi.org/10.1097/OPX.0000000000001732 – Peripherie-Training im Sport
 - W3C. (2024). *Web Content Accessibility Guidelines (WCAG) 2.2*, SC 2.3.1 Three Flashes or Below Threshold. https://www.w3.org/TR/WCAG22/ – Blitzgrenzen (Web, keine DOI)

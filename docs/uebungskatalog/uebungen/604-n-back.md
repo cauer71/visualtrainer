@@ -73,7 +73,7 @@ belastung:
 
 # ===== Auswahlhilfe =====
 voraussetzungen: ["Großbuchstaben A–Z sicher erkennen und benennen können", "Aufgabenregel 'gleich wie vor N Schritten?' verstehen (Einweisung mit 1- oder 2-Back hilfreich; das Original startet bei 3-Back)", "Touch oder Maus; zwei große Schaltflächen, keine Farbunterscheidung nötig"]
-vorsicht_bei: [aufmerksamkeitsprobleme, kognitive_einschraenkung, lese_rechtschreib_schwaeche, migraene_lichtempfindlich, kinder_unter_6]
+vorsicht_bei: [aufmerksamkeitsprobleme, kognitive_einschraenkung, lese_rechtschreib_schwaeche, photosensitive_epilepsie, migraene_lichtempfindlich, kinder_unter_6]
 geeignet_fuer: ["kurzes, forderndes Üben des laufenden Aktualisierens im Arbeitsgedächtnis ('die letzten drei merken und nachschieben')", "Konzentration über 45 s ohne Pause auf einen einzigen Reizstrom halten", "sitzende Übung ohne Bewegungsreize, mit sehr großen Buchstaben – auch bei eingeschränkter Sehschärfe gut lesbar", "Selbstvergleich über Wochen auf demselben Gerät (mit Vorsicht, siehe Messgrenzen)"]
 weniger_geeignet_fuer: ["Einstufung von Arbeitsgedächtnis, 'fluider Intelligenz' oder IQ (nicht normiert, wenig reliabel, keine Diagnose)", "Einsteiger:innen und Menschen, die bei Überforderung schnell frustriert sind (Start bei 3-Back, Stufe steigt automatisch und fällt nie)", "wer Zeitdruck vermeiden will (Antwortfenster 2,0 → 1,2 s, Uhr läuft durch)", "Erwartung einer Alltagswirkung auf Gedächtnis, Konzentration oder Schule"]
 evidenz:
@@ -141,7 +141,7 @@ normative Basislinie nach Kirchner 1958, 65–79 % Genauigkeit“).
   als Maß individueller Unterschiede zu wenig reliabel (Jaeggi et al., 2010). „Einbruch bei 4-Back wegen biologischer
   Grenze 4 ± 1“: Cowan (2001) gilt nur ohne Strategien; N-Back fordert zudem Kontrolle über Vertrautheit (Kane et al., 2007).
 - **Nicht belegt:** Transfer auf IQ und Alltag (Abschnitt 8). Die Tabelle hat keine Datengrundlage (die Seite sammelt
-  keine Daten), Kirchner enthält keine solche Norm, und sie passt nicht zum Spiel: 1.200 Punkte sind 8 richtige
+  keine Daten), eine Punkt- oder Perzentilnorm stammt nicht aus Kirchner (1958; Inhalt nur sekundär geprüft), und sie passt nicht zum Spiel: 1.200 Punkte sind 8 richtige
   Antworten, 65 % Genauigkeit liefert reines „Kein Treffer“-Tippen. „Signalentdeckungsmetriken“ (Woods et al., 2015) gibt
   es weder in der Studie noch im Spiel.
 - **Tipps:** Inneres Mitsprechen ist plausibel (Abschnitt 5), „nach Fadenverlust sofort neu ansetzen“ sinnvoll; die
@@ -150,7 +150,7 @@ normative Basislinie nach Kirchner 1958, 65–79 % Genauigkeit“).
 ## 4. Optische und okulomotorische Grundlagen
 
 - **Reizgröße (Herleitung):** Tablet (1 CSS-px ≈ 0,19 mm), 140 px Schrift, Versalhöhe ≈ 19 mm → bei 40 cm ≈ **2,7°**;
-  Smartphone (≈ 11 mm) bei 33 cm ≈ **1,9°**. Visus 1,0 löst ≈ 0,08° auf – auch bei deutlich reduziertem Visus lesbar.
+  Smartphone (≈ 11 mm) bei 33 cm ≈ **1,9°**. Visus 1,0 erkennt Buchstaben von ≈ 0,08° (5′) Höhe – auch bei deutlich reduziertem Visus lesbar.
   Sehschärfe, Kontrast und Farbe begrenzen nicht.
 - **Blick:** Ein Reiz an fester Stelle, keine Suche oder Blicksprünge nötig; kurze Blicke zu den Knöpfen darunter.
 - **Brille:** Am Tablet Blick durch den Nahteil, alles zentral – seitliche Gleitsicht-Unschärfe (Sheedy, 2004) spielt kaum
@@ -168,13 +168,13 @@ normative Basislinie nach Kirchner 1958, 65–79 % Genauigkeit“).
 - **Phonologische Schleife:** Gelesene Buchstaben werden in Laute umgesetzt und still mitgesprochen; Speicher im linken
   Gyrus supramarginalis, Mitsprechen im Broca-Areal (PET mit visuell gezeigten Buchstaben; Paulesu et al., 1993).
   Ähnlich klingende Buchstaben werden leichter verwechselt (Conrad & Hull, 1964): im Deutschen reimen B, C, D, E, G, P, T,
-  W auf „-e“, im Italienischen B, C, D, G, P, T auf „-i“ (Herleitung).
+  W auf „-e“, im Italienischen B, C, D, G, I, P, T (und V als „vi“) auf „-i“ (Herleitung).
 - **Aktualisieren und Vertrautheit:** Man muss das Älteste ersetzen und „genau vor N“ von „nur bekannt“ trennen; Lures
   erhöhen Fehlalarme (Kane et al., 2007). Dass die Übung Hirnregionen „stärkt“, ist nicht belegt.
 
 ## 6. Motorische Grundlagen
 
-- Zweifach-Wahlreaktion mit großen Knöpfen (≈ 41 × 11 mm am Tablet, Herleitung), über den ≈ 9,2 mm für Daumenziele
+- Zweifach-Wahlreaktion mit großen Knöpfen (Höhe ≈ 13 mm am Tablet, ≈ 9 mm am Smartphone; Herleitung aus Innenabstand und Zeilenhöhe), über den ≈ 9,2 mm für Daumenziele
   (Parhi et al., 2006); Zielgenauigkeit und Handruhe begrenzen nicht.
 - **Tempo vs. Genauigkeit:** Da die Uhr läuft und Fehler nichts kosten, lohnt schnelles Raten; ernsthaft üben heißt
   genau antworten. Touch misst Zeiten ≈ 58–70 ms zu lang (Pronk et al., 2020) – für 2-s-Fenster unerheblich.
@@ -214,8 +214,8 @@ normative Basislinie nach Kirchner 1958, 65–79 % Genauigkeit“).
 - **Vorsicht / anpassen bei …** `aufmerksamkeitsprobleme` (ununterbrochener Strom; bei ADHS häufige
   Arbeitsgedächtnisdefizite, d = 0,43–1,06; Martinussen et al., 2005); `kognitive_einschraenkung` (3-Back-Start,
   Aufstieg ohne Abstieg, Regelwechsel ohne Hinweis); `lese_rechtschreib_schwaeche` (schnelles Buchstabenbenennen,
-  Arbeitsgedächtnisnachteil d ≈ −0,67; Swanson et al., 2009); `migraene_lichtempfindlich` (roten Fehler-Blitz
-  abschalten); `kinder_unter_6` (Buchstabenkenntnis).
+  Arbeitsgedächtnisnachteil d ≈ −0,67; Swanson et al., 2009); `photosensitive_epilepsie` und `migraene_lichtempfindlich` (roter Vollbild-Blitz 480 ms bei
+  jedem Fehler, unter 3/s, aber gesättigtes Rot; vorher abschalten); `kinder_unter_6` (Buchstabenkenntnis).
 - **Kombiniert gut mit …** 602 (reines Behalten), 601 und 607 (räumliche Sequenzen), 208 (Daueraufmerksamkeit), 102
   (Go/No-Go), 205 (geteilte Aufmerksamkeit).
 

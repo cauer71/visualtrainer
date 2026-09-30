@@ -73,7 +73,7 @@ belastung:
 
 # ===== Auswahlhilfe =====
 voraussetzungen: ["ein ≈ 7–10 cm großes Raster (≈ 10–14° bei 40 cm) in 1,5 s überblicken können", "Emoji-Symbole von ≈ 4–7 mm Größe unterscheiden können (u. a. zwei ähnliche Sterne)", "Touch oder Maus; kein Lesen außer dem Wort 'ZIEL', keine Tastatur"]
-vorsicht_bei: [sehbehinderung_niedriger_visus, gesichtsfeldausfall, presbyopie_gleitsicht, kognitive_einschraenkung, aufmerksamkeitsprobleme, migraene_lichtempfindlich, kinder_unter_6]
+vorsicht_bei: [sehbehinderung_niedriger_visus, gesichtsfeldausfall, presbyopie_gleitsicht, kognitive_einschraenkung, aufmerksamkeitsprobleme, migraene_lichtempfindlich, photosensitive_epilepsie, tremor_parkinson, kinder_unter_6]
 geeignet_fuer: ["kurzes, sprachfreies Üben, sich zu merken, welches Ding wo lag (Objekt-Ort-Bindung), in DE und IT gleich", "Merkstrategien ausprobieren: Symbole an Ecken und Rändern verankern, kurze Etiketten ('Stern oben links')", "sitzende Übung am Tablet mit großen Tippfeldern", "Selbstvergleich über Wochen auf demselben Gerät"]
 weniger_geeignet_fuer: ["Einstufung des 'räumlichen Gedächtnisses', Normvergleich oder Gedächtnis-Screening (keine Normen, keine Diagnose)", "Menschen mit deutlich herabgesetzter Sehschärfe (kleine, teils ähnliche Emojis)", "Menschen, die ohne Rückstufung schnell frustriert sind (Stufe sinkt nie)", "reines Muster- oder Sequenzgedächtnis (→ 603, 607)"]
 evidenz:
@@ -116,8 +116,8 @@ Quelle: Seitentext und ausgelieferter Spielcode (Chunk `74988-…js`, Stand 29.0
 - **Wertung (Code):** +150 Punkte und Level +1 je Treffer; Fehler und Zeitablauf ohne Abzug, **kein Abstieg**, aber eine
   *neue* Zufallsanordnung derselben Stufe (Regeltext: „Runde wird wiederholt“). Trefferquote = Treffer / Versuche. Note
   aus 100 × √(Punkte/1.000): S+ ab 903 Punkten, also nach 7 Treffern. **Antwortzeiten werden nicht erfasst.**
-- **Eingabe (Code):** Touch oder Maus, Auslösung schon beim Aufsetzen (`pointerdown`); keine Tastatur. Fehler lösen
-  zusätzlich ein rotes Aufblitzen (0,48 s) aus; Blitz und Töne sind abschaltbar.
+- **Eingabe (Code):** Touch oder Maus, Auslösung schon beim Aufsetzen (`pointerdown`); keine Tastatur. Fehler und Zeitablauf
+  lösen zusätzlich ein rotes Aufblitzen (0,48 s) aus; Blitz und Töne sind abschaltbar.
 - **Widersprüche Regeltext ↔ Code:** „Raster-Progression 3×3 → 7×7“ ist in 45 s **nicht erreichbar**: 6×6 bräuchte
   23 Treffer, also ≤ 1,96 s je Versuch, das Minimum liegt bei ≈ 2,1 s. 5×5 (14 Treffer in Folge) schaffen nur sehr
   schnelle, fehlerfreie Personen. „Kein Zeitverlust“ stimmt nicht ganz: Ein Fehler kostet 0,4 s mehr Rückmeldezeit.
@@ -132,8 +132,8 @@ Schlüsseln und Parkplätzen. Eine Tabelle ordnet Level, Raster, Punkte und „Z
 - **Belegt:** Objekt-Ort-Gedächtnis besteht aus Objekt-, Orts- und Bindungsverarbeitung (Postma & De Haan, 1996; Postma
   et al., 2008). Vergessen betrifft vor allem die **Verknüpfung**: Falsch verortete Objekte landen oft auf dem Platz
   eines *anderen* Objekts („Swap-Fehler“; Pertzov et al., 2012). Die Kapazität des visuellen Arbeitsgedächtnisses liegt
-  bei ≈ 4 Objekten (Luck & Vogel, 1997; Cowan, 2001). Frauen sind im Mittel etwas besser bei Objektanordnungen (Voyer
-  et al., 2007).
+  bei ≈ 4 Objekten (Luck & Vogel, 1997; Cowan, 2001). Ab ≈ 13 Jahren schneiden Frauen im Mittel etwas besser ab, abhängig von
+  Objektart und Messmethode (Voyer et al., 2007).
 - **Überzogen:** „Fokales AG strikt auf 3–4 Elementpaare begrenzt“ – Cowan zählt Chunks, nicht Objekt-Ort-Paare. Der
   episodische Puffer ist als bindendes System *vorgeschlagen* (Baddeley, 2000), nicht „nachgewiesen“. Visuelle Bindung
   wirkte unter Zusatzlast relativ automatisch, aber fragil (Allen et al., 2006). Tolmans „kognitive Landkarte“ beruht auf
@@ -163,8 +163,8 @@ Schlüsseln und Parkplätzen. Eine Tabelle ordnet Level, Raster, Punkte und „Z
   auslassen – daher `sakkaden` 2 und `nutzbares_sehfeld` 2.
 - **Crowding (Herleitung nach Bouma, 1970; kritischer Abstand ≈ 0,5 × Exzentrizität):** Bei Blick zur Mitte liegen die
   Eckfelder am Tablet bei 4×4 ≈ 5,5° und bei 5×5 ≈ 5,7° exzentrisch. Der kritische Abstand (≈ 2,8°) ist größer als der
-  Zellabstand (2,6° bzw. 2,0°), Randsymbole sind aus der Mitte also nicht sicher erkennbar. Bei 3×3 (Abstand 3,4°) tritt
-  kein Crowding auf. Der Website-Tipp „Zentrumsblick mit 1–2 Mikrosakkaden“ ist nicht geprüft und bei größeren Rastern
+  Zellabstand (≈ 2,5° bzw. 2,0°), Randsymbole können aus der Mitte also schlechter erkennbar sein (unähnliche
+  Nachbarn stören weniger; nur Faustregel). Bei 3×3 (Abstand ≈ 3,3°) ist nach dieser Regel kein Crowding zu erwarten. Der Website-Tipp „Zentrumsblick mit 1–2 Mikrosakkaden“ ist nicht geprüft und bei größeren Rastern
   ungünstig.
 - **Blick beim Abruf:** Der Blick zur ursprünglichen Position hilft beim Erinnern, besonders bei räumlichen Beziehungen
   (Johansson & Johansson, 2014). Augenbewegungen in der Behaltensphase stören dagegen das Ortsgedächtnis (Postle et al.,
@@ -176,8 +176,8 @@ Schlüsseln und Parkplätzen. Eine Tabelle ordnet Level, Raster, Punkte und „Z
 - **Farbe und Licht:** Die Symbole unterscheiden sich vor allem in der Form, Farbe ist nur ein Zusatzhinweis
   (`farbunterscheidung` 1). Bei Rot-Grün-Schwäche (≈ 8 % der Männer; Birch, 2012) bleibt die Aufgabe lösbar. Die
   Rückmeldung grün/rot ist schwer lesbar; die Fehler zeigen aber zusätzlich der rote Blitz und das angezeigte Symbol.
-  Aufblitzen nur bei Fehlern (< 1/s) liegt weit unter der Grenze von 3 Blitzen/s; es kann aber Lichtempfindliche
-  stören.
+  Aufblitzen nur bei Fehlern (< 1/s) liegt weit unter der Grenze von 3 Blitzen/s (WCAG 2.3.1); als großflächiger,
+  gesättigt roter Blitz kann es aber Lichtempfindliche stören.
 
 ## 5. Neurowissenschaftliche Grundlagen
 
@@ -204,13 +204,14 @@ Schlüsseln und Parkplätzen. Eine Tabelle ordnet Level, Raster, Punkte und „Z
 
 - **Wenige Versuche, Zufall:** Eine Runde hat ≈ 13–16 Versuche mit wechselnder Symbolzahl und je einem Hinweisreiz.
   Raten trifft bei 3×3 in 11 % der Fälle (1/9), bei 4×4 in 6 %. Wer 4 von 8 Bindungen behält, trifft
-  schon ≈ 60 % (Herleitung). Stabile Kapazitätsschätzungen brauchen Hunderte Durchgänge (α > .9 bei 540; Xu et al.,
-  2018). Punkte und Level sind daher grobe, zufallsabhängige Maße; ohne Abstieg steigen sie eher optimistisch.
-- **Alter:** Das visuelle Arbeitsgedächtnis erreicht seinen Gipfel um ≈ 20 Jahre und nimmt danach deutlich ab (N = 55.753;
-  Brockmole & Logie, 2013). Das Bindungsdefizit im Alter ist größer als das für einzelne Items, auch für räumliche
+  schon ≈ 60 % (Herleitung). Zum Vergleich: In einer Änderungserkennungsaufgabe wurde eine hohe Reliabilität (α > .9)
+  mit 540 Durchgängen erreicht (Xu et al., 2018); für kurze Runden ist sie deutlich niedriger zu erwarten. Punkte und Level sind daher grobe, zufallsabhängige Maße; ohne Abstieg steigen sie eher optimistisch.
+- **Alter:** Das visuelle Arbeitsgedächtnis (Änderungserkennung) erreicht seinen Gipfel um ≈ 20 Jahre und nimmt danach
+  deutlich ab (N = 55.753; Brockmole & Logie, 2013). Das Bindungsdefizit im Alter ist größer als das für einzelne Items, auch für räumliche
   Orte (Old & Naveh-Benjamin, 2008). Für Ältere ist der Sprung auf 6–8 Symbole im 3×3-Raster steil. Keine Alters- oder
   Normvergleiche.
-- **Geschlecht und Gerät:** Frauenvorteil bei den meisten Objektarten ab ≈ 13 Jahren (Voyer et al., 2007). Emoji-Grafik,
+- **Geschlecht und Gerät:** Kleiner Frauenvorteil ab ≈ 13 Jahren, aber nicht bei allen Objektarten; bei „männlichen“
+  Objekten und Distanzmaßen lagen Männer vorn (Voyer et al., 2007). Emoji-Grafik,
   Rastergröße (Hoch-/Querformat ≈ 40 % Unterschied im Sehwinkel) und Touch-Latenz variieren. Nur Selbstvergleich auf
   demselben Gerät in derselben Ausrichtung.
 
@@ -243,7 +244,9 @@ Schlüsseln und Parkplätzen. Eine Tabelle ordnet Level, Raster, Punkte und „Z
     bewegen, eventuell Arbeitsplatzbrille verwenden.
   - `kognitive_einschraenkung`, `aufmerksamkeitsprobleme`: kurze Einprägezeit, Stufe sinkt nie, Frustgefahr.
     **Keine Anmutung eines Demenz-Screenings** (vgl. CANTAB PAL; Blackwell et al., 2004).
-  - `migraene_lichtempfindlich`: Rotes Aufblitzen bei Fehlern; abschalten.
+  - `migraene_lichtempfindlich`, `photosensitive_epilepsie`: großflächiges rotes Aufblitzen bei Fehlern und
+    Zeitablauf (einzeln, < 1/s); vorsorglich abschalten.
+  - `tremor_parkinson`: Auslösung schon beim Aufsetzen (`pointerdown`), versehentliche Berührungen zählen als Antwort.
   - `kinder_unter_6`: Die Spielidee ist kindgerecht, das Tempo nicht.
   - Farbsehschwäche: kein Ausschluss (Formen tragen die Information), aber Rückmeldung grün/rot schwer lesbar.
 - **Kombiniert gut mit …** 603 (statische Muster), 607 (Sequenzen), 811 (komplexe Muster), 106 (mehrere Objekte

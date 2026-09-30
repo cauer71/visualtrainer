@@ -75,12 +75,12 @@ belastung:
 voraussetzungen: ["Bildschirm oder Tablet auf fester Unterlage, Abstand 40–70 cm, Kopf möglichst ruhig", "Scharfes Sehen im Zwischenbereich über die ganze Bildbreite und ±8° nach oben/unten (Bildschirmbrille oder Einstärkenglas günstiger als Gleitsicht)", "Maus oder Finger nur zum Starten; während der Übung keine Eingabe nötig", "Bereitschaft, ohne Rückmeldung 30–120 s konzentriert zu folgen"]
 vorsicht_bei: [presbyopie_gleitsicht, schwindel_vestibulaer, reisekrankheit, nystagmus, schielen_binokular, trockenes_auge_bildschirm, kopfschmerz_asthenopie, kinder_unter_6]
 geeignet_fuer: ["glatte Blickfolge mit ständig wechselndem Tempo und senkrechter Komponente üben (Auf-ab-Folge ist schwerer als waagrechte)", "vorhersagbare, periodische Bewegung: Einstieg in 'vorausschauendes' Folgen bei 0,5–1× (Schwingung 0,26–0,53 Hz)", "Selbstbeobachtung eigener Blicksprünge in der schnellen Wellenmitte und an den seitlichen Umkehrpunkten", "kurze Augenübung ohne Hand- oder Körpereinsatz, ohne Flackerreize"]
-weniger_geeignet_fuer: ["alle, die Rückmeldung oder einen Leistungswert erwarten (das Original misst nichts)", "Gleitsichtträger:innen am großen Monitor (Bahn ≈ 43° breit und ≈ 16° hoch, weit über den scharfen Zwischenbereich hinaus)", "Tempo ab 2× für Ungeübte und Ältere (Schwingung ≥ 1 Hz, Spitzentempo ≥ 50°/s: Übergang in überwiegend sakkadisches Verfolgen)", "Ziel Reaktion, Hand-Zielgenauigkeit, Peripherie oder 'Bildschirmmüdigkeit vorbeugen' (nicht gefordert bzw. nicht belegt)"]
+weniger_geeignet_fuer: ["alle, die Rückmeldung oder einen Leistungswert erwarten (das Original misst nichts)", "Gleitsichtträger:innen am großen Monitor (Bahn ≈ 43° breit und ≈ 16° hoch, weit über den scharfen Zwischenbereich hinaus)", "Tempo ab 2× für Ungeübte und Ältere (Schwingung ≥ 1 Hz, Spitzentempo ≥ 50°/s: nahe der Grenze glatter Sinusfolge von ≈ 1,2 Hz, zunehmend Aufholsakkaden)", "Ziel Reaktion, Hand-Zielgenauigkeit, Peripherie oder 'Bildschirmmüdigkeit vorbeugen' (nicht gefordert bzw. nicht belegt)"]
 evidenz:
   uebungseffekt: mittel
   naher_transfer: schwach
   alltag_transfer: fehlend
-  kommentar: "Periodische Sinusbewegung wird im Labor innerhalb weniger Zyklen vorausschauend und nahezu ohne Verzögerung verfolgt (Barnes & Asselman, 1991; Bahill & McDonald, 1983), kurzes Pursuit-Training wirkte einige Tage nach (Eibenberger et al., 2012) – alles mit Eyetracker, nicht mit dieser Übung; Nutzen für Ballsport, Shooter oder Bildschirmbeschwerden wurde nie untersucht."
+  kommentar: "Periodische Bewegung wird im Labor nach wenigen Zyklen vorausschauender verfolgt (Barnes & Asselman, 1991; Barnes et al., 2000), Geübte folgen vorhersagbaren Wellenformen nahezu latenzfrei (Bahill & McDonald, 1983), kurzes Pursuit-Training mit quasi-zufälliger Bahn wirkte bei 10 Personen noch 5 Tage nach (Eibenberger et al., 2012) – alles mit Eyetracker, nicht mit dieser Übung; Nutzen für Ballsport, Shooter oder Bildschirmbeschwerden wurde nie untersucht."
 aehnliche_uebungen: [402, 404, 405, 406, 407, 413, 105, 514, 515, 707]
 stichworte: ["Sinuswelle", "sine wave pursuit", "smooth pursuit", "glatte Blickfolge", "vertikale Blickfolge", "prädiktive Blickfolge", "harmonische Schwingung", "Aufholsakkaden", "Folge-Gain", "Wellenbahn"]
 ---
@@ -139,34 +139,39 @@ Die Seite sagt, sie erfasse keine Augenposition, diagnostiziere nichts, und rät
 **Einordnung.**
 - **Vorhersage bei periodischer Bewegung – belegt:** In 2–4 Zyklen wird die Antwort vorausschauender (Reaktionszeit
   ≈ 300 → 200 ms bei Dreieckreizen; Barnes & Asselman, 1991), beim Einzelzyklus-Sinus 121 → 43 ms (Barnes et al.,
-  2000); Geübte folgen „latenzfrei“ (Bahill & McDonald, 1983). Das gilt aber nur für niedrige Frequenzen: bei
-  1,56 Hz sinkt der Gain auf ≈ 0,53 (Barnes et al., 1987).
+  2000); Geübte können vorhersagbaren Wellenformen „latenzfrei“ folgen (Bahill & McDonald, 1983). Das gilt aber nur für niedrige
+  Frequenzen: glatte Sinusfolge endet bei ≈ 1,2 Hz (Ohashi et al., 1985); in Mischungen mehrerer Sinusschwingungen
+  sinkt der Gain der langsamen Anteile von 0,92 auf 0,53, sobald eine schnelle Komponente von 1,56 Hz dazukommt
+  (Barnes et al., 1987) – relevant für „Random Speed“.
 - **„Kleinhirn trainieren“:** Stark et al. (1962) beschreiben einen technischen „adaptiven Prädiktor“, keine
   Hirnregion. Das Kleinhirn ist an der Folgebewegung beteiligt (Ilg & Thier, 2008); ein Training durch diese Übung ist nicht untersucht.
-- **Gain 1,0 ohne Sakkaden / Stufen:** Der glatte Gain Gesunder liegt fast immer < 0,95, Aufholsakkaden sind normal
+- **Gain 1,0 ohne Sakkaden / Stufen:** Der glatte Gain Gesunder lag in allen Bedingungen < 0,95, Aufholsakkaden sind normal
   (Collewijn & Tamminga, 1984). Die Stufen stehen in keiner Quelle, sind ohne Eyetracker nicht messbar – erfunden.
 - **Vertikal schwerer – richtig** (Rottach et al., 1996; Ke et al., 2013), aber falsch begründet: der riMLF ist ein
   Sakkaden-Generator (Sparks, 2002).
-- **Bildschirmarbeit, Durchblutung, Ballsport, Shooter:** unbelegt. Bildschirmbeschwerden hängen v. a. mit
-  Lidschlag und Naheinstellung zusammen (Portello et al., 2013). Nicht als Gesundheitsaussage übernehmen.
+- **Bildschirmarbeit, Durchblutung, Ballsport, Shooter:** unbelegt. Bildschirmbeschwerden hängen u. a. mit
+  seltenem und unvollständigem Lidschlag zusammen (Portello et al., 2013), nicht mit „untrainierten“ Augenmuskeln. Nicht als Gesundheitsaussage übernehmen.
 
 ## 4. Optische und okulomotorische Grundlagen
 
-**Tempo und Frequenz.** Ziel ≈ 0,85°, gut sichtbar. 1× (Spitze ≈ 27°/s) ist gut verfolgbar (Gain ≈ 0,9 bis 75°/s bei
-periodischen Bahnen; Buizza & Schmid, 1986). Begrenzend ist die **Frequenz**: bei 10° Ausschlag endet glatte Folge bei
-≈ **1,2 Hz** (Ohashi et al., 1985), hier knapp über 2×; ab 3× (1,6 Hz, ≈ 780°/s²) überwiegen Sakkaden.
+**Tempo und Frequenz.** Ziel ≈ 0,85°, gut sichtbar. 1× (Spitze ≈ 27°/s) ist gut verfolgbar (waagrecht Gain ≈ 0,9 bis 75°/s bei
+periodischen Bahnen; Buizza & Schmid, 1986; senkrecht etwas niedriger). Begrenzend ist die **Frequenz**: bei ± 10° Ausschlag endet glatte Folge bei
+≈ **1,2 Hz** (Ohashi et al., 1985), hier knapp über 2×; ab 3× (1,6 Hz, ≈ 780°/s²) dürften Sakkaden überwiegen
+(eigene Ableitung, an dieser Übung nicht gemessen).
 
 **Senkrechte Komponente und Umkehr.** Die Hauptarbeit ist senkrechte Folge – schwächer als waagrechte, aufwärts
 schwächer als abwärts (Rottach et al., 1996; Ke et al., 2013). Aufholsakkaden kommen, wenn Positions- und Tempofehler
-zu groß werden (de Brouwer et al., 2002), meist in der Wellenmitte. Der Knick am Rand (alle 7,9 s bzw. 4,9 s am
-Tablet) verlangt Neuausrichtung: Tempo sinkt nach ≈ 90 ms, Richtung ändert sich ab ≈ 130 ms (Soechting et al., 2005).
+zu groß werden (de Brouwer et al., 2002), vermutlich vor allem in der schnellen Wellenmitte. Der Knick am Rand (alle 7,9 s bzw. 4,9 s am
+Tablet) verlangt Neuausrichtung: bei unvorhersehbarem Richtungswechsel sinkt das Tempo nach ≈ 90 ms, die Richtung ändert
+sich ab ≈ 130 ms (Soechting et al., 2005); hier ist der Knick nach einigen Durchläufen vorhersehbar.
 
-**Brille und Alter.** Die Bahn ist am Monitor ≈ 43° breit und ≈ 16° hoch; Gleitsicht bietet bei 60 cm nur 13–18°
-klares Zwischenfeld (Han et al., 2003), das Auf-ab führt zudem durch Fern- und Nahteil. Besser: Arbeitsplatzbrille,
+**Brille und Alter.** Die Bahn ist am Monitor ≈ 43° breit und ≈ 16° hoch; Gleitsichtgläser boten in einer Bildschirm-
+studie bei 60 cm nur 13–18° waagrecht klares Sehfeld gegenüber 60° beim Einstärkenglas (Han et al., 2003); das Auf-ab
+(± 8°) führt zudem durch Glaszonen unterschiedlicher Wirkung. Besser: Arbeitsplatzbrille,
 kleineres Fenster, Kopf mitbewegen. Ältere haben bei allen Tempi niedrigeren Gain (Moschner &
-Baloh, 1994) und sättigen früher bei hoher Beschleunigung (Zackon & Sharpe, 1987) → 0,5–1×. Grundschulkinder haben
-noch niedrigeren Sinus-Gain (Accardo et al., 1995). Beim konzentrierten Folgen wird seltener geblinzelt (Portello
-et al., 2013) – relevant bei trockenem Auge.
+Baloh, 1994) und sättigen oberhalb ≈ 400°/s² zusätzlich (Zackon & Sharpe, 1987; hier ab ≈ 2×) → 0,5–1×. Grundschulkinder haben
+noch niedrigeren Sinus-Gain (Accardo et al., 1995). Am Bildschirm wird selten und oft unvollständig geblinzelt
+(11,6/min beim Lesen; Portello et al., 2013); für Blickfolge nicht untersucht, bei trockenem Auge aber zu beachten.
 
 ## 5. Neurowissenschaftliche Grundlagen
 
@@ -188,10 +193,10 @@ Keine Handbewegung gefordert (ein mitgeführter Zeiger wird nicht bewertet); das
 
 ## 8. Studienlage: Trainierbarkeit und Übertragung
 
-- **Übungseffekt – mittel:** Vorhersagbare Wellenformen werden in Minuten besser verfolgt (Bahill & McDonald, 1983:
-  mittlerer Fehler 0,32 deg², zeitweise < 0,1 deg²); 2 × 6 min an 3 Tagen wirkten noch nach 5 Tagen (Eibenberger
+- **Übungseffekt – mittel:** Vorhersagbare Wellenformen lernen Geübte latenzfrei zu verfolgen (Bahill & McDonald, 1983:
+  mittlerer Fehler 0,32 deg², zeitweise < 0,1 deg²); 2 × 6 min an 3 Tagen wirkten bei 10 Personen noch nach 5 Tagen (Eibenberger
   et al., 2012) – Laborbefunde mit Eyetracker, nicht mit dieser Übung.
-- **Naher Transfer – schwach:** Übertragung auf die Folgebewegung allgemein (Eibenberger et al., 2012), sonst keine Daten.
+- **Naher Transfer – schwach:** Training mit quasi-zufälliger Bahn verbesserte einen anderen Folgetest (Schritt-Rampe; Eibenberger et al., 2012), sonst keine Daten.
 - **Alltagstransfer – fehlend:** Keine Studie zu Browser-Blickfolge; große Effekte digitaler Sehtrainings entstehen
   vor allem bei gerätegleichen Tests (Guo, Yuan et al., 2025).
 
@@ -205,8 +210,8 @@ Keine Handbewegung gefordert (ein mitgeführter Zeiger wird nicht bewertet); das
   langsam beginnen, bei Übelkeit abbrechen); `nystagmus`, `schielen_binokular` (Folge oft verändert –
   keine Rückschlüsse); `trockenes_auge_bildschirm`, `kopfschmerz_asthenopie` (seltener Lidschlag → kurz, Pausen);
   `kinder_unter_6` (Folgebewegung reift bis ins Jugendalter).
-- **Kombiniert gut mit …** 404 (langsam, gleichmäßig), 402 (Acht), 405/406 (Richtungswechsel), 413 (senkrechte
-  Sprünge), 407 (Vorhersage ohne Sicht), 105 (Details am bewegten Ziel), 515 (senkrechtes Mitführen mit der Maus).
+- **Kombiniert gut mit …** 404 (langsam, gleichmäßig), 402 (Acht), 405/406 (Richtungswechsel), 413 (Zickzack mit
+  Höhenwechsel), 407 (Vorhersage ohne Sicht), 105 (Mitführen mit dem Zeiger, mit Wertung), 515 (senkrechtes Mitführen mit der Maus).
 
 ## 10. Schwächen des Originals und Empfehlungen für eine Blickfit-Umsetzung
 
@@ -232,8 +237,8 @@ Keine Handbewegung gefordert (ein mitgeführter Zeiger wird nicht bewertet); das
 - Bahill, A. T., & McDonald, J. D. (1983). Smooth pursuit eye movements in response to predictable target motions. *Vision Research, 23*(12), 1573–1583. https://doi.org/10.1016/0042-6989(83)90171-2 – latenzfreies Folgen gelernt, Fehlerwerte
 - Barnes, G. R., & Asselman, P. T. (1991). The mechanism of prediction in human smooth pursuit eye movements. *The Journal of Physiology, 439*, 439–461. https://doi.org/10.1113/jphysiol.1991.sp018675 – Vorhersage baut sich in 2–4 Zyklen auf
 - Barnes, G. R., Barnes, D. M., & Chakraborti, S. R. (2000). Ocular pursuit responses to repeated, single-cycle sinusoids reveal behavior compatible with predictive pursuit. *Journal of Neurophysiology, 84*(5), 2340–2355. https://doi.org/10.1152/jn.2000.84.5.2340 – Verzögerung 121 → 43 ms
-- Barnes, G. R., Donnelly, S. F., & Eason, R. D. (1987). Predictive velocity estimation in the pursuit reflex response to pseudo-random and step displacement stimuli in man. *The Journal of Physiology, 389*, 111–136. https://doi.org/10.1113/jphysiol.1987.sp016649 – Gain-Einbruch bei höherer Frequenz
-- Buizza, A., & Schmid, R. (1986). Velocity characteristics of smooth pursuit eye movements to different patterns of target motion. *Experimental Brain Research, 63*(2), 395–401. https://doi.org/10.1007/BF00236858 – Gain ≈ 0,9 bis 75°/s
+- Barnes, G. R., Donnelly, S. F., & Eason, R. D. (1987). Predictive velocity estimation in the pursuit reflex response to pseudo-random and step displacement stimuli in man. *The Journal of Physiology, 389*, 111–136. https://doi.org/10.1113/jphysiol.1987.sp016649 – Gain der langsamen Anteile bricht ein, wenn eine schnelle Komponente beigemischt ist
+- Buizza, A., & Schmid, R. (1986). Velocity characteristics of smooth pursuit eye movements to different patterns of target motion. *Experimental Brain Research, 63*(2), 395–401. https://doi.org/10.1007/BF00236858 – waagrecht Gain ≈ 0,9 bis 75°/s
 - Collewijn, H., & Tamminga, E. P. (1984). Human smooth and saccadic eye movements during voluntary pursuit of different target motions on different backgrounds. *The Journal of Physiology, 351*, 217–250. https://doi.org/10.1113/jphysiol.1984.sp015242 – Gain < 0,95
 - de Brouwer, S., Yuksel, D., Blohm, G., Missal, M., & Lefèvre, P. (2002). What triggers catch-up saccades during visual tracking? *Journal of Neurophysiology, 87*(3), 1646–1650. https://doi.org/10.1152/jn.00432.2001 – Auslöser von Aufholsakkaden
 - Eibenberger, K., Ring, M., & Haslwanter, T. (2012). Sustained effects for training of smooth pursuit plasticity. *Experimental Brain Research, 218*(1), 81–89. https://doi.org/10.1007/s00221-012-3009-8 – Trainierbarkeit
@@ -242,7 +247,7 @@ Keine Handbewegung gefordert (ein mitgeführter Zeiger wird nicht bewertet); das
 - Ilg, U. J., & Thier, P. (2008). The neural basis of smooth pursuit eye movements in the rhesus monkey brain. *Brain and Cognition, 68*(3), 229–240. https://doi.org/10.1016/j.bandc.2008.08.014 – Netzwerk
 - Ke, S. R., Lam, J., Pai, D. K., & Spering, M. (2013). Directional asymmetries in human smooth pursuit eye movements. *Investigative Ophthalmology & Visual Science, 54*(6), 4409–4421. https://doi.org/10.1167/iovs.12-11369 – vertikal/aufwärts schwächer
 - Moschner, C., & Baloh, R. W. (1994). Age-related changes in visual tracking. *Journal of Gerontology, 49*(5), M235–M238. https://doi.org/10.1093/geronj/49.5.M235 – Alter
-- Ohashi, N., Watanabe, Y., Kobayashi, H., & Mizukoshi, K. (1985). Quantitative measurement of smooth pursuit using a continuously changing sinusoidal wave in normal subjects. *ORL, 47*(1), 49–56. https://doi.org/10.1159/000275745 – Grenze glatter Sinusfolge ≈ 1,2 Hz
+- Ohashi, N., Watanabe, Y., Kobayashi, H., & Mizukoshi, K. (1985). Quantitative measurement of smooth pursuit using a continuously changing sinusoidal wave in normal subjects. *ORL, 47*(1), 49–56. https://doi.org/10.1159/000275745 – Grenze glatter Sinusfolge ≈ 1,2 Hz (Crossref führt das Online-Datum 2010; Druck 1985 laut PubMed)
 - Portello, J. K., Rosenfield, M., & Chu, C. A. (2013). Blink rate, incomplete blinks and computer vision syndrome. *Optometry and Vision Science, 90*(5), 482–487. https://doi.org/10.1097/OPX.0b013e31828f09a7 – Lidschlag
 - Rottach, K. G., Zivotofsky, A. Z., Das, V. E., Averbuch-Heller, L., Discenna, A. O., Poonyathalang, A., & Leigh, R. J. (1996). Comparison of horizontal, vertical and diagonal smooth pursuit eye movements in normal human subjects. *Vision Research, 36*(14), 2189–2195. https://doi.org/10.1016/0042-6989(95)00302-9 – horizontal > vertikal
 - Soechting, J. F., Mrotek, L. A., & Flanders, M. (2005). Smooth pursuit tracking of an abrupt change in target direction: Vector superposition of discrete responses. *Experimental Brain Research, 160*(2), 245–258. https://doi.org/10.1007/s00221-004-2010-2 – Umkehr am Rand

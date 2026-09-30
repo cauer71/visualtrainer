@@ -31,7 +31,7 @@ anforderungsprofil:
     nutzbares_sehfeld: 0
     blickfolge: 0
     sakkaden: 0
-    fixation: 2
+    fixation: 1
     bewegungswahrnehmung: 0
     visuelle_suche: 0
     visuelle_verarbeitungsgeschwindigkeit: 2
@@ -109,7 +109,7 @@ Quelle: Seitentext und ausgelieferter Spiel-Chunk (`84331-…js`, formatiert; nu
   Mitte entfernt ist – die Maus muss also ruhig liegen. Reine Touch-Geräte werden erkannt (`pointer: fine` fehlt).
 - **Reiz [CODE]:** 2D-Canvas. Ruhe: grauer Punkt (#1e293b, r = 24,5 px). Ziel: grüner Kreis (#10b981), r = 35 px,
   Deckkraft 0,88, Leuchtschein, weißer Kern. Täuschreiz: gleiche Farbe, Deckkraft 0,35, r = 30 px, ohne Schein,
-  **60 ms**; Ignorieren wird nicht bestraft. Kein Ton beim Aufleuchten.
+  **60 ms**; Ignorieren wird nicht bestraft. Kein Ton beim Aufleuchten, aber Treffer- und Strafton.
 - **Zeitablauf [CODE]:** Wartezeit **gleichverteilt** zwischen Minimum und Maximum, frühestens 350 ms nach dem letzten
   Klick. Das Anzeigefenster ist zugleich die Antwortfrist; danach erlischt das Ziel (Zeitüberschreitung). Zeitrechnung
   mit dt bzw. `performance.now()` → nicht bildfrequenzabhängig.
@@ -131,7 +131,8 @@ Quelle: Seitentext und ausgelieferter Spiel-Chunk (`84331-…js`, formatiert; nu
   (inkl. Geräte-Latenz) fällt; dann kostet jeder Durchgang 2 s (Zeitüberschreitung + verspäteter Klick als „Frühstart“).
 - **Auswertung [CODE]:** mittlere Reaktionszeit (Mittelwert nur der Treffer), Präzision, Frühstarts,
   Zeitüberschreitungen, Combo, Level; Note S+–F nach 100 × √(Punkte/48.000) – willkürlich, ohne Normdaten.
-- **Widersprüche Regeltext ↔ Code:** „Treffer +0,6 s“ – Code +2 s; „Frühstart −0,8 s“ – Code −1 s; „Bonus < 150 ms“ –
+- **Widersprüche Regeltext ↔ Code:** „Treffer +0,6 s“ (deutscher Seitentext) – Code +2 s (so auch die Regelkarte im
+  Spiel-Chunk); „Frühstart −0,8 s“ – Code −1 s; „Bonus < 150 ms“ –
   anteilig schon ab < 500 ms; „3D-Canvas“ – 2D; „Rohdaten ohne Beschleunigung“ – nicht zutreffend. Es gibt **keine
   Frühstart-Grenze** nach dem Reiz: Ein geratener Klick 20 ms nach dem Aufleuchten ist ein Treffer mit vollem Bonus.
   Bei abgeschalteter Zeitüberschreitung (Standard: an) bliebe laut Code auch ein Täuschreiz stehen – vermutlich ein Fehler.
@@ -151,23 +152,27 @@ Hardware-Werte, eine Tier-Tabelle (Profi < 160 ms, „genetisch maximale Leitges
   (Reizentdeckung ≈ 131 ms, Woods et al., 2015; V1 vor höheren Arealen, Schmolesky et al., 1998).
 - **Widerspricht der Evidenz:** „dauerhaft 15–40 ms schneller“ – der PVT blieb über 16 Wiederholungen stabil (Basner et
   al., 2018); Sporttraining änderte die einfache Reaktion nicht, die Go/No-Go-Reaktion schon (Kida et al., 2005).
-  Action-Spieler sind im Querschnitt ≈ 11 % schneller in Wahlaufgaben (Dye et al., 2009) – kein Beleg für diese Übung.
+  Action-Spieler waren über verschiedene Reaktionsaufgaben ≈ 11 % schneller bei gleicher Genauigkeit (Dye et al.,
+  2009, überwiegend Querschnittsvergleiche) – kein Beleg für diese Übung.
   Der Tempobonus bis 150 ms belohnt Raten; im PVT gilt < 100 ms als Frühstart (Basner & Dinges, 2011).
 - **Ohne Datengrundlage:** Tier-Tabelle samt „neurologischer Klassifikation“, „Profis 140–180 ms“, Schalterwerte,
-  Finger-Vorspannung, „trockene Augen verlängern die Reizleitung“ (sie betreffen Bildqualität und Beschwerden).
+  Finger-Vorspannung, „trockene Augen verlängern die Reizleitung“ (sie betreffen Bildqualität und Beschwerden);
+  auch der Satz, alle Zahlen stammten aus den vier angegebenen Arbeiten, trifft nicht zu.
 - **Messhinweis:** `performance.now()` ist fein aufgelöst, die Messkette nicht: Start ist der Bildaufbau vor der Anzeige,
-  Ende die Verarbeitung im Browser; dazwischen liegen Monitor-, Maus- und Browserlatenz (real 23–243 ms; Ivkovic et
-  al., 2015). Geräteunterschiede übersteigen Altersunterschiede von Jahrzehnten (Woods et al., 2015).
+  Ende die Verarbeitung im Browser; dazwischen liegen Monitor-, Maus- und Browserlatenz (zum Vergleich: lokale Latenz
+  realer Spielsysteme 23–243 ms; Ivkovic et al., 2015). Schon die Hardware-Verzögerung der kalibrierten Woods-Messung
+  (231 − 213 = 18 ms) entspricht rund 30 Jahren Altersanstieg (0,55 ms/Jahr) [ER].
 
 ## 4. Optische und okulomotorische Grundlagen
 
 - **Reiz:** Ø 70 px ≈ 1,8° (24″-Monitor, 1.920 px, 60 cm) bzw. ≈ 1,1° am 14″-Laptop [ER], stets in der Blickmitte
-  (höchste Zapfendichte; Curcio et al., 1990). Sehschärfe begrenzt kaum; keine Sakkaden, keine Peripherie, aber
-  lange ruhige Fixation. Bei zentralem Gesichtsfeldausfall (z. B. Makula) liegt der Reiz im betroffenen Bereich.
+  (höchste Zapfendichte; Curcio et al., 1990). Sehschärfe begrenzt kaum; keine Sakkaden, keine Peripherie; der Blick
+  ruht in der Mitte, eine präzise Fixation ist für den großen, hellen Reiz aber nicht nötig. Bei zentralem Gesichtsfeldausfall (z. B. Makula) liegt der Reiz im betroffenen Bereich.
 - **Helligkeit statt Farbe:** Ziel und Täuschreiz unterscheiden sich in Deckkraft, Größe und Schein, nicht im Farbton →
   bei Rot-Grün-Schwäche (≈ 8 % der Männer; Birch, 2012) lösbar. Die Reaktionszeit sinkt mit der Reizintensität
-  (Piéron'sches Gesetz; Pins & Bonnet, 1996) – Monitorhelligkeit und Raumlicht verschieben den Messwert. Die im Alter
-  sinkende Kontrastempfindlichkeit (Owsley et al., 1983) erschwert das Erkennen des gedimmten Täuschreizes.
+  (Piéron'sches Gesetz, auch für Wahlreaktionen bestätigt; Pins & Bonnet, 1996) – Monitorhelligkeit und Raumlicht verschieben den Messwert. Die im Alter
+  sinkende Kontrastempfindlichkeit (Owsley et al., 1983; v. a. mittlere/hohe Ortsfrequenzen) betrifft den großen
+  Reiz vermutlich wenig; ob sie die Unterscheidung Ziel/Täuschreiz erschwert, ist nicht untersucht.
 - **Bildrate/Lidschlag:** 60 ms = 3–4 Bilder bei 60 Hz, Reizbeginn auf das Bildraster quantisiert (bis 16,7 ms) [ER].
   Bei schnellen Spielen sinkt der Lidschlag auf ≈ ⅓ des Ruhewerts (Cardona et al., 2011); starres Warten und lange
   Runden begünstigen Brennen und Ermüdung (Sheppard & Wolffsohn, 2018).
@@ -226,7 +231,7 @@ gefordert, wenn Stopp-Reize selten sind und das Tempo hoch ist (Wessel, 2018). �
   `blitzreaktion`); Hemmung gezielt geübt werden soll (→ 102); Ziel Blickbewegung, Zielen oder Gedächtnis.
 - **Vorsicht / anpassen bei …** `photosensitive_epilepsie`, `migraene_lichtempfindlich` (Kern ist ein Aufblitzen auf
   dunklem Grund, 60-ms-Täuschblitze, roter Schimmer und Bildwackeln bei jedem Fehler, bei Dauerklicken mehrmals pro
-  Sekunde; Grenze ≤ 3 Blitze/s, Fisher et al., 2005); `trockenes_auge_bildschirm`, `kopfschmerz_asthenopie` (starres
+  Sekunde; Richtwert ≤ 3 Blitze/s, vgl. Fisher et al., 2005); `trockenes_auge_bildschirm`, `kopfschmerz_asthenopie` (starres
   Warten, Lidschlag ↓, Runden verlängern sich); `sehbehinderung_niedriger_visus` (zentraler Ausfall, Kontrast für den
   gedimmten Täuschreiz); `aufmerksamkeitsprobleme`, `kognitive_einschraenkung` (Zeitdruck, Strafen, Täuschreize);
   `tremor_parkinson` (ruhiges Fadenkreuz, verlangsamte Auslösung vs. schrumpfende Fenster). Nur Auswahlhinweise.
@@ -235,8 +240,9 @@ gefordert, wenn Stopp-Reize selten sind und das Tempo hoch ist (Wessel, 2018). �
 
 ## 10. Schwächen des Originals und Empfehlungen für eine Blickfit-Umsetzung
 
-- **Tablet:** Zielbewegung ist unnötig – „irgendwo tippen“ ist gleichwertig; Touch-Latenz (50–200 ms; Deber et al.,
-  2015) nicht bestrafen, Fenster adaptiv statt fest.
+- **Tablet:** Zielbewegung ist unnötig – „irgendwo tippen“ ist gleichwertig; Touch-Latenz (Berührung bis Anzeige
+  50–200 ms, Deber et al., 2015; Messaufschlag im Browser 58–70 ms, Pronk et al., 2020) nicht bestrafen, Fenster
+  adaptiv statt fest.
 - **Messqualität:** exponentielle (nicht alternde) Wartezeit, Frühstart-Grenze < 100 ms, Median und
   Interquartilsabstand bei fester Durchgangszahl, Reiz bis zur Antwort sichtbar (Frist nur für Punkte, wie
   `blitzreaktion`), `event.timeStamp`.

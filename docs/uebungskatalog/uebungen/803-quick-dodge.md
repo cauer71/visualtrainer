@@ -33,12 +33,12 @@ anforderungsprofil:
     sakkaden: 1
     fixation: 1
     bewegungswahrnehmung: 3
-    visuelle_suche: 1
+    visuelle_suche: 0
     visuelle_verarbeitungsgeschwindigkeit: 2
     zeitliche_aufloesung: 0
     naharbeit_dauer: 1
   kognitiv:
-    daueraufmerksamkeit: 2
+    daueraufmerksamkeit: 1
     selektive_aufmerksamkeit: 1
     inhibition: 0
     geteilte_aufmerksamkeit: 2
@@ -81,7 +81,7 @@ evidenz:
   naher_transfer: schwach
   alltag_transfer: fehlend
   kommentar: "Zu Maus-Ausweichspielen gibt es keine Studie. Ähnliche Bildschirmaufgaben werden mit Übung besser, die Effekte schrumpfen aber stark, wenn Training und Test sich unterscheiden (Guo et al., 2025); Transfer von Actionspielen auf Aufmerksamkeit ist uneinheitlich (Green & Bavelier, 2003; Boot et al., 2008), auf Spiele wie LoL/CS2 oder den Alltag nicht untersucht."
-aehnliche_uebungen: [806, 106, 707, 410, 801, 505, 104, 206, 802, 804]
+aehnliche_uebungen: [806, 106, 805, 707, 410, 801, 505, 104, 206, 802]
 stichworte: ["Ausweichen", "Kollisionsvermeidung", "Flugbahn vorhersagen", "Antizipation", "kontinuierliche Steuerung", "Mehrfachobjekte", "Bewegungswahrnehmung", "Mausspiel", "Zeitdruck", "Bullet-Hell", "Skillshot-Dodging"]
 ---
 
@@ -225,7 +225,13 @@ dem Handgelenk erreichbar ist.
   Pausen); `hand_arm_beschwerden` (schnelle Dauerbewegung); `aufmerksamkeitsprobleme`, `kognitive_einschraenkung`,
   `kinder_unter_6` (offenes Tempo, Strafreize). Sturz- oder Kreislauf-Vorsicht ist mangels Körperbewegung nicht nötig.
 - **Kombiniert gut mit …** 806 (Ausweichen im Raster), 106 (Mehrfachobjektverfolgung ohne Motorik), 707 (Pfad nachfahren,
-  ruhige Steuerung), 104/505 (einem bewegten Ziel folgen), 801 (Abfangen statt Ausweichen).
+  ruhige Steuerung), 104/505 (einem bewegten Ziel folgen), 801 (Abfangen statt Ausweichen), 805 (Gegenstück: in die Bahn
+  hinein statt aus ihr heraus).
+- **Abgrenzung innerhalb 801–805:** 803 ist die einzige Übung der Gruppe mit **kontinuierlicher Steuerung als Kern** und ohne
+  Ziel, das getroffen werden muss (kein Klick). Spiegelbild ist **805**: Dort wird der Zeiger in die gerade Bahn eines Knotens
+  gestellt und stillgehalten, hier aus den Bahnen heraus bewegt – beide fordern Bahnvorhersage ohne Klick. 801, 802 und 804
+  sind Klick-Abfangspiele mit gemeinsamer Engine und fordern vor allem Zielbewegungstempo; 803 fordert es kaum. Dublette
+  innerhalb der Gruppe: keine.
 
 ## 10. Schwächen des Originals und Empfehlungen für eine Blickfit-Umsetzung
 

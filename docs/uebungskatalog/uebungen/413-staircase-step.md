@@ -72,7 +72,7 @@ belastung:
   sprachabhaengigkeit: 0
 
 # ===== Auswahlhilfe =====
-voraussetzungen: ["Bildschirm oder Tablet in ruhiger Umgebung, Kopf möglichst ruhig, Abstand 40–70 cm", "Scharfes Sehen im Zwischenbereich über die ganze Breite (≈ 17–19° bei 60 cm) – Bildschirmbrille oder Einstärkenglas günstiger als Gleitsicht", "Maus oder Finger nur zum Starten; während der Übung keine Eingabe", "Tempo anfangs 0,5–1× (≈ 13–30°/s); ab ≈ 3× (≈ 80–90°/s, Umkehr alle 0,22 s) nahe an der Obergrenze der glatten Folgebewegung (≈ 100°/s bei geübten Laborpersonen), das Auge folgt dann zunehmend mit Sakkaden"]
+voraussetzungen: ["Bildschirm oder Tablet in ruhiger Umgebung, Kopf möglichst ruhig, Abstand 40–70 cm", "Scharfes Sehen im Zwischenbereich über die ganze Breite (≈ 17–19° bei 60 cm) – Bildschirmbrille oder Einstärkenglas günstiger als Gleitsicht", "Maus oder Finger nur zum Starten; während der Übung keine Eingabe", "Tempo anfangs 0,5–1× (≈ 13–30°/s); ab ≈ 3× (≈ 80–90°/s, Umkehr alle 0,22 s) nahe an der Obergrenze der glatten Folgebewegung (≈ 100°/s bei 4 von 5 Laborpersonen; Meyer et al., 1985), das Auge folgt dann zunehmend mit Sakkaden"]
 vorsicht_bei: [presbyopie_gleitsicht, trockenes_auge_bildschirm, kopfschmerz_asthenopie, nystagmus, schwindel_vestibulaer, kinder_unter_6]
 geeignet_fuer: ["glatte Blickfolge auf einer festen, gut vorhersagbaren Bahn üben", "vorausschauendes Umkehren des Blicks an regelmäßig wiederkehrenden Wendepunkten (Timing-Vorhersage)", "ruhige Augenübung ohne Hand- oder Körpereinsatz und ohne Blinkreize", "Zwischenstufe zwischen weicher Welle (403) und zufälligen Richtungswechseln (410, 415)"]
 weniger_geeignet_fuer: ["gezieltes Üben vertikaler Blickfolge oder der Auf-/Ab-Asymmetrie (die Bahn ist zu > 90 % waagerecht)", "alle, die eine Rückmeldung oder einen Leistungswert erwarten (das Original misst nichts)", "Gleitsichtträger:innen an großen Monitoren ohne Kopfbewegung (Ränder und unterer Bereich unscharf)", "Übungsziel Hand-Auge-Koordination oder Reaktion (keine Handlung gefordert)", "Kinder, die abstrakte Aufgaben ohne Rückmeldung nicht durchhalten"]
@@ -81,7 +81,7 @@ evidenz:
   naher_transfer: fehlend
   alltag_transfer: fehlend
   kommentar: "Das Folgen periodischer Dreieck-/Rampenbahnen verbessert sich im Labor schon innerhalb weniger Zyklen bzw. Minuten (Barnes & Asselman 1991; McHugh & Bahill 1985) – das ist eher kurzfristige Anpassung als Training. Ohne Messung und Rückmeldung (wie im Original) ist ein bleibender Übungseffekt unsicher; Lernen der Folgebewegung ist zudem richtungsspezifisch (Kahlon & Lisberger 1996). Transfer auf Sport, E-Sport oder Alltag ist nicht untersucht."
-aehnliche_uebungen: [405, 406, 403, 404, 402, 105, 515, 409, 414, 410, 707]
+aehnliche_uebungen: [405, 406, 407, 403, 404, 402, 105, 515, 409, 414, 410, 707]
 stichworte: ["smooth pursuit", "Blickfolge", "Zickzack", "Dreieckwelle", "Richtungsumkehr", "prädiktive Blickfolge", "Aufholsakkaden", "vertikale Blickfolge", "Auf-Ab-Asymmetrie", "Gleitsicht"]
 ---
 
@@ -146,7 +146,7 @@ synaptische Plastizität des Mittelhirns“ und helfe im E-Sport und Ballsport. 
 
 - **Geraden:** Ziel-Ø 32 px ≈ 0,85° (24″/60 cm), kontrastreich – Sehschärfe unkritisch. Gain der glatten Komponente
   immer < 0,95, sinkt mit dem Tempo; Aufholsakkaden ergänzen (Collewijn & Tamminga, 1984). Bei 4 von 5 Personen folgte das Auge Rampen bis ≈ 100°/s mit ≈ 90 % des Zieltempos, darüber Sättigung (Meyer et al., 1985) → ab ≈ 3× folgt das Auge zunehmend sakkadisch;
-  bei 9× ist ein Abschnitt (72 ms) kürzer als die Folgebewegungs-Latenz (100 ± 5 ms; Carl & Gellman, 1987).
+  bei 9× ist ein Abschnitt (72 ms) kürzer als die Folgebewegungs-Latenz auf unvorhersehbare Reizwechsel (100 ± 5 ms; Carl & Gellman, 1987) – vorhersagbare Umkehr kann das Auge vorwegnehmen, bei diesem Tempo folgt es aber praktisch nur noch sakkadisch.
 - **Wendepunkte:** Bei periodischer Bewegung kehrt das Auge **vor** dem Ziel um; das Timing lässt sich sogar willentlich
   vorprogrammieren, eine unerwartet frühe Umkehr wird viel später beantwortet (Jarrett & Barnes, 2005). Die Vorhersage
   baut sich über 2–4 Zyklen auf (≈ 300 → 200 ms bis zur Spitzengeschwindigkeit; Barnes & Asselman, 1991). Auf unerwartete
@@ -197,7 +197,7 @@ Kopf. Wer mitfährt, übt zusätzlich manuelles Tracking (vgl. 707) – ohne Erf
 
 - **Passt, wenn …** ruhige, vorhersagbare Blickfolge geübt werden soll (Aufbau nach 404/403, vor 410/415); Blinkreize
   vermieden werden müssen; Tempo 0,5–1×.
-- **Weniger passend, wenn …** gezielt vertikale Blickfolge (eher 515) oder eine Leistungsmessung gewünscht ist.
+- **Weniger passend, wenn …** gezielt vertikale Blickfolge (eher 515, dort mit Maus-Tracking) oder eine Leistungsmessung gewünscht ist.
 - **Vorsicht / anpassen bei …** `presbyopie_gleitsicht` (Hub und tiefe Zeilen außerhalb des scharfen Korridors → Fenster
   verkleinern, Bildschirmbrille); `trockenes_auge_bildschirm`, `kopfschmerz_asthenopie` (seltenes Blinzeln → Runden 30–45 s,
   Pausen); `nystagmus` (Folgebewegung evtl. eingeschränkt); `schwindel_vestibulaer` (schnelles Hin und Her ab 3× → niedriges
@@ -210,7 +210,7 @@ Kopf. Wer mitfährt, übt zusätzlich manuelles Tracking (vgl. 707) – ohne Erf
   auswerten – sonst ehrlich „Zickzack-Blickfolge“ nennen.
 - **Messung:** Ersatzaufgabe (Finger folgen, Abstand in Grad, Umkehr-Verzögerung in ms) oder Erkennungsaufgabe am
   bewegten Ziel wie „Scharf in Bewegung“; adaptives Tempo, keine Normtabellen ohne Daten.
-- **Tempo in °/s** mit Abstand kalibrieren (Folgebewegung bis ≈ 60°/s, darüber Sakkaden-Modus); Hub einstellbar (±5–10°)
+- **Tempo in °/s** mit Abstand kalibrieren (Übungsbereich z. B. bis ≈ 60°/s als eigene, nicht belegte Festlegung; glatte Folge im Labor bis ≈ 100°/s mit ≈ 90 % Gain, Meyer et al., 1985); Hub einstellbar (±5–10°)
   für Tablet/Gleitsicht, Kopf-Modus erlauben; Umkehrzeit wahlweise fest oder leicht variiert.
 - **Farbe:** hellere Standardfarbe (Rot auf Schwarz wirkt bei Protanopie dunkel; Rot-Grün-Schwäche ≈ 8 % der Männer,
   Birch, 2012); Pause jederzeit (WCAG 2.2.2).

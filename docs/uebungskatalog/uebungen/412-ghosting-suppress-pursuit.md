@@ -80,7 +80,7 @@ evidenz:
   uebungseffekt: schwach
   naher_transfer: schwach
   alltag_transfer: fehlend
-  kommentar: "Glatte Blickfolge verbessert sich im Labor mit kurzem Training (Eibenberger et al. 2012), am stärksten mit Rückmeldung (Madelain & Krauzlis 2003, dort auch Übertrag auf ungeübte Geschwindigkeiten) – das Original gibt keine. Dass man das 'Unterdrücken von Nachzieh-Spuren' lernen kann oder dass es Sport/E-Sport nützt, wurde nie untersucht."
+  kommentar: "Glatte Blickfolge verbessert sich im Labor mit kurzem Training (Eibenberger et al. 2012), am stärksten mit Rückmeldung (Madelain & Krauzlis 2003, Folgen eines kurz verschwindenden Ziels; dort auch Übertrag auf ungeübte Geschwindigkeiten) – das Original gibt keine. Dass man das 'Unterdrücken von Nachzieh-Spuren' lernen kann oder dass es Sport/E-Sport nützt, wurde nie untersucht."
 aehnliche_uebungen: [409, 404, 414, 410, 415, 403, 405, 407, 105, 514]
 stichworte: ["smooth pursuit", "Blickfolge", "Bewegungsunschärfe", "motion smear", "Ghosting", "Nachbild", "Distraktor", "Sample-and-hold", "Bildwiederholrate", "Fixationsstabilität"]
 ---
@@ -136,7 +136,7 @@ Zielgruppen: FPS-/E-Sport, Tennis, Tischtennis, Badminton, Baseball. Empfohlen: 
 dass die Übung **keine** Messung der Panel-Reaktionszeit ist.
 
 - **Motion smear:** Das Sehsystem summiert ≈ 120 ms, bewegte Ziele wirken trotzdem weniger verschmiert als erwartet
-  (Burr, 1980). Ursache ist neuronale Summation, nicht „Photorezeptor-Abklingzeit“; die Verringerung beruht v. a. auf
+  (Burr, 1980). Die Website nennt „Photorezeptor-Abklingzeit“ als Ursache – bei Burr geht es um neuronale zeitliche Summation; die Verringerung beruht v. a. auf
   Maskierung durch benachbarte bewegte Reize – ein einzelner Punkt im Dunkeln wirkt gerade **stark** verschmiert
   (Chen et al., 1995). Dass die Übung diese Filter „schärft“, ist nicht belegt.
 - **Folgt das Auge gut, steht das Ziel auf der Netzhaut still** – biologischer Smear entsteht am Ziel dann kaum;
@@ -145,8 +145,8 @@ dass die Übung **keine** Messung der Panel-Reaktionszeit ist.
 - **„30°/s-Grenze“:** Schlupf gibt es bei jedem Tempo (Gain < 0,95; Collewijn & Tamminga, 1984), glatte Folgebewegung
   reicht bei vielen bis ≈ 100°/s (Meyer et al., 1985). „V1/MT“ vermischt zwei Areale. **Mikrosakkaden** gehören zur
   Fixation; bei der Folgebewegung korrigieren Aufholsakkaden. „Regenerieren Netzhautrezeptoren“ ist überzogen.
-- **Kopf fixieren:** für eine reine Augenübung sinnvoll; Smear wird aber auch bei Kopfbewegung gedämpft (Tong et al.,
-  2006; Bedell et al., 2010), und bei Gleitsicht ist Kopfbewegung die natürliche Strategie.
+- **Kopf fixieren:** für eine reine Augenübung sinnvoll; Smear wird aber auch bei Kopfbewegung gedämpft (VOR/VVOR; Tong et al.,
+  2006; bei Blickfolge v. a. für Reize gegen die Bewegungsrichtung, Bedell et al., 2010), und bei Gleitsicht ist Kopfbewegung die natürliche Strategie.
 - **Stufentabelle ohne Datengrundlage:** bewertet nur das gewählte Tempo; „Apex“ ab 2× (≈ 19–33°/s) liegt weit
   unter der Obergrenze glatter Folgebewegung (≈ 100°/s; Meyer et al., 1985) – als „Profi-Niveau“ ohne Grundlage. E-Sport-/Ballsport-Transfer und 144-Hz-Vorteil: ohne Beleg (Abschnitt 11).
 
@@ -154,7 +154,7 @@ dass die Übung **keine** Messung der Panel-Reaktionszeit ist.
 
 - **Sehwinkel/Tempo:** Ziel Ø ≈ 0,85° (24″-Full-HD, 60 cm), weißer Kern ≈ 9′ – weit über der Sehschärfegrenze (1′ bei
   Visus 1,0). Tempo 1× ≈ 9–16°/s (Tablet 11″ in 30 cm ≈ 13–23°/s), 2× ≈ 19–33°/s, 5× ≈ 47–82°/s, 9× ≈ 85–150°/s. Der Gain sinkt mit dem Tempo (Collewijn &
-  Tamminga, 1984), ab ≈ 5× steigt daher der Anteil der Aufholsakkaden, obwohl im Labor bei 4 von 5 Personen ≈ 90 %
+  Tamminga, 1984), bei hohen Stufen (etwa ab 5×, eigene Einschätzung) dürften daher mehr Aufholsakkaden nötig sein, obwohl im Labor bei 4 von 5 Personen ≈ 90 %
   Gain bis ≈ 100°/s erreicht wurden (Meyer et al., 1985).
 - **Wandabpraller:** Die Folgebewegung reagiert auf Bewegungsänderungen erst nach ≈ 100 ms (Carl & Gellman, 1987),
   danach Aufholsakkade; die Abpraller sind aber vorhersehbar (Rand, Richtungslinie).
@@ -163,7 +163,8 @@ dass die Übung **keine** Messung der Panel-Reaktionszeit ist.
   Faustregel Tempo × Haltezeit: bei 60 Bildern/s 1× ≈ 9–16′, 5× ≈ 47–82′ – mehr als das Ziel (51′). Wegen der Drosselung
   bringt ein 144-Hz-Monitor hier nur ≈ 17 % kürzere Haltezeit. Geht das Auge nicht mit, erscheint das Ziel bei 5× als
   Reihe einzelner Bilder (≈ 30–50 px Abstand) – leicht mit den Ringen zu verwechseln.
-- **Gleitsicht/Presbyopie:** scharfer Zwischenbereich seitlich nur ≈ 13–18° (Han et al., 2003); ein 24″-Monitor in
+- **Gleitsicht/Presbyopie:** klares Zwischenbereichs-Sehfeld horizontal insgesamt nur ≈ 13–18° breit, mit
+  Einstärkenglas ≈ 60° (Han et al., 2003); ein 24″-Monitor in
   60 cm ist ≈ 48° breit → Kopfbewegung zulassen, Feld verkleinern oder Bildschirmbrille; am Tablet Nahkorrektur.
 - **Weiteres:** Bildschirmarbeit senkt die Lidschlagrate im Mittel auf etwa ein Fünftel (Patel et al.,
   1991) → trockenes Auge. Farbe
@@ -196,9 +197,11 @@ Aufholsakkaden. Wer die Maus mitführt, übt ungewollt Auge-Hand-Tracking, das n
 
 - **Übungseffekt – schwach:** Training mit quasi-zufälligem Ziel (2 × 6 min an 3 Tagen) verbesserte die Folgebewegung,
   5 Tage später noch messbar (Eibenberger et al., 2012, N = 10 je Gruppe); mit Belohnung für genaues Folgen deutlich
-  stärker (Madelain & Krauzlis, 2003). Das Original gibt keine Rückmeldung.
-- **Naher Transfer – schwach:** Belohntes Folgetraining übertrug sich im Labor auf ungeübte Geschwindigkeiten und
-  strukturierten Hintergrund (Madelain & Krauzlis, 2003). Dass das „Ausblenden“ gezeichneter Spuren auf
+  stärker (Gain bei kurz verschwindendem Ziel 0,59 → 0,89 nach 8–10 Sitzungen, ohne Belohnung 0,63 → 0,71;
+  Madelain & Krauzlis, 2003). Das Original gibt keine Rückmeldung.
+- **Naher Transfer – schwach:** Belohntes Folgetraining (Aufgabe mit kurz verschwindendem Ziel, also eine andere Aufgabe
+  als hier) übertrug sich im Labor auf ungeübte Geschwindigkeiten und strukturierten Hintergrund (Madelain &
+  Krauzlis, 2003); ohne Rückmeldung ist ein solcher Übertrag nicht gezeigt. Dass das „Ausblenden“ gezeichneter Spuren auf
   Monitor-Schlieren, Rauch oder Partikel in Spielen übergeht, wurde nie untersucht.
 - **Alltagstransfer – fehlend:** kein belastbarer Ferntransfer allgemeinen Wahrnehmungstrainings auf Sport (Fransen,
   2024; Gegenposition Appelbaum et al., 2025); zu dieser Übung keine Studie.

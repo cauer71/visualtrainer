@@ -12,7 +12,7 @@ blickfit_umsetzung: null
 stand: 2026-09-29
 
 # ===== Überblick =====
-kurzbeschreibung: "In einem 4×4- oder 5×5-Raster leuchten 1,5 Sekunden lang mehrere Felder gleichzeitig auf. Danach tippt man alle Felder an, die geleuchtet haben (Reihenfolge egal); jedes richtige Muster ist ein Feld größer, ein falsches Feld beendet den Versuch ohne Abzug."
+kurzbeschreibung: "In einem 4×4- oder 5×5-Raster leuchten 1,5 Sekunden lang mehrere Felder gleichzeitig auf. Danach tippt man alle Felder an, die geleuchtet haben (Reihenfolge egal); jedes richtige Muster ist ein Feld größer (beim Wechsel auf 5×5 wieder 5 Felder), ein falsches Feld beendet den Versuch ohne Abzug."
 ziel_funktionen: [kurzzeitgedaechtnis_visuell_raeumlich]
 eingabe: [touch, maus]
 tablet_geeignet: ja
@@ -73,7 +73,7 @@ belastung:
 
 # ===== Auswahlhilfe =====
 voraussetzungen: ["ein ≈ 7–14 cm großes Raster (≈ 10–14° bei 40 cm) auf einen Blick erfassen können", "Touch oder Maus; keine Tastatur, kein Lesen, keine Farbunterscheidung für die Aufgabe nötig", "1,5 s Einprägezeit ohne Wiederholung akzeptieren"]
-vorsicht_bei: [gesichtsfeldausfall, aufmerksamkeitsprobleme, kognitive_einschraenkung, kinder_unter_6, migraene_lichtempfindlich]
+vorsicht_bei: [gesichtsfeldausfall, aufmerksamkeitsprobleme, kognitive_einschraenkung, kinder_unter_6, photosensitive_epilepsie, migraene_lichtempfindlich, tremor_parkinson]
 geeignet_fuer: ["kurzes, sprachfreies Üben, ein gleichzeitig gezeigtes Muster aus Orten zu behalten (DE/IT gleich)", "Merkstrategien ausprobieren: Felder zu Formen gruppieren, Muster benennen ('L', 'Treppe')", "sitzende, ruhige Übung am Tablet mit großen Tippflächen", "Selbstvergleich über Wochen auf demselben Gerät"]
 weniger_geeignet_fuer: ["Einstufung des 'visuellen Gedächtnisses' oder Normvergleich (keine Normen, kein Test im diagnostischen Sinn)", "Reihenfolge-/Sequenzgedächtnis (→ 607, 601)", "Menschen, die ohne Rückstufung schnell frustriert sind (Stufe sinkt nie)", "Blickmotorik- oder Tempotraining (Augen- und Handbewegungen sind Nebensache)"]
 evidenz:
@@ -107,7 +107,7 @@ Quelle: Seitentext und ausgelieferter Spielcode (Chunk `9373-…js`, Stand 29.09
 - **Zeit (Code):** Countdown 2,45 s; Einprägen fest **1.500 ms** (150 ms Einblenden); Eingabe ohne Zeitlimit pro Versuch;
   danach 0,6 s (Treffer) bzw. 1,0 s (Fehler) Rückmeldung: Muster grün, falsches Feld rot. Die **60-s-Uhr läuft nur
   während der Eingabe** (`performance.now()`, 100-ms-Takt, bildfrequenzunabhängig). Real dauert eine Runde mit 12–18
-  Versuchen ≈ 1,5–2 min.
+  Versuchen ≈ 1,5–2 min (eigene Schätzung).
 - **Eingabe (Code):** Touch oder Maus, Auslösung beim Aufsetzen (`pointerdown`), keine Tastatur. Das erste falsche Feld
   beendet den Versuch; doppeltes Tippen auf ein richtiges Feld wird ignoriert. Getippte Felder werden cyan, und Punkte
   über dem Raster zeigen, **wie viele Felder** zu tippen sind – eine Hilfe, die der Regeltext nicht nennt.
@@ -116,7 +116,7 @@ Quelle: Seitentext und ausgelieferter Spielcode (Chunk `9373-…js`, Stand 29.09
   Feldzahl des *nächsten* Musters bei Rundenende, nicht die größte gelöste (nach dem Wechsel auf 5×5 fällt sie von 7 auf 5).
 - **Widersprüche:** Timer 60 s vs. „45-Sekunden-Durchgang“ in der Tabelle; „Timeout“ (Regel 3) gibt es nicht; „adaptiv, um
   die Kapazitätsgrenze exakt zu bestimmen“ stimmt nicht – die Stufe steigt nur, und beliebig viele Versuche je Stufe
-  erhöhen die Chance auf ein zufällig leichtes Muster. Fehler lösen ein rotes Vollbild-Aufblitzen (≈ 0,5 s) aus
+  erhöhen die Chance auf ein zufällig leichtes Muster. Der Regeltext spricht von „weißen Kacheln“, der Code zeigt lila. Fehler lösen ein rotes Vollbild-Aufblitzen (≈ 0,5 s) aus
   (abschaltbar, ebenso die Töne).
 
 ## 3. Was die Website sagt – und wie das einzuordnen ist
@@ -127,11 +127,11 @@ Tabelle ordnet Felder und Punkte Stufen zu („10–14+ Felder, 1.150+ Punkte = 
 samt „Klickfrequenzen“.
 
 - **Belegt:** Statische Muster (Visual Patterns Test, VPT) und Sequenzen (Corsi) sind trennbare Komponenten (Della Sala et
-  al., 1999; Klauer & Zhao, 2004), passend zu Logies (1995) Visual Cache und Inner Scribe. Benennen hilft: Leicht
-  benennbare VPT-Muster wurden ≈ 16 % besser behalten (Brown et al., 2006). Strukturierte Anordnungen (Symmetrie,
+  al., 1999); visuelle und räumliche Anteile dissoziieren auch bei Gesunden (Klauer & Zhao, 2004), passend zu Logies (1995) Visual Cache und Inner Scribe. Benennen hilft: Leicht
+  benennbare VPT-Muster wurden ≈ 16 % besser behalten (10,1 vs. 8,7 Felder; n = 60; Brown et al., 2006). Strukturierte Anordnungen (Symmetrie,
   Fortsetzung) werden besser behalten (Kemps, 2001, Corsi-Pfade).
 - **Überzogen:** „Strikt 3–4 Objekte“ – Cowan (2001) und Luck & Vogel (1997) zählen Chunks bzw. Objekte, keine Rasterfelder;
-  im VPT schaffen junge Erwachsene 8,7–10,1 Felder (Brown et al., 2006). „−60 % kognitive Last durch Chunking“ ist ohne
+  im VPT schaffen Erwachsene (20–40 J.) im Mittel 8,7–10,1 Felder (3 s Anzeige, 10 s Pause; Brown et al., 2006). „−60 % kognitive Last durch Chunking“ ist ohne
   Beleg. „Negativraum merken“ spart hier wenig, weil nie mehr als die Hälfte der Felder leuchtet.
 - **Nicht belegt / falsch:** Die Tabelle hat keine Datengrundlage (die Seite sammelt keine Daten) und widerspricht dem Code:
   Mehr als 12 Felder sind unmöglich, 1.150 Punkte (8 Treffer) heißen zuletzt 9 Felder auf 5×5. VPT-Normen (3 s Anzeige,
@@ -143,8 +143,8 @@ samt „Klickfrequenzen“.
 
 - **Reizgröße (Herleitung; Raster = min(88 vw, 44 vh) laut Code):** 10,9″-Tablet (1 CSS-px ≈ 0,19 mm) bei 40 cm quer:
   Raster ≈ 69 mm ≈ 9,9°, Zelle 4×4 ≈ 15 mm ≈ 2,2°, 5×5 ≈ 12 mm ≈ 1,7°; hochkant ≈ 100 mm ≈ 14,2° (Zellen 3,2° / 2,6°).
-  Smartphone bei 33 cm: Zelle 5×5 ≈ 10 mm ≈ 1,7°. Große, helle Felder (Lila auf fast Schwarz): **Sehschärfe und Kontrast
-  begrenzen nicht**, leichte Unschärfe stört kaum.
+  Smartphone bei 33 cm: Zelle 5×5 ≈ 10 mm ≈ 1,7°. Große Felder (Lila auf fast Schwarz, Kontrast ≈ 3,7:1, Rand ≈ 7,5:1; eigene Rechnung aus den Farbwerten):
+  **Sehschärfe und Kontrast begrenzen nicht**, leichte Unschärfe stört kaum.
 - **Erfassen in 1,5 s:** Fixationen dauern bei Szenen ≈ 330 ms, Sakkadenlatenzen ≥ 150–175 ms (Rayner, 1998) → nur ≈ 4–5
   Fixationen (Herleitung). Das Muster muss weitgehend als Ganzes aus Blickmitte und naher Peripherie (± 5–7°) aufgenommen
   werden. Crowding spielt bei Abständen ≥ 1,7° und Feldern ohne Detail kaum eine Rolle.
@@ -214,9 +214,11 @@ samt „Klickfrequenzen“.
   stehen; eine „Gedächtnis-Einstufung“ erwartet wird (keine Normen, keine Diagnose); 1,5 s Einprägezeit zu knapp sind.
 - **Vorsicht / anpassen bei …** `gesichtsfeldausfall` (Muster aus ≈ 10–14° in 1,5 s; Randfelder werden eventuell
   übersehen – kleineres Raster, längere Anzeige); `aufmerksamkeitsprobleme` (verpasste 1,5 s = verlorener Versuch;
-  räumliches Arbeitsgedächtnis bei ADHS deutlich schwächer, Effektstärke 0,85; Martinussen et al., 2005);
+  räumliches Speichern bei Kindern mit ADHS deutlich schwächer, Effektstärke 0,85; Martinussen et al., 2005);
   `kognitive_einschraenkung` und `kinder_unter_6` (Start mit 5 Feldern, kein Abstieg, Alles-oder-nichts);
-  `migraene_lichtempfindlich` (rotes Vollbild-Aufblitzen – Effekte abschalten). Bei Tremor Fehlberührungen (Abschnitt 6);
+  `photosensitive_epilepsie`, `migraene_lichtempfindlich` (rotes Vollbild-Aufblitzen bei jedem Fehler, zwar einzeln und
+  unter 3/s, aber gesättigtes Rot – Effekte abschalten); `tremor_parkinson` (Fehlberührung beim Aufsetzen beendet den
+  Versuch, Abschnitt 6);
   Alterssichtigkeit und Gleitsicht sind hier wenig kritisch.
 - **Kombiniert gut mit …** 607 (Corsi-Pfad, sequenzielles Gegenstück), 605 (Objekt-Ort), 811 (Muster merken), 601 (Senso),
   106 (Mehrfach-Objektverfolgung, dynamisch statt statisch).
@@ -230,7 +232,7 @@ samt „Klickfrequenzen“.
 - Einprägezeit wählbar (1,5 / 2 / 3 s; 3 s wie im VPT); Zählpunkte optional. Muster mit kontrollierter Struktur, damit die
   Schwierigkeit je Stufe weniger vom Zufall abhängt.
 - Rückmeldung farbunabhängig (✓/✗, Umriss), kein Rot-Grün, kein Vollbild-Aufblitzen; Rastergrenzen mit Kontrast ≥ 3:1
-  (WCAG 2.2, SC 1.4.11; im Original nur ≈ 4 % Weiß).
+  (WCAG 2.2, SC 1.4.11; im Original Zellfläche 4 %, Rand 10 % Weiß).
 - Touch: Auslösen beim Loslassen, damit Fehlberührungen den Versuch nicht beenden; Rastergröße unabhängig von der
   Ausrichtung (z. B. ≈ 12–14° bei 40 cm).
 

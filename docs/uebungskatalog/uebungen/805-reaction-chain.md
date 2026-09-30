@@ -31,7 +31,7 @@ anforderungsprofil:
     nutzbares_sehfeld: 1
     blickfolge: 1
     sakkaden: 2
-    fixation: 2
+    fixation: 1
     bewegungswahrnehmung: 2
     visuelle_suche: 0
     visuelle_verarbeitungsgeschwindigkeit: 1
@@ -40,7 +40,7 @@ anforderungsprofil:
   kognitiv:
     daueraufmerksamkeit: 1
     selektive_aufmerksamkeit: 1
-    inhibition: 2
+    inhibition: 1
     geteilte_aufmerksamkeit: 1
     kognitive_flexibilitaet: 0
     arbeitsgedaechtnis: 0
@@ -73,7 +73,7 @@ belastung:
 
 # ===== Auswahlhilfe =====
 voraussetzungen: ["Maus (oder Touchpad) und Desktop-Browser mit Pointer-Lock; reine Touch-Geräte werden erkannt und nicht zugelassen", "Maus auf ruhiger Unterlage, Hand kann den Zeiger kurz ganz stillhalten", "sicheres Sehen im Bildschirmabstand über die ganze Spielfeldbreite (≈ 29° bei 24″ in 60 cm)"]
-vorsicht_bei: [tremor_parkinson, hand_arm_beschwerden, photosensitive_epilepsie, migraene_lichtempfindlich, schwindel_vestibulaer, presbyopie_gleitsicht, sehbehinderung_niedriger_visus, aufmerksamkeitsprobleme]
+vorsicht_bei: [tremor_parkinson, hand_arm_beschwerden, photosensitive_epilepsie, migraene_lichtempfindlich, schwindel_vestibulaer, presbyopie_gleitsicht, trockenes_auge_bildschirm, gesichtsfeldausfall, sehbehinderung_niedriger_visus, aufmerksamkeitsprobleme, kognitive_einschraenkung, kinder_unter_6]
 geeignet_fuer: ["Bahn eines bewegten Ziels vorhersagen und den Zeiger rechtzeitig an den Treffpunkt stellen ('Fadenkreuz vorhalten')", "schnelle Zielbewegung mit sauberem Abstoppen ohne Nachrutschen", "Geduld/Stillhalten: nicht dem Ziel hinterherjagen, sondern warten", "Gamer:innen als Ergänzung zu Flick- und Präzisionsübungen (501, 509, 804)"]
 weniger_geeignet_fuer: ["Tablet ohne Maus (Original nicht spielbar)", "Einsteiger:innen und ältere oder langsame Personen (Tempo steigt automatisch, Knoten erreichen die Mitte ab Stufe 8 in < 0,5 s)", "Training der Reaktionshemmung im Sinne der Stop-Signal-Aufgabe (dafür 102)", "echte Körper- oder Reflexübung trotz Kapitel 'Körper & Reflexe'"]
 evidenz:
@@ -81,13 +81,13 @@ evidenz:
   naher_transfer: schwach
   alltag_transfer: fehlend
   kommentar: "Keine Studie zu diesem Spiel. Übungseffekte in gerätegleichen Bildschirmaufgaben sind regelmäßig groß, in unähnlichen klein (Guo et al., 2025); adaptives Hemmtraining zeigte gegenüber aktiver Kontrolle keinen echten Trainings- oder Transfereffekt (Enge et al., 2014). Übertragung auf Shooter, Sport oder Alltag ist nicht untersucht."
-aehnliche_uebungen: [511, 104, 808, 705, 804, 509, 501, 802, 407, 102]
+aehnliche_uebungen: [511, 104, 808, 705, 804, 509, 501, 802, 803, 407, 102]
 stichworte: ["Abbremsen", "Stillhalten", "Interzeption", "Fadenkreuz vorhalten", "Crosshair Placement", "Overflick", "Überschießen", "Woodworth", "Stop-Signal", "Maus", "Pointer-Lock", "bildfrequenzabhängig"]
 ---
 
 # 805 · Fadenkreuz in die Bahn stellen und stillhalten
 
-> Original: „Maus bremsen beim Aim“ (Reaction Chain) – skilldrills.online, Kapitel „physical“ / „reflex-training“ ·
+> Original: „Maus bremsen beim Aim“ (Reaction Chain) – skilldrills.online, Kapitel Körper & Reflexe (`physical`, Unterkapitel `reflex-training`) ·
 > Blickfit: noch nicht umgesetzt (Bausteine vorhanden: „Zielfang“ zu 104, „Punktlandung“)
 
 ## 1. Kurzbeschreibung
@@ -131,14 +131,14 @@ Die Seite beschreibt „Kinetic Arrest“ als Training der „neuromotorischen I
 
 ## 4. Optische und okulomotorische Grundlagen
 - **Reizgrößen [Herleitung]:** Knoten-Ø 30 px ≈ 0,8° (Stufe 1) bis 12 px ≈ 0,3° (Stufe 10), Fangbereich Ø 1,2° → 0,74°; die Anzeige „VEL“ in 10-px-Schrift ≈ 0,27° Zeichenhöhe. Grün (#10b981) auf fast Schwarz ist kontrastreich; ab Stufe 8 wechselt die Farbe nach Orange/Rot – nur Rückmeldung, nicht entscheidungsrelevant (Farbsehschwäche unproblematisch, Status zusätzlich als Text).
-- **Blickstrategie:** Wer die Bahn früh erkennt, springt mit Blick und Zeiger an den Treffpunkt (Sakkade, Latenz regulär ≈ 180–250 ms; Darrien et al., 2001) und lässt den Knoten dann auf den ruhenden Blick zulaufen – Folgebewegung ist dafür kaum nötig. Der Blick bleibt während einer Zeigebewegung am Ziel „verankert“ (Neggers & Bekkering, 2000); mehrere gleichzeitige Knoten verlangen dagegen Überwachung der Umgebung.
+- **Blickstrategie:** Wer die Bahn früh erkennt, springt mit Blick und Zeiger an den Treffpunkt (Sakkade, Latenz regulär ≈ 180–250 ms; Darrien et al., 2001) und lässt den Knoten dann auf den ruhenden Blick zulaufen – Folgebewegung ist dafür kaum nötig. Der Blick bleibt während einer Zeigebewegung am Ziel „verankert“ (Neggers & Bekkering, 2000); mehrere gleichzeitige Knoten verlangen dagegen Überwachung der Umgebung. Ruhiges Fixieren des Treffpunkts hilft, wird aber weder verlangt noch geprüft und begrenzt die Leistung nicht (Profil `fixation` 1; leistungsbegrenzend ist das Stillhalten der **Hand**).
 - **Peripherie:** Knoten tauchen am Rand auf, bis ≈ 15° seitlich der Feldmitte; ihr plötzliches Erscheinen zieht Aufmerksamkeit an, echte Sehfeld-Anforderung bleibt gering (nahe Peripherie).
 - **Bewegungsdarstellung [Herleitung]:** Bei 60 Hz springt ein Knoten auf Stufe 10 pro Bild ≈ 0,8° weiter – er wirkt ruckelnd; höhere Bildraten verringern Sprungweite und Bewegungsunschärfe, „verzögerungsfrei“ wird es nicht.
 - **Brille:** Mit Gleitsichtgläsern ist der scharfe Zwischenbereich am Bildschirm nur ≈ 13–18° breit (Han et al., 2003); Knoten von links/rechts starten in der seitlichen Unschärfe, der Kopf muss mitgehen. Ab ≈ 40 J. reicht die Akkommodation für Naharbeit nicht mehr (Charman, 2008) – für den Bildschirmabstand (50–70 cm) ist eine Arbeitsplatz- bzw. Nahkomfortbrille meist passender als eine reine Lesebrille (Beratung beim Optiker; keine Aussage aus der Quelle).
 
 ## 5. Neurowissenschaftliche Grundlagen
 - **Geplantes Abbremsen:** Schnelle Einzelgelenk-Bewegungen zeigen ein dreiphasiges EMG: Agonisten-Salve startet, Antagonisten-Salve hält am Endpunkt an, zweite Agonisten-Salve dämpft Nachschwingen; Basalganglien skalieren die erste Salve, das Kleinhirn steuert das Timing (Berardelli et al., 1996). Genau diese Endphase fordert die Übung.
-- **Stop-Signal-Hemmung** (Abbrechen einer schon gestarteten Handlung) wird als Rennen zweier Prozesse modelliert (Verbruggen & Logan, 2008) und aktiviert rechten inferioren Frontalkortex und STN (Aron & Poldrack, 2006). In 805 gibt es kein unvorhergesehenes Stoppsignal; am ehesten gleicht der Moment, in dem man eine begonnene Korrektur abbricht, weil der Knoten schon nahe ist, einer Hemmung – belegt ist das für dieses Spiel nicht.
+- **Stop-Signal-Hemmung** (Abbrechen einer schon gestarteten Handlung) wird als Rennen zweier Prozesse modelliert (Verbruggen & Logan, 2008) und aktiviert rechten inferioren Frontalkortex und STN (Aron & Poldrack, 2006). In 805 gibt es kein unvorhergesehenes Stoppsignal; am ehesten gleicht der Moment, in dem man eine begonnene Korrektur abbricht, weil der Knoten schon nahe ist, einer Hemmung – belegt ist das für dieses Spiel nicht. Im Profil ist `inhibition` deshalb nur als Nebenrolle (1) bewertet: Man muss den Impuls unterdrücken, dem Knoten hinterherzujagen, eine No-Go- oder Stoppsignal-Regel gibt es nicht (zum Vergleich 802 mit roten No-Go-Kugeln: 2).
 - **Vorhersage:** Beim Abfangen bewegter Ziele ist die zeitliche Präzision am höchsten, wenn man den Treffort frei wählen darf; Menschen passen eher den **Ort** als den **Zeitpunkt** an (Brenner & Smeets, 2015). 805 erlaubt genau diese Strategie: Ort wählen, warten – zeitliches Timing ist nicht gefordert.
 - **Zeitbudget [Herleitung]:** Ab Stufe 8 erreicht ein senkrecht fliegender Knoten die Mitte in < 0,3 s – weniger als eine einfache Reaktion (213–231 ms; Woods et al., 2015) plus Sakkade und Bewegung. Dort entscheidet vor allem, wo der Zeiger schon steht.
 
@@ -170,10 +170,13 @@ Die Seite beschreibt „Kinetic Arrest“ als Training der „neuromotorischen I
   - `photosensitive_epilepsie`, `migraene_lichtempfindlich`: rotes Fehler-Overlay (480 ms) und Bildschirmwackeln; ab Stufe 6–10 mit 3–5 Knoten können mehrere Fehler pro Sekunde auftreten, mehr als 3 rote Blitze/s sind dann denkbar (WCAG-Grenze 3/s; W3C, 2024). Effekte abschalten – das schaltet laut Code nur das rote Overlay ab, das Bildschirmwackeln bleibt.
   - `schwindel_vestibulaer`: Bei jedem Fehler wackelt das ganze Spielfeld (bis 20 px, klingt je Bild um 15 % ab, ≈ 0,4 s bei 60 Hz) und ist nicht abschaltbar; bei vielen Fehlern pro Sekunde entsteht ein fast dauerndes Ruckeln des Bildes.
   - `presbyopie_gleitsicht`: Knoten starten an den Feldrändern außerhalb des scharfen Gleitsicht-Zwischenbereichs.
+  - `trockenes_auge_bildschirm`: konzentriertes Starren auf schnelle, kleine Knoten ohne Pause; Blinzeln und Pausen zwischen den Runden einplanen.
+  - `gesichtsfeldausfall`: Knoten kommen von allen vier Rändern; bei Ausfällen einer Seite werden sie spät bemerkt und fliegen ungefangen hinaus (zählt als Fehler) – keine Aussage über das Gesichtsfeld ableiten, kein Test.
   - `sehbehinderung_niedriger_visus`: Knoten bis 0,3° klein, Status-Schrift ≈ 0,27°.
-  - `aufmerksamkeitsprobleme`: pausenlose Knotenfolge, automatisch steigendes Tempo.
+  - `aufmerksamkeitsprobleme`, `kognitive_einschraenkung`, `kinder_unter_6`: pausenlose Knotenfolge, automatisch steigendes Tempo, Zeitabzug bei jedem Fehler.
   - Keine Sturz- oder Herz-Kreislauf-Vorsicht nötig (keine Körperbewegung).
-- **Kombiniert gut mit …** 104 (bewegtes Ziel abfangen), 511 (Winkel halten), 808 und 705 (ruhige Hand), 509 (Mikrokorrektur), 804 (Zielerfassung), 407 (vorausschauende Blickfolge).
+- **Kombiniert gut mit …** 104 (bewegtes Ziel abfangen), 511 (Winkel halten), 808 und 705 (ruhige Hand), 509 (Mikrokorrektur), 804 (Zielerfassung), 407 (vorausschauende Blickfolge), 803 (Gegenstück: aus der Bahn heraus statt hinein).
+- **Abgrenzung innerhalb 801–805:** keine Dublette. 805 ist die einzige Übung der Gruppe, in der **Stillhalten der Hand** (ruhige Hand 2) und sauberes Abstoppen über Erfolg entscheiden; Klicken entfällt. Spiegelbild ist **803** (Zeiger aus geraden Bahnen heraus bewegen statt hineinstellen; dort kontinuierliche Steuerung als Kern). Mit **802** teilt 805 das Vorhalten auf eine gerade, gleichförmige Bahn, 802 verlangt aber einen Klick und eine Farbregel. Zielgenauigkeit ist in 805 (Abstoppen im Fangkorridor) und 804 (kleinste Klickziele) gleich hoch bewertet (3), meint aber Verschiedenes: hier Endpunkt ohne Nachrutschen, dort Treffen eines schrumpfenden Ziels.
 Keine Diagnosen, keine Heilversprechen; Punkte und Noten sind keine Normwerte.
 
 ## 10. Schwächen des Originals und Empfehlungen für eine Blickfit-Umsetzung

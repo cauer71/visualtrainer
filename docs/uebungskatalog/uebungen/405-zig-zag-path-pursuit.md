@@ -75,12 +75,12 @@ belastung:
 voraussetzungen: ["Bildschirm oder Tablet (am besten quer, mit Ständer) in 40–70 cm Abstand, Kopf möglichst ruhig", "Scharfes Sehen im Zwischenbereich über eine Bahn von ≈ 39° × 17° (Monitor) bzw. ≈ 26° × 14° (Tablet quer) – die Bewegung ist überwiegend senkrecht, deshalb Arbeitsplatzbrille oder Einstärkenglas günstiger als Gleitsicht", "Maus oder Finger nur zum Starten; während der Übung keine Eingabe", "Bereitschaft, ohne Rückmeldung 30–120 s konzentriert zu folgen"]
 vorsicht_bei: [presbyopie_gleitsicht, schwindel_vestibulaer, reisekrankheit, nystagmus, schielen_binokular, trockenes_auge_bildschirm, kopfschmerz_asthenopie, kinder_unter_6]
 geeignet_fuer: ["Blickfolge mit abrupten, regelmäßig wiederkehrenden Richtungswechseln üben (Wechsel von glatter Folge und Aufholsakkade an jedem Knick)", "überwiegend senkrechte Blickfolge (Auf-ab-Anteil ≈ 95 % der Geschwindigkeit) als Ergänzung zu waagrechten Bahnen", "Vorhersage eines festen Rhythmus: bei 0,5–1× (Knick alle 1,3 bzw. 0,65 s) Umkehr zunehmend vorwegnehmen", "kurze Augenübung ohne Hand- oder Körpereinsatz und ohne Blitzreize"]
-weniger_geeignet_fuer: ["alle, die Rückmeldung oder einen Leistungswert erwarten (das Original misst nichts)", "Gleitsichtträger:innen am großen Monitor ohne Kopfbewegung (senkrechte Wege von ≈ 17° führen durch Nah- und Fernzone, 39° Breite über den scharfen Zwischenbereich hinaus)", "Tempo ab ≈ 3× für Ungeübte und Ältere (Schrägstrecke ≤ 0,2 s, > 75°/s: kein glattes Folgen mehr möglich)", "Einstieg in Blickfolge überhaupt (404 oder 403 sind ruhiger)", "Ziel Reaktion, Handgenauigkeit, Peripherie, Lesen oder Sporttransfer"]
+weniger_geeignet_fuer: ["alle, die Rückmeldung oder einen Leistungswert erwarten (das Original misst nichts)", "Gleitsichtträger:innen am großen Monitor ohne Kopfbewegung (senkrechte Wege von ≈ 17° führen durch Nah- und Fernzone, 39° Breite über den scharfen Zwischenbereich hinaus)", "Tempo ab ≈ 3× für Ungeübte und Ältere (Schrägstrecke ≈ 0,2 s, am Monitor ≈ 80°/s – über dem im Labor gut verfolgbaren Bereich, glatte Folge wird zunehmend durch Sakkaden ersetzt)", "Einstieg in Blickfolge überhaupt (404 oder 403 sind ruhiger)", "Ziel Reaktion, Handgenauigkeit, Peripherie, Lesen oder Sporttransfer"]
 evidenz:
   uebungseffekt: mittel
   naher_transfer: schwach
   alltag_transfer: fehlend
-  kommentar: "Bei periodischen Dreieck- bzw. Rampenbahnen wird die Augenumkehr im Labor schon nach 2–4 Zyklen vorweggenommen (Barnes & Asselman, 1991), und die Augen bremsen vor erwarteten Umkehrpunkten (Collins & Barnes, 2009); kurzes Pursuit-Training wirkte einige Tage nach (Eibenberger et al., 2012) – alles mit Eyetracker, nicht mit dieser Übung. Übertragung auf andere Bahnen ist kaum untersucht, ein Nutzen für Sport oder Shooter nie gezeigt."
+  kommentar: "Bei periodischen (waagrechten) Dreieckbahnen wird die Folgeantwort im Labor binnen 2–4 Zyklen stärker und zeitlich früher (Barnes & Asselman, 1991), und die Augen bremsen vor erwarteten Umkehrpunkten (Collins & Barnes, 2009); kurzes Pursuit-Training (quasi-zufällige Bahn) wirkte 5 Tage nach (Eibenberger et al., 2012) – alles mit Eyetracker, nicht mit dieser Übung. Übertragung auf andere Bahnen ist kaum untersucht, ein Nutzen für Sport oder Shooter nie gezeigt."
 aehnliche_uebungen: [406, 413, 403, 404, 402, 407, 415, 410, 513, 505, 105, 515]
 stichworte: ["Zickzack", "zig-zag pursuit", "smooth pursuit", "glatte Blickfolge", "Richtungswechsel", "Aufholsakkaden", "Dreieckswelle", "vertikale Blickfolge", "prädiktive Blickfolge", "Knickpunkt"]
 ---
@@ -155,28 +155,28 @@ Tempo, Landefehler (< 12 bis > 70 px) und Umkehrlatenz (< 110 bis > 250 ms) „P
 - **„Kurvenschneiden“** ist normales Vorhersageverhalten an Ecken (Collewijn & Tamminga, 1984), kein Mangel an
   „Fixationsdisziplin“; die dafür zitierte Heinen-Arbeit existiert nicht.
 - **Hirnregionen, Sport, Quellen:** Die Areale gehören zum Pursuit-Netz (Abschnitt 5), eine Veränderung durch diese
-  Übung ist nicht belegt; Sport-/Shooter-Nutzen unbelegt, „wenige Millisekunden“ unmöglich. Von 6 Quellen existieren 2
+  Übung ist nicht belegt; Sport-/Shooter-Nutzen unbelegt, „wenige Millisekunden“ ist bei ≈ 100 ms Folgelatenz (Carl & Gellman, 1987) ausgeschlossen. Von 6 Quellen existieren 2
   in der zitierten Form nicht (Abschnitt 11).
 
 ## 4. Optische und okulomotorische Grundlagen
 
 - **Sehwinkel:** Ring ≈ 0,8–0,9° – Visus kaum gefordert. Kleine, in die Fovea passende Ziele erzeugen mehr
-  Aufholsakkaden (Heinen et al., 2016); Radius 25–50 px ergibt ruhigeres Folgen.
+  Aufholsakkaden (Heinen et al., 2016); ein größerer Radius (25–50 px) könnte daher ruhigeres Folgen erlauben (an dieser Übung nicht geprüft).
 - **Latenz am Knick:** Folgebewegung setzt nach ≈ 100 ms ein (Carl & Gellman, 1987), die neue Richtung nach ≈ 130 ms
   (Soechting et al., 2005). Bei 1× ist so das erste Fünftel jeder Strecke „Aufholen“; ab ≈ 5× (0,13 s) ist die
   Strecke vorbei, bevor eine reaktive Antwort greift – dann bleibt nur Vorhersage oder sakkadisches Mitspringen.
 - **Vorhersage:** Verzögerungsfrei folgen lässt sich nur bei stetiger Geschwindigkeit und begrenzter Beschleunigung
   (Bahill & McDonald, 1983) – ein Knick ist das Gegenteil. Bei periodischen Dreieckbahnen wird die Antwort aber über
   2–4 Zyklen stärker und früher (300 → 200 ms bis zum Geschwindigkeitsgipfel; Barnes & Asselman, 1991). Dreieckbahnen
-  werden bis ≈ 75°/s mit Gain ≈ 0,9 verfolgt (Buizza & Schmid, 1986) – bei 1–2× machbar, ab 3× am Monitor darüber.
+  werden waagrecht bis ≈ 75°/s mit Gain ≈ 0,9 verfolgt (Buizza & Schmid, 1986) – bei 1–2× machbar, ab 3× am Monitor darüber; senkrecht liegt die Grenze eher niedriger (Rottach et al., 1996).
 - **Richtung:** senkrecht wird schlechter gefolgt als waagrecht, aufwärts schlechter als abwärts (Rottach et al., 1996;
   Ke et al., 2013) – diese fast senkrechte Bahn ist bei gleichem Tempo schwerer als 403 oder 413.
 - **Gleitsicht/Arbeitsplatz:** unten Nahteil, oben Fernteil; der scharfe Zwischenbereich ist bei 60 cm nur
-  ≈ 13–18° breit, Träger:innen bewegen am Bildschirm mehr den Kopf (Han et al., 2003). Die ständigen Auf-ab-Wege von
+  ≈ 13–18° breit, mit schmalerem Zwischenbereich dauern Kopf- und Augenbewegungen länger (Han et al., 2003, Lesen). Die ständigen Auf-ab-Wege von
   ≈ 17° wechseln durch verschiedene Wirkungszonen, die Bahn ist 39° breit → Arbeitsplatz-/Bildschirmbrille, kleineres
   Fenster oder mehr Abstand, Kopf mitbewegen.
-- **Nähe, Auge, Alter:** 60 cm ≈ 1,7 dpt, 40 cm = 2,5 dpt Akkommodation bzw. Nahkorrektur; seltener Lidschlag beim
-  Verfolgen (≈ 11,6/min am Bildschirm; Portello et al., 2013). Ältere haben niedrigeren Gain, besonders bei schnellen
+- **Nähe, Auge, Alter:** 60 cm ≈ 1,7 dpt, 40 cm = 2,5 dpt Akkommodation bzw. Nahkorrektur; seltener Lidschlag bei
+  Bildschirmarbeit (≈ 11,6/min beim Lesen am Bildschirm; Portello et al., 2013; für Blickfolge nicht eigens gemessen). Ältere haben niedrigeren Gain, besonders bei schnellen
   Zielen (Moschner & Baloh, 1994); Kinder erreichen Erwachsenenwerte erst in der späten Jugend (Katsanis et al., 1998).
 
 ## 5. Neurowissenschaftliche Grundlagen
@@ -185,7 +185,7 @@ Tempo, Landefehler (< 12 bis > 70 px) und Umkehrlatenz (< 110 bis > 250 ms) „P
   hinterer Vermis) setzen sie um (Lencer & Trillenberg, 2008). Folge und Sakkaden teilen weitgehend eine Architektur
   (Krauzlis, 2004) und arbeiten als ein sensomotorischer Prozess zusammen (Orban de Xivry & Lefèvre, 2007).
 - Vorhersage beruht auf gespeicherter Geschwindigkeits- und Zeitinformation (Barnes, 2008; Barnes & Asselman, 1991).
-- Beim Affen senkten Läsionen des Vermis (VI–VII) den Gain bei Dreieckbahnen um ≈ 15 % (Takagi et al., 2000) – das
+- Beim Affen senkten Läsionen des Vermis (VI–VII) den Gain bei Dreieckbahnen um bis zu 15 % (Takagi et al., 2000) – das
   zeigt seine Beteiligung, nicht, dass eine Browser-Übung ihn „optimiert“.
 
 ## 6. Motorische Grundlagen
@@ -218,7 +218,7 @@ kommen Alter, Müdigkeit und Tagesform; die feste Bahn ist nach wenigen Durchlä
   „besser lesen/zielen“ das Ziel sind; ≥ 3× für Ungeübte/Ältere.
 - **Vorsicht / anpassen bei …** `presbyopie_gleitsicht` (Auf-ab-Wechsel durch Nah- und Fernzone → Arbeitsplatzbrille,
   kleineres Fenster, Kopf mitbewegen); `schwindel_vestibulaer`, `reisekrankheit` (schnelle Auf-ab-Bewegung; Menschen
-  mit visuellem Schwindel reagieren auf Bewegungsreize, Bronstein 1995 → langsam beginnen, bei Übelkeit abbrechen);
+  mit visuellem Schwindel reagieren v. a. auf großflächige Bewegungsreize, Bronstein 1995; hier nur ein kleiner Punkt → langsam beginnen, bei Übelkeit abbrechen);
   `nystagmus`, `schielen_binokular` (Folge oft verändert, keine Rückschlüsse); `trockenes_auge_bildschirm`,
   `kopfschmerz_asthenopie` (seltener Lidschlag, heller Modus blendet → kurze Blöcke); `kinder_unter_6`.
 - **Kombiniert gut mit …** 404 (Einstieg), 403/413 (flachere Wellen bzw. Zickzack), 406 (Dreieck), 407 (Vorhersage

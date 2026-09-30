@@ -13,7 +13,7 @@ stand: 2026-09-29
 
 # ===== Überblick =====
 kurzbeschreibung: "Eine kleine Kugel erscheint an zufälliger Stelle und fährt in geraden, leicht schrägen Stücken über den Bildschirm; in unregelmäßigen Abständen knickt ihre Bahn ab. Man hält das Mausfadenkreuz ohne zu klicken auf der Kugel, bis ihr Lebensbalken leer ist; dann taucht sie woanders neu auf."
-ziel_funktionen: [kontinuierliche_steuerung, auge_hand_koordination, blickfolge, bewegungswahrnehmung]
+ziel_funktionen: [kontinuierliche_steuerung, auge_hand_koordination, blickfolge]
 eingabe: [maus]
 tablet_geeignet: nein
 dauer_sekunden: 45
@@ -32,7 +32,7 @@ anforderungsprofil:
     blickfolge: 3
     sakkaden: 2
     fixation: 0
-    bewegungswahrnehmung: 3
+    bewegungswahrnehmung: 2
     visuelle_suche: 0
     visuelle_verarbeitungsgeschwindigkeit: 1
     zeitliche_aufloesung: 0
@@ -72,7 +72,7 @@ belastung:
   sprachabhaengigkeit: 0
 
 # ===== Auswahlhilfe =====
-voraussetzungen: ["Maus (Touchpad nur eingeschränkt) mit relativer Bewegung und Pointer Lock; kein Tablet", "scharfes Sehen im Bildschirmabstand (Zwischenbereich ≈ 50–75 cm) über die ganze Bildfläche, auch oben und unten", "Englische Spieloberfläche; Regeln auch deutsch auf der Seite, Spiel ohne Lesen bedienbar"]
+voraussetzungen: ["Maus (Touchpad nur eingeschränkt) mit relativer Bewegung und Pointer Lock; kein Tablet", "scharfes Sehen im Bildschirmabstand (Zwischenbereich ≈ 50–75 cm) über die ganze Bildfläche, auch oben und unten", "Anzeige und Regeln auf der deutschen Seite deutsch (Teile des Ergebnisbildschirms englisch), keine italienische Fassung geprüft; Spiel ohne Lesen bedienbar"]
 vorsicht_bei: [tremor_parkinson, hand_arm_beschwerden, nystagmus, presbyopie_gleitsicht, trockenes_auge_bildschirm, kopfschmerz_asthenopie, migraene_lichtempfindlich, photosensitive_epilepsie, farbsehschwaeche]
 geeignet_fuer: ["fortlaufendes Nachführen eines bewegten Ziels mit der Maus üben (Auge-Hand-Abstimmung)", "nach einem Bahnknick schnell wieder aufs Ziel kommen, ohne weit zu überschießen", "Wechsel zwischen Suchen/Anspringen eines neu erscheinenden Ziels und anschließendem Nachführen", "Spielerinnen und Spieler, die Tracking in der geübten Aufgabe verbessern wollen"]
 weniger_geeignet_fuer: ["Tablet- oder Touch-Nutzung (Original nicht bedienbar)", "Menschen mit Zittern, Hand- oder Handgelenkbeschwerden", "ruhiges, vorhersagbares Blickfolgetraining (Bahn knickt zufällig ab)", "Wunsch nach verlässlichen Norm- oder Leistungsvergleichen"]
@@ -80,7 +80,7 @@ evidenz:
   uebungseffekt: mittel
   naher_transfer: unklar
   alltag_transfer: fehlend
-  kommentar: "Manuelles Tracking und Aim-Trainer-Leistung verbessern sich mit Übung (Gauthier et al., 1988; Listman et al., 2021), für diesen Drill gibt es keine Studie; Transfer von Aim-Trainern auf Spiel oder Alltag ist nicht kontrolliert untersucht, Actionspiele selbst verbesserten Nachführaufgaben im Labor (Li et al., 2016)."
+  kommentar: "Auge-Hand-Tracking reift bzw. verbessert sich mit Übung (Gauthier et al., 1988, v. a. bei Kindern) und Aim-Trainer-Leistung steigt mit Übung (Listman et al., 2021, Beobachtungsdaten); für diesen Drill gibt es keine Studie; Transfer von Aim-Trainern auf Spiel oder Alltag ist nicht kontrolliert untersucht, Actionspiele selbst verbesserten Nachführaufgaben im Labor (Li et al., 2016)."
 aehnliche_uebungen: [512, 505, 514, 515, 405, 410, 415, 104, 304, 501, 707]
 stichworte: ["Zickzack-Tracking", "manuelles Nachführen", "Richtungswechsel", "Bahnknick", "Ausweichbewegung", "Aufholsakkade", "Smooth Pursuit", "Auge-Hand-Koordination", "Aim Trainer", "Maus"]
 ---
@@ -96,7 +96,7 @@ Auf fast schwarzem Grund mit kaum sichtbarem Gitter erscheint eine leuchtende Ku
 Grundlage: Seitentext und ausgelieferter Spielcode (seitenspezifischer Chunk `28378-…js` mit den gemeinsamen Modulen für Schwierigkeitskurve, Combo, Note und Einstellungen; gelesen am 29.09.2026, nur Mechanik übernommen). Winkel sind **eigene Umrechnungen** (24″-Full-HD-Monitor im Vollbild, 60 cm Abstand ≈ 38 px/°).
 
 - **Rahmen (Code):** Start-Karte → Countdown 3-2-1-GO (Start nach 2,45 s) → Spiel → Ergebnis. Canvas im 16:9-Container oder Vollbild; Verlassen von Vollbild oder Pointer Lock sowie Escape brechen ab. Das Fadenkreuz (Ring Ø 28 px ≈ 0,7°, Mittelpunkt Ø 4 px ≈ 6′) folgt der relativen Mausbewegung × Empfindlichkeit. Reine Touch-Geräte werden erkannt und nicht unterstützt. **Kein Klick.**
-- **Zielbewegung (Code):** Das Ziel startet an **zufälliger Stelle** der ganzen Fläche. Die waagrechte Geschwindigkeit ist immer ± Tempo, die senkrechte ein Zufallswert bis ± 25 % des Tempos → gerade Stücke mit höchstens ≈ 14° Neigung, also überwiegend waagrecht. Bei jedem „Zickzack-Ereignis“ (alle Grundabstand × 0,8–1,2) werden **Richtung links/rechts zufällig (50 : 50)** und Neigung neu gewählt – nur etwa jedes zweite Ereignis ist eine echte Umkehr, sonst ändert sich nur die Neigung um bis zu ≈ 28°. Das Tempo springt sofort; es gibt **keine** Abbrems- oder Beschleunigungsphase. Am Rand (Radius + 15 px) prallt das Ziel ab. Eine Spur der letzten 8 Bildpositionen wird gezeichnet.
+- **Zielbewegung (Code):** Das Ziel startet an **zufälliger Stelle** der ganzen Fläche. Die waagrechte Geschwindigkeit ist immer ± Tempo, die senkrechte ein Zufallswert bis ± 25 % des Tempos (beim Neuerscheinen bis ± 20 %) → gerade Stücke mit höchstens ≈ 14° Neigung, also überwiegend waagrecht. Bei jedem „Zickzack-Ereignis“ (alle Grundabstand × 0,8–1,2) werden **Richtung links/rechts zufällig (50 : 50)** und Neigung neu gewählt – nur etwa jedes zweite Ereignis ist eine echte Umkehr, sonst ändert sich nur die Neigung um bis zu ≈ 28°. Das Tempo springt sofort; es gibt **keine** Abbrems- oder Beschleunigungsphase. Am Rand (Radius + 15 px) prallt das Ziel ab. Eine Spur der letzten 8 Bildpositionen wird gezeichnet.
 - **Werte auf Level 1 (Code):** Radius 16 px (Ø ≈ 0,84°); Trefferzone = Zielradius (anders als 512 ohne Zuschlag); Tempo 350 px/s (≈ 9,2°/s); Knick alle 0,96–1,44 s, echte Umkehr im Mittel ≈ alle 2,4 s plus Randabpraller; Lebensdauer 4,2 s.
 - **Ziel „zerstören“ (Code):** Solange das Fadenkreuz auf dem Ziel liegt, sinkt dessen „Gesundheit“ um 65 %/s → **≈ 1,54 s Gesamtzeit auf dem Ziel** nötig (Auflegen darf unterbrochen werden). Dann +25 × Combo-Faktor Punkte und Neuerscheinen an zufälliger Stelle – im Mittel ≈ 800 px (≈ 21°) vom alten Ort (eigene Simulation). Dadurch entsteht etwa alle 1,5–2 s eine **schnelle Zielbewegung (Flick)** zum neuen Ziel.
 - **Schwierigkeit (Code):** Level = Punkte/1 400 + 1; alle Parameter folgen der gemeinsamen Exponentialkurve der Vorlage (Grenzwerte siehe YAML; Level 15 ohne Combo: Radius 11,1 px, Tempo 776 px/s, Knickabstand 0,48 s, Lebensdauer 2,4 s). Eigene Simulation: Ein perfekter Lauf ohne Erfassungszeit nach dem Neuerscheinen erreicht ≈ 8 400 Punkte (Level ≈ 7), mit realistischen 0,3 s Erfassungszeit ≈ 5 700 Punkte (Level ≈ 5). Dort gilt mit hoher Combo: Radius ≈ 12–13 px (Ø ≈ 0,65–0,7°), Tempo ≈ 530–610 px/s (≈ 14–16°/s), Knick alle ≈ 0,6–1,0 s.
@@ -123,7 +123,7 @@ Die Seite richtet sich an Spielende von Apex Legends, Warzone, Call of Duty Mobi
 - **Bildschirm:** Bei 60 Hz springt ein 16°/s-Ziel ≈ 0,27° (≈ 10 px) pro Bild – fast ein Zielradius; höhere Bildraten helfen beim Sehen, ändern die Aufgabe aber nicht (eigene Rechnung).
 - **Brille:** Anders als bei 512 nutzt das Ziel die **ganze Fläche**, auch oberen und unteren Rand. Bei Universal-Gleitsichtgläsern liegt die schmale Zwischenzone unter der Blickmitte, seitlich und oben wird es unscharf → Kopf- statt Augenbewegung, Kopf in den Nacken. Bildschirm-Gleitsichtgläser senkten die Kopfneigung am Monitor und verbesserten die Monitorsicht (Jaschinski et al., 2015); Monitor etwas tiefer stellen oder kleineres Fenster wählen.
 - **Farbe:** „Auf dem Ziel“ wird über Grün ↔ Rot angezeigt, ebenso der Lebensbalken (grün > 50 %, sonst rot). Bei Rot-Grün-Schwäche (≈ 8 % der Männer; Birch, 2012) fehlt dieses Signal weitgehend; die Überdeckung von Fadenkreuz und Kugel bleibt sichtbar → `farbunterscheidung` 1.
-- **Alter und Augen:** Ältere (75–93 J.) haben bei allen Geschwindigkeiten einen geringeren Pursuit-Gain (Moschner & Baloh, 1994). Konzentriertes Verfolgen senkt die Lidschlagrate (Patel et al., 1991); digitale Augenbelastung ist häufig (Sheppard & Wolffsohn, 2018). Stereosehen: 0.
+- **Alter und Augen:** Ältere (75–93 J.) haben bei allen Geschwindigkeiten einen geringeren Pursuit-Gain (Moschner & Baloh, 1994). Bildschirmarbeit senkt die Lidschlagrate deutlich (Patel et al., 1991); digitale Augenbelastung ist häufig (Sheppard & Wolffsohn, 2018). Stereosehen: 0.
 
 ## 5. Neurowissenschaftliche Grundlagen
 Die Bewegungsinformation stammt vor allem aus den Arealen MT/MST; die Streuung der Folgebewegung lässt sich weitgehend auf das Rauschen der Bewegungsschätzung in MT zurückführen (Lisberger, 2010). Folgebewegung und Sakkaden teilen eine ähnliche Architektur mit frontalem Augenfeld, Basalganglien und Colliculus superior – eher „zwei Ergebnisse einer gemeinsamen Kaskade“ als zwei getrennte Systeme (Krauzlis, 2004). Die Tabellenangaben „V1 und MT/V5 160–210 ms“ und „kortikospinaler Impuls an die Thenarmuskeln“ sind Vereinfachungen ohne Quelle. Dass der Drill bestimmte Hirnregionen „trainiert“ oder „konditioniert“, ist nicht belegt.
@@ -131,20 +131,20 @@ Die Bewegungsinformation stammt vor allem aus den Arealen MT/MST; die Streuung d
 ## 6. Motorische Grundlagen
 - **Zwei Bewegungsarten im Wechsel:** kontinuierliches Nachführen (Hauptteil) und etwa alle 1,5–2 s eine schnelle Zielbewegung zum neu erschienenen Ziel. Diese Flicks folgen den Regeln schneller Zielbewegungen: Primärbewegung plus Korrektur, Zeit wächst mit Distanz/Zielgröße (MacKenzie, 2018; Elliott et al., 2010) → `zielbewegung_tempo` 2. Die Trefferzone ist nur so groß wie das Ziel (Radius ≈ 0,42° → 0,33°) → `zielbewegung_praezision` 2.
 - **Manuelles Tracking ist intermittierend:** Korrekturen kommen in Schüben mit ≈ 170 ms Refraktärzeit; kleine Fehler unter ≈ 0,8° werden oft toleriert (Miall et al., 1993). Die Trefferzone liegt deutlich **unter** dieser Totzone – ständiges Nachkorrigieren ist nötig (eigene Folgerung).
-- **Reaktionsbudget bei Umkehr:** Die Hand reagiert erst nach ≈ 110–200 ms (Brenner & Smeets, 1997; Brenner et al., 1998). Bei echter Umkehr läuft sie so lange weiter in die alte Richtung, der Abstand wächst mit doppelter Zielgeschwindigkeit: bei 9°/s ≈ 2–3,7°, bei 16°/s ≈ 3,5–6° (eigene Rechnung). Reine Neigungsänderungen (jedes zweite Ereignis) erzeugen viel kleinere Fehler, sind aber auch schwerer zu bemerken (Dzhafarov et al., 1993).
+- **Reaktionsbudget bei Umkehr:** Die Hand reagiert erst nach ≈ 110–200 ms (Brenner & Smeets, 1997; Brenner et al., 1998). Bei echter Umkehr läuft sie so lange weiter in die alte Richtung, der Abstand wächst mit doppelter Zielgeschwindigkeit: bei 9°/s ≈ 2–3,7°, bei 16°/s ≈ 3,5–6° (eigene Rechnung). Reine Neigungsänderungen (jedes zweite Ereignis) erzeugen viel kleinere Fehler, werden aber auch langsamer bemerkt, weil die Reaktionszeit mit kleinerer Änderung steigt (Dzhafarov et al., 1993).
 - **2D-Steuerung:** Fehler werden auf Geschwindigkeit und Richtung bezogen, nicht getrennt in x/y geregelt (Engel & Soechting, 2000). Die senkrechte Komponente ist klein (≤ 25 % des Tempos).
-- **Bandbreite:** Genaues Maus-Tracking gelingt bis ≈ 2 Hz; Alter und motorische Einschränkung senken das (Riviere & Thakor, 1996). Die Knickrate des Drills (≈ 0,7–1,9 je s, davon etwa die Hälfte echte Umkehrungen) liegt darunter bzw. im Grenzbereich – langsamer als bei 512.
+- **Bandbreite:** Genaues Maus-Tracking gelingt bis ≈ 2 Hz; Alter und motorische Einschränkung senken das (Riviere & Thakor, 1996). Die Knickrate des Drills (≈ 0,7–1,7 je s, davon etwa die Hälfte echte Umkehrungen) liegt darunter – langsamer als bei 512; nur ein grober Vergleich, denn zufällige Knicke sind keine Sinusschwingung (eigene Einordnung).
 - **Maus-Übersetzung:** Betriebssystem-Mausbeschleunigung bleibt aktiv; sie macht Zeigen etwas schneller, erhöht aber das Überschießen (Casiez et al., 2008) – beim Flick und bei der Umkehr relevant.
 
 ## 7. Einflussfaktoren und Messgrenzen
 - **Latenz:** Lokale Systemlatenz liegt real bei 23–243 ms und verschlechtert Tracking schon ab ≈ 41 ms (Ivkovic et al., 2015). Bei 16°/s bedeuten 50 ms zusätzliche Latenz ≈ 0,8° Nachlauf – mehr als der Zielradius (eigene Rechnung). Werte verschiedener Geräte sind nicht vergleichbar.
 - **Größen in Pixeln:** Tempo, Ziel und Neuerscheinungsabstand hängen von Fenstergröße, Monitor und Abstand ab; im kleinen Fenster prallt das Ziel öfter am Rand ab (mehr, aber vorhersagbare Umkehrungen).
 - **Zufall:** Knickzeitpunkte, Richtung, Neigung und Neuerscheinungsort sind zufällig; zwei Läufe sind nicht gleich schwer. Punkte hängen stark von der Combo ab; die Sitzung dauert 45–74 s. Die Note ist so skaliert, dass selbst perfektes Spiel „D“ ergibt. Wiedereinfang- und Erfassungszeiten werden nicht gemessen.
-- **Zuverlässigkeit:** Tracking-Metriken in KovaaK’s waren an zwei Terminen gut reproduzierbar (ICC 0,947–0,995, N = 10; Rogers et al., 2024) – für diesen Browserdrill ungeprüft.
+- **Zuverlässigkeit:** Metriken in KovaaK’s (u. a. Strafe Tracking) waren an zwei Terminen gut reproduzierbar (ICC 0,947–0,995, N = 10; Rogers et al., 2024) – für diesen Browserdrill ungeprüft.
 - **Alter und Ermüdung:** Pursuit-Gain und Maus-Tracking werden im Alter schwächer (Moschner & Baloh, 1994; Riviere & Thakor, 1996). Wiederholtes Maus-Zielen (6 × 5 min) ermüdete die Handgelenkstrecker messbar, ohne Leistungsabfall (Forman et al., 2025).
 
 ## 8. Studienlage: Trainierbarkeit und Übertragung
-- **Übungseffekt – mittel:** Auge-Hand-Tracking verbessert sich mit Übung (Gauthier et al., 1988). In Aim-Lab-Daten (N = 7 174) stiegen die Leistungen über Tage deutlich (Listman et al., 2021; Beobachtungsdaten, Herstellerfinanzierung). Für diesen Drill gibt es keine Studie.
+- **Übungseffekt – mittel:** Die Auge-Hand-Koordination beim Nachführen reift bzw. verbessert sich mit Übung (Gauthier et al., 1988, v. a. bei Kindern gezeigt). In Aim-Lab-Daten (N = 7 174) stiegen vor allem die Treffer pro Sekunde über Tage deutlich, die Trefferquote nur mäßig (Listman et al., 2021; Beobachtungsdaten, Herstellerfinanzierung). Für diesen Drill gibt es keine Studie.
 - **Naher Transfer – unklar:** 5–10 h Actionspiel verbesserten bei Nicht-Spielenden das Nachführen im Labor (Li et al., 2016) – ein Spiel, kein 45-s-Drill. Große Effekte digitalen Sehtrainings entstehen vor allem bei gerätegleichen Test- und Übungsaufgaben (Guo et al., 2025).
 - **Alltagstransfer – fehlend:** Kein Beleg für Nutzen in Spielduellen, Sport, Verkehr oder Beruf; „Brain-Training“ zeigt viel Evidenz für die geübte, wenig für entfernte Aufgaben (Simons et al., 2016).
 

@@ -9,7 +9,7 @@ kapitel_original: "fps"
 unterkapitel_original: ""
 quelle_url: "https://skilldrills.online/de/drills/fps/target-acquisition"
 blickfit_umsetzung: null
-stand: 2026-09-29
+stand: 2026-09-30
 
 # ===== Überblick =====
 kurzbeschreibung: "Auf fast schwarzem Grund liegen drei bis acht bernsteinfarbene Kugeln verstreut, die unterschiedlich hell (deckend) sind. Man führt ein Fadenkreuz mit der Maus und klickt die Kugeln streng in absteigender Helligkeit ab; ist der Satz leer, erscheint sofort der nächste. Ein Klick auf eine falsche Kugel oder daneben kostet die Combo."
@@ -28,7 +28,7 @@ anforderungsprofil:
     farbunterscheidung: 0
     stereosehen: 0
     peripheres_sehen: 2
-    nutzbares_sehfeld: 2
+    nutzbares_sehfeld: 1
     blickfolge: 0
     sakkaden: 2
     fixation: 1
@@ -110,7 +110,7 @@ Grundlage: Seitentext und ausgelieferter Spiel-Chunk (`64974-…js`, formatiert;
 | 30 | 8 | 12,5 px | ≈ 0,66° | 3 px | 7 % | 33 px |
 
 - **Combo-Rückkopplung [CODE]:** Der Combo-Multiplikator (1,0 ab 0, 1,1 ab 3, … 2,0 ab 20, 3,0 ab 50 Treffern) erhöht nicht nur die Punkte, sondern macht den nächsten Satz größer, die Kugeln bis 15 % kleiner, die Helligkeitsstufen bis 20 % feiner und die Trefferzugabe bis 25 % kleiner – wer gut spielt, bekommt sofort schwerere Sätze.
-- **Treffer [CODE]:** richtig ist nur die hellste *verbliebene* Kugel. Punkte = 100 × Combo-Multiplikator × (1 + (Level − 1)/28); geräumter Satz: + 400 × derselbe Faktor, dann sofort neuer Satz. Level = 1 + Punkte/1.400 (Kommazahl, nur steigend).
+- **Treffer [CODE]:** richtig ist nur die hellste *verbliebene* Kugel. Punkte = 100 × Combo-Multiplikator × (1 + (Level − 1)/28); geräumter Satz: + 400 × derselbe Faktor, dann sofort neuer Satz. Level = 1 + Punkte/1.400 (Kommazahl, nur steigend). Die Trefferzugabe wird beim Klick aus dem *aktuellen* Level und der Combo berechnet, schrumpft also schon innerhalb eines Satzes.
 - **Fehler [CODE]:** Klick auf eine falsche Kugel = Reihenfolgefehler, daneben = Fehlklick. Beides setzt die Combo auf 0 und löst Fehlerton, rote Partikel, Bildwackeln (6–8 px, klingt ab) und einen **roten Vollbildblitz** (0,48 s; Einstellung „Miss Flash“, Standard **an**) aus. Die Zeitstrafe −0,6 s gilt nur mit der Einstellung „Strafen“ (Standard **aus**). Die falsche Kugel bleibt liegen.
 - **Konstruktionsfehler [CODE, ER]:** Wegen der Untergrenze 0,05 haben etwa zwischen Level 5,5 und 10,5 (je nach Combo) die **zwei schwächsten Kugeln exakt dieselbe Deckkraft**. Richtig ist dann nur die mit der kleineren internen Nummer – sichtbar ist das nicht, der Spieler muss raten (50 % Reihenfolgefehler bei diesem Klick).
 - **Zeit [CODE]:** Die Uhr läuft mit echter Zeit (dt, höchstens 0,1 s je Bild); Partikel bewegen sich pro Bild (auf 144 Hz schneller, nur Optik). **Es wird keine Reaktions- oder Erfassungszeit gemessen** – `performance.now()` dient nur der Bildschleife. Bestwerte bleiben im Browser (`localStorage`).
@@ -127,7 +127,7 @@ Die Seite verspricht Training von „Zielerkennung, Bedrohungsentscheidung und F
 - **„Visual Clutter kostet 100–200 ms“:** grob plausibel. Ineffiziente Suche kostet ≈ 25–35 ms je Element (Wolfe, 2001); der Gesamtwert hängt von der Elementzahl ab.
 - **Black eQualizer, Mausgriff, „300 ms Sichtkontakt entscheiden“:** ohne Quelle, nicht belegt.
 - **Tier-Tabelle:** **keine Datengrundlage.** Woods et al. (2015) untersuchten einfache Tastenreaktionen, keine Zielerfassung, und das Spiel misst die angegebene Latenz gar nicht.
-- **Messtechnik:** Die Angaben zu Bildintervall (16,7/6,9/4,2 ms bei 60/144/240 Hz) und USB-Abfrage (8 ms bei 125 Hz) sind korrekt. „Mikrosekundenauflösung“ stimmt nur eingeschränkt (100 µs bzw. 5 µs je nach Isolierung; MDN, o. J.-b) und ist hier bedeutungslos. „Kein Upload“ stimmt (nur `localStorage`).
+- **Messtechnik:** Die Angaben zu Bildintervall (16,7/6,9/4,2 ms bei 60/144/240 Hz) und USB-Abfrage (8 ms bei 125 Hz) sind korrekt. „Mikrosekundenauflösung“ stimmt nur eingeschränkt (100 µs bzw. 5 µs je nach Isolierung; MDN, o. J.) und ist hier bedeutungslos. „Kein Upload“ stimmt (nur `localStorage`).
 
 ## 4. Optische und okulomotorische Grundlagen
 - **Reizgröße [ER]:** Kugeldurchmesser 56 → 24 px ≈ 1,5° → 0,63°, Trefferfläche 72 → ≈ 28 px (1,9° → 0,74°). Für Sehschärfe ist das anspruchslos (Visus-Optotypen 1,0 ≈ 5′ = 0,08°); die Übung prüft Kontrast, nicht Detail.
@@ -215,7 +215,7 @@ Die Seite verspricht Training von „Zielerkennung, Bedrohungsentscheidung und F
 - Ketcham, C. J., Seidler, R. D., Van Gemmert, A. W. A., & Stelmach, G. E. (2002). Age-related kinematic differences as influenced by task difficulty, target size, and movement amplitude. *The Journals of Gerontology: Series B, 57*(1), P54–P64. https://doi.org/10.1093/geronb/57.1.P54 – Zielbewegungen im Alter
 - Kowal, M., Toth, A. J., Exton, C., & Campbell, M. J. (2018). Different cognitive abilities displayed by action video gamers and non-gamers. *Computers in Human Behavior, 88*, 255–262. https://doi.org/10.1016/j.chb.2018.07.010 – Tempo vs. Genauigkeit
 - Listman, J. B., Tsay, J. S., Kim, H. E., Mackey, W. E., & Heeger, D. J. (2021). Long-term motor learning in the "wild" with high volume video game data. *Frontiers in Human Neuroscience, 15*, 777779. https://doi.org/10.3389/fnhum.2021.777779 – Übungseffekt Aim-Trainer (herstellerfinanziert)
-- MDN Web Docs. (o. J.-b). *Performance: now() method*. Abgerufen am 29.09.2026 von https://developer.mozilla.org/en-US/docs/Web/API/Performance/now – Zeitauflösung (Webquelle, keine DOI)
+- MDN Web Docs. (o. J.). *Performance: now() method*. Abgerufen am 29.09.2026 von https://developer.mozilla.org/en-US/docs/Web/API/Performance/now – Zeitauflösung (Webquelle, keine DOI)
 - Munoz, D. P., Broughton, J. R., Goldring, J. E., & Armstrong, I. T. (1998). Age-related performance of human subjects on saccadic eye movement tasks. *Experimental Brain Research, 121*(4), 391–400. https://doi.org/10.1007/s002210050473 – Sakkaden und Alter
 - Neggers, S. F. W., & Bekkering, H. (2000). Ocular gaze is anchored to the target of an ongoing pointing movement. *Journal of Neurophysiology, 83*(2), 639–651. https://doi.org/10.1152/jn.2000.83.2.639 – Blickverankerung
 - Owsley, C., Sekuler, R., & Siemsen, D. (1983). Contrast sensitivity throughout adulthood. *Vision Research, 23*(7), 689–699. https://doi.org/10.1016/0042-6989(83)90210-9 – Kontrast im Alter
@@ -225,7 +225,7 @@ Die Seite verspricht Training von „Zielerkennung, Bedrohungsentscheidung und F
 - Sireteanu, R., & Rettenbach, R. (1995). Perceptual learning in visual search: Fast, enduring, but non-specific. *Vision Research, 35*(14), 2037–2043. https://doi.org/10.1016/0042-6989(94)00295-W – Sucherlernen
 - Soukoreff, R. W., & MacKenzie, I. S. (2004). Towards a standard for pointing device evaluation, perspectives on 27 years of Fitts' law research in HCI. *International Journal of Human-Computer Studies, 61*(6), 751–789. https://doi.org/10.1016/j.ijhcs.2004.09.001 – Fitts-Auswertung
 - Strasburger, H., Rentschler, I., & Jüttner, M. (2011). Peripheral vision and pattern recognition: A review. *Journal of Vision, 11*(5), 13. https://doi.org/10.1167/11.5.13 – peripheres Sehen
-- Thompson, K. G., & Bichot, N. P. (2005). A visual salience map in the primate frontal eye field. *Progress in Brain Research, 147*, 251–262. https://doi.org/10.1016/S0079-6123(04)47019-8 – FEF-Salienzkarte [Abstract; Crossref-Seiten 249–262]
+- Thompson, K. G., & Bichot, N. P. (2005). A visual salience map in the primate frontal eye field. *Progress in Brain Research, 147*, 251–262. https://doi.org/10.1016/S0079-6123(04)47019-8 – FEF-Salienzkarte (Seiten laut PubMed; Crossref: 249–262)
 - Toth, A. J., Hojaji, F., & Campbell, M. J. (2023). Exploring the mechanisms of target acquisition performance in esports: The role of component kinematic phases on a first person shooter motor skill. *Computers in Human Behavior, 139*, 107554. https://doi.org/10.1016/j.chb.2022.107554 – Phasen der Zielerfassung
 - Warburton, M., Campagnoli, C., Mon-Williams, M., Mushtaq, F., & Morehead, J. R. (2023). Kinematic markers of skill in first-person shooter video games. *PNAS Nexus, 2*(8), pgad249. https://doi.org/10.1093/pnasnexus/pgad249 – Kinematik und Übung
 - Wolfe, J. M. (2001). Asymmetries in visual search: An introduction. *Perception & Psychophysics, 63*(3), 381–389. https://doi.org/10.3758/BF03194406 – Suchkosten je Element

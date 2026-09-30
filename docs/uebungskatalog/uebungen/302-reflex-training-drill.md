@@ -17,7 +17,7 @@ ziel_funktionen: [auge_hand_koordination, zielbewegung_tempo]
 eingabe: [maus, touch, touchpad]
 tablet_geeignet: mit_anpassung
 dauer_sekunden: 45
-schwierigkeit_anpassung: "Automatisch, nie rückläufig: Level = Punkte / 1.750 + 1. Laut Code sinken von Level 1 bis 15 Zielradius 26 → 11,5 px, Lebensdauer 1.900 → 546 ms, Nachschubabstand 220 → 68 ms und Trefferzugabe 14 → 5 px; gleichzeitige Ziele 2 → 5 (ab Level 21: 7). Eine Serie (Combo) verschärft zusätzlich bis −25 % Radius, −30 % Lebensdauer und −50 % Trefferzugabe. Die Rundendauer ist variabel: 45 s Startguthaben, +2 s je Treffer (höchstens 60 s), −1 s je Fehler/Ablauf."
+schwierigkeit_anpassung: "Automatisch, nie rückläufig: Level = Punkte / 1.750 + 1. Laut Code sinken von Level 1 bis 15 Zielradius 26 → 11,5 px, Lebensdauer 1.900 → 546 ms, Nachschubabstand 220 → 68 ms und Trefferzugabe 14 → 5 px; gleichzeitige Ziele 2 → 5 (ab Level 17: 6, ab Level 21: 7). Eine Serie (Combo) verschärft zusätzlich bis −25 % Radius, −30 % Lebensdauer und −50 % Trefferzugabe. Die Rundendauer ist variabel: 45 s Startguthaben, +2 s je Treffer (höchstens 60 s), −1 s je Fehler/Ablauf."
 messgroessen: ["Punkte", "Genauigkeit = Treffer / (Treffer + Fehlklicks + abgelaufene Ziele)", "'Ø Reaktion' = Zeit vom Erscheinen bis zum Treffer, nur getroffene Ziele (keine echte Reaktionszeit)", "höchstes Level, maximale Combo", "sinnvoll: abgelaufene Ziele je Level, Bewegungszeit je Fitts-Schwierigkeit, Reihenfolgefehler (jüngeres statt ältestes Ziel)"]
 
 # ===== Anforderungsprofil 0–3 (alle Schlüssel angeben) =====
@@ -33,7 +33,7 @@ anforderungsprofil:
     sakkaden: 2
     fixation: 0
     bewegungswahrnehmung: 0
-    visuelle_suche: 2
+    visuelle_suche: 1
     visuelle_verarbeitungsgeschwindigkeit: 2
     zeitliche_aufloesung: 0
     naharbeit_dauer: 1
@@ -100,7 +100,7 @@ Grundlage: Seitentext und ausgelieferter Spielcode (Chunk `11411-…js` mit geme
 
 - **Ablauf:** Start → Countdown 3-2-1-GO (≈ 2,45 s, Töne) → Spiel → Ergebnis (Punkte, Genauigkeit, Ø Reaktion, Treffer, Fehlklicks, Abläufe, höchstes Level, maximale Combo, Buchstabennote). Escape, Vollbild-Ende oder Tabwechsel brechen ab.
 - **Spielfeld:** 16:9 in der Seite (Handy hochkant 3:4) oder Vollbild, Grund #050508. Ziele entstehen im inneren Bereich (13 % Rand seitlich, 17 % oben/unten) mit Mindestabstand 1,8 × Radiensumme – im Vollbild am Monitor ≈ 36°, am Tablet quer ≈ 24° breit.
-- **Ziele:** rote Kreise (#ef4444) mit weißem Mittelpunkt, **ruhend und ohne Anzeige der Restzeit**. Bei Touch, Fenster < 768 px oder Mobilgerät: Radius +2 px, unsichtbare Trefferzugabe +10 px.
+- **Ziele:** rote Kreise (#ef4444) mit weißem Mittelpunkt, **ruhend und ohne Anzeige der Restzeit**. Das Ablaufen hängt an einer seitenübergreifend im Browser gespeicherten Einstellung (`skilldrills_timeout_enabled`, Standard: an), für die es auf dieser Seite keinen Schalter gibt; wurde sie auf einer anderen Übungsseite ausgeschaltet, laufen die Ziele hier nicht ab (Code, nicht im Spiel geprüft). Bei Touch, Fenster < 768 px oder Mobilgerät: Radius +2 px, unsichtbare Trefferzugabe +10 px.
 - **Schwierigkeit:** Fortschritt p = (Level − 1)/14, exponentieller Abfall (Formel wie Literaturbasis W03, über Level 15 hinaus weiter). Level = Punkte/1.750 + 1, sinkt nie.
 
 | Level (Punkte) | Ø Ziel Monitor | Lebensdauer | Nachschub | Trefferzone Ø | gleichzeitig |
@@ -125,19 +125,19 @@ Die Seite beschreibt Mehrzielsuche, Priorisierung, geteilte Aufmerksamkeit und p
 - **Hick passt nur begrenzt:** Bei direktem Zeigen auf sichtbare Ziele ist der Anstieg mit der Zahl der Alternativen nahezu flach (Proctor & Schneider, 2018). Die roten Punkte springen ohne Ablenker heraus; Suche im engeren Sinn (Ziel zwischen Ablenkern; Wolfe, 2001) findet kaum statt. Die Last liegt in Reihenfolge und Bewegungsplanung.
 - **„Ø Reaktion“ ist keine Reaktionszeit:** gemessen wird Erscheinen → Treffer inklusive Wartezeit, abgelaufene Ziele fehlen. Da die Lebensdauer mit dem Level sinkt, „verbessert“ sich der Mittelwert allein durch den Levelanstieg (Auswahleffekt, eigene Analyse). Die Bänder bis < 180 ms haben keinen Bezug zur einfachen Reaktionszeit (kalibriert 231 bzw. 213 ms; Woods et al., 2015). Tempo und Genauigkeit gemeinsam zu lesen ist richtig (Heitz, 2014).
 - **Noten „LEGENDARY“/„ELITE REFLEX“** beruhen nur auf dem Punktestand, ohne Datengrundlage.
-- **„Dringend zuerst“** läuft der Wahrnehmung entgegen: Neu erscheinende Reize ziehen Aufmerksamkeit an (Yantis & Jonides, 1984), ruhende alte Objekte werden eher ausgeblendet (Watson & Humphreys, 1997).
+- **„Dringend zuerst“** läuft vermutlich der Wahrnehmung entgegen: Neu erscheinende Reize ziehen Aufmerksamkeit an (Yantis & Jonides, 1984), ruhende alte Objekte können bei der Suche ausgeblendet werden (Watson & Humphreys, 1997; dort alte Ablenker, nicht alte Ziele – die Übertragung auf diese Aufgabe ist eine Annahme).
 
 ## 4. Optische und okulomotorische Grundlagen
 
 - **Sehwinkel:** Ø 1,4° (Level 1) bis 0,6° (Level 15), bei hoher Combo 0,35–0,5°; für normale Sehschärfe groß. Begrenzend ist die schnelle Entdeckung außerhalb der Blickmitte, nicht das Detail. Der weiße Kern bleibt bei Rot-Grün-Schwäche sichtbar; Protanope sehen Rot dunkler, der Kontrast zum Schwarz bleibt ausreichend (eigene Einschätzung).
-- **Blick vor Hand:** Sakkade ≈ 250 ms nach dem Reiz, Hand ≈ 100 ms später (Prablanc et al., 1979). In Handlungsfolgen springt der Blick oft schon zum nächsten Objekt (Land & Hayhoe, 2001), doch während einer Zeigebewegung wird eine Sakkade zu einem neuen Ziel um ≈ 155 ms aufgeschoben, bis die Hand abbremst (Neggers & Bekkering, 2000). „Beim Klicken schon weiter scannen“ geht also nur begrenzt; neue Ziele müssen oft peripher entdeckt werden.
-- **Gleitsicht/Alterssichtigkeit:** Der Entstehungsbereich (≈ 36° bzw. 24°) übersteigt die klare Zwischenzone von Gleitsichtgläsern (≈ 13–18°; Han et al., 2003): seitliche Ziele unscharf oder mit Kopfdrehung, untere im Nahteil. Besser Bildschirmbrille, kein Vollbild, Bildschirm etwas tiefer; Tablet in ≈ 35–40 cm mit Nahkorrektur (Presbyope halten Geräte weiter weg; Boccardo et al., 2023).
+- **Blick vor Hand:** Sakkade innerhalb von ≈ 250 ms nach dem Reiz, Hand ≈ 100 ms später (Prablanc et al., 1979). In Handlungsfolgen springt der Blick oft schon zum nächsten Objekt (Land & Hayhoe, 2001), doch während einer Zeigebewegung wird eine Sakkade zu einem neuen Ziel um ≈ 155 ms aufgeschoben, bis die Hand abbremst (Neggers & Bekkering, 2000). „Beim Klicken schon weiter scannen“ geht also nur begrenzt; neue Ziele müssen oft peripher entdeckt werden.
+- **Gleitsicht/Alterssichtigkeit:** Der Entstehungsbereich (≈ 36° bzw. 24°) übersteigt die klare Zone von Gleitsichtgläsern (13° bzw. 18° horizontal bei zwei untersuchten Designs, 60 cm Abstand; Han et al., 2003): seitliche Ziele unscharf oder mit Kopfdrehung, untere im Nahteil. Besser Bildschirmbrille, kein Vollbild, Bildschirm etwas tiefer; Tablet in ≈ 35–40 cm mit Nahkorrektur (Presbyope halten Smartphones weiter weg und wählen größere Schrift; Boccardo et al., 2023).
 - **Trockenes Auge:** Am Bildschirm sinkt die Blinzelrate im Mittel auf ≈ ein Fünftel (Patel et al., 1991).
-- **Bildschirm/Latenz:** Ein neues Ziel wartet bei 60 Hz im Mittel 8 ms (max. 17 ms) auf das nächste Bild (eigene Rechnung). Ende-zu-Ende Maus → Bild 21–37 ms (120 bzw. 60 Hz), Tippen am Tablet 48–276 ms je nach Gerät und Toolkit (Casiez et al., 2017).
+- **Bildschirm/Latenz:** Ein neues Ziel wartet bei 60 Hz im Mittel 8 ms (max. 17 ms) auf das nächste Bild (eigene Rechnung). Ende-zu-Ende Maus → Bild im besten Laboraufbau 21–37 ms (1.000-Hz-Maus, 120 bzw. 60 Hz; mit anderem Toolkit bis ≈ 46 ms), Tippen am Tablet 48–276 ms je nach Gerät und Toolkit (Casiez et al., 2017).
 
 ## 5. Neurowissenschaftliche Grundlagen
 
-Zu dieser Aufgabe gibt es keine Bildgebungs- oder Trainingsstudie; die Website nennt auch keine Hirnregionen. Drei gut untersuchte Mechanismen greifen ineinander: (1) **Aufmerksamkeitsfang durch plötzliches Erscheinen** (Yantis & Jonides, 1984); (2) **Vorrang für Neues** – ruhende Objekte werden aktiv ausgeblendet, was Aufmerksamkeit kostet und unter Zusatzlast nachlässt (Watson & Humphreys, 1997), gerade das erschwert „ältestes zuerst“; (3) **Blick-Hand-Kopplung** – der Blick wird während des Zeigens am Ziel gehalten (Neggers & Bekkering, 2000) und in Handlungsfolgen planvoll, kaum nach Auffälligkeit, zum nächsten Objekt gelenkt (Land & Hayhoe, 2001). Hinzu kommt der Folgefehler der Mehrzielsuche: Nach einem gefundenen Ziel werden weitere häufiger übersehen (Adamo et al., 2013). „Trainiert Region X“ lässt sich daraus nicht ableiten.
+Zu dieser Aufgabe gibt es keine Bildgebungs- oder Trainingsstudie; die Website nennt auch keine Hirnregionen. Drei gut untersuchte Mechanismen greifen ineinander: (1) **Aufmerksamkeitsfang durch plötzliches Erscheinen** (Yantis & Jonides, 1984); (2) **Vorrang für Neues** – bereits sichtbare ruhende Objekte können aktiv ausgeblendet werden; das beansprucht Aufmerksamkeit und lässt unter Zusatzlast nach (Watson & Humphreys, 1997, an Ablenkern untersucht); vermutlich erschwert das „ältestes zuerst“; (3) **Blick-Hand-Kopplung** – der Blick wird während des Zeigens am Ziel gehalten (Neggers & Bekkering, 2000) und in Handlungsfolgen planvoll, kaum nach Auffälligkeit, zum nächsten Objekt gelenkt (Land & Hayhoe, 2001). Hinzu kommt der Folgefehler der Mehrzielsuche: Nach einem gefundenen Ziel werden weitere häufiger übersehen (Adamo et al., 2013; untersucht an Suche zwischen Ablenkern, hier ohne Ablenker vermutlich schwächer). „Trainiert Region X“ lässt sich daraus nicht ableiten.
 
 ## 6. Motorische Grundlagen
 
@@ -150,7 +150,7 @@ Zu dieser Aufgabe gibt es keine Bildgebungs- oder Trainingsstudie; die Website n
 
 - **Gerät:** Browser-Messungen enthalten 58–133 ms Geräteanteil (Pronk et al., 2020); Monitor und Tablet unterscheiden sich zusätzlich in Sehwinkel, Wegen und Trefferzugabe. Nur Selbstvergleich am selben Gerät ist sinnvoll.
 - **Zufall und Rückkopplung:** Zufällige Positionen lassen die Fitts-Schwierigkeit stark schwanken. Combo erhöht Punkte (bis × 3), damit Level und Schwierigkeit – gute Serien verschärfen die Aufgabe abrupt, das Level sinkt nie. Endlevel, Punkte und Rundendauer hängen deshalb eng zusammen.
-- **Messgrößen:** „Ø Reaktion“ ist verzerrt (Abschnitt 3); aussagekräftiger wären Abläufe je Level und Bewegungszeit je Fitts-Schwierigkeit. Aim-Trainer-Kennzahlen können sehr zuverlässig sein (ICC 0,947–0,995), zeigen aber Lerneffekte zwischen Terminen (Rogers et al., 2024).
+- **Messgrößen:** „Ø Reaktion“ ist verzerrt (Abschnitt 3); aussagekräftiger wären Abläufe je Level und Bewegungszeit je Fitts-Schwierigkeit. Aim-Trainer-Kennzahlen können sehr zuverlässig sein (ICC 0,947–0,995 in einer Pilotstudie mit 10 E-Sportlern); signifikante Verbesserungen zwischen zwei Terminen traten nur in einer von vier Aufgaben auf (Rogers et al., 2024).
 - **Alter:** Das reine Entdecken ist altersunabhängig (≈ 131 ms), die motorischen Anteile verlangsamen sich (Woods et al., 2015); in den ersten Sitzungen dominieren Gewöhnung und Strategie.
 
 ## 8. Studienlage: Trainierbarkeit und Übertragung
@@ -188,8 +188,8 @@ Zu dieser Aufgabe gibt es keine Bildgebungs- oder Trainingsstudie; die Website n
 
 - Hick, W. E. (1952). On the rate of gain of information. *Quarterly Journal of Experimental Psychology, 4*(1), 11–26. https://doi.org/10.1080/17470215208416600 – **Prüfung:** DOI stimmt ✓; **stützt die Aussage der Website:** teilweise (gilt für symbolische Wahlreaktionen; bei direktem Zeigen auf sichtbare Ziele nahezu flach, Proctor & Schneider 2018; die Seite nennt Hick selbst nur „Orientierung“).
 - Donders, F. C. (1969). On the speed of mental processes (Übersetzung des Originals von 1868). *Acta Psychologica, 30*, 412–431. https://doi.org/10.1016/0001-6918(69)90065-1 – **Prüfung:** DOI stimmt ✓ (Übersetzung 1969); **stützt:** ja (einfache und Wahlreaktion als verschiedene Verarbeitungsstufen; Inhalt über Sekundärquellen).
-- Kosinski, R. J. (2008 laut Website). *A literature review on reaction time.* Clemson University – **Prüfung:** keine DOI, unbegutachtetes Online-Skript; auffindbar nur die Fassung 2013 (http://www.cognaction.org/cogs105/readings/clemson.rt.pdf); **stützt:** teilweise (≈ 190 ms für Licht, Computermessungen ≈ 268 ms; für die Übungsbänder ohne Bezug).
-- Woods, D. L., Wyma, J. M., Yund, E. W., Herron, T. J., & Reed, B. (2015). Factors influencing the latency of simple reaction time. *Frontiers in Human Neuroscience, 9*, 131. https://doi.org/10.3389/fnhum.2015.00131 – **Prüfung:** DOI stimmt ✓ (Volltext); **stützt:** ja für „Hardware beeinflusst den Score“ (bis zu 100 ms), nein für die Übungsbänder (nur einfache RT, 231 bzw. 213 ms).
+- Kosinski, R. J. (2008 laut Website). *A literature review on reaction time.* Clemson University (von der Website für den Bereich 200–250 ms visueller Reaktion zitiert) – **Prüfung:** keine DOI, unbegutachtetes Online-Skript; auffindbar nur die Fassung 2013 (http://www.cognaction.org/cogs105/readings/clemson.rt.pdf); **stützt:** teilweise (nennt 180–200 ms für Licht bei Studierenden, am Computer an der Clemson University eher ≈ 268 ms; für die Übungsbänder ohne Bezug).
+- Woods, D. L., Wyma, J. M., Yund, E. W., Herron, T. J., & Reed, B. (2015). Factors influencing the latency of simple reaction time. *Frontiers in Human Neuroscience, 9*, 131. https://doi.org/10.3389/fnhum.2015.00131 – **Prüfung:** DOI stimmt ✓ (Volltext); **stützt:** ja für „Hardware beeinflusst den Score“ (bis zu 100 ms, dort nach Neath et al. 2011 zitiert), nein für die Übungsbänder (nur einfache RT, 231 bzw. 213 ms).
 
 ### Weitere Fachliteratur
 

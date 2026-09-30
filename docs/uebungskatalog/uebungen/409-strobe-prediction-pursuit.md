@@ -72,15 +72,15 @@ belastung:
   sprachabhaengigkeit: 0
 
 # ===== Auswahlhilfe =====
-voraussetzungen: ["Keine bekannte Photosensitivität/Epilepsie (das Ziel blinkt je nach Tempo und Gerät 0,3 bis über 5-mal pro Sekunde, mit 'Random Speed' bis ≈ 12-mal)", "Bildschirm in ruhiger Umgebung, Kopf möglichst ruhig, Abstand 40–70 cm", "Ausreichende Sicht im Zwischenbereich (Bildschirmbrille oder Einstärkenglas günstiger als Gleitsicht)", "Maus oder Finger nur zum Starten; während der Übung keine Eingabe"]
+voraussetzungen: ["Keine bekannte Photosensitivität/Epilepsie (das Ziel blinkt je nach Tempo und Gerät 0,3 bis ≈ 7-mal pro Sekunde, mit 'Random Speed' bis ≈ 12-mal; Standardfarbe ist gesättigtes Rot)", "Bildschirm in ruhiger Umgebung, Kopf möglichst ruhig, Abstand 40–70 cm", "Ausreichende Sicht im Zwischenbereich (Bildschirmbrille oder Einstärkenglas günstiger als Gleitsicht)", "Maus oder Finger nur zum Starten; während der Übung keine Eingabe"]
 vorsicht_bei: [photosensitive_epilepsie, migraene_lichtempfindlich, kopfschmerz_asthenopie, trockenes_auge_bildschirm, nystagmus, presbyopie_gleitsicht, sehbehinderung_niedriger_visus, kinder_unter_6]
 geeignet_fuer: ["vorausschauende (prädiktive) Blickfolge üben: den Blick weiterbewegen, obwohl das Ziel kurz fehlt", "Einstieg in Verdeckungsaufgaben mit regelmäßigem, vorhersagbarem Takt (bei 0,5–2× Tempo lange Dunkelphasen von ≈ 0,3–1 s)", "ruhige Augenübung ohne Hand- oder Körpereinsatz", "Ergänzung zu einfacher Blickfolge (404) und zur Einzelverdeckung (407)"]
 weniger_geeignet_fuer: ["Menschen mit Photosensitivität, Epilepsie in der Familie oder lichtempfindlicher Migräne", "alle, die eine Rückmeldung oder einen Leistungswert erwarten (das Original misst nichts)", "Gleitsichtträger:innen an großen Monitoren (Ziel läuft über die ganze Bildbreite in die unscharfe Randzone)", "Kinder, die abstrakte Aufgaben ohne Rückmeldung nicht durchhalten", "Ziel 'Reaktion' oder 'Zielgenauigkeit der Hand' (keine Handlung gefordert)"]
 evidenz:
   uebungseffekt: schwach
-  naher_transfer: schwach
+  naher_transfer: unklar
   alltag_transfer: fehlend
-  kommentar: "Blickfolge während einer Verdeckung ist im Labor mit Rückmeldung trainierbar (Gain 0,59 → 0,89, Madelain & Krauzlis 2003), ohne Rückmeldung nur wenig (0,63 → 0,71); das Original gibt keine Rückmeldung. Die zitierte Strobe-Brillen-Forschung (Sportübungen mit Shutterbrille, ganzes Gesichtsfeld) ist auf ein blinkendes Bildschirmziel nicht übertragbar; ein Alltagsnutzen ist nicht untersucht."
+  kommentar: "Blickfolge während einer Verdeckung ist im Labor mit Rückmeldung trainierbar (Gain 0,59 → 0,89, Madelain & Krauzlis 2003), ohne Rückmeldung nur wenig (0,63 → 0,71); das Original gibt keine Rückmeldung. Übertrag auf ungeübte Geschwindigkeiten ist nur für die belohnte Laborgruppe gezeigt. Die zitierte Strobe-Brillen-Forschung (Sportübungen mit Shutterbrille, ganzes Gesichtsfeld) ist auf ein blinkendes Bildschirmziel nicht übertragbar; ein Alltagsnutzen ist nicht untersucht."
 aehnliche_uebungen: [407, 404, 414, 412, 403, 406, 105, 107, 104, 109]
 stichworte: ["Verdeckung", "Okklusion", "target blanking", "prädiktive Blickfolge", "smooth pursuit", "Antizipation", "extraretinale Signale", "Geschwindigkeitsgedächtnis", "Stroboskop", "Photosensitivität"]
 ---
@@ -134,7 +134,8 @@ Sehschärfe, Antizipation und Kurzzeitgedächtnis; Nutzen für NHL/MLB/NFL und E
 - **Andere Methode:** Alle Studien nutzen **Shutterbrillen über das ganze Gesichtsfeld** (z. B. 100 ms offen /
   67–900 ms zu) bei Sportübungen (Wilkins & Appelbaum, 2020); ein blinkendes Bildschirmziel wurde nie untersucht.
   Befunde der Brillenstudien: zentrale Bewegungsempfindlichkeit/Aufmerksamkeit und Kurzzeitgedächtnis besser,
-  Timing-Vorteil nur kurzfristig, Eishockey nur als unverblindeter Pilot; **dynamische Sehschärfe nie gemessen**.
+  Timing-Vorteil nur kurzfristig (sofort und nach 10 min, nicht nach 10 Tagen; Smith & Mitroff, 2012), Eishockey nur als kleine
+  Pilotstudie; **dynamische Sehschärfe nie gemessen**.
   Metaanalyse (17 Studien, sportspezifische Tests): akut schlechter, nach längerem Training ≈ 5–6 % besser, Protokolle
   uneinheitlich (Vera et al., 2026).
 - **Blickfolge bei Verdeckung:** Das Auge bremst erst ≈ 190 ms nach dem Verschwinden und behält 40–60 % der
@@ -191,7 +192,8 @@ Tipp-Antwort (Abschnitt 10) brächte Auge-Hand-Koordination, Timing und Touch-La
 - **Übungseffekt – schwach:** Laborgain während Verdeckung mit belohnendem Ton bei genauer Folge 0,59 → 0,89 (8–10
   Tagessitzungen), ohne Ton nur
   0,63 → 0,71 (Madelain & Krauzlis, 2003); das Original gibt keine Rückmeldung.
-- **Naher Transfer – schwach:** dort Übertrag auf ungeübte Geschwindigkeiten (Laborbefund, nicht diese Übung).
+- **Naher Transfer – unklar:** Übertrag auf ungeübte Geschwindigkeiten nur in der belohnten Laborgruppe (Madelain &
+  Krauzlis, 2003); für Üben ohne Rückmeldung (wie im Original) nicht untersucht.
 - **Alltagstransfer – fehlend:** Strobe-Brillen: in sportspezifischen Tests nach längerem Training
   ≈ 5–6 % besser, akut schlechter, uneinheitliche Protokolle (17 Studien; Vera et al., 2026); für ein blinkendes
   Bildschirmziel keine Studie gefunden (PubMed, 09/2026).
@@ -203,11 +205,14 @@ Tipp-Antwort (Abschnitt 10) brächte Auge-Hand-Koordination, Timing und Touch-La
 - **Weniger passend, wenn …** Rückmeldung/Fortschritt gewünscht oder Reaktion bzw. Handgenauigkeit das Ziel ist.
 - **Vorsicht / anpassen bei …**
   - `photosensitive_epilepsie`: harter Hell-Dunkel-Wechsel (Hub relative Leuchtdichte ≈ 0,17, Kern ≈ 1,0; eigene
-    Rechnung), > 5, mit „Random Speed“ bis ≈ 12 Blitze/s; wirksam sind 1–65 Hz, junge Menschen häufiger betroffen
-    (Fisher et al., 2005). WCAG 2.3.1/Harding: Risiko ab ≥ 3 Blitzen/s (WCAG: > 3/s) bei ≥ 0,006 sr (≈ 25 % eines 10°-Feldes, etwa
-    5° × 4°) und ≥ 20 cd/m² (Harding et al., 2005); das Standardziel am Monitor erreicht ≈ 3–13 % dieser Fläche, die
-    Maximalgröße samt Leuchtsaum am Tablet (30 cm) nähert sich der Grenze. WCAG 2.3.2 (≤ 3 Blitze/s) und die
-    Blickfit-Grenze (≤ 2,5 Hz) werden ab ≈ 3,5–4× überschritten → immer Warnhinweis, niedriges Tempo.
+    Rechnung), bis ≈ 7, mit „Random Speed“ bis ≈ 12 Blitze/s; auslösend sind 1–65 Hz (am stärksten 15–25 Hz), bei
+    5–24-Jährigen häufiger, rote Blitze sind ein eigener Faktor (Fisher et al., 2005). Harding-Grenzen: ≥ 3 Blitze/s,
+    ≥ 0,006 sr, ≥ 20 cd/m²; zusätzlich gilt jeder Wechsel zu/von gesättigtem Rot als Risiko (Harding et al., 2005) –
+    das Standardziel ist Rot. WCAG 2.3.1: nicht mehr als 3 Blitze/s oder unter den Flächengrenzen (0,006 sr ≈ 25 % eines
+    10°-Feldes). Das Standardziel am Monitor erreicht ≈ 3–13 % dieser Fläche, die Maximalgröße samt Leuchtsaum am Tablet
+    (30 cm) nähert sich der Grenze. Die Blickfit-Grenze (≤ 2,5 Hz) wird ab ≈ 3,2–3,8×, WCAG 2.3.2 (≤ 3 Blitze/s) ab
+    ≈ 3,8–4,7× überschritten (je nach Bildrate 75/60 Bilder/s; eigene Rechnung), mit „Random Speed“ schon ab ≈ 2× →
+    immer Warnhinweis, niedriges Tempo, nicht Rot.
   - `migraene_lichtempfindlich`, `kopfschmerz_asthenopie`: kurze Sätze, bei Unwohlsein abbrechen;
     `trockenes_auge_bildschirm`: blinzeln, Pausen; `nystagmus`: Folgebewegung evtl. eingeschränkt;
     `presbyopie_gleitsicht`: kleineres Feld, Kopfbewegung; `sehbehinderung_niedriger_visus`: größer, Weiß/Gelb;
@@ -276,7 +281,7 @@ Keine Diagnose, kein Heil- oder Sehversprechen; ein Nutzen für Sehen, Sport ode
   Ophthalmology & Visual Science, 44*(4), 1534–1545. https://doi.org/10.1167/iovs.02-0507
 - Harding, G., Wilkins, A. J., Erba, G., Barkley, G. L., & Fisher, R. S. (2005). Photic- and pattern-induced seizures:
   Expert consensus of the Epilepsy Foundation of America Working Group. *Epilepsia, 46*(9), 1423–1425.
-  https://doi.org/10.1111/j.1528-1167.2005.31305.x – Grenzwerte ≥ 3 Hz, ≥ 0,006 sr
+  https://doi.org/10.1111/j.1528-1167.2005.31305.x – Grenzwerte ≥ 3 Hz, ≥ 0,006 sr, gesättigtes Rot
 - Lencer, R., Nagel, M., Sprenger, A., Zapf, S., Erdmann, C., Heide, W., & Binkofski, F. (2004). Cortical mechanisms
   of smooth pursuit eye movements with target blanking. An fMRI study. *European Journal of Neuroscience, 19*(5),
   1430–1436. https://doi.org/10.1111/j.1460-9568.2004.03229.x

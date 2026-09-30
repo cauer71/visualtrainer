@@ -73,7 +73,7 @@ belastung:
 
 # ===== Auswahlhilfe =====
 voraussetzungen: ["Bildschirm oder Tablet auf fester Unterlage, Abstand 40–70 cm, Kopf möglichst ruhig", "Scharfes Sehen im Zwischenbereich über die ganze Bildbreite (Bildschirmbrille oder Einstärkenglas günstiger als Gleitsicht)", "Maus oder Finger nur zum Starten; während der Übung keine Eingabe nötig", "Bereitschaft, ohne Rückmeldung 30–120 s konzentriert zu folgen"]
-vorsicht_bei: [presbyopie_gleitsicht, schwindel_vestibulaer, nystagmus, schielen_binokular, trockenes_auge_bildschirm, kopfschmerz_asthenopie, lese_rechtschreib_schwaeche, kinder_unter_6]
+vorsicht_bei: [presbyopie_gleitsicht, schwindel_vestibulaer, reisekrankheit, nystagmus, schielen_binokular, trockenes_auge_bildschirm, kopfschmerz_asthenopie, lese_rechtschreib_schwaeche, kinder_unter_6]
 geeignet_fuer: ["glatte Blickfolge an einer gleichmäßigen, vorhersagbaren Kurve üben (vor allem waagrecht, mit leichter senkrechter Komponente)", "ruhiger Einstieg in Blickfolge-Übungen bei 0,5–2× (≈ 5–20°/s am Monitor)", "Wahrnehmen eigener Blicksprünge an Wendepunkten und Kreuzung (Selbstbeobachtung)", "kurze Augenübung ohne Hand- oder Körpereinsatz, ohne Flackerreize"]
 weniger_geeignet_fuer: ["alle, die Rückmeldung oder einen Leistungswert erwarten (das Original misst nichts)", "Gleitsichtträger:innen am großen Monitor (Bahn ≈ 35° breit, weit über den scharfen Zwischenbereich hinaus)", "Ziel 'Lesen verbessern' oder Unterstützung bei Legasthenie (nicht belegt, s. Abschnitt 3)", "Ziel Reaktion, Hand-Zielgenauigkeit oder Peripherie (nicht gefordert)", "Tempo ab ≈ 5× für Ungeübte und Ältere (Übergang in überwiegend sakkadisches Verfolgen)"]
 evidenz:
@@ -112,7 +112,7 @@ Mechanik ausgewertet. Grad-Angaben sind eigene Umrechnungen.
 
 | Tempo | 0,5× | 1× | 2× | 3× | 5× | 7× | 9× |
 |---|---|---|---|---|---|---|---|
-| 24″-Full-HD, 60 cm (Bahn 35° × 7°): mittel / Spitze °/s | 5 / 6 | 10 / 13 | 20 / 25 | 30 / 38 | 51 / 63 | 71 / 88 | 91 / 113 |
+| 24″-Full-HD, 60 cm (Bahn 35° × 7°): mittel / Spitze °/s | 5 / 6 | 10 / 12 | 20 / 24 | 30 / 36 | 50 / 60 | 69 / 84 | 89 / 108 |
 | 11″-Tablet quer, 40 cm (Bahn 23° × 6°): mittel / Spitze °/s | 3,5 / 4 | 7 / 8 | 14 / 17 | 21 / 25 | 35 / 42 | 49 / 58 | 63 / 75 |
 
 - **Reiz (Code):** „Size 16 px“ ist der **Radius** (Ring Ø 32 px, Außenring Ø 42 px), einstellbar 10–50 px;
@@ -121,7 +121,7 @@ Mechanik ausgewertet. Grad-Angaben sind eigene Umrechnungen.
 - **„Random Speed“ (Code):** keine Zufallszahl, sondern eine feste Summe langsamer Sinusschwingungen (0,13–0,5 Hz),
   Tempofaktor ≈ 0,4–1,9.
 - **Bildrate (Code):** Bilder < 13 ms nach dem vorigen werden verworfen → ≤ 77 Bilder/s (120 Hz → 60, 144 Hz → 72).
-  Bei 9× springt das Ziel am Monitor bis ≈ 1,9° pro Bild – mehr als zwei Zieldurchmesser, die Bewegung ruckt.
+  Bei 9× springt das Ziel am Monitor (60 Bilder/s) bis ≈ 1,8° pro Bild – mehr als zwei Zieldurchmesser, die Bewegung ruckt.
 - **Zeiger (Code):** Maus-/Fingerposition erscheint als Fadenkreuz, wird aber **nicht ausgewertet**.
 
 **Widersprüche Regeltext ↔ Code:** (1) „Prüfe nach Abschluss deinen Tracking-Gain“ und die Tabelle „Zielverfolgung /
@@ -133,11 +133,11 @@ langsamsten. (3) „Erratic acceleration“ ist eine glatte, wiederkehrende Schw
 ## 3. Was die Website sagt – und wie das einzuordnen ist
 
 Die Seite nennt die Acht „effektiver als Kreise oder Linien“; sie fordere „zerebelläre Vorsteuerung und
-interhemisphärische Koordination“ beim „Überschreiten der Mittellinie“, beanspruche alle sechs Augenmuskeln „bis an
-ihre anatomische Dehngrenze“ und verbessere die Leseflüssigkeit („Ja“). Kopf ruhig halten „entkopple den VOR“.
+interhemisphärische Koordination“ beim „Überschreiten der Mittellinie“, beanspruche alle sechs Augenmuskeln, die schrägen „bis an
+ihre anatomische Dehngrenze“ (FAQ: „physiologische Enddehnung“) und verbessere die Leseflüssigkeit („Ja“). Kopf ruhig halten „entkopple den VOR“.
 Empfohlen: 2–3 × 60–90 s täglich, danach 20 s in die Ferne blicken. Zielgruppen: E-Sport, Rückschlagsport,
 Bildschirmarbeit, „Sehachsenblockaden abbauen“. Stufentabelle von „Elite 0,96–1,02“ bis „Förderbedarf < 0,68“.
-Positiv: mehrfach „kein Test, keine Diagnose“, kein Transferversprechen, Pause bei Doppelbildern oder Schwindel.
+Positiv: mehrfach „kein Test, keine Diagnose“, für Sport und Spiele ausdrücklich kein Transferversprechen (für Lesen aber doch), Pause bei Doppelbildern oder Schwindel.
 
 - **Stufentabelle ohne Datengrundlage:** Die Seite misst keine Augen und sammelt keine Daten; keine zitierte Quelle
   enthält solche Stufen. Im Labor liegt der glatte Gain Gesunder **unter 0,95** (Collewijn & Tamminga, 1984) –
@@ -154,8 +154,8 @@ Positiv: mehrfach „kein Test, keine Diagnose“, kein Transferversprechen, Pau
 - **Augenmuskeln:** Zusammenwirken aller sechs Muskeln bei schrägen Blickrichtungen ist Lehrbuchwissen (Leigh & Zee,
   2015); „Dehngrenze“ ist falsch – ±17° Auslenkung liegt weit im normalen Bewegungsbereich (Lehrbuchwissen).
 - **VOR:** Bei ruhigem Kopf ist der vestibulookuläre Reflex nicht gefordert; Kopf ruhig halten isoliert die
-  Augenfolge, „entkoppelt“ aber nichts. **20-20-20:** Pausen senkten Beschwerden kurzfristig, änderten Binokular- und
-  Tränenfilmwerte nicht (Talens-Estarelles et al., 2023). „Sehachsenblockade“ ist kein Fachbegriff.
+  Augenfolge, „entkoppelt“ aber nichts. **20-20-20:** Pausen senkten Beschwerden kurzfristig, änderten Binokular- (außer
+  Akkommodationsflexibilität) und Tränenfilmwerte nicht (Talens-Estarelles et al., 2023). „Sehachsenblockade“ ist kein Fachbegriff.
 - **Quellen:** 5 Angaben, eine mit falscher DOI; keine stützt Stufen oder Lemniskaten-Vorzüge (Abschnitt 11).
 
 ## 4. Optische und okulomotorische Grundlagen
@@ -164,8 +164,8 @@ Positiv: mehrfach „kein Test, keine Diagnose“, kein Transferversprechen, Pau
   Ein kleines, in die Fovea passendes Ziel erzeugt mehr Aufholsakkaden als ein größeres (Heinen et al., 2016).
 - **Glatte Folge:** Latenz ≈ 100 ms bei unvorhersehbarer Bewegung (Carl & Gellman, 1987), Gain < 0,95, Aufholsakkaden
   normal (Collewijn & Tamminga, 1984); periodische Bahnen werden nahezu ohne Verzögerung vorhergesagt (Soechting et
-  al., 2010; Barnes, 2008). Obergrenze ≈ 90 % Gain bis 100°/s bei den meisten Geübten (Meyer et al., 1985); bei
-  Mehrfrequenz-Reizen fiel der Gain auf 0,53, sobald die höchste Komponente 1,56 Hz erreichte (Barnes et al., 1987).
+  al., 2010; Barnes, 2008). bei Rampenbewegung ≈ 90 % Gain bis 100°/s bei 4 von 5 Versuchspersonen, eine erreichte nur ≈ 60 % davon (Meyer et al., 1985); bei
+  waagrechten Mehrfrequenz-Reizen fiel der Gain der langsamen Anteile auf 0,53, sobald die höchste Komponente 1,56 Hz erreichte (Barnes et al., 1987).
   Ab ≈ 5× ist zunehmend, bei 9× überwiegend sakkadisches Folgen zu erwarten (eigene Einschätzung).
 - **Richtung:** horizontal besser als vertikal (Rottach et al., 1996). Am 16:9-Monitor ist die Acht sehr flach
   (senkrecht ±3,5°) – überwiegend waagrechte Blickfolge; am Tablet hochkant runder.
@@ -173,10 +173,10 @@ Positiv: mehrfach „kein Test, keine Diagnose“, kein Transferversprechen, Pau
   de'Sperati & Viviani, 1997). Der Kreuzungspunkt ist ein Wendepunkt ohne Krümmung; dort ließe das Gesetz hohes Tempo
   erwarten, im Code ist es niedrig. Ob das stört, ist nicht untersucht (eigene Ableitung).
 - **Hintergrund:** Rot auf Fast-Schwarz ist kontrastreich; strukturierte Hintergründe senken den Gain (Collewijn &
-  Tamminga, 1984) – „Scanlines“ und Spur sind eher Störreize. **Alter:** Bei 75–93-Jährigen ist der Gain bei allen
+  Tamminga, 1984) (horizontal ≈ 10 %, durch Sakkaden ausgeglichen) – „Scanlines“ und Spur sind eher Störreize (eigene Einschätzung). **Alter:** Bei 75–93-Jährigen ist der Gain bei allen
   Tempi niedriger, besonders bei hohem Tempo (Moschner & Baloh, 1994) → 0,5–1× wählen.
-- **Gleitsicht/Arbeitsplatz:** Der scharfe Zwischenbereich ist bei 60 cm nur ≈ 13–18° breit; Träger:innen bewegen
-  am Bildschirm mehr den Kopf (Han et al., 2003). Die 35° breite Bahn läuft in die seitlichen Unschärfezonen – „Kopf
+- **Gleitsicht/Arbeitsplatz:** Der scharfe Zwischenbereich ist bei 60 cm nur ≈ 13–18° breit; beim Lesen am Bildschirm
+  dauerten mit Gleitsicht Kopfbewegungen länger und der Blick stabilisierte sich später (11 Presbyope; Han et al., 2003). Die 35° breite Bahn läuft in die seitlichen Unschärfezonen – „Kopf
   absolut ruhig“ passt für sie nicht. Besser: Bildschirmbrille, kleineres Gerät oder mehr Abstand, Kopf mitbewegen.
 - **Nähe, Auge, Farbe:** In 40 cm (Tablet) ≈ 2,5 dpt Akkommodation bzw. Nahkorrektur nötig. Am Bildschirm sinkt die
   Lidschlagrate (≈ 11,6/min, viele unvollständige Lidschläge; Portello et al., 2013) – bei trockenem Auge kurz üben.
@@ -204,7 +204,7 @@ bei vorhersagbaren Zielen (Koken & Erkelens, 1992) – das Fadenkreuz wird aber 
 - **Gerät:** Größe, Seitenverhältnis und Abstand ändern Bahnform und °/s stark (Tabelle Abschnitt 2) – „1×“ ist kein
   fester Reiz; ≤ 77 Bilder/s, bei hohem Tempo ruckendes Bild.
 - **Person:** Alter, Müdigkeit, Konzentration; Vorhersage verbessert das Folgen schon innerhalb von Minuten (McHugh &
-  Bahill, 1985) – die ersten Runden sind schwerer. Gleitsicht erzwingt Kopfbewegungen (Han et al., 2003).
+  Bahill, 1985) – die ersten Runden sind schwerer. Gleitsicht begünstigt zusätzliche Kopfbewegungen (Han et al., 2003).
 
 ## 8. Studienlage: Trainierbarkeit und Übertragung
 
@@ -222,7 +222,7 @@ bei vorhersagbaren Zielen (Koken & Erkelens, 1992) – das Fadenkreuz wird aber 
 - **Weniger passend, wenn …** Rückmeldung gewünscht ist; Reaktion, Peripherie oder Handgenauigkeit das Ziel sind;
   „besser lesen“ erwartet wird.
 - **Vorsicht / anpassen bei …** `presbyopie_gleitsicht` (breite Bahn durch Unschärfezonen → Kopf mitbewegen,
-  Bildschirmbrille, kleineres Feld); `schwindel_vestibulaer` (bewegte Reize, langsam beginnen, bei Übelkeit
+  Bildschirmbrille, kleineres Feld); `schwindel_vestibulaer`, `reisekrankheit` (bewegte Reize, bei hohem Tempo Unwohlsein möglich; langsam beginnen, bei Übelkeit
   abbrechen); `nystagmus`, `schielen_binokular` (Folge oft verändert, Doppelbilder möglich – keine Rückschlüsse);
   `trockenes_auge_bildschirm`, `kopfschmerz_asthenopie` (seltener Lidschlag → kurz, Pausen); `lese_rechtschreib_schwaeche`
   (nicht als Lesehilfe vorschlagen); `kinder_unter_6` (Folgebewegung reift bis ins Jugendalter, keine Rückmeldung).
@@ -242,8 +242,8 @@ bei vorhersagbaren Zielen (Koken & Erkelens, 1992) – das Fadenkreuz wird aber 
 ## 11. Quellen
 
 ### Von der Website angegeben
-- Robinson, D. A. (1965). The mechanics of human smooth pursuit eye movement. *The Journal of Physiology, 180*(3), 569–591. https://doi.org/10.1113/jphysiol.1965.sp007718 – **Prüfung:** DOI stimmt ✓; **stützt die Aussage der Website:** teilweise (Grundlagen, ≈ 130 ms bis zur neuen Geschwindigkeit; keine Stufen, keine Lemniskate)
-- Leigh, R. J., & Zee, D. S. (2015). *The neurology of eye movements* (5th ed.). Oxford University Press. https://doi.org/10.1093/med/9780199969289.001.0001 – **Prüfung:** DOI falsch (Website …9780199969203…, nicht auffindbar; richtig: …9780199969289…), Buch nur bibliografisch geprüft; **stützt:** teilweise (sechs Muskeln ja; „Dehngrenze“, Trainingsnutzen nein)
+- Robinson, D. A. (1965). The mechanics of human smooth pursuit eye movement. *The Journal of Physiology, 180*(3), 569–591. https://doi.org/10.1113/jphysiol.1965.sp007718 – **Prüfung:** DOI stimmt ✓; **stützt die Aussage der Website:** teilweise (Grundlagen der Folgemechanik; keine Stufen, keine Lemniskate)
+- Leigh, R. J., & Zee, D. S. (2015). *The neurology of eye movements* (5th ed.). Oxford University Press. https://doi.org/10.1093/med/9780199969289.001.0001 – **Prüfung:** DOI falsch (Website …9780199969203…, bei Crossref und doi.org nicht auflösbar; richtig: …9780199969289…), Buch nur bibliografisch geprüft; **stützt:** teilweise (sechs Muskeln ja; „Dehngrenze“, Trainingsnutzen nein)
 - Barnes, G. R. (2008). Cognitive processes involved in smooth pursuit eye movements. *Brain and Cognition, 68*(3), 309–326. https://doi.org/10.1016/j.bandc.2008.08.020 – **Prüfung:** DOI stimmt ✓; **stützt:** teilweise (Vorhersage allgemein; kein Vergleich Acht vs. Kreis, nichts zu „ungleich intensiver“)
 - Krauzlis, R. J. (2004). Recasting the smooth pursuit eye movement system. *Journal of Neurophysiology, 91*(2), 591–603. https://doi.org/10.1152/jn.00801.2003 – **Prüfung:** DOI stimmt ✓; **stützt:** teilweise (Netzwerk ja; „interhemisphärische Koordination“ nein)
 - Woods, D. L., Wyma, J. M., Yund, E. W., Herron, T. J., & Reed, B. (2015). Factors influencing the latency of simple reaction time. *Frontiers in Human Neuroscience, 9*, 131. https://doi.org/10.3389/fnhum.2015.00131 – **Prüfung:** DOI stimmt ✓; **stützt:** nein (Reaktionszeitstudie, kein Bezug zur Blickfolge)

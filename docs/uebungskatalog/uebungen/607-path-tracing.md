@@ -73,7 +73,7 @@ belastung:
 
 # ===== Auswahlhilfe =====
 voraussetzungen: ["eine Folge einzeln aufleuchtender Felder im Takt von 0,5 s verfolgen können (Raster ≈ 8–11° bei 40 cm am Tablet)", "Touch oder Maus; kein Lesen, keine Farbunterscheidung, keine Sprache nötig", "Einzel-Tipps auf Felder von ≈ 10–25 mm (Tablet, bis 5×5)"]
-vorsicht_bei: [gesichtsfeldausfall, aufmerksamkeitsprobleme, kognitive_einschraenkung, kinder_unter_6, tremor_parkinson, migraene_lichtempfindlich]
+vorsicht_bei: [gesichtsfeldausfall, aufmerksamkeitsprobleme, kognitive_einschraenkung, kinder_unter_6, tremor_parkinson, photosensitive_epilepsie, migraene_lichtempfindlich]
 geeignet_fuer: ["kurzes, sprachfreies Üben, eine Reihenfolge von Orten zu behalten (DE/IT gleich)", "Gruppierstrategien ausprobieren: Weg als Form oder Richtungsfolge merken ('zwei rechts, eins hoch')", "sitzende, ruhige Übung am Tablet mit Touch", "Selbstvergleich über Wochen auf demselben Gerät"]
 weniger_geeignet_fuer: ["Einstufung des räumlichen Gedächtnisses oder Vergleich mit Corsi-Normen (anderes Material, keine Normen, kein Test im diagnostischen Sinn)", "statische Muster (→ 603) oder Objekt-Ort-Bindung (→ 605)", "Menschen, die ohne Rückstufung schnell frustriert sind (Stufe sinkt nie)", "Blickmotorik-, Reaktions- oder Tempotraining", "Smartphone quer (Raster ≈ 2 cm, Felder zu klein)"]
 evidenz:
@@ -129,7 +129,7 @@ Fingern, Zentralfixation und rhythmisches Tippen – für MOBA-Gamer, MINT-Studi
   2004). Artikulatorische Unterdrückung stört Corsi vorwärts nicht, räumliche Zusatzaufgaben schon (Vandierendonck et al.,
   2004). Die **Struktur** einer Folge bestimmt die Leistung stark: Kreuzungen, Weglänge, Winkel (Parmentier et al., 2005),
   Cluster (De Lillo et al., 2016), komplizierte Pfade (Busch et al., 2005) – Richtungs-Chunking ist daher sinnvoll.
-- **Überzogen:** „−60 %“ ohne Quelle; Chunking entlastet nicht um eine feste Größe (Thalmann et al., 2019). Cowan (2001)
+- **Überzogen:** „−60 %“ ohne Quelle; Chunking entlastet zwar, aber abhängig von Chunkgröße und Position in der Folge, nicht um eine feste Größe (Thalmann et al., 2019). Cowan (2001)
   zählt Chunks, nicht Felder („Spur zerfällt nach 4–5 Schritten“ folgt nicht). Handbewegungen stören die räumliche Spanne
   weniger als Augenbewegungen (Pearson & Sahraie, 2003); ein Nutzen des Finger-Nachziehens ist nicht gezeigt.
 - **Nicht belegt / falsch:** Die Tabelle hat keine Datengrundlage (die Seite sammelt keine Daten) und widerspricht dem Code:
@@ -150,12 +150,12 @@ Fingern, Zentralfixation und rhythmisches Tippen – für MOBA-Gamer, MINT-Studi
   1998), doch Augenbewegungen beim Behalten stören räumliches und Reihenfolgegedächtnis (Postle et al., 2006; Pearson &
   Sahraie, 2003). „Mitte fixieren“ ist plausibel, hier aber ungeprüft; beim Abruf kann der Blick zum Ort helfen
   (Johansson & Johansson, 2014).
-- **Brille:** Kleines, zentrales Raster – seitliche Gleitsicht-Unschärfe (Sheedy, 2004) spielt kaum eine Rolle. Ab ≈ 40
-  Jahren Nahkorrektur für 30–40 cm (Charman, 2008); Tablet tief genug halten, um ohne Nackenbeugung durch den Nahteil zu
-  sehen. Am Monitor ist eine Arbeitsplatzbrille günstiger, das Raster dort aber nur ≈ 5° – Fenster vergrößern.
+- **Brille:** Kleines, zentrales Raster – seitliche Gleitsicht-Unschärfe (Sheedy, 2004) spielt kaum eine Rolle. Etwa ab
+  40–45 Jahren Nahkorrektur für 30–40 cm (Alterssichtigkeit; Charman, 2008); Tablet tief genug halten, um ohne Nackenbeugung durch den Nahteil zu
+  sehen. Am Monitor ist eine Arbeitsplatzbrille günstiger; das Raster ist dort 35 % der Fensterhöhe (Herleitung: 13″-Laptop bei 50 cm ≈ 6°, 24″-Monitor bei 60 cm ≈ 9°) – kleines Fenster vermeiden.
 - **Farbe, Licht, Auge:** Keine Farbunterscheidung nötig (Helligkeit; Fehler zusätzlich per Ton und Aufblitzen). 2 Hz auf
-  kleiner Fläche liegt unter 3 Blitzen/s (WCAG 2.2, SC 2.3.1); das rote Fehler-Aufblitzen kann Lichtempfindliche stören (Rot
-  als Zusatzfaktor; Fisher et al., 2005). Am Bildschirm sinkt die Lidschlagrate (Sheppard & Wolffsohn, 2018).
+  kleiner Fläche liegt unter 3 Blitzen/s (WCAG 2.2, SC 2.3.1); das rote Fehler-Aufblitzen (480 ms, ganze Spielfläche) kann Lichtempfindliche stören (gesättigtes Rot
+  als Zusatzfaktor; Fisher et al., 2005) – vorsorglich abschalten. Am Bildschirm sinkt die Lidschlagrate (Sheppard & Wolffsohn, 2018).
 
 ## 5. Neurowissenschaftliche Grundlagen
 
@@ -173,7 +173,7 @@ Fingern, Zentralfixation und rhythmisches Tippen – für MOBA-Gamer, MINT-Studi
   Daumenziele (Parhi et al., 2006). Smartphone (5×5 ≈ 8,5 mm) und Tablet quer ab 6×6 (≈ 7–8 mm) liegen darunter.
 - `pointerdown` ohne Rückgängig: Ein versehentliches Aufsetzen (Handballen, Tremor) beendet den Versuch. Da die Uhr nur
   beim Tippen läuft, bringt zügiges Tippen mehr Versuche (`zielbewegung_tempo` 1).
-- Touch- und klassischer Corsi-Test ergaben bei Gesunden vergleichbare Werte (Siddi et al., 2020). Tippzeiten würden am
+- Touch- und klassischer Corsi-Test ergaben übereinstimmende Ergebnisse (je 45 Patient:innen mit Psychose und Gesunde; Siddi et al., 2020). Tippzeiten würden am
   Touchscreen systematisch zu lang gemessen (+58–70 ms; Pronk et al., 2020).
 
 ## 7. Einflussfaktoren und Messgrenzen
@@ -182,7 +182,7 @@ Fingern, Zentralfixation und rhythmisches Tippen – für MOBA-Gamer, MINT-Studi
   schwankt die Leistung innerhalb einer Stufe mit der Pfadform (Busch et al., 2005). Ein Versuch je Länge,
   Alles-oder-nichts und kein Abstieg machen Punkte und Level zu einem groben, eher optimistischen Maß.
 - **Alter:** Corsi-Spanne steigt bis in die frühe Jugend (8. Klasse M = 6,9, junge Erwachsene 7,1; Farrell Pagulayan et
-  al., 2006) und sinkt im Erwachsenenalter; Bildung wirkt auf Corsi vorwärts (Monaco et al., 2013). Visuelles AG gipfelt
+  al., 2006) und sinkt im Erwachsenenalter mit dem Alter; mehr Bildung geht mit höherer Corsi-Spanne vorwärts einher (n = 362, 20–90 Jahre; Monaco et al., 2013). Visuelles AG gipfelt
   um ≈ 20 Jahre (Brockmole & Logie, 2013). Keine Alters- oder Normvergleiche anzeigen.
 - **Zustand und Gerät:** Schlafmangel beeinträchtigt AG und KZG (Lim & Dinges, 2010). Raster je nach Ausrichtung ±40 %,
   Übungseffekte bei Wiederholung (Calamia et al., 2012) – nur Selbstvergleich auf demselben Gerät.
@@ -190,7 +190,7 @@ Fingern, Zentralfixation und rhythmisches Tippen – für MOBA-Gamer, MINT-Studi
 ## 8. Studienlage: Trainierbarkeit und Übertragung
 
 - **Übungseffekt – stark:** Im Online-Training wurde jede geübte Aufgabe besser (N = 11.430; Owen et al., 2010). Strategien
-  wirken hier besonders, weil nach dem ersten Schritt jeder weitere höchstens 3 Möglichkeiten hat (Herleitung).
+  wirken hier vermutlich besonders, weil nach dem ersten Schritt jeder weitere höchstens 3 Möglichkeiten hat (Herleitung, ungeprüft).
 - **Naher Transfer – mittel:** Übertragung vor allem auf strukturgleiche Aufgaben, beim visuell-räumlichen seriellen
   Erinnern stärker als beim verbalen (Gathercole et al., 2019); visuell-räumliche Gewinne hielten eventuell länger
   (Melby-Lervåg & Hulme, 2013). Für diese Pfad-Variante selbst fehlt eine Studie.
@@ -200,13 +200,13 @@ Fingern, Zentralfixation und rhythmisches Tippen – für MOBA-Gamer, MINT-Studi
 ## 9. Auswahlhinweise für die KI
 
 - **Passt, wenn …** jemand ruhig und sprachfrei (DE/IT gleich) eine räumliche Reihenfolge behalten oder Gruppierstrategien
-  üben möchte; am Tablet mit Touch; ohne Bewegungs- oder Flimmerreize; als leichter Einstieg vor Corsi-artigen Folgen.
+  üben möchte; am Tablet mit Touch; ohne großflächige Bewegung, Lichtreize gering (rotes Fehler-Aufblitzen abschaltbar); als leichter Einstieg vor Corsi-artigen Folgen.
 - **Weniger passend, wenn …** statische Muster (→ 603), Objekt-Ort-Bindung (→ 605) oder Blickmotorik geübt werden sollen;
   eine „Gedächtnis-Einstufung“ erwartet wird (keine Normen, keine Diagnose); Smartphone quer.
 - **Vorsicht / anpassen bei …** `gesichtsfeldausfall` (zentrale/parazentrale Ausfälle treffen das kleine Raster);
   `aufmerksamkeitsprobleme` (verpasster 0,5-s-Schritt = verlorener Versuch; räumliches AG bei ADHS deutlich schwächer,
   Effektstärke 0,85; Martinussen et al., 2005); `kognitive_einschraenkung`, `kinder_unter_6` (kein Abstieg, festes Tempo);
-  `tremor_parkinson` (Auslösen beim Aufsetzen, kleine Felder); `migraene_lichtempfindlich` (rotes Aufblitzen abschalten).
+  `tremor_parkinson` (Auslösen beim Aufsetzen, kleine Felder); `photosensitive_epilepsie`, `migraene_lichtempfindlich` (Felder blinken im 2-Hz-Takt, rotes Aufblitzen der Spielfläche bei Fehlern – abschalten).
   Alterssichtigkeit und Farbsehschwäche sind wenig kritisch.
 - **Kombiniert gut mit …** 603 (statisches Gegenstück), 601 (Senso), 602 (verbale Folge), 605 (Objekt-Ort), 811 (Linienzug
   nachziehen), 707 (Pfad mit dem Zeiger folgen).
@@ -242,10 +242,10 @@ Fingern, Zentralfixation und rhythmisches Tippen – für MOBA-Gamer, MINT-Studi
 - Kessels, R. P. C., van Zandvoort, M. J. E., Postma, A., Kappelle, L. J., & de Haan, E. H. F. (2000). The Corsi
   Block-Tapping Task: Standardization and normative data. *Applied Neuropsychology*, 7(4), 252–258. – **Prüfung:** **DOI und
   Zeitschrift falsch** (Website-DOI bei Crossref nicht auffindbar); richtig https://doi.org/10.1207/S15324826AN0704_8 ✓;
-  **stützt:** unsicher/nein (5,4 ± 0,9 und „computerisiert“ nicht im Abstract; Sekundärquelle nennt 6,2 ± 1,3).
+  **stützt:** unsicher/nein (Abstract: n = 70 Gesunde, 70 Patient:innen, Perzentile und Grenzwerte; 5,4 ± 0,9 und „computerisiert“ stehen nicht darin; Volltext nicht eingesehen).
 - Woods, D. L., Wyma, J. M., Yund, E. W., Herron, T. J., & Reed, B. (2015). Factors influencing the latency of simple
   reaction time. *Frontiers in Human Neuroscience*, 9, 131. https://doi.org/10.3389/fnhum.2015.00131 – **Prüfung:** DOI
-  stimmt ✓; **stützt:** nein (nur einfache Reaktionszeit).
+  stimmt ✓; **stützt:** kaum (einfache Reaktionszeit; nennt Hardware-Verzögerungen nur allgemein, nicht den 500-ms-Takt; Tippzeiten misst das Spiel ohnehin nicht).
 
 ### Weitere Fachliteratur
 

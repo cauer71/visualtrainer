@@ -13,7 +13,7 @@ stand: 2026-09-29
 
 # ===== Überblick =====
 kurzbeschreibung: "Auf dunklem Grund erscheint immer genau ein gelber Kreis, der langsam durchs Feld driftet und dabei schrumpft. Man klickt ihn mit dem Maus-Fadenkreuz an, bevor er verschwindet – sofort erscheint der nächste an anderer Stelle. Mit den Punkten werden die Ziele schneller, kleiner und schrumpfen rascher. Trotz des Namens ist es keine Reaktionszeitmessung und keine Körperübung, sondern eine Maus-Zielaufgabe unter Zeitdruck."
-ziel_funktionen: [auge_hand_koordination, zielbewegung_tempo]
+ziel_funktionen: [auge_hand_koordination, zielbewegung_tempo, zielbewegung_praezision]
 eingabe: [maus, touchpad]
 tablet_geeignet: nein
 dauer_sekunden: 45
@@ -28,7 +28,7 @@ anforderungsprofil:
     farbunterscheidung: 0
     stereosehen: 0
     peripheres_sehen: 1
-    nutzbares_sehfeld: 1
+    nutzbares_sehfeld: 0
     blickfolge: 2
     sakkaden: 2
     fixation: 0
@@ -55,9 +55,9 @@ anforderungsprofil:
     einfache_reaktion: 2
     auge_hand_koordination: 3
     zielbewegung_tempo: 3
-    zielbewegung_praezision: 2
+    zielbewegung_praezision: 3
     kontinuierliche_steuerung: 1
-    ruhige_hand: 0
+    ruhige_hand: 1
     fingergeschwindigkeit: 0
     fingersequenz_bimanual: 0
     ganzkoerper: 0
@@ -73,7 +73,7 @@ belastung:
 
 # ===== Auswahlhilfe =====
 voraussetzungen: ["Maus (oder Touchpad) und Desktop-Browser mit Pointer-Lock; reine Touch-Geräte werden erkannt und nicht zugelassen", "sicheres Sehen im Bildschirmabstand über die ganze Spielfeldbreite (≈ 29° bei 24″ in 60 cm)", "Bereitschaft zu hohem Tempo ohne Pause zwischen den Zielen"]
-vorsicht_bei: [presbyopie_gleitsicht, hand_arm_beschwerden, tremor_parkinson, photosensitive_epilepsie, migraene_lichtempfindlich, sehbehinderung_niedriger_visus, gesichtsfeldausfall, aufmerksamkeitsprobleme]
+vorsicht_bei: [presbyopie_gleitsicht, hand_arm_beschwerden, tremor_parkinson, photosensitive_epilepsie, migraene_lichtempfindlich, schwindel_vestibulaer, trockenes_auge_bildschirm, sehbehinderung_niedriger_visus, gesichtsfeldausfall, aufmerksamkeitsprobleme, kognitive_einschraenkung, kinder_unter_6]
 geeignet_fuer: ["schnelle, gezielte Mausbewegungen zu wechselnden Orten (Zielerfassung, 'Flicks')", "Auge-Hand-Koordination mit langsam bewegten Zielen (≈ 3–15°/s)", "Abwägen von Tempo und Genauigkeit (früh klicken, solange das Ziel groß ist, aber ohne Fehlklick)", "Menschen, die Punktejagd und Serien (Combo) motivieren; Ergänzung zu Aim-Übungen 702/501"]
 weniger_geeignet_fuer: ["Tablet ohne Maus (Original nicht spielbar)", "Einsteiger:innen, ältere oder langsame Personen (kein Absenken der Schwierigkeit, keine Pausen, Zeitdruck steigt automatisch)", "wer eine Reaktionszeitmessung erwartet ('Best Reaction' enthält Bewegungszeit)", "Menschen mit Hand-/Armbeschwerden bei schneller Mausarbeit", "echte Körper-, Sprung- oder Fitnessübung (trotz Unterkapitel 'fitness')"]
 evidenz:
@@ -88,7 +88,7 @@ stichworte: ["Zielerfassung", "schrumpfende Ziele", "bewegte Ziele", "Fitts'sche
 # 804 · Schrumpfende Ziele schnell anklicken
 
 > Original: „Reaktionstest – Schrumpfende Ziele schnell und präzise treffen“ (Speed Drill) – skilldrills.online,
-> Kapitel „physical“ / „fitness“ · Blickfit: noch nicht umgesetzt (Baustein vorhanden: „Zielfang“ zu 104)
+> Kapitel Körper & Reflexe (`physical`, Unterkapitel `fitness`) · Blickfit: noch nicht umgesetzt (Baustein vorhanden: „Zielfang“ zu 104)
 
 ## 1. Kurzbeschreibung
 Auf fast schwarzem Grund mit feinem Raster erscheint ein gelber, leuchtender Kreis mit weißem Mittelpunkt. Er driftet in eine zufällige Richtung, prallt am Rand ab und schrumpft stetig. Man bewegt das gelbe Fadenkreuz mit der Maus hinein und klickt; bei einem Treffer erscheint sofort ein neues Ziel an anderer Stelle. Treffer bringen Punkte und Zeit, Fehlklicks und erloschene Ziele kosten Zeit und die Serie. Obwohl die Übung im Kapitel „Körper & Reflexe“ unter „fitness“ steht und „Reaktionstest“ heißt, ist sie eine reine Maus-Zielaufgabe wie ein Aim-Trainer – ohne Körperbewegung und ohne echte Reaktionszeitmessung.
@@ -129,8 +129,8 @@ Die Seite nennt den Speed Drill ein „hochintensives neuromuskuläres Trainings
 ## 4. Optische und okulomotorische Grundlagen
 - **Reizgrößen [Herleitung]** (24″-FHD, 60 cm, ≈ 37,8 px/°): Ziel-Ø 64 px ≈ 1,7° (Level 1), ≈ 1,1° (Level 10), ≈ 0,8° (Level 15), Minimum 0,53°; kurz vor dem Erlöschen ≈ 0,2°. Die Ziele sind groß gegenüber der Sehschärfegrenze; die Sehschärfe begrenzt kaum, wohl aber das Treffen des schrumpfenden Randes. Kontrast gelb auf fast schwarz ist hoch; Farbe trägt keine Entscheidung (Farbsehschwäche unproblematisch).
 - **Blickfolge:** Zieltempo 120 px/s (Level 1) bis ≈ 470 px/s (Level 15 mit langer Serie), Grenzwert ≈ 570 px/s, zuzüglich der leichten Beschleunigung **[Herleitung aus dem Code]** ≈ 3–15°/s – ein Bereich, in dem die glatte Folgebewegung gut funktioniert, der Gain aber unter 0,95 liegt und mit dem Tempo sinkt; Sakkaden ergänzen (Collewijn & Tamminga, 1984). Die leicht gekrümmten Bahnen und Randabpraller machen die Bewegung weniger vorhersagbar.
-- **Sakkaden:** Jedes neue Ziel erscheint an einem anderen Ort (≈ 11° entfernt **[Herleitung]**); reguläre Sakkadenlatenzen liegen bei ≈ 180–220 ms und hängen kaum von der Zielentfernung ab (Darrien et al., 2001); sie stecken in jeder Erfassungszeit.
-- **Peripherie:** Neue Ziele können bis ≈ 14° seitlich der aktuellen Blickposition auftauchen; der aufweitende Ring und das plötzliche Erscheinen machen sie auffällig. Echte Sehfeld-Anforderung ist gering (nahe Peripherie).
+- **Sakkaden:** Jedes neue Ziel erscheint an einem anderen Ort (≈ 11° entfernt **[Herleitung]**); reguläre Sakkadenlatenzen liegen bei ≈ 180–250 ms und hängen kaum von der Zielentfernung ab (Darrien et al., 2001); sie stecken in jeder Erfassungszeit.
+- **Peripherie:** Neue Ziele können bis ≈ 14° seitlich der aktuellen Blickposition auftauchen; der aufweitende Ring und das plötzliche Erscheinen machen sie auffällig. Echte Sehfeld-Anforderung ist gering (nahe Peripherie); da immer nur **ein** Ziel sichtbar ist, müssen Mitte und Umgebung nie gleichzeitig überwacht werden (nutzbares Sehfeld im Profil 0).
 - **Brille:** Mit Gleitsichtgläsern ist der scharfe Zwischenbereich am Bildschirm nur ≈ 13–18° breit (Han et al., 2003) – Ziele am Spielfeldrand (≈ 29° Breite) liegen in der seitlichen Unschärfe, man muss den Kopf mitdrehen, was bei 0,3–0,9 s Lebensdauer Zeit kostet. Ab ≈ 40 J. reicht die Akkommodation für Naharbeit nicht mehr (Charman, 2008); eine Arbeitsplatzbrille für 50–70 cm ist günstiger. Bevorzugter Bildschirmabstand im Mittel 63 cm (Jaschinski, 2002).
 - **Bildschirm:** Bewegungsunschärfe durch Halten des Bildes: 570 px/s ergeben ≈ 9–10 px Versatz pro Bild bei 60 Hz, ≈ 2 px bei 240 Hz **[Herleitung]** – schnellere Monitore verringern, „eliminieren“ aber nichts.
 
@@ -142,7 +142,7 @@ Die Seite nennt den Speed Drill ein „hochintensives neuromuskuläres Trainings
 
 ## 6. Motorische Grundlagen
 - **Zwei Phasen:** schneller Anfangsimpuls + Korrektur (Elliott et al., 2001); der Impuls endet meist knapp vor dem Ziel, weil Überschießen teurer ist (Lyons et al., 2006).
-- **Fitts'sches Gesetz [Herleitung]:** Bei mittlerem Abstand ≈ 420 px ergibt die Shannon-Form log₂(D/W + 1) ≈ 2,9 bit (Level 1, W = 64 px), ≈ 3,5 bit (Level 10), ≈ 3,9 bit (Level 15), ≈ 4,5 bit (Minimum). Da das Ziel während der Bewegung schrumpft, ist die wirksame Breite beim Klick kleiner.
+- **Fitts'sches Gesetz [Herleitung]:** Bei mittlerem Abstand ≈ 420 px ergibt die Shannon-Form log₂(D/W + 1) ≈ 2,9 bit (Level 1, W = 64 px), ≈ 3,5 bit (Level 10), ≈ 3,9 bit (Level 15), ≈ 4,5 bit (Minimum). Da das Ziel während der Bewegung schrumpft, ist die wirksame Breite beim Klick kleiner: bei ≈ 0,5–0,9 s Erfassungszeit auf Level 5 noch ≈ 13–19 px Radius, auf Level 10 (Lebensdauer 0,66 s) nur ≈ 5–8 px **[Herleitung aus Startradius und Schrumpfrate]**. Das sind die kleinsten wirksamen Ziele der Gruppe 801–805 (zum Vergleich Trefferradius 801: ≈ 20–26 px, Kugelradius 802: 12–28 px, Fangbereich 805: 14–23 px) – deshalb ist Zielgenauigkeit hier Kern der Übung (Profil 3), und der Zeiger darf beim Klick nicht verrutschen (ruhige Hand als Nebenrolle).
 - **Bewegte Ziele:** Der klassische Fitts-Index sagt Erfassungszeiten bewegter Ziele schlecht voraus (Jagacinski et al., 1980); ein Modell mit Positionsfehler, der die wirksame Zielbreite verkleinert, passt gut und sagt eine kritische Geschwindigkeit voraus, oberhalb derer ein Ziel nicht mehr erfasst werden kann (Hoffmann, 1991). Für das zeitliche Treffen schneller Ziele integriert man mehrere visuelle Hinweise (Lee et al., 2018).
 - **Tempo gegen Genauigkeit:** Frühes Klicken lohnt sich (Ziel noch groß), ein Fehlklick kostet aber 1 s und die Serie – ein klassischer Speed-Accuracy-Trade-off; ein Zögern zum Zielen „auf Sicherheit“ wird durch das Schrumpfen bestraft.
 - **Zeitbudget [Herleitung, Schätzung]:** Reaktion (≈ 213–231 ms, Woods et al., 2015) + Sakkade + Bewegung ergeben realistisch ≈ 0,5–0,9 s je Ziel. Ab Level ≈ 8–10 (Lebensdauer ≤ 0,9 s) erlöschen daher viele Ziele; dort endet die Runde meist.
@@ -169,12 +169,15 @@ Die Seite nennt den Speed Drill ein „hochintensives neuromuskuläres Trainings
   - `presbyopie_gleitsicht`: Ziele über ≈ 29° Breite, scharfer Gleitsicht-Zwischenbereich nur 13–18°; Arbeitsplatzbrille, kleineres Spielfeld.
   - `hand_arm_beschwerden`: Dauer der Mausnutzung hängt mit Hand-Arm-Beschwerden zusammen (IJmker et al., 2007); Runden können sich auf mehrere Minuten verlängern.
   - `tremor_parkinson`: kleine, schrumpfende Ziele und Fehlklickstrafe; Zittern führt zu Fehlklicks.
-  - `photosensitive_epilepsie`, `migraene_lichtempfindlich`: rotes Fehler-Overlay (480 ms) und Bildschirmwackeln; jeder Fehler startet ein eigenes Overlay; bei schnellen Fehlklickfolgen oder ab Level 15 (Lebensdauer ≤ 0,34 s) sind mehr als 3 rote Blitze/s denkbar (nicht gemessen) (WCAG-Grenze 3/s, W3C, 2024; Risikobereich 15–25 Hz, Fisher et al., 2005). Effekte abschalten.
+  - `photosensitive_epilepsie`, `migraene_lichtempfindlich`: rotes Fehler-Overlay (480 ms) und Bildschirmwackeln; jeder Fehler startet ein eigenes Overlay; bei schnellen Fehlklickfolgen oder ab Level 15 (Lebensdauer ≤ 0,34 s) sind mehr als 3 rote Blitze/s denkbar (nicht gemessen) (WCAG-Grenze 3/s, W3C, 2024; Risikobereich 15–25 Hz, Fisher et al., 2005). Effekte abschalten – laut Code entfällt damit nur das rote Overlay, das Wackeln bleibt.
+  - `schwindel_vestibulaer`: bei jedem Fehler wackelt das ganze Spielfeld (12 px, abklingend, nicht abschaltbar); bei Fehlerserien wiederholte großflächige Bildbewegung.
+  - `trockenes_auge_bildschirm`: pausenlose Zielfolge mit konzentriertem Starren; Runden können sich auf mehrere Minuten verlängern – Pausen und bewusstes Blinzeln einplanen.
   - `sehbehinderung_niedriger_visus`: Zielränder bei 0,5–0,8° und Erlöschen bei 0,2° – Ziele größer darstellen.
   - `gesichtsfeldausfall`: neue Ziele erscheinen an beliebiger Stelle bis ≈ 14° seitlich; bei Ausfällen einer Seite werden sie spät entdeckt und erlöschen – kein Test des Gesichtsfelds, ggf. kleineres Spielfeld.
-  - `aufmerksamkeitsprobleme`: pausenlose Zielfolge, steigender Zeitdruck ohne Absenken.
+  - `aufmerksamkeitsprobleme`, `kognitive_einschraenkung`, `kinder_unter_6`: pausenlose Zielfolge, steigender Zeitdruck ohne Absenken, Strafe für jeden Fehlklick.
   - Keine Sturz- oder Herz-Kreislauf-Vorsicht nötig (keine Körperbewegung).
 - **Kombiniert gut mit …** 702 (ruhende Ziele, Präzision), 104 (bewegtes Ziel abfangen), 501/508 (Flick/Erstschuss), 302 (mehrere Ziele), 805 (Abbremsen am Ziel).
+- **Abgrenzung innerhalb 801–805:** keine echte Dublette, aber **801, 802 und 804 teilen dieselbe Spiel-Engine** (Level = Punkte/1.750 + 1, +2 s/−1 s-Zeitkonto, gleiche Combo-Stufen und Note) und ein ähnliches Profil. 804 unterscheidet sich durch **genau ein Ziel zugleich** (keine geteilte Aufmerksamkeit, kein nutzbares Sehfeld, keine Farbregel) und die **kleinsten, schrumpfenden Ziele** (Zielgenauigkeit 3, bei 801/802 nur 2). Es ist damit die klassische Aim-Aufgabe der Gruppe und steht 702 (Motorik) näher als 801/802. 803 und 805 kommen ohne Klick aus. Die drei Engine-Geschwister nicht als „Abwechslung“ hintereinander vorschlagen.
 Keine Diagnosen, keine Heilversprechen; Punkte und Noten sind keine Normwerte.
 
 ## 10. Schwächen des Originals und Empfehlungen für eine Blickfit-Umsetzung
@@ -200,7 +203,7 @@ Keine Diagnosen, keine Heilversprechen; Punkte und Noten sind keine Normwerte.
 - Casiez, G., Conversy, S., Falce, M., Huot, S., & Roussel, N. (2015). Looking through the eye of the mouse: A simple method for measuring end-to-end latency using an optical mouse. In *Proceedings of UIST '15* (S. 629–636). ACM. https://doi.org/10.1145/2807442.2807454 – End-to-End-Latenz im Browser ≈ 62–83 ms (Testrechner, 2015)
 - Charman, W. N. (2008). The eye in focus: Accommodation and presbyopia. *Clinical and Experimental Optometry*, 91(3), 207–225. https://doi.org/10.1111/j.1444-0938.2008.00256.x – Alterssichtigkeit
 - Collewijn, H., & Tamminga, E. P. (1984). Human smooth and saccadic eye movements during voluntary pursuit of different target motions on different backgrounds. *The Journal of Physiology*, 351, 217–250. https://doi.org/10.1113/jphysiol.1984.sp015242 – Folge-Gain < 0,95, sinkt mit Tempo
-- Darrien, J. H., Herd, K., Starling, L.-J., Rosenberg, J. R., & Morrison, J. D. (2001). An analysis of the dependence of saccadic latency on target position and target characteristics in human subjects. *BMC Neuroscience*, 2, 13. https://doi.org/10.1186/1471-2202-2-13 – Sakkadenlatenz ≈ 182 ms, unabhängig von der Zielentfernung
+- Darrien, J. H., Herd, K., Starling, L.-J., Rosenberg, J. R., & Morrison, J. D. (2001). An analysis of the dependence of saccadic latency on target position and target characteristics in human subjects. *BMC Neuroscience*, 2, 13. https://doi.org/10.1186/1471-2202-2-13 – Sakkadenlatenz ≈ 180–250 ms (Personen-Mittelwerte ≈ 181–200 ms), unabhängig von der Zielentfernung
 - Desmurget, M., Epstein, C. M., Turner, R. S., Prablanc, C., Alexander, G. E., & Grafton, S. T. (1999). Role of the posterior parietal cortex in updating reaching movements to a visual target. *Nature Neuroscience*, 2(6), 563–567. https://doi.org/10.1038/9219 – Parietalkortex und Online-Korrektur (TMS)
 - Elliott, D., Helsen, W. F., & Chua, R. (2001). A century later: Woodworth's (1899) two-component model of goal-directed aiming. *Psychological Bulletin*, 127(3), 342–357. https://doi.org/10.1037/0033-2909.127.3.342 – Zwei-Komponenten-Modell
 - Findlater, L., Froehlich, J. E., Fattal, K., Wobbrock, J. O., & Dastyar, T. (2013). Age-related differences in performance with touchscreens compared to traditional mouse input. In *Proceedings of CHI '13* (S. 343–346). ACM. https://doi.org/10.1145/2470654.2470703 – Touch vs. Maus bei Älteren

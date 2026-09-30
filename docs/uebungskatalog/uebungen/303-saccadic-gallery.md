@@ -72,7 +72,7 @@ belastung:
   sprachabhaengigkeit: 0
 
 # ===== Auswahlhilfe =====
-voraussetzungen: ["Maus, Touchpad oder Touchscreen; Maus auf ruhiger Unterlage", "scharfes Sehen über das ganze Spielfeld (am Monitor bis ≈ 35° breit, am Tablet ≈ 23°) in Bildschirmabstand", "Ziele von anfangs ≈ 1,5° bis ≈ 0,6° Sehwinkel (Level 15) erkennen", "kein Farbsehen nötig (ein roter Punkt mit weißem Kern auf fast Schwarz)", "Blick und Hand ohne Pause über 1–3 min schnell wechseln können"]
+voraussetzungen: ["Maus, Touchpad oder Touchscreen; Maus auf ruhiger Unterlage", "scharfes Sehen über das ganze Spielfeld (am Monitor bis ≈ 35° breit, am Tablet ≈ 23°) in Bildschirmabstand", "Ziele von anfangs ≈ 1,5° bis ≈ 0,6° Sehwinkel (Level 15; mit maximaler Combo ≈ 0,5°) erkennen", "kein Farbsehen nötig (ein roter Punkt mit weißem Kern auf fast Schwarz)", "Blick und Hand ohne Pause über 1–3 min schnell wechseln können"]
 vorsicht_bei: [photosensitive_epilepsie, migraene_lichtempfindlich, presbyopie_gleitsicht, gesichtsfeldausfall, sehbehinderung_niedriger_visus, nystagmus, trockenes_auge_bildschirm, tremor_parkinson, hand_arm_beschwerden, kognitive_einschraenkung, aufmerksamkeitsprobleme]
 geeignet_fuer: ["große, schnelle Blick-Zeige-Sprünge zwischen festen Bildschirmpositionen üben", "Blick und Hand auf ein plötzlich erscheinendes Ziel ausrichten (Zielerfassung ohne Ablenker)", "spielerische Übung mit steigendem Tempo für Jugendliche und Erwachsene mit Freude an Zeitdruck", "Aufwärmen vor Flick- und Zielerfassungsübungen (501, 508, 704)"]
 weniger_geeignet_fuer: ["Messung von Sakkadenlatenz oder -genauigkeit (keine Blickmessung, Klickzeit enthält die Handbewegung)", "reine Blickübung ohne Handeinsatz", "Menschen, die ohne Zeitdruck üben sollen oder möchten", "Gleitsichtträger:innen am großen Monitor im Vollfenster", "Lichtempfindliche: roter Fehlerblitz bei jedem Fehler (abschaltbar)", "Ältere oder Einsteiger:innen ab etwa Level 8 (Lebensdauer < 0,85 s bei weiten Sprüngen)"]
@@ -92,7 +92,7 @@ stichworte: ["Sakkaden", "Blicksprung", "Zielerfassung", "Auge-Hand-Koordination
 
 ## 1. Kurzbeschreibung
 
-Auf fast schwarzem Feld leuchtet an einem von 12 schwach markierten Rasterpunkten (Touch: 9) ein roter Punkt auf, nie zweimal am selben
+Auf fast schwarzem Feld leuchtet an einem von 12 schwach markierten Rasterpunkten (Touch: 9) ein roter Punkt auf, nie zweimal hintereinander am selben
 Ort. Man springt mit dem Blick hin und klickt/tippt ihn an, bevor er verschwindet; dann folgt der nächste. Mit dem Level werden Ziele
 kleiner und kurzlebiger. Trotz des Namens misst das Spiel keine Augenbewegung, sondern die Zeit bis zum Klick.
 
@@ -173,7 +173,7 @@ während der Sakkade, was das Spiel weder tut noch messen kann. Beim Zeigen blei
 
 - **Fitts'sches Gesetz:** Bewegungszeit steigt mit log₂(2A/W) (Fitts, 1954). *Grobe eigene Abschätzung* mit 3,7–4,9 bit/s Maus-Durchsatz
   (Soukoreff & MacKenzie, 2004), Level 1 (Trefferzone 84 px): eine Spalte (≈ 460 px, 3,5 bit) ≈ 0,7–0,9 s, drei Spalten (≈ 1.380 px,
-  5,0 bit) ≈ 1,0–1,4 s – plus ≈ 0,2–0,3 s bis Bewegungsbeginn; weite Sprünge sind am Monitor schon bei 1,3 s knapp. Die Hand startet
+  5,0 bit) ≈ 1,0–1,4 s – plus ≈ 0,2–0,3 s bis Bewegungsbeginn; nach dieser Schätzung sind weite Sprünge am Monitor schon bei 1,3 s knapp (Geübte mit hoher Mausempfindlichkeit deutlich schneller; nicht gemessen). Die Hand startet
   ≈ 100 ms nach der Sakkade, Latenzen schwach gekoppelt (Prablanc et al., 1979) – die Klickzeit bestimmt überwiegend die Handbewegung.
 - **Touch:** Tippen verkürzte die Bewegungszeit gegenüber der Maus bei Älteren um 35 %, bei Jüngeren um 16 % (Findlater et al., 2013). Die
   Touch-Trefferzone bleibt bis Level 15 ≈ 11 mm, bei maximaler Combo ≈ 9,6 mm (Empfehlung 9,2 mm; Parhi et al., 2006; *eigene Rechnung*).
@@ -184,7 +184,7 @@ während der Sakkade, was das Spiel weder tut noch messen kann. Beim Zeigen blei
 - **Gerät:** Browser-Zeiten enthalten 58–133 ms Geräteanteil (Pronk et al., 2020), Tablet-Tipplatenzen 48–276 ms (Casiez et al., 2017).
   Fenstergröße und Gerät ändern Sprungweiten, Sehwinkel und Raster (4 × 3 vs. 3 × 3) – nur Selbstvergleich unter gleichen Bedingungen.
 - **Auswahleffekt:** „Ø Reaktion“ zählt nur Treffer; mit sinkender Lebensdauer fallen langsame Sprünge heraus, der Mittelwert „verbessert“
-  sich allein durch den Levelanstieg (*eigene Analyse*). Zufällige Sprungweiten (≈ 12–38°) streuen die Klickzeit zusätzlich.
+  sich allein durch den Levelanstieg (*eigene Analyse*). Zufällige Sprungweiten (≈ 8–38°; kürzester Sprung eine Zeile ≈ 8–9°) streuen die Klickzeit zusätzlich.
 - **Alter, Stabilität:** 60–79-Jährige haben längere Sakkadenlatenzen und -dauern als 20–30-Jährige (Munoz et al., 1998). Sakkadenmaße
   sind stabil (Retest r = 0,685–0,884; Bargary et al., 2017); die Klickzeit dieses Spiels wurde nie auf Zuverlässigkeit geprüft.
 

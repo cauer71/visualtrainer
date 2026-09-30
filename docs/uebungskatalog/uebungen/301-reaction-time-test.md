@@ -17,7 +17,7 @@ ziel_funktionen: [antizipation, zeitliche_aufloesung]
 eingabe: [maus, touch, touchpad]
 tablet_geeignet: ja
 dauer_sekunden: null   # unbegrenzt ("Freier Modus"), Ende durch Nutzer:in
-schwierigkeit_anpassung: "Level = Punkte/250 + 1, steigt nur (nie zurück). Zielzeit zufällig zwischen 1,0 s und min(8 s; 1,8 s + 0,45 s × Level): Level 1 bis 2,25 s, ab Level 14 bis 8 s. Anzeigedauer der Zielzeit 1,55 s → 0,5 s (−0,05 s je Level). Toleranz fest ±(50 ms + 5 % der Zielzeit), relativ also 10 % (1 s) → 5,6 % (8 s). Nach ≈ 25–30 Treffern in Folge ist der volle Bereich erreicht (eigene Rechnung)."
+schwierigkeit_anpassung: "Level = ⌊Punkte/250⌋ + 1, steigt nur (nie zurück). Zielzeit zufällig zwischen 1,0 s und min(8 s; 1,8 s + 0,45 s × Level): Level 1 bis 2,25 s, ab Level 14 bis 8 s. Anzeigedauer der Zielzeit 1,55 s → 0,5 s (−0,05 s je Level). Toleranz fest ±(50 ms + 5 % der Zielzeit), relativ also 10 % (1 s) → 5,6 % (8 s). Nach ≈ 25–30 Treffern in Folge ist der volle Bereich erreicht (eigene Rechnung)."
 messgroessen: ["Original: Punkte, Level, Trefferquote, mittlerer absoluter Fehler (nur Treffer)", "sinnvoll: vorzeichenbehafteter mittlerer Fehler (zu früh/zu spät) je Zielzeit", "sinnvoll: Streuung relativ zur Zielzeit (Variationskoeffizient in %)", "sinnvoll: Trefferquote getrennt nach kurzen (1–3 s) und langen (5–8 s) Intervallen"]
 
 # ===== Anforderungsprofil 0–3 (alle Schlüssel angeben) =====
@@ -80,7 +80,7 @@ evidenz:
   uebungseffekt: mittel
   naher_transfer: schwach
   alltag_transfer: fehlend
-  kommentar: "Zeitproduktion wird mit intensivem Üben gleichmäßiger und überträgt sich teilweise auf benachbarte Dauern und von Ton auf Bild (Bartolo & Merchant 2009); beim Unterscheiden kurzer Intervalle blieb der Gewinn auf die geübte Dauer beschränkt (Wright et al. 1997). Studien zu dieser Browserübung oder zu Alltagsnutzen gibt es nicht; die Trainingszahlen der Website stammen aus Actionspiel-Studien."
+  kommentar: "Zeitproduktion wird mit intensivem Üben gleichmäßiger und überträgt sich teilweise auf benachbarte Dauern und von Ton auf Bild (Bartolo & Merchant 2009); beim Unterscheiden kurzer Intervalle blieb der Gewinn auf die geübte Dauer beschränkt (Wright et al. 1997). Studien zu dieser Browserübung oder zu Alltagsnutzen gibt es nicht; die Trainingszahl der Website (15–30 ms) beruft sich auf eine Actionspiel-Übersicht (Dye et al. 2009), die diesen Wert nicht nennt."
 aehnliche_uebungen: [101, 503, 107, 409, 407, 109, 802, 102, 202]
 stichworte: ["Zeitschätzung", "Zeitproduktion", "Intervall-Timing", "innere Uhr", "Zeitgefühl", "Weber-Gesetz", "Zählen", "Rückmeldung in ms", "kein Reaktionstest", "Timing"]
 ---
@@ -140,12 +140,13 @@ exaktes Zeitgefühl“ und „mentale Chronometrie (Zeitintervallschätzung)“.
   Reaktionen, die hier nicht gemessen werden.
 - **Stufentabelle ohne Datengrundlage:** keine Quelle enthält Perzentile, Gaming-Ränge oder F1-Werte; die Seite sammelt
   selbst keine Daten. Kalibriert gemessen: 231 ms im Mittel, 213 ms ohne Hardwareanteil (n = 1.469; Woods et al., 2015).
-- **Falscher Tipp** „periphere Stäbchen erfassen Blitze schneller“: Stäbchen-Reaktionen sind ≈ 20 ms *langsamer* (Cao et
-  al., 2007); am hellen Bildschirm arbeiten ohnehin die Zapfen.
+- **Falscher Tipp** „periphere Stäbchen erfassen Blitze schneller“: Stäbchen-Reaktionen sind bei Dämmerungsbeleuchtung ≈ 20 ms
+  *langsamer* als Zapfen-Reaktionen (Cao et al., 2007); am hellen Bildschirm arbeiten ohnehin die Zapfen.
 - **Begriff falsch:** *Mentale Chronometrie* heißt, aus Reaktionszeiten auf Verarbeitungsstufen zu schließen (Donders).
   Die Übung ist eine **Zeitproduktionsaufgabe** – dafür nennt die Seite keine Quelle.
-- **„Messung ohne Verzögerung“** irreführend: `performance.now()` löst auf 100 µs auf (MDN), aber Anzeige- und Eingabekette
-  verlängern Browserzeiten um 58–133 ms (Pronk et al., 2020) – für 301 ein fester Versatz (Abschnitt 7).
+- **„Sub-Millisekunden-Präzision“** irreführend: `performance.now()` löst (ohne Cross-Origin-Isolation) auf 100 µs auf
+  (MDN), und „keine Verzögerung durch Server-Übertragungen“ stimmt – aber Anzeige- und Eingabekette verlängern im Browser
+  gemessene Reaktionszeiten um ≈ 58–133 ms (Pronk et al., 2020) – für 301 ein fester Versatz (Abschnitt 7).
 - **„15–30 ms Trainingsgewinn“:** Dye et al. (2009) untersuchen Actionspiele und nennen keinen solchen Wert.
 - **Zutreffend** ist nur der kleinere Teil: „Zeitgefühl ohne vorschnelles Raten oder Verzögern“.
 
@@ -155,7 +156,8 @@ exaktes Zeitgefühl“ und „mentale Chronometrie (Zeitintervallschätzung)“.
   11″-Tablet in 40 cm ≈ 1,2°; ms-Abweichung ≈ 0,5°. Auch bei deutlich herabgesetztem Visus lesbar.
 - **Blick:** Alles liegt in der Mitte (≈ 3° um den Punkt); keine Blickfolge, keine Sakkaden, keine Suche. **Gleitsicht**
   unkritisch, wenn die Mitte durch den Zwischenbereich gesehen wird (Bildschirm eher tiefer; mit Gleitsicht hält man den
-  Kopf ≈ 7° höher, Jaschinski et al., 2015). Alterssichtige lesen 1,2°-Ziffern in 60 cm meist auch ohne Zwischenkorrektur.
+  Kopf ≈ 7° höher, Jaschinski et al., 2015). Alterssichtige dürften 1,2°-Ziffern in 60 cm meist auch ohne Zwischenkorrektur lesen (eigene
+  Einschätzung, nicht geprüft).
 - **Farbe:** Die Bewertungsstufe steckt nur in der Farbe der ms-Zahl (Gold, Grün, Blau, Cyan, Orange, Magenta, Rot). Bei
   Rot-Grün-Schwäche (≈ 8 % der Männer; Birch, 2012) bleiben ms-Zahl, Wackeln und Ton – Relevanz gering.
 - **Lichtreize (grobe eigene Rechnung, keine Messung):** Bei Fehlern steigt die relative Leuchtdichte der Mitte kurz von
@@ -171,10 +173,11 @@ exaktes Zeitgefühl“ und „mentale Chronometrie (Zeitintervallschätzung)“.
   präfrontalen und parietalen Kortex und Basalganglien (Grondin, 2010); Merchant et al. (2013) beschreiben einen
   kortiko-thalamo-basalganglionären Kernmechanismus mit aufgabenabhängigen Arealen. Ein „Training“ bestimmter Regionen durch
   diese Übung ist nicht belegt.
-- **Weber-Gesetz:** Die Streuung wächst etwa proportional zur Dauer; für visuell markierte Intervalle ist der Weber-Bruch
-  höher (≈ 7–28 % bei 500 ms) als für Töne (≈ 4–10 %). Explizites Zählen hilft ab ≈ 1,2 s (Grondin, 2010) – der 1-s-Puls
-  liefert das Zählraster mit.
-- **Aufmerksamkeit/Gedächtnis:** Nebenaufgaben machten 2- und 5-s-Produktionen länger und variabler, und über viele
+- **Weber-Gesetz:** Die Streuung wächst grob proportional zur Dauer; zwischen 1 und 2 s ist der Weber-Bruch aber nicht
+  konstant (bei 1,5–2 s höher als bei 1 s). Beim Unterscheiden von 500-ms-Intervallen lag er für Lichtsignale höher
+  (≈ 7–28 %) als für Töne (≈ 4–10 %). Beim Unterscheiden hilft explizites Zählen ab ≈ 1,2 s (alles Grondin, 2010,
+  Übersicht) – der 1-s-Puls liefert das Zählraster mit. Werte für Zeit*produktion* von 1–8 s nennt die Übersicht nicht.
+- **Aufmerksamkeit/Gedächtnis:** Nebenaufgaben machten 2- und 5-s-Produktionen länger und/oder variabler, und über viele
   Durchgänge wurden Produktionen allmählich länger (Brown, 1997). Die Zielzahl muss im Arbeitsgedächtnis bleiben.
 - Die von der Seite beschriebene Kette Netzhaut → V1 → Motorkortex bestimmt hier nur den konstanten Startversatz.
 
@@ -187,8 +190,9 @@ Relevant ist nur das Timing des Auslösens; Schalterweg bzw. Touch-Erkennung geh
 
 - **Geräteversatz:** Die Messung startet beim programmseitigen Ausblenden; gesehen wird es erst nach der Anzeigeverzögerung,
   und der Klick zählt erst nach der Eingabeverzögerung – beide addieren sich zur gemessenen Zeit (eigene Analyse).
-  Ende-zu-Ende-Latenz: Maus 36,6 ms (60 Hz) bzw. 21,1 ms (120 Hz), Tablet-Tipp 48–276 ms je nach Gerät, iPad-Air-2-Safari-
-  Canvas 77 ms (Casiez et al., 2017). Wer exakt schätzt, wird „zu spät“ gewertet und gleicht das über die Rückmeldung aus –
+  Ende-zu-Ende-Latenz: 1000-Hz-Maus mit nativer Anwendung 36,6 ms (60 Hz) bzw. 21,1 ms (120 Hz); Tippen auf Smartphones
+  und Tablets 48–276 ms je nach Gerät, System und Programmierumgebung; iPad Air 2, Safari mit Canvas 77 ms (Casiez et
+  al., 2017). Wer exakt schätzt, wird „zu spät“ gewertet und gleicht das über die Rückmeldung aus –
   Ergebnisse sind **nur auf demselben Gerät vergleichbar**; „EXACT“ hängt stark von Zufall und Gerät ab.
 - **Messgrößen:** Der „Durchschnittsfehler“ ignoriert Fehlversuche und Vorzeichen; die Schlussnote misst Spieldauer.
 - **Strategie:** Mit Pulszählen und drehenden Ringen als „Uhr“ wird die Aufgabe teilweise extern getaktet.

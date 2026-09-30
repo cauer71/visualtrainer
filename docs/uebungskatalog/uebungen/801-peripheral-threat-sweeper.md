@@ -24,7 +24,7 @@ messgroessen: ["Punkte", "Trefferquote (Treffer / Treffer + Fehlklicks + Durchbr
 anforderungsprofil:
   visuell:
     sehschaerfe_detail: 0
-    kontrast: 1
+    kontrast: 0
     farbunterscheidung: 0
     stereosehen: 0
     peripheres_sehen: 2
@@ -33,7 +33,7 @@ anforderungsprofil:
     sakkaden: 2
     fixation: 1
     bewegungswahrnehmung: 2
-    visuelle_suche: 1
+    visuelle_suche: 0
     visuelle_verarbeitungsgeschwindigkeit: 1
     zeitliche_aufloesung: 0
     naharbeit_dauer: 1
@@ -52,13 +52,13 @@ anforderungsprofil:
     lesen_sprache: 0
     schlussfolgern: 0
   motorisch:
-    einfache_reaktion: 2
+    einfache_reaktion: 1
     auge_hand_koordination: 3
     zielbewegung_tempo: 3
     zielbewegung_praezision: 2
-    kontinuierliche_steuerung: 0
+    kontinuierliche_steuerung: 1
     ruhige_hand: 0
-    fingergeschwindigkeit: 1
+    fingergeschwindigkeit: 0
     fingersequenz_bimanual: 0
     ganzkoerper: 0
     gleichgewicht: 0
@@ -73,7 +73,7 @@ belastung:
 
 # ===== Auswahlhilfe =====
 voraussetzungen: ["Maus (oder Touchpad) am Computer; das Original nutzt Pointer-Lock und ein eigenes Fadenkreuz", "Bildschirm im Zwischenbereich (50–70 cm) scharf sehen, ohne den Kopf zu heben oder zu senken", "Keine bekannte Lichtempfindlichkeit (rotes Aufblitzen bei jedem Fehler)", "Hohes Tempo tolerieren: ab höheren Leveln bleibt pro Punkt oft weniger als 1 s"]
-vorsicht_bei: [photosensitive_epilepsie, migraene_lichtempfindlich, presbyopie_gleitsicht, gesichtsfeldausfall, sehbehinderung_niedriger_visus, trockenes_auge_bildschirm, hand_arm_beschwerden, tremor_parkinson, aufmerksamkeitsprobleme, kognitive_einschraenkung, kinder_unter_6]
+vorsicht_bei: [photosensitive_epilepsie, migraene_lichtempfindlich, schwindel_vestibulaer, presbyopie_gleitsicht, gesichtsfeldausfall, sehbehinderung_niedriger_visus, trockenes_auge_bildschirm, hand_arm_beschwerden, tremor_parkinson, aufmerksamkeitsprobleme, kognitive_einschraenkung, kinder_unter_6]
 geeignet_fuer: ["schnelle Auge-Hand-Zielbewegungen zu plötzlich auftauchenden, bewegten Zielen üben", "mehrere Ziele rund um die Mitte gleichzeitig im Blick behalten und nach Dringlichkeit abarbeiten", "spielerisches Reaktionstraining mit hoher Motivation (Combo, Zeitgutschrift) für geübte Maus-Nutzer:innen", "Ergänzung zu ruhigeren Sehfeld-Übungen (108) als temporeiche Variante"]
 weniger_geeignet_fuer: ["Tablet- und Smartphone-Nutzung (Original für Maus gebaut)", "wer gezielt das nutzbare Sehfeld bei ruhigem Blick üben will (Blickposition wird nicht kontrolliert; dafür 108)", "Einsteiger:innen, Ältere oder Menschen mit wenig Mauserfahrung ohne langsamen Modus (kein Einstellungsmenü für Tempo)", "Gleitsichtträger:innen an großen Monitoren", "Menschen, die bei Fehlern durch Blitz und Wackeln gestresst werden"]
 evidenz:
@@ -81,7 +81,7 @@ evidenz:
   naher_transfer: schwach
   alltag_transfer: fehlend
   kommentar: "Für dieses Spiel gibt es keine Studie. Übungseffekte in ähnlichen Bildschirmaufgaben sind regelmäßig, schrumpfen aber stark, wenn Test und Training sich unterscheiden (Guo et al., 2025); UFOV-Transfer ist nur für das spezielle Protokoll bei Älteren belegt (Edwards et al., 2018), Peripherie-Werkzeuge im Sport sind ohne Transfer-Nachweis (Vater & Strasburger, 2021)."
-aehnliche_uebungen: [401, 108, 510, 502, 302, 804, 802, 104, 205, 106]
+aehnliche_uebungen: [802, 302, 502, 510, 804, 803, 401, 108, 104, 205, 106]
 stichworte: ["peripheres Sehen", "nutzbares Sehfeld", "UFOV", "Interzeption", "Abfangen", "Auge-Hand-Koordination", "Fitts", "Mehrfachziele", "Priorisierung", "Aufmerksamkeitsfang", "Mausspiel", "Zeitdruck"]
 ---
 
@@ -151,8 +151,10 @@ UFOV-Trainingsbefunde gelten für ein spezielles Protokoll (Edwards et al., 2018
   Kern-Radius ≈ 1,2°, Startabstand bei 900 px Spielfeldhöhe ≈ 10,8° (11″-Tablet, 40 cm: ≈ 9°) – etwa die UFOV-Prüfexzentrizität
   (≈ 10,5°; docs/wissenschaft/03), also knapp außerhalb der Makula (Ø ≈ 17°, Radius ≈ 8,5°) in der nahen Peripherie
   (Einteilung nach Strasburger et al., 2011). Sehschärfe begrenzt nicht.
-- **Tempo:** 80–650 px/s ≈ 2–17°/s, schnelle Punkte bis ≈ 27°/s – gut sichtbar; begrenzend sind Reaktions- und Bewegungszeit.
-  Die Reaktionszeit steigt mit der Exzentrizität nur wenig, je nach Studie um ≈ 0,3–1,7 ms pro Grad (Überblick bei
+- **Tempo:** 80–650 px/s ≈ 2–17°/s, schnelle Punkte bis ≈ 27°/s – gut sichtbar; begrenzend sind Bewegungszeit und Reihenfolge der Abfangziele. Die Reaktion auf
+  das Erscheinen eines einzelnen Punkts spielt nur eine Nebenrolle, weil meist schon andere Punkte im Anflug sind (anders als bei
+  804 mit immer nur einem Ziel).
+  Die Reaktionszeit steigt mit der Exzentrizität nur wenig, je nach Studie um ≈ 0,3–1,8 ms pro Grad (Überblick bei
   Strasburger et al., 2011).
 - **Farbe/Kontrast:** Rot auf fast Schwarz ist kontraststark; Rot-Grün-Empfindlichkeit fällt zur Peripherie steiler ab (Hansen
   et al., 2009). Farbe entscheidet nichts – Farbsehschwäche (≈ 8 % der Männer; Birch, 2012) ist kein Ausschlussgrund.
@@ -175,7 +177,9 @@ Suche zwischen Ablenkern passt schlecht (keine Ablenker). Dass das Spiel „den 
 Jeder Treffer ist eine schnelle Zielbewegung auf ein **bewegtes** Ziel: Anfangsimpuls plus rückmeldungsgestützte Korrektur
 (Elliott et al., 2001). Fitts' Gesetz gilt für ruhende Ziele, für bewegte nur eingeschränkt (Jagacinski et al., 1980). Beim
 Abfangen passen Menschen eher den Treffort als den Zeitpunkt an (Brenner & Smeets, 2015) – hier: nahe am Kern abfangen verkürzt
-den Weg, erhöht aber das Durchbruch-Risiko; das Fadenkreuz bleibt nach einem Treffer am Trefferort. Ältere bewegen sich
+den Weg, erhöht aber das Durchbruch-Risiko; das Fadenkreuz bleibt nach einem Treffer am Trefferort. Vor dem Klick wird
+das Fadenkreuz kurz dem bewegten Punkt nachgeführt (Nebenrolle). Jeder Punkt braucht genau einen gezielten Klick – schnelles
+Serienklicken ist nicht gefordert. Ältere bewegen sich
 langsamer und variabler (Ketcham et al., 2002). Fehlklicks werden bestraft (leichte Hemmanforderung). Viele Stunden Computer-/Mausarbeit
 pro Tag hängen mit Hand-Arm-Beschwerden zusammen (IJmker et al., 2007); für kurze Runden ist das nicht untersucht.
 
@@ -205,13 +209,22 @@ pro Tag hängen mit Hand-Arm-Beschwerden zusammen (IJmker et al., 2007); für ku
   sollen; für mausgeübte Jugendliche/Erwachsene, die Spielcharakter mögen.
 - **Weniger passend, wenn …** ruhiges Sehfeld-Training, langsames Tempo, Tablet oder vergleichbare Messwerte gewünscht sind.
 - **Vorsicht / anpassen bei …** `photosensitive_epilepsie`, `migraene_lichtempfindlich` (rotes Aufblitzen bei jedem Fehler, bei
-  Fehlerserien mehrmals pro Sekunde möglich; Fisher et al., 2005; WCAG 2.2 SC 2.3.1); `presbyopie_gleitsicht` (seitliche
+  Fehlerserien mehrmals pro Sekunde möglich; Fisher et al., 2005; WCAG 2.2 SC 2.3.1; die Effekt-Einstellung schaltet laut Code
+  nur das rote Overlay ab, nicht das Wackeln); `schwindel_vestibulaer` (bei jedem Fehler wackelt das ganze Spielfeld, 12 px,
+  abklingend – bei Fehlerserien wiederholte großflächige Bildbewegung); `presbyopie_gleitsicht` (seitliche
   Ziele unscharf); `gesichtsfeldausfall`, `sehbehinderung_niedriger_visus` (Punkte einer Seite evtl. übersehen – keine Aussage
   über das Gesichtsfeld ableiten, kein Test); `trockenes_auge_bildschirm` (starre Fixation); `hand_arm_beschwerden`,
   `tremor_parkinson` (schnelle kleine Zielbewegungen); `aufmerksamkeitsprobleme`, `kognitive_einschraenkung`, `kinder_unter_6`
   (hoher Zeitdruck, Strafen). Sturz- oder Kreislauf-Vorsicht ist mangels Körperbewegung nicht nötig.
 - **Kombiniert gut mit …** 108 (UFOV-artig, ruhiger Blick), 401 (Randreize bei Blickfolge), 104 (ein bewegtes Ziel), 510/502
-  (Zielauswahl), 205 (geteilte Aufmerksamkeit).
+  (Zielauswahl), 205 (geteilte Aufmerksamkeit), 803 (Ausweichen statt Abfangen, ohne Klick).
+- **Abgrenzung innerhalb 801–805:** keine echte Dublette, aber **801, 802 und 804 teilen dieselbe Spiel-Engine** (Level =
+  Punkte/1.750 + 1, +2 s je Treffer bis 60 s, −1 s je Fehler, gleiche Combo-Stufen und Note nach √(Punkte/24.000)) und ein fast
+  gleiches Profil (Auge-Hand-Koordination und Zielbewegungstempo 3, Zeitdruck 3). Engste Verwandte ist **802**: ebenfalls
+  bewegte Ziele per Klick abfangen, dort aber senkrecht fallend, deutlich schneller (400–1.250 px/s statt 80–520 px/s) und mit
+  Rot/Grün-Regel. 801 ist die einzige der drei mit mehreren gleichzeitig anfliegenden Zielen, die **alle** getroffen werden
+  müssen (Priorisieren, geteilte Aufmerksamkeit). 804 hat immer nur ein Ziel, dafür die kleinsten Ziele. 803 und 805 kommen
+  ohne Klick aus. Die drei Engine-Geschwister nicht als „Abwechslung“ hintereinander vorschlagen.
 
 ## 10. Schwächen des Originals und Empfehlungen für eine Blickfit-Umsetzung
 

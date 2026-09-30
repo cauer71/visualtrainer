@@ -9,7 +9,7 @@ kapitel_original: "fps"
 unterkapitel_original: ""
 quelle_url: "https://skilldrills.online/de/drills/fps/flick-shot-training"
 blickfit_umsetzung: null
-stand: 2026-09-29
+stand: 2026-09-30
 
 # ===== Überblick =====
 kurzbeschreibung: "Auf dunklem Spielfeld erscheint nach kurzer Pause jeweils ein einzelner grüner Kreis an zufälliger Stelle. Man führt das Fadenkreuz per Maus (gesperrter Zeiger) so schnell wie möglich darauf und klickt, bevor der Kreis wieder verschwindet; mit Punktestand und Trefferserie werden die Kreise kleiner und kürzer sichtbar."
@@ -65,7 +65,7 @@ anforderungsprofil:
     ausdauer_belastung: 0
 belastung:
   zeitdruck: 3
-  flimmern_lichtreize: 1
+  flimmern_lichtreize: 2
   bewegungsreize_schwindel: 0
   koerperliche_belastung: 1
   sturzrisiko: 0
@@ -133,8 +133,8 @@ Quelle: Seitentext und ausgelieferter Spiel-Chunk (`19013-…js`, formatiert; nu
   endet erst, wenn das Zeitlimit die eigene Erfassungszeit unterschreitet. Zeitüberschreitungen lassen sich in den
   Einstellungen abschalten (Standard: an). Zeitrechnung mit Zeitdifferenz je Bild (dt, max. 0,1 s) bzw.
   `performance.now()` → nicht bildfrequenzabhängig; nur Partikel und Bildschütteln laufen pro Bild.
-- **Fehler-Rückmeldung [CODE]:** Bildschütteln (6 px, abklingend), Fehlerton und ein roter, radial verlaufender
-  Vollflächen-Schimmer (50 % Deckkraft in der Mitte, 0,45 s). Bei schnellen Fehlklicks können mehrere pro Sekunde folgen.
+- **Fehler-Rückmeldung [CODE]:** Bildschütteln (6 px, abklingend), Fehlerton und – sofern eine Effekt-Einstellung aktiv ist (Standardwert nicht
+  geprüft) – ein roter, radial verlaufender Vollflächen-Schimmer (50 % Deckkraft in der Mitte, ≈ 0,45 s). Bei schnellen Fehlklicks können mehrere pro Sekunde folgen.
 - **Auswertung [CODE]:** Präzision, Treffer, Fehlklicks, Leerklicks, Zeitüberschreitungen, mittlere Flick-Zeit
   (Mittelwert, nicht Median), maximale Combo, Level; Note S+ bis F nach 100 × √(Punkte/50.000) (S+ ab ≈ 45.000 Punkten)
   – eine willkürliche Skala ohne Normdaten. Bestwerte nur im Browser gespeichert.
@@ -174,7 +174,7 @@ Erstschuss-Präzision für CS2, Valorant, Apex und Overwatch 2, beruft sich auf 
   Das ist weit über der Auflösungsgrenze (Visus 1,0 ≈ 1′ = 0,017°) – Sehschärfe begrenzt kaum, die Zielbewegung schon.
   Bei niedrigem Visus oder unkorrigierter Alterssichtigkeit (Akkommodationsbedarf bei 60 cm ≈ 1,7 dpt [ER]; zur Alterssichtigkeit Charman, 2008) wird das
   Anpeilen des Zentrums der kleinen Kreise unsicherer.
-- **Sehfeld:** Im Vollbild reichen die Zielorte bis ≈ ±24° horizontal und ±14° vertikal [ER]. Plötzlich erscheinende
+- **Sehfeld:** Im Vollbild reichen die Zielorte bis ≈ ±23° horizontal und ±13° vertikal (24″/60 cm, 40-px-Rand) [ER]. Plötzlich erscheinende
   Reize ziehen Aufmerksamkeit auf sich (Yantis & Jonides, 1984) und lösen eine Sakkade aus; der Piepton kündigt das
   Ziel zusätzlich an. Bei Gesichtsfeldausfällen dürften Ziele im betroffenen Bereich später oder gar nicht bemerkt werden (Plausibilitätsannahme, für diese Übung nicht untersucht).
 - **Blick–Hand-Kopplung:** Sakkade zuerst (Latenz typ. 180–250 ms; Darrien et al., 2001), die Hand startet ≈ 100 ms
@@ -207,8 +207,8 @@ dass diese Übung bestimmte Hirnregionen „trainiert“, gibt es nicht.
   ist, schwankt der ID je Ziel stark – die mittlere Flick-Zeit ist dadurch verrauscht.
 - **Zeitlimit = aufgezwungener Speed-Accuracy-Trade-off:** Wird die Bewegungszeit von außen verkürzt, steigt die
   Fehlerrate vorhersagbar, und zwar stärker durch kleine Ziele als durch große Distanzen (Wobbrock et al., 2008).
-  Zum Vergleich: FPS-artige Mausziele brauchten im Mittel 614 ms (Warburton et al., 2023). Sichtbarkeiten ≤ 380 ms
-  (Level 15) liegen darunter – ab dort bestimmen Zeitüberschreitungen den Spielverlauf.
+  Zum Vergleich: In einer Aim-Trainer-Aufgabe ohne Zeitlimit brauchten Mausnutzer:innen am Ende von 20 Runden im Mittel
+  614 ms vom Erscheinen bis zum Treffer (Warburton et al., 2023). Sichtbarkeiten ≤ 380 ms (Level 15) liegen deutlich darunter – ab dort bestimmen Zeitüberschreitungen den Spielverlauf.
 - **Phasen:** Reaktionszeit, Primärbewegung, Korrektur, Klick-Verweilzeit; über 20 Übungsrunden sanken v. a.
   Korrekturzeit (−134 ms), Klick-Verweilzeit (−72 ms) und Reaktionszeit (−70 ms), die Primärbewegung kaum (−14 ms)
   (Warburton et al., 2023). Bei Aim-Lab-Profis beschreibt Fitts'
@@ -216,15 +216,18 @@ dass diese Übung bestimmte Hirnregionen „trainiert“, gibt es nicht.
 - **Eingabe:** Maus-Durchsatz 3,7–4,9 bit/s (Soukoreff & MacKenzie, 2004). Empfindlichkeit und OS-Beschleunigung
   verändern die Übersetzung Hand → Fadenkreuz; ein breiter Bereich ist gleich gut (Boudaoud et al., 2022). Touch: Tippen
   schneller als Maus, aber ungenauer (Cockburn et al., 2012); Ziele ≥ ≈ 9 mm (Parhi et al., 2006).
-- **Tremor/Alter:** physiologischer Handtremor (tremorbezogene EMG-Gipfel bei Jüngeren 9–12 Hz, bei einzelnen
-  Älteren 5–7 Hz; Elble, 2003) kann das Anhalten auf kleinen Zielen stören [Plausibilitätsannahme]; Ältere skalieren Tempo und Primärbewegung weniger an Distanz und Zielgröße an (Ketcham et al., 2002).
-- **Belastung:** schnelle, wiederholte Hand-/Handgelenkbewegungen; bei Esportlern berichten 32–36 % Hand-/
-  Handgelenkbeschwerden (DiFrancisco-Donoghue et al., 2019).
+- **Tremor/Alter:** physiologischer Handtremor (nur bei einer Minderheit Gesunder ein klarer tremorgekoppelter EMG-Gipfel,
+  bei Jüngeren 9–12 Hz, bei einzelnen Älteren 5–7 Hz; Elble, 2003) kann das Anhalten auf kleinen Zielen stören [Plausibilitätsannahme]; Ältere skalieren Tempo und Primärbewegung weniger an Distanz und Zielgröße an (Ketcham et al., 2002).
+- **Belastung:** schnelle, wiederholte Hand-/Handgelenkbewegungen; in einer Befragung von 65 College-Esportler:innen
+  (3–10 h Spielzeit pro Tag) berichteten 36 % Handgelenk- und 32 % Handschmerzen (DiFrancisco-Donoghue et al., 2019) –
+  bei wenigen Minuten Übung nicht übertragbar, aber ein Hinweis auf die Belastungsart.
 
 ## 7. Einflussfaktoren und Messgrenzen
 
 - **Gerät:** Systemlatenz, Bildrate, Mausabfrage (125 Hz = bis 8 ms), OS-Beschleunigung und Empfindlichkeit
-  beeinflussen die Flick-Zeit stärker als kleine Lernfortschritte (Ivkovic et al., 2015; Liu et al., 2021).
+  verändern die Flick-Zeit; in FPS-Studien verschlechterte schon lokale Latenz ab ≈ 41 ms die Zielleistung (Ivkovic et al.,
+  2015), und selbst kleine Latenzsenkungen unter 125 ms verbesserten Genauigkeit und Punkte (Liu et al., 2021). Geräte-
+  unterschiede können daher Lernfortschritte überdecken [Plausibilitätsannahme].
 - **Bildschirmgröße/Abstand:** Radien in CSS-Pixeln → auf Laptop und 32-Zoll-Monitor andere Sehwinkel und Distanzen;
   Werte sind geräteübergreifend nicht vergleichbar.
 - **Aufgabenzufall:** zufällige Distanz (0 bis Bildschirmdiagonale) und Mittelwert statt Median → Einzelrunden streuen.
@@ -265,8 +268,8 @@ dass diese Übung bestimmte Hirnregionen „trainiert“, gibt es nicht.
 
 - **Tablet:** Original auf Touch blockiert. Eine Touch-Version ist leicht möglich (Tipp-Zielen nach Fitts), verliert aber
   den Kern „Flick mit Empfindlichkeit“ – ehrlich als „Tipp-Ziele“ benennen; Ziele ≥ 9 mm, Mindestsichtbarkeit so wählen,
-  dass die Touch-Latenz (50–200 ms; Deber et al., 2015) nicht bestraft wird. Für Ältere ist Touch günstiger als die Maus
-  (Findlater et al., 2013).
+  dass die Touch-Latenz (bei kommerziellen Geräten 50–200 ms laut Deber et al., 2015) nicht bestraft wird. Ältere waren am Touchscreen um 35 % schneller als
+  mit der Maus (Findlater et al., 2013).
 - **Messqualität:** Median und Streuung, Flick-Zeit getrennt nach Distanz/Zielgröße bzw. Durchsatz (bit/s), Start
   jeweils aus der Mitte (vergleichbare Distanzen), `event.timeStamp` statt Zeitpunkt im Handler, keine Normnoten.
 - **Adaptivität:** Treppenverfahren auf ≈ 80 % Treffer (wie `zielfang`) statt punktgekoppelter Kurve und Combo-Heat,
@@ -320,4 +323,18 @@ dass diese Übung bestimmte Hirnregionen „trainiert“, gibt es nicht.
 - Warburton, M., Campagnoli, C., Mon-Williams, M., Mushtaq, F., & Morehead, J. R. (2023). Kinematic markers of skill in first-person shooter video games. *PNAS Nexus, 2*(8), pgad249. https://doi.org/10.1093/pnasnexus/pgad249 – Phasen, Übungseffekt, 614 ms
 - Wobbrock, J. O., Cutrell, E., Harada, S., & MacKenzie, I. S. (2008). An error model for pointing based on Fitts' law. In *Proceedings of CHI '08* (S. 1613–1622). ACM. https://doi.org/10.1145/1357054.1357306 – Fehlerrate bei vorgegebener Bewegungszeit (Crossref ✓, Volltext Autorenseite)
 - Yantis, S., & Jonides, J. (1984). Abrupt visual onsets and selective attention: Evidence from visual search. *Journal of Experimental Psychology: Human Perception and Performance, 10*(5), 601–621. https://doi.org/10.1037/0096-1523.10.5.601 – abrupt erscheinende Reize
-- Ebenfalls zitiert (alle Crossref ✓, Angaben in `lit-W06-fps-a`): Charman (2008) https://doi.org/10.1111/j.1444-0938.2008.00256.x · Cockburn et al. (2012) https://doi.org/10.1016/j.ijhcs.2011.11.002 · Deber et al. (2015) https://doi.org/10.1145/2702123.2702300 · Donovan et al. (2022) https://doi.org/10.3389/fnhum.2022.979293 · Fisher et al. (2005) https://doi.org/10.1111/j.1528-1167.2005.31405.x · Guo et al. (2025) https://doi.org/10.3389/fphys.2025.1664572 · Hutchings et al. (2007) https://doi.org/10.1111/j.1475-1313.2006.00460.x · Krakauer et al. (2000) https://doi.org/10.1523/JNEUROSCI.20-23-08916.2000 · Leigh & Zee (2015, Buch) https://doi.org/10.1093/med/9780199969289.001.0001 · Liu et al. (2021) https://doi.org/10.1145/3411764.3445245 · Munoz et al. (1998) https://doi.org/10.1007/s002210050473 · Parhi et al. (2006) https://doi.org/10.1145/1152215.1152260 · Shadmehr et al. (2010) https://doi.org/10.1146/annurev-neuro-060909-153135 · Sheppard & Wolffsohn (2018) https://doi.org/10.1136/bmjophth-2018-000146 · Wolpert et al. (1995) https://doi.org/10.1126/science.7569931
+- Charman, W. N. (2008). The eye in focus: Accommodation and presbyopia. *Clinical and Experimental Optometry, 91*(3), 207–225. https://doi.org/10.1111/j.1444-0938.2008.00256.x – Alterssichtigkeit
+- Cockburn, A., Ahlström, D., & Gutwin, C. (2012). Understanding performance in touch selections: Tap, drag and radial pointing drag with finger, stylus and mouse. *International Journal of Human-Computer Studies, 70*(3), 218–233. https://doi.org/10.1016/j.ijhcs.2011.11.002 – Touch vs. Maus
+- Deber, J., Jota, R., Forlines, C., & Wigdor, D. (2015). How much faster is fast enough? User perception of latency & latency improvements in direct and indirect touch. In *Proceedings of CHI '15* (S. 1827–1836). ACM. https://doi.org/10.1145/2702123.2702300 – Touch-Latenz
+- Donovan, I., Saul, M. A., DeSimone, K., Listman, J. B., Mackey, W. E., & Heeger, D. J. (2022). Assessment of human expertise and movement kinematics in first-person shooter games. *Frontiers in Human Neuroscience, 16*, 979293. https://doi.org/10.3389/fnhum.2022.979293 – Fitts' Gesetz bei Profis nur unvollständig
+- Fisher, R. S., Harding, G., Erba, G., Barkley, G. L., & Wilkins, A. (2005). Photic- and pattern-induced seizures: A review for the Epilepsy Foundation of America Working Group. *Epilepsia, 46*(9), 1426–1441. https://doi.org/10.1111/j.1528-1167.2005.31405.x – Lichtreize, Rot als Risikofaktor
+- Guo, Y., Yuan, T., Yang, M., & Qiu, J. (2025). Does the "learning effect" caused by digital devices exaggerate sports visual training outcomes? A systematic review and meta-analysis. *Frontiers in Physiology, 16*, 1664572. https://doi.org/10.3389/fphys.2025.1664572 – Übungseffekt bei gleicher Aufgabe
+- Hutchings, N., Irving, E. L., Jung, N., Dowling, L. M., & Wells, K. A. (2007). Eye and head movement alterations in naïve progressive addition lens wearers. *Ophthalmic and Physiological Optics, 27*(2), 142–153. https://doi.org/10.1111/j.1475-1313.2006.00460.x – Kopfbewegungen mit Gleitsicht
+- Krakauer, J. W., Pine, Z. M., Ghilardi, M.-F., & Ghez, C. (2000). Learning of visuomotor transformations for vectorial planning of reaching trajectories. *Journal of Neuroscience, 20*(23), 8916–8924. https://doi.org/10.1523/JNEUROSCI.20-23-08916.2000 – Übertragung gelernter Skalierung
+- Leigh, R. J., & Zee, D. S. (2015). *The neurology of eye movements* (5. Aufl.). Oxford University Press. https://doi.org/10.1093/med/9780199969289.001.0001 – Sakkadensteuerung (Buch)
+- Liu, S., Claypool, M., Kuwahara, A., Sherman, J., & Scovell, J. J. (2021). Lower is better? The effects of local latencies on competitive first-person shooter game players. In *Proceedings of CHI '21* (S. 1–12). ACM. https://doi.org/10.1145/3411764.3445245 – Latenz
+- Munoz, D. P., Broughton, J. R., Goldring, J. E., & Armstrong, I. T. (1998). Age-related performance of human subjects on saccadic eye movement tasks. *Experimental Brain Research, 121*(4), 391–400. https://doi.org/10.1007/s002210050473 – Sakkaden im Alter
+- Parhi, P., Karlson, A. K., & Bederson, B. B. (2006). Target size study for one-handed thumb use on small touchscreen devices. In *Proceedings of MobileHCI '06* (S. 203–210). ACM. https://doi.org/10.1145/1152215.1152260 – Touch-Zielgröße
+- Shadmehr, R., Smith, M. A., & Krakauer, J. W. (2010). Error correction, sensory prediction, and adaptation in motor control. *Annual Review of Neuroscience, 33*, 89–108. https://doi.org/10.1146/annurev-neuro-060909-153135 – Vorwärtsmodell
+- Sheppard, A. L., & Wolffsohn, J. S. (2018). Digital eye strain: Prevalence, measurement and amelioration. *BMJ Open Ophthalmology, 3*(1), e000146. https://doi.org/10.1136/bmjophth-2018-000146 – Bildschirmbeschwerden
+- Wolpert, D. M., Ghahramani, Z., & Jordan, M. I. (1995). An internal model for sensorimotor integration. *Science, 269*(5232), 1880–1882. https://doi.org/10.1126/science.7569931 – Vorwärtsmodell

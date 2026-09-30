@@ -141,7 +141,7 @@ erklärten „ballistischen Flick“ und „Reibungsbremsung“; das Training �
 - **Normtabelle ohne Datengrundlage und mit dem Code unvereinbar:** Die Seite sammelt nach eigener Aussage keine Daten;
   Woods et al. (2015) messen einfache Reaktionszeit, keine Normen für dieses Spiel. Stufen 1–3 (ab 9.500 Punkten) sind in
   45 s unerreichbar (Maximum ≈ 8.450); „6.000 Punkte – Level 3–5 – Warnzeit 1,10–1,25 s“ widerspricht der Levelformel
-  (6.000 Punkte ≙ Level > 25, Warnzeit 0,45 s).
+  (6.000 Punkte ≙ Level ≥ 25, Warnzeit 0,45 s).
 - **Parallele Entdeckung – teilweise:** Einzelmerkmale wie ein farbiger Rahmen werden parallel entdeckt (Treisman &
   Gelade, 1980). Gesucht ist aber das Feld **ohne** Markierung, und Merkmalsabwesenheit wird weniger effizient gefunden
   (Suchasymmetrie; Treisman & Souther, 1985). Die Warnung ist ein Farb-/Helligkeitsreiz mit ≈ 2-Hz-Pulsieren, aber kein Bewegungsreiz.
@@ -186,7 +186,7 @@ erklärten „ballistischen Flick“ und „Reibungsbremsung“; das Training �
 
 ## 6. Motorische Grundlagen
 
-- **Zielbewegung:** Nachbarfeld ≈ 1 bit, Diagonale ≈ 2 bit (Fitts, 1954; Zielbreite = Zellbreite) – schnell, wenig
+- **Zielbewegung:** Nachbarfeld ≈ 1 bit (diagonal ≈ 1–1,5 bit), über zwei Felder hinweg ≈ 2 bit (Fitts, 1954; ID = log₂(2D/W), Zielbreite = Zellbreite, Weg von Zellmitte zu Zellmitte; eigene Rechnung) – schnell, wenig
   präzise; Impuls + Korrektur (Elliott et al., 2001) zeigen sich vor allem nahe den Zellgrenzen.
 - **Zeitbudget bei 0,45 s:** Schon die einfache Reaktionszeit liegt bei ≈ 213–231 ms (Woods et al., 2015); dazu kommen
   Entscheidung und Bewegung. Erfolgreich ist „stehen bleiben, wenn frei; sonst nächstes freies Feld“.
