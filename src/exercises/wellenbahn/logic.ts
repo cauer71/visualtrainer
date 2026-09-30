@@ -10,7 +10,6 @@
  */
 import {
   approach,
-  ArcTable,
   type Bounds,
   clampWidth,
   pingPong01,
@@ -41,9 +40,9 @@ export function wavePoint(x: number, width: number, amp: number, waves: number):
 }
 
 export class WaveTrack implements PursuitTrack {
-  private table: ArcTable = new ArcTable([{ x: 0, y: 0 }], false);
+  private pts: Point[] = [];
+  /** Phase eines Hin-und-zurück-Zyklus (Position in x, nicht Bogenlänge – springt bei Formänderung nie) */
   private phase = 0;
-  private dir: 1 | -1 = 1;
   private width = 100;
   private left = 0;
   private cy = 0;
@@ -65,16 +64,14 @@ export class WaveTrack implements PursuitTrack {
     this.left = (area.minX + area.maxX) / 2 - this.width / 2;
     this.cy = (area.minY + area.maxY) / 2;
     this.halfH = Math.max(2, (area.maxY - area.minY) / 2);
-    this.amp = this.targetAmp();
-    this.waves = wavesFor(this.level);
-    this.rebuild();
+    this.snap();
   }
 
   setLevel(level: number): void {
     this.level = level;
   }
 
-  /** Form sofort auf die Stufe setzen (Start) */
+  /** Form sofort auf die Stufe setzen (Start, Größenänderung) */
   snap(): void {
     this.amp = this.targetAmp();
     this.waves = wavesFor(this.level);
@@ -83,8 +80,8 @@ export class WaveTrack implements PursuitTrack {
 
   begin(r: number, dir: 1 | -1): void {
     // Start nahe dem linken oder rechten Ende, dann geht es in Laufrichtung los
-    this.phase = dir === 1 ? (r - Math.floor(r)) * 0.25 : 0.5 + (r - Math.floor(r)) * 0.25;
-    this.dir = 1;
+    const k = r - Math.floor(r);
+    this.phase = dir === 1 ? k * 0.25 : 0.5 + k * 0.25;
     this.snap();
   }
 
@@ -94,10 +91,19 @@ export class WaveTrack implements PursuitTrack {
     if (Math.abs(target - this.amp) > 1e-4 || Math.abs(wantWaves - this.waves) > 1e-5) {
       this.amp = approach(this.amp, target, dt, MORPH_TAU);
       this.waves = approach(this.waves, wantWaves, dt, MORPH_TAU);
-      this.rebuild();
+      this.rebuildOutline();
     }
-    const cycle = pingPongCycle(this.table.length, TURN_FRACTION);
-    if (cycle > 0) this.phase += (this.dir * speed * dt) / cycle;
+    // Tempo entlang der Kurve konstant: x-Tempo = v · g' / √(1 + y'²) (Mittelpunktsverfahren)
+    const cycle = pingPongCycle(this.width, TURN_FRACTION);
+    const rate = (ph: number): number => {
+      const pp = pingPong01(ph, TURN_FRACTION);
+      const x = pp.pos * this.width;
+      const slope = ((this.amp * 2 * Math.PI * this.waves) / this.width) * Math.cos((2 * Math.PI * this.waves * x) / this.width);
+      return 1 / (cycle * Math.sqrt(1 + slope * slope));
+    };
+    const k1 = rate(this.phase);
+    const k2 = rate(this.phase + 0.5 * speed * dt * k1);
+    this.phase += speed * dt * k2;
     this.phase -= Math.floor(this.phase);
     this.place();
   }
@@ -107,7 +113,7 @@ export class WaveTrack implements PursuitTrack {
   }
 
   outline(): readonly Point[] {
-    return this.table.points;
+    return this.pts;
   }
 
   private targetAmp(): number {
@@ -115,18 +121,23 @@ export class WaveTrack implements PursuitTrack {
   }
 
   private rebuild(): void {
+    this.rebuildOutline();
+    this.place();
+  }
+
+  private rebuildOutline(): void {
     const pts: Point[] = [];
     for (let i = 0; i <= SAMPLES; i++) {
       const x = (i / SAMPLES) * this.width;
       pts.push({ x: this.left + x, y: this.cy + wavePoint(x, this.width, this.amp, this.waves) });
     }
-    this.table = new ArcTable(pts, false);
-    this.place();
+    this.pts = pts;
   }
 
   private place(): void {
     const pp = pingPong01(this.phase, TURN_FRACTION);
     this.speedNow = pp.speed;
-    this.current = this.table.at(pp.pos * this.table.length);
+    const x = pp.pos * this.width;
+    this.current = { x: this.left + x, y: this.cy + wavePoint(x, this.width, this.amp, this.waves) };
   }
 }

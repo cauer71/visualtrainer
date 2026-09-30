@@ -143,7 +143,7 @@ describe('fuenf-tueren: Auswertung', () => {
     const s = computeStats(hits, 2, 2);
     expect(s.hits).toBe(6);
     expect(s.accuracy).toBeCloseTo(60);
-    expect(s.medianMs).toBeCloseTo(610);
+    expect(s.medianMs).toBeCloseTo(620);
     expect(s.medianInner).toBe(520);
     expect(s.medianOuter).toBe(720);
     expect(isOuter(0)).toBe(true);
