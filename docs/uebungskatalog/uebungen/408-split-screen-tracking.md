@@ -73,7 +73,7 @@ belastung:
 
 # ===== Auswahlhilfe =====
 voraussetzungen: ["Bildschirm im Querformat, möglichst groß, Abstand 50–70 cm (Tablet 40 cm, Ständer), Kopf ruhig und mittig", "beide Bildschirmhälften müssen gleichzeitig im Gesichtsfeld sein (Ziele bis ≈ 17° links und ≈ 22° rechts der Mitte am 24″-Monitor)", "Bereitschaft, 30–120 s ohne Rückmeldung konzentriert zu bleiben", "Maus oder Finger nur zum Starten"]
-vorsicht_bei: [presbyopie_gleitsicht, gesichtsfeldausfall, nystagmus, schwindel_vestibulaer, trockenes_auge_bildschirm, kopfschmerz_asthenopie, aufmerksamkeitsprobleme, kognitive_einschraenkung, kinder_unter_6]
+vorsicht_bei: [presbyopie_gleitsicht, gesichtsfeldausfall, farbsehschwaeche, nystagmus, schwindel_vestibulaer, reisekrankheit, trockenes_auge_bildschirm, kopfschmerz_asthenopie, aufmerksamkeitsprobleme, kognitive_einschraenkung, kinder_unter_6]
 geeignet_fuer: ["ruhiges Hinschauen zur Mitte bei gleichzeitigem Wahrnehmen von Bewegung links und rechts erleben (verdeckte Aufmerksamkeit, 'aus dem Augenwinkel')", "Einstieg in Aufgaben mit geteilter Aufmerksamkeit ohne Hand- und Reaktionsdruck, vor 106 (Mehrfach-Objektverfolgung) oder 205/206", "kurze Augenübung ohne Blitzreize bei langsamem Tempo (0,5–2×)"]
 weniger_geeignet_fuer: ["alle, die Rückmeldung oder einen Leistungswert erwarten (das Original misst nichts)", "Ziel Blickfolge (dafür 402–404) oder Hand-Auge-Koordination (104, 305)", "Menschen mit bekanntem Gesichtsfeldausfall einer Seite (eine Hälfte ist dann kaum wahrnehmbar – Übung frustriert, keine Aussage über Ursache)", "kleine Smartphone-Bildschirme (beide Ziele liegen dann fast zentral, die Aufgabe verliert ihren Kern)"]
 evidenz:
@@ -81,7 +81,7 @@ evidenz:
   naher_transfer: schwach
   alltag_transfer: fehlend
   kommentar: "Mehrfach-Objektverfolgung mit Ablenkern ist gut übbar (Vater et al., 2021), diese Übung hat aber weder Ablenker noch Aufgabe noch Messung; Transfer von MOT-Training auf ungeübte Aufgaben und Sport ist schwach (Vater et al., 2021; Harenberg et al., 2022), Videospiel-Metaanalysen sind uneinheitlich (Bediou et al., 2018; Sala et al., 2018)."
-aehnliche_uebungen: [106, 205, 206, 401, 108, 801, 403, 404, 411, 409, 305]
+aehnliche_uebungen: [106, 205, 206, 401, 108, 801]
 stichworte: ["geteilte Aufmerksamkeit", "divided attention", "verdeckte Aufmerksamkeit", "covert attention", "Multiple Object Tracking", "MOT", "Halbfeld-Vorteil", "bilateral field advantage", "peripheres Sehen", "Blickanker", "zentrale Fixation", "Split-Screen"]
 ---
 
@@ -168,8 +168,8 @@ misst weder Blick noch Wahrnehmung, keine Quelle enthält Tempostufen, Seitendif
 - **Gleitsicht/Arbeitsplatz:** Der klare Zwischenbereich war bei zwei untersuchten Gleitsicht-Designs in 60 cm nur
   ≈ 13–18° breit; Augen- und Kopfbewegungen dauerten länger als mit Einstärkengläsern (Han et al., 2003). Beim Mittelblick sieht man die Ziele durch die seitlichen Unschärfezonen –
   für einen großen Punkt vermutlich unkritisch (nicht untersucht); wer hinspringt, blickt 12–22° zur Seite und beim
-  linken Ziel in Fern- bzw. Nahteil. Bildschirmbrille oder kleineres Bild günstiger, Monitor mittig.
-- **Trockenes Auge:** Am Bildschirm ≈ 11,6 Lidschläge/min, viele unvollständig (Portello et al., 2013); Starren zur Mitte
+  linken Ziel in Fern- bzw. Nahteil. Arbeitsplatzbrille oder kleineres Bild günstiger, Monitor mittig.
+- **Trockenes Auge:** Beim Lesen am Bildschirm ≈ 11,6 Lidschläge/min, davon im Mittel 16 % unvollständig (Portello et al., 2013); Starren zur Mitte
   kann das verstärken → kurze Durchgänge, blinzeln. Farbe trägt keine Information; bei Rot-Schwäche (Protan-Typ)
   wirkt der Standard-Rotpunkt auf Schwarz dunkler → hellere Farbe wählen (eigene Einschätzung, nicht untersucht).
 
@@ -195,7 +195,9 @@ Müdigkeit und Konzentration wirken mit; Seitenunterschiede sind (Pseudoneglect,
 ## 8. Studienlage: Trainierbarkeit und Übertragung
 
 - **Übungseffekt – unklar:** MOT-Aufgaben mit Ablenkern werden durch Üben deutlich besser (Vater et al., 2021); hier
-  gibt es weder definierte Leistung noch Rückmeldung – eine Verbesserung ist weder messbar noch untersucht.
+  gibt es weder definierte Leistung noch Rückmeldung – eine Verbesserung ist weder messbar noch untersucht. Anders als
+  bei den Blickfolge-Übungen 402–406 (deren Laborvorbilder dieselbe Tätigkeit auch ohne Rückmeldung untersuchten) fehlt
+  ein passendes Laborvorbild: MOT-Studien arbeiten mit Ablenkern und Antwort.
 - **Naher Transfer – schwach:** In einer randomisierten Studie (N = 31) stieg die MOT-Leistung stark (ηp² = 0,43),
   Entscheidungen und naher Transfer nicht (Harenberg et al., 2022); von 16 Neurotracker-Interventionsstudien war keine
   präregistriert (Vater et al., 2021). Videospiel-Metaanalysen: kleine (Interventionen g = 0,34, Publikationsbias, nachträgliches Erratum; Bediou et
@@ -208,13 +210,19 @@ Müdigkeit und Konzentration wirken mit; Seitenunterschiede sind (Pseudoneglect,
   (0,5–2×, Linien sichtbar) vor 106 oder 205/206; ohne Hand- und Reaktionsaufgabe.
 - **Weniger passend, wenn …** Rückmeldung gewünscht ist; Blickfolge, Reaktion oder Lesen das Ziel sind; nur ein
   Smartphone vorhanden ist.
-- **Vorsicht / anpassen bei …** `presbyopie_gleitsicht` (Unschärfezonen beim Hinschauen → Bildschirmbrille, kleineres
+- **Vorsicht / anpassen bei …** `presbyopie_gleitsicht` (Unschärfezonen beim Hinschauen → Arbeitsplatzbrille, kleineres
   Bild, Kopf erlauben); `gesichtsfeldausfall` (eine Hälfte kaum sichtbar; wer ein Ziel dauerhaft nicht bemerkt, sollte
-  das fachlich abklären lassen statt es als Trainingsrückstand zu deuten); `nystagmus` (ruhiger Blick erschwert);
-  `schwindel_vestibulaer` (Dauerbewegung beidseits, bei Unwohlsein abbrechen); `trockenes_auge_bildschirm`,
+  das fachlich abklären lassen statt es als Trainingsrückstand zu deuten); `farbsehschwaeche` (Standard-Rot wirkt bei
+  Protan-Typ dunkler und in der Peripherie weniger auffällig → Weiß oder Gelb wählen, wie bei 401); `nystagmus` (ruhiger
+  Blick erschwert); `schwindel_vestibulaer`, `reisekrankheit` (Dauerbewegung beidseits, zwar kleine Ziele, aber bei
+  Unwohlsein abbrechen); `trockenes_auge_bildschirm`,
   `kopfschmerz_asthenopie` (Starren → kurz, Pausen); `aufmerksamkeitsprobleme`, `kognitive_einschraenkung`
   (Doppelaufgabe ohne Rückmeldung); `kinder_unter_6` („nicht hinschauen“ kaum umsetzbar).
-- **Kombiniert gut mit …** 401 (Peripherie bei Fixation), 106 (MOT), 205/206 (Doppelaufgaben mit Messung), 108, 403/404.
+- **Kombiniert gut mit …** 401 (Peripherie bei Fixation), 106 (MOT), 205/206 (Doppelaufgaben mit Messung), 108, 403/404
+  (Gegenstück: echte Blickfolge – nicht ähnlich, daher nicht unter `aehnliche_uebungen`).
+- **Abgrenzung in der Gruppe:** 401 ist die nächste Verwandte, aber keine Dublette – dort ruht die Mitte (Fixierkreuz)
+  und kurze Randreize tauchen überall plötzlich auf, hier bewegen sich zwei dauerhaft sichtbare Ziele langsam in
+  festen Bahnen links und rechts. Beide haben im Original keine Antwort und keine Messung.
 
 ## 10. Schwächen des Originals und Empfehlungen für eine Blickfit-Umsetzung
 

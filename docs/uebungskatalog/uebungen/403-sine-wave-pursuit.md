@@ -31,7 +31,7 @@ anforderungsprofil:
     nutzbares_sehfeld: 0
     blickfolge: 3
     sakkaden: 1
-    fixation: 1
+    fixation: 0
     bewegungswahrnehmung: 2
     visuelle_suche: 0
     visuelle_verarbeitungsgeschwindigkeit: 0
@@ -72,7 +72,7 @@ belastung:
   sprachabhaengigkeit: 0
 
 # ===== Auswahlhilfe =====
-voraussetzungen: ["Bildschirm oder Tablet auf fester Unterlage, Abstand 40–70 cm, Kopf möglichst ruhig", "Scharfes Sehen im Zwischenbereich über die ganze Bildbreite und ±8° nach oben/unten (Bildschirmbrille oder Einstärkenglas günstiger als Gleitsicht)", "Maus oder Finger nur zum Starten; während der Übung keine Eingabe nötig", "Bereitschaft, ohne Rückmeldung 30–120 s konzentriert zu folgen"]
+voraussetzungen: ["Bildschirm oder Tablet auf fester Unterlage, Abstand 40–70 cm, Kopf möglichst ruhig", "Scharfes Sehen im Zwischenbereich über die ganze Bildbreite und ±8° nach oben/unten (Arbeitsplatzbrille oder Einstärkenglas günstiger als Gleitsicht)", "Maus oder Finger nur zum Starten; während der Übung keine Eingabe nötig", "Bereitschaft, ohne Rückmeldung 30–120 s konzentriert zu folgen"]
 vorsicht_bei: [presbyopie_gleitsicht, schwindel_vestibulaer, reisekrankheit, nystagmus, schielen_binokular, trockenes_auge_bildschirm, kopfschmerz_asthenopie, kinder_unter_6]
 geeignet_fuer: ["glatte Blickfolge mit ständig wechselndem Tempo und senkrechter Komponente üben (Auf-ab-Folge ist schwerer als waagrechte)", "vorhersagbare, periodische Bewegung: Einstieg in 'vorausschauendes' Folgen bei 0,5–1× (Schwingung 0,26–0,53 Hz)", "Selbstbeobachtung eigener Blicksprünge in der schnellen Wellenmitte und an den seitlichen Umkehrpunkten", "kurze Augenübung ohne Hand- oder Körpereinsatz, ohne Flackerreize"]
 weniger_geeignet_fuer: ["alle, die Rückmeldung oder einen Leistungswert erwarten (das Original misst nichts)", "Gleitsichtträger:innen am großen Monitor (Bahn ≈ 43° breit und ≈ 16° hoch, weit über den scharfen Zwischenbereich hinaus)", "Tempo ab 2× für Ungeübte und Ältere (Schwingung ≥ 1 Hz, Spitzentempo ≥ 50°/s: nahe der Grenze glatter Sinusfolge von ≈ 1,2 Hz, zunehmend Aufholsakkaden)", "Ziel Reaktion, Hand-Zielgenauigkeit, Peripherie oder 'Bildschirmmüdigkeit vorbeugen' (nicht gefordert bzw. nicht belegt)"]
@@ -210,8 +210,13 @@ Keine Handbewegung gefordert (ein mitgeführter Zeiger wird nicht bewertet); das
   langsam beginnen, bei Übelkeit abbrechen); `nystagmus`, `schielen_binokular` (Folge oft verändert –
   keine Rückschlüsse); `trockenes_auge_bildschirm`, `kopfschmerz_asthenopie` (seltener Lidschlag → kurz, Pausen);
   `kinder_unter_6` (Folgebewegung reift bis ins Jugendalter).
-- **Kombiniert gut mit …** 404 (langsam, gleichmäßig), 402 (Acht), 405/406 (Richtungswechsel), 413 (Zickzack mit
-  Höhenwechsel), 407 (Vorhersage ohne Sicht), 105 (Mitführen mit dem Zeiger, mit Wertung), 515 (senkrechtes Mitführen mit der Maus).
+- **Kombiniert gut mit …** 404 (langsame 2D-Folge), 402 (Acht), 405/406 (Richtungswechsel), 413 (Zickzack mit
+  Höhenwechsel), 407 (Blicksprung auf ein abbremsendes Ziel – keine Verdeckung), 105 (Mitführen mit dem Zeiger, mit
+  Wertung), 515 (senkrechtes Mitführen mit der Maus).
+- **Fast gleich (Dubletten in der Gruppe):** 402 und 404 haben denselben Aufbau – ein Leuchtpunkt, gleiche Einstellungen,
+  nur Augenfolge, keine Eingabe, keine Messung; es unterscheidet sich nur die Bahn: 403 waagrechter Lauf mit senkrechter
+  Welle (0,53 Hz bei 1×) und hartem Knick am Rand, 402 flache, überwiegend waagrechte Acht, 404 große 2D-Lissajous-Figur.
+  Für eine Auswahl genügt meist eine davon; 403 ist die mit dem höchsten Spitzentempo (≈ 27°/s bei 1× am Monitor).
 
 ## 10. Schwächen des Originals und Empfehlungen für eine Blickfit-Umsetzung
 

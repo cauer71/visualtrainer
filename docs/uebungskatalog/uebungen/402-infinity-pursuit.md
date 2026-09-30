@@ -31,7 +31,7 @@ anforderungsprofil:
     nutzbares_sehfeld: 0
     blickfolge: 3
     sakkaden: 1
-    fixation: 1
+    fixation: 0
     bewegungswahrnehmung: 2
     visuelle_suche: 0
     visuelle_verarbeitungsgeschwindigkeit: 0
@@ -72,7 +72,7 @@ belastung:
   sprachabhaengigkeit: 0
 
 # ===== Auswahlhilfe =====
-voraussetzungen: ["Bildschirm oder Tablet auf fester Unterlage, Abstand 40–70 cm, Kopf möglichst ruhig", "Scharfes Sehen im Zwischenbereich über die ganze Bildbreite (Bildschirmbrille oder Einstärkenglas günstiger als Gleitsicht)", "Maus oder Finger nur zum Starten; während der Übung keine Eingabe nötig", "Bereitschaft, ohne Rückmeldung 30–120 s konzentriert zu folgen"]
+voraussetzungen: ["Bildschirm oder Tablet auf fester Unterlage, Abstand 40–70 cm, Kopf möglichst ruhig", "Scharfes Sehen im Zwischenbereich über die ganze Bildbreite (Arbeitsplatzbrille oder Einstärkenglas günstiger als Gleitsicht)", "Maus oder Finger nur zum Starten; während der Übung keine Eingabe nötig", "Bereitschaft, ohne Rückmeldung 30–120 s konzentriert zu folgen"]
 vorsicht_bei: [presbyopie_gleitsicht, schwindel_vestibulaer, reisekrankheit, nystagmus, schielen_binokular, trockenes_auge_bildschirm, kopfschmerz_asthenopie, lese_rechtschreib_schwaeche, kinder_unter_6]
 geeignet_fuer: ["glatte Blickfolge an einer gleichmäßigen, vorhersagbaren Kurve üben (vor allem waagrecht, mit leichter senkrechter Komponente)", "ruhiger Einstieg in Blickfolge-Übungen bei 0,5–2× (≈ 5–20°/s am Monitor)", "Wahrnehmen eigener Blicksprünge an Wendepunkten und Kreuzung (Selbstbeobachtung)", "kurze Augenübung ohne Hand- oder Körpereinsatz, ohne Flackerreize"]
 weniger_geeignet_fuer: ["alle, die Rückmeldung oder einen Leistungswert erwarten (das Original misst nichts)", "Gleitsichtträger:innen am großen Monitor (Bahn ≈ 35° breit, weit über den scharfen Zwischenbereich hinaus)", "Ziel 'Lesen verbessern' oder Unterstützung bei Legasthenie (nicht belegt, s. Abschnitt 3)", "Ziel Reaktion, Hand-Zielgenauigkeit oder Peripherie (nicht gefordert)", "Tempo ab ≈ 5× für Ungeübte und Ältere (Übergang in überwiegend sakkadisches Verfolgen)"]
@@ -81,7 +81,7 @@ evidenz:
   naher_transfer: schwach
   alltag_transfer: fehlend
   kommentar: "Vorhersagbare Zielbahnen werden im Labor innerhalb von Minuten besser verfolgt (McHugh & Bahill, 1985), kurzes Pursuit-Training wirkte einige Tage nach (Eibenberger et al., 2012) – beides mit Eyetracker und nicht mit dieser Übung; ein Nutzen für Lesen oder Lernstörungen ist ausdrücklich nicht belegt (Handler & Fierson, 2011), ein Alltagstransfer wurde nie untersucht."
-aehnliche_uebungen: [403, 404, 405, 406, 407, 105, 514, 409, 413, 707, 104, 810]
+aehnliche_uebungen: [403, 404, 405, 406, 407, 105, 514, 409, 413, 707, 104]
 stichworte: ["liegende Acht", "Lemniskate", "Figure-8", "Lazy 8", "smooth pursuit", "glatte Blickfolge", "prädiktive Blickfolge", "Aufholsakkaden", "Mittellinie", "2D-Blickfolge", "Zwei-Drittel-Gesetz"]
 ---
 
@@ -177,9 +177,9 @@ Positiv: mehrfach „kein Test, keine Diagnose“, für Sport und Spiele ausdrü
   Tempi niedriger, besonders bei hohem Tempo (Moschner & Baloh, 1994) → 0,5–1× wählen.
 - **Gleitsicht/Arbeitsplatz:** Der scharfe Zwischenbereich ist bei 60 cm nur ≈ 13–18° breit; beim Lesen am Bildschirm
   dauerten mit Gleitsicht Kopfbewegungen länger und der Blick stabilisierte sich später (11 Presbyope; Han et al., 2003). Die 35° breite Bahn läuft in die seitlichen Unschärfezonen – „Kopf
-  absolut ruhig“ passt für sie nicht. Besser: Bildschirmbrille, kleineres Gerät oder mehr Abstand, Kopf mitbewegen.
+  absolut ruhig“ passt für sie nicht. Besser: Arbeitsplatzbrille, kleineres Gerät oder mehr Abstand, Kopf mitbewegen.
 - **Nähe, Auge, Farbe:** In 40 cm (Tablet) ≈ 2,5 dpt Akkommodation bzw. Nahkorrektur nötig. Am Bildschirm sinkt die
-  Lidschlagrate (≈ 11,6/min, viele unvollständige Lidschläge; Portello et al., 2013) – bei trockenem Auge kurz üben.
+  Lidschlagrate (beim Lesen am Bildschirm ≈ 11,6/min, davon im Mittel 16 % unvollständig; Portello et al., 2013) – bei trockenem Auge kurz üben.
   Farbe spielt keine Rolle.
 
 ## 5. Neurowissenschaftliche Grundlagen
@@ -222,12 +222,18 @@ bei vorhersagbaren Zielen (Koken & Erkelens, 1992) – das Fadenkreuz wird aber 
 - **Weniger passend, wenn …** Rückmeldung gewünscht ist; Reaktion, Peripherie oder Handgenauigkeit das Ziel sind;
   „besser lesen“ erwartet wird.
 - **Vorsicht / anpassen bei …** `presbyopie_gleitsicht` (breite Bahn durch Unschärfezonen → Kopf mitbewegen,
-  Bildschirmbrille, kleineres Feld); `schwindel_vestibulaer`, `reisekrankheit` (bewegte Reize, bei hohem Tempo Unwohlsein möglich; langsam beginnen, bei Übelkeit
+  Arbeitsplatzbrille, kleineres Feld); `schwindel_vestibulaer`, `reisekrankheit` (bewegte Reize, bei hohem Tempo Unwohlsein möglich; langsam beginnen, bei Übelkeit
   abbrechen); `nystagmus`, `schielen_binokular` (Folge oft verändert, Doppelbilder möglich – keine Rückschlüsse);
   `trockenes_auge_bildschirm`, `kopfschmerz_asthenopie` (seltener Lidschlag → kurz, Pausen); `lese_rechtschreib_schwaeche`
   (nicht als Lesehilfe vorschlagen); `kinder_unter_6` (Folgebewegung reift bis ins Jugendalter, keine Rückmeldung).
-- **Kombiniert gut mit …** 404 (langsame gleichmäßige Folge), 403 (Sinus), 405/406 (Richtungswechsel), 407/409
-  (Vorhersage ohne Sicht), 105 (Details am bewegten Ziel), 707 (Pfad mit der Maus nachfahren).
+- **Kombiniert gut mit …** 404 (langsame 2D-Folge), 403 (Sinus), 405/406 (Richtungswechsel), 409 (Folgen während
+  echter Dunkelphasen), 407 (Blicksprung auf ein abbremsendes Ziel – keine Verdeckung), 105 (Details am bewegten Ziel),
+  707 (Pfad mit der Maus nachfahren).
+- **Fast gleich (Dubletten in der Gruppe):** 403 und 404 haben denselben Aufbau – ein Leuchtpunkt, gleiche Einstellungen,
+  nur Augenfolge, keine Eingabe, keine Messung; es unterscheidet sich nur die Bahn: 402 flache, überwiegend waagrechte
+  Acht (am Monitor ≈ 35° × 7°), 403 waagrechter Lauf mit senkrechter Welle und hartem Knick am Rand, 404 große
+  2D-Lissajous-Figur mit dem größten senkrechten Anteil. Für eine Auswahl genügt meist eine davon; Abwechslung nur über
+  die Bahnform.
 
 ## 10. Schwächen des Originals und Empfehlungen für eine Blickfit-Umsetzung
 

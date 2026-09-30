@@ -72,7 +72,7 @@ belastung:
   sprachabhaengigkeit: 0
 
 # ===== Auswahlhilfe =====
-voraussetzungen: ["Bildschirm oder Tablet (quer) auf fester Unterlage, Abstand 40–70 cm, Kopf möglichst ruhig", "Scharfes Sehen im Zwischenbereich über fast die ganze Bildbreite (Monitor ≈ 48° × 17°) – Bildschirmbrille oder Einstärkenglas günstiger als Gleitsicht", "Maus oder Finger nur zum Starten; Mitführen des Fadenkreuzes freiwillig und ohne Wertung", "Bereitschaft, ohne Rückmeldung 30–120 s konzentriert mitzugehen"]
+voraussetzungen: ["Bildschirm oder Tablet (quer) auf fester Unterlage, Abstand 40–70 cm, Kopf möglichst ruhig", "Scharfes Sehen im Zwischenbereich über fast die ganze Bildbreite (Monitor ≈ 48° × 17°) – Arbeitsplatzbrille oder Einstärkenglas günstiger als Gleitsicht", "Maus oder Finger nur zum Starten; Mitführen des Fadenkreuzes freiwillig und ohne Wertung", "Bereitschaft, ohne Rückmeldung 30–120 s konzentriert mitzugehen"]
 vorsicht_bei: [presbyopie_gleitsicht, schwindel_vestibulaer, reisekrankheit, nystagmus, schielen_binokular, trockenes_auge_bildschirm, kopfschmerz_asthenopie, kinder_unter_6]
 geeignet_fuer: ["Blicksprünge auf ein sich bewegendes, abbremsendes Ziel mit anschließendem kurzem Nachfolgen üben", "Vorausschauendes Zielen mit dem Blick: Landepunkt aus Richtung und Anfangstempo schätzen (mit ausgeblendeter Linie)", "Steigerung nach 303 (ruhende Sprungziele) und vor 414/409 (Sprünge bzw. Dunkelphasen während laufender Bewegung)", "kurze Augenübung ohne Blitzreize und ohne Hand- oder Körpereinsatz"]
 weniger_geeignet_fuer: ["alle, die Rückmeldung oder einen Leistungswert erwarten (das Original misst nichts)", "Ziel 'Verfolgen hinter einer Verdeckung' – das Original verdeckt nie; dafür 409", "Ziel glatte, lange Blickfolge (Bewegungen dauern < 1 s und beginnen ruckartig; dafür 402–404)", "Gleitsichtträger:innen am großen Monitor (Landepunkte über fast die ganze Bildbreite, oben/unten in Fern- und Nahteil)", "Tempo ab ≈ 3× (Ziel hat ≈ 80 % der Strecke hinter sich, bevor der Blick startet – fast reine Reaktionssprünge, ruckendes Bild)"]
@@ -81,7 +81,7 @@ evidenz:
   naher_transfer: fehlend
   alltag_transfer: fehlend
   kommentar: "Blicksprünge auf bewegte Ziele berücksichtigen Position und Tempo des Ziels (de Brouwer et al., 2002b), und vorhersagbare Bewegungsabläufe werden im Labor rasch gelernt (Barnes, 2008; Kowler et al., 2019) – plausibel ist daher eine Gewöhnung an die feste Abbremsdynamik; untersucht ist diese Aufgabe nicht, die zitierten Verdeckungs-Lernstudien (Madelain & Krauzlis, 2003) betreffen einen anderen Reiz, und ein Nutzen für Sport, E-Sport oder Alltag ist nicht belegt."
-aehnliche_uebungen: [409, 414, 303, 410, 411, 415, 406, 403, 404, 105, 104, 501, 508]
+aehnliche_uebungen: [409, 414, 303, 410, 411, 415, 405, 406, 402, 403, 404, 105, 104, 501, 508]
 stichworte: ["Landepunkt", "Vorhersage", "prädiktive Sakkade", "Aufholsakkade", "catch-up saccade", "abbremsendes Ziel", "Blicksprung auf bewegtes Ziel", "Antizipation", "Verdeckung (nur im Seitentext)", "smooth pursuit", "Vorhaltemaß"]
 ---
 
@@ -175,7 +175,7 @@ Vorhersage (Woods et al., 2015); Vorwärtsmodelle blieben im Alter „hochgradig
 - **Gleitsicht/Arbeitsplatz:** Landepunkte über ≈ 48° × 17° (Monitor, 60 cm); der scharfe Bereich der zwei
   untersuchten Gleitsichtgläser war in 60 cm nur ≈ 13–18° breit (Einstärkenglas ≈ 60°); Blick und Kopf brauchten
   damit länger, bis das Bild ruhig stand (Han et al., 2003, n = 11). Punkte oben
-  fallen Richtung Fernteil, unten Richtung Nahteil – Bildschirmbrille, kleineres Feld, Kopfbewegung zulassen; Tablet in
+  fallen Richtung Fernteil, unten Richtung Nahteil – Arbeitsplatzbrille, kleineres Feld, Kopfbewegung zulassen; Tablet in
   40 cm ≈ 2,5 dpt. **Trockenes Auge:** ≈ 11,6 Lidschläge/min beim Lesen am Bildschirm, im Mittel 16 % unvollständig (Portello et al., 2013)
   → Ruhephasen zum Blinzeln nutzen. **Alter:** Folge lässt nach, Vorhersage bleibt (Sprenger et al., 2011) → 0,5–1×.
 
@@ -213,12 +213,15 @@ Genauigkeit von den Augenbewegungen mitbestimmt wird (Fooken et al., 2021) – f
 - **Weniger passend, wenn …** Verdeckung (→ 409), lange glatte Folge (→ 402–404), Rückmeldung oder Handgenauigkeit
   (→ 501, 104) gesucht sind.
 - **Vorsicht / anpassen bei …** `presbyopie_gleitsicht` (Landepunkte in Fern-, Nah- und seitlichen Unschärfezonen →
-  Bildschirmbrille, kleineres Feld, Kopf mitbewegen); `schwindel_vestibulaer`, `reisekrankheit` (ruckartige Bewegungsstarts über fast die ganze Bildbreite; langsam
+  Arbeitsplatzbrille, kleineres Feld, Kopf mitbewegen); `schwindel_vestibulaer`, `reisekrankheit` (ruckartige Bewegungsstarts über fast die ganze Bildbreite; langsam
   beginnen, kleineres Feld, bei Übelkeit abbrechen); `nystagmus`, `schielen_binokular` (Blicksprünge/Folge oft verändert – keine
   Rückschlüsse ziehen); `trockenes_auge_bildschirm`, `kopfschmerz_asthenopie` (Pausen, blinzeln); `kinder_unter_6`
   (Folgebewegung reift bis ins Jugendalter; Katsanis et al., 1998).
 - **Kombiniert gut mit …** 303 (Sprungziele), 414 (Sprung während der Bewegung), 409 (echte Dunkelphasen), 410/415
   (unvorhersehbare Richtungswechsel), 105 (Details am bewegten Ziel).
+- **Abgrenzung in der Gruppe:** keine Dublette. Gleicher Aufbau wie 402–406 (ein Leuchtpunkt, gleiche Einstellungen,
+  keine Messung), aber als einzige Übung der Gruppe mit ruckartigem Bewegungsstart und Ruhephase – gefordert sind vor
+  allem Blicksprünge, nicht lange glatte Folge. Trotz des Originaltitels gibt es keine Verdeckung (dafür 409).
 
 ## 10. Schwächen des Originals und Empfehlungen für eine Blickfit-Umsetzung
 

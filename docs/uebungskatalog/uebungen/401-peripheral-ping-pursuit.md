@@ -73,7 +73,7 @@ belastung:
 
 # ===== Auswahlhilfe =====
 voraussetzungen: ["Blick ohne Kontrolle selbstständig in der Mitte halten können (nichts prüft das)", "Abstand 50–70 cm zum Monitor bzw. 35–40 cm zum Tablet, Kopf ruhig", "keine bekannte Photosensitivität (plötzliche rote Leuchtpunkte, bei hohem Tempo ≈ 3 pro Sekunde)", "Maus oder Finger nur zum Starten; die im Text genannte Leertaste hat keine Funktion"]
-vorsicht_bei: [photosensitive_epilepsie, migraene_lichtempfindlich, gesichtsfeldausfall, farbsehschwaeche, trockenes_auge_bildschirm, presbyopie_gleitsicht, nystagmus, aufmerksamkeitsprobleme, kinder_unter_6]
+vorsicht_bei: [photosensitive_epilepsie, migraene_lichtempfindlich, gesichtsfeldausfall, farbsehschwaeche, trockenes_auge_bildschirm, kopfschmerz_asthenopie, presbyopie_gleitsicht, nystagmus, aufmerksamkeitsprobleme, kinder_unter_6]
 geeignet_fuer: ["ruhiges Fixieren üben, ohne auf plötzlich erscheinende Reize zu blicken (verdeckte Aufmerksamkeit)", "Aufmerksamkeit bewusst auf den ganzen Bildschirm ausweiten, ohne Handlung und ohne Zeitdruck", "Einstieg vor anspruchsvolleren Mitte-und-Rand-Aufgaben (108 Blitzblick/UFOV, 205, 801)"]
 weniger_geeignet_fuer: ["alle, die Rückmeldung, Punkte oder Fortschritt erwarten (das Original misst nichts)", "Ziel 'Blickfolge' (entgegen dem Namen gibt es kein bewegtes zentrales Ziel)", "Ziel 'Reaktionszeit' (keine Antwort vorgesehen)", "Menschen mit Photosensitivität oder lichtempfindlicher Migräne", "Personen mit Gesichtsfeldausfall, die ein Ergebnis als Gesichtsfeldbefund missverstehen könnten"]
 evidenz:
@@ -81,7 +81,7 @@ evidenz:
   naher_transfer: schwach
   alltag_transfer: fehlend
   kommentar: "Das Original hat keine Antwort und keine Blickkontrolle, ein Lernfortschritt ist daher nicht feststellbar. UFOV-Training (Mitte + Rand, kurze Darbietung, Antwort, Rückmeldung) verbessert die geübte Leistung deutlich (Ball et al., 1988, 2002), ist aber ein anderes Protokoll; 93 Studien zu Peripherie-Trainingsgeräten im Sport prüften nie per Eyetracking, ob überhaupt peripher gesehen wurde (Vater & Strasburger, 2021)."
-aehnliche_uebungen: [108, 801, 205, 408, 101, 208, 102, 404, 303, 206]
+aehnliche_uebungen: [108, 801, 205, 408, 101, 208, 102, 303, 206]
 stichworte: ["peripheres Sehen", "verdeckte Aufmerksamkeit", "covert attention", "Fixation", "Blickfang", "oculomotor capture", "nutzbares Sehfeld", "UFOV", "Randreiz", "Tunnelblick"]
 ---
 
@@ -261,7 +261,9 @@ peripher gesehen wurde.
 
 ## 8. Studienlage: Trainierbarkeit und Übertragung
 
-- **Übungseffekt – unklar.** Ohne Antwort und Rückmeldung gibt es keine messbare Leistung. Verwandte Aufgaben mit
+- **Übungseffekt – unklar.** Ohne Antwort und Rückmeldung gibt es keine messbare Leistung. Anders als bei den
+  Blickfolge-Übungen 402–406, deren Laborvorbilder dieselbe Tätigkeit (einem Ziel mit den Augen folgen) auch ohne
+  Rückmeldung untersuchten, gibt es für bloßes Hinsehen ohne Antwort kein passendes Laborvorbild. Verwandte Aufgaben mit
   Mitte + Rand, kurzer Darbietung und Rückmeldung (UFOV) sind gut trainierbar: Ältere verbesserten das nutzbare
   Sehfeld durch Übung (Ball et al., 1988); in der ACTIVE-Studie (2 832 Personen, 65–94 Jahre, 10 betreute
   Sitzungen) verbesserten sich 87 % der Geschwindigkeitsgruppe verlässlich, ohne Effekt auf das
@@ -286,13 +288,17 @@ peripher gesehen wurde.
     ≤ 2×, kein „Day Mode“, bei Unwohlsein abbrechen.
   - `gesichtsfeldausfall`: Übung kann Ausfälle weder erkennen noch ausschließen; Ergebnisse nicht deuten.
   - `farbsehschwaeche`: Standard-Rot für Protan-Betroffene dunkler; Weiß/Gelb wählen.
-  - `trockenes_auge_bildschirm`: starres Fixieren, seltener Lidschlag; Pausen, blinzeln.
+  - `trockenes_auge_bildschirm`, `kopfschmerz_asthenopie`: starres Fixieren, seltener Lidschlag; kurze Durchgänge,
+    Pausen, blinzeln.
   - `presbyopie_gleitsicht`: Kreuz durch den Zwischenbereich fixieren, Arbeitsplatzbrille, Monitorhöhe.
   - `nystagmus`: ruhiges Fixieren kann erschwert sein; Übung eventuell frustrierend.
   - `aufmerksamkeitsprobleme`, `kinder_unter_6`: eintönige Aufgabe ohne Rückmeldung, Blick bleibt schwer in der
     Mitte.
 - **Kombiniert gut mit …** 108 (Mitte + Rand mit Antwort), 801 (Randreize mit Reaktion), 205/206 (echte
   Doppelaufgabe), 408 (zwei Ziele links/rechts), 404 (echte Blickfolge), 303 (Gegenstück: bewusste Blicksprünge).
+- **Abgrenzung in der Gruppe:** 408 ist die nächste Verwandte, aber keine Dublette – dort bewegen sich zwei
+  dauerhaft sichtbare Ziele langsam links und rechts (kein Fixierkreuz, keine plötzlichen Onsets), hier ruht die
+  Mitte und kurze Randreize tauchen überall auf. Beide haben im Original keine Antwort und keine Messung.
 
 Keine Diagnose, kein Heil- oder Sehversprechen: Die Übung prüft weder das Gesichtsfeld noch die Fahrtauglichkeit.
 

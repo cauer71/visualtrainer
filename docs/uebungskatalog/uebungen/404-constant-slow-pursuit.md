@@ -17,7 +17,7 @@ ziel_funktionen: [blickfolge]
 eingabe: [maus, touch]
 tablet_geeignet: mit_anpassung
 dauer_sekunden: 60
-schwierigkeit_anpassung: "Kein Levelsystem, keine automatische Anpassung. Manuell: Tempo 0,5–9× (Regler in 0,1-Schritten; 1× ≈ 10°/s im Mittel am 24″-Monitor in 60 cm, eine volle Figur in 28,6 s), Zielradius 10–50 px (Standard 16 px), 'Bahn ausblenden' (weniger Vorhersagehilfe), 'Zufallstempo' (Tempo schwankt zeitabhängig zwischen 0,4- und 1,9-fach). Dauer 30/45/60/90/120 s."
+schwierigkeit_anpassung: "Kein Levelsystem, keine automatische Anpassung. Manuell: Tempo 0,5–9× (Regler in 0,1-Schritten; 1× ≈ 10°/s im Mittel am 24″-Monitor in 60 cm, eine volle Figur in 28,6 s), Zielradius 10–50 px (Standard 16 px), 'Hide Line' (Bahn ausblenden; weniger Vorhersagehilfe), 'Random Speed' (Zufallstempo; Tempo schwankt zeitabhängig zwischen 0,4- und 1,9-fach). Dauer 30/45/60/90/120 s."
 messgroessen: ["Original: keine Leistungsmessung – 'Score' ist nur das gewählte Tempo, dazu ein Zähler abgeschlossener Sitzungen", "sinnvoll mit Eyetracker: Folge-Gain, Aufholsakkaden pro Minute, Positionsfehler in Grad", "Ersatz ohne Eyetracker: Zeiger-/Fingerabstand zum Ziel in Grad und Anteil der Zeit im Ziel (manuelles Nachführen)", "Ersatz ohne Eyetracker: Erkennungsaufgabe im bewegten Ziel (kurz eingeblendetes Zeichen)", "subjektiv: Komfort/Beschwerden 0–10 bei gleichem Gerät und Abstand"]
 
 # ===== Anforderungsprofil 0–3 (alle Schlüssel angeben) =====
@@ -31,7 +31,7 @@ anforderungsprofil:
     nutzbares_sehfeld: 0
     blickfolge: 3
     sakkaden: 1
-    fixation: 1
+    fixation: 0
     bewegungswahrnehmung: 2
     visuelle_suche: 0
     visuelle_verarbeitungsgeschwindigkeit: 0
@@ -56,7 +56,7 @@ anforderungsprofil:
     auge_hand_koordination: 1
     zielbewegung_tempo: 0
     zielbewegung_praezision: 0
-    kontinuierliche_steuerung: 1
+    kontinuierliche_steuerung: 0
     ruhige_hand: 0
     fingergeschwindigkeit: 0
     fingersequenz_bimanual: 0
@@ -165,8 +165,9 @@ Die Referenztabelle („Orientierung 0,5–1,0× … Nur Referenz“) nennt ausd
   Gellman, 1987). Die Schwingungen (0,1–0,14 Hz bei 1×) sind langsam und gut vorhersagbar; bei pseudozufälligen
   Mehrfrequenzreizen hing der Gain an der höchsten Frequenz (0,92 bei 0,39 Hz, 0,53 bei 1,56 Hz; Barnes et al.,
   1987) – die periodische Bahn hier ist leichter vorhersagbar, die Werte sind nur grobe Orientierung. Bei 9×
-  (0,95/1,26 Hz, Spitzen 100–140°/s) ist überwiegend sakkadisches Folgen zu erwarten; ≈ 90 % Gain bis 100°/s
-  erreichten im Labor 5 von 6 Versuchspersonen, eine nur ≈ 60 % (Meyer et al., 1985).
+  (0,95/1,26 Hz, Spitzen 100–140°/s) ist überwiegend sakkadisches Folgen zu erwarten; bei gleichförmiger
+  Rampenbewegung erreichten im Labor 4 von 5 Versuchspersonen ≈ 90 % Gain bis 100°/s, die fünfte nur ≈ 60 % dieser
+  Werte (Meyer et al., 1985).
 - **Richtung und Kurven:** waagrecht wird besser gefolgt als senkrecht (Rottach et al., 1996); die 3 : 4-Figur hat
   einen großen senkrechten Anteil (±10,7° am Monitor, anders als die flache Acht 402). In engen Kurven verlangsamt
   das Auge gesetzmäßig (Zwei-Drittel-Gesetz; de'Sperati & Viviani, 1997).
@@ -196,8 +197,10 @@ Die Referenztabelle („Orientierung 0,5–1,0× … Nur Referenz“) nennt ausd
 
 Die eigentliche „Motorik“ ist die Augenbewegung (glatte Folge + Aufholsakkaden). Freiwilliges Mitführen von Maus oder
 Finger ist manuelles Nachführen mit intermittierenden Korrekturen (Leistungsspitze 0,5–1,8 Hz, ≈ 170 ms Abstand;
-Miall et al., 1993). Da das Fadenkreuz nicht ausgewertet wird, bleiben Auge-Hand-Koordination und kontinuierliche
-Steuerung Nebenrollen (1). Am Tablet hinkt der Zeiger wegen Touch-Latenz (Safari-Canvas ≈ 77 ms; Casiez et al., 2017)
+Miall et al., 1993). Da das Mitführen freiwillig ist und das Fadenkreuz nicht ausgewertet wird, ist nur die
+Auge-Hand-Koordination als Nebenrolle eingetragen (1), kontinuierliche Steuerung nicht (0) – dieselbe Regel wie bei 407
+(freiwilliges, ungewertetes Fadenkreuz, vom Seitentext empfohlen); bei 402/403, deren Seiten das Mitführen nicht
+empfehlen, sind alle motorischen Werte 0. Am Tablet hinkt der Zeiger wegen Touch-Latenz (Safari-Canvas ≈ 77 ms; Casiez et al., 2017)
 bei 8°/s ≈ 0,6° hinterher, und die Fingerkuppe (≈ 1,5–2° in 40 cm, eigene Rechnung) verdeckt das Ziel.
 
 ## 7. Einflussfaktoren und Messgrenzen
@@ -230,8 +233,14 @@ bei 8°/s ≈ 0,6° hinterher, und die Fingerkuppe (≈ 1,5–2° in 40 cm, eige
   `schielen_binokular` (Folge oft verändert – keine Rückschlüsse); `trockenes_auge_bildschirm`,
   `kopfschmerz_asthenopie` (seltener Lidschlag, heller Modus blendet → kurze Blöcke, dunkler Modus); `kinder_unter_6`
   (Folgebewegung reift bis ins Jugendalter).
-- **Kombiniert gut mit …** 402 (Acht), 403 (Sinus), 405/406 (Richtungswechsel), 407/409 (Vorhersage ohne Sicht), 412
-  (Nachzieh-Spur), 105 „Scharf in Bewegung“ (überprüfbare Erkennung am bewegten Ziel), 707/514 (Nachführen mit Wertung).
+- **Kombiniert gut mit …** 402 (Acht), 403 (Sinus), 405/406 (Richtungswechsel), 409 (Folgen während echter
+  Dunkelphasen), 407 (Blicksprung auf ein abbremsendes Ziel – keine Verdeckung), 412 (Nachzieh-Spur), 105 „Scharf in
+  Bewegung“ (überprüfbare Erkennung am bewegten Ziel), 707/514 (Nachführen mit Wertung).
+- **Fast gleich (Dubletten in der Gruppe):** 402 und 403 haben denselben Aufbau – ein Leuchtpunkt, gleiche Einstellungen,
+  nur Augenfolge, keine Messung; es unterscheidet sich nur die Bahn: 404 große 2D-Lissajous-Figur (≈ 37° × 21°) mit
+  dem größten senkrechten Anteil, 402 flache Acht, 403 senkrechte Welle mit Knick am Rand. Für eine Auswahl genügt meist
+  eine davon; 404 hat die sachlichste Anleitung (Einstieg, eine Änderung pro Durchgang), 402 bei 1× das gleichmäßigste
+  Tempo (≈ ±20 % statt Faktor ≈ 5 entlang der Bahn).
 
 ## 10. Schwächen des Originals und Empfehlungen für eine Blickfit-Umsetzung
 

@@ -45,7 +45,7 @@ anforderungsprofil:
     kognitive_flexibilitaet: 0
     arbeitsgedaechtnis: 0
     kurzzeitgedaechtnis_verbal: 0
-    kurzzeitgedaechtnis_visuell_raeumlich: 1
+    kurzzeitgedaechtnis_visuell_raeumlich: 0
     verarbeitungsgeschwindigkeit: 0
     antizipation: 2
     entscheidung_wahlreaktion: 0
@@ -72,7 +72,7 @@ belastung:
   sprachabhaengigkeit: 0
 
 # ===== Auswahlhilfe =====
-voraussetzungen: ["Bildschirm oder Tablet (quer) auf fester Unterlage, Abstand 40–70 cm, Kopf möglichst ruhig", "Scharfes Sehen im Zwischenbereich über ≈ 32° Breite und ≈ 18° Höhe (Monitor) – Bildschirmbrille oder Einstärkenglas günstiger als Gleitsicht", "Maus oder Finger nur zum Starten; während der Übung keine Eingabe", "Bereitschaft, ohne Rückmeldung 30–120 s konzentriert zu folgen"]
+voraussetzungen: ["Bildschirm oder Tablet (quer) auf fester Unterlage, Abstand 40–70 cm, Kopf möglichst ruhig", "Scharfes Sehen im Zwischenbereich über ≈ 32° Breite und ≈ 18° Höhe (Monitor) – Arbeitsplatzbrille oder Einstärkenglas günstiger als Gleitsicht", "Maus oder Finger nur zum Starten; während der Übung keine Eingabe", "Bereitschaft, ohne Rückmeldung 30–120 s konzentriert zu folgen"]
 vorsicht_bei: [presbyopie_gleitsicht, schwindel_vestibulaer, reisekrankheit, nystagmus, schielen_binokular, trockenes_auge_bildschirm, kopfschmerz_asthenopie, kinder_unter_6]
 geeignet_fuer: ["Blickfolge auf geraden Bahnen mit regelmäßigen, vorhersagbaren Richtungswechseln üben (waagrecht und schräg, auch schräg aufwärts)", "Wechsel von glatter Folge zu Aufholsakkade und zurück bewusst erleben (Selbstbeobachtung an den Ecken)", "Steigerung nach 404/402: gleiche Ruhe, aber mit Ecken; zuerst mit Linie, dann ohne, zuletzt mit 'Random Speed'", "kurze Augenübung ohne Hand- oder Körpereinsatz, ohne Blitzreize"]
 weniger_geeignet_fuer: ["alle, die Rückmeldung oder einen Leistungswert erwarten (das Original misst nichts)", "Gleitsichtträger:innen am großen Monitor (Dreieck reicht oben in den Fern-, unten in den Nahbereich des Glases und seitlich in die Unschärfezonen)", "Einsteiger:innen und Ältere ab ≈ 2× (am Monitor schon 30–40°/s) – mit 0,5× beginnen", "Ziel Reaktion, Hand-Zielgenauigkeit, Peripherie oder Lesen (nicht gefordert bzw. nicht belegt)", "Tempo ab ≈ 5× (am Monitor ≈ 80–100°/s, an bzw. über der Grenze der glatten Folge – zunehmend Sakkaden, ruckendes Bild)"]
@@ -164,7 +164,7 @@ Wiedererfassungszeit erheblich“). Stufentabelle von „Elite: Landefehler < 12
   geglätteter Dreieckbewegung) → 0,5–1× wählen.
 - **Gleitsicht/Arbeitsplatz:** Das Dreieck ist am Monitor ≈ 32° × 18°; das klare Sehfeld zweier untersuchter Gleitsichtgläser war
   in 60 cm nur ≈ 13° bzw. 18° breit (Einstärkenglas ≈ 60°), mit längeren Augen- und Kopfbewegungen (Han et al., 2003). Die Spitze (18 % Bildhöhe) fällt in
-  den Fernteil, die Basis (82 %) Richtung Nahteil – beides in 60 cm unscharf. Besser Bildschirmbrille, kleineres Feld,
+  den Fernteil, die Basis (82 %) Richtung Nahteil – beides in 60 cm unscharf. Besser Arbeitsplatzbrille, kleineres Feld,
   Kopfbewegung erlauben. Tablet in 40 cm: ≈ 2,5 dpt Nahbedarf.
 - **Trockenes Auge:** Beim Lesen am Bildschirm (50 cm) im Mittel 11,6 Lidschläge/min, davon
   ≈ 16 % unvollständig (Portello et al., 2013) → kurze Durchgänge,
@@ -204,12 +204,19 @@ Aufholsakkaden). Wer mit Finger oder Maus mitfährt, übt manuelles Tracking mit
 - **Passt, wenn …** Blickfolge mit regelmäßigen Richtungswechseln ohne Hand- und Reaktionsdruck geübt werden soll; als
   Steigerung nach 404/402 (0,5–1×, großer Zielradius, Linie sichtbar); als kurze Augenübung ohne Blitzreize.
 - **Weniger passend, wenn …** Rückmeldung gewünscht ist; Reaktion, Peripherie, Handgenauigkeit oder Lesen das Ziel sind.
-- **Vorsicht / anpassen bei …** `presbyopie_gleitsicht` (Fern-, Nah- und seitliche Unschärfezonen → Bildschirmbrille,
+- **Vorsicht / anpassen bei …** `presbyopie_gleitsicht` (Fern-, Nah- und seitliche Unschärfezonen → Arbeitsplatzbrille,
   kleineres Feld, Kopf mitbewegen); `schwindel_vestibulaer`, `reisekrankheit` (abrupte Bewegungswechsel bei ruhigem Kopf, langsam beginnen, bei Übelkeit
   abbrechen); `nystagmus`, `schielen_binokular` (Folge oft verändert, Doppelbilder möglich – keine Rückschlüsse);
   `trockenes_auge_bildschirm`, `kopfschmerz_asthenopie` (seltener Lidschlag → kurz, Pausen); `kinder_unter_6`
   (Folgebewegung reift bis ins Jugendalter).
-- **Kombiniert gut mit …** 404 (Einstieg), 405 (Zickzack), 413, 415/410 (unvorhersehbare Wechsel), 407, 105, 707.
+- **Kombiniert gut mit …** 404 (Einstieg), 405 (Zickzack), 413, 415/410 (unvorhersehbare Wechsel), 407 (Blicksprung
+  auf ein abbremsendes Ziel), 105, 707.
+- **Fast gleich (Dubletten):** 405 in derselben Gruppe – gerade Strecken mit gleichbleibendem Tempo und Knick ohne
+  Abbremsen, nur Augenfolge, keine Messung; Unterschied: 406 knickt bei 1× alle 1,54 s um 97°/132° auf schrägen und
+  waagrechten Kanten, 405 alle 0,65 s um ≈ 143° auf steilen, überwiegend senkrechten Strecken (schneller, schwerer).
+  Für eine Auswahl genügt meist eine davon; 406 ist die ruhigere Stufe nach 404/402.
+- **Hinweis zum Profil:** Das Merken der Bahnabschnitte (Barnes & Schmid, 2002) steckt im Wert `antizipation`; ein
+  eigener Gedächtniswert wird wie bei 402–405 nicht vergeben, weil die Bahnlinie standardmäßig sichtbar ist.
 
 ## 10. Schwächen des Originals und Empfehlungen für eine Blickfit-Umsetzung
 

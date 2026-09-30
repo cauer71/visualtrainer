@@ -15,9 +15,9 @@ stand: 2026-09-29
 kurzbeschreibung: "Ein roter Leuchtpunkt läuft mit gleichbleibendem Tempo auf einer festen Zickzacklinie aus sieben steilen Schrägstrecken von links unten nach rechts oben und wieder zurück; an jedem Knick ändert er schlagartig die Richtung. Man folgt ihm nur mit den Augen bei ruhigem Kopf – eine Eingabe oder Wertung gibt es nicht."
 ziel_funktionen: [blickfolge]
 eingabe: [maus, touch]
-tablet_geeignet: ja
+tablet_geeignet: mit_anpassung
 dauer_sekunden: 60
-schwierigkeit_anpassung: "Kein Levelsystem, keine automatische Anpassung. Manuell: Tempo 0,5–9× (Regler in 0,1-Schritten; bei 1× 0,65 s je Schrägstrecke, ≈ 26°/s am 24″-Monitor in 60 cm; bei 9× 72 ms und ≈ 240°/s), 'Zufallstempo' (Tempo schwankt weich zwischen dem 0,4- und 1,9-Fachen, im Mittel +15 %), 'Hilfslinie ausblenden', Zielradius 10–50 px (Standard 16 px), Dauer 30/45/60/90/120 s."
+schwierigkeit_anpassung: "Kein Levelsystem, keine automatische Anpassung. Manuell: Tempo 0,5–9× (Regler in 0,1-Schritten; bei 1× 0,65 s je Schrägstrecke, ≈ 26°/s am 24″-Monitor in 60 cm; bei 9× 72 ms und ≈ 240°/s), 'Random Speed' (Zufallstempo; Tempo schwankt weich zwischen dem 0,4- und 1,9-Fachen, im Mittel +15 %), 'Hide Line' (Hilfslinie ausblenden), Zielradius 10–50 px (Standard 16 px), Dauer 30/45/60/90/120 s."
 messgroessen: ["Original: keine Leistungsmessung – nur Zähler abgeschlossener Sitzungen; Zeiger/Finger werden gar nicht erfasst", "sinnvoll mit Eyetracker: Folge-Gain auf den Geraden, Verzögerung bzw. Vorlauf der Augenumkehr am Knick (ms), Zahl und Größe der Aufholsakkaden je Knick", "Ersatz ohne Eyetracker: Finger/Zeiger mitführen lassen und Abstand zum Ziel (Grad) sowie Umkehr-Verzögerung am Knick (ms) messen", "subjektiv: Komfort/Beschwerden 0–10 bei gleichem Gerät und Abstand"]
 
 # ===== Anforderungsprofil 0–3 (alle Schlüssel angeben) =====
@@ -173,7 +173,7 @@ Tempo, Landefehler (< 12 bis > 70 px) und Umkehrlatenz (< 110 bis > 250 ms) „P
   Ke et al., 2013) – diese fast senkrechte Bahn ist bei gleichem Tempo schwerer als 403 oder 413.
 - **Gleitsicht/Arbeitsplatz:** unten Nahteil, oben Fernteil; der scharfe Zwischenbereich ist bei 60 cm nur
   ≈ 13–18° breit, mit schmalerem Zwischenbereich dauern Kopf- und Augenbewegungen länger (Han et al., 2003, Lesen). Die ständigen Auf-ab-Wege von
-  ≈ 17° wechseln durch verschiedene Wirkungszonen, die Bahn ist 39° breit → Arbeitsplatz-/Bildschirmbrille, kleineres
+  ≈ 17° wechseln durch verschiedene Wirkungszonen, die Bahn ist 39° breit → Arbeitsplatzbrille, kleineres
   Fenster oder mehr Abstand, Kopf mitbewegen.
 - **Nähe, Auge, Alter:** 60 cm ≈ 1,7 dpt, 40 cm = 2,5 dpt Akkommodation bzw. Nahkorrektur; seltener Lidschlag bei
   Bildschirmarbeit (≈ 11,6/min beim Lesen am Bildschirm; Portello et al., 2013; für Blickfolge nicht eigens gemessen). Ältere haben niedrigeren Gain, besonders bei schnellen
@@ -221,8 +221,14 @@ kommen Alter, Müdigkeit und Tagesform; die feste Bahn ist nach wenigen Durchlä
   mit visuellem Schwindel reagieren v. a. auf großflächige Bewegungsreize, Bronstein 1995; hier nur ein kleiner Punkt → langsam beginnen, bei Übelkeit abbrechen);
   `nystagmus`, `schielen_binokular` (Folge oft verändert, keine Rückschlüsse); `trockenes_auge_bildschirm`,
   `kopfschmerz_asthenopie` (seltener Lidschlag, heller Modus blendet → kurze Blöcke); `kinder_unter_6`.
-- **Kombiniert gut mit …** 404 (Einstieg), 403/413 (flachere Wellen bzw. Zickzack), 406 (Dreieck), 407 (Vorhersage
-  ohne Sicht), 410/415 (unvorhersehbare Wechsel), 505/513 (Zickzack mit Zeigerwertung), 105 (Erkennen am bewegten Ziel).
+- **Kombiniert gut mit …** 404 (Einstieg), 403/413 (flachere Wellen bzw. Zickzack), 406 (Dreieck), 407 (Blicksprung
+  auf ein abbremsendes Ziel – keine Verdeckung), 410/415 (unvorhersehbare Wechsel), 505/513 (Zickzack mit Zeigerwertung),
+  105 (Erkennen am bewegten Ziel).
+- **Fast gleich (Dubletten):** 406 in derselben Gruppe – gerade Strecken mit gleichbleibendem Tempo und Knick ohne
+  Abbremsen, nur Augenfolge, keine Messung; Unterschied: 405 knickt bei 1× alle 0,65 s um ≈ 143° und läuft überwiegend
+  senkrecht, 406 alle 1,54 s um 97°/132° auf schrägen und waagrechten Kanten. 413 (Parallelgruppe) hat denselben Takt
+  (0,65 s je Abschnitt bei 1×), aber fast waagrechte Zeilen. Für eine Auswahl genügt meist eine davon; 405 ist die
+  schnellste und am stärksten senkrechte.
 
 ## 10. Schwächen des Originals und Empfehlungen für eine Blickfit-Umsetzung
 
