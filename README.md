@@ -11,7 +11,7 @@ funktioniert aber auch am Handy und am Computer. Sprachen: **Deutsch** und **Ita
 - adaptive Schwierigkeit (Staircase-Verfahren), Verlauf, Bestwerte, persönliche Tipps
 - **Zwei Ansichten** (Knopf in der Kopfzeile, beim ersten Öffnen Auswahl):
   **Kunde** sieht nur drei vom Optiker gewählte Übungen (Voreinstellung: Blitzreaktion, Kugel-Detektiv, Suchbild);
-  **Optiker** sieht alle 46 Übungen, „Hintergrund & Studien“, den **Übungskatalog** (82 Einträge mit Anforderungsprofil, Quellen)
+  **Optiker** sieht alle 81 Übungen, „Hintergrund & Studien“, den **Übungskatalog** (82 Einträge mit Anforderungsprofil, Quellen)
   und wählt im Optiker-Bereich die Kunden-Übungen. Die Wahl ist eine Ansicht, **kein Zugangsschutz** (kein Login, alles im Browser gespeichert).
 - **Tagestraining**: jeden Tag 5 Übungen (eine je Bereich)
 - statische Seite (~130 kB gzip JS), läuft auf jedem Webspace, in Unterordnern und im iframe
@@ -66,6 +66,41 @@ funktioniert aber auch am Handy und am Computer. Sprachen: **Deutsch** und **Ita
 | Wahrnehmen & Erfassen | **Rand-Ping** | Mitte im Blick, Orte am Rand merken |
 | Reaktion | **Tipp-Tempo** | in 20-Sekunden-Runden so oft wie möglich tippen |
 | Gedächtnis | **Wortliste** | gezeigte Wörter in einer Auswahl wiederfinden |
+| Konzentration & Denken | **Wortstrom** | Erkenne dein Zielwort im ruhigen Wortstrom. |
+| Bewegung verfolgen | **Abprall-Fang** | Sieh voraus, wo der Punkt am Rand abprallt – und tippe dorthin. |
+| Bewegung verfolgen | **Dunkelphasen** | Die Kugel blendet weich aus – rechne damit, wo sie wieder auftaucht. |
+| Bewegung verfolgen | **Tempo-Wechsel** | Bleib an der Kugel dran, wenn sie Tempo und Richtung wechselt. |
+| Bewegung verfolgen | **Nachzieh-Spur** | Bleib am hellen Kopf der Kugel, auch wenn sie einen Schweif zieht. |
+| Bewegung verfolgen | **Höhenwechsel-Bahn** | Folge der Kugel auf ihrer Treppenbahn und erkenne ein Zeichen. |
+| Bewegung verfolgen | **Richtungschaos** | Bleib an der Kugel, die mal hierhin, mal dorthin driftet. |
+| Bewegung verfolgen | **Flick-Ziele** | Ein Ziel taucht auf – tippe es an, bevor es wieder weg ist. |
+| Reaktion | **Sofort-Reaktion** | Die Mitte leuchtet auf – tippe, so schnell du kannst. |
+| Bewegung verfolgen | **Gegenhalten** | Halte die Marke auf dem Ziel, obwohl sie nach oben gezogen wird. |
+| Bewegung verfolgen | **Seitwärts folgen** | Folge mit deiner Marke dem Ziel, das hin und her ausweicht. |
+| Bewegung verfolgen | **Randziel-Flick** | Von der Mitte zum Rand: tippe das Ziel, sobald es auftaucht. |
+| Bewegung verfolgen | **Kurvenbahn folgen** | Folge dem Ziel auf seiner weichen Kurvenbahn – ohne Halt. |
+| Bewegung verfolgen | **Mikrokorrektur** | Großes Ziel antippen, dann das kleine Nachziel genau treffen. |
+| Konzentration & Denken | **Zielauswahl** | Tippe zuerst das Dringendste an – dann das Nächste. |
+| Reaktion | **Winkel halten** | Ruhig in der Mitte warten – und erst tippen, wenn das Ziel am Rand auftaucht. |
+| Bewegung verfolgen | **Ausweich folgen** | Bleib mit deiner Marke an einem Ziel, das scheinbar ausweicht. |
+| Bewegung verfolgen | **Zickzack folgen** | Bleib mit deiner Marke an einem Ziel, das im Zickzack läuft. |
+| Bewegung verfolgen | **Glatt folgen** | Begleite ein Ziel auf einer weichen, langsamen Kurvenbahn. |
+| Bewegung verfolgen | **Hoch und runter** | Folge einem Ziel, das in weichen Bögen hoch und wieder herunter springt. |
+| Bewegung verfolgen | **Ziele erwischen** | Mehrere Kreise sind unterwegs – tippe sie im Vorbeiflug an. |
+| Reaktion | **Tasten-Wahl** | Ein Zeichen erscheint – tippe die gleiche Taste. |
+| Bewegung verfolgen | **Präzisions-Flick** | Tippe das schrumpfende Ziel schnell und mitten hinein. |
+| Bewegung verfolgen | **Zielkette** | Tippe die Kreise der Reihe nach an – von Ziel zu Ziel. |
+| Bewegung verfolgen | **Rand im Blick** | Punkte gleiten vom Rand zur Mitte – fang sie ab, bevor sie dort sind. |
+| Reaktion | **Kugeln fangen** | Kreise antippen, Quadrate durchlassen – erst schauen, dann tippen. |
+| Bewegung verfolgen | **Ausweichen** | Führ die Figur sanft an langsamen Hindernissen vorbei. |
+| Bewegung verfolgen | **Schrumpfende Ziele** | Mehrere Kreise werden kleiner – tippe den kleinsten zuerst. |
+| Bewegung verfolgen | **In die Bahn** | Setz den Finger dorthin, wo das Ziel gleich vorbeiläuft. |
+| Konzentration & Denken | **Raster-Ausweichen** | Wechsle rechtzeitig auf ein freies Feld – bevor die schraffierten belegt sind. |
+| Bewegung verfolgen | **Sprossen-Leiter** | Tippe die Felder der Leiter von unten nach oben – genau im Takt. |
+| Bewegung verfolgen | **Gegen den Wind** | Halte die Marke im Ring, obwohl ein unsichtbarer Wind sie schiebt. |
+| Bewegung verfolgen | **Sprungweite** | Zieh den Balken genau so weit, dass die Kugel auf der Zielmarke landet. |
+| Bewegung verfolgen | **Diagonal-Korridor** | Zieh die Kugel durch einen schmalen, schrägen Gang – ohne die Wand zu berühren. |
+| Gedächtnis | **Muster nachzeichnen** | Merk dir einen Linienzug und zeichne ihn mit dem Finger nach. |
 
 **Übungskatalog:** [`docs/uebungskatalog/`](docs/uebungskatalog/UEBERSICHT.md) beschreibt alle 81 Übungen der Vorlage skilldrills.online (Nummern 101–811) sowie das eigene Reihen-Rätsel (901) mit Anforderungsprofil, Vorsichtshinweisen und geprüften Quellen – als Grundlage für eine spätere KI-gestützte Übungsauswahl.
 
