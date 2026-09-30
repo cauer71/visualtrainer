@@ -11,7 +11,7 @@ funktioniert aber auch am Handy und am Computer. Sprachen: **Deutsch** und **Ita
 - adaptive Schwierigkeit (Staircase-Verfahren), Verlauf, Bestwerte, persönliche Tipps
 - **Zwei Ansichten** (Knopf in der Kopfzeile, beim ersten Öffnen Auswahl):
   **Kunde** sieht nur drei vom Optiker gewählte Übungen (Voreinstellung: Blitzreaktion, Kugel-Detektiv, Suchbild);
-  **Optiker** sieht alle 31 Übungen, „Hintergrund & Studien“, den **Übungskatalog** (82 Einträge mit Anforderungsprofil, Quellen)
+  **Optiker** sieht alle 46 Übungen, „Hintergrund & Studien“, den **Übungskatalog** (82 Einträge mit Anforderungsprofil, Quellen)
   und wählt im Optiker-Bereich die Kunden-Übungen. Die Wahl ist eine Ansicht, **kein Zugangsschutz** (kein Login, alles im Browser gespeichert).
 - **Tagestraining**: jeden Tag 5 Übungen (eine je Bereich)
 - statische Seite (~130 kB gzip JS), läuft auf jedem Webspace, in Unterordnern und im iframe
@@ -51,6 +51,21 @@ funktioniert aber auch am Handy und am Computer. Sprachen: **Deutsch** und **Ita
 | Bewegung verfolgen | **Ziehen & Ablegen** | Ball mit dem Finger in den wandernden Ring ziehen |
 | Wahrnehmen & Erfassen | **Sekundengefühl** | eine Zeitspanne ohne Uhr treffen |
 | Wahrnehmen & Erfassen | **Hellste Kugel** | die hellste von mehreren grauen Kugeln finden |
+| Bewegung verfolgen | **Sanfte Blickfolge** | Kugel auf einer weichen Schleifenbahn verfolgen, ein Zeichen erkennen |
+| Bewegung verfolgen | **Zickzack-Bahn** | Kugel auf einer Zickzacklinie verfolgen |
+| Bewegung verfolgen | **Dreiecksbahn** | Kugel auf einer Dreiecksbahn verfolgen |
+| Bewegung verfolgen | **Ausweichziel** | Kugel verfolgen, die weich ausweicht |
+| Bewegung verfolgen | **Sprungziel** | Kugel nach einem Ortswechsel wiederfinden |
+| Bewegung verfolgen | **Landepunkt** | vorhersehen, wo ein verdeckter Ball landet |
+| Bewegung verfolgen | **Ziele abräumen** | mehrere Ziele vor Ablauf der Zeit antippen |
+| Bewegung verfolgen | **Pendel-Fang** | ein pendelndes Ziel im richtigen Moment antippen |
+| Bewegung verfolgen | **Hinter der Deckung** | kurz auftauchende Ziele hinter Deckungen antippen |
+| Bewegung verfolgen | **Schwarm-Wechsel** | wandernde Ziele nach Dringlichkeit antippen |
+| Bewegung verfolgen | **Ruhige Hand** | Ball mit dem Finger durch eine schmale Bahn führen |
+| Bewegung verfolgen | **Spur folgen** | einer laufenden Wellenlinie mit dem Finger folgen |
+| Wahrnehmen & Erfassen | **Rand-Ping** | Mitte im Blick, Orte am Rand merken |
+| Reaktion | **Tipp-Tempo** | in 20-Sekunden-Runden so oft wie möglich tippen |
+| Gedächtnis | **Wortliste** | gezeigte Wörter in einer Auswahl wiederfinden |
 
 **Übungskatalog:** [`docs/uebungskatalog/`](docs/uebungskatalog/UEBERSICHT.md) beschreibt alle 81 Übungen der Vorlage skilldrills.online (Nummern 101–811) sowie das eigene Reihen-Rätsel (901) mit Anforderungsprofil, Vorsichtshinweisen und geprüften Quellen – als Grundlage für eine spätere KI-gestützte Übungsauswahl.
 
