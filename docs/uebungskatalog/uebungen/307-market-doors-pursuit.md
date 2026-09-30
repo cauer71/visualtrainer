@@ -9,7 +9,7 @@ kapitel_original: "reaction-speed"
 unterkapitel_original: ""
 quelle_url: "https://skilldrills.online/de/drills/reaction-speed/market-doors-pursuit"
 blickfit_umsetzung: null
-stand: 2026-09-29
+stand: 2026-09-30
 
 # ===== Überblick =====
 kurzbeschreibung: "In einer Reihe stehen fünf dunkle Türöffnungen. In einer zufällig gewählten Tür erscheint plötzlich ein roter Punkt; man bringt den Zeiger hin und klickt oder tippt ihn an, bevor er wieder verschwindet. Mit den Punkten werden die Ziele kleiner, kürzer sichtbar und folgen dichter aufeinander."
@@ -17,8 +17,8 @@ ziel_funktionen: [auge_hand_koordination, zielbewegung_tempo]
 eingabe: [maus, touch, touchpad]
 tablet_geeignet: mit_anpassung
 dauer_sekunden: 45
-schwierigkeit_anpassung: "Automatisch, nie rückläufig: Level = Punkte / 1.750 + 1. Laut Code sinken von Level 1 bis 15 die Anzeigedauer 1.300 → 380 ms, der Zielradius 28 → 12 px, die Pause bis zum nächsten Ziel 550–750 → 147–206 ms und die unsichtbare Trefferzugabe 14 → 5 px. Eine Serie (Combo, bis Faktor 3,0 ab 50 Treffern) verkürzt zusätzlich bis −32 % Anzeigedauer, −25 % Radius, −30 % Pause, −50 % Zugabe. Rundenuhr: Start 45 s, +2 s je Treffer (max. 60 s), −1 s je Fehlklick oder Timeout."
-messgroessen: ["Punkte", "Genauigkeit = Treffer / (Treffer + Fehlklicks + Timeouts)", "'Ø Reaktion' = Zeit vom Erscheinen bis zum Treffer, nur Treffer (enthält Zeigerbewegung und Gerätelatenz)", "höchstes Level, maximale Combo", "sinnvoll: Zeit getrennt nach Abstand zur vorherigen Zeigerposition, Timeouts je Tür (links/rechts), Anteil der Treffer an äußeren Türen"]
+schwierigkeit_anpassung: "Automatisch, nie rückläufig: Level = Punkte / 1.750 + 1. Laut Code sinken von Level 1 bis 15 die Lebensdauer (Anzeigedauer) 1.300 → 380 ms, der Zielradius 28 → 12 px, die Pause bis zum nächsten Ziel 550–750 → 147–206 ms und die unsichtbare Trefferzugabe 14 → 5 px. Eine Serie (Combo, bis Faktor 3,0 ab 50 Treffern) verkürzt zusätzlich bis −32 % Lebensdauer, −25 % Radius, −30 % Pause, −50 % Zugabe. Rundenuhr: Start 45 s, +2 s je Treffer (max. 60 s), −1 s je Fehlklick oder abgelaufenem Ziel."
+messgroessen: ["Punkte", "Genauigkeit = Treffer / (Treffer + Fehlklicks + abgelaufene Ziele)", "'Ø Reaktion' = Zeit vom Erscheinen bis zum Treffer, nur Treffer (enthält Zeigerbewegung und Gerätelatenz)", "höchstes Level, maximale Combo", "sinnvoll: Zeit getrennt nach Abstand zur vorherigen Zeigerposition, abgelaufene Ziele je Tür (links/rechts), Anteil der Treffer an äußeren Türen"]
 
 # ===== Anforderungsprofil 0–3 (alle Schlüssel angeben) =====
 anforderungsprofil:
@@ -73,7 +73,7 @@ belastung:
 
 # ===== Auswahlhilfe =====
 voraussetzungen: ["Maus, Touchpad oder Touchscreen; Maus auf ruhiger Unterlage", "ruhende Ziele von ≈ 1,5° bis ≈ 0,5° Sehwinkel erkennen", "waagrechtes Blickfeld von ≈ 23° (in der Seite) bzw. ≈ 39° (Vollbild am Monitor) überblicken", "kein Farbsehen nötig (Ziel immer rot mit weißem Kern auf Fast-Schwarz)", "Querformat: im Hochformat-Vollbild und am Handy hochkant nur 4 Türen im 2 × 2-Raster"]
-vorsicht_bei: [photosensitive_epilepsie, migraene_lichtempfindlich, presbyopie_gleitsicht, gesichtsfeldausfall, sehbehinderung_niedriger_visus, trockenes_auge_bildschirm, tremor_parkinson, hand_arm_beschwerden, kognitive_einschraenkung, aufmerksamkeitsprobleme]
+vorsicht_bei: [photosensitive_epilepsie, migraene_lichtempfindlich, presbyopie_gleitsicht, gesichtsfeldausfall, sehbehinderung_niedriger_visus, nystagmus, trockenes_auge_bildschirm, tremor_parkinson, hand_arm_beschwerden, kognitive_einschraenkung, aufmerksamkeitsprobleme]
 geeignet_fuer: ["auf ein plötzlich an einem von fünf bekannten Orten erscheinendes Ziel mit Blick und Zeiger reagieren (räumliche Wahlreaktion mit Zeigen)", "Auge-Hand-Koordination und schnelle, kurze Zielbewegungen in waagrechter Richtung üben", "Strategie üben: Zeiger in der Mitte auf Zielhöhe bereithalten statt zu raten", "Aufwärmen vor FPS-Übungen mit ruhenden Zielen (501, 508, 511)"]
 weniger_geeignet_fuer: ["Messung der Reaktionszeit (Wert enthält Zeigerweg, Gerätelatenz und nur Treffer)", "visuelle Suche zwischen Ablenkern (es gibt nur ein Ziel, das sofort hervorsticht; dafür 103)", "Impulskontrolle (keine Nicht-Klick-Reize; dafür 102, 511)", "Menschen, die ohne Zeitdruck üben sollen", "Gleitsichtträger:innen im Vollbild (äußere Türen weit außerhalb der klaren Zwischenzone)", "Lichtempfindliche: roter Fehlerblitz bei jedem Fehler, standardmäßig an"]
 evidenz:
@@ -81,7 +81,7 @@ evidenz:
   naher_transfer: schwach
   alltag_transfer: fehlend
   kommentar: "Diese Übung wurde nie untersucht; Zeige- und Reaktionsaufgaben werden durch Übung deutlich besser (auch durch Gewöhnung an Gerät und Strategie), Effekte auf unähnliche Tests sind viel kleiner, ein Nutzen für E-Sport, Sport oder Verkehr ist nicht belegt (Guo et al. 2025; Simons et al. 2016; Fransen 2024)."
-aehnliche_uebungen: [303, 308, 511, 501, 508, 503, 101, 202, 702, 704, 302, 401, 306, 102]
+aehnliche_uebungen: [303, 308, 511, 501, 508, 503, 101, 202, 702, 704, 302, 401, 102]
 stichworte: ["räumliche Wahlreaktion", "Zeigen", "Auge-Hand-Koordination", "abrupt erscheinendes Ziel", "Sakkaden waagrecht", "Fitts'sches Gesetz", "Vorab-Positionierung", "Crosshair Placement", "Winkel prüfen (Name des Originals)", "Zeitdruck", "Combo", "Touch"]
 ---
 
@@ -98,7 +98,7 @@ Auf einem fast schwarzen Feld stehen fünf schmale, kaum sichtbare Türöffnunge
 
 Grundlage: Seitentext und ausgelieferter Spielcode (Chunk `74130-…js`, gemeinsame Module für Schwierigkeit, Combo, Strafe und Effekte; geladen am 29.09.2026, nur Mechanik übernommen). Winkel = **eigene Rechnung**: Monitor 24″ Full-HD in 60 cm (≈ 37,8 px/°), Tablet 11″ in 40 cm (≈ 36,4 CSS-px/°).
 
-- **Ablauf:** Start → Countdown 3-2-1-GO (≈ 2,45 s, Töne) → Spiel → Ergebnis (Punkte, Genauigkeit, Ø Reaktion, Treffer, Fehlklicks, Timeouts, höchstes Level, maximale Combo, Buchstabennote). Escape oder Verlassen des Vollbilds bricht ab.
+- **Ablauf:** Start → Countdown 3-2-1-GO (≈ 2,45 s, Töne) → Spiel → Ergebnis (Punkte, Genauigkeit, Ø Reaktion, Treffer, Fehlklicks, Abläufe, höchstes Level, maximale Combo, Buchstabennote). Escape oder Verlassen des Vollbilds bricht ab.
 - **Spielfeld:** 16:9 in der Seite (mind. 460–500 px hoch, typisch ≈ 1.120 × 630 px) oder Vollbild; Grund #050508 mit kaum sichtbarem 40-px-Raster. **Querformat:** 5 Türen je 96 × 160 px (≈ 2,5° × 4,2°; Obergrenzen, auch im Vollbild), Rahmen rot mit 35 % Deckkraft, Beschriftung „D-01“ … „D-05“ in 10-px-Schrift mit 20 % Deckkraft. Die Reihe nimmt 85 % der Breite ein und sitzt mittig in der Höhe. Abstand benachbarter Türmitten in der Seite ≈ 214 px ≈ 5,7°, äußere Türen ≈ 856 px ≈ 22,4° auseinander; im Vollbild (1.920 px) ≈ 10,1° bzw. ≈ 39°; am iPad quer ≈ 5,8° bzw. ≈ 22,8°. **Hochformat** (Höhe > Breite, also Handy hochkant oder Tablet-Vollbild hochkant): nur **4 Türen im 2 × 2-Raster** (je 25 % Breite × 20 % Höhe) – dann auch senkrechte Blickwechsel.
 - **Ziel:** Kreis #ef4444 mit Leuchtsaum und weißem Kern, **erscheint schlagartig** (kein Herausschieben aus einer Kante) in einer gleich wahrscheinlich gewählten Tür, **Wiederholung derselben Tür möglich** (je 20 %). Position: Türmitte ± 15 % der Türbreite, fast immer auf 40 % der Türhöhe (± 10 %) – die Zielhöhe ist also praktisch fest. Das Ziel steht still. Bei Touch, Fenster < 768 px oder Mobilgerät: Radius +2 px, Trefferzugabe +10 px.
 - **Schwierigkeit:** Fortschritt p = (Level − 1)/14, exponentieller Verlauf wie in 302–308 (Literaturbasis W03). Werte ohne Combo (Monitor, eigene Umrechnung):
@@ -111,8 +111,8 @@ Grundlage: Seitentext und ausgelieferter Spielcode (Chunk `74130-…js`, gemeins
 | 15 (24.500) | 24 px ≈ 0,6° | 380 ms | 147–206 ms | 34 px ≈ 0,9° |
 
 - **Combo:** Faktor 1,1/1,25/1,35/1,5/1,75/2/2,5/3,0 ab 3/5/7/10/15/20/30/50 Treffern in Folge; Punkte je Treffer = 100 × Faktor × (1 + 0,5 p). Bei Faktor 3,0: Anzeigedauer Level 1 884 ms, Level 15 258 ms; Ø Ziel Level 15 18 px ≈ 0,48°.
-- **Fehler:** Klick daneben oder Ablauf der Anzeigedauer → Combo 0, **−1 s**, Bildwackeln (6 px, klingt pro Bild ab), Ton, **roter Fehlerblitz** (gemeinsame Effektkomponente wie in 306: radialer Verlauf, ≈ 0,45 s; standardmäßig an, in der Übung abschaltbar). Das Timeout hängt an einer globalen Einstellung (standardmäßig an, in dieser Übung nicht umschaltbar); ohne sie bliebe das Ziel bis zum Treffer stehen.
-- **Zeit:** Start 45 s, **+2 s je Treffer** (max. 60 s). *Eigene Abschätzung:* Bei Level 1 dauert ein Zyklus (Pause ≈ 0,65 s + Reagieren und Zeigen ≈ 0,5–0,9 s) weniger als 2 s – wer sicher trifft, lässt die Uhr steigen, eine Runde kann dann mehrere Minuten dauern (≈ 70–90 Treffer bis Level 10). Sie endet erst, wenn Timeouts überwiegen.
+- **Fehler:** Klick daneben oder Ablauf der Anzeigedauer → Combo 0, **−1 s**, Bildwackeln (6 px, klingt pro Bild ab), Ton, **roter Fehlerblitz** (gemeinsame Effektkomponente wie in 306: radialer Verlauf, ≈ 0,45 s; standardmäßig an, in der Übung abschaltbar). Das Ablaufen hängt an einer globalen Einstellung (standardmäßig an, in dieser Übung nicht umschaltbar); ohne sie bliebe das Ziel bis zum Treffer stehen.
+- **Zeit:** Start 45 s, **+2 s je Treffer** (max. 60 s). *Eigene Abschätzung:* Bei Level 1 dauert ein Zyklus (Pause ≈ 0,65 s + Reagieren und Zeigen ≈ 0,5–0,9 s) weniger als 2 s – wer sicher trifft, lässt die Uhr steigen, eine Runde kann dann mehrere Minuten dauern (≈ 70–90 Treffer bis Level 10). Sie endet erst, wenn Abläufe überwiegen.
 - **Eingabe/Timing:** Pointer beim Drücken (Maus, Stift, Finger; ein Fadenkreuz folgt dem Zeiger, am Touchgerät nur am Berührpunkt). Keine Tastatur außer Escape. Die Anzeigedauer wird in Echtzeit ab dem Erscheinen gemessen (Zeitstempel beim Erzeugen des Ziels), die Rundenuhr mit der Bildzeit (dt, pro Bild höchstens 100 ms) → beides bildfrequenzunabhängig; nur Partikel und Wackeln laufen pro Bild (rein optisch).
 - **Note:** 100 × √(Punkte/18.000) → „S+ LEGENDARY“ ab 16.245 Punkten.
 
@@ -175,18 +175,19 @@ Zu dieser Aufgabe gibt es keine Bildgebungs- oder Trainingsstudie; die Website n
 - **Passt, wenn …** schnelle Reaktion mit Blick und Zeiger auf einen von wenigen bekannten Orten geübt werden soll, waagrechte Auge-Hand-Folgen gefragt sind oder jemand eine einfache, gut verständliche Spielregel mit steigendem Tempo mag; auch als Strategieübung („bereit in der Mitte, auf Zielhöhe“).
 - **Weniger passend, wenn …** eine saubere Reaktionszeit gefragt ist (101/Blitzreaktion, 503), Impulskontrolle geübt werden soll (102/Stopp & Los, 511), eine symbolische Wahlreaktion gemeint ist (202/Pfeil-Duell), echte Suche zwischen Ablenkern (103/Suchbild) oder ruhiges Üben ohne Zeitdruck.
 - **Vorsicht / anpassen bei …**
-  - `photosensitive_epilepsie`, `migraene_lichtempfindlich`: roter Fehlerblitz (standardmäßig an) bei jedem Fehlklick und Timeout; meist einzeln, bei Dauerklicken rechnerisch > 3/s möglich (WCAG-2.3.1-Grenze; nicht gemessen). Blitz abschalten.
+  - `photosensitive_epilepsie`, `migraene_lichtempfindlich`: roter Fehlerblitz (standardmäßig an) bei jedem Fehlklick und Ablauf; meist einzeln, bei Dauerklicken rechnerisch > 3/s möglich (WCAG-2.3.1-Grenze; nicht gemessen). Blitz abschalten.
   - `presbyopie_gleitsicht`: äußere Türen außerhalb der klaren Zwischenzone – kein Vollbild, Bildschirmbrille, Kopf mitdrehen.
   - `gesichtsfeldausfall`, `sehbehinderung_niedriger_visus`: Ziele bis ≈ 11° (Vollbild ≈ 20°) seitlich und bis ≈ 0,5° klein; Ziele auf der Ausfallseite verfallen unbemerkt.
+  - `nystagmus`: rasche Blicksprünge und kurze Fixationen auf kleine Ziele (bis ≈ 0,5°) unter Zeitdruck sind erschwert – niedrige Stufe oder Übungen ohne Zeitdruck.
   - `trockenes_auge_bildschirm`: seltenes Blinzeln im Schnellspiel; kurze Runden, Pausen.
   - `tremor_parkinson`, `hand_arm_beschwerden`: kleine Ziele unter Zeitdruck, Runden ohne Pausenfunktion, die sich bei Erfolg verlängern.
   - `kognitive_einschraenkung`, `aufmerksamkeitsprobleme`: sich verschärfender Zeitdruck, Rückmeldung mit Blitz, Ton und Wackeln – eher als Spiel auf niedriger Stufe, nicht als Test.
-- **Kombiniert gut mit …** 101 (Reaktion ohne Zielen, Mitte/Rand), 303 (gleiche Idee mit 12 Orten und größeren Sprüngen), 511/308 (Warten an einer Kante, Pre-Aim), 702 (Zielen ohne Zeitlimit je Ziel).
-- **Überschneidungen:** **303** ist fast dieselbe Aufgabe (ein Ziel an einem von 12 Rasterpunkten, gleiche Level-, Combo- und Zeitregeln) – nicht beide hintereinander vorschlagen. **308** und **511** lassen das Ziel an einer Kante auftauchen und belohnen Vorab-Positionierung, 511 zusätzlich mit Köder-Zielen und Frühklick-Strafe. **501/508** (FPS) sind Flicks zu völlig zufälligen Orten. **101** und **503** messen einfache Reaktion am festen Ort ohne Zeigerweg, **102** Impulskontrolle, **202** symbolische Wahlreaktion – all das fehlt hier.
+- **Kombiniert gut mit …** 101 (Reaktion ohne Zielen, Mitte/Rand), 401/801 (Randreize bei ruhigem Blick), 511 (Weiterführung: Kanten mit Köder-Zielen und Frühklick-Strafe), 702 (bewegte Ziele mit längerer Lebensdauer, Präzision).
+- **Überschneidungen:** **Dubletten:** **303** (ein Ziel an einem von 12 Rasterpunkten) und **308** (an einer von acht Deckungskanten) sind dieselbe Aufgabe mit gleichen Level-, Combo- und Zeitregeln – nie zusammen vorschlagen. **Gleiche Engine:** 302–308 teilen Level-, Combo-, Zeit- und Fehlerregeln (Level alle 1.750 Punkte, Combo bis 3,0×, +2 s je Treffer, −1 s je Fehler, roter Fehlerblitz, Bildwackeln) – pro Einheit höchstens eine davon, allenfalls eine zweite mit anderem Schwerpunkt (ruhende Ziele 302/303/307/308, bewegte 304/305/306). **511** (FPS) lässt das Ziel ebenfalls an einer Kante auftauchen (nur zwei Kanten, echtes Vorab-Positionieren möglich) und fordert zusätzlich Hemmung durch Köder-Ziele. **501** (FPS) sind Flicks zu völlig zufälligen Orten, **508** Zielerfassung nach Helligkeit. **101** und **503** messen einfache Reaktion am festen Ort ohne Zeigerweg, **102** Impulskontrolle, **202** symbolische Wahlreaktion – all das fehlt hier.
 
 ## 10. Schwächen des Originals und Empfehlungen für eine Blickfit-Umsetzung
 
-- **Ehrliche Messung:** Reaktionsbeginn (erste Zeigerbewegung) und Bewegungszeit getrennt erfassen, Zeiten nach Weglänge und Seite auswerten, Timeouts mitzählen; keine „Reaktionszeit“ nur aus Treffern, keine Noten wie „LEGENDARY“.
+- **Ehrliche Messung:** Reaktionsbeginn (erste Zeigerbewegung) und Bewegungszeit getrennt erfassen, Zeiten nach Weglänge und Seite auswerten, Abläufe mitzählen; keine „Reaktionszeit“ nur aus Treffern, keine Noten wie „LEGENDARY“.
 - **Feste Geometrie in Sehwinkel:** Türabstand und Reihenbreite begrenzen (z. B. ≤ 15–18° gesamt), damit Fenstergröße und Vollbild die Aufgabe nicht ändern; kommt Gleitsichtträger:innen entgegen.
 - **Regeltext und Mechanik angleichen:** entweder echte Reihenfolge (Scanroute) oder klar „zufällige Tür“; Tipps zur Wartestrategie (Mitte, Zielhöhe) statt „Kante“.
 - **Feste Rundendauer** (45–60 s), Stufe adaptiv in beide Richtungen (z. B. 3-down/1-up wie Zielfang) statt an Combo-Punkte gekoppelt.
