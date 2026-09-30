@@ -11,9 +11,9 @@ funktioniert aber auch am Handy und am Computer. Sprachen: **Deutsch** und **Ita
 - adaptive Schwierigkeit (Staircase-Verfahren), Verlauf, Bestwerte, persönliche Tipps
 - **Zwei Ansichten** (Knopf in der Kopfzeile, beim ersten Öffnen Auswahl):
   **Kunde** sieht nur drei vom Optiker gewählte Übungen (Voreinstellung: Blitzreaktion, Kugel-Detektiv, Suchbild);
-  **Optiker** sieht alle 16 Übungen, „Hintergrund & Studien“, den **Übungskatalog** (82 Einträge mit Anforderungsprofil, Quellen)
+  **Optiker** sieht alle 31 Übungen, „Hintergrund & Studien“, den **Übungskatalog** (82 Einträge mit Anforderungsprofil, Quellen)
   und wählt im Optiker-Bereich die Kunden-Übungen. Die Wahl ist eine Ansicht, **kein Zugangsschutz** (kein Login, alles im Browser gespeichert).
-- **Tagestraining**: jeden Tag 4 Übungen (eine je Bereich)
+- **Tagestraining**: jeden Tag 5 Übungen (eine je Bereich)
 - statische Seite (~130 kB gzip JS), läuft auf jedem Webspace, in Unterordnern und im iframe
 
 ## Die Übungen
@@ -36,6 +36,21 @@ funktioniert aber auch am Handy und am Computer. Sprachen: **Deutsch** und **Ita
 | Konzentration & Denken | **Zeichen-Code** | Zeichen schnell in Zahlen übersetzen (Schlüssel jedes Mal neu) |
 | Konzentration & Denken | **Zahlenjagd** | Zahlen (und Buchstaben) der Reihe nach finden |
 | Konzentration & Denken | **Reihen-Rätsel** | die Regel hinter einer Reihe finden – ohne Zeitdruck |
+| Gedächtnis | **Leuchtfolge** | Reihenfolge leuchtender Felder merken und nachtippen |
+| Gedächtnis | **Zahlenspanne** | Ziffernfolgen merken (vorwärts, später rückwärts) |
+| Gedächtnis | **Rastermuster** | Muster aus leuchtenden Feldern merken |
+| Gedächtnis | **Rückblick** | „Gleich wie vor N Schritten?“ (N-Back mit Formen) |
+| Gedächtnis | **Wo war es?** | Symbole und ihre Orte merken |
+| Gedächtnis | **Leuchtpfad** | Pfad aus leuchtenden Blöcken nachtippen |
+| Bewegung verfolgen | **Liegende Acht** | Kugel auf der Bahn verfolgen und ein Zeichen erkennen |
+| Bewegung verfolgen | **Wellenbahn** | Kugel auf einer Wellenbahn verfolgen |
+| Bewegung verfolgen | **Zwei Ziele** | zwei Hälften im Blick behalten, Veränderung melden |
+| Bewegung verfolgen | **Blicksprung-Galerie** | Ziel an wechselnden Rasterplätzen antippen |
+| Bewegung verfolgen | **Fünf Türen** | Ziel in einer von fünf Türen antippen |
+| Bewegung verfolgen | **Fallende Ziele** | herabfallende Ziele abfangen |
+| Bewegung verfolgen | **Ziehen & Ablegen** | Ball mit dem Finger in den wandernden Ring ziehen |
+| Wahrnehmen & Erfassen | **Sekundengefühl** | eine Zeitspanne ohne Uhr treffen |
+| Wahrnehmen & Erfassen | **Hellste Kugel** | die hellste von mehreren grauen Kugeln finden |
 
 **Übungskatalog:** [`docs/uebungskatalog/`](docs/uebungskatalog/UEBERSICHT.md) beschreibt alle 81 Übungen der Vorlage skilldrills.online (Nummern 101–811) sowie das eigene Reihen-Rätsel (901) mit Anforderungsprofil, Vorsichtshinweisen und geprüften Quellen – als Grundlage für eine spätere KI-gestützte Übungsauswahl.
 
