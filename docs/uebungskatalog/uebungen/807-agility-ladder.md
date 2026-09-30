@@ -8,7 +8,7 @@ kapitel: "Körper & Reflexe"
 kapitel_original: "physical"
 unterkapitel_original: "fitness"
 quelle_url: "https://skilldrills.online/de/drills/physical/fitness/agility-ladder"
-blickfit_umsetzung: null
+blickfit_umsetzung: {kennung: "sprossen-leiter", name: "Sprossen-Leiter", unterschiede: "Touch-Fassung für das Tablet: ohne Maus, Zeigersperre und Zeitstrafen, feste Dauer, große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/sprossen-leiter/)."}
 stand: 2026-09-29
 
 # ===== Überblick =====

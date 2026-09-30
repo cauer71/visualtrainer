@@ -8,7 +8,7 @@ kapitel: "Körper & Reflexe"
 kapitel_original: "physical"
 unterkapitel_original: "reflex-training"
 quelle_url: "https://skilldrills.online/de/drills/physical/reflex-training/reaction-chain"
-blickfit_umsetzung: null
+blickfit_umsetzung: {kennung: "in-die-bahn", name: "In die Bahn", unterschiede: "Touch-Fassung für das Tablet: ohne Maus, Zeigersperre und Zeitstrafen, feste Dauer, große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/in-die-bahn/)."}
 stand: 2026-09-29
 
 # ===== Überblick =====

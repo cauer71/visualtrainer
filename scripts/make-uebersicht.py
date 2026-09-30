@@ -11,7 +11,7 @@ kap = []
 for m in d:
     if not kap or kap[-1] != m['kapitel']:
         kap.append(m['kapitel'])
-n_play = sum(1 for m in d if m.get('blickfit_umsetzung') and m['blickfit_umsetzung'].get('kennung') and m['nr'] != 203)
+n_play = sum(1 for m in d if m.get('blickfit_umsetzung') and m['blickfit_umsetzung'].get('kennung'))
 L = ['# Übersicht aller Übungen', '',
      f'Erzeugt aus `katalog.json` (Stand 30.09.2026). **{len(d)} Einträge**, davon **{n_play} hier spielbar** (▲). Die Nummern sind dauerhaft.',
      'Die Spalte „Kern“ nennt die Funktionen mit Anforderungswert 3; Tablet = Eignung des Originals; ▲ = Blickfit-Umsetzung vorhanden.',

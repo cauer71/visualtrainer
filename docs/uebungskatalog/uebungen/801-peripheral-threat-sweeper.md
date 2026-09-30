@@ -8,7 +8,7 @@ kapitel: "Körper & Reflexe"
 kapitel_original: "physical"
 unterkapitel_original: "reflex-training"
 quelle_url: "https://skilldrills.online/de/drills/physical/reflex-training/peripheral-threat-sweeper"
-blickfit_umsetzung: null
+blickfit_umsetzung: {kennung: "randabwehr", name: "Rand im Blick", unterschiede: "Touch-Fassung für das Tablet: ohne Maus, Zeigersperre und Zeitstrafen, feste Dauer, große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/randabwehr/)."}
 stand: 2026-09-29
 
 # ===== Überblick =====

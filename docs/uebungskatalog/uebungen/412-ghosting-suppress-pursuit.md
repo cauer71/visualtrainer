@@ -8,7 +8,7 @@ kapitel: "Blickverfolgung"
 kapitel_original: "visual-tracking"
 unterkapitel_original: ""
 quelle_url: "https://skilldrills.online/de/drills/visual-tracking/ghosting-suppress-pursuit"
-blickfit_umsetzung: null
+blickfit_umsetzung: {kennung: "nachzieh-spur", name: "Nachzieh-Spur", unterschiede: "Touch-Fassung für das Tablet: ohne Maus, Zeigersperre und Zeitstrafen, feste Dauer, große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/nachzieh-spur/)."}
 stand: 2026-09-29
 
 # ===== Überblick =====

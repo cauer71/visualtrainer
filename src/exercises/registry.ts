@@ -53,6 +53,41 @@ import { tippTempo } from './tipp-tempo';
 import { wortliste } from './wortliste';
 import { ruhigeHand } from './ruhige-hand';
 import { spurFolgen } from './spur-folgen';
+import { wortstrom } from './wortstrom';
+import { abprallFang } from './abprall-fang';
+import { dunkelphasen } from './dunkelphasen';
+import { tempoWechsel } from './tempo-wechsel';
+import { nachziehSpur } from './nachzieh-spur';
+import { hoehenwechselBahn } from './hoehenwechsel-bahn';
+import { richtungschaos } from './richtungschaos';
+import { flickZiele } from './flick-ziele';
+import { sofortReaktion } from './sofort-reaktion';
+import { gegenhalten } from './gegenhalten';
+import { seitwaertsFolgen } from './seitwaerts-folgen';
+import { randzielFlick } from './randziel-flick';
+import { kurvenbahnFolgen } from './kurvenbahn-folgen';
+import { mikrokorrektur } from './mikrokorrektur';
+import { zielauswahl } from './zielauswahl';
+import { winkelHalten } from './winkel-halten';
+import { ausweichFolgen } from './ausweich-folgen';
+import { zickzackFolgen } from './zickzack-folgen';
+import { glattFolgen } from './glatt-folgen';
+import { hochRunterFolgen } from './hoch-runter-folgen';
+import { zielKlicken } from './ziel-klicken';
+import { tastenWahl } from './tasten-wahl';
+import { praezisionsFlick } from './praezisions-flick';
+import { zielkette } from './zielkette';
+import { randabwehr } from './randabwehr';
+import { kugelnFangen } from './kugeln-fangen';
+import { ausweichen } from './ausweichen';
+import { schrumpfendeZiele } from './schrumpfende-ziele';
+import { inDieBahn } from './in-die-bahn';
+import { rasterAusweichen } from './raster-ausweichen';
+import { sprossenLeiter } from './sprossen-leiter';
+import { gegenDenWind } from './gegen-den-wind';
+import { sprungAbfangen } from './sprung-abfangen';
+import { diagonalKorridor } from './diagonal-korridor';
+import { musterNachzeichnen } from './muster-nachzeichnen';
 
 /** Reihenfolge = Anzeige-Reihenfolge innerhalb der Bereiche */
 export const EXERCISES: ExerciseDefinition[] = [
@@ -102,6 +137,41 @@ export const EXERCISES: ExerciseDefinition[] = [
   wortliste,
   ruhigeHand,
   spurFolgen,
+  wortstrom,
+  abprallFang,
+  dunkelphasen,
+  tempoWechsel,
+  nachziehSpur,
+  hoehenwechselBahn,
+  richtungschaos,
+  flickZiele,
+  sofortReaktion,
+  gegenhalten,
+  seitwaertsFolgen,
+  randzielFlick,
+  kurvenbahnFolgen,
+  mikrokorrektur,
+  zielauswahl,
+  winkelHalten,
+  ausweichFolgen,
+  zickzackFolgen,
+  glattFolgen,
+  hochRunterFolgen,
+  zielKlicken,
+  tastenWahl,
+  praezisionsFlick,
+  zielkette,
+  randabwehr,
+  kugelnFangen,
+  ausweichen,
+  schrumpfendeZiele,
+  inDieBahn,
+  rasterAusweichen,
+  sprossenLeiter,
+  gegenDenWind,
+  sprungAbfangen,
+  diagonalKorridor,
+  musterNachzeichnen,
 ];
 
 export interface CategoryMeta {

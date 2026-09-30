@@ -8,7 +8,7 @@ kapitel: "Motorik"
 kapitel_original: "motor"
 unterkapitel_original: "hand-eye-coordination"
 quelle_url: "https://skilldrills.online/de/drills/motor/hand-eye-coordination/precision-flick-shot"
-blickfit_umsetzung: null
+blickfit_umsetzung: {kennung: "praezisions-flick", name: "Präzisions-Flick", unterschiede: "Touch-Fassung für das Tablet: ohne Maus, Zeigersperre und Zeitstrafen, feste Dauer, große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/praezisions-flick/)."}
 stand: 2026-09-29
 
 # ===== Überblick =====

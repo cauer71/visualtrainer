@@ -8,7 +8,7 @@ kapitel: "Körper & Reflexe"
 kapitel_original: "physical"
 unterkapitel_original: "fitness"
 quelle_url: "https://skilldrills.online/de/drills/physical/fitness/speed-drill"
-blickfit_umsetzung: null
+blickfit_umsetzung: {kennung: "schrumpfende-ziele", name: "Schrumpfende Ziele", unterschiede: "Touch-Fassung für das Tablet: ohne Maus, Zeigersperre und Zeitstrafen, feste Dauer, große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/schrumpfende-ziele/)."}
 stand: 2026-09-29
 
 # ===== Überblick =====

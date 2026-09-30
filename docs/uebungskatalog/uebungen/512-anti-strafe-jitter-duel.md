@@ -8,7 +8,7 @@ kapitel: "Zielen (FPS)"
 kapitel_original: "fps"
 unterkapitel_original: ""
 quelle_url: "https://skilldrills.online/de/drills/fps/anti-strafe-jitter-duel"
-blickfit_umsetzung: null
+blickfit_umsetzung: {kennung: "ausweich-folgen", name: "Ausweich folgen", unterschiede: "Touch-Fassung für das Tablet: ohne Maus, Zeigersperre und Zeitstrafen, feste Dauer, große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/ausweich-folgen/)."}
 stand: 2026-09-29
 
 # ===== Überblick =====

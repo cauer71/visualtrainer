@@ -8,7 +8,7 @@ kapitel: "Kognition & Aufmerksamkeit"
 kapitel_original: "cognitive"
 unterkapitel_original: "processing-speed"
 quelle_url: "https://skilldrills.online/de/drills/cognitive/processing-speed/rsvp-reader"
-blickfit_umsetzung: null
+blickfit_umsetzung: {kennung: "wortstrom", name: "Wortstrom", unterschiede: "Touch-Fassung für das Tablet: ohne Maus, Zeigersperre und Zeitstrafen, feste Dauer, große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/wortstrom/)."}
 stand: 2026-09-30
 
 # ===== Überblick =====

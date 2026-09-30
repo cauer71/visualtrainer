@@ -8,7 +8,7 @@ kapitel: "Blickverfolgung"
 kapitel_original: "visual-tracking"
 unterkapitel_original: ""
 quelle_url: "https://skilldrills.online/de/drills/visual-tracking/strobe-prediction-pursuit"
-blickfit_umsetzung: null
+blickfit_umsetzung: {kennung: "dunkelphasen", name: "Dunkelphasen", unterschiede: "Touch-Fassung für das Tablet: ohne Maus, Zeigersperre und Zeitstrafen, feste Dauer, große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/dunkelphasen/)."}
 stand: 2026-09-29
 
 # ===== Überblick =====

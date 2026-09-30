@@ -1619,7 +1619,11 @@
    "kapitel_original": "cognitive",
    "unterkapitel_original": "processing-speed",
    "quelle_url": "https://skilldrills.online/de/drills/cognitive/processing-speed/rsvp-reader",
-   "blickfit_umsetzung": null,
+   "blickfit_umsetzung": {
+    "kennung": "wortstrom",
+    "name": "Wortstrom",
+    "unterschiede": "Touch-Fassung für das Tablet: ohne Maus, Zeigersperre und Zeitstrafen, feste Dauer, große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/wortstrom/)."
+   },
    "stand": "2026-09-30",
    "kurzbeschreibung": "Englische Wörter erscheinen nacheinander an derselben Stelle in der Bildmitte, mit einem roten Buchstaben als Blickpunkt. Oben steht ein Zielwort; sobald es im Strom erscheint, tippt man auf einen großen Knopf. Das Tempo steigt in fünf Stufen von 250 auf 850 Wörter pro Minute. Es geht um das Erkennen einzelner Wörter im Takt, nicht um Lesen mit Verständnis.",
    "ziel_funktionen": [
@@ -3102,7 +3106,11 @@
    "kapitel_original": "reaction-speed",
    "unterkapitel_original": "",
    "quelle_url": "https://skilldrills.online/de/drills/reaction-speed/visual-tracking-speed-test",
-   "blickfit_umsetzung": null,
+   "blickfit_umsetzung": {
+    "kennung": "abprall-fang",
+    "name": "Abprall-Fang",
+    "unterschiede": "Touch-Fassung für das Tablet: ohne Maus, Zeigersperre und Zeitstrafen, feste Dauer, große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/abprall-fang/)."
+   },
    "stand": "2026-09-30",
    "kurzbeschreibung": "Auf dunklem Feld taucht an zufälliger Stelle ein roter Punkt auf und gleitet geradlinig in eine zufällige Richtung, wobei er an unsichtbaren Rändern abprallt. Man verfolgt ihn mit den Augen und klickt bzw. tippt ihn an, bevor er nach einer mit dem Level schrumpfenden Zeit verschwindet.",
    "ziel_funktionen": [
@@ -4938,7 +4946,11 @@
    "kapitel_original": "visual-tracking",
    "unterkapitel_original": "",
    "quelle_url": "https://skilldrills.online/de/drills/visual-tracking/strobe-prediction-pursuit",
-   "blickfit_umsetzung": null,
+   "blickfit_umsetzung": {
+    "kennung": "dunkelphasen",
+    "name": "Dunkelphasen",
+    "unterschiede": "Touch-Fassung für das Tablet: ohne Maus, Zeigersperre und Zeitstrafen, feste Dauer, große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/dunkelphasen/)."
+   },
    "stand": "2026-09-29",
    "kurzbeschreibung": "Ein kleiner leuchtender Punkt gleitet geradlinig über einen dunklen Bildschirm und prallt an den Rändern ab. In festem Takt verschwindet er für etwa ein Drittel der Zeit; man folgt ihm nur mit den Augen weiter und versucht, dort zu sein, wo er wieder auftaucht.",
    "ziel_funktionen": [
@@ -5234,7 +5246,11 @@
    "kapitel_original": "visual-tracking",
    "unterkapitel_original": "",
    "quelle_url": "https://skilldrills.online/de/drills/visual-tracking/spatial-shift-pursuit",
-   "blickfit_umsetzung": null,
+   "blickfit_umsetzung": {
+    "kennung": "tempo-wechsel",
+    "name": "Tempo-Wechsel",
+    "unterschiede": "Touch-Fassung für das Tablet: ohne Maus, Zeigersperre und Zeitstrafen, feste Dauer, große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/tempo-wechsel/)."
+   },
    "stand": "2026-09-29",
    "kurzbeschreibung": "Ein leuchtender Punkt fliegt auf dunklem Grund schräg über den Bildschirm, prallt an den Rändern ab und kehrt etwa einmal pro Sekunde unangekündigt eine oder beide Bewegungsrichtungen um, wobei er im Lauf der Runde immer schneller wird. Man folgt ihm nur mit den Augen; anders als der Name sagt, springt oder dreht sich das Bild selbst nie, und es gibt keine Eingabe, Punkte oder Messung.",
    "ziel_funktionen": [
@@ -5380,7 +5396,11 @@
    "kapitel_original": "visual-tracking",
    "unterkapitel_original": "",
    "quelle_url": "https://skilldrills.online/de/drills/visual-tracking/ghosting-suppress-pursuit",
-   "blickfit_umsetzung": null,
+   "blickfit_umsetzung": {
+    "kennung": "nachzieh-spur",
+    "name": "Nachzieh-Spur",
+    "unterschiede": "Touch-Fassung für das Tablet: ohne Maus, Zeigersperre und Zeitstrafen, feste Dauer, große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/nachzieh-spur/)."
+   },
    "stand": "2026-09-29",
    "kurzbeschreibung": "Ein leuchtender Punkt gleitet geradlinig über einen dunklen Bildschirm und prallt an den Rändern ab. Auf Wunsch zieht er eine Kette blasser Ringe hinter sich her; man folgt nur dem hellen Kern mit den Augen und lässt sich von der Spur nicht nach hinten ziehen.",
    "ziel_funktionen": [
@@ -5521,7 +5541,11 @@
    "kapitel_original": "visual-tracking",
    "unterkapitel_original": "",
    "quelle_url": "https://skilldrills.online/de/drills/visual-tracking/staircase-step",
-   "blickfit_umsetzung": null,
+   "blickfit_umsetzung": {
+    "kennung": "hoehenwechsel-bahn",
+    "name": "Höhenwechsel-Bahn",
+    "unterschiede": "Touch-Fassung für das Tablet: ohne Maus, Zeigersperre und Zeitstrafen, feste Dauer, große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/hoehenwechsel-bahn/)."
+   },
    "stand": "2026-09-29",
    "kurzbeschreibung": "Ein roter Punkt läuft mit gleichbleibendem Tempo auf einer festen Zickzacklinie hin und her: fast waagerecht von links nach rechts und zurück, dabei Zeile für Zeile ein Stück tiefer und danach wieder hinauf. Man folgt ihm nur mit den Augen, bei ruhigem Kopf, und versucht an den Wendepunkten sofort mitzukommen.",
    "ziel_funktionen": [
@@ -5816,7 +5840,11 @@
    "kapitel_original": "visual-tracking",
    "unterkapitel_original": "",
    "quelle_url": "https://skilldrills.online/de/drills/visual-tracking/directional-chaos-pursuit",
-   "blickfit_umsetzung": null,
+   "blickfit_umsetzung": {
+    "kennung": "richtungschaos",
+    "name": "Richtungschaos",
+    "unterschiede": "Touch-Fassung für das Tablet: ohne Maus, Zeigersperre und Zeitstrafen, feste Dauer, große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/richtungschaos/)."
+   },
    "stand": "2026-09-29",
    "kurzbeschreibung": "Ein leuchtender Punkt treibt auf dunklem Grund in leicht schlingernden, mit der Zeit schneller werdenden Bahnen über den Bildschirm und prallt an den Rändern ab. Man folgt ihm nur mit den Augen bei ruhigem Kopf; es gibt keine Eingabe, keine Punkte und keine Leistungsmessung.",
    "ziel_funktionen": [
@@ -5961,7 +5989,11 @@
    "kapitel_original": "fps",
    "unterkapitel_original": "",
    "quelle_url": "https://skilldrills.online/de/drills/fps/flick-shot-training",
-   "blickfit_umsetzung": null,
+   "blickfit_umsetzung": {
+    "kennung": "flick-ziele",
+    "name": "Flick-Ziele",
+    "unterschiede": "Touch-Fassung für das Tablet: ohne Maus, Zeigersperre und Zeitstrafen, feste Dauer, große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/flick-ziele/)."
+   },
    "stand": "2026-09-30",
    "kurzbeschreibung": "Auf dunklem Spielfeld erscheint nach kurzer Pause jeweils ein einzelner grüner Kreis an zufälliger Stelle. Man führt das Fadenkreuz per Maus (gesperrter Zeiger) so schnell wie möglich darauf und klickt, bevor der Kreis wieder verschwindet; mit Punktestand und Trefferserie werden die Kreise kleiner und kürzer sichtbar.",
    "ziel_funktionen": [
@@ -6273,7 +6305,11 @@
    "kapitel_original": "fps",
    "unterkapitel_original": "",
    "quelle_url": "https://skilldrills.online/de/drills/fps/instant-response",
-   "blickfit_umsetzung": null,
+   "blickfit_umsetzung": {
+    "kennung": "sofort-reaktion",
+    "name": "Sofort-Reaktion",
+    "unterschiede": "Touch-Fassung für das Tablet: ohne Maus, Zeigersperre und Zeitstrafen, feste Dauer, große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/sofort-reaktion/)."
+   },
    "stand": "2026-09-29",
    "kurzbeschreibung": "In der Bildmitte liegt ein dunkler Punkt unter dem Fadenkreuz. Nach einer zufälligen Wartezeit leuchtet er grün auf, und man klickt so schnell wie möglich, bevor er wieder erlischt; wer vorher klickt oder auf ein schwächeres, sehr kurzes Täuschaufleuchten hereinfällt, verliert Zeit und Serie.",
    "ziel_funktionen": [
@@ -6425,7 +6461,11 @@
    "kapitel_original": "fps",
    "unterkapitel_original": "",
    "quelle_url": "https://skilldrills.online/de/drills/fps/recoil-control",
-   "blickfit_umsetzung": null,
+   "blickfit_umsetzung": {
+    "kennung": "gegenhalten",
+    "name": "Gegenhalten",
+    "unterschiede": "Touch-Fassung für das Tablet: ohne Maus, Zeigersperre und Zeitstrafen, feste Dauer, große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/gegenhalten/)."
+   },
    "stand": "2026-09-29",
    "kurzbeschreibung": "Man hält die Maustaste gedrückt, dann wird ein Dauerfeuer simuliert: Mit jedem Schuss springt das Fadenkreuz nach einem festen Muster nach oben und seitlich. Man zieht die Maus gleichmäßig nach unten, um das Fadenkreuz auf einer grünen, dreiteiligen Zielfigur (Kopf, Brust, Beine) zu halten, die seitlich hin und her ausweicht.",
    "ziel_funktionen": [
@@ -6579,7 +6619,11 @@
    "kapitel_original": "fps",
    "unterkapitel_original": "",
    "quelle_url": "https://skilldrills.online/de/drills/fps/strafe-tracking",
-   "blickfit_umsetzung": null,
+   "blickfit_umsetzung": {
+    "kennung": "seitwaerts-folgen",
+    "name": "Seitwärts folgen",
+    "unterschiede": "Touch-Fassung für das Tablet: ohne Maus, Zeigersperre und Zeitstrafen, feste Dauer, große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/seitwaerts-folgen/)."
+   },
    "stand": "2026-09-29",
    "kurzbeschreibung": "Eine hochkant stehende, leuchtende Kapsel (angedeutete Spielfigur) läuft mit gleichbleibendem Tempo waagrecht über die Bildmitte und kehrt in zufälligen Abständen die Richtung um. Man hält das Mausfadenkreuz ohne zu klicken möglichst ununterbrochen auf der Kapsel; gezählt werden Zeit auf dem Ziel und ununterbrochene Serien.",
    "ziel_funktionen": [
@@ -6733,7 +6777,11 @@
    "kapitel_original": "fps",
    "unterkapitel_original": "",
    "quelle_url": "https://skilldrills.online/de/drills/fps/180-degree-awareness",
-   "blickfit_umsetzung": null,
+   "blickfit_umsetzung": {
+    "kennung": "randziel-flick",
+    "name": "Randziel-Flick",
+    "unterschiede": "Touch-Fassung für das Tablet: ohne Maus, Zeigersperre und Zeitstrafen, feste Dauer, große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/randziel-flick/)."
+   },
    "stand": "2026-09-29",
    "kurzbeschreibung": "Auf dunklem Spielfeld erscheint jeweils ein grüner Kreis – mit steigendem Level fast immer in einem schmalen Streifen am linken oder rechten Rand. Man bewegt das Fadenkreuz per Maus (gesperrter Zeiger) mit einer weiten, schnellen Bewegung dorthin, bremst ab und klickt, bevor der Kreis verschwindet. Eine echte 180-Grad-Drehung einer 3D-Ansicht gibt es nicht.",
    "ziel_funktionen": [
@@ -6892,7 +6940,11 @@
    "kapitel_original": "fps",
    "unterkapitel_original": "",
    "quelle_url": "https://skilldrills.online/de/drills/fps/flow-state",
-   "blickfit_umsetzung": null,
+   "blickfit_umsetzung": {
+    "kennung": "kurvenbahn-folgen",
+    "name": "Kurvenbahn folgen",
+    "unterschiede": "Touch-Fassung für das Tablet: ohne Maus, Zeigersperre und Zeitstrafen, feste Dauer, große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/kurvenbahn-folgen/)."
+   },
    "stand": "2026-09-29",
    "kurzbeschreibung": "Ein grüner, leuchtender Punkt gleitet auf gebogenen Bahnstücken kreuz und quer über einen fast schwarzen Bildschirm. Man hält das Maus-Fadenkreuz ohne Klicken möglichst ununterbrochen auf dem Punkt; lange Serien erhöhen den Punkte-Multiplikator, mehr als 1 s neben dem Ziel setzt ihn zurück.",
    "ziel_funktionen": [
@@ -7204,7 +7256,11 @@
    "kapitel_original": "fps",
    "unterkapitel_original": "",
    "quelle_url": "https://skilldrills.online/de/drills/fps/micro-correction-precision",
-   "blickfit_umsetzung": null,
+   "blickfit_umsetzung": {
+    "kennung": "mikrokorrektur",
+    "name": "Mikrokorrektur",
+    "unterschiede": "Touch-Fassung für das Tablet: ohne Maus, Zeigersperre und Zeitstrafen, feste Dauer, große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/mikrokorrektur/)."
+   },
    "stand": "2026-09-29",
    "kurzbeschreibung": "Mit einem Mausfadenkreuz klickt man zuerst ein größeres Ankerziel an; sofort erscheint etwa 1,4–3,5° daneben in zufälliger Richtung ein kleines Mikroziel, das man mit einer kurzen, genauen Nachbewegung möglichst mittig treffen muss. Beide Ziele verschwinden nach einer kurzen Lebensdauer, die mit dem Level schrumpft.",
    "ziel_funktionen": [
@@ -7343,7 +7399,11 @@
    "kapitel_original": "fps",
    "unterkapitel_original": "",
    "quelle_url": "https://skilldrills.online/de/drills/fps/target-prioritization",
-   "blickfit_umsetzung": null,
+   "blickfit_umsetzung": {
+    "kennung": "zielauswahl",
+    "name": "Zielauswahl",
+    "unterschiede": "Touch-Fassung für das Tablet: ohne Maus, Zeigersperre und Zeitstrafen, feste Dauer, große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/zielauswahl/)."
+   },
    "stand": "2026-09-29",
    "kurzbeschreibung": "Auf dunklem Grund treiben zwei bis vier farbige Kreise langsam umher. Man zielt mit der Maus (Fadenkreuz) und klickt zuerst rote, dann gelbe Kreise an; grüne darf man nie treffen. Gelbe werden nach kurzer Zeit rot, rote verschwinden unbeschossen mit Zeitstrafe (Standardeinstellung).",
    "ziel_funktionen": [
@@ -7485,7 +7545,11 @@
    "kapitel_original": "fps",
    "unterkapitel_original": "",
    "quelle_url": "https://skilldrills.online/de/drills/fps/angle-hold-trainer",
-   "blickfit_umsetzung": null,
+   "blickfit_umsetzung": {
+    "kennung": "winkel-halten",
+    "name": "Winkel halten",
+    "unterschiede": "Touch-Fassung für das Tablet: ohne Maus, Zeigersperre und Zeitstrafen, feste Dauer, große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/winkel-halten/)."
+   },
    "stand": "2026-09-29",
    "kurzbeschreibung": "Links und rechts im Bild stehen zwei dunkle „Mauern“. An einer der beiden Mauerkanten taucht nach unvorhersehbarer Wartezeit in zufälliger Höhe ein grüner Kreis auf, schiebt sich kurz ein Stück heraus und verschwindet wieder. Man muss ihn mit dem Maus-Fadenkreuz in dieser kurzen Zeit anklicken, darf aber nicht vorher klicken und ab höheren Stufen keine orangen Köder-Ziele treffen.",
    "ziel_funktionen": [
@@ -7631,7 +7695,11 @@
    "kapitel_original": "fps",
    "unterkapitel_original": "",
    "quelle_url": "https://skilldrills.online/de/drills/fps/anti-strafe-jitter-duel",
-   "blickfit_umsetzung": null,
+   "blickfit_umsetzung": {
+    "kennung": "ausweich-folgen",
+    "name": "Ausweich folgen",
+    "unterschiede": "Touch-Fassung für das Tablet: ohne Maus, Zeigersperre und Zeitstrafen, feste Dauer, große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/ausweich-folgen/)."
+   },
    "stand": "2026-09-29",
    "kurzbeschreibung": "Eine kleine Kugel bewegt sich auf der waagrechten Bildmitte hin und her und wechselt in kurzen, zufälligen Abständen Richtung und Tempo. Man hält das Mausfadenkreuz ohne zu klicken möglichst ununterbrochen auf der Kugel; gezählt wird die Zeit auf dem Ziel.",
    "ziel_funktionen": [
@@ -7776,7 +7844,11 @@
    "kapitel_original": "fps",
    "unterkapitel_original": "",
    "quelle_url": "https://skilldrills.online/de/drills/fps/anti-zigzag-movement-trainer",
-   "blickfit_umsetzung": null,
+   "blickfit_umsetzung": {
+    "kennung": "zickzack-folgen",
+    "name": "Zickzack folgen",
+    "unterschiede": "Touch-Fassung für das Tablet: ohne Maus, Zeigersperre und Zeitstrafen, feste Dauer, große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/zickzack-folgen/)."
+   },
    "stand": "2026-09-29",
    "kurzbeschreibung": "Eine kleine Kugel erscheint an zufälliger Stelle und fährt in geraden, leicht schrägen Stücken über den Bildschirm; in unregelmäßigen Abständen knickt ihre Bahn ab. Man hält das Mausfadenkreuz ohne zu klicken auf der Kugel, bis ihr Lebensbalken leer ist; dann taucht sie woanders neu auf.",
    "ziel_funktionen": [
@@ -7922,7 +7994,11 @@
    "kapitel_original": "fps",
    "unterkapitel_original": "",
    "quelle_url": "https://skilldrills.online/de/drills/fps/pro-smooth-pursuit",
-   "blickfit_umsetzung": null,
+   "blickfit_umsetzung": {
+    "kennung": "glatt-folgen",
+    "name": "Glatt folgen",
+    "unterschiede": "Touch-Fassung für das Tablet: ohne Maus, Zeigersperre und Zeitstrafen, feste Dauer, große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/glatt-folgen/)."
+   },
    "stand": "2026-09-29",
    "kurzbeschreibung": "Eine kleine Kugel zieht in weichen, schleifenförmigen Bahnen über den Bildschirm – waagrecht schwingt sie langsam, senkrecht gut doppelt so oft hin und her. Man hält das Mausfadenkreuz ohne zu klicken möglichst ununterbrochen auf der Kugel; gezählt wird die Zeit auf dem Ziel.",
    "ziel_funktionen": [
@@ -8068,7 +8144,11 @@
    "kapitel_original": "fps",
    "unterkapitel_original": "",
    "quelle_url": "https://skilldrills.online/de/drills/fps/vertical-air-track",
-   "blickfit_umsetzung": null,
+   "blickfit_umsetzung": {
+    "kennung": "hoch-runter-folgen",
+    "name": "Hoch und runter",
+    "unterschiede": "Touch-Fassung für das Tablet: ohne Maus, Zeigersperre und Zeitstrafen, feste Dauer, große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/hoch-runter-folgen/)."
+   },
    "stand": "2026-09-29",
    "kurzbeschreibung": "Grüne Kugeln werden vom unteren Bildrand wie Popcorn nach oben geschossen, werden langsamer, kehren am Scheitelpunkt um und fallen beschleunigt zurück; manchmal weichen sie ruckartig aus. Man hält die Maustaste gedrückt und das Fadenkreuz so lange auf der Kugel, bis ihr Lebensbalken leer ist, bevor sie unten wieder verschwindet.",
    "ziel_funktionen": [
@@ -9378,7 +9458,11 @@
    "kapitel_original": "motor",
    "unterkapitel_original": "hand-eye-coordination",
    "quelle_url": "https://skilldrills.online/de/drills/motor/hand-eye-coordination/aim-trainer",
-   "blickfit_umsetzung": null,
+   "blickfit_umsetzung": {
+    "kennung": "ziel-klicken",
+    "name": "Ziele erwischen",
+    "unterschiede": "Touch-Fassung für das Tablet: ohne Maus, Zeigersperre und Zeitstrafen, feste Dauer, große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/ziel-klicken/)."
+   },
    "stand": "2026-09-29",
    "kurzbeschreibung": "Auf dunklem Grund gleiten immer zwei grüne Kreisziele geradlinig umher und prallen an den Rändern ab. Man führt ein Fadenkreuz mit der Maus darauf und klickt, bevor ein Ziel nach seiner Lebensdauer verschwindet; mit steigender Punktzahl werden die Ziele kleiner, schneller und kurzlebiger.",
    "ziel_funktionen": [
@@ -9527,7 +9611,11 @@
    "kapitel_original": "motor",
    "unterkapitel_original": "movement-speed",
    "quelle_url": "https://skilldrills.online/de/drills/motor/movement-speed/keyboard-recognition",
-   "blickfit_umsetzung": null,
+   "blickfit_umsetzung": {
+    "kennung": "tasten-wahl",
+    "name": "Tasten-Wahl",
+    "unterschiede": "Touch-Fassung für das Tablet: ohne Maus, Zeigersperre und Zeitstrafen, feste Dauer, große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/tasten-wahl/)."
+   },
    "stand": "2026-09-29",
    "kurzbeschreibung": "In der Bildmitte erscheint groß eine Taste (z. B. „Q“ oder „3“), manchmal eine kurze Folge von 2–3 Tasten oder eine Folge, die man sich 1 s merken muss. Man drückt sie 60 Sekunden lang möglichst schnell auf der echten Tastatur, ohne hinzuschauen; orange „Fallen“-Tasten darf man nicht drücken.",
    "ziel_funktionen": [
@@ -9671,7 +9759,11 @@
    "kapitel_original": "motor",
    "unterkapitel_original": "hand-eye-coordination",
    "quelle_url": "https://skilldrills.online/de/drills/motor/hand-eye-coordination/precision-flick-shot",
-   "blickfit_umsetzung": null,
+   "blickfit_umsetzung": {
+    "kennung": "praezisions-flick",
+    "name": "Präzisions-Flick",
+    "unterschiede": "Touch-Fassung für das Tablet: ohne Maus, Zeigersperre und Zeitstrafen, feste Dauer, große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/praezisions-flick/)."
+   },
    "stand": "2026-09-29",
    "kurzbeschreibung": "Auf dunklem Grund stehen immer zwei ruhende grüne Kreisziele, die stetig schrumpfen. Man springt mit einem Fadenkreuz per Maus von Ziel zu Ziel und klickt, bevor ein Ziel verschwindet; ein Klick ins Zentrum zählt doppelt, mit steigender Punktzahl starten die Ziele kleiner und schrumpfen schneller.",
    "ziel_funktionen": [
@@ -10271,7 +10363,11 @@
    "kapitel_original": "motor",
    "unterkapitel_original": "movement-speed",
    "quelle_url": "https://skilldrills.online/de/drills/motor/movement-speed/finger-sequencing",
-   "blickfit_umsetzung": null,
+   "blickfit_umsetzung": {
+    "kennung": "zielkette",
+    "name": "Zielkette",
+    "unterschiede": "Touch-Fassung für das Tablet: ohne Maus, Zeigersperre und Zeitstrafen, feste Dauer, große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/zielkette/)."
+   },
    "stand": "2026-09-29",
    "kurzbeschreibung": "Auf dunklem Grund erscheint eine Kette aus drei bis fünf ruhenden Kreiszielen, verbunden durch eine gestrichelte Linie. Man klickt mit dem Fadenkreuz immer das hervorgehobene grüne Ziel an und arbeitet die Kette so schnell wie möglich in Reihenfolge ab; ab mittleren Stufen liegen rote Fallen-Ziele dazwischen, und die Zeit pro Kette wird knapper.",
    "ziel_funktionen": [
@@ -10420,7 +10516,11 @@
    "kapitel_original": "physical",
    "unterkapitel_original": "reflex-training",
    "quelle_url": "https://skilldrills.online/de/drills/physical/reflex-training/peripheral-threat-sweeper",
-   "blickfit_umsetzung": null,
+   "blickfit_umsetzung": {
+    "kennung": "randabwehr",
+    "name": "Rand im Blick",
+    "unterschiede": "Touch-Fassung für das Tablet: ohne Maus, Zeigersperre und Zeitstrafen, feste Dauer, große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/randabwehr/)."
+   },
    "stand": "2026-09-29",
    "kurzbeschreibung": "In der Bildschirmmitte liegt ein runder Schildkern. Aus zufälligen Richtungen fliegen farbige Punkte vom Rand auf ihn zu; man klickt sie mit der Maus an, bevor sie den Kern erreichen. Je mehr Punkte man erwischt, desto schneller und dichter kommen sie.",
    "ziel_funktionen": [
@@ -10573,7 +10673,11 @@
    "kapitel_original": "physical",
    "unterkapitel_original": "reflex-training",
    "quelle_url": "https://skilldrills.online/de/drills/physical/reflex-training/drop-catch",
-   "blickfit_umsetzung": null,
+   "blickfit_umsetzung": {
+    "kennung": "kugeln-fangen",
+    "name": "Kugeln fangen",
+    "unterschiede": "Touch-Fassung für das Tablet: ohne Maus, Zeigersperre und Zeitstrafen, feste Dauer, große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/kugeln-fangen/)."
+   },
    "stand": "2026-09-29",
    "kurzbeschreibung": "Von oben fallen grüne und rote Kugeln (rote mit weißem X) über den Bildschirm. Man fängt die grünen per Mausklick ab, bevor sie unten verschwinden, und lässt die roten fallen – mit jedem Level fallen die Kugeln schneller, dichter und häufiger rot. Trotz des Namens ist es kein Lineal-Falltest, sondern eine Maus-Abfangaufgabe mit Go/No-Go-Regel.",
    "ziel_funktionen": [
@@ -10718,7 +10822,11 @@
    "kapitel_original": "physical",
    "unterkapitel_original": "reflex-training",
    "quelle_url": "https://skilldrills.online/de/drills/physical/reflex-training/quick-dodge",
-   "blickfit_umsetzung": null,
+   "blickfit_umsetzung": {
+    "kennung": "ausweichen",
+    "name": "Ausweichen",
+    "unterschiede": "Touch-Fassung für das Tablet: ohne Maus, Zeigersperre und Zeitstrafen, feste Dauer, große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/ausweichen/)."
+   },
    "stand": "2026-09-29",
    "kurzbeschreibung": "Von allen Bildschirmrändern fliegen rote Kugeln geradlinig auf die Stelle zu, an der der eigene Zeiger gerade ist. Man bewegt den Zeiger mit der Maus ständig so, dass keine Kugel ihn berührt; jede ausgewichene Kugel bringt Punkte, und das Spiel wird rasch schneller und dichter.",
    "ziel_funktionen": [
@@ -10870,7 +10978,11 @@
    "kapitel_original": "physical",
    "unterkapitel_original": "fitness",
    "quelle_url": "https://skilldrills.online/de/drills/physical/fitness/speed-drill",
-   "blickfit_umsetzung": null,
+   "blickfit_umsetzung": {
+    "kennung": "schrumpfende-ziele",
+    "name": "Schrumpfende Ziele",
+    "unterschiede": "Touch-Fassung für das Tablet: ohne Maus, Zeigersperre und Zeitstrafen, feste Dauer, große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/schrumpfende-ziele/)."
+   },
    "stand": "2026-09-29",
    "kurzbeschreibung": "Auf dunklem Grund erscheint immer genau ein gelber Kreis, der langsam durchs Feld driftet und dabei schrumpft. Man klickt ihn mit dem Maus-Fadenkreuz an, bevor er verschwindet – sofort erscheint der nächste an anderer Stelle. Mit den Punkten werden die Ziele schneller, kleiner und schrumpfen rascher. Trotz des Namens ist es keine Reaktionszeitmessung und keine Körperübung, sondern eine Maus-Zielaufgabe unter Zeitdruck.",
    "ziel_funktionen": [
@@ -11019,7 +11131,11 @@
    "kapitel_original": "physical",
    "unterkapitel_original": "reflex-training",
    "quelle_url": "https://skilldrills.online/de/drills/physical/reflex-training/reaction-chain",
-   "blickfit_umsetzung": null,
+   "blickfit_umsetzung": {
+    "kennung": "in-die-bahn",
+    "name": "In die Bahn",
+    "unterschiede": "Touch-Fassung für das Tablet: ohne Maus, Zeigersperre und Zeitstrafen, feste Dauer, große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/in-die-bahn/)."
+   },
    "stand": "2026-09-29",
    "kurzbeschreibung": "Grüne Punkte („Knoten“) fliegen vom Bildschirmrand geradlinig waagrecht oder senkrecht durchs Feld. Man bringt das Maus-Fadenkreuz in ihre Bahn und muss es völlig ruhig halten, wenn der Knoten ankommt – bewegt sich der Zeiger im Moment der Berührung noch, oder fliegt ein Knoten ungefangen hinaus, ist es ein Fehler. Geübt wird also Vorhersagen der Bahn, zielgenaues Abstoppen und Stillhalten mit der Maus, keine Körperbewegung.",
    "ziel_funktionen": [
@@ -11168,7 +11284,11 @@
    "kapitel_original": "physical",
    "unterkapitel_original": "coordination",
    "quelle_url": "https://skilldrills.online/de/drills/physical/coordination/dynamic-grid-evasion",
-   "blickfit_umsetzung": null,
+   "blickfit_umsetzung": {
+    "kennung": "raster-ausweichen",
+    "name": "Raster-Ausweichen",
+    "unterschiede": "Touch-Fassung für das Tablet: ohne Maus, Zeigersperre und Zeitstrafen, feste Dauer, große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/raster-ausweichen/)."
+   },
    "stand": "2026-09-29",
    "kurzbeschreibung": "Die Spielfläche ist in 3 × 3 große Felder geteilt. In jeder Welle leuchten einige Felder bernsteinfarben als Warnung auf; bevor sie 'explodieren', muss man den Mauszeiger in ein nicht markiertes Feld bringen. 45 Sekunden lang, mit immer kürzerer Warnzeit und immer mehr bedrohten Feldern.",
    "ziel_funktionen": [
@@ -11312,7 +11432,11 @@
    "kapitel_original": "physical",
    "unterkapitel_original": "fitness",
    "quelle_url": "https://skilldrills.online/de/drills/physical/fitness/agility-ladder",
-   "blickfit_umsetzung": null,
+   "blickfit_umsetzung": {
+    "kennung": "sprossen-leiter",
+    "name": "Sprossen-Leiter",
+    "unterschiede": "Touch-Fassung für das Tablet: ohne Maus, Zeigersperre und Zeitstrafen, feste Dauer, große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/sprossen-leiter/)."
+   },
    "stand": "2026-09-29",
    "kurzbeschreibung": "Kleine Leitern mit je vier Sprossen (links–rechts–links–rechts) laufen von oben nach unten über den Bildschirm. Man berührt die Sprossen mit dem Mauszeiger in der richtigen Reihenfolge, bevor die Leiter unten verschwindet – eine Maus-Übung für Auge-Hand-Koordination und Timing, keine Beinarbeit.",
    "ziel_funktionen": [
@@ -11452,7 +11576,11 @@
    "kapitel_original": "physical",
    "unterkapitel_original": "balance-training",
    "quelle_url": "https://skilldrills.online/de/drills/physical/balance-training/stability-challenge",
-   "blickfit_umsetzung": null,
+   "blickfit_umsetzung": {
+    "kennung": "gegen-den-wind",
+    "name": "Gegen den Wind",
+    "unterschiede": "Touch-Fassung für das Tablet: ohne Maus, Zeigersperre und Zeitstrafen, feste Dauer, große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/gegen-den-wind/)."
+   },
    "stand": "2026-09-29",
    "kurzbeschreibung": "Ein unsichtbarer, ständig die Richtung wechselnder „Wind“ schiebt das Fadenkreuz aus der Bildmitte. Man hält es mit Gegenbewegungen der Maus 45 s lang im kleinen grünen Ring – eine Auge-Hand-Übung für fortlaufendes Ausgleichen, keine Gleichgewichtsübung.",
    "ziel_funktionen": [
@@ -11594,7 +11722,11 @@
    "kapitel_original": "physical",
    "unterkapitel_original": "fitness",
    "quelle_url": "https://skilldrills.online/de/drills/physical/fitness/jump-sequence",
-   "blickfit_umsetzung": null,
+   "blickfit_umsetzung": {
+    "kennung": "sprung-abfangen",
+    "name": "Sprungweite",
+    "unterschiede": "Touch-Fassung für das Tablet: ohne Maus, Zeigersperre und Zeitstrafen, feste Dauer, große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/sprung-abfangen/)."
+   },
    "stand": "2026-09-29",
    "kurzbeschreibung": "Ein Punkt steht unten auf einer Bodenlinie, darüber fliegt ein runder Zielring geradlinig durch das Bild und prallt von den Rändern ab. Man hält die Maustaste auf dem Punkt gedrückt, um „Sprungkraft“ zu laden, lässt los und lenkt den fliegenden Punkt mit der Maus seitlich in den Ring – eine Maus-Übung für Timing und Vorausschätzen, kein Sprungkrafttraining.",
    "ziel_funktionen": [
@@ -11732,7 +11864,11 @@
    "kapitel_original": "physical",
    "unterkapitel_original": "coordination",
    "quelle_url": "https://skilldrills.online/de/drills/physical/coordination/cross-body-movement",
-   "blickfit_umsetzung": null,
+   "blickfit_umsetzung": {
+    "kennung": "diagonal-korridor",
+    "name": "Diagonal-Korridor",
+    "unterschiede": "Touch-Fassung für das Tablet: ohne Maus, Zeigersperre und Zeitstrafen, feste Dauer, große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/diagonal-korridor/)."
+   },
    "stand": "2026-09-29",
    "kurzbeschreibung": "Am linken und rechten Bildschirmrand erscheinen ein Startpunkt (cyan) und ein Zielpunkt (magenta). Man fährt mit dem Mauszeiger auf den Startpunkt und zieht ihn in einem Zug durch eine schmale, leuchtende Bahn quer über den Bildschirm zum Zielpunkt – eine Maus-Übung für präzises, weites Führen des Zeigers, keine Körper- oder „Hirnhälften“-Übung.",
    "ziel_funktionen": [
@@ -11877,7 +12013,11 @@
    "kapitel_original": "physical",
    "unterkapitel_original": "coordination",
    "quelle_url": "https://skilldrills.online/de/drills/physical/coordination/complex-pattern",
-   "blickfit_umsetzung": null,
+   "blickfit_umsetzung": {
+    "kennung": "muster-nachzeichnen",
+    "name": "Muster nachzeichnen",
+    "unterschiede": "Touch-Fassung für das Tablet: ohne Maus, Zeigersperre und Zeitstrafen, feste Dauer, große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/muster-nachzeichnen/)."
+   },
    "stand": "2026-09-29",
    "kurzbeschreibung": "Ein Linienzug aus Start-, Weg- und Zielpunkten wird 2,0 bis 1,5 s gezeigt und verschwindet. Danach zieht man ihn bei gedrückter Maustaste aus dem Gedächtnis vom Start- zum Zielpunkt nach – eine Übung für das visuell-räumliche Kurzzeitgedächtnis mit Zeichenbewegung, keine Körperübung.",
    "ziel_funktionen": [

@@ -7,6 +7,41 @@
  * (siehe docs/wissenschaft/01-reaktion-und-impulskontrolle.md, Abschnitt 4).
  */
 import type { Lang } from '../i18n/lang';
+import { science as wortstromScience } from '../exercises/wortstrom/science';
+import { science as abprallFangScience } from '../exercises/abprall-fang/science';
+import { science as dunkelphasenScience } from '../exercises/dunkelphasen/science';
+import { science as tempoWechselScience } from '../exercises/tempo-wechsel/science';
+import { science as nachziehSpurScience } from '../exercises/nachzieh-spur/science';
+import { science as hoehenwechselBahnScience } from '../exercises/hoehenwechsel-bahn/science';
+import { science as richtungschaosScience } from '../exercises/richtungschaos/science';
+import { science as flickZieleScience } from '../exercises/flick-ziele/science';
+import { science as sofortReaktionScience } from '../exercises/sofort-reaktion/science';
+import { science as gegenhaltenScience } from '../exercises/gegenhalten/science';
+import { science as seitwaertsFolgenScience } from '../exercises/seitwaerts-folgen/science';
+import { science as randzielFlickScience } from '../exercises/randziel-flick/science';
+import { science as kurvenbahnFolgenScience } from '../exercises/kurvenbahn-folgen/science';
+import { science as mikrokorrekturScience } from '../exercises/mikrokorrektur/science';
+import { science as zielauswahlScience } from '../exercises/zielauswahl/science';
+import { science as winkelHaltenScience } from '../exercises/winkel-halten/science';
+import { science as ausweichFolgenScience } from '../exercises/ausweich-folgen/science';
+import { science as zickzackFolgenScience } from '../exercises/zickzack-folgen/science';
+import { science as glattFolgenScience } from '../exercises/glatt-folgen/science';
+import { science as hochRunterFolgenScience } from '../exercises/hoch-runter-folgen/science';
+import { science as zielKlickenScience } from '../exercises/ziel-klicken/science';
+import { science as tastenWahlScience } from '../exercises/tasten-wahl/science';
+import { science as praezisionsFlickScience } from '../exercises/praezisions-flick/science';
+import { science as zielketteScience } from '../exercises/zielkette/science';
+import { science as randabwehrScience } from '../exercises/randabwehr/science';
+import { science as kugelnFangenScience } from '../exercises/kugeln-fangen/science';
+import { science as ausweichenScience } from '../exercises/ausweichen/science';
+import { science as schrumpfendeZieleScience } from '../exercises/schrumpfende-ziele/science';
+import { science as inDieBahnScience } from '../exercises/in-die-bahn/science';
+import { science as rasterAusweichenScience } from '../exercises/raster-ausweichen/science';
+import { science as sprossenLeiterScience } from '../exercises/sprossen-leiter/science';
+import { science as gegenDenWindScience } from '../exercises/gegen-den-wind/science';
+import { science as sprungAbfangenScience } from '../exercises/sprung-abfangen/science';
+import { science as diagonalKorridorScience } from '../exercises/diagonal-korridor/science';
+import { science as musterNachzeichnenScience } from '../exercises/muster-nachzeichnen/science';
 import { science as sanfteBlickfolgeScience } from '../exercises/sanfte-blickfolge/science';
 import { science as zickzackBahnScience } from '../exercises/zickzack-bahn/science';
 import { science as dreiecksbahnScience } from '../exercises/dreiecksbahn/science';
@@ -539,7 +574,7 @@ export const SCIENCE: Record<string, ScienceEntry> = {
     ],
   },
   ...Object.fromEntries(
-    [leuchtfolgeScience, zahlenspanneScience, rastermusterScience, rueckblickScience, woWarEsScience, leuchtpfadScience, liegendeAchtScience, wellenbahnScience, zweiZieleScience, sekundenGefuehlScience, blicksprungGalerieScience, fuenfTuerenScience, fallendeZieleScience, hellsteKugelScience, ziehenAblegenScience, sanfteBlickfolgeScience, zickzackBahnScience, dreiecksbahnScience, ausweichzielScience, sprungzielScience, landepunktScience, zieleAbraeumenScience, pendelFangScience, hinterDerDeckungScience, schwarmWechselScience, randPingScience, tippTempoScience, wortlisteScience, ruhigeHandScience, spurFolgenScience].map((e) => [e.id, e]),
+    [leuchtfolgeScience, zahlenspanneScience, rastermusterScience, rueckblickScience, woWarEsScience, leuchtpfadScience, liegendeAchtScience, wellenbahnScience, zweiZieleScience, sekundenGefuehlScience, blicksprungGalerieScience, fuenfTuerenScience, fallendeZieleScience, hellsteKugelScience, ziehenAblegenScience, sanfteBlickfolgeScience, zickzackBahnScience, dreiecksbahnScience, ausweichzielScience, sprungzielScience, landepunktScience, zieleAbraeumenScience, pendelFangScience, hinterDerDeckungScience, schwarmWechselScience, randPingScience, tippTempoScience, wortlisteScience, ruhigeHandScience, spurFolgenScience, wortstromScience, abprallFangScience, dunkelphasenScience, tempoWechselScience, nachziehSpurScience, hoehenwechselBahnScience, richtungschaosScience, flickZieleScience, sofortReaktionScience, gegenhaltenScience, seitwaertsFolgenScience, randzielFlickScience, kurvenbahnFolgenScience, mikrokorrekturScience, zielauswahlScience, winkelHaltenScience, ausweichFolgenScience, zickzackFolgenScience, glattFolgenScience, hochRunterFolgenScience, zielKlickenScience, tastenWahlScience, praezisionsFlickScience, zielketteScience, randabwehrScience, kugelnFangenScience, ausweichenScience, schrumpfendeZieleScience, inDieBahnScience, rasterAusweichenScience, sprossenLeiterScience, gegenDenWindScience, sprungAbfangenScience, diagonalKorridorScience, musterNachzeichnenScience].map((e) => [e.id, e]),
   ),
 };
 
