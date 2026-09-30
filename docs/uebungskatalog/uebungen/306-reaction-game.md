@@ -9,7 +9,7 @@ kapitel_original: "reaction-speed"
 unterkapitel_original: ""
 quelle_url: "https://skilldrills.online/de/drills/reaction-speed/reaction-game"
 blickfit_umsetzung: null
-stand: 2026-09-29
+stand: 2026-09-30
 
 # ===== Überblick =====
 kurzbeschreibung: "Von oben fallen rote Punkte an zufälligen Stellen über das dunkle Spielfeld, mehrere gleichzeitig. Man klickt oder tippt sie an, bevor sie unten verschwinden; mit den Punkten steigt das Level, und die Punkte werden schneller, kleiner und kommen dichter."
@@ -73,8 +73,8 @@ belastung:
 
 # ===== Auswahlhilfe =====
 voraussetzungen: ["Maus, Touchpad oder Touchscreen; Maus auf ruhiger Unterlage", "Ziele von ≈ 1,5° bis ≈ 0,5° Sehwinkel erkennen, die mit ≈ 5 bis > 20 °/s nach unten fallen", "scharfes Sehen über die ganze Feldhöhe (≈ 17° in der Seite, ≈ 28° im Vollbild am Monitor)", "kein Farbsehen nötig (alle Ziele gleich rot, mit weißem Mittelpunkt)", "1–3 min ohne Pause schnell klicken oder tippen können"]
-vorsicht_bei: [photosensitive_epilepsie, migraene_lichtempfindlich, presbyopie_gleitsicht, nystagmus, gesichtsfeldausfall, sehbehinderung_niedriger_visus, trockenes_auge_bildschirm, tremor_parkinson, hand_arm_beschwerden, kognitive_einschraenkung, aufmerksamkeitsprobleme]
-geeignet_fuer: ["bewegte Ziele mit Blick und Zeiger abfangen (Interzeption) in spielerischer Form üben", "mehrere gleichzeitig fallende Ziele im Blick behalten und das dringendste (unterste) zuerst wählen", "Einstieg in Abfangaufgaben: die ersten Level sind langsam (Fallzeit ≈ 4 s), mit großer Trefferzone", "Aufwärmen vor FPS- oder Tracking-Übungen (304, 305, 515)"]
+vorsicht_bei: [photosensitive_epilepsie, migraene_lichtempfindlich, presbyopie_gleitsicht, nystagmus, gesichtsfeldausfall, sehbehinderung_niedriger_visus, trockenes_auge_bildschirm, kopfschmerz_asthenopie, tremor_parkinson, hand_arm_beschwerden, kognitive_einschraenkung, aufmerksamkeitsprobleme]
+geeignet_fuer: ["bewegte Ziele mit Blick und Zeiger abfangen (Interzeption) in spielerischer Form üben", "mehrere gleichzeitig fallende Ziele im Blick behalten und das dringendste (unterste) zuerst wählen", "Einstieg in Abfangaufgaben: die ersten Level sind langsam (Fallzeit ≈ 4 s), mit großer Trefferzone", "Vorstufe zu FPS-Übungen mit bewegten Zielen (515, 505)"]
 weniger_geeignet_fuer: ["Messung der Reaktionszeit (der Wert 'Ø Reaktion' enthält die Fallzeit bis zum selbst gewählten Klick)", "Impulskontrolle (es gibt keine Nicht-Klick-Reize; dafür 802 oder 102)", "Menschen, die ohne Zeitdruck üben sollen", "Lichtempfindliche: roter Fehlerblitz bei jedem Fehler, standardmäßig an", "Gleitsichtträger:innen im Vollbild (senkrechter Blickweg durch mehrere Glaszonen)", "Tablets mit hoher Tipp-Latenz ab mittleren Levels (Treffer rutschen systematisch hinter das Ziel)"]
 evidenz:
   uebungseffekt: stark
@@ -177,11 +177,11 @@ Zu dieser Aufgabe gibt es keine Bildgebungs- oder Trainingsstudie; die Website n
   - `presbyopie_gleitsicht`: senkrechter Blickweg über das ganze Feld – kein Vollbild, Bildschirmbrille, Monitor tiefer.
   - `nystagmus`: Blickfolge bewegter Ziele ist Kernbestandteil; langsame Level wählen oder 302 (ruhende Ziele).
   - `gesichtsfeldausfall`, `sehbehinderung_niedriger_visus`: Ziele entstehen am oberen Rand über fast die ganze Breite und werden bis ≈ 0,5° klein; ausfallseitige entkommen unbemerkt.
-  - `trockenes_auge_bildschirm`: seltenes Blinzeln im Schnellspiel; kurze Runden, Pausen.
+  - `trockenes_auge_bildschirm`, `kopfschmerz_asthenopie`: seltenes Blinzeln und anhaltendes Verfolgen fallender Ziele über eine sich verlängernde Runde; kurze Runden, Pausen.
   - `tremor_parkinson`, `hand_arm_beschwerden`: schnelle, kleine Ziele, keine Pausenfunktion.
   - `kognitive_einschraenkung`, `aufmerksamkeitsprobleme`: sich selbst verschärfender Zeitdruck, Rückmeldung mit Blitz, Ton und Wackeln – eher als Spiel auf niedriger Stufe, nicht als Test.
-- **Kombiniert gut mit …** 413 (senkrechte Blickfolge ohne Hand), 104/Zielfang (ein bewegtes Ziel, Blickfit), 302 (gleiche Spielmechanik mit ruhenden Zielen), 101 (Reaktion ohne Zielbewegung).
-- **Überschneidungen:** **802** ist fast dieselbe Aufgabe (fallende Kugeln abfangen) plus Go/No-Go-Regel – nicht beide hintereinander vorschlagen. **302** teilt Level-, Combo- und Zeitregeln, dort ruhen die Ziele. **304/305** fangen waagrecht bzw. zweidimensional bewegte Einzelziele ab, **515** senkrechte Flugbahnen mit Schwerkraft (FPS-Kapitel). **101** und **503** messen echte einfache Reaktion am festen Ort, **102** Impulskontrolle, **202** Wahlreaktion nach Regel – all das fehlt hier.
+- **Kombiniert gut mit …** 413 (senkrechte Blickfolge ohne Hand), 101 (Reaktion ohne Zielbewegung), 102 (Hemmung – fehlt hier), 404 (ruhige Blickfolge ohne Zeitdruck).
+- **Überschneidungen:** **Dublette:** **802** ist fast dieselbe Aufgabe (fallende Kugeln abfangen) plus Go/No-Go-Regel – nicht beide hintereinander vorschlagen; in der eigenen Gruppe gibt es keine Dublette. **Gleiche Engine:** 302–308 teilen Level-, Combo-, Zeit- und Fehlerregeln (Level alle 1.750 Punkte, Combo bis 3,0×, +2 s je Treffer, −1 s je Fehler, roter Fehlerblitz, Bildwackeln) – pro Einheit höchstens eine davon, allenfalls eine zweite mit anderem Schwerpunkt (ruhende Ziele 302/303/307/308, bewegte 304/305/306). **302** ist am nächsten (mehrere Ziele gleichzeitig, dort ruhend). **104/Zielfang** (Blickfit): ein bewegtes Ziel mit adaptiver Stufe und fester Dauer – ruhigere Alternative, nicht zusätzlich. **304/305** fangen waagrecht bzw. zweidimensional bewegte Einzelziele ab, **515** senkrechte Flugbahnen mit Schwerkraft (FPS-Kapitel). **101** und **503** messen echte einfache Reaktion am festen Ort, **102** Impulskontrolle, **202** Wahlreaktion nach Regel – all das fehlt hier.
 
 ## 10. Schwächen des Originals und Empfehlungen für eine Blickfit-Umsetzung
 
