@@ -7,6 +7,7 @@
  */
 import { circle, glow, ring, withAlpha } from '../../core/draw';
 import { clamp, easeOut } from '../../core/stats';
+import type { Rng } from '../../core/rng';
 import type { ExerciseContext, StageInfo, ToastKind } from '../../core/types';
 
 /** Weiches Ein- und Ausblenden: jeweils mindestens 100 ms (Regel: keine harten Übergänge) */
@@ -96,3 +97,62 @@ export function drawBullseye(g: CanvasRenderingContext2D, x: number, y: number, 
   circle(g, x, y, r * 0.36, '#FFFFFF');
   g.restore();
 }
+
+// ---------------------------------------------------------------------------
+// Ziele am linken oder rechten Rand (randziel-flick, winkel-halten)
+
+export type Side = 'left' | 'right';
+
+/** Seite des nächsten Ziels: zufällig, aber höchstens dreimal dieselbe Seite hintereinander */
+export function pickSide(rng: Pick<Rng, 'chance'>, history: readonly Side[]): Side {
+  const n = history.length;
+  if (n >= 3 && history[n - 1] === history[n - 2] && history[n - 2] === history[n - 3]) {
+    return history[n - 1] === 'left' ? 'right' : 'left';
+  }
+  return rng.chance(0.5) ? 'left' : 'right';
+}
+
+export interface EdgeLayout {
+  /** Mitte des nutzbaren Feldes */
+  cx: number;
+  cy: number;
+  /** Mitte der Zielspalten links und rechts */
+  leftX: number;
+  rightX: number;
+  /** vertikaler Bereich der Zielmitten */
+  yMin: number;
+  yMax: number;
+  /** sichtbarer Zielradius und Trefferradius (px) */
+  r: number;
+  hitR: number;
+}
+
+/**
+ * Randziele anordnen. `bottom` = Unterkante des nutzbaren Feldes (im Intro-Film über der Bildunterschrift),
+ * `rU` = Zielradius in u, `band` = Anteil der Feldhöhe, in dem die Zielmitten liegen können.
+ * Die Zielmitte hält Abstand zum Rand: der ganze Trefferkreis liegt auf der Bühne.
+ */
+export function edgeLayout(w: number, bottom: number, u: number, rU: number, band: number): EdgeLayout {
+  const r = Math.max(15, rU * u);
+  const hitR = hitRadiusFor(r);
+  const pad = hitR + Math.max(6, u * 1.2);
+  const cy = bottom / 2;
+  const half = Math.max(0, Math.min((bottom * band) / 2, cy - pad));
+  return {
+    cx: w / 2,
+    cy,
+    leftX: Math.min(pad, w / 2),
+    rightX: Math.max(w - pad, w / 2),
+    yMin: cy - half,
+    yMax: cy + half,
+    r,
+    hitR,
+  };
+}
+
+/** Zielmitte für eine Seite und einen normierten Höhenwert ny (0 = oben im Band, 1 = unten) */
+export function edgeTargetAt(lay: EdgeLayout, side: Side, ny: number): { x: number; y: number } {
+  return { x: side === 'left' ? lay.leftX : lay.rightX, y: lay.yMin + clamp(ny, 0, 1) * (lay.yMax - lay.yMin) };
+}
+
+export const inCircle = (x: number, y: number, cx: number, cy: number, r: number): boolean => Math.hypot(x - cx, y - cy) <= r;

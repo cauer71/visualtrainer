@@ -30,6 +30,7 @@ import {
   smoothstep,
   TrackStats,
   Trail,
+  trapezoid,
   Wobble,
 } from '../../src/exercises/_shared/nachfuehren-logic';
 import { simulate } from './_sim-w08-w09';
@@ -115,6 +116,28 @@ describe('nachfuehren-logic: Zeitverzerrung und Schwanken', () => {
       expect(smoothstep(k)).toBeGreaterThanOrEqual(prev - 1e-12);
       prev = smoothstep(k);
     }
+  });
+
+  it('trapezoid: 0 → 1, monoton, stetig, Geschwindigkeit ohne Sprünge', () => {
+    for (const a of [0.1, 0.2, 0.5]) {
+      expect(trapezoid(0, a)).toBe(0);
+      expect(trapezoid(1, a)).toBeCloseTo(1, 9);
+      expect(trapezoid(0.5, a)).toBeCloseTo(0.5, 9);
+      let prev = 0;
+      let maxJump = 0;
+      let pv = 0;
+      for (let u = 0; u <= 1; u += 0.001) {
+        const y = trapezoid(u, a);
+        expect(y).toBeGreaterThanOrEqual(prev - 1e-12);
+        const v = (y - prev) / 0.001;
+        if (u > 0.002) maxJump = Math.max(maxJump, Math.abs(v - pv));
+        pv = v;
+        prev = y;
+      }
+      expect(maxJump).toBeLessThan(0.05 / a);
+    }
+    expect(trapezoid(-1)).toBe(0);
+    expect(trapezoid(3)).toBe(1);
   });
 
   it('Wobble: in [−1, 1], deterministisch, Steigung beschränkt', () => {

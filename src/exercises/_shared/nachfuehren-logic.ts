@@ -65,6 +65,20 @@ export function rampTime(s: number, ramp: number): number {
 }
 
 /**
+ * Weiche Bewegung von 0 nach 1 mit „Trapez“-Geschwindigkeit: in den ersten und letzten Anteilen `a` (0 … 0,5) der Zeit
+ * gleichmäßig beschleunigen bzw. bremsen, dazwischen gleichmäßig schnell (a = 0,5: Dreieck, ≈ Kosinus-Kurve).
+ * Stetig und stetig differenzierbar (keine Geschwindigkeitssprünge). u = Zeitanteil 0..1.
+ */
+export function trapezoid(u: number, a = 0.2): number {
+  const x = clamp(u, 0, 1);
+  const k = clamp(a, 1e-6, 0.5);
+  const vmax = 1 / (1 - k);
+  if (x < k) return (vmax * x * x) / (2 * k);
+  if (x <= 1 - k) return vmax * (k / 2 + (x - k));
+  return 1 - (vmax * (1 - x) * (1 - x)) / (2 * k);
+}
+
+/**
  * Weiches, unregelmäßiges Schwanken: Summe mehrerer Sinuswellen mit zufälliger Phase und zufälligen Perioden.
  * Werte liegen garantiert in [−1, 1]; typische Ausschläge ≈ ±0,5. Deterministisch zum Startwert der `rng`.
  */

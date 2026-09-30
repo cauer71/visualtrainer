@@ -23,6 +23,8 @@ import { BALL, ballRadiusFor, type BarLayout, type SignConfig, SignExercise, sig
 const DEMO_SHOW_MS = 900;
 /** Sicherheitsnetz: Findet sich auf kleiner Bühne nie ein freies Fenster, geht es nach dieser Zeit trotzdem weiter */
 export const ROOM_WAIT_MAX_MS = 3500;
+/** Dauer des weichen Lenk-Bogens zur freien Seite (ms) */
+export const STEER_MS = 900;
 
 /**
  * Abstand vor einer Wand, ab dem `MotionPath` weich beidreht (gleiche Formel wie dort:
@@ -124,9 +126,27 @@ export abstract class FreeFlightExercise extends SignExercise {
     this.path.place(f.minX + (f.maxX - f.minX) * fx, f.minY + (f.maxY - f.minY) * fy, theta);
   }
 
+  /**
+   * Größte freie Strecke (px), die das Feld überhaupt bietet: der beste Strahl aus der Feldmitte
+   * (abzüglich Beidrehbereich), zu 80 %. Begrenzt die Anforderung auf sehr kleinen Bühnen, damit dort
+   * nicht ewig auf ein Fenster gewartet wird.
+   */
+  protected roomCap(): number {
+    const f = this.path.field;
+    const c = { x: (f.minX + f.maxX) / 2, y: (f.minY + f.maxY) / 2 };
+    let best = 0;
+    for (let k = 0; k < 16; k++) best = Math.max(best, roomFor(f, c, (k / 16) * Math.PI * 2, this.speedPx));
+    return best * 0.8;
+  }
+
+  /** Nötige freie Strecke (px) für `seconds` Sekunden geradeaus, begrenzt durch `roomCap` */
+  protected needPx(seconds: number): number {
+    return Math.min(this.speedPx * seconds, this.roomCap());
+  }
+
   /** Reicht die freie Strecke geradeaus für `seconds` Sekunden Weg (mit Beidrehbereich)? */
   protected roomAhead(seconds: number): boolean {
-    return roomFor(this.path.field, this.path, this.path.theta, this.speedPx) >= this.speedPx * seconds;
+    return roomFor(this.path.field, this.path, this.path.theta, this.speedPx) >= this.needPx(seconds);
   }
 
   /** Anzeigedauer des Zeichens in s (Intro-Film: fest) */
@@ -140,6 +160,25 @@ export abstract class FreeFlightExercise extends SignExercise {
    */
   protected signRoom(waitedMs: number): boolean {
     return this.roomAhead(this.showSeconds() * 1.1) || waitedMs >= ROOM_WAIT_MAX_MS;
+  }
+
+  /**
+   * Reicht die freie Strecke für das Zeichen nicht, das Ziel in einem weichen Bogen (nicht während eines
+   * anderen Bogens) zur freieren Seite lenken; danach wird erneut geprüft.
+   */
+  protected steerForSign(): void {
+    if (this.path.turning) return;
+    this.steerOpen(this.showSeconds() * 1.1);
+  }
+
+  /** Bogen zur freieren Seite, falls für `seconds` Sekunden geradeaus nicht genug Platz ist (nicht während eines Bogens) */
+  protected steerOpen(seconds: number): void {
+    if (this.path.turning) return;
+    const need = this.needPx(seconds);
+    const f = this.path.field;
+    if (roomFor(f, this.path, this.path.theta, this.speedPx) >= need) return;
+    const delta = turnToOpen(f, this.path, this.path.theta, need, this.speedPx);
+    if (Math.abs(delta) > 1e-3) this.path.startTurn(delta, STEER_MS);
   }
 
   protected onLayout(L: BarLayout): void {

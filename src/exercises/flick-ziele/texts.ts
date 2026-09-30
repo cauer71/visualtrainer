@@ -23,7 +23,7 @@ export const de: ExerciseTexts = {
     missed: 'Weg, bevor du tippen konntest',
   },
   tips: {
-    wrong: 'Du tippst öfter daneben. Schau erst hin, wo das Ziel ist, dann tippe – ein Augenblick mehr macht dich treffsicherer.',
+    wrong: 'Du tippst öfter daneben. Schau erst hin, wo das Ziel ist, dann tippe – ein Augenblick mehr hilft oft beim Treffen.',
     slow: 'Einige Ziele waren weg, bevor du getippt hast. Tippe gleich, wenn du es siehst – nicht erst überlegen.',
     far: 'Bei weiten Wegen brauchst du deutlich länger. Lass den Blick zuerst zum Ziel springen und bring dann den Finger hin.',
     great: 'Stark! Du findest die Ziele schnell und triffst sie. Bleib locker – dann klappt es auch bei kleineren Zielen.',
@@ -38,7 +38,7 @@ export const de: ExerciseTexts = {
 export const it: ExerciseTexts = {
   title: 'Bersagli lampo',
   tagline: 'Compare un bersaglio – toccalo prima che sparisca.',
-  steps: ['In un punto qualsiasi dello schermo compare un bersaglio.', 'Toccalo il più in fretta e con la massima precisione possibile.', 'Più sei bravo, più è piccolo e meno a lungo si vede.'],
+  steps: ['In un punto qualsiasi dello schermo compare un bersaglio.', 'Toccalo il più in fretta e con precisione.', 'Più sei bravo, più è piccolo e meno a lungo si vede.'],
   why:
     'Nella vita di tutti i giorni qualcosa compare spesso all’improvviso in un punto inaspettato, e sguardo e mano devono arrivarci in fretta. Qui ti eserciti proprio in questo movimento sul tablet: scoprire il bersaglio, portare il dito, colpire. La velocità dipende anche dal dispositivo – confrontati solo con te stesso. Non è dimostrato che questo esercizio si trasferisca allo sport o alla vita di tutti i giorni.',
   goodFor: ['Afferrare in fretta', 'Giochi con la palla', 'Guardarsi intorno'],
@@ -55,7 +55,7 @@ export const it: ExerciseTexts = {
     missed: 'Sparito prima del tocco',
   },
   tips: {
-    wrong: 'Tocchi spesso accanto. Guarda prima dov’è il bersaglio, poi tocca – un attimo in più ti rende più preciso.',
+    wrong: 'Tocchi spesso accanto. Guarda prima dov’è il bersaglio, poi tocca – un attimo in più spesso aiuta a colpire.',
     slow: 'Alcuni bersagli erano già spariti quando hai toccato. Tocca subito appena lo vedi – senza pensarci troppo.',
     far: 'Per i percorsi lunghi ti serve molto più tempo. Lascia prima saltare lo sguardo sul bersaglio, poi porta il dito.',
     great: 'Ottimo! Trovi i bersagli in fretta e li colpisci. Resta rilassato – così funziona anche con i bersagli più piccoli.',

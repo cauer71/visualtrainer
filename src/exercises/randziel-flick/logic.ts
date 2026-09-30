@@ -7,15 +7,15 @@
 import { clamp, median } from '../../core/stats';
 import type { Rng } from '../../core/rng';
 import { foreperiodMs } from '../_shared/vorperiode';
-import { hitRadiusFor, minLifeMs } from '../_shared/ziel-auftauchen';
+import { type EdgeLayout, type Side, edgeLayout, edgeTargetAt, inCircle, minLifeMs, pickSide } from '../_shared/ziel-auftauchen';
+
+export { inCircle, pickSide, type Side };
 
 export const MIN_LEVEL = 1;
 export const MAX_LEVEL = 14;
 export const MIN_LIFE_MS = Math.max(560, minLifeMs(200));
 
 export const levelOf = (level: number): number => clamp(Math.floor(level + 1e-9), MIN_LEVEL, MAX_LEVEL);
-
-export type Side = 'left' | 'right';
 
 /** Sichtbarer Zielradius in u: Stufe 1 ≈ 7,2 u, Stufe 14 ≈ 3,6 u */
 export function radiusU(level: number): number {
@@ -40,65 +40,20 @@ export function waitMs(rng: Pick<Rng, 'exp'>): number {
 /** Pause nach einem Durchgang, bevor die Mittelmarke wieder „bereit“ ist */
 export const GAP_MS = 380;
 
-/** Seite des nächsten Ziels: zufällig, aber höchstens dreimal dieselbe Seite hintereinander */
-export function pickSide(rng: Pick<Rng, 'chance'>, history: readonly Side[]): Side {
-  const n = history.length;
-  if (n >= 3 && history[n - 1] === history[n - 2] && history[n - 2] === history[n - 3]) {
-    return history[n - 1] === 'left' ? 'right' : 'left';
-  }
-  return rng.chance(0.5) ? 'left' : 'right';
-}
-
-export interface Layout {
-  /** Mittelmarke */
-  cx: number;
-  cy: number;
-  /** Radius der Mittelmarke (sichtbar) und ihres Tippbereichs */
+export interface Layout extends EdgeLayout {
+  /** Mittelmarke: sichtbarer Radius und Radius des Tippbereichs */
   markR: number;
   markHit: number;
-  /** Mitte der Zielspalten */
-  leftX: number;
-  rightX: number;
-  /** vertikaler Bereich der Zielmitten */
-  yMin: number;
-  yMax: number;
-  /** Trefferradius des Ziels */
-  hitR: number;
-  /** sichtbarer Zielradius */
-  r: number;
 }
 
-/**
- * Bühne aufteilen. `bottom` = Unterkante des nutzbaren Feldes (im Intro-Film über der Bildunterschrift).
- * Die Zielmitte hält einen Abstand zum Rand, sodass der ganze Trefferkreis auf der Bühne liegt.
- */
+/** Bühne aufteilen: Mittelmarke und Randziele (siehe `edgeLayout`) */
 export function layoutFor(w: number, bottom: number, u: number, level: number): Layout {
-  const r = Math.max(15, radiusU(level) * u);
-  const hitR = hitRadiusFor(r);
-  const pad = hitR + Math.max(6, u * 1.2);
-  const cy = bottom / 2;
-  const half = Math.max(0, Math.min((bottom * bandFrac(level)) / 2, cy - pad));
   const markR = Math.max(26, u * 4.5);
-  return {
-    cx: w / 2,
-    cy,
-    markR,
-    markHit: Math.max(44, markR * 1.35),
-    leftX: Math.min(pad, w / 2),
-    rightX: Math.max(w - pad, w / 2),
-    yMin: cy - half,
-    yMax: cy + half,
-    hitR,
-    r,
-  };
+  return { ...edgeLayout(w, bottom, u, radiusU(level), bandFrac(level)), markR, markHit: Math.max(44, markR * 1.35) };
 }
 
 /** Zielmitte für eine Seite und einen normierten Höhenwert ny (0 = oben im Band, 1 = unten) */
-export function targetAt(lay: Layout, side: Side, ny: number): { x: number; y: number } {
-  return { x: side === 'left' ? lay.leftX : lay.rightX, y: lay.yMin + clamp(ny, 0, 1) * (lay.yMax - lay.yMin) };
-}
-
-export const inCircle = (x: number, y: number, cx: number, cy: number, r: number): boolean => Math.hypot(x - cx, y - cy) <= r;
+export const targetAt = edgeTargetAt;
 
 export interface HitSample {
   ms: number;
