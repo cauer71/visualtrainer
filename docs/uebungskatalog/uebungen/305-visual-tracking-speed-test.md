@@ -9,11 +9,11 @@ kapitel_original: "reaction-speed"
 unterkapitel_original: ""
 quelle_url: "https://skilldrills.online/de/drills/reaction-speed/visual-tracking-speed-test"
 blickfit_umsetzung: null
-stand: 2026-09-29
+stand: 2026-09-30
 
 # ===== Überblick =====
 kurzbeschreibung: "Auf dunklem Feld taucht an zufälliger Stelle ein roter Punkt auf und gleitet geradlinig in eine zufällige Richtung, wobei er an unsichtbaren Rändern abprallt. Man verfolgt ihn mit den Augen und klickt bzw. tippt ihn an, bevor er nach einer mit dem Level schrumpfenden Zeit verschwindet."
-ziel_funktionen: [bewegungswahrnehmung, antizipation, auge_hand_koordination]
+ziel_funktionen: [bewegungswahrnehmung, antizipation, auge_hand_koordination, zielbewegung_tempo]
 eingabe: [maus, touch, touchpad]
 tablet_geeignet: mit_anpassung
 dauer_sekunden: 45
@@ -73,15 +73,15 @@ belastung:
 
 # ===== Auswahlhilfe =====
 voraussetzungen: ["Maus, Touchpad oder Touchscreen; Maus auf ruhiger Unterlage", "ein kleines bewegtes Ziel (≈ 1,5° bis ≈ 0,6° Sehwinkel, 2–16 °/s, mit Combo bis ≈ 22 °/s) sicher sehen und verfolgen können", "scharfes Sehen über das ganze Spielfeld (Vollbild; am Monitor ≈ 40° breit, am Tablet ≈ 27°) in Bildschirmabstand", "kein Farbsehen nötig (roter Punkt mit weißem Kern auf fast Schwarz; bei Rotschwäche wirkt der rote Rand dunkler, der weiße Kern bleibt sichtbar)", "Vollbildmodus erlaubt; Runde dauert bei guter Trefferquote länger als 45 s"]
-vorsicht_bei: [photosensitive_epilepsie, migraene_lichtempfindlich, presbyopie_gleitsicht, nystagmus, gesichtsfeldausfall, sehbehinderung_niedriger_visus, trockenes_auge_bildschirm, tremor_parkinson, hand_arm_beschwerden, kognitive_einschraenkung, aufmerksamkeitsprobleme]
-geeignet_fuer: ["bewegte Ziele mit Blick und Hand abfangen (Interzeption) in zwei Dimensionen üben", "Vorausschätzen einer geradlinigen Bahn mit Abprallern", "spielerische Auge-Hand-Übung mit steigendem Tempo für Jugendliche und Erwachsene mit Freude an Zeitdruck", "Aufwärmen vor FPS-Tracking- und Abfangübungen (304, 505, 514)"]
+vorsicht_bei: [photosensitive_epilepsie, migraene_lichtempfindlich, presbyopie_gleitsicht, nystagmus, gesichtsfeldausfall, sehbehinderung_niedriger_visus, trockenes_auge_bildschirm, kopfschmerz_asthenopie, tremor_parkinson, hand_arm_beschwerden, kognitive_einschraenkung, aufmerksamkeitsprobleme]
+geeignet_fuer: ["bewegte Ziele mit Blick und Hand abfangen (Interzeption) in zwei Dimensionen üben", "Vorausschätzen einer geradlinigen Bahn mit Abprallern", "spielerische Auge-Hand-Übung mit steigendem Tempo für Jugendliche und Erwachsene mit Freude an Zeitdruck", "Vorstufe zu FPS-Tracking-Übungen mit Haltezeit (505, 514)"]
 weniger_geeignet_fuer: ["Messung von Reaktionszeit oder Blickfolge (keine Blickmessung; 'Ø Reaktion' enthält Blick- und Handbewegung und zählt nur Treffer)", "kontinuierliches Nachführen eines Zeigers (gewertet wird nur der Klick; dafür 707, 514)", "Menschen, die ohne Zeitdruck üben sollen oder möchten", "Gleitsichtträger:innen im Vollbild am großen Monitor", "Lichtempfindliche: roter Fehlerblitz bei jedem Fehler (abschaltbar)", "Ältere oder Einsteiger:innen ab etwa Level 8 (Lebensdauer < 0,85 s, Tempo > 9 °/s)"]
 evidenz:
   uebungseffekt: stark
   naher_transfer: schwach
   alltag_transfer: fehlend
   kommentar: "Diese Übung wurde nie untersucht; Abfang- und Zeigeaufgaben werden durch Übung deutlich besser (auch Gerätegewöhnung, Guo et al. 2025), die Mechanismen der Interzeption sind gut erforscht (Mrotek & Soechting 2007; de la Malla et al. 2017), ein Nutzen für Sport, E-Sport oder Alltag ist aber nicht belegt (Fransen 2024)."
-aehnliche_uebungen: [304, 104, 306, 105, 410, 415, 505, 512, 514, 515, 303, 302, 301, 503, 101]
+aehnliche_uebungen: [304, 104, 306, 105, 410, 415, 505, 512, 514, 515, 303, 503, 101]
 stichworte: ["Interzeption", "Abfangen bewegter Ziele", "Zielverfolgung", "Blickfolge", "smooth pursuit", "Aufholsakkaden", "Abprallen", "Antizipation", "Auge-Hand-Koordination", "Fitts'sches Gesetz für bewegte Ziele", "Zeitdruck", "Combo", "Test (Name des Originals)"]
 ---
 
@@ -210,15 +210,21 @@ Augenbewegungsbefehls zusätzliche Bewegungsinformation (Interpretation von Sper
 - **Vorsicht / anpassen bei …** `photosensitive_epilepsie`, `migraene_lichtempfindlich`: roter Radialblitz je Fehler (Mitte 50 %
   Deckkraft, 0,45 s); *eigene Rechnung:* Leuchtdichteänderung ≈ 0,05 (WCAG-Schwelle 0,1), Rotanteil ≈ 0,6 (sRGB) bzw. ≈ 0,84 (linear);
   bei Fehlklickserien > 3 Blitze/s möglich (nicht gemessen) – Blitz abschalten. `presbyopie_gleitsicht`: Bahn über ≈ 40° – kleineres
-  Fenster, Bildschirmbrille. `trockenes_auge_bildschirm`: kurze Runden. `nystagmus`, `gesichtsfeldausfall`,
+  Fenster, Bildschirmbrille. `trockenes_auge_bildschirm`, `kopfschmerz_asthenopie`:
+  anhaltendes Verfolgen über eine sich verlängernde Runde – kurze Runden, Pausen. `nystagmus`, `gesichtsfeldausfall`,
   `sehbehinderung_niedriger_visus`: Folgen und Wiederfinden kleiner, schneller Ziele erschwert. `tremor_parkinson`,
   `hand_arm_beschwerden`: schnelle Zeigebewegungen auf kleine, bewegte Ziele. `kognitive_einschraenkung`, `aufmerksamkeitsprobleme`:
   sich verschärfender Zeitdruck, Blitz, Ton, Wackeln – als Spiel auf niedriger Stufe, nicht als Test.
-- **Kombiniert gut mit …** 404/105 (Blickfolge ohne Hand), 104 (`zielfang`), 306 (fallende Ziele), 410/415 (Richtungswechsel), 505/514.
-- **Überschneidungen:** 304 = dieselbe Abfang-Mechanik, nur waagrecht mit Richtungswechseln – nicht beide hintereinander vorschlagen.
-  Mit 101/301/503 nur das Reagieren auf ein erscheinendes (dort ruhendes) Ziel – dort wird echte Reaktionszeit gemessen, hier nicht;
-  mit 102 nur die Combo-Logik, mit 202 nichts Wesentliches. 302–304, 306–308 nutzen denselben Baukasten (Combo bis 3,0×, Level alle
-  1.750 Punkte); 501 und 508 sind ähnlich gebaut (1.800 bzw. 1.400 Punkte je Level).
+- **Kombiniert gut mit …** 404/105 (Blickfolge ohne Hand), 410/415 (Richtungswechsel, nur mit den Augen), 505/514 (Halten auf dem
+  Ziel statt Klick), 101 (Reaktion ohne Bewegung).
+- **Überschneidungen:** **Dublette:** 304 (dieselbe Abfang-Mechanik, nur waagrecht mit Richtungswechseln) – nie zusammen vorschlagen;
+  104/`zielfang` (Blickfit) ist dasselbe Prinzip mit adaptiver Stufe und fester Dauer – als ruhigere Alternative, nicht zusätzlich.
+  **Gleiche Engine:** 302–308 teilen Level-, Combo-, Zeit- und Fehlerregeln (Level alle 1.750 Punkte, Combo bis 3,0×, +2 s je Treffer,
+  −1 s je Fehler, roter Fehlerblitz, Bildwackeln) – pro Einheit höchstens eine davon, allenfalls eine zweite mit anderem Schwerpunkt
+  (ruhende Ziele 302/303/307/308, bewegte 304/305/306). 306 fängt mehrere fallende Ziele ab (zusätzlich Reihenfolge wählen). Mit 101
+  und 503 nur das Reagieren auf ein erscheinendes (dort ruhendes) Ziel – dort wird echte Reaktionszeit gemessen, hier nicht; 301 misst
+  trotz des Namens „Reaktionstest“ keine Reaktion, sondern Zeitschätzung. Mit 102 nur die Combo-Logik, mit 202 nichts Wesentliches.
+  501 und 508 (FPS) sind ähnlich gebaut (1.800 bzw. 1.400 Punkte je Level), aber mit ruhenden Zielen.
 
 ## 10. Schwächen des Originals und Empfehlungen für eine Blickfit-Umsetzung
 

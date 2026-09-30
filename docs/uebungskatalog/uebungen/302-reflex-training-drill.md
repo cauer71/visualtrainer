@@ -9,7 +9,7 @@ kapitel_original: "reaction-speed"
 unterkapitel_original: ""
 quelle_url: "https://skilldrills.online/de/drills/reaction-speed/reflex-training-drill"
 blickfit_umsetzung: null
-stand: 2026-09-29
+stand: 2026-09-30
 
 # ===== Überblick =====
 kurzbeschreibung: "Auf dunklem Feld erscheinen an zufälligen Stellen mehrere rote Punkte (2 bis 7 gleichzeitig), die nach einer festen, mit dem Level schrumpfenden Zeit wieder verschwinden. Man klickt oder tippt sie nacheinander an, bevor sie ablaufen; jeder Treffer bringt Zeit, jeder Fehlklick und jedes abgelaufene Ziel kostet Zeit."
@@ -73,15 +73,15 @@ belastung:
 
 # ===== Auswahlhilfe =====
 voraussetzungen: ["Maus, Touchpad oder Touchscreen; Maus auf ruhiger Unterlage", "Ziele von anfangs ≈ 1,4° bis unter 0,5° Sehwinkel erkennen (Level ≥ 15)", "passende Korrektion für Bildschirmabstand über das ganze Spielfeld (bis ≈ 36° breit im Vollbild am Monitor)", "kein Farbsehen nötig (alle Ziele gleich rot, mit weißem Mittelpunkt)", "1–3 min ohne Pause konzentriert klicken können"]
-vorsicht_bei: [photosensitive_epilepsie, migraene_lichtempfindlich, presbyopie_gleitsicht, gesichtsfeldausfall, sehbehinderung_niedriger_visus, trockenes_auge_bildschirm, tremor_parkinson, hand_arm_beschwerden, kognitive_einschraenkung, aufmerksamkeitsprobleme]
-geeignet_fuer: ["schnelle Folgen von Blick-Zeige-Bewegungen zu verstreut erscheinenden Zielen üben", "mehrere Ziele im Blick behalten und eine sinnvolle Reihenfolge wählen (älteste bzw. nächste zuerst)", "spielerische Übung mit steigendem Tempo für Jugendliche und Erwachsene mit Freude an Zeitdruck", "Vorstufe oder Ergänzung zu Aim-Übungen mit mehreren Zielen (502, 510, 702)"]
+vorsicht_bei: [photosensitive_epilepsie, migraene_lichtempfindlich, presbyopie_gleitsicht, gesichtsfeldausfall, sehbehinderung_niedriger_visus, nystagmus, trockenes_auge_bildschirm, tremor_parkinson, hand_arm_beschwerden, kognitive_einschraenkung, aufmerksamkeitsprobleme]
+geeignet_fuer: ["schnelle Folgen von Blick-Zeige-Bewegungen zu verstreut erscheinenden Zielen üben", "mehrere Ziele im Blick behalten und eine sinnvolle Reihenfolge wählen (älteste bzw. nächste zuerst)", "spielerische Übung mit steigendem Tempo für Jugendliche und Erwachsene mit Freude an Zeitdruck", "Vorstufe zu Aim-Übungen mit mehreren Zielen (502, 510, 702) – nicht in derselben Einheit"]
 weniger_geeignet_fuer: ["Messung der Reaktionszeit (der Wert 'Ø Reaktion' enthält Wartezeit und nur Treffer)", "Menschen, die ohne Zeitdruck üben sollen oder möchten", "Lichtempfindliche: rote Fehlerblitze bei jedem Fehler (abschaltbar)", "Gleitsichtträger:innen im Vollbild am großen Monitor", "Ältere oder Einsteiger:innen ab etwa Level 10 (Lebensdauer < 1 s, Ziele < 0,8°)", "reine Blickübungen ohne Handeinsatz"]
 evidenz:
   uebungseffekt: stark
   naher_transfer: schwach
   alltag_transfer: fehlend
   kommentar: "Diese Übung wurde nie untersucht; bei ähnlichen Zeige- und Aim-Aufgaben verbessert man sich durch Übung deutlich (auch durch Gewöhnung an Gerät und Strategie), Effekte auf unähnliche Tests sind viel kleiner und ein Nutzen für Sport, E-Sport oder Alltag ist nicht belegt (Guo et al. 2025; Simons et al. 2016; Fransen 2024)."
-aehnliche_uebungen: [502, 510, 702, 708, 804, 501, 303, 801, 204, 103, 101, 503, 202]
+aehnliche_uebungen: [502, 510, 702, 708, 804, 501, 303, 306, 307, 308, 801, 204, 103, 101, 503, 202]
 stichworte: ["Mehrzielsuche", "Zielpriorisierung", "Klickfolge", "Auge-Hand-Koordination", "Fitts'sches Gesetz", "Zeitdruck", "Lebensdauer der Ziele", "Combo", "Hick-Hyman", "Aim-Training", "Touch", "Reaktionstest (Name des Originals)"]
 ---
 
@@ -167,11 +167,12 @@ Zu dieser Aufgabe gibt es keine Bildgebungs- oder Trainingsstudie; die Website n
   - `photosensitive_epilepsie`, `migraene_lichtempfindlich`: Jeder Fehler löst einen roten, radialen Blitz über dem Feld aus (50 % Deckkraft in der Mitte, ≈ 0,45 s). *Eigene Rechnung:* Leuchtdichteänderung ≈ 0,05 (unter der WCAG-Schwelle 0,1), Rotanteil ≈ 0,84 (über 0,8, „gesättigtes Rot“). Ob bei hohen Levels mehr als 3 Blitze/s entstehen, wurde nicht gemessen. Fehlerblitz abschalten („Fehlblitz umschalten“).
   - `presbyopie_gleitsicht`: breites Feld, Ziele oben/unten/seitlich – kleineres Fenster, Bildschirmbrille.
   - `gesichtsfeldausfall`, `sehbehinderung_niedriger_visus`: Ziele überall, bis < 0,5°; ausfallseitige laufen unbemerkt ab und kosten Zeit.
+  - `nystagmus`: viele kurze Fixationen auf kleine Ziele (bis < 0,5°) unter Zeitdruck sind erschwert – niedrige Stufe oder Übungen ohne Zeitdruck.
   - `trockenes_auge_bildschirm`: seltenes Blinzeln im Schnellspiel; kurze Runden, Pausen.
   - `tremor_parkinson`, `hand_arm_beschwerden`: hohe Klickfrequenz, kleine Ziele, keine Pausenfunktion.
   - `kognitive_einschraenkung`, `aufmerksamkeitsprobleme`: sich selbst verschärfender Zeitdruck, Fehlerrückmeldung mit Blitz, Ton und Wackeln – eher als Spiel auf niedriger Stufe, nicht als Test.
-- **Kombiniert gut mit …** 101 (Reaktion ohne Zielbewegung), 303 (ein Ziel, große Sprünge), 204 (Reihenfolge ohne Zeitdruck), 801 (Randziele bei ruhigem Blick), 502/510 (FPS-Mehrziel, Priorisierung nach Farbe).
-- **Überschneidungen:** Mit 101 und 503 teilt 302 den Zeitdruck, dort aber mit festem Reizort und echter Reaktionszeit; mit 102 nur die Combo-Mechanik; mit 202 die Auswahl (dort nach Regel, hier nach Reihenfolge). 502, 510, 702, 708 und 804 nutzen laut Regeltext eine ähnliche Spielmechanik (ablaufende Ziele, Combo-Multiplikator, Level nach Punkten; bei 702 und 804 wie hier je 1.750 Punkte) mit anderer Zielanordnung – nicht mehrere davon hintereinander vorschlagen.
+- **Kombiniert gut mit …** 101 (Reaktion ohne Zielbewegung), 102 (Hemmung – fehlt hier), 204 (Reihenfolge ohne Zeitdruck), 801 (Randziele bei ruhigem Blick), 404 (ruhige Blickfolge als Gegenpol).
+- **Überschneidungen:** Keine Dublette in der Gruppe; am nächsten ist 306 (mehrere Ziele gleichzeitig, dort fallend statt ruhend). **Gleiche Engine:** 302–308 teilen Level-, Combo-, Zeit- und Fehlerregeln (Level alle 1.750 Punkte, Combo bis 3,0×, +2 s je Treffer, −1 s je Fehler, roter Fehlerblitz, Bildwackeln) – pro Einheit höchstens eine davon vorschlagen, allenfalls eine zweite mit anderem Schwerpunkt (ruhende Ziele 302/303/307/308, bewegte 304/305/306). Mit 101 und 503 teilt 302 den Zeitdruck, dort aber mit festem Reizort und echter Reaktionszeit; mit 102 nur die Combo-Mechanik; mit 202 die Auswahl (dort nach Regel, hier nach Reihenfolge). 502, 510, 702, 708 und 804 nutzen eine ähnliche Spielmechanik (ablaufende Ziele, Combo-Multiplikator, Level nach Punkten; bei 702, 708 und 804 wie hier je 1.750, bei 502 je 2.100, bei 510 je 1.400 Punkte) mit anderer Zielanordnung – nicht mehrere davon hintereinander vorschlagen.
 
 ## 10. Schwächen des Originals und Empfehlungen für eine Blickfit-Umsetzung
 

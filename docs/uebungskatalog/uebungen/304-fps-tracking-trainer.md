@@ -9,7 +9,7 @@ kapitel_original: "reaction-speed"
 unterkapitel_original: ""
 quelle_url: "https://skilldrills.online/de/drills/reaction-speed/fps-tracking-trainer"
 blickfit_umsetzung: null
-stand: 2026-09-29
+stand: 2026-09-30
 
 # ===== Überblick =====
 kurzbeschreibung: "Ein roter Punkt taucht am linken oder rechten Rand auf und pendelt auf einer waagrechten Linie hin und her; in zufälligen Abständen kehrt er die Richtung um. Man verfolgt ihn mit Blick und Zeiger und muss ihn anklicken oder antippen, bevor er verschwindet. Gewertet wird nur der Treffer, nicht das Draufbleiben."
@@ -73,15 +73,15 @@ belastung:
 
 # ===== Auswahlhilfe =====
 voraussetzungen: ["Maus, Touchpad oder Touchscreen; Maus auf ruhiger Unterlage", "Ziele von ≈ 1,5° bis unter 0,5° Sehwinkel erkennen, die sich mit ≈ 5–26°/s bewegen", "passende Korrektion für den Bildschirmabstand über die ganze Bahnbreite (bis ≈ 37° im Vollbild am Monitor)", "kein Farbsehen nötig (ein einziges rotes Ziel mit weißem Kern auf Schwarz)", "Tablet quer halten (hochkant ist die Bahn sehr kurz)"]
-vorsicht_bei: [photosensitive_epilepsie, migraene_lichtempfindlich, nystagmus, presbyopie_gleitsicht, sehbehinderung_niedriger_visus, trockenes_auge_bildschirm, kopfschmerz_asthenopie, tremor_parkinson, hand_arm_beschwerden, kognitive_einschraenkung, aufmerksamkeitsprobleme]
+vorsicht_bei: [photosensitive_epilepsie, migraene_lichtempfindlich, nystagmus, presbyopie_gleitsicht, gesichtsfeldausfall, sehbehinderung_niedriger_visus, trockenes_auge_bildschirm, kopfschmerz_asthenopie, tremor_parkinson, hand_arm_beschwerden, kognitive_einschraenkung, aufmerksamkeitsprobleme]
 geeignet_fuer: ["einem waagrecht bewegten Ziel mit Blick und Zeiger folgen und im richtigen Moment treffen", "Richtungswechsel erkennen und den Treffpunkt vorausschätzen (Vorhalt)", "spielerisches Aufwärmen für Jugendliche und Erwachsene mit Freude an Tempo und Punkten", "Einstieg vor echten Tracking-Übungen mit Haltezeit (505, 512, 514)"]
 weniger_geeignet_fuer: ["Messung von Blickfolge oder Reaktionszeit (keine Blickmessung; 'Ø Reaktion' enthält die Verfolgungszeit)", "ruhiges Blickfolgetraining ohne Zeitdruck (dafür 404, 105)", "Lichtempfindliche: roter Fehlerblitz bei jedem Fehler und Ablauf (abschaltbar)", "Gleitsichtträger:innen im Vollbild am großen Monitor", "Ältere oder Einsteiger:innen ab etwa Level 8–10 (Umkehr alle < 0,6 s, Zeitfenster < 0,1 s)", "Tablet im Hochformat"]
 evidenz:
-  uebungseffekt: mittel
+  uebungseffekt: stark
   naher_transfer: schwach
   alltag_transfer: fehlend
-  kommentar: "Die Übung selbst wurde nie untersucht; in der geübten Aufgabe wird man wahrscheinlich besser, vor allem durch Gewöhnung an Gerät und Strategie (bei Aim-Trainern nur teilweise belegt), Effekte auf unähnliche Tests sind viel kleiner, ein Nutzen für E-Sport, Sport oder Alltag ist nicht belegt (Guo et al. 2025; Rogers et al. 2024; Bediou et al. 2018 vs. Sala et al. 2018; Fransen 2024)."
-aehnliche_uebungen: [305, 306, 512, 505, 513, 514, 104, 105, 410, 415, 707, 302, 503, 101]
+  kommentar: "Die Übung selbst wurde nie untersucht; Zeige- und Abfangaufgaben werden durch Wiederholung deutlich besser, zu einem großen Teil durch Gewöhnung an Gerät und Strategie (Guo et al. 2025); Effekte auf unähnliche Tests sind viel kleiner, ein Nutzen für E-Sport, Sport oder Alltag ist nicht belegt (Bediou et al. 2018 vs. Sala et al. 2018; Fransen 2024)."
+aehnliche_uebungen: [305, 306, 512, 505, 513, 514, 104, 105, 410, 415, 707, 503, 101]
 stichworte: ["bewegtes Ziel", "Abfangen", "Interzeption", "Richtungswechsel", "glatte Blickfolge", "Aufholsakkaden", "Vorhalt", "Auge-Hand-Koordination", "Aim-Training", "Tracking (Name des Originals)", "Combo", "Latenz", "Touch"]
 ---
 
@@ -161,7 +161,7 @@ Zu dieser Aufgabe gibt es keine Bildgebungs- oder Trainingsstudie. Die Folgebewe
 
 ## 8. Studienlage: Trainierbarkeit und Übertragung
 
-- **Übungseffekt (mittel):** Für diese Übung gibt es keine Daten. Dass man in der geübten Aufgabe besser wird, ist plausibel und bei digitalem Sport-Sehtraining gut zu sehen, beruht aber zu einem großen Teil auf Gewöhnung an Gerät und Aufgabe: Bei der Reaktionszeit war der Effekt mit trainingsähnlichem Test gut fünfmal so groß wie mit unähnlichem (SMD 2,66 vs. 0,50; Guo et al., 2025). In einem kommerziellen Aim-Trainer verbesserte sich zwischen zwei Terminen nur eine von vier Aufgaben (Rogers et al., 2024).
+- **Übungseffekt (stark):** Für diese Übung gibt es keine Daten. Dass man in der geübten Aufgabe besser wird, ist für Zeige- und Abfangaufgaben gut belegt und bei digitalem Sport-Sehtraining deutlich zu sehen (Einstufung wie bei 302, 303 und 305–308), beruht aber zu einem großen Teil auf Gewöhnung an Gerät und Aufgabe: Bei der Reaktionszeit war der Effekt mit trainingsähnlichem Test gut fünfmal so groß wie mit unähnlichem (SMD 2,66 vs. 0,50; Guo et al., 2025). In einem kommerziellen Aim-Trainer verbesserte sich zwischen zwei Terminen nur eine von vier Aufgaben (Rogers et al., 2024) – eine Zuverlässigkeitsstudie mit zwei Messungen, keine Trainingsstudie.
 - **Naher Transfer (schwach):** keine Studie zu dieser Übung. Meta-Analysen zu Actionspielen widersprechen sich (Bediou et al., 2018: g = 0,34 mit Publikationsbias; Sala et al., 2018: kleine bis keine Effekte).
 - **Alltagstransfer (fehlend):** kein Beleg für bessere Spiel-, Sport- oder Verkehrsleistung; Ferntransfer allgemeiner Wahrnehmungs-/Kognitionstrainings auf Sport ist nicht belegt (Fransen, 2024; Simons et al., 2016).
 
@@ -173,12 +173,13 @@ Zu dieser Aufgabe gibt es keine Bildgebungs- oder Trainingsstudie. Die Folgebewe
   - `photosensitive_epilepsie`, `migraene_lichtempfindlich`: roter Fehlerblitz bei jedem Fehlklick und Ablauf (wie 302: unter der allgemeinen WCAG-Blitzschwelle, aber gesättigtes Rot; *eigene Rechnung:* allein durch Abläufe höchstens ≈ 1,6–1,9 Blitze/s auf Level 15 bzw. ≈ 2,0–2,7/s auf Level 20, schnelle Fehlklickfolgen können mehr erzeugen; nicht gemessen) plus Bildwackeln → Blitz abschalten.
   - `nystagmus`: Kern ist die Folgebewegung; mit unwillkürlichen Augenbewegungen sind Umkehrungen schwer zu verfolgen.
   - `presbyopie_gleitsicht`: Bahn breiter als die Zwischenzone → kleines Fenster, Bildschirmbrille.
+  - `gesichtsfeldausfall`: neue Ziele tauchen am linken oder rechten Bahnende auf (im Vollbild ≈ 18° seitlich der Mitte) – auf der Ausfallseite werden sie spät bemerkt.
   - `sehbehinderung_niedriger_visus`: Ziele bis < 0,5°, schnell bewegt.
   - `trockenes_auge_bildschirm`, `kopfschmerz_asthenopie`: anhaltendes Verfolgen, variable Rundendauer bis mehrere Minuten → Pausen, Runde begrenzen.
   - `tremor_parkinson`, `hand_arm_beschwerden`: kleine schnelle Ziele, Maus-Tracking über 2 Hz nicht mehr genau.
   - `kognitive_einschraenkung`, `aufmerksamkeitsprobleme`: sich selbst verschärfender Zeitdruck, Fehlerrückmeldung mit Blitz, Ton und Wackeln – eher als Spiel auf niedriger Stufe, nicht als Test.
-- **Kombiniert gut mit …** 404/105 (ruhige Blickfolge ohne Klick), 305 (gleiches Prinzip, zweidimensional), 707 (Halten auf einem Pfad), 101 (Reaktion ohne Bewegung).
-- **Überschneidungen:** 305 und 306 nutzen denselben Baukasten (Combo, 1.750 Punkte/Level, Trefferzugabe; 305 auch dieselbe Lebensdauer 1.300 → 380 ms) mit anderer Bahn – nicht mehrere davon hintereinander vorschlagen. 505 und 512 zeigen fast dieselbe Bewegung (waagrechte Bahn, zufällige Umkehr; 512 alle 450 → 150 ms), 513 Zickzack-Bahnen; dort wird aber die Zeit mit dem Fadenkreuz auf dem Ziel gezählt (ohne Klick, nur Maus) – echtes Tracking statt Abfangen. Mit 101 und 503 teilt 304 den Zeitdruck, dort aber mit ruhendem Reiz und echter Reaktionszeit; mit 102 nur die Fehlerstrafe; mit 202 keine Regelwahl.
+- **Kombiniert gut mit …** 404/105 (ruhige Blickfolge ohne Klick), 707 (Halten auf einem Pfad), 101 (Reaktion ohne Bewegung).
+- **Überschneidungen:** **Dublette:** 305 (dieselbe Abfangaufgabe mit gleicher Lebensdauer 1.300 → 380 ms, dort zweidimensional mit Abprallen) – nie zusammen vorschlagen. **Gleiche Engine:** 302–308 teilen Level-, Combo-, Zeit- und Fehlerregeln (Level alle 1.750 Punkte, Combo bis 3,0×, +2 s je Treffer, −1 s je Fehler, roter Fehlerblitz, Bildwackeln) – pro Einheit höchstens eine davon, allenfalls eine zweite mit anderem Schwerpunkt (ruhende Ziele 302/303/307/308, bewegte 304/305/306). 306 fängt mehrere fallende Ziele ab (zusätzlich Reihenfolge wählen). 505 und 512 zeigen fast dieselbe Bewegung (waagrechte Bahn, zufällige Umkehr; 512 alle 450 → 150 ms), 513 Zickzack-Bahnen; dort wird aber die Zeit mit dem Fadenkreuz auf dem Ziel gezählt (ohne Klick, nur Maus) – echtes Tracking statt Abfangen. Mit 101 und 503 teilt 304 den Zeitdruck, dort aber mit ruhendem Reiz und echter Reaktionszeit; mit 102 nur die Fehlerstrafe; mit 202 keine Regelwahl.
 
 ## 10. Schwächen des Originals und Empfehlungen für eine Blickfit-Umsetzung
 

@@ -73,7 +73,7 @@ belastung:
 
 # ===== Auswahlhilfe =====
 voraussetzungen: ["Computer mit Maus; Pointer Lock (Zeigersperre) nötig – ohne Touch-Steuerung", "freie Mausfläche, Unterarm aufgelegt; gleichmäßiges Gleiten der Maus", "Bildschirm 50–70 cm, passende Korrektion für diesen Abstand", "kein Farbsehen nötig (Trefferzonen unterscheiden sich durch Lage und Helligkeit, alle grün)", "Akzeptanz des Waffen-/Shooter-Themas"]
-vorsicht_bei: [hand_arm_beschwerden, tremor_parkinson, presbyopie_gleitsicht, trockenes_auge_bildschirm, kopfschmerz_asthenopie, sehbehinderung_niedriger_visus, migraene_lichtempfindlich, photosensitive_epilepsie, kinder_unter_6]
+vorsicht_bei: [hand_arm_beschwerden, tremor_parkinson, nystagmus, presbyopie_gleitsicht, trockenes_auge_bildschirm, kopfschmerz_asthenopie, sehbehinderung_niedriger_visus, migraene_lichtempfindlich, photosensitive_epilepsie, kinder_unter_6]
 geeignet_fuer: ["fortlaufendes Gegensteuern gegen eine vorhersagbare, wiederkehrende Störung mit der Maus üben (Adaptation, Vorwärtsmodell)", "Auge-Hand-Koordination beim Nachführen eines langsam ausweichenden Ziels", "gleichmäßige, dosierte Zugbewegung statt ruckartiger Korrekturen", "Aufwärmen für Menschen, die ohnehin Ego-Shooter spielen; Selbstvergleich auf demselben Gerät"]
 weniger_geeignet_fuer: ["Tablet- und Smartphone-Nutzung (nicht spielbar)", "Menschen ohne Maus-Routine oder mit Hand-/Unterarmbeschwerden", "Menschen, die Waffen-Szenarien ablehnen, und Kinder", "Ziele wie visuelle Suche, peripheres Sehen, Gedächtnis oder Lesen", "Erwartung eines Seh-, Konzentrations- oder Alltagsnutzens"]
 evidenz:
@@ -226,7 +226,7 @@ Streuung, > 90 % Treffer“) und „2–3 Wochen à 15 min“ bis zur Automatisi
   (kleine, teils kontrastarme Zonen); `migraene_lichtempfindlich`, `photosensitive_epilepsie` (vorsorglich: kleine
   Treffereffekte im 8-Hz-Takt, optionaler roter Blitz-Effekt höchstens ≈ alle 4,8 s, weit unter 3 Blitzen/s);
   `kinder_unter_6` (Shooter-Thema, Feinmotorik); `nystagmus` (kleines, ausweichendes Ziel mit der Blickfolge halten →
-  langsames Zieltempo, eher 505/507 meiden).
+  niedrige Stufe, langsames Zieltempo; 505/507 fordern die Blickfolge noch stärker).
 - **Kombiniert gut mit …** 505, 507, 514, 512, 515 (Tracking), 509 (Mikrokorrektur), 707 (Pfad folgen), 705, 808 (ruhige
   Hand), 104 (Zielverfolgung ohne Shooter-Thema).
 - **Abgrenzung in der Gruppe:** 505 und 507 sind reines Nachführen (ohne Klicken, ohne Störung); 504 ergänzt eine feste,
@@ -273,6 +273,7 @@ Streuung, > 90 % Treffer“) und „2–3 Wochen à 15 min“ bis zur Automatisi
 - Burdet, E., Osu, R., Franklin, D. W., Milner, T. E., & Kawato, M. (2001). The central nervous system stabilizes unstable dynamics by learning optimal impedance. *Nature, 414*(6862), 446–449. https://doi.org/10.1038/35106566 – gezielte Steifigkeit statt Verkrampfen
 - Brenner, E., & Smeets, J. B. J. (1997). Fast responses of the human hand to changes in target position. *Journal of Motor Behavior, 29*(4), 297–310. https://doi.org/10.1080/00222899709600017 – Handkorrektur nach ≈ 110 ms
 - Saunders, J. A., & Knill, D. C. (2003). Humans use continuous visual feedback from the hand to control fast reaching movements. *Experimental Brain Research, 152*(3), 341–352. https://doi.org/10.1007/s00221-003-1525-2 – laufende visuelle Rückkopplung (≈ 160 ms)
+- Koken, P. W., & Erkelens, C. J. (1992). Influences of hand movements on eye movements in tracking tasks in man. *Experimental Brain Research, 88*(3), 657–664. https://doi.org/10.1007/BF00228195 – Handbeteiligung glättet die Blickfolge nur bei vorhersagbarer Bewegung (Crossref ✓, PubMed-Abstract geprüft)
 - Krakauer, J. W., Pine, Z. M., Ghilardi, M.-F., & Ghez, C. (2000). Learning of visuomotor transformations for vectorial planning of reaching trajectories. *The Journal of Neuroscience, 20*(23), 8916–8924. https://doi.org/10.1523/JNEUROSCI.20-23-08916.2000 – Gain-Lernen verallgemeinert
 - Krakauer, J. W., Hadjiosif, A. M., Xu, J., Wong, A. L., & Haith, A. M. (2019). Motor learning. *Comprehensive Physiology, 9*(2), 613–663. https://doi.org/10.1002/cphy.c170043 – Grenzen von Laborparadigmen
 - Listman, J. B., Tsay, J. S., Kim, H. E., Mackey, W. E., & Heeger, D. J. (2021). Long-term motor learning in the "wild" with high volume video game data. *Frontiers in Human Neuroscience, 15*, 777779. https://doi.org/10.3389/fnhum.2021.777779 – Aim-Lab-Lernkurven (herstellerfinanziert)

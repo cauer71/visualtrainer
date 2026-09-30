@@ -147,8 +147,14 @@ Versprochen wird Training für „Multi-Target-Aiming“ und „Spray Transfers�
   langsamer und variabler (Munoz et al., 1998). Neu auftauchende Kugeln ziehen Aufmerksamkeit an (Yantis & Jonides, 1984).
   Aufmerksamkeit ist zwingend an das Sakkadenziel gekoppelt (Deubel & Schneider, 1996); bei geplanten Bewegungsfolgen können
   mehrere künftige Ziele vorab beachtet werden (Baldauf & Deubel, 2010) – vorplanen ja, Blick vorzeitig lösen nein.
-- **Sehwinkel/Farbe:** Ziele ≈ 1,5–1,8° (Level 1) bis ≈ 0,8–1,1° – für Sehschärfe unkritisch; 1–7°/s Tempo verlangt nur kurzes
-  Mitführen. Grün auf fast Schwarz mit hohem Leuchtdichtekontrast, nur eine Zielart → Farbsehen nicht nötig.
+- **Sehwinkel/Farbe:** Ziele ≈ 1,5–1,8° (Level 1) bis ≈ 0,8–1,1° – weit über der Sehschärfegrenze; kleine, bewegte und
+  kurzlebige Ziele genau anzuklicken, ist bei unscharfem Bild aber unsicherer → `sehschaerfe_detail` 1 (wie 501, 506, 508).
+  1–7°/s Tempo verlangt nur kurzes Mitführen. Grün auf fast Schwarz mit hohem Leuchtdichtekontrast, nur eine Zielart →
+  Farbsehen nicht nötig.
+- **Übersicht:** Anders als bei 501/506 (immer nur ein Ziel) sind 2–5 Ziele gleichzeitig sichtbar; während man eines
+  anklickt, muss man die übrigen und ihr (unsichtbares) Alter im Blick behalten → `nutzbares_sehfeld` 2 (wie 302).
+  Klickrate ≈ 1–2/s ist keine Tipp-Geschwindigkeitsaufgabe → `fingergeschwindigkeit` 0; die Regel „abklicken, bevor sie
+  verschwinden“ ergibt sich beim Spielen → `sprachabhaengigkeit` 0 (wie 501, 506).
 - **Gesichtsfeld/Brille:** Vollbild ≈ 48° × 27°; Ziele entstehen bis 40 px vom Rand, also bis ≈ 24° seitlich. Mit Gleitsicht
   ist der scharfe Zwischenbereich bei 60 cm nur ≈ 13–18° breit (Han et al., 2003); Randziele und der obere Bildrand (Blick
   durch den Fernteil) werden unscharf, Kopfbewegungen nehmen zu (Hutchings et al., 2007) → Arbeitsplatzbrille oder kleineres
@@ -197,11 +203,15 @@ Baldauf & Deubel, 2010). „Zwingt den motorischen Kortex“ oder „neural conf
 - **Vorsicht / anpassen bei …** `photosensitive_epilepsie`, `migraene_lichtempfindlich` (roter Vollbild-Blitz bei jedem Fehler,
   bei Fehlerserien mehrmals pro Sekunde möglich; Richtwert ≤ 3 Blitze/s, Fisher et al., 2005 → Blitz abschalten);
   `presbyopie_gleitsicht` (Ziele bis 24° seitlich); `gesichtsfeldausfall` (Ziele erscheinen überall, Abläufe bleiben
-  unbemerkt); `trockenes_auge_bildschirm`, `kopfschmerz_asthenopie` (seltener Lidschlag, offene Dauer); `hand_arm_beschwerden`,
+  unbemerkt); `sehbehinderung_niedriger_visus` (kleine, bewegte, kurzlebige Ziele im ganzen Feld – wie 501/506);
+  `trockenes_auge_bildschirm`, `kopfschmerz_asthenopie` (seltener Lidschlag, offene Dauer); `hand_arm_beschwerden`,
   `tremor_parkinson` (schnelle Mauszüge, Klicks); `aufmerksamkeitsprobleme`, `kognitive_einschraenkung` (Hektik, sofortige Strafen).
 - **Kombiniert gut mit …** 501 (Einzel-Flicks) → 502 → 510 (Priorisierung) bzw. 508 (Zielerkennung); 702/704 als
   Maus-Grundlage; 303 (Blicksprünge ohne Hand); ohne Maus eher 302/804 oder Blickfit `zielfang`. Keine Aussagen über
   Sehleistung, Verkehrstauglichkeit oder Spielerfolg ableiten.
+- **Abgrenzung in der Gruppe:** 501 und 506 (gleicher Grundaufbau mit Zeitkonto, Combo und Strafen) zeigen immer nur ein
+  ruhendes Ziel; 502 verlangt zusätzlich Übersicht über mehrere bewegte Ziele und eine Reihenfolgewahl. 506 ist die
+  Variante mit weiten Wegen zum Bildschirmrand, 508 die Variante mit Suche nach einer Regel (Helligkeit) ohne Zeitlimit je Ziel.
 
 ## 10. Schwächen des Originals und Empfehlungen für eine Blickfit-Umsetzung
 - **Tablet/Touch:** Original sperrt Touch. Umsetzbar als „Tippen im Schwarm“ mit direkten Tipps, Zielen ≥ 9–10 mm (Parhi et

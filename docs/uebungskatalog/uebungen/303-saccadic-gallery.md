@@ -9,7 +9,7 @@ kapitel_original: "reaction-speed"
 unterkapitel_original: ""
 quelle_url: "https://skilldrills.online/de/drills/reaction-speed/saccadic-gallery"
 blickfit_umsetzung: null
-stand: 2026-09-29
+stand: 2026-09-30
 
 # ===== Überblick =====
 kurzbeschreibung: "Auf dunklem Feld leuchtet immer nur ein roter Punkt auf, jedes Mal an einem anderen von 12 festen Rasterpunkten (am Touchgerät 9). Man springt mit dem Blick hin und klickt bzw. tippt ihn an, bevor er nach einer mit dem Level schrumpfenden Zeit wieder verschwindet."
@@ -81,7 +81,7 @@ evidenz:
   naher_transfer: schwach
   alltag_transfer: fehlend
   kommentar: "Diese Übung wurde nie untersucht; Zeige- und Blickaufgaben werden durch Übung deutlich besser (auch Gerätegewöhnung), Sakkaden-Latenztraining wirkte aber nur an der geübten Position, und ein Nutzen für Sport, E-Sport, Lesen oder Alltag ist nicht belegt (Di Russo et al. 2003; Guo et al. 2025; Fransen 2024)."
-aehnliche_uebungen: [401, 501, 508, 704, 302, 307, 101, 503, 801, 414, 411, 702]
+aehnliche_uebungen: [401, 501, 508, 704, 302, 307, 308, 305, 101, 503, 801, 414, 411, 702]
 stichworte: ["Sakkaden", "Blicksprung", "Zielerfassung", "Auge-Hand-Koordination", "Fitts'sches Gesetz", "Kopf-Auge-Koordination", "Gleitsicht", "Express-Sakkaden (Behauptung der Website)", "Zeitdruck", "Combo", "Augentraining (Name des Originals)"]
 ---
 
@@ -120,7 +120,7 @@ Grundlage: Seitentext und Spielcode (Chunk `7211-…js` mit gemeinsamen Modulen 
 - **Punkte/Zeit:** 100 × Combo-Faktor (1,1 ab 3 bis 3,0 ab 50 Treffern) × (1 + 0,5 p); fehlerfrei ist Level 10 nach 63, Level 15 nach
   84 Treffern erreicht (*eigene Rechnung*). Start 45 s, +2 s je Treffer (max. 60 s), −1 s je Fehlklick/Ablauf; wer schneller als ein
   Treffer pro 2 s ist, verlängert die Runde (*eigene Abschätzung:* meist 1–3 min, nicht gemessen).
-- **Fehler:** Combo 0, Bildwackeln (6 px), Fehlerton, roter Vollflächenblitz (Modul wie 302, abschaltbar). Abläufe lassen sich über eine
+- **Fehler:** Combo 0, Bildwackeln (6 px), Fehlerton, roter radialer Fehlerblitz (gleiche Effektkomponente wie 302, abschaltbar). Abläufe lassen sich über eine
   globale Einstellung abschalten (Code; Bedienelement nicht geprüft). **Eingabe:** Pointer beim Drücken (Maus, Stift, Finger), keine
   Tastatur; Uhr mit dt, nur Partikel pro Bild (rein optisch).
 
@@ -204,18 +204,23 @@ während der Sakkade, was das Spiel weder tut noch messen kann. Beim Zeigen blei
 - **Weniger passend, wenn …** eine Reaktionszeit bestimmt werden soll (101 bzw. Blitzreaktion); Blickbewegungen ohne Hand geübt werden
   sollen; Impulskontrolle (102) oder symbolische Wahlreaktion (202) gemeint ist; ohne Zeitdruck geübt werden soll (204).
 - **Vorsicht / anpassen bei …**
-  - `photosensitive_epilepsie`, `migraene_lichtempfindlich`: roter Vollflächenblitz bei jedem Fehler (Details 302) – Blitz abschalten.
+  - `photosensitive_epilepsie`, `migraene_lichtempfindlich`: roter radialer Fehlerblitz bei jedem Fehler (Details 302) – Blitz abschalten.
   - `presbyopie_gleitsicht`: Sprünge bis ≈ 35° übersteigen die klare Gleitsichtzone – kleineres Fenster, Bildschirmbrille.
   - `gesichtsfeldausfall`, `sehbehinderung_niedriger_visus`, `nystagmus`: Randziele werden übersehen, kurze Fixationen auf kleine Ziele
     (ab Level 10) sind erschwert – eher Übungen ohne Zeitdruck. `trockenes_auge_bildschirm`: seltenes Blinzeln – kurze Runden.
   - `tremor_parkinson`, `hand_arm_beschwerden`: weite, schnelle Zeigebewegungen über Minuten. `kognitive_einschraenkung`,
     `aufmerksamkeitsprobleme`: sich verschärfender Zeitdruck, Blitz, Ton, Wackeln – als Spiel auf niedriger Stufe, nicht als Test.
-- **Kombiniert gut mit …** 101 (Reaktion am festen Ort), 401/801 (Randreize bei ruhigem Blick), 302 (mehrere Ziele), 501/508/704 (Flick,
-  Zielerfassung), 404 (langsame Folgebewegung als Gegenpol).
-- **Überschneidungen:** Mit 101 und 503 teilt 303 das Reagieren auf ein plötzlich erscheinendes Ziel, dort aber am festen Ort ohne weite
-  Zeigebewegung; mit 102 nur die Combo-Mechanik; mit 202 die Ortswahl, die hier räumlich kompatibel und daher kaum Hick-belastet ist
-  (Kveraga et al., 2002). 302, 304–308 und FPS-Übungen wie 501, 508, 704 nutzen dieselbe Engine (Ablauf-Ziele, Combo bis 3,0×, Level alle
-  1.750 Punkte) – nicht mehrere davon hintereinander vorschlagen.
+- **Kombiniert gut mit …** 101 (Reaktion am festen Ort), 401/801 (Randreize bei ruhigem Blick), 404 (langsame Folgebewegung als
+  Gegenpol), 508 (Zielerfassung nach Helligkeit zwischen ähnlichen Kugeln).
+- **Überschneidungen:** **Dubletten:** 307 (ein Ziel an einer von fünf Türen) und 308 (an einer von acht Deckungskanten) sind dieselbe
+  Aufgabe mit weniger Orten und kürzeren Sprüngen – nie zusammen vorschlagen. **Gleiche Engine:** 302–308 teilen Level-, Combo-, Zeit- und
+  Fehlerregeln (Level alle 1.750 Punkte, Combo bis 3,0×, +2 s je Treffer, −1 s je Fehler, roter Fehlerblitz, Bildwackeln) – pro Einheit
+  höchstens eine davon, allenfalls eine zweite mit anderem Schwerpunkt (ruhende Ziele 302/303/307/308, bewegte 304/305/306). Mit 101 und
+  503 teilt 303 das Reagieren auf ein plötzlich erscheinendes Ziel, dort aber am festen Ort ohne weite Zeigebewegung; mit 102 nur die
+  Combo-Mechanik; mit 202 die Ortswahl, die hier räumlich kompatibel und daher kaum Hick-belastet ist (Kveraga et al., 2002). Nächster
+  Verwandter im FPS-Kapitel ist 501 (Flicks zu völlig zufälligen Orten, gleiche Sichtbarkeit 1.300 → 380 ms, aber 1.800 Punkte je Level),
+  ähnlich 704 (zwei schrumpfende Ziele, 1.400 Punkte je Level) – als Steigerung geeignet (303 als Aufwärmen davor), nicht als weitere
+  Übung gleichen Typs.
 
 ## 10. Schwächen des Originals und Empfehlungen für eine Blickfit-Umsetzung
 

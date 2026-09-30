@@ -126,7 +126,9 @@ Quelle: Seitentext und ausgelieferter Spiel-Chunk (`84331-…js`, formatiert; nu
 - **Punkte [CODE]:** (100 + Tempobonus) × Combo-Faktor (1,0; ab 3 Treffern 1,1 … ab 50: 3) × Levelfaktor
   (1 + 0,5 × (Level − 1)/14). Tempobonus linear 0 (≥ 500 ms) bis 150 (≤ 150 ms), z. B. 250 ms → +107.
 - **Zeitkonto [CODE]:** Start 45 s, Treffer **+2 s** (max. 60 s); Frühstart, Fehlklick, Zeitüberschreitung je **−1 s**,
-  Combo-Reset, Bildwackeln (8 px), roter radialer Schimmer (50 % Deckkraft, 0,45 s). Ein Zyklus dauert anfangs
+  Combo-Reset, Bildwackeln (8 px; kleine, kurze Bewegung des ganzen Bildes → `bewegungsreize_schwindel` 1 wie 501/502),
+  roter radialer Schimmer (50 % Deckkraft, 0,45 s). Das Aufleuchten selbst ist hier der Kern der Aufgabe, dazu kommen
+  60-ms-Täuschblitze → `flimmern_lichtreize` 2, höher als bei den übrigen Übungen der Gruppe (dort nur Fehler-Schimmer, 1). Ein Zyklus dauert anfangs
   ≈ 1,7 s [ER] – sicheres Treffen verlängert die Runde. Sie endet, wenn das Fenster unter die eigene Reaktionszeit
   (inkl. Geräte-Latenz) fällt; dann kostet jeder Durchgang 2 s (Zeitüberschreitung + verspäteter Klick als „Frühstart“).
 - **Auswertung [CODE]:** mittlere Reaktionszeit (Mittelwert nur der Treffer), Präzision, Frühstarts,

@@ -124,7 +124,9 @@ Quelle: Seitentext und Spiel-Chunk `13832-…js` (formatiert, nur Mechanik). **[
   60 s); Fehlklick, Leerklick, Zeitüberschreitung je **−1 s** und Combo-Reset. Spielzeit und Drift laufen mit dt (max.
   0,1 s) → nicht bildfrequenzabhängig; nur Partikel pro Bild (kosmetisch). Fehler: Bildschütteln (6 px), Fehlerton,
   roter Vollflächen-Schimmer (`fx-flash-red`, 480 ms; standardmäßig an, per Schalter „Miss Flash“ abschaltbar) – bei
-  schnellen Fehlklicks mehrmals pro Sekunde.
+  schnellen Fehlklicks mehrmals pro Sekunde. Schimmer nur bei Fehlern, nicht periodisch → `flimmern_lichtreize` 1;
+  Bildschütteln → `bewegungsreize_schwindel` 1 (gleiche Einstufung wie 501, 502, 509, 702, 704; 503 mit Aufleuchten als
+  Kernreiz: 2).
 - **Auswertung [CODE]:** Präzision, Fehlerarten, mittlere Erfassungszeit (Mittelwert über alle Treffer, kurze und
   lange Wege gemischt), maximale Combo, Level; Note S+ bis F nach 100 × √(Punkte/51.000) – ohne Normdaten.
 - **Widersprüche Regeltext ↔ Code:** „+0,6 s“/„−0,8 s“ – Code +2 s/−1 s; „Bildschirmecken“ – Randstreifen links/rechts;
@@ -189,6 +191,9 @@ Sakkade leitet die Mausbewegung ein“), werden Blick- und Handbefehl weitgehend
   Schulter arbeitet, hängt nur von Empfindlichkeit und DPI ab. Ältere skalieren die Geschwindigkeit bei großen
   Amplituden weniger (Ketcham et al., 2002); die Trefferzone (Level 15: ≈ 0,9 cm am Bildschirm) entspricht bei
   Standard-Empfindlichkeit nur ≈ 1 mm Mausweg (800 dpi) [ER] – das macht Tremor spürbar.
+- **Belastung:** häufige Querungen über die ganze Bildbreite, bei niedriger Empfindlichkeit (wie in Shootern üblich)
+  mit weiten Arm- und Schulterzügen → `koerperliche_belastung` 1; beim Schwester-Drill 501 mit kürzeren, zufälligen
+  Wegen 0.
 
 ## 7. Einflussfaktoren und Messgrenzen
 
@@ -221,6 +226,10 @@ Punkte. Anfangs große Eingewöhnungsgewinne – aussagekräftig ist nur der Ver
   kognitiver Einschränkung (Zeitdruck, Strafen).
 - **Kombiniert gut mit …** 501 (kurze Wege), 509 (Feinkorrektur), 511 (Fadenkreuz halten), 805 (Abbremsen), 303
   (Blicksprünge), 801/401 (Wahrnehmung am Rand).
+- **Nahe Dublette: 501.** Gleicher Spielaufbau (Zielgrößen, Sichtbarkeiten, Punkte, Zeitkonto, Strafen); Unterschied
+  nur der Zielort (hier bis 90–95 % Randziele, weitere Wege und Blicksprünge, `sakkaden` 3 statt 2) und eine leichte
+  Drift ab Level ≈ 9. Für dasselbe Übungsziel nur eine der beiden vorschlagen – 506 als Steigerung nach 501. 502 zeigt
+  mehrere bewegte Ziele gleichzeitig (Übersicht statt Weite).
 
 ## 10. Schwächen des Originals und Empfehlungen für eine Blickfit-Umsetzung
 
