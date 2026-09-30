@@ -168,8 +168,7 @@ class RasterAusweichen implements Exercise {
     this.handDone = false;
   }
 
-  update(dt: number, t: number): void {
-    void dt;
+  update(_dt: number, t: number): void {
     if (this.phase === 'done') return;
     this.vh.update(t);
     if (this.phase === 'gap') {

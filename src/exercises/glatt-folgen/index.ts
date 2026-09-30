@@ -20,7 +20,7 @@ export const glattFolgen: ExerciseDefinition = {
   color: '#4A8FD0',
   showsLevel: true,
   icon:
-    '<path d="M5 33C14 33 18 11 27 14s3 15-3 11 3-15 20-13" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" opacity=".22"/><path d="M5 33C14 33 18 11 27 14s3 15-3 11 3-15 20-13" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="14" cy="27" r="5.4" fill="none" stroke="currentColor" stroke-width="2.6"/><circle cx="14" cy="27" r="2" fill="currentColor"/>',
+    '<path d="M5 24C5 8 25 8 25 24S45 40 43 22" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" opacity=".22"/><path d="M5 24C5 8 25 8 25 24S45 40 43 22" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><circle cx="25" cy="24" r="5.6" fill="none" stroke="currentColor" stroke-width="2.6"/><circle cx="25" cy="24" r="2" fill="currentColor"/>',
   texts: { de, it },
   create: nachfuehren({ axes: 'xy', makeRule: smoothRule, previewSeconds: smoothPreviewSeconds, startLevel: 3, demoLevel: 2 }),
 };

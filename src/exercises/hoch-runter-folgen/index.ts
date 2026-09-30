@@ -20,7 +20,7 @@ export const hochRunterFolgen: ExerciseDefinition = {
   color: '#2459A0',
   showsLevel: true,
   icon:
-    '<path d="M4 39Q14 3 24 39Q34 3 44 39" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" opacity=".22"/><path d="M4 39Q14 3 24 39Q34 3 44 39" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><circle cx="34" cy="14" r="5.6" fill="none" stroke="currentColor" stroke-width="2.6"/><circle cx="34" cy="14" r="2" fill="currentColor"/>',
+    '<path d="M5 34C8 8 18 8 21 32q3 7 6 0C30 8 40 8 43 34" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" opacity=".22"/><path d="M5 34C8 8 18 8 21 32q3 7 6 0C30 8 40 8 43 34" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><circle cx="35" cy="15" r="5.6" fill="none" stroke="currentColor" stroke-width="2.6"/><circle cx="35" cy="15" r="2" fill="currentColor"/>',
   texts: { de, it },
   create: nachfuehren({ axes: 'xy', makeRule: arcRule, previewSeconds: arcPreviewSeconds, startLevel: 3, demoLevel: 2 }),
 };
