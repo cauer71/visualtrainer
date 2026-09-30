@@ -225,9 +225,13 @@ Streuung, > 90 % Treffer“) und „2–3 Wochen à 15 min“ bis zur Automatisi
   `trockenes_auge_bildschirm`, `kopfschmerz_asthenopie` (Dauerfixieren → Pausen, blinzeln); `sehbehinderung_niedriger_visus`
   (kleine, teils kontrastarme Zonen); `migraene_lichtempfindlich`, `photosensitive_epilepsie` (vorsorglich: kleine
   Treffereffekte im 8-Hz-Takt, optionaler roter Blitz-Effekt höchstens ≈ alle 4,8 s, weit unter 3 Blitzen/s);
-  `kinder_unter_6` (Shooter-Thema, Feinmotorik).
-- **Kombiniert gut mit …** 505, 514, 512, 515 (Tracking), 509 (Mikrokorrektur), 707 (Pfad folgen), 705, 808 (ruhige
+  `kinder_unter_6` (Shooter-Thema, Feinmotorik); `nystagmus` (kleines, ausweichendes Ziel mit der Blickfolge halten →
+  langsames Zieltempo, eher 505/507 meiden).
+- **Kombiniert gut mit …** 505, 507, 514, 512, 515 (Tracking), 509 (Mikrokorrektur), 707 (Pfad folgen), 705, 808 (ruhige
   Hand), 104 (Zielverfolgung ohne Shooter-Thema).
+- **Abgrenzung in der Gruppe:** 505 und 507 sind reines Nachführen (ohne Klicken, ohne Störung); 504 ergänzt eine feste,
+  vorhersagbare Störung (Rückstoß) und das Halten der Taste, das Ziel ist langsamer. Keine Dublette, aber für das Ziel
+  „Nachführen üben“ genügt meist eine der drei.
 
 ## 10. Schwächen des Originals und Empfehlungen für eine Blickfit-Umsetzung
 

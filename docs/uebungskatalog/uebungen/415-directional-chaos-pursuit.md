@@ -178,7 +178,8 @@ Grundlage: Seitentext und Spielcode (seitenspezifischer Chunk `38156-…js` plus
   - `gesichtsfeldausfall`: Ziel kann im ausgefallenen Bereich verloren gehen, v. a. nach Randabprallern.
   - `presbyopie_gleitsicht`: seitliche Unschärfe im Vollbild → kleineres Feld, Bildschirmbrille, Kopfbewegung erlauben.
   - `trockenes_auge_bildschirm`, `kopfschmerz_asthenopie`: wenig Lidschlag bei 60 s Dauerfolgen; kurze Blöcke, Pausen.
-- **Kombiniert gut mit …** 404 → 415 → 410 → 414 (steigende Unvorhersagbarkeit), 411 (Tempo-/Richtungswechsel), 303 (Blicksprünge auf ruhende Ziele), 105/514 (gleiche Idee mit Hand).
+  - `kinder_unter_6`: abstrakte Aufgabe ohne Rückmeldung über 60 s – nicht empfohlen.
+- **Kombiniert gut mit …** 412/404 (gleichförmige Grundform) → **415** (sanftes Driften) → 410 (harte Haken im festen Takt) → 411 (zufällig getaktete Umkehrungen, Tempo steigt): steigende Unvorhersagbarkeit. **Unterschied zu 410** (gleicher Seitentitel): dort gerade Strecken mit harten Haken alle 0,5 s, hier kaum merkliche Richtungsänderung (≈ 4° je 250 ms) und harte Wechsel fast nur am Rand. Daneben 414 (Positionssprünge), 303 (Blicksprünge auf ruhende Ziele), 105/514 (gleiche Idee mit Hand).
 
 Keine Diagnose, keine Heilversprechen: Trainingsaufgabe für gesunde Nutzer:innen, kein Test der Augenbeweglichkeit.
 
