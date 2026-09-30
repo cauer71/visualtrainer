@@ -18,7 +18,7 @@
  *
  * Geister-Hand (Film/Autoplay): Die Übung führt selbst eine virtuelle Hand, die den Linienzug nachzeichnet.
  */
-import { background, C, circle, ring, text, withAlpha } from '../../core/draw';
+import { background, C, circle, ring, text } from '../../core/draw';
 import { nextStartLevel, Staircase } from '../../core/staircase';
 import { clamp, lerp } from '../../core/stats';
 import type { Exercise, ExerciseContext, ExerciseDefinition, PointerInfo } from '../../core/types';
@@ -595,4 +595,3 @@ export const musterNachzeichnen: ExerciseDefinition = {
   create: (ctx) => new MusterNachzeichnen(ctx),
 };
 
-void withAlpha;

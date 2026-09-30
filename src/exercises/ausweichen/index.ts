@@ -54,7 +54,6 @@ const WINDOWS = 12;
 const QUICK_WINDOWS = 4;
 const PAUSE_MS = 1000;
 const CUE_MS = 900;
-const END_MS = 1200;
 const FADE_IN_S = 0.3;
 const FADE_OUT_S = 0.45;
 const START_LEVEL = 1;
@@ -113,7 +112,6 @@ class Ausweichen implements Exercise {
   private readonly windows: number;
   private phase: Phase = 'play';
   private pauseT0 = 0;
-  private endT0 = 0;
   // Geometrie
   private pu = MIN_PU;
   private off = 50;
@@ -217,7 +215,6 @@ class Ausweichen implements Exercise {
     if (this.phase === 'done') return;
     const { ctx } = this;
     if (ctx.autoplay) this.autoUpdate(dt, t);
-    if (this.phase === 'end' as Phase) return;
     // weiches Ein- und Ausblenden (Darstellung), auch während der Pause
     for (const o of this.obs) {
       if (o.dying) o.alpha -= dt / FADE_OUT_S;

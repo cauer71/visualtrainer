@@ -8,7 +8,7 @@ export const de: ExerciseTexts = {
   tagline: 'Großes Ziel antippen, dann das kleine Nachziel genau treffen.',
   steps: [
     'Tippe das große Ziel an.',
-    'Gleich danach erscheint ein kleines Ziel in der Nähe – tippe es an.',
+    'Gleich danach erscheint ein kleines Ziel – tippe es an.',
     'Je besser du bist, desto kleiner und kürzer wird es.',
   ],
   why:
@@ -41,7 +41,7 @@ export const it: ExerciseTexts = {
   tagline: 'Tocca il bersaglio grande, poi colpisci con precisione quello piccolo.',
   steps: [
     'Tocca il bersaglio grande.',
-    'Subito dopo compare un bersaglio piccolo lì vicino – toccalo.',
+    'Subito dopo compare un bersaglio piccolo – toccalo.',
     'Più sei bravo, più diventa piccolo e breve.',
   ],
   why:

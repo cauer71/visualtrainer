@@ -62,9 +62,9 @@ export function blend(s: number, t0: number, len: number): number {
   return k * k * (3 - 2 * k);
 }
 
-/** Wert auf [−lim, lim] halten und die Geschwindigkeit nach außen abbremsen (Sicherung gegen Rechenfehler, greift selten) */
-export function keepInside(pos: number, vel: number, lim: number): number {
-  if (pos >= lim && vel > 0) return 0;
-  if (pos <= -lim && vel < 0) return 0;
+/** Im Bereich [−lim, lim] halten: Geschwindigkeit nach außen wird null, sobald der nächste Schritt hinausführen würde (Sicherung, greift selten) */
+export function keepInside(pos: number, vel: number, lim: number, step = PATH_STEP_S): number {
+  if (vel > 0 && pos + vel * step >= lim) return 0;
+  if (vel < 0 && pos + vel * step <= -lim) return 0;
   return vel;
 }

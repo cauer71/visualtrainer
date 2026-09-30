@@ -269,7 +269,7 @@ class Mikrokorrektur implements Exercise {
       hud.setScore(this.points);
       this.updateLabel();
     } else if (kind !== 'hit') sfx.bad();
-    if (this.roundNo >= this.total) this.endAt = t + (this.demo ? 1100 : 700);
+    if (this.roundNo >= this.total) this.endAt = t + (this.demo ? 900 : 700);
   }
 
   // --- Intro-Film / Autoplay ---
@@ -281,7 +281,7 @@ class Mikrokorrektur implements Exercise {
     const c = this.px(this.anchor);
     const r = this.anchorR();
     if (this.demo) {
-      ghost.tap(c.x, c.y, { delay: this.roundNo === 0 ? 1100 : 600, move: 850 });
+      ghost.tap(c.x, c.y, { delay: this.roundNo === 0 ? 900 : 500, move: 800 });
       return;
     }
     if (rng.chance(0.01)) return; // Aussetzer: der Anker läuft ab

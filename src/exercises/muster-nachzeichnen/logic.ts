@@ -8,7 +8,7 @@
  *
  * Stufen (1–20, höher = schwerer):
  * - Länge 3 → 9 Stützpunkte
- * - Einprägezeit je Punkt 900 ms → 450 ms (plus 1,2 s Grundzeit)
+ * - Einprägezeit je Punkt 800 ms → 400 ms (plus 1,0 s Grundzeit)
  * - Komplexität: ab Stufe 7 sind Kreuzungen im Linienzug erlaubt (Wahrscheinlichkeit steigt bis Stufe 18)
  * Jede Strecke des Linienzugs führt klar an allen anderen Stützpunkten vorbei, damit Ziehen nicht versehentlich
  * andere Punkte trifft.
@@ -51,10 +51,10 @@ export function patternLengthFor(level: number): number {
   return 3 + Math.round(((levelOf(level) - 1) * 6) / (MAX_LEVEL - 1));
 }
 
-/** Einprägezeit in ms: 1,2 s + n · (900 → 450 ms) */
+/** Einprägezeit in ms: 1,0 s + n · (800 → 400 ms) */
 export function exposureMsFor(level: number, n = patternLengthFor(level)): number {
-  const per = 900 - (450 * (levelOf(level) - 1)) / (MAX_LEVEL - 1);
-  return Math.round(1200 + n * per);
+  const per = 800 - (400 * (levelOf(level) - 1)) / (MAX_LEVEL - 1);
+  return Math.round(1000 + n * per);
 }
 
 /** Wahrscheinlichkeit, dass ein Muster Kreuzungen haben darf: 0 bis Stufe 6, dann steigend bis 1 bei Stufe 18 */

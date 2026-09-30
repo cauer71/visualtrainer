@@ -44,7 +44,6 @@ import {
 import { de, it } from './texts';
 
 const FADE_IN_MS = 250;
-const CHECK_MS = 600;
 const BURST_MS = 420;
 const MARK_MS = 650;
 const WRONG_COOLDOWN_MS = 350;
@@ -73,14 +72,14 @@ const DEMO_CHAINS: DemoChain[] = [
       { nx: 0.86, ny: 0.62 },
     ],
     taps: [
-      { delay: 1300, move: 700 },
-      { delay: 350, move: 600 },
-      { delay: 350, move: 600 },
-      { delay: 350, move: 600 },
+      { delay: 900, move: 700 },
+      { delay: 250, move: 550 },
+      { delay: 250, move: 550 },
+      { delay: 250, move: 550 },
     ],
   },
   {
-    at: 7000,
+    at: 6600,
     pts: [
       { nx: 0.8, ny: 0.28 },
       { nx: 0.3, ny: 0.22 },
@@ -88,20 +87,20 @@ const DEMO_CHAINS: DemoChain[] = [
       { nx: 0.18, ny: 0.62 },
     ],
     taps: [
-      { delay: 600, move: 600 },
-      { delay: 250, move: 600 },
-      { delay: 250, move: 600 },
-      { delay: 250, move: 600 },
+      { delay: 400, move: 600 },
+      { delay: 250, move: 550 },
+      { delay: 250, move: 550 },
+      { delay: 250, move: 550 },
     ],
   },
 ];
-const DEMO_END_MS = 11700;
+const DEMO_END_MS = 11500;
 /** Zeitpunkte der Bildunterschriften im Intro-Film (ms seit Start) */
 const DEMO_CAPTIONS: Array<{ at: number; key: string }> = [
   { at: 0, key: 'watch' },
   { at: 1400, key: 'next' },
-  { at: 3500, key: 'arrow' },
-  { at: 7100, key: 'new' },
+  { at: 3100, key: 'arrow' },
+  { at: 6700, key: 'new' },
 ];
 
 interface Chain {
@@ -116,7 +115,6 @@ interface Chain {
 }
 
 interface Fx {
-  kind: 'hit' | 'check';
   nx: number;
   ny: number;
   r: number;
@@ -199,7 +197,7 @@ class Zielkette implements Exercise {
     if (this.demo) this.runDemo(t);
     else if (!this.chain && this.chainsStarted < this.total && t >= this.nextAt) this.spawnChain(t);
     const C = this.chain;
-    if (C && !this.demo && t - C.born >= C.limit) this.timeout(C, t);
+    if (C && !this.demo && t - C.born >= C.limit) this.timeout(t);
     if (this.ctx.autoplay && !this.demo) this.autoUpdate(t);
     this.prune(t);
   }
@@ -289,8 +287,7 @@ class Zielkette implements Exercise {
     const { sfx, hud } = this.ctx;
     C.done = i + 1;
     this.lastTap = { x: p.x, y: p.y };
-    this.fx.push({ kind: 'check', nx: C.pts[i].nx, ny: C.pts[i].ny, r: C.r, t0: p.t });
-    this.fx.push({ kind: 'hit', nx: C.pts[i].nx, ny: C.pts[i].ny, r: C.r, t0: p.t });
+    this.fx.push({ nx: C.pts[i].nx, ny: C.pts[i].ny, r: C.r, t0: p.t });
     sfx.tap();
     if (C.done < C.pts.length) return;
     // Kette vollständig
@@ -319,7 +316,7 @@ class Zielkette implements Exercise {
   }
 
   /** Zeitmarke überschritten: Kette ist vorbei (weich ausblenden), zählt als nicht gelungen */
-  private timeout(C: Chain, t: number): void {
+  private timeout(t: number): void {
     const { hud, stage, texts } = this.ctx;
     this.chain = null;
     this.chainsDone++;
@@ -343,7 +340,7 @@ class Zielkette implements Exercise {
   }
 
   private prune(t: number): void {
-    if (this.fx.length) this.fx = this.fx.filter((g) => t - g.t0 < (g.kind === 'hit' ? BURST_MS : CHECK_MS));
+    if (this.fx.length) this.fx = this.fx.filter((g) => t - g.t0 < BURST_MS);
     if (this.marks.length) this.marks = this.marks.filter((m) => t - m.t0 < MARK_MS);
   }
 
@@ -415,7 +412,7 @@ class Zielkette implements Exercise {
       if (i < C.done) {
         circle(g, c.x, c.y, r, withAlpha(BLUE_DARK, 0.35));
         ring(g, c.x, c.y, r - 1, withAlpha(BLUE_LIGHT, 0.45), Math.max(2, r * 0.07));
-        drawCheck(g, c.x, c.y, 0, clamp(r * 0.5, 8, 24), DONE);
+        drawCheck(g, c.x, c.y, 0.12, clamp(r * 0.5, 8, 24), DONE);
       } else if (i === next) {
         const pulse = this.ctx.reducedMotion ? 0 : 0.5 - 0.5 * Math.cos(((t - C.born) / PULSE_MS) * Math.PI * 2);
         glow(g, c.x, c.y, r, BLUE, 0.7);
@@ -471,24 +468,27 @@ class Zielkette implements Exercise {
     g.restore();
   }
 
-  /** Zeitmarke: Balken oberhalb des Spielfelds; bei wenig Rest gestrichelt (Form statt Farbe) */
+  /** Zeitmarke: Balken am unteren Rand; bei wenig Rest gestrichelt (Form statt Farbe) */
   private drawTimer(g: CanvasRenderingContext2D, C: Chain, t: number): void {
+    const { w, h, u } = this.ctx.stage;
     const f = playField(this.ctx.stage, false);
     const frac = clamp(1 - (t - C.born) / C.limit, 0, 1);
-    const y = f.y - Math.max(10, this.ctx.stage.u * 1.6);
-    const lw = Math.max(4, this.ctx.stage.u * 0.8);
+    const lw = Math.max(4, u * 0.8);
+    const y = h - Math.max(lw / 2 + 2, Math.max(10, u * 2) / 2);
+    const x0 = Math.max(f.x, w * 0.04);
+    const x1 = Math.min(f.x + f.w, w * 0.96);
     g.save();
     g.lineCap = 'round';
     g.beginPath();
-    g.moveTo(f.x, y);
-    g.lineTo(f.x + f.w, y);
+    g.moveTo(x0, y);
+    g.lineTo(x1, y);
     g.strokeStyle = 'rgba(207,230,255,0.16)';
     g.lineWidth = lw;
     g.stroke();
     if (frac > 0.005) {
       g.beginPath();
-      g.moveTo(f.x, y);
-      g.lineTo(f.x + f.w * frac, y);
+      g.moveTo(x0, y);
+      g.lineTo(x0 + (x1 - x0) * frac, y);
       if (frac < 0.3) g.setLineDash([lw * 1.6, lw * 1.3]);
       g.strokeStyle = BLUE_LIGHT;
       g.lineWidth = lw;
@@ -498,9 +498,8 @@ class Zielkette implements Exercise {
   }
 
   private drawFx(g: CanvasRenderingContext2D, d: Fx, t: number): void {
-    const c = this.px(d);
-    if (d.kind === 'check') return;
     if (this.ctx.reducedMotion) return;
+    const c = this.px(d);
     const k = clamp((t - d.t0) / BURST_MS, 0, 1);
     g.save();
     g.beginPath();

@@ -5,7 +5,7 @@ import type { ExerciseTexts } from '../../core/types';
 
 export const de: ExerciseTexts = {
   title: 'Ziele erwischen',
-  tagline: 'Mehrere Kreise sind unterwegs – tippe sie an, bevor sie weiterziehen.',
+  tagline: 'Mehrere Kreise sind unterwegs – tippe sie im Vorbeiflug an.',
   steps: [
     'Mehrere Kreise wandern über den Bildschirm.',
     'Tippe sie an – sie werden dabei größer und kleiner.',
@@ -37,7 +37,7 @@ export const de: ExerciseTexts = {
 
 export const it: ExerciseTexts = {
   title: 'Colpisci i bersagli',
-  tagline: 'Più cerchi sono in movimento – toccali prima che se ne vadano.',
+  tagline: 'Più cerchi sono in movimento – toccali al volo.',
   steps: [
     'Più cerchi vagano sullo schermo.',
     'Toccali – nel frattempo diventano più grandi e più piccoli.',

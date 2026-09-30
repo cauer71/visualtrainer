@@ -8,7 +8,7 @@
  *
  * Stufen (1–20):
  * - Stärke: Tempo-Spreizung (Faktor 1,4 → 2,2 nach oben und unten), Drehwinkel 25° → 130°
- * - Häufigkeit: mittlerer Abstand zwischen Wechseln 2,2 → 1,35 s (unregelmäßig)
+ * - Häufigkeit: mittlerer Abstand zwischen Wechseln 1,8 → 1,04 s (unregelmäßig)
  * - Wechsel-Dauer (Rampe und Bogen) 900 → 480 ms
  * - Zeichen: kleiner, kürzer sichtbar, erscheint früher nach dem Wechsel
  *
@@ -51,7 +51,7 @@ export function changeMsFor(level: number): number {
 
 /** Mittlerer Abstand zwischen zwei Wechseln in ms */
 export function gapMeanFor(level: number): number {
-  return Math.round(2200 - 45 * (levelOf(level) - 1));
+  return Math.round(1800 - 40 * (levelOf(level) - 1));
 }
 
 /** Zeit vom Ende des Wechsels bis zum Zeichen in ms */

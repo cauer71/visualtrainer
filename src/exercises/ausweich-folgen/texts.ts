@@ -47,7 +47,7 @@ export const it: ExerciseTexts = {
     'Con disturbi a mani o occhi: meglio una pausa.',
   ],
   why:
-    'Il bersaglio cambia continuamente direzione e velocità, come se schivasse il tuo segno. Ma è solo apparenza: lo svolgimento è stabilito prima e non dipende dal tuo segno. Eserciti il tornare in fretta sul bersaglio dopo ogni cambio. Con il tuo successo i cambi diventano più frequenti e più rapidi. Il segno sta sopra il dito, così la mano non copre nulla. Non è dimostrato che questo si trasferisca alla vita di tutti i giorni.',
+    'Il bersaglio cambia continuamente direzione e velocità, come se schivasse il tuo segno. Ma è solo apparenza: lo svolgimento è stabilito prima e non dipende dal tuo segno. Ti eserciti a tornare in fretta sul bersaglio dopo ogni cambio. Con il tuo successo i cambi diventano più frequenti e più rapidi. Il segno sta sopra il dito, così la mano non copre nulla. Non è dimostrato che questo si trasferisca alla vita di tutti i giorni.',
   goodFor: ['Correggere in fretta', 'Seguire di lato', 'Riagganciare il bersaglio'],
   captions: {
     touch: 'Appoggia il dito – il bersaglio parte',

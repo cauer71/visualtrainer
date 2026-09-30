@@ -52,7 +52,7 @@ export const it: ExerciseTexts = {
   goodFor: ['Decidere cosa viene prima', 'Tenere d’occhio più cose', 'Afferrare in fretta'],
   captions: {
     watch: 'Tra poco appaiono più cerchi',
-    smallest: 'Si rimpiccioliscono – il più piccolo prima',
+    smallest: 'Rimpiccioliscono: prima il più piccolo',
     next: 'Poi il successivo più piccolo',
     again: 'Nuovo turno: di nuovo il più piccolo',
   },

@@ -609,7 +609,7 @@ function drawTier(g: CanvasRenderingContext2D, tier: Tier, cx: number, cy: numbe
 export const zielauswahl: ExerciseDefinition = {
   id: 'zielauswahl',
   category: 'konzentration',
-  minutes: 2,
+  minutes: 1,
   color: '#7A5195',
   icon:
     '<path d="M11 18l7-12 7 12z" fill="currentColor"/><circle cx="36" cy="13" r="7" fill="none" stroke="currentColor" stroke-width="2.8"/><path d="M31.5 17.5l9-9M35 19.5l6-6M31 12l6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><rect x="10" y="29" width="14" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2.8"/><circle cx="14.5" cy="33.5" r="1.4" fill="currentColor"/><circle cx="19.5" cy="33.5" r="1.4" fill="currentColor"/><circle cx="14.5" cy="38.5" r="1.4" fill="currentColor"/><circle cx="19.5" cy="38.5" r="1.4" fill="currentColor"/><path d="M29 36h14m-5-5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>',

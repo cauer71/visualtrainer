@@ -26,7 +26,7 @@ export const de: ExerciseTexts = {
     passed: 'Gelungene Durchgänge',
   },
   tips: {
-    ahead: 'Die Bögen sind gleich: oben bremsen, unten schneller. Bewege die Hand schon mit, bevor das Ziel dort ist.',
+    ahead: 'Jeder Bogen folgt dem gleichen Muster: oben bremsen, unten schneller. Beweg die Hand schon mit, bevor das Ziel dort ist.',
     calm: 'Lass die Hand in einer runden Bewegung mitschwingen – oben sanft abbremsen, unten nicht hinterherhetzen.',
     great: 'Stark auf und ab gefolgt! Bleib locker – dann klappt es auch bei schnelleren Bögen.',
   },
@@ -61,7 +61,7 @@ export const it: ExerciseTexts = {
     passed: 'Turni riusciti',
   },
   tips: {
-    ahead: 'Gli archi sono uguali: in alto frenare, in basso accelerare. Muovi la mano prima che il bersaglio arrivi.',
+    ahead: 'Ogni arco segue lo stesso schema: in alto frenare, in basso accelerare. Muovi la mano prima che il bersaglio arrivi.',
     calm: 'Lascia che la mano oscilli in un movimento rotondo – in alto frena dolcemente, in basso non inseguirlo di corsa.',
     great: 'Ottimo! Resta rilassato – così ce la fai anche con archi più veloci.',
   },

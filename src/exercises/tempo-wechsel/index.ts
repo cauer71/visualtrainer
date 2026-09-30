@@ -32,7 +32,7 @@ import {
 } from './logic';
 import { de, it } from './texts';
 
-const TRIALS = 14;
+const TRIALS = 12;
 const QUICK_TRIALS = 3;
 const DEMO_TRIALS = 2;
 const FIRST_MS: [number, number] = [1500, 2200];

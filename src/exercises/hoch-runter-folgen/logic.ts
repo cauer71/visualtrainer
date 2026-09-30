@@ -46,9 +46,9 @@ export function boostChanceFor(level: number): number {
   return l < 4 ? 0 : clamp(0.2 + 0.05 * (l - 4), 0, 0.6);
 }
 
-/** Seitliches Schwanken (halbe Weite, u): klein, höchstens 20 % der halben Feldbreite */
+/** Seitliches Schwanken (halbe Weite, u): klein, höchstens 15 % der halben Feldbreite */
 export function sideAmplitudeFor(level: number, hw: number): number {
-  return Math.min(0.2 * hw, 5 + 0.4 * lv(level));
+  return Math.min(0.15 * hw, 4 + 0.25 * lv(level));
 }
 
 export interface Arc {
@@ -171,7 +171,7 @@ export function arcRule(setup: RuleSetup): TrackRule {
   const level = lv(setup.level);
   const plan = arcPlan(setup);
   const amp = sideAmplitudeFor(level, hw);
-  const f = 0.05 + 0.008 * level;
+  const f = 0.05 + 0.006 * level;
   const ph = rng.range(0, 2 * Math.PI);
   const x = (s: number): number => amp * Math.sin(2 * Math.PI * f * rampTime(s, 1.5) + ph);
   return {
