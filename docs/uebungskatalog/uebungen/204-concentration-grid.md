@@ -111,8 +111,8 @@ Mechanik ausgewertet. Grad-Werte sind eigene Umrechnungen (Tablet ≈ 36 CSS-px 
   Hochformat (≈ 820 × 1180 px) ≈ 540 px ≈ 15°, quer ≈ 380 px ≈ 10,5°, am Handy (390 px breit) ≈ 296 px. Zellenlücke
   8 px (bis 5×5) bzw. 4 px (ab 6×6). Zellen 3×3 ≈ 170 px, 8×8 ≈ 45–60 px (Tablet), am Handy ≈ 33 px.
 - **Ziffernhöhe (Code + Rechnung):** Schriftgröße = max(12, min(24, 100/n)) px: 3×3 und 4×4 24 px, 5×5 20 px,
-  6×6 ≈ 17 px, 7×7 ≈ 14 px, 8×8 **12,5 px**. Ziffernhöhe ≈ 0,7 × Schriftgröße (Erfahrungswert, [H]): bei 8×8 ≈ 9 px ≈ 0,24° ≈
-  15 Bogenminuten, grob 0,5 logMAR (bei 3×3 ≈ 0,47°, ≈ 0,1 logMAR höher lesbar).
+  6×6 ≈ 17 px, 7×7 ≈ 14 px, 8×8 **12,5 px**. Ziffernhöhe ≈ 0,7 × Schriftgröße (Schätzung, [H]): bei 8×8 ≈ 9 px ≈ 0,24° ≈
+  15 Bogenminuten, grob 0,5 logMAR nach MNREAD-Konvention (bei 3×3 ≈ 0,47°).
 - **Drehung (Code):** Ziffern in Zellen einzeln zufällig gedreht: 5×5 und 6×6 um −12° bis +11°, ab 7×7 um −20° bis +19°;
   gefundene Zellen werden nicht mehr gedreht. Text sagt nur „leichte Rotationsverzerrungen ab 5×5“.
 - **Treffer-/Fehlerlogik (Code):** Berührung zählt beim Aufsetzen (`pointerdown`), nicht beim Loslassen. Richtige
@@ -158,7 +158,6 @@ Durchgänge täglich für „optimale neuroplastische Anpassungen“.
 - **Herkunft „Schulte 1962, Tübingen“:** nicht prüfbar. Walter Schulte (1910–1972) leitete 1960–1972 die Tübinger
   Universitätsnervenklinik; eine Originalveröffentlichung der Tabelle wurde nicht gefunden. In der Literatur erscheint sie
   fast nur als Messinstrument in russischsprachigen Studien.
-- **Dosis „5–10 Durchgänge täglich, neuroplastisch optimal“:** ohne Quelle.
 - **Trail-Making-Bezug:** Fedotov et al. (2026, 69 Personen) fanden bei Gesunden und Personen mit Schizophrenie einen Zusammenhang
   zwischen Zeit im Trail Making Test und in der Zahlensuche mit Schulte-Tabellen; das stützt „misst Suchtempo“, nicht „trainiert die Peripherie“.
 - **Nicht medizinisch:** Die Seite schreibt selbst, sie sei kein Diagnose- oder Screening-Verfahren; das gilt auch für unsere Verwendung.
@@ -167,7 +166,7 @@ Durchgänge täglich für „optimale neuroplastische Anpassungen“.
 
 - **Serielle Suche mit Sakkaden:** Bei Suchaufgaben dauern Fixationen im Mittel ≈ 210 ms bei Sakkaden von ≈ 5,7°
   (Lesen: 254 ms, 2,4°; Rayner et al., 2007). Ein Raster von 10–15° Breite wird also mit mehreren Blicksprüngen abgesucht; ein
-  Blick starr auf die Mitte ist kaum durchhaltbar und nicht sinnvoll. Die Sakkadenlatenz ist mit 20–30 Jahren am kürzesten und
+  Blick starr auf die Mitte ist hier kaum durchhaltbar und nicht belegt hilfreich. Die Sakkadenlatenz ist mit 20–30 Jahren am kürzesten und
   bei 60–79-Jährigen länger (n = 168; Munoz et al., 1998).
 - **Sehwinkel:** 8×8-Ziffern am Tablet ≈ 0,24° hoch (≈ 15 Bogenminuten) und damit nur knapp über dem, was gesunde Ältere
   bequem lesen: kritische Schriftgröße 0,08 logMAR (8–23 J.), 0,21 (68 J.), 0,34 (81 J.) (Calabrèse et al., 2016). Wer
@@ -176,14 +175,13 @@ Durchgänge täglich für „optimale neuroplastische Anpassungen“.
   (Bouma, 1970; Pelli & Tillman, 2008). Beim 8×8-Raster (Ziffernabstand ≈ 1,3°) sind Zahlen, die ≳ 2,6° neben dem Blickpunkt
   liegen, von Nachbarn und Drehung gestört; das Raster wird daher nur mit Blickbewegungen gelöst [H]. Die Schulte-Tabelle
   bringt die „nutzbare Sehfeld“-Fähigkeit (UFOV, Ball et al., 1988) nur als Nebeneffekt ins Spiel; ein Training der Peripherie ist nicht belegt.
-- **Drehung:** Einzeln gedrehte Ziffern (bis ±20°) erschweren die Erkennung, zusätzlich fallen 6 und 9 leichter zusammen.
+- **Drehung:** Einzeln gedrehte Ziffern (bis ±20°) erschweren vermutlich die Erkennung; eine Studie dazu haben wir nicht gefunden [H].
 - **Brille (Optiker-Bezug):** Das Raster füllt 10–15° des Blickfeldes und liegt unten am Tablet-Ständer. Bei Gleitsicht
   werden Mitte und unteres Raster durch die Zwischen- und Nahzone gesehen; Ränder liegen in seitlichen Unschärfezonen, deren
   Breite sich zwischen Glasdesigns um mehr als das Doppelte unterscheidet (Sheedy, 2004). Gleitsicht-Neulinge weichen auf Kopfbewegungen aus
-  (Hutchings et al., 2007). Günstig: Arbeitsplatz-/Nahbrille für den Tablet-Abstand (Smartphone-Abstände 32–36 cm, Tablet ≈ 40 cm).
+  (Hutchings et al., 2007). Günstig: Arbeitsplatz-/Nahbrille für den Tablet-Abstand (≈ 40 cm angenommen).
 - **Farbsehen, Kontrast:** Keine Farbe im Spiel (weiß auf dunkel), also unproblematisch bei Farbsehschwäche (≈ 8 % der
   Männer).
-- **Trockenes Auge:** 45 s intensives Suchen ohne Lidschlag-Pause; bei mehreren Durchgängen hintereinander auf Pausen achten.
 
 ## 5. Neurowissenschaftliche Grundlagen
 
@@ -214,11 +212,10 @@ zusätzlicher Verzögerung (Pronk et al., 2020); bei Zeiten von 0,5–1 s je Zah
   bleiben gleich klein, die Wege werden kürzer. Ergebnisse zwischen Geräten sind daher nicht vergleichbar. Gleiche Bildwiederholrate
   (16,7 ms je Bild bei 60 Hz) spielt bei Sekundenzeiten keine Rolle.
 - **Übungseffekte und Messgüte:** Wiederholung senkt die Zeit deutlich (Buck et al., 2008; Calamia et al., 2012), ein Teil des
-  Effekts ist Merken von Positionen (nur bei wiederholten Rastern – im Original sind die Raster neu gemischt, das begrenzt dies). Dagegen
-  stützt der Ausgraueffekt die Suche: Mit jeder Zahl wird die Suchmenge kleiner, sodass die letzten Zahlen viel leichter zu
+  Effekts ist Merken von Positionen (nur bei wiederholten Rastern – im Original sind die Raster neu gemischt, das begrenzt dies). Hinzu
+  kommt der Ausgraueffekt: Mit jeder Zahl wird die Suchmenge kleiner, sodass die letzten Zahlen viel leichter zu
   finden sind als die ersten – **Zeit je Zahl ist daher nicht über das Raster konstant**.
 - **Punkte:** Punkte enthalten Tempo, Rastergröße und Zufall (welche Zahl liegt wo) und sind nicht mit den Leistungsstufen der Seite zu deuten (Abschnitt 2).
-- **Müdigkeit, Nahsicht:** Kurze Sitzungen; bei Beschwerden Pause.
 
 ## 8. Studienlage: Trainierbarkeit und Übertragung
 
@@ -263,7 +260,7 @@ Die Blickfit-Umsetzung **Zahlenjagd** (`src/exercises/zahlenjagd/`) behält das 
 - **Falschtipp:** **Blickfit:** Zelle wackelt kurz (bei „Bewegung reduzieren“ roter Rahmen), keine Zeitstrafe; Tipps auf gefundene Zahlen werden ignoriert.
 - **Behauptungen:** **Blickfit-Text** sagt: übt geordnetes Suchen und Tempo, Alltagstransfer nicht belegt; „peripheres Sehen“ und „Schnelllesen“ werden ausdrücklich nicht behauptet (science.ts).
 - Sprachen DE/IT, keine Farbe als Merkmal, Touch (Mindestgröße), Bewegung reduzieren berücksichtigt.
-- **Weitere Empfehlungen:** Zeit je Rastergröße getrennt ausweisen (nicht mischen), Nahbrille-Hinweis im Vorspann.
+- **Weitere Empfehlung:** Zeit je Rastergröße getrennt ausweisen; Hinweis auf passende Nahbrille im Vorspann.
 
 ## 11. Quellen
 
