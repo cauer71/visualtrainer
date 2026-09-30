@@ -10,6 +10,8 @@ export default defineConfig({
     target: 'es2020',
     sourcemap: false,
     assetsInlineLimit: 8192,
+    // zweite Seite: VR-Labor (/vr/) – three.js wird nur dort geladen
+    rollupOptions: { input: { main: 'index.html', vr: 'vr/index.html' } },
   },
   server: { host: true, port: 5173 },
   preview: { host: true, port: 4173 },

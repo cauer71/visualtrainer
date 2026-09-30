@@ -102,6 +102,8 @@ funktioniert aber auch am Handy und am Computer. Sprachen: **Deutsch** und **Ita
 | Bewegung verfolgen | **Diagonal-Korridor** | Zieh die Kugel durch einen schmalen, schrägen Gang – ohne die Wand zu berühren. |
 | Gedächtnis | **Muster nachzeichnen** | Merk dir einen Linienzug und zeichne ihn mit dem Finger nach. |
 
+**VR-Labor (Versuch):** unter `/vr/` liegt ein eigener Testbereich für VR-Brillen mit WebXR (Oculus/Meta Quest, Rift). Dort läuft **Kugel-Detektiv 3D** – Mehrfach-Objektverfolgung in einem Würfelraum, bei dem die räumliche Tiefe Teil der Aufgabe ist. Ohne Brille gibt es eine flache Vorschau. Beschreibung, Aufbau und Tests: [`docs/vr-labor.md`](docs/vr-labor.md). Aus dem Optiker-Bereich verlinkt.
+
 **Übungskatalog:** [`docs/uebungskatalog/`](docs/uebungskatalog/UEBERSICHT.md) beschreibt alle 81 Übungen der Vorlage skilldrills.online (Nummern 101–811) sowie das eigene Reihen-Rätsel (901) mit Anforderungsprofil, Vorsichtshinweisen und geprüften Quellen – als Grundlage für eine spätere KI-gestützte Übungsauswahl.
 
 Hintergrund, Studienlage und Quellen: Seite „Hintergrund & Studien“ in der App sowie

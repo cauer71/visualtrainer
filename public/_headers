@@ -9,3 +9,6 @@
 
 /index.html
   Cache-Control: no-cache
+
+/vr/index.html
+  Cache-Control: no-cache
