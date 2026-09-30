@@ -17,6 +17,8 @@ passende Übungen vorzuschlagen.
 - [`katalog.json`](katalog.json) – alle YAML-Köpfe als eine JSON-Datei (wird aus den Dateien erzeugt:
   `python3 docs/uebungskatalog/build.py`)
 - [`_vorlage.md`](_vorlage.md) – verbindliche Vorlage für neue Einträge
+- [`literatur/`](literatur/) – geprüfte Literaturbasis je Übungsgruppe (Prüftabelle der Website-Quellen,
+  Faktenliste mit Zahlen und Quellen, Evidenz-Zusammenfassung, Literaturliste); Grundlage der Einträge
 
 ## Nummernschema
 
