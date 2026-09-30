@@ -42,7 +42,7 @@ async function canvasHasContent(page, selector) {
 // IDs aus der Startseite lesen
 const ctx0 = await browser.newContext({ viewport: { width: 1180, height: 820 } });
 const p0 = await ctx0.newPage();
-await p0.goto(base, { waitUntil: 'networkidle' });
+await p0.goto(base + '?quick=1', { waitUntil: 'networkidle' }); // ?quick → Optiker-Ansicht: alle Übungen
 const ids = await p0.$$eval('a.ex-card', (as) => as.map((a) => a.getAttribute('href').split('/').pop()));
 await ctx0.close();
 console.log(`Übungen: ${ids.join(', ')}`);

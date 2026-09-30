@@ -543,7 +543,7 @@ export class Runner {
       }
       const half = tw / 2 + size * 0.2;
       const x = clamp(it.x ?? w / 2, half, Math.max(half, w - half));
-      const y = (it.y ?? h * 0.2) - k * size * 0.5;
+      const y = Math.max(size * 0.8, (it.y ?? h * 0.2) - k * size * 0.5);
       const color = it.kind === 'good' ? '#4ADE80' : it.kind === 'bad' ? '#F87171' : '#FFFFFF';
       g.globalAlpha = Math.max(0, alpha);
       g.textAlign = 'center';
