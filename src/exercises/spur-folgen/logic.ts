@@ -15,6 +15,8 @@ import type { Rng } from '../../core/rng';
 import { clamp } from '../../core/stats';
 
 export const MIN_LEVEL = 1;
+/** Verhältnis von Nebenwelle zu Hauptwelle (Frequenz) */
+export const SECOND_HARMONIC = 2.3;
 export const MAX_LEVEL = 12;
 /** Halbe Breite des Toleranzbands in u (≈ 5 mm am Tablet) */
 export const BAND_U = 3.6;
@@ -57,7 +59,6 @@ export function peakVerticalSpeedFor(level: number, amp = amplitudeFor(level)): 
   return amp * 2 * Math.PI * frequencyFor(level) * (0.8 + 0.2 * SECOND_HARMONIC);
 }
 
-export const SECOND_HARMONIC = 2.3;
 
 /** Punkte für einen Durchgang: Stufe × Anteil im Band */
 export function pointsFor(level: number, fraction: number): number {

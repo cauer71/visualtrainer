@@ -191,7 +191,7 @@ function run(o: Opts): Sim {
   }
   ex.destroy?.();
   // Zum Nachsehen: SIM_DIAG=1 npx vitest run tests/unit/schwarm-ping-tipp-sim.test.ts
-  if (process.env.SIM_DIAG) {
+  if ((globalThis as { process?: { env?: Record<string, string | undefined> } }).process?.env?.SIM_DIAG) {
     console.log(`[sim] ${o.def.id} ${o.mode ?? 'play'} ${w}x${h} q=${!!o.quick} fps=${fps} ${(endAt / 1000).toFixed(1)} s taps=${ghost.taps} ->`, JSON.stringify(result), captions.slice(0, 6).join(' | '));
   }
   return { result, seconds: endAt / 1000, toasts, captions, labels, ghostTaps: ghost.taps, downs };
