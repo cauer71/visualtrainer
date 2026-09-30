@@ -43,6 +43,7 @@ const de = {
     bewegung: { title: 'Bewegung verfolgen', text: 'Bewegte Dinge sicher im Blick behalten.' },
     wahrnehmung: { title: 'Wahrnehmen & Erfassen', text: 'Mehr sehen – auf einen Blick.' },
     konzentration: { title: 'Konzentration & Denken', text: 'Dranbleiben, umschalten, schnell entscheiden.' },
+    gedaechtnis: { title: 'Gedächtnis', text: 'Merken, behalten, wiedergeben – mit Farben, Zahlen und Orten.' },
   },
   intro: {
     start: 'Los geht’s',
@@ -192,6 +193,7 @@ const it: UiStrings = {
     bewegung: { title: 'Seguire il movimento', text: 'Tenere d’occhio ciò che si muove.' },
     wahrnehmung: { title: 'Percepire e cogliere', text: 'Vedere di più – con un solo sguardo.' },
     konzentration: { title: 'Concentrazione e pensiero', text: 'Restare concentrati, cambiare compito, decidere in fretta.' },
+    gedaechtnis: { title: 'Memoria', text: 'Memorizzare, trattenere, riprodurre – con colori, numeri e posizioni.' },
   },
   intro: {
     start: 'Iniziamo',

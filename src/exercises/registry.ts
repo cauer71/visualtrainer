@@ -76,6 +76,12 @@ export const CATEGORIES: CategoryMeta[] = [
     soft: '#F3EDF7',
     icon: '<circle cx="24" cy="24" r="17" fill="none" stroke="currentColor" stroke-width="3.5"/><circle cx="24" cy="24" r="9" fill="none" stroke="currentColor" stroke-width="3.5"/><circle cx="24" cy="24" r="3" fill="currentColor"/>',
   },
+  {
+    id: 'gedaechtnis',
+    color: '#2F8F83',
+    soft: '#E6F4F2',
+    icon: '<rect x="8" y="8" width="13" height="13" rx="3" fill="currentColor"/><rect x="27" y="8" width="13" height="13" rx="3" fill="none" stroke="currentColor" stroke-width="3.5"/><rect x="8" y="27" width="13" height="13" rx="3" fill="none" stroke="currentColor" stroke-width="3.5"/><rect x="27" y="27" width="13" height="13" rx="3" fill="currentColor"/>',
+  },
 ];
 
 export function getExercise(id: string | undefined): ExerciseDefinition | undefined {
