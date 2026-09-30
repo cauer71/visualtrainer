@@ -16,6 +16,7 @@ passende Übungen vorzuschlagen.
   (YAML-Kopf mit festen Feldern + ausführliche Beschreibung mit Quellen)
 - [`katalog.json`](katalog.json) – alle YAML-Köpfe als eine JSON-Datei (wird aus den Dateien erzeugt:
   `python3 docs/uebungskatalog/build.py`)
+- [`UEBERSICHT.md`](UEBERSICHT.md) – Tabelle aller 82 Übungen (Kern, Tablet-Eignung, Evidenz, Vorsicht)
 - [`_vorlage.md`](_vorlage.md) – verbindliche Vorlage für neue Einträge
 - [`literatur/`](literatur/) – geprüfte Literaturbasis je Übungsgruppe (Prüftabelle der Website-Quellen,
   Faktenliste mit Zahlen und Quellen, Evidenz-Zusammenfassung, Literaturliste); Grundlage der Einträge

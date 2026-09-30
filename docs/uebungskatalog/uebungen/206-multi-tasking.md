@@ -13,7 +13,7 @@ stand: 2026-09-29
 
 # ===== Überblick =====
 kurzbeschreibung: "Zwei Bildhälften (bei Hochformat oben und unten), in denen kleine Symbole (▲ ● ■ ★ ◆ …) in entgegengesetzter Richtung vorbeiziehen. Man tippt nur die Symbole an, die zum angezeigten Zielsymbol der jeweiligen Hälfte passen, und lässt alle anderen durchlaufen; nach 20 Sekunden ändert sich das Zielsymbol."
-ziel_funktionen: [geteilte_aufmerksamkeit]
+ziel_funktionen: [geteilte_aufmerksamkeit, selektive_aufmerksamkeit]
 eingabe: [maus, touch]
 tablet_geeignet: mit_anpassung
 dauer_sekunden: 45
@@ -41,7 +41,7 @@ anforderungsprofil:
     daueraufmerksamkeit: 1
     selektive_aufmerksamkeit: 2
     inhibition: 2
-    geteilte_aufmerksamkeit: 3
+    geteilte_aufmerksamkeit: 2
     kognitive_flexibilitaet: 1
     arbeitsgedaechtnis: 1
     kurzzeitgedaechtnis_verbal: 0
@@ -148,10 +148,11 @@ Quelle: ausgelieferter Spielcode (Next.js-Chunk, Stand 29.09.2026; nur Mechanik 
 - **Einstufung:** Übungseffekt mittel (in der Aufgabe wird man besser, für dieses Spiel nicht geprüft), naher Transfer schwach, Alltag fehlend.
 
 ## 9. Auswahlhinweise für die KI
-- **Passt, wenn** jemand zwei Bildbereiche gleichzeitig im Blick behalten und schnell entscheiden üben möchte, kurze Einheiten (45–60 s) gewünscht sind und Zeitdruck kein Problem ist; Profil: geteilte_aufmerksamkeit 3, selektive_aufmerksamkeit/inhibition/visuelle_suche 2.
+- **Passt, wenn** jemand zwei Bildbereiche gleichzeitig im Blick behalten und schnell entscheiden üben möchte, kurze Einheiten (45–60 s) gewünscht sind und Zeitdruck kein Problem ist; Profil: geteilte_aufmerksamkeit/selektive_aufmerksamkeit/inhibition/visuelle_suche 2 (die volle Doppelaufgabe bietet 205 mit geteilte_aufmerksamkeit 3).
 - **Weniger passend, wenn** Aufgabenwechsel oder Wechselkosten geübt werden sollen (→ Blickfit Weichensteller), ruhig und ohne Zeitdruck geübt werden soll, keine Maus/Touch-Möglichkeit besteht oder eine zuverlässige Messung nötig ist.
 - **Vorsicht / anpassen bei:** `aufmerksamkeitsprobleme` (hohe Reizdichte, Zeitdruck, Zeitstrafe abschalten); `presbyopie_gleitsicht` (Symbole reichen bis zu den Bildrändern, Bildschirm nicht zu nah; Arbeitsplatzbrille ggf. sinnvoll); `gesichtsfeldausfall` (Ströme in beiden Hälften); `sehbehinderung_niedriger_visus` (Symbole ca. 1,3–2°). Keine Aussage zu Eignung im medizinischen Sinn.
 - **Kombiniert gut mit:** 205 (geteilte Aufmerksamkeit, Blickfit „Doppelt gefordert“), 408 (zwei Bildhälften verfolgen), 201 (Stroop, Hemmung), 208 (Daueraufmerksamkeit), 510 (Zielauswahl).
+- **Abgrenzung in der Gruppe:** Dublette zu 205 im Sinne von „zwei Dinge im Blick“: 205 zwei verschiedene Aufgaben (Kreis und Ziffern), 206 eine Aufgabe in zwei Bereichen mit laufender Bewegung. Aufgabenwechsel mit Wechselkosten übt keine der beiden (→ Blickfit Weichensteller).
 
 ## 10. Schwächen des Originals und Empfehlungen für eine Blickfit-Umsetzung
 **Was Blickfit anders macht:** Der Weichensteller ersetzt die Doppelstrom-Suche durch echten **Aufgabenwechsel** (Einzelreiz, zwei Regeln, gleiche zwei Tasten). Der Wechsel wird immer angekündigt (Rahmen Kreis/Quadrat + Symbol „2/3“ bzw. „< 5 >“ + Frage + passende Tastenform), Farbe (Okabe-Ito) nur zusätzlich. Ablauf: Hinweis → Vorwarnzeit → Ziffer (max. 3 s) → Rückmeldung; Antworten unter 150 ms gelten als geraten. Sitzung ≈ 90 s: 5 Durchgänge nur Regel A, 5 nur Regel B, dann 24 gemischt (50 % Wechsel, höchstens 4 gleiche Regeln in Folge). Schwierigkeit: eine Skala, Stufe 1–20 (3-down/1-up, ca. 79 %), Vorwarnzeit 1000 · 0,75^(Stufe−1) ms (bis 100 ms) und eine weiche Antwortfrist 2400 → 740 ms. Kennwerte: Wechselkosten (Median Wechsel − Median Wiederholung), Mischkosten (Median Wiederholung gemischt − Median Reinblock), Hauptwert = Stufe (Differenzwerte sind als Einzelwert wenig verlässlich, Hedge et al., 2018). Pfeiltasten und Touch, keine Zeitstrafe, keine Punkte-Combo, DE/IT. Der Doppelstrom-Charakter des Originals steckt in Blickfit „Doppelt gefordert“ (Nr. 205).

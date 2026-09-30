@@ -52,7 +52,7 @@ anforderungsprofil:
     lesen_sprache: 2
     schlussfolgern: 0
   motorisch:
-    einfache_reaktion: 2
+    einfache_reaktion: 1
     auge_hand_koordination: 1
     zielbewegung_tempo: 1
     zielbewegung_praezision: 0
@@ -69,7 +69,7 @@ belastung:
   bewegungsreize_schwindel: 0
   koerperliche_belastung: 0
   sturzrisiko: 0
-  sprachabhaengigkeit: 2
+  sprachabhaengigkeit: 3
 
 # ===== Auswahlhilfe =====
 voraussetzungen: ["sicheres Lesen einzelner englischer Wörter in lateinischer Schrift (der Text ist nur auf Englisch vorhanden; Verstehen ist nicht nötig, das Zielwort kann auch als Buchstabenbild verglichen werden)", "Vollbild-Modus im Browser (Verlassen bricht die Runde ab)", "Wörter in der Bildmitte und das Zielwort-Banner oben müssen ohne Anstrengung lesbar sein (bei Nahbrille/Gleitsicht mit passender Brille)"]
@@ -81,7 +81,7 @@ evidenz:
   naher_transfer: fehlend
   alltag_transfer: fehlend
   kommentar: "Zur Aufgabe Zielwort im Strom gibt es keine Trainingsstudie; dass Übung die Trefferquote in einer festen, wiederholten Schleife erhöht, ist plausibel, aber nicht belegt. Für RSVP-Lesen sind Tempo und Verständnis gegenläufig (Rayner et al., 2016; Acklin & Papesh, 2017; Benedetto et al., 2015), ein Nutzen für das Lesen im Alltag ist nicht belegt."
-aehnliche_uebungen: [102, 208, 202, 109, 204, 606]
+aehnliche_uebungen: [102, 208, 109, 606]
 stichworte: ["RSVP", "Schnelllesen", "Zielwort", "Wortstrom", "Go/No-Go", "Timing", "Anzeigedauer", "optimale Blickposition", "Attentional Blink", "trockenes Auge", "Lesen", "nicht umgesetzt"]
 ---
 
@@ -177,7 +177,8 @@ Quelle: Seitentext und ausgelieferter Spielcode (Chunk `54416-….js` mit Spiell
   - `presbyopie_gleitsicht`, `sehbehinderung_niedriger_visus`: kleines Zielwort-Banner (≈ 0,27°) und seitliche Zonen bei Gleitsicht; passende Brille.
   - `nystagmus`: ruhige Fixation an einem Ort ist Kern der Aufgabe.
   - `lese_rechtschreib_schwaeche`, `kognitive_einschraenkung`, `aufmerksamkeitsprobleme`, `kinder_unter_6`: fremdsprachiges Lesen unter Zeitdruck kann frustrieren.
-- **Kombiniert gut mit …** 102 (Go/No-Go), 208 (Daueraufmerksamkeit), 202 (Wahlreaktion), 109 (Zeitauflösung/Takt), 204 (Suche und Reihenfolge).
+- **Kombiniert gut mit …** 102 (Go/No-Go), 208 (ebenfalls ein Zeichenstrom mit Tippen oder Zurückhalten, aber mit Regel statt festem Zielwort und ohne Takt-Vorausplanen), 109 (Zeitauflösung/Takt).
+- **Abgrenzung in der Gruppe:** 203 ist die einzige Übung, die Antizipation (Takt und feste Zielfolge) und Wortlesen im Sehen-im-Takt-Sinn verlangt; Reagieren allein reicht nicht. 208 (Go/No-Go mit Regel) fordert dagegen Entscheiden und Zurückhalten; 201 hat den Konflikt Wort gegen Farbe.
 
 Keine Diagnose, kein Heil- oder Sehversprechen: Die Übung ist ein Spiel, kein Test der Lese- oder Sehfähigkeit.
 

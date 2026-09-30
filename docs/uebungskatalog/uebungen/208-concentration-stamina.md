@@ -13,7 +13,7 @@ stand: 2026-09-30
 
 # ===== Überblick =====
 kurzbeschreibung: "In der Bildschirmmitte erscheint 45 Sekunden lang ein einzelner Buchstabe oder eine Ziffer nach dem anderen; getippt wird nur bei einem Zielzeichen der gerade gültigen Regel (Vokal bzw. Primzahl 2, 3, 5, 7). Die Regel wechselt alle 10 Sekunden, die Zeichen erscheinen mit steigendem Level immer kürzer."
-ziel_funktionen: [entscheidung_wahlreaktion]
+ziel_funktionen: [inhibition, entscheidung_wahlreaktion]
 eingabe: [touch, maus, tastatur]
 tablet_geeignet: ja
 dauer_sekunden: 45
@@ -48,7 +48,7 @@ anforderungsprofil:
     kurzzeitgedaechtnis_visuell_raeumlich: 0
     verarbeitungsgeschwindigkeit: 2
     antizipation: 0
-    entscheidung_wahlreaktion: 3
+    entscheidung_wahlreaktion: 2
     lesen_sprache: 1
     schlussfolgern: 0
   motorisch:
@@ -81,7 +81,7 @@ evidenz:
   naher_transfer: fehlend
   alltag_transfer: fehlend
   kommentar: "Wer eine Aufgabe wiederholt, wird darin meist besser (Lerneffekt); für Bildschirm-Wachsamkeitsübungen gibt es keinen belegten Transfer auf andere Aufgaben oder den Alltag. Vigilanzstudien messen über 10–30 min, die 45-s-Runde kann das Phänomen nicht zeigen."
-aehnliche_uebungen: [102, 201, 202, 205, 206, 207, 204, 604]
+aehnliche_uebungen: [102, 201, 203, 205, 206, 204, 604]
 stichworte: ["Daueraufmerksamkeit", "Vigilanz", "Continuous Performance Test", "Go/No-Go", "Regelwechsel", "Impulskontrolle", "Vokale", "Primzahlen", "Wachposten"]
 ---
 
@@ -215,7 +215,7 @@ Frame-Jitter“; 10 min vor Lernphasen „bringen das Gehirn in optimalen Fokus�
 - **Ehrlicher Nutzen:** Man erlebt, dass schnelles Entscheiden mit Regelwechsel Fehler provoziert und Pausen sinnvoll sind.
 
 ## 9. Auswahlhinweise für die KI
-- **Passt, wenn …** ein kurzes, schnelles Go/No-Go mit Regelwechsel gewünscht ist (Profil: `entscheidung_wahlreaktion` 3,
+- **Passt, wenn …** ein kurzes, schnelles Go/No-Go mit Regelwechsel gewünscht ist (Profil: `entscheidung_wahlreaktion`/
   `inhibition`/`verarbeitungsgeschwindigkeit` 2, `kognitive_flexibilitaet` 1), Touch am Tablet, keine Hand-Augen-Genauigkeit.
 - **Weniger passend, wenn …** Daueraufmerksamkeit über Minuten, Ruhe, tempofreies Üben, Farb- oder Lichtempfindlichkeit
   im Vordergrund stehen – dann eher Wachposten (Blickfit) oder 102 Go/No-Go.
@@ -223,7 +223,8 @@ Frame-Jitter“; 10 min vor Lernphasen „bringen das Gehirn in optimalen Fokus�
   Blitz abschalten), `aufmerksamkeitsprobleme` und `kognitive_einschraenkung` (Frust durch Tempo und 1-s-Sperre),
   `kinder_unter_6` (Buchstaben/Primzahlen), `sehbehinderung_niedriger_visus` (nur Zeichengröße ≈ 2° prüfen). Auswahlhinweis,
   keine medizinische Aussage.
-- **Kombiniert gut mit …** 102 (Go/No-Go), 201 (Stroop), 202 (Wahlreaktion), 206 (Aufgabenwechsel), 604 (n-back, Gedächtnisanteil).
+- **Kombiniert gut mit …** 102 (Go/No-Go), 201 (Stroop), 203 (Zeichenstrom mit Zielwort, Takt), 206 (zwei Ströme), 604 (n-back, Gedächtnisanteil).
+- **Abgrenzung in der Gruppe:** 208 ist ein Go/No-Go mit Regelwechsel (Entscheiden und Zurückhalten, eine Tippfläche); 203 dagegen Takt-Vorausplanen mit festem Zielwort, 201 Konflikt Wort/Farbe mit mehreren Knöpfen. Wegen der nur 45 s ist die Übung kein Vigilanz-Test; Daueraufmerksamkeit bleibt bei 1.
 - Nicht als Test, Diagnose oder Leistungsvergleich („Top 1 %“) verwenden.
 
 ## 10. Schwächen des Originals und Empfehlungen für eine Blickfit-Umsetzung

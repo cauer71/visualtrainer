@@ -65,7 +65,7 @@ anforderungsprofil:
     ausdauer_belastung: 0
 belastung:
   zeitdruck: 3
-  flimmern_lichtreize: 1
+  flimmern_lichtreize: 2
   bewegungsreize_schwindel: 0
   koerperliche_belastung: 0
   sturzrisiko: 0
@@ -81,7 +81,7 @@ evidenz:
   naher_transfer: schwach
   alltag_transfer: fehlend
   kommentar: "Für Symbol-Zahl-Aufgaben allgemein sind Übungseffekte gut belegt (Plateau bei wöchentlichem Üben nach ca. 8 Sitzungen; Pham et al., 2021; Calamia et al., 2012), für dieses Spiel gibt es keine Studie. Dass Symbol-Zahl-Üben andere Fähigkeiten oder den Alltag verbessert, ist nicht gezeigt; Computertraining bei Älteren verbessert das Tempo nur klein bis mäßig (Lampit et al., 2014)."
-aehnliche_uebungen: [202, 204, 103, 108, 703, 604, 206, 205]
+aehnliche_uebungen: [202, 204, 103, 108, 703, 604, 205, 901]
 stichworte: ["SDMT", "DSST", "Symbol-Zahl-Test", "Zahlen-Symbol-Test", "Verarbeitungsgeschwindigkeit", "Wahlreaktion", "visuelle Suche", "Zuordnung", "Schlüssel", "Legende"]
 ---
 
@@ -197,7 +197,8 @@ Einschränkungen minimieren“ stimmt nur für die mündliche Variante; hier wir
 - **Weniger passend, wenn** kein Zeitdruck erwünscht ist, die Sehschärfe niedrig ist, Tastatureingabe nötig wäre oder ein aussagekräftiger Tempowert gebraucht wird (→ Blickfit Zeichen-Code).
 - **Vorsicht / anpassen bei:** `sehbehinderung_niedriger_visus` (Schlüsselzahlen ≈ 0,25–0,33°); `presbyopie_gleitsicht` (Blickwege über mehrere Zonen, Bildschirm in Leseabstand, Kopf statt Augen bewegen);
   `photosensitive_epilepsie` (roter Vollbildblitz bei Fehlern, abschaltbar, unter 3 Blitzen pro Sekunde; Vorsichtsmaßnahme); `kognitive_einschraenkung` (Zeitdruck, Zeitstrafe); `aufmerksamkeitsprobleme` (Timeout und Serienverlust wirken stressig). Keine Aussage zur Eignung im medizinischen Sinn; kein Test, keine Diagnose.
-- **Kombiniert gut mit:** 202 (Wahlreaktion), 204 (Schulte-Tabelle, Suche), 103 (visuelle Suche), 604 (N-Back, Arbeitsgedächtnis), 206 (Aufgabenwechsel).
+- **Kombiniert gut mit:** 202 (Wahlreaktion), 204 (Schulte-Tabelle, Suche), 103 (visuelle Suche), 604 (N-Back, Arbeitsgedächtnis), 901 (ruhige Denkübung ohne Zeitdruck als Ausgleich).
+- **Abgrenzung in der Gruppe:** 207 verlangt Nachschlagen im Schlüssel und Zuordnen (Verarbeitungstempo 3); 204 geordnetes Suchen ohne Entscheidung; 202 Zeigen auf wechselnde Orte mit Farbregel.
 
 ## 10. Schwächen des Originals und Empfehlungen für eine Blickfit-Umsetzung
 

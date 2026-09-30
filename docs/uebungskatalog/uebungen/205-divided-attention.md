@@ -40,7 +40,7 @@ anforderungsprofil:
   kognitiv:
     daueraufmerksamkeit: 1
     selektive_aufmerksamkeit: 1
-    inhibition: 2
+    inhibition: 1
     geteilte_aufmerksamkeit: 3
     kognitive_flexibilitaet: 1
     arbeitsgedaechtnis: 0
@@ -81,7 +81,7 @@ evidenz:
   naher_transfer: schwach
   alltag_transfer: fehlend
   kommentar: "Doppelaufgaben-Training senkt in Laborstudien die Doppelaufgaben-Kosten und überträgt sich teils auf neue Aufgabenkombinationen (Kramer 1995, Bherer 2005, Anguera 2013; kleine Gruppen); für diese Übung selbst gibt es keine Studie, und ein Nutzen beim Fahren oder Gehen ist für Bildschirmübungen nicht belegt."
-aehnliche_uebungen: [206, 408, 208, 207, 202, 201, 106]
+aehnliche_uebungen: [206, 408, 208, 207, 106]
 stichworte: ["geteilte Aufmerksamkeit", "Dual-Task", "Doppelaufgabe", "Multitasking", "Parität", "gerade Zahl", "Doppelaufgaben-Kosten", "Blickwechsel"]
 ---
 
@@ -144,10 +144,11 @@ Quelle: Seitentext und ausgelieferter Spielcode (Stand 30.09.2026, nur Mechanik 
 - **Alltagstransfer (fehlend):** Für Bildschirmübungen nicht belegt. Zu echtem Gehen mit Zweitaufgabe gibt es kleine Studien mit motorisch-kognitivem Training (Silsupadol et al., 2009); das ist eine andere Übungsform. Fahren: Die Übung ersetzt keine Fahrpraxis; Telefonieren am Steuer bleibt gefährlich (Caird et al., 2008: Reaktionszeit +0,25 s).
 
 ## 9. Auswahlhinweise für die KI
-- **Passt, wenn** die Person üben oder erleben möchte, zwei Dinge gleichzeitig zu beachten, schnell zwischen Ort und Symbol umzuschalten, oder ein kurzes Reaktionsspiel mit Zeitdruck sucht. Profil: geteilte Aufmerksamkeit 3, Inhibition/Entscheidung 2.
+- **Passt, wenn** die Person üben oder erleben möchte, zwei Dinge gleichzeitig zu beachten, schnell zwischen Ort und Symbol umzuschalten, oder ein kurzes Reaktionsspiel mit Zeitdruck sucht. Profil: geteilte Aufmerksamkeit 3, Entscheidung 2, Inhibition 1 (nur ungerade Ziffern nicht melden).
 - **Weniger passend, wenn** die Person glatte Blickfolge (401–415), saubere Vergleichsmessung von Doppelaufgaben-Kosten (dann Blickfit „Doppelt gefordert") oder ruhige Übungen ohne Zeitdruck (Belastung `zeitdruck` 3) sucht.
 - **Vorsicht / anpassen bei** `aufmerksamkeitsprobleme` und `kognitive_einschraenkung` (Überforderung, Frust durch Zeitstrafe); `presbyopie_gleitsicht` (Blick durch seitliche Zonen, Kopfbewegung; Abstand und Brille prüfen); `hand_arm_beschwerden` (schnelle Zeigebewegungen). Nur als Auswahlhinweis, keine medizinische Aussage. Nicht während Fahren, Gehen oder anderer riskanter Tätigkeit.
-- **Kombiniert gut mit:** 206 (Multitasking), 408 (Geteilte Aufmerksamkeit: Blickverfolgung), 207 (Symbol-Zahl), 202 (Wahlreaktion), 208 (Daueraufmerksamkeit).
+- **Kombiniert gut mit:** 206 (Multitasking), 408 (Geteilte Aufmerksamkeit: Blickverfolgung), 207 (Symbol-Zahl), 208 (Daueraufmerksamkeit).
+- **Abgrenzung in der Gruppe:** 205 ist die einzige echte Doppelaufgabe (zwei verschiedene Aufgaben gleichzeitig, geteilte Aufmerksamkeit 3). 206 ist dieselbe Aufgabe in zwei Bildhälften (geteilte Aufmerksamkeit 2, mit Bewegungs- und Suchanteil); beide nicht in derselben Einheit.
 
 ## 10. Schwächen des Originals und Empfehlungen für eine Blickfit-Umsetzung
 - **Keine Einzelaufgaben-Basislinie** → keine Doppelaufgaben-Kosten. Blickfit: Teil A allein, Teil B allein, dann beides; Ergebnis „Zusammenspiel" = Doppel ÷ Einzel je Teilaufgabe (Anguera et al., 2013).

@@ -17,7 +17,7 @@ stand: 2026-09-30
 
 # ===== Überblick =====
 kurzbeschreibung: "Auf dunklem Feld liegen immer ein roter und ein blauer Kreis an zufälligen Stellen; ein kleines Banner oben sagt, welche Farbe gerade gilt („ROTES ZIEL“ oder „BLAUES ZIEL“). Man klickt oder tippt den passenden Kreis, bevor die Frist abläuft; danach springen beide an neue Orte, und ab Level 2 wechselt die geltende Farbe nach einigen Treffern."
-ziel_funktionen: [auge_hand_koordination, zielbewegung_tempo]
+ziel_funktionen: [entscheidung_wahlreaktion, kognitive_flexibilitaet, auge_hand_koordination, zielbewegung_tempo]
 eingabe: [touch, maus, touchpad]
 tablet_geeignet: ja
 dauer_sekunden: 45   # nominell; +2 s je Treffer (max. 60 s) verlängern die Runde bei guter Leistung auf ≈ 2–2,5 min (eigene Simulation)
@@ -85,7 +85,7 @@ evidenz:
   naher_transfer: schwach
   alltag_transfer: fehlend
   kommentar: "Wahlreaktions- und Zeigeaufgaben werden mit Übung zuverlässig schneller, der Zuwachs pro Alternative flacht ab (Mowbray & Rhoades 1959; Proctor & Schneider 2018). Zu dieser Browserübung gibt es keine Studie; computergestütztes Aufmerksamkeitstraining zeigte bei gesunden Älteren keinen signifikanten Effekt auf Aufmerksamkeit und exekutive Funktionen (Lampit et al. 2014), Aufgabenwechsel-Training erreicht nach wenigen Sitzungen ein Plateau ohne fernen Transfer (Zhao et al. 2020). Ein Alltagsnutzen ist nicht belegt."
-aehnliche_uebungen: [201, 207, 206, 302, 510, 802, 102, 101, 501, 702]
+aehnliche_uebungen: [201, 207, 302, 510, 802, 102, 101, 501, 702]
 stichworte: ["Wahlreaktion", "Choice Reaction Time", "Hick-Hyman-Gesetz", "Reiz-Reaktions-Kompatibilität", "Farbentscheidung Rot/Blau", "Regelwechsel", "Aufgabenwechsel", "Zeigebewegung", "Fitts'sches Gesetz", "Auge-Hand-Koordination", "Zeitdruck", "Combo", "keine Reaktionszeitmessung", "Reaktionszeit-Test (Name des Originals)"]
 ---
 

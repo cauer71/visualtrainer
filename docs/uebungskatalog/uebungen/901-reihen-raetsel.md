@@ -81,7 +81,7 @@ evidenz:
   naher_transfer: mittel
   alltag_transfer: schwach
   kommentar: "Die Aufgabenart (serielle Muster) verbesserte sich in der ACTIVE-Studie dauerhaft; Alltagseffekte nur im Selbstbericht, allgemeine Intelligenz kaum. ACTIVE war betreut und in Gruppen, unsere Version ist nicht untersucht – die Einstufung gilt für die Aufgabenart, nicht für diese Übung."
-aehnliche_uebungen: [204, 207, 205, 604, 811, 602]
+aehnliche_uebungen: [204, 207, 604, 811, 602]
 stichworte: ["induktives Schließen", "Reihen fortsetzen", "Zahlenreihe", "Buchstabenreihe", "Formenreihe", "Reasoning", "ACTIVE-Studie", "kein Zeitdruck", "Senioren", "Regel erkennen"]
 ---
 

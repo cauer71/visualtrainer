@@ -65,7 +65,7 @@ anforderungsprofil:
     ausdauer_belastung: 0
 belastung:
   zeitdruck: 3
-  flimmern_lichtreize: 1
+  flimmern_lichtreize: 2
   bewegungsreize_schwindel: 0
   koerperliche_belastung: 0
   sturzrisiko: 0

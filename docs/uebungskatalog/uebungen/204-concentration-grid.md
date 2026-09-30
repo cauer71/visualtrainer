@@ -81,7 +81,7 @@ evidenz:
   naher_transfer: unklar
   alltag_transfer: fehlend
   kommentar: "Für die Schulte-Tabelle selbst gibt es kaum Trainingsstudien; sie wird meist als Messaufgabe eingesetzt. Für das verwandte Trail Making sind deutliche Übungseffekte bei Wiederholung belegt (Buck et al., 2008; Calamia et al., 2012), Suchaufgaben werden mit Übung effizienter (Sireteanu & Rettenbach, 2000). Dass das Gesichtsfeld, das periphere Sehen oder das Lesetempo wächst, ist nicht belegt (Rayner et al., 2016)."
-aehnliche_uebungen: [103, 108, 207, 206, 208, 201, 202, 603, 401]
+aehnliche_uebungen: [103, 108, 207, 208, 201, 603, 401, 901]
 stichworte: ["Schulte-Tabelle", "Schulte table", "Konzentrationsgitter", "visuelle Suche", "Zahlensuche", "Trail Making", "Sakkaden", "Suchtempo", "Verarbeitungsgeschwindigkeit", "Zahlenjagd"]
 ---
 
@@ -244,7 +244,8 @@ zusätzlicher Verzögerung (Pronk et al., 2020); bei Zeiten von 0,5–1 s je Zah
     Kein Test- oder Therapieanspruch.
   - `photosensitive_epilepsie`, `migraene_lichtempfindlich`: roter Bildschirmschimmer bei jedem Fehltipp (≈ 480 ms; im Original in den Einstellungen abschaltbar), bei schnellen Fehltipps mehrfach pro Sekunde möglich; sonst keine Dauerreize. Schimmer vorher abschalten.
   - `tremor_parkinson`: Berührung zählt beim Aufsetzen, Zittern oder Doppeltipp kann ein falsches Feld treffen.
-- **Kombiniert gut mit …** 103 und 108 (visuelle Suche), 207 (Zeichen-Zahl-Zuordnung, Verarbeitungstempo), 206 (Aufgabenwechsel, wie Wechselpfad der Zahlenjagd), 208 (Ausdauer).
+- **Kombiniert gut mit …** 103 und 108 (visuelle Suche), 207 (Zeichen-Zahl-Zuordnung, Verarbeitungstempo), 208 (Ausdauer), 901 (ruhige Denkübung zum Abschluss).
+- **Abgrenzung in der Gruppe:** 204 ist die einzige Übung der Gruppe mit geordneter visueller Suche ohne Entscheidung und ohne Farbe (Sakkaden 3); 207 verlangt dagegen Nachschlagen in einem Schlüssel und Wahl unter Ziffern (Verarbeitungstempo, Entscheidung).
 
 ## 10. Schwächen des Originals und Empfehlungen für eine Blickfit-Umsetzung
 

@@ -33,6 +33,8 @@ funktioniert aber auch am Handy und am Computer. Sprachen: **Deutsch** und **Ita
 | Konzentration & Denken | **Zahlenjagd** | Zahlen (und Buchstaben) der Reihe nach finden |
 | Konzentration & Denken | **Reihen-Rätsel** | die Regel hinter einer Reihe finden – ohne Zeitdruck |
 
+**Übungskatalog:** [`docs/uebungskatalog/`](docs/uebungskatalog/UEBERSICHT.md) beschreibt alle 81 Übungen der Vorlage skilldrills.online (Nummern 101–811) sowie das eigene Reihen-Rätsel (901) mit Anforderungsprofil, Vorsichtshinweisen und geprüften Quellen – als Grundlage für eine spätere KI-gestützte Übungsauswahl.
+
 Hintergrund, Studienlage und Quellen: Seite „Hintergrund & Studien“ in der App sowie
 [`docs/wissenschaft/`](docs/wissenschaft/). Die Übungen sind ein Training, **kein Sehtest und kein Medizinprodukt**.
 
