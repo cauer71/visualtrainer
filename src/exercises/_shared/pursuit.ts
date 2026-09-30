@@ -1,5 +1,6 @@
 /**
- * Gemeinsamer Kern der Blickfolge-Übungen „Liegende Acht“ und „Wellenbahn“.
+ * Gemeinsamer Kern der Blickfolge-Übungen („Liegende Acht“, „Wellenbahn“, „Sanfte Blickfolge“,
+ * „Zickzack-Bahn“, „Dreiecksbahn“).
  *
  * Eine Kugel läuft mit gleichmäßigem Tempo auf einer festen Bahn (die Bahn liefert eine
  * `PursuitTrack`-Klasse). Die Originale („Infinity Pursuit“, „Sine Wave Pursuit“) verlangen nur
@@ -45,6 +46,14 @@ const FIRST_MS: [number, number] = [1600, 2300];
 const END_DELAY_MS = 900;
 /** Zeichen erst zeigen, wenn die Kugel mit (fast) vollem Tempo läuft – nicht in der Umkehr */
 const CRUISE_MIN = 0.85;
+/**
+ * Bahnen mit Knicken (`safeFor`): Zeichen nur auf geraden Stücken, mit Abstand zu jedem Knick.
+ * Sicherheitsnetz: Fände sich auf sehr kleiner Bühne nie ein Fenster, erscheint es nach dieser
+ * Wartezeit trotzdem (damit die Sitzung nicht hängt).
+ */
+const SAFE_WAIT_MAX_MS = 6000;
+/** Faktor auf das Tempo für den Weg während der Anzeige (Tempo wird weich nachgeführt) */
+const SAFE_SPEED_FACTOR = 1.15;
 // Intro-Film: leichte Stufe, Zeichen länger sichtbar, feste Richtungen (rechts, oben, links)
 const DEMO_SHOW_MS = 800;
 const DEMO_DIRS = [0, 3, 2];
@@ -174,7 +183,7 @@ export class PursuitExercise implements Exercise {
           this.end();
           return;
         }
-        if (this.track.cruise() >= CRUISE_MIN) this.show(t);
+        if (this.track.cruise() >= CRUISE_MIN && (this.signWindowOpen() || t - this.nextAt >= SAFE_WAIT_MAX_MS)) this.show(t);
       }
     } else if (this.phase === 'show') {
       if (t - this.onset >= this.showMs) {
@@ -188,6 +197,15 @@ export class PursuitExercise implements Exercise {
 
   // -------------------------------------------------------------------------
   // Durchgänge
+
+  /** Bahn mit Knicken: Ist jetzt ein gerades Stück mit genug Platz vor und nach dem Zeichen? */
+  private signWindowOpen(): boolean {
+    const safe = this.track.safeFor;
+    if (!safe) return true;
+    const ms = this.demo ? DEMO_SHOW_MS : exposureFor(this.stair.level);
+    const margin = targetRadiusFor(this.signNow) * 1.3;
+    return safe.call(this.track, (ms / 1000) * SAFE_SPEED_FACTOR, margin);
+  }
 
   private show(t: number): void {
     this.dir = this.demo ? DEMO_DIRS[this.idx % DEMO_DIRS.length] : pickDirection(this.ctx.rng, this.dirs);

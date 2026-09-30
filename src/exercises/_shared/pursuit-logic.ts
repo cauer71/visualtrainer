@@ -1,5 +1,6 @@
 /**
- * Reine Logik für die Blickfolge-Übungen (Liegende Acht, Wellenbahn) – ohne Canvas und DOM,
+ * Reine Logik für die Blickfolge-Übungen (Liegende Acht, Wellenbahn, Sanfte Blickfolge,
+ * Zickzack-Bahn, Dreiecksbahn) – ohne Canvas und DOM,
  * damit sie per Unit-Test geprüft werden kann.
  *
  * - Bahn als Bogenlängen-Tabelle (`ArcTable`): Das Ziel läuft mit gleichmäßigem Tempo entlang der
@@ -195,4 +196,11 @@ export interface PursuitTrack {
   cruise(): number;
   /** Bahnlinie als Polylinie (Hilfslinie) */
   outline(): readonly Point[];
+  /**
+   * Optional (Bahnen mit Knicken/Ecken): Darf das Zeichen jetzt erscheinen? `true`, wenn das Ziel
+   * in den nächsten `seconds` Sekunden auf einem geraden Stück bleibt und dabei mindestens
+   * `margin` px von jedem Knick entfernt ist – auch nicht kurz danach. Fehlt die Methode
+   * (Acht, Welle, Lissajous), gibt es keine Einschränkung.
+   */
+  safeFor?(seconds: number, margin: number): boolean;
 }
