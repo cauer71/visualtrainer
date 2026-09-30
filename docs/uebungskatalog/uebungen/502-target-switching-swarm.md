@@ -8,7 +8,7 @@ kapitel: "Zielen (FPS)"
 kapitel_original: "fps"
 unterkapitel_original: ""
 quelle_url: "https://skilldrills.online/de/drills/fps/target-switching-swarm"
-blickfit_umsetzung: null
+blickfit_umsetzung: {kennung: "schwarm-wechsel", name: "Schwarm-Wechsel", unterschiede: "Tablet-Umsetzung für Touch: große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/schwarm-wechsel/)."}
 stand: 2026-09-29
 
 # ===== Überblick =====

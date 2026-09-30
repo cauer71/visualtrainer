@@ -8,7 +8,7 @@ kapitel: "Motorik"
 kapitel_original: "motor"
 unterkapitel_original: "movement-speed"
 quelle_url: "https://skilldrills.online/de/drills/motor/movement-speed/rapid-tapping"
-blickfit_umsetzung: null
+blickfit_umsetzung: {kennung: "tipp-tempo", name: "Tipp-Tempo", unterschiede: "Tablet-Umsetzung für Touch: große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/tipp-tempo/)."}
 stand: 2026-09-29
 
 # ===== Überblick =====

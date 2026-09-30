@@ -2614,7 +2614,11 @@
    "kapitel_original": "reaction-speed",
    "unterkapitel_original": "",
    "quelle_url": "https://skilldrills.online/de/drills/reaction-speed/reflex-training-drill",
-   "blickfit_umsetzung": null,
+   "blickfit_umsetzung": {
+    "kennung": "ziele-abraeumen",
+    "name": "Ziele abräumen",
+    "unterschiede": "Tablet-Umsetzung für Touch: große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/ziele-abraeumen/)."
+   },
    "stand": "2026-09-30",
    "kurzbeschreibung": "Auf dunklem Feld erscheinen an zufälligen Stellen mehrere rote Punkte (2 bis 7 gleichzeitig), die nach einer festen, mit dem Level schrumpfenden Zeit wieder verschwinden. Man klickt oder tippt sie nacheinander an, bevor sie ablaufen; jeder Treffer bringt Zeit, jeder Fehlklick und jedes abgelaufene Ziel kostet Zeit.",
    "ziel_funktionen": [
@@ -2934,7 +2938,11 @@
    "kapitel_original": "reaction-speed",
    "unterkapitel_original": "",
    "quelle_url": "https://skilldrills.online/de/drills/reaction-speed/fps-tracking-trainer",
-   "blickfit_umsetzung": null,
+   "blickfit_umsetzung": {
+    "kennung": "pendel-fang",
+    "name": "Pendel-Fang",
+    "unterschiede": "Tablet-Umsetzung für Touch: große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/pendel-fang/)."
+   },
    "stand": "2026-09-30",
    "kurzbeschreibung": "Ein roter Punkt taucht am linken oder rechten Rand auf und pendelt auf einer waagrechten Linie hin und her; in zufälligen Abständen kehrt er die Richtung um. Man verfolgt ihn mit Blick und Zeiger und muss ihn anklicken oder antippen, bevor er verschwindet. Gewertet wird nur der Treffer, nicht das Draufbleiben.",
    "ziel_funktionen": [
@@ -3576,7 +3584,11 @@
    "kapitel_original": "reaction-speed",
    "unterkapitel_original": "",
    "quelle_url": "https://skilldrills.online/de/drills/reaction-speed/barrier-sequence-pursuit",
-   "blickfit_umsetzung": null,
+   "blickfit_umsetzung": {
+    "kennung": "hinter-der-deckung",
+    "name": "Hinter der Deckung",
+    "unterschiede": "Tablet-Umsetzung für Touch: große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/hinter-der-deckung/)."
+   },
    "stand": "2026-09-30",
    "kurzbeschreibung": "Auf einem fast schwarzen Feld stehen vier dunkle Blöcke („Deckungen“). Nach kurzer Pause schiebt sich an der linken oder rechten Kante eines zufälligen Blocks ein roter Kreis heraus; man tippt oder klickt ihn so schnell wie möglich an, bevor er verschwindet. Im Kern ist das schnelles Anvisieren eines plötzlich erscheinenden Reizes an einem von acht möglichen Orten (Reagieren plus Zielbewegung) – kein ruhiges Halten eines Winkels.",
    "ziel_funktionen": [
@@ -3730,7 +3742,11 @@
    "kapitel_original": "visual-tracking",
    "unterkapitel_original": "",
    "quelle_url": "https://skilldrills.online/de/drills/visual-tracking/peripheral-ping-pursuit",
-   "blickfit_umsetzung": null,
+   "blickfit_umsetzung": {
+    "kennung": "rand-ping",
+    "name": "Rand-Ping",
+    "unterschiede": "Tablet-Umsetzung für Touch: große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/rand-ping/)."
+   },
    "stand": "2026-09-29",
    "kurzbeschreibung": "Man hält den Blick auf ein ruhendes Kreuz in der Bildmitte, während an zufälligen Stellen des Bildschirms kurz rote Leuchtpunkte aufblitzen, und versucht, sie aus dem Augenwinkel zu bemerken, ohne hinzuschauen. Anders als der Seitentext verspricht, bewegt sich in der Mitte nichts, und das Original wertet keine Antwort aus.",
    "ziel_funktionen": [
@@ -4171,7 +4187,11 @@
    "kapitel_original": "visual-tracking",
    "unterkapitel_original": "",
    "quelle_url": "https://skilldrills.online/de/drills/visual-tracking/constant-slow-pursuit",
-   "blickfit_umsetzung": null,
+   "blickfit_umsetzung": {
+    "kennung": "sanfte-blickfolge",
+    "name": "Sanfte Blickfolge",
+    "unterschiede": "Tablet-Umsetzung für Touch: große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/sanfte-blickfolge/)."
+   },
    "stand": "2026-09-29",
    "kurzbeschreibung": "Ein leuchtender Punkt gleitet im Vollbild auf einer verschlungenen, sich wiederholenden Kurve (Lissajous-Figur) über fast den ganzen Bildschirm. Man folgt ihm mit den Augen bei ruhigem Kopf; Maus oder Finger dürfen als Hilfe mitlaufen, es wird aber nichts gemessen.",
    "ziel_funktionen": [
@@ -4317,7 +4337,11 @@
    "kapitel_original": "visual-tracking",
    "unterkapitel_original": "",
    "quelle_url": "https://skilldrills.online/de/drills/visual-tracking/zig-zag-path-pursuit",
-   "blickfit_umsetzung": null,
+   "blickfit_umsetzung": {
+    "kennung": "zickzack-bahn",
+    "name": "Zickzack-Bahn",
+    "unterschiede": "Tablet-Umsetzung für Touch: große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/zickzack-bahn/)."
+   },
    "stand": "2026-09-29",
    "kurzbeschreibung": "Ein roter Leuchtpunkt läuft mit gleichbleibendem Tempo auf einer festen Zickzacklinie aus sieben steilen Schrägstrecken von links unten nach rechts oben und wieder zurück; an jedem Knick ändert er schlagartig die Richtung. Man folgt ihm nur mit den Augen bei ruhigem Kopf – eine Eingabe oder Wertung gibt es nicht.",
    "ziel_funktionen": [
@@ -4462,7 +4486,11 @@
    "kapitel_original": "visual-tracking",
    "unterkapitel_original": "",
    "quelle_url": "https://skilldrills.online/de/drills/visual-tracking/triangular-pursuit",
-   "blickfit_umsetzung": null,
+   "blickfit_umsetzung": {
+    "kennung": "dreiecksbahn",
+    "name": "Dreiecksbahn",
+    "unterschiede": "Tablet-Umsetzung für Touch: große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/dreiecksbahn/)."
+   },
    "stand": "2026-09-29",
    "kurzbeschreibung": "Ein Leuchtpunkt läuft im Vollbild gleichmäßig im Uhrzeigersinn auf einem großen Dreieck: schräg nach rechts unten, waagrecht nach links, schräg nach rechts oben. Man folgt ihm nur mit den Augen und versucht, an den drei Ecken den Richtungswechsel ohne große Blicksprünge mitzumachen.",
    "ziel_funktionen": [
@@ -4610,7 +4638,11 @@
    "kapitel_original": "visual-tracking",
    "unterkapitel_original": "",
    "quelle_url": "https://skilldrills.online/de/drills/visual-tracking/predictive-pursuit",
-   "blickfit_umsetzung": null,
+   "blickfit_umsetzung": {
+    "kennung": "landepunkt",
+    "name": "Landepunkt",
+    "unterschiede": "Tablet-Umsetzung für Touch: große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/landepunkt/)."
+   },
    "stand": "2026-09-29",
    "kurzbeschreibung": "Ein leuchtender Punkt schnellt im festen Takt (Standardtempo alle 2,2 s) von seiner Ruheposition zu einem zufälligen neuen Ort, wird dabei stetig langsamer (anfangs am schnellsten) und bleibt kurz stehen. Man springt mit dem Blick hinterher und versucht – ohne die abschaltbare Hilfslinie – schon beim Start vorherzusehen, wo er landet; anders als der Seitentext verspricht, wird das Ziel nie verdeckt und nichts gemessen.",
    "ziel_funktionen": [
@@ -5052,7 +5084,11 @@
    "kapitel_original": "visual-tracking",
    "unterkapitel_original": "",
    "quelle_url": "https://skilldrills.online/de/drills/visual-tracking/dynamic-evasion-pursuit",
-   "blickfit_umsetzung": null,
+   "blickfit_umsetzung": {
+    "kennung": "ausweichziel",
+    "name": "Ausweichziel",
+    "unterschiede": "Tablet-Umsetzung für Touch: große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/ausweichziel/)."
+   },
    "stand": "2026-09-29",
    "kurzbeschreibung": "Ein leuchtender Punkt fliegt auf dunklem Grund geradlinig über den Bildschirm und schlägt bei Standardtempo etwa zweimal pro Sekunde unangekündigt einen Haken in eine zufällige neue Richtung. Man folgt ihm nur mit den Augen bei ruhigem Kopf; es gibt keine Eingabe, keine Punkte und keine Leistungsmessung.",
    "ziel_funktionen": [
@@ -5626,7 +5662,11 @@
    "kapitel_original": "visual-tracking",
    "unterkapitel_original": "",
    "quelle_url": "https://skilldrills.online/de/drills/visual-tracking/momentum-teleport-pursuit",
-   "blickfit_umsetzung": null,
+   "blickfit_umsetzung": {
+    "kennung": "sprungziel",
+    "name": "Sprungziel",
+    "unterschiede": "Tablet-Umsetzung für Touch: große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/sprungziel/)."
+   },
    "stand": "2026-09-29",
    "kurzbeschreibung": "Ein leuchtender Punkt gleitet auf dunklem Grund geradlinig über den Bildschirm und springt bei Standardtempo alle 1,2 Sekunden ohne Vorwarnung an einen zufälligen anderen Ort, wo er mit gleicher Richtung und gleichem Tempo weiterfliegt. Man springt mit dem Blick hinterher und folgt ihm dann wieder gleichmäßig; es gibt keine Eingabe, keine Punkte und keine Leistungsmessung.",
    "ziel_funktionen": [
@@ -6078,7 +6118,11 @@
    "kapitel_original": "fps",
    "unterkapitel_original": "",
    "quelle_url": "https://skilldrills.online/de/drills/fps/target-switching-swarm",
-   "blickfit_umsetzung": null,
+   "blickfit_umsetzung": {
+    "kennung": "schwarm-wechsel",
+    "name": "Schwarm-Wechsel",
+    "unterschiede": "Tablet-Umsetzung für Touch: große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/schwarm-wechsel/)."
+   },
    "stand": "2026-09-29",
    "kurzbeschreibung": "Auf dunklem Grund treiben zwei bis fünf leuchtend grüne Kugeln langsam umher; jede verschwindet nach 1–3 s von selbst. Man bewegt ein Fadenkreuz mit der Maus von Kugel zu Kugel und klickt sie ab, bevor sie ablaufen – jeder Treffer bringt Zeit und Combo, jeder Fehlklick oder Ablauf kostet Zeit.",
    "ziel_funktionen": [
@@ -8901,7 +8945,11 @@
    "kapitel_original": "memory",
    "unterkapitel_original": "short-term-memory",
    "quelle_url": "https://skilldrills.online/de/drills/memory/short-term-memory/word-recall",
-   "blickfit_umsetzung": null,
+   "blickfit_umsetzung": {
+    "kennung": "wortliste",
+    "name": "Wortliste",
+    "unterschiede": "Tablet-Umsetzung für Touch: große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/wortliste/)."
+   },
    "stand": "2026-09-29",
    "kurzbeschreibung": "Einige Wörter (anfangs 3) erscheinen zwei Sekunden lang gleichzeitig auf dem Bildschirm; danach tippt man alle erinnerten Wörter in beliebiger Reihenfolge in ein Textfeld. Ist die Liste vollständig und fehlerfrei, kommt ein Wort dazu, sonst fällt eines weg.",
    "ziel_funktionen": [
@@ -9193,7 +9241,11 @@
    "kapitel_original": "motor",
    "unterkapitel_original": "movement-speed",
    "quelle_url": "https://skilldrills.online/de/drills/motor/movement-speed/rapid-tapping",
-   "blickfit_umsetzung": null,
+   "blickfit_umsetzung": {
+    "kennung": "tipp-tempo",
+    "name": "Tipp-Tempo",
+    "unterschiede": "Tablet-Umsetzung für Touch: große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/tipp-tempo/)."
+   },
    "stand": "2026-09-29",
    "kurzbeschreibung": "In der Bildmitte liegt eine grüne Kugel, die ständig schrumpft. Man klickt oder tippt 45 Sekunden lang so schnell wie möglich auf sie; jeder Treffer lässt sie wieder wachsen. Gezählt werden die Klicks pro Sekunde.",
    "ziel_funktionen": [
@@ -9768,7 +9820,11 @@
    "kapitel_original": "motor",
    "unterkapitel_original": "precision-control",
    "quelle_url": "https://skilldrills.online/de/drills/motor/precision-control/steady-hand",
-   "blickfit_umsetzung": null,
+   "blickfit_umsetzung": {
+    "kennung": "ruhige-hand",
+    "name": "Ruhige Hand",
+    "unterschiede": "Tablet-Umsetzung für Touch: große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/ruhige-hand/)."
+   },
    "stand": "2026-09-29",
    "kurzbeschreibung": "Man führt ein Fadenkreuz mit der Maus von einer grünen Startzone links entlang einer leuchtenden Zickzacklinie zur Zielzone rechts, ohne die Linie zu verlassen. Wer abweicht, wird sofort an den Start zurückgesetzt; jede fehlerfreie Runde macht die nächste Linie länger und zackiger.",
    "ziel_funktionen": [
@@ -10064,7 +10120,11 @@
    "kapitel_original": "motor",
    "unterkapitel_original": "precision-control",
    "quelle_url": "https://skilldrills.online/de/drills/motor/precision-control/tracing",
-   "blickfit_umsetzung": null,
+   "blickfit_umsetzung": {
+    "kennung": "spur-folgen",
+    "name": "Spur folgen",
+    "unterschiede": "Tablet-Umsetzung für Touch: große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/spur-folgen/)."
+   },
    "stand": "2026-09-29",
    "kurzbeschreibung": "Eine leuchtend grüne Wellenlinie läuft 45 Sekunden lang von rechts nach links über den Bildschirm. Man hält das Fadenkreuz so auf der Linie, dass es ihr beim Auf und Ab folgt – die Welle wird dabei immer schneller und höher.",
    "ziel_funktionen": [

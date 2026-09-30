@@ -7,6 +7,21 @@
  * (siehe docs/wissenschaft/01-reaktion-und-impulskontrolle.md, Abschnitt 4).
  */
 import type { Lang } from '../i18n/lang';
+import { science as sanfteBlickfolgeScience } from '../exercises/sanfte-blickfolge/science';
+import { science as zickzackBahnScience } from '../exercises/zickzack-bahn/science';
+import { science as dreiecksbahnScience } from '../exercises/dreiecksbahn/science';
+import { science as ausweichzielScience } from '../exercises/ausweichziel/science';
+import { science as sprungzielScience } from '../exercises/sprungziel/science';
+import { science as landepunktScience } from '../exercises/landepunkt/science';
+import { science as zieleAbraeumenScience } from '../exercises/ziele-abraeumen/science';
+import { science as pendelFangScience } from '../exercises/pendel-fang/science';
+import { science as hinterDerDeckungScience } from '../exercises/hinter-der-deckung/science';
+import { science as schwarmWechselScience } from '../exercises/schwarm-wechsel/science';
+import { science as randPingScience } from '../exercises/rand-ping/science';
+import { science as tippTempoScience } from '../exercises/tipp-tempo/science';
+import { science as wortlisteScience } from '../exercises/wortliste/science';
+import { science as ruhigeHandScience } from '../exercises/ruhige-hand/science';
+import { science as spurFolgenScience } from '../exercises/spur-folgen/science';
 import { science as leuchtfolgeScience } from '../exercises/leuchtfolge/science';
 import { science as zahlenspanneScience } from '../exercises/zahlenspanne/science';
 import { science as rastermusterScience } from '../exercises/rastermuster/science';
@@ -524,7 +539,7 @@ export const SCIENCE: Record<string, ScienceEntry> = {
     ],
   },
   ...Object.fromEntries(
-    [leuchtfolgeScience, zahlenspanneScience, rastermusterScience, rueckblickScience, woWarEsScience, leuchtpfadScience, liegendeAchtScience, wellenbahnScience, zweiZieleScience, sekundenGefuehlScience, blicksprungGalerieScience, fuenfTuerenScience, fallendeZieleScience, hellsteKugelScience, ziehenAblegenScience].map((e) => [e.id, e]),
+    [leuchtfolgeScience, zahlenspanneScience, rastermusterScience, rueckblickScience, woWarEsScience, leuchtpfadScience, liegendeAchtScience, wellenbahnScience, zweiZieleScience, sekundenGefuehlScience, blicksprungGalerieScience, fuenfTuerenScience, fallendeZieleScience, hellsteKugelScience, ziehenAblegenScience, sanfteBlickfolgeScience, zickzackBahnScience, dreiecksbahnScience, ausweichzielScience, sprungzielScience, landepunktScience, zieleAbraeumenScience, pendelFangScience, hinterDerDeckungScience, schwarmWechselScience, randPingScience, tippTempoScience, wortlisteScience, ruhigeHandScience, spurFolgenScience].map((e) => [e.id, e]),
   ),
 };
 

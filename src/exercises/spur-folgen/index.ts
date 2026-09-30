@@ -51,7 +51,6 @@ const VF_ID = -2;
 const MIN_PU = 7.4;
 
 const BLUE = '#38A3DC';
-const BLUE_LIGHT = '#9BD8F5';
 const LINE = '#7DD3FC';
 const MARK = '#FDE68A';
 
@@ -484,7 +483,6 @@ class SpurFolgen implements Exercise {
       g.restore();
       text(g, this.lastPass ? '✓' : '•', this.tx + this.pu * 9, this.y0 - this.halfU * this.pu * 0.6 + 1, size, C.white, { weight: 800, alpha: a });
     }
-    void BLUE_LIGHT;
   }
 
   // ------------------------------------------------------------------ Ergebnis

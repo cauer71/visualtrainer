@@ -8,7 +8,7 @@ kapitel: "Motorik"
 kapitel_original: "motor"
 unterkapitel_original: "precision-control"
 quelle_url: "https://skilldrills.online/de/drills/motor/precision-control/steady-hand"
-blickfit_umsetzung: null
+blickfit_umsetzung: {kennung: "ruhige-hand", name: "Ruhige Hand", unterschiede: "Tablet-Umsetzung für Touch: große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/ruhige-hand/)."}
 stand: 2026-09-29
 
 # ===== Überblick =====

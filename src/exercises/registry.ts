@@ -38,6 +38,21 @@ import { fuenfTueren } from './fuenf-tueren';
 import { fallendeZiele } from './fallende-ziele';
 import { hellsteKugel } from './hellste-kugel';
 import { ziehenAblegen } from './ziehen-ablegen';
+import { sanfteBlickfolge } from './sanfte-blickfolge';
+import { zickzackBahn } from './zickzack-bahn';
+import { dreiecksbahn } from './dreiecksbahn';
+import { ausweichziel } from './ausweichziel';
+import { sprungziel } from './sprungziel';
+import { landepunkt } from './landepunkt';
+import { zieleAbraeumen } from './ziele-abraeumen';
+import { pendelFang } from './pendel-fang';
+import { hinterDerDeckung } from './hinter-der-deckung';
+import { schwarmWechsel } from './schwarm-wechsel';
+import { randPing } from './rand-ping';
+import { tippTempo } from './tipp-tempo';
+import { wortliste } from './wortliste';
+import { ruhigeHand } from './ruhige-hand';
+import { spurFolgen } from './spur-folgen';
 
 /** Reihenfolge = Anzeige-Reihenfolge innerhalb der Bereiche */
 export const EXERCISES: ExerciseDefinition[] = [
@@ -72,6 +87,21 @@ export const EXERCISES: ExerciseDefinition[] = [
   fallendeZiele,
   hellsteKugel,
   ziehenAblegen,
+  sanfteBlickfolge,
+  zickzackBahn,
+  dreiecksbahn,
+  ausweichziel,
+  sprungziel,
+  landepunkt,
+  zieleAbraeumen,
+  pendelFang,
+  hinterDerDeckung,
+  schwarmWechsel,
+  randPing,
+  tippTempo,
+  wortliste,
+  ruhigeHand,
+  spurFolgen,
 ];
 
 export interface CategoryMeta {

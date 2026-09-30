@@ -8,7 +8,7 @@ kapitel: "Blickverfolgung"
 kapitel_original: "visual-tracking"
 unterkapitel_original: ""
 quelle_url: "https://skilldrills.online/de/drills/visual-tracking/peripheral-ping-pursuit"
-blickfit_umsetzung: null
+blickfit_umsetzung: {kennung: "rand-ping", name: "Rand-Ping", unterschiede: "Tablet-Umsetzung für Touch: große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/rand-ping/)."}
 stand: 2026-09-29
 
 # ===== Überblick =====

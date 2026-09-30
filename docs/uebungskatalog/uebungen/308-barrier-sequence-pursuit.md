@@ -8,7 +8,7 @@ kapitel: "Reaktionsgeschwindigkeit"
 kapitel_original: "reaction-speed"
 unterkapitel_original: ""
 quelle_url: "https://skilldrills.online/de/drills/reaction-speed/barrier-sequence-pursuit"
-blickfit_umsetzung: null
+blickfit_umsetzung: {kennung: "hinter-der-deckung", name: "Hinter der Deckung", unterschiede: "Tablet-Umsetzung für Touch: große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/hinter-der-deckung/)."}
 stand: 2026-09-30
 
 # ===== Überblick =====

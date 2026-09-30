@@ -45,9 +45,9 @@ export const it: ExerciseTexts = {
   title: 'Mano ferma',
   tagline: 'Guida la palla lungo il percorso stretto senza toccare la parete.',
   steps: [
-    'Appoggia il dito sotto la palla e trascinala lungo il percorso.',
+    'Dito sotto la palla: trascinala lungo il percorso.',
     'Non toccare la parete – meglio piano che in fretta.',
-    'In caso di tremore alle mani o disturbi: meglio fare una pausa.',
+    'Con tremore alle mani o disturbi: meglio una pausa.',
   ],
   why:
     'Quando sul tablet ripassi una linea o segui qualcosa di stretto, muovi la mano piano e con precisione. Qui lo eserciti: con il tuo successo il percorso diventa più stretto e più tortuoso. La palla sta sopra il dito, così la mano non copre nulla. Non è dimostrato che questo si trasferisca alla vita di tutti i giorni.',

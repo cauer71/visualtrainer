@@ -8,7 +8,7 @@ kapitel: "Motorik"
 kapitel_original: "motor"
 unterkapitel_original: "precision-control"
 quelle_url: "https://skilldrills.online/de/drills/motor/precision-control/tracing"
-blickfit_umsetzung: null
+blickfit_umsetzung: {kennung: "spur-folgen", name: "Spur folgen", unterschiede: "Tablet-Umsetzung für Touch: große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/spur-folgen/)."}
 stand: 2026-09-29
 
 # ===== Überblick =====

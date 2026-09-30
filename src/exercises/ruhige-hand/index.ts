@@ -113,7 +113,6 @@ class RuhigeHand implements Exercise {
   private time = new PathTime();
   private started = false;
   private cueT = -1e9;
-  private cueAt: Pt = { x: 0, y: 0 };
   private hintedAt = -1e9;
   private lastClean = false;
   private maxX = 0;
@@ -124,8 +123,6 @@ class RuhigeHand implements Exercise {
   private freeSum = 0;
   private timeSum = 0;
   private points = 0;
-  private lastW = 0;
-  private lastH = 0;
   // virtueller Finger (Film / Autoplay)
   private vf: Pt = { x: 0, y: 0 };
   private auto: Auto = { st: 'idle', t0: 0, from: { x: 0, y: 0 }, to: { x: 0, y: 0 }, dur: 700, carryT0: 0, speed: 18, bumps: [], captioned: 0 };
@@ -175,9 +172,7 @@ class RuhigeHand implements Exercise {
   // ------------------------------------------------------------------ Ablauf
 
   start(t: number): void {
-    const { hud, ghost, stage } = this.ctx;
-    this.lastW = stage.w;
-    this.lastH = stage.h;
+    const { hud, ghost } = this.ctx;
     hud.setProgress(0);
     hud.setScore(this.demo ? null : 0);
     this.geometry();
@@ -234,7 +229,6 @@ class RuhigeHand implements Exercise {
   private onTouch(t: number): void {
     this.ctx.sfx.bad();
     this.cueT = t;
-    this.cueAt = { ...this.ball };
   }
 
   private afterFeedback(t: number): void {
@@ -404,10 +398,8 @@ class RuhigeHand implements Exercise {
 
   // ------------------------------------------------------------------ Größenänderung
 
-  resize(w: number, h: number): void {
+  resize(): void {
     const { rng } = this.ctx;
-    this.lastW = w;
-    this.lastH = h;
     if (this.phase !== 'play' && this.phase !== 'fb') return;
     // Bahn neu an die neue Größe anpassen; der Durchgang beginnt von vorn (ohne Wertung)
     this.geometry();
