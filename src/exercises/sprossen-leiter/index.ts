@@ -128,7 +128,7 @@ class SprossenLeiter implements Exercise {
     const ladderTop = my + mr + 2.5 * pu;
     const avail = Math.max(60, bottom - ladderTop);
     const fh = clamp((avail / (this.n + 0.6)) * 0.86, 44, pu * 9.5);
-    const fw = clamp(w * 0.3, 90, pu * 34);
+    const fw = clamp(Math.min((w - 24) / 2.3, pu * 34), 90, 400);
     const cx = w / 2;
     const dx = fw * 0.62;
     this.geo = {
@@ -185,7 +185,7 @@ class SprossenLeiter implements Exercise {
     this.phaseT = t;
     this.captioned = 0;
     if (this.ctx.autoplay) {
-      this.plan = planTaps(rng, this.n, this.level, this.demo ? [-18, 12, -8, 16] : undefined);
+      this.plan = planTaps(rng, this.n, this.period, this.level, this.demo ? [-18, 12, -8, 16] : undefined);
       this.planIdx = 0;
       this.prevTapAt = t;
       this.glideStarted = -1;
@@ -256,7 +256,7 @@ class SprossenLeiter implements Exercise {
     const size = clamp(ctx.stage.u * 4.4, 17, 32);
     const label = `${this.lastPass ? '✓' : '•'} ${on}/${this.n} ${ctx.texts.feedback.inBeat}${Number.isFinite(ma) ? ` · Ø ${ctx.fmt.ms(Math.round(ma))}` : ''}`;
     const G = this.layout();
-    ctx.hud.toast(label, this.lastPass ? 'good' : 'info', { x: ctx.stage.w / 2, y: Math.max(size * 1.4, G.my + G.mr + size * 1.6), ms: FB_MS - 200, size });
+    ctx.hud.toast(label, this.lastPass ? 'good' : 'info', { x: ctx.stage.w / 2, y: Math.max(size * 1.4, G.my), ms: FB_MS - 200, size });
     if (this.demo) ctx.hud.caption(ctx.texts.captions.check);
   }
 
@@ -323,6 +323,7 @@ class SprossenLeiter implements Exercise {
   }
 
   private drawMetronome(g: CanvasRenderingContext2D, G: Geo, rel: number): void {
+    if (this.phase !== 'play') return; // in der Rückmeldung steht hier die Wertung
     const p = this.phase === 'play' && rel >= -LEAD_BEATS * this.period - 200 && rel < (this.n - 1) * this.period + this.period * 0.6 ? beatPulse(rel, this.period) : 0;
     g.save();
     // Schiene mit Takt-Punkten (Zahl der Sprossen), damit der Fortschritt auch ohne Farbe lesbar ist
@@ -411,7 +412,7 @@ class SprossenLeiter implements Exercise {
     }
     // Nummer
     const size = clamp(G.fh * 0.46, 16, 34);
-    text(g, String(k + 1), r.x - G.fw * 0.34, r.y, size, isNext ? C.white : 'rgba(232,238,247,0.75)', { weight: 800 });
+    text(g, String(k + 1), r.x - G.fw * 0.36, r.y, size, isNext ? C.white : 'rgba(232,238,247,0.75)', { weight: 800 });
     // Ergebnis: ✓ mit Abweichung oder ✗
     const since = t - this.marks[k];
     if (res.state !== 'pending' && this.marks[k] > -1e8) {
@@ -419,11 +420,12 @@ class SprossenLeiter implements Exercise {
       const a = this.ctx.reducedMotion ? 1 : clamp(since / 150, 0, 1);
       g.save();
       g.globalAlpha = a;
-      softBadge(g, r.x + G.fw * 0.28, r.y, br, res.state === 'hit' ? 'ok' : 'bad');
+      softBadge(g, r.x + G.fw * 0.33, r.y, br, res.state === 'hit' ? 'ok' : 'bad');
       g.restore();
       if (res.state === 'hit') {
-        const ts = clamp(G.fh * 0.3, 12, 20);
-        text(g, this.ctx.fmt.msSigned(Math.round(res.dev)), r.x + G.fw * 0.28 + br * 1.3, r.y, ts, res.onTime ? '#99F6E4' : C.fg, { align: 'left', weight: 700, alpha: a });
+        // Abweichung im Feld, zwischen Nummer und Abzeichen
+        const ts = clamp(G.fh * 0.27, 12, 20);
+        text(g, this.ctx.fmt.msSigned(Math.round(res.dev)), r.x - G.fw * 0.03, r.y, ts, res.onTime ? '#99F6E4' : C.fg, { weight: 700, alpha: a });
       }
     }
   }
@@ -481,6 +483,7 @@ export const sprossenLeiter: ExerciseDefinition = {
   minutes: 1,
   color: '#3B82B8',
   showsLevel: true,
+  warning: 'flicker',
   icon:
     '<path d="M14 6v36M34 6v36" stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity=".45"/><rect x="6" y="31" width="18" height="8" rx="3" fill="currentColor"/><rect x="24" y="20" width="18" height="8" rx="3" fill="none" stroke="currentColor" stroke-width="2.8"/><rect x="6" y="9" width="18" height="8" rx="3" fill="none" stroke="currentColor" stroke-width="2.8" stroke-dasharray="3.4 3"/>',
   texts: { de, it },

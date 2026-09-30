@@ -7,9 +7,9 @@ export const de: ExerciseTexts = {
   title: 'Sprungweite',
   tagline: 'Zieh den Balken genau so weit, dass die Kugel auf der Zielmarke landet.',
   steps: [
-    'Zieh mit dem Finger unten am Balken: je weiter, desto weiter springt die Kugel.',
+    'Zieh unten am Balken: je weiter, desto weiter springt sie.',
     'Lass los – die Kugel springt im Bogen.',
-    'Sie soll auf dem Fähnchen landen. Danach siehst du, wie nah du warst.',
+    'Sie soll auf dem Fähnchen landen.',
   ],
   why:
     'Bei dieser Übung spielst du am Bildschirm mit dem Finger; dein Körper springt nicht. Du lernst, eine Strecke zu dosieren: wie weit du ziehen musst, damit die Kugel dort landet, wo du sie haben willst. Nach jedem Sprung siehst du, ob sie zu kurz oder zu weit kam. Die Übung ersetzt weder Brille noch Augenuntersuchung. Dass sie Sprungkraft, Sport oder den Alltag verbessert, ist nicht belegt.',
@@ -47,9 +47,9 @@ export const it: ExerciseTexts = {
   title: 'Lunghezza del salto',
   tagline: 'Tira la barra quanto basta perché la pallina atterri sul segnale.',
   steps: [
-    'Trascina il dito sulla barra in basso: più tiri, più lontano salta la pallina.',
+    'Trascina la barra in basso: più tiri, più lontano salta.',
     'Rilascia – la pallina salta ad arco.',
-    'Deve atterrare sulla bandierina. Poi vedi quanto ci sei andato vicino.',
+    'Deve atterrare sulla bandierina.',
   ],
   why:
     'In questo esercizio giochi sullo schermo con il dito; il tuo corpo non salta. Impari a dosare una distanza: quanto devi tirare perché la pallina atterri dove vuoi. Dopo ogni salto vedi se è arrivata troppo corta o troppo lontana. L’esercizio non sostituisce né gli occhiali né una visita oculistica. Che migliori la forza nel salto, lo sport o la vita di tutti i giorni non è dimostrato.',

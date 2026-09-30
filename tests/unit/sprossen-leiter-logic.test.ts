@@ -171,7 +171,7 @@ describe('sprossen-leiter: Autoplay-Plan', () => {
     const rng = createRng(9);
     for (const level of [1, 10, 20]) {
       const P = periodMsFor(level);
-      const plan = planTaps(rng, 6, level);
+      const plan = planTaps(rng, 6, P, level);
       expect(plan).toHaveLength(6);
       plan.forEach((p, k) => {
         expect(Math.abs(p.rel - k * P)).toBeLessThan(P / 2);
@@ -181,7 +181,7 @@ describe('sprossen-leiter: Autoplay-Plan', () => {
   });
 
   it('Film-Plan: feste Abweichungen, nie Fehler', () => {
-    const plan = planTaps(createRng(1), 4, 2, [-18, 12]);
+    const plan = planTaps(createRng(1), 4, periodMsFor(2), 2, [-18, 12]);
     expect(plan.map((p) => p.rung)).toEqual([0, 1, 2, 3]);
     expect(plan[0].rel).toBeCloseTo(-18);
     expect(plan[1].rel).toBeCloseTo(periodMsFor(2) + 12);
@@ -192,7 +192,7 @@ describe('sprossen-leiter: Autoplay-Plan', () => {
     let ok = 0;
     let all = 0;
     for (let i = 0; i < 100; i++) {
-      planTaps(rng, 5, 8).forEach((p, k) => {
+      planTaps(rng, 5, periodMsFor(8), 8).forEach((p, k) => {
         all++;
         if (p.rung === k) ok++;
       });

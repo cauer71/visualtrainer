@@ -52,7 +52,7 @@ const IDLE_LIMIT_MS = 25000;
 const START_LEVEL = 2;
 const DEMO_LEVEL = 2;
 const DEMO_N = 4;
-const DEMO_EXPOSURE = 3600;
+const DEMO_EXPOSURE = 2800;
 const VF_ID = -2;
 
 const SKY = '#7DD3FC';
@@ -295,13 +295,13 @@ class MusterNachzeichnen implements Exercise {
     const demo = this.demo;
     const info = (): PointerInfo => ({ id: VF_ID, x: this.vh.x, y: this.vh.y, t, type: 'ghost' });
     if (A.st === 'idle' && this.phase === 'draw') {
-      const react = demo ? 900 : rng.range(500, 1000);
+      const react = demo ? 700 : rng.range(500, 1000);
       if (t - this.phaseT < react) return;
       A.plan = planTrace(rng, this.seq, this.level, demo);
       A.leg = 0;
       const p0 = this.px(A.plan[0]);
       A.t0 = t;
-      A.dur = demo ? 900 : rng.range(450, 700);
+      A.dur = demo ? 750 : rng.range(450, 700);
       A.st = 'approach';
       this.vh.glide(p0.x, p0.y, t, A.dur);
       return;
@@ -359,8 +359,8 @@ class MusterNachzeichnen implements Exercise {
     const a = A.from;
     const b = this.px(A.plan[A.leg]);
     const len = Math.hypot(b.x - a.x, b.y - a.y);
-    const speed = this.demo ? 240 : this.ctx.rng.range(520, 760);
-    A.dur = Math.max(this.demo ? 650 : 280, (len / speed) * 1000);
+    const speed = this.demo ? 320 : this.ctx.rng.range(520, 760);
+    A.dur = Math.max(this.demo ? 600 : 280, (len / speed) * 1000);
   }
 
   // ------------------------------------------------------------------ Größenänderung
@@ -395,7 +395,7 @@ class MusterNachzeichnen implements Exercise {
     if (this.phase === 'draw' || this.phase === 'fb' || this.phase === 'end') this.drawMine(g);
     if (this.phase === 'fb' || this.phase === 'end') this.drawResult(g, t);
     this.drawProgressDots(g);
-    if (this.phase === 'pre' || this.phase === 'draw') this.drawStartMark(g, t);
+    if (this.phase === 'pre' || this.phase === 'show' || this.phase === 'draw') this.drawStartMark(g, t);
     if (this.ctx.autoplay) this.vh.render(g, t, handSize(this.ctx.stage));
   }
 

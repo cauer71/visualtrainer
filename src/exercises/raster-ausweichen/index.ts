@@ -219,12 +219,13 @@ class RasterAusweichen implements Exercise {
     if (!this.demo) this.stair.update(kind === 'ok');
     this.idx++;
     this.updateHud();
-    const G = this.layout();
+    const c = cellRect(cell >= 0 ? cell : this.own, this.layout());
     const size = clamp(this.ctx.stage.u * 4.4, 17, 32);
     const label = kind === 'ok' ? `✓ ${fmt.time(rt, 2)}` : kind === 'occupied' ? `✗ ${texts.feedback.occupied}` : `✗ ${texts.feedback.late}`;
-    hud.toast(label, kind === 'ok' ? 'good' : 'bad', {
-      x: this.ctx.stage.w / 2,
-      y: Math.max(size * 1.5, G.y - size * 0.4),
+    // Rückmeldung im angetippten Feld (bei „zu spät“ im eigenen Feld)
+    hud.toast(label, kind === 'ok' ? 'good' : 'info', {
+      x: c.cx,
+      y: c.y + c.h * 0.3,
       ms: Math.max(900, this.wait - rt + HOLD_MS - 200),
       size,
     });
@@ -474,6 +475,7 @@ export const rasterAusweichen: ExerciseDefinition = {
   minutes: 1,
   color: '#7A5195',
   showsLevel: true,
+  warning: 'flicker',
   icon:
     '<rect x="5" y="5" width="11" height="11" rx="2.4" fill="none" stroke="currentColor" stroke-width="2.4"/><rect x="18.5" y="5" width="11" height="11" rx="2.4" fill="currentColor" opacity=".3"/><rect x="32" y="5" width="11" height="11" rx="2.4" fill="none" stroke="currentColor" stroke-width="2.4"/><rect x="5" y="18.5" width="11" height="11" rx="2.4" fill="currentColor" opacity=".3"/><rect x="18.5" y="18.5" width="11" height="11" rx="2.4" fill="none" stroke="currentColor" stroke-width="2.4"/><rect x="32" y="18.5" width="11" height="11" rx="2.4" fill="none" stroke="currentColor" stroke-width="2.4"/><rect x="5" y="32" width="11" height="11" rx="2.4" fill="none" stroke="currentColor" stroke-width="2.4"/><rect x="18.5" y="32" width="11" height="11" rx="2.4" fill="none" stroke="currentColor" stroke-width="2.4"/><circle cx="37.5" cy="37.5" r="4.4" fill="currentColor"/>',
   texts: { de, it },

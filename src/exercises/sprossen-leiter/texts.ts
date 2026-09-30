@@ -7,9 +7,9 @@ export const de: ExerciseTexts = {
   title: 'Sprossen-Leiter',
   tagline: 'Tippe die Felder der Leiter von unten nach oben – genau im Takt.',
   steps: [
-    'Der Kreis oben gibt den Takt vor. Die nächste Sprosse atmet im selben Takt.',
-    'Tippe sie genau im Schlag an, dann die nächste – im Zickzack nach oben.',
-    'Danach siehst du bei jedem Feld, wie viele Millisekunden du daneben lagst.',
+    'Der Kreis gibt den Takt vor, die nächste Sprosse atmet mit.',
+    'Tippe sie genau im Schlag an – im Zickzack nach oben.',
+    'Bei jedem Feld siehst du die Abweichung in Millisekunden.',
   ],
   why:
     'Bei dieser Übung tippst du mit dem Finger auf Felder am Bildschirm; Beine und Gleichgewicht spielen keine Rolle. Du übst, eine Reihenfolge von Orten in einem festen Rhythmus zu treffen – ähnlich wie Stufen in gleichmäßigem Schritt. Gemessen wird die Zeit zwischen Berührung und Taktschlag auf diesem Gerät; ein Teil davon ist die Verzögerung des Touchscreens. Es ist kein Reaktionstest, und der Vergleich gilt nur mit dir selbst. Ein Nutzen für Sport, Beweglichkeit oder den Alltag ist nicht belegt.',
@@ -43,9 +43,9 @@ export const it: ExerciseTexts = {
   title: 'Scala a pioli',
   tagline: 'Tocca i riquadri della scala dal basso verso l’alto – esattamente a tempo.',
   steps: [
-    'Il cerchio in alto dà il ritmo. Il prossimo piolo «respira» allo stesso ritmo.',
-    'Toccalo proprio sul battito, poi il successivo – a zigzag verso l’alto.',
-    'Poi vedi per ogni riquadro di quanti millisecondi sei stato fuori tempo.',
+    'Il cerchio dà il ritmo, il prossimo piolo «respira» con lui.',
+    'Toccalo proprio sul battito – a zigzag verso l’alto.',
+    'Per ogni riquadro vedi lo scostamento in millisecondi.',
   ],
   why:
     'In questo esercizio tocchi con il dito dei riquadri sullo schermo; gambe ed equilibrio non c’entrano. Eserciti a centrare una serie di punti con un ritmo fisso – un po’ come i gradini a passo regolare. Si misura il tempo tra il tocco e il battito su questo dispositivo; una parte è il ritardo dello schermo tattile. Non è un test di reazione e il confronto vale solo con te stesso. Un beneficio per sport, mobilità o vita quotidiana non è dimostrato.',

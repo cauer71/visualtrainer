@@ -437,10 +437,6 @@ class Ausweichen implements Exercise {
         this.vf = { x: target.x + f.gx, y: target.y + f.gy };
         this.pointerMove(info(this.vf));
         if (this.demo) {
-          if (A.captioned < 2 && this.clock > 2.2) {
-            A.captioned = 2;
-            hud.caption(texts.captions.dodge);
-          }
           if (A.captioned < 3 && this.clock > DEMO_ACTIVE_S - 2.6) {
             A.captioned = 3;
             hud.caption(texts.captions.calm);

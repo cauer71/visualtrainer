@@ -345,7 +345,8 @@ class KugelnFangen implements Exercise {
   private demoUpdate(t: number): void {
     const { ghost, texts } = this.ctx;
     const el = t - this.t0;
-    while (this.demoIdx < DEMO.length && el >= DEMO[this.demoIdx].at) {
+    // Ein Kreis erscheint erst, wenn die Hand frei ist – so stimmt der Zeitpunkt des Antippens immer
+    while (this.demoIdx < DEMO.length && el >= DEMO[this.demoIdx].at && (DEMO[this.demoIdx].kind === 'square' || ghost.idle)) {
       const d = DEMO[this.demoIdx++];
       const F = this.spawn(t, d.kind, d.nx);
       F.planned = true;

@@ -13,7 +13,7 @@ export const de: ExerciseTexts = {
   ],
   why:
     'Wer einen Ball fangen will, geht nicht zum Ball, sondern dorthin, wo er gleich sein wird. Hier läuft das Ziel mehrmals dieselbe Bahn: Du siehst sie einmal und setzt den Finger dann vorab auf einen Punkt davon. Danach siehst du, wie nah das Ziel an deinem Finger vorbeigelaufen ist. Wohin dein Blick dabei geht, wird nicht gemessen, und ob sich das auf Sport oder Alltag überträgt, ist nicht belegt.',
-  goodFor: ['Bahnen vorausahnen', 'Ballspiele', 'Wo es gleich ist, nicht wo es war'],
+  goodFor: ['Bahnen vorausahnen', 'Ballspiele', 'Vorausschauen'],
   captions: {
     watch: 'Schau, wie das Ziel läuft',
     place: 'Tippe auf einen Punkt der Bahn',
@@ -51,12 +51,12 @@ export const it: ExerciseTexts = {
   tagline: 'Metti il dito dove il bersaglio sta per passare.',
   steps: [
     'Un bersaglio percorre una traiettoria – prima guarda.',
-    'Metti il dito su un punto della traiettoria, prima che ci arrivi.',
+    'Metti il dito su un punto, prima che il bersaglio ci arrivi.',
     'Tieni il dito fermo finché non è passato.',
   ],
   why:
     'Chi vuole afferrare una palla non va verso la palla, ma dove sarà tra poco. Qui il bersaglio percorre più volte la stessa traiettoria: la vedi una volta e poi metti il dito in anticipo su un punto. Poi vedi quanto il bersaglio è passato vicino al tuo dito. Dove guardi con gli occhi non viene misurato, e non è dimostrato che questo si trasferisca allo sport o alla vita quotidiana.',
-  goodFor: ['Prevedere le traiettorie', 'Giochi con la palla', 'Dove sarà, non dove era'],
+  goodFor: ['Prevedere le traiettorie', 'Giochi con la palla', 'Guardare avanti'],
   captions: {
     watch: 'Guarda come corre il bersaglio',
     place: 'Tocca un punto della traiettoria',

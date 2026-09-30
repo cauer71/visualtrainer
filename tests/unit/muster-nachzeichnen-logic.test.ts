@@ -214,6 +214,7 @@ describe('muster-nachzeichnen: Autoplay-Plan', () => {
     for (let i = 0; i < 300; i++) {
       const p = planTrace(rng, seq, 8);
       expect(p).toHaveLength(seq.length);
+      for (let k = 1; k < p.length; k++) expect(p[k]).not.toBe(p[k - 1]);
       if (p.every((v, k) => v === seq[k])) same++;
       else diff++;
     }

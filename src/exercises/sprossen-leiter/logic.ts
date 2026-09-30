@@ -233,11 +233,11 @@ export interface PlannedTap {
 
 /**
  * Tipp-Plan für Autoplay: meist richtig und nah am Schlag, manchmal daneben oder ausgelassen.
- * `fixedDevs` (Film): feste, kleine Abweichungen ohne Fehler.
+ * `period` = Taktdauer in ms. `fixedDevs` (Film): feste, kleine Abweichungen ohne Fehler.
  */
-export function planTaps(rng: Rng, n: number, level: number, fixedDevs?: readonly number[]): PlannedTap[] {
+export function planTaps(rng: Rng, n: number, period: number, level: number, fixedDevs?: readonly number[]): PlannedTap[] {
   const out: PlannedTap[] = [];
-  const P = periodMsFor(level);
+  const P = period;
   const sigma = 35 + 4 * levelOf(level);
   for (let k = 0; k < n; k++) {
     if (fixedDevs) {

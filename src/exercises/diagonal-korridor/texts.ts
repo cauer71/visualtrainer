@@ -7,9 +7,9 @@ export const de: ExerciseTexts = {
   title: 'Diagonal-Korridor',
   tagline: 'Zieh die Kugel durch einen schmalen, schrägen Gang – ohne die Wand zu berühren.',
   steps: [
-    'Setz den Finger unter die Kugel. Sie sitzt etwas über deinem Finger.',
-    'Zieh sie von einer Ecke schräg zur anderen, mitten durch den Gang.',
-    'Berührst du die Wand, gleitet die Kugel am Rand entlang. Am Ziel ist es geschafft.',
+    'Setz den Finger unter die Kugel. Sie sitzt etwas darüber.',
+    'Zieh sie von Ecke zu Ecke mitten durch den Gang.',
+    'An der Wand gleitet sie entlang. Am Ziel bist du fertig.',
   ],
   why:
     'Bei dieser Übung ziehst du einen Finger über den Bildschirm; Körper und Hirnhälften werden dabei nicht „gekreuzt“ oder trainiert. Du führst eine Marke über eine lange, gerade Strecke durch einen engen Gang. Je schmaler der Gang, desto langsamer und genauer musst du ziehen. Dauer und Gleichmäßigkeit werden mitgeschrieben, aber Tempo bringt keine Punkte. Die Übung ersetzt weder Brille noch Augenuntersuchung. Ein Nutzen für den Alltag ist nicht belegt.',
@@ -47,9 +47,9 @@ export const it: ExerciseTexts = {
   title: 'Corridoio diagonale',
   tagline: 'Trascina la pallina in uno stretto corridoio obliquo – senza toccare la parete.',
   steps: [
-    'Appoggia il dito sotto la pallina. Sta un po’ sopra il tuo dito.',
-    'Trascinala da un angolo all’altro in diagonale, al centro del corridoio.',
-    'Se tocchi la parete, la pallina scivola lungo il bordo. All’arrivo hai finito.',
+    'Appoggia il dito sotto la pallina: sta un po’ più in alto.',
+    'Trascinala da un angolo all’altro, al centro del corridoio.',
+    'Alla parete scivola lungo il bordo. All’arrivo hai finito.',
   ],
   why:
     'In questo esercizio trascini un dito sullo schermo; corpo ed emisferi cerebrali non vengono «incrociati» né allenati. Guidi un segno lungo un tragitto lungo e dritto in uno stretto corridoio. Più il corridoio è stretto, più lentamente e con precisione devi trascinare. Durata e regolarità vengono annotate, ma la velocità non dà punti. L’esercizio non sostituisce né gli occhiali né una visita oculistica. Un beneficio per la vita di tutti i giorni non è dimostrato.',

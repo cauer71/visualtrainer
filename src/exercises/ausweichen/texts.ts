@@ -9,7 +9,7 @@ export const de: ExerciseTexts = {
   steps: [
     'Setz den Finger unter die Figur und zieh sie durchs Feld.',
     'Kugeln und Quader gleiten langsam herein – weich ihnen aus.',
-    'Eine Berührung ist nur eine kurze Pause, dann geht es weiter.',
+    'Eine Berührung ist nur eine kurze Pause – dann weiter.',
   ],
   why:
     'Im Alltag schätzt du ständig, wohin sich etwas bewegt, und gehst rechtzeitig zur Seite: in der Menschenmenge, beim Ballspiel, auf dem Gehweg. Hier gleiten die Hindernisse gerade und gleichmäßig, sodass du ihren Weg vorausdenken kannst. Die Figur sitzt über deinem Finger, damit die Hand nichts verdeckt. Wohin dein Blick dabei geht, wird nicht gemessen, und ob sich das auf Alltag oder Sport überträgt, ist nicht belegt.',
@@ -53,7 +53,7 @@ export const it: ExerciseTexts = {
   captions: {
     place: 'Appoggia il dito sotto la figura',
     dodge: 'Scansa gli ostacoli',
-    calm: 'Contatto? Solo una breve pausa – si riparte',
+    calm: 'Contatto? Breve pausa, poi via',
   },
   metrics: {
     level: 'Il tuo livello',

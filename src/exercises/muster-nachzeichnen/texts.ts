@@ -7,9 +7,9 @@ export const de: ExerciseTexts = {
   title: 'Muster nachzeichnen',
   tagline: 'Merk dir einen Linienzug und zeichne ihn mit dem Finger nach.',
   steps: [
-    'Ein Linienzug über mehrere Punkte erscheint kurz. Merk dir den Weg.',
-    'Dann verschwindet er. Tippe die Punkte in derselben Reihenfolge an oder zieh von Punkt zu Punkt.',
-    'Danach siehst du das richtige Muster und welche Punkte gestimmt haben.',
+    'Ein Linienzug über Punkte erscheint kurz. Merk dir den Weg.',
+    'Dann tippe oder zieh die Punkte in derselben Reihenfolge.',
+    'Danach siehst du das richtige Muster und die Treffer.',
   ],
   why:
     'Bei dieser Übung merkst du dir eine Form und eine Reihenfolge von Orten und gibst sie mit dem Finger am Bildschirm wieder; dein Körper bewegt sich dabei nicht. Es hilft, den Weg als Figur zu sehen, etwa „erst nach oben, dann schräg nach unten“. Gezählt wird, wie viele Punkte in der richtigen Reihenfolge getroffen wurden; wie schnell du zeichnest, spielt keine Rolle. Die Übung ersetzt weder Brille noch Augenuntersuchung. Ob sie im Alltag hilft, ist nicht belegt.',
@@ -41,9 +41,9 @@ export const it: ExerciseTexts = {
   title: 'Ridisegna lo schema',
   tagline: 'Ricorda un tracciato e ridisegnalo con il dito.',
   steps: [
-    'Un tracciato su più punti appare per poco. Ricorda il percorso.',
-    'Poi sparisce. Tocca i punti nello stesso ordine o trascina da punto a punto.',
-    'Poi vedi lo schema giusto e quali punti erano corretti.',
+    'Appare per poco un tracciato su più punti. Ricordalo.',
+    'Poi tocca o trascina i punti nello stesso ordine.',
+    'Poi vedi lo schema giusto e i punti corretti.',
   ],
   why:
     'In questo esercizio ricordi una forma e un ordine di luoghi e li riproduci con il dito sullo schermo; il tuo corpo non si muove. Aiuta vedere il percorso come una figura, per esempio «prima in alto, poi in diagonale in basso». Si conta quanti punti sono stati toccati nell’ordine giusto; la velocità con cui disegni non conta. L’esercizio non sostituisce né gli occhiali né una visita oculistica. Che aiuti nella vita di tutti i giorni non è dimostrato.',

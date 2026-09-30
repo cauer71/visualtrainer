@@ -49,7 +49,7 @@ import {
 import { de, it } from './texts';
 
 const TRIALS = 10;
-const QUICK_TRIALS = 3;
+const QUICK_TRIALS = 2;
 const DEMO_TRIALS = 1;
 /** Das Ziel erscheint zunächst ruhig am Start (s) */
 const PRE_SHOW_S = 0.35;

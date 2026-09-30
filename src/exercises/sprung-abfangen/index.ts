@@ -46,11 +46,11 @@ import { de, it } from './texts';
 
 const TRIALS = 12;
 const QUICK_TRIALS = 3;
-const DEMO_TRIALS = 2;
+const DEMO_TRIALS = 1;
 const REVEAL_S = 1.5;
 const GAP_MS: [number, number] = [450, 750];
 const FIRST_MS: [number, number] = [900, 1300];
-const DEMO_FIRST_MS = 1300;
+const DEMO_FIRST_MS = 900;
 const DEMO_GAP_MS = 450;
 const END_DELAY_MS = 600;
 const DEMO_LEVEL = 1;
@@ -289,7 +289,7 @@ class SprungAbfangen implements Exercise {
     const dirWord = signed < 0 ? texts.feedback.short : texts.feedback.far;
     const label = ok ? `✓ ${fmt.num(abs, 1)} %` : `✗ ${dirWord} · ${fmt.num(abs, 1)} %`;
     const half = Math.min(stage.w / 2, label.length * size * 0.32 + 12);
-    hud.toast(label, ok ? 'good' : 'bad', {
+    hud.toast(label, ok ? 'good' : 'info', {
       x: clamp(tr.targetX, half, stage.w - half),
       y: Math.max(size * 1.4, G.groundLine - size * 4.2),
       ms: 1200,
@@ -380,12 +380,12 @@ class SprungAbfangen implements Exercise {
     const demo = this.demo;
     const info = (x: number): PointerInfo => ({ id: VF_ID, x, y: this.vh.y, t, type: 'ghost' });
     if (A.st === 'idle') {
-      const react = demo ? 1000 : rng.range(500, 1000);
+      const react = demo ? 900 : rng.range(500, 1000);
       if (t - A.t0 < react) return;
       // Rare Aussetzer im Spielmodus: nichts tun (Durchgang wartet) – nur in den Tests, nie im Film
       A.st = 'approach';
       A.t0 = t;
-      A.dur = demo ? 800 : rng.range(400, 650);
+      A.dur = demo ? 650 : rng.range(400, 650);
       const ax = this.anchorX(tr.dir);
       this.vh.glide(ax, G.barY, t, A.dur);
       return;
@@ -398,12 +398,12 @@ class SprungAbfangen implements Exercise {
       this.vh.press(t);
       const need = powerForDist(tr.dist, stage.w);
       const sigma = demo ? 0 : 0.02 + 0.002 * this.curLevel;
-      const pw = demo ? need : noisyPower(need, sigma, rng);
+      const pw = demo ? Math.min(1, need * 1.018) : noisyPower(need, sigma, rng);
       A.startX = this.vh.x;
       A.endX = this.anchorX(tr.dir) + tr.dir * pw * G.barLen;
       A.st = 'pull';
       A.t0 = t;
-      A.dur = demo ? 2100 : rng.range(550, 850);
+      A.dur = demo ? 1700 : rng.range(550, 850);
       if (demo && A.captioned < 1) {
         A.captioned = 1;
         this.setCaption('pull2', this.ctx.texts.captions.guide);
@@ -418,7 +418,7 @@ class SprungAbfangen implements Exercise {
       if (k >= 1) {
         A.st = 'hold';
         A.t0 = t;
-        A.dur = demo ? 700 : 150;
+        A.dur = demo ? 500 : 150;
       }
       return;
     }

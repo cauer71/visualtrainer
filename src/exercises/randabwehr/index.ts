@@ -308,7 +308,8 @@ class Randabwehr implements Exercise {
   private demoUpdate(t: number): void {
     const { ghost, texts } = this.ctx;
     const el = t - this.t0;
-    while (this.demoIdx < DEMO.length && el >= DEMO[this.demoIdx].at) {
+    // Ein Punkt erscheint erst, wenn die Hand frei ist – so stimmt der Zeitpunkt des Antippens immer
+    while (this.demoIdx < DEMO.length && el >= DEMO[this.demoIdx].at && ghost.idle) {
       const d = DEMO[this.demoIdx++];
       const D = this.spawn(t, d.angle);
       D.planned = true;

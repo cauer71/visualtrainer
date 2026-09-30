@@ -269,7 +269,8 @@ export function planTrace(rng: Rng, seq: readonly number[], level: number, clean
     const j = i + 1 < out.length ? i + 1 : i - 1;
     [out[i], out[j]] = [out[j], out[i]];
   } else {
-    const others = ANCHORS.map((_, k) => k).filter((k) => k !== out[i]);
+    // kein Nachbar-Punkt (sonst würde ein doppelter Punkt nicht zählen und die Hand müsste ewig weiter zeichnen)
+    const others = ANCHORS.map((_, k) => k).filter((k) => k !== out[i] && k !== out[i - 1] && k !== out[i + 1]);
     out[i] = rng.pick(others);
   }
   return out;
