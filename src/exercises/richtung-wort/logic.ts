@@ -11,8 +11,9 @@
  *   (räumlicher Stroop-/Simon-Konflikt, Lu & Proctor, 1995); Lesen läuft automatisch mit
  *   (Stroop, 1935; MacLeod, 1991). Das ist die eigentliche Schwierigkeit – Zeitdruck kommt erst ganz
  *   am Schluss (Stufe 10–12, weich).
- * - Deshalb baut die Stufenleiter die Kompatibilität schrittweise ab: Stufe 1–3 alle Wörter an der
- *   passenden Lage, 4–6 nur ein Paar vertauscht, 7–12 alle gemischt (nie die kompatible Anordnung).
+ * - Stufe 1 ist der Einstieg mit allen Wörtern an der passenden Lage; ab Stufe 2 sind die Wörter gemischt
+ *   (nie die kompatible Anordnung, wie im Vorlagevideo; Wunsch des Auftraggebers nach Probespiel). Zeichenvielfalt,
+ *   kürzere Blöcke und die weiche Antwortfrist kommen danach schrittweise dazu.
  *   Danach erst Zeichenvielfalt (Schrägpfeil ab 5, Kurve ab 7) und die Antwortfrist (ab 10).
  * - Als Zusatzwerte nur Vergleiche mit sich selbst: Mehrzeit bei vertauschter Lage („Lage-Kosten“),
  *   Lage-Fehler (Feld dort getippt, wohin das Zeichen zeigt, trägt aber ein anderes Wort) und
@@ -161,11 +162,11 @@ const B: ReadonlyArray<readonly [SignKind, number]> = [['box', 1]];
 
 const SPECS: Record<number, LevelSpec> = {
   1: { layout: 'identity', block: 0, kinds: B, looks: 1, upDiag: false, deadlineMs: null, pHome: 0 },
-  2: { layout: 'identity', block: 0, kinds: B, looks: 2, upDiag: false, deadlineMs: null, pHome: 0 },
-  3: { layout: 'identity', block: 0, kinds: B, looks: 4, upDiag: false, deadlineMs: null, pHome: 0 },
-  4: { layout: 'swap', block: 4, kinds: B, looks: 4, upDiag: false, deadlineMs: null, pHome: 0 },
-  5: { layout: 'swap', block: 4, kinds: [['box', 0.7], ['disc', 0.3]], looks: 4, upDiag: false, deadlineMs: null, pHome: 0 },
-  6: { layout: 'swap', block: 3, kinds: [['box', 0.6], ['disc', 0.4]], looks: 4, upDiag: false, deadlineMs: null, pHome: 0 },
+  2: { layout: 'mixed', block: 4, kinds: B, looks: 2, upDiag: false, deadlineMs: null, pHome: 0.3 },
+  3: { layout: 'mixed', block: 4, kinds: B, looks: 4, upDiag: false, deadlineMs: null, pHome: 0.3 },
+  4: { layout: 'mixed', block: 4, kinds: B, looks: 4, upDiag: false, deadlineMs: null, pHome: 0.3 },
+  5: { layout: 'mixed', block: 4, kinds: [['box', 0.7], ['disc', 0.3]], looks: 4, upDiag: false, deadlineMs: null, pHome: 0.3 },
+  6: { layout: 'mixed', block: 3, kinds: [['box', 0.6], ['disc', 0.4]], looks: 4, upDiag: false, deadlineMs: null, pHome: 0.3 },
   7: { layout: 'mixed', block: 3, kinds: [['box', 0.5], ['disc', 0.3], ['curve', 0.2]], looks: 4, upDiag: false, deadlineMs: null, pHome: 0.3 },
   8: { layout: 'mixed', block: 2, kinds: [['box', 0.4], ['disc', 0.3], ['curve', 0.3]], looks: 4, upDiag: true, deadlineMs: null, pHome: 0.3 },
   9: { layout: 'mixed', block: 2, kinds: [['box', 0.34], ['disc', 0.33], ['curve', 0.33]], looks: 4, upDiag: true, deadlineMs: null, pHome: 0.3 },

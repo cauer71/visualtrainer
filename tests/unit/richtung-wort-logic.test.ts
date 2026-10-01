@@ -45,10 +45,9 @@ const levels = Array.from({ length: MAX_LEVEL }, (_, i) => i + 1);
 const kindsOf = (l: number) => specFor(l).kinds.filter(([, w]) => w > 0).map(([k]) => k);
 
 describe('richtung-wort: Stufenleiter baut Kompatibilität schrittweise ab', () => {
-  it('Stufe 1–3 alle Wörter an der Lage, 4–6 ein Paar vertauscht, 7–12 alle gemischt', () => {
-    for (const l of [1, 2, 3]) expect(specFor(l).layout).toBe('identity');
-    for (const l of [4, 5, 6]) expect(specFor(l).layout).toBe('swap');
-    for (const l of [7, 8, 9, 10, 11, 12]) expect(specFor(l).layout).toBe('mixed');
+  it('Stufe 1 alle Wörter an der Lage, ab Stufe 2 alle gemischt', () => {
+    expect(specFor(1).layout).toBe('identity');
+    for (let l = 2; l <= MAX_LEVEL; l++) expect(specFor(l).layout).toBe('mixed');
   });
 
   it('Zeichenvielfalt kommt erst danach: Schrägpfeil ab Stufe 5, Kurve ab Stufe 7, vorher nur Pfeile', () => {
@@ -65,9 +64,9 @@ describe('richtung-wort: Stufenleiter baut Kompatibilität schrittweise ab', () 
   });
 
   it('Anordnung wechselt in Blöcken, die nie länger werden; ab Stufe 10 unvorhersehbar (block 0)', () => {
-    for (const l of [1, 2, 3]) expect(specFor(l).block).toBe(0); // bleibt immer gleich (identity)
-    let prev = specFor(4).block;
-    for (let l = 5; l <= 9; l++) {
+    expect(specFor(1).block).toBe(0); // bleibt immer gleich (identity)
+    let prev = specFor(2).block;
+    for (let l = 3; l <= 9; l++) {
       expect(specFor(l).block).toBeGreaterThan(0);
       expect(specFor(l).block).toBeLessThanOrEqual(prev);
       prev = specFor(l).block;
@@ -149,8 +148,8 @@ describe('richtung-wort: Durchgänge planen', () => {
     return Array.from({ length: n }, () => planner.next(level));
   };
 
-  it('Stufe 1–3: alle Durchgänge kompatibel – das richtige Wort steht dort, wohin das Zeichen zeigt', () => {
-    for (const l of [1, 2, 3]) {
+  it('Stufe 1: alle Durchgänge kompatibel – das richtige Wort steht dort, wohin das Zeichen zeigt', () => {
+    for (const l of [1]) {
       for (const t of run(l, 200)) {
         expect(t.compat).toBe(true);
         expect(t.targetSlot).toBe(t.sign.answer);
@@ -160,17 +159,8 @@ describe('richtung-wort: Durchgänge planen', () => {
     }
   });
 
-  it('Stufe 4–6: kompatible und abweichende Durchgänge kommen vor (für die Lage-Kosten)', () => {
-    for (const l of [4, 5, 6]) {
-      const ts = run(l, 600, 10 + l);
-      const compat = ts.filter((t) => t.compat).length;
-      expect(compat).toBeGreaterThan(600 * 0.15);
-      expect(compat).toBeLessThan(600 * 0.85);
-    }
-  });
-
-  it('Stufe 7–12: überwiegend abweichend, aber auch an der Lage gebliebene Wörter verlangt (≥ 10 %)', () => {
-    for (const l of [7, 9, 12]) {
+  it('Stufe 2–12: überwiegend abweichend, aber auch an der Lage gebliebene Wörter verlangt (≥ 10 %)', () => {
+    for (const l of [2, 4, 7, 9, 12]) {
       const ts = run(l, 1500, 20 + l);
       const share = ts.filter((t) => t.compat).length / ts.length;
       expect(share).toBeGreaterThan(0.1);
@@ -257,8 +247,8 @@ describe('richtung-wort: Durchgänge planen', () => {
     t6.forEach((t, i) => expect(t.newLayout).toBe(i % 3 === 0));
   });
 
-  it('Stufe 1–3: die Anordnung ändert sich nie (nur das erste Mal „neu“)', () => {
-    const ts = run(2, 50, 103);
+  it('Stufe 1: die Anordnung ändert sich nie (nur das erste Mal „neu“)', () => {
+    const ts = run(1, 50, 103);
     expect(ts.filter((t) => t.newLayout).length).toBe(1);
   });
 
@@ -275,14 +265,11 @@ describe('richtung-wort: Durchgänge planen', () => {
 
   it('Stufenwechsel bringt sofort eine Anordnung der neuen Art', () => {
     const planner = new TrialPlanner(createRng(120));
-    planner.next(3);
-    const swap = planner.next(4);
+    planner.next(1);
+    const swap = planner.next(2);
     expect(swap.newLayout).toBe(true);
-    expect(layoutModeOf(swap.words)).toBe('swap');
-    const mixed = planner.next(7);
-    expect(mixed.newLayout).toBe(true);
-    expect(layoutModeOf(mixed.words)).toBe('mixed');
-    const back = planner.next(2);
+    expect(layoutModeOf(swap.words)).toBe('mixed');
+    const back = planner.next(1);
     expect(back.newLayout).toBe(true);
     expect(back.words).toEqual([0, 1, 2, 3]);
   });

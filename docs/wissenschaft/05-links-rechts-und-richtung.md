@@ -125,7 +125,7 @@ Alle Einstufungen gelten für die **Aufgabenart**; keine der drei Übungen und k
 
 | Änderung | Grund | Quelle |
 |---|---|---|
-| **12 Stufen, Kompatibilität schrittweise abbauen:** 1–3 alle Wörter an der passenden Lage (nur Pfeile) → 4–6 ein Paar vertauscht → 7–9 alle gemischt (nie die passende Anordnung) | Der Konflikt Lage ↔ Wort ist die Schwierigkeit; schrittweise Einführung | Fitts & Seeger, 1953; Simon & Wolf, 1963; Lu & Proctor, 1995 |
+| **12 Stufen, Kompatibilität schrittweise abbauen:** Stufe 1 alle Wörter an der passenden Lage (Einstieg, nur Pfeile) → ab Stufe 2 alle gemischt (nie die passende Anordnung; ursprünglich stufenweiser Abbau geplant, nach Probespiel des Auftraggebers verkürzt) | Der Konflikt Lage ↔ Wort ist die Schwierigkeit; schrittweise Einführung | Fitts & Seeger, 1953; Simon & Wolf, 1963; Lu & Proctor, 1995 |
 | **Erst dann Zeichenvielfalt** (Pfeil im Kasten → Schrägpfeil in blauer Scheibe → Kurvendreieck) **und weiche Frist** (grob 5 → 3 s, ohne Strafe) in Stufe 10–12 | Konflikt und Zeitdruck nicht vermischen | Pratte et al., 2010 |
 | **Zeichen selbst gezeichnet,** Regel im Intro erklärt („Schrägpfeil in der Scheibe: links oder rechts vorbei“) | keine Nachbildung amtlicher Schilder; Regel statt Vorwissen | – |
 | **Kein Bewegungsreiz** (Wörter fliegen nicht), neue Anordnung zusammen mit dem Zeichen (oder 0,3 s vorher), zu frühe Tipps (< 150 ms) zählen nicht, ruhiger Takt (1,0–1,5 s Pause) | Lesen und Suchen erzwingen, Zufallstipps vermeiden | – |

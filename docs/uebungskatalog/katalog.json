@@ -12298,7 +12298,7 @@
    "blickfit_umsetzung": {
     "kennung": "richtung-wort",
     "name": "Richtung & Wort",
-    "unterschiede": "Eigene Umsetzung nach einem Handyvideo (Beobachtung, keine Online-Quelle); Zeichen und Ablauf sind nicht kopiert. Wissenschaftlich begründet geändert: 12 Stufen (Treppe, 3 richtig = schwerer, 1 Fehler = leichter) bauen die Reiz-Antwort-Kompatibilität schrittweise ab (alle Wörter an passender Lage, dann ein Paar vertauscht, dann alle gemischt); erst danach mehr Zeichenfamilien (Pfeil im Kasten, Schrägpfeil in blauer Scheibe, Dreieck mit Kurve; alle selbst gezeichnet) und eine weiche Antwortfrist (grob 5 bis 3 s, ohne Strafe). Zusatzwerte nur im Vergleich mit sich selbst (Lage-Kosten, Lage- und Achsenfehler). Sanfte Haken/Kreuz-Rückmeldung, Touch, DE/IT. Zahlen können sich noch ändern."
+    "unterschiede": "Eigene Umsetzung nach einem Handyvideo (Beobachtung, keine Online-Quelle); Zeichen und Ablauf sind nicht kopiert. Wissenschaftlich begründet geändert: 12 Stufen (Treppe, 3 richtig = schwerer, 1 Fehler = leichter) bauen die Reiz-Antwort-Kompatibilität schrittweise ab (Stufe 1 Einstieg mit allen Wörtern an passender Lage, ab Stufe 2 alle Wörter gemischt wie im Video – nach einem Probespiel des Auftraggebers so festgelegt); danach schrittweise mehr Zeichenfamilien (Pfeil im Kasten, Schrägpfeil in blauer Scheibe, Dreieck mit Kurve; alle selbst gezeichnet) und eine weiche Antwortfrist (grob 5 bis 3 s, ohne Strafe). Zusatzwerte nur im Vergleich mit sich selbst (Lage-Kosten, Lage- und Achsenfehler). Sanfte Haken/Kreuz-Rückmeldung, Touch, DE/IT. Zahlen können sich noch ändern."
    },
    "stand": "2026-10-01",
    "kurzbeschreibung": "Oben erscheint ein Richtungszeichen (Pfeil, Schild mit Schrägpfeil, Kurve). Unten stehen vier grüne Felder in Kreuzanordnung, jedes mit einem Wort (OBEN, UNTEN, LINKS, RECHTS). Man tippt das Feld, dessen Wort die Richtung nennt – die Wörter stehen nicht immer an der passenden Stelle.",
@@ -12311,7 +12311,7 @@
    ],
    "tablet_geeignet": "ja",
    "dauer_sekunden": 100,
-   "schwierigkeit_anpassung": "Blickfit (Stand der Spezifikation, Zahlen grob): 12 Stufen, Treppe 3 richtig in Folge = eine Stufe schwerer, 1 Fehler = leichter (Ziel ≈ 79 % richtig). Stufe 1–3: alle Wörter an passender Lage, nur Pfeile. Stufe 4–6: zwei Wörter vertauscht. Stufe 7–9: alle Wörter gemischt, dazu Schrägpfeil und Kurvendreieck. Stufe 10–12: zusätzlich weiche Antwortfrist (ca. 5 → 3 s, Überschreiten ohne Strafe) und unvorhersehbare Anordnung. Original: aus dem Video nicht erkennbar (kein Level sichtbar).",
+   "schwierigkeit_anpassung": "Blickfit (Stand der Spezifikation, Zahlen grob): 12 Stufen, Treppe 3 richtig in Folge = eine Stufe schwerer, 1 Fehler = leichter (Ziel ≈ 79 % richtig). Stufe 1: alle Wörter an passender Lage (Einstieg), nur Pfeile. Ab Stufe 2: alle Wörter gemischt (die Anordnung bleibt zunächst 4, später 3 und 2 Durchgänge stehen). Stufe 5–9: dazu Schrägpfeil und Kurvendreieck. Stufe 10–12: zusätzlich weiche Antwortfrist (ca. 5 → 3 s, Überschreiten ohne Strafe) und unvorhersehbare Anordnung. Original: aus dem Video nicht erkennbar (kein Level sichtbar).",
    "messgroessen": [
     "Hauptwert: erreichte Stufe (Schwelle der Treppe)",
     "Treffer in %",

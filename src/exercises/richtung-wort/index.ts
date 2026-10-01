@@ -7,8 +7,8 @@
  * Zeichen noch Ablauf sind kopiert – alles hier ist selbst gezeichnet und selbst gebaut).
  *
  * Gegenüber dem Video geändert (wissenschaftlich begründet, Einzelheiten und Quellen in logic.ts):
- * - Die Stufen bauen die Reiz–Antwort-Kompatibilität schrittweise ab (alle Wörter an der Lage →
- *   ein Paar vertauscht → alle gemischt); erst danach Zeichenvielfalt und eine weiche Antwortfrist.
+ * - Stufe 1 ist der Einstieg mit allen Wörtern an der Lage, ab Stufe 2 sind sie gemischt (wie im Video);
+ *   danach kommen Zeichenvielfalt und eine weiche Antwortfrist.
  *   Fitts & Seeger (1953): Kompatibilität bestimmt die Zeit; Stroop (1935), MacLeod (1991): Lesen
  *   läuft automatisch mit; Lu & Proctor (1995): räumlicher Konflikt zwischen Lage und Bedeutung.
  * - Hauptwert ist die Stufe (Staircase 3-down/1-up ≈ 79 % richtig). Zusatzwerte nur im Vergleich mit
