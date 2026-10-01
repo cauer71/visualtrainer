@@ -43,7 +43,9 @@ async function canvasHasContent(page, selector) {
 const ctx0 = await browser.newContext({ viewport: { width: 1180, height: 820 } });
 const p0 = await ctx0.newPage();
 await p0.goto(base + '?quick=1', { waitUntil: 'networkidle' }); // ?quick → Optiker-Ansicht: alle Übungen
-const ids = await p0.$$eval('a.ex-card', (as) => as.map((a) => a.getAttribute('href').split('/').pop()));
+const allIds = await p0.$$eval('a.ex-card', (as) => as.map((a) => a.getAttribute('href').split('/').pop()));
+// ONLY=id1,id2 prüft nur diese Übungen (z. B. nach dem Hinzufügen neuer Übungen)
+const ids = process.env.ONLY ? allIds.filter((i) => process.env.ONLY.split(',').includes(i)) : allIds;
 await ctx0.close();
 console.log(`Übungen: ${ids.join(', ')}`);
 
