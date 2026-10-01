@@ -12573,10 +12573,10 @@
    "blickfit_umsetzung": {
     "kennung": "zahl-buchstabe-wirbel",
     "name": "Zahlen-Buchstaben-Wirbel",
-    "unterschiede": "Eigene Umsetzung nach einem Handyvideo (Beobachtung, keine Online-Quelle). Im Video war keine Regel zu sehen; Blickfit setzt die Annahme einer abwechselnden Folge um (1 - A - 2 - B ...; Trail-Making-B-artig) mit Zeichen, die sich um versetzte Mittelpunkte drehen und sich dabei teils überlappen (Bewegung nach der Beobachtung des Auftraggebers, der das Original gespielt hat), und dem Hinweis oben („Als Nächstes: B“). Getippte Zeichen bleiben blass sichtbar (kein Verschwinden). Stufen 1-12 (Treppe 2 richtig = schwerer, 1 Fehler = leichter): Paare 3 bis 9, Versatz der Drehmittelpunkte von ±3 % (Stufe 1) bis ±28 % (Stufe 12) der Spielfläche in x und y getrennt, eine Umdrehung in 60 s (Stufe 1, sehr langsam) bis 20 s (Stufe 12), Überlappung ergibt sich aus der Geometrie (ab Stufe 6 darf teilweise überlappt werden); bei Überlappung gilt das nächste Ziel bevorzugt. Hauptwert Stufe; Zusatzwerte nur im Vergleich mit sich selbst. Keine Normen. Trail Making mit Bewegung ist kein validiertes Verfahren. Zahlen können sich noch ändern."
+    "unterschiede": "Eigene Umsetzung nach einem Handyvideo (Beobachtung, keine Online-Quelle). Im Video war keine Regel zu sehen; Blickfit setzt die Annahme einer abwechselnden Folge um (1 - A - 2 - B ...; Trail-Making-B-artig) mit Zeichen, die sich um versetzte Mittelpunkte drehen und sich dabei teils überlappen (Bewegung nach der Beobachtung des Auftraggebers, der das Original gespielt hat), und dem Hinweis oben („Als Nächstes: B“). Getippte Zeichen bleiben blass sichtbar (kein Verschwinden). Stufen 1-12 (Treppe 2 richtig = schwerer, 1 Fehler = leichter): Paare 3 bis 15 (Zeichen 6 bis 30), Zeichen laufen auf Kreisen und Ellipsen gemischt (Ellipsenanteil 30 % bis 70 %), ab Stufe 3 dreht ein wachsender Anteil in Gegenrichtung (10 % bis 50 %), Versatz der Drehmittelpunkte von ±3 % (Stufe 1) bis ±28 % (Stufe 12) der Spielfläche in x und y getrennt, eine Umdrehung in 60 s (Stufe 1, sehr langsam) bis 20 s (Stufe 12), Überlappung ergibt sich aus der Geometrie (ab Stufe 6 darf teilweise überlappt werden); Buchstaben je Sprache (Deutsch A bis O, Italienisch ohne J und K); bei Überlappung gilt das nächste Ziel bevorzugt. Hauptwert Stufe; Zusatzwerte nur im Vergleich mit sich selbst. Keine Normen. Trail Making mit Bewegung ist kein validiertes Verfahren. Zahlen können sich noch ändern."
    },
    "stand": "2026-10-01",
-   "kurzbeschreibung": "Zahlen und Buchstaben drehen sich langsam auf einer hellen Fläche, jedes um einen eigenen, etwas versetzten Mittelpunkt, und überlappen sich dabei zeitweise. Man tippt sie abwechselnd in aufsteigender Folge an (1 – A – 2 – B – 3 – C …); oben steht, was als Nächstes dran ist. Im Video war die Regel nicht zu sehen, die Folge ist eine Annahme.",
+   "kurzbeschreibung": "Zahlen und Buchstaben drehen sich langsam auf einer hellen Fläche, jedes um einen eigenen, etwas versetzten Mittelpunkt (teils auf Kreisen, teils auf Ellipsen, mit steigender Stufe auch gegenläufig), und überlappen sich dabei zeitweise. Man tippt sie abwechselnd in aufsteigender Folge an (1 – A – 2 – B – 3 – C …); oben steht, was als Nächstes dran ist. Im Video war die Regel nicht zu sehen, die Folge ist eine Annahme.",
    "ziel_funktionen": [
     "visuelle_suche",
     "kognitive_flexibilitaet"
@@ -12586,7 +12586,7 @@
    ],
    "tablet_geeignet": "ja",
    "dauer_sekunden": 150,
-   "schwierigkeit_anpassung": "Blickfit (Stand der Spezifikation, Zahlen grob): 12 Stufen, Treppe 2 richtig in Folge = eine Stufe schwerer, 1 Fehler = leichter. Anzahl Paare 3 → 9 (Zeichen 6 → 18), Versatz der Drehmittelpunkte ±3 % → ±28 % der Spielfläche (x und y getrennt), eine Umdrehung in 60 s → 20 s (alle Zeichen gleich schnell, gleiche Richtung), Überlappung ergibt sich aus der Geometrie und darf ab Stufe 6 teilweise sein. Erfolg einer Runde: höchstens 1 Fehltipp und Zeit je Zeichen unter einer Grenze (3,6 s minus 0,15 s je Stufe, mindestens 1,8 s). Original: im Video nicht erkennbar.",
+   "schwierigkeit_anpassung": "Blickfit (Stand der Spezifikation, Zahlen grob): 12 Stufen, Treppe 2 richtig in Folge = eine Stufe schwerer, 1 Fehler = leichter. Anzahl Paare 3 → 15 (Zeichen 6 → 30), Ellipsenanteil 30 % → 70 %, Gegenrichtung ab Stufe 3 (10 % → 50 % der Zeichen), Versatz der Drehmittelpunkte ±3 % → ±28 % der Spielfläche (x und y getrennt), eine Umdrehung in 60 s → 20 s (alle Zeichen gleich schnell, nur die Richtung kann wechseln), Überlappung ergibt sich aus der Geometrie und darf ab Stufe 6 teilweise sein. Erfolg einer Runde: höchstens 1 Fehltipp und Zeit je Zeichen unter einer Grenze (3,6 s minus 0,15 s je Stufe, mindestens 1,8 s). Original: im Video nicht erkennbar.",
    "messgroessen": [
     "Hauptwert: erreichte Stufe (Schwelle der Treppe)",
     "Ø Sekunden je Zeichen (nur Vergleich mit früher auf diesem Gerät, keine Normen)",
@@ -12644,13 +12644,13 @@
    "belastung": {
     "zeitdruck": 2,
     "flimmern_lichtreize": 0,
-    "bewegungsreize_schwindel": 1,
+    "bewegungsreize_schwindel": 2,
     "koerperliche_belastung": 0,
     "sturzrisiko": 0,
     "sprachabhaengigkeit": 1
    },
    "voraussetzungen": [
-    "Zahlen bis 18 und die Buchstaben A bis I in der Reihenfolge des Alphabets sicher kennen",
+    "Zahlen bis 15 und die ersten 15 Buchstaben des Alphabets (Deutsch A bis O, Italienisch A bis Q ohne J und K) in der Reihenfolge sicher kennen",
     "Zeichen von mindestens etwa 34 px (≈ 0,9° bei 40 cm Tablet-Abstand, eigene Rechnung) auch bei Überlappung erkennen",
     "Ein Spielfeld, das ohne Kopfdrehen überblickt werden kann (Tablet quer oder hoch)",
     "Mit dem Finger bewegte Zeichen treffen können (Trefferfläche mindestens 56 px)"
