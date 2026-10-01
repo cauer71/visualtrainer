@@ -339,9 +339,8 @@ describe('seite-erkennen: gezeichnete Figur (aufzeichnender Canvas-Ersatz)', () 
 // Stufen
 
 describe('seite-erkennen: Stufenfunktionen', () => {
-  it('Körperteile: bis Stufe 3 nur Hände, danach Hand, Fuß, Unterarm', () => {
-    for (let l = 1; l <= 3; l++) expect(partsFor(l)).toEqual(['hand']);
-    for (let l = 4; l <= MAX_LEVEL; l++) expect(partsFor(l)).toEqual(['hand', 'foot', 'forearm']);
+  it('Körperteile: von Stufe 1 an Hand, Fuß und Unterarm gemischt', () => {
+    for (let l = 1; l <= MAX_LEVEL; l++) expect(partsFor(l)).toEqual(['hand', 'foot', 'forearm']);
     expect(levelOf(0)).toBe(1);
     expect(levelOf(99)).toBe(12);
     expect(levelOf(5.9)).toBe(5);

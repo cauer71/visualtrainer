@@ -10,8 +10,8 @@
  * Stufenplan (Staircase 3-down/1-up, Stufe 1–12). Gegenüber dem Intro-Video wissenschaftlich begründet
  * geändert: Die Drehwinkel wachsen in der Reihenfolge, in der auch die Antwortzeiten wachsen
  * (0° → 45° → 90° → 135° → 180°), statt 180° vor ±90° anzubieten:
- *  1–3   nur Hände, aufrecht und leicht schräg (bis ±45°), zwei Felder, LINKS links, RECHTS rechts
- *  4–6   Füße und Unterarme dazu, ±90° (Stufe 5), ±135° (Stufe 6), Felder weiter kompatibel
+ *  1–3   Hand, Fuß und Unterarm gemischt, aufrecht und leicht schräg (bis ±45°), zwei Felder, LINKS links, RECHTS rechts
+ *  4–6   ±90° (Stufe 5), ±135° (Stufe 6), Felder weiter kompatibel
  *  7–9   die zwei Felder vertauschen zufällig ihre Seiten (Wort lesen nötig), 180° ab Stufe 8
  *  10–12 vier Felder (OBEN/UNTEN nie richtig, Wörter gemischt), Antwortfrist weich 5,0 → 3,5 s
  */
@@ -51,9 +51,9 @@ export const levelOf = (level: number): number => clamp(Math.floor(level + 1e-9)
 // ---------------------------------------------------------------------------
 // Stufenfunktionen
 
-/** Körperteile: bis Stufe 3 nur Hände, danach auch Füße und Unterarme */
-export function partsFor(level: number): Part[] {
-  return levelOf(level) <= 3 ? ['hand'] : ['hand', 'foot', 'forearm'];
+/** Körperteile: von Anfang an gemischt – Hand, Fuß und Unterarm (wie im Vorlagevideo); die Stufe steigert Drehung und Felder */
+export function partsFor(_level: number): Part[] {
+  return ['hand', 'foot', 'forearm'];
 }
 
 /** Beträge der Drehwinkel je Stufe (0 und 180 nur einmal, alle anderen ±) */
