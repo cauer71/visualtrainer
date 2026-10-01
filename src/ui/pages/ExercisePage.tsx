@@ -418,8 +418,12 @@ function ResultView({
         <h1 class="result-headline">
           {save.isBest ? <Icon name="trophy" size={30} /> : <Icon name="sparkle" size={28} />} {headline}
         </h1>
+        <div class="result-cols">
+          <div class="result-col">
         <div class="result-main">
-          <p class="result-label">{tx.metrics[p.key] ?? p.key}</p>
+          {(tx.metrics[p.key] ?? p.key).trim().toLowerCase() !== (parts.prefix ?? '').trim().toLowerCase() ? (
+            <p class="result-label">{tx.metrics[p.key] ?? p.key}</p>
+          ) : null}
           <p class="result-value">
             {parts.prefix ? <span class="result-prefix">{parts.prefix} </span> : null}
             {parts.value}
@@ -448,6 +452,8 @@ function ResultView({
             ))}
           </div>
         ) : null}
+          </div>
+          <div class="result-col">
         {history.length >= 2 ? (
           <div class="result-history">
             <div class="result-history-head">
@@ -468,6 +474,8 @@ function ResultView({
           </div>
         ) : null}
         {def.showsLevel ? <p class="muted small">{ui.result.levelNow(Math.max(1, Math.round(result.level)))}</p> : null}
+          </div>
+        </div>
         {seriesFinished ? (
           <div class="series-done">
             <Icon name="check" size={22} stroke={3} />
