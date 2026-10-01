@@ -20,11 +20,17 @@
  * Trail Making B; die Texte kennzeichnen das („angelehnt“, „nicht eigens untersucht“). Die Zahlenwerte
  * für Tempo und Versatz sind unsere Festlegung, kein Nachbau des Originals.
  *
- * - Stufe 1–12 (2-down/1-up → ≈ 71 %): Paare 3 → 9 (6 → 18 Zeichen), Versatz der Drehmittelpunkte
+ * Nach dem Probespiel des Auftraggebers („Das Feld ist zu klein“; Wunsch, kein Videobefund): ein Teil
+ * der Zeichen läuft auf Ellipsen statt auf Kreisen (füllen die Spielfläche), ein wachsender Anteil
+ * dreht in Gegenrichtung (gleiches ω), die Paarzahl steigt bis 15; die Buchstaben hängen von der
+ * Sprache ab (DE A–O, IT ohne J und K).
+ *
+ * - Stufe 1–12 (2-down/1-up → ≈ 71 %): Paare 3 → 15 (6 → 30 Zeichen), Versatz der Drehmittelpunkte
  *   ±3 % → ±28 % der Spielfläche (x: Breite, y: Höhe getrennt), eine Umdrehung in 60 s → 20 s
- *   (Stufe 1–2 sehr langsam), Mindestabstand der Zeichen sinkt (ab Stufe 6 darf teilweise überlappt
- *   werden), die Spielfläche wird kleiner. Geschafft = höchstens 1 Fehltipp und Zeit je Zeichen
- *   ≤ 3,6 s − 0,15 s · Stufe (mind. 1,8 s).
+ *   (Stufe 1–2 sehr langsam), Ellipsenanteil 30 → 70 %, Gegenrichtung ab Stufe 3 (10 → 50 %),
+ *   Mindestabstand der Zeichen sinkt (ab Stufe 6 darf teilweise überlappt werden). Geschafft =
+ *   höchstens 1 Fehltipp und Zeit je Zeichen ≤ Grenze (3,6 s − 0,15 s · Stufe, mind. 1,8 s, plus 30 ms
+ *   je Zeichen über 6).
  * - Getippte Zeichen bleiben sichtbar (die Suchmenge bleibt gleich), werden aber blass und tragen
  *   einen kleinen Punkt – wie bei der Zahlenjagd, nicht wie im Video (dort ist nichts getippt).
  * - Trefferprüfung bei Überlappung: Liegt das gesuchte Zeichen unter dem Finger, zählt es; sonst
@@ -52,10 +58,12 @@ import {
   arenaFraction,
   arenaRect,
   buildOrbits,
+  ellipseFracFor,
   fieldGeometry,
   glyphPx,
   hitHalf,
   isLetterAt,
+  lettersFor,
   levelOf,
   nextLevel,
   offsetFracFor,
@@ -65,6 +73,7 @@ import {
   pickTap,
   primaryLevel,
   resizeOrbits,
+  reverseFracFor,
   roundBonus,
   roundSuccess,
   separationFor,
@@ -108,10 +117,14 @@ interface Params {
   area: number;
   /** Versatz der Drehmittelpunkte als Anteil der Spielfläche */
   offset: number;
+  /** Anteil Zeichen auf Ellipsen statt Kreisen */
+  ellipse: number;
+  /** Anteil Zeichen, die gegen die übrigen drehen */
+  reverse: number;
 }
 
-/** Intro-Film: leichte, feste Werte (eine Umdrehung in 26 s, mittlerer Versatz, keine Überlappung am Start) */
-const DEMO: Params = { pairs: 4, omega: (2 * Math.PI) / 26, sep: 0.9, area: 30, offset: 0.14 };
+/** Intro-Film: leichte, feste Werte (eine Umdrehung in 26 s, mittlerer Versatz, zwei Ellipsen, ein gegenläufiges Zeichen) */
+const DEMO: Params = { pairs: 4, omega: (2 * Math.PI) / 26, sep: 0.9, area: 30, offset: 0.14, ellipse: 0.25, reverse: 0.13 };
 
 type Phase = 'play' | 'clear' | 'end' | 'done';
 
@@ -229,6 +242,8 @@ class ZahlBuchstabeWirbel implements Exercise {
       sep: separationFor(L),
       area: areaPerCharFor(L),
       offset: offsetFracFor(L),
+      ellipse: ellipseFracFor(L),
+      reverse: reverseFracFor(L),
     };
   }
 
@@ -254,9 +269,9 @@ class ZahlBuchstabeWirbel implements Exercise {
     this.cur = this.params();
     this.roundLevel = this.demo ? MIN_LEVEL : this.level;
     this.layout();
-    const labels = sequence(this.cur.pairs);
+    const labels = sequence(this.cur.pairs, lettersFor(ctx.lang));
     const halves = labels.map((l) => visibleHalf(l, this.F));
-    const orbits = buildOrbits(halves, this.roundLevel, this.arena, rng, { sep: this.cur.sep, offsetFrac: this.cur.offset });
+    const orbits = buildOrbits(halves, this.roundLevel, this.arena, rng, { sep: this.cur.sep, offsetFrac: this.cur.offset, ellipseFrac: this.cur.ellipse, reverseFrac: this.cur.reverse });
     const zs = rng.shuffle(labels.map((_, i) => i));
     this.rotT0 = t;
     this.lastT = t;
@@ -483,6 +498,7 @@ class ZahlBuchstabeWirbel implements Exercise {
   private demoCaptions(): void {
     const { hud, texts } = this.ctx;
     if (this.next === 1) hud.caption(texts.captions.alt);
+    else if (this.next === 2) hud.caption(texts.captions.reverse);
     else if (this.next === 3) hud.caption(texts.captions.next);
     else if (this.next === 5) hud.caption(texts.captions.kept);
     else if (this.next === 7) hud.caption(texts.captions.overlap);

@@ -5,7 +5,7 @@ export const de: ExerciseTexts = {
   tagline: 'Tippe Zahlen und Buchstaben abwechselnd an – auch wenn sie kreisen.',
   steps: [
     'Tippe abwechselnd: 1 – A – 2 – B – 3 – C …',
-    'Die Zeichen drehen sich um versetzte Mittelpunkte.',
+    'Sie kreisen auf Kreisen und Ellipsen, manche gegenläufig.',
     'Oben steht, was als Nächstes kommt.',
   ],
   why:
@@ -13,6 +13,7 @@ export const de: ExerciseTexts = {
   goodFor: ['Mehrere Dinge im Blick', 'Zwischen Reihen wechseln', 'Ruhig suchen'],
   captions: {
     drift: 'Sie drehen um versetzte Mittelpunkte',
+    reverse: 'Manche drehen andersherum',
     alt: 'Tippe abwechselnd: 1 – A – 2 – B – 3 …',
     next: 'Oben steht, was als Nächstes kommt',
     kept: 'Getippte bleiben sichtbar, nur blasser',
@@ -45,7 +46,7 @@ export const it: ExerciseTexts = {
   tagline: 'Tocca numeri e lettere in alternanza – anche mentre ruotano.',
   steps: [
     'Tocca in alternanza: 1 – A – 2 – B – 3 – C …',
-    'I simboli ruotano attorno a centri sfalsati.',
+    'Girano su cerchi ed ellissi, alcuni in senso opposto.',
     'In alto vedi cosa viene dopo.',
   ],
   why:
@@ -53,6 +54,7 @@ export const it: ExerciseTexts = {
   goodFor: ['Più cose sott’occhio', 'Passare da una serie all’altra', 'Cercare con calma'],
   captions: {
     drift: 'Ruotano attorno a centri sfalsati',
+    reverse: 'Alcuni girano al contrario',
     alt: 'Alterna: 1 – A – 2 – B – 3 …',
     next: 'In alto vedi cosa viene dopo',
     kept: 'Quelli toccati restano, più chiari',
