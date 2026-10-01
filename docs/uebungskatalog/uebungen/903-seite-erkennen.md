@@ -83,7 +83,7 @@ evidenz:
   alltag_transfer: fehlend
   kommentar: "Räumliches Training verbesserte in einer Metaanalyse (217 Studien) sowohl geübte als auch ungeübte räumliche Aufgaben, g ≈ 0,47 (Uttal et al., 2013). Zur Links-Rechts-Beurteilung von Körperteilen selbst gibt es kaum Trainingsstudien; als alleinige Übung zeigte sie bei chronischem Schmerz keinen Effekt (Bowering et al., 2013; kleine, methodisch schwache Studien). Für diese Übung gibt es keine Studie – die Einstufung gilt für die Aufgabenart."
 aehnliche_uebungen: [902, 103, 605, 811]
-stichworte: ["mentale Rotation", "motorische Vorstellung", "Händigkeit", "Links-Rechts-Urteil", "Hand-Lateralitätsaufgabe", "Körperteile", "Drehwinkel", "Chiralität", "Reha-Software", "kein Test", "keine Diagnose"]
+stichworte: ["mentale Rotation", "motorische Vorstellung", "Händigkeit", "Links-Rechts-Urteil", "Hand-Lateralitätsaufgabe", "Körperteile", "Drehwinkel", "Chiralität", "Reha-Software"]
 ---
 
 # 903 · Welche Seite? (Hand oder Fuß als rechts oder links erkennen)
@@ -138,6 +138,8 @@ Es gibt **keinen Seitentext, keine Werbeaussage und keine Leistungsstufen** – 
 - **Körperteile vs. Objekte:** Beim mentalen Drehen von Händen waren in einer PET-Studie (12 Rechtshänder) zusätzlich der primär-motorische Kortex und prämotorische Areale aktiv, beim Drehen verzweigter Objekte nicht; es gibt demnach mindestens zwei Strategien, eine mit Bewegungsvorbereitung, eine ohne (Kosslyn et al., 1998).
 - **Motorische Vorstellung als Strategie:** Antwortzeiten folgen der Biomechanik (längere Zeit für unbequeme Drehrichtungen); das deutet auf die Vorstellung der eigenen Bewegung (Parsons, 1987; Sekiyama, 1982; Funk et al., 2005 bei 5–6-Jährigen und Erwachsenen). Bei Drehung nur **um eine Achse** (wie in der Bildebene) zeigte sich in einer Studie **kein** Einfluss körperlicher Einschränkungen; erst Reize mit mehr als einer Drehachse riefen die motorische Vorstellung deutlich ab (ter Horst et al., 2010). Ob die Blickfit-Zeichnungen, die nur in der Bildebene gedreht werden, die motorische Vorstellung auslösen, ist daher **offen**.
 - **Hirnregionen:** „Diese Übung trainiert Region X“ ist nicht belegt und wird nicht gesagt. Gemessen wurde Aktivierung bei der Aufgabe, keine Trainingsänderung.
+
+- **Begründung des Profils (Gestaltungseinschätzung, kein Messergebnis; gilt für die Blickfit-Umsetzung):** `kurzzeitgedaechtnis_visuell_raeumlich` 3 als nächstliegender Schlüssel (ein räumliches Bild im Kopf halten und drehen; für mentale Rotation gibt es keinen eigenen Schlüssel), `arbeitsgedaechtnis` 2, `sehschaerfe_detail` 2 (feine Linien, Leitmerkmale), `sprachabhaengigkeit` 2 (ab Stufe 7 müssen die Felder gelesen werden), `zeitdruck` 1 (nur Stufe 10–12 mit weicher Frist), `inhibition` 1 und `entscheidung_wahlreaktion` 1 (zwei gültige Antworten), `farbunterscheidung` 0 (Wörter tragen die Information).
 
 ## 6. Motorische Grundlagen
 

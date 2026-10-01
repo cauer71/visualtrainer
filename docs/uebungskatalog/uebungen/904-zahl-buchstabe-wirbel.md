@@ -82,7 +82,7 @@ evidenz:
   alltag_transfer: fehlend
   kommentar: "Beim klassischen Trail Making gibt es deutliche Übungseffekte, auch mit Parallelformen (Buck et al., 2008; Calamia et al., 2012), und die Zeiten spiegeln vor allem Verarbeitungstempo und fluide Fähigkeiten (Salthouse, 2011). Die bewegte, überlappende Variante ist nicht untersucht; Trail Making mit Bewegung ist kein validierter Test. Die Einstufung gilt für die Aufgabenart, nicht für diese Übung."
 aehnliche_uebungen: [204, 708, 106, 202, 206]
-stichworte: ["Trail Making", "Zahl-Buchstabe-Wechsel", "kognitive Flexibilität", "visuelle Suche", "Verdeckung", "Crowding", "bewegte Ziele", "Reha-Software", "keine Normen", "kein validierter Test"]
+stichworte: ["Trail Making", "Zahl-Buchstabe-Wechsel", "kognitive Flexibilität", "visuelle Suche", "Verdeckung", "Crowding", "bewegte Ziele", "Reha-Software", "ohne Normwerte"]
 ---
 
 # 904 · Zahlen-Buchstaben-Wirbel (bewegte Zeichen abwechselnd in Folge antippen)
