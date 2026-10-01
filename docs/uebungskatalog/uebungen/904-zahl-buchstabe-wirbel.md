@@ -180,7 +180,7 @@ Man tippt kleine, bewegte Ziele nacheinander an: Auge-Hand-Koordination, Zieltem
 - **Stufen 1–12** (Treppe 2-down/1-up, Ziel ≈ 71 %; Levitt, 1971): Paare 3 → 9 (6 → 18 Zeichen), Drift stehend (Stufe 1–2) → ca. 3 % der Seitenlänge/s → ca. 9 %/s, Überlappung steigend (ab Stufe 6 häufiger). Erfolg einer Runde: höchstens 1 Fehltipp und Zeit je Zeichen unter der Grenze (3,6 s − 0,15 s·Stufe, mindestens 1,8 s); sonst leichter.
 - **Treffer-Prüfung:** Liegen mehrere Zeichen unter dem Finger, gilt das **nächste Ziel** bevorzugt (Fairness bei Überlappung), sonst das Zeichen mit dem kleinsten Abstand. Fehltipp = Kreuz ohne Zeitstrafe, zählt aber.
 - **Darstellung:** Schrift mindestens 34 px, Trefferfläche mindestens 56 px, Hintergrund hell, Zeichen dunkelgrau (Kontrast mindestens 4,5 : 1); Hochformat: Spielfeld füllt die Höhe, Zeichen gleichmäßig verteilt; `reducedMotion` → stehend.
-- **Zusatzwerte nur im Vergleich mit sich selbst:** Ø Sekunden je Zeichen (im Vergleich zu früher auf diesem Gerät), Fehltipps, Paare der letzten gelösten Runde, ggf. „Wechselkosten“ (siehe Abschnitt 7). **Keine Normen**, keine Altersvergleiche.
+- **Zusatzwerte nur im Vergleich mit sich selbst:** Ø Sekunden je Zeichen (im Vergleich zu früher auf diesem Gerät), Fehltipps, Paare der letzten gelösten Runde, „Mehrzeit für Buchstaben“ (Median Zeit zum Buchstaben minus Median Zeit zur Zahl, erst ab je 5 Werten; ausdrücklich keine Wechselkosten, siehe Abschnitt 7). **Keine Normen**, keine Altersvergleiche.
 - **Abgrenzung** zur Zahlenjagd (statisch, einfache Folge): eigene Übung mit Bewegung und Wechsel; gemeinsame Helfer werden wiederverwendet.
 
 **Empfehlungen:**

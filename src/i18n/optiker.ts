@@ -28,7 +28,7 @@ const de = {
   shortcutCatalog: 'Übungskatalog',
   shortcutVr: 'VR-Labor (Versuch)',
   shortcutVrText: 'Kugel-Detektiv 3D für VR-Brillen wie die Oculus/Meta Quest – eigener Testbereich, öffnet sich als eigene Seite.',
-  shortcutCatalogText: 'Alle 82 Übungen mit Anforderungsprofil, Vorsichtshinweisen, Studienlage und Quellen.',
+  shortcutCatalogText: 'Alle 85 Übungen mit Anforderungsprofil, Vorsichtshinweisen, Studienlage und Quellen.',
   allExercises: 'Alle spielbaren Übungen',
   catalogTitle: 'Übungskatalog',
   catalogLead:
@@ -91,7 +91,7 @@ const it: Dict = {
   shortcutCatalog: 'Catalogo degli esercizi',
   shortcutVr: 'Laboratorio VR (prova)',
   shortcutVrText: 'Sfera-Detective 3D per visori VR come Oculus/Meta Quest – area di prova separata, si apre in una pagina a parte.',
-  shortcutCatalogText: 'Tutti gli 82 esercizi con profilo dei requisiti, avvertenze, stato degli studi e fonti (testi in tedesco).',
+  shortcutCatalogText: 'Tutti gli 85 esercizi con profilo dei requisiti, avvertenze, stato degli studi e fonti (testi in tedesco).',
   allExercises: 'Tutti gli esercizi giocabili',
   catalogTitle: 'Catalogo degli esercizi',
   catalogLead:

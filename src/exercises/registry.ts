@@ -88,6 +88,9 @@ import { gegenDenWind } from './gegen-den-wind';
 import { sprungAbfangen } from './sprung-abfangen';
 import { diagonalKorridor } from './diagonal-korridor';
 import { musterNachzeichnen } from './muster-nachzeichnen';
+import { richtungWort } from './richtung-wort';
+import { seiteErkennen } from './seite-erkennen';
+import { zahlBuchstabeWirbel } from './zahl-buchstabe-wirbel';
 
 /** Reihenfolge = Anzeige-Reihenfolge innerhalb der Bereiche */
 export const EXERCISES: ExerciseDefinition[] = [
@@ -172,6 +175,9 @@ export const EXERCISES: ExerciseDefinition[] = [
   sprungAbfangen,
   diagonalKorridor,
   musterNachzeichnen,
+  richtungWort,
+  seiteErkennen,
+  zahlBuchstabeWirbel,
 ];
 
 export interface CategoryMeta {

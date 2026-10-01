@@ -38,8 +38,8 @@
 7. **Messwerte nur im Vergleich mit sich selbst.** Differenzwerte („Lage-Kosten“, „Dreh-Kosten“) sind als persönlicher Wert oft
    unzuverlässig (Test-Retest 0 bis 0,82; Hedge et al., 2018); Touch misst Zeiten zu lang (Pronk et al., 2020). Keine Normen, keine
    Ranglisten, keine „Test“-Sprache.
-8. **Offener Punkt für die Umsetzung von 903:** Die Winkelstufen 0° → 180° → ±90° folgen vermutlich nicht der Antwortzeit-Rangfolge der
-   Literatur (180° am langsamsten); die „Dreh-Kosten“ sollten je Winkel erfasst werden (Abschnitt 2.4).
+8. **Zur Umsetzung von 903 (erledigt):** Die ursprünglich geplante Reihenfolge 0° → 180° → ±90° folgte nicht der Antwortzeit-Rangfolge der
+   Literatur (180° am langsamsten). Die Blickfit-Version steigert die Winkel deshalb in der Reihenfolge der Antwortzeiten (0/±15° → ±30/±45° → ±90° → ±135° → 180°) und vergleicht ≥ 90° gedreht mit ≤ 15° aufrecht (Abschnitt 2.4).
 
 ## Evidenzskala
 
@@ -223,14 +223,14 @@ Vermeiden: „trainiert deine Hemmung“, „misst deine Reaktionsfähigkeit“,
 |---|---|---|
 | **Zeichnungen prozedural, zwei Seiten = Spiegelbild,** eindeutige Leitmerkmale (Daumen/große Zehe deutlich größer; Handfläche mit Falten, Handrücken mit Nägeln; Sohle mit Wölbung, Fußrücken mit Nägeln) | Seite und Ansicht müssen eindeutig entscheidbar sein | Ionta & Blanke, 2009 |
 | **Drehung ändert nie die Seite** (0/90/180/270° und ±15° Schräge); Chiralität mit Unit-Test abgesichert | Drehung ist keine Spiegelung | Shepard & Metzler, 1971 |
-| **12 Stufen:** 1–3 nur Hände aufrecht/schräg mit zwei Feldern (LINKS links, RECHTS rechts); 4–6 Füße und Unterarme, 180°; 7–9 ±90° und vertauschte Felder (Wortlesen); 10–12 vier Felder (OBEN/UNTEN nie richtig) und weiche Frist (grob 6 → 3,5 s) | schrittweise Steigerung von Winkel und Konflikt | Kompatibilität (Fitts & Seeger, 1953) |
+| **12 Stufen:** 1–3 nur Hände, Drehung bis ±45°, zwei Felder (LINKS links, RECHTS rechts); ab 4 Füße und Unterarme; Winkel in der Reihenfolge der Antwortzeiten (±90° ab Stufe 5, ±135° ab 6, 180° ab 8); ab 7 vertauschte Felder (Wortlesen); ab 10 vier Felder (OBEN/UNTEN nie richtig) und weiche Frist (6 s bis Stufe 9, dann 5,0 → 3,5 s) | schrittweise Steigerung von Winkel und Konflikt | Kompatibilität (Fitts & Seeger, 1953); Winkel nach Cooper & Shepard, 1975 |
 | **Pro Körperteil und Ansicht gleich häufig, links/rechts gleich häufig, höchstens 3 gleiche Seiten hintereinander** | Ausgewogenheit, kein Raten über Muster | – |
 | **Kein „Test“, keine Diagnose, keine Normen;** Intro neutral („Hilfreich kann sein, sich die eigene Hand in diese Lage zu denken – ob das bei dir hilft, ist nicht belegt“) | keine Krankheitsaussage; Strategie wird nur angeboten | Abschnitt 4 |
-| **Zusatzwerte nur im Vergleich mit sich selbst:** Treffer, Ø Zeit 0°/180° vs. ±90° („Dreh-Kosten“), Seitenverwechslungen | Differenzwerte unzuverlässig | Hedge et al., 2018 |
+| **Zusatzwerte nur im Vergleich mit sich selbst:** Treffer, Median der Zeit, „Dreh-Aufschlag“ (≥ 90° gedreht minus ≤ 15° aufrecht, erst ab je 3 richtigen Antworten), Seitenverwechslungen | Differenzwerte unzuverlässig | Hedge et al., 2018 |
 | **Sanfte Haken/Kreuz-Rückmeldung,** Frist ohne Strafe | Sicherheit | Dokument 03, 4.7 |
 
-**Offener Punkt (Empfehlung, Antwortzeit-Rangfolge):** In der Literatur ist **„Finger nach unten“ (180°) die langsamste Orientierung** (Cooper & Shepard, 1975); ±90° liegt vermutlich dazwischen (**Herleitung** aus dem systematischen Anstieg der Zeit mit der Abweichung von der aufrechten Lage) und zeigt Asymmetrien je nach Drehung zur Körpermitte hin oder von ihr weg (ter Horst et al., 2010, Abstract).
-Die Reihenfolge 0° → 180° → ±90° der Spezifikation entspricht daher vermutlich **nicht** der Rangfolge der Antwortzeiten, und ein gemeinsamer Wert für „0°/180°“ vermischt die schnellste mit der langsamsten Orientierung. **Designvorschlag:** Dreh-Kosten **je Winkel** erfassen (0°, 90°, 180°), die
+**Stand (Antwortzeit-Rangfolge, in der Umsetzung berücksichtigt):** In der Literatur ist **„Finger nach unten“ (180°) die langsamste Orientierung** (Cooper & Shepard, 1975); ±90° liegt vermutlich dazwischen (**Herleitung** aus dem systematischen Anstieg der Zeit mit der Abweichung von der aufrechten Lage) und zeigt Asymmetrien je nach Drehung zur Körpermitte hin oder von ihr weg (ter Horst et al., 2010, Abstract).
+Die zuerst geplante Reihenfolge 0° → 180° → ±90° entsprach daher vermutlich **nicht** der Rangfolge der Antwortzeiten. **Umgesetzt:** Winkel steigen in der Reihenfolge der Antwortzeiten, der Dreh-Aufschlag vergleicht ≥ 90° mit ≤ 15°. **Weiterhin offen:** Dreh-Kosten je einzelnem Winkel (0°, 90°, 180°) erfassen und auswerten – Dreh-Kosten **je Winkel** erfassen (0°, 90°, 180°), die
 Stufen als Übungsreihenfolge (nicht als „Winkelrang“) beschreiben und nirgends Winkel-Zeitnormen nennen. Die Treppe misst nur den eigenen Verlauf.
 
 ### 2.5 Ehrliche Formulierung für Laien
