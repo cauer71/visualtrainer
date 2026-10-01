@@ -1,6 +1,6 @@
 /**
- * Zahlen-Buchstaben-Wirbel – Zahlen und Buchstaben treiben langsam über die Fläche; man tippt sie
- * abwechselnd in aufsteigender Folge an: 1 – A – 2 – B – 3 – C …
+ * Zahlen-Buchstaben-Wirbel – Zahlen und Buchstaben drehen sich langsam, jedes um einen eigenen,
+ * etwas versetzten Mittelpunkt; man tippt sie abwechselnd in aufsteigender Folge an: 1 – A – 2 – B – 3 – C …
  *
  * Abgrenzung zur Zahlenjagd (statische Tafel, einfache Folge): Hier bewegen sich die Zeichen,
  * überlappen teilweise, und die Folge wechselt immer zwischen Zahl und Buchstabe. Das ist das
@@ -8,20 +8,29 @@
  * am Wechsel zwischen den Folgen und am Verarbeitungstempo hängt (Sánchez-Cubillo et al., 2009;
  * Salthouse, 2011). Verdeckung und enge Abstände erschweren die Suche (Crowding; Whitney & Levi, 2011).
  *
- * ANNAHME (Hypothese): Das Vorlagevideo zeigt nur treibende Zeichen (Zahlen 5–14, Buchstaben E–P),
- * kein Antippen und keine Regel. Die abwechselnde Folge ist unsere Vermutung in Anlehnung an
- * Trail Making B; die Texte kennzeichnen das („angelehnt“, „nicht eigens untersucht“).
+ * Bewegung (belegt, Beobachtung des Auftraggebers, der das Original gespielt hat): „Die Zeichen drehen
+ * alle um ein Zentrum. Jedes Zentrum ist etwas versetzt; je höher der Schwierigkeitsgrad, desto höher
+ * der Versatz (x und y).“ Umsetzung: alle Zeichen mit gleicher Winkelgeschwindigkeit ω und gleicher
+ * Richtung, p_i(t) = C + o_i + Rot(ω·t)·(b_i − o_i) (Einzelheiten in logic.ts). Die Position ist eine
+ * reine Funktion der Zeit; die Geister-Hand zielt deshalb exakt auf die Stelle, an der das Zeichen
+ * beim Tippen stehen wird.
  *
- * - Stufe 1–12 (2-down/1-up → ≈ 71 %): Paare 3 → 9 (6 → 18 Zeichen), Tempo 0 (Stufe 1–2 stehend) →
- *   3 %/s → 9 % der kürzeren Seite je Sekunde, Dichte steigend (kleinere Spielfläche, kleinerer
- *   Mindestabstand, ab Stufe 6 immer mehr dauerhaft überlappende Paare).
- *   Geschafft = höchstens 1 Fehltipp und Zeit je Zeichen ≤ 3,6 s − 0,15 s · Stufe (mind. 1,8 s).
+ * ANNAHME (Hypothese): Die Regel des Originals war im Video nicht zu sehen (nur drehende Zahlen 5–14
+ * und Buchstaben E–P, kein Antippen). Die abwechselnde Folge ist unsere Vermutung in Anlehnung an
+ * Trail Making B; die Texte kennzeichnen das („angelehnt“, „nicht eigens untersucht“). Die Zahlenwerte
+ * für Tempo und Versatz sind unsere Festlegung, kein Nachbau des Originals.
+ *
+ * - Stufe 1–12 (2-down/1-up → ≈ 71 %): Paare 3 → 9 (6 → 18 Zeichen), Versatz der Drehmittelpunkte
+ *   ±3 % → ±28 % der Spielfläche (x: Breite, y: Höhe getrennt), eine Umdrehung in 60 s → 20 s
+ *   (Stufe 1–2 sehr langsam), Mindestabstand der Zeichen sinkt (ab Stufe 6 darf teilweise überlappt
+ *   werden), die Spielfläche wird kleiner. Geschafft = höchstens 1 Fehltipp und Zeit je Zeichen
+ *   ≤ 3,6 s − 0,15 s · Stufe (mind. 1,8 s).
  * - Getippte Zeichen bleiben sichtbar (die Suchmenge bleibt gleich), werden aber blass und tragen
  *   einen kleinen Punkt – wie bei der Zahlenjagd, nicht wie im Video (dort ist nichts getippt).
  * - Trefferprüfung bei Überlappung: Liegt das gesuchte Zeichen unter dem Finger, zählt es; sonst
  *   das nächste ungetippte. Fehltipp = weiches ✗ (Form, kein Blitz), ohne Zeitstrafe, zählt aber.
  *   Ein Tipp ins Leere zeigt nur einen blassen Ring und zählt nicht als Fehltipp.
- * - Alles zeitbasiert (dt), Zufall nur über ctx.rng. „Bewegung reduzieren“ → die Zeichen stehen.
+ * - Alles zeitbasiert (virtuelle Zeit), Zufall nur über ctx.rng. „Bewegung reduzieren“ → die Zeichen stehen.
  * - Messung: Zeit von der Anzeige bis zum letzten richtigen Tipp. Wohin man schaut, wird nicht gemessen.
  *   Keine Normwerte; Zeit je Zeichen nur im Vergleich mit früher auf diesem Gerät.
  */
@@ -33,8 +42,7 @@ import { captionTop, handSize, restPoint } from '../_shared/tippziele';
 import { drawSoftCheck, drawSoftCross, markAlpha } from '../_shared/weiche-marken';
 import {
   type FieldGeom,
-  type Member,
-  type Mover,
+  type Orbit,
   type Rect,
   type RoundRecord,
   MAX_LEVEL,
@@ -43,29 +51,27 @@ import {
   areaPerCharFor,
   arenaFraction,
   arenaRect,
-  bondDepthFor,
-  bondsFor,
-  buildBodies,
+  buildOrbits,
   fieldGeometry,
   glyphPx,
   hitHalf,
   isLetterAt,
   levelOf,
   nextLevel,
+  offsetFracFor,
+  omegaFor,
+  orbitPos,
   pairsFor,
   pickTap,
-  placeItems,
-  predict,
   primaryLevel,
+  resizeOrbits,
   roundBonus,
   roundSuccess,
   separationFor,
-  seatAt,
   sequence,
-  speedFor,
-  stepDrift,
   summarize,
   tapPoints,
+  thetaAt,
   tipFor,
   visibleHalf,
 } from './logic';
@@ -95,16 +101,17 @@ const BAD_AMBER = PALETTE.bad;
 
 interface Params {
   pairs: number;
-  speed: number;
+  /** Winkelgeschwindigkeit in rad/s (gleich für alle Zeichen) */
+  omega: number;
   sep: number;
   /** Spielfläche je Zeichen in Vielfachen von F² */
   area: number;
-  bonds: number;
-  depth: number;
+  /** Versatz der Drehmittelpunkte als Anteil der Spielfläche */
+  offset: number;
 }
 
-/** Intro-Film: leichte, feste Werte; ein überdecktes Paar zeigt, dass Überlappen vorkommt */
-const DEMO: Params = { pairs: 4, speed: 3.4, sep: 1.0, area: 36, bonds: 1, depth: 0.8 };
+/** Intro-Film: leichte, feste Werte (eine Umdrehung in 26 s, mittlerer Versatz, keine Überlappung am Start) */
+const DEMO: Params = { pairs: 4, omega: (2 * Math.PI) / 26, sep: 0.9, area: 30, offset: 0.14 };
 
 type Phase = 'play' | 'clear' | 'end' | 'done';
 
@@ -121,7 +128,8 @@ interface Glyph {
   done: boolean;
   /** Zeichenreihenfolge bei Überdeckung (kleiner = weiter unten) */
   z: number;
-  seat: Member;
+  /** Kreisbahn: Start b und Drehmittelpunkt c */
+  orbit: Orbit;
 }
 
 interface Fx {
@@ -171,9 +179,10 @@ class ZahlBuchstabeWirbel implements Exercise {
   private steps: number[] = [];
   private cur: Params = DEMO;
   private glyphs: Glyph[] = [];
-  private bodies: Mover[] = [];
-  /** Tempo je Körper in u/s (mit eigenem Faktor); in px/s wird live mit u umgerechnet */
-  private vU: number[] = [];
+  /** Zeitpunkt (virtuelle ms), an dem der Drehwinkel 0 war */
+  private rotT0 = 0;
+  /** Zeit des letzten update() */
+  private lastT = 0;
   private geom!: FieldGeom;
   private arena!: Rect;
   private F = 40;
@@ -216,11 +225,10 @@ class ZahlBuchstabeWirbel implements Exercise {
     const L = this.level;
     return {
       pairs: pairsFor(L),
-      speed: speedFor(L),
+      omega: omegaFor(L),
       sep: separationFor(L),
       area: areaPerCharFor(L),
-      bonds: bondsFor(L),
-      depth: bondDepthFor(L),
+      offset: offsetFracFor(L),
     };
   }
 
@@ -235,8 +243,9 @@ class ZahlBuchstabeWirbel implements Exercise {
     this.arena = arenaRect(f, arenaFraction(this.cur.area, 2 * this.cur.pairs, this.F, f.w * f.h));
   }
 
-  private speedPx(vU: number): number {
-    return this.ctx.reducedMotion ? 0 : vU * this.ctx.stage.u;
+  /** Drehwinkel zur virtuellen Zeit t (bei „Bewegung reduzieren“ immer 0: die Zeichen stehen) */
+  private thetaAtTime(t: number): number {
+    return this.ctx.reducedMotion ? 0 : thetaAt(this.cur.omega, Math.max(0, t - this.rotT0));
   }
 
   private newRound(t: number): void {
@@ -247,18 +256,16 @@ class ZahlBuchstabeWirbel implements Exercise {
     this.layout();
     const labels = sequence(this.cur.pairs);
     const halves = labels.map((l) => visibleHalf(l, this.F));
-    const { bodies, members } = buildBodies(halves, this.cur.bonds, this.cur.depth, rng);
-    this.vU = bodies.map(() => this.cur.speed * (this.demo ? 1 : rng.range(0.75, 1.25)));
-    bodies.forEach((b, i) => (b.v = this.speedPx(this.vU[i])));
-    placeItems(bodies, this.arena, this.cur.sep, rng);
-    this.bodies = bodies;
+    const orbits = buildOrbits(halves, this.roundLevel, this.arena, rng, { sep: this.cur.sep, offsetFrac: this.cur.offset });
     const zs = rng.shuffle(labels.map((_, i) => i));
+    this.rotT0 = t;
+    this.lastT = t;
     this.glyphs = labels.map((label, k) => {
       const hv = halves[k];
       const hit = hitHalf(hv);
-      return { k, label, x: 0, y: 0, hw: hv.hw, hh: hv.hh, hx: hit.hx, hy: hit.hy, done: false, z: zs[k], seat: members[k] };
+      return { k, label, x: orbits[k].bx, y: orbits[k].by, hw: hv.hw, hh: hv.hh, hx: hit.hx, hy: hit.hy, done: false, z: zs[k], orbit: orbits[k] };
     });
-    this.syncGlyphs();
+    this.syncGlyphs(t);
     this.next = 0;
     this.roundErrors = 0;
     this.steps = [];
@@ -275,41 +282,44 @@ class ZahlBuchstabeWirbel implements Exercise {
     else hud.setLabel(`${texts.feedback.level} ${this.level}`);
   }
 
-  private syncGlyphs(): void {
+  /** Zeichen an ihre Stelle auf der Kreisbahn zur Zeit t setzen */
+  private syncGlyphs(t: number): void {
+    const th = this.thetaAtTime(t);
     for (const g of this.glyphs) {
-      const b = this.bodies[g.seat.body];
-      const p = seatAt(g.seat, b.x, b.y);
+      const p = orbitPos(g.orbit, th);
       g.x = p.x;
       g.y = p.y;
     }
   }
 
-  /** Nach dem Drehen: Positionen anteilig in die neue Spielfläche, Größen mit der neuen Zeichengröße */
+  /**
+   * Nach dem Drehen: Die Zeichen bleiben, wo sie gerade stehen (anteilig umgerechnet); die Bahnen
+   * werden in die neue Spielfläche eingepasst, Größen folgen der neuen Zeichengröße.
+   */
   resize(): void {
     if (!this.glyphs.length) return;
     const old = this.arena;
     const oldF = this.F;
+    const theta = this.thetaAtTime(this.lastT);
     this.layout();
     const k = this.F / oldF;
-    const a = this.arena;
-    for (const b of this.bodies) {
-      const rx = old.w > 0 ? (b.x - old.x) / old.w : 0.5;
-      const ry = old.h > 0 ? (b.y - old.y) / old.h : 0.5;
-      b.x = a.x + rx * a.w;
-      b.y = a.y + ry * a.h;
-      b.hw *= k;
-      b.hh *= k;
-    }
-    this.bodies.forEach((b, i) => (b.v = this.speedPx(this.vU[i])));
     for (const g of this.glyphs) {
       g.hw *= k;
       g.hh *= k;
-      g.seat = { body: g.seat.body, ox: g.seat.ox * k, oy: g.seat.oy * k };
       const hit = hitHalf({ hw: g.hw, hh: g.hh });
       g.hx = hit.hx;
       g.hy = hit.hy;
     }
-    this.syncGlyphs();
+    const orbits = resizeOrbits(
+      this.glyphs.map((g) => g.orbit),
+      theta,
+      old,
+      this.arena,
+      this.glyphs,
+    );
+    this.glyphs.forEach((g, i) => (g.orbit = orbits[i]));
+    this.rotT0 = this.lastT;
+    this.syncGlyphs(this.lastT);
     this.fx = [];
     if (this.ctx.autoplay) {
       this.ctx.ghost.clear();
@@ -319,7 +329,7 @@ class ZahlBuchstabeWirbel implements Exercise {
 
   // ------------------------------------------------------------------ Ablauf
 
-  update(dt: number, t: number): void {
+  update(_dt: number, t: number): void {
     if (this.phase === 'done') return;
     const { ctx } = this;
     if (!this.demo) {
@@ -330,8 +340,8 @@ class ZahlBuchstabeWirbel implements Exercise {
         return;
       }
     }
-    stepDrift(this.bodies, dt, this.arena, this.cur.sep, ctx.rng);
-    this.syncGlyphs();
+    this.lastT = t;
+    this.syncGlyphs(t);
     if (this.fx.length) this.fx = this.fx.filter((f) => t - f.t0 < (f.kind === 'ok' ? OK_MS : f.kind === 'bad' ? BAD_MS : MISS_MS));
     switch (this.phase) {
       case 'play':
@@ -465,11 +475,9 @@ class ZahlBuchstabeWirbel implements Exercise {
 
   // ------------------------------------------------------------------ Geister-Hand
 
-  /** Wohin tippen, damit das Zeichen nach `seconds` getroffen wird (geradeaus weitergedacht, mit Abprall) */
+  /** Wohin tippen, damit das Zeichen nach `seconds` getroffen wird (exakt aus der Kreisformel) */
   private aim(g: Glyph, seconds: number): { x: number; y: number } {
-    const b = this.bodies[g.seat.body];
-    const p = predict(b, this.arena, seconds);
-    return seatAt(g.seat, p.x, p.y);
+    return orbitPos(g.orbit, this.thetaAtTime(this.lastT + seconds * 1000));
   }
 
   private demoCaptions(): void {
@@ -480,7 +488,7 @@ class ZahlBuchstabeWirbel implements Exercise {
     else if (this.next === 7) hud.caption(texts.captions.overlap);
   }
 
-  /** Intro-Film: die Hand tippt 1 – A – 2 – B – … der Reihe nach, dem treibenden Zeichen voraus */
+  /** Intro-Film: die Hand tippt 1 – A – 2 – B – … der Reihe nach, dem kreisenden Zeichen voraus */
   private demoStep(): void {
     const { ghost } = this.ctx;
     if (!ghost.idle || this.plannedFor === this.next || this.next >= this.glyphs.length) return;
@@ -515,17 +523,9 @@ class ZahlBuchstabeWirbel implements Exercise {
   // ------------------------------------------------------------------ Zeichnen
 
   render(g: CanvasRenderingContext2D, t: number): void {
-    const { w, h, dpr, u } = this.ctx.stage;
+    const { w, h, dpr } = this.ctx.stage;
     lightBackground(g, w, h, dpr);
     if (!this.glyphs.length) return;
-    // Spielfläche (zeigt, wo die Zeichen abprallen)
-    const a = this.arena;
-    rrPath(g, a.x, a.y, a.w, a.h, Math.min(28, u * 2.5));
-    g.fillStyle = 'rgba(255,255,255,0.42)';
-    g.fill();
-    g.lineWidth = 1.5;
-    g.strokeStyle = 'rgba(38,43,51,0.10)';
-    g.stroke();
     this.drawGlyphs(g, t);
     this.drawFx(g, t);
     this.drawPill(g, t);

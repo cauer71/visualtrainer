@@ -55,7 +55,7 @@ Alle Einstufungen gelten für die **Aufgabenart**; keine der drei Übungen und k
 |---|---|---|---|---|---|---|
 | **Video 2 → 902 Richtung & Wort** (16 s) | Zeichen oben; vier grüne Felder im Kreuz; das Feld mit dem **Wort** der Richtung tippen; Wörter nicht immer an der passenden Lage | Reiz-Antwort-Zuordnung unter Konflikt (Lage ↔ Wort), Lesen, Suchen | passende und unpassende Lage gemischt, aber Auswertung unbekannt; Zeichen setzen Verkehrszeichen-Kenntnis voraus; Schrägpfeil mehrdeutig | Stufen bauen Kompatibilität ab, danach Zeichenvielfalt und weiche Frist | **mittel** | nah **schwach**, Alltag **fehlend** |
 | **Video 3 → 903 Welche Seite?** (43 s) | Strichzeichnung von Hand/Unterarm/Fuß im Kreis; rechts oder links tippen | mentale Drehung von Körperteilen, motorische Vorstellung | Winkel nicht abgestuft; Ergebnisseite nicht lesbar; keine Aussage zu Ansicht/Seiten-Häufigkeit | prozedurale Zeichnungen, Drehwinkel-Stufen, Drehung ändert nie die Seite, keine Normen | **mittel** (räumliches Training) | nah **mittel** (nur räumlich), Alltag **fehlend** |
-| **Video 1 → 904 Zahlen-Buchstaben-Wirbel** (3,6 s) | ≈ 20 Zahlen/Buchstaben treiben und überlappen; **Regel nicht sichtbar** | (Annahme) Suchen und Wechseln zwischen zwei Folgen, wie Trail Making B | Regel unklar; Überlappung zufällig; Trail Making ist klinisches Verfahren, mit Bewegung nicht validiert | Folge 1-A-2-B …, weiche Drift, Hinweis „Als Nächstes“, Stufen, keine Zeit-Normen | **mittel** | nah **schwach**, Alltag **fehlend** |
+| **Video 1 → 904 Zahlen-Buchstaben-Wirbel** (3,6 s) | ≈ 20 Zahlen/Buchstaben treiben und überlappen; **Regel nicht sichtbar** | (Annahme) Suchen und Wechseln zwischen zwei Folgen, wie Trail Making B | Regel unklar; Überlappung zufällig; Trail Making ist klinisches Verfahren, mit Bewegung nicht validiert | Folge 1-A-2-B …, Drehung um versetzte Mittelpunkte (Beobachtung des Auftraggebers), Hinweis „Als Nächstes“, Stufen, keine Zeit-Normen | **mittel** | nah **schwach**, Alltag **fehlend** |
 
 ### Zur Quelle: drei Handyvideos
 
@@ -308,7 +308,7 @@ Vermeiden: „erkennt Störungen der Körperwahrnehmung“, „testet dein Körp
 | Änderung | Grund | Quelle |
 |---|---|---|
 | **Eigene Festlegung der Aufgabe:** abwechselnd aufsteigend 1 – A – 2 – B – 3 – C …, Hinweis oben („Als Nächstes: B“) | Die Regel des Videos ist unbekannt; die Annahme wird offen als eigene Festlegung umgesetzt | Annahme; Trail-Making-B-Prinzip (Sánchez-Cubillo et al., 2009) |
-| **Weiche Bewegung** (Drift, Abprall mit leichter Richtungsänderung, keine Sprünge); Stufe 1–2 **stehend**; ≈ 3 → 9 % der Seitenlänge/s (≈ 1 → 3°/s, Tablet quer, 40 cm; **Herleitung**) | langsames Tempo, Schwindelvorsicht | – |
+| **Weiche Bewegung** (alle Zeichen kreisen mit gleicher Winkelgeschwindigkeit um je einen versetzten Mittelpunkt, Versatz ±3 → ±28 % der Fläche, eine Umdrehung in 60 → 20 s; keine Sprünge); Bahngeschwindigkeit grob 0,3–2°/s (Tablet quer, 40 cm; **Herleitung**) | langsames Tempo, Schwindelvorsicht | – |
 | **Getippte Zeichen bleiben sichtbar,** blass mit kleinem Punkt (kein Verschwinden) | Orientierung, weniger Überlappung durch „Wegfall“ | – |
 | **Überlappung steigend, bei Überlappung gilt das nächste Ziel bevorzugt** | Fairness; Überlappung als Stufenparameter statt Zufall | Pelli & Tillman, 2008 |
 | **12 Stufen** (Treppe 2-down/1-up, ≈ 71 %): Paare 3 → 9 (6 → 18 Zeichen), Erfolg = höchstens 1 Fehltipp und Zeit je Zeichen unter der Grenze (3,6 s − 0,15 s·Stufe, mind. 1,8 s) | adaptive Schwierigkeit | Levitt, 1971 |
@@ -321,7 +321,7 @@ Vermeiden: „erkennt Störungen der Körperwahrnehmung“, „testet dein Körp
 
 ### 3.5 Ehrliche Formulierung für Laien
 
-> **DE:** „Beim Zahlen-Buchstaben-Wirbel suchst du Zahlen und Buchstaben abwechselnd der Reihe nach, während sie langsam treiben. Das übt geordnetes Suchen und das Wechseln zwischen zwei Folgen. Es ist kein Test und vergleicht dich mit niemandem;
+> **DE:** „Beim Zahlen-Buchstaben-Wirbel suchst du Zahlen und Buchstaben abwechselnd der Reihe nach, während sie sich langsam um versetzte Mittelpunkte drehen. Das übt geordnetes Suchen und das Wechseln zwischen zwei Folgen. Es ist kein Test und vergleicht dich mit niemandem;
 > deine Zeiten gelten nur für dieses Gerät. Ob das im Alltag hilft, ist nicht belegt.“
 >
 > **IT (Entwurf):** „Nel *Vortice di numeri e lettere* cerchi numeri e lettere in ordine alternato mentre si muovono lentamente. Allena la ricerca ordinata e il passaggio tra due serie. Non è un test e non ti confronta con nessuno;

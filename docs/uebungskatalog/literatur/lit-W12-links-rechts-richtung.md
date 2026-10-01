@@ -178,7 +178,7 @@ Kürzel in eckigen Klammern hinter der Nummer = betroffene Übungen. Vollständi
 | F58 [alle] | Differenzwerte (Kompatibilitäts-, Wechselkosten) als persönlicher Wert oft unzuverlässig | Test-Retest 0 bis 0,82 in 7 Aufgaben | Hedge et al., 2018 [A] |
 | F59 [alle] | Farbe nie als einziges Unterscheidungsmerkmal; Kontrast Text ≥ 4,5 : 1; Mindestgröße von Touch-Zielen | SC 1.4.1; 1.4.3: 4,5 : 1; SC 2.5.8: 24 px, 2.5.5: 44 px | W3C, 2024 (WCAG 2.2) [V für 1.4.1, 1.4.3; W02 F09 für 2.5.5/2.5.8] |
 | F60 [alle] | Sehwinkel am 10,9″-Tablet in 40 cm: ≈ 36 CSS-px pro Grad (0,19 mm/px); Felder 72 px ≈ 2,0° ≈ 13,7 mm; Trefferfläche 56 px ≈ 1,6° ≈ 10,6 mm; Schrift 30 px ≈ 0,8°; Zeichen 34 px ≈ 0,9° | 36 px/° | [H, W02 F06] |
-| F61 [904] | Bildbreite des Tablets quer in 40 cm ≈ 33°; Drift 3 → 9 % der Seitenlänge pro Sekunde ≈ 1 → 3°/s | ≈ 33° | [H] |
+| F61 [904] | Bildbreite des Tablets quer in 40 cm ≈ 33°; Bahngeschwindigkeit der Kreisbewegung (Radius 100–250 px × ω, eine Umdrehung in 60 → 20 s) ≈ 10–80 px/s ≈ 0,3–2°/s | ≈ 33° | [H] |
 | F62 [alle] | Neue Gleitsichtträger nutzen mehr Kopfbewegungen beim Lesen und bei Blickwechseln | n = 10 | Hutchings et al., 2007 [A; W02 F54] |
 | F63 [alle] | Bildschirmarbeit senkt die Lidschlagrate | im Mittel 5-fach | Patel et al., 1991 [A] |
 | F64 [alle] | Treppenverfahren: 2-down/1-up ≈ 70,7 %, 3-down/1-up ≈ 79,4 % richtig | 70,7 % / 79,4 % | Levitt, 1971 [M; wie in 901] |

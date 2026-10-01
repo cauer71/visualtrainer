@@ -1,8 +1,24 @@
 /**
  * Zahlen-Buchstaben-Wirbel – reine Logik (ohne Canvas), damit sie per vitest prüfbar ist.
  *
- * Zahlen und Buchstaben treiben langsam über die Fläche. Man tippt sie abwechselnd in aufsteigender
- * Folge an: 1 – A – 2 – B – 3 – C … (Zahl n gehört zum n-ten Buchstaben).
+ * Zahlen und Buchstaben drehen sich langsam, jedes Zeichen um einen eigenen, etwas versetzten
+ * Mittelpunkt. Man tippt sie abwechselnd in aufsteigender Folge an: 1 – A – 2 – B – 3 – C …
+ * (Zahl n gehört zum n-ten Buchstaben).
+ *
+ * Bewegung (belegt durch den Auftraggeber, der das Original gespielt hat: „Die Zeichen drehen alle um
+ * ein Zentrum. Jedes Zentrum ist etwas versetzt; je höher der Schwierigkeitsgrad, desto höher der
+ * Versatz (x und y).“): Alle Zeichen drehen mit derselben Winkelgeschwindigkeit ω in derselben
+ * Richtung. Zeichen i startet bei b_i und dreht um c_i = C + o_i:
+ *
+ *     p_i(t) = C + o_i + Rot(ω·t)·(b_i − o_i)
+ *
+ * Bei Versatz 0 dreht sich die ganze Anordnung starr um die Mitte C (Karussell, alle Abstände
+ * bleiben gleich). Mit wachsendem Versatz ändern sich die Abstände der Zeichen zueinander immer
+ * stärker – der Abstand zweier Zeichen schwingt zwischen | |Δc| − |Δr| | und |Δc| + |Δr|
+ * (Δc = Unterschied der Mittelpunkte, Δr = Unterschied der Startabstände zum eigenen Mittelpunkt).
+ * Dichtliegende Zeichen mit ähnlichem Versatz bleiben deshalb lange übereinander, wie im Video
+ * („13“ über „10“, „G“ und „O“, „11“ und „H“). Die Überlappung ergibt sich aus der Geometrie; die
+ * Stufe regelt nur, wie weit sie gehen darf (Mindestabstand) und wie groß der Versatz ist.
  *
  * Grundlagen (für die Kommentare; Quellen sind im Katalog / in science.ts geprüft):
  * - Wechsel zwischen zwei Folgen (Zahl ↔ Buchstabe) ist das Prinzip des Trail Making Test B
@@ -10,19 +26,21 @@
  *   Arbeitsgedächtnis und erst danach am Aufgabenwechsel, Teil A vor allem an der Wahrnehmung;
  *   nach Salthouse (2011) spiegelt Trail Making vor allem Verarbeitungstempo wider.
  * - Bewegung und Überlappung der Zeichen erschweren die visuelle Suche (Verdeckung, Crowding:
- *   Whitney & Levi, 2011). Die Dichte ist deshalb ein eigener Schwierigkeitsregler: mit der Stufe
- *   wird die Spielfläche kleiner, der Mindestabstand zwischen den Zeichen kleiner, und immer mehr
- *   Zeichen wandern in Paaren, die sich dauerhaft teilweise überdecken (wie im Vorlagevideo, wo
- *   dieselben Paare – „13“ über „10“, „G“ und „O“ – über viele Bilder übereinander blieben).
+ *   Whitney & Levi, 2011). Der Versatz der Drehmittelpunkte ist deshalb der Schwierigkeitsregler:
+ *   je größer, desto stärker verändern sich die Nachbarschaften der Zeichen, und desto öfter
+ *   schieben sich Zeichen übereinander.
  * - Bei Trail-Making-Aufgaben ist die Dauer die übliche Messgröße. Wir nennen keine Normen:
  *   Hauptwert ist die Stufe; die Zeit je Zeichen taugt nur zum Vergleich mit früher auf demselben
  *   Gerät (Übungseffekte sind groß: Buck et al., 2008).
  *
- * ANNAHME (Hypothese): Die Vorlage – ein Video einer Trainingssoftware – zeigt nur treibende Zahlen
- * (5–14) und Buchstaben (E–P) ohne Antippen und ohne Regel. Dass hier die Folge Zahl–Buchstabe
- * abwechselnd (5–E–6–F …) gefragt ist, ist unsere Vermutung in Anlehnung an Trail Making B.
+ * ANNAHME (Hypothese): Welche Regel das Original verlangt, war im Video nicht zu sehen (nur drehende
+ * Zahlen 5–14 und Buchstaben E–P, kein Antippen). Dass hier die Folge Zahl–Buchstabe abwechselnd
+ * (1–A–2–B …) gefragt ist, bleibt unsere Vermutung in Anlehnung an Trail Making B. Die Bewegung
+ * (Drehung um versetzte Mittelpunkte) ist dagegen durch die Beobachtung des Auftraggebers belegt;
+ * die Zahlenwerte (Tempo, Versatz je Stufe) sind unsere Festlegung.
  *
- * Alle Zufälle laufen über den übergebenen Rng, alle Bewegungen sind mit dt gerechnet.
+ * Alle Zufälle laufen über den übergebenen Rng; die Position hängt nur von der Zeit ab (kein
+ * Schrittverfahren), ist also bildratenunabhängig und für jeden Zeitpunkt exakt berechenbar.
  */
 import type { Rng } from '../../core/rng';
 import { clamp, median } from '../../core/stats';
@@ -60,19 +78,32 @@ export const pairsFor = (level: number): number => PAIRS[levelOf(level) - 1];
 export const charsFor = (level: number): number => 2 * pairsFor(level);
 
 /**
- * Drifttempo in u/s (1 u = 1 % der kürzeren Bühnenseite, also % der Seitenlänge je Sekunde):
- * Stufe 1–2 stehend, Stufe 3 → 3 %/s, Stufe 12 → 9 %/s.
+ * Dauer einer vollen Umdrehung in Sekunden: Stufe 1 → 60 s (sehr langsam), Stufe 12 → 20 s.
+ * Alle Zeichen drehen mit derselben Winkelgeschwindigkeit.
  */
-export function speedFor(level: number): number {
-  const L = levelOf(level);
-  return L <= 2 ? 0 : 3 + ((L - 3) * 6) / 9;
+export function periodFor(level: number): number {
+  return 60 - (40 * (levelOf(level) - 1)) / (MAX_LEVEL - MIN_LEVEL);
+}
+
+/** Winkelgeschwindigkeit ω in rad/s (immer im Uhrzeigersinn) */
+export const omegaFor = (level: number): number => (2 * Math.PI) / periodFor(level);
+
+/**
+ * Größe des Versatzes der Drehmittelpunkte als Anteil der Spielflächen-Breite (x) bzw. -Höhe (y):
+ * Stufe 1 → ±3 %, Stufe 12 → ±28 %. Die Mittelpunkte liegen je Zeichen zufällig in diesem Rechteck.
+ */
+export const OFFSET_MIN = 0.03;
+export const OFFSET_MAX = 0.28;
+export function offsetFracFor(level: number): number {
+  return OFFSET_MIN + ((OFFSET_MAX - OFFSET_MIN) * (levelOf(level) - MIN_LEVEL)) / (MAX_LEVEL - MIN_LEVEL);
 }
 
 /**
- * Mindestabstand zwischen zwei Zeichen als Anteil der Zeichengröße: ≥ 1 heißt „berühren sich nie“,
- * darunter dürfen sie sich überlappen (0,45 = höchstens etwa die Hälfte).
+ * Mindestabstand zwischen zwei Zeichen als Anteil der Zeichengröße, **zu jedem Zeitpunkt der Drehung**:
+ * ≥ 1 heißt „berühren sich nie“ (Stufe 1–5), darunter dürfen sie sich überlappen
+ * (0,45 = höchstens etwa die Hälfte).
  */
-const SEP = [1.3, 1.3, 1.0, 1.0, 1.0, 0.85, 0.75, 0.65, 0.58, 0.52, 0.48, 0.45] as const;
+const SEP = [1.3, 1.3, 1.0, 1.0, 1.0, 0.85, 0.75, 0.65, 0.55, 0.5, 0.45, 0.4] as const;
 export const separationFor = (level: number): number => SEP[levelOf(level) - 1];
 
 /**
@@ -80,7 +111,7 @@ export const separationFor = (level: number): number => SEP[levelOf(level) - 1];
  * Gemessen an der Zeichengröße, damit Handy und Tablet gleich eng werden (nicht gleich viel Prozent
  * der Bühne). Auf dem Tablet quer entspricht das 100 % der Spielfläche bei Stufe 1 und 50 % bei Stufe 12.
  */
-const AREA_PER_CHAR = [58, 44, 41.5, 31.5, 30, 23.5, 22, 17.5, 16.5, 13.5, 12, 9.7] as const;
+const AREA_PER_CHAR = [58, 44, 41.5, 31.5, 30, 23.5, 20, 15.5, 13, 10.5, 8.6, 7.2] as const;
 export const areaPerCharFor = (level: number): number => AREA_PER_CHAR[levelOf(level) - 1];
 
 /** Anteil des Spielfelds, auf dem sich die Zeichen bewegen (0,3–1), bei `area` px² je F² und Zeichen */
@@ -88,18 +119,6 @@ export function arenaFraction(area: number, chars: number, F: number, fieldArea:
   return clamp((area * chars * F * F) / Math.max(1, fieldArea), 0.3, 1);
 }
 export const arenaFractionFor = (level: number, F: number, fieldArea: number): number => arenaFraction(areaPerCharFor(level), charsFor(level), F, fieldArea);
-
-/** Anzahl Paare, die dauerhaft teilweise übereinander wandern (ab Stufe 6) */
-const BONDS = [0, 0, 0, 0, 0, 1, 1, 2, 3, 3, 4, 5] as const;
-export const bondsFor = (level: number): number => BONDS[levelOf(level) - 1];
-
-/**
- * Versatz eines überdeckten Paares in x als Anteil der Summe der halben Zeichenbreiten:
- * 1 = berühren sich gerade, kleiner = stärkere Überdeckung. Mindestens 0,45, damit beide Zeichen
- * noch zur Hälfte lesbar bleiben.
- */
-const BOND_DEPTH = [1, 1, 1, 1, 1, 0.85, 0.8, 0.75, 0.7, 0.62, 0.55, 0.5] as const;
-export const bondDepthFor = (level: number): number => BOND_DEPTH[levelOf(level) - 1];
 
 /** Zeit je Zeichen in ms, bis zu der eine Runde als geschafft zählt: 3,6 s − 0,15 s · Stufe, mindestens 1,8 s */
 export const limitPerCharMs = (level: number): number => Math.max(1800, 3600 - 150 * levelOf(level));
@@ -191,32 +210,38 @@ export function arenaRect(field: Rect, fraction: number): Rect {
 }
 
 // ---------------------------------------------------------------------------
-// Bewegung
+// Bewegung: Drehung um versetzte Mittelpunkte
 
-export interface Mover {
-  x: number;
-  y: number;
-  /** Bewegungsrichtung in rad */
-  ang: number;
-  /** Drehrate in rad/s (langsam schwankend → weiche Kurven) */
-  turn: number;
-  /** Tempo in px/s (0 = stehend) */
-  v: number;
-  hw: number;
-  hh: number;
+/** Bahn eines Zeichens: Startposition b und Drehmittelpunkt c = C + o, beide absolut in px */
+export interface Orbit {
+  bx: number;
+  by: number;
+  cx: number;
+  cy: number;
 }
 
-/** Wie schnell sich überlappende Zeichen weich auseinanderschieben dürfen (px/s) */
-export const PUSH_PX_S = 120;
-const TURN_TAU = 1.6;
-const TURN_SIGMA = 0.22;
-const TURN_MAX = 0.8;
-const BOUNCE_JITTER = 0.17;
+/** Winkel ω·t in rad für die Zeit `ms` (Millisekunden seit Rundenbeginn) */
+export const thetaAt = (omega: number, ms: number): number => (omega * ms) / 1000;
 
-type R = Pick<Rng, 'next' | 'range' | 'normal' | 'shuffle'>;
+/**
+ * Mitte des Zeichens beim Drehwinkel θ: p = c + Rot(θ)·(b − c). Bei θ > 0 dreht es im Uhrzeigersinn
+ * (y zeigt auf dem Bildschirm nach unten). Exakt, für jeden Zeitpunkt – kein Schrittverfahren.
+ */
+export function orbitPos(o: Orbit, theta: number): { x: number; y: number } {
+  const dx = o.bx - o.cx;
+  const dy = o.by - o.cy;
+  const c = Math.cos(theta);
+  const s = Math.sin(theta);
+  return { x: o.cx + dx * c - dy * s, y: o.cy + dx * s + dy * c };
+}
+
+/** Radius der Kreisbahn in px */
+export const orbitRadius = (o: Orbit): number => Math.hypot(o.bx - o.cx, o.by - o.cy);
+
+type R = Pick<Rng, 'next' | 'range'>;
 
 /** Bereich, in dem die Mitte eines Zeichens liegen darf (Zeichen bleibt ganz in der Spielfläche) */
-export function centerRange(a: Rect, m: Pick<Mover, 'hw' | 'hh'>): { minX: number; maxX: number; minY: number; maxY: number } {
+export function centerRange(a: Rect, m: Half): { minX: number; maxX: number; minY: number; maxY: number } {
   let minX = a.x + m.hw;
   let maxX = a.x + a.w - m.hw;
   let minY = a.y + m.hh;
@@ -226,236 +251,145 @@ export function centerRange(a: Rect, m: Pick<Mover, 'hw' | 'hh'>): { minX: numbe
   return { minX, maxX, minY, maxY };
 }
 
-function clampInto(a: Rect, m: Mover): void {
-  const r = centerRange(a, m);
-  m.x = clamp(m.x, r.minX, r.maxX);
-  m.y = clamp(m.y, r.minY, r.maxY);
-}
-
-/** Überdeckung zweier Zeichen in x und y (positiv = die um `sep` skalierten Kästen überlappen) */
-export function overlapOf(a: Mover, b: Mover, sep: number): { ox: number; oy: number } {
-  return {
-    ox: (a.hw + b.hw) * sep - Math.abs(b.x - a.x),
-    oy: (a.hh + b.hh) * sep - Math.abs(b.y - a.y),
-  };
-}
-
-/** Weniger als `sep` voneinander entfernt? Dann: harte Trennung (nur für die Startaufstellung) */
-function relaxHard(items: Mover[], arena: Rect, sep: number, rounds = 90): void {
-  for (let it = 0; it < rounds; it++) {
-    let moved = false;
-    for (let i = 0; i < items.length; i++) {
-      for (let j = i + 1; j < items.length; j++) {
-        const a = items[i];
-        const b = items[j];
-        const { ox, oy } = overlapOf(a, b, sep);
-        if (ox <= 0 || oy <= 0) continue;
-        moved = true;
-        if (ox <= oy) {
-          const s = (b.x >= a.x ? 1 : -1) * (ox / 2 + 0.01);
-          a.x -= s;
-          b.x += s;
-        } else {
-          const s = (b.y >= a.y ? 1 : -1) * (oy / 2 + 0.01);
-          a.y -= s;
-          b.y += s;
-        }
-      }
-    }
-    for (const m of items) clampInto(arena, m);
-    if (!moved) return;
-  }
+/** Liegt die ganze Kreisbahn (nicht nur der Start) im erlaubten Bereich? `eps` = Rundungstoleranz in px */
+export function orbitFits(o: Orbit, arena: Rect, half: Half, eps = 1e-6): boolean {
+  const r = centerRange(arena, half);
+  const rad = orbitRadius(o);
+  return o.cx - rad >= r.minX - eps && o.cx + rad <= r.maxX + eps && o.cy - rad >= r.minY - eps && o.cy + rad <= r.maxY + eps;
 }
 
 /**
- * Startaufstellung: gleichmäßig über die Spielfläche verteilt (Raster mit zufälliger Zuordnung und
- * Versatz), danach so weit auseinandergeschoben, wie es der Mindestabstand der Stufe verlangt.
- * Die Richtungen sind gleichmäßig über den Kreis verteilt und zufällig zugeordnet.
+ * Passt die Bahn ins Rechteck: Der Start wird hineingeschoben, und reicht der Kreis noch darüber
+ * hinaus, wandert der Drehmittelpunkt auf der Linie zum Start (Radius schrumpft mit). Bei Radius 0
+ * steht das Zeichen still. Ein Kreis, der schon passt, bleibt unverändert.
  */
-export function placeItems(items: Mover[], arena: Rect, sep: number, rng: R): void {
-  const n = items.length;
-  if (!n) return;
-  const aspect = arena.w / Math.max(1, arena.h);
-  const cols = Math.max(1, Math.round(Math.sqrt(n * aspect)));
-  const rows = Math.max(1, Math.ceil(n / cols));
-  const cells = rng.shuffle(Array.from({ length: cols * rows }, (_, i) => i)).slice(0, n);
-  const cw = arena.w / cols;
-  const ch = arena.h / rows;
-  const dirs = rng.shuffle(Array.from({ length: n }, (_, i) => (i / n) * Math.PI * 2));
-  const phase = rng.range(0, Math.PI * 2);
-  items.forEach((m, i) => {
-    const c = cells[i];
-    m.x = arena.x + ((c % cols) + 0.5 + rng.range(-0.38, 0.38)) * cw;
-    m.y = arena.y + (Math.floor(c / cols) + 0.5 + rng.range(-0.38, 0.38)) * ch;
-    m.ang = dirs[i] + phase + rng.range(-0.25, 0.25);
-    m.turn = 0;
-    clampInto(arena, m);
+export function fitOrbit(o: Orbit, arena: Rect, half: Half): Orbit {
+  const r = centerRange(arena, half);
+  const mx = (r.minX + r.maxX) / 2;
+  const my = (r.minY + r.maxY) / 2;
+  const Hx = (r.maxX - r.minX) / 2;
+  const Hy = (r.maxY - r.minY) / 2;
+  const bx = clamp(o.bx, r.minX, r.maxX) - mx;
+  const by = clamp(o.by, r.minY, r.maxY) - my;
+  const cx = o.cx - mx;
+  const cy = o.cy - my;
+  const rad = Math.hypot(bx - cx, by - cy);
+  let s = 1;
+  // Bedingung |c_x| + r ≤ Hx; mit c' = b + s·(c − b) gilt |c'_x| + s·r ≤ (1 − s)|b_x| + s(|c_x| + r)
+  if (Math.abs(cx) + rad > Hx) s = Math.min(s, Math.max(0, (Hx - Math.abs(bx)) / (Math.abs(cx) + rad - Math.abs(bx))));
+  if (Math.abs(cy) + rad > Hy) s = Math.min(s, Math.max(0, (Hy - Math.abs(by)) / (Math.abs(cy) + rad - Math.abs(by))));
+  return { bx: bx + mx, by: by + my, cx: bx + s * (cx - bx) + mx, cy: by + s * (cy - by) + my };
+}
+
+/** Zeitproben je Umdrehung bei der Prüfung des Mindestabstands */
+export const SEP_SAMPLES = 180;
+/** Reserve in px gegen Lücken zwischen den Zeitproben (nur bei Mindestabstand ≥ 1) */
+const SEP_SLACK = 8;
+
+/**
+ * Größte Überdeckung (px) zweier Zeichen über eine volle Umdrehung, gemessen an den mit `sep`
+ * skalierten Kästen plus `slack`; 0 = die beiden kommen sich nie zu nah. Weil beide mit gleichem ω
+ * drehen, schwankt ihr Abstand zwischen | |Δc| − |Δr| | und |Δc| + |Δr|: Liegt schon das Minimum
+ * außerhalb der Reichweite der Kästen, entfällt die Probenrechnung.
+ */
+export function pairViolation(a: Orbit, ha: Half, b: Orbit, hb: Half, sep: number, slack = 0, samples = SEP_SAMPLES): number {
+  const dc = Math.hypot(a.cx - b.cx, a.cy - b.cy);
+  const dr = Math.hypot(a.bx - a.cx - (b.bx - b.cx), a.by - a.cy - (b.by - b.cy));
+  const wx = (ha.hw + hb.hw) * sep + slack;
+  const wy = (ha.hh + hb.hh) * sep + slack;
+  if (Math.abs(dc - dr) >= Math.hypot(wx, wy)) return 0;
+  let worst = 0;
+  for (let k = 0; k < samples; k++) {
+    const th = (2 * Math.PI * k) / samples;
+    const pa = orbitPos(a, th);
+    const pb = orbitPos(b, th);
+    const ox = wx - Math.abs(pb.x - pa.x);
+    const oy = wy - Math.abs(pb.y - pa.y);
+    if (ox > 0 && oy > 0) worst = Math.max(worst, Math.min(ox, oy));
+  }
+  return worst;
+}
+
+/** Größte Überdeckung (px) über alle Paare, siehe pairViolation (für Prüfungen) */
+export function worstViolation(orbits: readonly Orbit[], halves: readonly Half[], sep: number, slack = 0, samples = SEP_SAMPLES): number {
+  let worst = 0;
+  for (let i = 0; i < orbits.length; i++) {
+    for (let j = i + 1; j < orbits.length; j++) worst = Math.max(worst, pairViolation(orbits[i], halves[i], orbits[j], halves[j], sep, slack, samples));
+  }
+  return worst;
+}
+
+export interface OrbitOptions {
+  /** Versatz als Anteil der Spielfläche (Standard: offsetFracFor(level)); 0 = starres Karussell */
+  offsetFrac?: number;
+  /** Mindestabstand (Standard: separationFor(level)) */
+  sep?: number;
+  /** Versuche je Zeichen */
+  tries?: number;
+}
+
+/**
+ * Bahnen aller Zeichen. Je Zeichen: Mittelpunkt c = C + o mit o zufällig im Rechteck
+ * ±(Anteil · Breite, Anteil · Höhe) der Spielfläche; Start b zufällig auf einer Kreisbahn um c, deren
+ * Radius so begrenzt ist, dass der ganze Kreis in der Spielfläche bleibt (nie ein Austritt, nie ein
+ * Abprall). Ein Kandidat zählt, wenn er sich mit den schon gesetzten Zeichen zu **keinem Zeitpunkt**
+ * der Umdrehung näher kommt als der Mindestabstand der Stufe (Stufe 1–5: nie berühren, danach darf
+ * teilweise überlappt werden). Gelingt das nicht, wird der Versatz schrittweise kleiner; am Ende
+ * gilt der Kandidat mit der geringsten Überdeckung.
+ */
+export function buildOrbits(halves: readonly Half[], level: number, arena: Rect, rng: R, opt: OrbitOptions = {}): Orbit[] {
+  const sep = opt.sep ?? separationFor(level);
+  const frac = Math.max(0, opt.offsetFrac ?? offsetFracFor(level));
+  const tries = Math.max(1, Math.round(opt.tries ?? 90));
+  const slack = sep >= 1 ? SEP_SLACK : 0;
+  const Ox = frac * arena.w;
+  const Oy = frac * arena.h;
+  const out: Orbit[] = [];
+  for (let i = 0; i < halves.length; i++) {
+    const r = centerRange(arena, halves[i]);
+    const Hx = (r.maxX - r.minX) / 2;
+    const Hy = (r.maxY - r.minY) / 2;
+    const mx = (r.minX + r.maxX) / 2;
+    const my = (r.minY + r.maxY) / 2;
+    let best: Orbit = { cx: mx, cy: my, bx: mx, by: my };
+    let bestScore = Infinity;
+    for (let t = 0; t < tries; t++) {
+      // Nach 60 % der Versuche rückt der Mittelpunkt schrittweise zur Mitte (kleinerer Versatz)
+      const shrink = t < tries * 0.6 ? 1 : Math.max(0.2, 1 - (0.8 * (t - tries * 0.6)) / (tries * 0.4));
+      const ox = clamp(rng.range(-Ox, Ox) * shrink, -0.6 * Hx, 0.6 * Hx);
+      const oy = clamp(rng.range(-Oy, Oy) * shrink, -0.6 * Hy, 0.6 * Hy);
+      const rmax = Math.max(0, Math.min(Hx - Math.abs(ox), Hy - Math.abs(oy)));
+      const rad = rmax * (0.15 + 0.85 * Math.sqrt(rng.next()));
+      const ang = rng.range(0, 2 * Math.PI);
+      const cand: Orbit = { cx: mx + ox, cy: my + oy, bx: mx + ox + rad * Math.cos(ang), by: my + oy + rad * Math.sin(ang) };
+      let score = 0;
+      for (let j = 0; j < out.length && score < bestScore; j++) score = Math.max(score, pairViolation(cand, halves[i], out[j], halves[j], sep, slack));
+      if (score < bestScore) {
+        best = cand;
+        bestScore = score;
+        if (score <= 0) break;
+      }
+    }
+    out.push(best);
+  }
+  return out;
+}
+
+/**
+ * Nach dem Drehen des Tablets: Die Zeichen stehen dort, wo sie gerade sind (Winkel θ), umgerechnet in die
+ * neue Spielfläche (gleichmäßig verkleinert bzw. vergrößert um die Mitte); die Bahnen werden neu
+ * eingepasst, der Winkel beginnt danach wieder bei 0.
+ */
+export function resizeOrbits(orbits: readonly Orbit[], theta: number, from: Rect, to: Rect, halves: readonly Half[]): Orbit[] {
+  const s = Math.min(to.w / Math.max(1, from.w), to.h / Math.max(1, from.h));
+  const fx = from.x + from.w / 2;
+  const fy = from.y + from.h / 2;
+  const tx = to.x + to.w / 2;
+  const ty = to.y + to.h / 2;
+  return orbits.map((o, i) => {
+    const p = orbitPos(o, theta);
+    return fitOrbit({ bx: tx + (p.x - fx) * s, by: ty + (p.y - fy) * s, cx: tx + (o.cx - fx) * s, cy: ty + (o.cy - fy) * s }, to, halves[i]);
   });
-  relaxHard(items, arena, sep);
-}
-
-// ---------------------------------------------------------------------------
-// Körper: einzelne Zeichen oder Paare, die sich als Ganzes bewegen
-
-/** Wo ein Zeichen im Körper sitzt (Versatz zur Körpermitte in px) */
-export interface Member {
-  body: number;
-  ox: number;
-  oy: number;
-}
-
-/**
- * Teilt Zeichen in Körper auf: `bonds` zufällige Paare sitzen teilweise übereinander (Versatz in x =
- * depthX · Summe der halben Breiten, in y 25–95 % der Summe der halben Höhen) und bewegen sich wie
- * ein Stück, die übrigen Zeichen sind einzeln. Rückgabe: Körper (Tempo noch 0) und je Zeichen sein Sitz.
- */
-export function buildBodies(halves: readonly Half[], bonds: number, depthX: number, rng: R): { bodies: Mover[]; members: Member[] } {
-  const n = halves.length;
-  const order = rng.shuffle(Array.from({ length: n }, (_, i) => i));
-  const nb = clamp(Math.floor(bonds), 0, Math.floor(n / 2));
-  const bodies: Mover[] = [];
-  const members: Member[] = new Array(n);
-  const mk = (hw: number, hh: number): Mover => ({ x: 0, y: 0, ang: 0, turn: 0, v: 0, hw, hh });
-  for (let b = 0; b < nb; b++) {
-    const i = order[2 * b];
-    const j = order[2 * b + 1];
-    const A = halves[i];
-    const B = halves[j];
-    const dx = (rng.next() < 0.5 ? -1 : 1) * depthX * (A.hw + B.hw);
-    const dy = (rng.next() < 0.5 ? -1 : 1) * rng.range(0.25, 0.95) * (A.hh + B.hh);
-    // Körpermitte = Mitte des gemeinsamen Kastens
-    const minX = Math.min(-dx / 2 - A.hw, dx / 2 - B.hw);
-    const maxX = Math.max(-dx / 2 + A.hw, dx / 2 + B.hw);
-    const minY = Math.min(-dy / 2 - A.hh, dy / 2 - B.hh);
-    const maxY = Math.max(-dy / 2 + A.hh, dy / 2 + B.hh);
-    const cx = (minX + maxX) / 2;
-    const cy = (minY + maxY) / 2;
-    members[i] = { body: bodies.length, ox: -dx / 2 - cx, oy: -dy / 2 - cy };
-    members[j] = { body: bodies.length, ox: dx / 2 - cx, oy: dy / 2 - cy };
-    bodies.push(mk((maxX - minX) / 2, (maxY - minY) / 2));
-  }
-  for (let q = 2 * nb; q < n; q++) {
-    const i = order[q];
-    members[i] = { body: bodies.length, ox: 0, oy: 0 };
-    bodies.push(mk(halves[i].hw, halves[i].hh));
-  }
-  return { bodies, members };
-}
-
-/** Mitte des Zeichens, das auf `m` sitzt, wenn der Körper bei (x, y) steht */
-export const seatAt = (m: Member, x: number, y: number): { x: number; y: number } => ({ x: x + m.ox, y: y + m.oy });
-
-/** Dreieckswelle: bildet einen geradlinig weitergedachten Weg zwischen zwei Wänden ab */
-export function fold(p: number, lo: number, hi: number): number {
-  if (hi <= lo) return lo;
-  const span = hi - lo;
-  let q = (p - lo) % (2 * span);
-  if (q < 0) q += 2 * span;
-  return lo + (q <= span ? q : 2 * span - q);
-}
-
-/** Wo das Zeichen nach `seconds` steht, wenn es geradeaus weiterwandert und an den Wänden abprallt */
-export function predict(m: Mover, arena: Rect, seconds: number): { x: number; y: number } {
-  const r = centerRange(arena, m);
-  return {
-    x: fold(m.x + Math.cos(m.ang) * m.v * seconds, r.minX, r.maxX),
-    y: fold(m.y + Math.sin(m.ang) * m.v * seconds, r.minY, r.maxY),
-  };
-}
-
-function wallBounce(m: Mover, arena: Rect, rng: R): void {
-  const r = centerRange(arena, m);
-  let vx = Math.cos(m.ang);
-  let vy = Math.sin(m.ang);
-  let hit = false;
-  if (m.x < r.minX) {
-    m.x = Math.min(r.maxX, 2 * r.minX - m.x);
-    vx = Math.abs(vx);
-    hit = true;
-  } else if (m.x > r.maxX) {
-    m.x = Math.max(r.minX, 2 * r.maxX - m.x);
-    vx = -Math.abs(vx);
-    hit = true;
-  }
-  if (m.y < r.minY) {
-    m.y = Math.min(r.maxY, 2 * r.minY - m.y);
-    vy = Math.abs(vy);
-    hit = true;
-  } else if (m.y > r.maxY) {
-    m.y = Math.max(r.minY, 2 * r.maxY - m.y);
-    vy = -Math.abs(vy);
-    hit = true;
-  }
-  if (!hit) return;
-  // Abprall mit leichter Richtungsänderung, aber immer von der Wand weg
-  let a = Math.atan2(vy, vx) + rng.range(-BOUNCE_JITTER, BOUNCE_JITTER);
-  let cx = Math.cos(a);
-  let cy = Math.sin(a);
-  if (m.x <= r.minX + 0.5) cx = Math.abs(cx);
-  if (m.x >= r.maxX - 0.5) cx = -Math.abs(cx);
-  if (m.y <= r.minY + 0.5) cy = Math.abs(cy);
-  if (m.y >= r.maxY - 0.5) cy = -Math.abs(cy);
-  a = Math.atan2(cy, cx);
-  m.ang = a;
-  m.turn = -m.turn * 0.5;
-}
-
-/** Zeichen, die sich zu nah kommen, weich (mit höchstens PUSH_PX_S) auseinanderschieben und abprallen lassen */
-function pushApart(items: Mover[], sep: number, dt: number, arena: Rect): void {
-  const maxStep = PUSH_PX_S * dt;
-  for (let i = 0; i < items.length; i++) {
-    for (let j = i + 1; j < items.length; j++) {
-      const a = items[i];
-      const b = items[j];
-      const { ox, oy } = overlapOf(a, b, sep);
-      if (ox <= 0 || oy <= 0) continue;
-      const alongX = ox <= oy;
-      const d = alongX ? b.x - a.x : b.y - a.y;
-      const sgn = d > 0 ? 1 : d < 0 ? -1 : (i + j) % 2 === 0 ? 1 : -1;
-      const step = Math.min(alongX ? ox : oy, maxStep) / 2;
-      if (alongX) {
-        a.x -= sgn * step;
-        b.x += sgn * step;
-      } else {
-        a.y -= sgn * step;
-        b.y += sgn * step;
-      }
-      // Bewegen sie sich aufeinander zu, tauschen sie die Geschwindigkeitsanteile entlang der Achse
-      const avx = Math.cos(a.ang) * a.v;
-      const avy = Math.sin(a.ang) * a.v;
-      const bvx = Math.cos(b.ang) * b.v;
-      const bvy = Math.sin(b.ang) * b.v;
-      if (alongX ? (avx - bvx) * sgn > 0 : (avy - bvy) * sgn > 0) {
-        if (alongX) {
-          if (a.v > 0) a.ang = Math.atan2(avy, bvx);
-          if (b.v > 0) b.ang = Math.atan2(bvy, avx);
-        } else {
-          if (a.v > 0) a.ang = Math.atan2(bvy, avx);
-          if (b.v > 0) b.ang = Math.atan2(avy, bvx);
-        }
-      }
-    }
-  }
-  for (const m of items) clampInto(arena, m);
-}
-
-/**
- * Ein Zeitschritt der Drift. Stehende Zeichen (v = 0) bleiben unverändert. Alles mit dt gerechnet,
- * also gleich schnell auf 60- und 120-Hz-Geräten.
- */
-export function stepDrift(items: Mover[], dt: number, arena: Rect, sep: number, rng: R): void {
-  let moving = false;
-  for (const m of items) {
-    if (m.v <= 0) continue;
-    moving = true;
-    m.turn += (-m.turn / TURN_TAU) * dt + TURN_SIGMA * Math.sqrt((2 / TURN_TAU) * dt) * rng.normal();
-    m.turn = clamp(m.turn, -TURN_MAX, TURN_MAX);
-    m.ang += m.turn * dt;
-    m.x += Math.cos(m.ang) * m.v * dt;
-    m.y += Math.sin(m.ang) * m.v * dt;
-    wallBounce(m, arena, rng);
-  }
-  if (moving) pushApart(items, sep, dt, arena);
 }
 
 // ---------------------------------------------------------------------------

@@ -43,7 +43,7 @@ Crossref/PubMed/PMC verifiziert):
 | Zahlenjagd | Suchen + Reihenfolge (Schulte/Trail Making) | mittel | fehlend | große Zellen, Wechselpfad 1-A-2-B mit Formen, keine Sehfeld-Behauptungen |
 | Richtung & Wort | Reiz-Antwort-Zuordnung unter Konflikt (Lage ↔ Wort) | mittel | nah schwach, Alltag fehlend | Kompatibilität schrittweise abbauen (alle Wörter passend → ein Paar vertauscht → alle gemischt), erst dann Zeichenvielfalt und weiche Frist; Lage-Kosten nur als eigener Verlauf |
 | Welche Seite? | mentale Drehung von Händen/Füßen (Links-Rechts-Urteil) | mittel | nah mittel (nur räumlich), Alltag fehlend | Drehung ändert nie die Seite, Drehwinkel-Stufen, keine Normen, keine Diagnose, kein „Test“ |
-| Zahlen-Buchstaben-Wirbel | Suchen + Zahl-Buchstabe-Wechsel, bewegte Zeichen (Trail-Making-artig) | mittel | nah schwach, Alltag fehlend | eigene Festlegung der Folge (Regel im Video nicht sichtbar), weiche Drift, keine Zeit-Normen, kein validierter Test |
+| Zahlen-Buchstaben-Wirbel | Suchen + Zahl-Buchstabe-Wechsel, bewegte Zeichen (Trail-Making-artig) | mittel | nah schwach, Alltag fehlend | eigene Festlegung der Folge (Regel im Video nicht sichtbar), Drehung um versetzte Mittelpunkte (Beobachtung des Auftraggebers), keine Zeit-Normen, kein validierter Test |
 
 ## Umgesetzte Grundprinzipien
 
