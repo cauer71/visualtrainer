@@ -12,7 +12,7 @@ export const science: ScienceEntry = {
       research:
         'Das abwechselnde Verbinden von Zahlen und Buchstaben ist das Prinzip des Trail Making Test B. In Studien hing die Zeit vor allem am Arbeitsgedächtnis und erst danach am Wechseln zwischen den Reihen; über viele Altersgruppen hinweg spiegelte sie vor allem das Verarbeitungstempo wider. Bei Wiederholung wird man deutlich schneller (Übungseffekt). Enge Abstände und Überdeckung erschweren das Erkennen (Crowding). Die Fassung mit bewegten, überlappenden Zeichen ist eine eigene Variante und nicht untersucht; dass sich Üben auf Alltag oder Sehen überträgt, ist nicht belegt.',
       improved:
-        'Ruhige Drehung um versetzte Mittelpunkte (alle Zeichen gleich schnell, der Versatz wächst Stufe für Stufe), die Dichte steigt Stufe für Stufe, getippte Zeichen bleiben blass sichtbar (die Suche wird nicht leichter), bei Überlappung hat das gesuchte Zeichen Vorrang, Fehltipps kosten keine Zeit, Hauptwert ist die Stufe statt eines Normwerts, bei „Bewegung reduzieren“ stehen die Zeichen still.',
+        'Ruhige Drehung auf Kreisen und Ellipsen um versetzte Mittelpunkte (alle Zeichen gleich schnell, ab Stufe 3 ein wachsender Teil gegenläufig, der Versatz und die Zahl der Paare bis 15 wachsen Stufe für Stufe), die Dichte steigt Stufe für Stufe, getippte Zeichen bleiben blass sichtbar (die Suche wird nicht leichter), bei Überlappung hat das gesuchte Zeichen Vorrang, Fehltipps kosten keine Zeit, Hauptwert ist die Stufe statt eines Normwerts, bei „Bewegung reduzieren“ stehen die Zeichen still.',
     },
     it: {
       trains: 'Passare da una serie di numeri a una di lettere, tenendo d’occhio simboli in movimento e in parte sovrapposti.',
@@ -20,7 +20,7 @@ export const science: ScienceEntry = {
       research:
         'Collegare in alternanza numeri e lettere è il principio del Trail Making Test B. Negli studi il tempo dipendeva soprattutto dalla memoria di lavoro e solo dopo dal passaggio tra le serie; in molte fasce d’età rifletteva soprattutto la velocità di elaborazione. Ripetendo il compito si diventa nettamente più veloci (effetto della pratica). Distanze ridotte e sovrapposizioni rendono più difficile il riconoscimento (crowding). La versione con simboli in movimento e sovrapposti è una variante propria e non è stata studiata; che l’esercizio si trasferisca alla vita quotidiana o alla vista non è dimostrato.',
       improved:
-        'Rotazione calma attorno a centri sfalsati (tutti i simboli alla stessa velocità, lo sfalsamento cresce livello dopo livello), la densità cresce livello dopo livello, i simboli toccati restano visibili ma più chiari (la ricerca non diventa più facile), in caso di sovrapposizione ha la precedenza il simbolo cercato, i tocchi sbagliati non costano tempo, il valore principale è il livello e non una norma, con “Riduci movimento” i simboli restano fermi.',
+        'Rotazione calma su cerchi ed ellissi attorno a centri sfalsati (tutti i simboli alla stessa velocità, dal livello 3 una parte crescente in senso opposto, lo sfalsamento e il numero di coppie fino a 15 crescono livello dopo livello), la densità cresce livello dopo livello, i simboli toccati restano visibili ma più chiari (la ricerca non diventa più facile), in caso di sovrapposizione ha la precedenza il simbolo cercato, i tocchi sbagliati non costano tempo, il valore principale è il livello e non una norma, con “Riduci movimento” i simboli restano fermi.',
     },
   },
   sources: [
