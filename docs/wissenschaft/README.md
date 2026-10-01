@@ -1,12 +1,13 @@
 # Wissenschaftliche Recherche – Überblick
 
-Stand: 29.09.2026. Drei ausführliche Dokumente mit zusammen über 300 geprüften Quellen (jede DOI per
+Stand: 01.10.2026. Fünf ausführliche Dokumente mit zusammen über 300 geprüften Quellen (jede DOI per
 Crossref/PubMed/PMC verifiziert):
 
 1. [Reaktion & Impulskontrolle](01-reaktion-und-impulskontrolle.md) – Blitzreaktion, Stopp & Los, allgemeine Trainingsprinzipien, **Rechtliches & Formulierungen**
 2. [Bewegung verfolgen](02-bewegung-verfolgen.md) – Kugel-Detektiv, Scharf in Bewegung, Zielfang, Umrechnung Bildschirm → Sehwinkel
 3. [Wahrnehmen & Erfassen](03-wahrnehmen-und-erfassen.md) – Punktlandung, Suchbild, Blitzblick, Aus dem Takt, **Sicherheit (Flimmern/Epilepsie)**, Ausblick Kontrasttraining
 4. [Konzentration & Denken](04-konzentration-und-denken.md) – Pfeil-Duell (statt Stroop/Wahlreaktion), Zeichen-Code (Symbol-Ziffern), Weichensteller (Aufgabenwechsel), Doppelt gefordert (Dual-Task), Reihen-Rätsel, Wachposten (Daueraufmerksamkeit), Zahlenjagd (Schulte/Trail Making); warum RSVP-Schnelllesen entfällt
+5. [Links/Rechts, Richtung und Zahl-Buchstabe-Folgen](05-links-rechts-und-richtung.md) – Vergleich der drei Videospiele einer Reha-/Neuro-Trainingssoftware mit der Studienlage: Richtung & Wort (Reiz-Antwort-Kompatibilität, Stroop-/Simon-Konflikt), Welche Seite? (mentale Drehung von Körperteilen; sachliche Einordnung der Aussage „typische Pathologie“), Zahlen-Buchstaben-Wirbel (Trail Making mit Bewegung ist kein validierter Test)
 
 ## Das Wichtigste in fünf Sätzen
 
@@ -40,6 +41,9 @@ Crossref/PubMed/PMC verifiziert):
 | Reihen-Rätsel | schlussfolgerndes Denken | stark (ACTIVE) | schwach–mittel | neu; ohne Zeitdruck, Regel wird erklärt |
 | Wachposten | Daueraufmerksamkeit | mittel | fehlend | seltene Ziele (kein SART, keine Dublette zu Stopp & Los), d′ je Hälfte |
 | Zahlenjagd | Suchen + Reihenfolge (Schulte/Trail Making) | mittel | fehlend | große Zellen, Wechselpfad 1-A-2-B mit Formen, keine Sehfeld-Behauptungen |
+| Richtung & Wort | Reiz-Antwort-Zuordnung unter Konflikt (Lage ↔ Wort) | mittel | nah schwach, Alltag fehlend | Kompatibilität schrittweise abbauen (alle Wörter passend → ein Paar vertauscht → alle gemischt), erst dann Zeichenvielfalt und weiche Frist; Lage-Kosten nur als eigener Verlauf |
+| Welche Seite? | mentale Drehung von Händen/Füßen (Links-Rechts-Urteil) | mittel | nah mittel (nur räumlich), Alltag fehlend | Drehung ändert nie die Seite, Drehwinkel-Stufen, keine Normen, keine Diagnose, kein „Test“ |
+| Zahlen-Buchstaben-Wirbel | Suchen + Zahl-Buchstabe-Wechsel, bewegte Zeichen (Trail-Making-artig) | mittel | nah schwach, Alltag fehlend | eigene Festlegung der Folge (Regel im Video nicht sichtbar), weiche Drift, keine Zeit-Normen, kein validierter Test |
 
 ## Umgesetzte Grundprinzipien
 

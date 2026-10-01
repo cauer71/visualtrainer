@@ -1,6 +1,6 @@
 {
  "stand": "2026-09-29",
- "anzahl": 82,
+ "anzahl": 85,
  "uebungen": [
   {
    "nr": 101,
@@ -12286,6 +12286,423 @@
     "Regel erkennen"
    ],
    "datei": "uebungen/901-reihen-raetsel.md"
+  },
+  {
+   "nr": 902,
+   "kennung": "richtung-wort",
+   "name": "Richtung & Wort (Richtungszeichen dem passenden Wort zuordnen)",
+   "name_original": "– (Handyvideo einer Reha-/Neuro-Trainingssoftware, kein Titel erkennbar)",
+   "kapitel": "Eigene Blickfit-Übungen",
+   "kapitel_original": "",
+   "unterkapitel_original": "",
+   "blickfit_umsetzung": {
+    "kennung": "richtung-wort",
+    "name": "Richtung & Wort",
+    "unterschiede": "Eigene Umsetzung nach einem Handyvideo (Beobachtung, keine Online-Quelle); Zeichen und Ablauf sind nicht kopiert. Wissenschaftlich begründet geändert: 12 Stufen (Treppe, 3 richtig = schwerer, 1 Fehler = leichter) bauen die Reiz-Antwort-Kompatibilität schrittweise ab (alle Wörter an passender Lage, dann ein Paar vertauscht, dann alle gemischt); erst danach mehr Zeichenfamilien (Pfeil im Kasten, Schrägpfeil in blauer Scheibe, Dreieck mit Kurve; alle selbst gezeichnet) und eine weiche Antwortfrist (grob 5 bis 3 s, ohne Strafe). Zusatzwerte nur im Vergleich mit sich selbst (Lage-Kosten, Lage- und Achsenfehler). Sanfte Haken/Kreuz-Rückmeldung, Touch, DE/IT. Zahlen können sich noch ändern."
+   },
+   "stand": "2026-10-01",
+   "kurzbeschreibung": "Oben erscheint ein Richtungszeichen (Pfeil, Schild mit Schrägpfeil, Kurve). Unten stehen vier grüne Felder in Kreuzanordnung, jedes mit einem Wort (OBEN, UNTEN, LINKS, RECHTS). Man tippt das Feld, dessen Wort die Richtung nennt – die Wörter stehen nicht immer an der passenden Stelle.",
+   "ziel_funktionen": [
+    "inhibition",
+    "entscheidung_wahlreaktion"
+   ],
+   "eingabe": [
+    "touch"
+   ],
+   "tablet_geeignet": "ja",
+   "dauer_sekunden": 100,
+   "schwierigkeit_anpassung": "Blickfit (Stand der Spezifikation, Zahlen grob): 12 Stufen, Treppe 3 richtig in Folge = eine Stufe schwerer, 1 Fehler = leichter (Ziel ≈ 79 % richtig). Stufe 1–3: alle Wörter an passender Lage, nur Pfeile. Stufe 4–6: zwei Wörter vertauscht. Stufe 7–9: alle Wörter gemischt, dazu Schrägpfeil und Kurvendreieck. Stufe 10–12: zusätzlich weiche Antwortfrist (ca. 5 → 3 s, Überschreiten ohne Strafe) und unvorhersehbare Anordnung. Original: aus dem Video nicht erkennbar (kein Level sichtbar).",
+   "messgroessen": [
+    "Hauptwert: erreichte Stufe (Schwelle der Treppe)",
+    "Treffer in %",
+    "Ø Zeit richtig (ms) bei passender Lage und bei abweichender Lage; die Differenz ist der persönliche „Lage-Kosten“-Wert (nur Vergleich mit früher auf diesem Gerät)",
+    "Lage-Fehler (getipptes Feld liegt dort, wo die Richtung wäre, trägt aber ein anderes Wort)",
+    "Achsenfehler (z. B. UNTEN statt LINKS beim Schrägpfeil)",
+    "Original: keine Auswertung im Video zu sehen"
+   ],
+   "anforderungsprofil": {
+    "visuell": {
+     "sehschaerfe_detail": 1,
+     "kontrast": 1,
+     "farbunterscheidung": 0,
+     "stereosehen": 0,
+     "peripheres_sehen": 1,
+     "nutzbares_sehfeld": 1,
+     "blickfolge": 0,
+     "sakkaden": 2,
+     "fixation": 0,
+     "bewegungswahrnehmung": 0,
+     "visuelle_suche": 2,
+     "visuelle_verarbeitungsgeschwindigkeit": 1,
+     "zeitliche_aufloesung": 0,
+     "naharbeit_dauer": 1
+    },
+    "kognitiv": {
+     "daueraufmerksamkeit": 1,
+     "selektive_aufmerksamkeit": 2,
+     "inhibition": 3,
+     "geteilte_aufmerksamkeit": 0,
+     "kognitive_flexibilitaet": 1,
+     "arbeitsgedaechtnis": 1,
+     "kurzzeitgedaechtnis_verbal": 0,
+     "kurzzeitgedaechtnis_visuell_raeumlich": 0,
+     "verarbeitungsgeschwindigkeit": 2,
+     "antizipation": 0,
+     "entscheidung_wahlreaktion": 3,
+     "lesen_sprache": 2,
+     "schlussfolgern": 0
+    },
+    "motorisch": {
+     "einfache_reaktion": 0,
+     "auge_hand_koordination": 1,
+     "zielbewegung_tempo": 1,
+     "zielbewegung_praezision": 1,
+     "kontinuierliche_steuerung": 0,
+     "ruhige_hand": 0,
+     "fingergeschwindigkeit": 0,
+     "fingersequenz_bimanual": 0,
+     "ganzkoerper": 0,
+     "gleichgewicht": 0,
+     "ausdauer_belastung": 0
+    }
+   },
+   "belastung": {
+    "zeitdruck": 1,
+    "flimmern_lichtreize": 0,
+    "bewegungsreize_schwindel": 0,
+    "koerperliche_belastung": 0,
+    "sturzrisiko": 0,
+    "sprachabhaengigkeit": 3
+   },
+   "voraussetzungen": [
+    "Die Wörter LINKS, RECHTS, OBEN, UNTEN (Italienisch: SINISTRA, DESTRA, ALTO, BASSO) lesen können",
+    "Richtungen links/rechts/oben/unten sicher benennen können",
+    "Schrift von etwa 30 px (≈ 0,8° bei 40 cm Tablet-Abstand, eigene Rechnung) auf grünem Feld lesen können",
+    "Mit dem Finger Felder von mindestens 72 px Höhe (≈ 14 mm) treffen können"
+   ],
+   "vorsicht_bei": [
+    "lese_rechtschreib_schwaeche",
+    "kognitive_einschraenkung",
+    "aufmerksamkeitsprobleme",
+    "kinder_unter_6",
+    "sehbehinderung_niedriger_visus",
+    "presbyopie_gleitsicht"
+   ],
+   "geeignet_fuer": [
+    "Reiz-Antwort-Zuordnung und den Umgang mit Konflikt zwischen Lage und Wort in ruhigem Tempo üben",
+    "Lesen statt Raten: das passende Wort im Feldkreuz suchen, wenn die Lage nicht hilft",
+    "schrittweise Steigerung von „alles passt“ zu „alles gemischt“ ohne Zeitdruck in den unteren Stufen",
+    "Vergleich mit sich selbst: der eigene Lage-Kosten-Wert über mehrere Sitzungen"
+   ],
+   "weniger_geeignet_fuer": [
+    "reine Reaktionsschnelligkeit (dafür Einfachreaktion, 101/503)",
+    "Menschen, die die Wörter nicht lesen können, oder Kinder unter etwa 6 Jahren",
+    "Blickfolge, Peripherie oder Handgenauigkeit üben",
+    "Diagnose oder Normvergleich (nicht vorgesehen, nicht möglich)"
+   ],
+   "evidenz": {
+    "uebungseffekt": "mittel",
+    "naher_transfer": "schwach",
+    "alltag_transfer": "fehlend",
+    "kommentar": "Kompatibilitäts- und Stroop-/Simon-Effekte sind robust; sie werden mit Übung kleiner, verschwinden aber nicht (Dutta & Proctor, 1992), und Stroop-Übung bei Älteren übertrug sich nicht auf andere Aufgaben (Wilkinson & Yang, 2012). Für diese Übung gibt es keine Studie – die Einstufung gilt für die Aufgabenart, nicht für diese Übung."
+   },
+   "aehnliche_uebungen": [
+    201,
+    202,
+    703,
+    207,
+    901
+   ],
+   "stichworte": [
+    "Reiz-Antwort-Kompatibilität",
+    "räumlicher Stroop",
+    "Simon-Effekt",
+    "Wort-Lage-Konflikt",
+    "Hick-Hyman",
+    "Wahlreaktion",
+    "Richtungswörter",
+    "Lage-Kosten",
+    "Reha-Software",
+    "kein Zeitdruck in den unteren Stufen"
+   ],
+   "datei": "uebungen/902-richtung-wort.md"
+  },
+  {
+   "nr": 903,
+   "kennung": "seite-erkennen",
+   "name": "Welche Seite? (Hand oder Fuß als rechts oder links erkennen)",
+   "name_original": "– (Handyvideo einer Reha-/Neuro-Trainingssoftware, kein Titel erkennbar)",
+   "kapitel": "Eigene Blickfit-Übungen",
+   "kapitel_original": "",
+   "unterkapitel_original": "",
+   "blickfit_umsetzung": {
+    "kennung": "seite-erkennen",
+    "name": "Welche Seite?",
+    "unterschiede": "Eigene Umsetzung nach einem Handyvideo (Beobachtung, keine Online-Quelle); Zeichnungen prozedural selbst erzeugt (zwei Seiten = Spiegelbild, eindeutige Merkmale wie Daumen/große Zehe, Handfläche/Handrücken, Fußsohle/Fußrücken). Die Drehung ändert nie die Seite (Drehung ist keine Spiegelung). Stufen 1-12: erst nur Hände aufrecht mit zwei Feldern (LINKS links, RECHTS rechts), dann Füße und Unterarme sowie 180°, dann ±90° und vertauschte Felder, zuletzt vier Felder (OBEN und UNTEN nie richtig) und weiche Antwortfrist (grob 6 bis 3,5 s). Hauptwert Stufe (Treppe); Zusatzwerte nur im Vergleich mit sich selbst. Keine Normen, keine Diagnose, kein Test. Zahlen können sich noch ändern."
+   },
+   "stand": "2026-10-01",
+   "kurzbeschreibung": "In einem hellen Kreis erscheint die Strichzeichnung eines Körperteils (Hand, Unterarm mit Hand, Fuß), mal von der einen, mal von der anderen Seite, mal gedreht. Man entscheidet, ob es die rechte oder die linke Hand bzw. der rechte oder linke Fuß ist, und tippt LINKS oder RECHTS.",
+   "ziel_funktionen": [
+    "kurzzeitgedaechtnis_visuell_raeumlich"
+   ],
+   "eingabe": [
+    "touch"
+   ],
+   "tablet_geeignet": "ja",
+   "dauer_sekunden": 100,
+   "schwierigkeit_anpassung": "Blickfit (Stand der Spezifikation, Zahlen grob): 12 Stufen, Treppe (3 richtig in Folge = schwerer, 1 Fehler = leichter). Stufe 1–3: nur Hände, aufrecht oder leicht schräg, zwei Felder (LINKS links, RECHTS rechts). Stufe 4–6: Füße und Unterarme dazu, 180°. Stufe 7–9: ±90° dazu, die beiden Felder tauschen zufällig ihre Seiten (Wortlesen nötig). Stufe 10–12: vier Felder (OBEN und UNTEN sind nie richtig), Wörter gemischt, weiche Antwortfrist (ca. 6 → 3,5 s). Original: aus dem Video nicht erkennbar.",
+   "messgroessen": [
+    "Hauptwert: erreichte Stufe (Schwelle der Treppe)",
+    "Treffer in %",
+    "Ø Zeit (ms) bei 0°/180° und bei ±90°; die Differenz („Dreh-Kosten“) nur im Vergleich mit früher auf diesem Gerät",
+    "Seitenverwechslungen (links statt rechts und umgekehrt)",
+    "Original: eine Ergebnisseite am Ende des Videos, Inhalt nicht lesbar"
+   ],
+   "anforderungsprofil": {
+    "visuell": {
+     "sehschaerfe_detail": 2,
+     "kontrast": 1,
+     "farbunterscheidung": 0,
+     "stereosehen": 0,
+     "peripheres_sehen": 0,
+     "nutzbares_sehfeld": 1,
+     "blickfolge": 0,
+     "sakkaden": 1,
+     "fixation": 0,
+     "bewegungswahrnehmung": 0,
+     "visuelle_suche": 1,
+     "visuelle_verarbeitungsgeschwindigkeit": 1,
+     "zeitliche_aufloesung": 0,
+     "naharbeit_dauer": 1
+    },
+    "kognitiv": {
+     "daueraufmerksamkeit": 1,
+     "selektive_aufmerksamkeit": 1,
+     "inhibition": 1,
+     "geteilte_aufmerksamkeit": 0,
+     "kognitive_flexibilitaet": 1,
+     "arbeitsgedaechtnis": 2,
+     "kurzzeitgedaechtnis_verbal": 0,
+     "kurzzeitgedaechtnis_visuell_raeumlich": 3,
+     "verarbeitungsgeschwindigkeit": 1,
+     "antizipation": 0,
+     "entscheidung_wahlreaktion": 1,
+     "lesen_sprache": 1,
+     "schlussfolgern": 0
+    },
+    "motorisch": {
+     "einfache_reaktion": 0,
+     "auge_hand_koordination": 1,
+     "zielbewegung_tempo": 0,
+     "zielbewegung_praezision": 1,
+     "kontinuierliche_steuerung": 0,
+     "ruhige_hand": 0,
+     "fingergeschwindigkeit": 0,
+     "fingersequenz_bimanual": 0,
+     "ganzkoerper": 0,
+     "gleichgewicht": 0,
+     "ausdauer_belastung": 0
+    }
+   },
+   "belastung": {
+    "zeitdruck": 1,
+    "flimmern_lichtreize": 0,
+    "bewegungsreize_schwindel": 0,
+    "koerperliche_belastung": 0,
+    "sturzrisiko": 0,
+    "sprachabhaengigkeit": 2
+   },
+   "voraussetzungen": [
+    "Hand, Unterarm und Fuß als Zeichnung erkennen; Daumen und große Zehe unterscheiden können",
+    "Die Begriffe links und rechts (LINKS/RECHTS, IT: SINISTRA/DESTRA) kennen und lesen können",
+    "Feine Linien einer Strichzeichnung im hellen Kreis erkennen (Merkmale wie Nägel, Beugefalten, Wölbung)",
+    "Mit dem Finger Felder von mindestens 72 px Höhe (≈ 14 mm) treffen können"
+   ],
+   "vorsicht_bei": [
+    "kognitive_einschraenkung",
+    "kinder_unter_6",
+    "sehbehinderung_niedriger_visus",
+    "presbyopie_gleitsicht"
+   ],
+   "geeignet_fuer": [
+    "räumliches Vorstellen üben: ein Bild im Kopf drehen und mit der eigenen Hand/dem eigenen Fuß vergleichen",
+    "ruhiges Tempo mit schrittweise steigender Drehung (0°, 180°, ±90°)",
+    "Abwechslung zu Reaktions- und Blickübungen, die Auge und Vorstellung verbindet",
+    "Vergleich mit sich selbst über mehrere Sitzungen (kein Normvergleich)"
+   ],
+   "weniger_geeignet_fuer": [
+    "Reaktionsschnelligkeit, Blickfolge oder Handgenauigkeit üben",
+    "Menschen, die Links und Rechts nicht lesen oder benennen können (sprachabhängig, siehe Abschnitt 7)",
+    "Diagnose, Screening oder Verlaufskontrolle von Krankheiten – nicht vorgesehen und nicht möglich",
+    "Kinder unter etwa 6 Jahren"
+   ],
+   "evidenz": {
+    "uebungseffekt": "mittel",
+    "naher_transfer": "mittel",
+    "alltag_transfer": "fehlend",
+    "kommentar": "Räumliches Training verbesserte in einer Metaanalyse (217 Studien) sowohl geübte als auch ungeübte räumliche Aufgaben, g ≈ 0,47 (Uttal et al., 2013). Zur Links-Rechts-Beurteilung von Körperteilen selbst gibt es kaum Trainingsstudien; als alleinige Übung zeigte sie bei chronischem Schmerz keinen Effekt (Bowering et al., 2013; kleine, methodisch schwache Studien). Für diese Übung gibt es keine Studie – die Einstufung gilt für die Aufgabenart."
+   },
+   "aehnliche_uebungen": [
+    902,
+    103,
+    605,
+    811
+   ],
+   "stichworte": [
+    "mentale Rotation",
+    "motorische Vorstellung",
+    "Händigkeit",
+    "Links-Rechts-Urteil",
+    "Hand-Lateralitätsaufgabe",
+    "Körperteile",
+    "Drehwinkel",
+    "Chiralität",
+    "Reha-Software",
+    "kein Test",
+    "keine Diagnose"
+   ],
+   "datei": "uebungen/903-seite-erkennen.md"
+  },
+  {
+   "nr": 904,
+   "kennung": "zahl-buchstabe-wirbel",
+   "name": "Zahlen-Buchstaben-Wirbel (bewegte Zeichen abwechselnd in Folge antippen)",
+   "name_original": "– (Handyvideo einer Reha-/Neuro-Trainingssoftware, kein Titel erkennbar, keine Regel sichtbar)",
+   "kapitel": "Eigene Blickfit-Übungen",
+   "kapitel_original": "",
+   "unterkapitel_original": "",
+   "blickfit_umsetzung": {
+    "kennung": "zahl-buchstabe-wirbel",
+    "name": "Zahlen-Buchstaben-Wirbel",
+    "unterschiede": "Eigene Umsetzung nach einem Handyvideo (Beobachtung, keine Online-Quelle). Im Video war keine Regel zu sehen; Blickfit setzt die Annahme einer abwechselnden Folge um (1 - A - 2 - B ...; Trail-Making-B-artig) mit weich driftenden, sich teils überlappenden Zeichen und dem Hinweis oben („Als Nächstes: B“). Getippte Zeichen bleiben blass sichtbar (kein Verschwinden). Stufen 1-12 (Treppe 2 richtig = schwerer, 1 Fehler = leichter): Paare 3 bis 9, Drift von stehend (Stufe 1-2) bis grob 9 % der Seitenlänge pro Sekunde, Überlappung steigend; bei Überlappung gilt das nächste Ziel bevorzugt. Hauptwert Stufe; Zusatzwerte nur im Vergleich mit sich selbst. Keine Normen. Trail Making mit Bewegung ist kein validiertes Verfahren. Zahlen können sich noch ändern."
+   },
+   "stand": "2026-10-01",
+   "kurzbeschreibung": "Zahlen und Buchstaben treiben langsam über eine helle Fläche und überlappen sich zeitweise. Man tippt sie abwechselnd in aufsteigender Folge an (1 – A – 2 – B – 3 – C …); oben steht, was als Nächstes dran ist. Im Video war die Regel nicht zu sehen, die Folge ist eine Annahme.",
+   "ziel_funktionen": [
+    "visuelle_suche",
+    "kognitive_flexibilitaet"
+   ],
+   "eingabe": [
+    "touch"
+   ],
+   "tablet_geeignet": "ja",
+   "dauer_sekunden": 150,
+   "schwierigkeit_anpassung": "Blickfit (Stand der Spezifikation, Zahlen grob): 12 Stufen, Treppe 2 richtig in Folge = eine Stufe schwerer, 1 Fehler = leichter. Anzahl Paare 3 → 9 (Zeichen 6 → 18), Drift stehend (Stufe 1–2) → ca. 3 % der Seitenlänge pro Sekunde → ca. 9 %/s, Überlappung steigend (ab Stufe 6 häufiger). Erfolg einer Runde: höchstens 1 Fehltipp und Zeit je Zeichen unter einer Grenze (3,6 s minus 0,15 s je Stufe, mindestens 1,8 s). Original: im Video nicht erkennbar.",
+   "messgroessen": [
+    "Hauptwert: erreichte Stufe (Schwelle der Treppe)",
+    "Ø Sekunden je Zeichen (nur Vergleich mit früher auf diesem Gerät, keine Normen)",
+    "Fehltipps",
+    "Paare der letzten gelösten Runde",
+    "Wechselkosten (Zahl → Buchstabe vs. Buchstabe → Zahl) nur, falls sinnvoll; ein klassischer Wechselzuschlag bräuchte eine Vergleichsrunde ohne Wechsel",
+    "Original: im Video keine Auswertung erkennbar"
+   ],
+   "anforderungsprofil": {
+    "visuell": {
+     "sehschaerfe_detail": 2,
+     "kontrast": 1,
+     "farbunterscheidung": 0,
+     "stereosehen": 0,
+     "peripheres_sehen": 1,
+     "nutzbares_sehfeld": 2,
+     "blickfolge": 1,
+     "sakkaden": 2,
+     "fixation": 0,
+     "bewegungswahrnehmung": 1,
+     "visuelle_suche": 3,
+     "visuelle_verarbeitungsgeschwindigkeit": 1,
+     "zeitliche_aufloesung": 0,
+     "naharbeit_dauer": 1
+    },
+    "kognitiv": {
+     "daueraufmerksamkeit": 1,
+     "selektive_aufmerksamkeit": 2,
+     "inhibition": 1,
+     "geteilte_aufmerksamkeit": 1,
+     "kognitive_flexibilitaet": 3,
+     "arbeitsgedaechtnis": 2,
+     "kurzzeitgedaechtnis_verbal": 0,
+     "kurzzeitgedaechtnis_visuell_raeumlich": 1,
+     "verarbeitungsgeschwindigkeit": 2,
+     "antizipation": 1,
+     "entscheidung_wahlreaktion": 0,
+     "lesen_sprache": 1,
+     "schlussfolgern": 0
+    },
+    "motorisch": {
+     "einfache_reaktion": 0,
+     "auge_hand_koordination": 2,
+     "zielbewegung_tempo": 2,
+     "zielbewegung_praezision": 2,
+     "kontinuierliche_steuerung": 0,
+     "ruhige_hand": 0,
+     "fingergeschwindigkeit": 1,
+     "fingersequenz_bimanual": 0,
+     "ganzkoerper": 0,
+     "gleichgewicht": 0,
+     "ausdauer_belastung": 0
+    }
+   },
+   "belastung": {
+    "zeitdruck": 2,
+    "flimmern_lichtreize": 0,
+    "bewegungsreize_schwindel": 1,
+    "koerperliche_belastung": 0,
+    "sturzrisiko": 0,
+    "sprachabhaengigkeit": 1
+   },
+   "voraussetzungen": [
+    "Zahlen bis 18 und die Buchstaben A bis I in der Reihenfolge des Alphabets sicher kennen",
+    "Zeichen von mindestens etwa 34 px (≈ 0,9° bei 40 cm Tablet-Abstand, eigene Rechnung) auch bei Überlappung erkennen",
+    "Ein Spielfeld, das ohne Kopfdrehen überblickt werden kann (Tablet quer oder hoch)",
+    "Mit dem Finger bewegte Zeichen treffen können (Trefferfläche mindestens 56 px)"
+   ],
+   "vorsicht_bei": [
+    "kognitive_einschraenkung",
+    "aufmerksamkeitsprobleme",
+    "sehbehinderung_niedriger_visus",
+    "presbyopie_gleitsicht",
+    "gesichtsfeldausfall",
+    "schwindel_vestibulaer",
+    "lese_rechtschreib_schwaeche"
+   ],
+   "geeignet_fuer": [
+    "geordnetes Suchen und Wechseln zwischen zwei Folgen (Zahl, Buchstabe) üben",
+    "Suchen und Tippen bei langsamer Bewegung und teilweiser Überlappung üben",
+    "schrittweise steigende Zeichenzahl, zunächst stehend, ohne Zeitdruck im Display",
+    "Selbstvergleich: Sekunden je Zeichen über mehrere Sitzungen auf demselben Gerät"
+   ],
+   "weniger_geeignet_fuer": [
+    "Messung oder Diagnose von Aufmerksamkeit, Exekutivfunktion oder Verarbeitungstempo (kein validiertes Verfahren, keine Normen)",
+    "Menschen mit Schwindel bei bewegten Mustern, es sei denn der Modus „stehend“ ist aktiv",
+    "Menschen ohne sichere Alphabetkenntnis",
+    "Blickfolge, Reaktion oder Handgenauigkeit gezielt üben"
+   ],
+   "evidenz": {
+    "uebungseffekt": "mittel",
+    "naher_transfer": "schwach",
+    "alltag_transfer": "fehlend",
+    "kommentar": "Beim klassischen Trail Making gibt es deutliche Übungseffekte, auch mit Parallelformen (Buck et al., 2008; Calamia et al., 2012), und die Zeiten spiegeln vor allem Verarbeitungstempo und fluide Fähigkeiten (Salthouse, 2011). Die bewegte, überlappende Variante ist nicht untersucht; Trail Making mit Bewegung ist kein validierter Test. Die Einstufung gilt für die Aufgabenart, nicht für diese Übung."
+   },
+   "aehnliche_uebungen": [
+    204,
+    708,
+    106,
+    202,
+    206
+   ],
+   "stichworte": [
+    "Trail Making",
+    "Zahl-Buchstabe-Wechsel",
+    "kognitive Flexibilität",
+    "visuelle Suche",
+    "Verdeckung",
+    "Crowding",
+    "bewegte Ziele",
+    "Reha-Software",
+    "keine Normen",
+    "kein validierter Test"
+   ],
+   "datei": "uebungen/904-zahl-buchstabe-wirbel.md"
   }
  ]
 }
