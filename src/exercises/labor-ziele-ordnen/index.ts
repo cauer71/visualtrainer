@@ -82,7 +82,9 @@ class ZieleOrdnen implements Exercise {
     const calib = calibOf(ctx);
     let p: OrderParams = this.demo ? { ...base, ...DEMO_PARAMS } : base;
     if (!this.demo && ctx.quick) {
-      p = { ...p, count: Math.min(p.count, QUICK_COUNT), timeLimitS: p.timeLimitS > 0 ? Math.min(p.timeLimitS, QUICK_MAX_S) : QUICK_MAX_S };
+      // Sicherheitsnetz nur für den automatischen Lauf (Tests); wer selbst im Schnellmodus spielt, bekommt kein verstecktes Limit
+      const limit = ctx.autoplay ? (p.timeLimitS > 0 ? Math.min(p.timeLimitS, QUICK_MAX_S) : QUICK_MAX_S) : p.timeLimitS;
+      p = { ...p, count: Math.min(p.count, QUICK_COUNT), timeLimitS: limit };
     }
     this.p = { ...p, sizeCm: calib.fitCm(p.sizeCm) };
     const f = this.field();

@@ -297,7 +297,7 @@ describe('Texte', () => {
       expect(t.metrics[s.result!.primary.key]).toBeTruthy();
       for (const m of s.result!.secondary) expect(t.metrics[m.key], m.key).toBeTruthy();
       for (const k of ['few', 'false_start', 'aim', 'slow', 'harder', 'steady', 'compare']) expect(t.tips[k], k).toBeTruthy();
-      for (const k of ['label', 'start', 'hold', 'hintIdle', 'hintArmed', 'falseStart', 'late', 'noTarget', 'moreTitle', 'moreNote']) expect(t.feedback[k], k).toBeTruthy();
+      for (const k of ['label', 'start', 'hold', 'hintIdle', 'hintArmed', 'hintGo', 'falseStart', 'late', 'noTarget', 'moreTitle', 'moreNote']) expect(t.feedback[k], k).toBeTruthy();
     }
   });
 

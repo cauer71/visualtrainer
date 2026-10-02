@@ -456,7 +456,8 @@ class StartZiel implements Exercise {
     let line = '';
     if (this.msg) line = texts.feedback[this.msg.key];
     else if (s.state === 'idle') line = texts.feedback.hintIdle;
-    else if (s.state === 'armed' || s.state === 'go') line = texts.feedback.hintArmed;
+    else if (s.state === 'armed') line = texts.feedback.hintArmed;
+    else if (s.state === 'go') line = texts.feedback.hintGo;
     if (line && this.started) text(g, line, w / 2, Math.max(tsize * 0.9, f.y * 0.5), tsize, this.msg ? C.fg : C.dim, { weight: 700 });
     // Startfläche
     const hp = this.toPx(s.home.x, s.home.y);
