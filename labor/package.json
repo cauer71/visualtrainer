@@ -1,0 +1,11 @@
+{
+  "name": "visualtrainer-labor",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Visual Trainer Labor – eigenständiger, vollständig offline lauffähiger Prototyp (reines HTML/JS) mit 14 Übungen, Anleitungen und Tests",
+  "type": "commonjs",
+  "scripts": {
+    "test": "node --test \"test/*.test.js\"",
+    "docs": "node tools/gen-docs.js"
+  }
+}
