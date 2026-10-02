@@ -91,6 +91,7 @@ import { musterNachzeichnen } from './muster-nachzeichnen';
 import { richtungWort } from './richtung-wort';
 import { seiteErkennen } from './seite-erkennen';
 import { zahlBuchstabeWirbel } from './zahl-buchstabe-wirbel';
+import { vierZieleWechsel } from './vier-ziele-wechsel';
 
 /** Reihenfolge = Anzeige-Reihenfolge innerhalb der Bereiche */
 export const EXERCISES: ExerciseDefinition[] = [
@@ -178,6 +179,7 @@ export const EXERCISES: ExerciseDefinition[] = [
   richtungWort,
   seiteErkennen,
   zahlBuchstabeWirbel,
+  vierZieleWechsel,
 ];
 
 export interface CategoryMeta {
