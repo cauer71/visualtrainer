@@ -1100,6 +1100,59 @@ p {
   background: var(--good-soft);
   color: #14532d;
 }
+/* Optionale Detailtabellen (ExerciseResult.details), z. B. Richtungen */
+.result-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  gap: 16px;
+  align-items: start;
+}
+.result-table {
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 14px 16px;
+  min-width: 0;
+}
+.result-table-title {
+  font-size: 16px;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+.result-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.result-table th,
+.result-table td {
+  padding: 7px 0;
+  border-top: 1px solid var(--line);
+  text-align: left;
+  vertical-align: baseline;
+}
+.result-table tr:first-child th,
+.result-table tr:first-child td {
+  border-top: 0;
+}
+.result-table th {
+  font-weight: 700;
+  padding-right: 10px;
+}
+.result-table td {
+  text-align: right;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.result-table-text {
+  display: inline-block;
+  margin-left: 10px;
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--text-2);
+}
+.result-table .muted {
+  margin-top: 8px;
+}
 .result-actions {
   display: flex;
   flex-wrap: wrap;

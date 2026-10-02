@@ -476,6 +476,29 @@ function ResultView({
         {def.showsLevel ? <p class="muted small">{ui.result.levelNow(Math.max(1, Math.round(result.level)))}</p> : null}
           </div>
         </div>
+        {result.details?.length ? (
+          <div class="result-details">
+            {result.details.map((tb) => (
+              <section class="result-table" key={tb.title}>
+                <h2 class="result-table-title">{tb.title}</h2>
+                <table>
+                  <tbody>
+                    {tb.rows.map((r) => (
+                      <tr key={r.label}>
+                        <th scope="row">
+                          {r.label}
+                          {r.text ? <span class="result-table-text">{r.text}</span> : null}
+                        </th>
+                        <td>{r.value}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+                {tb.note ? <p class="muted small">{tb.note}</p> : null}
+              </section>
+            ))}
+          </div>
+        ) : null}
         {seriesFinished ? (
           <div class="series-done">
             <Icon name="check" size={22} stroke={3} />

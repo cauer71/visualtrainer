@@ -35,11 +35,30 @@ export interface PrimaryMetric extends Metric {
   better: Better;
 }
 
+/** Eine Zeile einer Detailtabelle auf dem Ergebnis-Bildschirm (Texte sind schon in der Sprache der Übung) */
+export interface ResultDetailRow {
+  label: string;
+  /** fertig formatierter Wert, z. B. "612 ms" */
+  value: string;
+  /** optionaler kurzer Zusatz unter dem Label, z. B. "schnellste" */
+  text?: string;
+}
+
+/** Kleine Tabelle unter den Zusatzwerten (optional; Übungen ohne `details` sehen aus wie bisher) */
+export interface ResultDetailTable {
+  title: string;
+  rows: ResultDetailRow[];
+  /** Hinweis unter der Tabelle */
+  note?: string;
+}
+
 export interface ExerciseResult {
   /** Hauptkennzahl – wird mit früheren Durchgängen verglichen */
   primary: PrimaryMetric;
   /** 2–4 Zusatzwerte für den Ergebnis-Bildschirm */
   secondary: Metric[];
+  /** Optionale Detailtabellen (z. B. Richtungen); gespeichert wird weiterhin nur Hauptwert + Stufe */
+  details?: ResultDetailTable[];
   /** Punkte (Motivation) */
   score: number;
   /** Schwierigkeitsstufe, mit der die nächste Sitzung startet */
