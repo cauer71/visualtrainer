@@ -104,7 +104,7 @@ funktioniert aber auch am Handy und am Computer. Sprachen: **Deutsch** und **Ita
 | Konzentration & Denken | **Richtung & Wort** | Richtungszeichen lesen und das Feld mit dem passenden Wort antippen – auch wenn die Wörter nicht an ihrer Lage stehen |
 | Wahrnehmen & Erfassen | **Welche Seite?** | bei Hand, Fuß oder Unterarm in verschiedenen Ansichten und Drehungen die linke oder rechte Seite erkennen |
 | Konzentration & Denken | **Zahlen-Buchstaben-Wirbel** | treibende Zahlen und Buchstaben abwechselnd der Reihe nach antippen (1 – A – 2 – B …) |
-| Bewegung verfolgen | **4-Ziele-Wechsel** | vier Ziele in den Ecken: das aktive Ziel finden und antippen, Reaktionszeit Ziel → Touch nach Richtung (Touch-Version; kein Eye-Tracking) |
+| Bewegung verfolgen | **4-Ziele-Wechsel** | vier Buchstabentafeln in den Ecken: ein Buchstabe von jeder Tafel im Wechsel antippen, Zeit von Tipp zu Tipp (Touch-Version der Sehtherapie-Übung „4 Chart Saccades“; kein Eye-Tracking) |
 
 **VR-Labor (Versuch):** unter `/vr/` liegt ein eigener Testbereich für VR-Brillen mit WebXR (Oculus/Meta Quest, Rift). Dort läuft **Kugel-Detektiv 3D** – Mehrfach-Objektverfolgung in einem Würfelraum, bei dem die räumliche Tiefe Teil der Aufgabe ist. Ohne Brille gibt es eine flache Vorschau. Beschreibung, Aufbau und Tests: [`docs/vr-labor.md`](docs/vr-labor.md). Aus dem Optiker-Bereich verlinkt.
 

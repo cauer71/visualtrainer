@@ -37,7 +37,7 @@ Nummern werden **nie neu vergeben**; entfällt eine Übung, bleibt ihre Nummer f
 | 601–607 | Gedächtnis | `memory` |
 | 701–708 | Motorik | `motor` |
 | 801–811 | Körper & Reflexe | `physical` |
-| 901–905 | Eigene Blickfit-Übungen (901 ohne Vorbild; 902–904 nach Handyvideos einer Reha-/Neuro-Trainingssoftware, keine Website; 905 nach der Beschreibung des Auftraggebers einer „4-Ziele-Fixationswechsel“-App, keine Website) | – |
+| 901–905 | Eigene Blickfit-Übungen (901 ohne Vorbild; 902–904 nach Handyvideos einer Reha-/Neuro-Trainingssoftware, keine Website; 905 nach der Sehtherapie-Übung „4 Chart Saccades / Four Square Hart Chart“ mit vier Buchstabentafeln, Quellen: Lehrvideo, Anbieterseiten, Fachartikel) | – |
 
 Die Blickfit-Übungen, die auf einer Vorlage beruhen, stehen im Feld `blickfit_umsetzung` der jeweiligen
 Vorlage (z. B. 101 → Blitzreaktion).
