@@ -100,6 +100,10 @@ import { laborBlitzErkennung } from './labor-blitz-erkennung';
 import { laborPeripheresErkennen } from './labor-peripheres-erkennen';
 import { laborDoppelaufgabe } from './labor-doppelaufgabe';
 
+import { laborZielVerfolgen } from './labor-ziel-verfolgen';
+import { laborTaktSakkaden } from './labor-takt-sakkaden';
+import { laborBuchstabentafel } from './labor-buchstabentafel';
+
 /** Reihenfolge = Anzeige-Reihenfolge innerhalb der Bereiche */
 export const EXERCISES: ExerciseDefinition[] = [
   blitzreaktion,
@@ -194,6 +198,9 @@ export const EXERCISES: ExerciseDefinition[] = [
   laborBlitzErkennung,
   laborPeripheresErkennen,
   laborDoppelaufgabe,
+  laborZielVerfolgen,
+  laborTaktSakkaden,
+  laborBuchstabentafel,
 ];
 
 /** Marke der Labor-Übungen (cm/Sehwinkel, Einstellungen, Kalibrierung); sie stehen nicht im Tagestraining */
