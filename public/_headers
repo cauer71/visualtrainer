@@ -12,3 +12,22 @@
 
 /vr/index.html
   Cache-Control: no-cache
+
+# EYE-EXPERIMENT begin – Blickschätzung (/eye/*), siehe docs/eye-tracking-experiment.md
+# Cloudflare führt die Header aller passenden Regeln zusammen (zwei CSP = beide gelten, die strengere gewinnt).
+# Deshalb werden die globalen Header hier mit "! Name" erst abgelöst und dann neu gesetzt. Diese Regel muss NACH der /*-Regel stehen.
+# Kamera nur für die eigene Seite; 'wasm-unsafe-eval' für WebAssembly (MediaPipe), kein 'unsafe-eval'.
+/eye/*
+  ! Content-Security-Policy
+  ! Permissions-Policy
+  Permissions-Policy: camera=(self), microphone=(), geolocation=(), payment=(), usb=()
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; worker-src 'self' blob:; connect-src 'self' blob: data:; media-src 'self' blob:; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'
+  Cache-Control: no-cache
+
+# Dieselben Header auch auf den Modell-/WASM-Dateien: Falls MediaPipe das Rechenprogramm in einem Worker lädt, gilt für den
+# Worker die CSP der Antwort der Skriptdatei (dann braucht auch sie 'wasm-unsafe-eval').
+/eye-models/*
+  ! Content-Security-Policy
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; worker-src 'self' blob:; connect-src 'self' blob: data:; media-src 'self' blob:; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'
+  Cache-Control: public, max-age=86400
+# EYE-EXPERIMENT end
