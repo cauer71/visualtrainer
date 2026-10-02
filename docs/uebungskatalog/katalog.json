@@ -1,6 +1,6 @@
 {
  "stand": "2026-09-29",
- "anzahl": 85,
+ "anzahl": 86,
  "uebungen": [
   {
    "nr": 101,
@@ -12701,6 +12701,158 @@
     "ohne Normwerte"
    ],
    "datei": "uebungen/904-zahl-buchstabe-wirbel.md"
+  },
+  {
+   "nr": 905,
+   "kennung": "vier-ziele-wechsel",
+   "name": "4-Ziele-Wechsel (das aktive Eckziel antippen, Blick zwischen vier Positionen wechseln)",
+   "name_original": "– (Beschreibung des Auftraggebers einer „4-Ziele-Fixationswechsel“-App, kein Titel, keine Website, keine URL)",
+   "kapitel": "Eigene Blickfit-Übungen",
+   "kapitel_original": "",
+   "unterkapitel_original": "",
+   "quelle_url": "",
+   "blickfit_umsetzung": {
+    "kennung": "vier-ziele-wechsel",
+    "name": "4-Ziele-Wechsel",
+    "unterschiede": "Eigene Umsetzung nach der Beschreibung des Auftraggebers (Optiker; keine Online-Quelle, kein Video, kein Code). Nur Touch (Kernmodus). Gemessen wird die Reaktionszeit Ziel → Touch, ausdrücklich kein Sakkadenmaß (kein Eye-Tracking, der Blick wird nicht gemessen). Wissenschaftlich begründet festgelegt: Stufen ändern je Schritt nur einen Parameter (Größe → Abstand/Rand → Pause 1.200 → 600 ms → ähnliche Zeichen → Symbole → Ablenker, ca. 12 Schritte); automatische Anpassung je ca. 12 Ziele (≥ 90 % richtig schwerer, 75–89 % gleich, < 75 % leichter); 3 Blöcke à 60 s mit Pause; Richtungsauswertung (→ ← ↓ ↑ ↘ ↖ ↗ ↙) erst ab genügend Wiederholungen je Klasse; Ermüdungsvergleich nur grob (erste vs. letzte Hälfte); keine Normwerte, Werte nur im Vergleich mit sich selbst auf diesem Gerät; kein Patientenname oder -code im Browser. Praxisperspektive des Auftraggebers (Muchnick, Mountford): nicht geprüft, nicht als Quelle verwendet. Zahlen grob, können sich noch ändern."
+   },
+   "stand": "2026-10-02",
+   "kurzbeschreibung": "Auf ruhigem Grund stehen vier Zeichen in den vier Ecken des Bildschirms (Buchstaben oder Ziffern, später ähnlichere Zeichen und kleine Symbole). Immer eines davon ist durch einen Ring als aktuelles Ziel markiert; man blickt hin und tippt es an, kurz darauf wechselt der Ring unvorhersehbar zu einer anderen Ecke. Gemessen wird nur die Zeit vom Erscheinen des Rings bis zum Tippen – nicht der Blick.",
+   "ziel_funktionen": [
+    "sakkaden",
+    "auge_hand_koordination"
+   ],
+   "eingabe": [
+    "touch"
+   ],
+   "tablet_geeignet": "ja",
+   "dauer_sekunden": 200,
+   "schwierigkeit_anpassung": "Blickfit (Stand der Spezifikation, Zahlen grob): ca. 12 Stufen, bei jedem Schritt ändert sich genau ein Parameter, in dieser Reihenfolge: Zielgröße (sehr groß → kleiner), Abstand/Randlage (Ziele weiter zu den Rändern), Pause bis zum nächsten Ziel (Mitte 1.200 → 1.000 → 800 → 600 ms), ähnliche Zeichen (B D P R, 6 8 9 5), kleine Symbole, Ablenker im Feld. Anpassung je Segment von ca. 12 Zielen: ≥ 90 % richtig → eine Stufe schwerer, 75–89 % gleich, < 75 % leichter. Original: nur als Idee beschrieben (Stufen mit einem geänderten Parameter), keine Zahlen bekannt.",
+   "messgroessen": [
+    "Hauptwert: erreichte Stufe",
+    "Treffer x von N, Fehler (falsches Ziel), Auslassungen (kein Tippen in 5–6 s), Ablenker-Tipps getrennt gezählt",
+    "Reaktionszeit Ziel → Touch (ms): Zeit vom Beginn der Einblendung des Rings bis zum Antippen – enthält Orientierung, Augenbewegung, Erkennen, Entscheiden und Fingerbewegung, ist KEIN Sakkadenmaß; Median (robuster) neben dem Mittelwert, nur richtige Erst-Tipps",
+    "erste vs. letzte Hälfte der Ziele (nur grober Verlaufshinweis, vermengt Lernen, Stufenwechsel und Müdigkeit)",
+    "Richtungsklassen → ← ↓ ↑ ↘ ↖ ↗ ↙ (Mittelwert je Klasse erst ab genügend richtigen Antworten, mit Unsicherheit; Klassen sind zugleich Wegklassen)",
+    "keine Normwerte, kein Vergleich mit anderen; Original: Auswertung nicht bekannt"
+   ],
+   "anforderungsprofil": {
+    "visuell": {
+     "sehschaerfe_detail": 2,
+     "kontrast": 1,
+     "farbunterscheidung": 0,
+     "stereosehen": 0,
+     "peripheres_sehen": 2,
+     "nutzbares_sehfeld": 2,
+     "blickfolge": 0,
+     "sakkaden": 3,
+     "fixation": 2,
+     "bewegungswahrnehmung": 0,
+     "visuelle_suche": 2,
+     "visuelle_verarbeitungsgeschwindigkeit": 1,
+     "zeitliche_aufloesung": 0,
+     "naharbeit_dauer": 1
+    },
+    "kognitiv": {
+     "daueraufmerksamkeit": 1,
+     "selektive_aufmerksamkeit": 2,
+     "inhibition": 1,
+     "geteilte_aufmerksamkeit": 0,
+     "kognitive_flexibilitaet": 0,
+     "arbeitsgedaechtnis": 0,
+     "kurzzeitgedaechtnis_verbal": 0,
+     "kurzzeitgedaechtnis_visuell_raeumlich": 0,
+     "verarbeitungsgeschwindigkeit": 2,
+     "antizipation": 0,
+     "entscheidung_wahlreaktion": 2,
+     "lesen_sprache": 1,
+     "schlussfolgern": 0
+    },
+    "motorisch": {
+     "einfache_reaktion": 1,
+     "auge_hand_koordination": 3,
+     "zielbewegung_tempo": 2,
+     "zielbewegung_praezision": 1,
+     "kontinuierliche_steuerung": 0,
+     "ruhige_hand": 0,
+     "fingergeschwindigkeit": 0,
+     "fingersequenz_bimanual": 0,
+     "ganzkoerper": 0,
+     "gleichgewicht": 0,
+     "ausdauer_belastung": 0
+    }
+   },
+   "belastung": {
+    "zeitdruck": 1,
+    "flimmern_lichtreize": 0,
+    "bewegungsreize_schwindel": 0,
+    "koerperliche_belastung": 0,
+    "sturzrisiko": 0,
+    "sprachabhaengigkeit": 0
+   },
+   "voraussetzungen": [
+    "Tablet auf einem Ständer, ruhig und mittig vor der Person (Abstand etwa 40–50 cm, immer gleich); alle vier Ecken mit dem Finger bequem erreichbar",
+    "Zeichen von etwa 34 px (≈ 0,9° bei 40 cm Tablet-Abstand, eigene Rechnung) bis etwa 160 px (≈ 4,6°) erkennen können",
+    "Mit dem Finger Ziele von mindestens 112 bis 144 px Durchmesser (≈ 21–28 mm) treffen können",
+    "Buchstaben bzw. Ziffern kennen (A B C D, 1 2 3 4, später B D P R, 6 8 9 5)",
+    "Mit ruhigem Kopf sitzen können; Brille bzw. Nahbrille so wie im Alltag verwenden und notieren"
+   ],
+   "vorsicht_bei": [
+    "nystagmus",
+    "gesichtsfeldausfall",
+    "schielen_binokular",
+    "amblyopie",
+    "kopfschmerz_asthenopie",
+    "migraene_lichtempfindlich",
+    "presbyopie_gleitsicht",
+    "sehbehinderung_niedriger_visus",
+    "tremor_parkinson",
+    "hand_arm_beschwerden",
+    "aufmerksamkeitsprobleme",
+    "kinder_unter_6"
+   ],
+   "geeignet_fuer": [
+    "Aufmerksamkeit und Blick zwischen vier weit auseinanderliegenden Zielen wechseln und das markierte Ziel zügig antippen, in ruhigem Tempo und mit schrittweiser Steigerung nur eines Parameters",
+    "Auge-Hand-Koordination über große Wege (Sehen und Tippen) in einer unvorhersehbaren Reihenfolge",
+    "Vergleich mit sich selbst: Zeit Ziel → Touch, Treffer und Fehler über mehrere Sitzungen auf demselben Gerät",
+    "Vorführübung im Geschäft oder in der Beratung – ohne Wirkanspruch und ohne Diagnose"
+   ],
+   "weniger_geeignet_fuer": [
+    "Messung von Sakkaden (Latenz, Amplitude, Genauigkeit): dafür braucht es einen Eye-Tracker, die App misst den Blick nicht",
+    "Diagnose, Normvergleich, Therapie oder Reha (nicht vorgesehen, nicht möglich)",
+    "reine Reaktionsschnelligkeit (dafür 101/503; hier steckt der Fingerweg in der Zeit)",
+    "Menschen mit Nystagmus, Gesichtsfeldausfall oder Schielen, wenn aus dem Ergebnis auf das Auge geschlossen werden soll",
+    "Smartphone-Bildschirme für große Blicksprünge (die Winkel sind nur etwa halb so groß wie am Tablet)"
+   ],
+   "evidenz": {
+    "uebungseffekt": "mittel",
+    "naher_transfer": "unklar",
+    "alltag_transfer": "fehlend",
+    "kommentar": "Sakkaden-, Zeige- und Reaktionsaufgaben werden mit Übung schneller und stabiler (Karantinos et al. 2025; Montenegro & Edelman 2019); im Labor übertrug sich das teils zwischen Sakkadentypen und Hemifeldern, in einem Einzelfall aber nicht auf andere Positionen (Di Russo et al. 2003). Bei trainingsähnlichem Test werden Effekte stark überschätzt (Guo et al. 2025), allgemeines Sehtraining brachte nichts über Testvertrautheit hinaus (Abernethy & Wood 2001), und Augenübungen sind für Lernstörungen nicht belegt (Handler & Fierson 2011). Für diese Übung gibt es keine Studie, und sie misst keine Sakkaden – die Einstufung gilt für die Aufgabenart."
+   },
+   "aehnliche_uebungen": [
+    303,
+    502,
+    702,
+    401,
+    103,
+    902
+   ],
+   "stichworte": [
+    "Fixationswechsel",
+    "Blicksprung",
+    "Sakkaden",
+    "Aufmerksamkeitsverschiebung",
+    "Auge-Hand-Koordination",
+    "Fitts'sches Gesetz",
+    "Reaktionszeit Ziel → Touch",
+    "visuo-motorische Reaktionszeit",
+    "vier Ecken",
+    "Richtungsklassen",
+    "kein Eye-Tracking",
+    "Praxisperspektive nicht geprüft"
+   ],
+   "datei": "uebungen/905-vier-ziele-wechsel.md"
   }
  ]
 }

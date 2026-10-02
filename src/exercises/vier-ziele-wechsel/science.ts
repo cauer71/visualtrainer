@@ -10,7 +10,7 @@ export const science: ScienceEntry = {
   texts: {
     de: {
       trains: 'Die Aufmerksamkeit schnell und gezielt zwischen vier weit getrennten Stellen wechseln und das jeweils markierte Ziel antippen.',
-      daily: 'Überall, wo der Blick zwischen weit entfernten Stellen springt: Spiegel und Straße, Armaturen, Bildschirm und Tastatur, Werkstatt und Küche.',
+      daily: 'Blickwechsel zwischen weit entfernten Stellen kommen im Alltag oft vor, zum Beispiel zwischen Bildschirm und Tastatur; ob die Übung dabei hilft, ist nicht belegt.',
       research:
         'Taucht ein Ziel plötzlich auf, zieht es die Aufmerksamkeit an, und der Blick wird meist von selbst dorthin gelenkt; am Ziel gelingt das Erkennen am besten, weil Aufmerksamkeit und Blickziel gekoppelt sind. Die gemessene Zeit vom Erscheinen des Rings bis zum Tipp enthält Orientierung, Augenbewegung, Erkennen, Entscheiden und die Fingerbewegung – wohin du wirklich schaust, wird hier nicht gemessen (kein Eye-Tracking). Mit Wiederholung wird man bei solchen Aufgaben schneller; ein Teil davon ist Gewöhnung an Aufgabe und Gerät. Touchscreens messen je nach Gerät 30–130 ms zu lang, deshalb zählt nur der Vergleich mit dir selbst auf demselben Gerät. Dass sich das Üben auf Sport, Straßenverkehr oder Sehen überträgt, ist nicht belegt; die Studienlage zu solchen Übungen ist umstritten.',
       improved:
@@ -18,7 +18,7 @@ export const science: ScienceEntry = {
     },
     it: {
       trains: 'Spostare rapidamente e con precisione l’attenzione tra quattro punti molto distanti e toccare il bersaglio evidenziato.',
-      daily: 'Ovunque lo sguardo salti tra punti lontani: specchietto e strada, cruscotto, schermo e tastiera, officina e cucina.',
+      daily: 'I cambi di sguardo tra punti lontani sono frequenti nella vita quotidiana, per esempio tra schermo e tastiera; che l’esercizio aiuti non è dimostrato.',
       research:
         'Quando un bersaglio compare all’improvviso, attira l’attenzione e di solito lo sguardo viene guidato lì da solo; sul bersaglio il riconoscimento riesce meglio, perché attenzione e meta dello sguardo sono accoppiate. Il tempo misurato dalla comparsa dell’anello al tocco comprende orientamento, movimento oculare, riconoscimento, decisione e movimento del dito – dove guardi davvero qui non viene misurato (nessun eye-tracking). Ripetendo, in questi compiti si diventa più veloci; in parte è abitudine al compito e al dispositivo. I touchscreen misurano, a seconda del dispositivo, 30–130 ms in più, per questo conta solo il confronto con te stesso sullo stesso dispositivo. Che l’esercizio si trasferisca allo sport, al traffico o alla vista non è dimostrato; i dati sugli esercizi di questo tipo sono controversi.',
       improved:
@@ -30,6 +30,9 @@ export const science: ScienceEntry = {
     src('Yantis & Jonides (1984). Abrupt visual onsets and selective attention: Evidence from visual search. Journal of Experimental Psychology: Human Perception and Performance', 'https://doi.org/10.1037/0096-1523.10.5.601'),
     src('Darrien, Herd, Starling, Rosenberg & Morrison (2001). An analysis of the dependence of saccadic latency on target position and target characteristics in human subjects. BMC Neuroscience', 'https://doi.org/10.1186/1471-2202-2-13'),
     src('Pronk, Wiers, Molenkamp & Murre (2020). Mental chronometry in the pocket? Timing accuracy of web applications on touchscreen and keyboard devices. Behavior Research Methods', 'https://doi.org/10.3758/s13428-019-01321-2'),
+    src('Saslow (1967). Effects of components of displacement-step stimuli upon latency for saccadic eye movement. Journal of the Optical Society of America', 'https://doi.org/10.1364/JOSA.57.001024'),
+    src('MacKenzie (1992). Fitts’ law as a research and design tool in human-computer interaction. Human-Computer Interaction', 'https://doi.org/10.1207/s15327051hci0701_3'),
+    src('Guo et al. (2025). Learning effects overestimate the effect of training when the test resembles the training. Frontiers in Physiology', 'https://doi.org/10.3389/fphys.2025.1664572'),
     src('Fransen (2024). There is no supporting evidence for a far transfer of general perceptual or cognitive training to sports performance. Sports Medicine', 'https://doi.org/10.1007/s40279-024-02060-x'),
     src('Appelbaum, Lochhead, Feng, Erickson, Liu & Laby (2025). Limited evidence is not no evidence: A rebuttal to Fransen, 2024. Sports Medicine', 'https://doi.org/10.1007/s40279-024-02141-x'),
   ],

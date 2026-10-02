@@ -1,6 +1,6 @@
 # Übersicht aller Übungen
 
-Erzeugt aus `katalog.json` (Stand 30.09.2026). **85 Einträge**, davon **85 hier spielbar** (▲). Die Nummern sind dauerhaft.
+Erzeugt aus `katalog.json` (Stand 30.09.2026). **86 Einträge**, davon **86 hier spielbar** (▲). Die Nummern sind dauerhaft.
 Die Spalte „Kern“ nennt die Funktionen mit Anforderungswert 3; Tablet = Eignung des Originals; ▲ = Blickfit-Umsetzung vorhanden.
 Evidenz: Übungseffekt / naher Transfer / Alltagstransfer (s = stark, m = mittel, w = schwach, f = fehlend, ? = unklar).
 
@@ -133,3 +133,4 @@ Evidenz: Übungseffekt / naher Transfer / Alltagstransfer (s = stark, m = mittel
 | 902 | [Richtung & Wort (Richtungszeichen dem passenden Wort zuordnen)](uebungen/902-richtung-wort.md) | inhibition, entscheidung_wahlreaktion | ja | m/w/f | lese_rechtschreib_schwaeche, kognitive_einschraenkung, aufmerksamkeitsprobleme, kinder_unter_6, sehbehinderung_niedriger_visus, presbyopie_gleitsicht | ▲ |
 | 903 | [Welche Seite? (Hand oder Fuß als rechts oder links erkennen)](uebungen/903-seite-erkennen.md) | kurzzeitgedaechtnis_visuell_raeumlich | ja | m/m/f | kognitive_einschraenkung, kinder_unter_6, sehbehinderung_niedriger_visus, presbyopie_gleitsicht | ▲ |
 | 904 | [Zahlen-Buchstaben-Wirbel (bewegte Zeichen abwechselnd in Folge antippen)](uebungen/904-zahl-buchstabe-wirbel.md) | visuelle_suche, kognitive_flexibilitaet | ja | m/w/f | kognitive_einschraenkung, aufmerksamkeitsprobleme, sehbehinderung_niedriger_visus, presbyopie_gleitsicht, gesichtsfeldausfall, schwindel_vestibulaer, lese_rechtschreib_schwaeche | ▲ |
+| 905 | [4-Ziele-Wechsel (das aktive Eckziel antippen, Blick zwischen vier Positionen wechseln)](uebungen/905-vier-ziele-wechsel.md) | sakkaden, auge_hand_koordination | ja | m/?/f | nystagmus, gesichtsfeldausfall, schielen_binokular, amblyopie, kopfschmerz_asthenopie, migraene_lichtempfindlich, presbyopie_gleitsicht, sehbehinderung_niedriger_visus, tremor_parkinson, hand_arm_beschwerden, aufmerksamkeitsprobleme, kinder_unter_6 | ▲ |

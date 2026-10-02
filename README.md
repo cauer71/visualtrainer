@@ -11,7 +11,7 @@ funktioniert aber auch am Handy und am Computer. Sprachen: **Deutsch** und **Ita
 - adaptive Schwierigkeit (Staircase-Verfahren), Verlauf, Bestwerte, persönliche Tipps
 - **Zwei Ansichten** (Knopf in der Kopfzeile, beim ersten Öffnen Auswahl):
   **Kunde** sieht nur drei vom Optiker gewählte Übungen (Voreinstellung: Blitzreaktion, Kugel-Detektiv, Suchbild);
-  **Optiker** sieht alle 84 Übungen, „Hintergrund & Studien“, den **Übungskatalog** (85 Einträge mit Anforderungsprofil, Quellen)
+  **Optiker** sieht alle 85 Übungen, „Hintergrund & Studien“, den **Übungskatalog** (86 Einträge mit Anforderungsprofil, Quellen)
   und wählt im Optiker-Bereich die Kunden-Übungen. Die Wahl ist eine Ansicht, **kein Zugangsschutz** (kein Login, alles im Browser gespeichert).
 - **Tagestraining**: jeden Tag 5 Übungen (eine je Bereich)
 - statische Seite (~130 kB gzip JS), läuft auf jedem Webspace, in Unterordnern und im iframe
@@ -104,10 +104,11 @@ funktioniert aber auch am Handy und am Computer. Sprachen: **Deutsch** und **Ita
 | Konzentration & Denken | **Richtung & Wort** | Richtungszeichen lesen und das Feld mit dem passenden Wort antippen – auch wenn die Wörter nicht an ihrer Lage stehen |
 | Wahrnehmen & Erfassen | **Welche Seite?** | bei Hand, Fuß oder Unterarm in verschiedenen Ansichten und Drehungen die linke oder rechte Seite erkennen |
 | Konzentration & Denken | **Zahlen-Buchstaben-Wirbel** | treibende Zahlen und Buchstaben abwechselnd der Reihe nach antippen (1 – A – 2 – B …) |
+| Bewegung verfolgen | **4-Ziele-Wechsel** | vier Ziele in den Ecken: das aktive Ziel finden und antippen, Reaktionszeit Ziel → Touch nach Richtung (Touch-Version; kein Eye-Tracking) |
 
 **VR-Labor (Versuch):** unter `/vr/` liegt ein eigener Testbereich für VR-Brillen mit WebXR (Oculus/Meta Quest, Rift). Dort läuft **Kugel-Detektiv 3D** – Mehrfach-Objektverfolgung in einem Würfelraum, bei dem die räumliche Tiefe Teil der Aufgabe ist. Ohne Brille gibt es eine flache Vorschau. Beschreibung, Aufbau und Tests: [`docs/vr-labor.md`](docs/vr-labor.md). Aus dem Optiker-Bereich verlinkt.
 
-**Übungskatalog:** [`docs/uebungskatalog/`](docs/uebungskatalog/UEBERSICHT.md) beschreibt alle 81 Übungen der Vorlage skilldrills.online (Nummern 101–811) sowie das eigene Reihen-Rätsel (901) und drei Übungen nach Handyvideos einer Neuro-Trainingssoftware (902–904: Richtung & Wort, Welche Seite?, Zahlen-Buchstaben-Wirbel) mit Anforderungsprofil, Vorsichtshinweisen und geprüften Quellen – als Grundlage für eine spätere KI-gestützte Übungsauswahl.
+**Übungskatalog:** [`docs/uebungskatalog/`](docs/uebungskatalog/UEBERSICHT.md) beschreibt alle 81 Übungen der Vorlage skilldrills.online (Nummern 101–811) sowie das eigene Reihen-Rätsel (901) und vier Übungen nach Handyvideos bzw. Beschreibung des Auftraggebers (902–905: Richtung & Wort, Welche Seite?, Zahlen-Buchstaben-Wirbel, 4-Ziele-Wechsel) mit Anforderungsprofil, Vorsichtshinweisen und geprüften Quellen – als Grundlage für eine spätere KI-gestützte Übungsauswahl.
 
 Hintergrund, Studienlage und Quellen: Seite „Hintergrund & Studien“ in der App sowie
 [`docs/wissenschaft/`](docs/wissenschaft/). Die Übungen sind ein Training, **kein Sehtest und kein Medizinprodukt**.

@@ -16,7 +16,7 @@ passende Übungen vorzuschlagen.
   (YAML-Kopf mit festen Feldern + ausführliche Beschreibung mit Quellen)
 - [`katalog.json`](katalog.json) – alle YAML-Köpfe als eine JSON-Datei (wird aus den Dateien erzeugt:
   `python3 docs/uebungskatalog/build.py`)
-- [`UEBERSICHT.md`](UEBERSICHT.md) – Tabelle aller 85 Übungen (Kern, Tablet-Eignung, Evidenz, Vorsicht)
+- [`UEBERSICHT.md`](UEBERSICHT.md) – Tabelle aller 86 Übungen (Kern, Tablet-Eignung, Evidenz, Vorsicht)
 - [`_vorlage.md`](_vorlage.md) – verbindliche Vorlage für neue Einträge
 - [`literatur/`](literatur/) – geprüfte Literaturbasis je Übungsgruppe (Prüftabelle der Website-Quellen,
   Faktenliste mit Zahlen und Quellen, Evidenz-Zusammenfassung, Literaturliste); Grundlage der Einträge
@@ -37,7 +37,7 @@ Nummern werden **nie neu vergeben**; entfällt eine Übung, bleibt ihre Nummer f
 | 601–607 | Gedächtnis | `memory` |
 | 701–708 | Motorik | `motor` |
 | 801–811 | Körper & Reflexe | `physical` |
-| 901–… | Eigene Blickfit-Übungen (901 ohne Vorbild; 902–904 nach Handyvideos einer Reha-/Neuro-Trainingssoftware, keine Website) | – |
+| 901–905 | Eigene Blickfit-Übungen (901 ohne Vorbild; 902–904 nach Handyvideos einer Reha-/Neuro-Trainingssoftware, keine Website; 905 nach der Beschreibung des Auftraggebers einer „4-Ziele-Fixationswechsel“-App, keine Website) | – |
 
 Die Blickfit-Übungen, die auf einer Vorlage beruhen, stehen im Feld `blickfit_umsetzung` der jeweiligen
 Vorlage (z. B. 101 → Blitzreaktion).

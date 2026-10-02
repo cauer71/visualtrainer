@@ -1,6 +1,6 @@
 # Wissenschaftliche Recherche – Überblick
 
-Stand: 01.10.2026. Fünf ausführliche Dokumente mit zusammen über 300 geprüften Quellen (jede DOI per
+Stand: 02.10.2026. Sechs ausführliche Dokumente mit zusammen über 300 geprüften Quellen (jede DOI per
 Crossref/PubMed/PMC verifiziert):
 
 1. [Reaktion & Impulskontrolle](01-reaktion-und-impulskontrolle.md) – Blitzreaktion, Stopp & Los, allgemeine Trainingsprinzipien, **Rechtliches & Formulierungen**
@@ -8,6 +8,7 @@ Crossref/PubMed/PMC verifiziert):
 3. [Wahrnehmen & Erfassen](03-wahrnehmen-und-erfassen.md) – Punktlandung, Suchbild, Blitzblick, Aus dem Takt, **Sicherheit (Flimmern/Epilepsie)**, Ausblick Kontrasttraining
 4. [Konzentration & Denken](04-konzentration-und-denken.md) – Pfeil-Duell (statt Stroop/Wahlreaktion), Zeichen-Code (Symbol-Ziffern), Weichensteller (Aufgabenwechsel), Doppelt gefordert (Dual-Task), Reihen-Rätsel, Wachposten (Daueraufmerksamkeit), Zahlenjagd (Schulte/Trail Making); warum RSVP-Schnelllesen entfällt
 5. [Links/Rechts, Richtung und Zahl-Buchstabe-Folgen](05-links-rechts-und-richtung.md) – Vergleich der drei Videospiele einer Reha-/Neuro-Trainingssoftware mit der Studienlage: Richtung & Wort (Reiz-Antwort-Kompatibilität, Stroop-/Simon-Konflikt), Welche Seite? (mentale Drehung von Körperteilen; sachliche Einordnung der Aussage „typische Pathologie“), Zahlen-Buchstaben-Wirbel (Trail Making mit Bewegung ist kein validierter Test)
+6. [Fixationswechsel zwischen vier Zielen](06-fixationswechsel.md) – Vergleich der Idee des Auftraggebers (4-Ziele-Fixationswechsel) mit der Studienlage: Sakkaden-Grundlagen (Latenz, Amplitude, Richtung), Aufmerksamkeit und Blick, Fitts'sches Gesetz, Hand-Auge-Koordination, was die Messgröße „Reaktionszeit Ziel → Touch“ ist und nicht ist (kein Sakkadenmaß), wie viele Durchgänge je Richtung nötig sind, Ermüdung in kurzen Blöcken, Studienlage zu Sakkaden-/Blicktraining, Praxisperspektive des Auftraggebers (nicht geprüft)
 
 ## Das Wichtigste in fünf Sätzen
 
@@ -44,6 +45,7 @@ Crossref/PubMed/PMC verifiziert):
 | Richtung & Wort | Reiz-Antwort-Zuordnung unter Konflikt (Lage ↔ Wort) | mittel | nah schwach, Alltag fehlend | Kompatibilität schrittweise abbauen (alle Wörter passend → ein Paar vertauscht → alle gemischt), erst dann Zeichenvielfalt und weiche Frist; Lage-Kosten nur als eigener Verlauf |
 | Welche Seite? | mentale Drehung von Händen/Füßen (Links-Rechts-Urteil) | mittel | nah mittel (nur räumlich), Alltag fehlend | Drehung ändert nie die Seite, Drehwinkel-Stufen, keine Normen, keine Diagnose, kein „Test“ |
 | Zahlen-Buchstaben-Wirbel | Suchen + Zahl-Buchstabe-Wechsel, bewegte Zeichen (Trail-Making-artig) | mittel | nah schwach, Alltag fehlend | eigene Festlegung der Folge (Regel im Video nicht sichtbar), Drehung um versetzte Mittelpunkte (Beobachtung des Auftraggebers), keine Zeit-Normen, kein validierter Test |
+| 4-Ziele-Wechsel | Blick und Aufmerksamkeit zwischen vier Eckzielen wechseln und antippen (Fixationswechsel) | mittel | nah unklar, Alltag fehlend | Messgröße „Reaktionszeit Ziel → Touch“ statt Sakkade (kein Eye-Tracking), ein Parameter je Stufe, Richtungsauswertung erst ab genügend Wiederholungen, Ermüdungsvergleich nur grob, keine Normwerte, kein Patientencode im Browser; Praxisperspektive des Auftraggebers nicht geprüft |
 
 ## Umgesetzte Grundprinzipien
 

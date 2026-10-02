@@ -21,6 +21,7 @@ import {
   LEVELS,
   levelOf,
   MAX_LEVEL,
+  MIN_FOR_DIRECTION,
   MIN_GLYPH_PX,
   MIN_LEVEL,
   moveFor,
@@ -306,7 +307,7 @@ describe('Zusammenfassung', () => {
     expect(odd.firstHalfTotal + odd.lastHalfTotal).toBe(10);
   });
 
-  it('Richtungen: Mittelwert je Klasse ab 3 richtigen Antworten, schnellste und langsamste Richtung', () => {
+  it('Richtungen: Mittelwert je Klasse erst ab genug richtigen Antworten (hier Schwelle 3), schnellste und langsamste Richtung', () => {
     // 5× 0→1 (→) mit 600 ms, 3× 1→0 (←) mit 1000 ms, 2× 0→2 (↓) mit 400 ms (zu wenige)
     const trials: Trial[] = [];
     let i = 0;
@@ -315,7 +316,7 @@ describe('Zusammenfassung', () => {
     for (let k = 0; k < 3; k++) add(1, 0, 1000);
     for (let k = 0; k < 2; k++) add(0, 2, 400);
     add(0, 1, null, { clean: false, errors: 1 }); // unsauber: nicht mitgezählt
-    const s = summarize(trials);
+    const s = summarize(trials, 3);
     const right = s.directions.find((d) => d.dir === 'right')!;
     const left = s.directions.find((d) => d.dir === 'left')!;
     const down = s.directions.find((d) => d.dir === 'down')!;
@@ -328,6 +329,15 @@ describe('Zusammenfassung', () => {
     expect(s.fastest).toBe('right');
     expect(s.slowest).toBe('left');
     expect(s.directions).toHaveLength(8);
+  });
+
+  it('Standard-Schwelle für Richtungsmittel ist 8 (3 Werte sind bei Streuung ≈ 150 ms zu unsicher)', () => {
+    expect(MIN_FOR_DIRECTION).toBe(8);
+    const trials: Trial[] = [];
+    for (let k = 0; k < 7; k++) trials.push({ index: k, from: 0, to: 1, level: 1, clean: true, rt: 600, errors: 0, distractorTaps: 0, omitted: false });
+    expect(Number.isNaN(summarize(trials).directions.find((d) => d.dir === 'right')!.meanMs)).toBe(true);
+    trials.push({ index: 7, from: 0, to: 1, level: 1, clean: true, rt: 600, errors: 0, distractorTaps: 0, omitted: false });
+    expect(summarize(trials).directions.find((d) => d.dir === 'right')!.meanMs).toBe(600);
   });
 
   it('keine schnellste/langsamste Richtung, wenn weniger als zwei Richtungen genug Daten haben', () => {
@@ -583,13 +593,13 @@ describe('Simulationsspieler über viele Startwerte', () => {
     expect(low.levels).toContain(1);
   });
 
-  it('Auswertung ist über viele Sitzungen in sich stimmig: Treffer + unsaubere = alle, Richtungsmittel nur mit ≥ 3', () => {
+  it('Auswertung ist über viele Sitzungen in sich stimmig: Treffer + unsaubere = alle, Richtungsmittel nur mit ≥ 8', () => {
     for (let seed = 1; seed <= 50; seed++) {
       const { trials } = simulate(seed, MID);
       const s = summarize(trials);
       expect(s.total).toBe(trials.length);
       expect(s.hits + trials.filter((t) => !t.clean).length).toBe(s.total);
-      for (const d of s.directions) expect(Number.isFinite(d.meanMs)).toBe(d.n >= 3);
+      for (const d of s.directions) expect(Number.isFinite(d.meanMs)).toBe(d.n >= MIN_FOR_DIRECTION);
       expect(s.firstHalfTotal).toBe(s.lastHalfTotal);
       if (s.fastest && s.slowest) {
         const f = s.directions.find((d) => d.dir === s.fastest)!;
@@ -631,10 +641,10 @@ describe('Texte', () => {
     expect(science.texts.de.research).toMatch(/kein Eye-Tracking/);
   });
 
-  it('Reaktionszeit heißt „Reaktionszeit Ziel → Touch“ und enthält den Gerätehinweis 30–130 ms', () => {
+  it('Reaktionszeit heißt „Reaktionszeit Ziel → Touch“ und enthält den Gerätehinweis (Touch misst zu lang)', () => {
     expect(de.metrics.reaction).toBe('Reaktionszeit Ziel → Touch');
-    expect(de.feedback.note).toMatch(/30–130 ms/);
-    expect(itTexts.feedback.note).toMatch(/30–130 ms/);
+    expect(de.feedback.note).toMatch(/50–70 ms/);
+    expect(itTexts.feedback.note).toMatch(/50–70 ms/);
     expect(de.feedback.note).toMatch(/nicht den Blick/);
   });
 

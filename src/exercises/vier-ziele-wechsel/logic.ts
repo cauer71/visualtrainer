@@ -115,7 +115,7 @@ export const QUICK_SEGMENT_TARGETS = 3;
 /** Frist bis zur Auslassung; das Ziel bleibt danach aktiv (Stufe 1 ohne Zeitdruck: nichts verschwindet) */
 export const OMIT_MS = 6000;
 /** Tipps schneller als das nach dem Erscheinen des Rings sind Vorwegnehmen, keine Antwort */
-export const MIN_RT_MS = 100;
+export const MIN_RT_MS = 250;
 /** Folgetipps innerhalb dieser Zeit werden ignoriert (Doppeltipp) */
 export const DOUBLE_TAP_MS = 250;
 
@@ -451,11 +451,13 @@ export interface Summary {
 
 /** Mindestzahl richtiger Antworten für einen Mittelwert (Richtung, Hälfte) */
 export const MIN_FOR_MEAN = 3;
+/** Richtungsmittel erst ab so vielen sauberen Treffern je Klasse (bei Streuung ≈ 150 ms sind 3 Werte zu unsicher; siehe docs/wissenschaft/06) */
+export const MIN_FOR_DIRECTION = 8;
 
 const meanOrNaN = (xs: readonly number[], min = MIN_FOR_MEAN): number => (xs.length >= min ? mean(xs) : NaN);
 const rtsOf = (ts: readonly Trial[]): number[] => ts.filter((t) => t.clean && t.rt !== null).map((t) => t.rt as number);
 
-export function summarize(trials: readonly Trial[], minPerDirection = MIN_FOR_MEAN): Summary {
+export function summarize(trials: readonly Trial[], minPerDirection = MIN_FOR_DIRECTION): Summary {
   const n = trials.length;
   const half = Math.floor(n / 2);
   const first = trials.slice(0, half);

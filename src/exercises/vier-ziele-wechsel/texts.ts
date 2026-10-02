@@ -37,7 +37,7 @@ export const de: ExerciseTexts = {
     distractor: 'Du hast öfter ein Ablenker-Zeichen berührt. Nur das Ziel mit dem Ring zählt – die anderen Zeichen darfst du ignorieren.',
     slow: 'Bei einigen Zielen hat es länger gedauert. Such den Ring zuerst mit den Augen und tippe dann gleich.',
     tired: 'In der zweiten Hälfte ging es etwas langsamer. Mach zwischen den Durchgängen eine kurze Pause und lass die Augen ruhen.',
-    direction: 'Manche Richtungen fallen dir leichter als andere. Schau dir die Tabelle an und übe ruhig öfter die langsamere Richtung.',
+    direction: 'Die Richtungen unterscheiden sich schon durch die Weglänge. Mit wenigen Durchgängen sagt die Tabelle nur grob etwas; vergleiche über mehrere Sitzungen.',
     great: 'Stark! Der Wechsel zwischen den Ecken klappt gleichmäßig. Bleib locker – dann geht es auch auf der nächsten Stufe.',
   },
   feedback: {
@@ -66,7 +66,7 @@ export const de: ExerciseTexts = {
     fewHits: 'noch zu wenige Treffer',
     count: '{n}×',
     note:
-      'Die Zeit enthält Hinsehen, Erkennen, Entscheiden und die Fingerbewegung – nicht den Blick allein, der wird nicht gemessen. Touchscreens messen je nach Gerät 30–130 ms zu lang. Vergleiche nur mit deinen eigenen Werten auf diesem Gerät. Waagerechte, senkrechte und schräge Wege sind unterschiedlich lang (je nach Hoch- oder Querformat).',
+      'Die Zeit enthält Hinsehen, Erkennen, Entscheiden und die Fingerbewegung – nicht den Blick allein, der wird nicht gemessen. Touchscreens messen etwas zu lang (bei Smartphones rund 50–70 ms, bei Tablets nicht untersucht). Vergleiche nur mit deinen eigenen Werten auf diesem Gerät. Waagerechte, senkrechte und schräge Wege sind unterschiedlich lang (je nach Hoch- oder Querformat).',
     noData: '–',
   },
 };
@@ -132,7 +132,7 @@ export const it: ExerciseTexts = {
     fewHits: 'ancora troppo pochi colpi',
     count: '{n}×',
     note:
-      'Il tempo comprende guardare, riconoscere, decidere e il movimento del dito – non lo sguardo da solo, che non viene misurato. I touchscreen misurano, a seconda del dispositivo, 30–130 ms in più. Confrontati solo con i tuoi valori su questo dispositivo. I percorsi orizzontali, verticali e diagonali hanno lunghezze diverse (a seconda che il dispositivo sia in verticale o in orizzontale).',
+      'Il tempo comprende guardare, riconoscere, decidere e il movimento del dito – non lo sguardo da solo, che non viene misurato. I touchscreen misurano un po’ in più (negli smartphone circa 50–70 ms, nei tablet non studiato). Confrontati solo con i tuoi valori su questo dispositivo. I percorsi orizzontali, verticali e diagonali hanno lunghezze diverse (a seconda che il dispositivo sia in verticale o in orizzontale).',
     noData: '–',
   },
 };

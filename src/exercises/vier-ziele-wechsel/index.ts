@@ -40,7 +40,7 @@ import {
   levelOf,
   MAX_LEVEL,
   MIN_LEVEL,
-  MIN_FOR_MEAN,
+  MIN_FOR_DIRECTION,
   MIN_RT_MS,
   moveFor,
   OMIT_MS,
@@ -539,7 +539,7 @@ class VierZieleWechsel implements Exercise {
 
     const dirRows: ResultDetailRow[] = DIRECTIONS.map((dir) => {
       const d = s.directions.find((x) => x.dir === dir)!;
-      const tag = s.fastest === dir ? fb.fastest : s.slowest === dir ? fb.slowest : d.n < MIN_FOR_MEAN ? fb.fewHits : '';
+      const tag = s.fastest === dir ? fb.fastest : s.slowest === dir ? fb.slowest : d.n < MIN_FOR_DIRECTION ? fb.fewHits : '';
       return { label: `${ARROW[dir]} ${fb[dir]}`, value: ms(d.meanMs), text: [tpl(fb.count, { n: d.n }), tag].filter(Boolean).join(' · ') };
     });
 
