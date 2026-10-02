@@ -169,6 +169,12 @@ export interface EyeTexts {
     s9EngineCpu: string;
     s9EngineGpu: string;
     s9EngineHint: string;
+    s9Res: string;
+    s9ResLow: string;
+    s9ResHd: string;
+    s9ResFull: string;
+    s9ResMax: string;
+    s9ResHint: string;
     s9Stop: string;
     s9Stopped: string;
     // allgemein
@@ -380,13 +386,19 @@ const de: EyeTexts = {
     s8Show: 'Messwerte anzeigen',
     s9: '9 · Kamera',
     s9Cameras: 'Kamera',
-    s9Switch: 'Kamera wechseln',
+    s9Switch: 'Kamera neu starten (mit dieser Auswahl)',
     s9OneCamera: 'Nur eine Kamera gefunden.',
     s9Engine: 'Auswertung über',
     s9EngineAuto: 'automatisch (GPU, sonst CPU)',
     s9EngineCpu: 'nur CPU',
     s9EngineGpu: 'nur GPU',
     s9EngineHint: 'Gilt beim nächsten Start der Kamera. Der Export enthält, was benutzt wurde.',
+    s9Res: 'Kameraauflösung (Wunsch)',
+    s9ResLow: 'niedrig · 640 × 480',
+    s9ResHd: 'mittel · 1280 × 720 (Standard)',
+    s9ResFull: 'hoch · 1920 × 1080',
+    s9ResMax: 'maximal · bis 3840 × 2160',
+    s9ResHint: 'Mehr Pixel zeigen die Iris genauer, kosten aber Rechenzeit (Bildrate sinkt). Gilt nach „Kamera neu starten“ (startet die Kamera neu; die Kalibrierung wird dabei verworfen). Die tatsächliche Auflösung wählt der Browser; sie steht in der Live-Ansicht und im Export.',
     s9Stop: 'Kamera beenden',
     s9Stopped: 'Kamera beendet.',
     quadrant: { tl: 'oben links', tr: 'oben rechts', bl: 'unten links', br: 'unten rechts' },
@@ -600,13 +612,19 @@ const it: EyeTexts = {
     s8Show: 'Mostra i valori misurati',
     s9: '9 · Fotocamera',
     s9Cameras: 'Fotocamera',
-    s9Switch: 'Cambia fotocamera',
+    s9Switch: 'Riavvia la fotocamera (con questa selezione)',
     s9OneCamera: 'Trovata una sola fotocamera.',
     s9Engine: 'Elaborazione tramite',
     s9EngineAuto: 'automatica (GPU, altrimenti CPU)',
     s9EngineCpu: 'solo CPU',
     s9EngineGpu: 'solo GPU',
     s9EngineHint: 'Vale al prossimo avvio della fotocamera. L’esportazione contiene ciò che è stato usato.',
+    s9Res: 'Risoluzione della fotocamera (richiesta)',
+    s9ResLow: 'bassa · 640 × 480',
+    s9ResHd: 'media · 1280 × 720 (standard)',
+    s9ResFull: 'alta · 1920 × 1080',
+    s9ResMax: 'massima · fino a 3840 × 2160',
+    s9ResHint: 'Più pixel mostrano l’iride con più precisione, ma richiedono più calcolo (il frame rate scende). Vale dopo «Riavvia la fotocamera» (riavvia la fotocamera; la calibrazione viene scartata). La risoluzione effettiva la sceglie il browser; compare nella vista live e nell’esportazione.',
     s9Stop: 'Termina fotocamera',
     s9Stopped: 'Fotocamera terminata.',
     quadrant: { tl: 'in alto a sinistra', tr: 'in alto a destra', bl: 'in basso a sinistra', br: 'in basso a destra' },

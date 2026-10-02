@@ -40,7 +40,18 @@ export interface TrackerOptions {
   delegate?: Delegate;
   /** 0 (kaum) … 1 (stark), Standard 0,5 */
   smoothing?: number;
+  /** Wunsch-Auflösung der Kamera (der Browser wählt das nächstliegende, tatsächliche Maß steht in stats().camera) */
+  resolution?: CameraResolution;
 }
+
+/** low = 640×480 · hd = 1280×720 · fullhd = 1920×1080 · max = bis 3840×2160 (Iris wird mit mehr Pixeln aufgelöst, kostet Rechenzeit) */
+export type CameraResolution = 'low' | 'hd' | 'fullhd' | 'max';
+export const RESOLUTIONS: Record<CameraResolution, { w: number; h: number }> = {
+  low: { w: 640, h: 480 },
+  hd: { w: 1280, h: 720 },
+  fullhd: { w: 1920, h: 1080 },
+  max: { w: 3840, h: 2160 },
+};
 
 export interface StartOptions {
   deviceId?: string;
@@ -191,6 +202,7 @@ export class EyeTracker {
       viewport: opts.viewport ?? (() => ({ w: window.innerWidth, h: window.innerHeight })),
       delegate: opts.delegate ?? 'auto',
       smoothing: opts.smoothing ?? 0.5,
+      resolution: opts.resolution ?? 'hd',
     };
     this.filter = new GazeFilter(this.opts.smoothing);
     this.video = document.createElement('video');
@@ -358,7 +370,8 @@ export class EyeTracker {
     if (!window.isSecureContext) throw new TrackerError('insecure');
     if (!navigator.mediaDevices?.getUserMedia) throw new TrackerError('no-camera-api');
     onProgress?.({ phase: 'camera', ratio: 0 });
-    const base: MediaTrackConstraints = { width: { ideal: 640 }, height: { ideal: 480 }, frameRate: { ideal: 30 } };
+    const want = RESOLUTIONS[this.opts.resolution ?? 'hd'];
+    const base: MediaTrackConstraints = { width: { ideal: want.w }, height: { ideal: want.h }, frameRate: { ideal: 30 } };
     const video: MediaTrackConstraints = deviceId ? { ...base, deviceId: { exact: deviceId } } : { ...base, facingMode: 'user' };
     try {
       this.stream = await navigator.mediaDevices.getUserMedia({ video, audio: false });

@@ -22,7 +22,7 @@ Sehkraft oder Gesundheit. Ergebnisse sind nur zum Vergleich mit sich selbst geda
 ## Funktionsweise
 
 ```
-Kamera (getUserMedia, user, 640×480, ≤ 30 fps)
+Kamera (getUserMedia, user, Wunsch-Auflösung wählbar: 640×480 · 1280×720 (Standard) · 1920×1080 · bis 3840×2160, ≤ 30 fps)
   → MediaPipe Face Landmarker (478 Punkte inkl. Iris, Transformationsmatrix)         [features.ts]
   → Merkmalsvektor: Iris relativ zu Augenwinkeln (je Auge, in Augenbreiten), Lidspalte,
     Kopfdrehung/-neigung/-rollen (aus der Matrix), Gesichtslage, Augenabstand-Skala

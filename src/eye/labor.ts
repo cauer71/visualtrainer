@@ -20,7 +20,7 @@ import { dominantQuadrant, makeSequence, QuadrantTestCounter, spreadStats, trans
 import { drawOverlay, Stage, viewportSize } from './stage';
 import { loadSessionCalibration, loadSettings, saveSessionCalibration, saveSettings } from './store';
 import { eyeTexts } from './texts';
-import { EyeTracker, isAbort, sleep, type Delegate, type FrameInfo, type TimedGaze, type TrackerError } from './tracker';
+import { EyeTracker, isAbort, sleep, type CameraResolution, type Delegate, type FrameInfo, type TimedGaze, type TrackerError } from './tracker';
 import type { Pt, Quadrant } from './types';
 import './eye.css';
 
@@ -47,7 +47,7 @@ const startDelegate: Delegate = delegateParam === 'cpu' ? 'CPU' : delegateParam 
 
 // Modelle/WASM liegen unter /eye-models/ (relativ zur Seite, funktioniert auch in Unterordnern)
 const modelBase = new URL('../../eye-models/', location.href).href;
-const tracker = new EyeTracker({ modelBase, viewport: viewportSize, delegate: startDelegate, smoothing: settings.smoothing });
+const tracker = new EyeTracker({ modelBase, viewport: viewportSize, delegate: startDelegate, smoothing: settings.smoothing, resolution: settings.resolution });
 
 app.innerHTML = `
 <header class="eye-head"><a href="../${lang === 'it' ? '?lang=it' : ''}">← ${t.backHome}</a><span class="eye-badge">${t.experiment}</span><span>${other}</span></header>
@@ -151,6 +151,8 @@ app.innerHTML = `
     <section class="eye-card" id="sec-camera" aria-labelledby="h-cam">
       <h2 id="h-cam">${T.s9}</h2>
       <div class="eye-field"><label for="cam-select">${T.s9Cameras}</label><select id="cam-select" disabled></select></div>
+      <div class="eye-field"><label for="res-select">${T.s9Res}</label><select id="res-select"><option value="low">${T.s9ResLow}</option><option value="hd">${T.s9ResHd}</option><option value="fullhd">${T.s9ResFull}</option><option value="max">${T.s9ResMax}</option></select></div>
+      <p class="eye-note">${T.s9ResHint}</p>
       <div class="eye-actions"><button type="button" class="eye-btn" id="btn-cam-switch" disabled>${T.s9Switch}</button></div>
       <p class="eye-note" id="cam-note"></p>
       <div class="eye-field"><label for="engine-select">${T.s9Engine}</label><select id="engine-select"><option value="auto">${T.s9EngineAuto}</option><option value="CPU">${T.s9EngineCpu}</option><option value="GPU">${T.s9EngineGpu}</option></select></div>
@@ -245,7 +247,7 @@ function updateLocks(): void {
   ctrl('btn-stop', run);
   const multi = cameras.length > 1;
   $<HTMLSelectElement>('cam-select').disabled = !run || synthetic || !multi;
-  $<HTMLButtonElement>('btn-cam-switch').disabled = !run || synthetic || !multi || busy;
+  $<HTMLButtonElement>('btn-cam-switch').disabled = !run || synthetic || busy;
   $('cam-note').textContent = run && !synthetic && !multi ? T.s9OneCamera : '';
   $<HTMLButtonElement>('btn-start').disabled = !$<HTMLInputElement>('consent').checked || run || busy;
   updateBanner();
@@ -392,12 +394,19 @@ async function refreshCameras(): Promise<void> {
 }
 
 $('btn-cam-switch').addEventListener('click', async () => {
-  const id = $<HTMLSelectElement>('cam-select').value;
+  const id = $<HTMLSelectElement>('cam-select').value || undefined;
   tracker.stop();
   tracker.setCalibration(null);
   saveSessionCalibration(null);
   $('cal-result').textContent = '';
   await startTracker({ deviceId: id });
+});
+
+const resEl = $<HTMLSelectElement>('res-select');
+resEl.value = settings.resolution;
+resEl.addEventListener('change', () => {
+  tracker.opts.resolution = resEl.value as CameraResolution;
+  saveSettings({ resolution: resEl.value as CameraResolution });
 });
 
 const engineEl = $<HTMLSelectElement>('engine-select');

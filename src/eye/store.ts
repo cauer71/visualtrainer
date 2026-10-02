@@ -1,7 +1,7 @@
 // EYE-EXPERIMENT: kleine lokale Ablage (Einstellungen in localStorage, Kalibrierung optional in sessionStorage).
 // Schlüssel `blickfit.eye:v1`; die Haupt-App-Historie wird nie berührt. Alle Zugriffe sind abgesichert.
 import { isGazeModel, type GazeModel } from './calibration';
-import type { Delegate } from './tracker';
+import type { CameraResolution, Delegate } from './tracker';
 import type { Size } from './types';
 
 const KEY = 'blickfit.eye:v1';
@@ -13,10 +13,12 @@ export interface EyeSettings {
   diagonalInch: number | null;
   smoothing: number;
   delegate: Delegate;
+  /** Wunsch-Auflösung der Kamera */
+  resolution: CameraResolution;
   lastCalibration?: { at: number; looMeanPx: number; viewport: Size; model: string };
 }
 
-export const DEFAULT_SETTINGS: EyeSettings = { distanceCm: 45, diagonalInch: null, smoothing: 0.5, delegate: 'auto' };
+export const DEFAULT_SETTINGS: EyeSettings = { distanceCm: 45, diagonalInch: null, smoothing: 0.5, delegate: 'auto', resolution: 'hd' };
 
 export function loadSettings(): EyeSettings {
   try {
@@ -29,6 +31,7 @@ export function loadSettings(): EyeSettings {
       distanceCm: Math.min(70, Math.max(30, Number(s.distanceCm) || DEFAULT_SETTINGS.distanceCm)),
       smoothing: Math.min(1, Math.max(0, Number.isFinite(Number(s.smoothing)) ? Number(s.smoothing) : DEFAULT_SETTINGS.smoothing)),
       delegate: s.delegate === 'CPU' || s.delegate === 'GPU' ? s.delegate : 'auto',
+      resolution: s.resolution === 'low' || s.resolution === 'fullhd' || s.resolution === 'max' ? s.resolution : 'hd',
     };
   } catch {
     return { ...DEFAULT_SETTINGS };
