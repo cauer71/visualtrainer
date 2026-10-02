@@ -3,7 +3,7 @@
 **Live:** https://visual.auer.page (Alternativ: https://blickfit.christian-auer-71.workers.dev)
 
 Eine Web-Plattform mit kurzen visuellen Trainingsübungen, gedacht für die Homepage eines Optikers
-(voreingestellt: **Bio-Optik Flaim**, Farben von optikflaim.com). Optimiert für Tablets mit Touchscreen,
+(Name, Farben und Links in `src/config/brand.ts` einstellbar). Optimiert für Tablets mit Touchscreen,
 funktioniert aber auch am Handy und am Computer. Sprachen: **Deutsch** und **Italienisch**.
 
 - keine Anmeldung, keine Cookies, kein Tracking – Ergebnisse bleiben nur auf dem Gerät (localStorage)
@@ -140,7 +140,7 @@ Danach `npm run build`.
 ## Auf der Homepage einbinden
 
 **Variante A – eigener Link/Unterseite (empfohlen):** Die Seite unter einer eigenen Adresse veröffentlichen
-(z. B. `training.optikflaim.com`) und von der Homepage verlinken. Vollbild und „Bildschirm bleibt an“ funktionieren so am besten.
+(z. B. `training.example.com`) und von der Homepage verlinken. Vollbild und „Bildschirm bleibt an“ funktionieren so am besten.
 
 **Variante B – iframe:**
 

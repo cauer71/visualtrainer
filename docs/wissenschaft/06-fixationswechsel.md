@@ -3,7 +3,7 @@
 *Übung 905 „4-Ziele-Wechsel“ · Vorbild: klassische Sehtherapie-Übung „Four Square / 4 Chart Saccades“ mit vier Hart-Chart-Tafeln (Quellen siehe „Zur Quelle“) · Stand: 02.10.2026 · ersetzt die erste Fassung dieses Dokuments (siehe „Was wir bei der ersten Fassung falsch verstanden haben“)*
 
 > **Wofür dieses Dokument da ist:** Grundlage für Übungsdesign, Beratung im Geschäft und Website-Texte (DE + IT) der
-> Trainingsplattform von Bio-Optik Flaim (Tablet/Touchscreen, Browser, keine Benutzerkonten, Ergebnisse nur lokal) für die
+> Trainingsplattform (Tablet/Touchscreen, Browser, keine Benutzerkonten, Ergebnisse nur lokal) für die
 > Übung **4-Ziele-Wechsel** (905). Es vergleicht **die klassische Übung** (vier Tafeln mit Buchstabenrastern, ein Buchstabe von jeder Tafel im Wechsel, laut gelesen)
 > und **ihre Touch-Umsetzung** mit der Studienlage: **was die Wissenschaft stützt**, **wo es schwach ist** und **welche Änderungen und Entscheidungen die Blickfit-Umsetzung deshalb hat**.
 > Jede zitierte Quelle wurde über Crossref (DOI) und – wo möglich – PubMed-, Europe-PMC-, Verlags- oder PMC-Abstract geprüft; der Prüfstand steht im

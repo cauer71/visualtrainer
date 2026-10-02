@@ -39,14 +39,14 @@ export interface BrandConfig {
 
 export const brand: BrandConfig = {
   appName: 'Blickfit',
-  opticianName: 'Bio-Optik Flaim',
+  opticianName: '',
   logoUrl: '',
-  homepageUrl: 'https://www.optikflaim.com/',
-  appointmentUrl: 'https://www.optikflaim.com/',
-  privacyUrl: 'https://www.optikflaim.com/pages/privacy-policy',
+  homepageUrl: '',
+  appointmentUrl: '',
+  privacyUrl: '',
   imprintUrl: '',
-  // Farben von optikflaim.com: Grün #79AC2B (Logo/Buttons) und Holz-Braun #8C6D4A.
-  // Für Buttons mit weißer Schrift wird ein tieferes Flaim-Grün verwendet (#5A7F20, Kontrast 4,7 : 1),
+  // Markenfarbe Grün #79AC2B und Holz-Braun #8C6D4A.
+  // Für Buttons mit weißer Schrift wird ein tieferes Grün verwendet (#5A7F20, Kontrast 4,7 : 1),
   // weil Weiß auf #79AC2B nur 2,7 : 1 erreicht (zu wenig für gute Lesbarkeit).
   colors: {
     primary: '#5A7F20',

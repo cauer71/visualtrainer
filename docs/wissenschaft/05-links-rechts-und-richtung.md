@@ -3,7 +3,7 @@
 *Neue Übungen 902–904 · Vorbild: drei Handyvideos einer Reha-/Neuro-Trainingssoftware (Touchmonitor; keine Website, keine URL, kein Code) · Stand: 01.10.2026*
 
 > **Wofür dieses Dokument da ist:** Grundlage für Übungsdesign, Beratung im Geschäft und Website-Texte (DE + IT) der
-> Trainingsplattform von Bio-Optik Flaim (Tablet/Touchscreen, Browser, keine Benutzerkonten, Ergebnisse nur lokal) für drei neue
+> Trainingsplattform (Tablet/Touchscreen, Browser, keine Benutzerkonten, Ergebnisse nur lokal) für drei neue
 > Übungen, die nach Videos des Auftraggebers entstehen: **Richtung & Wort** (902), **Welche Seite?** (903) und
 > **Zahlen-Buchstaben-Wirbel** (904). Es vergleicht je Übung, **was das Original verlangt**, **was die Wissenschaft sagt**,
 > **wo das Original wissenschaftlich schwach ist** und **welche Änderungen die Blickfit-Version deshalb macht**.

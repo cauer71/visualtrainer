@@ -5,7 +5,7 @@ Symbol-Zahl-Zuordnung, Daueraufmerksamkeit, geteilte Aufmerksamkeit, Multitaskin
 Stand: 29.09.2026*
 
 > **Wofür dieses Dokument da ist:** Grundlage für Übungsdesign und Website-Texte (DE + IT) der
-> Trainingsplattform von Bio-Optik Flaim (Tablet/Touchscreen, Browser, keine Benutzerkonten,
+> Trainingsplattform (Tablet/Touchscreen, Browser, keine Benutzerkonten,
 > Ergebnisse nur lokal). Zielgruppe: Laien aller Altersgruppen, ausdrücklich auch Senioren.
 > Jede zitierte Quelle wurde über eine echte URL geprüft (PubMed/NCBI, Crossref-DOI, PMC-Volltext,
 > Verlags- oder Autorenseite). Zahlen stammen aus Abstracts oder Volltexten. Eigene Herleitungen
