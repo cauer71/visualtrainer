@@ -104,6 +104,11 @@ import { laborZielVerfolgen } from './labor-ziel-verfolgen';
 import { laborTaktSakkaden } from './labor-takt-sakkaden';
 import { laborBuchstabentafel } from './labor-buchstabentafel';
 
+import { laborSequenzGedaechtnis } from './labor-sequenz-gedaechtnis';
+import { laborWoerterBauen } from './labor-woerter-bauen';
+import { laborZeichenFinden } from './labor-zeichen-finden';
+import { laborMentaleRotation } from './labor-mentale-rotation';
+
 /** Reihenfolge = Anzeige-Reihenfolge innerhalb der Bereiche */
 export const EXERCISES: ExerciseDefinition[] = [
   blitzreaktion,
@@ -201,6 +206,10 @@ export const EXERCISES: ExerciseDefinition[] = [
   laborZielVerfolgen,
   laborTaktSakkaden,
   laborBuchstabentafel,
+  laborSequenzGedaechtnis,
+  laborWoerterBauen,
+  laborZeichenFinden,
+  laborMentaleRotation,
 ];
 
 /** Marke der Labor-Übungen (cm/Sehwinkel, Einstellungen, Kalibrierung); sie stehen nicht im Tagestraining */
