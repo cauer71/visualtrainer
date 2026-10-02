@@ -93,6 +93,10 @@ import { seiteErkennen } from './seite-erkennen';
 import { zahlBuchstabeWirbel } from './zahl-buchstabe-wirbel';
 import { vierZieleWechsel } from './vier-ziele-wechsel';
 import { laborSpotTouch } from './labor-spot-touch';
+import { laborSequenzGedaechtnis } from './labor-sequenz-gedaechtnis';
+import { laborWoerterBauen } from './labor-woerter-bauen';
+import { laborZeichenFinden } from './labor-zeichen-finden';
+import { laborMentaleRotation } from './labor-mentale-rotation';
 
 /** Reihenfolge = Anzeige-Reihenfolge innerhalb der Bereiche */
 export const EXERCISES: ExerciseDefinition[] = [
@@ -182,6 +186,10 @@ export const EXERCISES: ExerciseDefinition[] = [
   zahlBuchstabeWirbel,
   vierZieleWechsel,
   laborSpotTouch,
+  laborSequenzGedaechtnis,
+  laborWoerterBauen,
+  laborZeichenFinden,
+  laborMentaleRotation,
 ];
 
 /** Marke der Labor-Übungen (cm/Sehwinkel, Einstellungen, Kalibrierung); sie stehen nicht im Tagestraining */
