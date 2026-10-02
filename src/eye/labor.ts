@@ -87,6 +87,7 @@ app.innerHTML = `
           <dt>${T.resolution}</dt><dd id="m-res">–</dd>
           <dt>${T.engine}</dt><dd id="m-engine">–</dd>
         </dl>
+        <p class="eye-note" id="m-resdiag" hidden></p>
       </div>
       <ul class="eye-tips" id="tips"></ul>
     </section>
@@ -366,6 +367,18 @@ function updateMetrics(): void {
   $('m-pitch').textContent = face && m?.hasPose ? `${num(Math.abs(m.pitchDeg), 0)}°` : '–';
   $('m-dist').textContent = face && m?.distanceCm ? `≈ ${num(Math.round(m.distanceCm / 5) * 5, 0)} cm` : '–';
   $('m-res').textContent = run && st.camera.width ? `${st.camera.width}×${st.camera.height}${st.camera.frameRateSetting ? ` @ ${num(st.camera.frameRateSetting, 0)}` : ''}` : '–';
+  const rd = $('m-resdiag');
+  if (run && !synthetic && st.camera.width) {
+    const c = st.camera;
+    const parts = [`${T.resWanted}: ${c.requested.w}×${c.requested.h}`];
+    if (c.max) parts.push(`${T.resMax}: ${c.max.w}×${c.max.h}`);
+    const belowWish = c.width < c.requested.w * 0.95;
+    const atMax = c.max ? c.width >= c.max.w * 0.95 : false;
+    rd.textContent = parts.join(' · ') + (belowWish ? ' – ' + (atMax ? T.resDiagMax : c.max ? T.resDiagLess : '') : '');
+    rd.hidden = false;
+  } else {
+    rd.hidden = true;
+  }
   $('m-engine').textContent = !run ? '–' : st.delegate === 'GPU' ? T.engineGpu : st.delegate === 'CPU' ? T.engineCpu : st.delegate === 'synthetic' ? T.engineSynthetic : '–';
   const tips: string[] = [];
   if (run && !synthetic) {
@@ -932,6 +945,8 @@ function collectExport(): Record<string, unknown> {
       width: st.camera.width,
       height: st.camera.height,
       frameRateSetting: st.camera.frameRateSetting,
+      requested: st.camera.requested,
+      maxCapability: st.camera.max,
       cameraCount: cameras.length,
       engine: st.delegate,
       engineSetting: tracker.opts.delegate,

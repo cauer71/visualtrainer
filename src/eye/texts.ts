@@ -175,6 +175,10 @@ export interface EyeTexts {
     s9ResFull: string;
     s9ResMax: string;
     s9ResHint: string;
+    resWanted: string;
+    resMax: string;
+    resDiagMax: string;
+    resDiagLess: string;
     s9Stop: string;
     s9Stopped: string;
     // allgemein
@@ -398,6 +402,10 @@ const de: EyeTexts = {
     s9ResHd: 'mittel · 1280 × 720 (Standard)',
     s9ResFull: 'hoch · 1920 × 1080',
     s9ResMax: 'maximal · bis 3840 × 2160',
+    resWanted: 'gewünscht',
+    resMax: 'Kamera-Maximum laut Browser',
+    resDiagMax: 'Mehr liefert diese Kamera laut Browser nicht. Eine höhere Stufe ändert dann nichts.',
+    resDiagLess: 'Der Browser liefert weniger, als die Kamera kann. Ist die Kamera noch in einem anderen Fenster, Tab oder einer anderen App geöffnet? Dann dort schließen, hier „Kamera beenden“ und neu starten.',
     s9ResHint: 'Mehr Pixel zeigen die Iris genauer, kosten aber Rechenzeit (Bildrate sinkt). Gilt nach „Kamera neu starten“ (startet die Kamera neu; die Kalibrierung wird dabei verworfen). Die tatsächliche Auflösung wählt der Browser; sie steht in der Live-Ansicht und im Export.',
     s9Stop: 'Kamera beenden',
     s9Stopped: 'Kamera beendet.',
@@ -624,6 +632,10 @@ const it: EyeTexts = {
     s9ResHd: 'media · 1280 × 720 (standard)',
     s9ResFull: 'alta · 1920 × 1080',
     s9ResMax: 'massima · fino a 3840 × 2160',
+    resWanted: 'richiesta',
+    resMax: 'massimo della fotocamera secondo il browser',
+    resDiagMax: 'Questa fotocamera non fornisce di più secondo il browser. Un livello più alto non cambia nulla.',
+    resDiagLess: 'Il browser fornisce meno di quanto la fotocamera può. La fotocamera è ancora aperta in un’altra finestra, scheda o app? Chiudetela lì, qui «Termina fotocamera» e riavviate.',
     s9ResHint: 'Più pixel mostrano l’iride con più precisione, ma richiedono più calcolo (il frame rate scende). Vale dopo «Riavvia la fotocamera» (riavvia la fotocamera; la calibrazione viene scartata). La risoluzione effettiva la sceglie il browser; compare nella vista live e nell’esportazione.',
     s9Stop: 'Termina fotocamera',
     s9Stopped: 'Fotocamera terminata.',

@@ -44,6 +44,18 @@ export interface TrackerOptions {
   resolution?: CameraResolution;
 }
 
+/** Größte Auflösung laut Kamera-Fähigkeiten (Chrome/Edge/Firefox nennen sie, Safari nicht) */
+function capMax(track: MediaStreamTrack | undefined): { w: number; h: number } | null {
+  try {
+    const c = track?.getCapabilities?.() as { width?: { max?: number }; height?: { max?: number } } | undefined;
+    const w = c?.width?.max;
+    const h = c?.height?.max;
+    return w && h ? { w, h } : null;
+  } catch {
+    return null;
+  }
+}
+
 /** low = 640×480 · hd = 1280×720 · fullhd = 1920×1080 · max = bis 3840×2160 (Iris wird mit mehr Pixeln aufgelöst, kostet Rechenzeit) */
 export type CameraResolution = 'low' | 'hd' | 'fullhd' | 'max';
 export const RESOLUTIONS: Record<CameraResolution, { w: number; h: number }> = {
@@ -82,7 +94,17 @@ export interface TrackerStats {
   procMsMean: number;
   procMsMax: number;
   frames: number;
-  camera: { label: string; width: number; height: number; frameRateSetting: number | null; deviceId: string | null };
+  camera: {
+    label: string;
+    width: number;
+    height: number;
+    frameRateSetting: number | null;
+    deviceId: string | null;
+    /** gewünschte Auflösung laut Einstellung */
+    requested: { w: number; h: number };
+    /** größte Auflösung, die die Kamera laut Browser kann (null = Browser nennt sie nicht) */
+    max: { w: number; h: number } | null;
+  };
   delegate: 'GPU' | 'CPU' | 'synthetic' | null;
 }
 
@@ -270,6 +292,8 @@ export class EyeTracker {
         height: this.video.videoHeight || s?.height || 0,
         frameRateSetting: s?.frameRate ?? null,
         deviceId: this.deviceId,
+        requested: RESOLUTIONS[this.opts.resolution],
+        max: capMax(track),
       },
       delegate: this.delegateUsed,
     };
@@ -383,6 +407,16 @@ export class EyeTracker {
       throw new TrackerError('camera-failed', (e as Error)?.message);
     }
     const track = this.stream.getVideoTracks()[0];
+    // Lieferte der Browser weniger als gewünscht, obwohl die Kamera mehr kann: nochmals ausdrücklich anfordern
+    try {
+      const cap = capMax(track);
+      const cur = track?.getSettings?.();
+      if (cap && cur?.width && cur.width < Math.min(want.w, cap.w)) {
+        await track.applyConstraints({ width: { ideal: Math.min(want.w, cap.w) }, height: { ideal: Math.min(want.h, cap.h) }, frameRate: { ideal: 30 } });
+      }
+    } catch {
+      /* bleibt bei der gelieferten Auflösung */
+    }
     this.deviceId = track?.getSettings?.().deviceId ?? deviceId ?? null;
     this.video.srcObject = this.stream;
     try {
