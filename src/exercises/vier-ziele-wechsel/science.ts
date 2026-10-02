@@ -32,7 +32,7 @@ export const science: ScienceEntry = {
     src('Pronk, Wiers, Molenkamp & Murre (2020). Mental chronometry in the pocket? Timing accuracy of web applications on touchscreen and keyboard devices. Behavior Research Methods', 'https://doi.org/10.3758/s13428-019-01321-2'),
     src('Saslow (1967). Effects of components of displacement-step stimuli upon latency for saccadic eye movement. Journal of the Optical Society of America', 'https://doi.org/10.1364/JOSA.57.001024'),
     src('MacKenzie (1992). Fitts’ law as a research and design tool in human-computer interaction. Human-Computer Interaction', 'https://doi.org/10.1207/s15327051hci0701_3'),
-    src('Guo et al. (2025). Learning effects overestimate the effect of training when the test resembles the training. Frontiers in Physiology', 'https://doi.org/10.3389/fphys.2025.1664572'),
+    src('Guo, Yuan, Yang & Qiu (2025). Does the "learning effect" caused by digital devices exaggerate sports visual training outcomes? A systematic review and meta-analysis. Frontiers in Physiology', 'https://doi.org/10.3389/fphys.2025.1664572'),
     src('Fransen (2024). There is no supporting evidence for a far transfer of general perceptual or cognitive training to sports performance. Sports Medicine', 'https://doi.org/10.1007/s40279-024-02060-x'),
     src('Appelbaum, Lochhead, Feng, Erickson, Liu & Laby (2025). Limited evidence is not no evidence: A rebuttal to Fransen, 2024. Sports Medicine', 'https://doi.org/10.1007/s40279-024-02141-x'),
   ],
