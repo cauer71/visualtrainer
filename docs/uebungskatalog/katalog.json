@@ -12705,19 +12705,19 @@
   {
    "nr": 905,
    "kennung": "vier-ziele-wechsel",
-   "name": "4-Ziele-Wechsel (das aktive Eckziel antippen, Blick zwischen vier Positionen wechseln)",
-   "name_original": "– (Beschreibung des Auftraggebers einer „4-Ziele-Fixationswechsel“-App, kein Titel, keine Website, keine URL)",
+   "name": "4-Ziele-Wechsel (vier Buchstabentafeln, ein Buchstabe pro Tafel im Wechsel)",
+   "name_original": "Vision Therapy Exercise: 4 Chart Saccades Exercise (Dr. Valerie Lam, Insight Vision Optometry) – auch „Four Square Hart Chart“ (Vivid Visions Optometry), „Four Charts“ (Emergent VT), „Four Corner Hart Chart Saccades“ (Marinoff, 2016); kein einheitlicher Titel",
    "kapitel": "Eigene Blickfit-Übungen",
    "kapitel_original": "",
    "unterkapitel_original": "",
-   "quelle_url": "",
+   "quelle_url": "https://www.youtube.com/watch?v=Dpj_t4tJ8Vo",
    "blickfit_umsetzung": {
     "kennung": "vier-ziele-wechsel",
     "name": "4-Ziele-Wechsel",
-    "unterschiede": "Eigene Umsetzung nach der Beschreibung des Auftraggebers (Optiker; keine Online-Quelle, kein Video, kein Code). Nur Touch (Kernmodus). Gemessen wird die Reaktionszeit Ziel → Touch, ausdrücklich kein Sakkadenmaß (kein Eye-Tracking, der Blick wird nicht gemessen). Wissenschaftlich begründet festgelegt: Stufen ändern je Schritt nur einen Parameter (Größe → Abstand/Rand → Pause 1.200 → 600 ms → ähnliche Zeichen → Symbole → Ablenker, ca. 12 Schritte); automatische Anpassung je ca. 12 Ziele (≥ 90 % richtig schwerer, 75–89 % gleich, < 75 % leichter); 3 Blöcke à 60 s mit Pause; Richtungsauswertung (→ ← ↓ ↑ ↘ ↖ ↗ ↙) erst ab genügend Wiederholungen je Klasse; Ermüdungsvergleich nur grob (erste vs. letzte Hälfte); keine Normwerte, Werte nur im Vergleich mit sich selbst auf diesem Gerät; kein Patientenname oder -code im Browser. Praxisperspektive des Auftraggebers (Muchnick, Mountford): nicht geprüft, nicht als Quelle verwendet. Zahlen grob, können sich noch ändern."
+    "unterschiede": "Touch-Umsetzung der klassischen Sehtherapie-Übung mit vier Hart-Chart-Tafeln (Buchstabenrastern) in den Ecken. Regel wie im Original: ein Buchstabe von jeder Tafel im Wechsel, dann die nächste Position. Unterschiede zum Original: Im Original wird laut vorgelesen, eine Therapeutin oder ein Lehrer hört zu und beobachtet Kopf und Augen, die Tafeln hängen an der Wand in etwa 2–3 m Abstand, das Tempo gibt oft ein Metronom vor, und es wird weder Zeit noch Blick gemessen. In der Touch-Fassung wird jeder Buchstabe der Reihe nach angetippt (erledigte Buchstaben werden blass), die Tafeln stehen in den Ecken eines Tablets in etwa 40–50 cm Abstand, und gemessen wird nur die Zeit von Tipp zu Tipp, dazu Fehler, Verlauf innerhalb der Runde und die Wechsel nach Richtung – ausdrücklich kein Sakkaden- und kein Blickmaß. Die Zeit enthält den Fingerweg, der vermutlich den größten Anteil hat. Führung (Ring um den nächsten Buchstaben, dann um die nächste Tafel, dann keine) wird abgebaut; die Stufen ändern je Schritt genau einen Parameter (Buchstabengröße, Tafelgröße, Tafelabstand, Wechsel nach 1 oder 2 Buchstaben, Tafelreihenfolge, Führung, Buchstabenmenge); Anpassung am Ende jeder Runde (≥ 90 % richtig und gleichmäßige Zeit: schwerer; 75–89 %: gleich; < 75 %: leichter). Alle Zahlen grob; maßgeblich ist die Stufentabelle der Übung (src/exercises/vier-ziele-wechsel/logic.ts). Eine erste Fassung der Übung (ein Zeichen pro Ecke, zufällig ein Ring) beruhte auf einem Missverständnis und wurde ersetzt. Ein Eye-Tracking-Versuch mit der Frontkamera wurde getestet und wieder entfernt (zu ungenau); er ist keine Quelle. Praxisangaben der Anbieter (periphere Wahrnehmung, Verbesserungen nach einigen Tagen, Lesefluss, Sportleistung) sind nicht belegt und werden nicht übernommen."
    },
    "stand": "2026-10-02",
-   "kurzbeschreibung": "Auf ruhigem Grund stehen vier Zeichen in den vier Ecken des Bildschirms (Buchstaben oder Ziffern, später ähnlichere Zeichen und kleine Symbole). Immer eines davon ist durch einen Ring als aktuelles Ziel markiert; man blickt hin und tippt es an, kurz darauf wechselt der Ring unvorhersehbar zu einer anderen Ecke. Gemessen wird nur die Zeit vom Erscheinen des Rings bis zum Tippen – nicht der Blick.",
+   "kurzbeschreibung": "In den vier Ecken des Bildschirms steht je eine Tafel mit einem Raster aus Buchstaben (eine „Hart-Chart“). Man liest oder tippt einen Buchstaben von jeder Tafel im Wechsel: erster Buchstabe der ersten Tafel, erster der zweiten, dritten, vierten, dann der zweite Buchstabe der ersten Tafel und so weiter, bis alle Buchstaben aller Tafeln an der Reihe waren. Getippte Buchstaben werden blass und zeigen den Stand. Gemessen wird nur die Zeit von Tipp zu Tipp – nicht der Blick.",
    "ziel_funktionen": [
     "sakkaden",
     "auge_hand_koordination"
@@ -12726,15 +12726,17 @@
     "touch"
    ],
    "tablet_geeignet": "ja",
-   "dauer_sekunden": 200,
-   "schwierigkeit_anpassung": "Blickfit (Stand der Spezifikation, Zahlen grob): ca. 12 Stufen, bei jedem Schritt ändert sich genau ein Parameter, in dieser Reihenfolge: Zielgröße (sehr groß → kleiner), Abstand/Randlage (Ziele weiter zu den Rändern), Pause bis zum nächsten Ziel (Mitte 1.200 → 1.000 → 800 → 600 ms), ähnliche Zeichen (B D P R, 6 8 9 5), kleine Symbole, Ablenker im Feld. Anpassung je Segment von ca. 12 Zielen: ≥ 90 % richtig → eine Stufe schwerer, 75–89 % gleich, < 75 % leichter. Original: nur als Idee beschrieben (Stufen mit einem geänderten Parameter), keine Zahlen bekannt.",
+   "dauer_sekunden": 240,
+   "schwierigkeit_anpassung": "Blickfit (Zahlen grob, maßgeblich ist die Stufentabelle der Übung): Bei jedem Schritt ändert sich genau ein Parameter – Buchstabengröße (groß → kleiner, bis etwa 22 px), Tafelgröße (z. B. 3 × 3 → 5 × 5 oder 6 × 4 Buchstaben), Abstand der Tafeln (Tafeln weiter nach außen), Wechsel-Granularität (nach jedem Buchstaben → nach 2 Buchstaben), Tafelreihenfolge (feste Reihenfolge → Zickzack → je Durchlauf wechselnd), Führung (Ring um den nächsten Buchstaben → Ring um die nächste Tafel → keine) und Buchstabenmenge (deutlich verschiedene Großbuchstaben → ähnliche wie B D P R E F → Groß- und Kleinbuchstaben und Ziffern gemischt). Anpassung am Ende jeder Runde (alle vier Tafeln vollständig; eine Sitzung = 3 Runden): ≥ 90 % richtig und gleichmäßige Zeit → eine Stufe schwerer, 75–89 % gleich, < 75 % leichter. Original: nur Steigerung durch Metronom, größere Tafelabstände und spaltenweises Lesen beschrieben; keine Stufentabelle, keine Zahlen für Leistung.",
    "messgroessen": [
     "Hauptwert: erreichte Stufe",
-    "Treffer x von N, Fehler (falsches Ziel), Auslassungen (kein Tippen in 5–6 s), Ablenker-Tipps getrennt gezählt",
-    "Reaktionszeit Ziel → Touch (ms): Zeit vom Beginn der Einblendung des Rings bis zum Antippen – enthält Orientierung, Augenbewegung, Erkennen, Entscheiden und Fingerbewegung, ist KEIN Sakkadenmaß; Median (robuster) neben dem Mittelwert, nur richtige Erst-Tipps",
-    "erste vs. letzte Hälfte der Ziele (nur grober Verlaufshinweis, vermengt Lernen, Stufenwechsel und Müdigkeit)",
-    "Richtungsklassen → ← ↓ ↑ ↘ ↖ ↗ ↙ (Mittelwert je Klasse erst ab genügend richtigen Antworten, mit Unsicherheit; Klassen sind zugleich Wegklassen)",
-    "keine Normwerte, kein Vergleich mit anderen; Original: Auswertung nicht bekannt"
+    "Treffer und Fehler (falscher Buchstabe angetippt; ein Tipp ins Leere zählt nicht)",
+    "Zeit von Tipp zu Tipp je Buchstabe (ms; Mittelwert und Median; der erste Tipp einer Runde zählt nicht): enthält Suchen, Blickwechsel, Erkennen und vor allem den Fingerweg – KEIN Sakkadenmaß, kein Blickmaß",
+    "Dauer je Runde (alle vier Tafeln vollständig)",
+    "erste vs. letzte Hälfte einer Runde (nur grober Verlaufshinweis; die Stufe bleibt innerhalb der Runde gleich, Üben und Müdigkeit bleiben vermengt)",
+    "Tafelwechsel nach Richtung → ← ↓ ↑ ↘ ↖ ↗ ↙ (Mittelwerte erst ab genügend Wiederholungen, Schwelle 8; Richtung ist zugleich Weglänge)",
+    "bei Wechsel nach 2 Buchstaben: Zeit beim Tafelwechsel vs. innerhalb derselben Tafel („Sprungkosten“; überwiegend Fingerweg, nur Vergleich mit früher)",
+    "keine Normwerte, kein Vergleich mit anderen; Original: weder Zeit noch Blick noch Fehler werden gemessen"
    ],
    "anforderungsprofil": {
     "visuell": {
@@ -12742,8 +12744,8 @@
      "kontrast": 1,
      "farbunterscheidung": 0,
      "stereosehen": 0,
-     "peripheres_sehen": 2,
-     "nutzbares_sehfeld": 2,
+     "peripheres_sehen": 1,
+     "nutzbares_sehfeld": 1,
      "blickfolge": 0,
      "sakkaden": 3,
      "fixation": 2,
@@ -12758,24 +12760,24 @@
      "selektive_aufmerksamkeit": 2,
      "inhibition": 1,
      "geteilte_aufmerksamkeit": 0,
-     "kognitive_flexibilitaet": 0,
-     "arbeitsgedaechtnis": 0,
+     "kognitive_flexibilitaet": 1,
+     "arbeitsgedaechtnis": 1,
      "kurzzeitgedaechtnis_verbal": 0,
-     "kurzzeitgedaechtnis_visuell_raeumlich": 0,
+     "kurzzeitgedaechtnis_visuell_raeumlich": 1,
      "verarbeitungsgeschwindigkeit": 2,
-     "antizipation": 0,
-     "entscheidung_wahlreaktion": 2,
+     "antizipation": 1,
+     "entscheidung_wahlreaktion": 1,
      "lesen_sprache": 1,
      "schlussfolgern": 0
     },
     "motorisch": {
-     "einfache_reaktion": 1,
+     "einfache_reaktion": 0,
      "auge_hand_koordination": 3,
      "zielbewegung_tempo": 2,
-     "zielbewegung_praezision": 1,
+     "zielbewegung_praezision": 2,
      "kontinuierliche_steuerung": 0,
      "ruhige_hand": 0,
-     "fingergeschwindigkeit": 0,
+     "fingergeschwindigkeit": 1,
      "fingersequenz_bimanual": 0,
      "ganzkoerper": 0,
      "gleichgewicht": 0,
@@ -12788,13 +12790,13 @@
     "bewegungsreize_schwindel": 0,
     "koerperliche_belastung": 0,
     "sturzrisiko": 0,
-    "sprachabhaengigkeit": 0
+    "sprachabhaengigkeit": 1
    },
    "voraussetzungen": [
-    "Tablet auf einem Ständer, ruhig und mittig vor der Person (Abstand etwa 40–50 cm, immer gleich); alle vier Ecken mit dem Finger bequem erreichbar",
-    "Zeichen von etwa 34 px (≈ 0,9° bei 40 cm Tablet-Abstand, eigene Rechnung) bis etwa 160 px (≈ 4,6°) erkennen können",
-    "Mit dem Finger Ziele von mindestens 112 bis 144 px Durchmesser (≈ 21–28 mm) treffen können",
-    "Buchstaben bzw. Ziffern kennen (A B C D, 1 2 3 4, später B D P R, 6 8 9 5)",
+    "Tablet auf einem Ständer, ruhig und mittig vor der Person (Abstand etwa 40–50 cm, immer gleich); alle vier Ecken mit dem Finger bequem erreichbar, ohne den Rumpf zu drehen",
+    "Buchstaben von etwa 22 px (Großbuchstabenhöhe ≈ 0,45° bei 40 cm Tablet-Abstand, eigene Rechnung) bis etwa 28 px und größer erkennen können; in dichten Rastern kommt Crowding hinzu",
+    "Mit dem Finger Zellen von mindestens etwa 48 px (≈ 9 mm) treffen können, auch zwischen eng stehenden Buchstaben",
+    "Buchstaben des lateinischen Alphabets kennen (später Klein- und Großbuchstaben und Ziffern gemischt)",
     "Mit ruhigem Kopf sitzen können; Brille bzw. Nahbrille so wie im Alltag verwenden und notieren"
    ],
    "vorsicht_bei": [
@@ -12809,48 +12811,52 @@
     "tremor_parkinson",
     "hand_arm_beschwerden",
     "aufmerksamkeitsprobleme",
-    "kinder_unter_6"
+    "kinder_unter_6",
+    "lese_rechtschreib_schwaeche"
    ],
    "geeignet_fuer": [
-    "Aufmerksamkeit und Blick zwischen vier weit auseinanderliegenden Zielen wechseln und das markierte Ziel zügig antippen, in ruhigem Tempo und mit schrittweiser Steigerung nur eines Parameters",
-    "Auge-Hand-Koordination über große Wege (Sehen und Tippen) in einer unvorhersehbaren Reihenfolge",
-    "Vergleich mit sich selbst: Zeit Ziel → Touch, Treffer und Fehler über mehrere Sitzungen auf demselben Gerät",
-    "Vorführübung im Geschäft oder in der Beratung – ohne Wirkanspruch und ohne Diagnose"
+    "Blick und Hand zwischen vier weit getrennten Buchstabenrastern nach fester Regel wechseln, in ruhigem Tempo und mit schrittweiser Steigerung nur eines Parameters",
+    "Buchstaben in dichten Rastern finden und der Reihe nach antippen (visuelle Suche mit Reihenfolge, Stand an blassen Buchstaben ablesbar)",
+    "Vergleich mit sich selbst: Zeit von Tipp zu Tipp, Fehler und Rundendauer über mehrere Sitzungen auf demselben Gerät",
+    "Vorführung der klassischen Übung „4 Chart Saccades“ als Touch-Spiel in Geschäft und Beratung – ohne Wirkanspruch und ohne Diagnose"
    ],
    "weniger_geeignet_fuer": [
-    "Messung von Sakkaden (Latenz, Amplitude, Genauigkeit): dafür braucht es einen Eye-Tracker, die App misst den Blick nicht",
+    "Messung oder Training von Sakkaden: die App misst den Blick nicht, und die Zeit von Tipp zu Tipp wird vom Fingerweg dominiert",
+    "Ersatz für die angeleitete Sehtherapie-Übung (laut lesen, Beobachtung von Kopf und Augen, Metronom, Wandtafeln in 2–3 m Abstand)",
     "Diagnose, Normvergleich, Therapie oder Reha (nicht vorgesehen, nicht möglich)",
-    "reine Reaktionsschnelligkeit (dafür 101/503; hier steckt der Fingerweg in der Zeit)",
     "Menschen mit Nystagmus, Gesichtsfeldausfall oder Schielen, wenn aus dem Ergebnis auf das Auge geschlossen werden soll",
-    "Smartphone-Bildschirme für große Blicksprünge (die Winkel sind nur etwa halb so groß wie am Tablet)"
+    "Smartphone-Bildschirme für große Wechsel (die Winkel sind nur etwa halb so groß wie am Tablet, die Tafeln müssen kleiner sein)"
    ],
    "evidenz": {
     "uebungseffekt": "mittel",
     "naher_transfer": "unklar",
     "alltag_transfer": "fehlend",
-    "kommentar": "Sakkaden-, Zeige- und Reaktionsaufgaben werden mit Übung schneller und stabiler (Karantinos et al. 2025; Montenegro & Edelman 2019); im Labor übertrug sich das teils zwischen Sakkadentypen und Hemifeldern, in einem Einzelfall aber nicht auf andere Positionen (Di Russo et al. 2003). Bei trainingsähnlichem Test werden Effekte stark überschätzt (Guo et al. 2025), allgemeines Sehtraining brachte nichts über Testvertrautheit hinaus (Abernethy & Wood 2001), und Augenübungen sind für Lernstörungen nicht belegt (Handler & Fierson 2011). Für diese Übung gibt es keine Studie, und sie misst keine Sakkaden – die Einstufung gilt für die Aufgabenart."
+    "kommentar": "Zur Hart-Chart-Übung mit vier Tafeln gibt es nach eigener Recherche (PubMed und Europe PMC, 02.10.2026) keine kontrollierte Studie; Hart Charts kommen in Studien nur als Teil von Mehrkomponenten-Programmen oder für die Akkommodation vor. Sakkaden-, Such- und Zeigeaufgaben werden mit Übung schneller und stabiler (Karantinos et al. 2025; Montenegro & Edelman 2019); im Labor übertrug sich das teils zwischen Sakkadentypen, in einem Einzelfall aber nicht auf andere Positionen (Di Russo et al. 2003). Lesenahe Sakkadentrainings bei Kindern: eine kleine Pilotstudie mit Symbol-Charts (n = 21; Facchin et al. 2025) und zwei Studien mit einer Firmensoftware, deren Autor:innen teils beim Hersteller arbeiten (Leong et al. 2014; Dodick et al. 2017); das Konsenspapier AAP/AAO hält Augenübungen bei Lernstörungen für nicht belegt (Handler & Fierson 2011). Bei trainingsähnlichem Test werden Effekte stark überschätzt (Guo et al. 2025). Für diese Übung gibt es keine Studie, und sie misst keine Sakkaden – die Einstufung gilt für die Aufgabenart."
    },
    "aehnliche_uebungen": [
     303,
-    502,
-    702,
-    401,
     103,
-    902
+    904,
+    502,
+    401,
+    702
    ],
    "stichworte": [
-    "Fixationswechsel",
-    "Blicksprung",
+    "Four Square",
+    "4 Chart Saccades",
+    "Four Corner Hart Chart",
+    "Hart Chart",
+    "Buchstabenraster",
     "Sakkaden",
-    "Aufmerksamkeitsverschiebung",
+    "Fixationswechsel",
     "Auge-Hand-Koordination",
+    "visuelle Suche",
+    "Crowding",
     "Fitts'sches Gesetz",
-    "Reaktionszeit Ziel → Touch",
-    "visuo-motorische Reaktionszeit",
-    "vier Ecken",
-    "Richtungsklassen",
+    "Zeit von Tipp zu Tipp",
     "kein Eye-Tracking",
-    "Praxisperspektive nicht geprüft"
+    "Sehtherapie-Übung",
+    "Praxisangaben nicht belegt"
    ],
    "datei": "uebungen/905-vier-ziele-wechsel.md"
   }
