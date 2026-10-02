@@ -54,7 +54,7 @@ export const de: ExerciseTexts = {
   feedback: {
     findAll: 'Finde alle:',
     done: 'Fertig',
-    label: 'Tafel {i} von {n} · gefunden {a} von {b}',
+    label: 'Tafel {i}/{n}',
     moreTitle: 'Weitere Werte',
     moreNote: 'Die Zeit enthält auch die Verzögerung von Bildschirm und Touch-Sensor. Vergleiche sie nur mit deinen eigenen Werten auf diesem Gerät.',
     gridReduced: 'Auf diesem Bildschirm war das Raster kleiner als eingestellt, damit die Zeichen gut lesbar bleiben.',
@@ -147,7 +147,7 @@ export const it: ExerciseTexts = {
   feedback: {
     findAll: 'Trova tutti:',
     done: 'Fatto',
-    label: 'Tavola {i} di {n} · trovati {a} su {b}',
+    label: 'Tavola {i}/{n}',
     moreTitle: 'Altri valori',
     moreNote: 'Il tempo comprende anche il ritardo di schermo e sensore touch. Confrontalo solo con i tuoi valori su questo dispositivo.',
     gridReduced: 'Su questo schermo la griglia era più piccola di quanto impostato, perché i caratteri restassero ben leggibili.',

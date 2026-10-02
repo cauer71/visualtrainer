@@ -204,8 +204,7 @@ class SequenzGedaechtnis implements Exercise {
     if (this.demo) return;
     hud.setScore(this.game.maxCompleted);
     const n = this.game.seq ? this.game.seq.length : this.game.length;
-    const tpl = this.p.maxErrors > 0 ? texts.feedback.labelMax : texts.feedback.label;
-    hud.setLabel(tpl.replace('{n}', String(n)).replace('{e}', String(this.game.errors)).replace('{m}', String(this.p.maxErrors)));
+    hud.setLabel(texts.feedback.label.replace('{n}', String(n)));
   }
 
   /** Fortschritt: der größte Anteil von Fehlern, Zielänge und Zeit */
@@ -391,6 +390,8 @@ class SequenzGedaechtnis implements Exercise {
     else if (this.phase === 'input') label = `${texts.feedback.yours} · ${this.game.pos} / ${this.game.seq?.length ?? 0}`;
     else if (this.phase === 'fb') label = this.outcome === 'error' ? texts.feedback.wrong : texts.feedback.right;
     if (!label) return;
+    const tpl = this.p.maxErrors > 0 ? texts.feedback.errors : texts.feedback.errorsFree;
+    label += ` · ${tpl.replace('{e}', String(this.game.errors)).replace('{m}', String(this.p.maxErrors))}`;
     let px = clamp(u * 3.8, 16, 26);
     g.save();
     g.font = font(px, 700);

@@ -178,11 +178,7 @@ class ZeichenFinden implements Exercise {
     hud.setScore(s.found);
     if (b) {
       hud.setLabel(
-        texts.feedback.label
-          .replace('{i}', String(s.round + 1))
-          .replace('{n}', String(this.p.rounds))
-          .replace('{a}', String(b.foundCount))
-          .replace('{b}', String(b.nTargets)),
+        texts.feedback.label.replace('{i}', String(s.round + 1)).replace('{n}', String(this.p.rounds)),
       );
     }
   }
@@ -357,9 +353,10 @@ class ZeichenFinden implements Exercise {
     this.drawDone(g, this.phase === 'play');
   }
 
-  /** „Finde alle:“ und das Zielzeichen groß */
+  /** „Finde alle:“, das Zielzeichen groß und daneben „gefunden / gesucht“ */
   private drawTarget(g: CanvasRenderingContext2D, b: Board, cx: number, cy: number, maxW: number, u: number): void {
     const label = this.ctx.texts.feedback.findAll;
+    const count = `${b.foundCount} / ${b.nTargets}`;
     const lp = clamp(u * 3.2, 14, 22);
     const gp = clamp(this.headerH() * 0.78, 34, 70);
     g.save();
@@ -367,13 +364,16 @@ class ZeichenFinden implements Exercise {
     const lw = g.measureText(label).width;
     g.font = font(gp, 800);
     const gw = Math.max(gp * 0.6, g.measureText(b.target).width);
+    g.font = font(lp * 1.1, 700);
+    const cw = g.measureText(count).width;
     g.restore();
     const gap = 12;
-    const total = lw + gap + gw;
+    const total = lw + gap + gw + gap * 1.6 + cw;
     const scale = total > maxW ? maxW / total : 1;
     const x0 = cx - (total * scale) / 2;
     text(g, label, x0, cy, lp * scale, C.dim, { weight: 700, align: 'left' });
     text(g, b.target, x0 + (lw + gap) * scale, cy + 1, gp * scale, TARGET, { weight: 800, align: 'left' });
+    text(g, count, x0 + (lw + gap + gw + gap * 1.6) * scale, cy, lp * 1.1 * scale, C.fg, { weight: 700, align: 'left' });
   }
 
   private drawBoard(g: CanvasRenderingContext2D, b: Board, L: FindLayout, showMissed: boolean): void {
@@ -420,17 +420,19 @@ class ZeichenFinden implements Exercise {
     const col = active ? C.fg : C.dim;
     const cx = r.x + r.w / 2;
     const cy = r.y + r.h / 2;
-    text(g, label, cx + lp * 0.7, cy, lp, col, { weight: 700 });
+    // Haken und Wort als Gruppe, mittig im Knopf
+    const group = lp * 1.5 + tw;
+    const gx = cx - group / 2;
+    text(g, label, gx + lp * 1.5 + tw / 2, cy, lp, col, { weight: 700 });
     g.save();
     g.strokeStyle = col;
     g.lineWidth = Math.max(2.5, lp * 0.14);
     g.lineCap = 'round';
     g.lineJoin = 'round';
-    const ax = cx - tw / 2 - lp * 0.35;
     g.beginPath();
-    g.moveTo(ax - lp * 0.45, cy + lp * 0.02);
-    g.lineTo(ax - lp * 0.12, cy + lp * 0.36);
-    g.lineTo(ax + lp * 0.5, cy - lp * 0.34);
+    g.moveTo(gx, cy + lp * 0.02);
+    g.lineTo(gx + lp * 0.33, cy + lp * 0.38);
+    g.lineTo(gx + lp * 0.95, cy - lp * 0.32);
     g.stroke();
     g.restore();
   }

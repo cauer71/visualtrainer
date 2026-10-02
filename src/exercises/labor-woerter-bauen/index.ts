@@ -165,8 +165,7 @@ class WoerterBauen implements Exercise {
     hud.setLabel(
       texts.feedback.label
         .replace('{i}', String(Math.min(s.idx + 1, s.words.length)))
-        .replace('{n}', String(s.words.length))
-        .replace('{e}', String(s.errors)),
+        .replace('{n}', String(s.words.length)),
     );
   }
 
@@ -402,19 +401,21 @@ class WoerterBauen implements Exercise {
     const tw = g.measureText(label).width;
     g.restore();
     const col = canUndo ? C.fg : C.dim;
-    text(g, label, cx + lp * 0.7, cy, lp, col, { weight: 700 });
+    // Pfeil und Wort als Gruppe, mittig im Knopf: Pfeil (≈ 1 lp breit), Abstand 0,5 lp, Wort
+    const group = lp * 1.5 + tw;
+    const gx = cx - group / 2;
+    text(g, label, gx + lp * 1.5 + tw / 2, cy, lp, col, { weight: 700 });
     g.save();
     g.strokeStyle = col;
     g.lineWidth = Math.max(2.5, lp * 0.14);
     g.lineCap = 'round';
     g.lineJoin = 'round';
-    const ax = cx - tw / 2 - lp * 0.1;
     g.beginPath();
-    g.moveTo(ax + lp * 0.55, cy - lp * 0.42);
-    g.lineTo(ax, cy);
-    g.lineTo(ax + lp * 0.55, cy + lp * 0.42);
-    g.moveTo(ax, cy);
-    g.lineTo(ax + lp * 1.0, cy);
+    g.moveTo(gx + lp * 0.5, cy - lp * 0.42);
+    g.lineTo(gx, cy);
+    g.lineTo(gx + lp * 0.5, cy + lp * 0.42);
+    g.moveTo(gx, cy);
+    g.lineTo(gx + lp * 1.0, cy);
     g.stroke();
     g.restore();
   }
