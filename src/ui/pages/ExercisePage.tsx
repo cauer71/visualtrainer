@@ -132,9 +132,9 @@ function Intro({ def, series, onStart }: { def: ExerciseDefinition; series: Seri
               </span>
             ) : null}
           </p>
-          {def.warning === 'flicker' ? (
+          {def.warning ? (
             <p class="notice notice-warn">
-              <Icon name="warn" size={18} /> {ui.intro.flicker}
+              <Icon name="warn" size={18} /> {def.warning === 'flash' ? ui.intro.flash : ui.intro.flicker}
             </p>
           ) : null}
           <p class="notice">

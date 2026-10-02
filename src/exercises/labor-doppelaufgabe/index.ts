@@ -8,7 +8,7 @@
  * - Hauptwert: erkannte Zielzahlen in der Mitte (`c_hits`, höher = mehr); im Modus „Nur Rand“ die getroffenen Punkte (`p_hits`).
  * - Größen in cm sprengen die Bühne nie (`calib.fitCm`, zusätzlich Platz neben dem Kreis in der Mitte).
  * - Rückmeldung weich: ✓ am Treffer, ✗ am Fehltipp, kein Blitz, kein Rot, keine Vollflächeneffekte; die Zahl in der Mitte
- *   blendet in 120 ms ein und wechselt höchstens 2,5-mal pro Sekunde; im Intro `warning: 'flicker'` und ein Hinweis in
+ *   blendet in 120 ms ein und wechselt höchstens 2,5-mal pro Sekunde; im Intro `warning: 'flash'` und ein Hinweis in
  *   „Gut zu wissen“. Ton nur, wenn „Ton“ an ist.
  * - Gemessen wird nur dein Tippen, nicht dein Blick: „Blick in der Mitte lassen“ ist eine Bitte.
  */
@@ -432,7 +432,7 @@ export const laborDoppelaufgabe: ExerciseDefinition = {
   icon:
     '<circle cx="24" cy="24" r="9" fill="none" stroke="currentColor" stroke-width="3.2"/><path d="M21 24h6M24 21v6" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><circle cx="8.5" cy="9" r="4.5" fill="currentColor"/><circle cx="40" cy="38.5" r="4.5" fill="currentColor" opacity=".5"/><circle cx="40" cy="9" r="3" fill="none" stroke="currentColor" stroke-width="2.6"/>',
   texts: { de, it },
-  warning: 'flicker',
+  warning: 'flash',
   showsLevel: false,
   tags: ['labor'],
   params: PARAMS,

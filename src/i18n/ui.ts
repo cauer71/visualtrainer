@@ -56,6 +56,8 @@ const de = {
     posture: 'Tablet ruhig halten, etwa eine Unterarmlänge entfernt. Brille aufsetzen, falls du eine hast.',
     flicker:
       'Hinweis: Diese Übung enthält sanft pulsierende Felder. Wenn du lichtempfindlich bist oder schon einmal einen epileptischen Anfall hattest, verzichte bitte darauf.',
+    flash:
+      'Hinweis: Diese Übung zeigt Zeichen sehr kurz und wechselt Anzeigen schnell. Wenn du lichtempfindlich bist oder schon einmal einen epileptischen Anfall hattest, verzichte bitte darauf. Bei Unwohlsein sofort abbrechen.',
     back: 'Alle Übungen',
     series: (i: number, n: number) => `Tagestraining · Übung ${i} von ${n}`,
     level: (n: number) => `Du startest auf Stufe ${n}`,
@@ -272,6 +274,8 @@ const it: UiStrings = {
     posture: 'Tieni il tablet fermo, a circa un avambraccio di distanza. Se porti gli occhiali, indossali.',
     flicker:
       'Nota: questo esercizio contiene riquadri che pulsano dolcemente. Se sei fotosensibile o hai già avuto una crisi epilettica, per favore non eseguirlo.',
+    flash:
+      'Nota: questo esercizio mostra i simboli per un tempo molto breve e cambia rapidamente le immagini. Se sei fotosensibile o hai già avuto una crisi epilettica, per favore non eseguirlo. In caso di malessere interrompi subito.',
     back: 'Tutti gli esercizi',
     series: (i: number, n: number) => `Allenamento del giorno · esercizio ${i} di ${n}`,
     level: (n: number) => `Inizi dal livello ${n}`,

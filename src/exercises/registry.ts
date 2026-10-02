@@ -191,7 +191,6 @@ export const EXERCISES: ExerciseDefinition[] = [
   laborZieleOrdnen,
   laborWahlreaktion,
   laborStartZiel,
-
   laborBlitzErkennung,
   laborPeripheresErkennen,
   laborDoppelaufgabe,

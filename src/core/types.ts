@@ -359,8 +359,8 @@ export interface ExerciseDefinition {
   /** Inneres SVG (viewBox 0 0 48 48) für Karten */
   icon: string;
   texts: Record<Lang, ExerciseTexts>;
-  /** Hinweis im Intro, z. B. wegen pulsierender Flächen */
-  warning?: 'flicker';
+  /** Hinweis im Intro: 'flicker' = sanft pulsierende Flächen, 'flash' = sehr kurze Einblendungen / schnelle Wechsel */
+  warning?: 'flicker' | 'flash';
   /** Ob die gespeicherte Stufe auf der Karte angezeigt wird */
   showsLevel?: boolean;
   /** Optionen, die das Intro vor dem Start anbietet (Standard aus, Auswahl wird gespeichert) */

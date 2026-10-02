@@ -10,7 +10,7 @@
  *   Ergebnis (`ecc`), und eine kurze Meldung erscheint zu Beginn.
  * - Anzeigedauer in ganzen Bildern, gemessene Dauer im Ergebnis (siehe `_shared/labor-bilder.ts`).
  * - Blinkregel: Zwischen zwei Blitzen liegen immer mehr als eine Sekunde; gedämpftes Hellgrau, kleiner Buchstabe, kein Rot,
- *   keine Vollflächeneffekte; im Intro `warning: 'flicker'` und ein Hinweis in „Gut zu wissen“.
+ *   keine Vollflächeneffekte; im Intro `warning: 'flash'` und ein Hinweis in „Gut zu wissen“.
  * - Der Blick wird NICHT gemessen (kein Eye-Tracking): „Blick in der Mitte lassen“ ist eine Bitte, keine Kontrolle. Die
  *   wechselnde Zahl gibt dem Blick nur einen Grund, dort zu bleiben.
  */
@@ -372,7 +372,7 @@ export const laborPeripheresErkennen: ExerciseDefinition = {
   icon:
     '<g fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"><path d="M24 17v14M17 24h14"/><circle cx="24" cy="24" r="14" stroke-dasharray="3 5" opacity=".55"/></g><rect x="36" y="19" width="9" height="10" rx="2.2" fill="currentColor"/><circle cx="24" cy="24" r="2" fill="currentColor"/>',
   texts: { de, it },
-  warning: 'flicker',
+  warning: 'flash',
   showsLevel: false,
   tags: ['labor'],
   params: PARAMS,

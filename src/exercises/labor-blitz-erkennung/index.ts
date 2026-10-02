@@ -11,7 +11,7 @@
  *   gemessene Dauer steht im Ergebnis. Auf Bildschirmen ist die Dauer auf ganze Bilder gerundet (60 Hz ≈ 17 ms).
  * - Blinkregel: höchstens eine Darbietung pro Sekunde (Kreuz ≥ 700 ms, Rückmeldung 500 ms); gedämpftes Hellgrau statt
  *   Weiß, Maske in mittleren Grautönen und weich ausgeblendet, kleine Fläche (nur die Zeichenzeile), keine Vollflächen-
- *   effekte, kein Rot; im Intro `warning: 'flicker'` und ein eigener Hinweis in „Gut zu wissen“.
+ *   effekte, kein Rot; im Intro `warning: 'flash'` und ein eigener Hinweis in „Gut zu wissen“.
  * - Rückmeldung mit ✓/✗ und Text, nie nur Farbe. Gemessen wird nur, was du eintippst – nicht dein Blick.
  */
 import { background, C, fillRR, font, hit, rrPath, text } from '../../core/draw';
@@ -508,7 +508,7 @@ export const laborBlitzErkennung: ExerciseDefinition = {
   icon:
     '<g fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"><path d="M24 5v6M10 9l4 4M38 9l-4 4"/></g><rect x="6" y="18" width="10" height="13" rx="2.5" fill="currentColor"/><rect x="19" y="18" width="10" height="13" rx="2.5" fill="currentColor" opacity=".5"/><rect x="32" y="18" width="10" height="13" rx="2.5" fill="none" stroke="currentColor" stroke-width="3"/><g fill="currentColor" opacity=".55"><rect x="6" y="37" width="7" height="6" rx="1.5"/><rect x="15" y="37" width="7" height="6" rx="1.5"/><rect x="24" y="37" width="7" height="6" rx="1.5"/><rect x="33" y="37" width="7" height="6" rx="1.5"/></g>',
   texts: { de, it },
-  warning: 'flicker',
+  warning: 'flash',
   showsLevel: false,
   tags: ['labor'],
   params: PARAMS,
