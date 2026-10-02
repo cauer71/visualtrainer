@@ -20,7 +20,7 @@ describe('Definition', () => {
     expect(laborPeripheresErkennen.category).toBe('wahrnehmung');
     expect(laborPeripheresErkennen.tags).toEqual(['labor']);
     expect(laborPeripheresErkennen.usesCalibration).toBe(true);
-    expect(laborPeripheresErkennen.warning).toBe('flicker');
+    expect(laborPeripheresErkennen.warning).toBe('flash');
     expect(laborPeripheresErkennen.showsLevel).toBe(false);
     expect(laborPeripheresErkennen.params).toBe(PARAMS);
     expect(laborPeripheresErkennen.icon.length).toBeGreaterThan(20);
@@ -263,7 +263,7 @@ describe('Texte', () => {
   });
 
   it('Warnung vor Blitzen im Intro (warning) und in „Gut zu wissen“', () => {
-    expect(laborPeripheresErkennen.warning).toBe('flicker');
+    expect(laborPeripheresErkennen.warning).toBe('flash');
     expect(de.cautions![0]).toMatch(/lichtempfindlich|epileptisch/);
     expect(itTexts.cautions![0]).toMatch(/fotosensibile|epilettica/);
   });

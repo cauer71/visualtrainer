@@ -34,7 +34,7 @@ describe('Definition', () => {
     expect(laborBlitzErkennung.category).toBe('wahrnehmung');
     expect(laborBlitzErkennung.tags).toEqual(['labor']);
     expect(laborBlitzErkennung.usesCalibration).toBe(true);
-    expect(laborBlitzErkennung.warning).toBe('flicker');
+    expect(laborBlitzErkennung.warning).toBe('flash');
     expect(laborBlitzErkennung.showsLevel).toBe(false);
     expect(laborBlitzErkennung.params).toBe(PARAMS);
     expect(laborBlitzErkennung.icon.length).toBeGreaterThan(20);
@@ -364,7 +364,7 @@ describe('Texte', () => {
   it('Warnung vor schnellen Helligkeitswechseln steht in „Gut zu wissen“ und im Intro (warning)', () => {
     expect(de.cautions![0]).toMatch(/lichtempfindlich|epileptisch/);
     expect(itTexts.cautions![0]).toMatch(/fotosensibile|epilettica/);
-    expect(laborBlitzErkennung.warning).toBe('flicker');
+    expect(laborBlitzErkennung.warning).toBe('flash');
   });
 
   it('ehrlich: Blick wird nicht gemessen, Anzeigedauer auf ganze Bilder gerundet, Touch-Verzögerung', () => {

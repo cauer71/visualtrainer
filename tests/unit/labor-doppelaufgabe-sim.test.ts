@@ -19,7 +19,7 @@ describe('Definition', () => {
     expect(laborDoppelaufgabe.category).toBe('konzentration');
     expect(laborDoppelaufgabe.tags).toEqual(['labor']);
     expect(laborDoppelaufgabe.usesCalibration).toBe(true);
-    expect(laborDoppelaufgabe.warning).toBe('flicker');
+    expect(laborDoppelaufgabe.warning).toBe('flash');
     expect(laborDoppelaufgabe.showsLevel).toBe(false);
     expect(laborDoppelaufgabe.params).toBe(PARAMS);
     expect(laborDoppelaufgabe.icon.length).toBeGreaterThan(20);
@@ -239,7 +239,7 @@ describe('Texte', () => {
   });
 
   it('Warnung (warning und „Gut zu wissen“); ehrlich: Blick wird nicht gemessen, Touch-Verzögerung, Kalibrierung', () => {
-    expect(laborDoppelaufgabe.warning).toBe('flicker');
+    expect(laborDoppelaufgabe.warning).toBe('flash');
     expect(de.cautions![0]).toMatch(/lichtempfindlich|epileptisch/);
     expect(itTexts.cautions![0]).toMatch(/fotosensibile|epilettica/);
     const all = JSON.stringify(de);
