@@ -96,6 +96,9 @@ import { laborSpotTouch } from './labor-spot-touch';
 import { laborZieleOrdnen } from './labor-ziele-ordnen';
 import { laborWahlreaktion } from './labor-wahlreaktion';
 import { laborStartZiel } from './labor-start-ziel';
+import { laborBlitzErkennung } from './labor-blitz-erkennung';
+import { laborPeripheresErkennen } from './labor-peripheres-erkennen';
+import { laborDoppelaufgabe } from './labor-doppelaufgabe';
 
 /** Reihenfolge = Anzeige-Reihenfolge innerhalb der Bereiche */
 export const EXERCISES: ExerciseDefinition[] = [
@@ -188,6 +191,10 @@ export const EXERCISES: ExerciseDefinition[] = [
   laborZieleOrdnen,
   laborWahlreaktion,
   laborStartZiel,
+
+  laborBlitzErkennung,
+  laborPeripheresErkennen,
+  laborDoppelaufgabe,
 ];
 
 /** Marke der Labor-Übungen (cm/Sehwinkel, Einstellungen, Kalibrierung); sie stehen nicht im Tagestraining */
