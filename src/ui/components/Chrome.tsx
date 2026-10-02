@@ -43,15 +43,15 @@ export function Header() {
         <nav class="header-nav" aria-label={ui.nav.language}>
           {isOptician ? (
             <>
-              <a class="nav-link hide-sm" href={href('/optiker')}>
+              <a class="nav-link hide-sm" href={href('/optiker')} title={opt.navOptician}>
                 <Icon name="eye" size={20} />
                 <span>{opt.navOptician}</span>
               </a>
-              <a class="nav-link hide-sm" href={href('/katalog')}>
+              <a class="nav-link hide-sm" href={href('/katalog')} title={opt.navCatalog}>
                 <Icon name="sparkle" size={20} />
                 <span>{opt.navCatalog}</span>
               </a>
-              <a class="nav-link hide-sm" href={href('/hintergrund')}>
+              <a class="nav-link hide-sm" href={href('/hintergrund')} title={ui.nav.science}>
                 <Icon name="book" size={20} />
                 <span>{ui.nav.science}</span>
               </a>

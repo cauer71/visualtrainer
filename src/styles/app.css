@@ -426,6 +426,9 @@ p {
   border: 1px solid color-mix(in srgb, var(--brand) 18%, transparent);
   box-shadow: var(--shadow);
 }
+.hero > * {
+  min-width: 0;
+}
 .hero h1 {
   font-size: clamp(34px, 5vw, 52px);
   font-weight: 850;
@@ -1407,9 +1410,30 @@ p {
 
 /* ------------------------------------------------------------------ Responsiv */
 
+/* Kopfzeile: bei mittleren Breiten nur Symbole bei den Menüpunkten (Beschriftung bleibt für Screenreader und als Tooltip) */
+@media (max-width: 1100px) {
+  .header-nav {
+    gap: 10px;
+  }
+  .nav-link {
+    padding: 10px;
+  }
+  .nav-link > span {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+  .brand-text {
+    flex: 0 1 auto;
+  }
+}
+
 @media (max-width: 980px) {
   .hero {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     padding: 26px;
   }
   .intro-grid {
@@ -2091,5 +2115,38 @@ p {
   }
   .tag-chip {
     padding: 0 14px;
+  }
+}
+
+/* Kopfzeile auf kleinen Handys (steht am Dateiende, damit es die Basisregeln der Knöpfe überschreibt) */
+@media (max-width: 480px) {
+  .chip {
+    white-space: normal;
+    max-width: 100%;
+  }
+  .fs-btn {
+    display: none;
+  }
+  .header-inner {
+    gap: 8px;
+  }
+  .header-nav {
+    gap: 8px;
+  }
+  .brand {
+    gap: 10px;
+  }
+  .brand-name {
+    font-size: 19px;
+  }
+  .brand-by {
+    display: none;
+  }
+  .role-btn {
+    padding: 0 10px;
+    font-size: 0.9rem;
+  }
+  .lang-btn {
+    min-width: 38px;
   }
 }
