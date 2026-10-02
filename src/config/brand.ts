@@ -39,7 +39,7 @@ export interface BrandConfig {
 
 export const brand: BrandConfig = {
   appName: 'Blickfit',
-  opticianName: '',
+  opticianName: 'Optik X',
   logoUrl: '',
   homepageUrl: '',
   appointmentUrl: '',
