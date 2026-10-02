@@ -224,7 +224,7 @@ class ZieleOrdnen implements Exercise {
       this.demoStep++;
       const idx = step.wrong ? s.order[Math.min(step.order, s.order.length - 1)] : s.order[s.next];
       if (this.demoStep === 1) this.ctx.hud.caption(this.ctx.texts.captions.tap);
-      this.planTap(s.items[idx], this.demoStep === 1 ? 600 : 650, 750);
+      this.planTap(s.items[idx], this.demoStep === 1 ? 700 : 800, 850);
       return;
     }
     const exp = s.expected();
