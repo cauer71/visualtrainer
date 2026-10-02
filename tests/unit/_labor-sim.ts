@@ -99,6 +99,15 @@ export interface Sim {
   sounds: string[];
   /** Zeichenaufrufe der Attrappe, die Text zeichnen (fillText) */
   texts: string[];
+  /** je Bild die gezeichneten Texte mit Ort und Deckkraft (nur mit `recordFrames`) */
+  frames: TextCall[][];
+}
+
+export interface TextCall {
+  s: string;
+  x: number;
+  y: number;
+  alpha: number;
 }
 
 export interface SimOpts {
@@ -114,8 +123,10 @@ export interface SimOpts {
   reducedMotion?: boolean;
   maxSeconds?: number;
   noCtxParams?: boolean;
+  /** Texte je Bild mit Ort und Deckkraft aufzeichnen (für Prüfungen weicher Übergänge) */
+  recordFrames?: boolean;
   fps?: number;
-  onFrame?: (ex: Exercise, now: number, ctx: ExerciseContext) => void;
+  onFrame?: (ex: Exercise, now: number, ctx: ExerciseContext, frames: TextCall[][]) => void;
   resizeAt?: { t: number; w: number; h: number };
 }
 
@@ -145,6 +156,7 @@ function run(def: ExerciseDefinition, o: SimOpts): Sim {
   const progress: number[] = [];
   const sounds: string[] = [];
   const texts: string[] = [];
+  const frames: TextCall[][] = [];
   let exRef: Exercise | null = null;
   const ghost = new FakeGhost((x, y, t) => exRef?.pointerDown?.({ id: -1, x, y, t, type: 'ghost' } satisfies PointerInfo));
   const stage = {
@@ -211,7 +223,7 @@ function run(def: ExerciseDefinition, o: SimOpts): Sim {
   ex.start(now);
   const dt = 1 / fps;
   const limit = (o.maxSeconds ?? 400) * 1000;
-  const g2 = recordingG(texts);
+  const g2 = recordingG(texts, o.recordFrames ? frames : null);
   let resized = false;
   while (!result && now < limit) {
     now += dt * 1000;
@@ -222,23 +234,28 @@ function run(def: ExerciseDefinition, o: SimOpts): Sim {
       ex.resize?.(w, h);
     }
     ghost.update(now);
-    o.onFrame?.(ex, now, ctx);
+    o.onFrame?.(ex, now, ctx, frames);
     ex.update(dt, now);
+    if (o.recordFrames) frames.push([]);
     ex.render(g2, now);
   }
   ex.destroy?.();
-  return { result, seconds: endAt / 1000, toasts, captions, labels, scores, progress, ghostTaps: ghost.taps, ghostHidden: ghost.hidden, sounds, texts };
+  return { result, seconds: endAt / 1000, toasts, captions, labels, scores, progress, ghostTaps: ghost.taps, ghostHidden: ghost.hidden, sounds, texts, frames };
 }
 
 /** Attrappe, die gezeichneten Text (fillText) mitschreibt – nur die letzten Bilder bleiben relevant */
-function recordingG(texts: string[]): CanvasRenderingContext2D {
+function recordingG(texts: string[], frames: TextCall[][] | null): CanvasRenderingContext2D {
   const base = fakeG();
   return new Proxy(base, {
     get: (t, k: string) => {
       if (k === 'fillText') {
-        return (s: string) => {
+        return (s: string, x: number, y: number) => {
           if (texts.length > 2000) texts.shift();
           texts.push(String(s));
+          if (frames && frames.length) {
+            const a = (t as unknown as Record<string, unknown>).globalAlpha;
+            frames[frames.length - 1].push({ s: String(s), x, y, alpha: typeof a === 'number' ? a : 1 });
+          }
         };
       }
       return (t as unknown as Record<string, unknown>)[k];
