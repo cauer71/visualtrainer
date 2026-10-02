@@ -337,7 +337,8 @@ class TaktSakkaden implements Exercise {
   private drawSymbol(g: CanvasRenderingContext2D, s: Shown, alpha: number, fontPx: number): void {
     if (alpha <= 0.01) return;
     const c = this.pointPx(s.point);
-    text(g, s.symbol, c.x, c.y, fontPx, SYMBOL_COLOR, { weight: 800, alpha });
+    // Grundlinie so, dass die Großbuchstaben bzw. Ziffern (Höhe ≈ 0,72 × Schriftgröße) mittig auf dem Punkt stehen
+    text(g, s.symbol, c.x, c.y + fontPx * 0.36, fontPx, SYMBOL_COLOR, { weight: 800, baseline: 'alphabetic', alpha });
   }
 }
 

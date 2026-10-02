@@ -14,7 +14,7 @@
  * - `layoutChart` rechnet die Zeichenorte; passt die Tafel nicht ins Feld, wird sie verkleinert (nie ein Fehler).
  * - Kennzahlen: Gesamtzeit, Zeichen pro Minute; im eigenen Tempo Mittel, Streuung und Streuung/Mittel der Zeit je Zeichen;
  *   im Takt der eingestellte Takt.
- * Ergänzungen/Abweichungen gegenüber dem Prototyp: (1) Im Takt zählt die Gesamtzeit vom ersten markierten Zeichen bis zum
+ * Ergänzungen/Abweichungen gegenüber dem Prototyp: (0) Zeichenzellen sind 0,8 statt 0,75 Zeichenhöhen breit (breite Buchstaben stießen aneinander); Hinweis und Ergebniszeile zur Verkleinerung erst unter 90 %. (1) Im Takt zählt die Gesamtzeit vom ersten markierten Zeichen bis zum
  *   Ende des letzten (Prototyp: einschließlich der Taktlänge vor dem ersten Schlag); sie steht damit durch Zeichenzahl ×
  *   Taktlänge fest. (2) Im eigenen Tempo wird ein Tipp, der weniger als 340 ms nach dem vorigen kommt, ignoriert
  *   (Doppeltipp; zugleich höchstens ≈ 2,9 Markenwechsel pro Sekunde). (3) Streuung/Mittel gibt es erst ab zwei Zeitabständen
@@ -90,11 +90,16 @@ export function chartParams(p: ExerciseParams): ChartParams {
 
 const LETTERS = 'ABDEFGHKLMNPRSTUVZ'.split('');
 const DIGITS = '123456789'.split('');
-/** Zeichenbreite im Verhältnis zur Höhe */
-const ADVANCE = 0.75;
-/** Tafel höchstens so groß wie dieser Anteil des Feldes (Rest: Hinweiszeile) */
-const FIT_W = 0.96;
+/**
+ * Breite einer Zeichenzelle im Verhältnis zur Zeichenhöhe. Der Prototyp rechnete mit 0,75; breite fette Buchstaben (M, N, W)
+ * sind aber fast so breit wie hoch und stießen dann aneinander, darum hier 0,8 (Abstand zwischen den Zeichen kommt dazu).
+ */
+export const ADVANCE = 0.8;
+/** Tafel höchstens so groß wie dieser Anteil des Feldes (Rest: Rand und Hinweiszeile) */
+const FIT_W = 0.92;
 const FIT_H = 0.88;
+/** Ab dieser Verkleinerung (kleiner als 90 %) gibt es Hinweis und Zeile im Ergebnis; darüber ist es nicht erwähnenswert */
+export const NOTICE_SCALE = 0.9;
 
 /** Im eigenen Tempo: Tipps im kürzeren Abstand werden ignoriert (Doppeltipp, höchstens ≈ 2,9 Wechsel pro Sekunde) */
 export const MIN_STEP_MS = 340;
@@ -131,7 +136,10 @@ export interface ChartLayout {
   letters: LetterPos[];
   /** Verkleinerungsfaktor (1 = wie eingestellt) */
   scale: number;
+  /** `true`, wenn die Tafel ohne Verkleinerung passt */
   fits: boolean;
+  /** `true`, wenn die Verkleinerung erwähnenswert ist (unter `NOTICE_SCALE`) */
+  noticeable: boolean;
   /** unverkleinerte Maße der Tafel in cm */
   totalW: number;
   totalH: number;
@@ -160,7 +168,7 @@ export function layoutChart(p: Pick<ChartParams, 'rows' | 'cols' | 'groupSize' |
       }
     }
   }
-  return { letters, scale, fits: scale >= 1 - 1e-9, totalW, totalH };
+  return { letters, scale, fits: scale >= 1 - 1e-9, noticeable: scale < NOTICE_SCALE, totalW, totalH };
 }
 
 export interface Step {

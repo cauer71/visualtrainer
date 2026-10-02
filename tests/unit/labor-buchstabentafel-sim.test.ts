@@ -221,7 +221,8 @@ describe('Eingabe mit echten Zeigerereignissen und Tasten (ohne Autoplay)', () =
 
 describe('Weiche Übergänge, kein Blinken im Takt', () => {
   const isLetter = (c: TextCall) => /^[A-Z0-9]$/.test(c.s);
-  const red = (c: TextCall) => Number(/rgb\((\d+),/.exec(c.color)?.[1] ?? Number.NaN);
+  // Blauanteil: hell (247) ↔ Markengelb (138) ↔ blass (132); ohne Überblendung wäre ein Schritt ≥ 105
+  const red = (c: TextCall) => Number(/rgb\(\d+,\d+,(\d+)\)/.exec(c.color)?.[1] ?? Number.NaN);
 
   for (const bpm of [60, 140]) {
     it(`Takt ${bpm}: die Marke wechselt weich (Schrift ändert sich je Bild nur um einen Bruchteil, Wechsel dauert ≥ 100 ms)`, () => {
@@ -242,8 +243,8 @@ describe('Weiche Übergänge, kein Blinken im Takt', () => {
           prev.set(k, r);
         }
       }
-      // Hell (232) ↔ dunkel (11): ohne Überblendung wäre ein Schritt ≈ 221; mit 130 ms bei 60 Bildern/s höchstens ≈ 60
-      expect(maxStep).toBeLessThanOrEqual(90);
+      // mit 130 ms Überblendung bei 60 Bildern/s höchstens ≈ 30 je Bild
+      expect(maxStep).toBeLessThanOrEqual(60);
       expect(steps).toBeGreaterThan(10);
     });
   }

@@ -7,6 +7,7 @@ import { defaultParams, sanitizeParams } from '../../src/core/params';
 import { createRng } from '../../src/core/rng';
 import {
   beatIntervalMs,
+  ADVANCE,
   chartParams,
   ChartSession,
   type ChartSummary,
@@ -30,6 +31,7 @@ describe('Buchstabentafel: Layout (aus dem Prototyp)', () => {
     const p = params({ rows: 2, cols: 3, groupSize: 2, sizeCm: 2, letterGapCm: 0.4, groupGapCm: 3 });
     const lay = layoutChart(p, 60, 34);
     expect(lay.fits).toBe(true);
+    expect(lay.noticeable).toBe(false);
     expect(lay.scale).toBe(1);
     expect(lay.letters.length).toBe(2 * 3 * 2);
     expect(lay.letters.slice(0, 3).map((l) => [l.g, l.k])).toEqual([
@@ -47,6 +49,7 @@ describe('Buchstabentafel: Layout (aus dem Prototyp)', () => {
     const p = params({ rows: 8, cols: 8, groupSize: 5, sizeCm: 4, groupGapCm: 5 });
     const lay = layoutChart(p, 60, 34);
     expect(lay.fits).toBe(false);
+    expect(lay.noticeable).toBe(true);
     expect(lay.scale).toBeLessThan(1);
     for (const l of lay.letters) {
       expect(l.x).toBeGreaterThan(0);
@@ -214,6 +217,17 @@ describe('Buchstabentafel: Erweiterungen und Grenzfälle', () => {
     expect(s.startedAt).toBe(500);
   });
 
+  it('Layout: eine Verkleinerung unter 10 % wird nicht erwähnt (noticeable erst unter 90 %)', () => {
+    const p = params({ rows: 1, cols: 1, groupSize: 3, sizeCm: 2, letterGapCm: 0.4 });
+    const w = 2 * 3 * ADVANCE + 0.8; // Breite der Gruppe in cm (unverkleinert)
+    const small = layoutChart(p, (w / 0.92) * 0.97, 34); // knapp zu schmal: Verkleinerung ≈ 3 %
+    expect(small.fits).toBe(false);
+    expect(small.scale).toBeGreaterThan(0.9);
+    expect(small.noticeable).toBe(false);
+    const tight = layoutChart(p, (w / 0.92) * 0.85, 34);
+    expect(tight.noticeable).toBe(true);
+  });
+
   it('Layout: Mindestgröße und Grenzfälle (eine Gruppe, ein Zeichen, riesige Tafel)', () => {
     const one = layoutChart(params({ rows: 1, cols: 1, groupSize: 1 }), 60, 34);
     expect(one.letters.length).toBe(1);
@@ -235,7 +249,7 @@ describe('Buchstabentafel: Erweiterungen und Grenzfälle', () => {
     const p = params({ rows: 1, cols: 2, groupSize: 3, sizeCm: 2, letterGapCm: 0.4, groupGapCm: 3 });
     const lay = layoutChart(p, 60, 34);
     expect(lay.scale).toBe(1);
-    const adv = 2 * 0.75;
+    const adv = 2 * ADVANCE;
     const [a, b, c, d] = lay.letters;
     expect(b.x - a.x).toBeCloseTo(adv + 0.4, 9);
     expect(c.x - b.x).toBeCloseTo(adv + 0.4, 9);

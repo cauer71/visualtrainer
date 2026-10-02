@@ -8,7 +8,7 @@
  * - Hauptwert: Gesamtzeit (`total`, niedriger = schneller). Im Takt steht sie durch Zeichenzahl und Takt fest (keine
  *   Leistung); dort ist sie nur zum Vergleich bei gleichem Takt da (Variantenschlüssel enthält Tempo und Takt).
  * - Tafel passt in die Bühne: reicht der Platz nicht, wird sie verkleinert (Hinweis unten und im Ergebnis).
- * - Marke: heller Kasten hinter dem Zeichen mit dunkler Schrift (Form + Kontrast, nicht nur Farbe); gelesene Zeichen werden
+ * - Marke: Rahmen mit leichter Füllung um das Zeichen, Schrift gelb (Form, Farbe nur zusätzlich); gelesene Zeichen werden
  *   blass. Die Marke wechselt weich (≈ 130 ms), es gibt kein Blinken im Takt (höchstens 140 Schläge pro Minute ≈ 2,3 Wechsel
  *   pro Sekunde). Takt = Ton (`ctx.sfx.beat`, wenn „Ton“ an ist) und der Markenwechsel selbst.
  * - Gelesen wird nur über Tippen bzw. Takt „geprüft“: ob wirklich jedes Zeichen gelesen wurde, wohin du schaust und ob du laut
@@ -16,7 +16,7 @@
  * - Im eigenen Tempo zählt jeder Tipp auf der Bühne (auch ohne Treffer auf ein Zeichen); Tipps im Abstand unter 340 ms gelten als
  *   Doppeltipp und werden ignoriert. Leertaste/Eingabetaste gehen ebenfalls.
  */
-import { background, fillRR, text } from '../../core/draw';
+import { background, rrPath, text } from '../../core/draw';
 import { calibOf } from '../../core/calib';
 import { paramsOf } from '../../core/params';
 import { clamp, easeOut } from '../../core/stats';
@@ -43,8 +43,8 @@ const FADE_MS = 130;
 const LEAD_MS = 1200;
 const LIGHT: Rgb = [232, 238, 247];
 const DIM: Rgb = [100, 112, 132];
-const DARK: Rgb = [11, 20, 36];
-const MARK_BG = '#F2F5F7';
+const MARK_COLOR: Rgb = [253, 230, 138];
+const MARK_EDGE = '#F2F5F7';
 
 // Intro-Film: kleine Tafel im eigenen Tempo, die Hand tippt in Ruhe
 const DEMO_PARAMS: Partial<ChartParams> = {
@@ -261,7 +261,7 @@ class Buchstabentafel implements Exercise {
       secondary.push({ key: 'symbols', value: sum.symbols, unit: 'count' }, { key: 'bpm', value: sum.bpm ?? this.p.bpm, unit: 'count' });
     }
     const lay = this.lay();
-    if (!lay.fits) rows.push({ label: texts.metrics.scale, value: fmt.pct(lay.scale * 100) });
+    if (lay.noticeable) rows.push({ label: texts.metrics.scale, value: fmt.pct(lay.scale * 100) });
     return {
       primary: { key: 'total', value: sum.totalMs ?? 0, unit: 'time', better: 'lower' },
       secondary,
@@ -293,8 +293,9 @@ class Buchstabentafel implements Exercise {
       if (step === this.markPrev) return 1 - fade;
       return 0;
     };
-    const boxW = fontPx * 0.95;
-    const boxH = fontPx * 1.2;
+    // Marke: Rahmen mit leichter Füllung um das Zeichen (Form), Schrift wird gelb (Farbe nur zusätzlich)
+    const boxW = sizePx * 1.2;
+    const boxH = sizePx * 1.7;
     for (const l of lay.letters) {
       const step = this.stepOf[l.g * this.p.groupSize + l.k];
       const x = f.x + l.x * k;
@@ -304,11 +305,17 @@ class Buchstabentafel implements Exercise {
       if (hl > 0.01) {
         g.save();
         g.globalAlpha = hl;
-        fillRR(g, x - boxW / 2, y - boxH / 2, boxW, boxH, Math.min(10, boxW * 0.2), MARK_BG);
+        rrPath(g, x - boxW / 2, y - boxH / 2, boxW, boxH, Math.min(10, boxW * 0.2));
+        g.fillStyle = 'rgba(242,245,247,0.16)';
+        g.fill();
+        g.strokeStyle = MARK_EDGE;
+        g.lineWidth = Math.max(2.5, sizePx * 0.07);
+        g.stroke();
         g.restore();
       }
       const base = done ? DIM : LIGHT;
-      text(g, s.groups[l.g][l.k], x, y, fontPx, mix(base, DARK, hl), { weight: 800, baseline: 'middle' });
+      // Grundlinie so, dass die Großbuchstaben bzw. Ziffern (Höhe ≈ 0,72 × Schriftgröße) mittig auf dem Punkt stehen
+      text(g, s.groups[l.g][l.k], x, y + fontPx * 0.36, fontPx, mix(base, MARK_COLOR, hl), { weight: 700, baseline: 'alphabetic' });
     }
     const size = clamp(u * 3.4, 13, 22);
     const hint = this.hint(lay);
@@ -321,7 +328,7 @@ class Buchstabentafel implements Exercise {
     if (this.demo) return '';
     if (this.p.pace === 'self' && this.session.pos === -1) return fb.startSelf;
     if (this.p.pace === 'beat' && this.session.pos === -1) return fb.ready;
-    if (!lay.fits) return fb.shrunk.replace('{p}', String(Math.round(lay.scale * 100)));
+    if (lay.noticeable) return fb.shrunk.replace('{p}', String(Math.round(lay.scale * 100)));
     return '';
   }
 }
