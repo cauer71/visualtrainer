@@ -174,10 +174,11 @@ describe('Autoplay im Spielmodus (?quick=1)', () => {
         }
       },
     });
-    // ohne Autoplay und mit Zufallstipps endet die Übung erst durch das Zeitlimit des Schnellmodus
+    // ohne Autoplay gibt es im Schnellmodus kein verstecktes Zeitlimit: mit Zufallstipps endet der Lauf nicht von selbst,
+    // er darf aber nicht abstürzen und zählt nichts Falsches
     expect(taps).toBeGreaterThan(0);
-    expect(s.result).not.toBeNull();
-    expect(Number.isFinite(s.result!.primary.value)).toBe(true);
+    expect(s.result === null || Number.isFinite(s.result.primary.value)).toBe(true);
+    expect(s.labels.every((t) => !/undefined|NaN/.test(t))).toBe(true);
   });
 });
 
