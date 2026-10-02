@@ -92,6 +92,7 @@ import { richtungWort } from './richtung-wort';
 import { seiteErkennen } from './seite-erkennen';
 import { zahlBuchstabeWirbel } from './zahl-buchstabe-wirbel';
 import { vierZieleWechsel } from './vier-ziele-wechsel';
+import { laborSpotTouch } from './labor-spot-touch';
 
 /** Reihenfolge = Anzeige-Reihenfolge innerhalb der Bereiche */
 export const EXERCISES: ExerciseDefinition[] = [
@@ -180,7 +181,29 @@ export const EXERCISES: ExerciseDefinition[] = [
   seiteErkennen,
   zahlBuchstabeWirbel,
   vierZieleWechsel,
+  laborSpotTouch,
 ];
+
+/** Marke der Labor-Übungen (cm/Sehwinkel, Einstellungen, Kalibrierung); sie stehen nicht im Tagestraining */
+export const TAG_LABOR = 'labor';
+
+export function hasTag(def: Pick<ExerciseDefinition, 'tags'>, tag: string): boolean {
+  return !!def.tags?.includes(tag);
+}
+
+/** Alle Übungen mit einer Marke (Reihenfolge wie in `EXERCISES`) */
+export function byTag(tag: string): ExerciseDefinition[] {
+  return EXERCISES.filter((e) => hasTag(e, tag));
+}
+
+/** Filter der Optiker-Ansicht: alle, nur Labor oder ohne Labor */
+export type TagFilter = 'all' | 'labor' | 'nolabor';
+
+export function matchesTagFilter(def: Pick<ExerciseDefinition, 'tags'>, filter: TagFilter): boolean {
+  if (filter === 'labor') return hasTag(def, TAG_LABOR);
+  if (filter === 'nolabor') return !hasTag(def, TAG_LABOR);
+  return true;
+}
 
 export interface CategoryMeta {
   id: CategoryId;
@@ -234,12 +257,15 @@ export function categoryMeta(cat: CategoryId): CategoryMeta {
   return CATEGORIES.find((c) => c.id === cat) ?? CATEGORIES[0];
 }
 
-/** Tagestraining: je eine Übung pro Bereich, täglich wechselnd. */
+/**
+ * Tagestraining: je eine Übung pro Bereich, täglich wechselnd. Labor-Übungen sind nie dabei: sie brauchen
+ * Einstellungen und Kalibrierung und sind für die Optiker-Ansicht gedacht.
+ */
 export function dailySet(date = new Date()): string[] {
   const day = Math.floor(new Date(date.getFullYear(), date.getMonth(), date.getDate()).getTime() / 86400000);
   const ids: string[] = [];
   CATEGORIES.forEach((c, ci) => {
-    const list = byCategory(c.id);
+    const list = byCategory(c.id).filter((e) => !hasTag(e, TAG_LABOR));
     if (list.length) ids.push(list[(day + ci) % list.length].id);
   });
   return ids;

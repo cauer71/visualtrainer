@@ -48,6 +48,8 @@ interface Exercise {
 | `ctx.sfx` | `tick()`, `go()`, `good()`, `bad()`, `tap()`, `done()` (im Demo stumm) |
 | `ctx.fmt` | `num(v, digits)`, `time(ms)` → „0,31 s“, `ms(ms)`, `msSigned(ms)`, `pct(v)` |
 | `ctx.texts` | Texte der aktuellen Sprache |
+| `ctx.params` | Bereinigte Einstellungen der Übung (nur Übungen mit `ExerciseDefinition.params`, sonst `{}`; im Intro-Film die Standardwerte) |
+| `ctx.calib` | cm ↔ Pixel ↔ Sehwinkel und Größenbegrenzung (nur nötig bei `usesCalibration`) |
 | `ctx.finish(result)` | Übung beenden |
 
 ## Regeln
@@ -119,3 +121,8 @@ VP=port node tests/e2e/flow.mjs …              # Hochformat
 node tests/e2e/shots.mjs http://localhost:5180/ /tmp/shots '#/uebung/<id>|6000|0'   # Intro-Film
 npx tsc --noEmit
 ```
+
+## Labor-Übungen (Einstellungen, Kalibrierung, Marke `labor`)
+
+Übungen mit eigenen Einstellungen (`params`), Größen in cm/Sehwinkel (`ctx.calib`) und der Marke `labor` sind in
+`docs/entwicklung/labor-uebungen-portieren.md` beschrieben; Referenz ist `src/exercises/labor-spot-touch/`.

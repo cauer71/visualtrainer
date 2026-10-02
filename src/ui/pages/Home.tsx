@@ -1,16 +1,28 @@
 import { createFormatter } from '../../core/format';
-import { countToday, daysThisWeek, doneToday, getRecord, WEEK_GOAL } from '../../core/storage';
+import { bestFor, countToday, currentVariant, daysThisWeek, doneToday, getRecord, WEEK_GOAL } from '../../core/storage';
 import type { ExerciseDefinition } from '../../core/types';
-import { byCategory, CATEGORIES, categoryMeta, getExercise } from '../../exercises/registry';
+import { byCategory, CATEGORIES, categoryMeta, EXERCISES, getExercise, matchesTagFilter, type TagFilter } from '../../exercises/registry';
 import { dailySet } from '../../exercises/registry';
 import { useApp } from '../app-context';
 import { ArtIcon, Icon } from '../components/Icon';
+import { LaborBadge } from '../components/LaborBadge';
+import { TagFilterChips } from '../components/TagFilter';
 import { metricText } from '../metrics';
 import { exerciseHref, href } from '../router';
+import { useTagFilter } from '../tag-filter';
 
 export function Home() {
   const { ui, lang, dataVersion, isOptician, customerIds, opt } = useApp();
   void dataVersion;
+  // Filter „Alle · Labor · Ohne Labor“ (nur Optiker-Ansicht; die Wahl bleibt in sessionStorage, ?tag=labor setzt sie)
+  const [tagFilter, setTagFilter] = useTagFilter();
+  const filtered = (cat: (typeof CATEGORIES)[number]) => byCategory(cat.id).filter((d) => matchesTagFilter(d, tagFilter));
+  const filterCounts: Record<TagFilter, number> = {
+    all: EXERCISES.length,
+    labor: EXERCISES.filter((d) => matchesTagFilter(d, 'labor')).length,
+    nolabor: EXERCISES.filter((d) => matchesTagFilter(d, 'nolabor')).length,
+  };
+  const anyShown = CATEGORIES.some((c) => filtered(c).length > 0);
   // Tagestraining: Kunden üben die vom Optiker gewählten Übungen, der Optiker eine je Bereich
   const daily = isOptician ? dailySet() : customerIds.filter((id) => getExercise(id));
   const dailyDone = daily.every((id) => doneToday(id));
@@ -68,7 +80,9 @@ export function Home() {
                   <span class="daily-icon">
                     <ArtIcon svg={def.icon} size={28} />
                   </span>
-                  <span class="daily-name">{def.texts[lang].title}</span>
+                  <span class="daily-name">
+                    {def.texts[lang].title} <LaborBadge def={def} />
+                  </span>
                   <Icon name="next" size={20} class="daily-go" />
                 </a>
               </li>
@@ -116,8 +130,15 @@ export function Home() {
         </p>
       ) : null}
 
+      {isOptician ? (
+        <section class="filter-bar" aria-label={ui.tagFilter.label}>
+          <TagFilterChips value={tagFilter} onChange={setTagFilter} counts={filterCounts} />
+        </section>
+      ) : null}
+      {isOptician && !anyShown ? <p class="muted filter-empty">{ui.tagFilter.empty}</p> : null}
+
       {(isOptician ? CATEGORIES : []).map((cat) => {
-        const list = byCategory(cat.id);
+        const list = filtered(cat);
         if (!list.length) return null;
         const ct = ui.categories[cat.id];
         return (
@@ -149,7 +170,9 @@ function ExerciseCard({ def }: { def: ExerciseDefinition }) {
   const rec = getRecord(def.id);
   const done = doneToday(def.id);
   const fmt = createFormatter(lang);
-  const best = rec.best !== null && rec.unit ? metricText(rec.best, rec.unit, fmt, ui) : null;
+  // Bei Übungen mit Einstellungen gilt der Bestwert der gerade gespeicherten Einstellungen
+  const bestValue = bestFor(rec, currentVariant(def.id, def.params));
+  const best = bestValue !== null && rec.unit ? metricText(bestValue, rec.unit, fmt, ui) : null;
   const meta = categoryMeta(def.category);
   return (
     <a class="ex-card" href={exerciseHref(def.id)} style={{ '--cat': meta.color, '--cat-soft': meta.soft }}>
@@ -167,6 +190,7 @@ function ExerciseCard({ def }: { def: ExerciseDefinition }) {
         </span>
         <span class="ex-card-tagline">{tx.tagline}</span>
         <span class="ex-card-meta">
+          <LaborBadge def={def} />
           <span class="chip chip-sm">
             <Icon name="clock" size={14} /> {ui.home.minutes(def.minutes)}
           </span>

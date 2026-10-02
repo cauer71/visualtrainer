@@ -1,13 +1,24 @@
 import { useState } from 'preact/hooks';
 import { CUSTOMER_COUNT, DEFAULT_CUSTOMER_IDS } from '../../core/storage';
-import { categoryMeta, EXERCISES } from '../../exercises/registry';
+import { categoryMeta, EXERCISES, matchesTagFilter, type TagFilter } from '../../exercises/registry';
 import { useApp } from '../app-context';
 import { ArtIcon, Icon } from '../components/Icon';
+import { LaborBadge } from '../components/LaborBadge';
+import { TagFilterChips } from '../components/TagFilter';
 import { href } from '../router';
+import { useTagFilter } from '../tag-filter';
 
 export function OpticianPage() {
   const { opt, ui, lang, customerIds, setCustomerIds } = useApp();
   const [saved, setSaved] = useState(false);
+  // dieselbe Filterwahl wie auf der Startseite (sessionStorage, ?tag=labor)
+  const [tagFilter, setTagFilter] = useTagFilter();
+  const shown = EXERCISES.filter((d) => matchesTagFilter(d, tagFilter));
+  const counts: Record<TagFilter, number> = {
+    all: EXERCISES.length,
+    labor: EXERCISES.filter((d) => matchesTagFilter(d, 'labor')).length,
+    nolabor: EXERCISES.filter((d) => matchesTagFilter(d, 'nolabor')).length,
+  };
   const toggle = (id: string) => {
     let next: string[];
     if (customerIds.includes(id)) next = customerIds.filter((x) => x !== id);
@@ -45,6 +56,15 @@ export function OpticianPage() {
               <span class="ex-card-tagline">{opt.shortcutCatalogText}</span>
             </span>
           </a>
+          <a class="ex-card" href={href('/kalibrieren')}>
+            <span class="ex-card-icon">
+              <Icon name="sliders" size={30} />
+            </span>
+            <span class="ex-card-body">
+              <span class="ex-card-title">{opt.shortcutCalib}</span>
+              <span class="ex-card-tagline">{opt.shortcutCalibText}</span>
+            </span>
+          </a>
           <a class="ex-card" href="./vr/">
             <span class="ex-card-icon">
               <Icon name="eye" size={30} />
@@ -64,8 +84,12 @@ export function OpticianPage() {
           {opt.customerSelected(customerIds.length, CUSTOMER_COUNT)}
           {!ok ? ` – ${opt.customerPickOne}` : ''}
         </p>
+        <div class="filter-bar">
+          <TagFilterChips value={tagFilter} onChange={setTagFilter} counts={counts} />
+        </div>
+        {!shown.length ? <p class="muted filter-empty">{ui.tagFilter.empty}</p> : null}
         <ul class="pick-list">
-          {EXERCISES.map((def) => {
+          {shown.map((def) => {
             const meta = categoryMeta(def.category);
             const on = customerIds.includes(def.id);
             const full = !on && customerIds.length >= CUSTOMER_COUNT;
@@ -78,7 +102,9 @@ export function OpticianPage() {
                   </span>
                   <span class="pick-text">
                     <strong>{def.texts[lang].title}</strong>
-                    <span class="muted">{ui.categories[def.category].title}</span>
+                    <span class="muted">
+                      {ui.categories[def.category].title} <LaborBadge def={def} />
+                    </span>
                   </span>
                 </label>
               </li>

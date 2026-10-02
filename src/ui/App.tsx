@@ -9,6 +9,7 @@ import { UI } from '../i18n/ui';
 import { AppCtx, type AppState } from './app-context';
 import { Footer, Header } from './components/Chrome';
 import { ExercisePage } from './pages/ExercisePage';
+import { Calibrate } from './pages/Calibrate';
 import { Catalog, CatalogEntry } from './pages/Catalog';
 import { Home } from './pages/Home';
 import { OpticianPage } from './pages/OpticianPage';
@@ -88,6 +89,8 @@ export function App() {
   else if (route.name === 'catalog' && isOptician) page = <Catalog />;
   else if (route.name === 'catalogEntry' && route.id && isOptician) page = <CatalogEntry nr={route.id} />;
   else if (route.name === 'optiker' && isOptician) page = <OpticianPage />;
+  // Kalibrierung: Sache der Person am Gerät, kein Login und keine Optiker-Ansicht nötig
+  else if (route.name === 'calibrate') page = <Calibrate />;
   else page = <Home />;
 
   return (

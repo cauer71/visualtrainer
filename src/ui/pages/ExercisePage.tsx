@@ -3,13 +3,16 @@ import { brand } from '../../config/brand';
 import { createFormatter } from '../../core/format';
 import { Runner } from '../../core/runner';
 import { sfx, unlockAudio } from '../../core/sound';
-import { getExerciseOptions, getRecord, saveResult, type SaveOutcome } from '../../core/storage';
-import type { ExerciseDefinition, ExerciseResult } from '../../core/types';
+import { isDefaultParams, summarizeParams, variantKey } from '../../core/params';
+import { getCalibSettings, getExerciseOptions, getExerciseParams, getRecord, saveResult, type SaveOutcome } from '../../core/storage';
+import type { ExerciseDefinition, ExerciseResult, ParamUnit, ParamValue } from '../../core/types';
 import { categoryMeta, getExercise } from '../../exercises/registry';
 import { useApp } from '../app-context';
 import { DemoPlayer } from '../components/DemoPlayer';
 import { ExerciseOptions } from '../components/ExerciseOptions';
+import { CalibNotice, ExerciseParams } from '../components/ExerciseParams';
 import { ArtIcon, Icon } from '../components/Icon';
+import { LaborBadge } from '../components/LaborBadge';
 import { Sparkline } from '../components/Sparkline';
 import { enterImmersive, exitImmersive } from '../immersive';
 import { metricParts, metricText } from '../metrics';
@@ -74,6 +77,7 @@ function Intro({ def, series, onStart }: { def: ExerciseDefinition; series: Seri
   const meta = categoryMeta(def.category);
   const rec = getRecord(def.id);
   const [curious, setCurious] = useState(false);
+  const [paramsVersion, setParamsVersion] = useState(0);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -97,7 +101,9 @@ function Intro({ def, series, onStart }: { def: ExerciseDefinition; series: Seri
               <ArtIcon svg={def.icon} size={34} />
             </span>
             <div>
-              <p class="kicker kicker-cat">{ui.categories[def.category].title}</p>
+              <p class="kicker kicker-cat">
+                {ui.categories[def.category].title} <LaborBadge def={def} />
+              </p>
               <h1>{tx.title}</h1>
             </div>
           </div>
@@ -110,6 +116,8 @@ function Intro({ def, series, onStart }: { def: ExerciseDefinition; series: Seri
               </li>
             ))}
           </ol>
+          <CalibNotice def={def} version={paramsVersion} />
+          <ExerciseParams def={def} onChange={() => setParamsVersion((v) => v + 1)} />
           <ExerciseOptions def={def} texts={tx.options} />
           <button type="button" class="btn btn-primary btn-xl btn-block" onClick={onStart}>
             <Icon name="play" size={22} /> {ui.intro.start}
@@ -140,6 +148,30 @@ function Intro({ def, series, onStart }: { def: ExerciseDefinition; series: Seri
               </span>
             ))}
           </div>
+          {tx.progression?.length ? (
+            <details class="curious curious-list">
+              <summary>
+                <Icon name="sparkle" size={18} /> {ui.intro.progression}
+              </summary>
+              <ul>
+                {tx.progression.map((t, i) => (
+                  <li key={i}>{t}</li>
+                ))}
+              </ul>
+            </details>
+          ) : null}
+          {tx.cautions?.length ? (
+            <details class="curious curious-list">
+              <summary>
+                <Icon name="warn" size={18} /> {ui.intro.cautions}
+              </summary>
+              <ul>
+                {tx.cautions.map((t, i) => (
+                  <li key={i}>{t}</li>
+                ))}
+              </ul>
+            </details>
+          ) : null}
           <details class="curious" open={curious} onToggle={(e) => setCurious((e.currentTarget as HTMLDetailsElement).open)}>
             <summary>
               <Icon name="bulb" size={18} /> {ui.intro.curious}
@@ -158,6 +190,8 @@ function Intro({ def, series, onStart }: { def: ExerciseDefinition; series: Seri
 interface Outcome {
   result: ExerciseResult;
   save: SaveOutcome;
+  /** Einstellungen dieses Laufs (nur Übungen mit `params`) */
+  params: Record<string, ParamValue>;
 }
 
 function Session({ def, series, onClose }: { def: ExerciseDefinition; series: Series | null; onClose: () => void }) {
@@ -175,9 +209,16 @@ function Session({ def, series, onClose }: { def: ExerciseDefinition; series: Se
     overlay.current?.scrollTo?.(0, 0);
   }, [outcome]);
 
-  const onFinish = (result: ExerciseResult) => {
-    const save = saveResult(def.id, { primary: result.primary.value, score: result.score, level: result.level }, result.primary.unit, result.primary.better);
-    setOutcome({ result, save });
+  const onFinish = (result: ExerciseResult, params: Record<string, ParamValue>) => {
+    // Vergleich, Verlauf und Bestwert gelten nur innerhalb gleicher Einstellungen (Variantenschlüssel; ohne `params` leer)
+    const save = saveResult(
+      def.id,
+      { primary: result.primary.value, score: result.score, level: result.level },
+      result.primary.unit,
+      result.primary.better,
+      variantKey(def.params, params),
+    );
+    setOutcome({ result, save, params });
   };
 
   const again = () => {
@@ -207,7 +248,7 @@ function RunView({
   onRestart,
 }: {
   def: ExerciseDefinition;
-  onFinish: (r: ExerciseResult) => void;
+  onFinish: (r: ExerciseResult, params: Record<string, ParamValue>) => void;
   onQuit: () => void;
   onRestart: () => void;
 }) {
@@ -251,6 +292,8 @@ function RunView({
   useEffect(() => {
     const el = host.current;
     if (!el) return;
+    // Einstellungen beim Start festhalten: dieselben Werte gehen an die Übung und in den Variantenschlüssel
+    const params = getExerciseParams(def.id, def.params);
     const runner = new Runner({
       host: el,
       def,
@@ -260,9 +303,11 @@ function RunView({
       quick: flags.quick,
       startLevel: getRecord(def.id).level,
       options: getExerciseOptions(def.id, def.options),
+      params,
+      calib: getCalibSettings(),
       sfx,
       domHud: { progress: progress.current, score: score.current, label: label.current },
-      onFinish: (r) => onFinish(r),
+      onFinish: (r) => onFinish(r, params),
       onError: () => setFailed(true),
     });
     runnerRef.current = runner;
@@ -392,8 +437,12 @@ function ResultView({
   const prev = save.previous;
   const improved = prev ? (p.better === 'higher' ? p.value > prev.p : p.value < prev.p) : false;
   const headline = !prev ? ui.result.first : save.isBest ? ui.result.newBest : improved ? ui.result.better : ui.result.steady;
-  const history = save.record.history.map((h) => h.p);
+  const history = save.history.map((h) => h.p);
   const meta = categoryMeta(def.category);
+  const hints = tx.metricHints ? Object.entries(tx.metricHints) : [];
+  const unitLabel = (u: ParamUnit) => ui.params.units[u];
+  const paramList = def.params?.length ? summarizeParams(def.params, tx.params, outcome.params, fmt, unitLabel) : [];
+  const customParams = !!def.params?.length && !isDefaultParams(def.params, outcome.params);
 
   useEffect(() => {
     bumpData();
@@ -417,7 +466,9 @@ function ResultView({
   return (
     <main class="result container" style={{ '--cat': meta.color, '--cat-soft': meta.soft }}>
       <div class="result-card">
-        <p class="kicker kicker-cat">{tx.title}</p>
+        <p class="kicker kicker-cat">
+          {tx.title} <LaborBadge def={def} />
+        </p>
         <h1 class="result-headline">
           {save.isBest ? <Icon name="trophy" size={30} /> : <Icon name="sparkle" size={28} />} {headline}
         </h1>
@@ -444,6 +495,13 @@ function ResultView({
               </span>
             ) : null}
           </div>
+          {def.params?.length ? (
+            <p class="result-settings">
+              <Icon name="sliders" size={16} /> {ui.result.settings}: <strong>{customParams ? `✎ ${ui.result.settingsCustom}` : ui.result.settingsStandard}</strong>
+              {paramList.length ? ` · ${paramList.join(' · ')}` : ''}
+            </p>
+          ) : null}
+          {save.onlyOtherVariants ? <p class="muted small">{ui.result.noCompare}</p> : null}
         </div>
         {result.secondary.length ? (
           <div class="result-stats">
@@ -501,6 +559,21 @@ function ResultView({
               </section>
             ))}
           </div>
+        ) : null}
+        {hints.length ? (
+          <details class="curious result-hints">
+            <summary>
+              <Icon name="info" size={18} /> {ui.result.hintsTitle}
+            </summary>
+            <dl>
+              {hints.map(([k, text]) => (
+                <div key={k}>
+                  <dt>{tx.metrics[k] ?? k}</dt>
+                  <dd>{text}</dd>
+                </div>
+              ))}
+            </dl>
+          </details>
         ) : null}
         {seriesFinished ? (
           <div class="series-done">

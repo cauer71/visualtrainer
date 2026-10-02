@@ -8,16 +8,20 @@
  * - Geister-Hand + Erklärtexte für die Intro-Filme
  */
 import type { Lang } from '../i18n/lang';
+import { buildCalib, DEFAULT_VIEW_DISTANCE_CM, makeCalib } from './calib';
 import { font, hand, ring, rrPath } from './draw';
 import { createFormatter } from './format';
+import { defaultParams, sanitizeParams } from './params';
 import { createRng } from './rng';
 import { silentSfx } from './sound';
 import { clamp, easeInOut, lerp } from './stats';
 import type {
+  CalibSettings,
   Exercise,
   ExerciseContext,
   ExerciseDefinition,
   ExerciseOptionValue,
+  ExerciseParams,
   ExerciseResult,
   Ghost,
   GhostTapOptions,
@@ -245,6 +249,10 @@ export interface RunnerOptions {
   startLevel: number | null;
   /** Gewählte Übungs-Optionen (nur im Spielmodus; im Intro-Film bleibt es leer) */
   options?: Record<string, ExerciseOptionValue>;
+  /** Gewählte Einstellungen (nur im Spielmodus; werden mit `def.params` bereinigt; im Intro-Film gelten die Standardwerte) */
+  params?: Record<string, unknown>;
+  /** Kalibrierung des Bildschirms (nur im Spielmodus; der Intro-Film nutzt eine eigene Skala für seine kleine Bühne) */
+  calib?: CalibSettings;
   seed?: number;
   sfx: Sfx;
   domHud?: DomHud;
@@ -276,6 +284,13 @@ export class Runner {
     const autoplay = o.mode === 'demo' || !!o.autoplay;
     this.ghost = new GhostHand(this.stage, (x, y, t) => this.dispatchDown({ id: -1, x, y, t, type: 'ghost' }), autoplay);
     const fmt = createFormatter(o.lang);
+    const defs = o.def.params;
+    const params: ExerciseParams = !defs?.length ? {} : o.mode === 'demo' ? defaultParams(defs) : sanitizeParams(defs, o.params);
+    // Intro-Film: kleine Bühne → Skala so, dass sie etwa 13 cm hoch ist (5 cm große Ziele bleiben gut zu sehen)
+    const calib =
+      o.mode === 'demo'
+        ? buildCalib(Math.max(10, this.stage.h / 13), o.calib?.viewDistanceCm ?? DEFAULT_VIEW_DISTANCE_CM, false, this.stage)
+        : makeCalib(o.calib, this.stage);
     this.ctx = {
       mode: o.mode,
       autoplay,
@@ -283,6 +298,8 @@ export class Runner {
       reducedMotion: prefersReducedMotion(),
       startLevel: o.startLevel,
       options: o.mode === 'demo' ? undefined : o.options,
+      params,
+      calib,
       lang: o.lang,
       texts: o.def.texts[o.lang],
       rng: createRng(o.seed),

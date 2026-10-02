@@ -179,6 +179,91 @@ export interface ExerciseOptionTexts {
   choices: Record<string, string>;
 }
 
+/**
+ * Einstellbare Größen einer Übung (z. B. Labor-Übungen). Standard und Grenzen stehen hier, die Texte
+ * (Beschriftung, Erklärung, Auswahl-Namen) unter `ExerciseTexts.params`. Die Übung bekommt die bereinigten
+ * Werte als `ctx.params` (Zahlen auf min/max/step gerundet und geklemmt, Auswahl nur erlaubte Werte, sonst Standard).
+ */
+export type ParamUnit = 'cm' | 's' | 'ms' | 'bpm' | 'count' | 'deg' | 'percent';
+
+interface ParamDefBase {
+  /** Schlüssel in `ctx.params` und in `ExerciseTexts.params` */
+  key: string;
+  /**
+   * `true` = ändert die Vergleichbarkeit der Ergebnisse nicht (z. B. Ton). Alle anderen Einstellungen gehören zum
+   * Variantenschlüssel: Verlauf, Bestwert und „Letztes Mal“ vergleichen nur Läufe mit gleichem Schlüssel.
+   */
+  neutral?: boolean;
+  /** `true` = erscheint in der Kurzfassung auf der Ergebnisseite (z. B. „5 cm · 1,5 s · 1 Spot“) */
+  summary?: boolean;
+}
+
+export interface NumberParamDef extends ParamDefBase {
+  type: 'number';
+  default: number;
+  min: number;
+  max: number;
+  step: number;
+  unit?: ParamUnit;
+}
+
+export interface SelectParamDef extends ParamDefBase {
+  type: 'select';
+  /** Standard-Wert (einer aus `options`) */
+  default: string;
+  /** Erlaubte Werte; die sichtbaren Namen stehen in `ExerciseTexts.params[key].options` */
+  options: readonly string[];
+}
+
+export type ParamDef = NumberParamDef | SelectParamDef;
+export type ParamValue = number | string;
+export type ExerciseParams = Readonly<Record<string, ParamValue>>;
+
+/** Texte einer Einstellung in einer Sprache */
+export interface ParamTexts {
+  label: string;
+  /** Kurz-Erklärung unter der Einstellung */
+  hint?: string;
+  /** Namen der Auswahl-Werte (nur bei `type: 'select'`) */
+  options?: Record<string, string>;
+  /**
+   * Vorlage für die Kurzfassung auf der Ergebnisseite, `{v}` = Wert (z. B. „{v} Spot|{v} Spots“: erste Form bei
+   * genau 1, zweite sonst). Fehlt sie, steht bei Zahlen der Wert mit Einheit, bei Auswahlen der Name des Werts.
+   */
+  short?: string;
+}
+
+/** Gewählte Kalibrierung (Einstellung, lokal gespeichert): Pixel pro cm (null = nicht kalibriert) und Sehentfernung in cm */
+export interface CalibSettings {
+  pxPerCm: number | null;
+  viewDistanceCm: number;
+}
+
+/**
+ * Umrechnung cm ↔ Pixel ↔ Sehwinkel (CSS-Pixel der Bühne). Ohne Kalibrierung gilt die Schätzung 38 px/cm
+ * (`calibrated: false`), damit alle Übungen weiter laufen.
+ */
+export interface Calib {
+  readonly pxPerCm: number;
+  readonly viewDistanceCm: number;
+  /** `false` = Schätzung, der Bildschirm wurde nicht kalibriert */
+  readonly calibrated: boolean;
+  cmToPx(cm: number): number;
+  pxToCm(px: number): number;
+  /** Sehwinkel in Grad, unter dem ein Objekt der Größe `cm` erscheint */
+  cmToDeg(cm: number): number;
+  /** Größe in cm, die unter dem Sehwinkel `deg` erscheint */
+  degToCm(deg: number): number;
+  /** Größe in px, höchstens 0,9 × kürzere Bühnenseite (die Bühne wird nie gesprengt); live zur aktuellen Bühne */
+  sizePx(cm: number): number;
+  /** Größe in cm nach derselben Begrenzung wie `sizePx` */
+  fitCm(cm: number): number;
+  /** `true`, wenn `cm` auf dieser Bühne begrenzt würde */
+  isLimited(cm: number): boolean;
+  /** Größte darstellbare Größe in cm auf der aktuellen Bühne */
+  maxCm(): number;
+}
+
 export interface ExerciseTexts {
   /** Name der Übung */
   title: string;
@@ -200,6 +285,14 @@ export interface ExerciseTexts {
   feedback: Record<string, string>;
   /** Texte der Optionen aus `ExerciseDefinition.options` (nur für Übungen mit Optionen) */
   options?: Record<string, ExerciseOptionTexts>;
+  /** Texte der Einstellungen aus `ExerciseDefinition.params` (Schlüssel wie `ParamDef.key`) */
+  params?: Record<string, ParamTexts>;
+  /** Erklärung je Kennzahl (Schlüssel wie in `metrics`); erscheint auf der Ergebnisseite unter „Was bedeuten die Werte?“ */
+  metricHints?: Record<string, string>;
+  /** „So wird es leichter/schwerer“: einklappbarer Abschnitt auf der Intro-Seite */
+  progression?: string[];
+  /** „Gut zu wissen“: Hinweise zur Vorsicht, einklappbarer Abschnitt auf der Intro-Seite */
+  cautions?: string[];
 }
 
 export interface ExerciseContext {
@@ -214,6 +307,13 @@ export interface ExerciseContext {
   readonly startLevel: number | null;
   /** Gewählte Optionen (siehe `ExerciseDefinition.options`); im Intro-Film nicht gesetzt */
   readonly options?: Readonly<Record<string, ExerciseOptionValue>>;
+  /**
+   * Bereinigte Einstellungen (siehe `ExerciseDefinition.params`); im Intro-Film die Standardwerte. Der Runner setzt es
+   * immer – optional nur, damit ältere Test-Attrappen weiter passen (dann `paramsOf(ctx, defs)` aus core/params nutzen).
+   */
+  readonly params?: ExerciseParams;
+  /** Kalibrierung cm/Sehwinkel; der Runner setzt sie immer (sonst `calibOf(ctx)` aus core/calib nutzen) */
+  readonly calib?: Calib;
   readonly lang: Lang;
   readonly texts: ExerciseTexts;
   readonly rng: Rng;
@@ -265,5 +365,11 @@ export interface ExerciseDefinition {
   showsLevel?: boolean;
   /** Optionen, die das Intro vor dem Start anbietet (Standard aus, Auswahl wird gespeichert) */
   options?: readonly ExerciseOptionDef[];
+  /** Marken, z. B. `'labor'` (Marke „Labor“ auf den Karten, Filter, nicht im Tagestraining) */
+  tags?: string[];
+  /** Einstellungen, die das Intro (einklappbar) anbietet; Werte kommen als `ctx.params` */
+  params?: readonly ParamDef[];
+  /** `true` = die Übung rechnet in cm/Sehwinkel (`ctx.calib`); das Intro weist auf die Kalibrierung hin */
+  usesCalibration?: boolean;
   create(ctx: ExerciseContext): Exercise;
 }

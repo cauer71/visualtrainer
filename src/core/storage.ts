@@ -4,7 +4,9 @@
  */
 import type { Lang } from '../i18n/lang';
 import { brand } from '../config/brand';
-import type { Better, ExerciseOptionDef, ExerciseOptionValue, MetricUnit } from './types';
+import { DEFAULT_CALIB, sanitizeCalib } from './calib';
+import { defaultParams, isDefaultParams, sanitizeParams, variantKey } from './params';
+import type { Better, CalibSettings, ExerciseOptionDef, ExerciseOptionValue, MetricUnit, ParamDef, ParamValue } from './types';
 
 export interface HistoryEntry {
   /** Zeitpunkt (epoch ms) */
@@ -15,6 +17,8 @@ export interface HistoryEntry {
   s: number;
   /** Stufe */
   l: number;
+  /** Variantenschlüssel der Einstellungen (nur bei Übungen mit `params`; fehlt = leer = „eine Variante“) */
+  v?: string;
 }
 
 export interface ExerciseRecord {
@@ -24,6 +28,8 @@ export interface ExerciseRecord {
   unit?: MetricUnit;
   better?: Better;
   history: HistoryEntry[];
+  /** Bestwerte je Variante der Einstellungen (nur bei Übungen mit `params`; `best` gilt für die leere Variante) */
+  bv?: Record<string, number>;
 }
 
 export type Role = 'kunde' | 'optiker';
@@ -39,6 +45,10 @@ export interface Settings {
   fullscreen: boolean;
   /** Gewählte Übungs-Optionen je Übung und Schlüssel (fehlt bei älteren Datenständen = alles aus) */
   exerciseOptions?: Record<string, Record<string, ExerciseOptionValue>>;
+  /** Gewählte Einstellungen je Übung (`ExerciseDefinition.params`); fehlt = Standard */
+  exerciseParams?: Record<string, Record<string, ParamValue>>;
+  /** Kalibrierung cm/Sehwinkel (null/fehlt = nicht kalibriert, Schätzung 38 px/cm) */
+  calib?: CalibSettings;
 }
 
 export interface StoreData {
@@ -108,34 +118,81 @@ export function localDay(d = new Date()): string {
 
 export interface SaveOutcome {
   record: ExerciseRecord;
+  /** Letzter früherer Lauf mit denselben Einstellungen (gleicher Variantenschlüssel) */
   previous: HistoryEntry | null;
+  /** Bisheriger Bestwert mit denselben Einstellungen */
   previousBest: number | null;
   isBest: boolean;
+  /** Variantenschlüssel dieses Laufs ('' = Übung ohne Einstellungen) */
+  variant: string;
+  /** Verlauf dieser Variante inklusive dieses Laufs (für die Spark-Linie) */
+  history: HistoryEntry[];
+  /** Es gibt frühere Läufe, aber alle mit anderen Einstellungen (kein Vergleich möglich) */
+  onlyOtherVariants: boolean;
 }
 
+const MAX_VARIANTS = 40;
+
+/** Variante eines Verlaufseintrags (ältere Einträge: leer) */
+export function entryVariant(h: HistoryEntry): string {
+  return h.v ?? '';
+}
+
+/** Bestwert einer Variante ('' = Übung ohne Einstellungen) */
+export function bestFor(rec: ExerciseRecord, variant: string): number | null {
+  if (variant === '') return rec.best;
+  const b = rec.bv?.[variant];
+  return typeof b === 'number' ? b : null;
+}
+
+/**
+ * Ergebnis speichern. `variant` = Variantenschlüssel der Einstellungen (`variantKey`); Vergleich, Bestwert und
+ * Verlauf gelten nur innerhalb gleicher Variante. Ohne Variante ('' – alle Übungen ohne `params`) verhält sich
+ * alles wie bisher.
+ */
 export function saveResult(
   id: string,
   entry: { primary: number; score: number; level: number },
   unit: MetricUnit,
   better: Better,
+  variant = '',
 ): SaveOutcome {
   const data = load();
   const rec = getRecord(id);
-  const previous = rec.history.length ? rec.history[rec.history.length - 1] : null;
-  const previousBest = rec.best;
+  const same = rec.history.filter((h) => entryVariant(h) === variant);
+  const previous = same.length ? same[same.length - 1] : null;
+  const previousBest = bestFor(rec, variant);
   const isBest =
     previousBest === null || (better === 'higher' ? entry.primary > previousBest : entry.primary < previousBest);
+  const newBest = isBest ? entry.primary : previousBest;
+  const item: HistoryEntry = { d: Date.now(), p: entry.primary, s: entry.score, l: entry.level, ...(variant ? { v: variant } : {}) };
+  let bv = rec.bv;
+  if (variant !== '' && newBest !== null) {
+    bv = { ...(rec.bv ?? {}), [variant]: newBest };
+    const keys = Object.keys(bv);
+    // nicht unbegrenzt wachsen lassen: die ältesten Varianten (Einfügereihenfolge) zuerst verwerfen
+    if (keys.length > MAX_VARIANTS) for (const k of keys.slice(0, keys.length - MAX_VARIANTS)) delete bv[k];
+  }
   const next: ExerciseRecord = {
     level: entry.level,
-    best: isBest ? entry.primary : previousBest,
+    best: variant === '' ? newBest : rec.best,
     unit,
     better,
-    history: [...rec.history, { d: Date.now(), p: entry.primary, s: entry.score, l: entry.level }].slice(-MAX_HISTORY),
+    history: [...rec.history, item].slice(-MAX_HISTORY),
+    ...(bv ? { bv } : {}),
   };
   const today = localDay();
   const days = data.days.includes(today) ? data.days : [...data.days, today].slice(-MAX_DAYS);
   persist({ ...data, exercises: { ...data.exercises, [id]: next }, days });
-  return { record: next, previous, previousBest, isBest: isBest && previousBest !== null };
+  return {
+    record: next,
+    previous,
+    previousBest,
+    isBest: isBest && previousBest !== null,
+    variant,
+    history: [...same, item],
+    onlyOtherVariants: rec.history.length > 0 && same.length === 0,
+  };
 }
 
 export function doneToday(id: string): boolean {
@@ -210,6 +267,53 @@ export function getExerciseOptions(exerciseId: string, defs: readonly ExerciseOp
 export function setExerciseOption(exerciseId: string, key: string, value: ExerciseOptionValue): void {
   const all = getSettings().exerciseOptions ?? {};
   updateSettings({ exerciseOptions: { ...all, [exerciseId]: { ...(all[exerciseId] ?? {}), [key]: { on: value.on === true, choice: String(value.choice) } } } });
+}
+
+/** Gespeicherte Einstellungen einer Übung, bereinigt und mit Standardwerten aufgefüllt (ohne `params`: leer) */
+export function getExerciseParams(exerciseId: string, defs: readonly ParamDef[] | undefined): Record<string, ParamValue> {
+  if (!defs?.length) return {};
+  return sanitizeParams(defs, getSettings().exerciseParams?.[exerciseId]);
+}
+
+/** Eine Einstellung ändern (der Wert wird bereinigt gespeichert); gibt alle Einstellungen der Übung zurück */
+export function setExerciseParam(exerciseId: string, defs: readonly ParamDef[], key: string, value: ParamValue): Record<string, ParamValue> {
+  const all = getSettings().exerciseParams ?? {};
+  const next = sanitizeParams(defs, { ...getExerciseParams(exerciseId, defs), [key]: value });
+  updateSettings({ exerciseParams: { ...all, [exerciseId]: next } });
+  return next;
+}
+
+/** „Standard wiederherstellen“: gespeicherte Einstellungen der Übung entfernen */
+export function resetExerciseParams(exerciseId: string, defs: readonly ParamDef[] | undefined): Record<string, ParamValue> {
+  const all = { ...(getSettings().exerciseParams ?? {}) };
+  delete all[exerciseId];
+  updateSettings({ exerciseParams: all });
+  return defaultParams(defs);
+}
+
+/** `true`, wenn die gespeicherten Einstellungen vom Standard abweichen */
+export function hasCustomParams(exerciseId: string, defs: readonly ParamDef[] | undefined): boolean {
+  return !!defs?.length && !isDefaultParams(defs, getSettings().exerciseParams?.[exerciseId]);
+}
+
+/** Variantenschlüssel der gerade gespeicherten Einstellungen einer Übung ('' ohne `params`) */
+export function currentVariant(exerciseId: string, defs: readonly ParamDef[] | undefined): string {
+  return variantKey(defs, getSettings().exerciseParams?.[exerciseId]);
+}
+
+/** Gespeicherte Kalibrierung (bereinigt; nicht kalibriert = `pxPerCm: null`) */
+export function getCalibSettings(): CalibSettings {
+  return sanitizeCalib(getSettings().calib ?? DEFAULT_CALIB);
+}
+
+export function setCalibSettings(c: CalibSettings): CalibSettings {
+  const clean = sanitizeCalib(c);
+  updateSettings({ calib: clean });
+  return clean;
+}
+
+export function resetCalibSettings(): CalibSettings {
+  return setCalibSettings(DEFAULT_CALIB);
 }
 
 export function clearAll(): void {
