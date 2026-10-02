@@ -125,7 +125,7 @@ for (const lang of ['de', 'it']) {
   check('Kamera: Modell und WASM kamen von /eye-models/ (self)', models.some((m) => m.endsWith('face_landmarker.task')) && models.some((m) => m.endsWith('vision_wasm_internal.wasm')), models.join(','));
   await page.waitForTimeout(3000);
   const st = await page.evaluate(() => window.__eye.tracker.stats());
-  check('Kamera: Bildrate und Auflösung werden gemessen', st.camFps > 5 && st.camera.width === 640, `${st.camFps.toFixed(1)} fps, ${st.camera.width}×${st.camera.height}`);
+  check('Kamera: Bildrate und Auflösung werden gemessen (Standard 1280×720)', st.camFps > 5 && st.camera.width === 1280 && st.camera.height === 720, `${st.camFps.toFixed(1)} fps, ${st.camera.width}×${st.camera.height}`);
   check('Kamera: Auswertung über CPU (?delegate=cpu)', st.delegate === 'CPU');
   if (!fakeVideo) {
     check('Kamera: Testbild ohne Gesicht → „Gesicht erkannt: nein“ und Hinweis', (await page.locator('#m-face').innerText()) === 'nein' && (await page.locator('#tips').innerText()).includes('Kein Gesicht'));
