@@ -108,6 +108,8 @@ export interface TextCall {
   x: number;
   y: number;
   alpha: number;
+  /** Füllfarbe beim Zeichnen (z. B. „rgb(232,238,247)“) */
+  color: string;
 }
 
 export interface SimOpts {
@@ -253,8 +255,9 @@ function recordingG(texts: string[], frames: TextCall[][] | null): CanvasRenderi
           if (texts.length > 2000) texts.shift();
           texts.push(String(s));
           if (frames && frames.length) {
-            const a = (t as unknown as Record<string, unknown>).globalAlpha;
-            frames[frames.length - 1].push({ s: String(s), x, y, alpha: typeof a === 'number' ? a : 1 });
+            const st = t as unknown as Record<string, unknown>;
+            const a = st.globalAlpha;
+            frames[frames.length - 1].push({ s: String(s), x, y, alpha: typeof a === 'number' ? a : 1, color: String(st.fillStyle ?? '') });
           }
         };
       }
