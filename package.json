@@ -4,7 +4,6 @@
   "version": "1.0.0",
   "description": "Blickfit – visuelle Trainingsübungen für Tablet und Browser (für die Homepage eines Optikers)",
   "type": "module",
-  "//": "EYE-EXPERIMENT: @mediapipe/tasks-vision wird nur in src/eye/ genutzt (docs/eye-tracking-experiment.md, scripts/remove-eye-experiment.sh)",
   "scripts": {
     "sync:katalog": "node scripts/sync-katalog.mjs",
     "dev": "npm run sync:katalog && vite",
@@ -16,7 +15,6 @@
     "deploy": "npm run build && npx --yes wrangler@4 deploy"
   },
   "dependencies": {
-    "@mediapipe/tasks-vision": "^1.0.1",
     "preact": "^10.29.8",
     "three": "^0.180.0"
   },

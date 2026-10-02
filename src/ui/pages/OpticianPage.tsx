@@ -54,17 +54,6 @@ export function OpticianPage() {
               <span class="ex-card-tagline">{opt.shortcutVrText}</span>
             </span>
           </a>
-          {/* EYE-EXPERIMENT begin */}
-          <a class="ex-card" href="./eye/">
-            <span class="ex-card-icon">
-              <Icon name="eye" size={30} />
-            </span>
-            <span class="ex-card-body">
-              <span class="ex-card-title">{opt.shortcutEye}</span>
-              <span class="ex-card-tagline">{opt.shortcutEyeText}</span>
-            </span>
-          </a>
-          {/* EYE-EXPERIMENT end */}
         </div>
       </section>
 

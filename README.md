@@ -108,8 +108,6 @@ funktioniert aber auch am Handy und am Computer. Sprachen: **Deutsch** und **Ita
 
 **VR-Labor (Versuch):** unter `/vr/` liegt ein eigener Testbereich für VR-Brillen mit WebXR (Oculus/Meta Quest, Rift). Dort läuft **Kugel-Detektiv 3D** – Mehrfach-Objektverfolgung in einem Würfelraum, bei dem die räumliche Tiefe Teil der Aufgabe ist. Ohne Brille gibt es eine flache Vorschau. Beschreibung, Aufbau und Tests: [`docs/vr-labor.md`](docs/vr-labor.md). Aus dem Optiker-Bereich verlinkt.
 
-**Blickschätzung (Experiment):** unter `/eye/` liegt ein Versuchsbereich, der mit der Frontkamera des Tablets grob schätzt, in welchem Viertel des Bildschirms man hinschaut (MediaPipe Face Landmarker, alles im Gerät, kein Upload). Phase 1: Testumgebung `/eye/labor/` (Kalibrierung, Genauigkeit, Viertel-Test, Export). Ganz entfernbar (`scripts/remove-eye-experiment.sh`). Beschreibung, Aufbau, Tests: [`docs/eye-tracking-experiment.md`](docs/eye-tracking-experiment.md). <!-- EYE-EXPERIMENT -->
-
 **Übungskatalog:** [`docs/uebungskatalog/`](docs/uebungskatalog/UEBERSICHT.md) beschreibt alle 81 Übungen der Vorlage skilldrills.online (Nummern 101–811) sowie das eigene Reihen-Rätsel (901) und vier Übungen nach Handyvideos bzw. Beschreibung des Auftraggebers (902–905: Richtung & Wort, Welche Seite?, Zahlen-Buchstaben-Wirbel, 4-Ziele-Wechsel) mit Anforderungsprofil, Vorsichtshinweisen und geprüften Quellen – als Grundlage für eine spätere KI-gestützte Übungsauswahl.
 
 Hintergrund, Studienlage und Quellen: Seite „Hintergrund & Studien“ in der App sowie

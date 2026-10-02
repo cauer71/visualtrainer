@@ -15,7 +15,6 @@ export default defineConfig({
       input: {
         main: 'index.html',
         vr: 'vr/index.html',
-        eye: 'eye/index.html', eyeLabor: 'eye/labor/index.html', // EYE-EXPERIMENT: Blickschätzung (/eye/), siehe docs/eye-tracking-experiment.md
       },
     },
   },
