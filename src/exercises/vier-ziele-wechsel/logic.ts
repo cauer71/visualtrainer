@@ -1,139 +1,222 @@
 /**
  * 4-Ziele-Wechsel – reine Logik (ohne Canvas), prüfbar mit vitest.
  *
- * Vier Ziele in den Ecken (0 oben links, 1 oben rechts, 2 unten links, 3 unten rechts). Immer genau eines ist das
- * aktuelle Ziel (Ring) und wird angetippt. Die Stufentabelle hat 12 Schritte; jeder Schritt ändert genau einen
- * Parameter: Größe → Rand (wie weit die Ziele nach außen rücken) → Pause → ähnliche Zeichen → Symbole → Ablenker.
- * Nach je 12 Zielen (ein Abschnitt) entscheidet eine feste Regel über die nächste Stufe (≥ 90 % und gleichmäßige
- * Zeit → eine Stufe schwerer, 75–89 % gleich, < 75 % eine Stufe leichter).
+ * Die Übung ist die „Vier-Tafel-Übung“ (Hart-Chart-Verfahren): In den vier Ecken des Bildschirms steht je eine
+ * Tafel, ein Raster aus Buchstaben (Zeilen × Spalten). Gelesen wird ein Buchstabe von jeder Tafel im Wechsel:
+ * Position p der ersten Tafel → Position p der zweiten → dritten → vierten Tafel → dann Position p + 1 der ersten
+ * Tafel … bis alle Buchstaben aller Tafeln gelesen sind (Leseregel; Fachartikel: „The patient has to read one letter
+ * from each chart until all the letters are read“). Position = Leserichtung innerhalb der Tafel: zeilenweise (Zeile
+ * für Zeile, von links nach rechts), auf späteren Stufen spaltenweise. Auf dem Tablet wird nicht vorgelesen, sondern
+ * die Buchstaben werden in dieser Reihenfolge angetippt; getippte Buchstaben werden blass (bleiben sichtbar), der
+ * nächste Buchstabe jeder Tafel ist also immer der erste nicht blasse.
  *
- * Gemessen wird die Zeit vom Erscheinen des Rings bis zum Tipp (Reaktionszeit Ziel → Touch). Darin stecken
- * Hinsehen, Erkennen, Entscheiden und die Fingerbewegung; der Blick selbst wird nicht gemessen.
+ * Ecken: 0 oben links, 1 oben rechts, 2 unten links, 3 unten rechts.
+ *
+ * Tafelreihenfolge (`Order`; nur „Leserichtung“ und „wechselnd“ sind durch Quellen gestützt, alles Übrige sind eigene
+ * Festlegungen der App; die Reihenfolge der Tafeln steht im Fachartikel nicht):
+ *   reading  Leserichtung (Stufe 1): oben links → oben rechts → unten links → unten rechts
+ *   cw       Uhrzeigersinn: oben links → oben rechts → unten rechts → unten links
+ *   zigzag   über Kreuz: oben links → unten rechts → oben rechts → unten links
+ *   varying  wechselnd: In jedem Durchlauf liest du die vier Tafeln in einer Reihenfolge deiner Wahl, jede Tafel
+ *            einmal (ABWEICHUNG von „zufällige Reihenfolge“: eine vom Gerät ausgelöste Zufallsreihenfolge ist ohne
+ *            Führung nicht zu wissen; also bestimmt die Person die Reihenfolge, die App prüft nur „jede Tafel einmal,
+ *            erst dann der nächste Buchstabe“. Diese Stufen haben nie eine Führung.)
+ * Wechsel-Granularität `gran`: so viele Buchstaben nacheinander aus derselben Tafel (1 = nach jedem Buchstaben
+ * wechseln, 2 = nach zwei Buchstaben, „halbe Zeile“).
+ * Leserichtung in der Tafel `scan`: zeilenweise oder spaltenweise (Steigerung aus den Quellen).
+ *
+ * Stufentabelle (17 Stufen, jeder Schritt ändert genau einen Parameter, siehe `LEVELS`).
+ * Nach jeder Runde (alle vier Tafeln vollständig gelesen) entscheidet eine feste Regel über die nächste Stufe
+ * (≥ 90 % richtig und gleichmäßige Zeit → eine Stufe schwerer, 75–89 % gleich, < 75 % eine Stufe leichter).
+ *
+ * Gemessen wird nur, was der Finger tut: die Zeit von Tipp zu Tipp (zum großen Teil der Fingerweg). Der Blick wird
+ * nicht gemessen. Beim Tippen nach Position müssen die Buchstaben nicht erkannt werden; auf den Stufen mit ähnlichen
+ * oder gemischten Buchstaben misst die Übung deshalb eher Dichte und Suchen als Unterscheiden (offene Frage).
  */
 import type { Rng } from '../../core/rng';
-import { clamp, mean, median, quantile } from '../../core/stats';
+import { clamp, lerp, mean, median, quantile } from '../../core/stats';
 
 export const MIN_LEVEL = 1;
-export const MAX_LEVEL = 12;
+export const MAX_LEVEL = 17;
 export const levelOf = (level: number): number => clamp(Math.floor(level + 1e-9), MIN_LEVEL, MAX_LEVEL);
 
 // ---------------------------------------------------------------------------
 // Stufentabelle
 
-export type SignSet = 'distinct' | 'similar' | 'symbols';
+export type Chars = 'distinct' | 'similar' | 'mixed';
+export type FixedOrder = 'reading' | 'cw' | 'zigzag';
+export type Order = FixedOrder | 'varying';
+export type Scan = 'rows' | 'cols';
+export type Guide = 'letter' | 'chart' | 'none';
+
+/** Buchstabengröße: Schrifthöhe in u (1 % der kürzeren Seite), aber nie unter `minPx` */
+export interface SizeSpec {
+  u: number;
+  minPx: number;
+}
+export const SIZES: readonly SizeSpec[] = [
+  { u: 6, minPx: 28 },
+  { u: 4.8, minPx: 24 },
+  { u: 3.8, minPx: 22 },
+  { u: 3, minPx: 22 },
+];
 
 export interface LevelParams {
   level: number;
-  /** Zeichenhöhe in u (1 % der kürzeren Seite) */
-  sizeU: number;
-  /** Rand: Anteil der halben Feldbreite/-höhe, um den die Ziele von der Mitte weg liegen (1 = ganz in die Ecke) */
+  /** Index in SIZES (0 = größte Buchstaben) */
+  size: number;
+  /** Buchstaben je Tafel: Spalten × Zeilen (auf kleinen Bühnen verkleinert, siehe `fitGrid`) */
+  cols: number;
+  rows: number;
+  /** Abstand der Tafeln: 0 = nah an der Mitte, 1 = ganz in den Ecken */
   reach: number;
-  /** Mitte der Pause zwischen Treffer und nächstem Ziel in ms */
-  pauseMs: number;
-  /** Zeichenvorrat der vier Ziele */
-  signs: SignSet;
-  /** Anzahl der Ablenker (andere Zeichen im Feld, nicht antippen) */
-  distractors: number;
+  /** Wechsel-Granularität: Buchstaben je Tafel, bevor zur nächsten gewechselt wird */
+  gran: 1 | 2;
+  order: Order;
+  /** Leserichtung in der Tafel: zeilenweise oder spaltenweise */
+  scan: Scan;
+  /** Führung: Ring um den nächsten Buchstaben / um die nächste Tafel / keine */
+  guide: Guide;
+  chars: Chars;
 }
 
-export const PARAM_KEYS = ['sizeU', 'reach', 'pauseMs', 'signs', 'distractors'] as const;
+export const PARAM_KEYS = ['size', 'grid', 'reach', 'gran', 'order', 'scan', 'guide', 'chars'] as const;
 export type ParamKey = (typeof PARAM_KEYS)[number];
 
-const P = (level: number, sizeU: number, reach: number, pauseMs: number, signs: SignSet, distractors: number): LevelParams => ({
-  level,
-  sizeU,
-  reach,
-  pauseMs,
-  signs,
-  distractors,
-});
+const valueOf = (p: LevelParams, k: ParamKey): string | number => (k === 'grid' ? `${p.cols}x${p.rows}` : p[k]);
+
+/** Welche Parameter unterscheiden sich zwischen zwei Stufen? (Test: je Schritt genau einer) */
+export function changedParams(a: LevelParams, b: LevelParams): ParamKey[] {
+  return PARAM_KEYS.filter((k) => valueOf(a, k) !== valueOf(b, k));
+}
+
+const P = (
+  level: number,
+  size: number,
+  cols: number,
+  rows: number,
+  reach: number,
+  gran: 1 | 2,
+  order: Order,
+  scan: Scan,
+  guide: Guide,
+  chars: Chars,
+): LevelParams => ({ level, size, cols, rows, reach, gran, order, scan, guide, chars });
 
 /**
- * Stufe | Größe | Rand | Pause | Zeichen   | Ablenker | geändert gegenüber der Stufe davor
- *   1   |  20 u | 0,55 | 1200  | A B C D   |    0     | – (Einstieg: sehr große Ziele, kein Zeitdruck)
- *   2   |  14 u | 0,55 | 1200  | A B C D   |    0     | Größe
- *   3   |   9 u | 0,55 | 1200  | A B C D   |    0     | Größe
- *   4   |   9 u | 0,78 | 1200  | A B C D   |    0     | Rand
- *   5   |   9 u | 1,00 | 1200  | A B C D   |    0     | Rand (ganz in die Ecken)
- *   6   |   9 u | 1,00 | 1000  | A B C D   |    0     | Pause
- *   7   |   9 u | 1,00 |  800  | A B C D   |    0     | Pause
- *   8   |   9 u | 1,00 |  600  | A B C D   |    0     | Pause
- *   9   |   9 u | 1,00 |  600  | B D P R   |    0     | Zeichen (ähnlich)
- *  10   |   9 u | 1,00 |  600  | Symbole   |    0     | Zeichen (kleine Symbole)
- *  11   |   9 u | 1,00 |  600  | Symbole   |    3     | Ablenker
- *  12   |   9 u | 1,00 |  600  | Symbole   |    6     | Ablenker
+ * Stufe | Schrift | Tafel | Abstand | Wechsel | Reihenfolge | Lesen   | Führung        | Buchstaben | geändert gegenüber der Stufe davor
+ *   1   | groß    | 3×3   | 0,50    | 1       | Leserichtung | Zeilen  | Buchstabenring | deutlich versch. | – (Einstieg)
+ *   2   | groß    | 3×3   | 0,75    | 1       | Leserichtung | Zeilen  | Buchstabenring | deutlich versch. | Abstand
+ *   3   | groß    | 4×4   | 0,75    | 1       | Leserichtung | Zeilen  | Buchstabenring | deutlich versch. | Tafelgröße
+ *   4   | mittel  | 4×4   | 0,75    | 1       | Leserichtung | Zeilen  | Buchstabenring | deutlich versch. | Schrift
+ *   5   | mittel  | 4×4   | 0,75    | 1       | Leserichtung | Zeilen  | Tafelring      | deutlich versch. | Führung
+ *   6   | mittel  | 5×5   | 0,75    | 1       | Leserichtung | Zeilen  | Tafelring      | deutlich versch. | Tafelgröße (5×5 wie in den Quellen)
+ *   7   | mittel  | 5×5   | 0,75    | 1       | Uhrzeigersinn | Zeilen | Tafelring      | deutlich versch. | Reihenfolge
+ *   8   | mittel  | 5×5   | 1,00    | 1       | Uhrzeigersinn | Zeilen | Tafelring      | deutlich versch. | Abstand
+ *   9   | mittel  | 5×5   | 1,00    | 2       | Uhrzeigersinn | Zeilen | Tafelring      | deutlich versch. | Wechsel-Granularität
+ *  10   | mittel  | 5×5   | 1,00    | 2       | Uhrzeigersinn | Spalten | Tafelring     | deutlich versch. | Lesen (spaltenweise)
+ *  11   | mittel  | 5×5   | 1,00    | 2       | über Kreuz   | Spalten | Tafelring      | deutlich versch. | Reihenfolge
+ *  12   | klein   | 5×5   | 1,00    | 2       | über Kreuz   | Spalten | Tafelring      | deutlich versch. | Schrift
+ *  13   | klein   | 5×5   | 1,00    | 2       | über Kreuz   | Spalten | keine          | deutlich versch. | Führung
+ *  14   | klein   | 5×5   | 1,00    | 2       | wechselnd    | Spalten | keine          | deutlich versch. | Reihenfolge
+ *  15   | kleinst | 5×5   | 1,00    | 2       | wechselnd    | Spalten | keine          | deutlich versch. | Schrift
+ *  16   | kleinst | 5×5   | 1,00    | 2       | wechselnd    | Spalten | keine          | ähnlich B D P R E F | Buchstaben
+ *  17   | kleinst | 5×5   | 1,00    | 2       | wechselnd    | Spalten | keine          | Groß-/Kleinbuchstaben, Ziffern | Buchstaben
+ * „wechselnd“ steht nur nach dem Wegfall der Führung (siehe `Order`). Die Reihenfolge der Stufen ist eine eigene
+ * Festlegung (Schwierigkeit grob steigend, eine Änderung je Schritt), kein Vorbild aus der Literatur.
  */
 export const LEVELS: readonly LevelParams[] = [
-  P(1, 20, 0.55, 1200, 'distinct', 0),
-  P(2, 14, 0.55, 1200, 'distinct', 0),
-  P(3, 9, 0.55, 1200, 'distinct', 0),
-  P(4, 9, 0.78, 1200, 'distinct', 0),
-  P(5, 9, 1.0, 1200, 'distinct', 0),
-  P(6, 9, 1.0, 1000, 'distinct', 0),
-  P(7, 9, 1.0, 800, 'distinct', 0),
-  P(8, 9, 1.0, 600, 'distinct', 0),
-  P(9, 9, 1.0, 600, 'similar', 0),
-  P(10, 9, 1.0, 600, 'symbols', 0),
-  P(11, 9, 1.0, 600, 'symbols', 3),
-  P(12, 9, 1.0, 600, 'symbols', 6),
+  P(1, 0, 3, 3, 0.5, 1, 'reading', 'rows', 'letter', 'distinct'),
+  P(2, 0, 3, 3, 0.75, 1, 'reading', 'rows', 'letter', 'distinct'),
+  P(3, 0, 4, 4, 0.75, 1, 'reading', 'rows', 'letter', 'distinct'),
+  P(4, 1, 4, 4, 0.75, 1, 'reading', 'rows', 'letter', 'distinct'),
+  P(5, 1, 4, 4, 0.75, 1, 'reading', 'rows', 'chart', 'distinct'),
+  P(6, 1, 5, 5, 0.75, 1, 'reading', 'rows', 'chart', 'distinct'),
+  P(7, 1, 5, 5, 0.75, 1, 'cw', 'rows', 'chart', 'distinct'),
+  P(8, 1, 5, 5, 1, 1, 'cw', 'rows', 'chart', 'distinct'),
+  P(9, 1, 5, 5, 1, 2, 'cw', 'rows', 'chart', 'distinct'),
+  P(10, 1, 5, 5, 1, 2, 'cw', 'cols', 'chart', 'distinct'),
+  P(11, 1, 5, 5, 1, 2, 'zigzag', 'cols', 'chart', 'distinct'),
+  P(12, 2, 5, 5, 1, 2, 'zigzag', 'cols', 'chart', 'distinct'),
+  P(13, 2, 5, 5, 1, 2, 'zigzag', 'cols', 'none', 'distinct'),
+  P(14, 2, 5, 5, 1, 2, 'varying', 'cols', 'none', 'distinct'),
+  P(15, 3, 5, 5, 1, 2, 'varying', 'cols', 'none', 'distinct'),
+  P(16, 3, 5, 5, 1, 2, 'varying', 'cols', 'none', 'similar'),
+  P(17, 3, 5, 5, 1, 2, 'varying', 'cols', 'none', 'mixed'),
 ];
 
 export const paramsFor = (level: number): LevelParams => LEVELS[levelOf(level) - 1];
 
-/** Welche Parameter unterscheiden sich zwischen zwei Stufen? (Test: je Schritt genau einer) */
-export function changedParams(a: LevelParams, b: LevelParams): ParamKey[] {
-  return PARAM_KEYS.filter((k) => a[k] !== b[k]);
-}
-
-/** Zeichenvorrat je Satz. Symbole sind Namen, gezeichnet wird in index.ts. */
-export const SIGNS: Record<SignSet, readonly string[]> = {
-  distinct: ['A', 'B', 'C', 'D'],
-  similar: ['B', 'D', 'P', 'R'],
-  symbols: ['triangle', 'square', 'diamond', 'star'],
+/** Buchstabenvorrat je Satz (deutlich verschieden / ähnlich / Groß- und Kleinbuchstaben und Ziffern gemischt) */
+export const LETTERS: Record<Chars, readonly string[]> = {
+  distinct: ['A', 'E', 'H', 'K', 'L', 'O', 'T', 'U', 'X', 'Z'],
+  similar: ['B', 'D', 'P', 'R', 'E', 'F'],
+  mixed: ['B', 'D', 'G', 'P', 'R', 'E', 'F', 'a', 'b', 'd', 'e', 'g', 'h', 'n', 'p', 'q', '2', '3', '5', '6', '8', '9'],
 };
 
-/** Ablenker-Zeichen (nie identisch mit einem Hauptzeichen der Stufen 11–12, den Symbolen) */
-export const DISTRACTOR_KINDS = ['x', 'plus', 'ring', '4', '7', 'H'] as const;
-
-/** Abstand zwischen Treffer und nächstem Ziel: gleichverteilt von 0,5 × Mitte bis 4/3 × Mitte (Stufe 8+: 300–800 ms) */
-export function pauseWindow(level: number | LevelParams): { min: number; max: number } {
-  const c = (typeof level === 'number' ? paramsFor(level) : level).pauseMs;
-  return { min: Math.round(c * 0.5), max: Math.round((c * 4) / 3) };
+/** Buchstaben einer Tafel in Leserichtung; nie derselbe Buchstabe zweimal hintereinander */
+export function makeChart(rng: Pick<Rng, 'int'>, chars: Chars, count: number): string[] {
+  const pool = LETTERS[chars];
+  const out: string[] = [];
+  for (let i = 0; i < count; i++) {
+    let c = pool[rng.int(pool.length)];
+    while (i > 0 && c === out[i - 1]) c = pool[rng.int(pool.length)];
+    out.push(c);
+  }
+  return out;
 }
 
-export function pauseMs(rng: Pick<Rng, 'range'>, level: number): number {
-  const w = pauseWindow(level);
-  return rng.range(w.min, w.max);
+/** Vier verschiedene (gemischte) Tafeln mit je `count` Buchstaben */
+export function makeCharts(rng: Pick<Rng, 'int'>, chars: Chars, count: number): string[][] {
+  return [0, 1, 2, 3].map(() => makeChart(rng, chars, count));
 }
 
 // ---------------------------------------------------------------------------
-// Ablauf: Blöcke, Abschnitte, Fristen
+// Ablauf: Runden
 
-/** Ein Abschnitt = so viele Ziele, dann wird die Stufe angepasst */
-export const SEGMENT_TARGETS = 12;
-export const QUICK_SEGMENT_TARGETS = 3;
-/** Frist bis zur Auslassung; das Ziel bleibt danach aktiv (Stufe 1 ohne Zeitdruck: nichts verschwindet) */
-export const OMIT_MS = 6000;
-/** Tipps schneller als das nach dem Erscheinen des Rings sind Vorwegnehmen, keine Antwort */
-export const MIN_RT_MS = 250;
-/** Folgetipps innerhalb dieser Zeit werden ignoriert (Doppeltipp) */
-export const DOUBLE_TAP_MS = 250;
-
-export interface BlockPlan {
-  blocks: number;
-  blockMs: number;
-  /** Vorschlag für die Pause zwischen den Blöcken; sie endet von selbst oder durch Antippen */
+export interface RoundPlan {
+  rounds: number;
+  /** Vorschlag für die Pause zwischen den Runden; sie endet von selbst oder durch Antippen */
   restMs: number;
-  /** Kurze Startphase: alle vier Zeichen sichtbar, noch kein Ziel */
+  /** Kurze Startphase: alle Tafeln sichtbar, Reihenfolge-Hinweis, noch kein Tipp */
   startMs: number;
-  segment: number;
+  /** Schnellmodus: nach so vielen Buchstaben endet die Runde (sonst erst, wenn alle gelesen sind) */
+  capSteps: number;
+  /** Notbremse (z. B. Tablet weggelegt): nach so langer Zeit endet die Runde mit dem, was gelesen wurde */
+  capMs: number;
 }
 
-export function blockPlan(quick: boolean): BlockPlan {
+export function roundPlan(quick: boolean): RoundPlan {
   return quick
-    ? { blocks: 3, blockMs: 6000, restMs: 2200, startMs: 700, segment: QUICK_SEGMENT_TARGETS }
-    : { blocks: 3, blockMs: 60000, restMs: 10000, startMs: 1300, segment: SEGMENT_TARGETS };
+    ? { rounds: 2, restMs: 2200, startMs: 700, capSteps: 8, capMs: 40_000 }
+    : { rounds: 3, restMs: 10_000, startMs: 2400, capSteps: Infinity, capMs: 300_000 };
 }
+
+/** Folgetipps innerhalb dieser Zeit werden ignoriert (Doppeltipp) */
+export const DOUBLE_TAP_MS = 100;
+
+// ---------------------------------------------------------------------------
+// Takt (Metronom, Option vor dem Start; nicht Teil der Stufentabelle)
+
+export type BeatTempo = 'slow' | 'medium' | 'fast';
+export const BEAT_CHOICES: readonly BeatTempo[] = ['slow', 'medium', 'fast'];
+export const BEAT_DEFAULT: BeatTempo = 'medium';
+/** Abstand der Taktschläge in ms: langsam 1,4 s · mittel 1,0 s (= 60 pro Minute) · schnell 0,8 s; ein Schlag = ein Buchstabe (Annahme) */
+export const BEAT_MS: Record<BeatTempo, number> = { slow: 1400, medium: 1000, fast: 800 };
+/** Ein Tipp gilt als „im Takt“, wenn er höchstens so weit (ms) neben einem Taktschlag liegt; nie ein Fehlergrund */
+export const BEAT_WINDOW_MS = 300;
+/** Der erste Taktschlag einer Runde kommt so lange nach Rundenbeginn */
+export const BEAT_START_MS = 900;
+
+export const beatMsFor = (choice: string): number => BEAT_MS[choice as BeatTempo] ?? BEAT_MS[BEAT_DEFAULT];
+
+/** Abstand eines Tipps zum nächsten Taktschlag in ms (Schläge bei t0 + k · interval, k ≥ 0) */
+export function beatOffset(t: number, t0: number, interval: number): number {
+  const k = Math.max(0, Math.round((t - t0) / interval));
+  return Math.abs(t - (t0 + k * interval));
+}
+
+export const onBeat = (t: number, t0: number, interval: number): boolean => beatOffset(t, t0, interval) <= BEAT_WINDOW_MS + 1e-9;
 
 // ---------------------------------------------------------------------------
 // Ecken und Richtungen
@@ -142,6 +225,13 @@ export type Corner = 0 | 1 | 2 | 3;
 export const CORNERS: readonly Corner[] = [0, 1, 2, 3];
 export const cornerCol = (c: number): number => c & 1;
 export const cornerRow = (c: number): number => c >> 1;
+
+/** Feste Tafelreihenfolgen (Ecken) */
+export const CHART_ORDER: Record<FixedOrder, readonly Corner[]> = {
+  reading: [0, 1, 2, 3],
+  cw: [0, 1, 3, 2],
+  zigzag: [0, 3, 1, 2],
+};
 
 export type Direction = 'right' | 'left' | 'down' | 'up' | 'downRight' | 'upLeft' | 'upRight' | 'downLeft';
 export const DIRECTIONS: readonly Direction[] = ['right', 'left', 'down', 'up', 'downRight', 'upLeft', 'upRight', 'downLeft'];
@@ -168,207 +258,261 @@ export function directionOf(from: number, to: number): Direction | null {
 }
 
 // ---------------------------------------------------------------------------
-// Zielfolge
+// Leseregel
 
-const zeros = (): number[][] => Array.from({ length: 4 }, () => [0, 0, 0, 0]);
-
-/**
- * Unvorhersehbare, ausgewogene Zielfolge:
- * - nie dasselbe Ziel zweimal hintereinander,
- * - kein Pendeln (A B A B ist ausgeschlossen),
- * - die 12 gerichteten Wechsel werden über die Zeit etwa gleich oft genutzt: von der aktuellen Ecke aus sind
- *   die am seltensten genutzten Wechsel doppelt so wahrscheinlich wie die um eins häufigeren; seltener als
- *   „seltenster + 1“ wird nichts gewählt.
- */
-export class TargetSequence {
-  readonly history: number[] = [];
-  /** counts[von][nach] */
-  readonly counts: number[][] = zeros();
-
-  get last(): number | null {
-    return this.history.length ? this.history[this.history.length - 1] : null;
-  }
-
-  next(rng: Pick<Rng, 'int' | 'next'>): number {
-    const h = this.history;
-    const n = h.length;
-    if (n === 0) {
-      const first = rng.int(4);
-      h.push(first);
-      return first;
-    }
-    const prev = h[n - 1];
-    const forbid = n >= 3 && h[n - 3] === prev ? h[n - 2] : -1; // A B A → nicht wieder B
-    const cand = CORNERS.filter((c) => c !== prev && c !== forbid);
-    const row = this.counts[prev];
-    const min = Math.min(...cand.map((c) => row[c]));
-    const weight: number[] = cand.map((c) => (row[c] === min ? 2 : row[c] === min + 1 ? 1 : 0));
-    const total = weight.reduce((a, b) => a + b, 0);
-    let r = rng.next() * total;
-    let pick = cand[0];
-    for (let i = 0; i < cand.length; i++) {
-      if (weight[i] <= 0) continue;
-      pick = cand[i];
-      r -= weight[i];
-      if (r < 0) break;
-    }
-    this.counts[prev][pick]++;
-    h.push(pick);
-    return pick;
-  }
+export interface Cell {
+  chart: Corner;
+  /** Position in Leserichtung (0 = erster Buchstabe oben links in der Tafel) */
+  pos: number;
 }
 
-// ---------------------------------------------------------------------------
-// Geometrie
-
-/** Kleinste Zeichenhöhe in px (schwerste Stufe) */
-export const MIN_GLYPH_PX = 34;
-/** Trefferradius je Ziel in px: Regel ≥ 72, nur auf sehr kleinen Feldern bis auf 56 verkleinert */
-export const HIT_R_PX = 72;
-export const HIT_R_MIN_PX = 56;
-/** Ringradius im Verhältnis zur Zeichenhöhe */
-export const RING_PER_GLYPH = 0.85;
-
-export interface Pt {
-  x: number;
-  y: number;
+/** Spalte und Zeile der Position `pos`: zeilenweise (Zeile für Zeile) oder spaltenweise (Spalte für Spalte) */
+export function gridOfPos(pos: number, cols: number, rows: number, scan: Scan): { col: number; row: number } {
+  return scan === 'rows' ? { col: pos % cols, row: Math.floor(pos / cols) } : { col: Math.floor(pos / rows), row: pos % rows };
 }
 
-export interface Layout {
-  w: number;
-  h: number;
-  centers: Pt[];
-  /** Zeichenhöhe (Versalhöhe) in px */
-  glyph: number;
-  /** sichtbarer Ringradius und Trefferradius */
-  r: number;
-  hitR: number;
+/** Umkehrung von `gridOfPos` */
+export function posOfGrid(col: number, row: number, cols: number, rows: number, scan: Scan): number {
+  return scan === 'rows' ? row * cols + col : col * rows + row;
 }
 
 /**
- * Feld `w × h` (h = Unterkante des nutzbaren Feldes). Die Ziele liegen in den vier Ecken; `reach` = 1 schiebt sie
- * so weit nach außen, dass der ganze Trefferkreis noch auf der Bühne liegt. Die Trefferkreise überlappen nie.
+ * Zustandsautomat der Leseregel für eine Runde mit `n` Buchstaben je Tafel.
+ *
+ * Ein Durchlauf (`pass`) deckt die Positionen [pass·gran, pass·gran + gran) ab (die letzte kann kürzer sein):
+ * jede der vier Tafeln liest diesen Block am Stück, dann kommt die nächste Tafel. Feste Reihenfolge (reading, cw, zigzag):
+ * genau ein Buchstabe ist erwartet. `varying`: am Beginn eines Blocks ist der Anfang jeder noch nicht gelesenen
+ * Tafel dieses Durchlaufs erlaubt (bis zu vier Buchstaben); ist ein Block begonnen, geht er in derselben Tafel weiter.
  */
-export function layoutFor(w: number, h: number, u: number, sizeU: number, reach: number): Layout {
-  const margin = Math.max(6, u * 1.2);
-  const short = Math.min(w, h);
-  const hitFit = (short / 2 - margin) / 2; // zwei Trefferkreise nebeneinander passen noch in die halbe Seite
-  let glyph = Math.max(MIN_GLYPH_PX, sizeU * u);
-  const r0 = glyph * RING_PER_GLYPH;
-  const hitR = Math.min(Math.max(HIT_R_PX, r0 + 8), Math.max(HIT_R_MIN_PX, hitFit));
-  const r = Math.min(r0, hitR - 6);
-  if (r < r0) glyph = r / RING_PER_GLYPH;
-  const pad = hitR + margin;
-  const halfW = w / 2;
-  const halfH = h / 2;
-  const dx = clamp(reach * halfW, hitR, Math.max(hitR, halfW - pad));
-  const dy = clamp(reach * halfH, hitR, Math.max(hitR, halfH - pad));
-  const cx = w / 2;
-  const cy = h / 2;
-  return {
-    w,
-    h,
-    glyph,
-    r,
-    hitR,
-    centers: [
-      { x: cx - dx, y: cy - dy },
-      { x: cx + dx, y: cy - dy },
-      { x: cx - dx, y: cy + dy },
-      { x: cx + dx, y: cy + dy },
-    ],
-  };
-}
+export class Reader {
+  /** Welche Buchstaben schon gelesen sind: done[Ecke][Position] */
+  readonly done: boolean[][];
+  /** Gelesene Buchstaben */
+  count = 0;
+  /** Zuletzt gelesener Buchstabe */
+  last: Cell | null = null;
+  private pass = 0;
+  private readonly doneCharts = new Set<number>();
+  private cur: number | null = null;
+  private inBlock = 0;
 
-export const inCircle = (x: number, y: number, cx: number, cy: number, r: number): boolean => Math.hypot(x - cx, y - cy) <= r;
-
-/** Nummer der Ecke, deren Trefferkreis den Punkt enthält, sonst -1 (die Kreise überlappen nicht) */
-export function cornerAt(lay: Layout, x: number, y: number): number {
-  for (let i = 0; i < 4; i++) if (inCircle(x, y, lay.centers[i].x, lay.centers[i].y, lay.hitR)) return i;
-  return -1;
-}
-
-export interface Distractor {
-  kind: string;
-  x: number;
-  y: number;
-}
-
-/** Zeichenhöhe der Ablenker im Verhältnis zu den Hauptzeichen und Trefferradius ihrer Berührungsfläche */
-export const distractorHitR = (glyph: number): number => Math.max(28, glyph * 0.75);
-
-/**
- * Ablenker im freien Feld zwischen den Zielen. Rein deterministisch aus `seeds` und der Geometrie: keine
- * Bewegung, kein Neuwürfeln, auch nach dem Drehen des Geräts stimmt die Anordnung. Die ersten n Punkte
- * sind unabhängig von `count` immer dieselben (Präfix), so kann sich die Zahl ändern, ohne dass etwas springt.
- */
-export function distractorsFor(count: number, seeds: readonly number[], lay: Layout): Distractor[] {
-  const out: Distractor[] = [];
-  if (count <= 0 || !seeds.length) return out;
-  const dHit = distractorHitR(lay.glyph);
-  const edge = dHit + 6;
-  const keepOut = lay.hitR + dHit + 10;
-  const cand: Pt[] = [];
-  const cols = 13;
-  const rows = 13;
-  for (let i = 0; i < cols; i++) {
-    for (let j = 0; j < rows; j++) {
-      const x = edge + ((lay.w - 2 * edge) * i) / (cols - 1);
-      const y = edge + ((lay.h - 2 * edge) * j) / (rows - 1);
-      if (lay.centers.every((c) => Math.hypot(x - c.x, y - c.y) >= keepOut)) cand.push({ x, y });
-    }
+  constructor(
+    readonly n: number,
+    readonly gran: number,
+    readonly order: Order,
+  ) {
+    this.done = Array.from({ length: 4 }, () => new Array<boolean>(n).fill(false));
   }
-  if (!cand.length) return out;
-  const chosen: Pt[] = [];
-  const base = Math.abs(Math.floor(seeds[0]));
-  for (let k = 0; k < count; k++) {
-    const s = Math.abs(Math.floor(seeds[k % seeds.length]));
-    let pick: Pt | null = null;
-    if (k === 0) {
-      pick = cand[s % cand.length];
-    } else {
-      // die am weitesten von den schon gewählten Punkten entfernten Kandidaten, darunter nach Zufallszahl
-      const ranked = cand
-        .map((c) => ({ c, d: Math.min(...chosen.map((p) => Math.hypot(c.x - p.x, c.y - p.y))) }))
-        .filter((e) => e.d >= 2 * dHit + 8)
-        .sort((a, b) => b.d - a.d || a.c.x - b.c.x || a.c.y - b.c.y);
-      if (!ranked.length) break;
-      pick = ranked[s % Math.min(5, ranked.length)].c;
+
+  get total(): number {
+    return 4 * this.n;
+  }
+
+  get finished(): boolean {
+    return this.count >= this.total;
+  }
+
+  /** Aktueller Durchlauf (0-basiert) */
+  get passIndex(): number {
+    return this.pass;
+  }
+
+  private blockLen(): number {
+    return Math.min(this.gran, this.n - this.pass * this.gran);
+  }
+
+  /** Mitten in einem Block (der nächste Buchstabe kommt aus derselben Tafel)? */
+  get midBlock(): boolean {
+    return this.cur !== null;
+  }
+
+  /** Erlaubte nächste Buchstaben (leer, wenn fertig) */
+  expected(): Cell[] {
+    if (this.finished) return [];
+    if (this.cur !== null) return [{ chart: this.cur as Corner, pos: this.pass * this.gran + this.inBlock }];
+    const pos = this.pass * this.gran;
+    if (this.order === 'varying') return CORNERS.filter((c) => !this.doneCharts.has(c)).map((chart) => ({ chart, pos }));
+    const next = CHART_ORDER[this.order].find((c) => !this.doneCharts.has(c));
+    return next === undefined ? [] : [{ chart: next, pos }];
+  }
+
+  /** Der eindeutig nächste Buchstabe (feste Reihenfolge); null bei freier Wahl oder wenn fertig */
+  next(): Cell | null {
+    const e = this.expected();
+    return e.length === 1 ? e[0] : null;
+  }
+
+  /** Tipp auf `cell`: zählt, wenn er erlaubt ist (dann rückt die Regel weiter), sonst false (= Fehler) */
+  accept(cell: Cell): boolean {
+    if (!this.expected().some((e) => e.chart === cell.chart && e.pos === cell.pos)) return false;
+    this.done[cell.chart][cell.pos] = true;
+    this.count++;
+    this.last = { chart: cell.chart, pos: cell.pos };
+    this.cur = cell.chart;
+    this.inBlock++;
+    if (this.inBlock >= this.blockLen()) {
+      this.doneCharts.add(cell.chart);
+      this.cur = null;
+      this.inBlock = 0;
+      if (this.doneCharts.size === 4) {
+        this.pass++;
+        this.doneCharts.clear();
+      }
     }
-    chosen.push(pick);
-    out.push({ kind: DISTRACTOR_KINDS[(base + k) % DISTRACTOR_KINDS.length], x: pick.x, y: pick.y });
+    return true;
+  }
+}
+
+/** Die ganze Lesefolge einer festen Reihenfolge (nicht für `varying`: dort wählt die Person) */
+export function readingSequence(n: number, gran: number, order: FixedOrder): Cell[] {
+  const r = new Reader(n, gran, order);
+  const out: Cell[] = [];
+  while (!r.finished) {
+    const c = r.next();
+    if (!c) break;
+    r.accept(c);
+    out.push(c);
   }
   return out;
 }
 
 // ---------------------------------------------------------------------------
-// Durchgänge und Auswertung
+// Geometrie
 
-export interface Trial {
+/** Zielfläche je Buchstabe = Zelle: mindestens so groß (px) */
+export const MIN_CELL_PX = 50;
+/** Zellgröße im Verhältnis zur Schrifthöhe */
+export const CELL_PER_FONT = 1.75;
+/** Rand der Tafel um das Raster, im Verhältnis zur Zelle */
+export const PAD_F = 0.12;
+/** Schrift höchstens so groß im Verhältnis zur Zelle (damit der Buchstabe in die Zelle passt) */
+export const FONT_PER_CELL = 0.78;
+
+export interface ChartRect {
+  corner: Corner;
+  /** Karte (Tafel samt Rand) */
+  x: number;
+  y: number;
+  w: number;
+  h: number;
+  /** Ursprung des Rasters (obere linke Zelle) */
+  gx: number;
+  gy: number;
+}
+
+export interface Layout {
+  w: number;
+  h: number;
+  cols: number;
+  rows: number;
+  scan: Scan;
+  /** Seitenlänge einer Zelle = Zielfläche je Buchstabe */
+  cell: number;
+  /** Schriftgröße in px */
+  font: number;
+  pad: number;
+  charts: ChartRect[];
+}
+
+const edge = (u: number): { m: number; gap: number } => ({ m: Math.max(8, u * 1.5), gap: Math.max(20, u * 3) });
+
+/** Größte Zelle, bei der zwei Tafeln nebeneinander und übereinander mit Rand und Mindestabstand ins Feld passen */
+export function cellMaxFor(w: number, h: number, u: number, cols: number, rows: number): number {
+  const { m, gap } = edge(u);
+  return Math.min((w - 2 * m - gap) / (2 * (cols + 2 * PAD_F)), (h - 2 * m - gap) / (2 * (rows + 2 * PAD_F)));
+}
+
+/** Gewünschtes Raster, verkleinert, bis die Zellen auf dem Feld mindestens `MIN_CELL_PX` groß sein können */
+export function fitGrid(w: number, h: number, u: number, cols: number, rows: number, minCell: number = MIN_CELL_PX): { cols: number; rows: number } {
+  let c = cols;
+  let r = rows;
+  while (cellMaxFor(w, h, u, c, r) < minCell) {
+    if (c >= r && c > 2) c--;
+    else if (r > 2) r--;
+    else if (c > 1) c--;
+    else break;
+  }
+  return { cols: c, rows: r };
+}
+
+/**
+ * Feld `w × h`. Die vier Tafeln sitzen in den Ecken; `reach` schiebt sie von der Mitte (0) bis ganz an den Rand (1).
+ * Die Karten überlappen nie und liegen im Feld. Die Zelle ist mindestens `MIN_CELL_PX` groß, wo das Feld es zulässt.
+ */
+export function layoutFor(w: number, h: number, u: number, size: number, reach: number, cols: number, rows: number, scan: Scan = 'rows'): Layout {
+  const { m, gap } = edge(u);
+  const sp = SIZES[clamp(Math.round(size), 0, SIZES.length - 1)];
+  const fontWanted = Math.max(sp.minPx, sp.u * u);
+  const desired = Math.max(MIN_CELL_PX, fontWanted * CELL_PER_FONT);
+  const cell = Math.min(desired, cellMaxFor(w, h, u, cols, rows));
+  const font = Math.min(fontWanted, cell * FONT_PER_CELL);
+  const pad = cell * PAD_F;
+  const bw = cols * cell + 2 * pad;
+  const bh = rows * cell + 2 * pad;
+  const r = clamp(reach, 0, 1);
+  const x0 = lerp(w / 2 - gap / 2 - bw, m, r);
+  const y0 = lerp(h / 2 - gap / 2 - bh, m, r);
+  const xs = [x0, w - x0 - bw];
+  const ys = [y0, h - y0 - bh];
+  const charts: ChartRect[] = CORNERS.map((corner) => {
+    const x = xs[cornerCol(corner)];
+    const y = ys[cornerRow(corner)];
+    return { corner, x, y, w: bw, h: bh, gx: x + pad, gy: y + pad };
+  });
+  return { w, h, cols, rows, scan, cell, font, pad, charts };
+}
+
+/** Feld und Stufe → Layout (Raster passend verkleinert) */
+export function layoutForLevel(w: number, h: number, u: number, level: number): Layout {
+  const p = paramsFor(level);
+  const g = fitGrid(w, h, u, p.cols, p.rows);
+  return layoutFor(w, h, u, p.size, p.reach, g.cols, g.rows, p.scan);
+}
+
+/** Mittelpunkt und Rechteck des Buchstabens an der Position `pos` */
+export function cellRect(lay: Layout, chart: number, pos: number): { x: number; y: number; w: number; h: number; cx: number; cy: number } {
+  const c = lay.charts[chart];
+  const { col, row } = gridOfPos(pos, lay.cols, lay.rows, lay.scan);
+  const x = c.gx + col * lay.cell;
+  const y = c.gy + row * lay.cell;
+  return { x, y, w: lay.cell, h: lay.cell, cx: x + lay.cell / 2, cy: y + lay.cell / 2 };
+}
+
+/** Welcher Buchstabe (Position) liegt unter dem Punkt? Der Rand der Tafel zählt zur nächsten Zelle; sonst null (Tipp ins Leere) */
+export function cellAt(lay: Layout, x: number, y: number): Cell | null {
+  for (const c of lay.charts) {
+    if (x < c.x || x > c.x + c.w || y < c.y || y > c.y + c.h) continue;
+    const col = clamp(Math.floor((x - c.gx) / lay.cell), 0, lay.cols - 1);
+    const row = clamp(Math.floor((y - c.gy) / lay.cell), 0, lay.rows - 1);
+    return { chart: c.corner, pos: posOfGrid(col, row, lay.cols, lay.rows, lay.scan) };
+  }
+  return null;
+}
+
+// ---------------------------------------------------------------------------
+// Buchstaben-Datensätze und Auswertung
+
+/** Ein gelesener Buchstabe (jeder Buchstabe der Runde ergibt genau einen Datensatz, sobald er richtig getippt ist) */
+export interface StepRec {
+  round: number;
+  /** Nummer des Buchstabens in der Runde (0-basiert) */
   index: number;
-  /** Ecke des vorigen Ziels (null beim ersten) */
-  from: number | null;
-  to: number;
   level: number;
-  /** erster Tipp richtig, nichts ausgelassen, nichts Falsches davor */
-  clean: boolean;
-  /** Reaktionszeit Ziel → Touch in ms; nur bei `clean` */
+  chart: Corner;
+  pos: number;
+  /** Tafel des vorigen Buchstabens in dieser Runde (null beim ersten) */
+  from: Corner | null;
+  gran: number;
+  /** Zeit von Tipp zu Tipp in ms (vom vorigen richtigen Tipp); null beim ersten Tipp der Runde */
   rt: number | null;
-  /** falsche Ziele (je Tipp) */
+  /** falsche Tipps vor dem richtigen */
   errors: number;
-  distractorTaps: number;
-  omitted: boolean;
+  /** nur mit Takt gespielt: lag der richtige Tipp im Taktfenster? (sonst nicht gesetzt) */
+  onBeat?: boolean;
 }
 
-/** Abschnitt: Treffer = saubere Durchgänge */
-export interface SegmentStats {
-  total: number;
-  hits: number;
-  /** 0..1 */
-  accuracy: number;
-  meanMs: number;
-  stable: boolean;
-}
+export const isClean = (s: StepRec): boolean => s.errors === 0 && s.rt !== null;
+const cleanTimes = (ss: readonly StepRec[]): number[] => ss.filter(isClean).map((s) => s.rt as number);
 
 /** Gleichmäßige Zeit: Streuung (Quartilsabstand) höchstens 60 % des Medians, bei mindestens 4 gültigen Zeiten */
 export const STABLE_SPREAD = 0.6;
@@ -380,22 +524,30 @@ export function isStable(rts: readonly number[]): boolean {
   return (quantile(rts, 0.75) - quantile(rts, 0.25)) / med <= STABLE_SPREAD;
 }
 
-export function evalSegment(trials: readonly Trial[]): SegmentStats {
-  const rts = trials.filter((t) => t.clean && t.rt !== null).map((t) => t.rt as number);
-  const total = trials.length;
-  return {
-    total,
-    hits: rts.length,
-    accuracy: total ? rts.length / total : 0,
-    meanMs: rts.length ? mean(rts) : NaN,
-    stable: isStable(rts),
-  };
+export interface RoundStats {
+  /** richtig getippte Buchstaben (Treffer) */
+  hits: number;
+  errors: number;
+  /** Treffer + Fehler */
+  taps: number;
+  /** 0..1 = Treffer / Tipps */
+  accuracy: number;
+  meanMs: number;
+  stable: boolean;
+}
+
+export function evalRound(steps: readonly StepRec[]): RoundStats {
+  const hits = steps.length;
+  const errors = steps.reduce((a, s) => a + s.errors, 0);
+  const taps = hits + errors;
+  const rts = cleanTimes(steps);
+  return { hits, errors, taps, accuracy: taps ? hits / taps : 0, meanMs: rts.length ? mean(rts) : NaN, stable: isStable(rts) };
 }
 
 export type Move = 'harder' | 'same' | 'easier';
 
 /** ≥ 90 % richtig und gleichmäßige Zeit → schwerer; 75–89 % (oder ≥ 90 % mit unruhiger Zeit) → gleich; < 75 % → leichter */
-export function moveFor(s: Pick<SegmentStats, 'accuracy' | 'stable'>): Move {
+export function moveFor(s: Pick<RoundStats, 'accuracy' | 'stable'>): Move {
   if (s.accuracy >= 0.9 - 1e-9) return s.stable ? 'harder' : 'same';
   if (s.accuracy >= 0.75 - 1e-9) return 'same';
   return 'easier';
@@ -405,66 +557,99 @@ export function applyMove(level: number, move: Move): number {
   return levelOf(level + (move === 'harder' ? 1 : move === 'easier' ? -1 : 0));
 }
 
-export interface SegmentLog {
+export interface RoundLog {
   level: number;
   accuracy: number;
 }
 
 /**
- * Erreichte Stufe (Hauptwert): die höchste Stufe, auf der ein Abschnitt mit mindestens 75 % richtig geschafft wurde.
- * Ohne so einen Abschnitt: eine unter der niedrigsten gespielten Stufe (nicht unter 1); ohne Abschnitt: die aktuelle.
+ * Erreichte Stufe (Hauptwert): die höchste Stufe, auf der eine Runde mit mindestens 75 % richtig geschafft wurde.
+ * Ohne so eine Runde: eine unter der niedrigsten gespielten Stufe (nicht unter 1); ohne Runde: die aktuelle.
  */
-export function reachedLevel(segments: readonly SegmentLog[], current: number): number {
-  if (!segments.length) return levelOf(current);
-  const ok = segments.filter((s) => s.accuracy >= 0.75 - 1e-9).map((s) => s.level);
+export function reachedLevel(rounds: readonly RoundLog[], current: number): number {
+  if (!rounds.length) return levelOf(current);
+  const ok = rounds.filter((s) => s.accuracy >= 0.75 - 1e-9).map((s) => s.level);
   if (ok.length) return levelOf(Math.max(...ok));
-  return levelOf(Math.min(...segments.map((s) => s.level)) - 1);
+  return levelOf(Math.min(...rounds.map((s) => s.level)) - 1);
+}
+
+export interface RoundRec {
+  round: number;
+  level: number;
+  durationMs: number;
+  hits: number;
+  errors: number;
+  meanMs: number;
 }
 
 export interface DirectionStat {
   dir: Direction;
-  /** richtige Antworten in dieser Richtung */
+  /** gültige Tafelwechsel in dieser Richtung */
   n: number;
-  /** Mittelwert in ms; NaN bei weniger als `minPerDirection` richtigen Antworten */
+  /** Mittelwert in ms; NaN bei weniger als `minPerDirection` gültigen Wechseln */
   meanMs: number;
 }
 
+export interface JumpStat {
+  /** Zeit bei einem Tafelwechsel und innerhalb derselben Tafel (nur Runden mit Wechsel nach 2 Buchstaben) */
+  switchMs: number;
+  switchN: number;
+  withinMs: number;
+  withinN: number;
+}
+
+export interface BeatStat {
+  /** richtige Tipps in Runden mit Takt */
+  n: number;
+  /** davon im Taktfenster */
+  on: number;
+  /** 0..1 */
+  share: number;
+}
+
 export interface Summary {
-  /** Ziele mit Ergebnis */
+  /** gelesene Buchstaben */
   total: number;
+  /** Treffer = gelesene Buchstaben */
   hits: number;
   errors: number;
-  distractorTaps: number;
-  omissions: number;
+  taps: number;
+  accuracy: number;
   meanMs: number;
-  /** erste und letzte Hälfte der Ziele (mittleres Ziel bei ungerader Zahl bleibt draußen) */
+  medianMs: number;
+  /** erste und letzte Hälfte der Buchstaben (der mittlere bei ungerader Zahl bleibt draußen) */
   firstHalfMs: number;
   lastHalfMs: number;
-  firstHalfHits: number;
+  firstHalfOk: number;
   firstHalfTotal: number;
-  lastHalfHits: number;
+  lastHalfOk: number;
   lastHalfTotal: number;
   directions: DirectionStat[];
   fastest: Direction | null;
   slowest: Direction | null;
+  /** null, wenn keine Runde mit Wechsel nach 2 Buchstaben gespielt wurde */
+  jump: JumpStat | null;
+  /** null, wenn ohne Takt gespielt wurde; sonst Anteil der richtigen Tipps im Taktfenster (nur Zusatzwert) */
+  beat: BeatStat | null;
 }
 
-/** Mindestzahl richtiger Antworten für einen Mittelwert (Richtung, Hälfte) */
+/** Mindestzahl gültiger Zeiten für einen Mittelwert (Hälfte) */
 export const MIN_FOR_MEAN = 3;
-/** Richtungsmittel erst ab so vielen sauberen Treffern je Klasse (bei Streuung ≈ 150 ms sind 3 Werte zu unsicher; siehe docs/wissenschaft/06) */
+/** Richtungsmittel erst ab so vielen gültigen Tafelwechseln je Klasse (bei Streuung ≈ 150 ms sind 3 Werte zu unsicher; siehe docs/wissenschaft/06) */
 export const MIN_FOR_DIRECTION = 8;
+/** Vergleich Tafelwechsel gegen Zeit innerhalb der Tafel: erst ab so vielen gültigen Zeiten je Seite */
+export const MIN_FOR_JUMP = 8;
 
 const meanOrNaN = (xs: readonly number[], min = MIN_FOR_MEAN): number => (xs.length >= min ? mean(xs) : NaN);
-const rtsOf = (ts: readonly Trial[]): number[] => ts.filter((t) => t.clean && t.rt !== null).map((t) => t.rt as number);
 
-export function summarize(trials: readonly Trial[], minPerDirection = MIN_FOR_DIRECTION): Summary {
-  const n = trials.length;
+export function summarize(steps: readonly StepRec[], minPerDirection = MIN_FOR_DIRECTION, minForJump = MIN_FOR_JUMP): Summary {
+  const n = steps.length;
   const half = Math.floor(n / 2);
-  const first = trials.slice(0, half);
-  const last = trials.slice(n - half);
-  const all = rtsOf(trials);
+  const first = steps.slice(0, half);
+  const last = steps.slice(n - half);
+  const all = cleanTimes(steps);
   const directions: DirectionStat[] = DIRECTIONS.map((dir) => {
-    const rts = rtsOf(trials.filter((t) => t.from !== null && directionOf(t.from, t.to) === dir));
+    const rts = cleanTimes(steps.filter((s) => s.from !== null && directionOf(s.from, s.chart) === dir));
     return { dir, n: rts.length, meanMs: meanOrNaN(rts, minPerDirection) };
   });
   const ok = directions.filter((d) => Number.isFinite(d.meanMs));
@@ -477,37 +662,61 @@ export function summarize(trials: readonly Trial[], minPerDirection = MIN_FOR_DI
       slowest = sorted[sorted.length - 1].dir;
     }
   }
+  const two = steps.filter((s) => s.gran >= 2 && s.from !== null);
+  let jump: JumpStat | null = null;
+  if (two.length) {
+    const sw = cleanTimes(two.filter((s) => s.from !== s.chart));
+    const wi = cleanTimes(two.filter((s) => s.from === s.chart));
+    jump = {
+      switchMs: meanOrNaN(sw, minForJump),
+      switchN: sw.length,
+      withinMs: meanOrNaN(wi, minForJump),
+      withinN: wi.length,
+    };
+  }
+  const beated = steps.filter((s) => s.onBeat !== undefined);
+  const beatOn = beated.filter((s) => s.onBeat).length;
+  const errors = steps.reduce((a, s) => a + s.errors, 0);
+  const noErr = (ss: readonly StepRec[]): number => ss.filter((s) => s.errors === 0).length;
   return {
     total: n,
-    hits: all.length,
-    errors: trials.reduce((a, t) => a + t.errors, 0),
-    distractorTaps: trials.reduce((a, t) => a + t.distractorTaps, 0),
-    omissions: trials.filter((t) => t.omitted).length,
+    hits: n,
+    errors,
+    taps: n + errors,
+    accuracy: n + errors ? n / (n + errors) : 0,
     meanMs: all.length ? mean(all) : NaN,
-    firstHalfMs: meanOrNaN(rtsOf(first)),
-    lastHalfMs: meanOrNaN(rtsOf(last)),
-    firstHalfHits: rtsOf(first).length,
+    medianMs: all.length ? median(all) : NaN,
+    firstHalfMs: meanOrNaN(cleanTimes(first)),
+    lastHalfMs: meanOrNaN(cleanTimes(last)),
+    firstHalfOk: noErr(first),
     firstHalfTotal: first.length,
-    lastHalfHits: rtsOf(last).length,
+    lastHalfOk: noErr(last),
     lastHalfTotal: last.length,
     directions,
     fastest,
     slowest,
+    jump,
+    beat: beated.length ? { n: beated.length, on: beatOn, share: beatOn / beated.length } : null,
   };
 }
 
-/** Punkte je sauberem Treffer: nur zur Motivation, nie als Hauptwert angezeigt */
-export function pointsFor(level: number, rt: number): number {
-  return 10 + 2 * (levelOf(level) - 1) + Math.round(Math.max(0, 1 - rt / 3000) * 10);
+/** Datensatz einer Runde für die Rundentabelle */
+export function roundRecord(steps: readonly StepRec[], round: number, level: number, durationMs: number): RoundRec {
+  const st = evalRound(steps);
+  return { round, level, durationMs, hits: st.hits, errors: st.errors, meanMs: st.meanMs };
 }
 
-/** Schlüssel in texts.tips: wrong | slow | distractor | tired | direction | great */
+/** Punkte je richtigem Buchstaben: nur zur Motivation, nie als Hauptwert angezeigt */
+export function pointsFor(level: number, rt: number | null): number {
+  return 4 + (levelOf(level) - 1) + (rt === null ? 0 : Math.round(Math.max(0, 1 - rt / 2500) * 6));
+}
+
+/** Schlüssel in texts.tips: wrong | tired | jump | direction | great */
 export function tipFor(s: Summary): string {
   if (s.total < 6) return 'great';
-  if (s.errors >= 3 && s.errors >= s.omissions) return 'wrong';
-  if (s.distractorTaps >= 3) return 'distractor';
-  if (s.omissions >= 3) return 'slow';
+  if (s.errors >= 4 && s.errors >= 0.08 * s.taps) return 'wrong';
   if (Number.isFinite(s.firstHalfMs) && Number.isFinite(s.lastHalfMs) && s.lastHalfMs > s.firstHalfMs * 1.15) return 'tired';
+  if (s.jump && Number.isFinite(s.jump.switchMs) && Number.isFinite(s.jump.withinMs) && s.jump.switchMs > s.jump.withinMs * 1.3 && s.jump.switchMs - s.jump.withinMs >= 80) return 'jump';
   const f = s.directions.find((d) => d.dir === s.fastest);
   const l = s.directions.find((d) => d.dir === s.slowest);
   if (f && l && l.meanMs > f.meanMs * 1.3) return 'direction';

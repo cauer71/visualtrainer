@@ -17,6 +17,7 @@ import type {
   Exercise,
   ExerciseContext,
   ExerciseDefinition,
+  ExerciseOptionValue,
   ExerciseResult,
   Ghost,
   GhostTapOptions,
@@ -242,6 +243,8 @@ export interface RunnerOptions {
   autoplay?: boolean;
   quick?: boolean;
   startLevel: number | null;
+  /** Gewählte Übungs-Optionen (nur im Spielmodus; im Intro-Film bleibt es leer) */
+  options?: Record<string, ExerciseOptionValue>;
   seed?: number;
   sfx: Sfx;
   domHud?: DomHud;
@@ -279,6 +282,7 @@ export class Runner {
       quick: !!o.quick,
       reducedMotion: prefersReducedMotion(),
       startLevel: o.startLevel,
+      options: o.mode === 'demo' ? undefined : o.options,
       lang: o.lang,
       texts: o.def.texts[o.lang],
       rng: createRng(o.seed),

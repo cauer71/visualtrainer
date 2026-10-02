@@ -55,6 +55,8 @@ function tone({ freq, to, dur, type = 'sine', gain = 0.12, delay = 0 }: ToneOpts
 }
 
 export const sfx: Sfx = {
+  // Taktschlag: kurz, tief, leise (leiser als alle Rückmeldungstöne), kein Lichtreiz dazu
+  beat: () => tone({ freq: 440, to: 360, dur: 0.05, type: 'triangle', gain: 0.045 }),
   tick: () => tone({ freq: 520, dur: 0.08, gain: 0.08 }),
   go: () => tone({ freq: 660, to: 990, dur: 0.16, type: 'triangle', gain: 0.12 }),
   good: () => tone({ freq: 880, to: 1320, dur: 0.1, gain: 0.1 }),
@@ -72,6 +74,7 @@ export const sfx: Sfx = {
 };
 
 export const silentSfx: Sfx = {
+  beat: () => {},
   tick: () => {},
   go: () => {},
   good: () => {},

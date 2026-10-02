@@ -131,6 +131,8 @@ export interface Ghost {
 }
 
 export interface Sfx {
+  /** Leiser, gleichmäßiger Taktschlag (optionales Metronom einer Übung); fehlt bei einfachen Test-Stubs */
+  beat?(): void;
   tick(): void;
   go(): void;
   good(): void;
@@ -149,6 +151,32 @@ export interface Formatter {
   /** vorzeichenbehaftet: "+48 ms" / "−48 ms" */
   msSigned(ms: number): string;
   pct(v: number): string;
+}
+
+/**
+ * Wahl, die eine Übung vor dem Start anbietet (z. B. ein Takt): ein Schalter (Standard aus) und, wenn an,
+ * eine Auswahl (z. B. Tempo). Die Auswahl wird lokal gespeichert (storage.ts) und der Übung als
+ * `ctx.options[key]` übergeben; Intro-Film und Autoplay laufen immer ohne.
+ */
+export interface ExerciseOptionDef {
+  key: string;
+  /** Wahlmöglichkeiten bei eingeschaltetem Schalter, z. B. ['slow', 'medium', 'fast'] */
+  choices: readonly string[];
+  defaultChoice: string;
+}
+
+export interface ExerciseOptionValue {
+  on: boolean;
+  choice: string;
+}
+
+/** Texte einer Option in einer Sprache (Schlüssel wie `ExerciseOptionDef.key`) */
+export interface ExerciseOptionTexts {
+  title: string;
+  /** Kurzer Hinweis unter dem Schalter */
+  hint: string;
+  /** Beschriftung je Wahlmöglichkeit */
+  choices: Record<string, string>;
 }
 
 export interface ExerciseTexts {
@@ -170,6 +198,8 @@ export interface ExerciseTexts {
   tips: Record<string, string>;
   /** Kurze Rückmeldungen während der Übung ("Zu früh!") */
   feedback: Record<string, string>;
+  /** Texte der Optionen aus `ExerciseDefinition.options` (nur für Übungen mit Optionen) */
+  options?: Record<string, ExerciseOptionTexts>;
 }
 
 export interface ExerciseContext {
@@ -182,6 +212,8 @@ export interface ExerciseContext {
   readonly reducedMotion: boolean;
   /** Gespeicherte Schwierigkeitsstufe (null = erster Durchgang) */
   readonly startLevel: number | null;
+  /** Gewählte Optionen (siehe `ExerciseDefinition.options`); im Intro-Film nicht gesetzt */
+  readonly options?: Readonly<Record<string, ExerciseOptionValue>>;
   readonly lang: Lang;
   readonly texts: ExerciseTexts;
   readonly rng: Rng;
@@ -231,5 +263,7 @@ export interface ExerciseDefinition {
   warning?: 'flicker';
   /** Ob die gespeicherte Stufe auf der Karte angezeigt wird */
   showsLevel?: boolean;
+  /** Optionen, die das Intro vor dem Start anbietet (Standard aus, Auswahl wird gespeichert) */
+  options?: readonly ExerciseOptionDef[];
   create(ctx: ExerciseContext): Exercise;
 }
