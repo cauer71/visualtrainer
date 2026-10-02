@@ -4,7 +4,7 @@
  */
 import type { Lang } from '../i18n/lang';
 import { brand } from '../config/brand';
-import type { Better, MetricUnit } from './types';
+import type { Better, ExerciseOptionDef, ExerciseOptionValue, MetricUnit } from './types';
 
 export interface HistoryEntry {
   /** Zeitpunkt (epoch ms) */
@@ -37,6 +37,8 @@ export interface Settings {
   customerIds: string[];
   /** Vollbild gewünscht (wird beim ersten Antippen eines Besuchs wieder aktiviert; Esc/Knopf schaltet aus) */
   fullscreen: boolean;
+  /** Gewählte Übungs-Optionen je Übung und Schlüssel (fehlt bei älteren Datenständen = alles aus) */
+  exerciseOptions?: Record<string, Record<string, ExerciseOptionValue>>;
 }
 
 export interface StoreData {
@@ -188,6 +190,26 @@ export function updateSettings(patch: Partial<Settings>): Settings {
   const settings = { ...data.settings, ...patch };
   persist({ ...data, settings });
   return settings;
+}
+
+/** Gespeicherte Auswahl einer Übungs-Option; ohne Speicherung oder bei ungültigem Wert: aus, Standard-Wahl */
+export function getExerciseOption(exerciseId: string, def: ExerciseOptionDef): ExerciseOptionValue {
+  const v = getSettings().exerciseOptions?.[exerciseId]?.[def.key];
+  const choice = v && def.choices.includes(v.choice) ? v.choice : def.defaultChoice;
+  return { on: v?.on === true, choice };
+}
+
+/** Alle Optionen einer Übung (für `ctx.options`); undefined, wenn die Übung keine hat */
+export function getExerciseOptions(exerciseId: string, defs: readonly ExerciseOptionDef[] | undefined): Record<string, ExerciseOptionValue> | undefined {
+  if (!defs?.length) return undefined;
+  const out: Record<string, ExerciseOptionValue> = {};
+  for (const d of defs) out[d.key] = getExerciseOption(exerciseId, d);
+  return out;
+}
+
+export function setExerciseOption(exerciseId: string, key: string, value: ExerciseOptionValue): void {
+  const all = getSettings().exerciseOptions ?? {};
+  updateSettings({ exerciseOptions: { ...all, [exerciseId]: { ...(all[exerciseId] ?? {}), [key]: { on: value.on === true, choice: String(value.choice) } } } });
 }
 
 export function clearAll(): void {

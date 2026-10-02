@@ -3,11 +3,12 @@ import { brand } from '../../config/brand';
 import { createFormatter } from '../../core/format';
 import { Runner } from '../../core/runner';
 import { sfx, unlockAudio } from '../../core/sound';
-import { getRecord, saveResult, type SaveOutcome } from '../../core/storage';
+import { getExerciseOptions, getRecord, saveResult, type SaveOutcome } from '../../core/storage';
 import type { ExerciseDefinition, ExerciseResult } from '../../core/types';
 import { categoryMeta, getExercise } from '../../exercises/registry';
 import { useApp } from '../app-context';
 import { DemoPlayer } from '../components/DemoPlayer';
+import { ExerciseOptions } from '../components/ExerciseOptions';
 import { ArtIcon, Icon } from '../components/Icon';
 import { Sparkline } from '../components/Sparkline';
 import { enterImmersive, exitImmersive } from '../immersive';
@@ -109,6 +110,7 @@ function Intro({ def, series, onStart }: { def: ExerciseDefinition; series: Seri
               </li>
             ))}
           </ol>
+          <ExerciseOptions def={def} texts={tx.options} />
           <button type="button" class="btn btn-primary btn-xl btn-block" onClick={onStart}>
             <Icon name="play" size={22} /> {ui.intro.start}
           </button>
@@ -257,6 +259,7 @@ function RunView({
       autoplay: flags.autoplay,
       quick: flags.quick,
       startLevel: getRecord(def.id).level,
+      options: getExerciseOptions(def.id, def.options),
       sfx,
       domHud: { progress: progress.current, score: score.current, label: label.current },
       onFinish: (r) => onFinish(r),
