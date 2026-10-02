@@ -220,11 +220,12 @@ describe('Buchstabentafel: Erweiterungen und Grenzfälle', () => {
   it('Layout: eine Verkleinerung unter 10 % wird nicht erwähnt (noticeable erst unter 90 %)', () => {
     const p = params({ rows: 1, cols: 1, groupSize: 3, sizeCm: 2, letterGapCm: 0.4 });
     const w = 2 * 3 * ADVANCE + 0.8; // Breite der Gruppe in cm (unverkleinert)
-    const small = layoutChart(p, (w / 0.92) * 0.97, 34); // knapp zu schmal: Verkleinerung ≈ 3 %
+    const eff = w + 0.35 * 2; // Breite der Gruppe plus Überstand breiter Buchstaben
+    const small = layoutChart(p, (eff / 0.96) * 0.97, 34); // knapp zu schmal: Verkleinerung ≈ 3 %
     expect(small.fits).toBe(false);
     expect(small.scale).toBeGreaterThan(0.9);
     expect(small.noticeable).toBe(false);
-    const tight = layoutChart(p, (w / 0.92) * 0.85, 34);
+    const tight = layoutChart(p, (eff / 0.96) * 0.85, 34);
     expect(tight.noticeable).toBe(true);
   });
 

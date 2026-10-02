@@ -96,7 +96,9 @@ const DIGITS = '123456789'.split('');
  */
 export const ADVANCE = 0.8;
 /** Tafel höchstens so groß wie dieser Anteil des Feldes (Rest: Rand und Hinweiszeile) */
-const FIT_W = 0.92;
+const FIT_W = 0.96;
+/** Breite breiter Buchstaben (M, W, N) über die Zelle hinaus, als Vielfaches der Zeichenhöhe, beide Seiten zusammen */
+const OVERHANG = 0.35;
 const FIT_H = 0.88;
 /** Ab dieser Verkleinerung (kleiner als 90 %) gibt es Hinweis und Zeile im Ergebnis; darüber ist es nicht erwähnenswert */
 export const NOTICE_SCALE = 0.9;
@@ -151,7 +153,7 @@ export function layoutChart(p: Pick<ChartParams, 'rows' | 'cols' | 'groupSize' |
   const gw = p.groupSize * adv + (p.groupSize - 1) * p.letterGapCm;
   const totalW = p.cols * gw + (p.cols - 1) * p.groupGapCm;
   const totalH = p.rows * p.sizeCm + (p.rows - 1) * p.groupGapCm;
-  const scale = Math.max(0.01, Math.min(1, (W * FIT_W) / totalW, (H * FIT_H) / totalH));
+  const scale = Math.max(0.01, Math.min(1, (W * FIT_W) / (totalW + OVERHANG * p.sizeCm), (H * FIT_H) / totalH));
   const x0 = (W - totalW * scale) / 2;
   const y0 = (H - totalH * scale) / 2;
   const letters: LetterPos[] = [];
