@@ -1,11 +1,31 @@
-import { useState } from 'preact/hooks';
+import { useEffect, useState } from 'preact/hooks';
 import { brand } from '../../config/brand';
 import { clearAll } from '../../core/storage';
 import { LANGS } from '../../i18n/lang';
 import { UI } from '../../i18n/ui';
 import { useApp } from '../app-context';
+import { fullscreenSupported, initFullscreenPreference, isFullscreen, toggleFullscreen } from '../immersive';
 import { flags, href } from '../router';
 import { Icon } from './Icon';
+
+function FullscreenButton() {
+  const { ui } = useApp();
+  const [on, setOn] = useState(isFullscreen());
+  useEffect(() => {
+    initFullscreenPreference();
+    const f = () => setOn(isFullscreen());
+    document.addEventListener('fullscreenchange', f);
+    return () => document.removeEventListener('fullscreenchange', f);
+  }, []);
+  if (!fullscreenSupported() || flags.embed) return null;
+  const label = on ? ui.nav.exitFullscreen : ui.nav.fullscreen;
+  return (
+    <button type="button" class="fs-btn" onClick={toggleFullscreen} title={label} aria-label={label} aria-pressed={on}>
+      <Icon name={on ? 'shrink' : 'expand'} size={20} />
+    </button>
+  );
+}
+
 
 export function Header() {
   const { ui, lang, setLang, opt, isOptician, role, askRole } = useApp();
@@ -37,6 +57,7 @@ export function Header() {
               </a>
             </>
           ) : null}
+          <FullscreenButton />
           {role ? (
             <button type="button" class="role-btn" onClick={askRole} title={opt.roleSwitch} aria-label={`${opt.roleSwitch}: ${isOptician ? opt.roleOpticianShort : opt.roleCustomerShort}`}>
               {isOptician ? opt.roleOpticianShort : opt.roleCustomerShort}

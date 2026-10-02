@@ -1330,6 +1330,24 @@ p {
 }
 
 /* ---------- Rollenwahl (Kunde / Optiker) ---------- */
+.fs-btn {
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  border: 2px solid var(--line);
+  background: #fff;
+  color: var(--text-2);
+  cursor: pointer;
+}
+.fs-btn:hover,
+.fs-btn[aria-pressed='true'] {
+  background: var(--primary-soft);
+  color: var(--primary);
+  border-color: var(--brand);
+}
 .role-btn {
   min-height: 40px;
   padding: 0 14px;

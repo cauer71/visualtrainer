@@ -12,6 +12,8 @@ const de = {
     science: 'Hintergrund',
     language: 'Sprache',
     home: 'Zur Startseite',
+    fullscreen: 'Vollbild',
+    exitFullscreen: 'Vollbild beenden',
   },
   home: {
     kicker: 'Übungen für Reaktion & Wahrnehmung',
@@ -162,6 +164,8 @@ const it: UiStrings = {
     science: 'Approfondimento',
     language: 'Lingua',
     home: 'Alla pagina iniziale',
+    fullscreen: 'Schermo intero',
+    exitFullscreen: 'Esci dallo schermo intero',
   },
   home: {
     kicker: 'Esercizi per riflessi e percezione',

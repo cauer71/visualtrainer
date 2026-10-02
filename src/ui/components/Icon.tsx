@@ -1,6 +1,8 @@
 /** Schlichte Linien-Icons (eigene Zeichnung, 24×24). */
 const PATHS: Record<string, string> = {
   close: 'M6 6l12 12M18 6 6 18',
+  expand: 'M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5',
+  shrink: 'M9 4v5H4M15 4v5h5M9 20v-5H4M15 20v-5h5',
   pause: 'M9 5v14M15 5v14',
   play: 'M8 5.5v13l10.5-6.5z',
   soundOn: 'M4 10v4h4l5 4V6L8 10H4zM16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12',

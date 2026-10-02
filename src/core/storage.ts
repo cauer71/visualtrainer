@@ -35,6 +35,8 @@ export interface Settings {
   role: Role | null;
   /** Übungen, die der Kunde sieht (vom Optiker gewählt) */
   customerIds: string[];
+  /** Vollbild gewünscht (wird beim ersten Antippen eines Besuchs wieder aktiviert; Esc/Knopf schaltet aus) */
+  fullscreen: boolean;
 }
 
 export interface StoreData {
@@ -56,7 +58,7 @@ const MAX_DAYS = 400;
 let memory: StoreData | null = null;
 
 function empty(): StoreData {
-  return { v: 1, exercises: {}, days: [], settings: { sound: true, lang: null, role: null, customerIds: [...DEFAULT_CUSTOMER_IDS] } };
+  return { v: 1, exercises: {}, days: [], settings: { sound: true, lang: null, role: null, customerIds: [...DEFAULT_CUSTOMER_IDS], fullscreen: false } };
 }
 
 export function load(): StoreData {
