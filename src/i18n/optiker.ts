@@ -28,6 +28,8 @@ const de = {
   shortcutCatalog: 'Übungskatalog',
   shortcutVr: 'VR-Labor (Versuch)',
   shortcutVrText: 'Kugel-Detektiv 3D für VR-Brillen wie die Oculus/Meta Quest – eigener Testbereich, öffnet sich als eigene Seite.',
+  shortcutEye: 'Blickschätzung (Experiment)', // EYE-EXPERIMENT
+  shortcutEyeText: 'Testumgebung: schätzt mit der Frontkamera grob, wohin man schaut – nur Versuch, öffnet sich als eigene Seite.', // EYE-EXPERIMENT
   shortcutCatalogText: 'Alle 85 Übungen mit Anforderungsprofil, Vorsichtshinweisen, Studienlage und Quellen.',
   allExercises: 'Alle spielbaren Übungen',
   catalogTitle: 'Übungskatalog',
@@ -91,6 +93,8 @@ const it: Dict = {
   shortcutCatalog: 'Catalogo degli esercizi',
   shortcutVr: 'Laboratorio VR (prova)',
   shortcutVrText: 'Sfera-Detective 3D per visori VR come Oculus/Meta Quest – area di prova separata, si apre in una pagina a parte.',
+  shortcutEye: 'Stima dello sguardo (esperimento)', // EYE-EXPERIMENT
+  shortcutEyeText: 'Ambiente di prova: stima in modo approssimativo con la fotocamera frontale dove si guarda – solo prova, si apre in una pagina a parte.', // EYE-EXPERIMENT
   shortcutCatalogText: 'Tutti gli 85 esercizi con profilo dei requisiti, avvertenze, stato degli studi e fonti (testi in tedesco).',
   allExercises: 'Tutti gli esercizi giocabili',
   catalogTitle: 'Catalogo degli esercizi',
