@@ -85,7 +85,7 @@ aehnliche_uebungen: [505, 513, 514, 515, 507, 104, 105, 304, 410, 415, 707]
 stichworte: ["reaktives Tracking", "manuelles Nachführen", "Richtungswechsel", "Strafe", "ADAD", "Aufholsakkade", "Smooth Pursuit", "Auge-Hand-Koordination", "Aim Trainer", "Maus"]
 ---
 
-# 512 · Reaktives Nachführen – Fadenkreuz auf einem Ziel halten, das sprunghaft links/rechts wechselt
+# 512 · Ausweich folgen – eine Marke waagrecht an einem Ziel halten, das Richtung und Tempo wechselt
 
 > Original: „Aim Trainer – Reaktives Tracking & ADAD“ (Spieltitel „Anti-Strafe Jitter Duel“) – skilldrills.online, Kapitel Zielen (FPS) · Blickfit: noch nicht umgesetzt
 

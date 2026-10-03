@@ -85,10 +85,9 @@ aehnliche_uebungen: [510, 502, 501, 103, 108, 204, 509, 702, 704, 302, 804, 801]
 stichworte: ["target acquisition", "Zielerfassung", "visuelle Suche", "Helligkeitsvergleich", "Leuchtdichtekontrast", "Reihenfolge", "Aim-Trainer", "Fitts'sches Gesetz", "Blick-Hand-Koordination", "First Shot", "Pointer Lock", "Maus"]
 ---
 
-# 508 · Zielerfassung – im Kugel-Cluster immer die hellste Kugel zuerst anklicken
+# 508 · Hellste Kugel – im Kugel-Cluster die hellste Kugel finden und antippen
 
-> Original: „Valorant Aim Trainer – Zielerfassung & First Shot“ (Spiel „Target Acquisition Pro“) – skilldrills.online,
-> Kapitel Zielen (`fps`) · Blickfit: noch nicht umgesetzt (verwandt: `suchbild`, `zahlenjagd`, `zielfang`)
+> Original: „Valorant Aim Trainer – Zielerfassung & First Shot“ (Spiel „Target Acquisition Pro“) – skilldrills.online, Kapitel Zielen (`fps`) · Blickfit: noch nicht umgesetzt (verwandt: `suchbild`, `zahlenjagd`, `zielfang`)
 
 ## 1. Kurzbeschreibung
 

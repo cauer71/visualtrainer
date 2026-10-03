@@ -85,10 +85,9 @@ aehnliche_uebungen: [501, 509, 502, 511, 704, 702, 805, 303, 801, 401]
 stichworte: ["Flick", "180-Grad-Drehung", "Randziel", "große Amplitude", "Aim Trainer", "Fitts'sches Gesetz", "Sakkade", "Blick-Kopf-Koordination", "peripheres Sehen", "Auge-Hand-Koordination", "Ego-Shooter", "FPS", "Maus", "Pointer Lock", "Zeitdruck", "Combo"]
 ---
 
-# 506 · Randziel-Flick – Ziele am linken oder rechten Bildschirmrand bemerken und mit einer weiten Mausbewegung treffen
+# 506 · Randziel-Flick – von der Mitte zu Zielen am linken oder rechten Rand tippen
 
-> Original: „180° Awareness Pro“ (Seitentitel „180-Grad-Aim-Training | FPS-Drehung“) – skilldrills.online,
-> Kapitel Zielen (`fps`) · Blickfit: noch nicht umgesetzt (verwandt: `zielfang`, `blitzblick`)
+> Original: „180° Awareness Pro“ (Seitentitel „180-Grad-Aim-Training | FPS-Drehung“) – skilldrills.online, Kapitel Zielen (`fps`) · Blickfit: noch nicht umgesetzt (verwandt: `zielfang`, `blitzblick`)
 
 ## 1. Kurzbeschreibung
 

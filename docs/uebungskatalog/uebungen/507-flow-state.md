@@ -85,10 +85,9 @@ aehnliche_uebungen: [505, 514, 512, 513, 515, 504, 304, 105, 104, 402, 403, 410,
 stichworte: ["Flow", "Flow State", "Fokus-Training", "Tracking Aim", "Bézier-Kurve", "manuelles Nachführen", "Time on Target", "Smooth Pursuit", "Aufholsakkade", "Auge-Hand-Koordination", "Daueraufmerksamkeit", "Combo-Multiplikator", "Aim Trainer", "Maus", "Pointer Lock"]
 ---
 
-# 507 · Flow-Tracking – einem Punkt auf Kurvenbahnen ohne Unterbrechung folgen
+# 507 · Kurvenbahn folgen – einem Ziel auf weichen Kurvenbahnen mit dem Finger folgen
 
-> Original: „Flow State Aim Trainer“ (Seitentitel „FPS Fokus Training | Flow Aim Trainer“) – skilldrills.online,
-> Kapitel Zielen (`fps`) · Blickfit: noch nicht umgesetzt (verwandt: `scharf-in-bewegung`, `zielfang`)
+> Original: „Flow State Aim Trainer“ (Seitentitel „FPS Fokus Training | Flow Aim Trainer“) – skilldrills.online, Kapitel Zielen (`fps`) · Blickfit: noch nicht umgesetzt (verwandt: `scharf-in-bewegung`, `zielfang`)
 
 ## 1. Kurzbeschreibung
 

@@ -85,7 +85,7 @@ aehnliche_uebungen: [308, 307, 503, 508, 501, 510, 101, 301, 102, 801]
 stichworte: ["Crosshair Placement", "Winkel halten", "Angle Hold", "Pre-Aim", "Peeker's Advantage", "Fake Peek", "Frühschuss", "Reizbeginn peripher", "Flick", "einfache Reaktionszeit", "Go/No-Go", "Aim Trainer"]
 ---
 
-# 511 · Winkel halten – auf plötzlich auftauchende Ziele an zwei Kanten reagieren
+# 511 · Winkel halten – ruhig abwarten und auf plötzlich auftauchende Ziele an zwei Rändern reagieren
 
 > Original: „Aim Trainer – Crosshair Placement & Winkel halten“ – skilldrills.online, Kapitel Zielen (FPS) · Blickfit: noch nicht umgesetzt (verwandt: „Blitzreaktion“, „Stopp & Los“)
 

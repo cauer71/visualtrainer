@@ -85,7 +85,7 @@ aehnliche_uebungen: [501, 508, 704, 702, 705, 808, 805, 502, 303]
 stichworte: ["Mikrokorrektur", "Zielbewegung", "Fitts'sches Gesetz", "Korrekturbewegung", "Aim Trainer", "Präzision", "Auge-Hand-Koordination", "Maus"]
 ---
 
-# 509 · Mikrokorrektur – großes Ankerziel, dann kleines Nachziel präzise treffen
+# 509 · Mikrokorrektur – großes Ankerziel antippen, dann kleines Nachziel präzise treffen
 
 > Original: „Aim Trainer – Mikrokorrektur & Headshot-Präzision“ – skilldrills.online, Kapitel Zielen (FPS) · Blickfit: noch nicht umgesetzt
 

@@ -85,7 +85,7 @@ aehnliche_uebungen: [102, 202, 103, 502, 508, 302, 801, 511]
 stichworte: ["Zielpriorisierung", "Target Prioritization", "Go/No-Go", "Friendly Fire", "Farbkodierung", "Pop-out", "Priority Map", "Aim Trainer", "Schusshemmung", "Wahlreaktion"]
 ---
 
-# 510 · Zielauswahl nach Bedrohungsfarbe – zuerst Rot, dann Gelb, nie Grün
+# 510 · Zielauswahl – mehrere Ziele nach Dringlichkeit in der richtigen Reihenfolge antippen
 
 > Original: „Aim Trainer – Zielauswahl & Bedrohungspriorität“ – skilldrills.online, Kapitel Zielen (FPS) · Blickfit: noch nicht umgesetzt (verwandt: „Stopp & Los“)
 
