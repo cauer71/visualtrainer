@@ -15,7 +15,7 @@ export const de: ExerciseTexts = {
     'Getippte Buchstaben werden blass: so siehst du, wo du bist.',
   ],
   why:
-    'Im Alltag springt dein Blick zwischen weit entfernten Stellen hin und her. Hier liest du reihum von vier Tafeln in den Ecken – ähnlich wie bei Hart-Charts, den Buchstabentafeln der Sehtherapie. Gemessen wird nur die Zeit von Tipp zu Tipp, nicht wohin du schaust. Ob sich das auf Sport, Verkehr oder Sehen überträgt, ist nicht belegt.',
+    'Im Alltag springt dein Blick zwischen weit entfernten Stellen hin und her. Hier liest du reihum von vier Tafeln in den Ecken – ähnlich wie bei Hart-Charts, den Buchstabentafeln der funktionellen Optometrie. Gemessen wird nur die Zeit von Tipp zu Tipp, nicht wohin du schaust. Ob sich das auf Sport, Verkehr oder Sehen überträgt, ist nicht belegt.',
   goodFor: ['Blickwechsel', 'Reihenfolge halten', 'Überblick'],
   captions: {
     start: 'Vier Tafeln in den Ecken',
@@ -105,7 +105,7 @@ export const it: ExerciseTexts = {
     'Le lettere toccate diventano chiare: vedi dove sei.',
   ],
   why:
-    'Nella vita di tutti i giorni lo sguardo salta tra punti lontani. Qui leggi a turno da quattro tavole negli angoli – in modo simile alle Hart-Chart, le tavole di lettere della terapia visiva. Viene misurato solo il tempo da tocco a tocco, non dove guardi. Non è dimostrato che questo si trasferisca allo sport, al traffico o alla vista.',
+    'Nella vita di tutti i giorni lo sguardo salta tra punti lontani. Qui leggi a turno da quattro tavole negli angoli – in modo simile alle Hart-Chart, le tavole di lettere dell’optometria funzionale. Viene misurato solo il tempo da tocco a tocco, non dove guardi. Non è dimostrato che questo si trasferisca allo sport, al traffico o alla vista.',
   goodFor: ['Cambio di sguardo', 'Tenere l’ordine', 'Visione d’insieme'],
   captions: {
     start: 'Quattro tavole negli angoli',

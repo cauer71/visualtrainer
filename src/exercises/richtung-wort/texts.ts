@@ -13,7 +13,7 @@ export const de: ExerciseTexts = {
     'Die Wörter wechseln den Platz – lies, bevor du tippst.',
   ],
   why:
-    'Wörter lesen wir automatisch mit – auch dann, wenn wir eigentlich auf etwas anderes achten wollen. Steht „LINKS“ auf einem Feld rechts, kommen Lage und Wort einander in die Quere, und es dauert etwas länger; das ist normal. Darum werden die Wörter Schritt für Schritt vertauscht, später kommen Schrägpfeil (zählt nur links oder rechts), Kurve und eine Antwortzeit dazu. Die Zeit zählt nur im Vergleich mit deinen früheren Durchgängen auf diesem Gerät. Ob sich das auf Alltag oder Sport überträgt, ist nicht belegt.',
+    'Wörter lesen wir automatisch mit – auch dann, wenn wir eigentlich auf etwas anderes achten wollen. Steht „LINKS“ auf einem Feld rechts, kommen Lage und Wort einander in die Quere, und es dauert etwas länger; das ist normal. Darum stehen die Wörter zuerst an ihrer Lage und werden dann gemischt; später kommen Schrägpfeil (zählt nur links oder rechts), Kurve und eine Antwortzeit dazu. Die Zeit zählt nur im Vergleich mit deinen früheren Durchgängen auf diesem Gerät. Ob sich das auf Alltag oder Sport überträgt, ist nicht belegt.',
   goodFor: ['Wörter und Zeichen zuordnen', 'Schilder und Bedienfelder lesen', 'Genau hinschauen'],
   captions: {
     up: 'Der Pfeil zeigt nach oben: tippe OBEN',
@@ -55,7 +55,7 @@ export const it: ExerciseTexts = {
     'Le parole cambiano posto – leggile prima di toccare.',
   ],
   why:
-    'Le parole le leggiamo in automatico, anche quando vorremmo badare ad altro. Se “SINISTRA” sta su un campo a destra, posizione e parola si ostacolano e ci vuole un po’ di più; è normale. Per questo le parole vengono scambiate passo dopo passo; più avanti arrivano freccia obliqua (conta solo sinistra o destra), curva e un tempo di risposta. Il tempo conta solo nel confronto con i tuoi passaggi precedenti su questo dispositivo. Che questo si trasferisca alla vita di tutti i giorni o allo sport non è dimostrato.',
+    'Le parole le leggiamo in automatico, anche quando vorremmo badare ad altro. Se “SINISTRA” sta su un campo a destra, posizione e parola si ostacolano e ci vuole un po’ di più; è normale. Per questo le parole stanno prima al loro posto e poi vengono mescolate; più avanti arrivano freccia obliqua (conta solo sinistra o destra), curva e un tempo di risposta. Il tempo conta solo nel confronto con i tuoi passaggi precedenti su questo dispositivo. Che questo si trasferisca alla vita di tutti i giorni o allo sport non è dimostrato.',
   goodFor: ['Abbinare parole e segni', 'Leggere cartelli e pannelli', 'Guardare con attenzione'],
   captions: {
     up: 'Freccia in alto: tocca ALTO',

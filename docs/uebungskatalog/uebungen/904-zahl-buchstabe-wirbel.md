@@ -11,7 +11,7 @@ blickfit_umsetzung: {kennung: "zahl-buchstabe-wirbel", name: "Zahlen-Buchstaben-
 stand: 2026-10-01
 
 # ===== Überblick =====
-kurzbeschreibung: "Zahlen und Buchstaben drehen sich langsam auf einer hellen Fläche, jedes um einen eigenen, etwas versetzten Mittelpunkt (teils auf Kreisen, teils auf Ellipsen, mit steigender Stufe auch gegenläufig), und überlappen sich dabei zeitweise. Man tippt sie abwechselnd in aufsteigender Folge an (1 – A – 2 – B – 3 – C …); oben steht, was als Nächstes dran ist. Im Video war die Regel nicht zu sehen, die Folge ist eine Annahme."
+kurzbeschreibung: "Zahlen und Buchstaben drehen sich langsam auf einer hellen Fläche, jedes um einen eigenen, etwas versetzten Mittelpunkt (teils auf Kreisen, teils auf Ellipsen, mit steigender Stufe auch gegenläufig), und überlappen sich dabei zeitweise. Man tippt sie abwechselnd in aufsteigender Folge an (1 – A – 2 – B – 3 – C …); oben steht, was als Nächstes dran ist."
 ziel_funktionen: [visuelle_suche, kognitive_flexibilitaet]
 eingabe: [touch]
 tablet_geeignet: ja
@@ -82,7 +82,7 @@ evidenz:
   alltag_transfer: fehlend
   kommentar: "Beim klassischen Trail Making gibt es deutliche Übungseffekte, auch mit Parallelformen (Buck et al., 2008; Calamia et al., 2012), und die Zeiten spiegeln vor allem Verarbeitungstempo und fluide Fähigkeiten (Salthouse, 2011). Die bewegte, überlappende Variante ist nicht untersucht; Trail Making mit Bewegung ist kein validierter Test. Die Einstufung gilt für die Aufgabenart, nicht für diese Übung."
 aehnliche_uebungen: [204, 708, 106, 202, 206]
-stichworte: ["Trail Making", "Zahl-Buchstabe-Wechsel", "kognitive Flexibilität", "visuelle Suche", "Verdeckung", "Crowding", "bewegte Ziele", "Reha-Software", "ohne Normwerte"]
+stichworte: ["Trail Making", "Zahl-Buchstabe-Wechsel", "kognitive Flexibilität", "visuelle Suche", "Verdeckung", "Crowding", "bewegte Ziele", "Zahlenfolge", "ohne Normwerte"]
 ---
 
 # 904 · Zahlen-Buchstaben-Wirbel (bewegte Zeichen abwechselnd in Folge antippen)
@@ -91,7 +91,7 @@ stichworte: ["Trail Making", "Zahl-Buchstabe-Wechsel", "kognitive Flexibilität"
 
 ## 1. Kurzbeschreibung
 
-Auf einer hellen Fläche bewegen sich etwa 20 Zahlen und Buchstaben. Nach der Beobachtung des Auftraggebers, der das Original gespielt hat, drehen sie alle um ein Zentrum, wobei jedes Zentrum etwas versetzt ist. Sie überlappen sich zeitweise, sodass manche Zeichen halb verdeckt sind. Die Übung, die daraus bei Blickfit wird: Man tippt die Zeichen **abwechselnd in aufsteigender Folge** an – 1, A, 2, B, 3, C und so weiter –, und oben steht als Hinweis, was als Nächstes dran ist. Das erinnert an den **Trail Making Test Teil B** der Neuropsychologie (Zahlen und Buchstaben abwechselnd verbinden), nur mit kreisenden, teils überlappenden Zeichen. **Wichtig:** Im Video war weder ein Antippen noch eine Regel zu sehen; die abwechselnde Folge ist eine **Annahme** (siehe Abschnitt 2). Trail Making mit Bewegung ist kein validiertes Verfahren; die Übung ist eine Such- und Wechselübung, kein Test.
+Auf einer hellen Fläche drehen sich Zahlen und Buchstaben langsam, jedes Zeichen um einen eigenen, etwas versetzten Mittelpunkt. Die Bahnen sind Kreise und Ellipsen; mit steigender Stufe dreht ein wachsender Anteil der Zeichen in Gegenrichtung, die Mittelpunkte rücken weiter auseinander, und die Zahl der Paare steigt von 3 auf 15 (6 bis 30 Zeichen). Dabei überlappen sich Zeichen zeitweise, sodass manche halb verdeckt sind. Man tippt die Zeichen **abwechselnd in aufsteigender Folge** an – 1, A, 2, B, 3, C und so weiter –, und oben steht als Hinweis, was als Nächstes dran ist. Getippte Zeichen bleiben sichtbar, werden aber blass. Das Prinzip ist an den **Trail Making Test Teil B** der Neuropsychologie angelehnt (Zahlen und Buchstaben abwechselnd verbinden), nur mit kreisenden, teils überlappenden Zeichen. Trail Making mit Bewegung ist kein validiertes Verfahren; die Übung ist eine Such- und Wechselübung, kein Test.
 
 ## 2. Ablauf im Original (Analyse)
 
@@ -128,9 +128,9 @@ Es gibt **keinen Seitentext, keine Werbeaussage und keine Leistungsstufen** – 
 
 ## 4. Optische und okulomotorische Grundlagen
 
-- **Sehanforderung mittel:** Zeichen von etwa 34 px entsprechen am 10,9″-Tablet in 40 cm etwa 0,9° (36 CSS-px pro Grad, Herleitung Lit. W02/W03). Sie sind dunkelgrau auf hellem Grund gut sichtbar; kritisch wird es erst bei Überlappung (zwei Zeichen übereinander).
-- **Crowding und Überlappung:** Objekte werden schlecht erkannt, wenn Nachbarn näher liegen als ein Bruchteil (etwa die Hälfte) des Abstands von der Blickmitte; dieser kritische Abstand wächst proportional zur Exzentrizität (Bouma-Gesetz; Bouma, 1970; Pelli & Tillman, 2008), und dieses „Gedränge“ begrenzt das Such- und Lesetempo. Dass echte Überlappung noch stärker stört als bloße Nachbarschaft, ist plausibel, aber **Annahme** (nicht untersucht). Beim Antippen wird ein Zeichen meist angeblickt, dann ist die Verdeckung weniger kritisch als in der Peripherie (**Herleitung**, nicht untersucht).
-- **Blickverhalten:** Suchsprünge zwischen den Zeichen (Sakkaden) und, bei kreisenden Zeichen, kurze Folgebewegungen. Die Bahngeschwindigkeit ist Radius mal Winkelgeschwindigkeit (bei Ellipsen die größere Halbachse): bei Bahnradien von grob 100–500 px und einer Umdrehung in 60 s (Stufe 1) bis 20 s (Stufe 12) etwa 10–160 px/s, das sind grob 0,3–4°/s (Tablet quer, 40 cm; eigene Rechnung mit 36 px je Grad). Das ist langsam; die Augen können es voraussichtlich ohne Mühe verfolgen (Einschätzung, nicht untersucht). Bei „Bewegung reduzieren“ entfällt die Bewegung (Zeichen stehen).
+- **Sehanforderung mittel:** Zeichen von etwa 34 px entsprechen am 10,9″-Tablet in 40 cm etwa 0,9° (rund 36 Bildschirmpunkte je Grad). Sie sind dunkelgrau auf hellem Grund gut sichtbar; kritisch wird es erst bei Überlappung (zwei Zeichen übereinander).
+- **Crowding und Überlappung:** Objekte werden schlecht erkannt, wenn Nachbarn näher liegen als ein Bruchteil (etwa die Hälfte) des Abstands von der Blickmitte; dieser kritische Abstand wächst proportional zur Exzentrizität (Bouma-Gesetz; Bouma, 1970; Pelli & Tillman, 2008), und dieses „Gedränge“ begrenzt das Such- und Lesetempo. Dass echte Überlappung noch stärker stört als bloße Nachbarschaft, ist plausibel, aber **Annahme** (nicht untersucht). Beim Antippen wird ein Zeichen meist angeblickt, dann ist die Verdeckung wahrscheinlich weniger kritisch als in der Peripherie (nicht untersucht).
+- **Blickverhalten:** Suchsprünge zwischen den Zeichen (Sakkaden) und, bei kreisenden Zeichen, kurze Folgebewegungen. Die Bahngeschwindigkeit ist Radius mal Winkelgeschwindigkeit (bei Ellipsen die größere Halbachse): bei Bahnradien von grob 100–500 px und einer Umdrehung in 60 s (Stufe 1) bis 20 s (Stufe 12) etwa 10–160 px/s, das sind grob 0,3–4°/s (Tablet quer, 40 cm; Rechnung mit rund 36 Bildschirmpunkten je Grad). Das ist langsam; die Augen können es voraussichtlich ohne Mühe verfolgen (Einschätzung, nicht untersucht). Bei „Bewegung reduzieren“ entfällt die Bewegung (Zeichen stehen).
 - **Sehfeld:** Die Zeichen verteilen sich über die ganze Fläche; Gesichtsfeldausfälle können dazu führen, dass Zeichen im Ausfallbereich nicht gefunden werden (Auswahlhinweis).
 - **Blendung:** Der helle Hintergrund ist großflächig; Bildschirmhelligkeit an die Umgebung anpassen (Bedienhinweis, keine Sehaussage).
 - **Brillenträger:** Das Spielfeld füllt den Bildschirm; bei Gleitsicht liegen Zeichen auch in den seitlichen, unschärferen Bereichen, und mehr Kopfbewegung ist plausibel (neue Gleitsichtträger zeigten in einer kleinen Studie mehr Kopfbewegungen; Hutchings et al., 2007; nicht für diese Übung untersucht). Arbeitsplatz-/Nahbrille für den Bildschirmabstand ist eine Bedienhilfe, keine Sehaussage.
@@ -142,13 +142,13 @@ Für Trail Making liegen vor allem Verhaltensbefunde vor (welche Fähigkeiten di
 
 ## 6. Motorische Grundlagen
 
-Man tippt kleine, bewegte Ziele nacheinander an: Auge-Hand-Koordination, Zieltempo und Zielgenauigkeit stehen auf 2. Bei Touch kann die Hand das nächste Zeichen verdecken. Die Trefferfläche ist deshalb mindestens 56 px; bei Überlappung wird das **nächste** Ziel bevorzugt (Fairness, Spezifikation). Die Reaktionszeit auf Touchgeräten wird zu lang gemessen (Pronk et al., 2020); für den persönlichen Vergleich auf demselben Gerät hebt sich das weitgehend heraus. Ein Fehltipp zählt als Fehler, bringt aber keine Zeitstrafe.
+Man tippt kleine, bewegte Ziele nacheinander an: Auge-Hand-Koordination, Zieltempo und Zielgenauigkeit stehen auf 2. Bei Touch kann die Hand das nächste Zeichen verdecken. Die Trefferfläche ist deshalb mindestens 56 px; bei Überlappung wird das **nächste** Ziel bevorzugt (Fairness). Die Reaktionszeit auf Touchgeräten wird zu lang gemessen (Pronk et al., 2020); für den persönlichen Vergleich auf demselben Gerät hebt sich das weitgehend heraus. Ein Fehltipp zählt als Fehler, bringt aber keine Zeitstrafe.
 
 ## 7. Einflussfaktoren und Messgrenzen
 
 - **Zufall im Layout:** Startpositionen und Mittelpunkte der Drehungen werden zufällig gewählt, und daraus ergibt sich, wann sich welche Zeichen überlappen; zwei Runden gleicher Stufe sind unterschiedlich schwer. Verlauf über mehrere Runden anzeigen.
 - **Übung:** Beim klassischen Trail Making gibt es deutliche Übungseffekte, auch mit Parallelformen (Buck et al., 2008: Anstieg über drei Wochen bei Studierenden; Calamia et al., 2012: Metaanalyse mit rund 1.600 Effekten). Ein Lernen der Aufgabe verändert die Zeit, ohne dass sich etwas anderes verbessert hat.
-- **Alter, Bildung, Gerät:** Zeiten steigen mit dem Alter und sinken mit höherer Bildung (Tombaugh, 2004, Papierform); Bildschirmgröße und Abstand verändern die Zeichengröße in Grad. Werte sind nur auf demselben Gerät vergleichbar.
+- **Alter, Bildung, Gerät:** Zeiten steigen mit dem Alter und sinken mit höherer Bildung (Tombaugh, 2004, Papierform); Bildschirmgröße und Abstand verändern die Zeichengröße in Grad. Werte sind nur auf demselben Gerät vergleichbar. Messungen am Menschen streuen stärker als an Prüfkörpern (Mountford et al., 2004, S. 43–44), und eine hohe Korrelation zweier Verfahren heißt nicht, dass sie dieselben Werte liefern (ebd., S. 24); aussagekräftig ist deshalb nur der Verlauf über mehrere Runden.
 - **Alphabetkenntnis und Zahlen:** Wer die Alphabetfolge unsicher beherrscht, wird langsamer, ohne dass die Suche schlechter ist.
 - **Wechsel ist nicht gleich Wechselkosten:** Ein „Wechselkosten“-Wert aus Zahl → Buchstabe gegen Buchstabe → Zahl ist **kein** üblicher Wechselaufwand; üblich ist der Vergleich Wechsel gegen Wiederholung bzw. B−A bei gleichem Layout (Arbuthnott & Frank, 2000; Sánchez-Cubillo et al., 2009). Ohne Vergleichsrunde nur als Hinweis verwenden.
 - **Differenzwerte:** als persönlicher Wert oft wenig zuverlässig (Hedge et al., 2018).
@@ -159,7 +159,7 @@ Man tippt kleine, bewegte Ziele nacheinander an: Auge-Hand-Koordination, Zieltem
 - **Übungseffekt: mittel (für die Aufgabenart).** Beim klassischen Trail Making werden Probanden mit Wiederholung schneller, auch mit Parallelformen (Buck et al., 2008; Calamia et al., 2012). Für die bewegte, überlappende Variante gibt es keine Studie.
 - **Naher Transfer: schwach.** Für Trail Making gibt es kaum Trainingsstudien mit Transfer; die Fachliteratur nutzt es als Messaufgabe, nicht als Übung (Bowie & Harvey, 2006).
 - **Alltagstransfer: fehlend.** Ein Nutzen im Alltag (Suche, Fahren, Orientierung) ist nicht belegt.
-- **Seriöse Formulierung:** „Beim Zahlen-Buchstaben-Wirbel suchst du Zahlen und Buchstaben abwechselnd der Reihe nach, während sie sich langsam um versetzte Mittelpunkte drehen. Das übt geordnetes Suchen und das Wechseln zwischen zwei Folgen. Es ist kein Test und vergleicht dich mit niemandem; deine Zeiten gelten nur für dieses Gerät. Ob das im Alltag hilft, ist nicht belegt.“
+- **Kurzfassung für Anwender:** „Beim Zahlen-Buchstaben-Wirbel suchst du Zahlen und Buchstaben abwechselnd der Reihe nach, während sie sich langsam um versetzte Mittelpunkte drehen. Das übt geordnetes Suchen und das Wechseln zwischen zwei Folgen. Es ist kein Test und vergleicht dich mit niemandem; deine Zeiten gelten nur für dieses Gerät. Ob das im Alltag hilft, ist nicht belegt.“
 
 ## 9. Auswahlhinweise für die KI
 
@@ -171,6 +171,7 @@ Man tippt kleine, bewegte Ziele nacheinander an: Auge-Hand-Koordination, Zieltem
   - `gesichtsfeldausfall`: Zeichen im Ausfallbereich werden nicht gefunden.
   - `schwindel_vestibulaer`: bewegte Zeichen; „stehend“ wählen, Pausen.
   - `lese_rechtschreib_schwaeche`: Alphabetfolge als Voraussetzung.
+  - **Warnzeichen (kein Schlüssel):** Doppelbilder, plötzlicher Sehverlust, Lichtblitze, Kopfschmerz mit nachlassender Sehschärfe, Schwindel oder Zittern gelten in der Lehrbuchliteratur als Anlass zur ärztlichen Abklärung (Muchnick, 2008, S. 6, 28). Dann zuerst abklären lassen und nicht üben; Pause und Rücksprache auch bei Beschwerden während der Übung.
 - **Kombiniert gut mit …** 204 (Schulte-Tabelle, statische Zahlenfolge), 708 (Zielkette, ruhende Ziele in Reihenfolge), 106 (bewegte Objekte verfolgen), 202 (Wahlreaktion mit Regelwechsel), 206 (Zwei-Ströme-Symbolsuche).
 - Keine Diagnosen, keine Heilversprechen; nicht als „Test“ darstellen; keine Normen.
 
@@ -199,7 +200,7 @@ Man tippt kleine, bewegte Ziele nacheinander an: Auge-Hand-Koordination, Zieltem
 ## 11. Quellen
 
 ### Von der Website angegeben
-- Keine Online-Quelle – Beobachtung aus Videos des Auftraggebers (Handyvideo einer Reha-/Neuro-Trainingssoftware, 3,6 s, Querformat; Name, Hersteller und URL unbekannt). Die Videobeobachtungen sind in `docs/uebungskatalog/literatur/lit-W12-links-rechts-richtung.md` (Teil A) festgehalten.
+- Keine Online-Quelle; Aufbau und Stufen beruhen auf der unten genannten Fachliteratur. **stützt:** keine Aussage
 
 ### Weitere Fachliteratur
 - Reitan, R. M. (1958). Validity of the Trail Making Test as an indicator of organic brain damage. *Perceptual and Motor Skills*, *8*(3), 271–276. https://doi.org/10.2466/pms.1958.8.3.271 – Ausgangsarbeit zum Trail Making Test (**Prüfung:** Crossref ✓; Abstract nicht vorhanden, Inhalt über Titel und Übersichten).
@@ -219,3 +220,5 @@ Man tippt kleine, bewegte Ziele nacheinander an: Auge-Hand-Koordination, Zieltem
 - Pronk, T., Wiers, R. W., Molenkamp, B., & Murre, J. (2020). Mental chronometry in the pocket? Timing accuracy of web applications on touchscreen and keyboard devices. *Behavior Research Methods*, *52*(3), 1371–1382. https://doi.org/10.3758/s13428-019-01321-2 – Touch überschätzt Reaktionszeiten (**Prüfung:** Crossref ✓; Abstract gelesen).
 - Levitt, H. (1971). Transformed up-down methods in psychoacoustics. *The Journal of the Acoustical Society of America*, *49*(2B), 467–477. https://doi.org/10.1121/1.1912375 – Treppenverfahren (2-down/1-up ≈ 71 %) (**Prüfung:** Crossref ✓; wie in 901 verwendet).
 - Hutchings, N., Irving, E. L., Jung, N., Dowling, L. M., Wells, K. A., & Lillakas, L. (2007). Eye and head movement alterations in naïve progressive addition lens wearers. *Ophthalmic and Physiological Optics*, *27*(2), 142–153. https://doi.org/10.1111/j.1475-1313.2006.00460.x – Gleitsicht, Kopfbewegung (**Prüfung:** Crossref ✓; Abstract gelesen, Literaturbasis W02).
+- Muchnick, B. G. (2008). *Clinical Medicine in Optometric Practice* (2nd ed.). Mosby/Elsevier. https://openlibrary.org/isbn/9780323029612 – Warnzeichen, die ärztliche Abklärung verlangen (S. 6, 28).
+- Mountford, J., Ruston, D., & Dave, T. (2004). *Orthokeratology: Principles and Practice*. Butterworth-Heinemann. https://openlibrary.org/isbn/9780750640077 – Messungen am Menschen streuen; Korrelation ist keine Übereinstimmung (S. 24, 43–44).
