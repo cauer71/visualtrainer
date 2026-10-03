@@ -357,7 +357,28 @@ export interface ColorCheckInfo {
   title: string;
   text: string;
   panels: Array<{ color: string; label: string }>;
+  /** Erweiterte Fassung „Schritt für Schritt“: nummerierte Schritte, an einzelnen Schritten Einstellungen zum Verstellen */
+  steps?: Array<{ text: string; adjust?: ColorCheckAdjust[] }>;
+  /** Zusatzhinweis unter den Schritten (z. B. zu Geisterbildern) */
+  note?: string;
 }
+
+/** Einstellung (`ExerciseDefinition.params`), die das Prüfbild direkt verstellen lässt und speichert */
+export type ColorCheckAdjust =
+  | { kind: 'choice'; key: string; label: string; value: string; options: Array<{ value: string; label: string }> }
+  | {
+      kind: 'level';
+      key: string;
+      value: number;
+      min: number;
+      max: number;
+      step: number;
+      /** Aktueller Wert als Text, z. B. „Rot: 80 %“ */
+      valueText: string;
+      /** Beschriftung der Tasten, z. B. „Rot dunkler“ / „Rot heller“ */
+      downLabel: string;
+      upLabel: string;
+    };
 
 export interface ExerciseDefinition {
   /** URL- und Speicher-Kennung, z. B. "blitzreaktion" */

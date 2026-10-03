@@ -3,12 +3,16 @@
  * Auswertung nach Farbe und Auge (Schwelle ≥ 20 Zeichen je Farbe), Ablauf der Sitzung, Tipps, Einstellungen.
  */
 import { describe, expect, it } from 'vitest';
-import { defaultParams, sanitizeParams } from '../../src/core/params';
+import { defaultParams, sanitizeParams, variantKey } from '../../src/core/params';
+import type { ParamValue } from '../../src/core/types';
 import { createRng } from '../../src/core/rng';
 import {
+  cmToPd,
+  colorOffsets,
   colorPattern,
   DIGITS,
   eyeColors,
+  GLYPH_W,
   keysFor,
   LETTERS,
   makeSequence,
@@ -16,13 +20,18 @@ import {
   minPerColor,
   MIXED,
   PARAMS,
+  pdToCm,
   pickChars,
   pointsFor,
   poolFor,
+  pxToPd,
   rgParams,
   RgSession,
   scoreEntry,
+  shiftPdForTrial,
+  shiftPx,
   showMs,
+  strokeTally,
   summarize,
   tipFor,
   toneCss,
@@ -34,12 +43,67 @@ import {
   type RgTrial,
 } from '../../src/exercises/labor-rot-gruen-lesen/logic';
 
-const base = (over: Partial<RgParams> = {}): RgParams => rgParams({ ...defaultParams(PARAMS), ...over });
+const base = (over: Record<string, ParamValue> = {}): RgParams => rgParams({ ...defaultParams(PARAMS), ...over });
 
 describe('Einstellungen', () => {
   it('Standardwerte laut Auftrag', () => {
     const p = base();
-    expect(p).toEqual({ symbols: 'digits', length: 6, sizeCm: 1.2, mix: 'alternate', leftLens: 'red', showFor: 'unlimited', trials: 10, tones: 'redgreen', brightness: 100 });
+    expect(p).toEqual({
+      symbols: 'digits',
+      length: 6,
+      sizeCm: 1.2,
+      mix: 'alternate',
+      leftLens: 'red',
+      showFor: 'unlimited',
+      trials: 10,
+      tones: 'redgreen',
+      brightness: 100,
+      // Ergänzungen: alle aus, bisheriges Verhalten bleibt gleich
+      redLevel: 100,
+      secondLevel: 100,
+      glassesCheck: 'simple',
+      controlMarks: false,
+      shiftPd: 0,
+      shiftDir: 'convergence',
+      rampDurchgaenge: 0,
+    });
+  });
+
+  it('Ergänzungen: Grenzen (Helligkeit je Farbe 30–100 in 10er-Schritten, Versatz 0–12 Δ, Aufbau 0–10) und Bereinigung', () => {
+    const num = (k: string) => PARAMS.find((d) => d.key === k) as { min: number; max: number; step: number };
+    for (const k of ['redLevel', 'secondLevel']) expect([num(k).min, num(k).max, num(k).step]).toEqual([30, 100, 10]);
+    expect([num('shiftPd').min, num('shiftPd').max]).toEqual([0, 12]);
+    expect([num('rampDurchgaenge').min, num('rampDurchgaenge').max]).toEqual([0, 10]);
+    const s = sanitizeParams(PARAMS, { redLevel: 5, secondLevel: 77, shiftPd: 99, rampDurchgaenge: -3, tones: 'redblue', shiftDir: 'seitwaerts', controlMarks: 'vielleicht', glassesCheck: 'x' });
+    expect(s.redLevel).toBe(30);
+    expect(s.secondLevel).toBe(80);
+    expect(s.shiftPd).toBe(12);
+    expect(s.rampDurchgaenge).toBe(0);
+    expect(s.tones).toBe('redblue');
+    expect(s.shiftDir).toBe('convergence');
+    expect(s.controlMarks).toBe('off');
+    expect(s.glassesCheck).toBe('simple');
+    expect(base({ controlMarks: 'on', shiftPd: 4.5, shiftDir: 'divergence', rampDurchgaenge: 4, tones: 'redblue', redLevel: 60 })).toMatchObject({
+      controlMarks: true,
+      shiftPd: 4.5,
+      shiftDir: 'divergence',
+      rampDurchgaenge: 4,
+      tones: 'redblue',
+      redLevel: 60,
+    });
+  });
+
+  it('Variantenschlüssel: Farbpaar, Helligkeit je Farbe, Kontrollstriche, Versatz, Richtung und Aufbau gehören dazu; die Prüfbild-Ansicht nicht', () => {
+    const key = (o: Record<string, ParamValue>) => variantKey(PARAMS, o);
+    const k0 = key({});
+    for (const o of [{ tones: 'redblue' }, { redLevel: 60 }, { secondLevel: 70 }, { controlMarks: 'on' }, { shiftPd: 6 }, { shiftDir: 'divergence' }, { rampDurchgaenge: 5 }] as Array<Record<string, ParamValue>>) {
+      expect(key(o), JSON.stringify(o)).not.toBe(k0);
+    }
+    expect(key({ glassesCheck: 'steps' })).toBe(k0);
+    expect(PARAMS.filter((d) => d.neutral).map((d) => d.key)).toEqual(['glassesCheck']);
+    for (const k of ['redLevel', 'secondLevel', 'controlMarks', 'shiftPd', 'shiftDir', 'rampDurchgaenge', 'tones']) expect(k0).toContain(`${k}=`);
+    // Verlauf und Bestwert nur gegen gleiche Einstellungen: gleicher Versatz in anderer Richtung ist eine andere Variante
+    expect(key({ shiftPd: 6, shiftDir: 'convergence' })).not.toBe(key({ shiftPd: 6, shiftDir: 'divergence' }));
   });
 
   it('Grenzen: Länge 4–12, Folgen 6–20, Helligkeit 80–100, Größe in cm; ungültige Werte werden bereinigt', () => {
@@ -70,8 +134,8 @@ describe('Einstellungen', () => {
     expect(showMs(base({ showFor: '2' }))).toBe(2000);
   });
 
-  it('Variantenschlüssel: jede Einstellung gehört dazu (keine ist „neutral“)', () => {
-    expect(PARAMS.every((d) => !d.neutral)).toBe(true);
+  it('Variantenschlüssel: jede Einstellung gehört dazu (nur die Ansicht des Prüfbilds ist „neutral“)', () => {
+    expect(PARAMS.filter((d) => d.neutral).map((d) => d.key)).toEqual(['glassesCheck']);
     expect(PARAMS.filter((d) => d.summary).length).toBeGreaterThanOrEqual(2);
     expect(PARAMS.filter((d) => d.summary).length).toBeLessThanOrEqual(3);
   });
@@ -81,6 +145,22 @@ describe('Farben', () => {
   it('reines Rot, Grün und Cyan bei voller Helligkeit', () => {
     expect(toneCss('redgreen', 100)).toMatchObject({ a: 'rgb(255,0,0)', b: 'rgb(0,255,0)' });
     expect(toneCss('redcyan', 100)).toMatchObject({ a: 'rgb(255,0,0)', b: 'rgb(0,255,255)' });
+  });
+
+  it('Farbpaar Rot–Blau: Blau rgb(0,160,255), Rot unverändert', () => {
+    expect(toneCss('redblue', 100)).toMatchObject({ a: 'rgb(255,0,0)', b: 'rgb(0,160,255)' });
+    expect(toneCss('redblue', 80).b).toBe('rgb(0,128,204)');
+  });
+
+  it('Helligkeit je Farbe getrennt (30–100 %), zusätzlich zur gemeinsamen Helligkeit; Standard 100 ändert nichts', () => {
+    expect(toneCss('redgreen', 100, 100, 100)).toEqual(toneCss('redgreen', 100));
+    expect(toneCss('redgreen', 100, 60, 100)).toMatchObject({ a: 'rgb(153,0,0)', b: 'rgb(0,255,0)' });
+    expect(toneCss('redgreen', 100, 100, 30)).toMatchObject({ a: 'rgb(255,0,0)', b: 'rgb(0,77,0)' });
+    expect(toneCss('redblue', 100, 100, 50).b).toBe('rgb(0,80,128)');
+    // gemeinsam mal je Farbe: 80 % · 50 % = 40 %
+    expect(toneCss('redcyan', 80, 50, 50)).toMatchObject({ a: 'rgb(102,0,0)', b: 'rgb(0,102,102)' });
+    // Rahmen und Kreuz folgen nur der gemeinsamen Helligkeit
+    expect(toneCss('redgreen', 100, 30, 30).neutral).toBe(toneCss('redgreen', 100).neutral);
   });
 
   it('Helligkeit skaliert die Farben, ohne die jeweils anderen Kanäle zu füllen', () => {
@@ -338,7 +418,7 @@ describe('Auswertung nach Farbe und Auge', () => {
 });
 
 describe('Sitzung', () => {
-  const session = (over: Partial<RgParams> = {}, seed = 1) => new RgSession(base({ trials: 6, ...over }), { rng: createRng(seed) });
+  const session = (over: Record<string, ParamValue> = {}, seed = 1) => new RgSession(base({ trials: 6, ...over }), { rng: createRng(seed) });
 
   it('unbegrenzt: nach der Vorlaufzeit sofort Eingabe, Folge dabei sichtbar', () => {
     const s = session();
@@ -461,5 +541,201 @@ describe('Sehwinkel', () => {
     expect(visualAngleDeg(1.2, 40)).toBeCloseTo(1.718, 2);
     expect(visualAngleDeg(2.4, 40)).toBeGreaterThan(visualAngleDeg(1.2, 40));
     expect(visualAngleDeg(1.2, 80)).toBeLessThan(visualAngleDeg(1.2, 40));
+  });
+});
+
+describe('Versatz (Fusionsanforderung)', () => {
+  it('1 Δ = 1 cm auf 1 m: Umrechnung Δ → cm → Pixel bei verschiedener Sehentfernung', () => {
+    expect(pdToCm(1, 100)).toBeCloseTo(1, 9);
+    expect(pdToCm(6, 40)).toBeCloseTo(2.4, 9);
+    expect(pdToCm(6, 60)).toBeCloseTo(3.6, 9);
+    expect(pdToCm(12, 100)).toBeCloseTo(12, 9);
+    expect(cmToPd(2.4, 40)).toBeCloseTo(6, 9);
+    // Pixel: Δ · Abstand / 100 · Pixel je cm
+    expect(shiftPx(6, 40, 38)).toBeCloseTo(91.2, 9);
+    expect(shiftPx(6, 60, 38)).toBeCloseTo(136.8, 9);
+    expect(shiftPx(6, 100, 38)).toBeCloseTo(228, 9);
+    expect(shiftPx(6, 40, 50)).toBeCloseTo(120, 9);
+    expect(shiftPx(0, 40, 38)).toBe(0);
+    // Umkehrung
+    for (const d of [30, 40, 65, 100]) for (const pd of [0.5, 3, 12]) expect(pxToPd(shiftPx(pd, d, 41), d, 41)).toBeCloseTo(pd, 9);
+    // je größer der Abstand, desto größer der Versatz in cm für gleiche Δ
+    expect(shiftPx(4, 80, 38)).toBeGreaterThan(shiftPx(4, 40, 38));
+  });
+
+  it('Aufwärmen: der erste Durchgang hat immer Versatz 0, danach der Zielwert', () => {
+    const p = base({ shiftPd: 6 });
+    expect([0, 1, 2, 9].map((i) => shiftPdForTrial(p, i))).toEqual([0, 6, 6, 6]);
+    expect(shiftPdForTrial(base({ shiftPd: 0, rampDurchgaenge: 5 }), 3)).toBe(0);
+    // auch mit Aufbau 1: Durchgang 0 bleibt 0
+    expect(shiftPdForTrial(base({ shiftPd: 6, rampDurchgaenge: 1 }), 0)).toBe(0);
+    expect(shiftPdForTrial(base({ shiftPd: 6, rampDurchgaenge: 1 }), 1)).toBe(6);
+  });
+
+  it('langsamer Aufbau: wächst über N Durchgänge linear von 0 auf den Zielwert und bleibt dann dort', () => {
+    const p = base({ shiftPd: 8, rampDurchgaenge: 4 });
+    const seq = Array.from({ length: 8 }, (_, i) => shiftPdForTrial(p, i));
+    expect(seq).toEqual([0, 2, 4, 6, 8, 8, 8, 8]);
+    for (let i = 1; i < seq.length; i++) expect(seq[i]).toBeGreaterThanOrEqual(seq[i - 1]);
+    const q = base({ shiftPd: 5, rampDurchgaenge: 3 });
+    expect(Array.from({ length: 5 }, (_, i) => shiftPdForTrial(q, i))).toEqual([0, 1.65, 3.35, 5, 5]);
+    expect(Math.max(...Array.from({ length: 12 }, (_, i) => shiftPdForTrial(base({ shiftPd: 12, rampDurchgaenge: 10 }), i)))).toBe(12);
+  });
+
+  /** Referenzformel der gekreuzten Disparität: Bild des linken Auges liegt bei Konvergenz rechts vom Bild des rechten Auges */
+  const ref = (cx: number, shift: number, mode: 'convergence' | 'divergence') => {
+    const h = shift / 2;
+    const s = mode === 'divergence' ? -1 : 1;
+    return { left: cx + s * h, right: cx - s * h };
+  };
+
+  it('Vorzeichen: Konvergenz = Farbe des linken Auges nach rechts, Divergenz umgekehrt; je Glasseite (per Referenzformel festgehalten)', () => {
+    const shift = 80;
+    // Rot-Glas links: linkes Auge sieht Rot (a)
+    expect(colorOffsets('red', 'convergence', shift)).toEqual({ a: 40, b: -40 });
+    expect(colorOffsets('red', 'divergence', shift)).toEqual({ a: -40, b: 40 });
+    // Grün-Glas links: linkes Auge sieht die zweite Farbe (b), Rot läuft über das rechte Auge
+    expect(colorOffsets('green', 'convergence', shift)).toEqual({ a: -40, b: 40 });
+    expect(colorOffsets('green', 'divergence', shift)).toEqual({ a: 40, b: -40 });
+    // gleiche Ergebnisse wie die Referenzformel (Bildlage je Auge), für jede Kombination
+    for (const lens of ['red', 'green'] as const) {
+      for (const mode of ['convergence', 'divergence'] as const) {
+        const o = colorOffsets(lens, mode, shift);
+        const e = eyeColors(lens);
+        const r = ref(0, shift, mode);
+        expect(o[e.left]).toBeCloseTo(r.left, 9);
+        expect(o[e.right]).toBeCloseTo(r.right, 9);
+      }
+    }
+    // der Abstand zwischen den Bildern ist immer der volle Versatz
+    const o = colorOffsets('red', 'convergence', 91.2);
+    expect(Math.abs(o.a - o.b)).toBeCloseTo(91.2, 9);
+    // ohne Versatz keine Verschiebung
+    expect(colorOffsets('red', 'convergence', 0)).toEqual({ a: 0, b: 0 });
+  });
+
+  it('Zeichenbreite für den Mindestabstand liegt zwischen 0,9 und 1,25 Zeichenhöhen', () => {
+    expect(GLYPH_W).toBeGreaterThan(0.9);
+    expect(GLYPH_W).toBeLessThan(1.25);
+  });
+});
+
+describe('Kontrollstriche', () => {
+  const session = (over: Record<string, ParamValue> = {}, seed = 1) => new RgSession(base({ trials: 6, ...over }), { rng: createRng(seed) });
+
+  it('ohne Einstellung: keine Meldung möglich, keine Angabe im Durchgang', () => {
+    const s = session();
+    s.start(0);
+    s.update(900);
+    expect(s.canMark).toBe(false);
+    expect(s.toggleMissing('a')).toBe(false);
+    s.press(s.target[0].ch);
+    const tr = s.submit(2000)!;
+    expect(tr.strokes).toBeUndefined();
+    expect(summarize(s.trials, 'red').strokes).toBeNull();
+  });
+
+  it('mit Einstellung: melden und zurücknehmen in der Anzeige- und Eingabephase, nicht im Vorlauf oder in der Rückmeldung; je Durchgang neu', () => {
+    const s = session({ controlMarks: 'on', showFor: '2' });
+    s.start(0);
+    expect(s.toggleMissing('a')).toBe(false); // Vorlauf: Striche noch nicht sichtbar
+    s.update(900);
+    expect(s.phase).toBe('show');
+    expect(s.canMark).toBe(true);
+    expect(s.toggleMissing('b')).toBe(true);
+    expect(s.missing).toEqual({ a: false, b: true });
+    s.update(900 + 2000);
+    expect(s.phase).toBe('input');
+    expect(s.toggleMissing('a')).toBe(true);
+    expect(s.toggleMissing('b')).toBe(true); // zweiter Druck nimmt zurück
+    expect(s.missing).toEqual({ a: true, b: false });
+    s.press(s.target[0].ch);
+    const tr = s.submit(4000)!;
+    expect(tr.strokes).toEqual({ a: true, b: false });
+    expect(s.phase).toBe('feedback');
+    expect(s.toggleMissing('a')).toBe(false);
+    s.update(4000 + 1500);
+    expect(s.phase).toBe('lead');
+    expect(s.missing).toEqual({ a: false, b: false });
+  });
+
+  const withStrokes = (flags: Array<[boolean, boolean]>): RgTrial[] => flags.map(([a, b]) => ({ ...trial('ab', ['ok', 'ok']), strokes: { a, b } }));
+
+  it('Auswertung: Anzahl der Durchgänge mit fehlendem roten bzw. zweiten Strich', () => {
+    const t = withStrokes([
+      [true, false],
+      [false, false],
+      [true, true],
+      [false, true],
+      [true, false],
+    ]);
+    expect(strokeTally(t)).toEqual({ n: 5, missA: 3, missB: 2 });
+    const s = summarize(t, 'red');
+    expect(s.strokes).toEqual({ n: 5, missA: 3, missB: 2 });
+    // Kontrollstriche ändern die Wertung der Zeichen nicht
+    expect(s.accuracy).toBe(100);
+    expect(strokeTally([])).toBeNull();
+    expect(strokeTally([trial('ab', ['ok', 'ok'])])).toBeNull();
+  });
+
+  it('läuft durch: Meldungen landen im Durchgang, Zählung stimmt mit den Meldungen überein', () => {
+    const s = new RgSession(base({ trials: 6, length: 4, controlMarks: 'on' }), { rng: createRng(4) });
+    s.start(0);
+    let now = 0;
+    let wantA = 0;
+    let wantB = 0;
+    let guard = 0;
+    while (!s.finished && guard++ < 3000) {
+      now += 100;
+      s.update(now);
+      if (s.phase === 'input') {
+        const i = s.idx;
+        if (i % 2 === 0) {
+          s.toggleMissing('a');
+          wantA++;
+        }
+        if (i % 3 === 0) {
+          s.toggleMissing('b');
+          wantB++;
+        }
+        for (const c of s.target) s.press(c.ch);
+        s.submit(now);
+      }
+    }
+    const sum = s.summary();
+    expect(sum.strokes).toEqual({ n: 6, missA: wantA, missB: wantB });
+    expect(wantA).toBe(3);
+    expect(wantB).toBe(2);
+  });
+});
+
+describe('Versatz in der Sitzung', () => {
+  it('jeder Durchgang trägt seinen Versatz: erster 0, danach Ziel bzw. Aufbau; Summary nennt den größten', () => {
+    const run = (over: Record<string, ParamValue>) => {
+      const s = new RgSession(base({ trials: 6, length: 4, ...over }), { rng: createRng(2) });
+      s.start(0);
+      let now = 0;
+      let guard = 0;
+      const seen: number[] = [];
+      while (!s.finished && guard++ < 3000) {
+        now += 100;
+        s.update(now);
+        if (s.phase === 'input') {
+          seen.push(s.shiftPd);
+          for (const c of s.target) s.press(c.ch);
+          s.submit(now);
+        }
+      }
+      return { s, seen };
+    };
+    const a = run({ shiftPd: 6 });
+    expect(a.seen).toEqual([0, 6, 6, 6, 6, 6]);
+    expect(a.s.trials.map((t) => t.shiftPd)).toEqual([0, 6, 6, 6, 6, 6]);
+    expect(a.s.summary().shiftMax).toBe(6);
+    const b = run({ shiftPd: 5, rampDurchgaenge: 5 });
+    expect(b.seen).toEqual([0, 1, 2, 3, 4, 5]);
+    const c = run({});
+    expect(c.seen).toEqual([0, 0, 0, 0, 0, 0]);
+    expect(c.s.summary().shiftMax).toBe(0);
   });
 });

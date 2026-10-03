@@ -14,7 +14,16 @@ import { Stepper } from './Stepper';
  * Zahlen als Stepper (− Wert Einheit +) mit Schieberegler, Auswahlen als Auswahl-Chips (Radiogruppe, ✓ an der gewählten),
  * unter jeder Einstellung die Kurz-Erklärung. Alles wird sofort lokal gespeichert; „Standard wiederherstellen“ setzt zurück.
  */
-export function ExerciseParams({ def, onChange }: { def: ExerciseDefinition; onChange?: () => void }) {
+export function ExerciseParams({
+  def,
+  onChange,
+  version,
+}: {
+  def: ExerciseDefinition;
+  onChange?: () => void;
+  /** erhöht sich, wenn andere Teile der Seite Einstellungen geändert haben (z. B. das Prüfbild): Werte neu lesen */
+  version?: number;
+}) {
   const { ui, lang } = useApp();
   const defs = def.params;
   const [values, setValues] = useState<Record<string, ParamValue>>(() => getExerciseParams(def.id, defs));
@@ -24,6 +33,9 @@ export function ExerciseParams({ def, onChange }: { def: ExerciseDefinition; onC
     setValues(getExerciseParams(def.id, defs));
     setMsg('');
   }, [def.id]);
+  useEffect(() => {
+    setValues(getExerciseParams(def.id, defs));
+  }, [version]);
   if (!defs?.length) return null;
   const tx = def.texts[lang].params ?? {};
   const fmt = createFormatter(lang);

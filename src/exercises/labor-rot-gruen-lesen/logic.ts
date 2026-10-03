@@ -13,6 +13,15 @@
  *
  * Die Auswertung zählt nur, welche Zeichen und welche Farbe fehlten oder verwechselt wurden. Sie sagt nie, welches Auge
  * „schwächer“ ist; das ist kein Befund (auch Brille, Bildschirmfarben und Helligkeit spielen eine Rolle).
+ *
+ * Optionale Ergänzungen (jede einzeln abschaltbar, Standard = bisheriges Verhalten):
+ * - Farbpaar Rot–Blau (Blau rgb(0,160,255)) und Helligkeit je Farbe getrennt (30–100 %, Schritte 10 %).
+ * - Kontrollstriche: ein kurzer Strich in Rot über und einer in der zweiten Farbe unter der Folge; mit den Tasten
+ *   „Roter Strich fehlt“ / „Strich der zweiten Farbe fehlt“ meldest du, welcher fehlte (Zählung je Farbe, nur ein Hinweis).
+ * - Versatz der beiden Farbbilder in Prismendioptrien (Δ), Richtung Konvergenz (gekreuzt, Bild rückt näher) oder
+ *   Divergenz (Bild rückt weg). 1 Δ = 1 cm Ablenkung auf 1 m. Umrechnung in cm und Pixel mit der Sehentfernung der
+ *   Kalibrierung. Der erste Durchgang hat immer Versatz 0; optional wächst der Versatz über N Durchgänge. Das ist keine
+ *   Prismenmessung und kein Ersatz für eine Untersuchung.
  */
 import { mean } from '../../core/stats';
 import type { ExerciseParams, ParamDef } from '../../core/types';
@@ -27,15 +36,25 @@ export const PARAMS: readonly ParamDef[] = [
   { key: 'leftLens', type: 'select', default: 'red', options: ['red', 'green'] },
   { key: 'showFor', type: 'select', default: 'unlimited', options: ['unlimited', '8', '4', '2'], summary: true },
   { key: 'trials', type: 'number', unit: 'count', min: 6, max: 20, step: 1, default: 10 },
-  { key: 'tones', type: 'select', default: 'redgreen', options: ['redgreen', 'redcyan'] },
+  { key: 'tones', type: 'select', default: 'redgreen', options: ['redgreen', 'redcyan', 'redblue'] },
   { key: 'brightness', type: 'number', unit: 'percent', min: 80, max: 100, step: 5, default: 100 },
+  { key: 'redLevel', type: 'number', unit: 'percent', min: 30, max: 100, step: 10, default: 100 },
+  { key: 'secondLevel', type: 'number', unit: 'percent', min: 30, max: 100, step: 10, default: 100 },
+  // Ansicht im Intro (Prüfbild einfach oder Schritt für Schritt): ändert die Übung nicht
+  { key: 'glassesCheck', type: 'select', default: 'simple', options: ['simple', 'steps'], neutral: true },
+  { key: 'controlMarks', type: 'select', default: 'off', options: ['off', 'on'] },
+  { key: 'shiftPd', type: 'number', min: 0, max: 12, step: 0.5, default: 0 },
+  { key: 'shiftDir', type: 'select', default: 'convergence', options: ['convergence', 'divergence'] },
+  { key: 'rampDurchgaenge', type: 'number', unit: 'count', min: 0, max: 10, step: 1, default: 0 },
 ];
 
 export type Symbols = 'digits' | 'letters' | 'mixed';
 export type Mix = 'alternate' | 'random';
 export type Lens = 'red' | 'green';
 export type ShowFor = 'unlimited' | '8' | '4' | '2';
-export type Tones = 'redgreen' | 'redcyan';
+export type Tones = 'redgreen' | 'redcyan' | 'redblue';
+export type GlassesCheck = 'simple' | 'steps';
+export type ShiftDir = 'convergence' | 'divergence';
 
 export interface RgParams {
   symbols: Symbols;
@@ -46,7 +65,19 @@ export interface RgParams {
   showFor: ShowFor;
   trials: number;
   tones: Tones;
+  /** gemeinsame Helligkeit in % (80–100) */
   brightness: number;
+  /** Helligkeit je Farbe in % (30–100), zusätzlich zur gemeinsamen Helligkeit */
+  redLevel: number;
+  secondLevel: number;
+  glassesCheck: GlassesCheck;
+  /** Kontrollstriche über und unter der Folge, mit Tasten „Strich fehlt“ */
+  controlMarks: boolean;
+  /** Versatz der Farbbilder in Prismendioptrien Δ (0 = aus) */
+  shiftPd: number;
+  shiftDir: ShiftDir;
+  /** Zahl der Durchgänge, über die der Versatz von 0 auf den Zielwert wächst (0 = aus) */
+  rampDurchgaenge: number;
 }
 
 /** Bereinigte Einstellungen (`ctx.params`) als typisiertes Objekt; fehlende oder ungültige Werte → Standard */
@@ -68,8 +99,15 @@ export function rgParams(p: ExerciseParams): RgParams {
     leftLens: sel<Lens>('leftLens', ['red', 'green'], 'red'),
     showFor: sel<ShowFor>('showFor', ['unlimited', '8', '4', '2'], 'unlimited'),
     trials: Math.round(num('trials')),
-    tones: sel<Tones>('tones', ['redgreen', 'redcyan'], 'redgreen'),
+    tones: sel<Tones>('tones', ['redgreen', 'redcyan', 'redblue'], 'redgreen'),
     brightness: num('brightness'),
+    redLevel: num('redLevel'),
+    secondLevel: num('secondLevel'),
+    glassesCheck: sel<GlassesCheck>('glassesCheck', ['simple', 'steps'], 'simple'),
+    controlMarks: sel<'off' | 'on'>('controlMarks', ['off', 'on'], 'off') === 'on',
+    shiftPd: num('shiftPd'),
+    shiftDir: sel<ShiftDir>('shiftDir', ['convergence', 'divergence'], 'convergence'),
+    rampDurchgaenge: Math.round(num('rampDurchgaenge')),
   };
 }
 
@@ -81,26 +119,42 @@ export function showMs(p: Pick<RgParams, 'showFor'>): number | null {
 // ---------------------------------------------------------------------------
 // Farben
 
-/** `a` = Rot, `b` = zweite Farbe (Grün oder Cyan) */
+/** `a` = Rot, `b` = zweite Farbe (Grün, Cyan oder Blau) */
 export type ColorId = 'a' | 'b';
 
 export interface ToneCss {
   /** Zeichenfarbe Rot */
   a: string;
-  /** Zeichenfarbe Grün bzw. Cyan */
+  /** Zeichenfarbe Grün, Cyan bzw. Blau */
   b: string;
   /** Neutrales Hellgrau (Rahmen, Kreuz, Bedienung): beide Augen sehen es */
   neutral: string;
 }
 
-/** Farben als CSS-Werte: reines Rot (255,0,0), reines Grün (0,255,0) oder Cyan (0,255,255), skaliert mit der Helligkeit in % */
-export function toneCss(tones: Tones, brightness: number): ToneCss {
-  const k = Math.max(0, Math.min(100, brightness)) / 100;
-  const v = Math.round(255 * k);
+/** Grundfarben bei voller Helligkeit (R, G, B): reines Rot, reines Grün, Cyan, Blau (Rot-Cyan-Brillen) */
+export const BASE_RGB: Record<'red' | Tones, readonly [number, number, number]> = {
+  red: [255, 0, 0],
+  redgreen: [0, 255, 0],
+  redcyan: [0, 255, 255],
+  redblue: [0, 160, 255],
+};
+
+/**
+ * Farben als CSS-Werte: reines Rot (255,0,0) und reines Grün (0,255,0), Cyan (0,255,255) oder Blau (0,160,255), skaliert
+ * mit der gemeinsamen Helligkeit (80–100 %) und – je Farbe getrennt – mit `redLevel` und `secondLevel` (30–100 %).
+ * Ohne die Stufen (Standard 100 %) ergibt sich das frühere Verhalten.
+ */
+export function toneCss(tones: Tones, brightness: number, redLevel = 100, secondLevel = 100): ToneCss {
+  const clampPct = (x: number) => Math.max(0, Math.min(100, x)) / 100;
+  const k = clampPct(brightness);
+  const paint = (rgb: readonly [number, number, number], level: number): string => {
+    const f = k * clampPct(level);
+    return `rgb(${rgb.map((c) => Math.round(c * f)).join(',')})`;
+  };
   const n = Math.round(200 * k);
   return {
-    a: `rgb(${v},0,0)`,
-    b: tones === 'redcyan' ? `rgb(0,${v},${v})` : `rgb(0,${v},0)`,
+    a: paint(BASE_RGB.red, redLevel),
+    b: paint(BASE_RGB[tones], secondLevel),
     neutral: `rgb(${n},${n},${n})`,
   };
 }
@@ -108,6 +162,53 @@ export function toneCss(tones: Tones, brightness: number): ToneCss {
 /** Welche Farbe sieht welches Auge (Rot-Glas = Rot sichtbar, Grün-/Cyan-Glas = zweite Farbe sichtbar) */
 export function eyeColors(leftLens: Lens): { left: ColorId; right: ColorId } {
   return leftLens === 'red' ? { left: 'a', right: 'b' } : { left: 'b', right: 'a' };
+}
+
+// ---------------------------------------------------------------------------
+// Versatz (Fusionsanforderung)
+
+/** 1 Prismendioptrie (Δ) = 1 cm Ablenkung auf 1 m Entfernung: Versatz in cm bei `distCm` Sehentfernung */
+export function pdToCm(pd: number, distCm: number): number {
+  return (pd * distCm) / 100;
+}
+
+/** Umkehrung von `pdToCm` */
+export function cmToPd(cm: number, distCm: number): number {
+  return (cm / distCm) * 100;
+}
+
+/** Versatz in Pixeln für `pd` Prismendioptrien bei Sehentfernung `distCm` und `pxPerCm` Pixeln je cm (Kalibrierung) */
+export function shiftPx(pd: number, distCm: number, pxPerCm: number): number {
+  return pdToCm(pd, distCm) * pxPerCm;
+}
+
+/** Umkehrung von `shiftPx` */
+export function pxToPd(px: number, distCm: number, pxPerCm: number): number {
+  return cmToPd(px / pxPerCm, distCm);
+}
+
+/**
+ * Versatz (Δ) des Durchgangs mit der Nummer `idx` (ab 0). Der erste Durchgang hat immer Versatz 0 (Aufwärmen). Ohne Aufbau
+ * gilt danach der Zielwert; mit `rampDurchgaenge` = N wächst der Versatz linear von 0 (Durchgang 0) auf den Zielwert
+ * (ab Durchgang N). Auf 0,05 Δ gerundet.
+ */
+export function shiftPdForTrial(p: Pick<RgParams, 'shiftPd' | 'rampDurchgaenge'>, idx: number): number {
+  if (!(p.shiftPd > 0) || idx <= 0) return 0;
+  const k = p.rampDurchgaenge >= 1 ? Math.min(1, idx / p.rampDurchgaenge) : 1;
+  return Math.round(p.shiftPd * k * 20) / 20;
+}
+
+/**
+ * Waagerechte Verschiebung der Zeichen je Farbe (px, plus = nach rechts) bei einem Versatz von `shift` px zwischen den
+ * beiden Farbbildern. Gekreuzt (Konvergenz): Das Bild des linken Auges liegt rechts vom Bild des rechten Auges, das Bild
+ * rückt scheinbar näher und verlangt mehr Konvergenz; Divergenz ist umgekehrt. Das linke Auge sieht die Farbe seines Glases
+ * (`leftLens`). Die Farbe des linken Auges wandert bei Konvergenz um +shift/2, die des rechten um −shift/2.
+ */
+export function colorOffsets(leftLens: Lens, dir: ShiftDir, shift: number): Record<ColorId, number> {
+  const sign = dir === 'divergence' ? -1 : 1;
+  const left = eyeColors(leftLens).left;
+  const right: ColorId = left === 'a' ? 'b' : 'a';
+  return { [left]: (sign * shift) / 2, [right]: 0 - (sign * shift) / 2 } as Record<ColorId, number>;
 }
 
 // ---------------------------------------------------------------------------
@@ -205,6 +306,8 @@ export const MIN_PER_COLOR = 20;
 export const COLOR_GAP_PCT = 10;
 /** Platz eines Zeichens in der Zeile (Vielfaches der Zeichenhöhe, Mitte zu Mitte) */
 export const PITCH = 1.25;
+/** Breite der breitesten Zeichen (Tinte, Vielfaches der Zeichenhöhe); Mindestabstand mit Versatz: Zeichenbreite + Versatz */
+export const GLYPH_W = 1.05;
 
 export type RgPhase = 'idle' | 'lead' | 'show' | 'input' | 'feedback' | 'done';
 
@@ -221,6 +324,10 @@ export interface RgTrial {
   symbolsOk: number;
   /** Zeit vom Beginn der Eingabemöglichkeit bis „Fertig“ (ms) */
   entryMs: number;
+  /** Versatz der Farbbilder in diesem Durchgang (Δ) */
+  shiftPd?: number;
+  /** Kontrollstriche (nur mit `controlMarks`): `true` = „Strich fehlt“ gemeldet; `a` = roter, `b` = Strich der zweiten Farbe */
+  strokes?: { a: boolean; b: boolean };
 }
 
 export interface RgEnv {
@@ -234,6 +341,15 @@ export interface ColorTally {
   ok: number;
   missing: number;
   wrong: number;
+}
+
+export interface StrokeTally {
+  /** Durchgänge mit Kontrollstrichen */
+  n: number;
+  /** Durchgänge, in denen der rote Strich als fehlend gemeldet wurde */
+  missA: number;
+  /** Durchgänge, in denen der Strich der zweiten Farbe als fehlend gemeldet wurde */
+  missB: number;
 }
 
 export interface RgSummary {
@@ -261,6 +377,10 @@ export interface RgSummary {
   moreOftenEye: 'left' | 'right' | null;
   /** Mittlere Eingabezeit in ms, null ohne Folge */
   entryMean: number | null;
+  /** Kontrollstriche: Zählung je Farbe, `null` ohne Kontrollstriche */
+  strokes: StrokeTally | null;
+  /** Größter Versatz (Δ) unter den Durchgängen, 0 ohne Versatz */
+  shiftMax: number;
   trials: RgTrial[];
 }
 
@@ -329,7 +449,20 @@ export function summarize(trials: readonly RgTrial[], leftLens: Lens): RgSummary
     byEye: { left: { ...byColor[eyes.left], color: eyes.left }, right: { ...byColor[eyes.right], color: eyes.right } },
     moreOftenEye,
     entryMean: n ? round(mean(trials.map((t) => t.entryMs)), 0) : null,
+    strokes: strokeTally(trials),
+    shiftMax: Math.max(0, ...trials.map((t) => t.shiftPd ?? 0)),
     trials: trials.slice(),
+  };
+}
+
+/** Kontrollstriche zählen: nur Durchgänge mit Kontrollstrichen; ohne solche `null` */
+export function strokeTally(trials: readonly RgTrial[]): StrokeTally | null {
+  const withStrokes = trials.filter((t) => t.strokes !== undefined);
+  if (!withStrokes.length) return null;
+  return {
+    n: withStrokes.length,
+    missA: withStrokes.filter((t) => t.strokes!.a).length,
+    missB: withStrokes.filter((t) => t.strokes!.b).length,
   };
 }
 
@@ -341,6 +474,10 @@ export class RgSession {
   phase: RgPhase = 'idle';
   target: Cell[] = [];
   entry: string[] = [];
+  /** Versatz (Δ) des laufenden Durchgangs */
+  shiftPd = 0;
+  /** Kontrollstriche des laufenden Durchgangs: `true` = „Strich fehlt“ gemeldet */
+  missing: { a: boolean; b: boolean } = { a: false, b: false };
   trials: RgTrial[] = [];
   /** Nummer der laufenden Folge, ab 0 */
   idx = 0;
@@ -380,6 +517,8 @@ export class RgSession {
     this.target = makeSequence(this.rng, this.p, this.prev);
     this.prev = this.target.map((c) => c.ch).join('');
     this.entry = [];
+    this.missing = { a: false, b: false };
+    this.shiftPd = shiftPdForTrial(this.p, this.idx);
     this.phase = 'lead';
     this.phaseAt = now;
   }
@@ -425,6 +564,18 @@ export class RgSession {
     return this.phase === 'input';
   }
 
+  /** Kontrollstriche (falls eingeschaltet) sind sichtbar oder eben erst gesehen worden: „Strich fehlt“ kann gemeldet werden */
+  get canMark(): boolean {
+    return this.p.controlMarks && (this.phase === 'show' || this.phase === 'input');
+  }
+
+  /** „Strich fehlt“ umschalten (zweiter Druck nimmt die Meldung zurück); `false`, wenn nicht angenommen */
+  toggleMissing(color: ColorId): boolean {
+    if (!this.canMark) return false;
+    this.missing[color] = !this.missing[color];
+    return true;
+  }
+
   /** „Fertig“ ist möglich, sobald mindestens ein Zeichen (auch „?“) eingegeben wurde */
   get canSubmit(): boolean {
     return this.phase === 'input' && this.entry.length > 0;
@@ -460,6 +611,8 @@ export class RgSession {
       correct: symbolsOk === this.p.length,
       symbolsOk,
       entryMs: Math.round(now - this.inputFrom),
+      shiftPd: this.shiftPd,
+      ...(this.p.controlMarks ? { strokes: { ...this.missing } } : {}),
     };
     this.trials.push(trial);
     this.phase = 'feedback';

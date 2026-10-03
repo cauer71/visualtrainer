@@ -7,6 +7,9 @@ import type { ExerciseTexts } from '../../core/types';
 // Sicherheitshinweise (Pflicht): Rot-Grün-Farbsehschwäche (Birch, 2012), Doppelbilder/Schielen/Schwindel/Kopf- oder
 // Augenschmerz (Muchnick, 2008, S. 6 und 28), kurze Durchgänge mit Pausen, Abstand etwa 40 cm.
 // `short` in params: Muster für die Kurzfassung der Einstellungen auf der Ergebnisseite.
+// Optionale Ergänzungen (Standard aus): Farbpaar Rot–Blau, Helligkeit je Farbe, Prüfbild Schritt für Schritt, Kontrollstriche,
+// Versatz in Prismendioptrien Δ (ausdrücklich keine Prismenmessung und kein Ersatz für eine Untersuchung; bei Schielen,
+// Doppelbildern, Schwindel, Kopfschmerz nur nach Absprache mit der behandelnden Fachperson oder gar nicht; Muchnick, 2008).
 
 export const de: ExerciseTexts = {
   title: 'Rot-Grün-Lesen',
@@ -17,7 +20,7 @@ export const de: ExerciseTexts = {
     'Tippe sie der Reihe nach ein, dann „Fertig“.',
   ],
   why:
-    'Hier liest du eine Folge aus Ziffern oder Buchstaben, deren Zeichen teils rot, teils grün auf Schwarz stehen. Mit einer Rot-Grün-Brille sieht jedes Auge nur die Zeichen seiner Farbe hell; die ganze Folge liest nur, wer beide Augen zusammen nutzt. Ein Rahmen und ein kleines Kreuz sieht jedes Auge, sie helfen, die beiden Bilder zusammenzuhalten. Die App zählt nur, welche Zeichen und welche Farbe fehlten – das ist kein Befund, auch Brille, Bildschirmfarben und Helligkeit spielen eine Rolle. Ob das Üben beidäugiges Sehen im Alltag, im Sport oder im Verkehr verbessert, ist nicht belegt.',
+    'Hier liest du eine Folge aus Ziffern oder Buchstaben, deren Zeichen teils rot, teils grün auf Schwarz stehen. Mit einer Rot-Grün-Brille sieht jedes Auge nur die Zeichen seiner Farbe hell; die ganze Folge liest nur, wer beide Augen zusammen nutzt. Ein Rahmen und ein kleines Kreuz sieht jedes Auge, sie helfen, die beiden Bilder zusammenzuhalten. Die App zählt nur, welche Zeichen und welche Farbe fehlten – das ist kein Befund, auch Brille, Bildschirmfarben und Helligkeit spielen eine Rolle. Auf Wunsch kannst du die beiden Farben leicht gegeneinander verschieben (Versatz in Prismendioptrien); das ist keine Messung und kein Ersatz für eine Untersuchung. Ob das Üben beidäugiges Sehen im Alltag, im Sport oder im Verkehr verbessert, ist nicht belegt.',
   goodFor: ['Genaues Lesen', 'Ruhiger Blick', 'Aufmerksamkeit'],
   captions: {
     look: 'Ruhig auf das Kreuz in der Mitte schauen',
@@ -38,6 +41,7 @@ export const de: ExerciseTexts = {
     chars: 'Zeichen richtig insgesamt',
     size: 'Zeichenhöhe',
     shown: 'Anzeigedauer der Folge',
+    shift: 'Versatz der Bilder',
   },
   metricHints: {
     accuracy:
@@ -58,6 +62,8 @@ export const de: ExerciseTexts = {
     size:
       'Höhe der Zeichen in Zentimetern und der Sehwinkel, unter dem sie bei deinem Abstand erscheinen (berechnet aus der Kalibrierung und dem Abstand). Sie ist kleiner als eingestellt, wenn die Folge sonst nicht auf den Bildschirm passt.',
     shown: 'Wie lange die Folge sichtbar war, bevor du eingeben konntest, oder „unbegrenzt“ (dann blieb sie beim Eintippen sichtbar).',
+    shift:
+      'Versatz zwischen den roten und den andersfarbigen Zeichen in Prismendioptrien (Δ): 1 Δ lenkt auf 1 m Entfernung um 1 cm ab. Er wird mit dem Abstand aus der Kalibrierung in cm und Pixel umgerechnet. Der erste Durchgang hatte immer Versatz 0. Das ist keine Prismenmessung und kein Ersatz für eine Untersuchung.',
   },
   tips: {
     few:
@@ -108,13 +114,49 @@ export const de: ExerciseTexts = {
       'Bei unbegrenzter Anzeige enthält die Eingabezeit auch die Zeit zum Lesen und die Verzögerung des Touch-Sensors. Vergleiche nur mit deinen eigenen Werten auf diesem Gerät und mit denselben Einstellungen.',
     checkTitle: 'Prüfbild für die Brille (ohne Wertung)',
     checkText:
-      'Mit dem roten Glas vor dem Auge sollte die grüne (bei Rot und Cyan: cyanfarbene) Fläche dunkel erscheinen und umgekehrt. Wenn nicht: Helligkeit und Brille prüfen oder die Farbtöne ändern.',
+      'Mit dem roten Glas vor dem Auge sollte die grüne (bei Rot und Cyan: cyanfarbene, bei Rot–Blau: blaue) Fläche dunkel erscheinen und umgekehrt. Wenn nicht: Helligkeit und Brille prüfen oder die Farbtöne ändern.',
+    checkTextSteps: 'Das Prüfbild bewertet nichts; es hilft nur, Brille und Farben einzustellen. Die Werte gelten danach für die Übung.',
+    checkStepGlasses: 'Setze die Brille auf. Trägst du eine Korrekturbrille, nimm am besten eine Überbrille. Der Raum darf eher dunkel sein.',
+    checkStepLeft: 'Halte das linke Auge zu: Du darfst nur die {c} Fläche sehen, die andere muss fast verschwinden.',
+    checkStepRight: 'Halte das rechte Auge zu: Du darfst nur die {c} Fläche sehen, die andere muss fast verschwinden.',
+    checkStepLens: 'Siehst du die falsche Fläche? Dann sitzt das Glas auf der anderen Seite. Wähle, welches Glas vor deinem linken Auge sitzt:',
+    checkLensIs: 'Linkes Glas: {c}',
+    checkStepLevel: 'Stelle die Helligkeit jeder Farbe so ein, dass beim Zuhalten eines Auges die Fläche des anderen Auges fast verschwindet:',
+    checkLevelValue: '{c}: {v} %',
+    checkLevelDown: '{c} dunkler',
+    checkLevelUp: '{c} heller',
+    checkGhost:
+      'Siehst du durch ein Auge beide Flächen (Geisterbild)? Stelle die hellere Farbe dunkler, verringere Raumlicht und Spiegelungen auf dem Bildschirm und prüfe die Bildschirmhelligkeit.',
+    nameBlue: 'Blau',
+    lensBlue: 'blau',
+    adjRed: 'rote',
+    adjGreen: 'grüne',
+    adjCyan: 'cyanfarbene',
+    adjBlue: 'blaue',
+    missRed: 'Roter Strich fehlt',
+    missGreen: 'Grüner Strich fehlt',
+    missCyan: 'Cyan-Strich fehlt',
+    missBlue: 'Blauer Strich fehlt',
+    strokeTitle: 'Kontrollstriche (Hinweis, kein Befund)',
+    strokeRow: 'Strich in {c} fehlte',
+    strokeValue: '{k} von {n} Folgen',
+    strokeNote:
+      'Gezählt wird nur, wie oft du gemeldet hast, dass ein Strich fehlte. Das ist ein Hinweis, kein Befund: Auch Brille, Bildschirmfarben und Helligkeit spielen eine Rolle. Fehlt immer derselbe Strich, sprich mit deiner Optikerin, deinem Optiker oder bei einer Augenärztin, einem Augenarzt.',
+    dirConvergence: 'Konvergenz (gekreuzt)',
+    dirDivergence: 'Divergenz',
+    shiftValue: '{pd} Δ · {dir}',
+    shiftDetail: 'etwa {cm} cm (≈ {px} px) zwischen Rot und der zweiten Farbe bei {d} cm Abstand',
+    shiftRamp: 'wuchs über {n} Durchgänge von 0 auf diesen Wert, der erste Durchgang hatte Versatz 0',
+    shiftWarmup: 'der erste Durchgang hatte Versatz 0',
+    shiftLimited: 'auf diesem Bildschirm auf {pd} Δ begrenzt, damit die Folge passt',
+    shiftNote: 'Der Versatz ist keine Prismenmessung und kein Ersatz für eine Untersuchung. Er gilt nur für diesen Bildschirm, diese Kalibrierung und diesen Abstand.',
   },
   progression: [
     'Leichter: weniger Zeichen (4 bis 5), größere Zeichen (1,5 bis 2 cm), abwechselnde Farben, unbegrenzte Anzeige, Ziffern.',
     'Schwerer: mehr Zeichen (8 bis 12), kleinere Zeichen, zufällig gemischte Farben, Anzeige nur 4 oder 2 Sekunden, Buchstaben oder gemischt.',
     'Stelle ein, welches Glas vor deinem linken Auge sitzt („Linkes Glas“); nur dann kann die Auswertung nach Auge stimmen. Ein Farbvergleich gilt erst ab 20 Zeichen je Farbe – das sind etwa 4 Folgen mit 10 Zeichen.',
     'Unsere Faustregel (keine Vorgabe aus der Forschung): Löst du in drei Durchläufen hintereinander über 90 % ganz richtig, mach eine Einstellung schwerer; unter 50 % mach sie leichter. Ändere immer nur eine Einstellung auf einmal.',
+    'Versatz (optional): Beginne bei 0 Δ und nimm den langsamen Aufbau über 4 bis 6 Folgen; steigere erst, wenn die Folgen ohne Anstrengung und ohne Doppelbilder gelingen. Das ist unsere Faustregel, keine Vorgabe aus der Forschung.',
   ],
   cautions: [
     'Rot-Grün-Farbsehschwäche: Etwa 8 von 100 Männern und 4 von 1000 Frauen europäischer Herkunft haben sie (Birch, 2012). Dann werden Rot und Grün falsch getrennt, und die Übung ist für dich nicht geeignet.',
@@ -125,6 +167,10 @@ export const de: ExerciseTexts = {
     'Prüfe vor dem Start das Prüfbild: Mit dem roten Glas vor dem Auge sollte die grüne Fläche dunkel erscheinen und umgekehrt. Schalte Nachtmodus und Farbfilter des Geräts aus; sie verändern die Farben. Vermeide Spiegelungen auf dem Bildschirm.',
     'Stell den Bildschirm einmal ein („Bildschirm kalibrieren“), damit die Zeichengröße in Zentimetern stimmt; im Ergebnis steht die Größe mit dem Sehwinkel. Auf kleinen Bildschirmen wird die Größe begrenzt, wenn die Folge sonst nicht passt.',
     'Die App kann nicht prüfen, ob du die Brille trägst oder wohin du schaust. Gemessen wird nur, was du eintippst. Die Auswertung nach Farbe und Auge ist ein Hinweis, kein Befund.',
+    'Versatz (optional): Er ist eine zusätzliche Anforderung an das Zusammenspiel beider Augen, keine Prismenmessung und kein Ersatz für eine Untersuchung. 1 Δ (Prismendioptrie) lenkt auf 1 m Entfernung um 1 cm ab. Konvergenz heißt, das Bild rückt scheinbar näher und die Augen drehen nach innen; Divergenz heißt, es rückt scheinbar weg und die Augen drehen nach außen. Beginne bei 0 und steigere in kleinen Schritten.',
+    'Bei Schielen, Doppelbildern, Schwindel oder Kopfschmerz: Versatz nur nach Absprache mit der behandelnden Fachperson oder gar nicht. Bei Beschwerden sofort aufhören (Muchnick, 2008, S. 6 und 28).',
+    'Dunkler Raum und Überbrille: Rot und Grün trennen sich besser bei gedämpftem Raumlicht und ohne Spiegelungen auf dem Bildschirm. Trägst du eine Korrekturbrille, nimm eine Überbrille, die über deiner Brille sitzt.',
+    'Kontrollstriche (optional): Ein roter Strich über und ein Strich in der zweiten Farbe unter der Folge zeigen, ob beide Bilder ankommen. Fehlt einer, tippst du „Strich fehlt“ (Tastatur: Pfeil hoch oder runter). Gezählt wird nur, wie oft das vorkam – ein Hinweis, kein Befund.',
   ],
   params: {
     symbols: {
@@ -150,7 +196,7 @@ export const de: ExerciseTexts = {
     leftLens: {
       label: 'Linkes Glas der Brille',
       hint: 'Welches Glas sitzt vor deinem linken Auge? Das braucht nur die Auswertung nach Auge; für die Aufgabe selbst ist es egal.',
-      options: { red: 'Rot', green: 'Grün (bzw. Cyan)' },
+      options: { red: 'Rot', green: 'Grün, Cyan oder Blau' },
     },
     showFor: {
       label: 'Anzeigedauer der Folge',
@@ -164,13 +210,48 @@ export const de: ExerciseTexts = {
     },
     tones: {
       label: 'Farbtöne',
-      hint: 'Standard ist reines Rot (#FF0000) und reines Grün (#00FF00). Alternative: Rot und Cyan (#FF0000 und #00FFFF), wenn deine Brille Rot-Cyan-Gläser hat. Das Prüfbild zeigt die eingestellten Farben.',
-      options: { redgreen: 'Rot und Grün', redcyan: 'Rot und Cyan' },
+      hint: 'Standard ist reines Rot (#FF0000) und reines Grün (#00FF00). Alternativen: Rot und Cyan (#FF0000 und #00FFFF) oder Rot und Blau (#FF0000 und #00A0FF). Rot-Cyan-Brillen funktionieren mit dem Farbpaar Rot–Blau. Das Prüfbild zeigt die eingestellten Farben.',
+      options: { redgreen: 'Rot und Grün', redcyan: 'Rot und Cyan', redblue: 'Rot und Blau' },
     },
     brightness: {
       label: 'Helligkeit der Farben',
-      hint: 'Anteil der vollen Farbhelligkeit, 80 bis 100 Prozent. Passt die Helligkeit nicht zur Brille, hilft oft ein kleiner Schritt; prüfe es mit dem Prüfbild.',
+      hint: 'Gemeinsamer Anteil der vollen Farbhelligkeit, 80 bis 100 Prozent. Passt die Helligkeit nicht zur Brille, hilft oft ein kleiner Schritt; prüfe es mit dem Prüfbild. Jede Farbe lässt sich zusätzlich einzeln dunkler stellen.',
       short: '{v} %',
+    },
+    redLevel: {
+      label: 'Helligkeit Rot',
+      hint: 'Anteil der Helligkeit der roten Zeichen, 30 bis 100 Prozent in Schritten von 10, zusätzlich zur gemeinsamen Helligkeit. Im Prüfbild („Schritt für Schritt“) stellst du sie mit „Rot dunkler“ und „Rot heller“ ein.',
+      short: 'Rot {v} %',
+    },
+    secondLevel: {
+      label: 'Helligkeit zweite Farbe',
+      hint: 'Anteil der Helligkeit der grünen, cyanfarbenen oder blauen Zeichen, 30 bis 100 Prozent in Schritten von 10, zusätzlich zur gemeinsamen Helligkeit. Im Prüfbild („Schritt für Schritt“) stellst du sie mit den Tasten „dunkler“ und „heller“ ein.',
+      short: 'Zweite Farbe {v} %',
+    },
+    glassesCheck: {
+      label: 'Prüfbild im Intro',
+      hint: 'Einfach: zwei Farbflächen. Schritt für Schritt: Brille aufsetzen, je ein Auge zuhalten, das Glas wählen und die Helligkeit jeder Farbe einstellen. Das Prüfbild bewertet nichts und ändert die Übung nur über die Einstellungen, die du darin wählst.',
+      options: { simple: 'Einfach', steps: 'Schritt für Schritt' },
+    },
+    controlMarks: {
+      label: 'Kontrollstriche',
+      hint: 'Zeigt über der Folge einen kurzen roten Strich und darunter einen kurzen Strich in der zweiten Farbe. Fehlt dir einer, tippst du auf „Strich fehlt“ (Tastatur: Pfeil hoch für den oberen, Pfeil runter für den unteren Strich). Im Ergebnis steht, wie oft welcher Strich fehlte – ein Hinweis, kein Befund.',
+      options: { off: 'Aus', on: 'Ein' },
+    },
+    shiftPd: {
+      label: 'Versatz in Prismendioptrien Δ',
+      hint: 'Verschiebt die roten Zeichen und die der zweiten Farbe waagerecht gegeneinander (0 = aus, bis 12 Δ). 1 Δ lenkt auf 1 m Entfernung um 1 cm ab; der Versatz wird mit dem Abstand aus der Kalibrierung in cm und Pixel umgerechnet (ohne Kalibrierung nur eine Schätzung). Der erste Durchgang hat immer Versatz 0. Keine Prismenmessung, kein Ersatz für eine Untersuchung. Bei Schielen, Doppelbildern, Schwindel oder Kopfschmerz nur nach Absprache mit der behandelnden Fachperson oder gar nicht.',
+      short: 'Versatz {v} Δ',
+    },
+    shiftDir: {
+      label: 'Richtung des Versatzes',
+      hint: 'Konvergenz (gekreuzt): Das Bild rückt scheinbar näher, die Augen drehen nach innen. Divergenz: Das Bild rückt scheinbar weg, die Augen drehen nach außen. Wirkt nur, wenn der Versatz größer als 0 ist.',
+      options: { convergence: 'Konvergenz (gekreuzt)', divergence: 'Divergenz' },
+    },
+    rampDurchgaenge: {
+      label: 'Langsamer Aufbau des Versatzes',
+      hint: 'Zahl der Folgen, über die der Versatz von 0 auf den eingestellten Wert wächst (0 = aus: dann gilt der Wert ab der zweiten Folge). Der erste Durchgang hat immer Versatz 0. Wirkt nur, wenn der Versatz größer als 0 ist.',
+      short: 'Aufbau über {v} Folgen|Aufbau über {v} Folgen',
     },
   },
 };
@@ -184,7 +265,7 @@ export const it: ExerciseTexts = {
     'Digitala in ordine, poi tocca “Fatto”.',
   ],
   why:
-    'Qui leggi una sequenza di cifre o lettere i cui simboli sono in parte rossi e in parte verdi su nero. Con gli occhiali rosso-verdi ogni occhio vede chiari solo i simboli del proprio colore; la sequenza intera la legge solo chi usa i due occhi insieme. Una cornice e una piccola croce le vede ogni occhio e aiutano a tenere insieme le due immagini. L’app conta solo quali simboli e quale colore mancavano – non è un referto, contano anche occhiali, colori dello schermo e luminosità. Non è dimostrato che l’esercizio migliori la visione con due occhi nella vita quotidiana, nello sport o nel traffico.',
+    'Qui leggi una sequenza di cifre o lettere i cui simboli sono in parte rossi e in parte verdi su nero. Con gli occhiali rosso-verdi ogni occhio vede chiari solo i simboli del proprio colore; la sequenza intera la legge solo chi usa i due occhi insieme. Una cornice e una piccola croce le vede ogni occhio e aiutano a tenere insieme le due immagini. L’app conta solo quali simboli e quale colore mancavano – non è un referto, contano anche occhiali, colori dello schermo e luminosità. Se vuoi, puoi spostare leggermente i due colori l’uno rispetto all’altro (spostamento in diottrie prismatiche); non è una misurazione e non sostituisce una visita. Non è dimostrato che l’esercizio migliori la visione con due occhi nella vita quotidiana, nello sport o nel traffico.',
   goodFor: ['Lettura precisa', 'Sguardo calmo', 'Attenzione'],
   captions: {
     look: 'Guarda con calma la croce al centro',
@@ -205,6 +286,7 @@ export const it: ExerciseTexts = {
     chars: 'Simboli giusti in totale',
     size: 'Altezza dei simboli',
     shown: 'Durata di visualizzazione della sequenza',
+    shift: 'Spostamento delle immagini',
   },
   metricHints: {
     accuracy:
@@ -225,6 +307,8 @@ export const it: ExerciseTexts = {
     size:
       'Altezza dei simboli in centimetri e angolo visivo sotto cui appaiono alla tua distanza (calcolato dalla calibrazione e dalla distanza). È minore di quella impostata se la sequenza altrimenti non entra nello schermo.',
     shown: 'Per quanto tempo la sequenza è rimasta visibile prima che potessi digitare, oppure “illimitata” (allora è rimasta visibile mentre digitavi).',
+    shift:
+      'Spostamento tra i simboli rossi e quelli dell’altro colore in diottrie prismatiche (Δ): 1 Δ devia di 1 cm a 1 m di distanza. Viene convertito in cm e pixel con la distanza della calibrazione. La prima sequenza aveva sempre spostamento 0. Non è una misurazione prismatica e non sostituisce una visita.',
   },
   tips: {
     few:
@@ -275,13 +359,49 @@ export const it: ExerciseTexts = {
       'Con la visualizzazione illimitata il tempo di digitazione comprende anche il tempo di lettura e il ritardo del sensore touch. Confronta solo con i tuoi valori su questo dispositivo e con le stesse impostazioni.',
     checkTitle: 'Immagine di controllo per gli occhiali (senza valutazione)',
     checkText:
-      'Con la lente rossa davanti all’occhio la superficie verde (con rosso e ciano: ciano) dovrebbe apparire scura e viceversa. In caso contrario: controlla luminosità e occhiali o cambia le tonalità.',
+      'Con la lente rossa davanti all’occhio la superficie verde (con rosso e ciano: ciano, con rosso–blu: blu) dovrebbe apparire scura e viceversa. In caso contrario: controlla luminosità e occhiali o cambia le tonalità.',
+    checkTextSteps: 'L’immagine di controllo non valuta nulla; serve solo a regolare occhiali e colori. I valori valgono poi per l’esercizio.',
+    checkStepGlasses: 'Metti gli occhiali. Se porti occhiali correttivi, meglio usare occhiali da sovrapporre. La stanza può essere piuttosto buia.',
+    checkStepLeft: 'Copri l’occhio sinistro: devi vedere solo la superficie {c}, l’altra deve quasi sparire.',
+    checkStepRight: 'Copri l’occhio destro: devi vedere solo la superficie {c}, l’altra deve quasi sparire.',
+    checkStepLens: 'Vedi la superficie sbagliata? Allora la lente è dall’altra parte. Scegli quale lente è davanti al tuo occhio sinistro:',
+    checkLensIs: 'Lente sinistra: {c}',
+    checkStepLevel: 'Regola la luminosità di ogni colore in modo che, coprendo un occhio, la superficie dell’altro occhio quasi sparisca:',
+    checkLevelValue: '{c}: {v} %',
+    checkLevelDown: '{c} più scuro',
+    checkLevelUp: '{c} più chiaro',
+    checkGhost:
+      'Con un occhio vedi entrambe le superfici (immagine fantasma)? Rendi più scuro il colore più chiaro, riduci la luce della stanza e i riflessi sullo schermo e controlla la luminosità dello schermo.',
+    nameBlue: 'Blu',
+    lensBlue: 'blu',
+    adjRed: 'rossa',
+    adjGreen: 'verde',
+    adjCyan: 'ciano',
+    adjBlue: 'blu',
+    missRed: 'Manca il trattino rosso',
+    missGreen: 'Manca il trattino verde',
+    missCyan: 'Manca il trattino ciano',
+    missBlue: 'Manca il trattino blu',
+    strokeTitle: 'Trattini di controllo (indicazione, non referto)',
+    strokeRow: 'Trattino mancante: {c}',
+    strokeValue: '{k} su {n} sequenze',
+    strokeNote:
+      'Si conta solo quante volte hai segnalato che mancava un trattino. È un’indicazione, non un referto: contano anche occhiali, colori dello schermo e luminosità. Se manca sempre lo stesso trattino, parlane con il tuo ottico o con l’oculista.',
+    dirConvergence: 'Convergenza (incrociata)',
+    dirDivergence: 'Divergenza',
+    shiftValue: '{pd} Δ · {dir}',
+    shiftDetail: 'circa {cm} cm (≈ {px} px) tra il rosso e il secondo colore a {d} cm di distanza',
+    shiftRamp: 'è cresciuto in {n} sequenze da 0 a questo valore, la prima sequenza aveva spostamento 0',
+    shiftWarmup: 'la prima sequenza aveva spostamento 0',
+    shiftLimited: 'limitato su questo schermo a {pd} Δ perché la sequenza entri',
+    shiftNote: 'Lo spostamento non è una misurazione prismatica e non sostituisce una visita. Vale solo per questo schermo, questa calibrazione e questa distanza.',
   },
   progression: [
     'Più facile: meno simboli (4–5), simboli più grandi (1,5–2 cm), colori alternati, visualizzazione illimitata, cifre.',
     'Più difficile: più simboli (8–12), simboli più piccoli, colori mescolati a caso, visualizzazione di soli 4 o 2 secondi, lettere o miste.',
     'Imposta quale lente è davanti al tuo occhio sinistro (“Lente sinistra”); solo così la valutazione per occhio può essere corretta. Un confronto dei colori vale solo da 20 simboli per colore – circa 4 sequenze di 10 simboli.',
     'La nostra regola pratica (non è una indicazione della ricerca): se in tre giri di fila risolvi completamente bene oltre il 90 %, rendi più difficile un’impostazione; sotto il 50 % rendila più facile. Cambia sempre una sola impostazione alla volta.',
+    'Spostamento (facoltativo): inizia da 0 Δ e usa la crescita lenta su 4–6 sequenze; aumenta solo quando le sequenze riescono senza fatica e senza visione doppia. È la nostra regola pratica, non una indicazione della ricerca.',
   ],
   cautions: [
     'Alterazione della visione dei colori rosso-verde: circa 8 uomini su 100 e 4 donne su 1000 di origine europea (Birch, 2012). Allora rosso e verde vengono separati in modo errato e l’esercizio non è adatto a te.',
@@ -292,6 +412,10 @@ export const it: ExerciseTexts = {
     'Prima di iniziare controlla l’immagine di controllo: con la lente rossa davanti all’occhio la superficie verde dovrebbe apparire scura e viceversa. Disattiva la modalità notturna e i filtri colore del dispositivo; cambiano i colori. Evita i riflessi sullo schermo.',
     'Imposta lo schermo una volta (“Calibra lo schermo”) perché la dimensione dei simboli in centimetri sia corretta; nel risultato trovi la dimensione con l’angolo visivo. Sugli schermi piccoli la dimensione viene limitata se la sequenza altrimenti non entra.',
     'L’app non può controllare se porti gli occhiali o dove guardi. Si misura solo ciò che digiti. La valutazione per colore e per occhio è un’indicazione, non un referto.',
+    'Spostamento (facoltativo): è un’ulteriore richiesta alla collaborazione dei due occhi, non una misurazione prismatica e non sostituisce una visita. 1 Δ (diottria prismatica) devia di 1 cm a 1 m di distanza. Convergenza significa che l’immagine sembra avvicinarsi e gli occhi ruotano verso l’interno; divergenza che sembra allontanarsi e gli occhi ruotano verso l’esterno. Inizia da 0 e aumenta a piccoli passi.',
+    'In caso di strabismo, visione doppia, vertigini o mal di testa: spostamento solo dopo accordo con lo specialista che ti segue, oppure per niente. In caso di disturbi smetti subito (Muchnick, 2008, p. 6 e 28).',
+    'Stanza buia e occhiali da sovrapporre: rosso e verde si separano meglio con luce soffusa e senza riflessi sullo schermo. Se porti occhiali correttivi, usa occhiali da sovrapporre alla tua montatura.',
+    'Trattini di controllo (facoltativi): un trattino rosso sopra e uno nel secondo colore sotto la sequenza mostrano se arrivano entrambe le immagini. Se ne manca uno, tocca “Manca il trattino” (tastiera: freccia su o giù). Si conta solo quante volte è successo – un’indicazione, non un referto.',
   ],
   params: {
     symbols: {
@@ -317,7 +441,7 @@ export const it: ExerciseTexts = {
     leftLens: {
       label: 'Lente sinistra degli occhiali',
       hint: 'Quale lente è davanti al tuo occhio sinistro? Serve solo alla valutazione per occhio; per il compito stesso non importa.',
-      options: { red: 'Rossa', green: 'Verde (o ciano)' },
+      options: { red: 'Rossa', green: 'Verde, ciano o blu' },
     },
     showFor: {
       label: 'Durata di visualizzazione della sequenza',
@@ -331,13 +455,48 @@ export const it: ExerciseTexts = {
     },
     tones: {
       label: 'Tonalità',
-      hint: 'Lo standard è rosso puro (#FF0000) e verde puro (#00FF00). Alternativa: rosso e ciano (#FF0000 e #00FFFF), se i tuoi occhiali hanno lenti rosso-ciano. L’immagine di controllo mostra i colori impostati.',
-      options: { redgreen: 'Rosso e verde', redcyan: 'Rosso e ciano' },
+      hint: 'Lo standard è rosso puro (#FF0000) e verde puro (#00FF00). Alternative: rosso e ciano (#FF0000 e #00FFFF) oppure rosso e blu (#FF0000 e #00A0FF). Gli occhiali rosso-ciano funzionano con la coppia di colori rosso–blu. L’immagine di controllo mostra i colori impostati.',
+      options: { redgreen: 'Rosso e verde', redcyan: 'Rosso e ciano', redblue: 'Rosso e blu' },
     },
     brightness: {
       label: 'Luminosità dei colori',
-      hint: 'Quota della luminosità piena dei colori, dall’80 al 100 per cento. Se la luminosità non si adatta agli occhiali, spesso aiuta un piccolo passo; controllalo con l’immagine di controllo.',
+      hint: 'Quota comune della luminosità piena dei colori, dall’80 al 100 per cento. Se la luminosità non si adatta agli occhiali, spesso aiuta un piccolo passo; controllalo con l’immagine di controllo. Ogni colore si può inoltre scurire singolarmente.',
       short: '{v} %',
+    },
+    redLevel: {
+      label: 'Luminosità del rosso',
+      hint: 'Quota della luminosità dei simboli rossi, dal 30 al 100 per cento a passi di 10, oltre alla luminosità comune. Nell’immagine di controllo (“Passo dopo passo”) la regoli con “Rosso più scuro” e “Rosso più chiaro”.',
+      short: 'Rosso {v} %',
+    },
+    secondLevel: {
+      label: 'Luminosità del secondo colore',
+      hint: 'Quota della luminosità dei simboli verdi, ciano o blu, dal 30 al 100 per cento a passi di 10, oltre alla luminosità comune. Nell’immagine di controllo (“Passo dopo passo”) la regoli con i tasti “più scuro” e “più chiaro”.',
+      short: 'Secondo colore {v} %',
+    },
+    glassesCheck: {
+      label: 'Immagine di controllo nell’introduzione',
+      hint: 'Semplice: due superfici colorate. Passo dopo passo: metti gli occhiali, copri un occhio alla volta, scegli la lente e regola la luminosità di ogni colore. L’immagine di controllo non valuta nulla e cambia l’esercizio solo tramite le impostazioni che scegli al suo interno.',
+      options: { simple: 'Semplice', steps: 'Passo dopo passo' },
+    },
+    controlMarks: {
+      label: 'Trattini di controllo',
+      hint: 'Mostra sopra la sequenza un breve trattino rosso e sotto un breve trattino nel secondo colore. Se te ne manca uno, tocca “Manca il trattino” (tastiera: freccia su per quello superiore, freccia giù per quello inferiore). Nel risultato trovi quante volte mancava quale trattino – un’indicazione, non un referto.',
+      options: { off: 'No', on: 'Sì' },
+    },
+    shiftPd: {
+      label: 'Spostamento in diottrie prismatiche Δ',
+      hint: 'Sposta orizzontalmente i simboli rossi e quelli del secondo colore l’uno rispetto all’altro (0 = no, fino a 12 Δ). 1 Δ devia di 1 cm a 1 m di distanza; lo spostamento viene convertito in cm e pixel con la distanza della calibrazione (senza calibrazione è solo una stima). La prima sequenza ha sempre spostamento 0. Non è una misurazione prismatica e non sostituisce una visita. In caso di strabismo, visione doppia, vertigini o mal di testa solo dopo accordo con lo specialista che ti segue, oppure per niente.',
+      short: 'Spostamento {v} Δ',
+    },
+    shiftDir: {
+      label: 'Direzione dello spostamento',
+      hint: 'Convergenza (incrociata): l’immagine sembra avvicinarsi, gli occhi ruotano verso l’interno. Divergenza: l’immagine sembra allontanarsi, gli occhi ruotano verso l’esterno. Agisce solo se lo spostamento è maggiore di 0.',
+      options: { convergence: 'Convergenza (incrociata)', divergence: 'Divergenza' },
+    },
+    rampDurchgaenge: {
+      label: 'Crescita lenta dello spostamento',
+      hint: 'Numero di sequenze in cui lo spostamento cresce da 0 al valore impostato (0 = no: allora il valore vale dalla seconda sequenza). La prima sequenza ha sempre spostamento 0. Agisce solo se lo spostamento è maggiore di 0.',
+      short: 'Crescita su {v} sequenze|Crescita su {v} sequenze',
     },
   },
 };

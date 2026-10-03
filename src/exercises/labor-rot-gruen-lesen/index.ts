@@ -14,24 +14,31 @@
  *   Bedienung (Tasten, Beschriftungen, ✓/✗) hängt nicht an der Farbe; nur die Aufgabe selbst ist farbbasiert.
  * - Ruhig: kein Flackern, keine schnellen Wechsel, keine Blitze; Rückmeldung weich (✓/✗ als Symbol, kein Rotblitz).
  * - Gemessen wird nur, was du eintippst – nicht, ob du die Brille trägst, wohin du schaust, oder welches Auge etwas sieht.
+ * - Optional (jeweils abschaltbar, Standard aus): Farbpaar Rot–Blau, Helligkeit je Farbe, Prüfbild Schritt für Schritt,
+ *   Kontrollstriche mit Tasten „Strich fehlt“ (Zählung je Farbe), Versatz der Farbbilder in Prismendioptrien Δ mit Richtung
+ *   Konvergenz/Divergenz und langsamem Aufbau (Umrechnung mit der Sehentfernung der Kalibrierung). Keine Prismenmessung.
  */
 import { calibOf } from '../../core/calib';
 import { C, fillRR, font, hit, rrPath, text, type Rect } from '../../core/draw';
 import { paramsOf } from '../../core/params';
 import { clamp } from '../../core/stats';
-import type { ColorCheckInfo, Exercise, ExerciseContext, ExerciseDefinition, ExerciseParams, ExerciseResult, ExerciseTexts, Metric, PointerInfo, ResultDetailRow, ResultDetailTable } from '../../core/types';
+import type { ColorCheckAdjust, ColorCheckInfo, Exercise, ExerciseContext, ExerciseDefinition, ExerciseParams, ExerciseResult, ExerciseTexts, Metric, NumberParamDef, PointerInfo, ResultDetailRow, ResultDetailTable } from '../../core/types';
 import { restPoint } from '../_shared/tippziele';
 import { drawSoftCheck, drawSoftCross } from '../_shared/weiche-marken';
 import { rgLayout, type RgLayout } from './layout';
 import {
   COLOR_GAP_PCT,
+  colorOffsets,
   eyeColors,
   MIN_PER_COLOR,
   PARAMS,
+  pdToCm,
   pointsFor,
+  pxToPd,
   QUICK_TRIALS,
   rgParams,
   RgSession,
+  shiftPx,
   showMs,
   tipFor,
   toneCss,
@@ -52,7 +59,23 @@ const UI_LINE = 'rgba(255,255,255,0.28)';
 const UI_FILL = 'rgba(255,255,255,0.12)';
 
 // Intro-Film: zwei kurze Folgen; bei der zweiten zeigt die Hand, wie man „nicht gesehen“ eingibt
-const DEMO_PARAMS: Partial<RgParams> = { trials: 2, symbols: 'digits', length: 4, sizeCm: 1.8, mix: 'alternate', showFor: 'unlimited', leftLens: 'red', tones: 'redgreen', brightness: 100 };
+const DEMO_PARAMS: Partial<RgParams> = {
+  trials: 2,
+  symbols: 'digits',
+  length: 4,
+  sizeCm: 1.8,
+  mix: 'alternate',
+  showFor: 'unlimited',
+  leftLens: 'red',
+  tones: 'redgreen',
+  brightness: 100,
+  redLevel: 100,
+  secondLevel: 100,
+  controlMarks: false,
+  shiftPd: 0,
+  shiftDir: 'convergence',
+  rampDurchgaenge: 0,
+};
 const DEMO_LEAD_MS = 800;
 const DEMO_FEEDBACK_MS = 1000;
 const DEMO_START_MS = 600;
@@ -79,12 +102,14 @@ class RotGruenLesen implements Exercise {
   private autoPlanned = false;
   private limited = false;
   private lastCaption = '';
+  /** Kleinster möglicher Versatz (px), auf den enge Bühnen den gewünschten Versatz begrenzt haben (null = nie begrenzt) */
+  private shiftCapPx: number | null = null;
 
   constructor(private readonly ctx: ExerciseContext) {
     this.demo = ctx.mode === 'demo';
     const base = rgParams(paramsOf(ctx, PARAMS));
     this.p = this.demo ? { ...base, ...DEMO_PARAMS } : ctx.quick ? { ...base, trials: Math.min(base.trials, QUICK_TRIALS) } : base;
-    this.css = toneCss(this.p.tones, this.p.brightness);
+    this.css = toneCss(this.p.tones, this.p.brightness, this.p.redLevel, this.p.secondLevel);
     this.session = new RgSession(this.p, {
       rng: ctx.rng,
       leadMs: this.demo ? DEMO_LEAD_MS : undefined,
@@ -96,6 +121,7 @@ class RotGruenLesen implements Exercise {
 
   private layout(): RgLayout {
     const s = this.ctx.stage;
+    const calib = calibOf(this.ctx);
     return rgLayout({
       w: s.w,
       h: s.h,
@@ -105,7 +131,17 @@ class RotGruenLesen implements Exercise {
       wantGlyphPx: calibOf(this.ctx).sizePx(this.p.sizeCm),
       length: this.p.length,
       keyCount: this.session.keys.length,
+      controlMarks: this.p.controlMarks,
+      shiftPx: shiftPx(this.p.shiftPd, calib.viewDistanceCm, calib.pxPerCm),
     });
+  }
+
+  /** Verschiebung je Farbe (px) im laufenden Durchgang; nie größer als auf der Bühne möglich (dann wird das vermerkt) */
+  private offsets(L: RgLayout): Record<ColorId, number> {
+    const calib = calibOf(this.ctx);
+    const want = shiftPx(this.session.shiftPd, calib.viewDistanceCm, calib.pxPerCm);
+    if (want > L.shiftMaxPx + 0.5) this.shiftCapPx = Math.min(this.shiftCapPx ?? Infinity, L.shiftMaxPx);
+    return colorOffsets(this.p.leftLens, this.p.shiftDir, Math.min(want, L.shiftMaxPx));
   }
 
   /** Platz unten im Intro-Film für Hand und Bildunterschrift */
@@ -203,12 +239,17 @@ class RotGruenLesen implements Exercise {
   pointerDown(p: PointerInfo): void {
     if (this.done || !this.started) return;
     const s = this.session;
-    if (!s.canEnter) return;
+    if (!s.canEnter && !s.canMark) return;
     if (p.type === 'ghost' && this.autoPlanned) {
       this.autoPlanned = false;
       this.autoPos++;
     }
     const L = this.layout();
+    if (s.canMark && L.missA && L.missB) {
+      if (hit(L.missA, p.x, p.y, this.pad(L.missA))) return this.toggleMissing('a');
+      if (hit(L.missB, p.x, p.y, this.pad(L.missB))) return this.toggleMissing('b');
+    }
+    if (!s.canEnter) return;
     if (hit(L.done, p.x, p.y, this.pad(L.done))) {
       this.submit(p.t);
       return;
@@ -227,7 +268,13 @@ class RotGruenLesen implements Exercise {
   }
 
   keyDown(key: string, t: number): void {
-    if (this.done || !this.started || !this.session.canEnter) return;
+    if (this.done || !this.started) return;
+    // Kürzel für „Strich fehlt“: Pfeil nach oben = oberer (roter) Strich, Pfeil nach unten = unterer Strich
+    if (key === 'ArrowUp' || key === 'ArrowDown') {
+      this.toggleMissing(key === 'ArrowUp' ? 'a' : 'b');
+      return;
+    }
+    if (!this.session.canEnter) return;
     if (key === 'Enter') this.submit(t);
     else if (key === 'Backspace') {
       if (this.session.back()) this.ctx.sfx.tap();
@@ -235,6 +282,11 @@ class RotGruenLesen implements Exercise {
       const k = key === UNSURE ? UNSURE : key.toUpperCase();
       this.press(k);
     }
+  }
+
+  /** „Strich fehlt“ melden oder zurücknehmen */
+  private toggleMissing(c: ColorId): void {
+    if (this.session.toggleMissing(c)) this.ctx.sfx.tap();
   }
 
   private press(key: string): void {
@@ -254,6 +306,11 @@ class RotGruenLesen implements Exercise {
     const s = this.session;
     const { rng } = this.ctx;
     const out: string[] = [];
+    if (!this.demo && this.p.controlMarks) {
+      // gelegentlich meldet die Hand einen fehlenden Kontrollstrich (je Farbe, nur für Tests)
+      if (rng.next() < 0.12) out.push('missA');
+      if (rng.next() < 0.12) out.push('missB');
+    }
     s.target.forEach((cell, i) => {
       if (this.demo) {
         // Film: erste Folge ganz richtig, in der zweiten ist ein Zeichen „nicht gesehen“
@@ -283,7 +340,7 @@ class RotGruenLesen implements Exercise {
     const key = this.autoKeys[this.autoPos];
     if (key === undefined) return;
     const L = this.layout();
-    const r = key === 'done' ? L.done : L.keys[s.keys.indexOf(key)];
+    const r = key === 'done' ? L.done : key === 'missA' ? L.missA : key === 'missB' ? L.missB : L.keys[s.keys.indexOf(key)];
     if (!r) return;
     const quick = this.ctx.quick;
     let delay: number;
@@ -321,8 +378,7 @@ class RotGruenLesen implements Exercise {
   }
 
   private colorName(c: ColorId): string {
-    const f = this.ctx.texts.feedback;
-    return c === 'a' ? f.nameRed : this.p.tones === 'redcyan' ? f.nameCyan : f.nameGreen;
+    return colorNameOf(this.ctx.texts, this.p.tones, c);
   }
 
   private tallyText(tl: ColorTally): string {
@@ -336,6 +392,32 @@ class RotGruenLesen implements Exercise {
       .replace('{p}', this.ctx.fmt.num((100 * (tl.missing + tl.wrong)) / tl.shown, 0))
       .replace('{miss}', String(tl.missing))
       .replace('{wrong}', String(tl.wrong));
+  }
+
+  /** Zeile „Versatz der Bilder“: Δ, Richtung, Umrechnung in cm und px, Aufbau, Begrenzung, Kalibrierung */
+  private shiftRow(calib: ReturnType<typeof calibOf>, L: RgLayout): ResultDetailRow {
+    const { texts, fmt } = this.ctx;
+    const f = texts.feedback;
+    const p = this.p;
+    const dist = calib.viewDistanceCm;
+    const cm = pdToCm(p.shiftPd, dist);
+    const notes = [
+      f.shiftDetail
+        .replace('{cm}', fmt.num(cm, 1))
+        .replace('{px}', fmt.num(cm * calib.pxPerCm, 0))
+        .replace('{d}', fmt.num(dist, 0)),
+      p.rampDurchgaenge >= 2 ? f.shiftRamp.replace('{n}', String(p.rampDurchgaenge)) : f.shiftWarmup,
+    ];
+    if (this.shiftCapPx !== null) {
+      const cap = pxToPd(Math.min(this.shiftCapPx, L.shiftMaxPx), dist, calib.pxPerCm);
+      notes.push(f.shiftLimited.replace('{pd}', fmt.num(cap, 1)));
+    }
+    if (!calib.calibrated) notes.push(f.notCalibrated);
+    return {
+      label: texts.metrics.shift,
+      value: f.shiftValue.replace('{pd}', fmt.num(p.shiftPd, 1)).replace('{dir}', p.shiftDir === 'divergence' ? f.dirDivergence : f.dirConvergence),
+      text: notes.join(' · '),
+    };
   }
 
   buildResult(sum: RgSummary): ExerciseResult {
@@ -367,7 +449,7 @@ class RotGruenLesen implements Exercise {
     // Nach Auge (nur mit genug Zeichen je Farbe)
     if (sum.enough) {
       const eyes = eyeColors(this.p.leftLens);
-      const lens = (c: ColorId) => (c === 'a' ? f.lensRed : this.p.tones === 'redcyan' ? f.lensCyan : f.lensGreen);
+      const lens = (c: ColorId) => lensNameOf(texts, this.p.tones, c);
       const eyeRows: ResultDetailRow[] = [
         { label: f.eyeLeft.replace('{lens}', lens(eyes.left)), value: this.tallyText(sum.byEye.left), text: this.errText(sum.byEye.left) },
         { label: f.eyeRight.replace('{lens}', lens(eyes.right)), value: this.tallyText(sum.byEye.right), text: this.errText(sum.byEye.right) },
@@ -375,6 +457,15 @@ class RotGruenLesen implements Exercise {
       const hintText =
         sum.moreOftenEye === 'left' ? f.eyeMoreLeft : sum.moreOftenEye === 'right' ? f.eyeMoreRight : f.eyeEven.replace('{gap}', String(COLOR_GAP_PCT));
       details.push({ title: f.eyeTitle, rows: eyeRows, note: `${hintText} ${f.eyeNote}` });
+    }
+    // Kontrollstriche: Zählung je Farbe (nur ein Hinweis)
+    if (sum.strokes) {
+      const st = sum.strokes;
+      const row = (c: ColorId, k: number): ResultDetailRow => ({
+        label: f.strokeRow.replace('{c}', this.colorName(c)),
+        value: f.strokeValue.replace('{k}', String(k)).replace('{n}', String(st.n)),
+      });
+      details.push({ title: f.strokeTitle, rows: [row('a', st.missA), row('b', st.missB)], note: f.strokeNote });
     }
     // Weitere Werte
     const L = this.layout();
@@ -390,7 +481,9 @@ class RotGruenLesen implements Exercise {
     more.push({ label: texts.metrics.size, value: f.sizeValue.replace('{cm}', fmt.num(cm, 1)), text: sizeNotes.join(' · ') });
     const ms = showMs(this.p);
     more.push({ label: texts.metrics.shown, value: ms === null ? f.unlimited : fmt.time(ms, 0) });
-    details.push({ title: f.moreTitle, rows: more, note: f.moreNote });
+    const shifted = this.p.shiftPd > 0;
+    if (shifted) more.push(this.shiftRow(calib, L));
+    details.push({ title: f.moreTitle, rows: more, note: shifted ? `${f.moreNote} ${f.shiftNote}` : f.moreNote });
 
     return {
       primary: { key: 'accuracy', value: sum.accuracy ?? 0, unit: 'percent', better: 'higher' },
@@ -413,13 +506,18 @@ class RotGruenLesen implements Exercise {
     const s = this.session;
     const L = this.layout();
     this.drawFrame(g, L);
-    if (s.visible) this.drawChars(g, L);
+    if (s.visible) {
+      const offs = this.offsets(L);
+      this.drawChars(g, L, offs);
+      this.drawStrokes(g, L, offs);
+    }
     const active = s.phase === 'input';
     this.drawEntry(g, L);
     if (s.phase === 'feedback') {
       this.drawMarks(g, L, t);
       this.drawVerdict(g, L);
     } else if (!this.demo && active) this.drawAsk(g, L);
+    this.drawMissButtons(g, L);
     this.drawActions(g, L, active);
     this.drawKeys(g, L, active);
   }
@@ -443,17 +541,70 @@ class RotGruenLesen implements Exercise {
     g.restore();
   }
 
-  /** Die Folge: jedes Zeichen in seiner Farbe */
-  private drawChars(g: CanvasRenderingContext2D, L: RgLayout): void {
+  /** Die Folge: jedes Zeichen in seiner Farbe, mit Versatz je Farbe (Rot nach rechts oder links, die zweite Farbe umgekehrt) */
+  private drawChars(g: CanvasRenderingContext2D, L: RgLayout, offs: Record<ColorId, number>): void {
     g.save();
     g.font = font(L.glyph / 0.72, 700);
     g.textAlign = 'center';
     g.textBaseline = 'middle';
     this.session.target.forEach((c, i) => {
       g.fillStyle = c.color === 'a' ? this.css.a : this.css.b;
-      g.fillText(c.ch, L.chars[i].x, L.chars[i].y);
+      g.fillText(c.ch, L.chars[i].x + offs[c.color], L.chars[i].y);
     });
     g.restore();
+  }
+
+  /** Kontrollstriche: oben ein kurzer Strich in Rot, unten einer in der zweiten Farbe (gleicher Versatz wie die Zeichen) */
+  private drawStrokes(g: CanvasRenderingContext2D, L: RgLayout, offs: Record<ColorId, number>): void {
+    const st = L.strokes;
+    if (!st) return;
+    g.save();
+    g.fillStyle = this.css.a;
+    g.fillRect(st.x + offs.a - st.len / 2, st.yA - st.thick / 2, st.len, st.thick);
+    g.fillStyle = this.css.b;
+    g.fillRect(st.x + offs.b - st.len / 2, st.yB - st.thick / 2, st.len, st.thick);
+    g.restore();
+  }
+
+  /** Tasten „Strich fehlt“: Beschriftung mit Pfeil (oben/unten) und ✓ bei gemeldetem Strich (nie nur Farbe) */
+  private drawMissButtons(g: CanvasRenderingContext2D, L: RgLayout): void {
+    if (!L.missA || !L.missB) return;
+    const s = this.session;
+    const f = this.ctx.texts.feedback;
+    const enabled = s.canMark;
+    const items: Array<{ r: Rect; c: ColorId; arrow: string }> = [
+      { r: L.missA, c: 'a', arrow: '↑' },
+      { r: L.missB, c: 'b', arrow: '↓' },
+    ];
+    for (const { r, c, arrow } of items) {
+      const on = s.missing[c];
+      g.save();
+      g.globalAlpha = enabled ? 1 : 0.35;
+      this.btn(g, r, on ? 'rgba(255,255,255,0.26)' : UI_FILL);
+      const key = c === 'a' ? 'missRed' : this.p.tones === 'redcyan' ? 'missCyan' : this.p.tones === 'redblue' ? 'missBlue' : 'missGreen';
+      const label = `${arrow} ${f[key]}`;
+      const room = r.w * 0.72;
+      let size = clamp(r.h * 0.28, 11, 19);
+      g.font = font(size, 700);
+      const width = g.measureText(label).width;
+      if (width > room) size = Math.max(9, size * (room / width));
+      text(g, label, r.x + r.w * 0.58, r.y + r.h / 2 + 1, size, C.fg, { weight: 700 });
+      if (on) {
+        const aw = clamp(r.h * 0.2, 6, 11);
+        const cx = r.x + r.w * 0.1;
+        const cy = r.y + r.h / 2;
+        g.strokeStyle = C.fg;
+        g.lineWidth = 3;
+        g.lineCap = 'round';
+        g.lineJoin = 'round';
+        g.beginPath();
+        g.moveTo(cx - aw, cy);
+        g.lineTo(cx - aw * 0.25, cy + aw * 0.75);
+        g.lineTo(cx + aw, cy - aw * 0.7);
+        g.stroke();
+      }
+      g.restore();
+    }
   }
 
   /** Eingabefeld: ein Platz je Zeichen mit Unterstrich, getippte Zeichen neutral hell darin */
@@ -590,18 +741,70 @@ class RotGruenLesen implements Exercise {
   }
 }
 
-/** Prüfbild im Intro (ohne Wertung): zwei Flächen in den eingestellten Farben, damit die Brille geprüft werden kann */
+/** Name der Farbe (Rot; Grün, Cyan oder Blau je nach Farbpaar) */
+function colorNameOf(tx: ExerciseTexts, tones: RgParams['tones'], c: ColorId): string {
+  const f = tx.feedback;
+  return c === 'a' ? f.nameRed : tones === 'redcyan' ? f.nameCyan : tones === 'redblue' ? f.nameBlue : f.nameGreen;
+}
+
+/** Name des Glases (rot; grün, cyan oder blau) */
+function lensNameOf(tx: ExerciseTexts, tones: RgParams['tones'], c: ColorId): string {
+  const f = tx.feedback;
+  return c === 'a' ? f.lensRed : tones === 'redcyan' ? f.lensCyan : tones === 'redblue' ? f.lensBlue : f.lensGreen;
+}
+
+/**
+ * Prüfbild im Intro (ohne Wertung): zwei Flächen in den eingestellten Farben, damit die Brille geprüft werden kann.
+ * Mit „Schritt für Schritt“ (Einstellung `glassesCheck`): Brille aufsetzen, je ein Auge zuhalten, Glas wählen, Helligkeit je
+ * Farbe verstellen (30–100 %, Schritte 10 %), ein Satz zu Geisterbildern. Die Werte werden als Einstellungen gespeichert.
+ */
 function colorCheck(params: ExerciseParams, tx: ExerciseTexts): ColorCheckInfo {
   const p = rgParams(params);
-  const css = toneCss(p.tones, p.brightness);
+  const css = toneCss(p.tones, p.brightness, p.redLevel, p.secondLevel);
   const f = tx.feedback;
-  return {
+  const info: ColorCheckInfo = {
     title: f.checkTitle,
     text: f.checkText,
     panels: [
-      { color: css.a, label: f.nameRed },
-      { color: css.b, label: p.tones === 'redcyan' ? f.nameCyan : f.nameGreen },
+      { color: css.a, label: colorNameOf(tx, p.tones, 'a') },
+      { color: css.b, label: colorNameOf(tx, p.tones, 'b') },
     ],
+  };
+  if (p.glassesCheck !== 'steps') return info;
+  const eyes = eyeColors(p.leftLens);
+  const adj = (c: ColorId) => (c === 'a' ? f.adjRed : p.tones === 'redcyan' ? f.adjCyan : p.tones === 'redblue' ? f.adjBlue : f.adjGreen);
+  const lensOption = (v: 'red' | 'green') => ({ value: v, label: f.checkLensIs.replace('{c}', lensNameOf(tx, p.tones, v === 'red' ? 'a' : 'b')) });
+  const level = (key: 'redLevel' | 'secondLevel', c: ColorId): ColorCheckAdjust => {
+    const d = PARAMS.find((x) => x.key === key) as NumberParamDef;
+    const value = key === 'redLevel' ? p.redLevel : p.secondLevel;
+    const name = colorNameOf(tx, p.tones, c);
+    return {
+      kind: 'level',
+      key,
+      value,
+      min: d.min,
+      max: d.max,
+      step: d.step,
+      valueText: f.checkLevelValue.replace('{c}', name).replace('{v}', String(value)),
+      downLabel: f.checkLevelDown.replace('{c}', name),
+      upLabel: f.checkLevelUp.replace('{c}', name),
+    };
+  };
+  return {
+    ...info,
+    text: f.checkTextSteps,
+    steps: [
+      { text: f.checkStepGlasses },
+      // Linkes Auge zugehalten → das rechte Auge sieht nur die Farbe seines Glases, und umgekehrt
+      { text: f.checkStepLeft.replace('{c}', adj(eyes.right)) },
+      { text: f.checkStepRight.replace('{c}', adj(eyes.left)) },
+      {
+        text: f.checkStepLens,
+        adjust: [{ kind: 'choice', key: 'leftLens', label: tx.params?.leftLens?.label ?? 'leftLens', value: p.leftLens, options: [lensOption('red'), lensOption('green')] }],
+      },
+      { text: f.checkStepLevel, adjust: [level('redLevel', 'a'), level('secondLevel', 'b')] },
+    ],
+    note: f.checkGhost,
   };
 }
 
