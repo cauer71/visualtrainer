@@ -65,6 +65,12 @@ import { science as laborWoerterBauenScience } from '../exercises/labor-woerter-
 import { science as laborZeichenFindenScience } from '../exercises/labor-zeichen-finden/science';
 import { science as laborMentaleRotationScience } from '../exercises/labor-mentale-rotation/science';
 import { science as laborRotGruenLesenScience } from '../exercises/labor-rot-gruen-lesen/science';
+import { science as laborHessScience } from '../exercises/labor-hess/science';
+import { science as laborWorthScience } from '../exercises/labor-worth/science';
+import { science as laborSchoberScience } from '../exercises/labor-schober/science';
+import { science as laborDiplopieScience } from '../exercises/labor-diplopie/science';
+import { science as laborVertikaleScience } from '../exercises/labor-vertikale/science';
+import { science as laborProjektionScience } from '../exercises/labor-projektion/science';
 import { science as sanfteBlickfolgeScience } from '../exercises/sanfte-blickfolge/science';
 import { science as zickzackBahnScience } from '../exercises/zickzack-bahn/science';
 import { science as dreiecksbahnScience } from '../exercises/dreiecksbahn/science';
@@ -609,6 +615,10 @@ export const SCIENCE: Record<string, ScienceEntry> = {
   },
   ...Object.fromEntries(
     [leuchtfolgeScience, zahlenspanneScience, rastermusterScience, rueckblickScience, woWarEsScience, leuchtpfadScience, liegendeAchtScience, wellenbahnScience, zweiZieleScience, sekundenGefuehlScience, blicksprungGalerieScience, fuenfTuerenScience, fallendeZieleScience, hellsteKugelScience, ziehenAblegenScience, sanfteBlickfolgeScience, zickzackBahnScience, dreiecksbahnScience, ausweichzielScience, sprungzielScience, landepunktScience, zieleAbraeumenScience, pendelFangScience, hinterDerDeckungScience, schwarmWechselScience, randPingScience, tippTempoScience, wortlisteScience, ruhigeHandScience, spurFolgenScience, wortstromScience, abprallFangScience, dunkelphasenScience, tempoWechselScience, nachziehSpurScience, hoehenwechselBahnScience, richtungschaosScience, flickZieleScience, sofortReaktionScience, gegenhaltenScience, seitwaertsFolgenScience, randzielFlickScience, kurvenbahnFolgenScience, mikrokorrekturScience, zielauswahlScience, winkelHaltenScience, ausweichFolgenScience, zickzackFolgenScience, glattFolgenScience, hochRunterFolgenScience, zielKlickenScience, tastenWahlScience, praezisionsFlickScience, zielketteScience, randabwehrScience, kugelnFangenScience, ausweichenScience, schrumpfendeZieleScience, inDieBahnScience, rasterAusweichenScience, sprossenLeiterScience, gegenDenWindScience, sprungAbfangenScience, diagonalKorridorScience, musterNachzeichnenScience, richtungWortScience, seiteErkennenScience, zahlBuchstabeWirbelScience, vierZieleWechselScience, pendelballScience, laborSpotTouchScience, laborZieleOrdnenScience, laborWahlreaktionScience, laborStartZielScience, laborBlitzErkennungScience, laborPeripheresErkennenScience, laborDoppelaufgabeScience, laborZielVerfolgenScience, laborTaktSakkadenScience, laborBuchstabentafelScience, laborSequenzGedaechtnisScience, laborWoerterBauenScience, laborZeichenFindenScience, laborMentaleRotationScience, laborRotGruenLesenScience].map((e) => [e.id, e]),
+  ),
+  // Funktionsübungen (Rot-Grün-Brille und weitere)
+  ...Object.fromEntries(
+    [laborHessScience, laborWorthScience, laborSchoberScience, laborDiplopieScience, laborVertikaleScience, laborProjektionScience].map((e) => [e.id, e]),
   ),
 };
 

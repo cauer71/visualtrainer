@@ -1,0 +1,156 @@
+import type { ExerciseTexts } from '../../core/types';
+import { COMMON } from '../_shared/pruefung-texte';
+
+// Funktionsübung der Marke „Labor“ nach dem Prinzip der subjektiven visuellen Vertikalen (keine Brille), Texte in du-Form und
+// einfacher Sprache. Regeln: kein Ersatz für die Untersuchung, keine Befunddeutung, keine Richtwerte, kein Wirkversprechen;
+// gezeigt werden Übungswerte in Grad. Voraussetzung: Gerät gerade, Kopf aufrecht, Raum abgedunkelt.
+
+export const de: ExerciseTexts = {
+  title: 'Subjektive Vertikale',
+  tagline: 'Stelle eine helle Linie im Dunkeln so ein, dass sie senkrecht wirkt.',
+  steps: ['Gerät gerade aufstellen, Raum abdunkeln.', 'Schaue auf die Linie, Kopf aufrecht.', 'Wirkt sie senkrecht: „Senkrecht“.'],
+  why:
+    'Die subjektive visuelle Vertikale ist die Richtung, die du im Dunkeln als senkrecht empfindest. Sie hängt vom Zusammenspiel von Gleichgewichtsorgan, Sehen und Körperwahrnehmung ab und wird in der Fachliteratur bei Störungen des Gleichgewichtssystems untersucht. Hier machst du eine digitale Näherung als Funktionsübung nach diesem Prinzip: Eine helle Linie steht auf dunklem Grund, entweder dreht sie sich langsam und du stoppst sie, oder du stellst sie mit Tasten ein. Die Starts wechseln zwischen rechts und links geneigt. Die App zeigt, wie weit deine Einstellungen von der echten Senkrechten abwichen (Übungswerte in Grad), und deutet das nicht. Sie ersetzt keine Untersuchung. Ob die Übung für Alltag oder Gleichgewicht etwas bringt, ist nicht belegt.',
+  goodFor: ['Gefühl für „senkrecht“', 'Ruhiges Einstellen', 'Dunkel schauen'],
+  captions: {
+    look: 'Eine helle Linie im Dunkeln.',
+    rotate: 'Sie dreht sich langsam.',
+    stop: 'Wirkt sie senkrecht: „Senkrecht“.',
+    done: 'Danach siehst du die Werte.',
+  },
+  metrics: { n: 'Fertige Einstellungen', ms_mean: 'Zeit je Einstellung' },
+  metricHints: {
+    n: 'Wie viele Einstellungen du abgeschlossen hast. Das ist nur die Zahl deiner Eingaben, keine Leistung und kein Befund.',
+    ms_mean: 'Mittlere Zeit von der Anzeige bis zu „Senkrecht“. Sie enthält beim Drehen die Zeit, die die Linie bis zur Senkrechten braucht; vergleiche nur mit denselben Einstellungen.',
+  },
+  tips: {
+    calm: 'Beurteile die Linie, nicht den Bildschirmrand. Entscheide zügig nach dem ersten Eindruck, starre nicht zu lange auf die Linie und neige den Kopf nicht.',
+    more: 'Mit wenigen Einstellungen sind Mittel und Streuung unsicher. Mehr Einstellungen (10 bis 12) zeigen genauer, wie deine Einstellungen streuen.',
+  },
+  feedback: {
+    progress: '{n} / {total}',
+    hintRotate: 'Sobald die Linie senkrecht wirkt: „Senkrecht“ (Leertaste).',
+    hintAdjust: 'Stelle die Linie senkrecht ein, dann „Senkrecht“ (Leertaste).',
+    plumb: 'Senkrecht',
+    valuesTitle: 'Übungswerte (keine Deutung)',
+    rowMean: 'Mittlere Einstellung',
+    meanValue: '{v} °',
+    meanText: '+ = im Uhrzeigersinn geneigt, − = gegen den Uhrzeigersinn',
+    rowAbs: 'Mittlerer Betrag der Abweichung',
+    rowSd: 'Streuung der Einstellungen',
+    rowHyst: 'Unterschied je nach Startseite',
+    hystText: 'Mittel bei Start rechts geneigt minus Mittel bei Start links geneigt',
+    setupTitle: 'Aufstellung',
+    rowMethod: 'Verfahren',
+    methodRotate: 'Drehen und stoppen ({v} Grad pro Sekunde)',
+    methodAdjust: 'Mit Tasten einstellen',
+    rowLine: 'Länge der Linie',
+    lineValue: '{cm} cm',
+    limited: 'auf diesem Bildschirm begrenzt',
+    notCalibrated: 'nicht kalibriert: nur eine Schätzung',
+    setupText: 'Die Winkel stimmen nur, wenn das Gerät wirklich gerade steht und der Kopf aufrecht bleibt.',
+    valuesNote: COMMON.de.values,
+    fewNote: COMMON.de.fewValues,
+  },
+  progression: [
+    'Gröber: größere Startneigung (30 bis 40 Grad) und schnelleres Drehen.',
+    'Feiner: kleinere Startneigung (10 bis 15 Grad), langsames Drehen (0,5 bis 1 Grad pro Sekunde) und mehr Einstellungen (12 bis 20).',
+    'Das Verfahren „Einstellen“ hängt nicht von deiner Reaktionszeit ab, braucht aber mehr Zeit.',
+    'Zum Vergleichen mit dir selbst: dieselben Einstellungen und dieselbe Aufstellung des Geräts.',
+  ],
+  cautions: [
+    COMMON.de.principle,
+    'Stelle das Gerät gerade und fest auf (prüfe mit einer Wasserwaage, dass der Bildschirmrand wirklich senkrecht ist), dunkle den Raum so weit wie möglich ab und sitze aufrecht mit geradem Kopf. Rahmen, Möbelkanten und Fensterkreuze geben dir Hinweise auf die Senkrechte und stören.',
+    'Ohne gerade Aufstellung und ohne abgedunkelten Raum sind die Werte nicht aussagekräftig. Die App nennt keine Richtwerte; je nach Verfahren und Gerät fallen die Werte unterschiedlich aus.',
+    'Bei Schwindel, Übelkeit oder Kopfschmerz nach der Übung: Pause machen; bei anhaltenden Beschwerden ärztlich abklären lassen.',
+    COMMON.de.warn,
+    COMMON.de.epilepsy,
+    COMMON.de.calm,
+  ],
+  params: {
+    trials: { label: 'Anzahl der Einstellungen', hint: 'Wie viele Einstellungen ein Durchlauf hat (4 bis 20, gerade Zahlen). Die Startseite wechselt von Einstellung zu Einstellung; mehr Einstellungen zeigen die Streuung genauer.', short: '{v} Einstellungen|{v} Einstellungen' },
+    method: {
+      label: 'Verfahren',
+      hint: 'Drehen und stoppen: Die Linie dreht sich langsam und du stoppst sie. Mit Tasten einstellen: Du verstellst die Linie mit den Tasten (−2°, −0,5°, +0,5°, +2°) oder den Pfeiltasten.',
+      options: { rotating: 'Drehen und stoppen', adjust: 'Mit Tasten einstellen' },
+    },
+    speedDegS: { label: 'Drehgeschwindigkeit (Grad pro Sekunde)', hint: 'Nur beim Drehen: wie schnell sich die Linie dreht. Langsamer ist genauer, dauert aber länger. Bei 45 Grad kehrt die Linie um.', short: '{v} °/s' },
+    startMaxDeg: { label: 'Größte Startneigung', hint: 'Größte Anfangsneigung in Grad. Jeder Start liegt zufällig zwischen 60 und 100 Prozent dieses Wertes.', short: '{v} °' },
+    lineCm: { label: 'Länge der Linie', hint: 'Länge der Linie in Zentimetern (nach Kalibrierung). Auf kleinen Bildschirmen wird sie begrenzt. Eine längere Linie lässt die Neigung feiner beurteilen.', short: '{v} cm' },
+  },
+};
+
+export const it: ExerciseTexts = {
+  title: 'Verticale soggettiva',
+  tagline: 'Regola al buio una linea chiara finché ti sembra verticale.',
+  steps: ['Dispositivo dritto, stanza oscurata.', 'Guarda la linea, testa dritta.', 'Se ti sembra verticale: «Verticale».'],
+  why:
+    'La verticale visiva soggettiva è la direzione che al buio senti come verticale. Dipende dall’interazione tra organo dell’equilibrio, vista e percezione del corpo e nella letteratura specialistica viene studiata nei disturbi del sistema dell’equilibrio. Qui fai un’approssimazione digitale come esercizio funzionale secondo questo principio: una linea chiara su fondo scuro, che o ruota lentamente e la fermi tu, oppure la regoli con i tasti. Gli inizi si alternano tra inclinato a destra e a sinistra. L’app mostra quanto le tue regolazioni si sono discostate dalla verticale vera (valori dell’esercizio in gradi) e non lo interpreta. Non sostituisce una visita. Che l’esercizio serva alla vita quotidiana o all’equilibrio non è dimostrato.',
+  goodFor: ['Senso di «verticale»', 'Regolare con calma', 'Guardare al buio'],
+  captions: {
+    look: 'Una linea chiara al buio.',
+    rotate: 'Ruota lentamente.',
+    stop: 'Se è verticale: «Verticale».',
+    done: 'Poi vedi i valori.',
+  },
+  metrics: { n: 'Regolazioni completate', ms_mean: 'Tempo per regolazione' },
+  metricHints: {
+    n: 'Quante regolazioni hai completato. È solo il numero delle tue immissioni, non una prestazione e non un referto.',
+    ms_mean: 'Tempo medio dalla visualizzazione fino a «Verticale». Con la rotazione comprende il tempo che la linea impiega per arrivare alla verticale; confronta solo con le stesse impostazioni.',
+  },
+  tips: {
+    calm: 'Valuta la linea, non il bordo dello schermo. Decidi in fretta secondo la prima impressione, non fissare la linea troppo a lungo e non inclinare la testa.',
+    more: 'Con poche regolazioni media e dispersione sono incerte. Più regolazioni (da 10 a 12) mostrano con più precisione come variano le tue regolazioni.',
+  },
+  feedback: {
+    progress: '{n} / {total}',
+    hintRotate: 'Appena la linea ti sembra verticale: «Verticale» (barra spaziatrice).',
+    hintAdjust: 'Regola la linea in verticale, poi «Verticale» (barra spaziatrice).',
+    plumb: 'Verticale',
+    valuesTitle: 'Valori dell’esercizio (nessuna interpretazione)',
+    rowMean: 'Regolazione media',
+    meanValue: '{v} °',
+    meanText: '+ = inclinata in senso orario, − = in senso antiorario',
+    rowAbs: 'Valore assoluto medio dello scostamento',
+    rowSd: 'Dispersione delle regolazioni',
+    rowHyst: 'Differenza secondo il lato di partenza',
+    hystText: 'Media con partenza inclinata a destra meno media con partenza inclinata a sinistra',
+    setupTitle: 'Posizionamento',
+    rowMethod: 'Metodo',
+    methodRotate: 'Ruotare e fermare ({v} gradi al secondo)',
+    methodAdjust: 'Regolare con i tasti',
+    rowLine: 'Lunghezza della linea',
+    lineValue: '{cm} cm',
+    limited: 'limitata su questo schermo',
+    notCalibrated: 'non calibrato: solo una stima',
+    setupText: 'Gli angoli sono giusti solo se il dispositivo è davvero dritto e la testa resta eretta.',
+    valuesNote: COMMON.it.values,
+    fewNote: COMMON.it.fewValues,
+  },
+  progression: [
+    'Più grossolano: inclinazione iniziale maggiore (da 30 a 40 gradi) e rotazione più veloce.',
+    'Più fine: inclinazione iniziale minore (da 10 a 15 gradi), rotazione lenta (da 0,5 a 1 grado al secondo) e più regolazioni (da 12 a 20).',
+    'Il metodo «Regolare» non dipende dal tuo tempo di reazione, ma richiede più tempo.',
+    'Per confrontarti con te stesso: le stesse impostazioni e lo stesso posizionamento del dispositivo.',
+  ],
+  cautions: [
+    COMMON.it.principle,
+    'Posiziona il dispositivo dritto e fermo (controlla con una livella che il bordo dello schermo sia davvero verticale), oscura la stanza il più possibile e siediti eretto con la testa dritta. Cornici, spigoli dei mobili e montanti delle finestre danno indizi sulla verticale e disturbano.',
+    'Senza posizionamento dritto e senza stanza oscurata i valori non sono significativi. L’app non indica valori di riferimento; secondo il metodo e il dispositivo i valori risultano diversi.',
+    'In caso di vertigini, nausea o mal di testa dopo l’esercizio: fai una pausa; se i disturbi persistono fatti visitare.',
+    COMMON.it.warn,
+    COMMON.it.epilepsy,
+    COMMON.it.calm,
+  ],
+  params: {
+    trials: { label: 'Numero di regolazioni', hint: 'Quante regolazioni ha un giro (da 4 a 20, numeri pari). Il lato di partenza cambia da una regolazione all’altra; più regolazioni mostrano meglio la dispersione.', short: '{v} regolazione|{v} regolazioni' },
+    method: {
+      label: 'Metodo',
+      hint: 'Ruotare e fermare: la linea ruota lentamente e la fermi tu. Regolare con i tasti: sposti la linea con i tasti (−2°, −0,5°, +0,5°, +2°) o con le frecce.',
+      options: { rotating: 'Ruotare e fermare', adjust: 'Regolare con i tasti' },
+    },
+    speedDegS: { label: 'Velocità di rotazione (gradi al secondo)', hint: 'Solo con la rotazione: quanto velocemente ruota la linea. Più lenta è più precisa, ma dura di più. A 45 gradi la linea inverte il senso.', short: '{v} °/s' },
+    startMaxDeg: { label: 'Inclinazione iniziale massima', hint: 'Inclinazione iniziale massima in gradi. Ogni partenza è casuale tra il 60 e il 100 per cento di questo valore.', short: '{v} °' },
+    lineCm: { label: 'Lunghezza della linea', hint: 'Lunghezza della linea in centimetri (dopo la calibrazione). Sugli schermi piccoli viene limitata. Una linea più lunga permette di valutare l’inclinazione con più finezza.', short: '{v} cm' },
+  },
+};

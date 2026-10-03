@@ -32,9 +32,10 @@ describe('Definition und Registrierung', () => {
     expect(laborRotGruenLesen.warning).toBeUndefined();
   });
 
-  it('steht am Ende der Labor-Gruppe in der Registry und hat einen Hintergrundtext', () => {
+  it('steht in der Labor-Gruppe der Registry (nach den portierten Labor-Übungen) und hat einen Hintergrundtext', () => {
     expect(getExercise('labor-rot-gruen-lesen')).toBe(laborRotGruenLesen);
-    expect(EXERCISES[EXERCISES.length - 1].id).toBe('labor-rot-gruen-lesen');
+    const ids = EXERCISES.map((e) => e.id);
+    expect(ids.indexOf('labor-rot-gruen-lesen')).toBe(ids.indexOf('labor-mentale-rotation') + 1);
     expect(SCIENCE['labor-rot-gruen-lesen']).toBe(science);
   });
 

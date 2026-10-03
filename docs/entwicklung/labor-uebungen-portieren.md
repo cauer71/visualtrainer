@@ -3,6 +3,16 @@
 Der Labor-Prototyp (Branch `origin/labor-offline-prototyp`, Ordner `labor/`, reines HTML/JS, CommonJS) hat 14 Übungen.
 Dazu kommt als 15. Übung der Marke „Labor“ `labor-rot-gruen-lesen` (Rot-Grün-Brille): keine Portierung, sondern eine eigene Umsetzung der
 klassischen dichoptischen Aufgabe (`src/exercises/labor-rot-gruen-lesen/`; Prüfbild im Intro über `ExerciseDefinition.colorCheck`).
+Als Ergänzung kommen die sechs **Funktionsübungen** `labor-hess`, `labor-worth`, `labor-schober`, `labor-diplopie`, `labor-vertikale`
+und `labor-projektion` (Prototyp `ex/hess.js`, `worth.js`, `schober.js`, `diplopia.js`, `vertical.js`, `projection.js`) hinzu; sie sind
+normale Labor-Übungen (Trainer- und Entwickler-Ansicht, Filter „Labor“, Auswahl für Benutzer, nicht im Tagestraining), gemeinsame
+Bausteine in `src/exercises/_shared/pruefung-*.ts` (Blickraster, Brille/Farben/Prüfbild, Tasten und Anordnung, Texte), Tests
+`tests/unit/pruefung*.test.ts`, `labor-{hess,worth,schober,diplopie,vertikale,projektion}-logic.test.ts` und `tests/e2e/pruefungen.mjs`.
+Ihre Texte beschreiben **Funktionsübungen nach dem Prinzip des klassischen Verfahrens** („kein Ersatz für die Untersuchung“), zeigen nur
+„Übungswerte“ (Grad, Δ, cm) ohne Deutung, ohne Richtwerte und ohne das Wort „Test“; bei Schober steht „Vorzeichenregeln nur hergeleitet,
+nicht gegen ein Messgerät geprüft“ in Hinweisen und Ergebnis. Als Hauptwert dient die Zahl der Eingaben (`count`), weil es für Grad/Δ/cm
+keine Einheit in `MetricUnit` gibt; die Messgrößen stehen in den Detailtabellen. Damit gibt es 21 Labor-Übungen (14 portierte, Rot-Grün-Lesen und die
+sechs Funktionsübungen), 107 Übungen insgesamt.
 Sie werden in Blickfit **neu geschrieben** (TypeScript/Preact, Canvas-Modul wie die Übungen unter `src/exercises/`), nicht kopiert:
 der Prototyp wird nicht ins Repository übernommen, nur portiert. Phase A hat die Grundlage gebaut und als Vorbild **eine**
 Übung portiert: **`labor-spot-touch`** (aus `ex/spots.js` + `help/spots.js`). Orientiere dich an ihr, Datei für Datei.
