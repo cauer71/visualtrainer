@@ -1,14 +1,21 @@
-import fs from 'node:fs';
-import path from 'node:path';
 import { describe, expect, it } from 'vitest';
-// @ts-expect-error – .mjs ohne Typen, siehe katalog-public.d.mts
+import katalog from '../../docs/uebungskatalog/katalog.json';
 import { publicBody, publicIndexItem } from '../../scripts/katalog-public.mjs';
 
 /**
  * Die veröffentlichten Texte (Katalog, Hintergrund, Übungstexte) sollen aus Studien und Grundlagen hergeleitet gelesen werden:
  * keine Hinweise auf bestehende Webseiten, Programme oder interne Unterlagen.
  */
-const root = path.resolve(__dirname, '../..');
+const raw = (m: Record<string, unknown>) => m as Record<string, string>;
+// Beschreibungen und Texte der App als Rohtext einlesen (ohne Node-Typen)
+const docs = raw(import.meta.glob('../../docs/uebungskatalog/uebungen/*.md', { query: '?raw', import: 'default', eager: true }));
+const sources = raw(
+  import.meta.glob(['../../src/exercises/*/texts.ts', '../../src/exercises/*/science.ts', '../../src/content/science.ts', '../../src/i18n/ui.ts', '../../src/i18n/optiker.ts'], {
+    query: '?raw',
+    import: 'default',
+    eager: true,
+  }),
+);
 
 // Bezeichnungen, die in veröffentlichten Texten nicht vorkommen dürfen
 const FORBIDDEN: [string, RegExp][] = [
@@ -36,11 +43,12 @@ function scan(label: string, text: string): string[] {
 }
 
 describe('Übungskatalog (öffentliche Fassung)', () => {
-  const cat = JSON.parse(fs.readFileSync(path.join(root, 'docs/uebungskatalog/katalog.json'), 'utf8')) as { uebungen: Record<string, any>[] };
+  const cat = katalog as unknown as { uebungen: Record<string, any>[] };
+  const bodyOf = (datei: string) => docs[`../../docs/uebungskatalog/${datei}`] ?? '';
   it('Beschreibungstexte enthalten keine Bezüge auf Vorlagen', () => {
     const bad: string[] = [];
     for (const m of cat.uebungen) {
-      const body = publicBody(fs.readFileSync(path.join(root, 'docs/uebungskatalog', m.datei), 'utf8')) as string;
+      const body = publicBody(bodyOf(m.datei));
       bad.push(...scan(String(m.nr), body));
     }
     expect(bad, bad.slice(0, 40).join('\n')).toEqual([]);
@@ -53,26 +61,16 @@ describe('Übungskatalog (öffentliche Fassung)', () => {
 });
 
 describe('Übungstexte und Hintergrund', () => {
-  const files: string[] = [];
-  const walk = (dir: string) => {
-    for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
-      const p = path.join(dir, e.name);
-      if (e.isDirectory()) walk(p);
-      else if (/(^|\/)(texts|science)\.ts$/.test(p) || p.endsWith('src/content/science.ts') || p.endsWith('src/i18n/ui.ts') || p.endsWith('src/i18n/optiker.ts')) files.push(p);
-    }
-  };
-  walk(path.join(root, 'src'));
   it('sichtbare Texte (ohne Kommentare) enthalten keine Bezüge auf Vorlagen', () => {
     const bad: string[] = [];
-    for (const f of files) {
+    for (const [f, src] of Object.entries(sources)) {
       // Kommentarzeilen (// … und Blockkommentare) sind keine sichtbaren Texte
-      const text = fs
-        .readFileSync(f, 'utf8')
+      const text = src
         .replace(/\/\*[\s\S]*?\*\//g, '')
         .split('\n')
         .filter((l) => !/^\s*\/\//.test(l))
         .join('\n');
-      bad.push(...scan(path.relative(root, f), text));
+      bad.push(...scan(f.replace('../../', ''), text));
     }
     expect(bad, bad.slice(0, 60).join('\n')).toEqual([]);
   });
