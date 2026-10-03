@@ -12,7 +12,7 @@ export const science: ScienceEntry = {
       research:
         'Plötzlich auftauchende Reize ziehen die Aufmerksamkeit von selbst an. Wie lange eine Zielbewegung dauert, hängt vom Weg und von der Zielgröße ab (Fitts’sches Gesetz); wird die Zeit knapper, steigen die Fehler. In Zielaufgaben am Bildschirm werden Menschen mit Übung deutlich schneller – ein Teil davon ist Gewöhnung an Gerät und Aufgabe. Ein Nutzen für Sport, Straßenverkehr oder Alltag ist nicht belegt. Vergleiche dich nur mit dir selbst auf demselben Gerät: Die Verzögerung von Touchscreen und Anzeige steckt in jeder gemessenen Zeit.',
       improved:
-        'Feste Dauer statt Zeitkonto, kein Strafabzug, kein Rot-Blitz, kein Bildschütteln; die Stufe (Größe und Sichtzeit) passt sich an; der Weg zum letzten Ziel wechselt zwischen kurz, mittel und weit; weiches Ein- und Ausblenden; große Trefferkreise für den Finger; Median statt Mittelwert; bei Fehltipps ✗ und Ring am richtigen Ort.',
+        'Eine Runde hat eine feste Zahl von 24 Zielen; ein Fehltipp kostet keine Zeit, und es gibt weder Blitze noch Schütteln des Bildes. Die Stufe (Größe und Sichtzeit der Ziele) passt sich dem Ergebnis an. Der Weg zum jeweils nächsten Ziel wechselt zwischen kurz, mittel und weit, damit jede Bewegung anders lang ist; die Ziele blenden weich ein und aus, und die Trefferkreise sind für den Finger groß. Ausgewertet wird der Median statt des Mittelwerts, damit einzelne Ausreißer wenig zählen; bei einem Fehltipp erscheinen ✗ und ein Ring am richtigen Ort. Gemessen wird nur die Zeit bis zum Tipp, nicht die Augenbewegung.',
     },
     it: {
       trains: 'Scoprire un bersaglio che compare all’improvviso in un punto libero, portarvi il dito e colpirlo con precisione.',
@@ -20,7 +20,7 @@ export const science: ScienceEntry = {
       research:
         'Gli stimoli che compaiono all’improvviso attirano da soli l’attenzione. La durata di un movimento verso un bersaglio dipende dalla distanza e dalla dimensione del bersaglio (legge di Fitts); se il tempo si riduce, aumentano gli errori. Nei compiti di puntamento sullo schermo le persone diventano nettamente più veloci con l’esercizio – in parte è abitudine al dispositivo e al compito. Un’utilità per sport, traffico o vita quotidiana non è dimostrata. Confrontati solo con te stesso sullo stesso dispositivo: il ritardo di touchscreen e schermo è contenuto in ogni tempo misurato.',
       improved:
-        'Durata fissa invece del conto alla rovescia, nessuna penalità di tempo, nessun lampo rosso, nessun tremolio dell’immagine; il livello (dimensione e tempo di visibilità) si adatta; il percorso dall’ultimo bersaglio alterna corto, medio e lungo; comparsa e scomparsa graduali; ampie aree di tocco per il dito; mediana invece della media; in caso di errore ✗ e anello nel punto giusto.',
+        'Un turno ha un numero fisso di 24 bersagli; un tocco sbagliato non costa tempo, e non ci sono né lampi né tremolio dell’immagine. Il livello (dimensione e tempo di visibilità dei bersagli) si adatta al risultato. Il percorso verso il bersaglio successivo alterna corto, medio e lungo, così ogni movimento ha una lunghezza diversa; i bersagli compaiono e scompaiono gradualmente, e le aree di tocco sono ampie per il dito. Si valuta la mediana invece della media, perché i valori anomali pesino poco; in caso di tocco sbagliato compaiono ✗ e un anello nel punto giusto. Viene misurato solo il tempo fino al tocco, non il movimento degli occhi.',
     },
   },
   sources: [

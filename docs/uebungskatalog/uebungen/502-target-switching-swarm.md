@@ -2,7 +2,7 @@
 # ===== Kennung =====
 nr: 502
 kennung: target-switching-swarm
-name: "Zielwechsel im Schwarm – mehrere wandernde Ziele nacheinander anklicken"
+name: "Zielwechsel im Schwarm – mehrere wandernde Ziele nacheinander antippen"
 name_original: "Aim Trainer Zielwechsel – Multi-Target & Spray Transfer (Spieltitel: Target Switching Swarm)"
 kapitel: "Zielen (FPS)"
 kapitel_original: "fps"
@@ -12,7 +12,7 @@ blickfit_umsetzung: {kennung: "schwarm-wechsel", name: "Schwarm-Wechsel", unters
 stand: 2026-09-29
 
 # ===== Überblick =====
-kurzbeschreibung: "Auf dunklem Grund treiben zwei bis fünf leuchtend grüne Kugeln langsam umher; jede verschwindet nach 1–3 s von selbst. Man bewegt ein Fadenkreuz mit der Maus von Kugel zu Kugel und klickt sie ab, bevor sie ablaufen – jeder Treffer bringt Zeit und Combo, jeder Fehlklick oder Ablauf kostet Zeit."
+kurzbeschreibung: "Zwei bis fünf Kugeln wandern über den Bildschirm; um jede liegt ein Ring, der ihre Restzeit zeigt. Man tippt jeweils die dringendste Kugel zuerst an und wechselt sofort zur nächsten; abgelaufene Kugeln zählen als Fehler. Anzahl, Tempo und Größe passen sich an. Ausgewertet werden die Zeit von Treffer zu Treffer (Median) und der Anteil richtig gewählter Reihenfolgen."
 ziel_funktionen: [sakkaden, auge_hand_koordination, zielbewegung_tempo]
 eingabe: [maus, touchpad]
 tablet_geeignet: mit_anpassung
@@ -74,27 +74,24 @@ belastung:
 # ===== Auswahlhilfe =====
 voraussetzungen: ["Maus (oder Touchpad) und Desktop-Browser mit Pointer Lock – auf Touch-Geräten sperrt das Original den Start", "Vollbild; Monitor 50–70 cm entfernt, passende Korrektion für diesen Abstand", "kein Farbsehen nötig (nur eine Zielart, grün auf fast schwarz)", "Frustrationstoleranz: Fehlklicks und Abläufe kosten sofort Zeit und Combo"]
 vorsicht_bei: [photosensitive_epilepsie, migraene_lichtempfindlich, presbyopie_gleitsicht, gesichtsfeldausfall, sehbehinderung_niedriger_visus, trockenes_auge_bildschirm, kopfschmerz_asthenopie, hand_arm_beschwerden, tremor_parkinson, aufmerksamkeitsprobleme, kognitive_einschraenkung]
-geeignet_fuer: ["schnelle Blick-Hand-Wechsel zwischen mehreren Zielen unter Zeitdruck üben", "Maus-Zielbewegungen (Fitts-Aufgabe) mit leicht bewegten Zielen und eigener Reihenfolgewahl", "Fortsetzung nach Einzelziel-Klickübungen (501, 702, 704), bevor Ziel-Priorisierung (510) oder Suche (508) dazukommen", "spielerischer Gesprächsanlass zu Bildschirmsehen (Abstand, Arbeitsplatzbrille, Lidschlag)"]
-weniger_geeignet_fuer: ["Tablet-Nutzung (Original nicht startbar; Touch nur in einer eigenen Umsetzung)", "Gleitsichtträger:innen im Vollbild ohne Arbeitsplatzbrille (Ziele bis ≈ 24° seitlich)", "wer eine feste, kurze Übungsdauer braucht (Runde verlängert sich mit jedem Treffer)", "Einsteiger:innen, ältere oder leicht frustrierbare Menschen ab höheren Levels (5 Ziele, ≈ 1 s Lebensdauer)", "Übungsziel glatte Blickfolge oder Dauertracking (dafür 505, 514, 104, 105)"]
+geeignet_fuer: ["schnelle Blick-Hand-Wechsel zwischen mehreren Zielen unter Zeitdruck üben", "Zielbewegungen (Fitts-Aufgabe) mit leicht bewegten Zielen und eigener Reihenfolgewahl", "Fortsetzung nach Einzelziel-Übungen (501, 702, 704), bevor Ziel-Priorisierung (510) oder Suche (508) dazukommen", "Gesprächsanlass zu Bildschirmsehen (Abstand, Arbeitsplatzbrille, Lidschlag)"]
+weniger_geeignet_fuer: ["Gleitsichtträger:innen im Vollbild ohne Arbeitsplatzbrille (Ziele im ganzen Feld, auch weit seitlich)", "Einsteiger:innen, ältere oder leicht frustrierbare Menschen auf hohen Stufen (5 Ziele, kurze Lebensdauer)", "Übungsziel glatte Blickfolge oder Dauertracking (dafür 505, 514, 104, 105)"]
 evidenz:
   uebungseffekt: stark
   naher_transfer: schwach
   alltag_transfer: fehlend
-  kommentar: "Die Übung selbst ist nicht untersucht; in gleichartigen Maus-Zielaufgaben verbessert man sich mit Übung deutlich (Aim-Lab-Längsschnitt N = 7.174; Laborstudie N = 86). Ob das auf Spielleistung oder andere Zeigeaufgaben übergeht, wurde nicht kontrolliert geprüft; Alltagseffekte sind nicht belegt."
+  kommentar: "Die Übung selbst ist nicht untersucht; in gleichartigen Zielaufgaben mit Maus verbessert man sich mit Übung deutlich (Längsschnitt N = 7.174; Laborstudie N = 86). Ob das auf Spielleistung oder andere Zeigeaufgaben übergeht, wurde nicht kontrolliert geprüft; Alltagseffekte sind nicht belegt."
 aehnliche_uebungen: [501, 506, 708, 302, 510, 508, 509, 702, 704, 804, 303, 106]
 stichworte: ["target switching", "Zielwechsel", "Multi-Target", "Aim-Trainer", "Fitts'sches Gesetz", "bewegte Ziele", "Blick-Hand-Koordination", "Sakkaden", "sequenzielles Zielen", "Zeitdruck", "Combo", "Pointer Lock", "Maus"]
 ---
 
-# 502 · Zielwechsel im Schwarm – mehrere wandernde Ziele nacheinander anklicken
+# 502 · Zielwechsel im Schwarm – mehrere wandernde Ziele nacheinander antippen
 
-> Original: „Aim Trainer Zielwechsel – Multi-Target & Spray Transfer“ (Spiel „Target Switching Swarm“) – skilldrills.online,
-> Kapitel Zielen (`fps`) · Blickfit: noch nicht umgesetzt (verwandt: `zielfang` – ein bewegtes Ziel antippen)
+> Original: „Aim Trainer Zielwechsel – Multi-Target & Spray Transfer“ (Spiel „Target Switching Swarm“) – skilldrills.online, Kapitel Zielen (`fps`) · Blickfit: noch nicht umgesetzt (verwandt: `zielfang` – ein bewegtes Ziel antippen)
 
 ## 1. Kurzbeschreibung
-Das Spielfeld füllt den Bildschirm: fast schwarzer Grund, darauf zwei (später bis fünf) leuchtend grüne Kugeln, die langsam
-geradeaus treiben und an den Rändern abprallen. Man steuert ein Fadenkreuz mit der Maus, klickt eine Kugel an und springt
-sofort zur nächsten; jede getroffene Kugel wird irgendwo neu ersetzt. Wer eine Kugel zu lange liegen lässt (sie verschwindet
-ohne sichtbaren Countdown) oder danebenklickt, verliert Zeit und seine Trefferserie. Die Runde endet, wenn die Uhr abläuft.
+
+Zwei bis fünf Kugeln wandern weich über den Bildschirm und prallen am Rand ab. Um jede Kugel liegt ein Ring, der ihre Restzeit zeigt. Man tippt die dringendste Kugel (kürzester Ring) zuerst an und wechselt sofort zur nächsten; eine getroffene Kugel wird nach kurzer Pause an anderer Stelle ersetzt, eine abgelaufene zählt als Fehler. Anzahl, Tempo, Größe und Lebensdauer der Kugeln steigen in Stufen und passen sich dem Ergebnis an; die Runde dauert fest 45 Sekunden. Ausgewertet werden die mittlere Zeit von Treffer zu Treffer (Median) und der Anteil der Tipps, bei denen die dringendste Kugel zuerst kam.
 
 ## 2. Ablauf im Original (Analyse)
 Grundlage: Seitentext und Spielcode (Chunk `44969-…js` samt Stufen-/Combo-Modulen; geprüft 29.09.2026, nur Mechanik). Winkel
@@ -143,75 +140,42 @@ Versprochen wird Training für „Multi-Target-Aiming“ und „Spray Transfers�
   hat keinen Rückstoß.
 
 ## 4. Optische und okulomotorische Grundlagen
-- **Blicksprünge:** Jeder Wechsel verlangt eine Sakkade (Latenz typisch 180–250 ms; Darrien et al., 2001), ab ≈ 60 Jahren
-  langsamer und variabler (Munoz et al., 1998). Neu auftauchende Kugeln ziehen Aufmerksamkeit an (Yantis & Jonides, 1984).
-  Aufmerksamkeit ist zwingend an das Sakkadenziel gekoppelt (Deubel & Schneider, 1996); bei geplanten Bewegungsfolgen können
-  mehrere künftige Ziele vorab beachtet werden (Baldauf & Deubel, 2010) – vorplanen ja, Blick vorzeitig lösen nein.
-- **Sehwinkel/Farbe:** Ziele ≈ 1,5–1,8° (Level 1) bis ≈ 0,8–1,1° – weit über der Sehschärfegrenze; kleine, bewegte und
-  kurzlebige Ziele genau anzuklicken, ist bei unscharfem Bild aber unsicherer → `sehschaerfe_detail` 1 (wie 501, 506, 508).
-  1–7°/s Tempo verlangt nur kurzes Mitführen. Grün auf fast Schwarz mit hohem Leuchtdichtekontrast, nur eine Zielart →
-  Farbsehen nicht nötig.
-- **Übersicht:** Anders als bei 501/506 (immer nur ein Ziel) sind 2–5 Ziele gleichzeitig sichtbar; während man eines
-  anklickt, muss man die übrigen und ihr (unsichtbares) Alter im Blick behalten → `nutzbares_sehfeld` 2 (wie 302).
-  Klickrate ≈ 1–2/s ist keine Tipp-Geschwindigkeitsaufgabe → `fingergeschwindigkeit` 0; die Regel „abklicken, bevor sie
-  verschwinden“ ergibt sich beim Spielen → `sprachabhaengigkeit` 0 (wie 501, 506).
-- **Gesichtsfeld/Brille:** Vollbild ≈ 48° × 27°; Ziele entstehen bis 40 px vom Rand, also bis ≈ 24° seitlich. Mit Gleitsicht
-  ist der scharfe Zwischenbereich bei 60 cm nur ≈ 13–18° breit (Han et al., 2003); Randziele und der obere Bildrand (Blick
-  durch den Fernteil) werden unscharf, Kopfbewegungen nehmen zu (Hutchings et al., 2007) → Arbeitsplatzbrille oder kleineres
-  Fenster. Akkommodationsbedarf bei 60 cm ≈ 1,7 dpt [eigene Rechnung] – bei Alterssichtigkeit
-  ohne passende Zwischenkorrektion nicht mehr aufzubringen.
-- **Trockenes Auge:** Bei schnellen Bildschirmspielen sinkt die Lidschlagrate auf ≈ ⅓ (Cardona et al., 2011); die Runde kann
-  sich über Minuten ziehen → Pausen, bewusst blinzeln.
+
+- **Blicksprünge:** Jeder Wechsel verlangt eine Sakkade (Latenz typisch 180–250 ms; Darrien et al., 2001), ab ≈ 60 Jahren langsamer und variabler (Munoz et al., 1998). Neu auftauchende Kugeln ziehen Aufmerksamkeit an (Yantis & Jonides, 1984). Aufmerksamkeit ist zwingend an das Sakkadenziel gekoppelt (Deubel & Schneider, 1996); bei geplanten Bewegungsfolgen können mehrere künftige Ziele vorab beachtet werden (Baldauf & Deubel, 2010). Vorplanen ist also möglich, den Blick vorzeitig zu lösen nicht.
+- **Sehwinkel und Tempo:** Der sichtbare Radius der Kugeln sinkt über die 16 Stufen von 6,6 auf 3,3 % der kürzeren Bildseite; auf einem Tablet in 40 cm Abstand (1 % ≈ 0,23°, grob gerechnet) sind das Durchmesser von etwa 3° bis 1,5°, weit über der Sehschärfegrenze. Das Tempo steigt von 6 auf ≈ 22 % der kürzeren Seite pro Sekunde (grob 1,4 bis 5°/s) und verlangt nur kurzes Mitführen. Kleine, bewegte und kurzlebige Ziele genau zu treffen, ist bei unscharfem Bild aber unsicherer, daher `sehschaerfe_detail` 1 (wie 501, 506, 508).
+- **Übersicht:** Anders als bei 501/506 (immer nur ein Ziel) sind 2–5 Ziele gleichzeitig sichtbar; während man eines antippt, muss man die übrigen und ihre Restzeit-Ringe im Blick behalten, daher `nutzbares_sehfeld` 2 (wie 302). Die Tipprate von ≈ 1–2/s ist keine Aufgabe der Fingergeschwindigkeit (`fingergeschwindigkeit` 0); der Aufbau erklärt sich beim Üben von selbst (`sprachabhaengigkeit` 0, wie 501, 506).
+- **Gesichtsfeld/Brille:** Die Kugeln wandern über das ganze Feld. Mit Gleitsicht ist der scharfe Zwischenbereich bei 60 cm nur ≈ 13–18° breit (Han et al., 2003); Randziele und der obere Bildrand (Blick durch den Fernteil) werden unscharf, Kopfbewegungen nehmen zu (Hutchings et al., 2007), daher Arbeitsplatzbrille oder kleineres Fenster. Der Akkommodationsbedarf beträgt bei 60 cm ≈ 1,7 dpt, bei 40 cm 2,5 dpt (Rechenregel: Kehrwert des Abstands in Metern); bei Alterssichtigkeit ist er ohne passende Zwischenkorrektion nicht mehr aufzubringen. Gesichtsfeldausfälle lassen sich klinisch nach dem Verlauf der Sehbahn einordnen (Muchnick, 2008, S. 32); die Übung ist kein Gesichtsfeldtest.
+- **Trockenes Auge:** Bei schnellen Bildschirmaufgaben sinkt die Lidschlagrate auf etwa ein Drittel (Cardona et al., 2011); Pausen einlegen, bewusst blinzeln.
 
 ## 5. Neurowissenschaftliche Grundlagen
-Beteiligt sind die Netzwerke für Sakkaden (frontales Augenfeld, Colliculus superior, Hirnstamm, Kleinhirn; Lehrbuch Leigh &
-Zee, 2015) und für visuell geführtes Zeigen, verbunden über gemeinsame Aufmerksamkeitsauswahl (Deubel & Schneider, 1996;
-Baldauf & Deubel, 2010). „Zwingt den motorischen Kortex“ oder „neural confidence“ sind Bildsprache ohne Beleg; Hirnveränderungen durch ein solches Training sind nicht untersucht.
+
+Beteiligt sind die Netzwerke für Sakkaden (frontales Augenfeld, Colliculus superior, Hirnstamm, Kleinhirn; Lehrbuch Leigh & Zee, 2015) und für visuell geführtes Zeigen, verbunden über gemeinsame Aufmerksamkeitsauswahl (Deubel & Schneider, 1996; Baldauf & Deubel, 2010). Hirnveränderungen durch ein solches Training sind nicht untersucht.
 
 ## 6. Motorische Grundlagen
-- **Fitts:** Zeit ∝ ID = log₂(D/W + 1): bei 700 px Abstand ≈ 3,5 bit (W = 68 px) bzw. ≈ 4,1 bit auf hohen Leveln (W ≈ 43 px)
-  [eigene Rechnung]; Maus-Durchsatz in ISO-konformen Studien 3,7–4,9 bit/s (Soukoreff & MacKenzie, 2004). **Bewegte Ziele**
-  sind schwerer; ein um die Zielgeschwindigkeit erweiterter Index sagt Fangzeiten besser voraus (Jagacinski et al., 1980).
-- **Zielfolgen:** Primärbewegung + Korrektur je Ziel (Meyer et al., 1988); folgt ein weiteres Ziel, wird die erste Bewegung
-  länger (Helsen et al., 2001) – der Wechsel ist nie „kostenlos“. Kurze Wege durch Punktmengen finden Menschen
-  wahrnehmungsgestützt gut (MacGregor & Ormerod, 1996); bei 2–5 Zielen mit Sofortersatz ist der Planungsanteil klein.
-- **Speed-Accuracy/Übung:** Fehlklicks und Abläufe kosten gleichermaßen – Tempo *und* Genauigkeit zählen, Klick-Spammen lohnt
-  nicht. 20 Runden Maus-Zielen verkürzten Reaktions- (−70 ms), Korrektur- (−134 ms) und Klick-Verweilzeit (−72 ms)
-  (Warburton et al., 2023).
+
+- **Fitts:** Zeit ∝ ID = log₂(D/W + 1) (D Distanz, W Zielbreite); Maus-Durchsatz in ISO-konformen Studien 3,7–4,9 bit/s (Soukoreff & MacKenzie, 2004). **Bewegte Ziele** sind schwerer; ein um die Zielgeschwindigkeit erweiterter Index sagt Fangzeiten besser voraus (Jagacinski et al., 1980). Die Übung misst Touch-Tipps, nicht Mausbewegungen; beide Werte sind nicht vergleichbar.
+- **Zielfolgen:** Primärbewegung plus Korrektur je Ziel (Meyer et al., 1988); folgt ein weiteres Ziel, wird die erste Bewegung länger (Helsen et al., 2001), der Wechsel ist nie „kostenlos“. Kurze Wege durch Punktmengen finden Menschen wahrnehmungsgestützt gut (MacGregor & Ormerod, 1996); bei 2–5 Zielen mit schnellem Ersatz ist der Planungsanteil klein.
+- **Speed-Accuracy/Übung:** Fehltipps und abgelaufene Ziele zählen als Fehler; Tempo *und* Genauigkeit zählen, wahlloses Tippen lohnt nicht. 20 Runden Mauszielen verkürzten Reaktions- (−70 ms), Korrektur- (−134 ms) und Klick-Verweilzeit (−72 ms) (Warburton et al., 2023).
 
 ## 7. Einflussfaktoren und Messgrenzen
-- **Gerät:** Mausbeschleunigung, Empfindlichkeit/DPI, Bildschirmgröße und Systemlatenz verändern die Werte stark; geringere
-  Latenz wirkt mehr als Bildrate > 60 Hz (Spjut et al., 2019) → nur Selbstvergleich am selben Gerät.
-- **Offene Rundendauer:** Punkte, Level und Note messen vor allem, wie lange man „überlebt“; die Combo lässt Punkte
-  überproportional steigen. „Präzision“ ignoriert Abläufe; Zufallspositionen machen Runden ungleich schwer. Alter:
-  Zielbewegungen Älterer sind langsamer und variabler (Ketcham et al., 2002) – Werte nicht zwischen Altersgruppen vergleichen.
+
+- **Gerät:** Die Bewegung ist zeitbasiert und daher auf 60 und 120 Hz gleich schnell, das Tempo aber in Bildschirmeinheiten festgelegt; Bildschirmgröße, Abstand und Systemlatenz verändern die Werte. Geringere Latenz wirkt mehr als Bildrate > 60 Hz (Spjut et al., 2019), also nur Selbstvergleich am selben Gerät.
+- **Messgröße:** Gemessen werden der Median der Zeit zwischen Treffern und der Anteil „dringendste zuerst“; wohin man schaut, wird nicht gemessen. Zufallspositionen machen Runden ungleich schwer; Messungen am Menschen streuen von Durchgang zu Durchgang, erst mehrere Runden erlauben eine Einschätzung (Mountford et al., 2004, S. 43–44). Alter: Zielbewegungen Älterer sind langsamer und variabler (Ketcham et al., 2002); Werte nicht zwischen Altersgruppen vergleichen.
 
 ## 8. Studienlage: Trainierbarkeit und Übertragung
-- **Übungseffekt – stark (für den Aufgabentyp):** Aim-Lab-Daten (N = 7.174, bis 100 Tage): deutliche Verbesserung v. a. der
-  Treffer pro Sekunde, 90 % des Tagesnutzens mit ≈ 30 min (Listman et al., 2021; herstellerfinanziert); Laborbefund bei
-  Warburton et al. (2023). Die Original-Übung selbst ist nicht untersucht.
-- **Naher Transfer – schwach:** keine kontrollierte Studie „Aim-Trainer → Spielleistung“ gefunden; große Effekte digitaler
-  Sehtrainings entstehen vor allem, wenn Trainings- und Testaufgabe gleich sind (Guo et al., 2025).
-- **Alltagstransfer – fehlend:** Metaanalysen zu Action-Videospielen betreffen ganze Spiele und kognitive Maße; motorische Maße
-  wurden mangels Daten ausgeschlossen (Bediou et al., 2023).
+
+- **Übungseffekt – stark (für den Aufgabentyp):** In einer Zielübungs-Software (N = 7.174, bis 100 Tage) besserten sich die Nutzer:innen deutlich, vor allem in Treffern pro Sekunde; 90 % des Tagesnutzens fielen auf etwa 30 min (Listman et al., 2021; vom Anbieter der Software finanziert); Laborbefund bei Warburton et al. (2023). Beide Studien betrafen Mauseingabe; die Übung selbst ist nicht untersucht.
+- **Naher Transfer – schwach:** Keine kontrollierte Studie, dass Zielübungen am Bildschirm die Spielleistung verbessern; große Effekte digitaler Sehtrainings entstehen vor allem, wenn Trainings- und Testaufgabe gleich sind (Guo et al., 2025).
+- **Alltagstransfer – fehlend:** Metaanalysen zu Action-Videospielen betreffen ganze Spiele und kognitive Maße; motorische Maße wurden mangels Daten ausgeschlossen (Bediou et al., 2023).
+- Erfahrungswissen aus der funktionellen Optometrie, nicht belegt: Man beginnt am eigenen Arbeitspunkt und steigert in kleinen, selbst gesteuerten Schritten; die Stufen der Übung folgen diesem Vorgehen.
 
 ## 9. Auswahlhinweise für die KI
-- **Passt, wenn …** schnelle Blick-Hand-Wechsel zwischen mehreren Zielen, Maus-Zielbewegungen unter Zeitdruck oder ein
-  motivierendes Punkte-/Combo-Spiel für geübte Maus-Nutzer:innen gesucht sind.
-- **Weniger passend, wenn …** nur ein Tablet vorhanden ist, eine feste kurze Dauer nötig ist, Einsteiger:innen oder ältere
-  Menschen ohne Maus-Routine üben oder Blickfolge/Dauertracking das Ziel ist.
-- **Vorsicht / anpassen bei …** `photosensitive_epilepsie`, `migraene_lichtempfindlich` (roter Vollbild-Blitz bei jedem Fehler,
-  bei Fehlerserien mehrmals pro Sekunde möglich; Richtwert ≤ 3 Blitze/s, Fisher et al., 2005 → Blitz abschalten);
-  `presbyopie_gleitsicht` (Ziele bis 24° seitlich); `gesichtsfeldausfall` (Ziele erscheinen überall, Abläufe bleiben
-  unbemerkt); `sehbehinderung_niedriger_visus` (kleine, bewegte, kurzlebige Ziele im ganzen Feld – wie 501/506);
-  `trockenes_auge_bildschirm`, `kopfschmerz_asthenopie` (seltener Lidschlag, offene Dauer); `hand_arm_beschwerden`,
-  `tremor_parkinson` (schnelle Mauszüge, Klicks); `aufmerksamkeitsprobleme`, `kognitive_einschraenkung` (Hektik, sofortige Strafen).
-- **Kombiniert gut mit …** 501 (Einzel-Flicks) → 502 → 510 (Priorisierung) bzw. 508 (Zielerkennung); 702/704 als
-  Maus-Grundlage; 303 (Blicksprünge ohne Hand); ohne Maus eher 302/804 oder Blickfit `zielfang`. Keine Aussagen über
-  Sehleistung, Verkehrstauglichkeit oder Spielerfolg ableiten.
-- **Abgrenzung in der Gruppe:** 501 und 506 (gleicher Grundaufbau mit Zeitkonto, Combo und Strafen) zeigen immer nur ein
-  ruhendes Ziel; 502 verlangt zusätzlich Übersicht über mehrere bewegte Ziele und eine Reihenfolgewahl. 506 ist die
-  Variante mit weiten Wegen zum Bildschirmrand, 508 die Variante mit Suche nach einer Regel (Helligkeit) ohne Zeitlimit je Ziel.
+
+- **Passt, wenn …** schnelle Blick-Hand-Wechsel zwischen mehreren Zielen, Tipp-Zielbewegungen unter Zeitdruck oder eine Übung zum Priorisieren mehrerer bewegter Ziele gesucht sind.
+- **Weniger passend, wenn …** nur ein sehr kleiner Bildschirm vorhanden ist, Einsteiger:innen oder ältere Menschen auf hohen Stufen üben oder Blickfolge/Dauertracking das Ziel ist.
+- **Vorsicht / anpassen bei …** `photosensitive_epilepsie`, `migraene_lichtempfindlich` (kein Vollbild-Blitz; Kugeln blenden mit 250 ms ein und 300 ms aus, Fehler werden mit ✗ gezeigt; Richtwert ≤ 3 Blitze/s, Fisher et al., 2005; Anfallsleiden gehören zur Vorgeschichte, die ärztlich zu erfragen ist, Muchnick, 2008, S. 7); `presbyopie_gleitsicht` (Ziele im ganzen Feld); `gesichtsfeldausfall` (Kugeln erscheinen überall, Abläufe bleiben unbemerkt); `sehbehinderung_niedriger_visus` (kleine, bewegte, kurzlebige Ziele im ganzen Feld, wie 501/506); `trockenes_auge_bildschirm`, `kopfschmerz_asthenopie` (seltener Lidschlag; Kopfschmerz zusammen mit Sehverschlechterung ärztlich abklären lassen, Muchnick, 2008, S. 28); `hand_arm_beschwerden`, `tremor_parkinson` (schnelle Tipp-Bewegungen); `aufmerksamkeitsprobleme`, `kognitive_einschraenkung` (Hektik, mehrere Ziele zugleich).
+- **Kombiniert gut mit …** 501 (Einzelziele) → 502 → 510 (Priorisierung) bzw. 508 (Zielerkennung); 702/704 als Grundlage; 303 (Blicksprünge ohne Hand); ohne Zielbewegung eher 302/804 oder Blickfit `zielfang`. Keine Aussagen über Sehleistung, Verkehrstauglichkeit oder Spielerfolg ableiten.
+- **Abgrenzung in der Gruppe:** 501 und 506 zeigen immer nur ein ruhendes Ziel; 502 verlangt zusätzlich Übersicht über mehrere bewegte Ziele und eine Reihenfolgewahl. 506 ist die Variante mit weiten Wegen zum Bildschirmrand, 508 die Variante mit Suche nach einer Regel (Helligkeit) ohne Zeitlimit je Ziel.
 
 ## 10. Schwächen des Originals und Empfehlungen für eine Blickfit-Umsetzung
 - **Tablet/Touch:** Original sperrt Touch. Umsetzbar als „Tippen im Schwarm“ mit direkten Tipps, Zielen ≥ 9–10 mm (Parhi et
@@ -228,8 +192,6 @@ Baldauf & Deubel, 2010). „Zwingt den motorischen Kortex“ oder „neural conf
 - Woods, D. L., Wyma, J. M., Yund, E. W., Herron, T. J., & Reed, B. (2015). Factors influencing the latency of simple reaction time. *Frontiers in Human Neuroscience, 9*, 131. https://doi.org/10.3389/fnhum.2015.00131 – **Prüfung:** DOI stimmt ✓; **stützt die Aussage der Website:** nein (einfache Tastenreaktion, keine Wechsel-Latenz oder Eliminationsrate)
 - Fitts, P. M. (1954). The information capacity of the human motor system in controlling the amplitude of movement. *Journal of Experimental Psychology, 47*(6), 381–391. https://doi.org/10.1037/h0055392 – **Prüfung:** DOI stimmt ✓; **stützt:** teilweise (Gesetz ja; „90 %-Primärschub“ und Zeitwerte nicht)
 - Meyer, D. E., Abrams, R. A., Kornblum, S., Wright, C. E., & Smith, J. E. K. (1988). Optimality in human motor performance: Ideal control of rapid aimed movements. *Psychological Review, 95*(3), 340–370. https://doi.org/10.1037/0033-295X.95.3.340 – **Prüfung:** DOI stimmt ✓; **stützt:** teilweise (Teilbewegungs-Modell ja; Prozentwerte und Trainingsbehauptungen nicht)
-- Treisman, A. M., & Gelade, G. (1980). A feature-integration theory of attention. *Cognitive Psychology, 12*(1), 97–136. https://doi.org/10.1016/0010-0285(80)90005-5 – **Prüfung:** DOI stimmt ✓; **stützt:** teilweise (Theorie korrekt, aber keine Suche mit Ablenkern in der Übung) bzw. nein (Blick-vor-Hand-Aussage)
-- Wolfe, J. M. (2007). Guided Search 4.0: Current progress with a model of visual search. In W. D. Gray (Hrsg.), *Integrated models of cognitive systems* (S. 99–119). Oxford University Press. https://doi.org/10.1093/acprof:oso/9780195189193.003.0008 – **Prüfung:** DOI stimmt ✓ (Buchkapitel); **stützt:** teilweise (wie Treisman & Gelade) bzw. nein (Blick-vor-Hand-Aussage)
 - Im Text ohne Quelle („FINST-Theorie“): gemeint Pylyshyn & Storm (1988), s. u. – **Prüfung:** DOI der richtigen Arbeit per Crossref ✓; **stützt:** nein (keine Identitätsverfolgung nötig)
 
 ### Weitere Fachliteratur
@@ -245,19 +207,19 @@ Baldauf & Deubel, 2010). „Zwingt den motorischen Kortex“ oder „neural conf
 - Han, Y., Ciuffreda, K. J., Selenow, A., & Ali, S. R. (2003). Dynamic interactions of eye and head movements when reading with single-vision and progressive lenses in a simulated computer-based environment. *Investigative Ophthalmology & Visual Science, 44*(4), 1534–1545. https://doi.org/10.1167/iovs.02-0507 – Gleitsicht-Zwischenbereich
 - Helsen, W. F., Elliott, D., Starkes, J. L., & Ricker, K. L. (1998). Temporal and spatial coupling of point of gaze and hand movements in aiming. *Journal of Motor Behavior, 30*(3), 249–259. https://doi.org/10.1080/00222899809601340 – Blick-Hand-Kopplung, Unterschießen
 - Helsen, W. F., Adam, J. J., Elliott, D., & Buekers, M. J. (2001). The one-target advantage: A test of the movement integration hypothesis. *Human Movement Science, 20*(4–5), 643–674. https://doi.org/10.1016/S0167-9457(01)00071-9 – Kosten von Zielfolgen
-- Hutchings, N., Irving, E. L., Jung, N., Dowling, L. M., Wells, K. A., & Lillakas, L. (2007). Eye and head movement alterations in naïve progressive addition lens wearers. *Ophthalmic and Physiological Optics, 27*(2), 142–153. https://doi.org/10.1111/j.1475-1313.2006.00460.x – Kopfbewegungen mit Gleitsicht (Crossref listet 5 Autor:innen; Lillakas per Erratum ergänzt)
+- Hutchings, N., Irving, E. L., Jung, N., Dowling, L. M., Wells, K. A., & Lillakas, L. (2007). Eye and head movement alterations in naïve progressive addition lens wearers. *Ophthalmic and Physiological Optics, 27*(2), 142–153. https://doi.org/10.1111/j.1475-1313.2006.00460.x – Kopfbewegungen mit Gleitsicht
 - Jagacinski, R. J., Repperger, D. W., Ward, S. L., & Moran, M. S. (1980). A test of Fitts' law with moving targets. *Human Factors, 22*(2), 225–233. https://doi.org/10.1177/001872088002200211 – Fitts für bewegte Ziele (nur Kurzfassung eingesehen)
 - Ketcham, C. J., Seidler, R. D., Van Gemmert, A. W. A., & Stelmach, G. E. (2002). Age-related kinematic differences as influenced by task difficulty, target size, and movement amplitude. *The Journals of Gerontology: Series B, 57*(1), P54–P64. https://doi.org/10.1093/geronb/57.1.P54 – Alter
 - Leigh, R. J., & Zee, D. S. (2015). *The neurology of eye movements* (5. Aufl.). Oxford University Press. https://doi.org/10.1093/med/9780199969289.001.0001 – Sakkaden-Netzwerk (Lehrbuch)
-- Listman, J. B., Tsay, J. S., Kim, H. E., Mackey, W. E., & Heeger, D. J. (2021). Long-term motor learning in the "wild" with high volume video game data. *Frontiers in Human Neuroscience, 15*, 777779. https://doi.org/10.3389/fnhum.2021.777779 – Übungseffekt Aim Lab
+- Listman, J. B., Tsay, J. S., Kim, H. E., Mackey, W. E., & Heeger, D. J. (2021). Long-term motor learning in the "wild" with high volume video game data. *Frontiers in Human Neuroscience, 15*, 777779. https://doi.org/10.3389/fnhum.2021.777779 – Übungseffekt (N = 7.174)
 - MacGregor, J. N., & Ormerod, T. (1996). Human performance on the traveling salesman problem. *Perception & Psychophysics, 58*(4), 527–539. https://doi.org/10.3758/BF03213088 – Routenwahl
-- MDN Web Docs. (o. J.). *Element: requestPointerLock() method*. Abgerufen am 29.09.2026 von https://developer.mozilla.org/en-US/docs/Web/API/Element/requestPointerLock – `unadjustedMovement`, iPad
 - Munoz, D. P., Broughton, J. R., Goldring, J. E., & Armstrong, I. T. (1998). Age-related performance of human subjects on saccadic eye movement tasks. *Experimental Brain Research, 121*(4), 391–400. https://doi.org/10.1007/s002210050473 – Sakkaden im Alter
 - Neggers, S. F. W., & Bekkering, H. (2000). Ocular gaze is anchored to the target of an ongoing pointing movement. *Journal of Neurophysiology, 83*(2), 639–651. https://doi.org/10.1152/jn.2000.83.2.639 – Blickverankerung
 - Parhi, P., Karlson, A. K., & Bederson, B. B. (2006). Target size study for one-handed thumb use on small touchscreen devices. In *Proceedings of MobileHCI '06* (S. 203–210). ACM. https://doi.org/10.1145/1152215.1152260 – Touch-Zielgröße
 - Prablanc, C., Echallier, J. F., Komilis, E., & Jeannerod, M. (1979). Optimal response of eye and hand motor systems in pointing at a visual target. I. *Biological Cybernetics, 35*(2), 113–124. https://doi.org/10.1007/BF00337436 – Sakkade vor Hand
-- Pylyshyn, Z. W., & Storm, R. W. (1988). Tracking multiple independent targets: Evidence for a parallel tracking mechanism. *Spatial Vision, 3*(3), 179–197. https://doi.org/10.1163/156856888X00122 – FINST (nur Kurzfassung)
 - Soukoreff, R. W., & MacKenzie, I. S. (2004). Towards a standard for pointing device evaluation, perspectives on 27 years of Fitts' law research in HCI. *International Journal of Human-Computer Studies, 61*(6), 751–789. https://doi.org/10.1016/j.ijhcs.2004.09.001 – Durchsatz
 - Spjut, J., Boudaoud, B., Binaee, K., Kim, J., Majercik, A., McGuire, M., Luebke, D., & Kim, J. (2019). Latency of 30 ms benefits first person targeting tasks more than refresh rate above 60 Hz. In *SIGGRAPH Asia 2019 Technical Briefs* (S. 110–113). ACM. https://doi.org/10.1145/3355088.3365170 – Latenz vs. Bildrate
 - Warburton, M., Campagnoli, C., Mon-Williams, M., Mushtaq, F., & Morehead, J. R. (2023). Kinematic markers of skill in first-person shooter video games. *PNAS Nexus, 2*(8), pgad249. https://doi.org/10.1093/pnasnexus/pgad249 – Übung, Bewegungsphasen
 - Yantis, S., & Jonides, J. (1984). Abrupt visual onsets and selective attention: Evidence from visual search. *Journal of Experimental Psychology: Human Perception and Performance, 10*(5), 601–621. https://doi.org/10.1037/0096-1523.10.5.601 – neu erscheinende Ziele
+- Muchnick, B. G. (2008). *Clinical Medicine in Optometric Practice* (2nd ed.). Mosby/Elsevier. https://openlibrary.org/isbn/9780323029612 – S. 7, 28, 32: Anfallsleiden gehören zur erfragten Vorgeschichte; Kopfschmerz mit Sehverschlechterung als neurologisches Warnzeichen; Gesichtsfeldausfälle nach Sehbahnverlauf
+- Mountford, J., Ruston, D., & Dave, T. (2004). *Orthokeratology: Principles and Practice*. Butterworth-Heinemann. https://openlibrary.org/isbn/9780750640077 – S. 43–44: Wiederholbarkeit von Messungen am Menschen geringer als an Prüfkörpern

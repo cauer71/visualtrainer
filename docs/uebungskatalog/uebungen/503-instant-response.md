@@ -2,7 +2,7 @@
 # ===== Kennung =====
 nr: 503
 kennung: instant-response
-name: "Sofortreaktion – beim grünen Aufleuchten in der Bildmitte klicken, Frühstarts und Täuschreize meiden"
+name: "Sofortreaktion – beim Aufleuchten in der Bildmitte tippen, Frühstarts vermeiden"
 name_original: "Instant Response Pro (Seitentitel: Reaktionszeit Test – FPS-Reflexe messen)"
 kapitel: "Zielen (FPS)"
 kapitel_original: "fps"
@@ -12,7 +12,7 @@ blickfit_umsetzung: {kennung: "sofort-reaktion", name: "Sofort-Reaktion", unters
 stand: 2026-09-29
 
 # ===== Überblick =====
-kurzbeschreibung: "In der Bildmitte liegt ein dunkler Punkt unter dem Fadenkreuz. Nach einer zufälligen Wartezeit leuchtet er grün auf, und man klickt so schnell wie möglich, bevor er wieder erlischt; wer vorher klickt oder auf ein schwächeres, sehr kurzes Täuschaufleuchten hereinfällt, verliert Zeit und Serie."
+kurzbeschreibung: "In der Bildmitte liegt ein hohler Ring, der sich nach einer unvorhersehbaren Wartezeit weich mit warmweißem Licht füllt. Man tippt so schnell wie möglich irgendwo auf den Bildschirm; ein Tipp vor dem Licht zählt als Frühstart. Ausgewertet werden Reaktionszeit (Median), Streuung und Frühstarts im Vergleich mit sich selbst."
 ziel_funktionen: [einfache_reaktion]
 eingabe: [maus]
 tablet_geeignet: mit_anpassung
@@ -74,30 +74,24 @@ belastung:
 # ===== Auswahlhilfe =====
 voraussetzungen: ["Computer mit Maus (reine Touch-Geräte werden erkannt und nicht zugelassen; ohne Pointer Lock – z. B. iPad-Safari – werden Klicks ignoriert)", "Maus während der Runde ruhig liegen lassen (Treffer nur, wenn das Fadenkreuz ≤ 45 px von der Mitte entfernt ist)", "Bildschirm 50–70 cm, Vollbild empfohlen", "passende Korrektion für den Bildschirmabstand", "kein Farbsehen nötig (Aufleuchten und Täuschreiz unterscheiden sich in der Helligkeit)", "Toleranz für Zeitdruck, Aufblitzen und Fehler-Rückmeldung (roter Schimmer, Bildwackeln)"]
 vorsicht_bei: [photosensitive_epilepsie, migraene_lichtempfindlich, trockenes_auge_bildschirm, kopfschmerz_asthenopie, sehbehinderung_niedriger_visus, aufmerksamkeitsprobleme, kognitive_einschraenkung, tremor_parkinson]
-geeignet_fuer: ["einfache visuelle Reaktion auf einen zentralen Lichtreiz spielerisch üben", "Frühstarts unterdrücken (Warten auf den echten Reiz) und ab höheren Levels Täuschreize ignorieren (Go/No-Go-Anteil)", "Wachbleiben über wiederholte, unvorhersehbare Wartezeiten", "Selbstvergleich auf demselben Gerät, z. B. vor/nach Pausen", "kurzes Aufwärmen für Menschen, die ohnehin Ego-Shooter spielen"]
-weniger_geeignet_fuer: ["Tablet- und Smartphone-Nutzung (Original nicht spielbar)", "genaue Messung der eigenen Reaktionszeit (Fenster schneidet langsame Antworten ab, Mittelwert statt Median, Geräte-Latenz)", "Übungsziel Zielen, Blickbewegungen, peripheres Sehen oder Suche", "Menschen, die unter Zeitdruck und Strafen rasch frustriert sind", "Erwartung eines Seh-, Sport- oder Alltagsnutzens"]
+geeignet_fuer: ["einfache visuelle Reaktion auf einen zentralen Lichtreiz üben", "Frühstarts unterdrücken (Warten auf den echten Reiz)", "Wachbleiben über wiederholte, unvorhersehbare Wartezeiten", "Selbstvergleich auf demselben Gerät, z. B. vor/nach Pausen", "kurzes Aufwärmen vor Übungen mit schneller Reaktion"]
+weniger_geeignet_fuer: ["genaue Messung der eigenen Reaktionszeit (Touch und Anzeige addieren eine Verzögerung, das Gerät beeinflusst den Wert)", "Übungsziel Zielen, Blickbewegungen, peripheres Sehen oder Suche", "Menschen, die unter Zeitdruck rasch frustriert sind", "Erwartung eines Seh-, Sport- oder Alltagsnutzens"]
 evidenz:
   uebungseffekt: mittel
   naher_transfer: schwach
   alltag_transfer: fehlend
-  kommentar: "Einfache Reaktionszeit ist über Wiederholungen sehr stabil (Basner et al. 2018; Kida et al. 2005), Zugewinne sind überwiegend Gewöhnung an Aufgabe und Gerät (Guo et al. 2025); Punkte steigen eher durch Timing und weniger Fehler. Die Übung selbst und ein Transfer auf Spiel oder Alltag sind nicht untersucht."
+  kommentar: "Einfache Reaktionszeit ist über Wiederholungen sehr stabil (Basner et al. 2018; Kida et al. 2005), Zugewinne sind überwiegend Gewöhnung an Aufgabe und Gerät (Guo et al. 2025); gleichmäßigere Antworten und weniger Frühstarts sind eher Timing als schnellere Wahrnehmung. Die Übung selbst und ein Transfer auf Spiel oder Alltag sind nicht untersucht."
 aehnliche_uebungen: [101, 102, 202, 802, 306, 511, 501, 208]
 stichworte: ["Reaktionszeit", "einfache Reaktion", "Frühstart", "Antizipation", "Täuschreiz", "Go/No-Go", "Impulskontrolle", "Vorperiode", "Aufleuchten", "Ego-Shooter", "FPS", "Maus", "Pointer Lock", "Zeitdruck", "Combo"]
 ---
 
-# 503 · Sofortreaktion – beim grünen Aufleuchten in der Bildmitte klicken, Frühstarts und Täuschreize meiden
+# 503 · Sofortreaktion – beim Aufleuchten in der Bildmitte tippen, Frühstarts vermeiden
 
-> Original: „Instant Response Pro“ (Seitentitel „Reaktionszeit Test – FPS-Reflexe messen“) – skilldrills.online,
-> Kapitel Zielen (`fps`) · Blickfit: noch nicht umgesetzt (verwandt: `blitzreaktion` zu 101, `stopp-los` zu 102)
+> Original: „Instant Response Pro“ (Seitentitel „Reaktionszeit Test – FPS-Reflexe messen“) – skilldrills.online, Kapitel Zielen (`fps`) · Blickfit: noch nicht umgesetzt (verwandt: `blitzreaktion` zu 101, `stopp-los` zu 102)
 
 ## 1. Kurzbeschreibung
 
-Auf fast schwarzem Grund liegt in der Bildmitte ein dunkelgrauer Punkt, darüber das weiße Fadenkreuz. Nach einer
-zufälligen Wartezeit von rund 0,7–2,2 s leuchtet der Punkt hell grün auf; man klickt, so schnell es geht, und
-bewegt die Maus dabei nicht. Wer vor dem Aufleuchten klickt, zu spät kommt oder – ab mittleren Levels – auf ein
-schwächeres, nur 60 ms kurzes Täuschaufleuchten reagiert, verliert 1 s und die Trefferserie. Mit steigendem
-Punktestand werden Wartezeit und Antwortfenster kürzer. Geübt wird also die einfache Reaktion mit
-„Abzugsdisziplin“, nicht das Zielen.
+In der Bildmitte liegt ein hohler Ring. Nach einer unregelmäßigen, nicht vorhersagbaren Wartezeit (mindestens 0,9 s, höchstens 3,5 s) füllt er sich weich mit warmweißem Licht (Einblenden in 100 ms, kein Grün, kein Rot, kein Blitz). Sobald das Licht erscheint, tippt man so schnell wie möglich irgendwo auf den Bildschirm; gezielt getroffen werden muss nichts. Ein Tipp vor dem Licht oder in den ersten 100 ms danach zählt als Frühstart, wird nicht gewertet und löst eine neue Wartezeit aus. Eine Runde besteht aus 2 Aufwärm- und 16 gewerteten Durchgängen. Ausgewertet werden die Reaktionszeit (Median), ihre Streuung, die Frühstarts und die gültigen Durchgänge, als Vergleich mit sich selbst auf demselben Gerät. Geübt wird die einfache Reaktion mit „Abzugsdisziplin“: auf den echten Reiz warten, nicht raten.
 
 ## 2. Ablauf im Original (Analyse)
 
@@ -167,78 +161,41 @@ Hardware-Werte, eine Tier-Tabelle (Profi < 160 ms, „genetisch maximale Leitges
 
 ## 4. Optische und okulomotorische Grundlagen
 
-- **Reiz:** Ø 70 px ≈ 1,8° (24″-Monitor, 1.920 px, 60 cm) bzw. ≈ 1,1° am 14″-Laptop [ER], stets in der Blickmitte
-  (höchste Zapfendichte; Curcio et al., 1990). Sehschärfe begrenzt kaum; keine Sakkaden, keine Peripherie; der Blick
-  ruht in der Mitte, eine präzise Fixation ist für den großen, hellen Reiz aber nicht nötig. Bei zentralem Gesichtsfeldausfall (z. B. Makula) liegt der Reiz im betroffenen Bereich.
-- **Helligkeit statt Farbe:** Ziel und Täuschreiz unterscheiden sich in Deckkraft, Größe und Schein, nicht im Farbton →
-  bei Rot-Grün-Schwäche (≈ 8 % der Männer; Birch, 2012) lösbar. Die Reaktionszeit sinkt mit der Reizintensität
-  (Piéron'sches Gesetz, auch für Wahlreaktionen bestätigt; Pins & Bonnet, 1996) – Monitorhelligkeit und Raumlicht verschieben den Messwert. Die im Alter
-  sinkende Kontrastempfindlichkeit (Owsley et al., 1983; v. a. mittlere/hohe Ortsfrequenzen) betrifft den großen
-  Reiz vermutlich wenig; ob sie die Unterscheidung Ziel/Täuschreiz erschwert, ist nicht untersucht.
-- **Bildrate/Lidschlag:** 60 ms = 3–4 Bilder bei 60 Hz, Reizbeginn auf das Bildraster quantisiert (bis 16,7 ms) [ER].
-  Bei schnellen Spielen sinkt der Lidschlag auf ≈ ⅓ des Ruhewerts (Cardona et al., 2011); starres Warten und lange
-  Runden begünstigen Brennen und Ermüdung (Sheppard & Wolffsohn, 2018).
-- **Brille:** Zentraler, großer Reiz – mit Gleitsicht unkritisch, wenn die Bildschirmmitte durch den Zwischenbereich
-  gesehen wird (Monitor nicht zu hoch, sonst Kopf in den Nacken); Bedarf bei 60 cm ≈ 1,7 dpt (Charman, 2008).
-- **Stereosehen:** 2D-Bildschirm → 0.
+- **Reiz:** Das Licht erscheint stets in der Blickmitte (höchste Zapfendichte; Curcio et al., 1990). Die Sehschärfe begrenzt kaum; es gibt keine Sakkaden und keine Peripherie, der Blick ruht in der Mitte, eine präzise Fixation ist für den großen, hellen Reiz aber nicht nötig. Bei zentralem Gesichtsfeldausfall (z. B. Makula) liegt der Reiz im betroffenen Bereich; Gesichtsfeldausfälle lassen sich klinisch nach dem Verlauf der Sehbahn einordnen (Muchnick, 2008, S. 32), die Übung ist kein Gesichtsfeldtest.
+- **Helligkeit statt Farbe:** Der Reiz unterscheidet sich vom Hintergrund in der Helligkeit, nicht im Farbton, daher ist die Übung auch bei Rot-Grün-Schwäche (≈ 8 % der Männer; Birch, 2012) lösbar. Die Reaktionszeit sinkt mit der Reizintensität (Piéron'sches Gesetz, auch für Wahlreaktionen bestätigt; Pins & Bonnet, 1996); Monitorhelligkeit und Raumlicht verschieben den Messwert. Die im Alter sinkende Kontrastempfindlichkeit (Owsley et al., 1983; vor allem mittlere und hohe Ortsfrequenzen) betrifft den großen Reiz vermutlich wenig.
+- **Bildrate/Lidschlag:** Der Reizbeginn ist auf das Bildraster quantisiert (bei 60 Hz bis 16,7 ms). Bei schnellen Bildschirmaufgaben sinkt der Lidschlag auf etwa ein Drittel des Ruhewerts (Cardona et al., 2011); starres Warten und lange Runden begünstigen Brennen und Ermüdung (Sheppard & Wolffsohn, 2018).
+- **Brille:** Zentraler, großer Reiz, auch mit Gleitsicht unkritisch, wenn die Bildschirmmitte durch den Zwischenbereich gesehen wird (Bildschirm nicht zu hoch, sonst Kopf im Nacken); der Akkommodationsbedarf beträgt bei 40 cm 2,5 dpt, bei 60 cm ≈ 1,7 dpt (Charman, 2008).
+- **Stereosehen:** 2D-Bildschirm, Profilwert 0.
 
 ## 5. Neurowissenschaftliche Grundlagen
 
-Die einfache Reaktion umfasst Reizentdeckung (≈ 131 ms), Auslösung und Ausführung; der Altersanstieg betrifft vor allem
-den motorischen Teil (Woods et al., 2015). Magnozelluläre Bahnen und V1 antworten zuerst, höhere Areale bis zum
-frontalen Augenfeld kurz danach (Schmolesky et al., 1998, Makaken). Das Warten beansprucht das **Alarmierungs-Netzwerk**
-(Noradrenalin aus dem Locus coeruleus, rechtshemisphärische Wachsamkeitssysteme; Petersen & Posner, 2012). Die
-Bereitschaft folgt der Hazardrate: Bei gleichverteilter Wartezeit steigt sie, je länger man wartet (Niemi & Näätänen,
-1981) – das begünstigt hier Frühstarts am Ende der Wartezeit. Das Zurückhalten eines vorbereiteten Klicks wird einem
-rechts-frontalen „Brems“-Netzwerk mit Basalganglien zugeschrieben (Aron et al., 2014); echte Hemmung wird nur
-gefordert, wenn Stopp-Reize selten sind und das Tempo hoch ist (Wessel, 2018). „Stärkt synaptische Plastizität“ oder
-„beschleunigt die Nervenleitung“ ist nicht belegt.
+Die einfache Reaktion umfasst Reizentdeckung (≈ 131 ms), Auslösung und Ausführung; der Altersanstieg betrifft vor allem den motorischen Teil (Woods et al., 2015). Magnozelluläre Bahnen und V1 antworten zuerst, höhere Areale bis zum frontalen Augenfeld kurz danach (Schmolesky et al., 1998, Makaken). Das Warten beansprucht das **Alarmierungs-Netzwerk** (Noradrenalin aus dem Locus coeruleus, rechtshemisphärische Wachsamkeitssysteme; Petersen & Posner, 2012). Die Bereitschaft folgt der Hazardrate: Bei gleichverteilter Wartezeit steigt sie, je länger man wartet (Niemi & Näätänen, 1981). Deshalb folgt auf eine feste Mindestwartezeit von 0,9 s ein exponentiell verteilter Anteil, bei dem die Wahrscheinlichkeit „jetzt kommt es“ konstant bleibt und sich der Zeitpunkt nicht erraten lässt. Das Zurückhalten eines vorbereiteten Tipps wird einem rechts-frontalen „Brems“-Netzwerk mit Basalganglien zugeschrieben (Aron et al., 2014); echte Hemmung wird nur gefordert, wenn Stopp-Reize selten sind und das Tempo hoch ist (Wessel, 2018). Belege für eine Verbesserung der Nervenleitung oder synaptische Plastizität durch diese Übung gibt es nicht.
 
 ## 6. Motorische Grundlagen
 
-- **Bewegung:** ein Tastendruck des Zeigefingers bei ruhiger Hand (45-px-Zone; bei Tremor gelegentlich Fehlklicks).
-- **Speed-Accuracy-Trade-off:** Tempobonus und schrumpfende Fenster schieben zu Tempo und damit zu Frühstarts (Heitz,
-  2014); FPS-/MOBA-Spieler waren im Stroop schneller, aber fehleranfälliger (Kowal et al., 2018).
-- **Latenz:** USB-Abfrage 125 Hz bis 8 ms, 1.000 Hz 1 ms [ER]; geringere Gesamtlatenz nützt mehr als Bildraten über 60 Hz
-  (Spjut et al., 2019). Web-Apps messen Touch-Reaktionen 58–70 ms zu lang (Pronk et al., 2020).
-- **Alter:** +0,55 ms pro Lebensjahr (Woods et al., 2015), aber ab 60 deutlich mehr Schwankung von Durchgang zu Durchgang
-  (Dykiert et al., 2012) – bei kurzen festen Fenstern mehr Zeitüberschreitungen.
+- **Bewegung:** ein Tipp mit dem Finger irgendwo auf dem Bildschirm; gemessen wird das Erkennen, nicht das Zielen. Bei Tremor ist die Auslösung unsicherer.
+- **Speed-Accuracy-Trade-off:** Wer schneller sein will, riskiert mehr Frühstarts (Heitz, 2014); FPS- und MOBA-Spieler waren im Stroop-Test schneller, aber fehleranfälliger (Kowal et al., 2018).
+- **Latenz:** Geringere Gesamtlatenz nützt mehr als Bildraten über 60 Hz (Spjut et al., 2019). Web-Apps messen Touch-Reaktionen 58–70 ms zu lang (Pronk et al., 2020); Touch und Anzeige addieren eine Verzögerung, die Zeit ist daher zu lang und nur als Vergleich mit sich selbst auf demselben Gerät zu lesen (zur Wahrnehmung von Touch-Latenz Deber et al., 2015).
+- **Alter:** +0,55 ms pro Lebensjahr (Woods et al., 2015), aber ab 60 deutlich mehr Schwankung von Durchgang zu Durchgang (Dykiert et al., 2012).
 
 ## 7. Einflussfaktoren und Messgrenzen
 
-- **Gerät:** Latenz, Bildrate, Maus-Abfrage, Browser, Helligkeit wirken stärker als Lernen → nur Selbstvergleich.
-- **Zensierte Messung:** Nur Treffer innerhalb des Fensters zählen; je kürzer es wird, desto mehr langsame Antworten
-  fallen heraus → die mittlere Reaktionszeit wird mit dem Level künstlich besser. Mittelwert statt Median, keine Streuung
-  (robuste Kennwerte: Ratcliff, 1993).
-- **Antizipation:** steigende Hazardrate und fehlende Frühstart-Grenze belohnen Raten; nach einem Klick auf einen
-  Täuschreiz kommt das nächste Ziel vorhersehbar nach 350 ms.
-- **Zustand:** Schlafmangel verschlechtert v. a. einfache Aufmerksamkeit (Lim & Dinges, 2010); frühe Gewinne sind
-  großteils Gewöhnung (Guo et al., 2025). Punkte, Level, Rundendauer und Fenster hängen voneinander ab.
+- **Gerät:** Latenz, Bildrate, Touch-Abtastung, Browser und Helligkeit wirken stärker als Lernen; nur Selbstvergleich auf demselben Gerät.
+- **Robuste Kennwerte:** Median und Streuung (Interquartilsabstand) statt Mittelwert, weil einzelne Ausreißer den Mittelwert verzerren (Ratcliff, 1993). Antworten von 100–149 ms werden gewertet, aber als „auffallend schnell“ gezählt (Hinweis auf Raten). Messungen am Menschen streuen; Mehrfachmessung und Median sind sinnvoll (Mountford et al., 2004, S. 44). Das Licht bleibt bis zum Tipp, höchstens 1,5 s; danach gilt der Durchgang als verpasst.
+- **Zustand:** Schlafmangel verschlechtert vor allem einfache Aufmerksamkeit (Lim & Dinges, 2010); frühe Gewinne sind großteils Gewöhnung (Guo et al., 2025).
 
 ## 8. Studienlage: Trainierbarkeit und Übertragung
 
-- **Übungseffekt – mittel:** Punkte steigen mit Übung (Timing, weniger Frühstarts); die einfache Reaktionszeit selbst ist
-  sehr stabil (PVT, 16 Durchgänge, N = 45; Basner et al., 2018). Go/No-Go-Reaktionen waren durch langjähriges
-  Sporttraining veränderbar, einfache nicht (Kida et al., 2005).
-- **Naher Transfer – schwach:** Effekte sind groß nur bei gleichartigen Tests (SMD 2,66 vs. 0,50; Guo et al., 2025);
-  Querschnittsbefunde zu Action-Spielern (Dye et al., 2009) gelten nicht für diese Einzelübung.
-- **Alltagstransfer – fehlend:** kein Nachweis für Spiel, Verkehr oder Beruf; Videospiel-Training zeigt kleinen bis
-  keinen Ferntransfer (Sala et al., 2018; Bediou et al., 2023).
+- **Übungseffekt – mittel:** Mit Übung werden die Antworten gleichmäßiger und Frühstarts seltener; die einfache Reaktionszeit selbst ist sehr stabil (PVT, 16 Durchgänge, N = 45; Basner et al., 2018). Go/No-Go-Reaktionen waren durch langjähriges Sporttraining veränderbar, einfache nicht (Kida et al., 2005).
+- **Naher Transfer – schwach:** Effekte sind groß nur bei gleichartigen Tests (SMD 2,66 vs. 0,50; Guo et al., 2025); Querschnittsbefunde zu Action-Spielern (Dye et al., 2009) gelten nicht für diese Einzelübung.
+- **Alltagstransfer – fehlend:** Kein Nachweis für Spiel, Verkehr oder Beruf; Videospiel-Training zeigt kleinen bis keinen Ferntransfer (Sala et al., 2018; Bediou et al., 2023). Die Übung sagt nichts über die Fahrtüchtigkeit aus.
 
 ## 9. Auswahlhinweise für die KI
 
-- **Passt, wenn …** einfache Reaktion und das Abwarten des echten Reizes spielerisch geübt werden sollen; die Person
-  Maus und Tempo mag; ein kurzes, kognitiv einfaches Aufwärmen ohne Suche und Zielen gesucht wird.
-- **Weniger passend, wenn …** nur ein Tablet vorhanden ist; eine verlässliche Messung gewünscht ist (→ Blickfit
-  `blitzreaktion`); Hemmung gezielt geübt werden soll (→ 102); Ziel Blickbewegung, Zielen oder Gedächtnis.
-- **Vorsicht / anpassen bei …** `photosensitive_epilepsie`, `migraene_lichtempfindlich` (Kern ist ein Aufblitzen auf
-  dunklem Grund, 60-ms-Täuschblitze, roter Schimmer und Bildwackeln bei jedem Fehler, bei Dauerklicken mehrmals pro
-  Sekunde; Richtwert ≤ 3 Blitze/s, vgl. Fisher et al., 2005); `trockenes_auge_bildschirm`, `kopfschmerz_asthenopie` (starres
-  Warten, Lidschlag ↓, Runden verlängern sich); `sehbehinderung_niedriger_visus` (zentraler Ausfall, Kontrast für den
-  gedimmten Täuschreiz); `aufmerksamkeitsprobleme`, `kognitive_einschraenkung` (Zeitdruck, Strafen, Täuschreize);
-  `tremor_parkinson` (ruhiges Fadenkreuz, verlangsamte Auslösung vs. schrumpfende Fenster). Nur Auswahlhinweise.
-- **Kombiniert gut mit …** 101 (Reaktion ohne Täuschung), 102 (Go/No-Go), 202 (Wahlreaktion), 208
-  (Daueraufmerksamkeit), 511 (Warten auf ein Ziel mit Zielen).
+- **Passt, wenn …** einfache Reaktion und das Abwarten des echten Reizes geübt werden sollen; ein kurzes, kognitiv einfaches Aufwärmen ohne Suche und Zielen gesucht wird.
+- **Weniger passend, wenn …** eine verlässliche Messung der Reaktionszeit gewünscht ist (→ Blickfit `blitzreaktion`); Hemmung gezielt geübt werden soll (→ 102); das Ziel Blickbewegung, Zielen oder Gedächtnis ist.
+- **Vorsicht / anpassen bei …** `photosensitive_epilepsie`, `migraene_lichtempfindlich` (Kern ist ein Aufleuchten auf dunklem Grund; das Licht blendet weich warmweiß ein, ohne Blitz und ohne roten Schimmer, trotzdem sind es mehrere Lichtreize pro Minute; Richtwert ≤ 3 Blitze/s, vgl. Fisher et al., 2005; Anfallsleiden gehören zur Vorgeschichte, die ärztlich zu erfragen ist, Muchnick, 2008, S. 7); `trockenes_auge_bildschirm`, `kopfschmerz_asthenopie` (starres Warten, Lidschlag ↓; Kopfschmerz zusammen mit Sehverschlechterung ärztlich abklären lassen, Muchnick, 2008, S. 28); `sehbehinderung_niedriger_visus` (zentraler Ausfall); `aufmerksamkeitsprobleme`, `kognitive_einschraenkung` (Zeitdruck); `tremor_parkinson` (ruhige Auslösung). Nur Auswahlhinweise.
+- **Kombiniert gut mit …** 101 (Reaktion ohne Täuschung), 102 (Go/No-Go), 202 (Wahlreaktion), 208 (Daueraufmerksamkeit), 511 (Warten auf ein Ziel mit Zielen).
 
 ## 10. Schwächen des Originals und Empfehlungen für eine Blickfit-Umsetzung
 
@@ -258,7 +215,7 @@ gefordert, wenn Stopp-Reize selten sind und das Tempo hoch ist (Wessel, 2018). �
 
 - Woods, D. L., Wyma, J. M., Yund, E. W., Herron, T. J., & Reed, B. (2015). Factors influencing the latency of simple reaction time. *Frontiers in Human Neuroscience, 9*, 131. https://doi.org/10.3389/fnhum.2015.00131 – **Prüfung:** DOI stimmt ✓; **stützt die Aussage der Website:** teilweise (200–250 ms und Hardware-Anteil ja; Monitor-/Schalterwerte, Latenzkette und Tier-Tabelle stehen nicht darin).
 - Posner, M. I., & Petersen, S. E. (1990). The attention system of the human brain. *Annual Review of Neuroscience, 13*, 25–42. https://doi.org/10.1146/annurev.ne.13.030190.000325 – **Prüfung:** DOI stimmt ✓ (im Text als „Posner, 1990“); **stützt:** nein (Aufmerksamkeitsnetzwerke; nichts zu Zapfendichte oder Motorkortex-Latenz).
-- Donders, F. C. (1969). On the speed of mental processes (W. G. Koster, Übers.). *Acta Psychologica, 30*, 412–431. https://doi.org/10.1016/0001-6918(69)90065-1 (Original 1868) – **Prüfung:** DOI stimmt ✓; **stützt:** teilweise (einfache vs. Wahlreaktion ja; „160–220 ms“ und Tier-Tabelle nicht daraus).
+- Donders, F. C. (1969). On the speed of mental processes (W. G. Koster, Übers.). *Acta Psychologica, 30*, 412–431. https://doi.org/10.1016/0001-6918(69)90065-1 (erstmals 1868) – **Prüfung:** DOI stimmt ✓; **stützt:** teilweise (einfache vs. Wahlreaktion ja; „160–220 ms“ und Tier-Tabelle nicht daraus).
 - Hick, W. E. (1952). On the rate of gain of information. *Quarterly Journal of Experimental Psychology, 4*(1), 11–26. https://doi.org/10.1080/17470215208416600 – **Prüfung:** DOI stimmt ✓; **stützt:** teilweise (gilt für Wahlreaktionen; für Latenzkette und einfache Reaktion ohne Bezug).
 
 ### Weitere Fachliteratur
@@ -275,4 +232,20 @@ gefordert, wenn Stopp-Reize selten sind und das Tempo hoch ist (Wessel, 2018). �
 - Pins, D., & Bonnet, C. (1996). On the relation between stimulus intensity and processing time: Piéron's law and choice reaction time. *Perception & Psychophysics, 58*(3), 390–400. https://doi.org/10.3758/BF03206815 – Reaktionszeit und Helligkeit (Crossref ✓, Abstract PubMed)
 - Schmolesky, M. T., Wang, Y., Hanes, D. P., Thompson, K. G., Leutgeb, S., Schall, J. D., & Leventhal, A. G. (1998). Signal timing across the macaque visual system. *Journal of Neurophysiology, 79*(6), 3272–3278. https://doi.org/10.1152/jn.1998.79.6.3272 – Latenzen im visuellen System
 - Wessel, J. R. (2018). Prepotent motor activity and inhibitory control demands in different variants of the go/no-go paradigm. *Psychophysiology, 55*(3), e12871. https://doi.org/10.1111/psyp.12871 – wann Go/No-Go Hemmung fordert
-- Ebenfalls zitiert (alle Crossref ✓, Angaben in [`literatur/lit-W06-fps-a.md`](../literatur/lit-W06-fps-a.md) bzw. `docs/wissenschaft/01`): Basner & Dinges (2011) https://doi.org/10.1093/sleep/34.5.581 · Bediou et al. (2023) https://doi.org/10.1037/tmb0000102 · Birch (2012) https://doi.org/10.1364/JOSAA.29.000313 · Charman (2008) https://doi.org/10.1111/j.1444-0938.2008.00256.x · Curcio et al. (1990) https://doi.org/10.1002/cne.902920402 · Deber et al. (2015) https://doi.org/10.1145/2702123.2702300 · Fisher et al. (2005) https://doi.org/10.1111/j.1528-1167.2005.31405.x · Heitz (2014) https://doi.org/10.3389/fnins.2014.00150 · Ivkovic et al. (2015) https://doi.org/10.1145/2702123.2702432 · Kowal et al. (2018) https://doi.org/10.1016/j.chb.2018.07.010 · Lim & Dinges (2010) https://doi.org/10.1037/a0018883 · McLellan et al. (2016) https://doi.org/10.1016/j.neubiorev.2016.09.001 · Owsley et al. (1983) https://doi.org/10.1016/0042-6989(83)90210-9 · Pronk et al. (2020) https://doi.org/10.3758/s13428-019-01321-2 · Ratcliff (1993) https://doi.org/10.1037/0033-2909.114.3.510 · Sala et al. (2018) https://doi.org/10.1037/bul0000139 · Sheppard & Wolffsohn (2018) https://doi.org/10.1136/bmjophth-2018-000146 · Spjut et al. (2019) https://doi.org/10.1145/3355088.3365170
+- Birch, J. (2012). Worldwide prevalence of red-green color deficiency. *Journal of the Optical Society of America A, 29*(3), 313–320. https://doi.org/10.1364/JOSAA.29.000313 – Häufigkeit der Rot-Grün-Schwäche
+- Bediou, B., Rodgers, M. A., Tipton, E., Mayer, R. E., Green, C. S., & Bavelier, D. (2023). Effects of action video game play on cognitive skills: A meta-analysis. *Technology, Mind, and Behavior, 4*(1), 28–48. https://doi.org/10.1037/tmb0000102 – kleiner bis kein Ferntransfer
+- Charman, W. N. (2008). The eye in focus: Accommodation and presbyopia. *Clinical and Experimental Optometry, 91*(3), 207–225. https://doi.org/10.1111/j.1444-0938.2008.00256.x – Akkommodationsbedarf, Alterssichtigkeit
+- Curcio, C. A., Sloan, K. R., Kalina, R. E., & Hendrickson, A. E. (1990). Human photoreceptor topography. *Journal of Comparative Neurology, 292*(4), 497–523. https://doi.org/10.1002/cne.902920402 – höchste Zapfendichte in der Fovea
+- Deber, J., Jota, R., Forlines, C., & Wigdor, D. (2015). How much faster is fast enough? User perception of latency & latency improvements in direct and indirect touch. In *Proceedings of CHI '15* (S. 1827–1836). ACM. https://doi.org/10.1145/2702123.2702300 – Touch-Latenz
+- Fisher, R. S., Harding, G., Erba, G., Barkley, G. L., & Wilkins, A. (2005). Photic- and pattern-induced seizures: A review for the Epilepsy Foundation of America Working Group. *Epilepsia, 46*(9), 1426–1441. https://doi.org/10.1111/j.1528-1167.2005.31405.x – Lichtreize
+- Heitz, R. P. (2014). The speed-accuracy tradeoff: History, physiology, methodology, and behavior. *Frontiers in Neuroscience, 8*, 150. https://doi.org/10.3389/fnins.2014.00150 – Tempo und Fehler
+- Kowal, M., Toth, A. J., Exton, C., & Campbell, M. J. (2018). Different cognitive abilities displayed by action video gamers and non-gamers. *Computers in Human Behavior, 88*, 255–262. https://doi.org/10.1016/j.chb.2018.07.010 – schnell, aber fehleranfälliger
+- Lim, J., & Dinges, D. F. (2010). A meta-analysis of the impact of short-term sleep deprivation on cognitive variables. *Psychological Bulletin, 136*(3), 375–389. https://doi.org/10.1037/a0018883 – Schlafmangel und einfache Aufmerksamkeit
+- Owsley, C., Sekuler, R., & Siemsen, D. (1983). Contrast sensitivity throughout adulthood. *Vision Research, 23*(7), 689–699. https://doi.org/10.1016/0042-6989(83)90210-9 – Kontrastempfindlichkeit im Alter
+- Pronk, T., Wiers, R. W., Molenkamp, B., & Murre, J. (2020). Mental chronometry in the pocket? Timing accuracy of web applications on touchscreen and keyboard devices. *Behavior Research Methods, 52*(3), 1371–1382. https://doi.org/10.3758/s13428-019-01321-2 – Zeitmessung am Touchscreen
+- Ratcliff, R. (1993). Methods for dealing with reaction time outliers. *Psychological Bulletin, 114*(3), 510–532. https://doi.org/10.1037/0033-2909.114.3.510 – robuste Kennwerte
+- Sala, G., Tatlidil, K. S., & Gobet, F. (2018). Video game training does not enhance cognitive ability: A comprehensive meta-analytic investigation. *Psychological Bulletin, 144*(2), 111–139. https://doi.org/10.1037/bul0000139 – Ferntransfer
+- Sheppard, A. L., & Wolffsohn, J. S. (2018). Digital eye strain: Prevalence, measurement and amelioration. *BMJ Open Ophthalmology, 3*(1), e000146. https://doi.org/10.1136/bmjophth-2018-000146 – Bildschirmbeschwerden
+- Spjut, J., Boudaoud, B., Binaee, K., Kim, J., Majercik, A., McGuire, M., Luebke, D., & Kim, J. (2019). Latency of 30 ms benefits first person targeting tasks more than refresh rate above 60 Hz. In *SIGGRAPH Asia 2019 Technical Briefs* (S. 110–113). ACM. https://doi.org/10.1145/3355088.3365170 – Latenz wichtiger als Bildfrequenz
+- Muchnick, B. G. (2008). *Clinical Medicine in Optometric Practice* (2nd ed.). Mosby/Elsevier. https://openlibrary.org/isbn/9780323029612 – S. 7, 28, 32: Anfallsleiden gehören zur erfragten Vorgeschichte; Kopfschmerz mit Sehverschlechterung als neurologisches Warnzeichen; Gesichtsfeldausfälle nach Sehbahnverlauf
+- Mountford, J., Ruston, D., & Dave, T. (2004). *Orthokeratology: Principles and Practice*. Butterworth-Heinemann. https://openlibrary.org/isbn/9780750640077 – S. 44: Anzahl der Messwiederholungen hängt von der Streuung ab; Mehrfachmessung

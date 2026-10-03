@@ -2,7 +2,7 @@
 # ===== Kennung =====
 nr: 411
 kennung: spatial-shift-pursuit
-name: "Blickfolge bei zufälligen Tempo- und Richtungswechseln (Original: „Sichtfeldwechsel“)"
+name: "Blickfolge bei zufälligen Tempo- und Richtungswechseln"
 name_original: "Blickverfolgung bei Sichtfeldwechsel – Zielverfolgung trotz verschobenem Sichtfeld (Spatial Shift Pursuit)"
 kapitel: "Blickverfolgung"
 kapitel_original: "visual-tracking"
@@ -12,7 +12,7 @@ blickfit_umsetzung: {kennung: "tempo-wechsel", name: "Tempo-Wechsel", unterschie
 stand: 2026-09-29
 
 # ===== Überblick =====
-kurzbeschreibung: "Ein leuchtender Punkt fliegt auf dunklem Grund schräg über den Bildschirm, prallt an den Rändern ab und kehrt etwa einmal pro Sekunde unangekündigt eine oder beide Bewegungsrichtungen um, wobei er im Lauf der Runde immer schneller wird. Man folgt ihm nur mit den Augen; anders als der Name sagt, springt oder dreht sich das Bild selbst nie, und es gibt keine Eingabe, Punkte oder Messung."
+kurzbeschreibung: "Eine helle Kugel ändert in unregelmäßigen Abständen weich Tempo und Richtung; man folgt ihr nur mit den Augen. Sobald sie wieder gleichmäßig läuft, erscheint in ihr kurz ein Landolt-Ring, dessen Öffnungsrichtung man über einen großen Button meldet. Stärke und Häufigkeit der Wechsel passen sich an. Gemessen wird nur das Erkennen des Zeichens, nicht die Augenbewegung."
 ziel_funktionen: [blickfolge]
 eingabe: [maus, touch]
 tablet_geeignet: mit_anpassung
@@ -74,24 +74,22 @@ belastung:
 # ===== Auswahlhilfe =====
 voraussetzungen: ["30–120 s ohne Unterbrechung auf den Bildschirm schauen können", "ruhige Sitzposition: Monitor 50–70 cm, Tablet auf Ständer ca. 40 cm", "passende Korrektion für den Bildschirmabstand (bei Alterssichtigkeit Zwischen- bzw. Nahkorrektur)", "kein Farbsehen nötig (Zielfarbe frei wählbar)", "keine Hand-Eingabe während der Übung (nur Start per Klick/Tipp)", "Folgen von ≈ 40°/s muss bequem möglich sein, sonst kürzere Runden oder Tempo 0,5×"]
 vorsicht_bei: [schwindel_vestibulaer, reisekrankheit, nystagmus, gesichtsfeldausfall, presbyopie_gleitsicht, trockenes_auge_bildschirm, kopfschmerz_asthenopie, kinder_unter_6]
-geeignet_fuer: ["glatte Blickfolge mit unvorhersagbaren Umkehrungen und kleinen Aufholsakkaden üben (sinnvoll bei Tempo 0,5–1×, Runden 30–60 s)", "Steigerung innerhalb einer Runde erleben: ruhiger Beginn, zunehmend schnelle diagonale Bahnen", "Stufe nach 415 (sanftes Zufallsdriften) und 410 (harte Haken im festen Takt): zufällig getaktete Umkehrungen bei steigendem Tempo", "rein visuelles Aufwärmen der Augenfolge vor Aim- oder Tracking-Übungen"]
-weniger_geeignet_fuer: ["Übungsziel 'Wiederfinden nach Bildsprung/Screen Shake' – das bietet die Übung nicht (dafür eher 414 Positionssprünge)", "wer Rückmeldung, Punkte oder Fortschrittswerte erwartet", "Einsteiger:innen und ältere Menschen bei Tempo ab 2× (Endtempo ≈ 80°/s) oder in 90–120-s-Runden", "Gleitsichtträger:innen im Vollbild bei streng ruhigem Kopf (seitliche Unschärfezonen)", "Übungsziel Auge-Hand-Koordination (dafür 104, 105, 505, 513)"]
+geeignet_fuer: ["glatte Blickfolge mit unvorhersagbaren Wechseln von Tempo und Richtung und kleinen Aufholsakkaden üben", "Steigerung in kleinen Stufen erleben: Wechsel werden stärker, häufiger und schneller", "Stufe nach 415 (sanftes Zufallsdriften) und 410 (harte Haken im festen Takt): zufällig getaktete Wechsel", "rein visuelles Aufwärmen der Augenfolge vor Zielübungen"]
+weniger_geeignet_fuer: ["Übungsziel „Wiederfinden nach Bildsprung“ – die Kugel springt nie (dafür eher 414 Positionssprünge)", "wer eine Messung der Augenbewegung erwartet – geprüft wird nur das Erkennen des Zeichens", "Einsteiger:innen und ältere Menschen auf hohen Stufen mit häufigen, starken Wechseln", "Gleitsichtträger:innen im Vollbild bei streng ruhigem Kopf (seitliche Unschärfezonen)", "Übungsziel Auge-Hand-Koordination (dafür 104, 105, 505, 513)"]
 evidenz:
   uebungseffekt: schwach
   naher_transfer: schwach
   alltag_transfer: fehlend
-  kommentar: "Die Übung wurde nie untersucht; die beste Analogie ist eine kleine Laborstudie mit quasi-zufällig bewegtem Ziel (Eibenberger et al. 2012, je N = 10), in der sich die Folgebewegung nach 3 Tagen × 12 min verbesserte und noch 5 Tage später messbar war. Die auf der Website zitierte Remapping-Literatur passt nicht zur Mechanik; ein Nutzen für Sport, E-Sport oder Alltag ist nicht belegt."
+  kommentar: "Zu dieser Übung gibt es keine Studie; die beste Analogie ist eine kleine Laborstudie mit quasi-zufällig bewegtem Ziel (Eibenberger et al. 2012, je N = 10), in der sich die Folgebewegung nach 3 Tagen × 12 min verbesserte und noch 5 Tage später messbar war. Ein Nutzen für Sport, Bildschirmspiele oder Alltag ist nicht belegt."
 aehnliche_uebungen: [410, 415, 414, 405, 404, 407, 403, 412, 105, 513, 512, 303]
 stichworte: ["smooth pursuit", "Aufholsakkaden", "catch-up saccades", "Richtungsumkehr", "Tempowechsel", "unvorhersagbare Bewegung", "Blickverfolgung", "rein visuell", "ohne Eingabe", "Sichtfeldwechsel (nur Name)"]
 ---
 
-# 411 · Blickfolge bei zufälligen Tempo- und Richtungswechseln (Original: „Sichtfeldwechsel“)
-
-> Original: „Blickverfolgung bei Sichtfeldwechsel – Zielverfolgung trotz verschobenem Sichtfeld“ (Spatial Shift Pursuit) – skilldrills.online, Kapitel Blickverfolgung (`visual-tracking`) · Blickfit: noch nicht umgesetzt (verwandt: `scharf-in-bewegung`, `zielfang`). Wichtig für die Auswahl: Der Name verspricht Bildsprünge und Drehungen des Bezugsrahmens – die Übung enthält **keine**.
+# 411 · Blickfolge bei zufälligen Tempo- und Richtungswechseln
 
 ## 1. Kurzbeschreibung
 
-Auf fast schwarzem Grund fliegt ein roter, leuchtender Punkt (Standard ≈ 0,7–0,85°) schräg über den Bildschirm und prallt an den Rändern ab. Im Mittel etwa einmal pro Sekunde kehrt er ohne Vorwarnung eine oder beide Bewegungsrichtungen um und ändert leicht sein Tempo; insgesamt wird er während der Runde deutlich schneller und läuft am Ende fast nur noch auf 45°-Diagonalen. Man folgt ihm nur mit den Augen bei ruhigem Kopf. Das Original misst nichts und gibt keine Rückmeldung.
+Eine helle Kugel läuft über den Bildschirm und ändert in unregelmäßigen Abständen weich ihr Tempo und ihre Richtung, nie mit einem Sprung. Man folgt ihr nur mit den Augen bei ruhigem Kopf. Sobald die Kugel wieder gleichmäßig läuft, erscheint in ihr kurz ein Landolt-Ring („C“); man meldet über einen großen Button unten, wohin die Öffnung zeigt. Stärke und Häufigkeit der Wechsel, ihre Dauer und die Größe des Zeichens passen sich über die zwölf Durchgänge einer Runde an das Ergebnis an. Gemessen wird nur, ob das Zeichen erkannt wird, nicht, ob die Augen tatsächlich folgen.
 
 ## 2. Ablauf im Original (Analyse)
 
@@ -125,52 +123,52 @@ Grundlage: Seitentext und Spielcode (seitenspezifischer Chunk `54003-…js` plus
 
 ## 4. Optische und okulomotorische Grundlagen
 
-- **Sehwinkel:** Ziel ≈ 0,7–0,85° (Monitor 60 cm), ≈ 0,9° (Tablet 40 cm) – weit über der Auflösungsgrenze; Sehschärfe nicht leistungsbegrenzend.
-- **Folgeleistung über die Runde:** Der glatte Gain ist immer < 0,95 und sinkt mit dem Tempo (Collewijn & Tamminga, 1984); in einer kleinen Laborstichprobe (5 Personen) erreichten 4 ≈ 90 % Gain bis ≈ 100°/s, die fünfte nur ≈ 60 % davon (Meyer et al., 1985; vorhersagbare Laborreize, bei unvorhersagbaren Wechseln eher weniger). Bei 1× (15 → 40°/s) ist die Aufgabe daher gut machbar, ab 2× (Endtempo ≈ 80°/s) nahe an der Grenze, ab 3× nur noch sakkadisches Hinterherspringen.
-- **Reaktion auf einen Wechsel:** Nach einem abrupten Richtungswechsel sinkt die Folgegeschwindigkeit erst nach ≈ 90 ms, die Richtung ändert sich erst ab ≈ 130 ms (Soechting et al., 2005; gemessen an Richtungswechseln, hier auf Umkehrungen übertragen). Bei 40°/s läuft das Auge in dieser Zeit ≈ 4–5° weiter, während sich das Ziel ebenso weit in Gegenrichtung entfernt – zusammen **≈ 8–10° Abstand** (eigene Rechnung), der per Aufholsakkade ausgeglichen wird. Reine Tempoänderungen (25 % der Ereignisse) sind hier sprunghafte Geschwindigkeitswechsel um 20–30 %; auf solche Tempo-Sprünge antwortet die Folge mit kurzer Latenz (Soechting et al., 2005). Für allmähliche Beschleunigung liegen die Unterscheidungsschwellen von Wahrnehmung und Folge dagegen höher als für Geschwindigkeit (Watamaniuk & Heinen, 2003) – das betrifft hier vor allem das langsame Hochdrehen über die Runde, das kaum bemerkt werden dürfte (eigene Übertragung). Kleine Tempo-Schwankungen verfolgt das Auge mit nur ≈ 67 ms reiner Verzögerung (Tavassoli & Ringach, 2009).
-- **Bewegungsunschärfe/Ruckeln:** Sprung pro Bild bei 1× am Ende ≈ 0,7° (60 Hz), etwa Zielgröße; Verschmierung ≈ Geschwindigkeit ÷ Bildfrequenz (eigene Rechnung, Prinzip siehe 410/412).
-- **Blickfeld und Gleitsicht:** Vollbild 24 Zoll in 60 cm ≈ 48° × 28° (Tablet 40 cm ≈ 33° × 23°); das Ziel erreicht ständig die Ecken. Der scharfe Zwischenbereich einer Gleitsichtbrille ist seitlich nur ≈ 13–18° breit statt ≈ 60° bei Einstärkengläsern (Han et al., 2003); neue Träger:innen bewegen mehr den Kopf (Hutchings et al., 2007). Diagonalen führen zugleich nach unten (Nahteil) und oben (Fernteil) → Arbeitsplatzbrille, kleineres Feld oder Kopfbewegung erlauben.
-- **Akkommodation/Kontrast:** 60 cm ≈ 1,7 dpt, 40 cm ≈ 2,5 dpt. Rot #ef4444 auf #050508 ≈ 5,4 : 1, Weiß 20 : 1 (Rechnung aus 410). Bei Protan-Schwäche wirkt Rot dunkler; ≈ 8 % der Männer haben eine Rot-Grün-Schwäche (Birch, 2012).
+- **Sehwinkel:** Das Ziel ist groß genug, dass die Sehschärfe nicht leistungsbegrenzend ist; schwierig wird nur das kleine Zeichen. Bei 40 cm Abstand entspricht 1 cm auf dem Schirm etwa 1,4°.
+- **Folgeleistung:** Der glatte Gain (Verhältnis von Augen- zu Zielgeschwindigkeit) ist immer < 0,95 und sinkt mit dem Tempo (Collewijn & Tamminga, 1984). In einer kleinen Laborstichprobe (5 Personen) erreichten 4 ≈ 90 % Gain bis ≈ 100°/s, die fünfte nur ≈ 60 % davon (Meyer et al., 1985; vorhersagbare Laborreize, bei unvorhersagbaren Wechseln eher weniger). Das Grundtempo der Übung beträgt je nach Stufe etwa 12 bis 33 % der kürzeren Bildseite pro Sekunde, auf einem Tablet in 40 cm Abstand grob 3 bis 8°/s. Es liegt damit weit unter der Laborgrenze; die Aufgabe verlangt Dranbleiben bei Wechseln, kein Höchsttempo.
+- **Reaktion auf einen Wechsel:** Nach einem abrupten Richtungswechsel des Ziels sinkt die Folgegeschwindigkeit erst nach ≈ 90 ms, die Richtung ändert sich erst ab ≈ 130 ms (Soechting et al., 2005; gemessen an Richtungswechseln). Das Auge läuft in dieser Zeit noch ein Stück in die alte Richtung weiter und holt den Abstand per Aufholsakkade nach. Auf Sprünge im Tempo antwortet die Folge mit kurzer Latenz (Soechting et al., 2005), auf kleine Tempo-Schwankungen mit nur ≈ 67 ms reiner Verzögerung (Tavassoli & Ringach, 2009). Für allmähliche Beschleunigung liegen die Unterscheidungsschwellen von Wahrnehmung und Folge höher als für Geschwindigkeit (Watamaniuk & Heinen, 2003). In der Übung sind Tempo und Richtung stets weich verbunden (Tempo-Rampe und Bogen mit jeweils verschwindender Steigung am Anfang und Ende); die Reaktion dürfte daher eher der auf allmähliche als der auf abrupte Änderungen ähneln (Übertragung, nicht eigens untersucht).
+- **Blickfeld und Gleitsicht:** Die Kugel läuft über das ganze Feld. Der scharfe Zwischenbereich einer Gleitsichtbrille ist seitlich nur ≈ 13–18° breit statt ≈ 60° bei Einstärkengläsern (Han et al., 2003); neue Träger:innen bewegen mehr den Kopf (Hutchings et al., 2007). Schräge Bahnen führen zugleich nach unten (Nahteil) und oben (Fernteil), daher Arbeitsplatzbrille, kleineres Feld oder etwas Kopfbewegung erlauben.
+- **Akkommodation:** 60 cm entsprechen ≈ 1,7 dpt, 40 cm ≈ 2,5 dpt (Rechenregel: Kehrwert des Abstands in Metern).
 - **Trockenes Auge:** Bildschirmarbeit senkt die Lidschlagrate im Mittel etwa auf ein Fünftel (Patel et al., 1991); beim konzentrierten Folgen ist Ähnliches zu erwarten (Übertragung, nicht eigens untersucht).
-- **Alter:** Folge-Gain sinkt im Alter bei allen Tempi, Unterschied wächst mit Tempo und Beschleunigung (Moschner & Baloh, 1994) – das automatische Hochdrehen trifft Ältere also besonders.
+- **Alter:** Der Folge-Gain sinkt im Alter bei allen Tempi, der Unterschied wächst mit Tempo und Beschleunigung (Moschner & Baloh, 1994); starke und schnelle Wechsel treffen Ältere daher besonders.
 
 ## 5. Neurowissenschaftliche Grundlagen
 
-- Bewegungssignale aus MT/MST steuern die Folge über das Folgeareal des frontalen Augenfelds (FEF), Brückenkerne und Kleinhirn (Lisberger, 2010); FEF mit direktestem Einfluss, Basalganglien und Colliculus superior beteiligt (Krauzlis, 2004). Die Antwort auf einen Richtungswechsel lässt sich als Überlagerung „alte Bewegung stoppt“ + „neue beginnt“ beschreiben (Soechting et al., 2005).
-- Unvorhersagbare Bahnen werden schlechter verfolgt als vorhersagbare: der glatte Gain ist bei Pseudo-Zufallsbewegung niedriger als bei einfachen Sinusbahnen (Collewijn & Tamminga, 1984; vgl. Bahill et al., 1980); Vorhersage und extraretinale Signale stützen die Folge (Barnes, 2008). Vorhersagbar sind hier nur die Randabpraller (≈ 1,3/s) – die zufälligen Wechsel nicht.
-- Parietales Remapping (Duhamel et al., 1992) begleitet jede Sakkade; dass diese Übung es „trainiert“, ist nicht gezeigt. Lernen der Folgebewegung ist bei Affen richtungsspezifisch (Kahlon & Lisberger, 1996) – ein Hinweis, dass Übung eher aufgabennah wirkt.
+- Bewegungssignale aus MT/MST steuern die Folge über das Folgeareal des frontalen Augenfelds (FEF), Brückenkerne und Kleinhirn (Lisberger, 2010); das FEF hat den direktesten Einfluss, Basalganglien und Colliculus superior sind beteiligt (Krauzlis, 2004). Die Antwort auf einen Richtungswechsel lässt sich als Überlagerung „alte Bewegung stoppt“ + „neue beginnt“ beschreiben (Soechting et al., 2005).
+- Unvorhersagbare Bahnen werden schlechter verfolgt als vorhersagbare: Der glatte Gain ist bei Pseudo-Zufallsbewegung niedriger als bei einfachen Sinusbahnen (Collewijn & Tamminga, 1984; vgl. Bahill et al., 1980); Vorhersage und extraretinale Signale stützen die Folge (Barnes, 2008). Vorhersagbar sind in der Übung nur die Randbögen; Zeitpunkt, Stärke und Richtung der Wechsel sind es nicht.
+- Parietales Remapping (Duhamel et al., 1992) begleitet jede Sakkade; dass diese Übung es „trainiert“, ist nicht gezeigt. Das Lernen der Folgebewegung ist bei Affen richtungsspezifisch (Kahlon & Lisberger, 1996), ein Hinweis, dass Übung eher aufgabennah wirkt.
 
 ## 6. Motorische Grundlagen
 
-- Keine Hand-Eingabe; die „Motorik“ sind Augenbewegungen → motorische Profilwerte 0. Nicht die Augenmuskeln begrenzen: Auge und Hand reagieren auf Richtungswechsel fast gleich schnell (Engel et al., 2000).
-- Wer Maus/Finger mitführt, macht daraus eine unbewertete Nachführaufgabe; am Tablet verdeckt der Finger das Ziel. Gerät stabil aufstellen, aufrecht sitzen.
+- Die Eingabe beschränkt sich auf das Antworten per Tipp oder Klick; die eigentliche „Motorik“ der Übung sind Augenbewegungen, deshalb sind die motorischen Profilwerte 0. Nicht die Augenmuskeln begrenzen die Leistung: Auge und Hand reagieren auf Richtungswechsel fast gleich schnell (Engel et al., 2000).
+- Die Antwortbuttons liegen unten, damit der Finger das Ziel nie verdeckt. Gerät stabil aufstellen, aufrecht sitzen, Kopf möglichst ruhig halten und nur mit den Augen folgen (Praxisangabe, nicht belegt).
 
 ## 7. Einflussfaktoren und Messgrenzen
 
-- **Keine Messung:** Fortschritt nur subjektiv. Die Schwierigkeit ist innerhalb einer Runde nicht konstant (Tempo steigt), zwischen Runden je nach Zufall unterschiedlich – selbst mit Eyetracker wären Runden schlecht vergleichbar.
-- **Dauer verändert die Aufgabe:** 30-s-Runden enden bei ≈ 37°/s, 90–120-s-Runden laufen überwiegend nahe der Obergrenze (Median am Ende ≈ 39°/s, Grenze ≈ 42°/s × Tempo).
-- **Gerät:** Wechselrate hängt von der Bildfrequenz ab (0,68–1,08/s); °/s hängt von Pixeldichte und Abstand ab (Tablet mit kleinerem Feld → mehr Abpraller). Vergleiche nur am selben Gerät und Abstand.
-- **Person:** Ermüdung und nachlassende Aufmerksamkeit dürften die Folge verschlechtern (plausibel, hier nicht eigens belegt); Alter (Moschner & Baloh, 1994), Brillenversorgung.
+- **Keine Messung der Augenbewegung:** Das Ergebnis zeigt nur, ob das Zeichen erkannt wurde. Daraus lässt sich nicht ablesen, wie genau die Augen gefolgt sind; ein richtiges Erkennen ist auch mit kurzen Aufholsprüngen möglich.
+- **Stufe statt fester Schwierigkeit:** Die Schwierigkeit wird adaptiv angepasst; verglichen werden sinnvoll nur Stufen derselben Übung am selben Gerät und Abstand.
+- **Gerät:** Die Tempi sind in Bildschirmeinheiten festgelegt; die Winkelgeschwindigkeit hängt von Bildschirmgröße und Abstand ab. Touch- und Mausbedienung unterscheiden sich in Zeitbedarf und Streuung, Vergleiche sind nur am selben Gerät aussagekräftig. Messungen am Menschen streuen von Durchgang zu Durchgang; erst mehrere Durchgänge bzw. Runden (Median) erlauben eine Einschätzung, und eine hohe Korrelation zwischen zwei Geräten bedeutet noch keine Übereinstimmung (Mountford et al., 2004, S. 24).
+- **Person:** Ermüdung und nachlassende Aufmerksamkeit dürften die Folge verschlechtern (plausibel, nicht eigens belegt); dazu kommen Alter (Moschner & Baloh, 1994) und Brillenversorgung.
 
 ## 8. Studienlage: Trainierbarkeit und Übertragung
 
-- **Übungseffekt – schwach:** Keine Studie zu dieser Übung. Beste Analogie: 2 × 6 min Folgen eines quasi-zufällig bewegten Ziels an 3 Tagen verbesserten die Folgebewegung noch nach 5 Tagen (Eibenberger et al., 2012; je N = 10, Eyetracker). Rückmeldung verstärkt das Lernen deutlich: mit Belohnung für genaues Folgen stieg der Gain bei kurz verdeckten Zielen nach 8–10 Sitzungen von 0,59 auf 0,89, mit zufälliger Belohnung blieb er praktisch gleich (0,60 → 0,63), ohne Belohnung stieg er leicht (0,63 → 0,71) (Madelain & Krauzlis, 2003) – das Original gibt keine Rückmeldung.
-- **Naher Transfer – schwach:** Eibenberger et al. (2012) testeten mit einer anderen Aufgabe – ein Hinweis, mehr nicht. Richtungsspezifität des Lernens (Kahlon & Lisberger, 1996) spricht gegen breiten Transfer.
-- **Alltagstransfer – fehlend:** Kein Beleg für Screen-Shake-Festigkeit, Motorsport, Kampfsport oder Verkehr (Fransen, 2024; Simons et al., 2016); große Effekte digitaler Sport-Sehtrainings zeigen sich vor allem am Trainingsgerät (Guo et al., 2025).
+- **Übungseffekt – schwach:** Keine Studie zu dieser Übung. Beste Analogie: 2 × 6 min Folgen eines quasi-zufällig bewegten Ziels an 3 Tagen verbesserten die Folgebewegung noch nach 5 Tagen (Eibenberger et al., 2012; je N = 10, Eyetracker). Rückmeldung verstärkt das Lernen deutlich: Mit Belohnung für genaues Folgen stieg der Gain bei kurz verdeckten Zielen nach 8–10 Sitzungen von 0,59 auf 0,89, mit zufälliger Belohnung blieb er praktisch gleich (0,60 → 0,63), ohne Belohnung stieg er leicht (0,63 → 0,71) (Madelain & Krauzlis, 2003). Die Übung gibt nach jedem Durchgang ein ✓/✗, belohnt aber nicht das genaue Folgen selbst.
+- **Naher Transfer – schwach:** Eibenberger et al. (2012) testeten mit einer anderen Aufgabe, ein Hinweis, mehr nicht. Die Richtungsspezifität des Lernens (Kahlon & Lisberger, 1996) spricht gegen breiten Transfer.
+- **Alltagstransfer – fehlend:** Kein Beleg für Vorteile im Sport oder Verkehr (Fransen, 2024; Simons et al., 2016); große Effekte digitaler Sport-Sehtrainings zeigen sich vor allem am Trainingsgerät (Guo et al., 2025).
+- Erfahrungswissen aus der funktionellen Optometrie, nicht belegt: Klassische Übungsformen der Blickfolge (hängender Ball, rotierende Scheibe) werden bei ruhigem Kopf ausgeführt und in kleinen, selbst gesteuerten Schritten gesteigert; die Übung greift dieses Vorgehen mit ihren Stufen auf.
 
 ## 9. Auswahlhinweise für die KI
 
-- **Passt, wenn …** Blickfolge mit zufälligen Umkehrungen und Wiederfinden per kleiner Sakkade ohne Hand geübt werden soll; als Stufe nach 404/412, 415 und 410 – unter 409–415 die am wenigsten vorhersagbare Richtungswechsel-Übung. Einstellung: Tempo 0,5–1×, Runden 30–60 s, „Random Speed“ aus, Linie zuerst an, später aus; 3–5 Runden mit Pausen und bewusstem Blinzeln.
-- **Weniger passend, wenn …** das Ziel „Orientierung nach Bildsprüngen/Kamerawackeln“ ist (die Übung hat keine; Positionssprünge: 414), Rückmeldung gewünscht ist oder Auge-Hand-Koordination geübt werden soll (104, 105, 505, 513).
+- **Passt, wenn …** Blickfolge mit unvorhersagbaren Wechseln von Tempo und Richtung und das Wiederfinden per kleiner Sakkade geübt werden soll, ohne dass die Hand etwas tun muss; als Stufe nach 404/412 und 415 und vor oder neben 410 (harte Haken im festen Takt). Die Zeitpunkte der Wechsel sind zufällig, die Folgen sanft. Eine Runde dauert etwa eine Minute; 3–5 Runden mit Pausen und bewusstem Blinzeln genügen.
+- **Weniger passend, wenn …** das Ziel „Orientierung nach Bildsprüngen“ ist (die Kugel springt nie; Positionssprünge: 414), die Augenbewegung selbst gemessen werden soll (die Übung prüft nur das Erkennen eines Zeichens) oder Auge-Hand-Koordination geübt werden soll (104, 105, 505, 513).
 - **Vorsicht / anpassen bei …**
-  - **Photosensitivität geprüft (kein Vorsichtsschlüssel):** kein Blinken, keine Vollbildblitze, das Ziel bewegt sich stetig (wie 410, 412, 413, 415) → `flimmern_lichtreize` 0. Das helle Ziel liegt mit ≈ 2–8·10⁻⁴ sr (je nach Leuchtschein, eigene Abschätzung) weit unter der Flächenschwelle von 0,006 sr (WCAG 2.3.1; Harding et al., 2005); bei Size 50 px am Tablet aus 30 cm ≈ 2–4·10⁻³ sr (Scheibe und Ring), mit Außenring/Leuchtschein bis nahe an 0,006 sr – also knapp darunter (eigene Abschätzung wie bei 410). Ab ≈ 2–3× springt es pro Bild 1,4–2°; das ist kein Blitz im Sinn von WCAG, kann aber unruhig wirken → bei Licht- oder Reizempfindlichkeit Tempo ≤ 1×, „Neon Glow“/„Gaze Trail“ aus, Size klein halten, Day Mode meiden.
-  - `schwindel_vestibulaer`, `reisekrankheit`: dauernde, unvorhersagbare Umkehrungen bei steigendem Tempo; großflächige Bewegung fehlt (ruhiger Hintergrund), daher gering, aber individuell unangenehm möglich (Keshavarz et al., 2015). Kurze Runden, niedriges Tempo.
+  - **Photosensitivität geprüft (kein Vorsichtsschlüssel):** Es gibt kein Blinken und keine Vollbildblitze; das Ziel bewegt sich stetig, Übergänge sind weich (wie 410, 412, 413, 415), also `flimmern_lichtreize` 0. Die helle Fläche des Ziels bleibt klein und liegt bei üblichem Betrachtungsabstand unter der Flächenschwelle von 0,006 sr (WCAG 2.3.1; Harding et al., 2005). Bei ausgeprägter Licht- oder Reizempfindlichkeit trotzdem kurze Blöcke und niedrige Stufen wählen.
+  - `schwindel_vestibulaer`, `reisekrankheit`: dauernde, unvorhersagbare Wechsel; großflächige Bewegung fehlt (ruhiger Hintergrund), daher gering, aber individuell unangenehm möglich (Keshavarz et al., 2015). Kurze Runden, niedrige Stufen. Wiederkehrender Schwindel oder neue Doppelbilder sind ein Anlass zur ärztlichen Abklärung und kein Übungsthema (Muchnick, 2008, S. 28, 32).
   - `nystagmus`: Folge und Blickhalten können eingeschränkt sein, Frustgefahr.
-  - `gesichtsfeldausfall`: Ziel läuft ständig in die Ecken und kann im ausgefallenen Bereich verloren gehen.
-  - `presbyopie_gleitsicht`: Diagonalen durch Rand-, Nah- und Fernzone → kleineres Feld, Bildschirmbrille, Kopfbewegung erlauben.
-  - `trockenes_auge_bildschirm`, `kopfschmerz_asthenopie`: wenig Lidschlag beim Dauerfolgen; kurze Blöcke.
-  - `kinder_unter_6`: abstrakte Aufgabe ohne Rückmeldung bei steigendem Tempo – nicht empfohlen.
-- **Kombiniert gut mit …** 412/404 (gleichförmige Grundform) → 415 (sanftes Zufallsdriften) → 410 (harte Haken im festen Takt) → **411** (steigende Unvorhersagbarkeit). **Unterschied zu 410:** dort ≈ 2 Haken/s im festen 0,5-s-Takt bei gleichbleibendem Tempo, hier ≈ 0,9 Wechsel/s zu zufälligen Zeitpunkten (Umkehr, Achsenspiegelung oder Tempowechsel) bei von selbst steigendem Tempo. Daneben 414 (echte Positionssprünge), 407 (Vorhersage bei Verdeckung), 303 (Blicksprünge auf ruhende Ziele), 105/513 (gleiche Idee mit Hand).
+  - `gesichtsfeldausfall`: Das Ziel läuft über das ganze Feld und kann im ausgefallenen Bereich verloren gehen.
+  - `presbyopie_gleitsicht`: Schräge Bahnen durch Rand-, Nah- und Fernzone → kleineres Feld, Bildschirmbrille, Kopfbewegung erlauben.
+  - `trockenes_auge_bildschirm`, `kopfschmerz_asthenopie`: wenig Lidschlag beim Dauerfolgen; kurze Blöcke. Kopfschmerz zusammen mit Sehverschlechterung sollte ärztlich abgeklärt werden.
+  - `kinder_unter_6`: abstrakte Aufgabe mit Zeichenerkennung bei wechselndem Tempo, nicht empfohlen.
+- **Kombiniert gut mit …** 412/404 (gleichförmige Grundform) → 415 (sanftes Zufallsdriften) → 410 (harte Haken im festen Takt) → **411** (zufällig getaktete Tempo- und Richtungswechsel). Daneben 414 (echte Positionssprünge), 407 (Vorhersage bei Verdeckung), 303 (Blicksprünge auf ruhende Ziele), 105/513 (gleiche Idee mit Hand).
 
 Keine Diagnose, keine Heilversprechen: Trainingsaufgabe für gesunde Nutzer:innen, kein Test der Augenbeweglichkeit.
 
@@ -193,7 +191,6 @@ Keine Diagnose, keine Heilversprechen: Trainingsaufgabe für gesunde Nutzer:inne
 - Rashbass, C. (1961). The relationship between saccadic and smooth tracking eye movements. *The Journal of Physiology, 159*(2), 326–338. https://doi.org/10.1113/jphysiol.1961.sp006811 – **Prüfung:** DOI stimmt ✓, Titel auf der Website leicht falsch („pursuit“ statt „tracking“), nur bibliografisch; **stützt:** teilweise (Klassiker: Positionsfehler → Sakkade, Geschwindigkeitsfehler → Folge).
 - Kahlon, M., & Lisberger, S. G. (1996). Coordinate system for learning in the smooth pursuit eye movements of monkeys. *The Journal of Neuroscience, 16*(22), 7270–7283. https://doi.org/10.1523/JNEUROSCI.16-22-07270.1996 – **Prüfung:** DOI stimmt ✓; **stützt:** nein (Folgelernen bei Affen ist richtungsspezifisch, generalisiert über 15–45°/s; nichts zu PPC oder Bildschirmerschütterungen).
 - Woods, D. L., Wyma, J. M., Yund, E. W., Herron, T. J., & Reed, B. (2015). Factors influencing the latency of simple reaction time. *Frontiers in Human Neuroscience, 9*, 131. https://doi.org/10.3389/fnhum.2015.00131 – **Prüfung:** DOI stimmt ✓; **stützt:** nein („30–50 ms früher mit 144 Hz“ steht dort nicht; allein durch die Bildfrequenz sind nur ≈ 10 ms erklärbar).
-- Die Leistungsstufen-Tabelle nennt keine Quelle; keine der sechs Arbeiten enthält Normwerte für „Re-Zentrierung“.
 
 ### Weitere Fachliteratur
 
@@ -224,4 +221,6 @@ Keine Diagnose, keine Heilversprechen: Trainingsaufgabe für gesunde Nutzer:inne
 - Spjut, J., Boudaoud, B., Binaee, K., Kim, J., Majercik, A., McGuire, M., Luebke, D., & Kim, J. (2019). Latency of 30 ms benefits first person targeting tasks more than refresh rate above 60 Hz. In *SIGGRAPH Asia 2019 Technical Briefs* (S. 110–113). ACM. https://doi.org/10.1145/3355088.3365170 – Latenz wichtiger als Bildfrequenz
 - Tavassoli, A., & Ringach, D. L. (2009). Dynamics of smooth pursuit maintenance. *Journal of Neurophysiology, 102*(1), 110–118. https://doi.org/10.1152/jn.91320.2008 – schnelle Antwort auf Tempo-Schwankungen (≈ 67 ms Verzögerung)
 - Watamaniuk, S. N., & Heinen, S. J. (2003). Perceptual and oculomotor evidence of limitations on processing accelerating motion. *Journal of Vision, 3*(11), 698–709. https://doi.org/10.1167/3.11.5 – Beschleunigung schwerer unterscheidbar als Geschwindigkeit (Wahrnehmung und Folge)
+- Muchnick, B. G. (2008). *Clinical Medicine in Optometric Practice* (2nd ed.). Mosby/Elsevier. https://openlibrary.org/isbn/9780323029612 – S. 28, 32: Warnzeichen (Doppelbilder, Schwindel, Kopfschmerz mit Sehverschlechterung) verlangen ärztliche Abklärung
+- Mountford, J., Ruston, D., & Dave, T. (2004). *Orthokeratology: Principles and Practice*. Butterworth-Heinemann. https://openlibrary.org/isbn/9780750640077 – S. 24: Korrelation ist nicht Übereinstimmung; Messungen am Menschen streuen
 - World Wide Web Consortium. (2024). *Web Content Accessibility Guidelines (WCAG) 2.2*, Erfolgskriterien 2.2.2, 2.3.1 (Norm, keine DOI). https://www.w3.org/TR/WCAG22/ – Blitz-Flächenschwelle, Pause-Pflicht

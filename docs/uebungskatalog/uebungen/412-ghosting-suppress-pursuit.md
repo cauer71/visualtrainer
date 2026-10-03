@@ -12,7 +12,7 @@ blickfit_umsetzung: {kennung: "nachzieh-spur", name: "Nachzieh-Spur", unterschie
 stand: 2026-09-29
 
 # ===== Überblick =====
-kurzbeschreibung: "Ein leuchtender Punkt gleitet geradlinig über einen dunklen Bildschirm und prallt an den Rändern ab. Auf Wunsch zieht er eine Kette blasser Ringe hinter sich her; man folgt nur dem hellen Kern mit den Augen und lässt sich von der Spur nicht nach hinten ziehen."
+kurzbeschreibung: "Eine helle Kugel läuft gleichmäßig über den Bildschirm und zieht einen weichen, verblassenden Schweif hinter sich her; man folgt nur dem hellen Kopf mit den Augen und lässt sich vom Schweif nicht nach hinten ziehen. Im Kopf erscheint kurz ein Landolt-Ring, dessen Öffnungsrichtung man über einen großen Button meldet. Länge und Helligkeit des Schweifs, Tempo und Zeichengröße passen sich an. Gemessen wird nur das Erkennen des Zeichens."
 ziel_funktionen: [blickfolge]
 eingabe: [maus, touch]
 tablet_geeignet: mit_anpassung
@@ -74,29 +74,24 @@ belastung:
 # ===== Auswahlhilfe =====
 voraussetzungen: ["'Gaze Trail' einschalten – sonst bleibt nur einfache Blickfolge auf Geraden mit Randabprallern (gleiche Bewegung wie 409, dort mit Blinken)", "Bildschirm in ruhiger Umgebung, Abstand 40–70 cm, Kopf möglichst ruhig", "Scharfe Sicht im Zwischenbereich (Bildschirmbrille oder Einstärkenglas günstiger als Gleitsicht)", "Maus oder Finger nur zum Starten; während der Übung keine Eingabe"]
 vorsicht_bei: [trockenes_auge_bildschirm, kopfschmerz_asthenopie, nystagmus, presbyopie_gleitsicht, schwindel_vestibulaer, kinder_unter_6]
-geeignet_fuer: ["gleichmäßige Blickfolge auf geraden Bahnen mit Wandabprallern üben, ohne Hand- oder Körpereinsatz", "den Blick bei einer leichten, mitlaufenden Ablenkung auf einem kleinen Zielkern halten", "ruhiger Einstieg in Blickfolge-Übungen ohne Blink- oder Flimmerreize (bei 0,5–2×)", "Grundform von 409 (+ Dunkelphasen) und 414 (+ Positionssprünge) – dieselbe Bewegung ohne diese Zusätze; Ergänzung zu 404 (Lissajous-Bahn); danach Richtungswechsel 415 → 410 → 411"]
-weniger_geeignet_fuer: ["alle, die eine Rückmeldung oder einen Leistungswert erwarten (das Original misst nichts)", "wer die Qualität des eigenen Monitors prüfen will (der 'Nachzieheffekt' ist gezeichnet, kein Bildschirm-Artefakt)", "Gleitsichtträger:innen an großen Monitoren (Ziel läuft über die ganze Bildbreite in die unscharfe Randzone)", "Kinder, die abstrakte Aufgaben ohne Rückmeldung nicht durchhalten", "Ziel 'Reaktion' oder 'Zielgenauigkeit der Hand'"]
+geeignet_fuer: ["gleichmäßige Blickfolge auf geraden Bahnen und in sanften Bögen üben, ohne Hand- oder Körpereinsatz", "den Blick bei einer leichten Ablenkung hinter dem Ziel auf einem kleinen Zielkopf halten", "ruhiger Einstieg in Blickfolge-Übungen ohne Blink- oder Flimmerreize (niedrige Stufen)", "Grundform für 409 (+ Dunkelphasen) und 414 (+ Positionssprünge); Ergänzung zu 404 (Lissajous-Bahn); danach Richtungswechsel 415 → 410 → 411"]
+weniger_geeignet_fuer: ["alle, die einen Leistungswert der Augenbewegung erwarten (die Übung prüft nur das Erkennen des Zeichens)", "wer die Qualität des eigenen Monitors prüfen will (der Schweif ist gezeichnet, kein Bildschirm-Artefakt)", "Gleitsichtträger:innen an großen Monitoren (Ziel läuft über die ganze Bildbreite in die unscharfe Randzone)", "Kinder, die abstrakte Aufgaben nicht durchhalten", "Ziel „Reaktion“ oder „Zielgenauigkeit der Hand“"]
 evidenz:
   uebungseffekt: schwach
   naher_transfer: schwach
   alltag_transfer: fehlend
-  kommentar: "Glatte Blickfolge verbessert sich im Labor mit kurzem Training, auch ohne Belohnung, und der Effekt zeigte sich in einem anderen Testparadigma (Step-Ramp; Eibenberger et al. 2012, N = 10) – daher naher Transfer schwach wie bei 410/411/415; mit Rückmeldung ist der Lerneffekt deutlich größer (Madelain & Krauzlis 2003, Folgen eines kurz verschwindenden Ziels) – das Original gibt keine. Dass man das 'Unterdrücken von Nachzieh-Spuren' lernen kann oder dass es Sport/E-Sport nützt, wurde nie untersucht."
+  kommentar: "Glatte Blickfolge verbessert sich im Labor mit kurzem Training, auch ohne Belohnung, und der Effekt zeigte sich in einem anderen Testparadigma (Step-Ramp; Eibenberger et al. 2012, N = 10) – daher naher Transfer schwach wie bei 410/411/415; mit Rückmeldung ist der Lerneffekt deutlich größer (Madelain & Krauzlis 2003, Folgen eines kurz verschwindenden Ziels). Dass man das Ignorieren eines Schweifs lernen kann oder dass es dem Sport nützt, wurde nie untersucht."
 aehnliche_uebungen: [409, 414, 404, 415, 410, 411, 403, 405, 407, 105, 514]
 stichworte: ["smooth pursuit", "Blickfolge", "Bewegungsunschärfe", "motion smear", "Ghosting", "Nachbild", "Distraktor", "Sample-and-hold", "Bildwiederholrate", "Fixationsstabilität"]
 ---
 
 # 412 · Blickfolge trotz Nachzieh-Spur
 
-> Original: „Monitor-Nachzieheffekt-Test | Blickstabilität“ („Fixationsstabilität Sehtraining –
-> Bewegungsunschärfe-Unterdrückung“) – skilldrills.online, Kapitel Blickverfolgung (`visual-tracking`) · Blickfit: noch
-> nicht umgesetzt
+> Original: „Monitor-Nachzieheffekt-Test | Blickstabilität“ („Fixationsstabilität Sehtraining – Bewegungsunschärfe-Unterdrückung“) – skilldrills.online, Kapitel Blickverfolgung (`visual-tracking`) · Blickfit: noch nicht umgesetzt
 
 ## 1. Kurzbeschreibung
 
-Ein roter Punkt mit weißem Kern und Leuchtsaum gleitet auf geraden Bahnen über einen fast schwarzen Bildschirm und
-prallt an den Rändern ab; eine blasse Linie zeigt in seine Bewegungsrichtung. Mit „Gaze Trail“ zieht er eine Kette
-schwacher Ringe („Geisterringe“) hinter sich her. Man folgt nur mit den Augen dem hellen Kern und lässt sich von der
-Spur nicht nach hinten ziehen. Keine Handaufgabe, keine Punkte, keine Rückmeldung.
+Eine helle Kugel läuft mit gleichmäßigem Tempo über den Bildschirm, auf geraden Bahnen und in sanften Bögen, und zieht einen weichen, gleichmäßig verblassenden Schweif hinter sich her. Man folgt mit den Augen dem hellen Kopf der Kugel und lässt sich vom Schweif nicht nach hinten ziehen. Im Kopf erscheint kurz ein Landolt-Ring („C“), nie im Schweif; man meldet über einen großen Button unten, wohin die Öffnung zeigt. Länge und Helligkeit des Schweifs, Tempo und Zeichengröße steigen in Stufen und passen sich über die 14 Durchgänge einer Runde an das Ergebnis an. Es gibt kein Blinken und keinen Leuchtsaum; gemessen wird nur, ob das Zeichen erkannt wird, nicht, ob die Augen am Kopf bleiben.
 
 ## 2. Ablauf im Original (Analyse)
 
@@ -152,82 +147,40 @@ dass die Übung **keine** Messung der Panel-Reaktionszeit ist.
 
 ## 4. Optische und okulomotorische Grundlagen
 
-- **Sehwinkel/Tempo:** Ziel Ø ≈ 0,85° (24″-Full-HD, 60 cm), weißer Kern ≈ 9′ – weit über der Sehschärfegrenze (1′ bei
-  Visus 1,0). Tempo 1× ≈ 9–16°/s (Tablet 11″ in 30 cm ≈ 13–23°/s), 2× ≈ 19–33°/s, 5× ≈ 47–82°/s, 9× ≈ 85–150°/s. Der Gain sinkt mit dem Tempo (Collewijn &
-  Tamminga, 1984), bei hohen Stufen (etwa ab 5×, eigene Einschätzung) dürften daher mehr Aufholsakkaden nötig sein, obwohl im Labor bei 4 von 5 Personen ≈ 90 %
-  Gain bis ≈ 100°/s erreicht wurden (Meyer et al., 1985).
-- **Wandabpraller:** Die Folgebewegung reagiert auf Bewegungsänderungen erst nach ≈ 100 ms (Carl & Gellman, 1987),
-  danach Aufholsakkade; die Abpraller sind aber vorhersehbar (Rand, Richtungslinie) und bei 1× selten (≈ 0,5/s am
-  24″-Monitor, ≈ 0,7/s am 11″-Tablet; eigene Rechnung). Aufholsakkaden spielen daher nur eine Nebenrolle (`sakkaden` 1) –
-  anders als bei 409 (Wiederauftauchen nach der Dunkelphase), 410/411 (unvorhersehbare Wechsel) und 414 (Sprünge).
-- **Echtes Bildschirm-„Ghosting“:** Bei Sample-and-hold-Displays wächst die wahrgenommene Unschärfe mit der Haltezeit
-  (Geri & Morgan, 2007); 120 statt 60 Bilder/s verbessern deutlich, ab ≈ 240 kaum mehr (Kuroki et al., 2007).
-  Faustregel Tempo × Haltezeit: bei 60 Bildern/s 1× ≈ 9–16′, 5× ≈ 47–82′ – mehr als das Ziel (51′). Wegen der Drosselung
-  bringt ein 144-Hz-Monitor hier nur ≈ 17 % kürzere Haltezeit. Geht das Auge nicht mit, erscheint das Ziel bei 5× als
-  Reihe einzelner Bilder (≈ 30–50 px Abstand) – leicht mit den Ringen zu verwechseln.
-- **Gleitsicht/Presbyopie:** klares Zwischenbereichs-Sehfeld horizontal insgesamt nur ≈ 13–18° breit, mit
-  Einstärkenglas ≈ 60° (Han et al., 2003); ein 24″-Monitor in
-  60 cm ist ≈ 48° breit → Kopfbewegung zulassen, Feld verkleinern oder Bildschirmbrille; am Tablet Nahkorrektur.
-- **Weiteres:** Bildschirmarbeit senkt die Lidschlagrate im Mittel auf etwa ein Fünftel (Patel et al.,
-  1991) → trockenes Auge. Farbe
-  nicht aufgabenrelevant; bei Protan wirkt Rot dunkel → Weiß/Gelb (Rot-Grün-Schwäche ≈ 8 % der Männer; Birch, 2012).
+- **Sehwinkel und Tempo:** Der helle Kopf der Kugel liegt weit über der Sehschärfegrenze (1′ bei Visus 1,0); schwierig wird nur das kleine Zeichen. Das Tempo steigt über die 20 Stufen von etwa 14 auf etwa 66 % der kürzeren Bildseite pro Sekunde, auf einem Tablet in 40 cm Abstand grob von 3 auf 15°/s (bei 40 cm Abstand entspricht 1 cm etwa 1,4°). Der Gain sinkt mit dem Tempo (Collewijn & Tamminga, 1984); im Labor erreichten 4 von 5 Personen ≈ 90 % Gain bis ≈ 100°/s (Meyer et al., 1985). Die Tempi der Übung liegen weit darunter.
+- **Bögen:** Die Folgebewegung reagiert auf Bewegungsänderungen erst nach ≈ 100 ms (Carl & Gellman, 1987), danach folgt bei Bedarf eine Aufholsakkade. In der Übung sind die Bögen sanft, vor dem Zeichen gelegentlich eingestreut und ihre Zeitpunkte unregelmäßig; Aufholsakkaden spielen daher nur eine Nebenrolle (`sakkaden` 1), anders als bei 409 (Wiederauftauchen nach der Dunkelphase), 410/411 (unvorhersehbare Wechsel) und 414 (Sprünge).
+- **Echtes Bildschirm-„Ghosting“:** Bei Displays, die jedes Bild bis zum nächsten halten (Sample-and-hold), wächst die wahrgenommene Unschärfe mit der Haltezeit (Geri & Morgan, 2007); 120 statt 60 Bilder/s verbessern deutlich, ab ≈ 240 kaum mehr (Kuroki et al., 2007). Faustregel: Verschmierung ≈ Tempo × Haltezeit, bei 60 Bildern/s und 3–15°/s also etwa 3–15′ (eigene Rechnung). Der Schweif der Übung ist gezeichnet und hat mit diesem Effekt nichts zu tun; die Übung prüft keinen Bildschirm.
+- **Gleitsicht/Presbyopie:** Das klare Zwischenbereichs-Sehfeld ist horizontal insgesamt nur ≈ 13–18° breit, mit Einstärkenglas ≈ 60° (Han et al., 2003). Bei großen Bildschirmen Kopfbewegung zulassen, das Feld verkleinern oder eine Bildschirmbrille tragen; am Tablet Nahkorrektur.
+- **Weiteres:** Bildschirmarbeit senkt die Lidschlagrate im Mittel auf etwa ein Fünftel (Patel et al., 1991), daher trockenes Auge möglich. Die Farbe ist nicht aufgabenrelevant (heller Kopf, bläulich-heller Schweif auf dunklem Grund).
 
 ## 5. Neurowissenschaftliche Grundlagen
 
-MT/V5 und MST liefern das Bewegungssignal, Folgeareal des frontalen Augenfelds und Kleinhirn setzen es um; ≈ 100 ms
-visueller Bewegung gehen in den Start der Folgebewegung ein (Lisberger, 2010). Folgebewegung und Wahrnehmung teilen
-einen selektiven Aufmerksamkeitsmechanismus (Khurana & Kowler, 1987). Ein zu ignorierender, **anders** bewegter
-Distraktor senkt die Augengeschwindigkeit nach 140 ms um ≈ 25 % (Spering et al., 2006); die Ringe hier laufen **mit**
-dem Ziel, ein Konflikt der Bewegungssignale entsteht kaum. Geringeren Smear bei Eigenbewegung erklären extraretinale
-Signale (Bedell et al., 2010). Dass die Übung V1/MT-Hemmung oder Mikrosakkaden „trainiert“, ist nicht belegt.
+MT/V5 und MST liefern das Bewegungssignal, das Folgeareal des frontalen Augenfelds und das Kleinhirn setzen es um; ≈ 100 ms visueller Bewegung gehen in den Start der Folgebewegung ein (Lisberger, 2010). Folgebewegung und Wahrnehmung teilen einen selektiven Aufmerksamkeitsmechanismus (Khurana & Kowler, 1987). Ein zu ignorierender, **anders** bewegter Ablenker senkt die Augengeschwindigkeit nach 140 ms um ≈ 25 % (Spering et al., 2006). Wie stark ein verblassender Schweif hinter dem Ziel die Blickfolge tatsächlich stört, ist nicht gemessen. Geringeren Smear bei Eigenbewegung erklären extraretinale Signale (Bedell et al., 2010). Dass die Übung die Hemmung im visuellen Kortex oder Mikrosakkaden „trainiert“, ist nicht belegt.
 
 ## 6. Motorische Grundlagen
 
-Keine Handbewegung (Eingabe nur zum Start) – alle motorischen Merkmale 0; die „Motorik“ sind Folgebewegung und
-Aufholsakkaden. Wer die Maus mitführt, übt ungewollt Auge-Hand-Tracking, das nicht ausgewertet wird.
+Die einzige Handbewegung ist das Antworten per Tipp oder Klick auf einen der Buttons unten; alle motorischen Profilwerte sind 0, die „Motorik“ sind Folgebewegung und Aufholsakkaden. Die Buttons liegen unterhalb des Spielfelds, damit der Finger das Ziel nicht verdeckt.
 
 ## 7. Einflussfaktoren und Messgrenzen
 
-- **Gerät:** Spurlänge hängt von der verarbeiteten Bildrate (45–77 Bilder/s) ab, Halte-Unschärfe vom Panel; Tempo in
-  px/s → am nahen Tablet mehr °/s. Vergleiche nur am selben Gerät mit denselben Schaltern.
-- **Einstellungen/Person:** ohne „Gaze Trail“ nur Blickfolge ohne Ablenker (wie 409 ohne Blinken); Richtungslinie
-  erleichtert die Vorhersage; Alter, Müdigkeit, trockenes Auge und Brillenkorrektur im Zwischenbereich wirken mit.
-- **Messqualität:** Das Original misst nichts. Folgequalität ist nur mit Eyetracker messbar (Gain, Sakkadenzahl;
-  individuell sehr stabile Kennwerte laut Bargary et al., 2017) oder indirekt über eine Erkennungsaufgabe.
+- **Gerät:** Die Schweiflänge ist als Zeit festgelegt und daher auf 60 und 120 Hz gleich lang; die Halte-Unschärfe hängt vom Panel ab, das Tempo ist in Bildschirmeinheiten festgelegt, also erscheint es am nahen Tablet in °/s größer. Touch- und Mausbedienung unterscheiden sich in Zeitbedarf und Streuung. Vergleiche sinnvoll nur am selben Gerät und Abstand.
+- **Person:** Alter, Müdigkeit, trockenes Auge und die Brillenkorrektur im Zwischenbereich wirken mit. Messungen am Menschen streuen von Durchgang zu Durchgang und stärker als an Prüfkörpern; erst mehrere Runden erlauben eine Einschätzung (Mountford et al., 2004, S. 43–44).
+- **Messqualität:** Die Übung misst die Augenbewegung nicht. Folgequalität ist nur mit Eyetracker messbar (Gain, Sakkadenzahl; individuell sehr stabile Kennwerte laut Bargary et al., 2017) oder indirekt über eine Erkennungsaufgabe wie hier. Ein richtiges Erkennen spricht dafür, dass der Blick zur Zeigezeit nahe am Kopf war, belegt es aber nicht und sagt nichts darüber, wie er dorthin kam.
 
 ## 8. Studienlage: Trainierbarkeit und Übertragung
 
-- **Übungseffekt – schwach:** Training mit quasi-zufälligem Ziel (2 × 6 min an 3 Tagen) verbesserte die Folgebewegung,
-  5 Tage später noch messbar (Eibenberger et al., 2012, N = 10 je Gruppe); mit Belohnung für genaues Folgen deutlich
-  stärker (Gain bei kurz verschwindendem Ziel 0,59 → 0,89 nach 8–10 Sitzungen, ohne Belohnung 0,63 → 0,71;
-  Madelain & Krauzlis, 2003). Das Original gibt keine Rückmeldung.
-- **Naher Transfer – schwach:** Kurzes Folgetraining ohne Belohnung (quasi-zufälliges Ziel) verbesserte die
-  Folgebewegung in einem anderen Test (Step-Ramp), 5 Tage später noch messbar (Eibenberger et al., 2012, N = 10) – ein
-  Laborhinweis, der für die glatte Folgebewegung dieser Übung ebenso gilt wie für 409–411 und 415. Belohntes
-  Folgetraining übertrug sich außerdem auf ungeübte Geschwindigkeiten und strukturierten Hintergrund (Madelain &
-  Krauzlis, 2003; andere Aufgabe, nur mit Rückmeldung). Dass das „Ausblenden“ gezeichneter Spuren auf
-  Monitor-Schlieren, Rauch oder Partikel in Spielen übergeht, wurde nie untersucht.
-- **Alltagstransfer – fehlend:** kein belastbarer Ferntransfer allgemeinen Wahrnehmungstrainings auf Sport (Fransen,
-  2024; Gegenposition Appelbaum et al., 2025); zu dieser Übung keine Studie.
+- **Übungseffekt – schwach:** Training mit quasi-zufälligem Ziel (2 × 6 min an 3 Tagen) verbesserte die Folgebewegung, 5 Tage später noch messbar (Eibenberger et al., 2012, N = 10 je Gruppe); mit Belohnung für genaues Folgen deutlich stärker (Gain bei kurz verschwindendem Ziel 0,59 → 0,89 nach 8–10 Sitzungen, ohne Belohnung 0,63 → 0,71; Madelain & Krauzlis, 2003). Die Übung zeigt nach jedem Durchgang ✓/✗, belohnt aber nicht das genaue Folgen selbst.
+- **Naher Transfer – schwach:** Kurzes Folgetraining ohne Belohnung (quasi-zufälliges Ziel) verbesserte die Folgebewegung in einem anderen Test (Step-Ramp), 5 Tage später noch messbar (Eibenberger et al., 2012, N = 10) – ein Laborhinweis, der sinngemäß auch für die glatte Folgebewegung dieser Übung gilt. Belohntes Folgetraining übertrug sich außerdem auf ungeübte Geschwindigkeiten und strukturierten Hintergrund (Madelain & Krauzlis, 2003; andere Aufgabe, nur mit Rückmeldung). Dass das „Ausblenden“ gezeichneter Spuren auf Monitor-Schlieren, Rauch oder Partikel in Spielen übergeht, wurde nie untersucht.
+- **Alltagstransfer – fehlend:** Kein belastbarer Ferntransfer allgemeinen Wahrnehmungstrainings auf Sport (Fransen, 2024; Gegenposition Appelbaum et al., 2025); zu dieser Übung keine Studie.
+- Erfahrungswissen aus der funktionellen Optometrie, nicht belegt: Blickfolge wird klassisch bei ruhigem Kopf und nur mit den Augen geübt und in kleinen, selbst gesteuerten Schritten gesteigert.
 
 ## 9. Auswahlhinweise für die KI
 
-- **Passt, wenn …** gleichmäßige Blickfolge ohne Hand-/Körpereinsatz und ohne Blinkreize geübt werden soll – mit
-  „Gaze Trail“ als leichte Zusatzablenkung, bei 0,5–2×.
-- **Weniger passend, wenn …** Rückmeldung gewünscht ist, der Monitor geprüft werden soll oder Reaktion bzw.
-  Handgenauigkeit das Ziel ist.
-- **Vorsicht / anpassen bei …** `trockenes_auge_bildschirm`, `kopfschmerz_asthenopie` (seltener Lidschlag: blinzeln,
-  kurze Sätze, Pausen); `nystagmus` (Folgebewegung evtl. eingeschränkt, langsam beginnen); `presbyopie_gleitsicht`
-  (kleineres Feld, Kopfbewegung, Bildschirmbrille); `schwindel_vestibulaer` (hohe Tempi und
-  „Random Speed“ meiden, klein beginnen); `kinder_unter_6` (abstrakt, ohne Rückmeldung).
-- **Photosensitivität geprüft:** kein Blinken, keine flächigen Helligkeitswechsel; Ziel dauerhaft sichtbar, Ringe in
-  der Helligkeit konstant, Scanlines statisch und fast unsichtbar. WCAG 2.3.1 und die Harding-Kriterien (≥ 3 Blitze/s
-  bei ≥ 0,006 sr; Harding et al., 2005) greifen nicht → `flimmern_lichtreize` 0 (gleiche Einstufung wie 410, 411, 413,
-  415: stetig bewegtes Ziel ohne Blinken; erst ab ≈ 5× springt es pro Bild um mehr als seinen Durchmesser).
-- **Kombiniert gut mit …** 409 und 414 – **dieselbe Bewegung** (Geraden mit Randabprallern, gleiches Tempo): 409 fügt
-  Dunkelphasen hinzu, 414 Positionssprünge; ohne „Gaze Trail“ ist 412 die reine Grundform, 409 ohne Blinken praktisch
-  eine Dublette. Danach Richtungswechsel 415 → 410 → 411; 404/403/405 (andere Bahnen), 105 (Blickfolge mit Messung), 514
-  (Tracking mit der Maus). Unterschied zu 404: dort geschwungene Lissajous-Bahn ohne Abpraller.
+- **Passt, wenn …** gleichmäßige Blickfolge ohne Hand- oder Körpereinsatz und ohne Blinkreize geübt werden soll, mit dem Schweif als leichter Ablenkung; niedrige Stufen für den Einstieg.
+- **Weniger passend, wenn …** eine Messung der Augenbewegung gewünscht ist, ein Bildschirm geprüft werden soll oder Reaktion bzw. Handgenauigkeit das Ziel ist.
+- **Vorsicht / anpassen bei …** `trockenes_auge_bildschirm`, `kopfschmerz_asthenopie` (seltener Lidschlag: blinzeln, kurze Sätze, Pausen; Kopfschmerz zusammen mit Sehverschlechterung ärztlich abklären lassen, Muchnick, 2008, S. 15–16, 28); `nystagmus` (Folgebewegung evtl. eingeschränkt, auf niedriger Stufe beginnen); `presbyopie_gleitsicht` (kleineres Feld, Kopfbewegung, Bildschirmbrille); `schwindel_vestibulaer` (hohe Stufen meiden, klein beginnen; wiederkehrender Schwindel gehört ärztlich abgeklärt, Muchnick, 2008, S. 18, 28); `kinder_unter_6` (abstrakte Aufgabe).
+- **Photosensitivität geprüft:** kein Blinken, keine flächigen Helligkeitswechsel, kein Leuchtsaum; das Ziel ist dauerhaft sichtbar, der Schweif verblasst linear in der Zeit. WCAG 2.3.1 und die Harding-Kriterien (≥ 3 Blitze/s bei ≥ 0,006 sr; Harding et al., 2005) greifen nicht, daher `flimmern_lichtreize` 0 (gleiche Einstufung wie 410, 411, 413, 415: stetig bewegtes Ziel ohne Blinken).
+- **Kombiniert gut mit …** 409 und 414: dieselbe Bewegungsgrundlage, 409 fügt Dunkelphasen hinzu, 414 Positionssprünge. Danach Richtungswechsel 415 → 410 → 411; 404/403/405 (andere Bahnen), 105 (Blickfolge mit Hand), 514 (Tracking mit der Maus). Unterschied zu 404: dort geschwungene Lissajous-Bahn ohne Wandkontakt.
 
 Keine Diagnose, kein Heil- oder Sehversprechen; ein Nutzen für Sehen, Sport oder Verkehr ist nicht belegt.
 
@@ -258,10 +211,6 @@ Keine Diagnose, kein Heil- oder Sehversprechen; ein Nutzen für Sehen, Sport ode
 - Krauzlis, R. J. (2004). Recasting the smooth pursuit eye movement system. *Journal of Neurophysiology, 91*(2),
   591–603. https://doi.org/10.1152/jn.00801.2003 – **Prüfung:** DOI stimmt ✓; **stützt die Aussage der Website:** nein –
   „ab ≈ 30°/s Schlupf mit Nachbildern“ steht dort nicht.
-- Leigh, R. J., & Zee, D. S. (2015). *The neurology of eye movements* (5th ed.). Oxford University Press.
-  https://doi.org/10.1093/med/9780199969203.001.0001 – **Prüfung:** DOI falsch (nicht bei Crossref); richtig
-  https://doi.org/10.1093/med/9780199969289.001.0001 ✓ (Buch, nicht eingesehen); **stützt die Aussage der Website:**
-  unklar – „Kopfbewegung verhindert die Beanspruchung der Mikrobewegungen“ nicht belegt.
 - Woods, D. L., Wyma, J. M., Yund, E. W., Herron, T. J., & Reed, B. (2015). Factors influencing the latency of simple
   reaction time. *Frontiers in Human Neuroscience, 9*, 131. https://doi.org/10.3389/fnhum.2015.00131 – **Prüfung:** DOI
   stimmt ✓; **stützt die Aussage der Website:** nein – Reaktionszeit/Hardware (≈ 18 ms); nichts zu Schlieren oder 144 Hz.
@@ -310,9 +259,9 @@ Keine Diagnose, kein Heil- oder Sehversprechen; ein Nutzen für Sehen, Sport ode
   *J. Exp. Psychol.: Human Perception and Performance, 32*(5), 1136–1154. https://doi.org/10.1037/0096-1523.32.5.1136
 - Tong, J., Patel, S. S., & Bedell, H. E. (2006). The attenuation of perceived motion smear during combined eye and head
   movements. *Vision Research, 46*(26), 4387–4397. https://doi.org/10.1016/j.visres.2006.08.034
-- Ergänzend (Abschnitte 4, 7, 8, alle geprüft): Carl & Gellman (1987) https://doi.org/10.1152/jn.1987.57.5.1446 ·
-  Bargary et al. (2017) https://doi.org/10.1016/j.visres.2017.03.001 · Fransen (2024)
-  https://doi.org/10.1007/s40279-024-02060-x · Appelbaum et al. (2025) https://doi.org/10.1007/s40279-024-02141-x
-
-Prüfvermerk: DOIs am 29.09.2026 per Crossref geprüft, Inhalte über PubMed-Abstracts bzw. die geprüfte Literaturbasis
-der Gruppe. Bildraten, Spurlängen, Sehwinkel und Kontraste sind eigene Berechnungen aus Code und Formeln.
+- Carl, J. R., & Gellman, R. S. (1987). Human smooth pursuit: Stimulus-dependent responses. *Journal of Neurophysiology, 57*(5), 1446–1463. https://doi.org/10.1152/jn.1987.57.5.1446 – Folgebewegung reagiert erst nach ≈ 100 ms
+- Bargary, G., Bosten, J. M., Goodbourn, P. T., Lawrance-Owen, A. J., Hogg, R. E., & Mollon, J. D. (2017). Individual differences in human eye movements: An oculomotor signature? *Vision Research, 141*, 157–169. https://doi.org/10.1016/j.visres.2017.03.001 – individuell stabile Kennwerte der Augenbewegung
+- Fransen, J. (2024). There is no supporting evidence for a far transfer of general perceptual or cognitive training to sports performance. *Sports Medicine, 54*(11), 2717–2724. https://doi.org/10.1007/s40279-024-02060-x – kein Ferntransfer
+- Appelbaum, L. G., Lochhead, L., Feng, J., Erickson, G., Liu, S., & Laby, D. M. (2025). Limited evidence is not no evidence: A rebuttal to Fransen, 2024. *Sports Medicine, 55*(1), 241–242. https://doi.org/10.1007/s40279-024-02141-x – Gegenposition
+- Muchnick, B. G. (2008). *Clinical Medicine in Optometric Practice* (2nd ed.). Mosby/Elsevier. https://openlibrary.org/isbn/9780323029612 – S. 15–16, 18, 28: Kopfschmerz mit Sehverschlechterung, Schwindel und andere neurologische Warnzeichen verlangen ärztliche Abklärung
+- Mountford, J., Ruston, D., & Dave, T. (2004). *Orthokeratology: Principles and Practice*. Butterworth-Heinemann. https://openlibrary.org/isbn/9780750640077 – S. 43–44: Wiederholbarkeit von Messungen am Menschen geringer als an Prüfkörpern

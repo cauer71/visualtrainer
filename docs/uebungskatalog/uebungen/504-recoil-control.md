@@ -2,7 +2,7 @@
 # ===== Kennung =====
 nr: 504
 kennung: recoil-control
-name: "Rückstoßausgleich – das hochspringende Fadenkreuz mit gleichmäßigem Gegenzug auf einem ausweichenden Ziel halten"
+name: "Rückstoßausgleich – eine nach oben gezogene Marke mit gleichmäßigem Gegenzug auf dem Ziel halten"
 name_original: "Recoil Control Pro (Seitentitel: Rückstoßkontrolle lernen | FPS Spray Control)"
 kapitel: "Zielen (FPS)"
 kapitel_original: "fps"
@@ -12,7 +12,7 @@ blickfit_umsetzung: {kennung: "gegenhalten", name: "Gegenhalten", unterschiede: 
 stand: 2026-09-29
 
 # ===== Überblick =====
-kurzbeschreibung: "Man hält die Maustaste gedrückt, dann wird ein Dauerfeuer simuliert: Mit jedem Schuss springt das Fadenkreuz nach einem festen Muster nach oben und seitlich. Man zieht die Maus gleichmäßig nach unten, um das Fadenkreuz auf einer grünen, dreiteiligen Zielfigur (Kopf, Brust, Beine) zu halten, die seitlich hin und her ausweicht."
+kurzbeschreibung: "Eine Marke über dem Finger wird gleichmäßig nach oben gezogen und gleitet nach jedem Zug zurück. Man legt den Finger irgendwo auf, nur die Höhe zählt, und zieht gleichmäßig dagegen, damit die Marke im hellen Ring um das stehende Ziel bleibt. Zughöhe, Tempo und Schwankung passen sich an."
 ziel_funktionen: [kontinuierliche_steuerung, auge_hand_koordination]
 eingabe: [maus]
 tablet_geeignet: nein
@@ -74,29 +74,24 @@ belastung:
 # ===== Auswahlhilfe =====
 voraussetzungen: ["Computer mit Maus; Pointer Lock (Zeigersperre) nötig – ohne Touch-Steuerung", "freie Mausfläche, Unterarm aufgelegt; gleichmäßiges Gleiten der Maus", "Bildschirm 50–70 cm, passende Korrektion für diesen Abstand", "kein Farbsehen nötig (Trefferzonen unterscheiden sich durch Lage und Helligkeit, alle grün)", "Akzeptanz des Waffen-/Shooter-Themas"]
 vorsicht_bei: [hand_arm_beschwerden, tremor_parkinson, nystagmus, presbyopie_gleitsicht, trockenes_auge_bildschirm, kopfschmerz_asthenopie, sehbehinderung_niedriger_visus, migraene_lichtempfindlich, photosensitive_epilepsie, kinder_unter_6]
-geeignet_fuer: ["fortlaufendes Gegensteuern gegen eine vorhersagbare, wiederkehrende Störung mit der Maus üben (Adaptation, Vorwärtsmodell)", "Auge-Hand-Koordination beim Nachführen eines langsam ausweichenden Ziels", "gleichmäßige, dosierte Zugbewegung statt ruckartiger Korrekturen", "Aufwärmen für Menschen, die ohnehin Ego-Shooter spielen; Selbstvergleich auf demselben Gerät"]
-weniger_geeignet_fuer: ["Tablet- und Smartphone-Nutzung (nicht spielbar)", "Menschen ohne Maus-Routine oder mit Hand-/Unterarmbeschwerden", "Menschen, die Waffen-Szenarien ablehnen, und Kinder", "Ziele wie visuelle Suche, peripheres Sehen, Gedächtnis oder Lesen", "Erwartung eines Seh-, Konzentrations- oder Alltagsnutzens"]
+geeignet_fuer: ["fortlaufendes Gegensteuern gegen eine vorhersagbare, wiederkehrende Störung üben (Adaptation, Vorwärtsmodell)", "Auge-Hand-Koordination beim Halten einer Marke auf einem Ziel", "gleichmäßige, dosierte Zugbewegung statt ruckartiger Korrekturen", "Selbstvergleich auf demselben Gerät"]
+weniger_geeignet_fuer: ["Menschen mit Hand-/Unterarmbeschwerden oder Zittern", "Ziele wie visuelle Suche, peripheres Sehen, Gedächtnis oder Lesen", "Erwartung eines Seh-, Konzentrations- oder Alltagsnutzens"]
 evidenz:
   uebungseffekt: mittel
   naher_transfer: schwach
   alltag_transfer: fehlend
-  kommentar: "Das Erlernen vorhersagbarer Störungen über interne Modelle ist in Laborstudien robust belegt (Shadmehr & Mussa-Ivaldi 1994; Tseng et al. 2007), bleibt aber aufgabenspezifisch; zur Original-Übung, zu Rückstoß-Drills allgemein und zu einem Transfer ins Spiel oder in den Alltag gibt es keine Studien."
+  kommentar: "Das Erlernen vorhersagbarer Störungen über interne Modelle ist in Laborstudien robust belegt (Shadmehr & Mussa-Ivaldi 1994; Tseng et al. 2007), bleibt aber aufgabenspezifisch; zu dieser Übung, zu ähnlichen Drills allgemein und zu einem Transfer ins Spiel oder in den Alltag gibt es keine Studien."
 aehnliche_uebungen: [505, 507, 509, 514, 512, 515, 707, 705, 808, 104, 304]
 stichworte: ["Recoil Control", "Rückstoßkontrolle", "Spray Control", "Spray Pattern", "Kompensation", "Vorwärtsmodell", "motorische Adaptation", "manuelles Tracking", "Auge-Hand-Koordination", "Ego-Shooter", "FPS", "Maus", "Pointer Lock", "Combo"]
 ---
 
-# 504 · Rückstoßausgleich – das hochspringende Fadenkreuz mit gleichmäßigem Gegenzug auf einem ausweichenden Ziel halten
+# 504 · Rückstoßausgleich – eine nach oben gezogene Marke mit gleichmäßigem Gegenzug auf dem Ziel halten
 
-> Original: „Recoil Control Pro“ (Seitentitel „Rückstoßkontrolle lernen | FPS Spray Control“) – skilldrills.online,
-> Kapitel Zielen (`fps`) · Blickfit: noch nicht umgesetzt
+> Original: „Recoil Control Pro“ (Seitentitel „Rückstoßkontrolle lernen | FPS Spray Control“) – skilldrills.online, Kapitel Zielen (`fps`) · Blickfit: noch nicht umgesetzt
 
 ## 1. Kurzbeschreibung
 
-Auf fast schwarzem Grund weicht eine kleine grüne Zielfigur aus drei Kreisen (Kopf, Brust, Beine) seitlich aus. Solange
-man die linke Maustaste hält, wird im 120-ms-Takt „geschossen“; mit jedem Schuss springt das sichtbare Fadenkreuz nach
-einem festen Muster nach oben und pendelt später seitlich. Man führt die Maus gleichmäßig nach unten und seitlich, damit
-das Fadenkreuz auf der Figur bleibt. Nach 30 Schuss wird 1,2 s nachgeladen; eine Runde dauert 45 s. Es ist ein
-Maus-Geschicklichkeitsspiel im Shooter-Stil – kein Seh- oder Reaktionstest.
+Ein Ring (Ziel) steht still; über dem Finger sitzt eine Marke, die von selbst gleichmäßig nach oben gezogen wird und nach einem Zug sanft zurückgleitet, bevor der nächste Zug beginnt. Man legt den Finger irgendwo auf, nur die Fingerhöhe zählt, und zieht gleichmäßig dagegen, damit die Marke im hellen Ring bleibt. Ein Pfeil neben der Marke zeigt die Zugrichtung. Jeder Zug hat eine leicht andere Höhe und Dauer, damit man ihn nicht auswendig lernt. Zughöhe, Zugtempo und Schwankung steigen in Stufen und passen sich nach oben und unten an; Abheben des Fingers ist eine Pause. Ausgewertet werden die Stufe, die Zeit im Ring und der mittlere Abstand zum Ziel. Geübt wird das gleichmäßige, dosierte Gegensteuern gegen eine vorhersagbare, wiederkehrende Störung, nicht das Sehen.
 
 ## 2. Ablauf im Original (Analyse)
 
@@ -151,87 +146,48 @@ Streuung, > 90 % Treffer“) und „2–3 Wochen à 15 min“ bis zur Automatisi
 
 ## 4. Optische und okulomotorische Grundlagen
 
-- **Sehwinkel [ER]** (1 CSS-px ≈ 0,26 mm, 60 cm, 1° ≈ 40 px): Kopfkreis ≈ 0,32° (Trefferzone ≈ 0,67°), Brust ≈ 0,56°,
-  Fadenkreuz-Ring ≈ 0,75°; Rückstoßhöhe ≈ 1,8–4,1°, Seitenpendeln ≈ 0,4–0,9°. Weit über der Sehschärfegrenze – Detailsehen
-  ist Nebensache, unkorrigierte Fehlsichtigkeit macht die kleinen Zonen aber unscharf.
-- **Blickfolge:** Zieltempo ≈ 1,3–2,4°/s (Level 1) bis ≈ 7°/s [ER] – Bereich mit hohem, aber < 0,95 liegendem Folge-Gain
-  (Collewijn & Tamminga, 1984). Beim Handtracking eines glatt, aber unvorhersagbar bewegten Ziels war der Folge-Gain
-  höher und Aufholsakkaden seltener als beim bloßen Zusehen (Danion & Flanagan, 2018); bei pseudozufälliger Bewegung
-  fand sich dieser Vorteil nicht (Koken & Erkelens, 1992) – uneinheitlich, wie bei 505/507 eingeordnet. Richtungswechsel
-  erzeugen kleine Aufholsakkaden. Eine großflächige Bewegung gibt es nicht (kein Bildwackeln, laut Code bleibt der
-  Wackel-Wert immer 0); das ausweichende Ziel und das im 8-Hz-Takt springende Fadenkreuz → `bewegungsreize_schwindel` 1
-  (wie bei den übrigen Nachführaufgaben). Wer Nystagmus hat, dürfte das kleine bewegte Ziel schwerer ruhig halten
-  (Plausibilitätsannahme) → `nystagmus` in `vorsicht_bei`.
-- **Farbe/Kontrast:** alle Zonen grün auf Schwarz, unterschieden durch Lage und Helligkeit → bei Farbsehschwäche (≈ 8 %
-  der Männer; Birch, 2012) spielbar; die Beinzone (22 % Deckkraft) ist kontrastarm, im Alter schlechter sichtbar.
-- **Gleitsicht:** Das 16 : 9-Feld (≈ 25–30° breit bei 60 cm, im Vollbild mehr) übersteigt den klaren Zwischenbereich
-  (13–18°; Han et al., 2003); am Rand muss der Kopf mitgehen → Bildschirmbrille oder kleineres Fenster. 60 cm Abstand
-  verlangen ≈ 1,67 dpt Akkommodation [ER].
-- **Trockenes Auge:** ununterbrochenes Hinsehen; bei schnellen Spielen sinkt der Lidschlag auf ≈ ⅓ (Cardona et al., 2011).
+- **Sehwinkel:** Ring und Marke liegen weit über der Sehschärfegrenze, Detailsehen ist Nebensache; unkorrigierte Fehlsichtigkeit macht die Marke aber unschärfer. Die Marke sitzt über dem Finger, damit die Hand nichts verdeckt.
+- **Blickfolge:** Das Zugtempo der Marke steigt über die Stufen von etwa 2 auf etwa 8 % der kürzeren Bildseite pro Sekunde, auf einem Tablet in 40 cm Abstand grob von 0,5 auf 2°/s, ein Bereich mit hohem, aber < 0,95 liegendem Folge-Gain (Collewijn & Tamminga, 1984). Beim Handtracking eines glatt, aber unvorhersagbar bewegten Ziels war der Folge-Gain höher und Aufholsakkaden seltener als beim bloßen Zusehen (Danion & Flanagan, 2018); bei pseudozufälliger Bewegung fand sich dieser Vorteil nicht (Koken & Erkelens, 1992). Die Befunde sind uneinheitlich, wie bei 505/507 eingeordnet. Es gibt keine großflächige Bewegung, daher `bewegungsreize_schwindel` 1 (wie bei den übrigen Nachführaufgaben). Wer Nystagmus hat, dürfte die kleine bewegte Marke schwerer ruhig halten (Plausibilitätsannahme), daher `nystagmus` in `vorsicht_bei`.
+- **Farbe/Kontrast:** Ring und Marke unterscheiden sich durch Lage und Helligkeit, nicht durch den Farbton; bei Farbsehschwäche (≈ 8 % der Männer; Birch, 2012) gut lösbar.
+- **Gleitsicht:** Die Bewegung ist überwiegend senkrecht und läuft über einen begrenzten Streifen; wenn das Feld den klaren Zwischenbereich (13–18°; Han et al., 2003) übersteigt, muss der Kopf mitgehen, dann Bildschirmbrille oder kleineres Fenster. Der Akkommodationsbedarf beträgt bei 40 cm 2,5 dpt, bei 60 cm ≈ 1,7 dpt (Rechenregel: Kehrwert des Abstands in Metern).
+- **Trockenes Auge:** ununterbrochenes Hinsehen; bei schnellen Bildschirmaufgaben sinkt der Lidschlag auf etwa ein Drittel (Cardona et al., 2011).
 
 ## 5. Neurowissenschaftliche Grundlagen
 
-- **Interne Modelle:** Vorhersagbare Störungen werden über ein internes Modell gelernt und ausgeglichen; Nacheffekte
-  zeigen, dass es gespeichert ist (Shadmehr & Mussa-Ivaldi, 1994). Gelernt wird Versuch für Versuch aus dem Fehler
-  (Thoroughman & Shadmehr, 2000), angetrieben von **sensorischen Vorhersagefehlern** (Shadmehr et al., 2010).
-- Das Rückstoßmuster ist eine **visuomotorische Störung** (gesehenes Fadenkreuz ≠ Handposition). Die Anpassung daran ist
-  **kleinhirnabhängig**; Menschen mit Kleinhirnataxie adaptieren deutlich schwächer (Tseng et al., 2007). Das beschreibt
-  die beteiligte Struktur – kein Beleg, dass die Übung das Kleinhirn „trainiert“.
-- **Rückkopplung:** Manuelles Nachführen korrigiert intermittierend (Fehler-Totzone ≈ 0,8° beim Joystick-Tracking,
-  bei schnellen Zielen Abstände vereinbar mit ≈ 170 ms Refraktärzeit; Miall et al., 1993); korrigiert werden vor allem aufgabenrelevante Abweichungen (Todorov & Jordan, 2002).
-- Beim Verfolgen des Ziels arbeitet das Netzwerk der Folgebewegung (MT/MST, FEF, Kleinhirn; Krauzlis, 2004).
+- **Interne Modelle:** Vorhersagbare Störungen werden über ein internes Modell gelernt und ausgeglichen; Nacheffekte zeigen, dass es gespeichert ist (Shadmehr & Mussa-Ivaldi, 1994). Gelernt wird Versuch für Versuch aus dem Fehler (Thoroughman & Shadmehr, 2000), angetrieben von **sensorischen Vorhersagefehlern** (Shadmehr et al., 2010).
+- Der Zug ist eine **visuomotorische Störung** (gesehene Marke ≠ Handposition). Die Anpassung daran ist **kleinhirnabhängig**; Menschen mit Kleinhirnataxie adaptieren deutlich schwächer (Tseng et al., 2007). Das beschreibt die beteiligte Struktur und ist kein Beleg, dass die Übung das Kleinhirn „trainiert“. Klinisch wird die Koordination u. a. mit dem Finger-Nase-Versuch geprüft (Muchnick, 2008, S. 30–31); die Übung ist kein solcher Test.
+- **Rückkopplung:** Manuelles Nachführen korrigiert intermittierend (Fehler-Totzone ≈ 0,8° beim Joystick-Tracking, bei schnellen Zielen Abstände vereinbar mit ≈ 170 ms Refraktärzeit; Miall et al., 1993); korrigiert werden vor allem aufgabenrelevante Abweichungen (Todorov & Jordan, 2002).
+- Beim Verfolgen der Marke mit den Augen arbeitet das Netzwerk der Folgebewegung (MT/MST, FEF, Kleinhirn; Krauzlis, 2004).
 
 ## 6. Motorische Grundlagen
 
-- **Aufgabe:** kompensatorisches Tracking einer festen, zeitlich ablaufenden Auslenkung plus reaktives Nachführen eines
-  zufällig ausweichenden Ziels – zwei überlagerte Steuerprobleme in derselben Hand.
-- **Laborbefund:** Beim Tracking unter einem ablenkenden Kraftfeld wird der Ausgleich rasch gelernt, das intermittierende
-  Grundmuster bleibt; Kraftsteuerung und Armsteifigkeit teilen sich die Arbeit (≈ 80 : 20 %; Squeri et al., 2010).
-- **Rauschen und Tremor:** Große, schnelle Korrekturimpulse streuen stärker (Harris & Wolpert, 1998). Physiologischer
-  Tremor (EMG-Gipfel 9–12 Hz bei Jüngeren, bei einzelnen Älteren 5–7 Hz; Elble, 2003) wirkt direkt auf Zonen von 0,3–0,7°.
-- **Gerät:** Mausweg je Pixel hängt von DPI, Beschleunigung und Empfindlichkeit ab; eine neue Übersetzung (Gain) wird
-  rasch gelernt und verallgemeinert (Krakauer et al., 2000).
-- **Belastung:** gehaltene Taste plus dosierter Unterarmzug, ≈ 9 Magazine je Runde [ER]; bei College-Esportlern 36 %
-  Handgelenk-, 32 % Handbeschwerden (DiFrancisco-Donoghue et al., 2019).
+- **Aufgabe:** kompensatorisches Tracking einer ablaufenden Auslenkung nur in der Höhe; es zählt die Fingerhöhe, nicht der Ort in der Breite.
+- **Laborbefund:** Beim Tracking unter einem ablenkenden Kraftfeld wird der Ausgleich rasch gelernt, das intermittierende Grundmuster bleibt; Kraftsteuerung und Armsteifigkeit teilen sich die Arbeit (≈ 80 : 20 %; Squeri et al., 2010). Gezielte Steifigkeit statt Verkrampfen stabilisiert instabile Dynamik (Burdet et al., 2001).
+- **Rauschen und Tremor:** Große, schnelle Korrekturimpulse streuen stärker als kleine (Harris & Wolpert, 1998), daher sind kleine, gleichmäßige Bewegungen günstiger als Ruckeln. Physiologischer Tremor (EMG-Gipfel 9–12 Hz bei Jüngeren, bei einzelnen Älteren 5–7 Hz; Elble, 2003) wirkt direkt auf das Halten im Ring. Bei Händezittern oder Beschwerden lieber pausieren; Zittern ist als neurologisches Symptom ärztlich abzuklären (Muchnick, 2008, S. 28).
+- **Gerät:** Der Weg je Pixel hängt von Bildschirm und Eingabe ab; eine neue Übersetzung (Gain) wird rasch gelernt und verallgemeinert (Krakauer et al., 2000). Touch-Zielgrößen ab etwa 9 mm (Parhi et al., 2006).
+- **Belastung:** dosierter Armzug auf dem Tablet; bei College-Esportlern mit 3–10 h Spielzeit pro Tag berichteten 36 % Handgelenk- und 32 % Handbeschwerden (DiFrancisco-Donoghue et al., 2019), bei wenigen Minuten Übung nicht übertragbar, aber ein Hinweis auf die Belastungsart.
 
 ## 7. Einflussfaktoren und Messgrenzen
 
-- **Taktik statt Fähigkeit:** Da Loslassen das Muster zurücksetzt, misst die Präzision vor allem Salvenabbruch, nicht die
-  Kompensationsgüte (ein Restfehler je Schussnummer wird nicht erfasst).
-- **Gerät:** bildratenabhängiger Schusstakt; Systemlatenz senkt die Zeit auf dem Ziel (−5,8 % bei 41 ms bis −32,7 % bei
-  164 ms; Ivkovic, 2017); Mausbeschleunigung aktiv; Feldgröße ändert Sehwinkel und Mausweg.
-- **Zufall und Übung:** Zielbewegung zufällig → nur Mittel mehrerer Runden am selben Gerät vergleichen. Frühe Zuwächse
-  spiegeln Aufgabenvertrautheit (Reaktionszeit: trainingsgleiche Tests SMD 2,66 vs. unähnliche 0,50; Guo et al., 2025).
-- **Person:** Alter, Müdigkeit, Tremor, Maus-Erfahrung; Normwerte gibt es nicht.
+- **Aufgabe statt Fähigkeit:** Gemessen werden Zeit im Ring und mittlerer Abstand zum Ziel in Prozent der Ringbreite; das Ergebnis hängt von der Stufe ab, die sich nach oben und unten anpasst, der Hauptwert ist daher die erreichte Stufe.
+- **Gerät:** Die Marke bewegt sich nach Zeit, nicht nach Bildzahl (auf 60- und 120-Hz-Geräten gleich). Systemlatenz zwischen Finger und Marke verändert das Gegensteuern; in einer Studie zu Zielaufgaben sank die Zeit auf dem Ziel mit wachsender Latenz (−5,8 % bei 41 ms bis −32,7 % bei 164 ms; Ivkovic, 2017). Touch und Maus unterscheiden sich in Zeitbedarf und Streuung; nur Vergleich am selben Gerät.
+- **Zufall und Übung:** Zughöhe und -dauer streuen leicht von Zug zu Zug; mehrere Durchgänge und der Mittelwert über Runden sind aussagekräftiger als ein Einzelwert (Mountford et al., 2004, S. 44). Frühe Zuwächse spiegeln Aufgabenvertrautheit (Reaktionszeit: trainingsgleiche Tests SMD 2,66 vs. unähnliche 0,50; Guo et al., 2025).
+- **Person:** Alter, Müdigkeit, Tremor, Erfahrung mit Touch-Eingabe; Normwerte gibt es nicht.
 
 ## 8. Studienlage: Trainierbarkeit und Übertragung
 
-- **Übungseffekt – mittel:** Lernen vorhersagbarer Störungen ist im Labor robust (Shadmehr & Mussa-Ivaldi, 1994; Tseng et
-  al., 2007; Squeri et al., 2010); Aim-Trainer-Leistung steigt mit Übung (Listman et al., 2021, N = 7.174; Klickaufgaben,
-  herstellerfinanziert). Zu dieser Übung oder zu Rückstoß-Drills gibt es keine Studie.
-- **Naher Transfer – schwach:** Adaptationen bleiben weitgehend an Aufgabe und Störung gebunden; Transfer eines
-  2D-Browsermusters auf andere Muster oder 3D-Spiele ist nicht untersucht (vgl. Krakauer et al., 2019).
-- **Alltagstransfer – fehlend:** kein Beleg; Metaanalysen zu Action-Spielen schließen motorische Maße mangels Daten aus
-  (Bediou et al., 2023).
+- **Übungseffekt – mittel:** Das Lernen vorhersagbarer Störungen ist im Labor robust (Shadmehr & Mussa-Ivaldi, 1994; Tseng et al., 2007; Squeri et al., 2010); die Leistung in Zielaufgaben am Bildschirm steigt mit Übung (Listman et al., 2021, N = 7.174; Klickaufgaben, vom Anbieter finanziert). Zu dieser Übung oder zu ähnlichen Drills gibt es keine Studie.
+- **Naher Transfer – schwach:** Adaptationen bleiben weitgehend an Aufgabe und Störung gebunden; ein Transfer auf andere Störmuster oder andere Geräte ist nicht untersucht (vgl. Krakauer et al., 2019).
+- **Alltagstransfer – fehlend:** Kein Beleg; Metaanalysen zu Action-Spielen schließen motorische Maße mangels Daten aus (Bediou et al., 2023).
+- Erfahrungswissen aus der funktionellen Optometrie, nicht belegt: Bei Auge-Hand-Übungen mit Rückmeldung beim Verlassen einer Bahn (z. B. Weg-Verfolgen) wird in kleinen, selbst gesteuerten Schritten gesteigert; die Stufen der Übung greifen das auf.
 
 ## 9. Auswahlhinweise für die KI
 
-- **Passt, wenn …** jemand mit Maus-Routine gleichmäßiges Gegensteuern und Auge-Hand-Koordination beim Nachführen üben
-  will; als Aufwärmen für Shooter-Spieler:innen; Selbstvergleich am selben Gerät.
-- **Weniger passend, wenn …** nur ein Tablet vorhanden ist; Sehfunktionen, Suche, Gedächtnis oder Lesen im Fokus stehen;
-  Waffen-Szenarien abgelehnt werden; keine Maus-Erfahrung besteht.
-- **Vorsicht / anpassen bei …** `hand_arm_beschwerden`, `tremor_parkinson` (Dauerzug, kleine Zonen → kurze Runden);
-  `presbyopie_gleitsicht` (Ziel pendelt über die volle Breite → Bildschirmbrille, kleineres Fenster);
-  `trockenes_auge_bildschirm`, `kopfschmerz_asthenopie` (Dauerfixieren → Pausen, blinzeln); `sehbehinderung_niedriger_visus`
-  (kleine, teils kontrastarme Zonen); `migraene_lichtempfindlich`, `photosensitive_epilepsie` (vorsorglich: kleine
-  Treffereffekte im 8-Hz-Takt, optionaler roter Blitz-Effekt höchstens ≈ alle 4,8 s, weit unter 3 Blitzen/s);
-  `kinder_unter_6` (Shooter-Thema, Feinmotorik); `nystagmus` (kleines, ausweichendes Ziel mit der Blickfolge halten →
-  niedrige Stufe, langsames Zieltempo; 505/507 fordern die Blickfolge noch stärker).
-- **Kombiniert gut mit …** 505, 507, 514, 512, 515 (Tracking), 509 (Mikrokorrektur), 707 (Pfad folgen), 705, 808 (ruhige
-  Hand), 104 (Zielverfolgung ohne Shooter-Thema).
-- **Abgrenzung in der Gruppe:** 505 und 507 sind reines Nachführen (ohne Klicken, ohne Störung); 504 ergänzt eine feste,
-  vorhersagbare Störung (Rückstoß) und das Halten der Taste, das Ziel ist langsamer. Keine Dublette, aber für das Ziel
-  „Nachführen üben“ genügt meist eine der drei.
+- **Passt, wenn …** jemand gleichmäßiges Gegensteuern und Auge-Hand-Koordination beim Nachführen üben will, am Tablet und ohne Maus; Selbstvergleich am selben Gerät.
+- **Weniger passend, wenn …** Sehfunktionen, Suche, Gedächtnis oder Lesen im Fokus stehen; bei Beschwerden von Hand oder Unterarm.
+- **Vorsicht / anpassen bei …** `hand_arm_beschwerden`, `tremor_parkinson` (Dauerzug, kleiner Ring → kurze Runden, niedrige Stufe); `presbyopie_gleitsicht` (Bildschirmbrille, kleineres Fenster); `trockenes_auge_bildschirm`, `kopfschmerz_asthenopie` (Dauerfixieren → Pausen, blinzeln; Kopfschmerz zusammen mit Sehverschlechterung ärztlich abklären lassen, Muchnick, 2008, S. 28); `sehbehinderung_niedriger_visus` (kleine, teils kontrastarme Zonen); `migraene_lichtempfindlich`, `photosensitive_epilepsie` (vorsorglich; die Übung hat kein Blinken, die Marke bewegt sich stetig); `kinder_unter_6` (Feinmotorik); `nystagmus` (kleine, bewegte Marke mit der Blickfolge halten → niedrige Stufe, langsames Zugtempo; 505/507 fordern die Blickfolge noch stärker).
+- **Kombiniert gut mit …** 505, 507, 514, 512, 515 (Tracking), 509 (Mikrokorrektur), 707 (Pfad folgen), 705, 808 (ruhige Hand), 104 (Zielverfolgung).
+- **Abgrenzung in der Gruppe:** 505 und 507 sind reines Nachführen eines bewegten Ziels; 504 ergänzt eine feste, vorhersagbare Störung (Zug und Zurückgleiten), das Ziel steht still. Keine Dublette, aber für das Ziel „Nachführen üben“ genügt meist eine der drei.
 
 ## 10. Schwächen des Originals und Empfehlungen für eine Blickfit-Umsetzung
 
@@ -249,12 +205,6 @@ Streuung, > 90 % Treffer“) und „2–3 Wochen à 15 min“ bis zur Automatisi
 ### Von der Website angegeben
 
 - Woods, D. L., Wyma, J. M., Yund, E. W., Herron, T. J., & Reed, B. (2015). Factors influencing the latency of simple reaction time. *Frontiers in Human Neuroscience, 9*, 131. https://doi.org/10.3389/fnhum.2015.00131 – **Prüfung:** DOI stimmt ✓; **stützt die Aussage der Website:** nein (einfache Tastenreaktion; nichts zu `performance.now()`, Browser- Timern, Bildraten oder Rückstoß).
-- Fitts, P. M. (1954). The information capacity of the human motor system in controlling the amplitude of movement. *Journal of Experimental Psychology, 47*(6), 381–391. https://doi.org/10.1037/h0055392 – **Prüfung:** DOI stimmt ✓; **stützt:** teilweise/nein (gilt für einzelne Zielbewegungen, nicht für fortlaufende Kompensation).
-- Meyer, D. E., Abrams, R. A., Kornblum, S., Wright, C. E., & Smith, J. E. K. (1988). Optimality in human motor performance: Ideal control of rapid aimed movements. *Psychological Review, 95*(3), 340–370. https://doi.org/10.1037/0033-295X.95.3.340 – **Prüfung:** DOI stimmt ✓; **stützt:** teilweise (Primär- plus Korrekturbewegung bei diskretem Zielen; auf Dauerfeuer nur als Analogie übertragbar; keine Normwerte).
-- Schmidt, R. A., & Lee, T. D. (2011). *Motor control and learning: A behavioral emphasis* (5. Aufl.). Human Kinetics. ISBN 978-0-7360-7961-7 – **Prüfung:** Buch, keine DOI ✓ (bibliografisch korrekt); **stützt:** teilweise (GMP als Theorie ja; „reines Open-Loop, schneller als visuelle Rückkopplung“ widerspricht Korrekturlatenzen von 110–160 ms).
-- Schmidt, R. A., Zelaznik, H., Hawkins, B., Frank, J. S., & Quinn, J. T. (1979). Motor-output variability: A theory for the accuracy of rapid motor acts. *Psychological Review, 86*(5), 415–451. https://doi.org/10.1037/0033-295X.86.5.415 – **Prüfung:** DOI stimmt ✓; **stützt:** teilweise (Streuung wächst mit Kraft/Impuls – ja, aber annähernd linear, nicht „logarithmisch“; zu Propriozeption und „Sehnenelastizität“ nein).
-- Woodworth, R. S. (1899). The accuracy of voluntary movement. *The Psychological Review: Monograph Supplements, 3*(3), i–114. https://doi.org/10.1037/h0092992 – **Prüfung:** DOI stimmt ✓; **stützt:** teilweise (Zwei-Komponenten-Modell für Zielbewegungen; keine Aussage zu Rückstoß; Leistungstabelle ohne Grundlage).
-
 ### Weitere Fachliteratur
 
 - Shadmehr, R., & Mussa-Ivaldi, F. A. (1994). Adaptive representation of dynamics during learning of a motor task. *The Journal of Neuroscience, 14*(5), 3208–3224. https://doi.org/10.1523/JNEUROSCI.14-05-03208.1994 – internes Modell für vorhersagbare Störungen, Nacheffekte
@@ -276,7 +226,7 @@ Streuung, > 90 % Treffer“) und „2–3 Wochen à 15 min“ bis zur Automatisi
 - Koken, P. W., & Erkelens, C. J. (1992). Influences of hand movements on eye movements in tracking tasks in man. *Experimental Brain Research, 88*(3), 657–664. https://doi.org/10.1007/BF00228195 – Handbeteiligung glättet die Blickfolge nur bei vorhersagbarer Bewegung (Crossref ✓, PubMed-Abstract geprüft)
 - Krakauer, J. W., Pine, Z. M., Ghilardi, M.-F., & Ghez, C. (2000). Learning of visuomotor transformations for vectorial planning of reaching trajectories. *The Journal of Neuroscience, 20*(23), 8916–8924. https://doi.org/10.1523/JNEUROSCI.20-23-08916.2000 – Gain-Lernen verallgemeinert
 - Krakauer, J. W., Hadjiosif, A. M., Xu, J., Wong, A. L., & Haith, A. M. (2019). Motor learning. *Comprehensive Physiology, 9*(2), 613–663. https://doi.org/10.1002/cphy.c170043 – Grenzen von Laborparadigmen
-- Listman, J. B., Tsay, J. S., Kim, H. E., Mackey, W. E., & Heeger, D. J. (2021). Long-term motor learning in the "wild" with high volume video game data. *Frontiers in Human Neuroscience, 15*, 777779. https://doi.org/10.3389/fnhum.2021.777779 – Aim-Lab-Lernkurven (herstellerfinanziert)
+- Listman, J. B., Tsay, J. S., Kim, H. E., Mackey, W. E., & Heeger, D. J. (2021). Long-term motor learning in the "wild" with high volume video game data. *Frontiers in Human Neuroscience, 15*, 777779. https://doi.org/10.3389/fnhum.2021.777779 – Lernkurven in Zielaufgaben (vom Anbieter finanziert)
 - Bediou, B., Rodgers, M. A., Tipton, E., Mayer, R. E., Green, C. S., & Bavelier, D. (2023). Effects of action video game play on cognitive skills: A meta-analysis. *Technology, Mind, and Behavior, 4*(1), 28–48. https://doi.org/10.1037/tmb0000102 – kein motorischer/Alltagstransfer belegt
 - Ivkovic, Z. (2017). *Characterizing the effects of local latency on aim performance in first person shooters* [Masterarbeit, University of Saskatchewan]. https://harvest.usask.ca/bitstream/10388/7707/1/IVKOVIC-THESIS-2017.pdf – keine DOI; Latenz und Tracking
 - Elble, R. J. (2003). Characteristics of physiologic tremor in young and elderly adults. *Clinical Neurophysiology, 114*(4), 624–635. https://doi.org/10.1016/S1388-2457(03)00006-3 – Tremorfrequenzen
@@ -284,4 +234,5 @@ Streuung, > 90 % Treffer“) und „2–3 Wochen à 15 min“ bis zur Automatisi
 - Cardona, G., García, C., Serés, C., Vilaseca, M., & Gispets, J. (2011). Blink rate, blink amplitude, and tear film integrity during dynamic visual display terminal tasks. *Current Eye Research, 36*(3), 190–197. https://doi.org/10.3109/02713683.2010.544442 – Lidschlag bei schnellen Spielen
 - Birch, J. (2012). Worldwide prevalence of red-green color deficiency. *Journal of the Optical Society of America A, 29*(3), 313–320. https://doi.org/10.1364/JOSAA.29.000313 – Häufigkeit der Farbsehschwäche
 - DiFrancisco-Donoghue, J., Balentine, J., Schmidt, G., & Zwibel, H. (2019). Managing the health of the eSport athlete: An integrated health management model. *BMJ Open Sport & Exercise Medicine, 5*(1), e000467. https://doi.org/10.1136/bmjsem-2018-000467 – Hand-/Handgelenkbeschwerden
-- MDN Web Docs. (o. J.). *Element: requestPointerLock() method*. Abgerufen am 29.09.2026 von https://developer.mozilla.org/en-US/docs/Web/API/Element/requestPointerLock – `unadjustedMovement`, keine Unterstützung in Safari iOS/iPadOS
+- Muchnick, B. G. (2008). *Clinical Medicine in Optometric Practice* (2nd ed.). Mosby/Elsevier. https://openlibrary.org/isbn/9780323029612 – S. 28, 30–31: Zittern und Kopfschmerz mit Sehverschlechterung als Warnzeichen; klinische Koordinationsprüfung (Finger-Nase-Versuch)
+- Mountford, J., Ruston, D., & Dave, T. (2004). *Orthokeratology: Principles and Practice*. Butterworth-Heinemann. https://openlibrary.org/isbn/9780750640077 – S. 44: Anzahl der Messwiederholungen hängt von der Streuung ab; Mehrfachmessung

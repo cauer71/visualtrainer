@@ -12,7 +12,7 @@ export const science: ScienceEntry = {
       research:
         'Zum Zielen und Zeigen gibt es viel Forschung: Die Zeit hängt von Entfernung und Zielgröße ab, bewegte Ziele sind schwerer, und folgt ein weiteres Ziel, wird die erste Bewegung etwas länger – ein Wechsel ist nie „kostenlos“. In Studien mit ähnlichen Zielaufgaben werden Menschen mit Übung deutlich besser, vor allem an der geübten Aufgabe. Ob das auf andere Aufgaben, den Sport oder den Alltag übergeht, ist nicht belegt. Vergleiche dich nur mit dir selbst auf demselben Gerät.',
       improved:
-        'Bewegung mit Zeitschritt gerechnet (gleich schnell auf jedem Gerät), sichtbarer Restzeit-Ring statt verstecktem Ablauf, feste Dauer und adaptive Stufe statt offener Runde, große Trefferflächen für den Finger, Fehler mit Symbol (✓/✗) statt rotem Vollbild-Blitz, kein Wackeln, keine Noten oder Ranglisten; gemessen wird die Zeit von Treffer zu Treffer als Median.',
+        'Die Bewegung wird mit dem Zeitschritt gerechnet und ist deshalb auf jedem Gerät gleich schnell. Jede Kugel zeigt ihre Restzeit in einem sichtbaren Ring, sodass man erkennen kann, welche zuerst dran ist. Die Runde dauert fest 45 Sekunden, und die Stufe (Anzahl, Tempo, Größe und Lebensdauer der Kugeln) passt sich dem Ergebnis an. Die Trefferflächen sind für den Finger groß; ein Fehltipp wird mit einem Symbol (✗) gezeigt, es gibt keinen Vollbild-Blitz, kein Wackeln und keine Noten oder Ranglisten. Gemessen werden die Zeit von Treffer zu Treffer als Median und ob die dringendste Kugel zuerst getippt wurde.',
     },
     it: {
       trains: 'Tenere d’occhio più bersagli in movimento, scegliere il più urgente, toccarlo e passare subito al successivo.',
@@ -20,7 +20,7 @@ export const science: ScienceEntry = {
       research:
         'Sul puntare e indicare esiste molta ricerca: il tempo dipende dalla distanza e dalla dimensione del bersaglio, i bersagli in movimento sono più difficili e, se segue un altro bersaglio, il primo movimento dura un po’ di più – un cambio non è mai “gratuito”. Negli studi con compiti simili le persone migliorano nettamente con l’esercizio, soprattutto nel compito esercitato. Che questo si trasferisca ad altri compiti, allo sport o alla vita quotidiana non è dimostrato. Confrontati solo con te stesso sullo stesso dispositivo.',
       improved:
-        'Movimento calcolato con il passo temporale (stessa velocità su ogni dispositivo), anello del tempo rimasto visibile invece di una scadenza nascosta, durata fissa e livello adattivo invece di un round aperto, grandi aree di tocco per il dito, errori con simbolo (✓/✗) invece di un lampo rosso a schermo intero, nessuno scuotimento, nessun voto o classifica; si misura il tempo tra un colpo e l’altro come mediana.',
+        'Il movimento è calcolato con il passo temporale ed è quindi ugualmente veloce su ogni dispositivo. Ogni sfera mostra il tempo rimasto in un anello ben visibile, così si riconosce quale tocca per prima. Il turno dura 45 secondi fissi, e il livello (numero, velocità, dimensione e durata delle sfere) si adatta al risultato. Le aree di tocco sono ampie per il dito; un tocco sbagliato è segnalato con un simbolo (✗), non ci sono lampi a schermo intero, tremolii, voti o classifiche. Si misurano il tempo tra un colpo e l’altro (mediana) e se è stata toccata per prima la sfera più urgente.',
     },
   },
   sources: [
