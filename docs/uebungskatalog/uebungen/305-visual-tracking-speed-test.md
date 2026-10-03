@@ -2,7 +2,7 @@
 # ===== Kennung =====
 nr: 305
 kennung: visual-tracking-speed-test
-name: "Zielverfolgung mit Abfangklick – abprallendes Ziel verfolgen und anklicken"
+name: "Abprallendes Ziel vorausschätzen – Abprallort antippen"
 name_original: "Zielverfolgung testen (Seitentitel: Zielverfolgung testen | SkillDrills)"
 kapitel: "Reaktionsgeschwindigkeit"
 kapitel_original: "reaction-speed"
@@ -85,7 +85,7 @@ aehnliche_uebungen: [304, 104, 306, 105, 410, 415, 505, 512, 514, 515, 303, 503,
 stichworte: ["Interzeption", "Abfangen bewegter Ziele", "Zielverfolgung", "Blickfolge", "smooth pursuit", "Aufholsakkaden", "Abprallen", "Antizipation", "Auge-Hand-Koordination", "Fitts'sches Gesetz für bewegte Ziele", "Zeitdruck", "Combo", "Abprallort vorhersagen"]
 ---
 
-# 305 · Zielverfolgung mit Abfangklick – abprallendes Ziel verfolgen und anklicken
+# 305 · Abprallendes Ziel vorausschätzen – Abprallort antippen
 
 > Original: „Zielverfolgung testen“ – skilldrills.online, Kapitel Reaktionsgeschwindigkeit (`reaction-speed`) · Blickfit: noch nicht umgesetzt (fachlich sehr nah: `zielfang`, die Blickfit-Umsetzung von 104)
 
@@ -148,7 +148,8 @@ Doppelbildern. Die Stufen (> 330 ms … < 180 ms Ø Reaktion, < 72 % … 98 %+ G
 ## 4. Optische und okulomotorische Grundlagen
 
 - **Folgebewegung (Labordaten, in der Übung nicht gemessen):** Das Ziel bleibt die ganze Zeit sichtbar. Die Folgebewegung
-  der Augen startet etwa 100 ms nach Beginn einer Bewegung (Carl & Gellman, 1987); Aufholsakkaden folgen dem
+  der Augen startet etwa 100 ms nach Beginn einer Bewegung (Carl & Gellman, 1987); die Folgebewegung reagiert auf
+  Geschwindigkeitsfehler, Sakkaden auf Positionsfehler (Rashbass, 1961); Aufholsakkaden folgen dem
   vorhergesagten Positions- und Tempofehler und werden ausgelöst, wenn dieser nicht binnen 40–180 ms von selbst schrumpft
   (de Brouwer et al., 2002). Der Gain (Augen- ÷ Zielgeschwindigkeit) junger Erwachsener lag in einem Standardversuch bei
   0,80 (Spanne 0,31–1,08; Bargary et al., 2017); bei 75–93-Jährigen ist er bei allen Tempi niedriger, umso mehr, je
@@ -264,11 +265,9 @@ Kleinhirn). Beim Verfolgen liefert vermutlich eine Kopie des Augenbewegungsbefeh
   https://doi.org/10.1152/jn.00801.2003 – **Prüfung:** DOI stimmt ✓ (Abstract); **stützt:** teilweise (nur Augen-Folgebewegung; der Artikel betont eher Gemeinsamkeiten von
   Folgebewegung und Sakkaden als ihre Trennung).
 - Woods, D. L., Wyma, J. M., Yund, E. W., Herron, T. J., & Reed, B. (2015). Factors influencing the latency of simple reaction time.
-  *Frontiers in Human Neuroscience, 9*, 131. https://doi.org/10.3389/fnhum.2015.00131 – **Prüfung:** DOI stimmt ✓ (Volltext); **stützt:**
-  ja für „Hardware beeinflusst den Wert“, nein für die ms-Stufen (einfache Reaktion auf ruhenden Reiz: 231 ms, hardwarekorrigiert 213 ms).
+  *Frontiers in Human Neuroscience, 9*, 131. https://doi.org/10.3389/fnhum.2015.00131 – **Prüfung:** DOI stimmt ✓ (Volltext); **stützt (für diese Übung):** nein (nicht verwendet; Prüfung der Quelle: ja) für „Hardware beeinflusst den Wert“, nein für die ms-Stufen (einfache Reaktion auf ruhenden Reiz: 231 ms, hardwarekorrigiert 213 ms).
 - Kosinski, R. J. (2008). *A literature review on reaction time.* Clemson University. – **Prüfung:** keine DOI, unbegutachtetes Skript;
-  geprüft wurde die Fassung von 2013 (http://www.cognaction.org/cogs105/readings/clemson.rt.pdf), 2008 nicht auffindbar; **stützt:**
-  teilweise (dort ≈ 190 ms klassisch, ≈ 268 ms am Computer – für einfache Reaktionen, nicht für Abfangklicks auf bewegte Ziele).
+  geprüft wurde die Fassung von 2013 (http://www.cognaction.org/cogs105/readings/clemson.rt.pdf), 2008 nicht auffindbar; **stützt (für diese Übung):** nein (nicht verwendet; Prüfung der Quelle: teilweise) (dort ≈ 190 ms klassisch, ≈ 268 ms am Computer – für einfache Reaktionen, nicht für Abfangklicks auf bewegte Ziele).
 
 ### Weitere Fachliteratur
 
@@ -278,11 +277,6 @@ Kleinhirn). Beim Verfolgen liefert vermutlich eine Kopie des Augenbewegungsbefeh
   with one's eyes. *Scientific Reports, 7*, 10793. https://doi.org/10.1038/s41598-017-11200-5 – Blickfolge verhindert Abfangfehler.
 - Diaz, G., Cooper, J., Rothkopf, C., & Hayhoe, M. (2013). Saccades to future ball location reveal memory-based prediction in a
   virtual-reality interception task. *Journal of Vision, 13*(1), 20. https://doi.org/10.1167/13.1.20 – Vorhersage nach Abprall (Abstract).
-- Huang, J., Tian, F., Fan, X., Zhang, X. (L.), & Zhai, S. (2018). Understanding the uncertainty in 1D unidirectional moving target
-  selection. In *Proceedings of the 2018 CHI Conference on Human Factors in Computing Systems* (S. 1–12). ACM.
-  https://doi.org/10.1145/3173574.3173811 – Klicks landen hinter schnellen Zielen.
-- Jagacinski, R. J., Repperger, D. W., Ward, S. L., & Moran, M. S. (1980). A test of Fitts' law with moving targets. *Human Factors,
-  22*(2), 225–233. https://doi.org/10.1177/001872088002200211 – Fitts mit Geschwindigkeitsterm.
 - Lisberger, S. G. (2010). Visual guidance of smooth-pursuit eye movements: Sensation, action, and what happens in between. *Neuron,
   66*(4), 477–491. https://doi.org/10.1016/j.neuron.2010.03.027 – MT, Kleinhirn, frontales Augenfeld (Abstract).
 - Moschner, C., & Baloh, R. W. (1994). Age-related changes in visual tracking. *Journal of Gerontology, 49*(5), M235–M238.
@@ -291,7 +285,7 @@ Kleinhirn). Beim Verfolgen liefert vermutlich eine Kopie des Augenbewegungsbefeh
   27*(27), 7297–7309. https://doi.org/10.1523/JNEUROSCI.2046-07.2007 – Auge folgt bis zum Abfangen, Finger eilt voraus.
 - Spering, M., Schütz, A. C., Braun, D. I., & Gegenfurtner, K. R. (2011). Keep your eyes on the ball: Smooth pursuit eye movements enhance
   prediction of visual motion. *Journal of Neurophysiology, 105*(4), 1756–1767. https://doi.org/10.1152/jn.00344.2010 – Bahnvorhersage.
-- Ergänzend (DOIs am 29.09.2026 per Crossref geprüft, Inhalte laut Literaturbasis W03 bzw. Dossier 02): Bargary et al. (2017),
+- Ergänzend zitiert (Kurzangaben): Bargary et al. (2017),
   https://doi.org/10.1016/j.visres.2017.03.001; Brenner, Bom & Smeets (2026), https://doi.org/10.1007/s00221-026-07264-3; Carl & Gellman
   (1987), https://doi.org/10.1152/jn.1987.57.5.1446; Casiez et al. (2017), https://doi.org/10.1145/3126594.3126606; de Brouwer et al.
   (2002), https://doi.org/10.1152/jn.00432.2001; Findlater et al. (2013), https://doi.org/10.1145/2470654.2470703; Fransen (2024),

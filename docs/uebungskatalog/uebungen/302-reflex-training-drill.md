@@ -2,7 +2,7 @@
 # ===== Kennung =====
 nr: 302
 kennung: reflex-training-drill
-name: "Mehrere Ziele abräumen – Klickfolge unter Zeitdruck"
+name: "Mehrere Ziele abräumen – Reihenfolge selbst wählen"
 name_original: "Reaktionstest: Mehrere Ziele (Seitentitel: Reaktionstest: Mehrere Ziele | SkillDrills)"
 kapitel: "Reaktionsgeschwindigkeit"
 kapitel_original: "reaction-speed"
@@ -85,7 +85,7 @@ aehnliche_uebungen: [502, 510, 702, 708, 804, 501, 303, 306, 307, 308, 801, 204,
 stichworte: ["Mehrzielsuche", "Zielpriorisierung", "Klickfolge", "Auge-Hand-Koordination", "Fitts'sches Gesetz", "Zeitdruck", "Lebensdauer der Ziele", "Combo", "Hick-Hyman", "Aim-Training", "Touch", "kein Reaktionstest"]
 ---
 
-# 302 · Mehrere Ziele abräumen – Klickfolge unter Zeitdruck
+# 302 · Mehrere Ziele abräumen – Reihenfolge selbst wählen
 
 > Original: „Reaktionstest: Mehrere Ziele“ – skilldrills.online, Kapitel Reaktionsgeschwindigkeit (`reaction-speed`) · Blickfit: noch nicht umgesetzt (verwandt: `zielfang`, `blitzreaktion`, `zahlenjagd`)
 
@@ -170,6 +170,9 @@ gehalten (Neggers & Bekkering, 2000) und in Handlungsfolgen planvoll, kaum nach 
 gelenkt (Land & Hayhoe, 2001). Hinzu kommt der Folgefehler der Mehrzielsuche: Nach einem gefundenen Ziel werden weitere
 häufiger übersehen (Adamo et al., 2013; untersucht an Suche zwischen Ablenkern, hier ohne Ablenker vermutlich
 schwächer). „Trainiert Region X“ lässt sich daraus nicht ableiten.
+
+Die eigentliche Entscheidung ist die **Reihenfolge**: Mehrere sichtbare Ziele sind Alternativen, doch beim direkten Zeigen auf
+sichtbare Ziele steigt die Wahlzeit mit der Zahl der Alternativen kaum (Hick, 1952; Proctor & Schneider, 2018).
 
 ## 6. Motorische Grundlagen
 
@@ -256,8 +259,8 @@ schwächer). „Trainiert Region X“ lässt sich daraus nicht ableiten.
 ### Von der Website angegeben
 
 - Hick, W. E. (1952). On the rate of gain of information. *Quarterly Journal of Experimental Psychology, 4*(1), 11–26. https://doi.org/10.1080/17470215208416600 – **Prüfung:** DOI stimmt ✓; **stützt die Aussage der Website:** teilweise (gilt für symbolische Wahlreaktionen; bei direktem Zeigen auf sichtbare Ziele nahezu flach, Proctor & Schneider 2018; die Seite nennt Hick selbst nur „Orientierung“).
-- Donders, F. C. (1969). On the speed of mental processes (Übersetzung der Arbeit von 1868). *Acta Psychologica, 30*, 412–431. https://doi.org/10.1016/0001-6918(69)90065-1 – **Prüfung:** DOI stimmt ✓ (Übersetzung 1969); **stützt:** ja (einfache und Wahlreaktion als verschiedene Verarbeitungsstufen; Inhalt über Sekundärquellen).
-- Kosinski, R. J. (2008). *A literature review on reaction time.* Clemson University – **Prüfung:** keine DOI, unbegutachtetes Online-Skript; auffindbar nur die Fassung 2013 (http://www.cognaction.org/cogs105/readings/clemson.rt.pdf); **stützt:** teilweise (nennt 180–200 ms für Licht bei Studierenden, am Computer an der Clemson University eher ≈ 268 ms; für die Übungsbänder ohne Bezug).
+- Donders, F. C. (1969). On the speed of mental processes (Übersetzung der Arbeit von 1868). *Acta Psychologica, 30*, 412–431. https://doi.org/10.1016/0001-6918(69)90065-1 – **Prüfung:** DOI stimmt ✓ (Übersetzung 1969); **stützt (für diese Übung):** nein (nicht verwendet; Prüfung der Quelle: ja) (einfache und Wahlreaktion als verschiedene Verarbeitungsstufen; Inhalt über Sekundärquellen).
+- Kosinski, R. J. (2008). *A literature review on reaction time.* Clemson University – **Prüfung:** keine DOI, unbegutachtetes Online-Skript; auffindbar nur die Fassung 2013 (http://www.cognaction.org/cogs105/readings/clemson.rt.pdf); **stützt (für diese Übung):** nein (nicht verwendet; Prüfung der Quelle: teilweise) (nennt 180–200 ms für Licht bei Studierenden, am Computer an der Clemson University eher ≈ 268 ms; für die Übungsbänder ohne Bezug).
 - Woods, D. L., Wyma, J. M., Yund, E. W., Herron, T. J., & Reed, B. (2015). Factors influencing the latency of simple reaction time. *Frontiers in Human Neuroscience, 9*, 131. https://doi.org/10.3389/fnhum.2015.00131 – **Prüfung:** DOI stimmt ✓ (Volltext); **stützt:** ja für „Hardware beeinflusst den Score“ (bis zu 100 ms, dort nach Neath et al. 2011 zitiert), nein für die Übungsbänder (nur einfache RT, 231 bzw. 213 ms).
 
 ### Weitere Fachliteratur
@@ -279,6 +282,6 @@ Alle DOIs am 29.09.2026 per Crossref geprüft; Inhalte über PubMed-Abstracts bz
 - Soukoreff, R. W., & MacKenzie, I. S. (2004). Towards a standard for pointing device evaluation, perspectives on 27 years of Fitts' law research in HCI. *International Journal of Human-Computer Studies, 61*(6), 751–789. https://doi.org/10.1016/j.ijhcs.2004.09.001 – Maus-Durchsatz.
 - Watson, D. G., & Humphreys, G. W. (1997). Visual marking: Prioritizing selection for new objects by top-down attentional inhibition of old objects. *Psychological Review, 104*(1), 90–122. https://doi.org/10.1037/0033-295X.104.1.90 – Vorrang für neue Objekte.
 - Yantis, S., & Jonides, J. (1984). Abrupt visual onsets and selective attention: Evidence from visual search. *Journal of Experimental Psychology: Human Perception and Performance, 10*(5), 601–621. https://doi.org/10.1037/0096-1523.10.5.601 – Aufmerksamkeitsfang durch neue Reize.
-- Ergänzend zitiert (Kurzangaben, Details in der Literaturbasis W03): Bediou et al. (2018), https://doi.org/10.1037/bul0000130 · Boccardo et al. (2023), https://doi.org/10.1371/journal.pone.0282947 · Casiez et al. (2017), https://doi.org/10.1145/3126594.3126606 · Elliott et al. (2010), https://doi.org/10.1037/a0020958 · Fransen (2024), https://doi.org/10.1007/s40279-024-02060-x · Heitz (2014), https://doi.org/10.3389/fnins.2014.00150 · McAuley & Marsden (2000), https://doi.org/10.1093/brain/123.8.1545 · Patel et al. (1991), https://doi.org/10.1097/00006324-199111000-00010 · Rogers et al. (2024), https://doi.org/10.3389/fspor.2024.1309991 · Sala et al. (2018), https://doi.org/10.1037/bul0000139 · Simons et al. (2016), https://doi.org/10.1177/1529100616661983 · Wolfe (2001), https://doi.org/10.3758/BF03194406 · W3C (2024), *WCAG 2.2*, Kriterium 2.3.1, https://www.w3.org/TR/WCAG22/ (Norm, keine DOI).
+- Ergänzend zitiert (Kurzangaben): Bediou et al. (2018), https://doi.org/10.1037/bul0000130 · Boccardo et al. (2023), https://doi.org/10.1371/journal.pone.0282947 · Casiez et al. (2017), https://doi.org/10.1145/3126594.3126606 · Elliott et al. (2010), https://doi.org/10.1037/a0020958 · Fransen (2024), https://doi.org/10.1007/s40279-024-02060-x · Heitz (2014), https://doi.org/10.3389/fnins.2014.00150 · McAuley & Marsden (2000), https://doi.org/10.1093/brain/123.8.1545 · Patel et al. (1991), https://doi.org/10.1097/00006324-199111000-00010 · Rogers et al. (2024), https://doi.org/10.3389/fspor.2024.1309991 · Sala et al. (2018), https://doi.org/10.1037/bul0000139 · Simons et al. (2016), https://doi.org/10.1177/1529100616661983 · Wolfe (2001), https://doi.org/10.3758/BF03194406 · W3C (2024), *WCAG 2.2*, Kriterium 2.3.1, https://www.w3.org/TR/WCAG22/ (Norm, keine DOI).
 - Muchnick, B. G. (2008). *Clinical Medicine in Optometric Practice* (2nd ed.). Mosby/Elsevier. https://openlibrary.org/isbn/9780323029612 – Gesichtsfeldausfälle nach Sehbahnverlauf; Warnzeichen mit ärztlichem Abklärungsbedarf (Kap. 1, S. 5–6; Kap. 3, S. 28, 32)
 - Mountford, J., Ruston, D., & Dave, T. (2004). *Orthokeratology: Principles and Practice*. Butterworth-Heinemann. https://openlibrary.org/isbn/9780750640077 – Wiederholbarkeit von Messungen am Auge, Mehrfachmessung (S. 43–44)

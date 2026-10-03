@@ -2,7 +2,7 @@
 # ===== Kennung =====
 nr: 306
 kennung: reaction-game
-name: "Fallende Ziele abfangen – Klick auf herabfallende Punkte"
+name: "Fallende Ziele abfangen – herabfallende Ziele antippen"
 name_original: "Reaktionstest-Spiel (Seitentitel: Reaktionstest-Spiel | SkillDrills)"
 kapitel: "Reaktionsgeschwindigkeit"
 kapitel_original: "reaction-speed"
@@ -85,7 +85,7 @@ aehnliche_uebungen: [802, 302, 304, 305, 104, 515, 413, 101, 503, 102, 202, 803,
 stichworte: ["Interzeption", "fallende Ziele", "Abfangen", "Auge-Hand-Koordination", "vertikale Blickfolge", "Bewegungsvorhersage", "Fitts'sches Gesetz", "Latenz", "Zeitdruck", "Combo", "Touch", "kein Reaktionstest"]
 ---
 
-# 306 · Fallende Ziele abfangen – Klick auf herabfallende Punkte
+# 306 · Fallende Ziele abfangen – herabfallende Ziele antippen
 
 > Original: „Reaktionstest-Spiel“ – skilldrills.online, Kapitel Reaktionsgeschwindigkeit (`reaction-speed`) · Blickfit: noch nicht umgesetzt (verwandt: `zielfang` = Umsetzung von 104, ein bewegtes Ziel abfangen)
 
@@ -137,6 +137,9 @@ Die Seite beschreibt das Spiel als Verbindung von visueller Suche, Tracking, Tim
 - **Sehwinkel und Tempo:** Die Ziele sind für normale Sehschärfe groß. Begrenzend sind das Entdecken am oberen Rand, die
   Blickfolge und das Timing, nicht das Detail. Zur Orientierung: Bei 40 cm Abstand entspricht 1 cm auf dem Bildschirm
   etwa 1,4°. Neue Ziele erscheinen oben, oft außerhalb der Blickmitte, und müssen peripher bemerkt werden.
+- **Verfolgen statt Fixieren:** Für den Fang ist es günstig, das Ziel mit den Augen zu verfolgen: Wer stattdessen einen festen Punkt
+  fixiert, macht große systematische Abfangfehler (de la Malla et al., 2017); Menschen folgen Zielen bis zum Abfangen meist mit
+  glatter Folgebewegung (Mrotek & Soechting, 2007).
 - **Senkrechte Blickfolge:** Die Folgebewegung setzt etwa 100 ms nach Bewegungsbeginn ein (Carl & Gellman, 1987); fällt das
   Auge zu weit zurück, holt eine Aufholsakkade auf (de Brouwer et al., 2002). Senkrechte Folgebewegungen sind weniger
   genau als waagrechte (Rottach et al., 1996; Ke et al., 2013); **abwärts** folgten Erwachsene jedoch schneller und
@@ -170,6 +173,9 @@ Zu dieser Aufgabe gibt es keine Bildgebungs- oder Trainingsstudie. Relevante Bef
   Lussanet et al., 2001); bei mehreren Zielen mit unterschiedlichem Tempo ist mit solchen Fehlern zu rechnen.
 - **Laufende Korrektur:** Abfangbewegungen werden fortlaufend an die neueste Sehinformation angepasst; die
   visuomotorische Latenz betrug 114 ms, gleich für Tippen und Wischen (Brenner et al., 2026).
+- **Wahl der Reihenfolge:** Mehrere sichtbare Ziele sind Alternativen, doch beim Zeigen auf den sichtbaren Ort steigt die Wahlzeit
+  kaum mit der Zahl der Alternativen (Hick, 1952; Proctor & Schneider, 2018). Die eigentliche Entscheidung ist die Reihenfolge
+  (unterstes bzw. schnellstes Ziel zuerst).
 
 „Trainiert Region X“ lässt sich daraus nicht ableiten.
 
@@ -266,10 +272,10 @@ Zu dieser Aufgabe gibt es keine Bildgebungs- oder Trainingsstudie. Relevante Bef
 
 ### Von der Website angegeben
 
-- Kosinski, R. J. (2008). *A literature review on reaction time.* Clemson University – **Prüfung:** keine DOI, unbegutachtetes Online-Skript; auffindbar nur die Fassung 2013 (http://www.cognaction.org/cogs105/readings/clemson.rt.pdf); **stützt die Aussage der Website:** teilweise (≈ 190 ms für Licht, Computermessungen ≈ 268 ms; für die Übungsbänder und für Abfangaufgaben ohne Bezug).
+- Kosinski, R. J. (2008). *A literature review on reaction time.* Clemson University – **Prüfung:** keine DOI, unbegutachtetes Online-Skript; auffindbar nur die Fassung 2013 (http://www.cognaction.org/cogs105/readings/clemson.rt.pdf); **stützt (für diese Übung):** nein (nicht verwendet; Prüfung der Quelle: teilweise) (≈ 190 ms für Licht, Computermessungen ≈ 268 ms; für die Übungsbänder und für Abfangaufgaben ohne Bezug).
 - Hick, W. E. (1952). On the rate of gain of information. *Quarterly Journal of Experimental Psychology, 4*(1), 11–26. https://doi.org/10.1080/17470215208416600 – **Prüfung:** DOI stimmt ✓; **stützt:** teilweise (gilt für symbolische Wahlreaktionen; bei direktem Zeigen auf sichtbare Ziele nahezu flach, Proctor & Schneider 2018).
 - Woods, D. L., Wyma, J. M., Yund, E. W., Herron, T. J., & Reed, B. (2015). Factors influencing the latency of simple reaction time. *Frontiers in Human Neuroscience, 9*, 131. https://doi.org/10.3389/fnhum.2015.00131 – **Prüfung:** DOI stimmt ✓ (Volltext); **stützt:** ja für „Gerät beeinflusst den Wert“, nein für die Bänder (nur einfache RT, 231 bzw. 213 ms).
-- Donders, F. C. (1969). On the speed of mental processes (Übersetzung der Arbeit von 1868). *Acta Psychologica, 30*, 412–431. https://doi.org/10.1016/0001-6918(69)90065-1 – **Prüfung:** DOI stimmt ✓ (Übersetzung 1969; Website nennt 1868 und die Übersetzung korrekt); **stützt:** teilweise (einfache vs. Wahlreaktion als Verarbeitungsstufen; zu bewegten Zielen sagt Donders nichts; Inhalt über Sekundärquellen).
+- Donders, F. C. (1969). On the speed of mental processes (Übersetzung der Arbeit von 1868). *Acta Psychologica, 30*, 412–431. https://doi.org/10.1016/0001-6918(69)90065-1 – **Prüfung:** DOI stimmt ✓ (Übersetzung 1969; Website nennt 1868 und die Übersetzung korrekt); **stützt (für diese Übung):** nein (nicht verwendet; Prüfung der Quelle: teilweise) (einfache vs. Wahlreaktion als Verarbeitungsstufen; zu bewegten Zielen sagt Donders nichts; Inhalt über Sekundärquellen).
 
 ### Weitere Fachliteratur
 
@@ -286,6 +292,6 @@ Alle DOIs am 29.09.2026 per Crossref geprüft; Inhalte über PubMed-Abstracts, d
 - Mrotek, L. A., & Soechting, J. F. (2007). Target interception: Hand–eye coordination and strategies. *The Journal of Neuroscience, 27*(27), 7297–7309. https://doi.org/10.1523/JNEUROSCI.2046-07.2007 – Blickfolge bis zum Abfangen.
 - Rottach, K. G., Zivotofsky, A. Z., Das, V. E., Averbuch-Heller, L., Discenna, A. O., Poonyathalang, A., & Leigh, R. J. (1996). Comparison of horizontal, vertical and diagonal smooth pursuit eye movements in normal human subjects. *Vision Research, 36*(14), 2189–2195. https://doi.org/10.1016/0042-6989(95)00302-9 – geringerer Gain senkrecht (n = 5).
 - Zago, M., Bosco, G., Maffei, V., Iosa, M., Ivanenko, Y. P., & Lacquaniti, F. (2004). Internal models of target motion: Expected dynamics overrides measured kinematics in timing manual interceptions. *Journal of Neurophysiology, 91*(4), 1620–1634. https://doi.org/10.1152/jn.00862.2003 – Schwerkraft- vs. Gleichförmigkeitsannahme beim Abfangen.
-- Ergänzend zitiert (Kurzangaben, Details in der Literaturbasis W03 bzw. Dossier 02): Bediou et al. (2018), https://doi.org/10.1037/bul0000130 · Boccardo et al. (2023), https://doi.org/10.1371/journal.pone.0282947 · Carl & Gellman (1987), https://doi.org/10.1152/jn.1987.57.5.1446 · de Brouwer et al. (2002), https://doi.org/10.1152/jn.00432.2001 · Elliott et al. (2010), https://doi.org/10.1037/a0020958 · Findlater et al. (2013), https://doi.org/10.1145/2470654.2470703 · Fitts (1954), https://doi.org/10.1037/h0055392 · Fransen (2024), https://doi.org/10.1007/s40279-024-02060-x · Gerharz & Voudouris (2025), https://doi.org/10.1152/jn.00029.2025 · Guo et al. (2025), https://doi.org/10.3389/fphys.2025.1664572 · Han et al. (2003), https://doi.org/10.1167/iovs.02-0507 · Heitz (2014), https://doi.org/10.3389/fnins.2014.00150 · Jaschinski et al. (2015), https://doi.org/10.1111/cxo.12248 · Krauzlis (2004), https://doi.org/10.1152/jn.00801.2003 · McAuley & Marsden (2000), https://doi.org/10.1093/brain/123.8.1545 · Parhi et al. (2006), https://doi.org/10.1145/1152215.1152260 · Patel et al. (1991), https://doi.org/10.1097/00006324-199111000-00010 · Proctor & Schneider (2018), https://doi.org/10.1080/17470218.2017.1322622 · Pronk et al. (2020), https://doi.org/10.3758/s13428-019-01321-2 · Rogers et al. (2024), https://doi.org/10.3389/fspor.2024.1309991 · Sala et al. (2018), https://doi.org/10.1037/bul0000139 · Simons et al. (2016), https://doi.org/10.1177/1529100616661983 · W3C (2024), *WCAG 2.2*, Kriterium 2.3.1, https://www.w3.org/TR/WCAG22/ (Norm, keine DOI).
+- Ergänzend zitiert (Kurzangaben): Bediou et al. (2018), https://doi.org/10.1037/bul0000130 · Boccardo et al. (2023), https://doi.org/10.1371/journal.pone.0282947 · Carl & Gellman (1987), https://doi.org/10.1152/jn.1987.57.5.1446 · de Brouwer et al. (2002), https://doi.org/10.1152/jn.00432.2001 · Elliott et al. (2010), https://doi.org/10.1037/a0020958 · Findlater et al. (2013), https://doi.org/10.1145/2470654.2470703 · Fitts (1954), https://doi.org/10.1037/h0055392 · Fransen (2024), https://doi.org/10.1007/s40279-024-02060-x · Gerharz & Voudouris (2025), https://doi.org/10.1152/jn.00029.2025 · Guo et al. (2025), https://doi.org/10.3389/fphys.2025.1664572 · Han et al. (2003), https://doi.org/10.1167/iovs.02-0507 · Heitz (2014), https://doi.org/10.3389/fnins.2014.00150 · Jaschinski et al. (2015), https://doi.org/10.1111/cxo.12248 · Krauzlis (2004), https://doi.org/10.1152/jn.00801.2003 · McAuley & Marsden (2000), https://doi.org/10.1093/brain/123.8.1545 · Parhi et al. (2006), https://doi.org/10.1145/1152215.1152260 · Patel et al. (1991), https://doi.org/10.1097/00006324-199111000-00010 · Proctor & Schneider (2018), https://doi.org/10.1080/17470218.2017.1322622 · Pronk et al. (2020), https://doi.org/10.3758/s13428-019-01321-2 · Rogers et al. (2024), https://doi.org/10.3389/fspor.2024.1309991 · Sala et al. (2018), https://doi.org/10.1037/bul0000139 · Simons et al. (2016), https://doi.org/10.1177/1529100616661983 · W3C (2024), *WCAG 2.2*, Kriterium 2.3.1, https://www.w3.org/TR/WCAG22/ (Norm, keine DOI).
 - Muchnick, B. G. (2008). *Clinical Medicine in Optometric Practice* (2nd ed.). Mosby/Elsevier. https://openlibrary.org/isbn/9780323029612 – Gesichtsfeldausfälle nach Sehbahnverlauf, Warnzeichen mit ärztlichem Abklärungsbedarf (Kap. 1, S. 6; Kap. 3, S. 28, 32)
 - Mountford, J., Ruston, D., & Dave, T. (2004). *Orthokeratology: Principles and Practice*. Butterworth-Heinemann. https://openlibrary.org/isbn/9780750640077 – Wiederholbarkeit von Messungen am Auge, Mehrfachmessung (S. 43–44)

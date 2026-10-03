@@ -258,19 +258,18 @@ gehen als fester Versatz in die Abweichung ein.
 
 - Kosinski, R. J. (2008). *A literature review on reaction time*. Clemson University (ohne DOI). – **Prüfung:** nicht per
   DOI prüfbar, unbegutachtet; nur Fassung „Last updated September 2013“ gefunden und gelesen
-  (http://www.cognaction.org/cogs105/readings/clemson.rt.pdf); **stützt:** teilweise (≈ 190 ms Licht, Computermessung
+  (http://www.cognaction.org/cogs105/readings/clemson.rt.pdf); **stützt (für diese Übung):** nein (nicht verwendet; Prüfung der Quelle: teilweise) (≈ 190 ms Licht, Computermessung
   ≈ 268 ms; keine „Elite“-Grenzen, Stäbchen-Reize *langsamer*). Für Zeitschätzung nicht einschlägig.
 - Woods, D. L., Wyma, J. M., Yund, E. W., Herron, T. J., & Reed, B. (2015). Factors influencing the latency of simple
   reaction time. *Frontiers in Human Neuroscience, 9*, 131. https://doi.org/10.3389/fnhum.2015.00131 – **Prüfung:** DOI
-  stimmt ✓ (Volltext PMC4374455); **stützt:** teilweise (231 ms; Hardware 17,8 ms mit 60-Hz-LCD + Gaming-Maus; 144/240 Hz,
+  stimmt ✓ (Volltext PMC4374455); **stützt (für diese Übung):** nein (nicht verwendet; Prüfung der Quelle: teilweise) (231 ms; Hardware 17,8 ms mit 60-Hz-LCD + Gaming-Maus; 144/240 Hz,
   Perzentile und `performance.now()` kommen nicht vor).
 - Jain, A., Bansal, R., Kumar, A., & Singh, K. D. (2015). A comparative study of visual and auditory reaction times on the
   basis of gender and physical activity levels of medical first year students. *International Journal of Applied and Basic
   Medical Research, 5*(2), 124–127. https://doi.org/10.4103/2229-516X.157168 – **Prüfung:** DOI stimmt ✓ (Volltext
-  PMC4456887); **stützt:** teilweise (auditiv < visuell, n = 120; ms-Werte nur als Lehrbuchzitat).
+  PMC4456887); **stützt (für diese Übung):** nein (nicht verwendet; Prüfung der Quelle: teilweise) (auditiv < visuell, n = 120; ms-Werte nur als Lehrbuchzitat).
 - Shelton, J., & Kumar, G. P. (2010). Comparison between auditory and visual simple reaction times. *Neuroscience &
-  Medicine, 1*(1), 30–32. https://doi.org/10.4236/nm.2010.11004 – **Prüfung:** DOI stimmt ✓ (Abstract); **stützt:**
-  teilweise (n = 14: 284 vs. 331 ms; nicht die absoluten 140–170 ms; „Hörrinde im Hirnstamm“ anatomisch falsch).
+  Medicine, 1*(1), 30–32. https://doi.org/10.4236/nm.2010.11004 – **Prüfung:** DOI stimmt ✓ (Abstract); **stützt (für diese Übung):** nein (nicht verwendet; Prüfung der Quelle: teilweise) (n = 14: 284 vs. 331 ms; nicht die absoluten 140–170 ms; „Hörrinde im Hirnstamm“ anatomisch falsch).
 - Dye, M. W. G., Green, C. S., & Bavelier, D. (2009). Increasing speed of processing with action video games. *Current
   Directions in Psychological Science, 18*(6), 321–326. https://doi.org/10.1111/j.1467-8721.2009.01660.x – **Prüfung:** DOI
   stimmt ✓ (Volltext PMC2871325); **stützt:** nein (Actionspiele: 50 h −13 % vs. −6 % RT; keine „15–30 ms“).
@@ -279,7 +278,7 @@ gehen als fester Versatz in die Abweichung ein.
   **Prüfung:** DOI stimmt ✓ (Abstract; Erratum 2009); **stützt:** teilweise (einfache RT bis ≈ 50 J. kaum langsamer;
   „18–24 J.“, „2–6 ms/Jahrzehnt“ und Trainingsaussage nicht im Abstract).
 - Smith, A. (2002). Effects of caffeine on human behavior. *Food and Chemical Toxicology, 40*(9), 1243–1255.
-  https://doi.org/10.1016/S0278-6915(02)00096-0 – **Prüfung:** DOI stimmt ✓ (Abstract); **stützt:** teilweise (mehr
+  https://doi.org/10.1016/S0278-6915(02)00096-0 – **Prüfung:** DOI stimmt ✓ (Abstract); **stützt (für diese Übung):** nein (nicht verwendet; Prüfung der Quelle: teilweise) (mehr
   Wachheit, bessere einfache Aufgaben vor allem bei Müdigkeit; keine ms-Zahl).
 
 ### Weitere Fachliteratur
@@ -306,9 +305,6 @@ gehen als fester Versatz in die Abweichung ein.
 - Pronk, T., Wiers, R. W., Molenkamp, B., & Murre, J. (2020). Mental chronometry in the pocket? Timing accuracy of web
   applications on touchscreen and keyboard devices. *Behavior Research Methods, 52*(3), 1371–1382.
   https://doi.org/10.3758/s13428-019-01321-2 – Browser-Verzögerung.
-- Cao, D., Zele, A. J., & Pokorny, J. (2007). Linking impulse response functions to reaction time: Rod and cone reaction
-  time data and a computational model. *Vision Research, 47*(8), 1060–1074. https://doi.org/10.1016/j.visres.2006.11.027 –
-  Stäbchen langsamer.
 - Jaschinski, W., König, M., Mekontso, T. M., Ohlendorf, A., & Welscher, M. (2015). Computer vision syndrome in presbyopia
   and beginning presbyopia: Effects of spectacle lens type. *Clinical and Experimental Optometry, 98*(3), 228–233.
   https://doi.org/10.1111/cxo.12248 – Kopfhaltung mit Gleitsicht.
@@ -320,8 +316,5 @@ gehen als fester Versatz in die Abweichung ein.
 - Fisher, R. S., Harding, G., Erba, G., Barkley, G. L., & Wilkins, A. (2005). Photic- and pattern-induced seizures: A review
   for the Epilepsy Foundation of America Working Group. *Epilepsia, 46*(9), 1426–1441.
   https://doi.org/10.1111/j.1528-1167.2005.31405.x – Rot als Risikofaktor.
-- W3C (2024). *WCAG 2.2*, Kriterium 2.3.1 (Norm, keine DOI). https://www.w3.org/TR/WCAG22/ · MDN Web Docs (o. J.).
-  *Performance: now()* (technische Dokumentation, abgerufen 29.09.2026).
-  https://developer.mozilla.org/en-US/docs/Web/API/Performance/now – Blitzgrenzen; Zeitauflösung 100 µs.
 - Muchnick, B. G. (2008). *Clinical Medicine in Optometric Practice* (2nd ed.). Mosby/Elsevier. https://openlibrary.org/isbn/9780323029612 – Warnzeichen mit ärztlichem Abklärungsbedarf (Kap. 1, S. 6; Kap. 3, S. 28)
 - Mountford, J., Ruston, D., & Dave, T. (2004). *Orthokeratology: Principles and Practice*. Butterworth-Heinemann. https://openlibrary.org/isbn/9780750640077 – Genauigkeit und Wiederholbarkeit von Messungen am Auge (S. 17–18, 24, 43–44)

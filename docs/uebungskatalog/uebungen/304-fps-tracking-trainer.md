@@ -2,7 +2,7 @@
 # ===== Kennung =====
 nr: 304
 kennung: fps-tracking-trainer
-name: "Pendelndes Ziel abfangen – Klick auf ein bewegtes Ziel mit Richtungswechseln"
+name: "Pendelndes Ziel abfangen – im richtigen Moment tippen"
 name_original: "Aim-Training online (Seitentitel: Aim-Training online | SkillDrills; Untertitel: Tracking · Bewegliche Ziele verfolgen)"
 kapitel: "Reaktionsgeschwindigkeit"
 kapitel_original: "reaction-speed"
@@ -85,7 +85,7 @@ aehnliche_uebungen: [305, 306, 512, 505, 513, 514, 104, 105, 410, 415, 707, 503,
 stichworte: ["bewegtes Ziel", "Abfangen", "Interzeption", "Richtungswechsel", "glatte Blickfolge", "Aufholsakkaden", "Vorhalt", "Auge-Hand-Koordination", "Aim-Training", "Pendel", "Combo", "Latenz", "Touch"]
 ---
 
-# 304 · Pendelndes Ziel abfangen – Klick auf ein bewegtes Ziel mit Richtungswechseln
+# 304 · Pendelndes Ziel abfangen – im richtigen Moment tippen
 
 > Original: „Aim-Training online“ (Untertitel „Tracking · Bewegliche Ziele verfolgen“) – skilldrills.online, Kapitel Reaktionsgeschwindigkeit (`reaction-speed`) · Blickfit: noch nicht umgesetzt (verwandt: `zielfang`)
 
@@ -144,8 +144,9 @@ Die Seite richtet sich an FPS- und Battle-Royale-Spieler:innen, verspricht „sa
   beträgt 5,0 s auf der ersten und 2,8 s auf der letzten Stufe. Die glatte Folgebewegung der Augen erreicht beim Gesunden
   eine Verstärkung (Gain, Augen- ÷ Zielgeschwindigkeit) unter 0,95, die mit dem Tempo sinkt (Collewijn & Tamminga, 1984);
   in einem Standardversuch mit 1.058 jungen Erwachsenen lag sie im Mittel bei 0,80 (Spanne 0,31–1,08), mit 0,64
-  Aufholsakkaden je Sekunde (Bargary et al., 2017). Aufholsakkaden werden ausgelöst, wenn der Positionsfehler nicht binnen
-  40–180 ms von selbst schrumpft (de Brouwer et al., 2002).
+  Aufholsakkaden je Sekunde (Bargary et al., 2017). Die Folgebewegung reagiert auf Geschwindigkeitsfehler, Positionsfehler
+  korrigieren Aufholsakkaden (Rashbass, 1961); diese werden ausgelöst, wenn der Positionsfehler nicht binnen 40–180 ms von selbst
+  schrumpft (de Brouwer et al., 2002).
 - **Vorhersagbarkeit:** Ein gleichmäßiges Pendeln lässt sich vorausahnen, und die Folgebewegung kann Vorhersagen nutzen
   (Kowler et al., 2019). Bei unvorhersehbarer, schneller Bewegung ist das anders: Bei pseudozufälliger Bewegung (Summe von
   vier Sinusschwingungen) fiel der Gain der langsamen Anteile von 0,92 auf 0,53, wenn die schnellste Komponente von 0,39
@@ -272,7 +273,7 @@ bzw. 200 ms Verzögerung (Brenner et al., 1998). „Trainiert Region X“ lässt
 - Krauzlis, R. J. (2004). Recasting the smooth pursuit eye movement system. *Journal of Neurophysiology, 91*(2), 591–603. https://doi.org/10.1152/jn.00801.2003 – **Prüfung:** DOI stimmt ✓ (Crossref, Abstract); **stützt die Aussage der Website:** teilweise (Netzwerk und Steuerung der Augen-Folgebewegung ja; die Übung misst Mausklicks, nicht Augen – die Seite sagt das selbst).
 - Rashbass, C. (1961). The relationship between saccadic and smooth tracking eye movements. *The Journal of Physiology, 159*(2), 326–338. https://doi.org/10.1113/jphysiol.1961.sp006811 – **Prüfung:** DOI stimmt ✓, **Titel auf der Website ungenau** („pursuit“ statt „tracking“); nur Metadaten, Inhalt (Step-Ramp) über Sekundärliteratur; **stützt:** teilweise (Folgebewegung reagiert auf Geschwindigkeit, Sakkaden auf Position – für Augen, nicht für Klicks).
 - Green, C. S., & Bavelier, D. (2003). Action video game modifies visual selective attention. *Nature, 423*(6939), 534–537. https://doi.org/10.1038/nature01647 – **Prüfung:** DOI stimmt ✓ (Abstract); **stützt:** nein (Aufmerksamkeitsaufgaben nach Actionspielen, kein Tracking; Transfer umstritten).
-- Woods, D. L., Wyma, J. M., Yund, E. W., Herron, T. J., & Reed, B. (2015). Factors influencing the latency of simple reaction time. *Frontiers in Human Neuroscience, 9*, 131. https://doi.org/10.3389/fnhum.2015.00131 – **Prüfung:** DOI stimmt ✓ (Volltext); **stützt:** teilweise (Hardware verlängert Reaktionszeiten, gemessen aber nur an einem 60-Hz-Aufbau; zu bewegten Zielen und Bildraten nichts).
+- Woods, D. L., Wyma, J. M., Yund, E. W., Herron, T. J., & Reed, B. (2015). Factors influencing the latency of simple reaction time. *Frontiers in Human Neuroscience, 9*, 131. https://doi.org/10.3389/fnhum.2015.00131 – **Prüfung:** DOI stimmt ✓ (Volltext); **stützt (für diese Übung):** nein (nicht verwendet; Prüfung der Quelle: teilweise) (Hardware verlängert Reaktionszeiten, gemessen aber nur an einem 60-Hz-Aufbau; zu bewegten Zielen und Bildraten nichts).
 
 ### Weitere Fachliteratur
 
@@ -285,16 +286,13 @@ Alle DOIs am 29.09.2026 per Crossref geprüft; Inhalte über PubMed-Abstracts bz
 - Carl, J. R., & Gellman, R. S. (1987). Human smooth pursuit: Stimulus-dependent responses. *Journal of Neurophysiology, 57*(5), 1446–1463. https://doi.org/10.1152/jn.1987.57.5.1446 – Latenz der Folgebewegung (≈ 100 ms).
 - Casiez, G., Pietrzak, T., Marchal, D., Poulmane, S., Falce, M., & Roussel, N. (2017). Characterizing latency in touch and button-equipped interactive systems. In *Proceedings of UIST '17* (S. 29–39). ACM. https://doi.org/10.1145/3126594.3126606 – Ende-zu-Ende-Latenz Maus/Touch.
 - Collewijn, H., & Tamminga, E. P. (1984). Human smooth and saccadic eye movements during voluntary pursuit of different target motions on different backgrounds. *The Journal of Physiology, 351*, 217–250. https://doi.org/10.1113/jphysiol.1984.sp015242 – Gain < 0,95, sinkt mit Tempo.
-- Danion, F. R., & Flanagan, J. R. (2018). Different gaze strategies during eye versus hand tracking of a moving target. *Scientific Reports, 8*, 10059. https://doi.org/10.1038/s41598-018-28434-6 – Blickstrategie beim Handtracking.
 - de Brouwer, S., Yuksel, D., Blohm, G., Missal, M., & Lefèvre, P. (2002). What triggers catch-up saccades during visual tracking? *Journal of Neurophysiology, 87*(3), 1646–1650. https://doi.org/10.1152/jn.00432.2001 – Auslöser von Aufholsakkaden.
 - Han, Y., Ciuffreda, K. J., Selenow, A., & Ali, S. R. (2003). Dynamic interactions of eye and head movements when reading with single-vision and progressive lenses in a simulated computer-based environment. *Investigative Ophthalmology & Visual Science, 44*(4), 1534–1545. https://doi.org/10.1167/iovs.02-0507 – Gleitsicht am Bildschirm.
 - Huang, J., Tian, F., Fan, X., Zhang, X. (L.), & Zhai, S. (2018). Understanding the uncertainty in 1D unidirectional moving target selection. In *Proceedings of CHI 2018* (S. 1–12). ACM. https://doi.org/10.1145/3173574.3173811 – Klicks landen hinter bewegten Zielen.
 - Jagacinski, R. J., Repperger, D. W., Ward, S. L., & Moran, M. S. (1980). A test of Fitts' law with moving targets. *Human Factors, 22*(2), 225–233. https://doi.org/10.1177/001872088002200211 – Fitts mit Geschwindigkeitsterm.
 - Kowler, E., Rubinstein, J. F., Santos, E. M., & Wang, J. (2019). Predictive smooth pursuit eye movements. *Annual Review of Vision Science, 5*, 223–246. https://doi.org/10.1146/annurev-vision-091718-014901 – Vorhersage in der Folgebewegung.
 - Liu, S., Claypool, M., Kuwahara, A., Sherman, J., & Scovell, J. J. (2021). Lower is better? The effects of local latencies on competitive first-person shooter game players. In *Proceedings of CHI 2021* (S. 1–12). ACM. https://doi.org/10.1145/3411764.3445245 – Latenz und Trefferquote im Shooter.
-- Miall, R. C., Weir, D. J., & Stein, J. F. (1993). Intermittency in human manual tracking tasks. *Journal of Motor Behavior, 25*(1), 53–63. https://doi.org/10.1080/00222895.1993.9941639 – intermittierendes Nachführen.
 - Moschner, C., & Baloh, R. W. (1994). Age-related changes in visual tracking. *Journal of Gerontology, 49*(5), M235–M238. https://doi.org/10.1093/geronj/49.5.M235 – Folge-Gain im Alter.
-- Riviere, C. N., & Thakor, N. V. (1996). Effects of age and disability on tracking tasks with a computer mouse: Accuracy and linearity. *Journal of Rehabilitation Research and Development, 33*(1), 6–15. PMID 8868412 – Zeitschrift ohne DOI, PubMed-Abstract geprüft; Maus-Tracking bis ≈ 2 Hz.
-- Ergänzend zitiert (Kurzangaben, Details in der Literaturbasis W03): Bediou et al. (2018), https://doi.org/10.1037/bul0000130 · Findlater et al. (2013), https://doi.org/10.1145/2470654.2470703 · Fransen (2024), https://doi.org/10.1007/s40279-024-02060-x · Guo et al. (2025), https://doi.org/10.3389/fphys.2025.1664572 · McAuley & Marsden (2000), https://doi.org/10.1093/brain/123.8.1545 · Parhi et al. (2006), https://doi.org/10.1145/1152215.1152260 · Patel et al. (1991), https://doi.org/10.1097/00006324-199111000-00010 · Pronk et al. (2020), https://doi.org/10.3758/s13428-019-01321-2 · Rogers et al. (2024), https://doi.org/10.3389/fspor.2024.1309991 · Sala et al. (2018), https://doi.org/10.1037/bul0000139 · Simons et al. (2016), https://doi.org/10.1177/1529100616661983.
+- Ergänzend zitiert (Kurzangaben): Bediou et al. (2018), https://doi.org/10.1037/bul0000130 · Findlater et al. (2013), https://doi.org/10.1145/2470654.2470703 · Fransen (2024), https://doi.org/10.1007/s40279-024-02060-x · Guo et al. (2025), https://doi.org/10.3389/fphys.2025.1664572 · McAuley & Marsden (2000), https://doi.org/10.1093/brain/123.8.1545 · Parhi et al. (2006), https://doi.org/10.1145/1152215.1152260 · Patel et al. (1991), https://doi.org/10.1097/00006324-199111000-00010 · Pronk et al. (2020), https://doi.org/10.3758/s13428-019-01321-2 · Rogers et al. (2024), https://doi.org/10.3389/fspor.2024.1309991 · Sala et al. (2018), https://doi.org/10.1037/bul0000139 · Simons et al. (2016), https://doi.org/10.1177/1529100616661983.
 - Muchnick, B. G. (2008). *Clinical Medicine in Optometric Practice* (2nd ed.). Mosby/Elsevier. https://openlibrary.org/isbn/9780323029612 – Prüfung der Augenfolgebewegung (H-Muster), Warnzeichen mit ärztlichem Abklärungsbedarf (Kap. 1, S. 6; Kap. 3, S. 28, 32–35)
 - Mountford, J., Ruston, D., & Dave, T. (2004). *Orthokeratology: Principles and Practice*. Butterworth-Heinemann. https://openlibrary.org/isbn/9780750640077 – Wiederholbarkeit von Messungen am Auge, Mehrfachmessung (S. 43–44)

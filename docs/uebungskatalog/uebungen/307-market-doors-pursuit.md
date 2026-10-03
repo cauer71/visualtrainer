@@ -2,7 +2,7 @@
 # ===== Kennung =====
 nr: 307
 kennung: market-doors-pursuit
-name: "Fünf Türen – Ziel an zufälliger Öffnung anklicken"
+name: "Fünf Türen – Ziel in der richtigen Tür antippen"
 name_original: "Aim-Training: Winkel prüfen (Seitentitel: Aim-Training: Winkel prüfen | SkillDrills)"
 kapitel: "Reaktionsgeschwindigkeit"
 kapitel_original: "reaction-speed"
@@ -85,7 +85,7 @@ aehnliche_uebungen: [303, 308, 511, 501, 508, 503, 101, 202, 702, 704, 302, 401,
 stichworte: ["räumliche Wahlreaktion", "Zeigen", "Auge-Hand-Koordination", "abrupt erscheinendes Ziel", "Sakkaden waagrecht", "Fitts'sches Gesetz", "Vorab-Positionierung", "Zeitdruck", "Combo", "Touch"]
 ---
 
-# 307 · Fünf Türen – Ziel an zufälliger Öffnung anklicken
+# 307 · Fünf Türen – Ziel in der richtigen Tür antippen
 
 > Original: „Aim-Training: Winkel prüfen“ – skilldrills.online, Kapitel Reaktionsgeschwindigkeit (`reaction-speed`) · Blickfit: noch nicht umgesetzt (verwandt: `blitzreaktion` = 101, Reaktion in der Mitte und am Rand ohne Zielen)
 
@@ -170,6 +170,8 @@ Zu dieser Aufgabe gibt es keine Bildgebungs- oder Trainingsstudie. Relevante Bef
 - **Räumliche Erwartung:** Ein gültiger Hinweis auf den Reizort verkürzt die Entdeckungszeit; Aufmerksamkeit lässt sich
   aber kaum auf zwei nicht benachbarte Orte zugleich richten (Posner et al., 1980). Weil die Tür unvorhersehbar wechselt,
   gibt es hier keinen gültigen Hinweis; nur der ungefähre Zeitpunkt (Pause 0,55–1,15 s) ist eingegrenzt.
+- **Verarbeitungsstufen:** Eine Wahlreaktion lässt sich in Wahrnehmen, Auswählen und Ausführen gliedern (Donders, 1969); hier ist
+  das Auswählen durch die hohe Kompatibilität von Reizort und Zeigeort besonders einfach.
 - **Wahl mit hoher Reiz-Reaktions-Kompatibilität:** Zeigen und Blicken auf den Reizort brauchen kaum Zuordnungsarbeit
   (Proctor & Schneider, 2018; Kveraga et al., 2002) – anders als die symbolische Wahlreaktion in 202 (Pfeil-Duell). Bei
   direktem Zeigen steigt die Reaktionszeit daher mit der Zahl der Orte nur wenig.
@@ -265,7 +267,7 @@ Zu dieser Aufgabe gibt es keine Bildgebungs- oder Trainingsstudie. Relevante Bef
 
 ### Von der Website angegeben
 
-- Rayner, K. (1998). Eye movements in reading and information processing: 20 years of research. *Psychological Bulletin, 124*(3), 372–422. https://doi.org/10.1037/0033-2909.124.3.372 – **Prüfung:** DOI stimmt ✓ (nur Abstract); **stützt die Aussage der Website:** teilweise (allgemeine Übersicht zu Augenbewegungen bei Lesen und Informationsverarbeitung; zu dieser Aufgabe mit einem auffälligen Einzelziel nicht spezifisch).
+- Rayner, K. (1998). Eye movements in reading and information processing: 20 years of research. *Psychological Bulletin, 124*(3), 372–422. https://doi.org/10.1037/0033-2909.124.3.372 – **Prüfung:** DOI stimmt ✓ (nur Abstract); **stützt (für diese Übung):** nein (nicht verwendet; Prüfung der Quelle: teilweise) (allgemeine Übersicht zu Augenbewegungen bei Lesen und Informationsverarbeitung; zu dieser Aufgabe mit einem auffälligen Einzelziel nicht spezifisch).
 - Donders, F. C. (1969). On the speed of mental processes (Übersetzung der Arbeit von 1868). *Acta Psychologica, 30*, 412–431. https://doi.org/10.1016/0001-6918(69)90065-1 – **Prüfung:** DOI stimmt ✓ (Website nennt 1868 und die Übersetzung 1969 korrekt; Inhalt über Sekundärquellen); **stützt:** teilweise (Verarbeitungsstufen Wahrnehmen – Auswählen – Ausführen korrekt; Zeigebewegung und Browserlatenz behandelt Donders nicht).
 - Krauzlis, R. J. (2004). Recasting the smooth pursuit eye movement system. *Journal of Neurophysiology, 91*(2), 591–603. https://doi.org/10.1152/jn.00801.2003 – **Prüfung:** DOI stimmt ✓ (Abstract); **stützt:** nein (Folgebewegung; die Ziele dieser Übung stehen still).
 - Woods, D. L., Wyma, J. M., Yund, E. W., Herron, T. J., & Reed, B. (2015). Factors influencing the latency of simple reaction time. *Frontiers in Human Neuroscience, 9*, 131. https://doi.org/10.3389/fnhum.2015.00131 – **Prüfung:** DOI stimmt ✓ (Volltext); **stützt:** ja für „Gerät und Bedingungen beeinflussen den Wert“; nein für die Reaktions-Bänder (nur einfache RT, 231 bzw. 213 ms; keine Zeigeaufgabe).
@@ -288,6 +290,6 @@ Alle DOIs am 29.09.2026 per Crossref geprüft; Inhalte über PubMed-Abstracts bz
 - Pronk, T., Wiers, R. W., Molenkamp, B., & Murre, J. (2020). Mental chronometry in the pocket? Timing accuracy of web applications on touchscreen and keyboard devices. *Behavior Research Methods, 52*(3), 1371–1382. https://doi.org/10.3758/s13428-019-01321-2 – Browser-Zuschlag 58–133 ms.
 - Casiez, G., Pietrzak, T., Marchal, D., Poulmane, S., Falce, M., & Roussel, N. (2017). Characterizing latency in touch and button-equipped interactive systems. In *Proceedings of UIST '17* (S. 29–39). ACM. https://doi.org/10.1145/3126594.3126606 – Ende-zu-Ende-Latenz Maus/Tablet.
 - Guo, Y., Yuan, T., Yang, M., & Qiu, J. (2025). Does the "learning effect" caused by digital devices exaggerate sports visual training outcomes? A systematic review and meta-analysis. *Frontiers in Physiology, 16*, 1664572. https://doi.org/10.3389/fphys.2025.1664572 – ähnliche vs. unähnliche Tests.
-- Ergänzend zitiert (Kurzangaben, Details in der Literaturbasis W03): Basner et al. (2018), https://doi.org/10.1093/sleep/zsx187 · Bediou et al. (2018), https://doi.org/10.1037/bul0000130 · Birch (2012), https://doi.org/10.1364/JOSAA.29.000313 · Boccardo et al. (2023), https://doi.org/10.1371/journal.pone.0282947 · Der & Deary (2006), https://doi.org/10.1037/0882-7974.21.1.62 · Di Russo et al. (2003), https://doi.org/10.1016/S0042-6989(03)00299-2 · Elliott et al. (2010), https://doi.org/10.1037/a0020958 · Findlater et al. (2013), https://doi.org/10.1145/2470654.2470703 · Fransen (2024), https://doi.org/10.1007/s40279-024-02060-x · Gibaldi & Sabatini (2021), https://doi.org/10.3758/s13428-020-01388-2 · Heitz (2014), https://doi.org/10.3389/fnins.2014.00150 · Jaschinski et al. (2015), https://doi.org/10.1111/cxo.12248 · Liu et al. (2021), https://doi.org/10.1145/3411764.3445245 · McAuley & Marsden (2000), https://doi.org/10.1093/brain/123.8.1545 · Parhi et al. (2006), https://doi.org/10.1145/1152215.1152260 · Patel et al. (1991), https://doi.org/10.1097/00006324-199111000-00010 · Rogers et al. (2024), https://doi.org/10.3389/fspor.2024.1309991 · Sala et al. (2018), https://doi.org/10.1037/bul0000139 · Simons et al. (2016), https://doi.org/10.1177/1529100616661983 · W3C (2024), *WCAG 2.2*, Kriterium 2.3.1, https://www.w3.org/TR/WCAG22/ (Norm, keine DOI).
+- Ergänzend zitiert (Kurzangaben): Basner et al. (2018), https://doi.org/10.1093/sleep/zsx187 · Bediou et al. (2018), https://doi.org/10.1037/bul0000130 · Birch (2012), https://doi.org/10.1364/JOSAA.29.000313 · Boccardo et al. (2023), https://doi.org/10.1371/journal.pone.0282947 · Der & Deary (2006), https://doi.org/10.1037/0882-7974.21.1.62 · Di Russo et al. (2003), https://doi.org/10.1016/S0042-6989(03)00299-2 · Elliott et al. (2010), https://doi.org/10.1037/a0020958 · Findlater et al. (2013), https://doi.org/10.1145/2470654.2470703 · Fransen (2024), https://doi.org/10.1007/s40279-024-02060-x · Gibaldi & Sabatini (2021), https://doi.org/10.3758/s13428-020-01388-2 · Heitz (2014), https://doi.org/10.3389/fnins.2014.00150 · Jaschinski et al. (2015), https://doi.org/10.1111/cxo.12248 · Liu et al. (2021), https://doi.org/10.1145/3411764.3445245 · McAuley & Marsden (2000), https://doi.org/10.1093/brain/123.8.1545 · Parhi et al. (2006), https://doi.org/10.1145/1152215.1152260 · Patel et al. (1991), https://doi.org/10.1097/00006324-199111000-00010 · Rogers et al. (2024), https://doi.org/10.3389/fspor.2024.1309991 · Sala et al. (2018), https://doi.org/10.1037/bul0000139 · Simons et al. (2016), https://doi.org/10.1177/1529100616661983 · W3C (2024), *WCAG 2.2*, Kriterium 2.3.1, https://www.w3.org/TR/WCAG22/ (Norm, keine DOI).
 - Muchnick, B. G. (2008). *Clinical Medicine in Optometric Practice* (2nd ed.). Mosby/Elsevier. https://openlibrary.org/isbn/9780323029612 – Gesichtsfeldausfälle nach Sehbahnverlauf, Warnzeichen mit ärztlichem Abklärungsbedarf (Kap. 1, S. 6; Kap. 3, S. 28, 32)
 - Mountford, J., Ruston, D., & Dave, T. (2004). *Orthokeratology: Principles and Practice*. Butterworth-Heinemann. https://openlibrary.org/isbn/9780750640077 – Wiederholbarkeit von Messungen am Auge, Mehrfachmessung (S. 43–44)

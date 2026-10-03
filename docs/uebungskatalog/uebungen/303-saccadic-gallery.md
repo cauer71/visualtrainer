@@ -2,7 +2,7 @@
 # ===== Kennung =====
 nr: 303
 kennung: saccadic-gallery
-name: "Blicksprung-Galerie – Ziel an wechselnden Rasterpunkten anklicken"
+name: "Blicksprung-Galerie – Ziel in wechselnden Rasterzellen antippen"
 name_original: "Augentraining Online · Blicksprünge trainieren (Seitentitel: Augentraining Online · Blicksprünge trainieren | SkillDrills)"
 kapitel: "Reaktionsgeschwindigkeit"
 kapitel_original: "reaction-speed"
@@ -85,7 +85,7 @@ aehnliche_uebungen: [401, 501, 508, 704, 302, 307, 308, 305, 101, 503, 801, 414,
 stichworte: ["Sakkaden", "Blicksprung", "Zielerfassung", "Auge-Hand-Koordination", "Fitts'sches Gesetz", "Kopf-Auge-Koordination", "Gleitsicht", "Express-Sakkaden", "Zeitdruck", "Combo", "Rastersprünge"]
 ---
 
-# 303 · Blicksprung-Galerie – Ziel an wechselnden Rasterpunkten anklicken
+# 303 · Blicksprung-Galerie – Ziel in wechselnden Rasterzellen antippen
 
 > Original: „Augentraining Online · Blicksprünge trainieren“ – skilldrills.online, Kapitel Reaktionsgeschwindigkeit (`reaction-speed`) · Blickfit: noch nicht umgesetzt (verwandt: `blitzreaktion` mit Randreizen, `zielfang`)
 
@@ -261,14 +261,12 @@ Bekkering, 2000). Eine „subkortikale Direktauslösung“ schneller Tipps ist d
 ### Von der Website angegeben
 
 - Rayner, K. (1998). Eye movements in reading and information processing: 20 years of research. *Psychological Bulletin, 124*(3), 372–422.
-  https://doi.org/10.1037/0033-2909.124.3.372 – **Prüfung:** DOI stimmt ✓ (nur Abstract zugänglich); **stützt die Aussage der Website:**
-  teilweise (allgemeine Beschreibung von Sakkaden; 700 °/s, Tier-Stufen und Lesegewinn durch Training nicht belegbar).
+  https://doi.org/10.1037/0033-2909.124.3.372 – **Prüfung:** DOI stimmt ✓ (nur Abstract zugänglich); **stützt (für diese Übung):** nein (nicht verwendet; Prüfung der Quelle: teilweise) (allgemeine Beschreibung von Sakkaden; 700 °/s, Tier-Stufen und Lesegewinn durch Training nicht belegbar).
 - Leigh, R. J., & Zee, D. S. (2015). *The neurology of eye movements* (5. Aufl.). Oxford University Press.
   https://doi.org/10.1093/med/9780199969289.001.0001 – **Prüfung:** DOI falsch (Website …9780199969203…, Crossref 404; richtig
   …9780199969289…), Buch, Inhalt nicht eingesehen; **stützt:** nein für „> 280 ms = Dysmetrie“ (Latenz ≠ Zielgenauigkeit).
 - Woods, D. L., Wyma, J. M., Yund, E. W., Herron, T. J., & Reed, B. (2015). Factors influencing the latency of simple reaction time.
-  *Frontiers in Human Neuroscience, 9*, 131. https://doi.org/10.3389/fnhum.2015.00131 – **Prüfung:** DOI stimmt ✓ (Volltext); **stützt:**
-  teilweise (Hardware verlängert Reaktionszeiten; 144/240-Hz-Werte sind Arithmetik, gemessen wurde nur ein 60-Hz-Display; keine Sakkaden).
+  *Frontiers in Human Neuroscience, 9*, 131. https://doi.org/10.3389/fnhum.2015.00131 – **Prüfung:** DOI stimmt ✓ (Volltext); **stützt (für diese Übung):** nein (nicht verwendet; Prüfung der Quelle: teilweise) (Hardware verlängert Reaktionszeiten; 144/240-Hz-Werte sind Arithmetik, gemessen wurde nur ein 60-Hz-Display; keine Sakkaden).
 - Fischer, B., & Boch, R. (1984). Express-saccades of the monkey: A new type of visually guided rapid eye movements after extremely short
   reaction times. *Advances in Psychology, 22*, 403–408. https://doi.org/10.1016/S0166-4115(08)61860-9 – **Prüfung:** nur im Text genannt,
   nicht im Quellenverzeichnis; über Crossref ermittelt ✓; **stützt:** nein (Affenstudie, nichts zu Esportlern/Piloten; Übung misst keine Augen).
@@ -294,7 +292,7 @@ Bekkering, 2000). Eine „subkortikale Direktauslösung“ schneller Tipps ist d
   307–314. https://doi.org/10.1007/s00221-002-1168-8 – Zahl der Orte kaum relevant.
 - Munoz, D. P. (2002). Commentary: Saccadic eye movements: Overview of neural circuitry. *Progress in Brain Research, 140*, 89–96.
   https://doi.org/10.1016/S0079-6123(02)40044-1 – Netzwerk der Sakkadensteuerung (Abstract).
-- Ergänzend (DOIs am 29.09.2026 per Crossref geprüft, Inhalte laut Literaturbasis W03): Fischer & Ramsperger (1984), https://doi.org/10.1007/BF00231145;
+- Ergänzend zitiert (Kurzangaben): Fischer & Ramsperger (1984), https://doi.org/10.1007/BF00231145;
   Gibaldi & Sabatini (2021), https://doi.org/10.3758/s13428-020-01388-2; Munoz et al. (1998), https://doi.org/10.1007/s002210050473;
   Neggers & Bekkering (2000), https://doi.org/10.1152/jn.2000.83.2.639; Prablanc et al. (1979), https://doi.org/10.1007/BF00337436;
   Rayner et al. (2016), https://doi.org/10.1177/1529100615623267; Casiez et al. (2017), https://doi.org/10.1145/3126594.3126606;
