@@ -1,0 +1,266 @@
+import type { ExerciseTexts } from '../../core/types';
+import { SAFETY_STANDING_DE, SAFETY_STANDING_IT, safetyList } from '../_shared/labor-sicherheit';
+
+// Texte für Blickfit geschrieben (du-Form, einfache Sprache, Fachwörter erklärt).
+// Formulierungsregeln (Optiker-Seite): nur beschreiben, was man in der Übung tut; keine Wirk-, Heil- oder
+// Sicherheitsversprechen, keine Messung des Gleichgewichts, keine Normwerte, Vergleich nur mit sich selbst auf diesem Gerät.
+// Richtungsnamen: dir0 … dir7 = oben, oben rechts, rechts, unten rechts, unten, unten links, links, oben links
+// (bei 4 Richtungen werden dir0, dir2, dir4, dir6 benutzt).
+
+export const de: ExerciseTexts = {
+  title: 'Richtungen',
+  tagline: 'Pfeil sehen, Richtung zuordnen – antippen oder mit dem Körper zeigen.',
+  steps: [
+    'Bildschirm auf Augenhöhe, sicher stehen oder sitzen.',
+    'Ein Pfeil erscheint: gib seine Richtung an.',
+    'Tippe das Feld – oder die Hilfsperson tippt Richtig/Falsch.',
+  ],
+  why:
+    'Hier übst du, einen Pfeil schnell einer Richtung zuzuordnen. Am schnellsten geht das, wenn Reiz und Antwort auf derselben Seite liegen; bei der Gegenrichtung musst du die naheliegende Antwort unterdrücken und die andere wählen – das dauert länger und führt öfter zu Fehlern. Mit acht Richtungen gibt es mehr Möglichkeiten. Mit Hilfsperson kannst du die Richtung mit dem Körper ausführen; die App sieht davon nichts. Ob sich das Üben auf Alltag, Sport oder Verkehr überträgt, ist nicht belegt.',
+  goodFor: ['Reaktion', 'Richtungen', 'Körperbewegung'],
+  captions: {
+    appear: 'Ein Pfeil erscheint',
+    touch: 'Tippe die Richtung des Pfeils',
+    next: 'Gleich kommt der nächste Pfeil',
+    helper: 'Mit Hilfsperson: sie tippt „Richtig“',
+    wrong: 'Daneben? Dann tippt sie „Falsch“',
+  },
+  metrics: {
+    correct: 'Richtige Antworten',
+    wrong: 'Falsche Richtung',
+    omissions: 'Keine Antwort',
+    early: 'Zu früh',
+    accuracy: 'Genauigkeit',
+    rt_mean: 'Reaktionszeit (Mittel)',
+    rt_median: 'Reaktionszeit (Median)',
+    rt_sd: 'Reaktionszeit (Streuung)',
+  },
+  metricHints: {
+    correct: 'So viele Pfeile hast du richtig beantwortet.',
+    wrong: 'Antworten mit falscher Richtung. Mit Hilfsperson: so oft hat sie „Falsch“ getippt.',
+    omissions: 'Pfeile, auf die du in der Antwortzeit nicht geantwortet hast. Viele davon heißen: Die Antwortzeit ist zu kurz eingestellt.',
+    early: 'Antworten, die kamen, bevor ein Pfeil zu sehen war oder weniger als 0,1 s danach. Sie zählen nicht in der Wertung.',
+    accuracy: 'Anteil der richtig beantworteten Pfeile an allen Pfeilen (richtige durch alle).',
+    rt_mean: 'Durchschnittliche Zeit vom Erscheinen des Pfeils bis zur richtigen Antwort. Mit Hilfsperson enthält sie deren Reaktionszeit und die Zeit für deine Körperbewegung; sie ist nur auf demselben Gerät und mit derselben Hilfsperson vergleichbar.',
+    rt_median: 'Der mittlere Wert, wenn man alle Zeiten der Größe nach ordnet: Die Hälfte war schneller, die Hälfte langsamer. Einzelne Ausreißer ziehen ihn weniger als den Durchschnitt.',
+    rt_sd: 'Wie stark deine Zeiten schwanken (Standardabweichung). Kleinere Werte bedeuten gleichmäßigeres Reagieren.',
+  },
+  tips: {
+    few: 'Diesmal gab es keine richtige Antwort. Probiere vier Richtungen, „In Pfeilrichtung“ und eine längere Antwortzeit (3.000 ms).',
+    early: 'Du antwortest öfter, bevor der Pfeil da ist. Warte, bis er erscheint – schau auf die Mitte und lass ihn kommen.',
+    wrong: 'Du wählst öfter die falsche Richtung. Antworte etwas langsamer und genauer: Ein Fehler kostet mehr Zeit, als du gewinnst.',
+    slow: 'Bei vielen Pfeilen kam keine Antwort. Stell eine längere Antwortzeit ein oder wähle vier Richtungen.',
+    harder: 'Du antwortest fast immer richtig. Wenn du magst, mach genau eine Einstellung schwerer, zum Beispiel acht Richtungen oder die Gegenrichtung.',
+    helper: 'Mit Hilfsperson zählt, dass sie immer nach derselben Regel „Richtig“ oder „Falsch“ tippt. Vergleiche nur Durchläufe mit derselben Hilfsperson.',
+    compare: 'Vergleiche diesen Durchlauf nur mit Durchläufen, die dieselben Einstellungen hatten – auf diesem Gerät und mit derselben Eingabe.',
+  },
+  feedback: {
+    label: '{n} / {total}',
+    early: 'Zu früh',
+    slow: 'Zu langsam',
+    taskSame: 'Richtung des Pfeils',
+    taskOpposite: 'Gegenrichtung des Pfeils',
+    btnOk: 'Richtig',
+    btnBad: 'Falsch',
+    keyOk: 'Leertaste',
+    keyBad: 'Taste X',
+    dir0: 'oben',
+    dir1: 'oben rechts',
+    dir2: 'rechts',
+    dir3: 'unten rechts',
+    dir4: 'unten',
+    dir5: 'unten links',
+    dir6: 'links',
+    dir7: 'oben links',
+    moreTitle: 'Weitere Werte',
+    moreNote: 'Die Reaktionszeit enthält auch die Verzögerung von Bildschirm und Touch-Sensor und mit Hilfsperson deren Reaktion. Vergleiche sie nur mit deinen eigenen Werten.',
+    dirTitle: 'Zeit je Richtung des Pfeils',
+    dirValue: '{ms} ({n} von {of} richtig)',
+    dirValueNone: 'keine richtige Antwort ({of} Pfeile)',
+    dirNote: 'Nur Zählwerte mit meist wenigen Pfeilen je Richtung – keine Wertung und kein Befund.',
+  },
+  progression: [
+    'Leichter: vier Richtungen, „In Pfeilrichtung“, lange Antwortzeit (3.000 ms und mehr), große Pfeile, Eingabe per Berührung.',
+    'Schwerer: acht Richtungen, „In Gegenrichtung“, kürzere Antwortzeit (1.000 bis 1.500 ms), kürzere und stärker schwankende Wartezeiten.',
+    'Mit Hilfsperson: erst im sicheren Stand oder im Sitzen, dann nur schrittweise anspruchsvoller – nie auf wackligen Unterlagen ohne Sicherung.',
+    'Unsere Faustregel (keine Vorgabe aus der Forschung): Liegst du in drei Durchläufen hintereinander über 95 %, mach eine Einstellung schwerer. Ändere immer nur eine Einstellung auf einmal.',
+  ],
+  cautions: [
+    ...safetyList(SAFETY_STANDING_DE),
+    'Stell den Bildschirm einmal ein („Bildschirm kalibrieren“), damit die Pfeilgröße in Zentimetern stimmt.',
+    'Mit Hilfsperson: Vereinbart vorher, welche Körperbewegung zu welcher Richtung gehört (zum Beispiel Neigen nach vorn für „oben“) und dass die Hilfsperson immer nach derselben Regel tippt. Das Gerät steht ruhig auf einem Ständer oder Tisch, oder die Hilfsperson hält es; sie sitzt oder steht selbst sicher. Tastatur: Leertaste = richtig, X = falsch.',
+    'Die Zeit enthält die Reaktion der Hilfsperson und ist nur bei gleicher Hilfsperson und gleichem Aufbau vergleichbar.',
+    'Die Pfeile erscheinen und verschwinden. Bei sehr kurzen Wartezeiten kann das unruhig wirken; bist du lichtempfindlich oder hattest du schon einmal einen epileptischen Anfall, verzichte bitte darauf.',
+  ],
+  params: {
+    trials: {
+      label: 'Anzahl der Pfeile',
+      hint: 'Wie viele Pfeile ein Durchlauf hat. Die Richtungen sind gleichmäßig verteilt.',
+    },
+    directions: {
+      label: 'Richtungen',
+      hint: 'Vier Richtungen (oben, rechts, unten, links) oder acht (zusätzlich die Diagonalen). Mehr Richtungen sind schwerer.',
+      options: { '4': '4', '8': '8 (mit Diagonalen)' },
+    },
+    rule: {
+      label: 'Aufgabe',
+      hint: '„In Pfeilrichtung“: richtig ist die Richtung des Pfeils. „In Gegenrichtung“: richtig ist die entgegengesetzte Richtung – das ist deutlich anspruchsvoller, weil du die naheliegende Antwort unterdrücken musst.',
+      options: { same: 'In Pfeilrichtung', opposite: 'In Gegenrichtung' },
+    },
+    input: {
+      label: 'Eingabe',
+      hint: '„Berührung“: du tippst die Richtung selbst auf dem Richtungsfeld. „Hilfsperson“: du führst die Richtung mit dem Körper aus, die Hilfsperson tippt „Richtig“ oder „Falsch“ (Tastatur: Leertaste oder X). Die App sieht deine Bewegung nicht.',
+      options: { touch: 'Berührung', helper: 'Hilfsperson bestätigt' },
+    },
+    stimulusMs: {
+      label: 'Antwortzeit je Pfeil',
+      hint: 'Wie lange du nach dem Erscheinen Zeit hast. Danach zählt der Pfeil als „keine Antwort“. Mit Hilfsperson gelten mindestens 1.500 ms.',
+    },
+    waitMinMs: {
+      label: 'Wartezeit mindestens',
+      hint: 'Kürzeste Wartezeit zwischen zwei Pfeilen in Millisekunden.',
+    },
+    waitMaxMs: {
+      label: 'Wartezeit höchstens',
+      hint: 'Längste Wartezeit. Die tatsächliche Zeit liegt zufällig dazwischen, damit du den Zeitpunkt nicht erraten kannst.',
+    },
+    sizeCm: {
+      label: 'Pfeilgröße',
+      hint: 'Länge des Pfeils in Zentimetern. Auf kleinen Bildschirmen wird er so begrenzt, dass darunter noch Platz für das Richtungsfeld bleibt.',
+    },
+    sound: {
+      label: 'Ton',
+      hint: 'Kurzer Ton bei einer Antwort (hoch bei richtig, tief bei falsch). Der Ton ändert die Vergleichbarkeit nicht.',
+      options: { no: 'Aus', yes: 'An' },
+    },
+  },
+};
+
+export const it: ExerciseTexts = {
+  title: 'Direzioni',
+  tagline: 'Vedi la freccia, assegna la direzione – tocca o indica con il corpo.',
+  steps: [
+    'Schermo ad altezza occhi, stai fermo e al sicuro.',
+    'Compare una freccia: indica la sua direzione.',
+    'Tocca il campo – o l’aiutante tocca Giusto/Sbagliato.',
+  ],
+  why:
+    'Qui ti alleni ad assegnare in fretta una direzione a una freccia. È più veloce quando stimolo e risposta si trovano dalla stessa parte; con la direzione opposta devi sopprimere la risposta più naturale e scegliere l’altra – ci vuole più tempo e si sbaglia più spesso. Con otto direzioni ci sono più possibilità. Con la persona di aiuto puoi eseguire la direzione con il corpo; l’app non ne vede nulla. Non è dimostrato che l’allenamento si trasferisca alla vita quotidiana, allo sport o al traffico.',
+  goodFor: ['Reazione', 'Direzioni', 'Movimento del corpo'],
+  captions: {
+    appear: 'Compare una freccia',
+    touch: 'Tocca la direzione della freccia',
+    next: 'Subito dopo arriva la prossima',
+    helper: 'Con aiuto: tocca «Giusto»',
+    wrong: 'Sbagliato? Allora tocca «Sbagliato»',
+  },
+  metrics: {
+    correct: 'Risposte giuste',
+    wrong: 'Direzione sbagliata',
+    omissions: 'Nessuna risposta',
+    early: 'Troppo presto',
+    accuracy: 'Precisione',
+    rt_mean: 'Tempo di reazione (media)',
+    rt_median: 'Tempo di reazione (mediana)',
+    rt_sd: 'Tempo di reazione (variazione)',
+  },
+  metricHints: {
+    correct: 'Quante frecce hai risposto correttamente.',
+    wrong: 'Risposte con direzione sbagliata. Con la persona di aiuto: quante volte ha toccato «Sbagliato».',
+    omissions: 'Frecce a cui non hai risposto nel tempo di risposta. Molte significano: il tempo di risposta è impostato troppo breve.',
+    early: 'Risposte arrivate prima che si vedesse una freccia o meno di 0,1 s dopo. Non contano nella valutazione.',
+    accuracy: 'Quota delle frecce con risposta giusta su tutte le frecce (giuste diviso tutte).',
+    rt_mean: 'Tempo medio da quando compare la freccia alla risposta giusta. Con la persona di aiuto comprende la sua reazione e il tempo del tuo movimento; è confrontabile solo sullo stesso dispositivo e con la stessa persona.',
+    rt_median: 'Il valore centrale quando si ordinano tutti i tempi: metà erano più veloci, metà più lenti. I valori anomali lo influenzano meno della media.',
+    rt_sd: 'Quanto variano i tuoi tempi (deviazione standard). Valori più piccoli indicano una reazione più regolare.',
+  },
+  tips: {
+    few: 'Stavolta nessuna risposta giusta. Prova quattro direzioni, «Nella direzione della freccia» e un tempo di risposta più lungo (3.000 ms).',
+    early: 'Rispondi spesso prima che la freccia ci sia. Aspetta che compaia – guarda al centro e lasciala arrivare.',
+    wrong: 'Scegli spesso la direzione sbagliata. Rispondi un po’ più lentamente e con più precisione: un errore costa più tempo di quanto ne guadagni.',
+    slow: 'Per molte frecce non è arrivata risposta. Imposta un tempo di risposta più lungo o scegli quattro direzioni.',
+    harder: 'Rispondi quasi sempre in modo giusto. Se vuoi, rendi più difficile una sola impostazione, per esempio otto direzioni o la direzione opposta.',
+    helper: 'Con la persona di aiuto conta che tocchi sempre «Giusto» o «Sbagliato» secondo la stessa regola. Confronta solo giri con la stessa persona.',
+    compare: 'Confronta questo giro solo con giri che avevano le stesse impostazioni – su questo dispositivo e con lo stesso tipo di input.',
+  },
+  feedback: {
+    label: '{n} / {total}',
+    early: 'Troppo presto',
+    slow: 'Troppo lento',
+    taskSame: 'Direzione della freccia',
+    taskOpposite: 'Direzione opposta alla freccia',
+    btnOk: 'Giusto',
+    btnBad: 'Sbagliato',
+    keyOk: 'Barra spaziatrice',
+    keyBad: 'Tasto X',
+    dir0: 'su',
+    dir1: 'su a destra',
+    dir2: 'destra',
+    dir3: 'giù a destra',
+    dir4: 'giù',
+    dir5: 'giù a sinistra',
+    dir6: 'sinistra',
+    dir7: 'su a sinistra',
+    moreTitle: 'Altri valori',
+    moreNote: 'Il tempo di reazione comprende anche il ritardo di schermo e sensore touch e, con la persona di aiuto, la sua reazione. Confrontalo solo con i tuoi valori.',
+    dirTitle: 'Tempo per direzione della freccia',
+    dirValue: '{ms} ({n} su {of} giuste)',
+    dirValueNone: 'nessuna risposta giusta ({of} frecce)',
+    dirNote: 'Solo valori di conteggio con di solito poche frecce per direzione – nessuna valutazione e nessun referto.',
+  },
+  progression: [
+    'Più facile: quattro direzioni, «Nella direzione della freccia», tempo di risposta lungo (3.000 ms e più), frecce grandi, input con il tocco.',
+    'Più difficile: otto direzioni, «Nella direzione opposta», tempo di risposta più breve (da 1.000 a 1.500 ms), attese più brevi e più variabili.',
+    'Con la persona di aiuto: prima in posizione stabile o da seduto, poi solo gradualmente più impegnativo – mai su superfici instabili senza protezione.',
+    'La nostra regola pratica (non è un’indicazione della ricerca): se in tre giri di seguito superi il 95 %, rendi più difficile un’impostazione. Cambia sempre una sola impostazione alla volta.',
+  ],
+  cautions: [
+    ...safetyList(SAFETY_STANDING_IT),
+    'Calibra lo schermo una volta («Calibra lo schermo»), così la dimensione della freccia in centimetri è corretta.',
+    'Con la persona di aiuto: concordate prima quale movimento del corpo corrisponde a quale direzione (per esempio inclinarsi in avanti per «su») e che la persona tocchi sempre secondo la stessa regola. Il dispositivo sta fermo su un supporto o su un tavolo, oppure lo tiene la persona di aiuto; anche lei sta seduta o in piedi in modo sicuro. Tastiera: barra spaziatrice = giusto, X = sbagliato.',
+    'Il tempo comprende la reazione della persona di aiuto ed è confrontabile solo con la stessa persona e lo stesso allestimento.',
+    'Le frecce compaiono e spariscono. Con attese molto brevi può risultare agitato; se sei fotosensibile o hai già avuto una crisi epilettica, non eseguire l’esercizio.',
+  ],
+  params: {
+    trials: {
+      label: 'Numero di frecce',
+      hint: 'Quante frecce ha un giro. Le direzioni sono distribuite in modo uniforme.',
+    },
+    directions: {
+      label: 'Direzioni',
+      hint: 'Quattro direzioni (su, destra, giù, sinistra) oppure otto (anche le diagonali). Più direzioni sono più difficili.',
+      options: { '4': '4', '8': '8 (con diagonali)' },
+    },
+    rule: {
+      label: 'Compito',
+      hint: '«Nella direzione della freccia»: è giusta la direzione della freccia. «Nella direzione opposta»: è giusta la direzione contraria – molto più impegnativo, perché devi sopprimere la risposta più naturale.',
+      options: { same: 'Nella direzione della freccia', opposite: 'Nella direzione opposta' },
+    },
+    input: {
+      label: 'Input',
+      hint: '«Tocco»: tocchi tu la direzione sul campo delle direzioni. «Persona di aiuto»: esegui la direzione con il corpo, la persona di aiuto tocca «Giusto» o «Sbagliato» (tastiera: barra spaziatrice o X). L’app non vede il tuo movimento.',
+      options: { touch: 'Tocco', helper: 'Conferma della persona di aiuto' },
+    },
+    stimulusMs: {
+      label: 'Tempo di risposta per freccia',
+      hint: 'Quanto tempo hai dopo la comparsa. Poi la freccia conta come «nessuna risposta». Con la persona di aiuto valgono almeno 1.500 ms.',
+    },
+    waitMinMs: {
+      label: 'Attesa minima',
+      hint: 'Attesa più breve tra due frecce, in millisecondi.',
+    },
+    waitMaxMs: {
+      label: 'Attesa massima',
+      hint: 'Attesa più lunga. Il tempo effettivo è casuale tra i due valori, così non puoi indovinare il momento.',
+    },
+    sizeCm: {
+      label: 'Dimensione della freccia',
+      hint: 'Lunghezza della freccia in centimetri. Sugli schermi piccoli viene limitata, così sotto resta spazio per il campo delle direzioni.',
+    },
+    sound: {
+      label: 'Suono',
+      hint: 'Suono breve a ogni risposta (acuto se giusta, grave se sbagliata). Il suono non cambia la confrontabilità.',
+      options: { no: 'No', yes: 'Sì' },
+    },
+  },
+};

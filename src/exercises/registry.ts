@@ -113,6 +113,12 @@ import { laborRotGruenLesen } from './labor-rot-gruen-lesen';
 import { laborFusion } from './labor-fusion';
 import { laborStereo } from './labor-stereo';
 
+import { laborRichtungen } from './labor-richtungen';
+import { laborOrientierung } from './labor-orientierung';
+import { laborBalanceTouch } from './labor-balance-touch';
+import { laborSlalom } from './labor-slalom';
+import { laborInvasoren } from './labor-invasoren';
+
 /** Reihenfolge = Anzeige-Reihenfolge innerhalb der Bereiche */
 export const EXERCISES: ExerciseDefinition[] = [
   blitzreaktion,
@@ -218,6 +224,12 @@ export const EXERCISES: ExerciseDefinition[] = [
   laborRotGruenLesen,
   laborFusion,
   laborStereo,
+
+  laborRichtungen,
+  laborOrientierung,
+  laborBalanceTouch,
+  laborSlalom,
+  laborInvasoren,
 ];
 
 /** Marke der Labor-Übungen (cm/Sehwinkel, Einstellungen, Kalibrierung); sie stehen nicht im Tagestraining */

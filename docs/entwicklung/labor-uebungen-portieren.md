@@ -1,6 +1,6 @@
 # Labor-Übungen in Blickfit portieren (Anleitung für Phase B)
 
-Der Labor-Prototyp (Branch `origin/labor-offline-prototyp`, Ordner `labor/`, reines HTML/JS, CommonJS) hat 14 Übungen.
+Der Labor-Prototyp (Branch `origin/labor-offline-prototyp`, Ordner `labor/`, reines HTML/JS, CommonJS) hat 14 Übungen (dazu die Gleichgewichts-Übungen, siehe Abschnitt 9).
 Dazu kommt als 15. Übung der Marke „Labor“ `labor-rot-gruen-lesen` (Rot-Grün-Brille): keine Portierung, sondern eine eigene Umsetzung der
 klassischen dichoptischen Aufgabe (`src/exercises/labor-rot-gruen-lesen/`; Prüfbild im Intro über `ExerciseDefinition.colorCheck`).
 Als 16. und 17. kommen `labor-fusion` („Fusion – Bilder verschmelzen“, aus `ex/fusion.js`) und `labor-stereo` („Tiefe sehen – Zufallspunkte“,
@@ -189,3 +189,24 @@ Die Literaturangaben des Prototyps stammen laut dessen README **aus dem Gedächt
 - Anzeigedauern sind an die Bildwiederholrate gebunden (60 Hz ≈ 17 ms); Reaktionszeiten enthalten die Verzögerung von Bildschirm und Touch-Sensor und sind nur auf demselben Gerät vergleichbar.
 - Die Kalibrierung ist eine Eingabe der Person (Bankkartenvergleich), keine Messung; falsche Kalibrierung verfälscht Größen und Winkel, nicht Zeiten.
 - Keine Normwerte, keine medizinische Aussage, kein Medizinprodukt.
+
+## 9. Gleichgewichts-Übungen (Runde 15: `labor-richtungen`, `labor-orientierung`, `labor-balance-touch`, `labor-slalom`, `labor-invasoren`)
+
+Fünf weitere Übungen der Marke „Labor“ aus den Gleichgewichts-Übungen des Prototyps (`directions`, `orient`, `balancetouch`, `slalom`, `invaders`;
+sie kommen zu den 15 Labor-Übungen hinzu: **20 Labor-Übungen** insgesamt). Neu sind drei gemeinsame Bausteine unter `src/exercises/_shared/`:
+
+| Baustein | Datei | Kurz |
+|---|---|---|
+| Hilfsperson | `labor-helfer.ts` | große Bildschirmtasten „Richtig“, „Falsch“, „Gleichgewicht verloren“ (≥ 56 px, Text und Zeichen ✓ ✗ !), Treffer, Tastenkürzel (Leertaste/Enter, X/Rücktaste, B) |
+| Steuerung | `labor-steuerung.ts` | Zeiger, Pfeiltasten (A/D) und Gerätekippen (`deviceorientation`, relativ zur Startlage, Bildschirmdrehung beachtet); Erlaubnisabfrage (iOS) nur auf Anforderung |
+| Startbildschirm Kippen | `labor-steuerung-ui.ts` | `TiltGate`: „Kippen einschalten“ → Anfrage erst beim Loslassen → Sensorwert → Countdown (Mitte-Haltung) → Lauf; sonst Rückfall auf Zeiger/Tasten mit Hinweis |
+| Sicherheitstexte | `labor-sicherheit.ts` | gemeinsame Hinweise DE/IT (Sturzgefahr, Rücksprache, Warnzeichen mit Quelle, keine Messung, Kippen, bewegte Bilder) |
+
+- `labor-richtungen` (Kategorie `reaktion`) erbt in `logic.ts` von `ChoiceSession` (`labor-wahlreaktion/logic.ts`); `labor-balance-touch` (`bewegung`) nutzt die
+  `SpotSession` aus `labor-spot-touch/logic.ts`; beide importieren, nichts ist kopiert. `labor-orientierung` ist `wahrnehmung`, `labor-slalom` `bewegung`, `labor-invasoren` `reaktion`.
+- Hilfsperson-Übungen (`richtungen` mit Eingabe „Hilfsperson“, `orientierung`, `balance-touch`): Die App liest nichts von einer Plattform aus und misst weder Gleichgewicht noch Haltung;
+  es gibt nur Zählwerte (richtige Antworten, Zeit bis zum Tipp der Hilfsperson, von ihr gezählte Verluste). Das steht in jedem Intro unter „Gut zu wissen“.
+- Slalom und Invasoren: Intro-Film und Autoplay steuern mit einem Autopiloten (die Geister-Hand folgt nur zur Anschauung), `ctx.autoplay` überspringt den Startbildschirm „Kippen“.
+- `public/_headers`: `Permissions-Policy` nennt jetzt ausdrücklich `accelerometer=(self), gyroscope=(self)` (Standard wäre ohnehin „self“; Kamera, Mikrofon, Standort bleiben gesperrt).
+- Tests: `tests/unit/labor-<id>-logic.test.ts` und `-sim.test.ts` je Übung, `labor-steuerung.test.ts`, `labor-helfer.test.ts`; Smoke-Test im Browser: `tests/e2e/gleichgewicht.mjs`.
+- Ungetestet auf echten Geräten: Gerätekippen auf iPad/iPhone (Erlaubnisabfrage, Achsen im Querformat) und Android, Sturzrisiko-Hinweise im Alltag.
