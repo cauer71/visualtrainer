@@ -11,6 +11,7 @@ import type { Lang } from '../i18n/lang';
 import { buildCalib, DEFAULT_VIEW_DISTANCE_CM, makeCalib } from './calib';
 import { font, hand, ring, rrPath } from './draw';
 import { createFormatter } from './format';
+import { hasLiveControls } from './live';
 import { defaultParams, sanitizeParams } from './params';
 import { createRng } from './rng';
 import { silentSfx } from './sound';
@@ -26,6 +27,7 @@ import type {
   Ghost,
   GhostTapOptions,
   Hud,
+  LiveState,
   Mode,
   PointerInfo,
   Sfx,
@@ -253,6 +255,8 @@ export interface RunnerOptions {
   params?: Record<string, unknown>;
   /** Kalibrierung des Bildschirms (nur im Spielmodus; der Intro-Film nutzt eine eigene Skala für seine kleine Bühne) */
   calib?: CalibSettings;
+  /** Trainer-Ansicht mit Regler (`def.liveControls`): `ctx.liveEnabled`; im Intro-Film immer aus */
+  live?: boolean;
   seed?: number;
   sfx: Sfx;
   domHud?: DomHud;
@@ -300,6 +304,7 @@ export class Runner {
       options: o.mode === 'demo' ? undefined : o.options,
       params,
       calib,
+      liveEnabled: o.mode === 'play' && hasLiveControls(o.def, !!o.live),
       lang: o.lang,
       texts: o.def.texts[o.lang],
       rng: createRng(o.seed),
@@ -329,6 +334,26 @@ export class Runner {
 
   get isPaused(): boolean {
     return this.paused;
+  }
+
+  /** Trainer-Regler: Zustand der Übung (`null`, wenn die Übung keinen hat oder er gerade nicht wirkt) */
+  getLive(): LiveState | null {
+    if (this.destroyed || this.finished) return null;
+    try {
+      return this.ex.getLive?.() ?? null;
+    } catch {
+      return null;
+    }
+  }
+
+  /** Trainer-Regler: neuen Wert setzen (wirkt sofort, auch während der Pause nicht verloren, aber ohne Zeitsprung) */
+  setLive(key: string, value: number): void {
+    if (this.destroyed || this.finished || !this.started) return;
+    try {
+      this.ex.setLive?.(key, value);
+    } catch (e) {
+      this.fail(e);
+    }
   }
 
   get isFinished(): boolean {

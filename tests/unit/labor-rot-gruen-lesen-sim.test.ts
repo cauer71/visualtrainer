@@ -32,9 +32,10 @@ describe('Definition und Registrierung', () => {
     expect(laborRotGruenLesen.warning).toBeUndefined();
   });
 
-  it('steht am Ende der Labor-Gruppe in der Registry und hat einen Hintergrundtext', () => {
+  it('steht in der Labor-Gruppe der Registry (danach folgen Fusion und Tiefe sehen) und hat einen Hintergrundtext', () => {
     expect(getExercise('labor-rot-gruen-lesen')).toBe(laborRotGruenLesen);
-    expect(EXERCISES[EXERCISES.length - 1].id).toBe('labor-rot-gruen-lesen');
+    const ids = EXERCISES.map((e) => e.id);
+    expect(ids.slice(-3)).toEqual(['labor-rot-gruen-lesen', 'labor-fusion', 'labor-stereo']);
     expect(SCIENCE['labor-rot-gruen-lesen']).toBe(science);
   });
 

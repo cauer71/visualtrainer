@@ -26,6 +26,33 @@
 import { mean } from '../../core/stats';
 import type { ExerciseParams, ParamDef } from '../../core/types';
 import type { Rng } from '../../core/rng';
+import {
+  BASE_RGB,
+  colorOffsets,
+  cmToPd,
+  eyeColors,
+  P_BRIGHTNESS,
+  P_GLASSES_CHECK,
+  P_LEFT_LENS,
+  P_RED_LEVEL,
+  P_SECOND_LEVEL,
+  P_TONES,
+  pdToCm,
+  pxToPd,
+  shiftPx,
+  toneCss,
+  visualAngleDeg,
+  type ColorId,
+  type GlassesCheck,
+  type Lens,
+  type ShiftDir,
+  type ToneCss,
+  type Tones,
+} from '../_shared/anaglyph';
+
+// Gemeinsame Bausteine der Rot-Grün-/Rot-Cyan-Übungen liegen in _shared/anaglyph.ts; hier bleiben die Namen erhalten
+export { BASE_RGB, colorOffsets, cmToPd, eyeColors, pdToCm, pxToPd, shiftPx, toneCss, visualAngleDeg };
+export type { ColorId, GlassesCheck, Lens, ShiftDir, ToneCss, Tones };
 
 /** Einstellungen (Texte in texts.ts) */
 export const PARAMS: readonly ParamDef[] = [
@@ -33,15 +60,15 @@ export const PARAMS: readonly ParamDef[] = [
   { key: 'length', type: 'number', unit: 'count', min: 4, max: 12, step: 1, default: 6, summary: true },
   { key: 'sizeCm', type: 'number', unit: 'cm', min: 0.6, max: 4, step: 0.1, default: 1.2, summary: true },
   { key: 'mix', type: 'select', default: 'alternate', options: ['alternate', 'random'] },
-  { key: 'leftLens', type: 'select', default: 'red', options: ['red', 'green'] },
+  P_LEFT_LENS,
   { key: 'showFor', type: 'select', default: 'unlimited', options: ['unlimited', '8', '4', '2'], summary: true },
   { key: 'trials', type: 'number', unit: 'count', min: 6, max: 20, step: 1, default: 10 },
-  { key: 'tones', type: 'select', default: 'redgreen', options: ['redgreen', 'redcyan', 'redblue'] },
-  { key: 'brightness', type: 'number', unit: 'percent', min: 80, max: 100, step: 5, default: 100 },
-  { key: 'redLevel', type: 'number', unit: 'percent', min: 30, max: 100, step: 10, default: 100 },
-  { key: 'secondLevel', type: 'number', unit: 'percent', min: 30, max: 100, step: 10, default: 100 },
+  P_TONES,
+  P_BRIGHTNESS,
+  P_RED_LEVEL,
+  P_SECOND_LEVEL,
   // Ansicht im Intro (Prüfbild einfach oder Schritt für Schritt): ändert die Übung nicht
-  { key: 'glassesCheck', type: 'select', default: 'steps', options: ['simple', 'steps'], neutral: true },
+  P_GLASSES_CHECK,
   { key: 'controlMarks', type: 'select', default: 'off', options: ['off', 'on'] },
   { key: 'shiftPd', type: 'number', min: 0, max: 12, step: 0.5, default: 0 },
   { key: 'shiftDir', type: 'select', default: 'convergence', options: ['convergence', 'divergence'] },
@@ -50,11 +77,7 @@ export const PARAMS: readonly ParamDef[] = [
 
 export type Symbols = 'digits' | 'letters' | 'mixed';
 export type Mix = 'alternate' | 'random';
-export type Lens = 'red' | 'green';
 export type ShowFor = 'unlimited' | '8' | '4' | '2';
-export type Tones = 'redgreen' | 'redcyan' | 'redblue';
-export type GlassesCheck = 'simple' | 'steps';
-export type ShiftDir = 'convergence' | 'divergence';
 
 export interface RgParams {
   symbols: Symbols;
@@ -117,75 +140,10 @@ export function showMs(p: Pick<RgParams, 'showFor'>): number | null {
 }
 
 // ---------------------------------------------------------------------------
-// Farben
-
-/** `a` = Rot, `b` = zweite Farbe (Grün, Cyan oder Blau) */
-export type ColorId = 'a' | 'b';
-
-export interface ToneCss {
-  /** Zeichenfarbe Rot */
-  a: string;
-  /** Zeichenfarbe Grün, Cyan bzw. Blau */
-  b: string;
-  /** Neutrales Hellgrau (Rahmen, Kreuz, Bedienung): beide Augen sehen es */
-  neutral: string;
-}
-
-/** Grundfarben bei voller Helligkeit (R, G, B): reines Rot, reines Grün, Cyan, Blau (Rot-Cyan-Brillen) */
-export const BASE_RGB: Record<'red' | Tones, readonly [number, number, number]> = {
-  red: [255, 0, 0],
-  redgreen: [0, 255, 0],
-  redcyan: [0, 255, 255],
-  redblue: [0, 160, 255],
-};
-
-/**
- * Farben als CSS-Werte: reines Rot (255,0,0) und reines Grün (0,255,0), Cyan (0,255,255) oder Blau (0,160,255), skaliert
- * mit der gemeinsamen Helligkeit (80–100 %) und – je Farbe getrennt – mit `redLevel` und `secondLevel` (30–100 %).
- * Ohne die Stufen (Standard 100 %) ergibt sich das frühere Verhalten.
- */
-export function toneCss(tones: Tones, brightness: number, redLevel = 100, secondLevel = 100): ToneCss {
-  const clampPct = (x: number) => Math.max(0, Math.min(100, x)) / 100;
-  const k = clampPct(brightness);
-  const paint = (rgb: readonly [number, number, number], level: number): string => {
-    const f = k * clampPct(level);
-    return `rgb(${rgb.map((c) => Math.round(c * f)).join(',')})`;
-  };
-  const n = Math.round(200 * k);
-  return {
-    a: paint(BASE_RGB.red, redLevel),
-    b: paint(BASE_RGB[tones], secondLevel),
-    neutral: `rgb(${n},${n},${n})`,
-  };
-}
-
-/** Welche Farbe sieht welches Auge (Rot-Glas = Rot sichtbar, Grün-/Cyan-Glas = zweite Farbe sichtbar) */
-export function eyeColors(leftLens: Lens): { left: ColorId; right: ColorId } {
-  return leftLens === 'red' ? { left: 'a', right: 'b' } : { left: 'b', right: 'a' };
-}
+// Farben: `ColorId` (`a` = Rot, `b` = zweite Farbe), `toneCss`, `eyeColors` stehen in _shared/anaglyph.ts
 
 // ---------------------------------------------------------------------------
 // Versatz (Fusionsanforderung)
-
-/** 1 Prismendioptrie (Δ) = 1 cm Ablenkung auf 1 m Entfernung: Versatz in cm bei `distCm` Sehentfernung */
-export function pdToCm(pd: number, distCm: number): number {
-  return (pd * distCm) / 100;
-}
-
-/** Umkehrung von `pdToCm` */
-export function cmToPd(cm: number, distCm: number): number {
-  return (cm / distCm) * 100;
-}
-
-/** Versatz in Pixeln für `pd` Prismendioptrien bei Sehentfernung `distCm` und `pxPerCm` Pixeln je cm (Kalibrierung) */
-export function shiftPx(pd: number, distCm: number, pxPerCm: number): number {
-  return pdToCm(pd, distCm) * pxPerCm;
-}
-
-/** Umkehrung von `shiftPx` */
-export function pxToPd(px: number, distCm: number, pxPerCm: number): number {
-  return cmToPd(px / pxPerCm, distCm);
-}
 
 /**
  * Versatz (Δ) des Durchgangs mit der Nummer `idx` (ab 0). Der erste Durchgang hat immer Versatz 0 (Aufwärmen). Ohne Aufbau
@@ -196,19 +154,6 @@ export function shiftPdForTrial(p: Pick<RgParams, 'shiftPd' | 'rampDurchgaenge'>
   if (!(p.shiftPd > 0) || idx <= 0) return 0;
   const k = p.rampDurchgaenge >= 1 ? Math.min(1, idx / p.rampDurchgaenge) : 1;
   return Math.round(p.shiftPd * k * 20) / 20;
-}
-
-/**
- * Waagerechte Verschiebung der Zeichen je Farbe (px, plus = nach rechts) bei einem Versatz von `shift` px zwischen den
- * beiden Farbbildern. Gekreuzt (Konvergenz): Das Bild des linken Auges liegt rechts vom Bild des rechten Auges, das Bild
- * rückt scheinbar näher und verlangt mehr Konvergenz; Divergenz ist umgekehrt. Das linke Auge sieht die Farbe seines Glases
- * (`leftLens`). Die Farbe des linken Auges wandert bei Konvergenz um +shift/2, die des rechten um −shift/2.
- */
-export function colorOffsets(leftLens: Lens, dir: ShiftDir, shift: number): Record<ColorId, number> {
-  const sign = dir === 'divergence' ? -1 : 1;
-  const left = eyeColors(leftLens).left;
-  const right: ColorId = left === 'a' ? 'b' : 'a';
-  return { [left]: (sign * shift) / 2, [right]: 0 - (sign * shift) / 2 } as Record<ColorId, number>;
 }
 
 // ---------------------------------------------------------------------------
@@ -648,9 +593,4 @@ export function tipFor(s: RgSummary): string {
 /** Punkte (nur Motivation, nicht Teil der Messung): 10 je ganz richtiger Folge */
 export function pointsFor(correct: number): number {
   return Math.max(0, Math.round(correct)) * 10;
-}
-
-/** Sehwinkel in Grad für eine Höhe in cm bei einem Abstand in cm */
-export function visualAngleDeg(cm: number, distCm: number): number {
-  return (2 * Math.atan(cm / (2 * distCm)) * 180) / Math.PI;
 }

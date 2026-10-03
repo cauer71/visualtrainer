@@ -114,6 +114,8 @@ export interface SimOpts {
   maxSeconds?: number;
   fps?: number;
   noCtxParams?: boolean;
+  /** Trainer-Ansicht mit Regler (`ctx.liveEnabled`), nur im Spielmodus */
+  liveEnabled?: boolean;
   /** Texte beim Zeichnen mitschneiden */
   recordText?: boolean;
   onFrame?: (ex: Exercise, now: number, ctx: ExerciseContext) => void;
@@ -179,6 +181,7 @@ function run(def: ExerciseDefinition, o: SimOpts): Sim {
     reducedMotion: o.reducedMotion ?? false,
     startLevel: null,
     ...(o.noCtxParams ? {} : { params: mode === 'demo' ? defaultParams(defs) : params, calib }),
+    ...(o.liveEnabled !== undefined ? { liveEnabled: mode === 'play' && o.liveEnabled } : {}),
     lang,
     texts: def.texts[lang],
     rng: createRng(o.seed ?? 7),

@@ -1002,12 +1002,142 @@ p {
   min-width: 3ch;
   text-align: right;
 }
+.run-body {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
 .stage {
   position: relative;
   flex: 1;
   min-height: 0;
+  min-width: 0;
   overflow: hidden;
   touch-action: none;
+}
+
+/* Trainer-Regler (nur Trainer-/Entwickler-Ansicht): neutrales Grau, außerhalb des Reizfelds – unter der Bühne, im Querformat daneben */
+.live-bar {
+  flex: none;
+  background: #1c1c1e;
+  color: #d8d8dc;
+  border-top: 1px solid #3a3a3e;
+  padding: 6px 10px calc(6px + env(safe-area-inset-bottom));
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  touch-action: manipulation;
+}
+.live-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 0 12px;
+  border: 1px solid #4a4a4f;
+  border-radius: 12px;
+  background: #2a2a2d;
+  color: #e6e6ea;
+  font: inherit;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  text-align: left;
+}
+.live-toggle-text {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.live-body {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4px;
+}
+.live-title,
+.live-value,
+.live-total,
+.live-note {
+  margin: 0;
+}
+.live-title {
+  font-size: 13px;
+  color: #a8a8ae;
+}
+.live-value {
+  font-size: 24px;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  color: #f2f2f4;
+}
+.live-total {
+  font-size: 14px;
+  color: #c4c4ca;
+  font-variant-numeric: tabular-nums;
+}
+.live-buttons {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(56px, 1fr));
+  gap: 8px;
+}
+.live-btn {
+  min-width: 56px;
+  min-height: 56px;
+  border-radius: 14px;
+  border: 1px solid #55555a;
+  background: #333337;
+  color: #f2f2f4;
+  font: inherit;
+  font-size: 24px;
+  font-weight: 800;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+.live-btn:active:not(:disabled) {
+  background: #4a4a50;
+}
+.live-btn:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+.live-note {
+  font-size: 12px;
+  line-height: 1.35;
+  color: #a8a8ae;
+}
+.live-keys {
+  display: none;
+}
+@media (hover: hover) and (pointer: fine) {
+  .live-keys {
+    display: block;
+  }
+}
+@media (orientation: landscape) and (min-width: 700px) {
+  .run-body.has-live {
+    flex-direction: row;
+  }
+  .live-bar {
+    width: 232px;
+    border-top: 0;
+    border-left: 1px solid #3a3a3e;
+    overflow-y: auto;
+  }
+  .live-bar:not(.is-open) {
+    width: 64px;
+  }
+  .live-bar:not(.is-open) .live-toggle-text {
+    display: none;
+  }
+  .live-bar:not(.is-open) .live-toggle {
+    justify-content: center;
+    padding: 0;
+  }
+  .live-buttons {
+    grid-template-columns: repeat(2, minmax(56px, 1fr));
+  }
 }
 .countdown {
   position: absolute;
@@ -1238,7 +1368,9 @@ p {
   text-align: right;
   font-weight: 800;
   font-variant-numeric: tabular-nums;
-  white-space: nowrap;
+  /* lange Werte (z. B. „4,0 Δ pro Sekunde“) dürfen umbrechen, statt in die Beschriftung zu ragen */
+  white-space: normal;
+  padding-left: 8px;
 }
 .result-table-text {
   display: inline-block;

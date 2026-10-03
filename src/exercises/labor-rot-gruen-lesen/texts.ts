@@ -1,4 +1,5 @@
 import type { ExerciseTexts } from '../../core/types';
+import { anaglyphFeedbackDe, anaglyphFeedbackIt, anaglyphParamsDe, anaglyphParamsIt } from '../_shared/anaglyph-texts';
 
 // Eigene Übung der Marke „Labor“ (klassische dichoptische Rot-Grün-Aufgabe), Texte in du-Form und einfacher Sprache.
 // Formulierungsregeln: nur beschreiben, was man in der Übung tut; keine Wirk-, Heil- oder Sicherheitsversprechen, keine
@@ -43,6 +44,7 @@ export const de: ExerciseTexts = {
     shown: 'Anzeigedauer der Folge',
     shift: 'Versatz der Bilder',
   },
+  liveLabels: { shiftPd: 'Versatz der Bilder (Zusatz zum geplanten Wert)' },
   metricHints: {
     accuracy:
       'Anteil der Folgen, die du ganz richtig eingegeben hast: alle Zeichen an der richtigen Stelle. Das ist ein Vergleichswert mit dir selbst bei gleichen Einstellungen, keine Bewertung deiner Augen.',
@@ -78,6 +80,7 @@ export const de: ExerciseTexts = {
     compare: 'Vergleiche diesen Durchlauf nur mit Durchläufen mit denselben Einstellungen – auf diesem Gerät und bei ähnlichem Licht.',
   },
   feedback: {
+    ...anaglyphFeedbackDe,
     trial: '{n} / {total}',
     right: 'Richtig',
     partial: '{k} von {n} Zeichen richtig',
@@ -85,12 +88,6 @@ export const de: ExerciseTexts = {
     erase: 'Löschen',
     done: 'Fertig',
     unlimited: 'unbegrenzt',
-    nameRed: 'Rot',
-    nameGreen: 'Grün',
-    nameCyan: 'Cyan',
-    lensRed: 'rot',
-    lensGreen: 'grün',
-    lensCyan: 'cyan',
     rowColor: '{c}',
     colorRow: '{bad} von {n}',
     colorDetail: '{p} % · {miss} fehlend · {wrong} verwechselt',
@@ -112,31 +109,6 @@ export const de: ExerciseTexts = {
     moreTitle: 'Weitere Werte',
     moreNote:
       'Bei unbegrenzter Anzeige enthält die Eingabezeit auch die Zeit zum Lesen und die Verzögerung des Touch-Sensors. Vergleiche nur mit deinen eigenen Werten auf diesem Gerät und mit denselben Einstellungen.',
-    checkTitle: 'Prüfbild für die Brille (ohne Wertung)',
-    checkText:
-      'Mit dem roten Glas vor dem Auge sollte die grüne (bei Rot und Cyan: cyanfarbene, bei Rot–Blau: blaue) Fläche dunkel erscheinen und umgekehrt. Wenn nicht: Helligkeit und Brille prüfen oder die Farbtöne ändern.',
-    checkTextSteps: 'Das Prüfbild bewertet nichts; es hilft nur, Brille und Farben einzustellen. Die Werte gelten danach für die Übung.',
-    checkStepGlasses: 'Setze die Brille auf. Trägst du eine Korrekturbrille, nimm am besten eine Überbrille. Der Raum darf eher dunkel sein.',
-    checkStepLeft: 'Halte das linke Auge zu: Du darfst nur die {c} Fläche sehen, die andere muss fast verschwinden.',
-    checkStepRight: 'Halte das rechte Auge zu: Du darfst nur die {c} Fläche sehen, die andere muss fast verschwinden.',
-    checkStepLens: 'Siehst du die falsche Fläche? Dann sitzt das Glas auf der anderen Seite. Wähle, welches Glas vor deinem linken Auge sitzt:',
-    checkLensIs: 'Linkes Glas: {c}',
-    checkStepLevel: 'Stelle die Helligkeit jeder Farbe so ein, dass beim Zuhalten eines Auges die Fläche des anderen Auges fast verschwindet:',
-    checkLevelValue: '{c}: {v} %',
-    checkLevelDown: '{c} dunkler',
-    checkLevelUp: '{c} heller',
-    checkGhost:
-      'Siehst du durch ein Auge beide Flächen (Geisterbild)? Stelle die hellere Farbe dunkler, verringere Raumlicht und Spiegelungen auf dem Bildschirm und prüfe die Bildschirmhelligkeit.',
-    nameBlue: 'Blau',
-    lensBlue: 'blau',
-    adjRed: 'rote',
-    adjGreen: 'grüne',
-    adjCyan: 'cyanfarbene',
-    adjBlue: 'blaue',
-    missRed: 'Roter Strich fehlt',
-    missGreen: 'Grüner Strich fehlt',
-    missCyan: 'Cyan-Strich fehlt',
-    missBlue: 'Blauer Strich fehlt',
     strokeTitle: 'Kontrollstriche (Hinweis, kein Befund)',
     strokeRow: 'Strich in {c} fehlte',
     strokeValue: '{k} von {n} Folgen',
@@ -149,6 +121,15 @@ export const de: ExerciseTexts = {
     shiftRamp: 'wuchs über {n} Durchgänge von 0 auf diesen Wert, der erste Durchgang hatte Versatz 0',
     shiftWarmup: 'der erste Durchgang hatte Versatz 0',
     shiftLimited: 'auf diesem Bildschirm auf {pd} Δ begrenzt, damit die Folge passt',
+    shiftLive: 'mit dem Trainer-Regler: größter Versatz {max} Δ',
+    liveTitle: 'Trainer-Regler (während der Übung)',
+    liveCount: 'Versatz vom Trainer verändert',
+    liveCountValue: '{n}-mal, zuletzt Zusatz {v} {u} (gesamt {t} {u})',
+    liveEntry: 'Durchgang {k}, {time}',
+    liveEntryValue: 'Zusatz {v} {u} (gesamt {t} {u})',
+    liveMore: '… und {n} weitere Änderungen',
+    liveNote:
+      'Der Regler gilt nur für diesen Durchlauf und verändert keine Einstellungen. Der Versatz ist der geplante Wert plus der Zusatz, den die Trainerin oder der Trainer eingestellt hat (0 bis 12 Δ). Auch der erste Durchgang kann so einen Versatz bekommen.',
     shiftNote: 'Der Versatz ist keine Prismenmessung und kein Ersatz für eine Untersuchung. Er gilt nur für diesen Bildschirm, diese Kalibrierung und diesen Abstand.',
   },
   progression: [
@@ -171,8 +152,11 @@ export const de: ExerciseTexts = {
     'Bei Schielen, Doppelbildern, Schwindel oder Kopfschmerz: Versatz nur nach Absprache mit der behandelnden Fachperson oder gar nicht. Bei Beschwerden sofort aufhören (Muchnick, 2008, S. 6 und 28).',
     'Dunkler Raum und Überbrille: Rot und Grün trennen sich besser bei gedämpftem Raumlicht und ohne Spiegelungen auf dem Bildschirm. Trägst du eine Korrekturbrille, nimm eine Überbrille, die über deiner Brille sitzt.',
     'Kontrollstriche (optional): Ein roter Strich über und ein Strich in der zweiten Farbe unter der Folge zeigen, ob beide Bilder ankommen. Fehlt einer, tippst du „Strich fehlt“ (Tastatur: Pfeil hoch oder runter). Gezählt wird nur, wie oft das vorkam – ein Hinweis, kein Befund.',
+    'Trainer-Regler: In der Trainer- und Entwickler-Ansicht kann der Versatz während der Übung in kleinen Schritten verändert werden (Zusatz zum geplanten Versatz, höchstens 2 Δ je Tastendruck, Anzeige gleitet weich, jede Änderung wird mit Zeitpunkt festgehalten). Bei Doppelbildern, Schwindel oder Kopfschmerz sofort zurücknehmen und Pause machen.',
   ],
   params: {
+    tones: anaglyphParamsDe.tones,
+    glassesCheck: anaglyphParamsDe.glassesCheck,
     symbols: {
       label: 'Zeichenart',
       hint: 'Ziffern, Buchstaben oder beides gemischt (ohne leicht verwechselbare Zeichen). In einer Folge kommt kein Zeichen doppelt vor, solange der Vorrat reicht.',
@@ -208,11 +192,6 @@ export const de: ExerciseTexts = {
       hint: 'Wie viele Folgen ein Durchlauf hat (6 bis 20). Halte den Durchlauf kurz; bei Ermüdung höre auf.',
       short: '{v} Folgen|{v} Folgen',
     },
-    tones: {
-      label: 'Farbtöne',
-      hint: 'Standard ist reines Rot (#FF0000) und reines Grün (#00FF00). Alternativen: Rot und Cyan (#FF0000 und #00FFFF) oder Rot und Blau (#FF0000 und #00A0FF). Rot-Cyan-Brillen funktionieren mit dem Farbpaar Rot–Blau. Das Prüfbild zeigt die eingestellten Farben.',
-      options: { redgreen: 'Rot und Grün', redcyan: 'Rot und Cyan', redblue: 'Rot und Blau' },
-    },
     brightness: {
       label: 'Helligkeit der Farben',
       hint: 'Gemeinsamer Anteil der vollen Farbhelligkeit, 80 bis 100 Prozent. Passt die Helligkeit nicht zur Brille, hilft oft ein kleiner Schritt; prüfe es mit dem Prüfbild. Jede Farbe lässt sich zusätzlich einzeln dunkler stellen.',
@@ -227,11 +206,6 @@ export const de: ExerciseTexts = {
       label: 'Helligkeit zweite Farbe',
       hint: 'Anteil der Helligkeit der grünen, cyanfarbenen oder blauen Zeichen, 30 bis 100 Prozent in Schritten von 10, zusätzlich zur gemeinsamen Helligkeit. Im Prüfbild („Schritt für Schritt“) stellst du sie mit den Tasten „dunkler“ und „heller“ ein.',
       short: 'Zweite Farbe {v} %',
-    },
-    glassesCheck: {
-      label: 'Prüfbild im Intro',
-      hint: 'Einfach: zwei Farbflächen. Schritt für Schritt: Brille aufsetzen, je ein Auge zuhalten, das Glas wählen und die Helligkeit jeder Farbe einstellen. Das Prüfbild bewertet nichts und ändert die Übung nur über die Einstellungen, die du darin wählst.',
-      options: { simple: 'Einfach', steps: 'Schritt für Schritt' },
     },
     controlMarks: {
       label: 'Kontrollstriche',
@@ -288,6 +262,7 @@ export const it: ExerciseTexts = {
     shown: 'Durata di visualizzazione della sequenza',
     shift: 'Spostamento delle immagini',
   },
+  liveLabels: { shiftPd: 'Spostamento delle immagini (aggiunta al valore previsto)' },
   metricHints: {
     accuracy:
       'Quota delle sequenze che hai digitato completamente giuste: tutti i simboli al posto giusto. È un valore di confronto con te stesso a parità di impostazioni, non una valutazione dei tuoi occhi.',
@@ -323,6 +298,7 @@ export const it: ExerciseTexts = {
     compare: 'Confronta questo giro solo con giri con le stesse impostazioni – su questo dispositivo e con luce simile.',
   },
   feedback: {
+    ...anaglyphFeedbackIt,
     trial: '{n} / {total}',
     right: 'Giusto',
     partial: '{k} simboli su {n} giusti',
@@ -330,12 +306,6 @@ export const it: ExerciseTexts = {
     erase: 'Cancella',
     done: 'Fatto',
     unlimited: 'illimitata',
-    nameRed: 'Rosso',
-    nameGreen: 'Verde',
-    nameCyan: 'Ciano',
-    lensRed: 'rossa',
-    lensGreen: 'verde',
-    lensCyan: 'ciano',
     rowColor: '{c}',
     colorRow: '{bad} su {n}',
     colorDetail: '{p} % · {miss} mancanti · {wrong} scambiati',
@@ -357,31 +327,6 @@ export const it: ExerciseTexts = {
     moreTitle: 'Altri valori',
     moreNote:
       'Con la visualizzazione illimitata il tempo di digitazione comprende anche il tempo di lettura e il ritardo del sensore touch. Confronta solo con i tuoi valori su questo dispositivo e con le stesse impostazioni.',
-    checkTitle: 'Immagine di controllo per gli occhiali (senza valutazione)',
-    checkText:
-      'Con la lente rossa davanti all’occhio la superficie verde (con rosso e ciano: ciano, con rosso–blu: blu) dovrebbe apparire scura e viceversa. In caso contrario: controlla luminosità e occhiali o cambia le tonalità.',
-    checkTextSteps: 'L’immagine di controllo non valuta nulla; serve solo a regolare occhiali e colori. I valori valgono poi per l’esercizio.',
-    checkStepGlasses: 'Metti gli occhiali. Se porti occhiali correttivi, meglio usare occhiali da sovrapporre. La stanza può essere piuttosto buia.',
-    checkStepLeft: 'Copri l’occhio sinistro: devi vedere solo la superficie {c}, l’altra deve quasi sparire.',
-    checkStepRight: 'Copri l’occhio destro: devi vedere solo la superficie {c}, l’altra deve quasi sparire.',
-    checkStepLens: 'Vedi la superficie sbagliata? Allora la lente è dall’altra parte. Scegli quale lente è davanti al tuo occhio sinistro:',
-    checkLensIs: 'Lente sinistra: {c}',
-    checkStepLevel: 'Regola la luminosità di ogni colore in modo che, coprendo un occhio, la superficie dell’altro occhio quasi sparisca:',
-    checkLevelValue: '{c}: {v} %',
-    checkLevelDown: '{c} più scuro',
-    checkLevelUp: '{c} più chiaro',
-    checkGhost:
-      'Con un occhio vedi entrambe le superfici (immagine fantasma)? Rendi più scuro il colore più chiaro, riduci la luce della stanza e i riflessi sullo schermo e controlla la luminosità dello schermo.',
-    nameBlue: 'Blu',
-    lensBlue: 'blu',
-    adjRed: 'rossa',
-    adjGreen: 'verde',
-    adjCyan: 'ciano',
-    adjBlue: 'blu',
-    missRed: 'Manca il trattino rosso',
-    missGreen: 'Manca il trattino verde',
-    missCyan: 'Manca il trattino ciano',
-    missBlue: 'Manca il trattino blu',
     strokeTitle: 'Trattini di controllo (indicazione, non referto)',
     strokeRow: 'Trattino mancante: {c}',
     strokeValue: '{k} su {n} sequenze',
@@ -394,6 +339,15 @@ export const it: ExerciseTexts = {
     shiftRamp: 'è cresciuto in {n} sequenze da 0 a questo valore, la prima sequenza aveva spostamento 0',
     shiftWarmup: 'la prima sequenza aveva spostamento 0',
     shiftLimited: 'limitato su questo schermo a {pd} Δ perché la sequenza entri',
+    shiftLive: 'con il regolatore del trainer: spostamento massimo {max} Δ',
+    liveTitle: 'Regolatore del trainer (durante l’esercizio)',
+    liveCount: 'Spostamento modificato dal trainer',
+    liveCountValue: '{n} volte, da ultimo aggiunta {v} {u} (totale {t} {u})',
+    liveEntry: 'Sequenza {k}, {time}',
+    liveEntryValue: 'Aggiunta {v} {u} (totale {t} {u})',
+    liveMore: '… e altre {n} modifiche',
+    liveNote:
+      'Il regolatore vale solo per questo giro e non cambia le impostazioni. Lo spostamento è il valore previsto più l’aggiunta impostata dal trainer (da 0 a 12 Δ). Anche la prima sequenza può ricevere così uno spostamento.',
     shiftNote: 'Lo spostamento non è una misurazione prismatica e non sostituisce una visita. Vale solo per questo schermo, questa calibrazione e questa distanza.',
   },
   progression: [
@@ -416,8 +370,11 @@ export const it: ExerciseTexts = {
     'In caso di strabismo, visione doppia, vertigini o mal di testa: spostamento solo dopo accordo con lo specialista che ti segue, oppure per niente. In caso di disturbi smetti subito (Muchnick, 2008, p. 6 e 28).',
     'Stanza buia e occhiali da sovrapporre: rosso e verde si separano meglio con luce soffusa e senza riflessi sullo schermo. Se porti occhiali correttivi, usa occhiali da sovrapporre alla tua montatura.',
     'Trattini di controllo (facoltativi): un trattino rosso sopra e uno nel secondo colore sotto la sequenza mostrano se arrivano entrambe le immagini. Se ne manca uno, tocca “Manca il trattino” (tastiera: freccia su o giù). Si conta solo quante volte è successo – un’indicazione, non un referto.',
+    'Regolatore del trainer: nella vista del trainer e dello sviluppatore lo spostamento può essere cambiato durante l’esercizio a piccoli passi (aggiunta al valore previsto, al massimo 2 Δ per tasto, la visualizzazione scorre dolcemente, ogni modifica viene registrata con l’orario). In caso di visione doppia, vertigini o mal di testa riduci subito e fai una pausa.',
   ],
   params: {
+    tones: anaglyphParamsIt.tones,
+    glassesCheck: anaglyphParamsIt.glassesCheck,
     symbols: {
       label: 'Tipo di simboli',
       hint: 'Cifre, lettere o entrambe mescolate (senza simboli facilmente confondibili). In una sequenza nessun simbolo compare due volte finché la scorta basta.',
@@ -453,11 +410,6 @@ export const it: ExerciseTexts = {
       hint: 'Quante sequenze ha un giro (da 6 a 20). Tieni il giro breve; in caso di stanchezza smetti.',
       short: '{v} sequenza|{v} sequenze',
     },
-    tones: {
-      label: 'Tonalità',
-      hint: 'Lo standard è rosso puro (#FF0000) e verde puro (#00FF00). Alternative: rosso e ciano (#FF0000 e #00FFFF) oppure rosso e blu (#FF0000 e #00A0FF). Gli occhiali rosso-ciano funzionano con la coppia di colori rosso–blu. L’immagine di controllo mostra i colori impostati.',
-      options: { redgreen: 'Rosso e verde', redcyan: 'Rosso e ciano', redblue: 'Rosso e blu' },
-    },
     brightness: {
       label: 'Luminosità dei colori',
       hint: 'Quota comune della luminosità piena dei colori, dall’80 al 100 per cento. Se la luminosità non si adatta agli occhiali, spesso aiuta un piccolo passo; controllalo con l’immagine di controllo. Ogni colore si può inoltre scurire singolarmente.',
@@ -472,11 +424,6 @@ export const it: ExerciseTexts = {
       label: 'Luminosità del secondo colore',
       hint: 'Quota della luminosità dei simboli verdi, ciano o blu, dal 30 al 100 per cento a passi di 10, oltre alla luminosità comune. Nell’immagine di controllo (“Passo dopo passo”) la regoli con i tasti “più scuro” e “più chiaro”.',
       short: 'Secondo colore {v} %',
-    },
-    glassesCheck: {
-      label: 'Immagine di controllo nell’introduzione',
-      hint: 'Semplice: due superfici colorate. Passo dopo passo: metti gli occhiali, copri un occhio alla volta, scegli la lente e regola la luminosità di ogni colore. L’immagine di controllo non valuta nulla e cambia l’esercizio solo tramite le impostazioni che scegli al suo interno.',
-      options: { simple: 'Semplice', steps: 'Passo dopo passo' },
     },
     controlMarks: {
       label: 'Trattini di controllo',

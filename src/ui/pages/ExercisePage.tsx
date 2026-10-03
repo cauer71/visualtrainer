@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'preact/hooks';
 import { brand } from '../../config/brand';
 import { createFormatter } from '../../core/format';
+import { hasLiveControls } from '../../core/live';
 import { Runner } from '../../core/runner';
 import { sfx, unlockAudio } from '../../core/sound';
 import { isDefaultParams, summarizeParams, variantKey } from '../../core/params';
@@ -15,6 +16,7 @@ import { ColorCheck } from '../components/ColorCheck';
 import { ArtIcon, Icon } from '../components/Icon';
 import { FeedbackButton } from '../components/FeedbackDialog';
 import { LaborBadge } from '../components/LaborBadge';
+import { LiveBar } from '../components/LiveBar';
 import { Sparkline } from '../components/Sparkline';
 import { enterImmersive, exitImmersive } from '../immersive';
 import { metricParts, metricText } from '../metrics';
@@ -260,7 +262,9 @@ function RunView({
   onQuit: () => void;
   onRestart: () => void;
 }) {
-  const { ui, lang, sound, setSound } = useApp();
+  const { ui, lang, sound, setSound, isOptician } = useApp();
+  // Trainer-Regler (Versatz o. Ä.) nur in der Trainer- und Entwickler-Ansicht, nie beim Kunden
+  const hasLive = hasLiveControls(def, isOptician);
   const host = useRef<HTMLDivElement>(null);
   const progress = useRef<HTMLDivElement>(null);
   const score = useRef<HTMLSpanElement>(null);
@@ -313,6 +317,7 @@ function RunView({
       options: getExerciseOptions(def.id, def.options),
       params,
       calib: getCalibSettings(),
+      live: hasLive,
       sfx,
       domHud: { progress: progress.current, score: score.current, label: label.current },
       onFinish: (r) => onFinish(r, params),
@@ -375,7 +380,10 @@ function RunView({
           <Icon name={sound ? 'soundOn' : 'soundOff'} size={22} />
         </button>
       </div>
-      <div class="stage" ref={host} />
+      <div class={`run-body${hasLive ? ' has-live' : ''}`}>
+        <div class="stage" ref={host} />
+        {hasLive ? <LiveBar def={def} runner={() => runnerRef.current} /> : null}
+      </div>
       {count !== null && !paused ? (
         <div class="countdown" aria-live="assertive">
           <span key={count} class="countdown-num">

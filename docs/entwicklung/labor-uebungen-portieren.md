@@ -3,6 +3,12 @@
 Der Labor-Prototyp (Branch `origin/labor-offline-prototyp`, Ordner `labor/`, reines HTML/JS, CommonJS) hat 14 Übungen.
 Dazu kommt als 15. Übung der Marke „Labor“ `labor-rot-gruen-lesen` (Rot-Grün-Brille): keine Portierung, sondern eine eigene Umsetzung der
 klassischen dichoptischen Aufgabe (`src/exercises/labor-rot-gruen-lesen/`; Prüfbild im Intro über `ExerciseDefinition.colorCheck`).
+Als 16. und 17. kommen `labor-fusion` („Fusion – Bilder verschmelzen“, aus `ex/fusion.js`) und `labor-stereo` („Tiefe sehen – Zufallspunkte“,
+aus `ex/stereo.js`): neu geschrieben mit dem Farbpaar-/Brillen-Baukasten `src/exercises/_shared/anaglyph.ts` (gemeinsam mit Rot-Grün-Lesen:
+Farben und Helligkeit je Farbe, Δ ↔ cm ↔ Pixel ↔ Winkelsekunden, Konvergenz/Divergenz, Prüfbild Schritt für Schritt) und mit dem **Trainer-Regler**
+für den Versatz während der Übung (`docs/entwicklung/neue-uebung.md`, Abschnitt „Trainer-Regler“). Insgesamt gibt es damit **17 Labor-Übungen**:
+14 aus dem Prototyp (Mapping in Abschnitt 5) plus drei neue bzw. ergänzte (Rot-Grün-Lesen, Fusion, Tiefe sehen).
+Die Funktionsprüfungen (hess, worth, schober, diplopia, vertical, projection) und die Gleichgewichts-Übungen des Prototyps sind **nicht** übernommen.
 Sie werden in Blickfit **neu geschrieben** (TypeScript/Preact, Canvas-Modul wie die Übungen unter `src/exercises/`), nicht kopiert:
 der Prototyp wird nicht ins Repository übernommen, nur portiert. Phase A hat die Grundlage gebaut und als Vorbild **eine**
 Übung portiert: **`labor-spot-touch`** (aus `ex/spots.js` + `help/spots.js`). Orientiere dich an ihr, Datei für Datei.
@@ -108,7 +114,7 @@ calib.sizePx(cm) / fitCm(cm) / isLimited(cm) / maxCm()     // begrenzt auf 0,9 �
 - **Filter:** `useTagFilter()` (`src/ui/tag-filter.ts`): `?tag=labor|nolabor|all` (Hash oder Seiten-URL) vor `sessionStorage` vor „Alle“.
 - `ctx.params`/`ctx.calib` sind im Typ **optional** (ältere Test-Attrappen bauen `ExerciseContext` ohne sie); der Runner setzt sie immer. In Übungen immer `paramsOf(ctx, PARAMS)` und `calibOf(ctx)` nutzen.
 
-## 5. Mapping der 14 Labor-Übungen
+## 5. Mapping der 14 Labor-Übungen (Stand Phase B)
 
 Titel der Labor-Übungen bleiben (die Marke „Labor“ unterscheidet sie von ähnlichen bestehenden, z. B. „Tasten-Wahl“, „Doppelt gefordert“). Alle: `tags: ['labor']`, `showsLevel: false`, `level: 1`. Farbe nach Kategorie (Varianten erlaubt): reaktion `#C8641E`, bewegung `#2E6DB4`, wahrnehmung `#8C6D4A`, konzentration `#7A5195`, gedaechtnis `#2F8F83`.
 

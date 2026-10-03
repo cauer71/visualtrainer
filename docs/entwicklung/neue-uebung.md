@@ -126,3 +126,23 @@ npx tsc --noEmit
 
 Übungen mit eigenen Einstellungen (`params`), Größen in cm/Sehwinkel (`ctx.calib`) und der Marke `labor` sind in
 `docs/entwicklung/labor-uebungen-portieren.md` beschrieben; Referenz ist `src/exercises/labor-spot-touch/`.
+
+## Trainer-Regler (`liveControls`): einen Wert während der Übung verstellen
+
+Die Trainerin/der Trainer kann bei manchen Übungen einen Wert **während der Übung** verändern (heute: Versatz in Prismendioptrien Δ bei
+Rot-Grün-Lesen und Fusion, Disparität in Winkelsekunden bei Tiefe sehen). Technik, abwärtskompatibel (Übungen ohne Regler bleiben unverändert):
+
+- `ExerciseDefinition.liveControls`: Liste `{ key, unit, min, max, step, coarseStep }`; Beschriftung je Sprache in `texts.liveLabels[key]`.
+- `Exercise.setLive?(key, value)` und `Exercise.getLive?(): LiveState | null` (Wert, Grenzen, Schritte, Einheit, `additive`, `effective`).
+  `additive: true` heißt: der Wert ist ein **Zusatz** zum automatischen Wert der Übung, `effective` der angezeigte Gesamtwert.
+- `ctx.liveEnabled` ist `true`, wenn die Trainer-/Entwickler-Ansicht den Regler zeigt (Benutzer-Ansicht und Intro-Film: nie). Die Übung darf
+  sich darauf verlassen, dass ohne Regler der eingestellte Wert bleibt, und muss dann trotzdem weiterlaufen (z. B. „Trainer“ wie „automatisch“).
+- Die Leiste (`src/ui/components/LiveBar.tsx`) liegt außerhalb der Bühne (unter ihr, im Querformat daneben), neutral grau, Tasten − / + und −− / ++
+  ≥ 56 px, Tastatur `+`, `-`, Bild auf, Bild ab (Hilfen in `src/core/live.ts`); sie fragt `getLive()` ab und ruft `setLive()`.
+- Pflicht in der Übung: Grenzen einhalten, **kein Sprung über den groben Schritt** je Aufruf, Anzeige weich gleiten lassen (≥ 150 ms), jede
+  Änderung mit Zeitpunkt, Wert, Durchgang protokollieren und im Ergebnis ausweisen, nichts dauerhaft verändern. Bausteine dafür:
+  `LiveValue`, `liveDetail` in `src/exercises/_shared/anaglyph.ts`.
+- Der Verlauf des Reglers gehört **nicht** zum Variantenschlüssel (er ist kein Parameter); Startwert und Steuerungsart (`automatisch` / `Trainer`)
+  sind Parameter und gehören dazu.
+- Tests: `tests/unit/anaglyph-shared.test.ts` (Wert, Gleiten, Protokoll, Tasten), je Übung `…-sim.test.ts` und `labor-rot-gruen-lesen-live.test.ts`;
+  Browser: `tests/e2e/fusion.mjs`, `stereo.mjs` (Trainer-Ansicht mit Leiste, Benutzer-Ansicht ohne).

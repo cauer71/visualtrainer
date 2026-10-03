@@ -22,7 +22,8 @@ import { calibOf } from '../../core/calib';
 import { C, fillRR, font, hit, rrPath, text, type Rect } from '../../core/draw';
 import { paramsOf } from '../../core/params';
 import { clamp } from '../../core/stats';
-import type { ColorCheckAdjust, ColorCheckInfo, Exercise, ExerciseContext, ExerciseDefinition, ExerciseParams, ExerciseResult, ExerciseTexts, Metric, NumberParamDef, PointerInfo, ResultDetailRow, ResultDetailTable } from '../../core/types';
+import type { ColorCheckInfo, Exercise, ExerciseContext, ExerciseDefinition, ExerciseParams, ExerciseResult, ExerciseTexts, LiveState, Metric, PointerInfo, ResultDetailRow, ResultDetailTable } from '../../core/types';
+import { anaglyphColorCheck, colorNameOf, lensNameOf, liveDetail, LiveValue, readAnaglyph } from '../_shared/anaglyph';
 import { restPoint } from '../_shared/tippziele';
 import { drawSoftCheck, drawSoftCross } from '../_shared/weiche-marken';
 import { rgLayout, type RgLayout } from './layout';
@@ -38,6 +39,7 @@ import {
   QUICK_TRIALS,
   rgParams,
   RgSession,
+  shiftPdForTrial,
   shiftPx,
   showMs,
   tipFor,
@@ -53,6 +55,10 @@ import {
 import { de, it } from './texts';
 
 const LEAD_MS = 500;
+/** Trainer-Regler für den Versatz: Zusatz zum geplanten Versatz, ±12 Δ (Obergrenze der Einstellung), Schritte 0,5 und 2 Δ */
+const LIVE_MAX_PD = 12;
+const LIVE_STEP = 0.5;
+const LIVE_COARSE = 2;
 const BLACK = '#000000';
 /** Neutrales Hellgrau für Bedienelemente und Beschriftung (beide Augen sehen es) */
 const UI_LINE = 'rgba(255,255,255,0.28)';
@@ -104,6 +110,8 @@ class RotGruenLesen implements Exercise {
   private lastCaption = '';
   /** Kleinster möglicher Versatz (px), auf den enge Bühnen den gewünschten Versatz begrenzt haben (null = nie begrenzt) */
   private shiftCapPx: number | null = null;
+  /** Trainer-Regler: Zusatz zum geplanten Versatz (Δ), weich gleitend, mit Protokoll */
+  private readonly live = new LiveValue({ start: 0, min: -LIVE_MAX_PD, max: LIVE_MAX_PD, maxJump: LIVE_COARSE });
 
   constructor(private readonly ctx: ExerciseContext) {
     this.demo = ctx.mode === 'demo';
@@ -132,8 +140,36 @@ class RotGruenLesen implements Exercise {
       length: this.p.length,
       keyCount: this.session.keys.length,
       controlMarks: this.p.controlMarks,
-      shiftPx: shiftPx(this.p.shiftPd, calib.viewDistanceCm, calib.pxPerCm),
+      // Platz für den größten Versatz: der eingestellte, oder – wenn der Trainer-Regler mehr verlangt – der gerade angezeigte
+      shiftPx: shiftPx(Math.max(this.p.shiftPd, this.session.shiftPd), calib.viewDistanceCm, calib.pxPerCm),
     });
+  }
+
+  // --- Trainer-Regler ---
+
+  /** Versatz (Δ) des laufenden Durchgangs: geplanter Wert (erster Durchgang 0, ggf. Aufbau) plus Zusatz des Trainers, 0 bis 12 Δ */
+  private effectivePd(extra: number): number {
+    return clamp(shiftPdForTrial(this.p, this.session.idx) + extra, 0, LIVE_MAX_PD);
+  }
+
+  setLive(key: string, value: number): void {
+    if (this.demo || this.done || !this.started || key !== 'shiftPd') return;
+    this.live.set(value, this.ctx.now(), Math.min(this.session.idx + 1, this.p.trials), (target) => this.effectivePd(target));
+  }
+
+  getLive(): LiveState | null {
+    if (this.demo || this.done || !this.started) return null;
+    return {
+      key: 'shiftPd',
+      value: this.live.target,
+      min: -LIVE_MAX_PD,
+      max: LIVE_MAX_PD,
+      step: LIVE_STEP,
+      coarseStep: LIVE_COARSE,
+      unit: 'Δ',
+      additive: true,
+      effective: this.effectivePd(this.live.shown),
+    };
   }
 
   /** Verschiebung je Farbe (px) im laufenden Durchgang; nie größer als auf der Bühne möglich (dann wird das vermerkt) */
@@ -190,7 +226,7 @@ class RotGruenLesen implements Exercise {
     return this.ctx.texts.feedback.trial.replace('{n}', String(n)).replace('{total}', String(this.p.trials));
   }
 
-  update(_dt: number, t: number): void {
+  update(dt: number, t: number): void {
     if (this.done) return;
     const s = this.session;
     if (!this.started) {
@@ -200,6 +236,9 @@ class RotGruenLesen implements Exercise {
       this.limited = this.glyphCm(this.layout()) < this.p.sizeCm - 0.05;
     }
     s.update(t);
+    // Versatz = geplanter Wert + Zusatz des Trainers (gleitet weich); ohne Regler-Benutzung bleibt er der geplante Wert
+    this.live.update(dt);
+    if (this.live.log.length > 0) s.shiftPd = this.effectivePd(this.live.shown);
     if (s.phase !== this.lastPhase) this.onPhase(s.phase);
     this.noticeResult(t);
     if (this.ctx.autoplay) this.autoUpdate();
@@ -395,7 +434,7 @@ class RotGruenLesen implements Exercise {
   }
 
   /** Zeile „Versatz der Bilder“: Δ, Richtung, Umrechnung in cm und px, Aufbau, Begrenzung, Kalibrierung */
-  private shiftRow(calib: ReturnType<typeof calibOf>, L: RgLayout): ResultDetailRow {
+  private shiftRow(calib: ReturnType<typeof calibOf>, L: RgLayout, shiftMax: number): ResultDetailRow {
     const { texts, fmt } = this.ctx;
     const f = texts.feedback;
     const p = this.p;
@@ -412,6 +451,7 @@ class RotGruenLesen implements Exercise {
       const cap = pxToPd(Math.min(this.shiftCapPx, L.shiftMaxPx), dist, calib.pxPerCm);
       notes.push(f.shiftLimited.replace('{pd}', fmt.num(cap, 1)));
     }
+    if (this.live.log.length) notes.push(f.shiftLive.replace('{max}', fmt.num(shiftMax, 1)));
     if (!calib.calibrated) notes.push(f.notCalibrated);
     return {
       label: texts.metrics.shift,
@@ -481,9 +521,12 @@ class RotGruenLesen implements Exercise {
     more.push({ label: texts.metrics.size, value: f.sizeValue.replace('{cm}', fmt.num(cm, 1)), text: sizeNotes.join(' · ') });
     const ms = showMs(this.p);
     more.push({ label: texts.metrics.shown, value: ms === null ? f.unlimited : fmt.time(ms, 0) });
-    const shifted = this.p.shiftPd > 0;
-    if (shifted) more.push(this.shiftRow(calib, L));
+    const shifted = this.p.shiftPd > 0 || this.live.log.length > 0;
+    if (shifted) more.push(this.shiftRow(calib, L, sum.shiftMax));
     details.push({ title: f.moreTitle, rows: more, note: shifted ? `${f.moreNote} ${f.shiftNote}` : f.moreNote });
+    // Trainer-Regler: jede Änderung mit Zeitpunkt (nur wenn benutzt)
+    const liveTable = liveDetail(this.live.log, f, fmt, 'Δ', 1, true);
+    if (liveTable) details.push(liveTable);
 
     return {
       primary: { key: 'accuracy', value: sum.accuracy ?? 0, unit: 'percent', better: 'higher' },
@@ -741,71 +784,9 @@ class RotGruenLesen implements Exercise {
   }
 }
 
-/** Name der Farbe (Rot; Grün, Cyan oder Blau je nach Farbpaar) */
-function colorNameOf(tx: ExerciseTexts, tones: RgParams['tones'], c: ColorId): string {
-  const f = tx.feedback;
-  return c === 'a' ? f.nameRed : tones === 'redcyan' ? f.nameCyan : tones === 'redblue' ? f.nameBlue : f.nameGreen;
-}
-
-/** Name des Glases (rot; grün, cyan oder blau) */
-function lensNameOf(tx: ExerciseTexts, tones: RgParams['tones'], c: ColorId): string {
-  const f = tx.feedback;
-  return c === 'a' ? f.lensRed : tones === 'redcyan' ? f.lensCyan : tones === 'redblue' ? f.lensBlue : f.lensGreen;
-}
-
-/**
- * Prüfbild im Intro (ohne Wertung): zwei Flächen in den eingestellten Farben, damit die Brille geprüft werden kann.
- * Mit „Schritt für Schritt“ (Einstellung `glassesCheck`): Brille aufsetzen, je ein Auge zuhalten, Glas wählen, Helligkeit je
- * Farbe verstellen (30–100 %, Schritte 10 %), ein Satz zu Geisterbildern. Die Werte werden als Einstellungen gespeichert.
- */
+/** Prüfbild im Intro (ohne Wertung); Aufbau und Texte teilen sich die Anaglyphen-Übungen (_shared/anaglyph.ts) */
 function colorCheck(params: ExerciseParams, tx: ExerciseTexts): ColorCheckInfo {
-  const p = rgParams(params);
-  const css = toneCss(p.tones, p.brightness, p.redLevel, p.secondLevel);
-  const f = tx.feedback;
-  const info: ColorCheckInfo = {
-    title: f.checkTitle,
-    text: f.checkText,
-    panels: [
-      { color: css.a, label: colorNameOf(tx, p.tones, 'a') },
-      { color: css.b, label: colorNameOf(tx, p.tones, 'b') },
-    ],
-  };
-  if (p.glassesCheck !== 'steps') return info;
-  const eyes = eyeColors(p.leftLens);
-  const adj = (c: ColorId) => (c === 'a' ? f.adjRed : p.tones === 'redcyan' ? f.adjCyan : p.tones === 'redblue' ? f.adjBlue : f.adjGreen);
-  const lensOption = (v: 'red' | 'green') => ({ value: v, label: f.checkLensIs.replace('{c}', lensNameOf(tx, p.tones, v === 'red' ? 'a' : 'b')) });
-  const level = (key: 'redLevel' | 'secondLevel', c: ColorId): ColorCheckAdjust => {
-    const d = PARAMS.find((x) => x.key === key) as NumberParamDef;
-    const value = key === 'redLevel' ? p.redLevel : p.secondLevel;
-    const name = colorNameOf(tx, p.tones, c);
-    return {
-      kind: 'level',
-      key,
-      value,
-      min: d.min,
-      max: d.max,
-      step: d.step,
-      valueText: f.checkLevelValue.replace('{c}', name).replace('{v}', String(value)),
-      downLabel: f.checkLevelDown.replace('{c}', name),
-      upLabel: f.checkLevelUp.replace('{c}', name),
-    };
-  };
-  return {
-    ...info,
-    text: f.checkTextSteps,
-    steps: [
-      { text: f.checkStepGlasses },
-      // Linkes Auge zugehalten → das rechte Auge sieht nur die Farbe seines Glases, und umgekehrt
-      { text: f.checkStepLeft.replace('{c}', adj(eyes.right)) },
-      { text: f.checkStepRight.replace('{c}', adj(eyes.left)) },
-      {
-        text: f.checkStepLens,
-        adjust: [{ kind: 'choice', key: 'leftLens', label: tx.params?.leftLens?.label ?? 'leftLens', value: p.leftLens, options: [lensOption('red'), lensOption('green')] }],
-      },
-      { text: f.checkStepLevel, adjust: [level('redLevel', 'a'), level('secondLevel', 'b')] },
-    ],
-    note: f.checkGhost,
-  };
+  return anaglyphColorCheck(readAnaglyph(params), tx);
 }
 
 export const laborRotGruenLesen: ExerciseDefinition = {
@@ -821,5 +802,6 @@ export const laborRotGruenLesen: ExerciseDefinition = {
   params: PARAMS,
   usesCalibration: true,
   colorCheck,
+  liveControls: [{ key: 'shiftPd', unit: 'Δ', min: -LIVE_MAX_PD, max: LIVE_MAX_PD, step: LIVE_STEP, coarseStep: LIVE_COARSE }],
   create: (ctx) => new RotGruenLesen(ctx),
 };

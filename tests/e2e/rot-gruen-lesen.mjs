@@ -127,6 +127,14 @@ for (const sc of scenarios) {
         await page.waitForTimeout(1900);
         if (!(await noHScroll(page))) throw new Error('Übung: horizontales Scrollen');
         if (shots) await page.screenshot({ path: `${shots}/${tag}-run.png` });
+        if (sc.name === 'versatz6') {
+          // Trainer-Regler (Trainer-Ansicht): Leiste vorhanden, „+“ legt einen Zusatz auf den Versatz
+          if ((await page.locator('.live-bar').count()) !== 1) throw new Error('keine Regler-Leiste');
+          await page.locator('.live-btn').nth(2).click();
+          await page.waitForTimeout(300);
+          const v = await page.locator('.live-value').textContent();
+          if (!/\+0,5|\+0\.5/.test(v || '')) throw new Error(`Regler-Wert nach „+“: ${v}`);
+        }
         await page.waitForSelector('.result-card', { timeout: 90000 });
         const value = await page.textContent('.result-value');
         if (!value || !/\d/.test(value)) throw new Error(`Ergebnis ohne Zahl: "${value}"`);
@@ -135,6 +143,8 @@ for (const sc of scenarios) {
         if (sc.name === 'striche' && !/Kontrollstriche|Trattini di controllo/.test(text)) throw new Error('Ergebnis ohne Tabelle „Kontrollstriche“');
         if (sc.name === 'versatz6' && !/Versatz der Bilder|Spostamento delle immagini/.test(text)) throw new Error('Ergebnis ohne Zeile „Versatz“');
         if (sc.name === 'versatz6' && !/6,0 Δ/.test(text)) throw new Error('Ergebnis ohne „6,0 Δ“');
+        if (sc.name === 'versatz6' && !/Trainer-Regler \(während der Übung\)|Regolatore del trainer \(durante l’esercizio\)/.test(text)) throw new Error('Ergebnis ohne Tabelle „Trainer-Regler“');
+        if (sc.name === 'standard' && /Trainer-Regler \(während der Übung\)|Regolatore del trainer \(durante l’esercizio\)/.test(text)) throw new Error('Standard: Tabelle „Trainer-Regler“ ohne Bedienung');
         if (sc.name === 'standard' && /Kontrollstriche|Trattini di controllo|Versatz der Bilder|Spostamento delle immagini/.test(text)) throw new Error('Standard: unerwartete Zeilen zu Strichen oder Versatz');
         if (shots) await page.screenshot({ path: `${shots}/${tag}-result.png`, fullPage: true });
         if (errors.length) throw new Error(`Konsolenfehler: ${errors.join(' | ')}`);

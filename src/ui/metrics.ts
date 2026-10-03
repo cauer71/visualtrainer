@@ -25,6 +25,10 @@ export function metricParts(value: number, unit: MetricUnit, fmt: Formatter, ui:
       return { value: fmt.num(Math.round(value)), unit: ui.units.points };
     case 'level':
       return { value: fmt.num(Math.floor(value + 1e-9)), unit: '', prefix: ui.units.level };
+    case 'pd':
+      return { value: fmt.num(value, 1), unit: 'Δ' };
+    case 'arcsec':
+      return { value: fmt.num(Math.round(value)), unit: '″' };
     case 'count':
     default:
       return { value: fmt.num(Math.round(value)), unit: '' };

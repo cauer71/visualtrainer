@@ -20,8 +20,10 @@ export type Mode = 'play' | 'demo';
  * - count:   ganze Zahl
  * - points:  Punkte
  * - level:   Stufe
+ * - pd:      Prismendioptrien Δ mit einer Nachkommastelle ("6,5 Δ")
+ * - arcsec:  Winkelsekunden, ganze Zahl ("600 ″")
  */
-export type MetricUnit = 'time' | 'ms' | 'msSigned' | 'percent' | 'count' | 'points' | 'level';
+export type MetricUnit = 'time' | 'ms' | 'msSigned' | 'percent' | 'count' | 'points' | 'level' | 'pd' | 'arcsec';
 export type Better = 'higher' | 'lower';
 
 export interface Metric {
@@ -289,6 +291,8 @@ export interface ExerciseTexts {
   params?: Record<string, ParamTexts>;
   /** Erklärung je Kennzahl (Schlüssel wie in `metrics`); erscheint auf der Ergebnisseite unter „Was bedeuten die Werte?“ */
   metricHints?: Record<string, string>;
+  /** Beschriftung der Trainer-Regler (Schlüssel wie `ExerciseDefinition.liveControls[].key`), z. B. „Versatz“ */
+  liveLabels?: Record<string, string>;
   /** „So wird es leichter/schwerer“: einklappbarer Abschnitt auf der Intro-Seite */
   progression?: string[];
   /** „Gut zu wissen“: Hinweise zur Vorsicht, einklappbarer Abschnitt auf der Intro-Seite */
@@ -314,6 +318,11 @@ export interface ExerciseContext {
   readonly params?: ExerciseParams;
   /** Kalibrierung cm/Sehwinkel; der Runner setzt sie immer (sonst `calibOf(ctx)` aus core/calib nutzen) */
   readonly calib?: Calib;
+  /**
+   * `true` = die Trainer-Ansicht zeigt während der Übung den Regler (`ExerciseDefinition.liveControls`). Ohne Regler
+   * (Benutzer-Ansicht, ältere Test-Attrappen) bleibt der eingestellte Wert; der Runner setzt es immer.
+   */
+  readonly liveEnabled?: boolean;
   readonly lang: Lang;
   readonly texts: ExerciseTexts;
   readonly rng: Rng;
@@ -328,9 +337,49 @@ export interface ExerciseContext {
   finish(result: ExerciseResult): void;
 }
 
+/**
+ * Zustand eines Trainer-Reglers (`Exercise.getLive`): Wert, Grenzen, Schritte und Einheit. Bei `additive` ist `value` ein
+ * Zusatz zum automatischen Wert der Übung (z. B. Versatz = automatischer Wert + Zusatz), `effective` der Gesamtwert, der
+ * gerade angezeigt wird. Ohne `additive` ist `value` der Wert selbst.
+ */
+export interface LiveState {
+  key: string;
+  /** Wert des Reglers (Ziel; die Anzeige der Übung gleitet weich dorthin) */
+  value: number;
+  min: number;
+  max: number;
+  /** kleiner und grober Schritt der Tasten − / + und −− / ++ */
+  step: number;
+  coarseStep: number;
+  /** Einheit, z. B. „Δ“ oder „″“ */
+  unit: string;
+  additive: boolean;
+  /** aktuell angezeigter Gesamtwert (in derselben Einheit) */
+  effective: number;
+}
+
+/** Trainer-Regler einer Übung (statische Beschreibung; Beschriftung in `ExerciseTexts.liveLabels`) */
+export interface LiveControlDef {
+  key: string;
+  /** Einheit, z. B. „Δ“ oder „″“ */
+  unit: string;
+  min: number;
+  max: number;
+  step: number;
+  coarseStep: number;
+}
+
 export interface Exercise {
   /** Wird einmal aufgerufen, sobald die Bühne bereit ist */
   start(t: number): void;
+  /**
+   * Trainer-Regler (nur Übungen mit `ExerciseDefinition.liveControls`): neuen Wert setzen. Die Übung begrenzt auf ihre
+   * Grenzen und auf höchstens einen kleinen Sprung je Aufruf, lässt die Anzeige weich gleiten und protokolliert die
+   * Änderung mit Zeitpunkt. Wirkt sofort, ohne Pause, und verändert keine gespeicherten Einstellungen.
+   */
+  setLive?(key: string, value: number): void;
+  /** Zustand des Trainer-Reglers; `null`, solange er nicht wirkt (vor dem Start, nach dem Ende) */
+  getLive?(): LiveState | null;
   /** Pro Frame: dt in Sekunden (begrenzt), t = virtuelle Zeit in ms */
   update(dt: number, t: number): void;
   /** Pro Frame zeichnen (Koordinaten in CSS-Pixeln) */
@@ -405,5 +454,10 @@ export interface ExerciseDefinition {
   usesCalibration?: boolean;
   /** Prüfbild, das das Intro unter den Einstellungen zeigt (aus den aktuellen Einstellungen und den Texten der Sprache) */
   colorCheck?: (params: ExerciseParams, texts: ExerciseTexts) => ColorCheckInfo;
+  /**
+   * Werte, die die Trainerin/der Trainer während der Übung verstellen kann (nur Trainer- und Entwickler-Ansicht, schmale
+   * einklappbare Leiste außerhalb des Reizfelds). Die Übung setzt dafür `Exercise.setLive`/`getLive` um.
+   */
+  liveControls?: readonly LiveControlDef[];
   create(ctx: ExerciseContext): Exercise;
 }
