@@ -9,7 +9,7 @@ export const de: ExerciseTexts = {
   steps: ['Grüner Kreis: sofort tippen – egal wo.', 'Rotes Stoppschild: Finger weg!', 'Es wird immer flotter – bleib wachsam.'],
   why:
     'Bei Grün tippst du blitzschnell, bei Rot hältst du still. Weil fast immer Grün kommt, wird das Tippen zur Gewohnheit – deshalb ist das Bremsen bei Rot so knifflig. Mit etwas Übung wirst du darin besser; ob sich das auf Verkehr oder Sport überträgt, ist nicht belegt.',
-  goodFor: ['Anfahren an der Ampel', 'Bremsen im Verkehr', 'Ballspiele'],
+  goodFor: ['Schnell starten', 'Rechtzeitig innehalten', 'Ballspiele'],
   captions: {
     go: 'Grün: sofort tippen!',
     stop: 'Rot: Finger weg!',
@@ -42,7 +42,7 @@ export const it: ExerciseTexts = {
   steps: ['Cerchio verde: tocca subito, dove vuoi.', 'Segnale rosso: non toccare!', 'Si va sempre più veloci – resta attento.'],
   why:
     'Col verde tocchi in un lampo, col rosso resti fermo. Visto che arriva quasi sempre il verde, toccare diventa un’abitudine – per questo frenarsi sul rosso è così difficile. Con un po’ di pratica migliori in questo esercizio; che serva anche nel traffico o nello sport, non è dimostrato.',
-  goodFor: ['Partire al semaforo', 'Frenare nel traffico', 'Giochi con la palla'],
+  goodFor: ['Partire subito', 'Fermarsi al momento giusto', 'Giochi con la palla'],
   captions: {
     go: 'Verde: tocca subito!',
     stop: 'Rosso: non toccare!',

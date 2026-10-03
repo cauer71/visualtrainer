@@ -162,17 +162,17 @@ export const SCIENCE: Record<string, ScienceEntry> = {
         trains: 'Schnell reagieren – und eine schon geplante Reaktion im richtigen Moment zurückhalten.',
         daily: 'Situationen, in denen man eine Bewegung stoppen muss: nicht losfahren, obwohl man wollte; beim Sport eine Finte erkennen.',
         research:
-          'Go/No-Go ist eine klassische Aufgabe zur Impulskontrolle. In der Aufgabe selbst wird man mit Übung schneller und treffsicherer. Ein Training der Impulskontrolle übertrug sich in Studien aber nicht auf andere Aufgaben oder auf das Fahren im Simulator.',
+          'Go/No-Go ist eine klassische Aufgabe zur Impulskontrolle. In der Aufgabe selbst wird man mit Übung schneller und treffsicherer. Ein Training der Impulskontrolle übertrug sich in Studien aber nicht auf andere Aufgaben oder auf das Fahren im Simulator. Mit nur zehn Stopp-Zeichen je Block streut die Fehlerquote bei Rot; aussagekräftig ist der Verlauf über mehrere Blöcke.',
         improved:
-          '75 % Grün-Reize, damit das Tippen zur Gewohnheit wird und Bremsen wirklich gefordert ist; die Antwortfrist passt sich nur über die Grün-Reize an; Grün und Rot unterscheiden sich zusätzlich in Form und Helligkeit (Rot-Grün-Schwäche betrifft etwa 8 % der Männer).',
+          'Ein Block besteht aus 40 Durchgängen, genau ein Viertel davon sind Stopp-Zeichen, nie mehr als zwei in Folge. Weil meist Grün kommt, wird das Tippen zur Gewohnheit, und das Zurückhalten bei Rot fordert wirklich. Die Antwortfrist passt sich nur über die grünen Zeichen an; ein Tipp bei Rot verändert sie nicht, damit Ungeduld nicht belohnt wird. Grün und Rot unterscheiden sich zusätzlich in Form und Helligkeit (heller Kreis, dunkleres Achteck mit Balken), weil eine Rot-Grün-Schwäche etwa 8 % der Männer betrifft. Tipps in der Pause werden nur gezählt, nicht bestraft; ausgewertet werden die erreichte Stufe, die Reaktionszeit bei Grün, Tipps bei Rot und Verpasstes getrennt.',
       },
       it: {
         trains: 'Reagire in fretta – e trattenere al momento giusto una reazione già pronta.',
         daily: 'Situazioni in cui bisogna fermare un movimento: non partire anche se si voleva; riconoscere una finta nello sport.',
         research:
-          'Il Go/No-Go è un classico compito sul controllo degli impulsi. Nel compito stesso, con l’allenamento si diventa più veloci e precisi. Negli studi, però, l’allenamento del controllo degli impulsi non si è trasferito ad altri compiti né alla guida al simulatore.',
+          'Il Go/No-Go è un classico compito sul controllo degli impulsi. Nel compito stesso, con l’allenamento si diventa più veloci e precisi. Negli studi, però, l’allenamento del controllo degli impulsi non si è trasferito ad altri compiti né alla guida al simulatore. Con soli dieci segnali di stop per blocco la quota di errori sul rosso varia molto; è significativo l’andamento su più blocchi.',
         improved:
-          '75 % di stimoli verdi, così toccare diventa un’abitudine e fermarsi è davvero impegnativo; il tempo di risposta si adatta solo con gli stimoli verdi; verde e rosso si distinguono anche per forma e luminosità (il daltonismo rosso-verde riguarda circa l’8 % degli uomini).',
+          'Un blocco consiste in 40 prove, esattamente un quarto sono segnali di stop, mai più di due di seguito. Poiché per lo più compare il verde, toccare diventa un’abitudine e trattenersi sul rosso è davvero impegnativo. Il tempo di risposta si adatta solo con i segnali verdi; un tocco sul rosso non lo modifica, così l’impazienza non viene premiata. Verde e rosso si distinguono anche per forma e luminosità (cerchio chiaro, ottagono più scuro con barra), perché il daltonismo rosso-verde riguarda circa l’8 % degli uomini. I tocchi durante la pausa vengono solo contati, non penalizzati; si valutano separatamente il livello raggiunto, il tempo di reazione sul verde, i tocchi sul rosso e i mancati.',
       },
     },
     sources: [
@@ -180,6 +180,7 @@ export const SCIENCE: Record<string, ScienceEntry> = {
       src('Enge et al. (2014). No evidence for true training and transfer effects after inhibitory control training in young healthy adults. J Exp Psychol: LMC', 'https://doi.org/10.1037/a0036165'),
       src('Hatfield et al. (2018). The effects of training impulse control on simulated driving. Accident Analysis & Prevention', 'https://doi.org/10.1016/j.aap.2018.06.012'),
       src('Birch (2012). Worldwide prevalence of red-green color deficiency. JOSA A', 'https://doi.org/10.1364/JOSAA.29.000313'),
+      src('Mountford, Ruston & Dave (2004). Orthokeratology: Principles and Practice, S. 43–44. Butterworth-Heinemann', 'https://openlibrary.org/isbn/9780750640077'),
     ],
   },
 
