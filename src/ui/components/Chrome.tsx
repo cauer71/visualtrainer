@@ -29,6 +29,7 @@ function FullscreenButton() {
 
 export function Header() {
   const { ui, lang, setLang, opt, isOptician, role, askRole } = useApp();
+  const roleLabel = role === 'entwickler' ? opt.roleDeveloperShort : isOptician ? opt.roleOpticianShort : opt.roleCustomerShort;
   const logo = brand.logoUrl ? <img class="brand-logo" src={brand.logoUrl} alt={brand.opticianName || brand.appName} /> : <BrandMark />;
   return (
     <header class="site-header">
@@ -59,8 +60,8 @@ export function Header() {
           ) : null}
           <FullscreenButton />
           {role ? (
-            <button type="button" class="role-btn" onClick={askRole} title={opt.roleSwitch} aria-label={`${opt.roleSwitch}: ${isOptician ? opt.roleOpticianShort : opt.roleCustomerShort}`}>
-              {isOptician ? opt.roleOpticianShort : opt.roleCustomerShort}
+            <button type="button" class="role-btn" onClick={askRole} title={opt.roleSwitch} aria-label={`${opt.roleSwitch}: ${roleLabel}`}>
+              {roleLabel}
             </button>
           ) : null}
           <div class="lang-switch" role="group" aria-label={ui.nav.language}>

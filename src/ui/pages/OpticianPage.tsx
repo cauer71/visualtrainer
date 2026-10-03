@@ -81,9 +81,6 @@ export function OpticianPage() {
           <p class="muted">{opt.fbGeneralText}</p>
           <p class="opt-feedback-actions">
             <FeedbackButton exercise={GENERAL_ID} name={opt.fbGeneralName} class="btn btn-ghost" />
-            <a class="btn btn-ghost btn-sm" href={href('/entwickler')}>
-              {opt.fbDeveloper}
-            </a>
           </p>
         </div>
       </section>

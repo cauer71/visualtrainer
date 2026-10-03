@@ -12,7 +12,7 @@ await p.goto(base, { waitUntil: 'networkidle' });
 await p.screenshot({ path: `${out}/1-gate.png` });
 console.log('gate:', await p.locator('.role-gate').count());
 // Kunde
-await p.click('text=Ich bin Kunde');
+await p.click('text=Ich bin Benutzer');
 await p.waitForTimeout(300);
 console.log('kunde cards:', await p.locator('.ex-card').count(), 'daily:', await p.locator('.daily-item').count(), 'science link:', await p.locator('a[href="#/hintergrund"]').count(), 'copyright:', await p.locator('.footer-copy').count());
 await p.screenshot({ path: `${out}/2-kunde.png`, fullPage: true });
@@ -40,7 +40,7 @@ await p.screenshot({ path: `${out}/5-eintrag.png`, fullPage: true });
 await p.goto(base + '#/katalog/101'); await p.waitForTimeout(1200);
 console.log('101 play button:', await p.locator('text=Spielbare Blickfit-Übung öffnen').count());
 // Kunde sieht nun geänderte Auswahl
-await p.click('.role-btn'); await p.click('text=Ich bin Kunde'); await p.waitForTimeout(300);
+await p.click('.role-btn'); await p.click('text=Ich bin Benutzer'); await p.waitForTimeout(300);
 console.log('kunde names:', (await p.locator('.daily-name').allInnerTexts()).join(' | '));
 console.log('errors:', errs);
 await b.close();

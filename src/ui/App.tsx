@@ -53,12 +53,12 @@ export function App() {
       ui: UI[lang],
       opt: OPT[lang],
       role,
-      isOptician: role === 'optiker',
+      isOptician: role === 'optiker' || role === 'entwickler',
       setRole: (r) => {
         updateSettings({ role: r });
         setRoleState(r);
         setAskingRole(false);
-        go('/');
+        go(r === 'entwickler' ? '/entwickler' : '/');
       },
       askRole: () => setAskingRole(true),
       customerIds,
@@ -82,7 +82,7 @@ export function App() {
     [lang, sound, dataVersion, role, customerIds],
   );
 
-  const isOptician = role === 'optiker';
+  const isOptician = role === 'optiker' || role === 'entwickler';
   let page;
   if (route.name === 'exercise' && route.id && (isOptician || customerIds.includes(route.id))) {
     page = <ExercisePage id={route.id} query={route.query} />;

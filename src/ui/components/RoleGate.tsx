@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'preact/hooks';
 import { useApp } from '../app-context';
 import { Icon } from './Icon';
 
-/** Auswahl "Kunde" oder "Optiker" – beim ersten Öffnen und über den Knopf in der Kopfzeile. */
+/** Auswahl Benutzer, Trainer oder Entwickler – beim ersten Öffnen und über den Knopf in der Kopfzeile. */
 export function RoleGate({ onClose }: { onClose?: () => void }) {
   const { opt, role, setRole } = useApp();
   const first = useRef<HTMLButtonElement>(null);
@@ -30,6 +30,11 @@ export function RoleGate({ onClose }: { onClose?: () => void }) {
             <Icon name="book" size={32} />
             <strong>{opt.roleOptician}</strong>
             <span>{opt.roleOpticianText}</span>
+          </button>
+          <button type="button" class={`role-option${role === 'entwickler' ? ' is-current' : ''}`} onClick={() => setRole('entwickler')}>
+            <Icon name="sliders" size={32} />
+            <strong>{opt.roleDeveloper}</strong>
+            <span>{opt.roleDeveloperText}</span>
           </button>
         </div>
         <p class="muted role-note">{opt.roleNote}</p>

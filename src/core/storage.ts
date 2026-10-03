@@ -32,7 +32,7 @@ export interface ExerciseRecord {
   bv?: Record<string, number>;
 }
 
-export type Role = 'kunde' | 'optiker';
+export type Role = 'kunde' | 'optiker' | 'entwickler';
 
 export interface Settings {
   sound: boolean;
