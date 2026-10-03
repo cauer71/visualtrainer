@@ -6,7 +6,7 @@ export const de: ExerciseTexts = {
   steps: ['Oben siehst du, welches Zeichen du suchst.', 'Finde es im Feld und tippe es an.', 'Je schneller, desto mehr Punkte!'],
   why:
     'Gezielt mit den Augen suchen musst du ständig – im Regal, an der Kreuzung, auf dem vollen Schreibtisch. Hier übst du das mit Zeichen, die sich mit der Zeit immer ähnlicher werden. Mit etwas Übung wirst du hier schneller; ob sich das auf den Alltag überträgt, ist nicht sicher belegt.',
-  goodFor: ['Einkaufsregal', 'Schilder im Verkehr', 'Anzeigetafeln'],
+  goodFor: ['Einkaufsregal', 'Listen und Tabellen', 'Anzeigetafeln'],
   captions: {
     find: 'Finde das X!',
     next: 'Und jetzt das C',
@@ -35,7 +35,7 @@ export const it: ExerciseTexts = {
   steps: ['In alto vedi quale segno cercare.', 'Trovalo nel campo e toccalo.', 'Più sei veloce, più punti fai!'],
   why:
     'Cercare qualcosa con gli occhi ti capita di continuo – sullo scaffale, all’incrocio, sulla scrivania piena di cose. Qui ti alleni con segni che col tempo si somigliano sempre di più. Con un po’ di pratica qui diventi più veloce; non è dimostrato con certezza che questo si trasferisca alla vita di tutti i giorni.',
-  goodFor: ['Scaffali del supermercato', 'Cartelli stradali', 'Tabelloni degli orari'],
+  goodFor: ['Scaffali del supermercato', 'Elenchi e tabelle', 'Tabelloni degli orari'],
   captions: {
     find: 'Trova la X!',
     next: 'E adesso la C',

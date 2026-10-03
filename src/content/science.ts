@@ -309,17 +309,17 @@ export const SCIENCE: Record<string, ScienceEntry> = {
         trains: 'Gezielt ein bestimmtes Zeichen zwischen vielen ähnlichen finden.',
         daily: 'Schilder im Verkehr, Produkte im Regal, Fahrpläne, Bildschirme.',
         research:
-          'Visuelle Suche gehört zu den am besten erforschten Aufgaben: Je ähnlicher Ziel und Ablenker und je mehr Elemente, desto länger dauert es. Suchaufgaben werden mit Übung nachweislich schneller, oft schon nach wenigen hundert Durchgängen und dauerhaft. Ein Nutzen für das Suchen im Alltag ist möglich, aber bei Gesunden nicht bewiesen.',
+          'Visuelle Suche gehört zu den am besten erforschten Aufgaben: Je ähnlicher Ziel und Ablenker und je mehr Elemente, desto länger dauert es. Suchaufgaben werden mit Übung nachweislich schneller, oft schon nach wenigen hundert Durchgängen und dauerhaft. Ein Nutzen für das Suchen im Alltag ist möglich, aber bei Gesunden nicht bewiesen. Dicht gedrängte Zeichen werden schlechter erkannt als einzelne (Crowding); deshalb sind die Abstände hier großzügig gewählt.',
         improved:
-          'Anzahl und Ähnlichkeit der Zeichen passen sich an (vom leichten "X zwischen O" bis zu gespiegelten Buchstaben), genug Abstand zwischen den Zeichen, große Touch-Flächen und die Suchrichtung, die wirklich schwer ist ("O zwischen C" statt nur "C zwischen O").',
+          'Das Suchfeld wird in 12 Stufen schwerer: Zeichenzahl (12 bis 56) und Ähnlichkeit von Ziel und Ablenkern steigen, die Abstände werden enger, bleiben aber so groß, dass sich Nachbarn nicht gegenseitig verdrängen (Crowding). Auch die schwere Suchrichtung kommt vor: Ein O zwischen C ist schwerer zu finden als ein C zwischen O, weil dem Ziel dann ein Merkmal fehlt. Eine Suche gilt als gelungen, wenn das Ziel in 1,2 s plus 75 ms je Zeichen gefunden wird; die Stufe passt sich so an, dass etwa sieben von zehn Suchen gelingen. Buchstaben werden nach ihrer sichtbaren Form zentriert, damit sich b, d, p und q nicht durch Ober- und Unterlängen verraten, und die Tippflächen sind groß. Fehltipps kosten nichts, werden aber gezählt.',
       },
       it: {
         trains: 'Trovare in modo mirato un certo simbolo tra tanti simili.',
         daily: 'Cartelli nel traffico, prodotti sullo scaffale, orari, schermi.',
         research:
-          'La ricerca visiva è tra i compiti più studiati: più bersaglio e distrattori sono simili e più elementi ci sono, più tempo serve. Con l’allenamento la ricerca diventa dimostrabilmente più veloce, spesso già dopo qualche centinaio di prove e in modo duraturo. Un beneficio nella vita quotidiana è possibile, ma nelle persone sane non è dimostrato.',
+          'La ricerca visiva è tra i compiti più studiati: più bersaglio e distrattori sono simili e più elementi ci sono, più tempo serve. Con l’allenamento la ricerca diventa dimostrabilmente più veloce, spesso già dopo qualche centinaio di prove e in modo duraturo. Un beneficio nella vita quotidiana è possibile, ma nelle persone sane non è dimostrato. I segni molto ravvicinati vengono riconosciuti peggio di quelli isolati (crowding); per questo qui le distanze sono generose.',
         improved:
-          'Numero e somiglianza dei simboli si adattano (dalla facile “X tra le O” fino alle lettere speculari), spazio sufficiente tra i simboli, grandi aree di tocco e la direzione di ricerca davvero difficile (“O tra le C” e non solo “C tra le O”).',
+          'Il campo di ricerca diventa più difficile in 12 livelli: aumentano il numero di segni (da 12 a 56) e la somiglianza tra bersaglio e distrattori, le distanze si riducono ma restano abbastanza ampie da evitare che i segni vicini si disturbino a vicenda (crowding). Compare anche la direzione di ricerca difficile: una O tra molte C è più difficile da trovare di una C tra molte O, perché al bersaglio manca una caratteristica. Una ricerca è riuscita se il bersaglio viene trovato entro 1,2 s più 75 ms per segno; il livello si adatta in modo che riescano circa sette ricerche su dieci. Le lettere vengono centrate sulla loro forma visibile, così b, d, p e q non si distinguono per le aste ascendenti e discendenti, e le aree di tocco sono grandi. I tocchi sbagliati non costano nulla, ma vengono contati.',
       },
     },
     sources: [
@@ -327,6 +327,7 @@ export const SCIENCE: Record<string, ScienceEntry> = {
       src('Treisman & Souther (1985). Search asymmetry: A diagnostic for preattentive processing of separable features. J Exp Psychol: General', 'https://doi.org/10.1037/0096-3445.114.3.285'),
       src('Duncan & Humphreys (1989). Visual search and stimulus similarity. Psychological Review', 'https://doi.org/10.1037/0033-295X.96.3.433'),
       src('Sireteanu & Rettenbach (1995). Perceptual learning in visual search: Fast, enduring, but non-specific. Vision Research', 'https://doi.org/10.1016/0042-6989(94)00295-W'),
+      src('Bouma (1970). Interaction effects in parafoveal letter recognition. Nature', 'https://doi.org/10.1038/226177a0'),
     ],
   },
 
