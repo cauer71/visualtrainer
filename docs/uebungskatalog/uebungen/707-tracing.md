@@ -85,7 +85,7 @@ aehnliche_uebungen: [705, 403, 505, 514, 515, 104, 105, 407, 706, 808]
 stichworte: ["Tracing", "Pfad nachfahren", "manuelles Verfolgen", "pursuit tracking", "Vorschau", "Sinuswelle", "Auge-Hand-Koordination", "glatte Blickfolge", "Steering Law", "Bildfrequenzabhängigkeit", "Maus"]
 ---
 
-# 707 · Wellenlinie nachfahren – Zeiger auf einer laufenden Sinuswelle halten
+# 707 · Spur folgen – einer laufenden Wellenlinie mit der Fingerhöhe folgen
 
 > Original: „Maus-Tracking-Test“ – skilldrills.online, Kapitel Motorik (`motor/precision-control`) · Blickfit: noch nicht umgesetzt
 

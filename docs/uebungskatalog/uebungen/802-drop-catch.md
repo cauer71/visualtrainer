@@ -85,7 +85,7 @@ aehnliche_uebungen: [801, 104, 805, 102, 804, 302, 803, 515]
 stichworte: ["Interzeption", "Abfangen bewegter Ziele", "Go/No-Go", "Reaktionshemmung", "Auge-Hand-Koordination", "Lineal-Falltest (nur Name)", "Farbsignal Rot/Grün", "Maus", "Pointer-Lock", "Combo"]
 ---
 
-# 802 · Fallende Kugeln fangen – Grün anklicken, Rot durchlassen
+# 802 · Kugeln fangen – Kreise antippen, Quadrate durchlassen
 
 > Original: „Lineal-Falltest & Drop Catch“ – skilldrills.online, Kapitel Körper & Reflexe (`physical`, Unterkapitel `reflex-training`) · Blickfit: noch nicht umgesetzt (Bausteine vorhanden: „Zielfang“ zu 104, „Stopp & Los“ zu 102)
 
@@ -183,7 +183,7 @@ Die Seite verspricht die „digitale Messung des Lineal-Falltests“ für Sportl
 
 ## 11. Quellen
 ### Von der Website angegeben
-- Donders, F. C. (1969). On the speed of mental processes (W. G. Koster, Übers.). *Acta Psychologica*, *30*, 412–431. https://doi.org/10.1016/0001-6918(69)90065-1 (Original 1868) – **Prüfung:** DOI stimmt ✓; **stützt die Aussage der Website:** teilweise (c-Reaktion = Go/No-Go passt; „Typ-C-Wahlreaktion“ vermischt b- und c-Reaktion; das Spiel misst keine Reaktionszeit).
+- Donders, F. C. (1969). On the speed of mental processes (W. G. Koster, Übers.). *Acta Psychologica*, *30*, 412–431. https://doi.org/10.1016/0001-6918(69)90065-1 (Erstveröffentlichung 1868) – **Prüfung:** DOI stimmt ✓; **stützt die Aussage der Website:** teilweise (c-Reaktion = Go/No-Go passt; „Typ-C-Wahlreaktion“ vermischt b- und c-Reaktion; das Spiel misst keine Reaktionszeit).
 - Lee, D. N. (1976). A theory of visual control of braking based on information about time-to-collision. *Perception*, *5*(4), 437–459. https://doi.org/10.1068/p050437 – **Prüfung:** DOI stimmt ✓; **stützt:** nein (Tau betrifft Annäherung/Bildvergrößerung; die Kugeln fallen seitlich, gleichförmig und ohne Vergrößerung).
 - Logan, G. D., & Cowan, W. B. (1984). On the ability to inhibit thought and action: A theory of an act of control. *Psychological Review*, *91*(3), 295–327. https://doi.org/10.1037/0033-295X.91.3.295 – **Prüfung:** DOI stimmt ✓ (im Text teils „Logan (1984)“); **stützt:** teilweise (Rennmodell korrekt, gilt für Stop-Signal; kein Beleg für Training „auf Spitzensport-Niveau“).
 - Woodworth, R. S. (1899). The accuracy of voluntary movement. *The Psychological Review: Monograph Supplements*, *3*(3), i–114. https://doi.org/10.1037/h0092992 – **Prüfung:** DOI stimmt ✓; **stützt:** teilweise (Zwei-Komponenten-Modell ja; „85 % ballistisch“ nicht belegt, auf 804 steht „75 %“).

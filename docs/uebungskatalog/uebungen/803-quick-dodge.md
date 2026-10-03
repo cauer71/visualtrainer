@@ -2,7 +2,7 @@
 # ===== Kennung =====
 nr: 803
 kennung: quick-dodge
-name: "Ausweichen – roten Geschossen mit dem Zeiger entgehen"
+name: "Ausweichen – langsamen Hindernissen mit der Figur entgehen"
 name_original: "Maus-Ausweichspiel – Projektilen ausweichen, länger überleben (Quick Dodge)"
 kapitel: "Körper & Reflexe"
 kapitel_original: "physical"
@@ -12,7 +12,7 @@ blickfit_umsetzung: {kennung: "ausweichen", name: "Ausweichen", unterschiede: "T
 stand: 2026-09-29
 
 # ===== Überblick =====
-kurzbeschreibung: "Von allen Bildschirmrändern fliegen rote Kugeln geradlinig auf die Stelle zu, an der der eigene Zeiger gerade ist. Man bewegt den Zeiger mit der Maus ständig so, dass keine Kugel ihn berührt; jede ausgewichene Kugel bringt Punkte, und das Spiel wird rasch schneller und dichter."
+kurzbeschreibung: "Man führt mit dem Finger eine Figur durch ein Feld, in das von den Seiten und von oben langsam Kugeln und Quader gleiten. Die Hindernisse bewegen sich geradlinig, ein Teil zielt auf die Stelle, an der die Figur beim Erscheinen war; man weicht ihnen aus. Eine Berührung ist nur eine kurze Pause. Mit der Stufe kommen mehr und etwas schnellere Hindernisse."
 ziel_funktionen: [kontinuierliche_steuerung, antizipation, bewegungswahrnehmung]
 eingabe: [maus, touchpad]
 tablet_geeignet: nein
@@ -74,27 +74,24 @@ belastung:
 # ===== Auswahlhilfe =====
 voraussetzungen: ["Maus (oder Touchpad) am Computer; das Original nutzt Pointer-Lock und ein eigenes Fadenkreuz, Touch-Wischen wird nicht ausgewertet", "den ganzen Bildschirm (≈ 48° breit bei 24″ in 60 cm) ohne Kopfheben im Blick haben", "keine bekannte Lichtempfindlichkeit (rotes Aufblitzen und Bildschirmwackeln bei jedem Treffer)", "hohes und rasch steigendes Tempo tolerieren; es gibt keinen langsamen Modus"]
 vorsicht_bei: [photosensitive_epilepsie, migraene_lichtempfindlich, schwindel_vestibulaer, reisekrankheit, presbyopie_gleitsicht, gesichtsfeldausfall, sehbehinderung_niedriger_visus, trockenes_auge_bildschirm, hand_arm_beschwerden, aufmerksamkeitsprobleme, kognitive_einschraenkung, kinder_unter_6]
-geeignet_fuer: ["fortlaufende Zeigersteuerung unter Zeitdruck üben (ausweichen statt treffen)", "Flugbahnen mehrerer bewegter Objekte abschätzen und freie Lücken vorausschauend wählen", "Aufmerksamkeit über den ganzen Bildschirm verteilen, neue Objekte am Rand früh bemerken", "kurzes, motivierendes Reaktionsspiel für mausgeübte Jugendliche und Erwachsene"]
-weniger_geeignet_fuer: ["Tablet- und Smartphone-Nutzung (Original nur mit Maus spielbar)", "Einsteiger:innen, Ältere oder wenig Mausgeübte (Tempo steigt ohne Obergrenze, keine Einstellung)", "vergleichbare Leistungsmessung (Punkte explodieren nichtlinear, hängen von Fenstergröße und Latenz ab)", "gezieltes Training der Zielgenauigkeit oder ruhigen Hand (dafür 702, 705)", "Menschen, die bei Fehlern durch Blitz und Wackeln gestresst werden"]
+geeignet_fuer: ["fortlaufende Steuerung einer Figur unter Zeitdruck üben (ausweichen statt treffen)", "Flugbahnen mehrerer bewegter Objekte abschätzen und freie Lücken vorausschauend wählen", "Aufmerksamkeit über das ganze Feld verteilen, neue Objekte am Rand früh bemerken", "kurze, ruhige Bewegungsaufgabe ohne Treffen und ohne Klicken"]
+weniger_geeignet_fuer: ["Menschen, die bei vielen gleichzeitig bewegten Objekten schnell unsicher oder unwohl werden", "vergleichbare Leistungsmessung zwischen Geräten (Wege und Tempo hängen von der Bildschirmgröße ab)", "gezieltes Training der Zielgenauigkeit oder ruhigen Hand (dafür 702, 705)"]
 evidenz:
   uebungseffekt: mittel
   naher_transfer: schwach
   alltag_transfer: fehlend
-  kommentar: "Zu Maus-Ausweichspielen gibt es keine Studie. Ähnliche Bildschirmaufgaben werden mit Übung besser, die Effekte schrumpfen aber stark, wenn Training und Test sich unterscheiden (Guo et al., 2025); Transfer von Actionspielen auf Aufmerksamkeit ist uneinheitlich (Green & Bavelier, 2003; Boot et al., 2008), auf Spiele wie LoL/CS2 oder den Alltag nicht untersucht."
+  kommentar: "Zu Ausweichaufgaben dieser Art gibt es keine Studie. Ähnliche Bildschirmaufgaben werden mit Übung besser, die Effekte schrumpfen aber stark, wenn Training und Test sich unterscheiden (Guo et al., 2025); Transfer von Actionspielen auf Aufmerksamkeit ist uneinheitlich (Green & Bavelier, 2003; Boot et al., 2008), auf Sport oder den Alltag nicht untersucht."
 aehnliche_uebungen: [806, 106, 805, 707, 410, 801, 505, 104, 206, 802]
 stichworte: ["Ausweichen", "Kollisionsvermeidung", "Flugbahn vorhersagen", "Antizipation", "kontinuierliche Steuerung", "Mehrfachobjekte", "Bewegungswahrnehmung", "Mausspiel", "Zeitdruck", "Bullet-Hell", "Skillshot-Dodging"]
 ---
 
-# 803 · Ausweichen – roten Geschossen mit dem Zeiger entgehen
+# 803 · Ausweichen – langsamen Hindernissen mit der Figur entgehen
 
 > Original: „Maus-Ausweichspiel“ (Spielname „Quick Dodge“) – skilldrills.online, Kapitel Körper & Reflexe (`physical`, Unterkapitel `reflex-training`) · Blickfit: noch nicht umgesetzt
 
 ## 1. Kurzbeschreibung
 
-Auf dunklem Feld steuert man ein grünes Fadenkreuz mit der Maus. Von allen vier Rändern tauchen rote Kugeln auf und
-fliegen geradlinig auf die Stelle zu, an der das Fadenkreuz beim Erscheinen der Kugel war. Wer stillhält, wird getroffen;
-wer ständig in freie Lücken ausweicht, sammelt Punkte für jede Kugel, die das Feld wieder verlässt. Trotz Kapitelname
-**keine Körperübung**, sondern ein temporeiches Maus-Steuerspiel ohne Klicken.
+Man setzt den Finger unter eine Figur und zieht sie durch das Feld; die Figur sitzt etwas oberhalb des Fingers, sodass die Hand nichts verdeckt. Von links, rechts und oben gleiten Kugeln und Quader langsam und geradlinig herein; etwa die Hälfte zielt auf die Stelle, an der die Figur beim Erscheinen des Hindernisses war, sodass der Weg von Anfang an abschätzbar ist. Wer stillhält, wird berührt; wer in freie Lücken ausweicht, bleibt unberührt. Eine Berührung ist nur eine kurze Pause: Das Hindernis blendet weich aus, ein weiches Symbol erscheint, nach einer Sekunde geht es weiter. Eine Sitzung besteht aus 12 Abschnitten zu je 3,5 Sekunden Spielzeit; ein Abschnitt ohne Berührung gilt als Erfolg. Danach kommen mehr und etwas schnellere Hindernisse, nach Berührungen wird zurückgestuft. Hebt man den Finger ab, ist das eine Pause. Es ist keine Körperübung; geübt wird kontinuierliche Steuerung ohne Klicken.
 
 ## 2. Ablauf im Original (Analyse)
 
@@ -154,83 +151,41 @@ Ergonomie-Tipp (lockerer Griff, Pausen).
 
 ## 4. Optische und okulomotorische Grundlagen
 
-- **Sehwinkel [Herleitung, 24″-FHD, 0,277 mm/px, 60 cm ≈ 37,8 px/°]:** Kugeln Ø 0,5° beim Erscheinen, dann Ø 1,3–2,1° (Lv. 1)
-  bzw. 2,0–3,2° (Lv. 15); Zeiger-Trefferradius 6 px ≈ 0,16°. Das Feld reicht bis ≈ ±24° (24″ in 60 cm ≈ 48° breit). Sehschärfe und
-  Kontrast (Rot auf fast Schwarz) begrenzen nicht.
-- **Tempo:** 300 px/s ≈ 8°/s (Lv. 1), 1.600 px/s ≈ 42°/s (Lv. 15), später mehr. Geschwindigkeiten werden auch peripher fein
-  unterschieden (Weber-Anteil ≈ 6 %; McKee & Nakayama, 1984). Begrenzend ist die Zahl gleichzeitig verfolgbarer Objekte: bei
-  langsamer Bewegung bis ≈ 8, bei hoher nur noch eines (Alvarez & Franconeri, 2007; Paradigma: Pylyshyn & Storm, 1988). Mit bis zu 48
-  schnellen Kugeln verfolgt man nicht alle, sondern überwacht neue Kugeln und die freie Fläche um den Zeiger.
-- **Blickstrategie:** vorwiegend ruhiger Blick in der Nähe des Zeigers mit Aufmerksamkeit für den Rand; Sakkaden zu neu
-  auftauchenden Kugeln kosten Zeit. Die Website empfiehlt ein „Weiten des Blicks“; das wird nicht kontrolliert.
-- **Farbe:** Nur ein Kugeltyp, Farbe entscheidet nichts. Bei Protan-Schwäche wirkt Rot dunkler, bleibt aber als Ring auf
-  Schwarz sichtbar (allgemeines Wissen, nicht eigens belegt). Der Zeigerring wird bei Combo ≥ 3 ebenfalls rot – kleine
-  Verwechslungsgefahr, der grüne Kern bleibt.
-- **Brille:** Mit **Gleitsicht** ist der scharfe Zwischenbereich am Bildschirm nur ≈ 13–18° breit (Han et al., 2003). Große
-  rote Kugeln am Rand werden trotzdem bemerkt, Kopfbewegungen stören aber die Mausführung; besser Arbeitsplatzbrille für
-  50–70 cm oder kleineres Fenster. Ab ≈ 40 Jahren reicht die Akkommodation für Nahsicht nicht mehr (Charman, 2008).
-- **Bildrate:** Pro Bild springt eine Kugel bei 1.600 px/s um 27 px (60 Hz) bzw. 11 px (144 Hz) – die Website rechnet mit
-  500 px/s (8,3 px) richtig, aber mit falschem Tempo. Hohe Bildraten glätten die Bahn; eine Wirkung auf „Prädiktion“ ist nicht belegt.
+- **Sehwinkel:** Die Hindernisse haben je nach Stufe einen Radius von 3,4 bis 4,3 % der kürzeren Bildschirmseite, die Figur 2,1 %. Bei einer kürzeren Seite von 15 cm und 40 cm Abstand sind das Durchmesser von etwa 1,5° bis 1,9° für die Hindernisse (bei 40 cm entspricht 1 cm etwa 1,4°). Sehschärfe und Kontrast begrenzen bei korrigiertem Sehen nicht.
+- **Tempo:** Die Hindernisse gleiten je nach Stufe mit 11 bis etwa 25 % der kürzeren Bildschirmseite pro Sekunde, bei 15 cm Seite und 40 cm Abstand also mit etwa 2,4° bis 5,4° pro Sekunde (eigene Berechnung). Geschwindigkeiten werden auch peripher fein unterschieden (Weber-Anteil etwa 6 %; McKee & Nakayama, 1984). Begrenzend ist die Zahl gleichzeitig verfolgbarer Objekte: bei langsamer Bewegung bis etwa 8, bei hoher nur noch eines (Alvarez & Franconeri, 2007; Paradigma: Pylyshyn & Storm, 1988). Mit zwei bis sieben langsamen Hindernissen liegt die Übung im günstigen Bereich; man verfolgt nicht jedes Hindernis, sondern überwacht neue Hindernisse und die freie Fläche um die Figur.
+- **Blickstrategie:** Vorwiegend ruhiger Blick in der Nähe der Figur mit Aufmerksamkeit für den Rand; Sakkaden zu neu auftauchenden Hindernissen kosten Zeit. Praxisangabe, nicht belegt: Man soll den Blick „weiten“ und die Aufmerksamkeit über das ganze Feld verteilen. Wohin die Augen tatsächlich gehen, wird nicht gemessen.
+- **Form statt Farbe:** Kugeln und Quader unterscheiden sich durch Form und Muster, nicht nur durch die Farbe; Farbsehschwäche ist kein Ausschlussgrund.
+- **Brille:** Mit **Gleitsicht** ist der scharfe Zwischenbereich am Bildschirm nur etwa 13–18° breit (Han et al., 2003). Hindernisse am Rand werden trotzdem bemerkt, Kopfbewegungen stören aber die Führung; besser Arbeitsplatzbrille für 50–70 cm oder kleineres Feld. Ab etwa 40 Jahren reicht die Akkommodation für Nahsicht nicht mehr (Charman, 2008).
+- **Bildrate:** Das Tempo ist in Sekunden vorgegeben und auf Geräten mit 60 oder 120 Hz gleich; die Berührung wird entlang der Strecke zwischen zwei Bildern geprüft, sodass nichts durchspringen kann.
 
 ## 5. Neurowissenschaftliche Grundlagen
 
-Bewegungsrichtung und -tempo der Kugeln werden in bewegungsempfindlichen Arealen (MT/MST) und parietalen Netzwerken
-verarbeitet; das gleichzeitige Überwachen vieler Objekte entspricht dem Paradigma der Mehrfachobjektverfolgung mit klaren
-Kapazitätsgrenzen (Meyerhoff et al., 2017). Die Zeigerbewegung beruht auf parietal-prämotorischen Schleifen; das Kleinhirn
-trägt nach gängiger Auffassung Vorwärtsmodelle der eigenen Bewegung bei (Wolpert et al., 1998). Bei manueller Interzeption
-nimmt die Hand die Zielbewegung um ≈ 150 ms vorweg (Mrotek & Soechting, 2007) – Vorhersage fremder Bewegung ist also real,
-aber kein Beleg, dass dieses Spiel „zerebelläre Prädiktion“ trainiert. Aussagen über „neuromuskuläre Bahnen“ sind unbelegt.
+Bewegungsrichtung und -tempo der Hindernisse werden in bewegungsempfindlichen Arealen (MT/MST) und parietalen Netzwerken verarbeitet; das gleichzeitige Überwachen mehrerer Objekte entspricht dem Paradigma der Mehrfachobjektverfolgung mit klaren Kapazitätsgrenzen (Meyerhoff et al., 2017). Die Bewegung der Figur beruht auf parietal-prämotorischen Schleifen; das Kleinhirn trägt nach gängiger Auffassung Vorwärtsmodelle der eigenen Bewegung bei (Wolpert et al., 1998). Bei manueller Interzeption nimmt die Hand die Zielbewegung um etwa 150 ms vorweg (Mrotek & Soechting, 2007) – Vorhersage fremder Bewegung ist also real, aber kein Beleg, dass diese Übung „zerebelläre Prädiktion“ trainiert. Aussagen über „neuromuskuläre Bahnen“ sind unbelegt. Schwindel und Gleichgewichtsstörungen gehören in ärztliche Abklärung; für das Gleichgewicht gibt es in der Praxis keinen brauchbaren einfachen Screeningtest (Muchnick, 2008, S. 36).
 
 ## 6. Motorische Grundlagen
 
-Die Aufgabe ist **kontinuierliche Steuerung** ohne Zielpunkt: Weil jede Kugel auf die alte Zeigerposition zielt, ist
-gleichmäßiges Weiterbewegen (z. B. Kreisbahnen) wirksamer als kurze Ruck-Ausweicher; Richtungswechsel kombinieren schnelle
-Anfangsimpulse mit Korrekturen (Elliott et al., 2001). Wege durch Lücken folgen eher dem Steuergesetz (Zeit ∝ Länge/Breite;
-Accot & Zhai, 1997) als Fitts' Gesetz. Stillhalten wird bestraft; physiologisches Zittern (≈ 8–12 Hz, wenige Pixel; allgemeines Wissen, nicht eigens belegt) spielt bei ≥ 31 px
-Sicherheitsabstand keine Rolle. Ältere bewegen sich langsamer und variabler (Ketcham et al., 2002). Längere tägliche
-Mausnutzung hängt mit Hand-Arm-Beschwerden zusammen (mäßige Evidenz, Hinweis auf Dosis-Wirkung; IJmker et al., 2007); Empfindlichkeit so wählen, dass das Feld aus
-dem Handgelenk erreichbar ist.
+Die Aufgabe ist **kontinuierliche Steuerung** ohne Zielpunkt: Weil ein Teil der Hindernisse auf die Position der Figur beim Erscheinen zielt, ist gleichmäßiges Weiterbewegen wirksamer als kurze Ruck-Ausweicher; Richtungswechsel kombinieren schnelle Anfangsimpulse mit Korrekturen (Elliott et al., 2001). Wege durch Lücken folgen eher dem Steuergesetz (Zeit ∝ Länge/Breite; Accot & Zhai, 1997) als Fitts' Gesetz. Stillhalten führt zur Berührung; physiologisches Zittern (etwa 8–12 Hz, wenige Pixel; allgemeines Wissen, nicht eigens belegt) spielt bei dem gebotenen Sicherheitsabstand keine Rolle. Ältere bewegen sich langsamer und variabler (Ketcham et al., 2002). Der Finger verdeckt Teile des Feldes; deshalb sitzt die Figur über dem Finger. Längere tägliche Mausnutzung hängt mit Hand-Arm-Beschwerden zusammen (mäßige Evidenz, Hinweis auf Dosis-Wirkung; IJmker et al., 2007); für kurze Durchgänge am Tablet ist das nicht untersucht.
 
 ## 7. Einflussfaktoren und Messgrenzen
 
-- **Latenz:** Bei 62–83 ms End-to-End-Latenz im Browser (Casiez et al., 2015) fliegt eine Kugel auf Lv. 1 ≈ 19–25 px, auf Lv. 15
-  ≈ 100–130 px weiter, bevor die eigene Reaktion sichtbar wird **[Herleitung]** – Gerät und Browser verändern die Schwierigkeit.
-- **Fenster und Bildrate:** absolute px/s und feste Kugelzahl → kleine Fenster deutlich schwerer; Kollisionsprüfung pro Bild.
-- **Punkte:** stark nichtlinear (Rückkopplung Level ↔ Punkte), eine lange fehlerfreie Serie entscheidet fast alles; Ausweichquote
-  hängt vom Tempo ab. Keine Einzelmaße (Zeit bis Treffer, Treffer je Tempostufe). Nur **gleiches Gerät, gleiche Fenstergröße** vergleichen.
-- **Person:** Mauserfahrung, Empfindlichkeit, Alter, Müdigkeit, Brille. Strategiewechsel (Kreisen, Mitte halten) steigern die
-  Punkte rasch – kein Nachweis besserer Wahrnehmung.
+- **Latenz:** Bei einer End-to-End-Latenz von etwa 62–83 ms im Browser (Messung an einem Testrechner; Casiez et al., 2015) legt ein Hindernis bis zur sichtbaren eigenen Reaktion bei einer Bühnenseite von 15 cm einen Weg von etwa 1 bis 3 mm zurück – Gerät und Browser verändern die Schwierigkeit leicht.
+- **Bildschirmgröße:** Wege, Tempo und Abstände sind relativ zur Bühne gewählt; auf kleinen Bildschirmen ist das Feld enger und die Steuerung feiner. Ergebnisse sind nur **mit sich selbst am selben Gerät** vergleichbar. Messungen am Menschen streuen; ein einzelner Abschnitt sagt wenig, und eine hohe Korrelation zweier Geräte oder Sitzungen heißt noch nicht, dass die Werte übereinstimmen (Mountford et al., 2004, S. 24, 43–44).
+- **Kennzahlen:** Gemessen werden die Berührungen und der Anteil der Zeit ohne Berührung; die Stufe ergibt sich aus dem Verlauf der Abschnitte ohne Berührung. Es gibt keine Einzelmaße wie Reaktionszeiten.
+- **Person:** Erfahrung mit Touch-Geräten, Alter, Müdigkeit, Brille. Strategiewechsel (gleichmäßig kreisen, in der Mitte bleiben) steigern die Ergebnisse rasch – kein Nachweis besserer Wahrnehmung.
 
 ## 8. Studienlage: Trainierbarkeit und Übertragung
 
-- **Übungseffekt (mittel):** keine Studie zu diesem Spiel; ähnliche Bildschirmaufgaben werden besser, die Effekte sind aber
-  stark aufgebläht, wenn Training und Test ähnlich sind (Reaktionszeit SMD 2,66 vs. 0,50; Guo et al., 2025).
-- **Naher Transfer (schwach):** Actionspiele gingen mit besserer visueller Aufmerksamkeit einher (Green & Bavelier, 2003), eine
-  Replikation fand nach 20+ h kaum Verbesserungen (Boot et al., 2008). MOT-Training verbessert vor allem MOT selbst
-  (docs/wissenschaft/02).
-- **Alltag/E-Sport (fehlend):** kein Beleg für Transfer auf Skillshot-Dodging oder Alltag; allgemein zeigt „Brain Training“ wenig
-  entfernten Transfer (Simons et al., 2016).
+- **Übungseffekt (mittel):** keine Studie zu dieser Übung; ähnliche Bildschirmaufgaben werden besser, die Effekte sind aber stark aufgebläht, wenn Training und Test ähnlich sind (Reaktionszeit SMD 2,66 vs. 0,50; Guo et al., 2025).
+- **Naher Transfer (schwach):** Actionspiele gingen mit besserer visueller Aufmerksamkeit einher (Green & Bavelier, 2003), eine Replikation fand nach über 20 h kaum Verbesserungen (Boot et al., 2008). Für die Mehrfachobjektverfolgung gilt nach üblicher Darstellung, dass Training vor allem diese Aufgabe selbst verbessert (Überblick, hier nicht einzeln belegt).
+- **Alltag und Sport (fehlend):** kein Beleg für Transfer auf Ausweichbewegungen im Sport oder auf den Alltag; allgemein zeigt „Brain Training“ wenig entfernten Transfer (Simons et al., 2016).
 
 ## 9. Auswahlhinweise für die KI
 
-- **Passt, wenn …** fortlaufende Zeigersteuerung, Vorausschau auf Flugbahnen und Überwachen des ganzen Bildschirms unter
-  Zeitdruck geübt werden sollen; für mausgeübte Jugendliche/Erwachsene, die Spielcharakter mögen.
-- **Weniger passend, wenn …** langsames Tempo, Tablet, Zielgenauigkeit oder vergleichbare Messwerte gewünscht sind.
-- **Vorsicht / anpassen bei …** `photosensitive_epilepsie`, `migraene_lichtempfindlich` (rotes Aufblitzen bei jedem Treffer;
-  mit Zeiger am Rand und hohem Level sind > 3 Treffer/s denkbar **[Herleitung]**; Fisher et al., 2005; WCAG 2.2 SC 2.3.1);
-  `schwindel_vestibulaer`, `reisekrankheit` (viele schnelle Objekte, das ganze Feld wackelt bei Treffern – bei Unwohlsein abbrechen); `presbyopie_gleitsicht`
-  (Kopfbewegung statt Blick); `gesichtsfeldausfall`, `sehbehinderung_niedriger_visus` (Kugeln einer Seite evtl. zu spät
-  bemerkt – keine Aussage über das Gesichtsfeld ableiten, kein Test); `trockenes_auge_bildschirm` (konzentriertes Starren,
-  Pausen); `hand_arm_beschwerden` (schnelle Dauerbewegung); `aufmerksamkeitsprobleme`, `kognitive_einschraenkung`,
-  `kinder_unter_6` (offenes Tempo, Strafreize). Sturz- oder Kreislauf-Vorsicht ist mangels Körperbewegung nicht nötig.
-- **Kombiniert gut mit …** 806 (Ausweichen im Raster), 106 (Mehrfachobjektverfolgung ohne Motorik), 707 (Pfad nachfahren,
-  ruhige Steuerung), 104/505 (einem bewegten Ziel folgen), 801 (Abfangen statt Ausweichen), 805 (Gegenstück: in die Bahn
-  hinein statt aus ihr heraus).
-- **Abgrenzung innerhalb 801–805:** 803 ist die einzige Übung der Gruppe mit **kontinuierlicher Steuerung als Kern** und ohne
-  Ziel, das getroffen werden muss (kein Klick). Spiegelbild ist **805**: Dort wird der Zeiger in die gerade Bahn eines Knotens
-  gestellt und stillgehalten, hier aus den Bahnen heraus bewegt – beide fordern Bahnvorhersage ohne Klick. 801, 802 und 804
-  sind Klick-Abfangspiele mit gemeinsamer Engine und fordern vor allem Zielbewegungstempo; 803 fordert es kaum. Dublette
-  innerhalb der Gruppe: keine.
+- **Passt, wenn …** fortlaufende Steuerung, Vorausschau auf Flugbahnen und Überwachen des ganzen Feldes geübt werden sollen; ein ruhiger Einstieg ohne Treffen und ohne Klicken gewünscht ist.
+- **Weniger passend, wenn …** Zielgenauigkeit oder vergleichbare Messwerte zwischen Geräten gewünscht sind; viele gleichzeitig bewegte Objekte unangenehm sind.
+- **Vorsicht / anpassen bei …** `photosensitive_epilepsie`, `migraene_lichtempfindlich` (weiche Rückmeldung, keine Blitze und kein Bildwackeln; dennoch Vorsicht bei starker Lichtempfindlichkeit; Fisher et al., 2005; WCAG 2.2 SC 2.3.1); `schwindel_vestibulaer`, `reisekrankheit` (mehrere bewegte Objekte – bei Unwohlsein abbrechen; wiederkehrender Schwindel gehört in ärztliche Abklärung, Muchnick, 2008, S. 18, 28); `presbyopie_gleitsicht` (Kopfbewegung statt Blick); `gesichtsfeldausfall`, `sehbehinderung_niedriger_visus` (Hindernisse einer Seite evtl. zu spät bemerkt – keine Aussage über das Gesichtsfeld ableiten, kein Test); `trockenes_auge_bildschirm` (konzentriertes Starren, Pausen); `hand_arm_beschwerden` (Dauerbewegung); `aufmerksamkeitsprobleme`, `kognitive_einschraenkung`, `kinder_unter_6` (mehrere gleichzeitige Hindernisse, steigende Zahl). Sturz- oder Kreislauf-Vorsicht ist mangels Körperbewegung nicht nötig. Bei Doppelbildern, plötzlichem Sehverlust oder neuen Gesichtsfeldausfällen nicht üben, sondern ärztlich abklären lassen.
+- **Kombiniert gut mit …** 806 (Ausweichen im Raster), 106 (Mehrfachobjektverfolgung ohne Motorik), 707 (Pfad nachfahren, ruhige Steuerung), 104/505 (einem bewegten Ziel folgen), 801 (Abfangen statt Ausweichen), 805 (Gegenstück: in die Bahn hinein statt aus ihr heraus).
+- **Abgrenzung innerhalb 801–805:** 803 ist die einzige Übung der Gruppe mit **kontinuierlicher Steuerung als Kern** und ohne Ziel, das getroffen werden muss (kein Tippen auf Ziele). Spiegelbild ist 805: Dort wird die Figur in die gerade Bahn eines Knotens gestellt und stillgehalten, hier aus den Bahnen heraus bewegt – beide fordern Bahnvorhersage. 801, 802 und 804 sind Abfangübungen und fordern vor allem Zielbewegungstempo; 803 fordert es kaum. Dublette innerhalb der Gruppe: keine.
 
 ## 10. Schwächen des Originals und Empfehlungen für eine Blickfit-Umsetzung
 
@@ -277,3 +232,5 @@ dem Handgelenk erreichbar ist.
 Prüfvermerk: Alle DOIs am 29.09.2026 per Crossref geprüft; Inhalte über Abstracts/Volltexte (Gruppen-Literaturbasis W10;
 Fajen & Warren 2003, Mrotek & Soechting 2007, Wolpert et al. 1998 per PubMed-Abstract; MOT-Quellen aus docs/wissenschaft/02).
 Sehwinkel, Pixelsprünge, Latenzwege und die Level-Simulation sind eigene Herleitungen aus Code und Formeln.
+- Mountford, J., Ruston, D., & Dave, T. (2004). *Orthokeratology: Principles and Practice*. Butterworth-Heinemann. https://openlibrary.org/isbn/9780750640077 – Messgenauigkeit, Streuung am Menschen, Korrelation und Übereinstimmung (S. 24, 43–44)
+- Muchnick, B. G. (2008). *Clinical Medicine in Optometric Practice* (2nd ed.). Mosby/Elsevier. https://openlibrary.org/isbn/9780323029612 – Schwindel als Beschwerde mit Abklärungsbedarf (S. 18, 28); kein brauchbarer Screeningtest für das Gleichgewicht (S. 36)

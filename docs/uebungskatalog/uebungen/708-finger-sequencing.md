@@ -85,7 +85,7 @@ aehnliche_uebungen: [702, 704, 502, 501, 508, 204, 303, 302, 701]
 stichworte: ["Sequence Aim", "Zielkette", "serielles Zielen", "Fitts'sches Gesetz", "one-target advantage", "Blickvorlauf", "Auge-Hand-Koordination", "Trail Making", "Mauspräzision", "Pointer Lock", "Combo"]
 ---
 
-# 708 · Zielkette – ruhende Ziele in vorgegebener Reihenfolge anklicken
+# 708 · Zielkette – ruhende Ziele in vorgegebener Reihenfolge antippen
 
 > Original: „Aim Trainer Zielwechsel“ (Code: „Sequence Aim Trainer“) – skilldrills.online, Kapitel Motorik (`motor/movement-speed`) · Blickfit: noch nicht umgesetzt (verwandt: `zahlenjagd` = Zahlen der Reihe nach antippen, Vorbild 204)
 

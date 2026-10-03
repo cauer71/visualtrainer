@@ -256,7 +256,7 @@ describe('w10-touch: Hintergrundtexte', () => {
       expect(e.sources.length, e.id).toBeGreaterThanOrEqual(3);
       const urls = new Set<string>();
       for (const src of e.sources) {
-        expect(src.url).toMatch(/^https:\/\/(doi\.org|www\.w3\.org)\//);
+        expect(src.url).toMatch(/^https:\/\/(doi\.org|www\.w3\.org|openlibrary\.org\/isbn)\//);
         expect(src.label.length).toBeGreaterThan(20);
         expect(urls.has(src.url), `${e.id}: doppelte Quelle`).toBe(false);
         urls.add(src.url);

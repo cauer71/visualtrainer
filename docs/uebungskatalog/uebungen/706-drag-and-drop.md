@@ -85,7 +85,7 @@ aehnliche_uebungen: [702, 104, 705, 707, 505, 514, 803]
 stichworte: ["Drag and Drop", "Ziehen und Ablegen", "bewegtes Ziel", "Abfangen", "Fitts'sches Gesetz", "Steering Law", "Auge-Hand-Koordination", "Loslass-Timing", "Pointer Lock", "Maus"]
 ---
 
-# 706 · Ziehen und Ablegen – Ball in einen wandernden Behälter ziehen
+# 706 · Ziehen und Ablegen – Ball in einen wandernden Ring ziehen
 
 > Original: „Drag and Drop Test – Maus Präzision Training“ – skilldrills.online, Kapitel Motorik (`motor/hand-eye-coordination`) · Blickfit: noch nicht umgesetzt (verwandt: `zielfang`, bewegtes Ziel antippen)
 

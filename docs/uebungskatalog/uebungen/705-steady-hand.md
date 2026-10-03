@@ -85,7 +85,7 @@ aehnliche_uebungen: [707, 810, 706, 808, 509, 514, 405]
 stichworte: ["Heißer Draht", "Steady Hand", "buzz wire", "Steuerungsgesetz", "steering law", "Accot-Zhai", "physiologischer Tremor", "Feinmotorik", "Pfadführung", "Pointer Lock"]
 ---
 
-# 705 · Ruhige Hand – Heißer Draht mit der Maus
+# 705 · Ruhige Hand – einen Ball durch eine schmale Bahn führen
 
 > Original: „Maus-Präzisionstest (Ruhige Hand)“ – Heißer Draht Parcours – skilldrills.online, Kapitel Motorik (`motor/precision-control`) · Blickfit: noch nicht umgesetzt
 
