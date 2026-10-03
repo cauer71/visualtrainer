@@ -1,10 +1,10 @@
 import type { ExerciseTexts } from '../../core/types';
 
-// Quelle: Labor-Prototyp (help/ordering.js), für Blickfit geglättet: du-Form, einfache Sprache, Fachwörter erklärt
+// Stil: du-Form, einfache Sprache, Fachwörter erklärt
 // (Standardabweichung als „wie stark die Zeiten schwanken“; „Trail Making“ nicht im Text, nur in den Quellen).
 // Formulierungsregeln (Optiker-Seite): nur beschreiben, was man in der Übung tut; keine Wirk-, Heil- oder
 // Sicherheitsversprechen, kein „Test“, keine Normwerte, Vergleich nur mit sich selbst auf diesem Gerät.
-// `short` in params: Vorlage für die Kurzfassung der Einstellungen auf der Ergebnisseite ({v} = Wert; „|“ trennt die
+// `short` in params: Muster für die Kurzfassung der Einstellungen auf der Ergebnisseite ({v} = Wert; „|“ trennt die
 // Form für genau 1 von der Form für andere Zahlen).
 // feedback: `label`/`labelLimit` = Anzeige oben ({n} richtige von {total}, {s} Restsekunden), `task_*` = Aufgabe oben im Bild.
 

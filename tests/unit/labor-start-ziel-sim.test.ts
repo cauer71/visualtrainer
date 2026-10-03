@@ -328,7 +328,7 @@ describe('science.ts', () => {
     expect(science.sources.length).toBeGreaterThanOrEqual(3);
     const urls = new Set<string>();
     for (const s of science.sources) {
-      expect(s.url).toMatch(/^https:\/\/doi\.org\/10\.\d{4,9}\/\S+$/);
+      expect(s.url).toMatch(/^https:\/\/(doi\.org\/10\.\d{4,9}\/\S+|openlibrary\.org\/isbn\/\d{10,13})$/);
       expect(s.label.length).toBeGreaterThan(20);
       expect(urls.has(s.url), s.url).toBe(false);
       urls.add(s.url);
@@ -348,6 +348,9 @@ describe('science.ts', () => {
       '10.3758/s13428-019-01321-2', // Pronk et al. 2020
       '10.3389/fphys.2025.1664572', // Guo et al. 2025
     ];
-    expect(science.sources.map((s) => s.url.replace('https://doi.org/', '')).sort()).toEqual([...verified].sort());
+    const dois = science.sources.map((s) => s.url).filter((u) => u.startsWith('https://doi.org/'));
+    expect(dois.map((u) => u.replace('https://doi.org/', '')).sort()).toEqual([...verified].sort());
+    // Lehrbuch (ISBN über Open Library, Seitenangabe im Label)
+    expect(science.sources.map((s) => s.url).filter((u) => !u.startsWith('https://doi.org/'))).toEqual(['https://openlibrary.org/isbn/9780750640077']);
   });
 });

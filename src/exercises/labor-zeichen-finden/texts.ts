@@ -1,14 +1,14 @@
 import type { ExerciseTexts } from '../../core/types';
 
-// Quelle: Labor-Prototyp (help/findchars.js), für Blickfit geglättet: du-Form, einfache Sprache, Fachwörter erklärt
+// Stil: du-Form, einfache Sprache, Fachwörter erklärt
 // („Suchaufgabe“ statt „Streichungsaufgabe“, Median entfällt).
-// Streichungen/Änderungen gegenüber dem Prototyp: „Wenn Buchstaben bei dir häufig gespiegelt oder vertauscht erscheinen, dies
+// Nicht aufgenommen: „Wenn Buchstaben bei dir häufig gespiegelt oder vertauscht erscheinen, dies
 // fachlich abklären lassen“ (klingt nach Diagnose) → jetzt: misst nicht Lesen oder Schreiben und sagt nichts über die Augen;
 // „Verwechslungen … werden hier gezielt geübt“ und „trainiert genaues Unterscheiden“ (Wirkversprechen) entfallen; „rot“ für Fehltipps
 // → ✗ und gestricheltes Feld (Farbe nie allein).
 // Formulierungsregeln (Optiker-Seite): nur beschreiben, was man in der Übung tut; keine Wirk-, Heil- oder
 // Sicherheitsversprechen, kein „Test“, keine Normwerte, Vergleich nur mit sich selbst auf diesem Gerät.
-// `short` in params: Vorlage für die Kurzfassung der Einstellungen auf der Ergebnisseite ({v} = Wert; „|“ trennt die Form
+// `short` in params: Muster für die Kurzfassung der Einstellungen auf der Ergebnisseite ({v} = Wert; „|“ trennt die Form
 // für genau 1 von der Form für andere Zahlen).
 
 export const de: ExerciseTexts = {
