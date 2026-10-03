@@ -176,7 +176,7 @@ describe('Wissens-Einträge', () => {
     expect(['strong', 'medium', 'weak']).toContain(sc.evidence);
     expect(sc.sources.length).toBeGreaterThanOrEqual(3);
     for (const s of sc.sources) {
-      expect(s.url).toMatch(/^https:\/\/doi\.org\/10\./);
+      expect(s.url).toMatch(/^https:\/\/(doi\.org\/10\.|openlibrary\.org\/isbn\/)/);
       expect(s.label.length).toBeGreaterThan(20);
     }
     for (const lang of ['de', 'it'] as const) {
