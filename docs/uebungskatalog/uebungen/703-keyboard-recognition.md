@@ -2,7 +2,7 @@
 # ===== Kennung =====
 nr: 703
 kennung: keyboard-recognition
-name: "Tasten-Wahlreaktion (angezeigte Taste blind drücken)"
+name: "Tasten-Wahlreaktion (Zeichen der passenden Taste zuordnen)"
 name_original: "Tastatur-Reaktionszeit-Test | Keybind-Trainer & Tastengeschwindigkeitstest (Keyboard Speed Test)"
 kapitel: "Motorik"
 kapitel_original: "motor"
@@ -12,7 +12,7 @@ blickfit_umsetzung: {kennung: "tasten-wahl", name: "Tasten-Wahl", unterschiede: 
 stand: 2026-09-29
 
 # ===== Überblick =====
-kurzbeschreibung: "In der Bildmitte erscheint groß eine Taste (z. B. „Q“ oder „3“), manchmal eine kurze Folge von 2–3 Tasten oder eine Folge, die man sich 1 s merken muss. Man drückt sie 60 Sekunden lang möglichst schnell auf der echten Tastatur, ohne hinzuschauen; orange „Fallen“-Tasten darf man nicht drücken."
+kurzbeschreibung: "Oben erscheint ein Zeichen (Form mit Buchstabe), unten liegen zwei bis vier große Tasten mit denselben Zeichen. Man tippt möglichst schnell die passende Taste; mit der Stufe kommen mehr Tasten dazu, sie wechseln den Platz, und die Antwortfrist wird knapper."
 ziel_funktionen: [entscheidung_wahlreaktion, fingersequenz_bimanual]
 eingabe: [tastatur]
 tablet_geeignet: nein
@@ -74,13 +74,13 @@ belastung:
 # ===== Auswahlhilfe =====
 voraussetzungen: ["Physische Tastatur (Desktop/Laptop); reine Touch-Geräte werden im Original gesperrt", "Sichere Kenntnis von Buchstaben, Ziffern und der eigenen Tastenbelegung", "US-Tastaturbelegung oder Voreinstellung ohne Y/Z und Sonderzeichen (sonst Fehlwertung auf deutscher QWERTZ-Tastatur)", "Keine feine Sehschärfe nötig (Zeichen ≈ 1–2,4° groß)"]
 vorsicht_bei: [kognitive_einschraenkung, aufmerksamkeitsprobleme, lese_rechtschreib_schwaeche, hand_arm_beschwerden, tremor_parkinson, presbyopie_gleitsicht, kinder_unter_6]
-geeignet_fuer: ["Wahlreaktion mit fester Reiz-Taste-Zuordnung unter Zeitdruck üben", "Tastenbelegung (z. B. Spiel-Hotkeys oder Zahlenreihe) ohne Blick auf die Tastatur festigen", "Antworthemmung bei seltenen Scheinreizen (Go/No-go-ähnlich) spielerisch erleben", "eigenen Fortschritt am selben Gerät und mit derselben Tastenauswahl verfolgen"]
-weniger_geeignet_fuer: ["Tablet- oder Smartphone-Nutzung ohne Tastatur und Maus (Hauptgerät von Blickfit)", "Ziele im Bereich Sehen, Blickmotorik oder Zielgenauigkeit (Augen werden kaum gefordert)", "Menschen ohne sichere Buchstaben-/Ziffernkenntnis oder mit Leseschwäche unter Zeitdruck", "Vergleich mit anderen Personen (Werte hängen von Tastenauswahl, Modus, Tastatur und Belegung ab)"]
+geeignet_fuer: ["Wahlreaktion mit Reiz-Taste-Zuordnung unter Zeitvorgabe üben", "erleben, wie die Entscheidungszeit mit der Zahl der Alternativen wächst (Hick'sches Gesetz)", "ruhige, sitzende Übung am Tablet mit großen Tasten und ohne Blitze", "eigenen Fortschritt am selben Gerät und mit derselben Tastenauswahl verfolgen"]
+weniger_geeignet_fuer: ["wer Tastenwege auf einer echten Tastatur blind einüben möchte (diese Übung nutzt Bildschirmtasten)", "Ziele im Bereich Sehen, Blickmotorik oder Zielgenauigkeit (Augen werden kaum gefordert)", "Menschen ohne sichere Buchstaben-/Ziffernkenntnis oder mit Leseschwäche unter Zeitdruck", "Vergleich mit anderen Personen (Werte hängen von Stufe, Gerät und Zeitmessung ab)"]
 evidenz:
   uebungseffekt: mittel
   naher_transfer: schwach
   alltag_transfer: fehlend
-  kommentar: "Übung verkleinert den Einfluss der Alternativenzahl auf die Wahlreaktionszeit bei gleichbleibender Zuordnung (Proctor & Schneider, 2018; Logan et al., 2016), das Gelernte bleibt aber an Zuordnung und Aufgabe gebunden (Karni et al., 1995); Hemmungstraining zeigt keinen echten Transfer (Enge et al., 2014); Nutzen für Spielleistung oder Alltag ist nicht untersucht."
+  kommentar: "Übung verkleinert den Einfluss der Alternativenzahl auf die Wahlreaktionszeit bei gleichbleibender Zuordnung (Proctor & Schneider, 2018; Logan et al., 2016), das Gelernte bleibt aber an Zuordnung und Aufgabe gebunden (Karni et al., 1995); Nutzen für Spielleistung oder Alltag ist nicht untersucht."
 aehnliche_uebungen: [202, 102, 802, 101, 701, 207, 602, 601]
 stichworte: ["Wahlreaktion", "Hick'sches Gesetz", "Tastatur", "Keybinds", "Hotkeys", "Blindschreiben", "Go/No-go", "Reiz-Reaktions-Zuordnung", "Sequenz", "Tastenbelegung", "Impulskontrolle"]
 ---
@@ -91,7 +91,7 @@ stichworte: ["Wahlreaktion", "Hick'sches Gesetz", "Tastatur", "Keybinds", "Hotke
 
 ## 1. Kurzbeschreibung
 
-Auf dunklem Grund erscheint in der Mitte groß ein Tastenzeichen, etwa „W“, „4“ oder „Space“. Man soll die passende Taste auf der echten Tastatur drücken, bevor die Zeit abläuft – und dabei nicht auf die Tastatur schauen. Zwischendurch kommen Folgen aus 2–3 Tasten, Merkfolgen (drei Zeichen werden 1 s gezeigt und verschwinden) und orange „Fallen“, bei denen man nichts drücken darf. Richtige Antworten in Serie erhöhen den Punktefaktor und verkürzen das Zeitfenster. Nach 60 Sekunden gibt es Punkte, Genauigkeit, Tasten pro Minute und eine Note. Es ist im Kern eine **Wahlreaktionsaufgabe mit Tastenzuordnung**, keine Tipptempo-Messung.
+Oben erscheint ein Zeichen, bestehend aus einer Form und einem Buchstaben (Dreieck A, Quadrat B, Raute C, Kreis D); es wird weich eingeblendet. Unten liegen zwei bis vier große Bildschirmtasten mit denselben Zeichen, und man tippt die passende Taste. Auf den ersten Stufen sind es zwei Tasten, später drei und vier; ab Stufe 9 wechseln die Tastenplätze vor jedem Durchgang. Die Antwortfrist verkürzt sich von etwa 3,0 Sekunden auf Stufe 1 auf etwa 1,35 Sekunden auf Stufe 12. Drei richtige Antworten in Folge führen eine Stufe höher, eine falsche oder zu späte eine Stufe tiefer. Eine Sitzung besteht aus einer festen Zahl von Durchgängen, ohne Zeitbonus und ohne Zeitstrafe. Wer eine Tastatur nutzt, kann auch die Ziffern 1 bis 4 drücken. Gemessen werden Stufe, Median und Streuung der Zeiten sowie falsche und zu langsame Antworten. Es ist im Kern eine **Wahlreaktionsaufgabe mit Zuordnung**, keine Tipptempo-Messung.
 
 ## 2. Ablauf im Original (Analyse)
 
@@ -124,55 +124,57 @@ Die Seite nennt die Übung ein „hochpräzises neuro-motorisches Trainingsinstr
 
 ## 4. Optische und okulomotorische Grundlagen
 
-- **Reizgröße:** Einzelzeichen am 24″-Full-HD-Monitor (0,274 mm/px, 60 cm) mit ≈ 90 px Versalhöhe ≈ 25 mm ≈ **2,4°**; Folgenkästchen ≈ 42 px ≈ 1,1° [eigene Berechnung]. Visus 1,0 löst 1′ auf (ISO 8596) – die Sehschärfe begrenzt nicht, auch bei deutlich reduziertem Visus bleiben die Zeichen erkennbar. Kleine Sonderzeichen (` ' , . ;) und die dunkelgrauen Folgetasten (≈ 2,4 : 1) sind der schwächste Punkt.
-- **Farbe:** Fallen sind orange statt weiß, zusätzlich andere Schrift und Hintergrundschimmer; Orange (Leuchtdichte ≈ 44 % von Weiß [eigene Berechnung]) bleibt auch bei Rot-Grün-Sehschwäche (≈ 8 % der Männer; Birch, 2012) von Weiß unterscheidbar. Erfolg/Fehler (grün/rosa) sind durch Töne doppelt kodiert.
-- **Blickverhalten:** Gewünscht ist ruhiger Blick auf den Bildschirm; wer die Tasten nicht blind findet, springt mit Blick (und ggf. Kopf) zwischen Monitor und Tastatur. Das kostet Zeit. Bei Logan et al. (2016) tippten Personen mit nicht standardmäßiger Technik (weniger Finger, weniger konsistente Zuordnung) langsamer und ungenauer als Zehnfinger-Tippende – besonders, wenn die Tastenbeschriftung fehlte oder die Tastatur verdeckt war.
-- **Brille/Gleitsicht:** Monitor (≈ 60 cm, Bedarf 1,67 dpt) und Tastatur (≈ 40–50 cm, tiefer) liegen in verschiedenen Zonen eines Gleitsichtglases; jeder Kontrollblick nach unten verlangt Umfokussieren durch den Nahteil, der Monitor wird oft mit gehobenem Kinn gesehen (Weidling & Jaschinski, 2015). Eine Arbeitsplatzbrille mit breitem Zwischenbereich ist hier angenehmer. Blindes Arbeiten reduziert diese Blickwechsel – ein Seh-„Training“ ist das aber nicht.
-- **Trockenes Auge:** 60 s konzentriertes Schauen mit seltenerem Lidschlag (Patel et al., 1991) – bei einer Runde unkritisch, bei den empfohlenen 10–15 min eher spürbar. Keine Flimmer- oder Bewegungsreize; stereosehen spielt keine Rolle.
+- **Reizgröße:** Das Zeichen oben und die Tasten unten sind groß (Tasten mindestens 56 Pixel). Form und Buchstabe tragen die Information, Farbe ist nur ein Zusatz. Zur Orientierung: Bei 40 cm Abstand entspricht 1 cm auf dem Bildschirm etwa 1,4°. Die Sehschärfe begrenzt nicht; auch bei deutlich reduziertem Visus bleiben Form und Buchstabe erkennbar.
+- **Farbe:** Weil etwa 8 % der Männer eine Rot-Grün-Schwäche haben (Birch, 2012), ist die Zuordnung nicht an Farbe gebunden. Rückmeldungen erscheinen als weiches Häkchen oder Kreuz, nicht nur in Farbe.
+- **Blickverhalten:** Der Blick wechselt zwischen dem Zeichen oben und den Tasten unten; ab Stufe 9 wechseln die Tastenplätze, sodass der Blick die passende Taste erst suchen muss. Das kostet Zeit und gehört zur Aufgabe.
+- **Brille/Gleitsicht:** Am Tablet liegen Zeichen und Tasten beide im Nahbereich. Am Monitor (etwa 60 cm) liegen sie in verschiedenen Zonen eines Gleitsichtglases; der Wechsel verlangt Kopf- oder Blickbewegung (Weidling & Jaschinski, 2015). Eine Arbeitsplatzbrille mit breitem Zwischenbereich ist dort angenehmer.
+- **Trockenes Auge:** Konzentriertes Schauen senkt die Lidschlagrate (Patel et al., 1991) – bei einer kurzen Sitzung unkritisch. Das Zeichen wird weich eingeblendet (etwa 160 ms), es gibt keine Flimmer-, Blitz- oder Bewegungsreize; Stereosehen spielt keine Rolle.
 
 ## 5. Neurowissenschaftliche Grundlagen
 
-- **Kette einer Wahlreaktion:** Zeichen erkennen (visuelle Areale bis in den ventralen Schläfenlappen) → Antwort auswählen (Zuordnung Zeichen → Taste → Finger; prämotorische und parietale Areale) → Ausführen (primärmotorischer Kortex, supplementär-motorisches Areal, Basalganglien, Kleinhirn; vgl. Witt et al., 2008, für Fingerbewegungen). Die Seite verortet das Lernen im „kortikospinalen Muskelgedächtnis“ – das ist eine Metapher; belegt ist, dass motorisches Sequenzlernen kortiko-striatale, Anpassungslernen kortiko-zerebelläre Netzwerke nutzt (Doyon & Benali, 2005).
+- **Kette einer Wahlreaktion:** Zeichen erkennen (visuelle Areale bis in den ventralen Schläfenlappen) → Antwort auswählen (Zuordnung Zeichen → Taste; prämotorische und parietale Areale) → Ausführen (primärmotorischer Kortex, supplementär-motorisches Areal, Basalganglien, Kleinhirn; vgl. Witt et al., 2008, für Fingerbewegungen). Die Unterscheidung von einfacher und Wahlreaktion geht auf Donders (1868; Übersetzung 1969) zurück. Dass das Lernen im „kortikospinalen Muskelgedächtnis“ verortet wäre, ist eine Metapher; belegt ist, dass motorisches Sequenzlernen kortiko-striatale, Anpassungslernen kortiko-zerebelläre Netzwerke nutzt (Doyon & Benali, 2005).
 - **Automatisierung:** Nach der Instanztheorie ersetzt mit der Übung das direkte Abrufen gespeicherter Reiz-Antwort-Episoden die langsame Regelanwendung (Logan, 1988) – deshalb profitiert man nur für die **geübte Zuordnung**. Karni et al. (1995) fanden für eine geübte Fingerfolge Veränderungen im motorischen Kortex, aber keine Übertragung auf eine andere Folge.
-- **Hemmung bei Fallen:** Das Abbremsen einer vorbereiteten Antwort beruht auf einem Netzwerk aus rechtem unterem Frontalkortex, prä-SMA und Basalganglien („Bremse“; Aron et al., 2014). Dass die Übung dieses Netzwerk „trainiert“, ist nicht belegt; Go/No-go-Training verbessert vor allem das Tempo der Los-Reize (Enge et al., 2014). Feste Zuordnungen („Orange = nicht drücken“) erzeugen eher automatische, reizgebundene Hemmung (Spierer et al., 2013).
+- **Vorwegnehmen:** Einfache Reaktionen liegen bei etwa 213–231 ms, die reine Reizentdeckung bei etwa 131 ms (Woods et al., 2015). Tipps, die weniger als 120 ms nach dem Erscheinen des Zeichens (oder davor) erfolgen, gelten deshalb als Vorwegnehmen, nicht als Reaktion; sie zählen nicht und verschieben den nächsten Reiz.
 
 ## 6. Motorische Grundlagen
 
-- **Hick vs. Fitts:** Beim Tippen konkurrieren kurze Wege (viele Finger → Fitts) mit wenigen Wahlmöglichkeiten je Finger (wenige Finger → Hick); geübte Zehnfinger-Tipper lösen das durch konsistente Zuordnung (Logan et al., 2016). Auch selbst beigebrachte Techniken mit weniger Fingern können schnell sein (Feit et al., 2016). In Spielen ruht die linke Hand meist auf WASD – die Übung prüft Tastenwege um diese Grundstellung.
-- **Folgen:** Bei 2–3 zufälligen Tasten muss jede Taste neu gewählt werden; echtes Chunking entsteht erst bei wiederholten Folgen (Sakai et al., 2003). Mit der Standard-Voreinstellung „Valorant“ liegen fast alle Tasten im Bereich der linken Hand (WASD, Q E C X, 1–4, Shift, Ctrl, Space mit dem Daumen); die rechte Hand ist im Spiel an der Maus. Beidhändige Folgen entstehen erst mit freier Tastenauswahl (z. B. alle Buchstaben) [eigene Einordnung].
-- **Speed-Accuracy-Trade-off:** Das adaptive Fenster (Gleichgewicht ≈ 67 % gelöst) belohnt Tempo; bei knappen Fenstern steigen Verwechslungen benachbarter Tasten und Fehlalarme bei Fallen.
-- **Alter:** Wahlreaktionszeit verlangsamt sich über das ganze Erwachsenenalter (n = 7.130; Der & Deary, 2006); ältere Schreibkräfte gleichen im Alltag durch Vorauslesen aus (Salthouse, 1984) – das ist hier nicht möglich, Ältere werden also stärker benachteiligt als beim normalen Schreiben.
-- **Belastung:** 60 s sind körperlich gering; die Seite empfiehlt aber 10–15 min täglich – bei Sehnen-/Handgelenkbeschwerden eher kurz halten.
+- **Hick und Fitts:** Beim Tippen konkurrieren kurze Wege (viele Finger → Fitts) mit wenigen Wahlmöglichkeiten je Finger (wenige Finger → Hick); geübte Zehnfinger-Schreibende lösen das durch konsistente Zuordnung (Logan et al., 2016). Hier liegen die großen Tasten nebeneinander, die Wege sind kurz und ähnlich lang, und die Zuordnung ist visuell (gleiches Zeichen); es bleibt vor allem die Auswahl (Hick), die mit der Tastenzahl wächst.
+- **Zielgröße:** Fingertippen ist schnell, aber ungenau: 4,8 mm breite Ziele → 11–14 % Fehler, 7,2 mm → 3–6 % (Bi et al., 2013). Die Tasten sind deshalb groß; Zielgenauigkeit begrenzt nicht.
+- **Speed-Accuracy-Trade-off:** Die Antwortfrist wird mit der Stufe knapper; bei knappen Fristen steigen Verwechslungen benachbarter Tasten. Doppeltipps (weniger als 350 ms nach einer Antwort) werden ignoriert.
+- **Alter:** Die Wahlreaktionszeit verlangsamt sich über das ganze Erwachsenenalter (n = 7.130; Der & Deary, 2006).
+- **Belastung:** Eine Sitzung ist körperlich gering belastend; bei Sehnen- oder Handgelenkbeschwerden kurz halten und Pausen machen.
 
 ## 7. Einflussfaktoren und Messgrenzen
 
-- **Tastaturbelegung (gravierend für Südtirol):** Weil das Spiel die physische Taste (`code`) prüft, gilt für die angezeigte Taste die **US-Belegung**. Auf der deutschen QWERTZ-Tastatur liegt das Zeichen „Z“ auf der Position `KeyY` und umgekehrt (W3C, 2025); wer bei „Z“ (in der Standard-Voreinstellung enthalten, „Ping“) seine Z-Taste drückt, erhält einen **Fehler**. Ebenso passen „-“, „=“, „[“, „]“, „;“, „'“, „/“, „`“ auf deutscher und italienischer Tastatur nicht zum aufgedruckten Zeichen. Bei französischem AZERTY sind sogar A/Q und W/Z vertauscht.
-- **Gerätelatenz:** Tastaturen unterscheiden sich in der Latenz um bis zu mehrere Dutzend ms (Wimmer et al., 2019), Monitore ≈ 11 ms (Woods et al., 2015); Browser messen Reaktionszeiten stets zu lang (Pronk et al., 2020). Der Startzeitpunkt wird vor dem Zeichnen gesetzt – die Bilddarstellung (1–2 Bilder) steckt in der Zeit [eigene Einordnung].
-- **Modus und Tastenauswahl** bestimmen die Schwierigkeit (Hick): 4 Ziffern sind etwas völlig anderes als 19 Spieltasten. Vergleiche nur bei gleicher Einstellung.
-- **Messgrößen verzerrt:** Ø Reaktion mischt Einzeltasten, Folgen und Merkphasen; Genauigkeit ignoriert Auslassungen (wer bei Unsicherheit nichts drückt, bleibt „genau“); KPM zählt Fehlanschläge. Zuverlässigkeitsdaten für diese Übung gibt es nicht.
-- **Übungseffekt:** Schnelle Anfangsgewinne sind überwiegend Aufgaben- und Belegungslernen; Leistungskurven flachen dann ab.
+- **Gerätelatenz:** Auf dem Touchscreen wird die Zeit um mehrere Dutzend Millisekunden zu lang gemessen (Pronk et al., 2020); Eingabegeräte unterscheiden sich in der Latenz um bis zu mehrere Dutzend Millisekunden (Wimmer et al., 2019), Monitore um etwa 11 ms (Woods et al., 2015). Gemessen wird vom ersten gezeichneten Bild des Zeichens bis zum Zeitpunkt des Tipps. Absolute Zeiten sind deshalb zwischen Geräten kaum vergleichbar; zwei Geräte können hoch korrelieren und trotzdem systematisch abweichen – Korrelation ist nicht Übereinstimmung (zum Grundsatz aus der Messmethodik: Mountford et al., 2004, S. 24). Sinnvoll ist der Vergleich mit sich selbst auf demselben Gerät.
+- **Tastenzahl und Plätze** bestimmen die Schwierigkeit (Hick): Zwei Tasten sind etwas anderes als vier mit wechselnden Plätzen. Verglichen werden sollte nur bei gleicher Stufe.
+- **Streuung:** Einzelne Messungen am Menschen streuen; deshalb werden Median und Streuung der Zeiten gezeigt, und aussagekräftiger als ein Einzelwert ist der Verlauf über mehrere Sitzungen (Mountford et al., 2004, S. 44). Zuverlässigkeitsdaten für diese Übung gibt es nicht.
+- **Getrennte Fehlerarten:** Falsche Taste, zu langsam und zu früh werden getrennt gezählt; die Zeiten stammen nur aus richtigen Antworten.
+- **Tastatur:** Die Ziffern 1 bis 4 sind den Zeichen A bis D zugeordnet; das hängt nicht von der Tastaturbelegung (QWERTZ, QWERTY) ab.
+- **Übungseffekt:** Schnelle Anfangsgewinne sind überwiegend Aufgaben- und Zuordnungslernen; Leistungskurven flachen dann ab.
 
 ## 8. Studienlage: Trainierbarkeit und Übertragung
 
-- **Übungseffekt – mittel:** Übung und konsistente Zuordnung verkleinern die Wahlkosten (Proctor & Schneider, 2018; Logan et al., 2016); Go/No-go-Leistung verbessert sich in der geübten Aufgabe deutlich (Enge et al., 2014). Studien zu genau diesem Spiel fehlen.
-- **Naher Transfer – schwach:** Automatisierung ist an die geübten Reiz-Antwort-Paare gebunden (Logan, 1988); Fingerfolgen-Training überträgt sich nicht auf andere Folgen (Karni et al., 1995); adaptives Hemmungstraining war einer aktiven Kontrollgruppe nicht überlegen, ohne Transfer auf den Stroop-Test (Enge et al., 2014). Denkbar ist Nutzen für **dieselbe** Tastenbelegung im Spiel – untersucht ist das nicht.
-- **Alltagstransfer – fehlend:** Kein Beleg für bessere Spielleistung, schnelleres Schreiben oder allgemeine Impulskontrolle; Videospiel-/Kognitionstraining zeigt allgemein keinen Ferntransfer (Sala et al., 2018).
+- **Übungseffekt – mittel:** Übung und konsistente Zuordnung verkleinern die Wahlkosten (Proctor & Schneider, 2018; Logan et al., 2016). Studien zu genau dieser Übung fehlen.
+- **Naher Transfer – schwach:** Automatisierung ist an die geübten Reiz-Antwort-Paare gebunden (Logan, 1988); Fingerfolgen-Training überträgt sich nicht auf andere Folgen (Karni et al., 1995). Denkbar ist Nutzen für **dieselbe** Zuordnung – untersucht ist das nicht.
+- **Alltagstransfer – fehlend:** Kein Beleg für bessere Spielleistung, schnelleres Schreiben oder allgemeine Entscheidungsgeschwindigkeit; Videospiel- und Kognitionstraining zeigen allgemein keinen Ferntransfer (Sala et al., 2018).
 
-## 9. Auswahlhinweise für die KI
+## 9. Auswahlhinweise
 
-- **Passt, wenn …** jemand am PC mit Tastatur eine schnelle Wahlreaktions- und Zuordnungsaufgabe sucht; Spiel-Hotkeys oder die Zahlenreihe ohne Hinschauen festigen möchte; eine leichte Hemmungskomponente (Fallen) gewünscht ist; als Ergänzung zu 202 (Wahlreaktion) oder 102 (Go/No-go) mit echter Fingerzuordnung.
-- **Weniger passend, wenn …** nur ein Tablet/Smartphone vorhanden ist (Blickfit-Hauptgerät); Ziele im Bereich Sehen, Blickfolge oder Sehfeld bestehen; Buchstaben- und Ziffernkenntnis unsicher ist; jemand ohne Zeitdruck üben möchte (dann Zeitfenster abschalten oder „Easy“).
+- **Passt, wenn …** jemand am Tablet oder am Computer eine schnelle Wahlreaktions- und Zuordnungsaufgabe sucht; ruhig, ohne Blitze und mit großen Tasten; als Ergänzung zu 202 (Wahlreaktion) oder 102 (Go/No-go).
+- **Weniger passend, wenn …** Ziele im Bereich Sehen, Blickfolge oder Sehfeld bestehen; Tastenwege auf einer echten Tastatur blind eingeübt werden sollen (diese Übung nutzt Bildschirmtasten); Zeichenkenntnis unsicher ist; jemand ohne Zeitdruck üben möchte (die Antwortfrist ist fest und wird knapper).
 - **Vorsicht / anpassen bei …**
-  - `kognitive_einschraenkung`: Mischung aus vier Aufgabentypen, wechselnde Regeln und adaptiver Zeitdruck überfordern leicht → nur Einzeltasten, wenige Tasten, ohne Zeitlimit.
-  - `aufmerksamkeitsprobleme`: Fallen und Serienabbruch fördern Frust bei impulsiven Fehlern; Fallenanteil senken, Erfolge statt Fehler betonen.
-  - `lese_rechtschreib_schwaeche`: schnelles Erkennen und Zuordnen von Buchstaben unter Zeitdruck; ähnliche Zeichen (1/I, 0/O, ,/.) meiden oder Ziffern-/Spieltasten nutzen.
-  - `hand_arm_beschwerden`: bei längeren Blöcken (Website: 10–15 min) Belastung von Fingern und Handgelenk; kurze Runden, Pausen.
-  - `tremor_parkinson`: gezieltes Anschlagen ohne Hinsehen unter Zeitdruck ist erschwert, Fehlanschläge brechen Serien; großzügige Fenster, keine Bewertung.
-  - `presbyopie_gleitsicht`: wer noch nicht blind tippt, blickt ständig zwischen Monitor und Tastatur hin und her; mit Gleitsichtglas heißt das jedes Mal Kopf-/Blickwechsel zwischen Zwischen- und Nahzone. Das verlangsamt und benachteiligt – eher mit wenigen, vertrauten Tasten beginnen; eine Arbeitsplatzbrille ist angenehmer. Keine Aussage über Sehen oder Sehkorrektur.
-  - `kinder_unter_6`: setzt Zeichenkenntnis und Tastaturerfahrung voraus.
-  - Farbsehschwäche ist **kein** Ausschluss (Fallen mehrfach kodiert, Orange hebt sich von Weiß ab).
-- **Kombiniert gut mit …** 202 (Wahlreaktion am Bildschirm), 102 (Go/No-go, Impulskontrolle) und 802 (Abfangen mit der Maus mit Go/No-go-Regel), 101 (einfache Reaktion als Vergleich: Wahlkosten ≈ Differenz der Reaktionszeiten; 301 ist trotz seines Namens eine Zeitschätzaufgabe und dafür ungeeignet), 701 (Klicktempo) und 708 (Zielfolge mit der Maus) als motorische Ergänzung, 602 und 601 (Merkspanne statt Merkfolge unter Zeitdruck), 207 (Symbol-Zuordnung).
-- **Abgrenzung:** 703 ist im Katalog die einzige Übung mit echter Tastenzuordnung (`fingersequenz_bimanual` = 3). 708 heißt im Original „Finger Sequencing“, ist aber eine Maus-Zielübung ohne Fingerfolgen – keine Dublette.
+  - `kognitive_einschraenkung`: wechselnde Tastenplätze und knapper werdende Fristen überfordern leicht → auf den unteren Stufen bleiben.
+  - `aufmerksamkeitsprobleme`: Zu frühes Tippen und Verpassen können Frust fördern; Erfolge statt Fehler betonen.
+  - `lese_rechtschreib_schwaeche`: Zuordnen von Buchstaben und Formen unter Zeitvorgabe; die Form trägt die Information mit.
+  - `hand_arm_beschwerden`: bei längeren Blöcken Belastung von Fingern und Handgelenk; kurze Runden, Pausen. Taubheit oder Schwäche in Hand und Arm gelten als Anlass zur ärztlichen Abklärung (Muchnick, 2008, S. 28).
+  - `tremor_parkinson`: gezieltes Antippen unter Zeitvorgabe ist erschwert, Fehltipps senken die Stufe; die Übung stellt keine Bewertung an.
+  - `presbyopie_gleitsicht`: am Tablet unproblematisch; am Monitor mit Gleitsichtglas Wechsel zwischen Zonen; eine Arbeitsplatzbrille ist angenehmer. Keine Aussage über Sehen oder Sehkorrektur.
+  - `kinder_unter_6`: setzt Zeichenkenntnis voraus.
+  - Farbsehschwäche ist **kein** Ausschluss (Form und Buchstabe tragen die Information).
+  - Allgemein: Bei Doppelbildern, plötzlichem Sehverlust, Schwindel oder Kopfschmerz mit Sehverschlechterung die Übung abbrechen und ärztlich abklären lassen (vgl. Muchnick, 2008, S. 6, 28).
+- **Kombiniert gut mit …** 202 (Wahlreaktion am Bildschirm), 102 (Go/No-go, Impulskontrolle) und 802 (Abfangen mit der Maus mit Go/No-go-Regel), 101 (einfache Reaktion als Vergleich: Wahlkosten ≈ Differenz der Reaktionszeiten; 301 ist trotz seines Namens eine Zeitschätzaufgabe und dafür ungeeignet), 701 (Tipp-Tempo) und 708 (Zielfolge mit der Maus) als motorische Ergänzung, 602 und 601 (Merkspanne statt Merkfolge unter Zeitdruck), 207 (Symbol-Zuordnung).
+- **Abgrenzung:** Nahe verwandt sind 202 (Wahlreaktion) und 102 (Go/No-go); 703 betont die Zuordnung von Zeichen zu Tasten bei wachsender Zahl von Alternativen. 708 ist eine Maus-Zielübung ohne Fingerfolgen – keine Dublette.
 
 ## 10. Schwächen des Originals und Empfehlungen für eine Blickfit-Umsetzung
 
@@ -188,33 +190,25 @@ Die Seite nennt die Übung ein „hochpräzises neuro-motorisches Trainingsinstr
 
 ### Von der Website angegeben
 
-- Donders, F. C. (1969). On the speed of mental processes (W. G. Koster, Übers.). *Acta Psychologica, 30*, 412–431. https://doi.org/10.1016/0001-6918(69)90065-1 (Original 1868) – **Prüfung:** DOI stimmt ✓ (Übersetzung 1969); **stützt die Aussage der Website:** ja – Unterscheidung einfache vs. Wahlreaktion (Subtraktionsmethode); zu Tastatur-Training keine Aussage.
+- Donders, F. C. (1969). On the speed of mental processes (W. G. Koster, Übers.). *Acta Psychologica, 30*, 412–431. https://doi.org/10.1016/0001-6918(69)90065-1 (zuerst 1868 erschienen) – **Prüfung:** DOI stimmt ✓ (Übersetzung 1969); **stützt die Aussage der Website:** ja – Unterscheidung einfache vs. Wahlreaktion (Subtraktionsmethode); zu Tastatur-Training keine Aussage.
 - Hick, W. E. (1952). On the rate of gain of information. *Quarterly Journal of Experimental Psychology, 4*(1), 11–26. https://doi.org/10.1080/17470215208416600 – **Prüfung:** DOI stimmt ✓; **stützt die Aussage der Website:** ja für den logarithmischen Anstieg; nein für „Muskelgedächtnis nähert die Reaktion einem Reflex an“ – dazu steht bei Hick nichts; Übung verkleinert nur die Steigung (Proctor & Schneider, 2018), ein Reflex wird es nicht.
-- Logan, G. D., & Cowan, W. B. (1984). On the ability to inhibit thought and action: A theory of an act of control. *Psychological Review, 91*(3), 295–327. https://doi.org/10.1037/0033-295X.91.3.295 – **Prüfung:** DOI stimmt ✓; **stützt die Aussage der Website:** teilweise – liefert das Wettlaufmodell für Stopp-Signale; die Fallen der Übung sind aber Go/No-go-Reize, und eine Aussage über den präfrontalen Kortex steht dort nicht (Verhaltensmodell).
-- Sternberg, S. (1966). High-speed scanning in human memory. *Science, 153*(3736), 652–654. https://doi.org/10.1126/science.153.3736.652 – **Prüfung:** DOI stimmt ✓, **Titel auf der Website falsch** („perception“ statt „memory“); **stützt die Aussage der Website:** nein – Gedächtnissuche (RT steigt linear mit der Listenlänge), nichts zu motorischen Sequenzen oder Chunking.
 - Woods, D. L., Wyma, J. M., Yund, E. W., Herron, T. J., & Reed, B. (2015). Factors influencing the latency of simple reaction time. *Frontiers in Human Neuroscience, 9*, 131. https://doi.org/10.3389/fnhum.2015.00131 – **Prüfung:** DOI stimmt ✓; **stützt die Aussage der Website:** teilweise – bestätigt Hardware-Einflüsse (Monitor 11 ms, Maus bis ≥ 20 ms) und damit „gleiches Setup vergleichen“; „200–250 ms Reizverarbeitung“ (deutsche Fassung) nein: 213–231 ms ist die ganze einfache Reaktion, Reizentdeckung ≈ 131 ms; die englische Fassung („einfache visuelle Reaktion ≈ 200–250 ms“) passt dagegen ungefähr. Die Stufentabelle stammt aus keiner der Quellen.
 
 ### Weitere Fachliteratur
 
-- Aron, A. R., Robbins, T. W., & Poldrack, R. A. (2014). Inhibition and the right inferior frontal cortex: One decade on. *Trends in Cognitive Sciences, 18*(4), 177–185. https://doi.org/10.1016/j.tics.2013.12.003 – Hemmungsnetzwerk („Bremse“) (Crossref ✓, Abstract).
+- Bi, X., Li, Y., & Zhai, S. (2013). FFitts law. In *Proceedings of the SIGCHI Conference on Human Factors in Computing Systems* (S. 1363–1372). ACM. https://doi.org/10.1145/2470654.2466180 – Fehlerraten bei kleinen Touch-Zielen
 - Birch, J. (2012). Worldwide prevalence of red-green color deficiency. *Journal of the Optical Society of America A, 29*(3), 313–320. https://doi.org/10.1364/JOSAA.29.000313 – Häufigkeit Farbsehschwäche.
 - Der, G., & Deary, I. J. (2006). Age and sex differences in reaction time in adulthood: Results from the United Kingdom Health and Lifestyle Survey. *Psychology and Aging, 21*(1), 62–73. https://doi.org/10.1037/0882-7974.21.1.62 – Alterseffekt der Wahlreaktion.
-- Dhakal, V., Feit, A. M., Kristensson, P. O., & Oulasvirta, A. (2018). Observations on typing from 136 million keystrokes. In *Proceedings of the 2018 CHI Conference on Human Factors in Computing Systems* (S. 1–12). ACM. https://doi.org/10.1145/3173574.3174220 – Anschlagintervalle beim freien Tippen.
 - Doyon, J., & Benali, H. (2005). Reorganization and plasticity in the adult brain during learning of motor skills. *Current Opinion in Neurobiology, 15*(2), 161–167. https://doi.org/10.1016/j.conb.2005.03.004 – Netzwerke motorischen Lernens.
-- Enge, S., Behnke, A., Fleischhauer, M., Küttler, L., Kliegel, M., & Strobel, A. (2014). No evidence for true training and transfer effects after inhibitory control training in young healthy adults. *Journal of Experimental Psychology: Learning, Memory, and Cognition, 40*(4), 987–1001. https://doi.org/10.1037/a0036165 – kein echter Transfer von Hemmungstraining.
-- Feit, A. M., Weir, D., & Oulasvirta, A. (2016). How we type: Movement strategies and performance in everyday typing. In *Proceedings of the 2016 CHI Conference on Human Factors in Computing Systems* (S. 4262–4273). ACM. https://doi.org/10.1145/2858036.2858233 – Tipptechniken mit weniger Fingern.
 - Karni, A., Meyer, G., Jezzard, P., Adams, M. M., Turner, R., & Ungerleider, L. G. (1995). Functional MRI evidence for adult motor cortex plasticity during motor skill learning. *Nature, 377*(6545), 155–158. https://doi.org/10.1038/377155a0 – Lernspezifität von Fingerfolgen.
-- Liu, X., Crump, M. J. C., & Logan, G. D. (2010). Do you know where your fingers have been? Explicit knowledge of the spatial layout of the keyboard in skilled typists. *Memory & Cognition, 38*(4), 474–484. https://doi.org/10.3758/MC.38.4.474 – Tastenpositionen nur implizit bekannt (Crossref ✓, Abstract).
 - Logan, G. D. (1988). Toward an instance theory of automatization. *Psychological Review, 95*(4), 492–527. https://doi.org/10.1037/0033-295X.95.4.492 – Automatisierung als aufgabenspezifischer Abruf (Crossref ✓, nur Kurzfassung).
 - Logan, G. D., Ulrich, J. E., & Lindsey, D. R. B. (2016). Different (key)strokes for different folks: How standard and nonstandard typists balance Fitts' law and Hick's law. *Journal of Experimental Psychology: Human Perception and Performance, 42*(12), 2084–2102. https://doi.org/10.1037/xhp0000272 – Hick vs. Fitts beim Tippen, Einfluss verdeckter Tastatur (Crossref ✓, Abstract).
+- Mountford, J., Ruston, D., & Dave, T. (2004). *Orthokeratology: Principles and Practice*. Butterworth-Heinemann. https://openlibrary.org/isbn/9780750640077 – Messwerte streuen, Wiederholmessung sinnvoll (S. 44)
+- Muchnick, B. G. (2008). *Clinical Medicine in Optometric Practice* (2. Aufl.). Mosby/Elsevier. https://openlibrary.org/isbn/9780323029612 – Warnzeichen mit Abklärungsbedarf (S. 6, 28)
+- Patel, S., Henderson, R., Bradley, L., Galloway, B., & Hunter, L. (1991). Effect of visual display unit use on blink rate and tear stability. *Optometry and Vision Science*, 68(11), 888–892. https://doi.org/10.1097/00006324-199111000-00010 – Lidschlag am Bildschirm
 - Proctor, R. W., & Schneider, D. W. (2018). Hick's law for choice reaction time: A review. *Quarterly Journal of Experimental Psychology, 71*(6), 1281–1299. https://doi.org/10.1080/17470218.2017.1322622 – Übung und Kompatibilität verändern die Hick-Steigung.
 - Pronk, T., Wiers, R. W., Molenkamp, B., & Murre, J. (2020). Mental chronometry in the pocket? Timing accuracy of web applications on touchscreen and keyboard devices. *Behavior Research Methods, 52*(3), 1371–1382. https://doi.org/10.3758/s13428-019-01321-2 – Messfehler im Browser.
-- Sakai, K., Kitaguchi, K., & Hikosaka, O. (2003). Chunking during human visuomotor sequence learning. *Experimental Brain Research, 152*(2), 229–242. https://doi.org/10.1007/s00221-003-1548-8 – Chunking nur bei wiederholten Folgen.
 - Sala, G., Tatlidil, K. S., & Gobet, F. (2018). Video game training does not enhance cognitive ability: A comprehensive meta-analytic investigation. *Psychological Bulletin, 144*(2), 111–139. https://doi.org/10.1037/bul0000139 – fehlender Ferntransfer.
-- Salthouse, T. A. (1984). Effects of age and skill in typing. *Journal of Experimental Psychology: General, 113*(3), 345–371. https://doi.org/10.1037/0096-3445.113.3.345 – Vorauslesen gleicht Alter aus.
-- Spierer, L., Chavan, C. F., & Manuel, A. L. (2013). Training-induced behavioral and brain plasticity in inhibitory control. *Frontiers in Human Neuroscience, 7*, 427. https://doi.org/10.3389/fnhum.2013.00427 – automatische, reizgebundene Hemmung.
-- Verbruggen, F., Aron, A. R., Band, G. P. H., Beste, C., Bissett, P. G., Brockett, A. T., … Boehler, C. N. (2019). A consensus guide to capturing the ability to inhibit actions and impulsive behaviors in the stop-signal task. *eLife, 8*, e46323. https://doi.org/10.7554/eLife.46323 – Abgrenzung Stopp-Signal- vs. Go/No-go-Aufgabe (Crossref ✓, Abstract).
-- Wessel, J. R. (2018). Prepotent motor activity and inhibitory control demands in different variants of the go/no-go paradigm. *Psychophysiology, 55*(3), e12871. https://doi.org/10.1111/psyp.12871 – Go/No-go-Varianten, Anteil seltener No-go-Reize.
+- Weidling, P., & Jaschinski, W. (2015). The vertical monitor position for presbyopic computer users with progressive lenses: How to reach clear vision and comfortable head posture. *Ergonomics*, 58(11), 1813–1829. https://doi.org/10.1080/00140139.2015.1035764 – Monitorhöhe bei Gleitsichtgläsern
 - Wimmer, R., Schmid, A., & Bockes, F. (2019). On the latency of USB-connected input devices. In *Proceedings of the 2019 CHI Conference on Human Factors in Computing Systems* (S. 1–12). ACM. https://doi.org/10.1145/3290605.3300650 – Tastaturlatenz.
-- W3C (2025). *UI Events KeyboardEvent code Values* (G. Kacmarcik, T. Leithead & M. Nakano, Hrsg.; Stand 22.04.2025). https://www.w3.org/TR/uievents-code/ – Web-Standard, keine DOI; `KeyZ` = „y“ auf deutscher QWERTZ-Tastatur.
-- Weitere im Text genannte, in der Literaturbasis geprüfte Arbeiten: Bi, Li & Zhai (2013), https://doi.org/10.1145/2470654.2466180; Patel et al. (1991), https://doi.org/10.1097/00006324-199111000-00010; Weidling & Jaschinski (2015), https://doi.org/10.1080/00140139.2015.1035764; Witt, Laird & Meyerand (2008), https://doi.org/10.1016/j.neuroimage.2008.04.025.
+- Witt, S. T., Laird, A. R., & Meyerand, M. E. (2008). Functional neuroimaging correlates of finger-tapping task variations: An ALE meta-analysis. *NeuroImage*, 42(1), 343–356. https://doi.org/10.1016/j.neuroimage.2008.04.025 – beteiligte Hirnnetzwerke
