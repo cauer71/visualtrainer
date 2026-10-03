@@ -11,7 +11,7 @@ funktioniert aber auch am Handy und am Computer. Sprachen: **Deutsch** und **Ita
 - adaptive Schwierigkeit (Staircase-Verfahren), Verlauf, Bestwerte, persönliche Tipps
 - **Zwei Ansichten** (Knopf in der Kopfzeile, beim ersten Öffnen Auswahl):
   **Kunde** sieht nur drei vom Optiker gewählte Übungen (Voreinstellung: Blitzreaktion, Kugel-Detektiv, Suchbild);
-  **Optiker** sieht alle 101 Übungen, „Hintergrund & Studien“, den **Übungskatalog** (87 Einträge mit Anforderungsprofil, Quellen)
+  **Optiker** sieht alle 106 Übungen, „Hintergrund & Studien“, den **Übungskatalog** (87 Einträge mit Anforderungsprofil, Quellen)
   und wählt im Optiker-Bereich die Kunden-Übungen. Die Wahl ist eine Ansicht, **kein Zugangsschutz** (kein Login, alles im Browser gespeichert).
 - **Tagestraining**: jeden Tag 5 Übungen (eine je Bereich)
 - statische Seite (~130 kB gzip JS), läuft auf jedem Webspace, in Unterordnern und im iframe
@@ -105,6 +105,8 @@ funktioniert aber auch am Handy und am Computer. Sprachen: **Deutsch** und **Ita
 | Wahrnehmen & Erfassen | **Welche Seite?** | bei Hand, Fuß oder Unterarm in verschiedenen Ansichten und Drehungen die linke oder rechte Seite erkennen |
 | Konzentration & Denken | **Zahlen-Buchstaben-Wirbel** | treibende Zahlen und Buchstaben abwechselnd der Reihe nach antippen (1 – A – 2 – B …) |
 | Bewegung verfolgen | **4-Ziele-Wechsel** | vier Buchstabentafeln in den Ecken: ein Buchstabe von jeder Tafel im Wechsel antippen, Zeit von Tipp zu Tipp (Touch-Version der Sehtherapie-Übung „4 Chart Saccades“; kein Eye-Tracking) |
+
+**Gleichgewichts-Übungen (Marke „Labor“):** `labor-richtungen`, `labor-orientierung`, `labor-balance-touch` (mit großen Bildschirmtasten für eine Hilfsperson plus Tastenkürzel), `labor-slalom` und `labor-invasoren` (Steuerung per Finger, Pfeiltasten oder Gerätekippen; Kippen nur nach Antippen, iOS fragt dann nach der Erlaubnis, die Sensorwerte bleiben auf dem Gerät). Sie messen weder Gleichgewicht noch Haltung, nur Zählwerte der Übung; Sicherheitshinweise stehen im Intro unter „Gut zu wissen“. Beschreibung: [`docs/entwicklung/labor-uebungen-portieren.md`](docs/entwicklung/labor-uebungen-portieren.md), Abschnitt 9.
 
 **VR-Labor (Versuch):** unter `/vr/` liegt ein eigener Testbereich für VR-Brillen mit WebXR (Oculus/Meta Quest, Rift). Dort läuft **Kugel-Detektiv 3D** – Mehrfach-Objektverfolgung in einem Würfelraum, bei dem die räumliche Tiefe Teil der Aufgabe ist. Ohne Brille gibt es eine flache Vorschau. Beschreibung, Aufbau und Tests: [`docs/vr-labor.md`](docs/vr-labor.md). Aus dem Optiker-Bereich verlinkt.
 
