@@ -2,7 +2,7 @@
 # ===== Kennung =====
 nr: 506
 kennung: 180-degree-awareness
-name: "Randziel-Flick – Ziele am linken oder rechten Bildschirmrand bemerken und mit einer weiten Mausbewegung treffen"
+name: "Randziel-Flick – von der Mitte zu Zielen am linken oder rechten Rand tippen"
 name_original: "180° Awareness Pro (Seitentitel: 180-Grad-Aim-Training | FPS-Drehung)"
 kapitel: "Zielen (FPS)"
 kapitel_original: "fps"
@@ -12,7 +12,7 @@ blickfit_umsetzung: {kennung: "randziel-flick", name: "Randziel-Flick", untersch
 stand: 2026-09-29
 
 # ===== Überblick =====
-kurzbeschreibung: "Auf dunklem Spielfeld erscheint jeweils ein grüner Kreis – mit steigendem Level fast immer in einem schmalen Streifen am linken oder rechten Rand. Man bewegt das Fadenkreuz per Maus (gesperrter Zeiger) mit einer weiten, schnellen Bewegung dorthin, bremst ab und klickt, bevor der Kreis verschwindet. Eine echte 180-Grad-Drehung einer 3D-Ansicht gibt es nicht."
+kurzbeschreibung: "Jeder Durchgang beginnt mit einem Tipp auf eine Marke in der Bildschirmmitte. Nach einer unvorhersehbaren Wartezeit erscheint am linken oder rechten Rand ein Ziel, das möglichst schnell angetippt wird. Der Weg von der Mitte zum Rand ist immer lang und vergleichbar; mit steigender Stufe werden die Ziele kleiner, kürzer sichtbar und streuen über eine größere Höhe. Ausgewertet werden der Median der Zeit von der Mitte bis zum Ziel, die Trefferquote und der Vergleich links gegen rechts."
 ziel_funktionen: [sakkaden, auge_hand_koordination, zielbewegung_tempo, zielbewegung_praezision]
 eingabe: [maus]
 tablet_geeignet: nein
@@ -74,13 +74,13 @@ belastung:
 # ===== Auswahlhilfe =====
 voraussetzungen: ["Computer mit Maus (reine Touch-Geräte werden vom Original abgewiesen; Pointer Lock gibt es in Safari auf iPad nicht)", "freie Mausfläche, bequeme Arm-/Handgelenkhaltung", "Bildschirm 50–70 cm, möglichst Vollbild (Verlassen des Vollbilds bricht ab)", "seitlicher Blick bzw. Kopfdrehung bis zum Bildschirmrand scharf möglich (Bildschirm- statt Gleitsichtbrille)", "kein Farbsehen nötig (ein heller Zieltyp)", "Toleranz für hohen Zeitdruck und Misserfolgs-Rückmeldung"]
 vorsicht_bei: [hand_arm_beschwerden, tremor_parkinson, presbyopie_gleitsicht, gesichtsfeldausfall, trockenes_auge_bildschirm, kopfschmerz_asthenopie, sehbehinderung_niedriger_visus, photosensitive_epilepsie, migraene_lichtempfindlich, aufmerksamkeitsprobleme, kognitive_einschraenkung]
-geeignet_fuer: ["weite, schnelle Zielbewegungen mit der Maus quer über den Bildschirm üben (Fitts-Aufgabe mit großer Amplitude und Zeitlimit)", "Blick-Hand-Koordination bei großen Blicksprüngen zu seitlich auftauchenden Zielen", "Aufwärmen für Menschen, die ohnehin Ego-Shooter spielen", "Selbstvergleich auf demselben Gerät (Erfassungszeit, Präzision)"]
-weniger_geeignet_fuer: ["Tablet- und Smartphone-Nutzung (Original nicht spielbar)", "Gleitsichtträger:innen am großen Monitor (Randziele im unscharfen Seitenbereich des Glases)", "Menschen mit Gesichtsfeldausfall zur Seite, Tremor oder Hand-/Schulterbeschwerden", "Einsteiger:innen und ältere Menschen ohne Maus-Routine (Zeitfenster schrumpft unter typische Erfassungszeiten)", "Ziel echte Raumorientierung, Drehungen im 3D-Raum oder Richtungshören (kommt im Original nicht vor)", "Erwartung eines Seh-, Sicherheits- oder Alltagsnutzens"]
+geeignet_fuer: ["weite Zielbewegungen von der Bildschirmmitte zum Rand üben (Zeigeaufgabe mit großer Amplitude und Zeitlimit)", "Blick-Hand-Koordination bei großen Blicksprüngen zu seitlich auftauchenden Zielen", "Selbstvergleich auf demselben Gerät (Zeit Mitte → Ziel, Trefferquote, links gegen rechts)", "zum Aufwärmen für Ballspiele und andere Sportarten mit raschen Seitenblicken"]
+weniger_geeignet_fuer: ["Gleitsichtträger:innen an großen Bildschirmen (Randziele liegen im unscharfen Seitenbereich des Glases)", "Menschen mit Gesichtsfeldausfall zur Seite, Tremor oder Hand-/Schulterbeschwerden", "Einsteiger:innen und ältere Menschen, denen kurze Sichtzeiten auf hohen Stufen zu schnell sind", "wer Raumorientierung, Drehungen im 3D-Raum oder Richtungshören üben möchte (nicht Gegenstand der Übung)", "Erwartung eines Seh-, Sicherheits- oder Alltagsnutzens"]
 evidenz:
   uebungseffekt: stark
   naher_transfer: schwach
   alltag_transfer: fehlend
-  kommentar: "In Aim-Trainer-Klickaufgaben wird man mit Übung deutlich schneller (Warburton et al. 2023; Aim-Lab-Längsschnitt N = 7.174, Listman et al. 2021), eine neue Maus-Skalierung wird rasch gelernt und verallgemeinert (Krakauer et al. 2000); die Übung selbst, ein Transfer auf 180°-Drehungen im Spiel oder auf den Alltag sind nicht untersucht."
+  kommentar: "Bei Zeigeaufgaben am Bildschirm wird man mit Übung deutlich schneller (Warburton et al. 2023; Längsschnittdaten mit N = 7.174 aus einem Zieltraining am Bildschirm, Listman et al. 2021), und eine veränderte Übersetzung zwischen Hand- und Zeigerbewegung wird rasch gelernt und verallgemeinert (Krakauer et al. 2000). Für die Übung selbst, einen Transfer auf Drehbewegungen im Spiel oder auf den Alltag liegen keine Untersuchungen vor."
 aehnliche_uebungen: [501, 509, 502, 511, 704, 702, 805, 303, 801, 401]
 stichworte: ["Flick", "180-Grad-Drehung", "Randziel", "große Amplitude", "Aim Trainer", "Fitts'sches Gesetz", "Sakkade", "Blick-Kopf-Koordination", "peripheres Sehen", "Auge-Hand-Koordination", "Ego-Shooter", "FPS", "Maus", "Pointer Lock", "Zeitdruck", "Combo"]
 ---
@@ -92,11 +92,7 @@ stichworte: ["Flick", "180-Grad-Drehung", "Randziel", "große Amplitude", "Aim T
 
 ## 1. Kurzbeschreibung
 
-Technisch eine Schwester von Nr. 501: Auf fast schwarzem Grund taucht mit Piepton ein grüner Kreis auf, man führt das
-Fadenkreuz per Maus darauf und klickt – mit steigendem Level fast immer in einem Streifen ganz links oder rechts, oft
-quer über den ganzen Bildschirm. Treffer bringen Punkte und Zeit, Fehler kosten Zeit und die Trefferserie. „180°“
-spielt auf die Drehung der Spielfigur im Ego-Shooter an; im Original dreht sich aber keine Ansicht – es ist eine
-flache 2D-Zeigeaufgabe mit großer Weite.
+Jeder Durchgang beginnt mit einem Tipp auf die Marke in der Bildschirmmitte. Danach folgt eine unvorhersehbare Wartezeit (mindestens 0,5 s, im Mittel rund 1 s), und am linken oder rechten Rand blendet weich ein Ziel ein. Man tippt das Ziel an, bevor es wieder ausblendet. Weil jeder Durchgang an derselben Stelle beginnt und das Ziel immer am Rand liegt, ist der Weg lang und von Durchgang zu Durchgang vergleichbar; dieselbe Seite kommt höchstens dreimal hintereinander. Die Stufe passt sich an (drei Treffer in Folge steigern, ein Fehler senkt): Das Ziel wird kleiner, bleibt kürzer sichtbar und erscheint in einem größeren Anteil der Bildschirmhöhe. Eine Sitzung hat 20 Durchgänge ohne Zeitkonto und ohne Strafabzug; ausgewertet werden der Median der Zeit von der Mitte bis zum Ziel, die Trefferquote und die Zeiten links gegen rechts.
 
 ## 2. Ablauf im Original (Analyse)
 
@@ -156,80 +152,39 @@ Schwung 180–260 ms, Bremsung 60–110 ms, Feinjustierung 70–130 ms, gesamt 4
 
 ## 4. Optische und okulomotorische Grundlagen
 
-- **Größe/Ort:** Kreis-Ø ≈ 1,7° (Level 1) bis 0,7° (Level 15) – weit über der Auflösungsgrenze. Randziele liegen
-  ≈ 20–23° vom Zentrum, ≈ 40–46° vom Gegenrand (27 Zoll in 60 cm: ±26,5°) [ER].
-- **Randbereich:** Ein kontrastreicher, plötzlich erscheinender Kreis zieht Aufmerksamkeit auf sich (Yantis &
-  Jonides, 1984, dort nahe der Blickmitte untersucht); bei 20–45° dürfte er dank Kontrast und Ton meist bemerkt
-  werden (Einschätzung); die zum Rand stark abfallende Detailerkennung (Strasburger et al., 2011) wird kaum
-  gebraucht – daher `peripheres_sehen` = 2.
-- **Große Blicksprünge:** Latenz 180–250 ms, kaum exzentrizitätsabhängig (Darrien et al., 2001); Sakkade und Hand
-  unterschießen leicht (Helsen et al., 1998). Bei weiten Sprüngen dreht oft der Kopf mit, individuell sehr verschieden
-  (Bereich ohne Kopfbewegung 35,8 ± 31,9° breit; Stahl, 1999). Ab 60–79 Jahren sind Sakkaden langsamer und variabler
-  (Munoz et al., 1998).
-- **Brille:** Der scharfe Zwischenbereich einer Gleitsichtbrille ist bei 60 cm nur 13–18° breit (Einstärkenglas ≈ 60°;
-  Han et al., 2003) – Randziele liegen außerhalb, Kopfdrehungen verfälschen die Werte. Besser: Bildschirm-/
-  Arbeitsplatzbrille, kleineres Fenster; Nahbedarf bei 60 cm ≈ 1,7 dpt [ER].
-- **Weiteres:** Gesichtsfeldausfall zu einer Seite → Randziele dort später bemerkt (Auswahlhinweis, keine Diagnose).
-  Lidschlag bei schnellen Spielen ≈ ⅓ des Ruhewerts (Cardona et al., 2011). Ein heller Zieltyp → Farbsehschwäche
-  (≈ 8 % der Männer) unerheblich; 2D → Stereosehen 0.
+- **Größe und Ort:** Der sichtbare Zielradius beträgt 7,2 (Stufe 1) bis 3,6 Einheiten (Stufe 14; eine Einheit ist 1 % der kürzeren Bildschirmseite, mindestens 15 Pixel); die Trefferfläche ist größer als das sichtbare Ziel (Radius mindestens 28 Pixel). Die Ziele liegen weit über der Auflösungsgrenze des Auges. Als Faustwert: Bei 40 cm Abstand entspricht 1 cm auf dem Bildschirm etwa 1,4°; bei einem Tablet mit 20 cm Anzeigebreite liegen die Zielmitten daher grob 12–13° links und rechts der Mitte, und die beiden Seiten sind rund 25° voneinander entfernt.
+- **Randbereich:** Ein kontrastreicher, plötzlich erscheinender Reiz zieht Aufmerksamkeit auf sich (Yantis & Jonides, 1984, dort nahe der Blickmitte untersucht); bei 12–25° Exzentrizität dürfte er dank Kontrast und weichem Einblenden meist bemerkt werden (Einschätzung). Die zum Rand stark abfallende Detailerkennung (Strasburger et al., 2011) wird kaum gebraucht – daher `peripheres_sehen` = 2.
+- **Große Blicksprünge:** Die Latenz liegt bei 180–250 ms und hängt kaum von der Exzentrizität ab (Darrien et al., 2001); Sakkade und Hand unterschießen leicht (Helsen et al., 1998). Bei weiten Sprüngen dreht oft der Kopf mit, individuell sehr verschieden (Bereich ohne Kopfbewegung 35,8 ± 31,9° breit; Stahl, 1999). Ab 60–79 Jahren sind Sakkaden langsamer und variabler (Munoz et al., 1998).
+- **Brille:** Der scharfe Zwischenbereich einer Gleitsichtbrille ist bei 60 cm Abstand nur 13–18° breit (Einstärkenglas ≈ 60°; Han et al., 2003). Randziele können daher außerhalb liegen, und Kopfdrehungen verfälschen die Zeiten. Besser sind eine Bildschirm- oder Arbeitsplatzbrille und ein kleineres Fenster bzw. ein kleinerer Bildschirm; der Nahbedarf beträgt rechnerisch bei 60 cm etwa 1,7 dpt, bei 40 cm 2,5 dpt (Faustregel: Dioptrien = 100 / Abstand in cm).
+- **Weiteres:** Ein Gesichtsfeldausfall zu einer Seite führt dazu, dass Randziele dort später bemerkt werden (Auswahlhinweis, keine Diagnose). Ausfälle vor dem Chiasma betreffen meist ein Auge, am Chiasma beide Seiten ungleichseitig, dahinter gleichseitig (Muchnick, 2008, S. 32); die Übung ist kein Gesichtsfeldtest. Der Lidschlag ist bei konzentrierter Bildschirmarbeit auf etwa ein Drittel des Ruhewerts vermindert (Cardona et al., 2011). Es gibt nur einen Zieltyp; Farbsehschwäche (≈ 8 % der Männer) ist daher unerheblich, und weil die Aufgabe flach ist, spielt Stereosehen keine Rolle (0).
 
 ## 5. Neurowissenschaftliche Grundlagen
 
-Orientierungssakkaden entstehen im Netzwerk aus frontalem Augenfeld, Colliculus superior und Hirnstamm (Leigh & Zee,
-2015), bei großen Blickwechseln gekoppelt an Kopfbewegungen (Freedman, 2008). Anders als die Website nahelegt („die
-Sakkade leitet die Mausbewegung ein“), werden Blick- und Handbefehl weitgehend **parallel** geplant (Prablanc et al.,
-1979). Dass die Übung eine Hirnregion „trainiert“, ist nicht belegt.
+Orientierungssakkaden entstehen im Netzwerk aus frontalem Augenfeld, Colliculus superior und Hirnstamm (Leigh & Zee, 2015), bei großen Blickwechseln gekoppelt an Kopfbewegungen (Freedman, 2008). Blick- und Handbefehl werden weitgehend **parallel** geplant (Prablanc et al., 1979); der Blick „leitet“ die Handbewegung also nicht ein, beide werden gleichzeitig vorbereitet. Dass die Übung eine Hirnregion „trainiert“, ist nicht belegt.
 
 ## 6. Motorische Grundlagen
 
-- **Fitts:** ID = log₂(D/W + 1); Querung auf Level 15 (D ≈ 1.700 px, W ≈ 32 px) ≈ 5,8 bit [ER]. Bei Maus-Durchsätzen
-  von 3,7–4,9 bit/s (Soukoreff & MacKenzie, 2004) wären das für Durchschnittsnutzer ≈ 1,2–1,6 s plus Reaktionszeit
-  [ER, Faustrechnung ohne Randeffekt] – weit über 380 ms Sichtbarkeit; Gegenseiten-Ziele dürften auf hohen Levels oft
-  verfallen, auch wenn Geübte und der Randanschlag schneller sind (Einschätzung).
-- **Bewegungsablauf:** Schnelle weite Bewegungen streuen stärker (Schmidt et al., 1979); das Geschwindigkeitsmaximum
-  liegt etwa bei halber Strecke (Helsen et al., 1998) – „80–90 % ballistisch“ ist unbelegt. Ob Handgelenk oder
-  Schulter arbeitet, hängt nur von Empfindlichkeit und DPI ab. Ältere skalieren die Geschwindigkeit bei großen
-  Amplituden weniger (Ketcham et al., 2002); die Trefferzone (Level 15: ≈ 0,9 cm am Bildschirm) entspricht bei
-  Standard-Empfindlichkeit nur ≈ 1 mm Mausweg (800 dpi) [ER] – das macht Tremor spürbar.
-- **Belastung:** häufige Querungen über die ganze Bildbreite, bei niedriger Empfindlichkeit (wie in Shootern üblich)
-  mit weiten Arm- und Schulterzügen → `koerperliche_belastung` 1; beim Schwester-Drill 501 mit kürzeren, zufälligen
-  Wegen 0.
+- **Fitts:** Die Bewegungszeit hängt vom Verhältnis aus Weg und Zielbreite ab (ID = log₂(D/W + 1)). In der Übung ist der Weg die halbe Bildschirmbreite und die Zielbreite die Trefferfläche; mit kleineren Zielen auf höheren Stufen steigt der Schwierigkeitsindex. Bei Zeigegeräten wie der Maus liegen typische Durchsätze bei 3,7–4,9 bit/s (Soukoreff & MacKenzie, 2004); für das Antippen auf Touchscreens gelten andere, hier nicht belegte Werte. Die Zeit von der Mitte bis zum Tipp enthält zudem die Reaktionszeit.
+- **Bewegungsablauf:** Schnelle weite Bewegungen streuen stärker (Schmidt et al., 1979); das Geschwindigkeitsmaximum liegt etwa bei halber Strecke (Helsen et al., 1998). Ältere skalieren die Geschwindigkeit bei großen Amplituden weniger (Ketcham et al., 2002). Ob Hand und Unterarm oder die Schulter arbeiten, hängt von Gerät und Haltung ab; Aussagen wie „80–90 % der Bewegung sind ballistisch“ sind nicht belegt.
+- **Belastung:** wiederholte weite Armbewegungen, vor allem an sehr großen Bildschirmen; auf dem Tablet gering (`koerperliche_belastung` 1).
 
 ## 7. Einflussfaktoren und Messgrenzen
 
-Bildschirmbreite, Abstand, DPI, Beschleunigung und Empfindlichkeit bestimmen Sehwinkel und Mausweg; Latenz
-verschlechtert das Zielen schon ab ≈ 41 ms (Ivkovic et al., 2015) → keine Vergleiche zwischen Geräten. Die mittlere
-Erfassungszeit hängt stark vom Zufallsanteil der Gegenseiten-Ziele ab; Randanschlag und Serienbonus verzerren die
-Punkte. Anfangs große Eingewöhnungsgewinne – aussagekräftig ist nur der Verlauf über Tage (Listman et al., 2021).
+Bildschirmbreite und Betrachtungsabstand bestimmen den Sehwinkel der Wege, und die Verzögerung des Touchscreens geht in jede gemessene Zeit ein – daher keine Vergleiche zwischen Geräten. Wie jede Messung am Menschen streuen Einzelwerte; sinnvoll ist, mehrere Durchgänge zu bündeln (Median statt Einzelwert) und nur Verläufe auf demselben Gerät zu vergleichen (vgl. Mountford et al., 2004, zu Wiederholbarkeit und Mehrfachmessung). Eine hohe Korrelation zweier Geräte heißt außerdem noch nicht, dass sie dieselben Zeiten liefern. Anfangs sind die Eingewöhnungsgewinne groß – aussagekräftig ist nur der Verlauf über Tage (Listman et al., 2021). Verzögerungen des Systems verschlechtern Zielaufgaben schon ab etwa 41 ms (Ivkovic et al., 2015). Die Ziele halten Abstand zum Bildschirmrand, damit der Rand nicht als Anschlag das Treffen erleichtert (vgl. Walker & Smelcer, 1990, zu Bildschirmrändern bei der Auswahl mit der Maus). Bei kleinen Zielen und kurzer Sichtzeit verfallen Ziele auch bei guter Zielgenauigkeit.
 
 ## 8. Studienlage: Trainierbarkeit und Übertragung
 
-- **Übungseffekt – stark** (Aim-Trainer-Klick-Zielen allgemein): nach 20 Runden deutlich kürzere Reaktions-,
-  Korrektur- und Verweilzeiten (Warburton et al., 2023); Aim-Lab-Längsschnitt N = 7.174 (Listman et al., 2021;
-  herstellerfinanziert). Die Original-Übung ist nicht untersucht.
-- **Naher Transfer – schwach:** Skalierungslernen verallgemeinert (Krakauer et al., 2000), ein „fest verdrahtetes“
-  Empfindlichkeitsgedächtnis wurde nicht beobachtet (Boudaoud et al., 2022); Transfer auf 180°-Drehungen im 3D-Spiel
-  ist nicht untersucht.
-- **Alltagstransfer – fehlend:** Metaanalysen zu Action-Spielen schließen motorische Maße mangels Daten aus (Bediou et
-  al., 2023); kein Beleg für bessere Seitenwahrnehmung im Verkehr oder Sport.
+- **Übungseffekt – stark** (Zeigeaufgaben am Bildschirm allgemein): Nach 20 Runden sind Reaktions-, Korrektur- und Verweilzeiten deutlich kürzer (Warburton et al., 2023); ein Längsschnitt mit N = 7.174 (Listman et al., 2021) stammt von einem kommerziellen Anbieter. Diese Übung selbst ist nicht untersucht.
+- **Naher Transfer – schwach:** Das Lernen einer veränderten Übersetzung zwischen Hand und Zeiger verallgemeinert (Krakauer et al., 2000); ein „fest verdrahtetes“ Gedächtnis für eine bestimmte Empfindlichkeit wurde nicht beobachtet (Boudaoud et al., 2022). Ein Transfer auf weite Drehbewegungen im Spiel ist nicht untersucht.
+- **Alltagstransfer – fehlend:** Metaanalysen zu Action-Videospielen schließen motorische Maße mangels Daten aus (Bediou et al., 2023); es gibt keinen Beleg für bessere Seitenwahrnehmung im Verkehr oder Sport.
 
 ## 9. Auswahlhinweise für die KI
 
-- **Passt, wenn …** jemand mit Maus-Routine weite, schnelle Zielbewegungen und große Blicksprünge unter Zeitdruck üben
-  oder sich für Ego-Shooter aufwärmen möchte; als Steigerung nach 501.
-- **Weniger passend, wenn …** nur ein Tablet da ist; Blickfolge, Suche, Gedächtnis oder Raumorientierung das Ziel sind;
-  bei Einsteiger:innen oder Älteren ohne Maus-Routine.
-- **Vorsicht / anpassen bei …** Gleitsicht (Randziele außerhalb des Zwischenbereichs → Bildschirmbrille, kleineres
-  Fenster); Gesichtsfeldausfall, niedrigem Visus (Randziele später bemerkt); Hand-/Armbeschwerden, Tremor (weite
-  schnelle Züge, genaues Anhalten); trockenem Auge, Asthenopie (seltener Lidschlag; gute Spieler verlängern die Runde);
-  Photosensitivität, Migräne (roter Vollflächen-Schimmer, mehrfach pro Sekunde möglich – im Original abschaltbar); Aufmerksamkeitsproblemen,
-  kognitiver Einschränkung (Zeitdruck, Strafen).
-- **Kombiniert gut mit …** 501 (kurze Wege), 509 (Feinkorrektur), 511 (Fadenkreuz halten), 805 (Abbremsen), 303
-  (Blicksprünge), 801/401 (Wahrnehmung am Rand).
-- **Nahe Dublette: 501.** Gleicher Spielaufbau (Zielgrößen, Sichtbarkeiten, Punkte, Zeitkonto, Strafen); Unterschied
-  nur der Zielort (hier bis 90–95 % Randziele, weitere Wege und Blicksprünge, `sakkaden` 3 statt 2) und eine leichte
-  Drift ab Level ≈ 9. Für dasselbe Übungsziel nur eine der beiden vorschlagen – 506 als Steigerung nach 501. 502 zeigt
-  mehrere bewegte Ziele gleichzeitig (Übersicht statt Weite).
+- **Passt, wenn …** jemand weite, schnelle Zielbewegungen und große Blicksprünge von der Mitte zum Rand unter Zeitdruck üben möchte oder sich für Ball- und Rückschlagspiele aufwärmen will; als Steigerung nach 501.
+- **Weniger passend, wenn …** Blickfolge, Suche, Gedächtnis oder Raumorientierung das Ziel sind; bei Einsteiger:innen oder Älteren, denen die kurzen Sichtzeiten auf hohen Stufen zu schnell sind (die Stufe passt sich an).
+- **Vorsicht / anpassen bei …** Gleitsicht (Randziele können außerhalb des Zwischenbereichs liegen → Bildschirmbrille, kleineres Fenster); Gesichtsfeldausfall, niedrigem Visus (Randziele später bemerkt); Hand-/Armbeschwerden, Tremor (weite schnelle Bewegungen, genaues Treffen); trockenem Auge, Asthenopie (seltener Lidschlag; Pausen einlegen); Photosensitivität, Migräne (die Übung blitzt nicht, blendet aber weich ein und aus); Aufmerksamkeitsproblemen, kognitiver Einschränkung (Zeitdruck). Treten Doppelbilder, plötzlicher einseitiger Sehverlust, neue Gesichtsfeldlücken, Kopfschmerz mit Sehverschlechterung oder Schwindel auf, ist das ein Anlass für ärztliche Abklärung und kein Übungsthema (Muchnick, 2008, S. 6, 28).
+- **Kombiniert gut mit …** 501 (kurze Wege), 509 (Feinkorrektur), 511 (Fadenkreuz halten), 805 (Abbremsen), 303 (Blicksprünge), 801/401 (Wahrnehmung am Rand).
+- **Verwandte Übung: 501.** Gleiche Grundform (Ziele, Sichtzeiten, Stufen); der Unterschied liegt im Zielort (hier immer am Rand, mit weiteren Wegen und größeren Blicksprüngen, `sakkaden` 3 statt 2). Für dasselbe Übungsziel genügt eine der beiden; 506 ist die Steigerung nach 501. 502 zeigt mehrere bewegte Ziele gleichzeitig (Übersicht statt Weite).
 
 ## 10. Schwächen des Originals und Empfehlungen für eine Blickfit-Umsetzung
 
@@ -253,23 +208,25 @@ Punkte. Anfangs große Eingewöhnungsgewinne – aussagekräftig ist nur der Ver
 
 ### Weitere Fachliteratur
 
-- Bediou, B., Rodgers, M. A., Tipton, E., Mayer, R. E., Green, C. S., & Bavelier, D. (2023). Effects of action video game play on cognitive skills: A meta-analysis. *Technology, Mind, and Behavior, 4*(1), 28–48. https://doi.org/10.1037/tmb0000102 – Transfer; motorische Maße mangels Daten ausgeschlossen
-- Boudaoud, B., Spjut, J., & Kim, J. (2022). Mouse sensitivity in first-person targeting tasks. In *2022 IEEE Conference on Games (CoG)* (S. 183–190). https://doi.org/10.1109/CoG51982.2022.9893626 – optimaler Empfindlichkeitsbereich 20–80 cm/360°
-- Cardona, G., García, C., Serés, C., Vilaseca, M., & Gispets, J. (2011). Blink rate, blink amplitude, and tear film integrity during dynamic visual display terminal tasks. *Current Eye Research, 36*(3), 190–197. https://doi.org/10.3109/02713683.2010.544442 – Lidschlag bei schnellen Spielen
+- Bediou, B., Rodgers, M. A., Tipton, E., Mayer, R. E., Green, C. S., & Bavelier, D. (2023). Effects of action video game play on cognitive skills: A meta-analysis. *Technology, Mind, and Behavior, 4*(1), 28–48. https://doi.org/10.1037/tmb0000102 – Transfer von Action-Spielen; motorische Maße mangels Daten ausgeschlossen
+- Boudaoud, B., Spjut, J., & Kim, J. (2022). Mouse sensitivity in first-person targeting tasks. In *2022 IEEE Conference on Games (CoG)* (S. 183–190). https://doi.org/10.1109/CoG51982.2022.9893626 – Spannweite sinnvoller Zeigerempfindlichkeiten
+- Cardona, G., García, C., Serés, C., Vilaseca, M., & Gispets, J. (2011). Blink rate, blink amplitude, and tear film integrity during dynamic visual display terminal tasks. *Current Eye Research, 36*(3), 190–197. https://doi.org/10.3109/02713683.2010.544442 – Lidschlag bei Bildschirmaufgaben
 - Darrien, J. H., Herd, K., Starling, L.-J., Rosenberg, J. R., & Morrison, J. D. (2001). An analysis of the dependence of saccadic latency on target position and target characteristics in human subjects. *BMC Neuroscience, 2*, 13. https://doi.org/10.1186/1471-2202-2-13 – Sakkadenlatenz 180–250 ms, kaum exzentrizitätsabhängig
 - Freedman, E. G. (2008). Coordination of the eyes and head during visual orienting. *Experimental Brain Research, 190*(4), 369–387. https://doi.org/10.1007/s00221-008-1504-8 – Blick-Kopf-Koordination bei großen Blickwechseln
 - Han, Y., Ciuffreda, K. J., Selenow, A., & Ali, S. R. (2003). Dynamic interactions of eye and head movements when reading with single-vision and progressive lenses in a simulated computer-based environment. *Investigative Ophthalmology & Visual Science, 44*(4), 1534–1545. https://doi.org/10.1167/iovs.02-0507 – Gleitsicht-Zwischenbereich 13–18° bei 60 cm
 - Helsen, W. F., Elliott, D., Starkes, J. L., & Ricker, K. L. (1998). Temporal and spatial coupling of point of gaze and hand movements in aiming. *Journal of Motor Behavior, 30*(3), 249–259. https://doi.org/10.1080/00222899809601340 – Unterschießen, Geschwindigkeitsmaximum bei 50 %
-- Ivkovic, Z., Stavness, I., Gutwin, C., & Sutcliffe, S. (2015). Quantifying and mitigating the negative effects of local latencies on aiming in 3D shooter games. In *Proceedings of CHI '15* (S. 135–144). ACM. https://doi.org/10.1145/2702123.2702432 – Systemlatenz 23–243 ms (Zahlen über Ivkovic, 2017)
+- Ivkovic, Z., Stavness, I., Gutwin, C., & Sutcliffe, S. (2015). Quantifying and mitigating the negative effects of local latencies on aiming in 3D shooter games. In *Proceedings of CHI '15* (S. 135–144). ACM. https://doi.org/10.1145/2702123.2702432 – Systemlatenz geht in gemessene Zeiten ein (23–243 ms)
 - Ketcham, C. J., Seidler, R. D., Van Gemmert, A. W. A., & Stelmach, G. E. (2002). Age-related kinematic differences as influenced by task difficulty, target size, and movement amplitude. *The Journals of Gerontology: Series B, 57*(1), P54–P64. https://doi.org/10.1093/geronb/57.1.P54 – Ältere bei großen Amplituden
 - Krakauer, J. W., Pine, Z. M., Ghilardi, M.-F., & Ghez, C. (2000). Learning of visuomotor transformations for vectorial planning of reaching trajectories. *The Journal of Neuroscience, 20*(23), 8916–8924. https://doi.org/10.1523/JNEUROSCI.20-23-08916.2000 – Skalierungs-(Gain-)Lernen verallgemeinert
-- Listman, J. B., Tsay, J. S., Kim, H. E., Mackey, W. E., & Heeger, D. J. (2021). Long-term motor learning in the "wild" with high volume video game data. *Frontiers in Human Neuroscience, 15*, 777779. https://doi.org/10.3389/fnhum.2021.777779 – Übungseffekt im Aim-Trainer (herstellerfinanziert)
-- MDN Web Docs. (o. J.). *Element: requestPointerLock() method*. Abgerufen am 29.09.2026 von https://developer.mozilla.org/en-US/docs/Web/API/Element/requestPointerLock – `unadjustedMovement`, keine Unterstützung in Safari iOS/iPadOS
+- Listman, J. B., Tsay, J. S., Kim, H. E., Mackey, W. E., & Heeger, D. J. (2021). Long-term motor learning in the "wild" with high volume video game data. *Frontiers in Human Neuroscience, 15*, 777779. https://doi.org/10.3389/fnhum.2021.777779 – Übungseffekt bei Zielaufgaben am Bildschirm (Daten eines kommerziellen Anbieters)
+- MDN Web Docs. (o. J.). *Element: requestPointerLock() method*. Abgerufen am 29.09.2026 von https://developer.mozilla.org/en-US/docs/Web/API/Element/requestPointerLock – Eingabeverhalten des Browsers
 - Munoz, D. P., Broughton, J. R., Goldring, J. E., & Armstrong, I. T. (1998). Age-related performance of human subjects on saccadic eye movement tasks. *Experimental Brain Research, 121*(4), 391–400. https://doi.org/10.1007/s002210050473 – Sakkaden und Alter
 - Prablanc, C., Echallier, J. F., Komilis, E., & Jeannerod, M. (1979). Optimal response of eye and hand motor systems in pointing at a visual target. I. *Biological Cybernetics, 35*(2), 113–124. https://doi.org/10.1007/BF00337436 – Sakkade vor Hand, parallele Planung
-- Soukoreff, R. W., & MacKenzie, I. S. (2004). Towards a standard for pointing device evaluation, perspectives on 27 years of Fitts' law research in HCI. *International Journal of Human-Computer Studies, 61*(6), 751–789. https://doi.org/10.1016/j.ijhcs.2004.09.001 – Fitts-Formel, Maus-Durchsatz 3,7–4,9 bit/s
+- Soukoreff, R. W., & MacKenzie, I. S. (2004). Towards a standard for pointing device evaluation, perspectives on 27 years of Fitts' law research in HCI. *International Journal of Human-Computer Studies, 61*(6), 751–789. https://doi.org/10.1016/j.ijhcs.2004.09.001 – Fitts-Formel, Durchsatz von Zeigegeräten 3,7–4,9 bit/s
 - Stahl, J. S. (1999). Amplitude of human head movements associated with horizontal saccades. *Experimental Brain Research, 126*(1), 41–54. https://doi.org/10.1007/s002210050715 – Bereich ohne Kopfbewegung 35,8 ± 31,9°, individuell stabil (Abstract, PubMed 10333006)
 - Strasburger, H., Rentschler, I., & Jüttner, M. (2011). Peripheral vision and pattern recognition: A review. *Journal of Vision, 11*(5), 13. https://doi.org/10.1167/11.5.13 – Gesichtsfeld ≈ 200°, Abfall der Formerkennung
 - Walker, N., & Smelcer, J. B. (1990). A comparison of selection time from walking and pull-down menus. In *Proceedings of CHI '90* (S. 221–226). ACM. https://doi.org/10.1145/97243.97277 – undurchdringliche Bildschirmränder beschleunigen die Auswahl (Abstract, Semantic Scholar)
-- Warburton, M., Campagnoli, C., Mon-Williams, M., Mushtaq, F., & Morehead, J. R. (2023). Kinematic markers of skill in first-person shooter video games. *PNAS Nexus, 2*(8), pgad249. https://doi.org/10.1093/pnasnexus/pgad249 – Übungseffekt in FPS-Zielaufgabe
+- Warburton, M., Campagnoli, C., Mon-Williams, M., Mushtaq, F., & Morehead, J. R. (2023). Kinematic markers of skill in first-person shooter video games. *PNAS Nexus, 2*(8), pgad249. https://doi.org/10.1093/pnasnexus/pgad249 – Übungseffekt in einer Zielaufgabe mit Zeigegerät
 - Yantis, S., & Jonides, J. (1984). Abrupt visual onsets and selective attention: Evidence from visual search. *Journal of Experimental Psychology: Human Perception and Performance, 10*(5), 601–621. https://doi.org/10.1037/0096-1523.10.5.601 – plötzliche Reize ziehen Aufmerksamkeit
+- Muchnick, B. G. (2008). *Clinical Medicine in Optometric Practice* (2. Aufl.). Mosby/Elsevier. https://openlibrary.org/isbn/9780323029612 – Gesichtsfeldausfälle nach Sehbahnverlauf (S. 32), Warnzeichen mit Abklärungsbedarf (S. 6, 28)
+- Mountford, J., Ruston, D., & Dave, T. (2004). *Orthokeratology: Principles and Practice*. Butterworth-Heinemann. https://openlibrary.org/isbn/9780750640077 – Genauigkeit, Wiederholbarkeit und Mehrfachmessung (Kap. 2, S. 17–18, 24)
