@@ -283,17 +283,17 @@ export const SCIENCE: Record<string, ScienceEntry> = {
         trains: 'Den Moment abschätzen, in dem etwas auf dich zukommt – allein aus der Art, wie es größer wird.',
         daily: 'Bremsen, Abstand halten, Straße queren, einen Ball fangen oder schlagen.',
         research:
-          'Wie schnell ein Bild größer wird, verrät dem Gehirn die Zeit bis zum Kontakt – ein seit den 1970er-Jahren gut untersuchtes Prinzip. In solchen Timing-Aufgaben wird man mit Übung besser. Ob sich das auf Verkehr oder Sport überträgt, ist nicht belegt. Echtes räumliches (3D-)Sehen lässt sich an einem normalen Bildschirm nicht trainieren – die Übung nutzt Hinweise, die man auch mit einem Auge sieht.',
+          'Wie schnell ein Bild größer wird, verrät dem Gehirn die Zeit bis zum Kontakt – ein seit den 1970er-Jahren gut untersuchtes Prinzip. In solchen Timing-Aufgaben wird man mit Übung besser. Ob sich das auf Verkehr oder Sport überträgt, ist nicht belegt. Echtes räumliches (3D-)Sehen lässt sich an einem normalen Bildschirm nicht trainieren – die Übung nutzt Hinweise, die man auch mit einem Auge sieht. Ein konstantes „zu spät“ kann zum Teil an der Gerätelatenz liegen; deshalb zählt der Verlauf am selben Gerät, nicht der Einzelwert.',
         improved:
-          'Echte perspektivische Annäherung (die Kugel wird immer schneller größer, wie in Wirklichkeit) statt linearem Wachstum, Verdeckung kurz vor dem Ziel als Schwierigkeitsstufe und eine Rückmeldung in Millisekunden: zu früh oder zu spät.',
+          'Die Kugel nähert sich wie ein echter Ball mit gleichbleibender Geschwindigkeit: Ihr Bild wächst nicht linear, sondern zum Schluss immer schneller, und genau daran lässt sich die Ankunftszeit ablesen. Startgröße, Flugzeit und Vorlauf sind zufällig, damit man nicht zählen oder einen Rhythmus nutzen kann. Als Schwierigkeitsstufe verschwindet die Kugel in den letzten 0,2 bis 1,2 s vor dem Ring, sodass man ihre Ankunft gedanklich fortführen muss. Nach jedem Tipp zeigt die Übung die Abweichung in Millisekunden („zu früh“ oder „zu spät“) mit einem Zeitbalken; die Tippzeit stammt aus dem Zeitstempel des Ereignisses, und die Stufe passt sich an (nach drei gelungenen Versuchen schwerer, nach einem Fehlversuch leichter). Es geht um Timing, nicht um räumliches Sehen: Am flachen Bildschirm sehen beide Augen dasselbe Bild.',
       },
       it: {
         trains: 'Stimare il momento in cui qualcosa ti arriva addosso – solo dal modo in cui diventa più grande.',
         daily: 'Frenare, mantenere la distanza, attraversare la strada, prendere o colpire una palla.',
         research:
-          'La velocità con cui un’immagine si ingrandisce rivela al cervello il tempo al contatto – un principio ben studiato dagli anni ’70. In questi compiti di tempismo si migliora con l’allenamento. Non è dimostrato che questo si trasferisca al traffico o allo sport. La vera visione tridimensionale non si può allenare su uno schermo normale – l’esercizio usa indizi visibili anche con un occhio solo.',
+          'La velocità con cui un’immagine si ingrandisce rivela al cervello il tempo al contatto – un principio ben studiato dagli anni ’70. In questi compiti di tempismo si migliora con l’allenamento. Non è dimostrato che questo si trasferisca al traffico o allo sport. La vera visione tridimensionale non si può allenare su uno schermo normale – l’esercizio usa indizi visibili anche con un occhio solo. Un «troppo tardi» costante può dipendere in parte dalla latenza del dispositivo; conta quindi l’andamento sullo stesso dispositivo, non il singolo valore.',
         improved:
-          'Vero avvicinamento prospettico (la palla si ingrandisce sempre più in fretta, come nella realtà) invece di una crescita lineare, copertura poco prima dell’arrivo come livello di difficoltà e un riscontro in millisecondi: troppo presto o troppo tardi.',
+          'La palla si avvicina come una vera palla a velocità costante: la sua immagine non cresce in modo lineare, ma sempre più in fretta verso la fine, ed è proprio da questo che si legge il momento dell’arrivo. Dimensione iniziale, durata del volo e fase di attesa sono casuali, così non si può contare né sfruttare un ritmo. Come livello di difficoltà la palla scompare negli ultimi 0,2–1,2 s prima dell’anello, e si deve proseguire mentalmente il suo arrivo. Dopo ogni tocco l’esercizio mostra lo scarto in millisecondi («troppo presto» o «troppo tardi») con una barra del tempo; il momento del tocco viene dal timestamp dell’evento e il livello si adatta (dopo tre prove riuscite più difficile, dopo una fallita più facile). Conta il tempismo, non la visione spaziale: su uno schermo piatto entrambi gli occhi vedono la stessa immagine.',
       },
     },
     sources: [
@@ -301,6 +301,7 @@ export const SCIENCE: Record<string, ScienceEntry> = {
       src('Gray & Regan (1998). Accuracy of estimating time to collision using binocular and monocular information. Vision Research', 'https://doi.org/10.1016/S0042-6989(97)00230-7'),
       src('Tresilian (1995). Perceptual and cognitive processes in time-to-contact estimation. Perception & Psychophysics', 'https://doi.org/10.3758/BF03206510'),
       src('Ding & Levi (2011). Recovery of stereopsis through perceptual learning in human adults with abnormal binocular vision. PNAS', 'https://doi.org/10.1073/pnas.1105183108'),
+      src('Mountford, Ruston & Dave (2004). Orthokeratology: Principles and Practice, S. 43–44. Butterworth-Heinemann', 'https://openlibrary.org/isbn/9780750640077'),
     ],
   },
 
