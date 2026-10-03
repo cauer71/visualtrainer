@@ -82,7 +82,7 @@ evidenz:
   alltag_transfer: fehlend
   kommentar: "Kompatibilitäts- und Stroop-/Simon-Effekte sind robust; sie werden mit Übung kleiner, verschwinden aber nicht (Dutta & Proctor, 1992), und Stroop-Übung bei Älteren übertrug sich nicht auf andere Aufgaben (Wilkinson & Yang, 2012). Für diese Übung gibt es keine Studie – die Einstufung gilt für die Aufgabenart, nicht für diese Übung."
 aehnliche_uebungen: [201, 202, 703, 207, 901]
-stichworte: ["Reiz-Antwort-Kompatibilität", "räumlicher Stroop", "Simon-Effekt", "Wort-Lage-Konflikt", "Hick-Hyman", "Wahlreaktion", "Richtungswörter", "Lage-Kosten", "Reha-Software", "kein Zeitdruck in den unteren Stufen"]
+stichworte: ["Reiz-Antwort-Kompatibilität", "räumlicher Stroop", "Simon-Effekt", "Wort-Lage-Konflikt", "Hick-Hyman", "Wahlreaktion", "Richtungswörter", "Lage-Kosten", "Zuordnungsaufgabe", "kein Zeitdruck in den unteren Stufen"]
 ---
 
 # 902 · Richtung & Wort (Richtungszeichen dem passenden Wort zuordnen)
@@ -91,7 +91,7 @@ stichworte: ["Reiz-Antwort-Kompatibilität", "räumlicher Stroop", "Simon-Effekt
 
 ## 1. Kurzbeschreibung
 
-Oben auf dem Bildschirm erscheint ein Zeichen, das eine Richtung zeigt: ein Pfeil in einem hellen oder dunklen Kasten, ein blaues Rundschild mit weißem Schrägpfeil oder ein Warndreieck mit einer Kurve. Unten stehen vier grüne Felder, angeordnet wie ein Kreuz (oben, unten, links, rechts) mit weißer Mitte. Jedes Feld trägt ein Wort: OBEN, UNTEN, LINKS oder RECHTS. Man tippt das Feld, dessen **Wort** die Richtung des Zeichens nennt. Das ist leicht, wenn das Wort dort steht, wo die Richtung liegt („OBEN“ im oberen Feld), und deutlich schwerer, wenn die Wörter anders verteilt sind: dann muss man **lesen und suchen**, statt nach der Lage zu antworten. Genau dieser Konflikt zwischen Lage und Wort ist die eigentliche Anforderung der Übung, nicht Tempo.
+Oben auf dem Bildschirm erscheint ein Zeichen, das eine Richtung zeigt: ein Pfeil in einem hellen oder dunklen Kasten, ein blaues Rundschild mit weißem Schrägpfeil oder ein Dreieck mit einer Kurve. Unten stehen vier grüne Felder, angeordnet wie ein Kreuz (oben, unten, links, rechts) mit weißer Mitte. Jedes Feld trägt ein Wort: OBEN, UNTEN, LINKS oder RECHTS (italienisch ALTO, BASSO, SINISTRA, DESTRA). Man tippt das Feld, dessen **Wort** die Richtung des Zeichens nennt; bei Schrägpfeil und Kurve zählt nur der Links/Rechts-Anteil. Auf Stufe 1 steht jedes Wort an seiner Lage („OBEN“ im oberen Feld). Ab Stufe 2 sind die Wörter gemischt: Dann muss man **lesen und suchen**, statt nach der Lage zu antworten. Dieser Konflikt zwischen Lage und Wort ist die eigentliche Anforderung der Übung, nicht Tempo. Die Stufe steigt nach drei richtigen Antworten in Folge und sinkt nach einem Fehler; ab Stufe 10 gilt eine weiche Antwortfrist ohne Strafe.
 
 ## 2. Ablauf im Original (Analyse)
 
@@ -123,8 +123,8 @@ Es gibt **keinen Seitentext, keine Werbeaussage und keine Leistungsstufen** – 
 
 ## 4. Optische und okulomotorische Grundlagen
 
-- **Sehanforderung gering bis mittel:** Wörter von etwa 30 px Schriftgrad (fett) entsprechen am 10,9″-Tablet in 40 cm etwa 0,8° (36 CSS-px pro Grad; Tablet-Rechnung aus Lit. W02/W03, eigene Herleitung). Das ist gut lesbar; knapp wird es nur bei niedrigem Visus oder zu großem Abstand. Die Wörter müssen auf grünem Grund einen Kontrast von mindestens 4,5 : 1 haben (WCAG 2.2, SC 1.4.3; der konkrete Wert wird beim Bau gemessen).
-- **Blickverhalten:** Erst das Zeichen oben, dann eine Suche über die vier Wörter (nach Herleitung mehrere Blicksprünge), dann der Tipp. Die Felder liegen im Kreuz um eine weiße Mitte, die Sprünge sind groß, aber nicht extrem. Das Lesen eines Richtungswortes kann selbst eine Blickbewegung zur genannten Seite auslösen (Hodgson et al., 2009; Laborbefund mit Farb- und Ortswörtern).
+- **Sehanforderung gering bis mittel:** Wörter von etwa 30 px Schriftgrad (fett) entsprechen am 10,9″-Tablet in 40 cm etwa 0,8° (rund 36 Bildschirmpunkte je Grad). Das ist gut lesbar; knapp wird es nur bei niedrigem Visus oder zu großem Abstand. Die dunkle Schrift auf dem grünen Feld hat ein Kontrastverhältnis von rund 7,5 : 1 (gefordert sind mindestens 4,5 : 1; WCAG 2.2, SC 1.4.3).
+- **Blickverhalten:** Erst das Zeichen oben, dann eine Suche über die vier Wörter (zu erwarten sind mehrere Blicksprünge), dann der Tipp. Die Felder liegen im Kreuz um eine weiße Mitte, die Sprünge sind groß, aber nicht extrem. Das Lesen eines Richtungswortes kann selbst eine Blickbewegung zur genannten Seite auslösen (Hodgson et al., 2009; Laborbefund mit Farb- und Ortswörtern).
 - **Naharbeit:** Etwa 100 s sind gering belastend (Wert 1). Wie bei jeder Bildschirmaufgabe sinkt beim Starren die Lidschlagrate (Patel et al., 1991: im Mittel 5-fach niedriger); bewusst blinzeln.
 - **Brillenträger:** Das Kreuz liegt im unteren Bildschirmbereich; bei Gleitsicht und Tablet in Nahdistanz meist durch den Nahteil lesbar, die seitlichen Felder verlangen ggf. eine leichte Kopfdrehung (neue Gleitsichtträger nutzten in einer kleinen Studie mehr Kopfbewegungen; Hutchings et al., 2007; nicht für diese Übung untersucht). Eine Arbeitsplatz-/Nahbrille für den Bildschirmabstand ist eine Bedienhilfe, keine Sehaussage.
 - **Farbe:** Die Aufgabe braucht keine Farbunterscheidung: Wörter und Formen tragen die Information (WCAG 2.2, SC 1.4.1: Farbe nie allein). Blaue Scheibe und rotes Dreieck sind zusätzlich an der Form erkennbar.
@@ -133,41 +133,42 @@ Es gibt **keinen Seitentext, keine Werbeaussage und keine Leistungsstufen** – 
 
 - **Interferenzauflösung:** In einer Metaanalyse von 47 Bildgebungsstudien zu Aufgaben mit Störinformation (Stroop, Flanker, Go/No-Go, Simon, Stop-Signal) waren vor allem anteriorer cingulärer Kortex, dorsolateraler präfrontaler Kortex, unterer Frontalgyrus, posteriorer Parietalkortex und vordere Insel beteiligt (Nee et al., 2007; Abstract). Das beschreibt Aktivierung bei der Aufgabe, **nicht** „Training einer Region“.
 - **Dimensional-Overlap-Modell:** Konflikt entsteht, wenn irrelevante und relevante Reizmerkmale oder Reiz und Antwort „überlappen“, hier die Richtung des Zeichens, die Lage des Feldes und die Bedeutung des Wortes (Kornblum et al., 1990).
-- **Unterschiedlicher Verlauf:** Stroop-artige Interferenz (Wortbedeutung) wächst mit langsameren Antworten, Simon-artige (Lage) ist bei schnellen Antworten am größten und nimmt ab (Pratte et al., 2010). Das ist eine Herleitung für die Frist-Stufen: Eine knappe Frist verstärkt eher den Lage-Anteil, ruhiges Tempo eher den Wort-Anteil (**Herleitung**, nicht für diese Übung geprüft).
-- **Kontrollierte statt automatische Verarbeitung:** Wechselt die Zuordnung (hier: welches Wort wo steht) bei jedem Durchgang, lässt sich die Aufgabe nicht automatisieren (Schneider & Shiffrin, 1977). Daraus folgt (Herleitung, für diese Übung nicht geprüft), dass Suchen und Lesen auch nach viel Übung nötig bleiben.
+- **Unterschiedlicher Verlauf:** Stroop-artige Interferenz (Wortbedeutung) wächst mit langsameren Antworten, Simon-artige (Lage) ist bei schnellen Antworten am größten und nimmt ab (Pratte et al., 2010). Das legt nahe, dass eine knappe Frist (Stufe 10–12) eher den Lage-Anteil verstärkt und ruhiges Tempo eher den Wort-Anteil; für diese Übung ist das nicht geprüft.
+- **Kontrollierte statt automatische Verarbeitung:** Wechselt die Zuordnung (hier: welches Wort wo steht) bei jedem Durchgang, lässt sich die Aufgabe nicht automatisieren (Schneider & Shiffrin, 1977). Plausibel ist daher, dass Suchen und Lesen auch nach viel Übung nötig bleiben; für diese Übung ist das nicht geprüft.
 
-- **Begründung des Profils (Gestaltungseinschätzung, kein Messergebnis; gilt für die Blickfit-Umsetzung):** `inhibition` 3 und `entscheidung_wahlreaktion` 3, weil der Konflikt zwischen Lage und Wort unterdrückt und eine von vier Antworten gewählt werden muss; `lesen_sprache` 2 und `sprachabhaengigkeit` 3, weil ab Stufe 4 ohne Lesen keine sichere Lösung möglich ist; `visuelle_suche` 2 und `sakkaden` 2 für das Absuchen der vier Wörter; `selektive_aufmerksamkeit` 2 und `verarbeitungsgeschwindigkeit` 2; `zeitdruck` 1, weil nur Stufe 10–12 eine weiche Frist haben; Motorik nur 1 wegen der großen Felder; `farbunterscheidung` 0, weil Farbe keine Information trägt.
+- **Einschätzung der Anforderungen (kein Messergebnis):** `inhibition` 3 und `entscheidung_wahlreaktion` 3, weil der Konflikt zwischen Lage und Wort unterdrückt und eine von vier Antworten gewählt werden muss; `lesen_sprache` 2 und `sprachabhaengigkeit` 3, weil ab Stufe 2 ohne Lesen keine sichere Lösung möglich ist; `visuelle_suche` 2 und `sakkaden` 2 für das Absuchen der vier Wörter; `selektive_aufmerksamkeit` 2 und `verarbeitungsgeschwindigkeit` 2; `zeitdruck` 1, weil nur die Stufen 10–12 eine weiche Frist haben; Motorik nur 1 wegen der großen Felder; `farbunterscheidung` 0, weil Farbe keine Information trägt.
 
 ## 6. Motorische Grundlagen
 
-Motorisch anspruchslos: ein Tipp auf ein großes Feld (mindestens 72 px hoch, Trefferfläche mindestens 56 px). Zielgenauigkeit und Tempo spielen eine Nebenrolle. Auf dem Touchscreen werden Reaktionszeiten zu lang gemessen (Web-Apps; Pronk et al., 2020); für den persönlichen **Vergleich zweier Bedingungen** (passend vs. abweichend) auf demselben Gerät hebt sich das weitgehend heraus, absolute Millisekunden sind nicht vergleichbar. Zu frühe Tipps (unter 150 ms nach Reizbeginn) und Doppeltipps zählen nicht (Spezifikation).
+Motorisch anspruchslos: ein Tipp auf ein großes Feld (mindestens 72 px hoch, Trefferfläche mindestens 56 px). Zielgenauigkeit und Tempo spielen eine Nebenrolle. Auf dem Touchscreen werden Reaktionszeiten zu lang gemessen (Web-Apps; Pronk et al., 2020); für den persönlichen **Vergleich zweier Bedingungen** (passend vs. abweichend) auf demselben Gerät hebt sich das weitgehend heraus, absolute Millisekunden sind nicht vergleichbar. Zu frühe Tipps (unter 150 ms nach Reizbeginn) und Doppeltipps zählen in der Übung nicht.
 
 ## 7. Einflussfaktoren und Messgrenzen
 
-- **Differenzwerte sind unzuverlässig:** Der „Lage-Kosten“-Wert ist eine Differenz; solche Interferenz- und Kompatibilitätsunterschiede sind als Gruppeneffekt robust, als persönlicher Wert aber oft wenig zuverlässig (Test-Retest 0 bis 0,82 in sieben klassischen Aufgaben; Hedge et al., 2018). Der Wert darf nur als Verlauf über mehrere Sitzungen angezeigt werden.
-- **Lernen der Anordnungen:** Bei einem vertauschten Paar gibt es nur 6 mögliche Anordnungen (eigene Rechnung), bei „alle gemischt“ höchstens 23. Wer sie wiedererkennt, liest weniger; das verkleinert die Lage-Kosten, ohne dass sich die Konfliktlösung verbessert hat. Der Kompatibilitätseffekt bleibt aber auch nach 8 Sitzungen bestehen (Dutta & Proctor, 1992).
+- **Differenzwerte sind unzuverlässig:** Der „Lage-Kosten“-Wert ist eine Differenz; solche Interferenz- und Kompatibilitätsunterschiede sind als Gruppeneffekt robust, als persönlicher Wert aber oft wenig zuverlässig (Test-Retest 0 bis 0,82 in sieben klassischen Aufgaben; Hedge et al., 2018). Der Wert ist nur als Verlauf über mehrere Sitzungen aussagekräftig.
+- **Lernen der Anordnungen:** Vier Wörter lassen sich auf 24 Arten auf die Felder verteilen; ab Stufe 2 kommen nur die 17 vor, bei denen höchstens ein Wort an seiner Lage steht. Wer sie wiedererkennt, liest weniger; das verkleinert die Lage-Kosten, ohne dass sich die Konfliktlösung verbessert hat. Der Kompatibilitätseffekt bleibt aber auch nach 8 Sitzungen bestehen (Dutta & Proctor, 1992).
 - **Alter:** Bei unpassender Zuordnung war die Reaktionszeit verlangsamt (+30 % bei 180°), die erwartete Wechselwirkung mit dem Alter blieb aus (Simon & Wolf, 1963; zwei Altersgruppen); in einer Metaanalyse über 176 Studien sprach für Stroop und Flanker nichts für ein Hemmdefizit im Alter, für den Simon-Effekt ist die Datenlage offen (Rey-Mermet & Gade, 2018). Altersaussagen werden deshalb nicht gemacht.
 - **Sprache und Lesefertigkeit:** DE und IT messen nicht dasselbe (Wortlänge, Lesegewohnheit); Werte nicht zwischen Sprachen vergleichen.
-- **Gerät:** Bildfrequenz und Touch-Latenz verschieben absolute Zeiten (Pronk et al., 2020); Bildschirmgröße und Abstand ändern die Sprunggrößen.
+- **Gerät:** Bildfrequenz und Touch-Latenz verschieben absolute Zeiten (Pronk et al., 2020); Bildschirmgröße und Abstand ändern die Sprunggrößen. Messungen am Menschen streuen stärker als an Prüfkörpern (Mountford et al., 2004, S. 43–44), und eine hohe Korrelation zweier Verfahren heißt nicht, dass sie dieselben Werte liefern (ebd., S. 24). Aussagekräftig ist deshalb nur der Verlauf über mehrere Runden auf demselben Gerät.
 - **Raten:** Bei vier Feldern liegt der Zufallstreffer bei 25 %. Die Fehlerarten (Lage-Fehler, Achsenfehler) zeigen, ob eher nach Lage oder nach Wort geantwortet wurde.
 
 ## 8. Studienlage: Trainierbarkeit und Übertragung
 
 - **Übungseffekt: mittel (für die Aufgabenart).** Mit Übung wird die Wahlreaktion schneller, die Steigung pro Alternative flacht ab (Proctor & Schneider, 2018). Kompatibilitätseffekte bleiben auch nach 8 Sitzungen bestehen (Dutta & Proctor, 1992), Stroop-Interferenz sinkt bei Älteren, verschwindet aber nicht (Wilkinson & Yang, 2012; dort 6 Sitzungen, n = 56, 60–84 J.).
 - **Naher Transfer: schwach.** In der Stroop-Studie mit Älteren übertrug sich die Verbesserung **nicht** auf andere Aufgaben (Wilkinson & Yang, 2012).
-- **Alltagstransfer: fehlend.** Für diese Aufgabe (und für Wort-Lage-Konflikte allgemein) gibt es keinen Nachweis eines Nutzens im Alltag, im Verkehr oder in der Reha. Auch das Video belegt nichts dazu.
-- **Reha-Kontext:** Aus dem Video geht nicht hervor, ob die Software als Therapie eingesetzt wird; für unsere Übung wird **kein** Therapie- oder Heilanspruch erhoben.
-- **Seriöse Formulierung:** „Bei Richtung & Wort tippst du das Feld, dessen Wort die Richtung nennt. Stehen die Wörter nicht an der passenden Stelle, musst du lesen statt nach der Lage zu antworten. Mit Übung wird man in dieser Aufgabe schneller; ob das im Alltag hilft, ist nicht belegt. Deine Werte gelten nur für dieses Gerät.“
+- **Alltagstransfer: fehlend.** Für diese Aufgabe (und für Wort-Lage-Konflikte allgemein) gibt es keinen Nachweis eines Nutzens im Alltag, im Verkehr oder in der Rehabilitation.
+- **Therapie:** Für die Übung wird **kein** Therapie- oder Heilanspruch erhoben.
+- **Kurzfassung für Anwender:** „Bei Richtung & Wort tippst du das Feld, dessen Wort die Richtung nennt. Stehen die Wörter nicht an der passenden Stelle, musst du lesen statt nach der Lage zu antworten. Mit Übung wird man in dieser Aufgabe schneller; ob das im Alltag hilft, ist nicht belegt. Deine Werte gelten nur für dieses Gerät.“
 
 ## 9. Auswahlhinweise für die KI
 
 - **Passt, wenn …** jemand eine ruhige Konzentrationsübung mit Lesen und Entscheiden sucht; Zuordnung unter Konflikt geübt werden soll; Touch am Tablet genutzt wird; Sehschärfe und Farbsehen keine Rolle spielen sollen (große Wörter, keine Farbabhängigkeit); der eigene Verlauf wichtiger ist als ein Rang.
 - **Weniger passend, wenn …** Reaktion, Blickfolge, Peripherie oder Handgenauigkeit trainiert werden sollen; die Wörter nicht gelesen werden können; Kinder unter etwa 6 Jahren; ein Normvergleich oder eine Diagnose gewünscht ist.
 - **Vorsicht / anpassen bei …**
-  - `lese_rechtschreib_schwaeche`: Die Übung verlangt Lesen von Wörtern unter Konflikt; mit den unteren Stufen (alle Wörter an passender Lage) beginnen.
+  - `lese_rechtschreib_schwaeche`: Die Übung verlangt Lesen von Wörtern unter Konflikt; auf Stufe 1 (alle Wörter an passender Lage) beginnen.
   - `kognitive_einschraenkung`, `aufmerksamkeitsprobleme`: Konfliktstufen können frustrieren; auf Stufe 1 bleiben, kein Therapieanspruch.
   - `kinder_unter_6`: Lesen und Links/Rechts noch nicht sicher; nicht untersucht.
   - `sehbehinderung_niedriger_visus`, `presbyopie_gleitsicht`: Wortschrift 28–30 px und seitliche Felder; Tablet in den Nahteil-Abstand bringen, Schrift/Bildschirm vergrößern.
+  - **Warnzeichen (kein Schlüssel):** Doppelbilder, plötzlicher Sehverlust, Lichtblitze, Kopfschmerz mit nachlassender Sehschärfe, Schwindel oder Zittern gelten in der Lehrbuchliteratur als Anlass zur ärztlichen Abklärung (Muchnick, 2008, S. 6, 28). Dann zuerst abklären lassen und nicht üben; Pause und Rücksprache auch bei Beschwerden während der Übung.
 - **Kombiniert gut mit …** 201 (Stroop-Aufgabe, Interferenz), 202 (Wahlreaktion mit Regelwechsel), 703 (Tasten-Wahlreaktion), 207 (Zuordnung Zeichen–Zahl), 901 (Reihen-Rätsel als ruhiger Ausgleich).
 - Keine Diagnosen, keine Heilversprechen; nicht als „Test“ darstellen.
 
@@ -189,7 +190,7 @@ Motorisch anspruchslos: ein Tipp auf ein großes Feld (mindestens 72 px hoch, Tr
 ## 11. Quellen
 
 ### Von der Website angegeben
-- Keine Online-Quelle – Beobachtung aus Videos des Auftraggebers (Handyvideo einer Reha-/Neuro-Trainingssoftware, 16 s, Hochformat; Name, Hersteller und URL unbekannt). Die Videobeobachtungen sind in `docs/uebungskatalog/literatur/lit-W12-links-rechts-richtung.md` (Teil A) festgehalten.
+- Keine Online-Quelle; Aufbau und Stufen beruhen auf der unten genannten Fachliteratur. **stützt:** keine Aussage
 
 ### Weitere Fachliteratur
 - Fitts, P. M., & Seeger, C. M. (1953). S-R compatibility: Spatial characteristics of stimulus and response codes. *Journal of Experimental Psychology*, *46*(3), 199–210. https://doi.org/10.1037/h0062827 – Kompatibilität bestimmt die Reaktionszeit (**Prüfung:** Crossref ✓; Inhalt über Übersichten, Abstract nicht vorhanden).
@@ -216,3 +217,5 @@ Motorisch anspruchslos: ein Tipp auf ein großes Feld (mindestens 72 px hoch, Tr
 - Patel, S., Henderson, R., Bradley, L., Galloway, B., & Hunter, L. (1991). Effect of visual display unit use on blink rate and tear stability. *Optometry and Vision Science*, *68*(11), 888–892. https://doi.org/10.1097/00006324-199111000-00010 – Lidschlagrate am Bildschirm im Mittel 5-fach niedriger (**Prüfung:** Crossref ✓; Abstract gelesen).
 - Hutchings, N., Irving, E. L., Jung, N., Dowling, L. M., Wells, K. A., & Lillakas, L. (2007). Eye and head movement alterations in naïve progressive addition lens wearers. *Ophthalmic and Physiological Optics*, *27*(2), 142–153. https://doi.org/10.1111/j.1475-1313.2006.00460.x – Gleitsicht, Kopfbewegung (**Prüfung:** Crossref ✓; Abstract gelesen, Literaturbasis W02).
 - World Wide Web Consortium. (2024). *Web Content Accessibility Guidelines (WCAG) 2.2* (SC 1.4.1, 1.4.3). https://www.w3.org/TR/WCAG22/ – Farbe nie allein, Kontrast 4,5 : 1 (**Prüfung:** Webdokument ohne DOI; Kriterien 1.4.1 und 1.4.3 am 01.10.2026 gelesen).
+- Muchnick, B. G. (2008). *Clinical Medicine in Optometric Practice* (2nd ed.). Mosby/Elsevier. https://openlibrary.org/isbn/9780323029612 – Warnzeichen, die ärztliche Abklärung verlangen (S. 6, 28).
+- Mountford, J., Ruston, D., & Dave, T. (2004). *Orthokeratology: Principles and Practice*. Butterworth-Heinemann. https://openlibrary.org/isbn/9780750640077 – Messungen am Menschen streuen; Korrelation ist keine Übereinstimmung (S. 24, 43–44).
