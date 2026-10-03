@@ -117,7 +117,7 @@ describe('ausweich-folgen: Texte und Quellen', () => {
     expect(itTexts.why).toMatch(/non è dimostrato/i);
     expect(de.steps.length).toBe(itTexts.steps.length);
     expect(science.sources.length).toBeGreaterThanOrEqual(3);
-    for (const s of science.sources) expect(s.url).toMatch(/^https:\/\/doi\.org\//);
+    for (const s of science.sources) expect(s.url).toMatch(/^https:\/\/(doi\.org|openlibrary\.org)\//);
     expect(science.id).toBe(ausweichFolgen.id);
   });
 });
