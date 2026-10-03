@@ -41,7 +41,7 @@ export const PARAMS: readonly ParamDef[] = [
   { key: 'redLevel', type: 'number', unit: 'percent', min: 30, max: 100, step: 10, default: 100 },
   { key: 'secondLevel', type: 'number', unit: 'percent', min: 30, max: 100, step: 10, default: 100 },
   // Ansicht im Intro (Prüfbild einfach oder Schritt für Schritt): ändert die Übung nicht
-  { key: 'glassesCheck', type: 'select', default: 'simple', options: ['simple', 'steps'], neutral: true },
+  { key: 'glassesCheck', type: 'select', default: 'steps', options: ['simple', 'steps'], neutral: true },
   { key: 'controlMarks', type: 'select', default: 'off', options: ['off', 'on'] },
   { key: 'shiftPd', type: 'number', min: 0, max: 12, step: 0.5, default: 0 },
   { key: 'shiftDir', type: 'select', default: 'convergence', options: ['convergence', 'divergence'] },
@@ -103,7 +103,7 @@ export function rgParams(p: ExerciseParams): RgParams {
     brightness: num('brightness'),
     redLevel: num('redLevel'),
     secondLevel: num('secondLevel'),
-    glassesCheck: sel<GlassesCheck>('glassesCheck', ['simple', 'steps'], 'simple'),
+    glassesCheck: sel<GlassesCheck>('glassesCheck', ['simple', 'steps'], 'steps'),
     controlMarks: sel<'off' | 'on'>('controlMarks', ['off', 'on'], 'off') === 'on',
     shiftPd: num('shiftPd'),
     shiftDir: sel<ShiftDir>('shiftDir', ['convergence', 'divergence'], 'convergence'),

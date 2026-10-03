@@ -61,7 +61,7 @@ describe('Einstellungen', () => {
       // Ergänzungen: alle aus, bisheriges Verhalten bleibt gleich
       redLevel: 100,
       secondLevel: 100,
-      glassesCheck: 'simple',
+      glassesCheck: 'steps',
       controlMarks: false,
       shiftPd: 0,
       shiftDir: 'convergence',
@@ -82,7 +82,7 @@ describe('Einstellungen', () => {
     expect(s.tones).toBe('redblue');
     expect(s.shiftDir).toBe('convergence');
     expect(s.controlMarks).toBe('off');
-    expect(s.glassesCheck).toBe('simple');
+    expect(s.glassesCheck).toBe('steps');
     expect(base({ controlMarks: 'on', shiftPd: 4.5, shiftDir: 'divergence', rampDurchgaenge: 4, tones: 'redblue', redLevel: 60 })).toMatchObject({
       controlMarks: true,
       shiftPd: 4.5,

@@ -39,12 +39,12 @@ describe('Definition und Registrierung', () => {
   });
 
   it('Prüfbild: zwei Flächen in den eingestellten Farben, beschriftet, ohne Wertung', () => {
-    const info = laborRotGruenLesen.colorCheck!({ tones: 'redgreen', brightness: 100 }, de);
+    const info = laborRotGruenLesen.colorCheck!({ glassesCheck: 'simple', tones: 'redgreen', brightness: 100 }, de);
     expect(info.panels.map((p) => p.color)).toEqual(['rgb(255,0,0)', 'rgb(0,255,0)']);
     expect(info.panels.map((p) => p.label)).toEqual(['Rot', 'Grün']);
     expect(info.text).toMatch(/roten Glas vor dem Auge sollte die grüne/);
     expect(info.text).toMatch(/Helligkeit und Brille prüfen/);
-    const cy = laborRotGruenLesen.colorCheck!({ tones: 'redcyan', brightness: 80 }, itTexts);
+    const cy = laborRotGruenLesen.colorCheck!({ glassesCheck: 'simple', tones: 'redcyan', brightness: 80 }, itTexts);
     expect(cy.panels.map((p) => p.color)).toEqual(['rgb(204,0,0)', 'rgb(0,204,204)']);
     expect(cy.panels[1].label).toBe('Ciano');
     expect(JSON.stringify(info)).not.toMatch(/Test|Befund:|Diagnose/);
@@ -54,11 +54,11 @@ describe('Definition und Registrierung', () => {
   });
 
   it('Prüfbild Rot–Blau: Blau rgb(0,160,255), beschriftet; je Farbe getrennte Helligkeit färbt die Flächen', () => {
-    const info = laborRotGruenLesen.colorCheck!({ tones: 'redblue', brightness: 100, redLevel: 100, secondLevel: 100 }, de);
+    const info = laborRotGruenLesen.colorCheck!({ glassesCheck: 'simple', tones: 'redblue', brightness: 100, redLevel: 100, secondLevel: 100 }, de);
     expect(info.panels.map((p) => p.color)).toEqual(['rgb(255,0,0)', 'rgb(0,160,255)']);
     expect(info.panels.map((p) => p.label)).toEqual(['Rot', 'Blau']);
     expect(info.text).toMatch(/bei Rot–Blau: blaue/);
-    const dim = laborRotGruenLesen.colorCheck!({ tones: 'redblue', brightness: 100, redLevel: 50, secondLevel: 70 }, itTexts);
+    const dim = laborRotGruenLesen.colorCheck!({ glassesCheck: 'simple', tones: 'redblue', brightness: 100, redLevel: 50, secondLevel: 70 }, itTexts);
     expect(dim.panels.map((p) => p.color)).toEqual(['rgb(128,0,0)', 'rgb(0,112,179)']);
     expect(dim.panels.map((p) => p.label)).toEqual(['Rosso', 'Blu']);
   });
