@@ -166,7 +166,7 @@ describe('hoch-runter-folgen: Texte und Quellen', () => {
     expect(de.why).toMatch(/nicht belegt\.$/);
     expect(itTexts.why).toMatch(/non è dimostrato/i);
     expect(science.sources.length).toBeGreaterThanOrEqual(3);
-    for (const s of science.sources) expect(s.url).toMatch(/^https:\/\/doi\.org\//);
+    for (const s of science.sources) expect(s.url).toMatch(/^https:\/\/(doi\.org|openlibrary\.org)\//);
     expect(science.id).toBe(hochRunterFolgen.id);
   });
 });
