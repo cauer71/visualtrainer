@@ -87,8 +87,7 @@ stichworte: ["Corsi-Block-Tapping", "Pfadgedächtnis", "räumliche Spanne", "ser
 
 # 607 · Leuchtpfad nachtippen (Corsi-artige Sequenz)
 
-> Original: „Corsi-Block-Test online – Sequenzgedächtnis“ („Path Tracing Pro“) – skilldrills.online, Kapitel Gedächtnis
-> (`memory`, Unterkapitel `spatial-memory`) · Blickfit: noch nicht umgesetzt
+> Original: „Corsi-Block-Test online – Sequenzgedächtnis“ („Path Tracing Pro“) – skilldrills.online, Kapitel Gedächtnis (`memory`, Unterkapitel `spatial-memory`) · Blickfit: noch nicht umgesetzt
 
 ## 1. Kurzbeschreibung
 

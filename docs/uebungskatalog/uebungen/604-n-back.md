@@ -85,10 +85,9 @@ aehnliche_uebungen: [602, 606, 601, 607, 603, 605, 208, 205, 206, 102, 201]
 stichworte: ["N-Back", "3-Back", "Arbeitsgedächtnis", "working memory updating", "Aktualisieren", "Buchstabenfolge", "Wiedererkennen", "Kirchner", "Dual N-Back", "Lure", "d prime", "phonologische Schleife", "Daueraufmerksamkeit", "Zeitdruck"]
 ---
 
-# 604 · N-Back (Buchstabe von vor N Schritten wiedererkennen)
+# 604 · N-Back (Form von vor N Schritten wiedererkennen)
 
-> Original: „N-Back Test online – Arbeitsgedächtnis“ (Startbild „Dual N-Back Training Pro“) – skilldrills.online,
-> Kapitel Gedächtnis (`memory`, Unterkapitel `working-memory`) · Blickfit: noch nicht umgesetzt
+> Original: „N-Back Test online – Arbeitsgedächtnis“ (Startbild „Dual N-Back Training Pro“) – skilldrills.online, Kapitel Gedächtnis (`memory`, Unterkapitel `working-memory`) · Blickfit: noch nicht umgesetzt
 
 ## 1. Kurzbeschreibung
 

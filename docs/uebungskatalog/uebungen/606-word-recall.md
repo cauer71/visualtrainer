@@ -85,10 +85,9 @@ aehnliche_uebungen: [602, 603, 604, 605, 601, 607, 203, 207]
 stichworte: ["Wortliste", "freie Wiedergabe", "free recall", "verbales Kurzzeitgedächtnis", "Wortspanne", "serieller Positionseffekt", "Lesen", "Tippen", "Bildschirmtastatur", "adaptive Treppe", "Sprachabhängigkeit", "Zeitdruck"]
 ---
 
-# 606 · Wortliste merken (freie Wiedergabe)
+# 606 · Wortliste merken (Wiedererkennen)
 
-> Original: „Wortgedächtnis-Test – Wörter merken und abrufen“ („Wort-Recall Pro“) – skilldrills.online, Kapitel
-> Gedächtnis (`memory`, Unterkapitel `short-term-memory`) · Blickfit: noch nicht umgesetzt
+> Original: „Wortgedächtnis-Test – Wörter merken und abrufen“ („Wort-Recall Pro“) – skilldrills.online, Kapitel Gedächtnis (`memory`, Unterkapitel `short-term-memory`) · Blickfit: noch nicht umgesetzt
 
 ## 1. Kurzbeschreibung
 

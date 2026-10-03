@@ -74,7 +74,7 @@ belastung:
 # ===== Auswahlhilfe =====
 voraussetzungen: ["Beschwerdefreie Finger, Hand und Unterarm (45 s Tippen mit Höchsttempo)", "Maus mit fester Unterlage oder Tablet stabil aufgestellt (nicht in der Hand halten)", "Keine Farb- oder Detailwahrnehmung nötig; Kugel ist groß (Ø ≈ 2,6° zu Beginn)"]
 vorsicht_bei: [hand_arm_beschwerden, tremor_parkinson, photosensitive_epilepsie, migraene_lichtempfindlich, gelenk_ruecken]
-geeignet_fuer: ["einfaches, sprachfreies Motorik-Spiel zum Einstieg: Tipp- oder Klicktempo spielerisch erleben", "eigenen Fortschritt im Tipptempo am selben Gerät verfolgen (Übungseffekt ist belegt)", "kurzer Einstieg vor anderen Maus-/Touch-Übungen (702, 704, 708) – in kurzen Runden mit Pausen, weil schnelles Tippen rasch ermüdet", "Kinder ab Schulalter und Jugendliche mit Spaß an schnellen Aufgaben"]
+geeignet_fuer: ["einfache, sprachfreie Motorik-Übung zum Einstieg: Tipp- oder Klicktempo spielerisch erleben", "eigenen Fortschritt im Tipptempo am selben Gerät verfolgen (Übungseffekt ist belegt)", "kurzer Einstieg vor anderen Maus-/Touch-Übungen (702, 704, 708) – in kurzen Runden mit Pausen, weil schnelles Tippen rasch ermüdet", "Kinder ab Schulalter und Jugendliche mit Spaß an schnellen Aufgaben"]
 weniger_geeignet_fuer: ["Menschen mit Sehnenscheiden-, Karpaltunnel-, Daumen- oder Handgelenkbeschwerden", "Menschen mit Tremor oder Parkinson (Frustgefahr; Tippen ist dort ein klinisches Untersuchungsitem, diese Übung ist kein Test und leitet nichts daraus ab)", "Ziele im Bereich Sehen oder Blickmotorik (die Übung fordert die Augen praktisch nicht)", "Vergleich mit anderen Personen oder Geräten (Technik und Geräteunterschiede verfälschen)"]
 evidenz:
   uebungseffekt: mittel
@@ -85,7 +85,7 @@ aehnliche_uebungen: [703, 708]
 stichworte: ["Finger-Tapping", "CPS", "Klicks pro Sekunde", "Klickgeschwindigkeit", "Tipptempo", "motorische Ermüdung", "Jitter-Clicking", "Butterfly-Clicking", "Fingerausdauer", "Touch-Tippen"]
 ---
 
-# 701 · Klick-Tempo (schnelles Tippen auf eine Kugel)
+# 701 · Tipp-Tempo (schnelles Tippen auf eine Kugel)
 
 > Original: „CPS-Test | Klickgeschwindigkeit messen“ (englisch „CPS Test – Click speed test“) – skilldrills.online, Kapitel Motorik (`motor`, Unterkapitel `movement-speed`) · Blickfit: noch nicht umgesetzt
 
@@ -158,7 +158,7 @@ Fingertippen aktiviert zuverlässig den primären sensomotorischen Kortex (gegen
 
 ## 9. Auswahlhinweise
 
-- **Passt, wenn …** jemand ein kurzes, sprachfreies, visuell anspruchsloses Motorik-Spiel möchte; als Aufwärmen vor Zielübungen; zum Vergleich mit sich selbst am selben Gerät; für Kinder ab Schulalter und Jugendliche. Auch für Menschen mit eingeschränktem Sehen geeignet, da das Ziel groß und zentral ist.
+- **Passt, wenn …** jemand ein kurzes, sprachfreies, visuell anspruchslose Motorik-Übung möchte; als Aufwärmen vor Zielübungen; zum Vergleich mit sich selbst am selben Gerät; für Kinder ab Schulalter und Jugendliche. Auch für Menschen mit eingeschränktem Sehen geeignet, da das Ziel groß und zentral ist.
 - **Weniger passend, wenn …** Ziele im Bereich Sehen, Blickfolge, Aufmerksamkeit oder Genauigkeit bestehen (andere Übungen wählen); wenn Personen sich mit anderen messen wollen (Werte technik- und geräteabhängig).
 - **Vorsicht / anpassen bei …**
   - `hand_arm_beschwerden`: Höchsttempo belastet Sehnen und Handgelenk; bei Schmerz abbrechen, Pausen nutzen. Taubheit oder Schwäche in Hand und Arm gelten als Anlass zur ärztlichen Abklärung (vgl. Muchnick, 2008, S. 28).

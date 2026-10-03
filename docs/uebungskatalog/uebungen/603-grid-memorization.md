@@ -85,10 +85,9 @@ aehnliche_uebungen: [605, 607, 811, 601, 606, 602, 604, 106]
 stichworte: ["Memory Matrix", "Rastergedächtnis", "Mustergedächtnis", "Visual Patterns Test", "Pattern Span", "visuell-räumliches Kurzzeitgedächtnis", "Visual Cache", "Chunking", "Gestalt", "statisches Muster", "Touch", "sprachfrei"]
 ---
 
-# 603 · Rastermuster merken (Memory Matrix)
+# 603 · Rastermuster merken
 
-> Original: „Visueller Gedächtnistest online – Memory Matrix“ („Grid Memorization Pro“) – skilldrills.online, Kapitel
-> Gedächtnis (`memory`, Unterkapitel `spatial-memory`) · Blickfit: noch nicht umgesetzt
+> Original: „Visueller Gedächtnistest online – Memory Matrix“ („Grid Memorization Pro“) – skilldrills.online, Kapitel Gedächtnis (`memory`, Unterkapitel `spatial-memory`) · Blickfit: noch nicht umgesetzt
 
 ## 1. Kurzbeschreibung
 

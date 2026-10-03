@@ -87,8 +87,7 @@ stichworte: ["Object Location Memory", "Objekt-Ort-Gedächtnis", "Positionsgedä
 
 # 605 · Objekt-Ort merken (Wo war das Symbol?)
 
-> Original: „Räumlicher Gedächtnistest online – Objektposition“ („Object Location Pro“) – skilldrills.online, Kapitel
-> Gedächtnis (`memory`, Unterkapitel `spatial-memory`) · Blickfit: noch nicht umgesetzt
+> Original: „Räumlicher Gedächtnistest online – Objektposition“ („Object Location Pro“) – skilldrills.online, Kapitel Gedächtnis (`memory`, Unterkapitel `spatial-memory`) · Blickfit: noch nicht umgesetzt
 
 ## 1. Kurzbeschreibung
 

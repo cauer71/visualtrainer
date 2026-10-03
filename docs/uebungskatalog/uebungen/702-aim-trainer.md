@@ -85,7 +85,7 @@ aehnliche_uebungen: [704, 708, 104, 501, 502, 508, 302, 804, 509, 706]
 stichworte: ["Aim Trainer", "Fitts'sches Gesetz", "bewegte Ziele", "moving target selection", "Auge-Hand-Koordination", "Zielbewegung", "Mauspräzision", "Speed-Accuracy-Trade-off", "Pointer Lock", "Combo"]
 ---
 
-# 702 · Zielklicken – bewegte Ziele mit dem Mauszeiger erfassen
+# 702 · Zielklicken – bewegte Ziele antippen oder anklicken
 
 > Original: „Aim Trainer Online“ – skilldrills.online, Kapitel Motorik (`motor/hand-eye-coordination`) · Blickfit: noch nicht umgesetzt (verwandt: `zielfang` = bewegtes Ziel antippen, Vorbild 104)
 

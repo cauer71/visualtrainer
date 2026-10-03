@@ -87,8 +87,7 @@ stichworte: ["Zahlenspanne", "digit span", "Ziffernfolge", "verbales Kurzzeitged
 
 # 602 · Zahlenspanne (Ziffernfolgen merken)
 
-> Original: „Zahlenspanne-Test – Zahlenfolgen merken“ („Digit Span Pro“) – skilldrills.online, Kapitel Gedächtnis
-> (`memory`, Unterkapitel `short-term-memory`) · Blickfit: noch nicht umgesetzt
+> Original: „Zahlenspanne-Test – Zahlenfolgen merken“ („Digit Span Pro“) – skilldrills.online, Kapitel Gedächtnis (`memory`, Unterkapitel `short-term-memory`) · Blickfit: noch nicht umgesetzt
 
 ## 1. Kurzbeschreibung
 

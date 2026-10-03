@@ -85,7 +85,7 @@ aehnliche_uebungen: [202, 102, 802, 101, 701, 207, 602, 601]
 stichworte: ["Wahlreaktion", "Hick'sches Gesetz", "Tastatur", "Keybinds", "Hotkeys", "Blindschreiben", "Go/No-go", "Reiz-Reaktions-Zuordnung", "Sequenz", "Tastenbelegung", "Impulskontrolle"]
 ---
 
-# 703 · Tasten-Wahlreaktion (angezeigte Taste blind drücken)
+# 703 · Tasten-Wahlreaktion (Zeichen der passenden Taste zuordnen)
 
 > Original: „Tastatur-Reaktionszeit-Test – Keybind-Trainer & Tastengeschwindigkeitstest“ (englisch „Keyboard Speed Test“) – skilldrills.online, Kapitel Motorik (`motor`, Unterkapitel `movement-speed`) · Blickfit: noch nicht umgesetzt
 
