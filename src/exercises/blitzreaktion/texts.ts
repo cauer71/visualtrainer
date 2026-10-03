@@ -9,8 +9,8 @@ export const de: ExerciseTexts = {
     'Nicht raten: Erst tippen, wenn es leuchtet!',
   ],
   why:
-    'Du übst, schnell und gleichmäßig auf Lichter zu reagieren, die plötzlich auftauchen – in der Mitte und am Rand, ohne den Blick zu bewegen. Dein Verlauf zeigt auch deine Tagesform. Ob sich das auf Straßenverkehr oder Sport überträgt, ist nicht belegt – und über deine Fahrtüchtigkeit sagt das Spiel nichts aus.',
-  goodFor: ['Bremsen im Verkehr', 'Ballspiele', 'Aufmerksam bleiben'],
+    'Du übst, schnell und gleichmäßig auf Lichter zu reagieren, die plötzlich auftauchen – in der Mitte und am Rand, ohne den Blick zu bewegen. Dein Verlauf zeigt auch deine Tagesform. Ob sich das auf Straßenverkehr oder Sport überträgt, ist nicht belegt – und über deine Fahrtüchtigkeit sagt die Übung nichts aus.',
+  goodFor: ['Schnell auf Plötzliches reagieren', 'Ballspiele', 'Aufmerksam bleiben'],
   captions: {
     look: 'Schau auf das Kreuz in der Mitte',
     tap: 'Licht? Sofort tippen – egal wo!',
@@ -48,8 +48,8 @@ export const it: ExerciseTexts = {
     'Non tirare a indovinare: tocca solo quando si accende!',
   ],
   why:
-    'Ti alleni a reagire in modo rapido e costante a luci che compaiono all’improvviso – al centro e ai lati, senza muovere lo sguardo. I tuoi progressi mostrano anche la tua forma del giorno. Non è dimostrato che questo si trasferisca al traffico o allo sport – e il gioco non dice nulla sulla tua idoneità alla guida.',
-  goodFor: ['Frenare nel traffico', 'Giochi con la palla', 'Restare attenti'],
+    'Ti alleni a reagire in modo rapido e costante a luci che compaiono all’improvviso – al centro e ai lati, senza muovere lo sguardo. I tuoi progressi mostrano anche la tua forma del giorno. Non è dimostrato che questo si trasferisca al traffico o allo sport – e l’esercizio non dice nulla sulla tua idoneità alla guida.',
+  goodFor: ['Reagire in fretta a ciò che accade all’improvviso', 'Giochi con la palla', 'Restare attenti'],
   captions: {
     look: 'Guarda la croce al centro',
     tap: 'Luce? Tocca subito – ovunque!',

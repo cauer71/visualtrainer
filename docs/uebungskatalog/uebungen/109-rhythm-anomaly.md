@@ -12,7 +12,7 @@ blickfit_umsetzung: {kennung: "aus-dem-takt", name: "Aus dem Takt", unterschiede
 stand: 2026-09-30
 
 # ===== Überblick =====
-kurzbeschreibung: "Ein Raster aus 36 dunklen Feldern pulsiert langsam. Ein Feld pulsiert schneller als die anderen (und im Original zusätzlich heller). Man tippt oder klickt es an, bevor die Zeit abläuft; kurze Aussetzer einzelner Felder („Störblitze“) lenken ab."
+kurzbeschreibung: "In einem Raster aus 4 × 4 Feldern pulsieren alle Felder sanft und gleich hell, nur eines pulsiert in einem anderen Tempo, schneller oder langsamer. Nach mindestens zwei Sekunden Zuschauen tippt man es an. Der Tempounterschied wird adaptiv kleiner, von 40 % bis 4,3 %; die Rückmeldung erscheint als ruhiger Rahmen, nicht als Blitz."
 ziel_funktionen: [zeitliche_aufloesung]
 eingabe: [maus, touch]
 tablet_geeignet: ja
@@ -64,7 +64,7 @@ anforderungsprofil:
     gleichgewicht: 0
     ausdauer_belastung: 0
 belastung:
-  zeitdruck: 2
+  zeitdruck: 1
   flimmern_lichtreize: 2
   bewegungsreize_schwindel: 0
   koerperliche_belastung: 0
@@ -80,7 +80,7 @@ evidenz:
   uebungseffekt: schwach
   naher_transfer: fehlend
   alltag_transfer: fehlend
-  kommentar: "Die Grundlagen der Frequenzunterscheidung sind gut belegt, direkte Trainingsstudien mit langsamen Pulsen bei Gesunden fehlen (Recherche docs/wissenschaft/03); verwandte Lernstudien betreffen andere Aufgaben (Seitz 2006, Xiong 2022) und zeigen bei Normalsichtigen teils keinen Effekt (Eisen-Enosh 2023)."
+  kommentar: "Die Grundlagen der Frequenzunterscheidung sind gut belegt, direkte Trainingsstudien mit langsamen Pulsen bei Gesunden fehlen; verwandte Lernstudien betreffen andere Aufgaben (Seitz 2006, Xiong 2022) und zeigen bei Normalsichtigen teils keinen Effekt (Eisen-Enosh 2023)."
 aehnliche_uebungen: [103, 108, 204, 208, 401]
 stichworte: ["zeitliche Frequenzunterscheidung", "Flimmern", "Pulsrhythmus", "visuelle Suche in der Zeit", "Photosensitivität", "Weber-Anteil", "Odd-one-out", "weiches Schauen"]
 ---
@@ -90,7 +90,8 @@ stichworte: ["zeitliche Frequenzunterscheidung", "Flimmern", "Pulsrhythmus", "vi
 > Original: „Flimmerfusion-Test“ (Rhythm Anomaly Pro) – skilldrills.online, Kapitel Visuelle Wahrnehmung · Blickfit: „Aus dem Takt“ (umgesetzt, mit deutlichen Änderungen)
 
 ## 1. Kurzbeschreibung
-Auf dunklem Grund pulsieren 36 quadratische Felder (6 x 6) langsam, etwa ein- bis zweimal pro Sekunde. Eines davon pulsiert schneller als die übrigen. Man tippt oder klickt es an. Bei jedem Treffer wird das Grundtempo etwas höher, das Zeitlimit kürzer, und gelegentlich fallen einzelne Felder für einen Moment aus (auf der Website „Störblitze“ genannt). Gefordert ist der Vergleich von Rhythmen über eine größere Fläche, also eine Art „Suchbild in der Zeit“. Trotz des Namens „Flimmerfusion“ wird die Flimmerverschmelzungsfrequenz (CFF, die Frequenz, ab der Flimmern als Dauerlicht erscheint) nicht gemessen: die Pulse sind mit 0,6 bis 2,3 Hz um ein Vielfaches langsamer als die CFF (ca. 50–90 Hz).
+
+Auf dunklem Grund liegen 16 quadratische Felder in einem 4 × 4-Raster. Alle pulsieren sanft, gleich hell und mit zufälliger Phase; nur ein Feld pulsiert in einem anderen Tempo, zufällig schneller oder langsamer als die übrigen. Das Grundtempo liegt in jedem Durchgang zufällig zwischen 1,0 und 1,8 Hz und nie über 2,5 Hz. Man schaut zuerst mindestens 2 s zu, weil der Vergleich mehrere Pulse braucht, und tippt dann das abweichende Feld an; nach höchstens 9 s wird die Lösung gezeigt. Eine Sitzung hat 12 Durchgänge. Der Tempounterschied beginnt bei 40 % und wird nach zwei richtigen Antworten kleiner (bis 4,3 %), nach einer falschen wieder größer. Gefordert ist der Vergleich von Rhythmen über eine größere Fläche, also eine Art „Suchbild in der Zeit“. Die Flimmerverschmelzungsfrequenz (CFF, die Frequenz, ab der Flimmern als Dauerlicht erscheint) wird nicht gemessen: Die Pulse sind mit 1,0 bis 2,5 Hz um ein Vielfaches langsamer als die CFF (ca. 50–90 Hz).
 
 ## 2. Ablauf im Original (Analyse)
 Quellen: Seitentext, ausgeliefertes Spielskript (Chunk 74807, Mechanik und Parameter) und die Code-Analyse in `docs/skilldrills-analyse.md`; Originalcode wird nicht wiedergegeben.
@@ -115,46 +116,55 @@ Quellen: Seitentext, ausgeliefertes Spielskript (Chunk 74807, Mechanik und Param
 - **Sinnvoll:** Der Hinweis, das Raster locker zu überblicken statt Feld für Feld zu prüfen, passt zu Befunden zu Flimmern als Suchmerkmal (Cass et al., 2011).
 
 ## 4. Optische und okulomotorische Grundlagen
-- **Zeitliche Empfindlichkeit:** Flimmern wird bis etwa 50–90 Hz gesehen (CFF; Mankowska et al., 2021). Die Kontrastempfindlichkeit für Flimmern ist bei mittleren Frequenzen am höchsten (ca. 10 Hz; Spalek et al., 2009). Für den Vergleich langsamer Pulse zählt eher die Unterscheidungsschwelle: Δf/f ≈ 0,08 bei 1,5, 4 und 30 Hz und ≈ 0,50 bei 20 Hz, bei angeglichener Modulationstiefe (Mandler, 1984). Das Original verlangt ca. 39 % Unterschied – weit über der Laborschwelle; die Schwierigkeit liegt im Finden unter 36 Feldern, nicht in der Feinunterscheidung.
-- **Phasenvergleich über Distanz:** Aufmerksamkeitsabhängiger Vergleich getrennter Flimmerquellen gelingt nur bis ca. 11,4 Hz bei 4° Abstand und 8,9 Hz bei 14° (Aghdaee & Cavanagh, 2007). Bei 1–2 Hz ist das nicht limitierend.
-- **Peripherie:** Die Unterscheidungsschwellen liegen in Fovea und bei 30° Exzentrizität innerhalb eines Faktors 2 (Waugh & Hess, 1994). Das Raster (ca. 12–15°) ist daher auch ohne Blicksprünge einsehbar; die „Weichfokus“-Strategie ist plausibel.
-- **Kontrast:** Grau 10 bis 26 (normal) und 10 bis 42 (Ziel) auf fast Schwarz; Leuchtdichteunterschied ΔL ≈ 0,007 bzw. 0,020 (WCAG-Formel, eigene Rechnung, Angabe der Code-Analyse). Auf spiegelnden oder dunkel gestellten Displays, bei Katarakt oder im Alter (foveale Flimmerempfindlichkeit sinkt ab ca. 44 Jahren; Kim & Mayer, 1994) ist das schwer sichtbar. Helle Umgebung, maximale Helligkeit und Blendfreiheit helfen.
+
+- **Zeitliche Empfindlichkeit:** Flimmern wird bis etwa 50–90 Hz gesehen (CFF; Mankowska et al., 2021). Die klassischen Empfindlichkeitskurven für zeitlich wechselndes Licht haben ihren Gipfel bei mittleren Frequenzen (ca. 10 Hz; Kelly, 1961; De Lange, 1958; Spalek et al., 2009). Bei Tageslicht summiert das Auge Licht über etwa 120 ms (Burr, 1980). Für den Vergleich langsamer Pulse zählt eher die Unterscheidungsschwelle: Δf/f ≈ 0,08 bei 1,5, 4 und 30 Hz und ≈ 0,50 bei 20 Hz, bei angeglichener Modulationstiefe (Mandler, 1984). Die Übung beginnt mit 40 % Unterschied, weit über der Laborschwelle, und verkleinert ihn schrittweise bis 4,3 %.
+- **Phasenvergleich über Distanz:** Aufmerksamkeitsabhängiger Vergleich getrennter Flimmerquellen gelingt nur bis ca. 11,4 Hz bei 4° Abstand und 8,9 Hz bei 14° (Aghdaee & Cavanagh, 2007). Bei 1–2,5 Hz ist das nicht limitierend.
+- **Peripherie:** Die Unterscheidungsschwellen liegen in Fovea und bei 30° Exzentrizität innerhalb eines Faktors 2 (Waugh & Hess, 1994). Das Raster (mindestens ≈ 8° breit: vier Felder von je ≥ 60 px plus Lücken bei 36 px/°; eigene Schätzung) ist daher auch ohne Blicksprünge einsehbar; die „Weichfokus“-Strategie, den Blick locker über alle Felder gleiten zu lassen, ist plausibel.
+- **Kontrast:** Die Felder pulsieren zwischen sRGB-Grau 30 und 60 auf dunklem Grund (Grau 20); der Leuchtdichtehub beträgt ΔL ≈ 0,032 (WCAG-Formel, eigene Rechnung). Das ist bewusst sanft und auf spiegelnden oder dunkel gestellten Displays, bei Katarakt oder im Alter (foveale Flimmerempfindlichkeit sinkt ab ca. 44 Jahren; Kim & Mayer, 1994) schwer sichtbar. Helle Umgebung, maximale Helligkeit und Blendfreiheit helfen.
 - **Alter:** Die CFF nimmt über die Lebensspanne linear ab (Lachenmayr et al., 1994).
-- **Sakkaden:** Während Blicksprüngen wird die magnozelluläre Empfindlichkeit für niedrige Ortsfrequenzen kurz unterdrückt (Burr et al., 1994). Bei Pulsen von 0,6–2,3 Hz (Periode > 400 ms) fällt eine solche kurze Unterdrückung kaum ins Gewicht; ein Vorteil des ruhigen Blicks über das ganze Raster ist plausibel, aber nicht belegt (unsicher).
+- **Sakkaden:** Während Blicksprüngen wird die magnozelluläre Empfindlichkeit für niedrige Ortsfrequenzen kurz unterdrückt (Burr et al., 1994). Bei Pulsen von 1,0–2,5 Hz (Periode > 400 ms) fällt eine solche kurze Unterdrückung kaum ins Gewicht; ein Vorteil des ruhigen Blicks über das ganze Raster ist plausibel, aber nicht belegt (unsicher).
 - **Brille/Bildschirm:** Bei Gleitsicht liegt der Bildschirm oft im Nahteil, seitliche Felder werden unscharf; der Kopf wird bewegt statt des Blicks. Für längere Bildschirmarbeit Arbeitsplatzbrille bedenken. Bildschirmarbeit senkt die Lidschlagrate deutlich (im Mittel auf ein Fünftel; die Tränenfilmstabilität blieb in dieser Studie unverändert; Patel et al., 1991). Bewusstes Blinzeln und Pausen sind eine naheliegende Vorsichtsmaßnahme bei trockenen Augen (nicht aus dieser Studie belegt).
+- **Lichtreize und Sicherheit:** Die Felder pulsieren höchstens mit 2,5 Hz, als Sinus in linearer Leuchtdichte und mit weichem Ein- und Ausblenden; die pulsierende Fläche beträgt höchstens 22 % der Bühne, das Pulsieren dauert höchstens etwa 9 s und wird von mindestens 2 s Standbild gefolgt. Rot wird nicht als Pulsfarbe verwendet, es gibt keine Störblitze, und die Rückmeldung erscheint als statischer Rahmen. Photosensitive Reaktionen treten typischerweise bei 15–25 Hz auf (Fisher et al., 2005); die Übung bleibt bewusst weit darunter, ein Restrisiko lässt sich dennoch nicht ausschließen.
 
 ## 5. Neurowissenschaftliche Grundlagen
-- **Parallele Bahnen:** Magno- und parvozelluläres System liefern früh unterschiedlich schnelle Signale; M-Zellen sind im Thalamus etwa 17 ms früher aktiv (Schmolesky et al., 1998). Ob genau diese Bahn das Erkennen eines 1–2-Hz-Rhythmus trägt, ist nicht gezeigt.
+
+- **Parallele Bahnen:** Magno- und parvozelluläres System liefern früh unterschiedlich schnelle Signale; M-Zellen sind im Thalamus etwa 17 ms früher aktiv (Schmolesky et al., 1998). Ob genau diese Bahn das Erkennen eines 1–2,5-Hz-Rhythmus trägt, ist nicht gezeigt.
 - **Zeitliche Grenzen:** Einfache Merkmale (z. B. Flimmern, Bewegungsrichtung) werden schnell verarbeitet, das Verbinden getrennter Merkmale und der Vergleich verteilter Quellen ist langsam und aufmerksamkeitsabhängig (Holcombe, 2009; Aghdaee & Cavanagh, 2007).
-- **Pop-out:** Große relative Frequenzunterschiede (> 5 Hz, z. B. 1,3 gegenüber 12,1 Hz) springen ins Auge; entscheidend ist der relative Unterschied (Cass et al., 2011). Bei den hier verwendeten 1–2 Hz ist von Pop-out nicht sicher auszugehen (unsicher).
-- **Aufmerksamkeit:** Suche in einem 36-Felder-Raster beansprucht selektive Aufmerksamkeit (allgemeine Annahme; die beteiligten Hirnnetzwerke wurden für diese Übung nicht untersucht). „Die Übung trainiert V1 oder den M-Pfad“ ist nicht belegt.
+- **Pop-out:** Große relative Frequenzunterschiede (> 5 Hz, z. B. 1,3 gegenüber 12,1 Hz) springen ins Auge; entscheidend ist der relative Unterschied (Cass et al., 2011). Bei den hier verwendeten 1–2,5 Hz ist von Pop-out nicht sicher auszugehen (unsicher). Das Grundtempo wechselt von Durchgang zu Durchgang, damit kein absoluter Takt gelernt wird.
+- **Aufmerksamkeit:** Die Suche in einem 16-Felder-Raster beansprucht selektive Aufmerksamkeit (allgemeine Annahme; die beteiligten Hirnnetzwerke wurden für diese Übung nicht untersucht). „Die Übung trainiert V1 oder den M-Pfad“ ist nicht belegt.
 
 ## 6. Motorische Grundlagen
-- **Aufgabe:** Ein einzelner Tipp oder Klick auf ein großes Ziel (ca. 2–3° je Feld); Fitts'sches Gesetz (Trefferaufwand steigt mit Entfernung und sinkt mit Zielgröße) spielt praktisch keine Rolle. Die Motorik ist kaum leistungsbegrenzend.
-- **Entscheidung statt Reaktion:** Antwortzeit ist die Zeit bis zum Finden des Ziels plus Bewegung; sie ist keine Reaktionszeit auf einen Reiz (Startzeitpunkt ist nicht klar definiert, das Ziel läuft von Beginn an).
-- **Eingabegerät:** Touch verdeckt kein Zielfeld nach dem Tipp; Fehler durch ungenaues Treffen sind bei ausreichend großen Feldern (Blickfit: mindestens 60 px) selten; die Feldgröße des Originals hängt von der Fenstergröße ab. Unbeabsichtigte Berührungen (Handballen) auf dem Tablet können Fehlklicks erzeugen (Beobachtung, nicht belegt).
+
+- **Aufgabe:** Ein einzelner Tipp oder Klick auf ein großes Ziel (mindestens 60 px, ≈ 1,5° je Feld bei 40 cm); das Fitts'sche Gesetz (Trefferaufwand steigt mit Entfernung und sinkt mit Zielgröße) spielt praktisch keine Rolle. Die Motorik ist kaum leistungsbegrenzend.
+- **Entscheidung statt Reaktion:** Die Antwortzeit ist die Zeit bis zum Finden des Ziels plus Bewegung; sie ist keine Reaktionszeit auf einen Reiz (das Ziel läuft von Beginn an, ein Tipp zählt erst nach 2 s).
+- **Eingabegerät:** Touch verdeckt kein Zielfeld nach dem Tipp; Fehler durch ungenaues Treffen sind bei Feldern von mindestens 60 px selten. Unbeabsichtigte Berührungen (Handballen) auf dem Tablet können Fehlantworten erzeugen (Beobachtung, nicht belegt).
 
 ## 7. Einflussfaktoren und Messgrenzen
+
 - **Rasteranordnung:** Position des Ziels (Rand/Mitte) beeinflusst die Findezeit; Blickstrategie (starr vs. Feld für Feld) ebenfalls.
-- **Helligkeit als Nebenhinweis:** Im Original erlaubt die doppelte Amplitude ein „Heller-Suchen“; die Messgröße ist damit keine reine Frequenzunterscheidung. Der Gleichtakt der Nachbarn verrät ebenfalls (Blickfit vermeidet beides).
-- **Display:** Ein 60-Hz-Display kann höchstens 30 Hz darstellen (ein Bild an, eins aus); für 0,6–2,3 Hz ohne Belang. Die Website-Aussage, mit 144 Hz seien „feinste Phasenunterschiede“ besser sichtbar, ist für diese langsamen Pulse ohne Belang (Elze & Tanner, 2012 zu LCD-Eigenschaften). Helligkeit und Kontrast des Displays wirken sich aber stark aus.
-- **Score-Größen:** Punkte spiegeln Tempo und Serie wider (nicht Schwelle); kein Perzentil, keine Normwerte. Die Notenskala der Website beruht auf willkürlicher Referenz (200 Punkte).
-- **Ermüdung/Übung:** 45 s, zufälliges Ziel – Übungseffekt durch Taktik (Blickstrategie, Suchmuster) wahrscheinlich, Wirkung auf Sehfunktion unbekannt.
-- **Zuverlässigkeit:** Ein 45-s-Score ist ein grobes Maß; für die Auswahl von Übungen ausreichend, nicht als Test.
+- **Nur der Rhythmus verrät das Ziel:** Alle Felder pulsieren gleich hell und mit zufälliger Phase; es gibt weder einen Helligkeitsunterschied noch einen Gleichtakt der Nachbarn als Nebenhinweis. Das Grundtempo wechselt von Durchgang zu Durchgang.
+- **Display:** Ein 60-Hz-Display kann höchstens 30 Hz darstellen (ein Bild an, eins aus); für 1,0–2,5 Hz ohne Belang. Schnellere Bildraten bringen für so langsame Pulse nichts (Elze & Tanner, 2012 zu den Eigenschaften von LCD-Bildschirmen); die Helligkeit wird aus der Uhrzeit berechnet und ist daher auf 60- und 120-Hz-Geräten gleich. Helligkeit und Kontrast des Displays wirken sich dagegen stark aus.
+- **Kennzahl:** Die Kennzahl ist der kleinste erkannte Unterschied; realistisch sind etwa 8–15 % (Laborbestwert Δf/f ≈ 0,08; Mandler, 1984). Es gibt keine Normwerte und kein Perzentil.
+- **Ermüdung/Übung:** 12 Durchgänge mit zufälligem Ziel – ein Übungseffekt durch Taktik (Blickstrategie, Suchmuster) ist wahrscheinlich, die Wirkung auf die Sehfunktion unbekannt.
+- **Zuverlässigkeit:** Ein Durchgang mit 12 Versuchen ist ein grobes Maß. Messungen am Menschen streuen stärker als an Prüfkörpern; darum zählt der Verlauf über mehrere Sitzungen (Mountford et al., 2004, S. 43–44). Die Übung ist kein Test.
 
 ## 8. Studienlage: Trainierbarkeit und Übertragung
-- **Übungseffekt: schwach.** Es gibt keine Trainingsstudie, die bei Gesunden gezielt das Unterscheiden langsamer Puls- oder Flimmerfrequenzen übt (Recherche docs/wissenschaft/03, Sept. 2026). Man wird in der Aufgabe vermutlich besser, vor allem durch Strategie.
+
+- **Übungseffekt: schwach.** Es ist keine Trainingsstudie bekannt, die bei Gesunden gezielt das Unterscheiden langsamer Puls- oder Flimmerfrequenzen übt. Man wird in der Aufgabe vermutlich besser, vor allem durch Strategie.
 - **Verwandtes:** Ein Lernverfahren für Bewegungsrichtung erhöhte die CFF deutlich und dauerhaft (Laborstudie; Seitz et al., 2006). Ein Flimmertraining verbesserte die CFF im amblyopen Auge um 17 %, bei Normalsichtigen zeigte sich kein Effekt (je 6 Personen; Eisen-Enosh et al., 2023). Das Unterscheiden von Zeitintervallen (nicht von Flimmerfrequenzen) ist lernbar; ein Übertrag zwischen Sehen und Hören zeigte sich nur mit zusätzlicher Übung einer zweiten Aufgabe (Doppeltraining; Xiong et al., 2022).
 - **Naher Transfer: fehlend.** Keine Belege, dass sich andere Zeitaufgaben verbessern.
-- **Alltagstransfer: fehlend.** Ein Nutzen im Verkehr, Sport oder bei Sehleistung ist nicht belegt; die Website zeigt keine Daten.
-- Fazit: Aufmerksamkeitsspiel mit klarer Kennzahl, keine Sehübung mit belegtem Effekt.
+- **Alltagstransfer: fehlend.** Ein Nutzen im Verkehr, Sport oder bei der Sehleistung ist nicht belegt.
+- **Praxis:** In der funktionellen Optometrie werden Zeit- und Rhythmusübungen häufig mit einem Metronom oder Händeklatschen verbunden, zum Teil zusammen mit einer Denkaufgabe (Praxisangabe, nicht belegt). Die Übung selbst ist rein visuell und nutzt keinen Ton.
+- Fazit: Aufmerksamkeitsübung mit klarer Kennzahl, keine Sehübung mit belegtem Effekt.
 
 ## 9. Auswahlhinweise für die KI
+
 - **Passt, wenn …** die Person „Zeit- und Rhythmusgefühl beim Schauen“ oder „genau vergleichen“ üben möchte, eine ruhige Aufgabe ohne Blickführung sucht und Lichtreize gut verträgt (Profil: zeitliche_aufloesung 3, selektive_aufmerksamkeit 2, visuelle_suche 2).
 - **Weniger passend, wenn …** Blickfolge/Blicksprünge, feine Sehschärfe, Farbunterscheidung oder Reaktionsgeschwindigkeit geübt werden sollen; oder wenn ein „Flimmertest“ erwartet wird.
-- **Vorsicht / anpassen bei …** photosensitive_epilepsie und migraene_lichtempfindlich (großflächiges Pulsieren, Aussetzer/rote Bildschirm-Blitze; im Original nur < 3 Hz und kleiner Leuchtdichtehub, ein Risiko lässt sich trotzdem nicht ausschließen); sehbehinderung_niedriger_visus (dunkle, kontrastarme Reize); presbyopie_gleitsicht (das Raster von ca. 12–15° liegt bei Gleitsicht teils im unscharfen Seitenbereich, Kopf statt Blick bewegen); trockenes_auge_bildschirm und kopfschmerz_asthenopie (Bildschirmnähe, Konzentration); aufmerksamkeitsprobleme (Zeitlimit und Störreize). Auswahlhinweis, keine medizinische Aussage.
-- **Kombiniert gut mit …** 103 (Suchbild, räumliche Suche), 108 (Suchraster mit Störreizen), 204 und 208 (Konzentration).
-Keine Diagnose, keine Heil- oder Sehversprechen.
+- **Vorsicht / anpassen bei …** `photosensitive_epilepsie` und `migraene_lichtempfindlich` (sanftes Pulsieren mit höchstens 2,5 Hz und kleinem Leuchtdichtehub, kein Rot, keine Blitze; ein Risiko lässt sich trotzdem nicht ausschließen, bei bekannter Lichtempfindlichkeit vorher ärztlich klären); `sehbehinderung_niedriger_visus` (dunkle, kontrastarme Reize); `presbyopie_gleitsicht` (das Raster liegt bei Gleitsicht teils im unscharfen Seitenbereich, Kopf statt Blick bewegen); `trockenes_auge_bildschirm` und `kopfschmerz_asthenopie` (Bildschirmnähe, Konzentration); `aufmerksamkeitsprobleme` (Zuschauzeit bis 9 s). Auswahlhinweis, keine medizinische Aussage.
+- **Abklärung vor dem Üben:** Anfallsleiden (Epilepsie) gehören zu den neurologischen Vorerkrankungen, nach denen bei der Anamnese gefragt wird (Muchnick, 2008, S. 7). Doppelbilder, plötzlicher einseitiger Sehverlust, Lichtblitze, neue Schleier, Kopfschmerz mit Sehverschlechterung, Schwindel oder Zittern gehören ärztlich abgeklärt; sie sind kein Anlass zum Üben (Muchnick, 2008, S. 6, 28).
+- **Kombiniert gut mit …** 103 (Suchbild, räumliche Suche), 108 (Mitte und Rand im kurzen Moment), 204 und 208 (Konzentration).
+- Keine Diagnose, keine Heil- oder Sehversprechen.
 
 ## 10. Schwächen des Originals und Empfehlungen für eine Blickfit-Umsetzung
 **Schwächen des Originals:** Name „Flimmerfusion“ irreführend; Helligkeit und Gleichtakt verraten das Ziel; Tempounterschied ist konstant statt adaptiv; Punkte statt Schwelle; Zeitdruck (Timeout bis 1,8 s); Raster nicht am Sehwinkel ausgerichtet; dunkler, kontrastarmer Grund; roter Vollbild-Blitz bei Fehlklick ist ein Lichtreiz, „Störblitze“ sind eigentlich Aussetzer; Canvas nicht für hochauflösende Displays skaliert; Notenskala und Leistungsstufen ohne Datengrundlage; kein Hinweis auf Photosensitivität.
@@ -179,19 +189,21 @@ Keine Diagnose, keine Heil- oder Sehversprechen.
 - Woods, D. L., Wyma, J. M., Yund, E. W., Herron, T. J., & Reed, B. (2015). Factors influencing the latency of simple reaction time. *Frontiers in Human Neuroscience, 9*, 131. https://doi.org/10.3389/fnhum.2015.00131 – **Prüfung:** DOI ✓; **stützt:** nein (einfache Reaktionszeit, keine zeitliche Integration)
 
 ### Weitere Fachliteratur
-- Mankowska, N. D., Marcinkowska, A. B., Waskow, M., Sharma, R. I., Kot, J., & Winklewski, P. J. (2021). Critical flicker fusion frequency: A narrative review. *Medicina, 57*(10), 1096. https://doi.org/10.3390/medicina57101096 – CFF ca. 50–90 Hz; Abgrenzung zur Übung (Crossref ✓)
-- Mandler, M. B. (1984). Temporal frequency discrimination above threshold. *Vision Research, 24*(12), 1873–1880. https://doi.org/10.1016/0042-6989(84)90020-8 – Weber-Anteile Δf/f ≈ 0,08 bzw. 0,50 (Crossref ✓)
-- Cass, J., Van der Burg, E., & Alais, D. (2011). Finding flicker: Critical differences in temporal frequency capture attention. *Frontiers in Psychology, 2*, 320. https://doi.org/10.3389/fpsyg.2011.00320 – relative Frequenzunterschiede als Suchmerkmal (Crossref ✓)
-- Aghdaee, S. M., & Cavanagh, P. (2007). Temporal limits of long-range phase discrimination across the visual field. *Vision Research, 47*(16), 2156–2163. https://doi.org/10.1016/j.visres.2007.04.016 – Phasenvergleich über Distanz, 8,9–11,4 Hz (Crossref ✓)
-- Spalek, T. M., Kawahara, J., & Di Lollo, V. (2009). Flicker is a primitive visual attribute in visual search. *Canadian Journal of Experimental Psychology, 63*(4), 319–322. https://doi.org/10.1037/a0015716 – Flimmern als Suchmerkmal (Crossref ✓)
-- Waugh, S. J., & Hess, R. F. (1994). Suprathreshold temporal-frequency discrimination in the fovea and the periphery. *Journal of the Optical Society of America A, 11*(4), 1199–1212. https://doi.org/10.1364/JOSAA.11.001199 – Fovea vs. Peripherie (Crossref ✓)
-- Schmolesky, M. T., Wang, Y., Hanes, D. P., Thompson, K. G., Leutgeb, S., Schall, J. D., & Leventhal, A. G. (1998). Signal timing across the macaque visual system. *Journal of Neurophysiology, 79*(6), 3272–3278. https://doi.org/10.1152/jn.1998.79.6.3272 – M-Vorsprung ca. 17 ms (Crossref ✓)
-- Burr, D. C., Morrone, M. C., & Ross, J. (1994). Selective suppression of the magnocellular visual pathway during saccadic eye movements. *Nature, 371*(6497), 511–513. https://doi.org/10.1038/371511a0 – sakkadische Unterdrückung (Crossref ✓)
-- Kim, C. B., & Mayer, M. J. (1994). Foveal flicker sensitivity in healthy aging eyes. II. Cross-sectional aging trends from 18 through 77 years of age. *Journal of the Optical Society of America A, 11*(7), 1958–1969. https://doi.org/10.1364/JOSAA.11.001958 – Altersgang der Flimmerempfindlichkeit (Crossref ✓)
-- Lachenmayr, B. J., Kojetinsky, S., Ostermaier, N., Angstwurm, K., Vivell, P. M., & Schaumberger, M. (1994). The different effects of aging on normal sensitivity in flicker and light-sense perimetry. *Investigative Ophthalmology & Visual Science, 35*(6), 2741–2748. https://pubmed.ncbi.nlm.nih.gov/8188467/ – CFF nimmt mit dem Alter ab (PubMed ✓, keine DOI)
-- Seitz, A. R., Nanez, J. E., Sr., Holloway, S. R., & Watanabe, T. (2006). Perceptual learning of motion leads to faster flicker perception. *PLoS ONE, 1*(1), e28. https://doi.org/10.1371/journal.pone.0000028 – Lernen und CFF (Crossref ✓)
-- Eisen-Enosh, A., Farah, N., Polat, U., & Mandel, Y. (2023). Perceptual learning based on a temporal stimulus enhances visual function in adult amblyopic subjects. *Scientific Reports, 13*, 7643. https://doi.org/10.1038/s41598-023-34421-3 – Training nur bei Amblyopie wirksam (Crossref ✓)
-- Xiong, Y.-Z., Guan, S.-C., & Yu, C. (2022). A supramodal and conceptual representation of subsecond time revealed with perceptual learning of temporal interval discrimination. *Scientific Reports, 12*, 10668. https://doi.org/10.1038/s41598-022-14698-6 – Lernen zeitlicher Intervalle, Übertrag Sehen–Hören nur mit Doppeltraining (Crossref ✓, Abstract geprüft)
-- Elze, T., & Tanner, T. G. (2012). Temporal properties of liquid crystal displays: Implications for vision science experiments. *PLoS ONE, 7*(9), e44048. https://doi.org/10.1371/journal.pone.0044048 – Display-Zeitverhalten (Crossref ✓)
-- Fisher, R. S., Harding, G., Erba, G., Barkley, G. L., & Wilkins, A. (2005). Photic- and pattern-induced seizures: A review for the Epilepsy Foundation of America Working Group. *Epilepsia, 46*(9), 1426–1441. https://doi.org/10.1111/j.1528-1167.2005.31405.x – Photosensitivität, kritisch 15–25 Hz (Crossref ✓)
-- Patel, S., Henderson, R., Bradley, L., Galloway, B., & Hunter, L. (1991). Effect of visual display unit use on blink rate and tear stability. *Optometry and Vision Science, 68*(11), 888–892. https://doi.org/10.1097/00006324-199111000-00010 – Lidschlagrate am Bildschirm (Crossref ✓)
+- Mankowska, N. D., Marcinkowska, A. B., Waskow, M., Sharma, R. I., Kot, J., & Winklewski, P. J. (2021). Critical flicker fusion frequency: A narrative review. *Medicina, 57*(10), 1096. https://doi.org/10.3390/medicina57101096 – CFF ca. 50–90 Hz; Abgrenzung zur Übung
+- Mandler, M. B. (1984). Temporal frequency discrimination above threshold. *Vision Research, 24*(12), 1873–1880. https://doi.org/10.1016/0042-6989(84)90020-8 – Weber-Anteile Δf/f ≈ 0,08 bzw. 0,50
+- Cass, J., Van der Burg, E., & Alais, D. (2011). Finding flicker: Critical differences in temporal frequency capture attention. *Frontiers in Psychology, 2*, 320. https://doi.org/10.3389/fpsyg.2011.00320 – relative Frequenzunterschiede als Suchmerkmal
+- Aghdaee, S. M., & Cavanagh, P. (2007). Temporal limits of long-range phase discrimination across the visual field. *Vision Research, 47*(16), 2156–2163. https://doi.org/10.1016/j.visres.2007.04.016 – Phasenvergleich über Distanz, 8,9–11,4 Hz
+- Spalek, T. M., Kawahara, J., & Di Lollo, V. (2009). Flicker is a primitive visual attribute in visual search. *Canadian Journal of Experimental Psychology, 63*(4), 319–322. https://doi.org/10.1037/a0015716 – Flimmern als Suchmerkmal
+- Waugh, S. J., & Hess, R. F. (1994). Suprathreshold temporal-frequency discrimination in the fovea and the periphery. *Journal of the Optical Society of America A, 11*(4), 1199–1212. https://doi.org/10.1364/JOSAA.11.001199 – Fovea vs. Peripherie
+- Schmolesky, M. T., Wang, Y., Hanes, D. P., Thompson, K. G., Leutgeb, S., Schall, J. D., & Leventhal, A. G. (1998). Signal timing across the macaque visual system. *Journal of Neurophysiology, 79*(6), 3272–3278. https://doi.org/10.1152/jn.1998.79.6.3272 – M-Vorsprung ca. 17 ms
+- Burr, D. C., Morrone, M. C., & Ross, J. (1994). Selective suppression of the magnocellular visual pathway during saccadic eye movements. *Nature, 371*(6497), 511–513. https://doi.org/10.1038/371511a0 – sakkadische Unterdrückung
+- Kim, C. B., & Mayer, M. J. (1994). Foveal flicker sensitivity in healthy aging eyes. II. Cross-sectional aging trends from 18 through 77 years of age. *Journal of the Optical Society of America A, 11*(7), 1958–1969. https://doi.org/10.1364/JOSAA.11.001958 – Altersgang der Flimmerempfindlichkeit
+- Lachenmayr, B. J., Kojetinsky, S., Ostermaier, N., Angstwurm, K., Vivell, P. M., & Schaumberger, M. (1994). The different effects of aging on normal sensitivity in flicker and light-sense perimetry. *Investigative Ophthalmology & Visual Science, 35*(6), 2741–2748. https://pubmed.ncbi.nlm.nih.gov/8188467/ – CFF nimmt mit dem Alter ab
+- Seitz, A. R., Nanez, J. E., Sr., Holloway, S. R., & Watanabe, T. (2006). Perceptual learning of motion leads to faster flicker perception. *PLoS ONE, 1*(1), e28. https://doi.org/10.1371/journal.pone.0000028 – Lernen und CFF
+- Eisen-Enosh, A., Farah, N., Polat, U., & Mandel, Y. (2023). Perceptual learning based on a temporal stimulus enhances visual function in adult amblyopic subjects. *Scientific Reports, 13*, 7643. https://doi.org/10.1038/s41598-023-34421-3 – Training nur bei Amblyopie wirksam
+- Xiong, Y.-Z., Guan, S.-C., & Yu, C. (2022). A supramodal and conceptual representation of subsecond time revealed with perceptual learning of temporal interval discrimination. *Scientific Reports, 12*, 10668. https://doi.org/10.1038/s41598-022-14698-6 – Lernen zeitlicher Intervalle, Übertrag Sehen–Hören nur mit Doppeltraining
+- Elze, T., & Tanner, T. G. (2012). Temporal properties of liquid crystal displays: Implications for vision science experiments. *PLoS ONE, 7*(9), e44048. https://doi.org/10.1371/journal.pone.0044048 – Display-Zeitverhalten
+- Fisher, R. S., Harding, G., Erba, G., Barkley, G. L., & Wilkins, A. (2005). Photic- and pattern-induced seizures: A review for the Epilepsy Foundation of America Working Group. *Epilepsia, 46*(9), 1426–1441. https://doi.org/10.1111/j.1528-1167.2005.31405.x – Photosensitivität, kritisch 15–25 Hz
+- Patel, S., Henderson, R., Bradley, L., Galloway, B., & Hunter, L. (1991). Effect of visual display unit use on blink rate and tear stability. *Optometry and Vision Science, 68*(11), 888–892. https://doi.org/10.1097/00006324-199111000-00010 – Lidschlagrate am Bildschirm
+- Muchnick, B. G. (2008). *Clinical Medicine in Optometric Practice* (2nd ed.). Mosby/Elsevier. https://openlibrary.org/isbn/9780323029612 – Warnzeichen mit Abklärungsbedarf (S. 6, 28), neurologische Vorerkrankungen einschließlich Anfallsleiden (S. 7).
+- Mountford, J., Ruston, D., & Dave, T. (2004). *Orthokeratology: Principles and Practice*. Butterworth-Heinemann. https://openlibrary.org/isbn/9780750640077 – Genauigkeit und Wiederholbarkeit von Messungen am Menschen, Mehrfachmessung (S. 17–18, 24, 43–44).
