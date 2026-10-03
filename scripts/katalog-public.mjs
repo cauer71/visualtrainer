@@ -37,7 +37,7 @@ function publicSources(section) {
 
 /** Beschreibung (Markdown ohne YAML-Kopf) → öffentliche Fassung */
 export function publicBody(md) {
-  const text = md.replace(/^---\n[\s\S]*?\n---\n/, '').replace(/^> Original:.*\n?/gm, '');
+  const text = md.replace(/^---\n[\s\S]*?\n---\n/, '').replace(/^> Original:.*(?:\n>.*)*\n?/gm, '');
   const parts = text.split(/(?=^## )/m);
   const out = [];
   for (const p of parts) {
