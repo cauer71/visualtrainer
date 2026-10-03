@@ -12,7 +12,7 @@ blickfit_umsetzung: {kennung: "blicksprung-galerie", name: "Blicksprung-Galerie"
 stand: 2026-09-30
 
 # ===== Überblick =====
-kurzbeschreibung: "Auf dunklem Feld leuchtet immer nur ein roter Punkt auf, jedes Mal an einem anderen von 12 festen Rasterpunkten (am Touchgerät 9). Man springt mit dem Blick hin und klickt bzw. tippt ihn an, bevor er nach einer mit dem Level schrumpfenden Zeit wieder verschwindet."
+kurzbeschreibung: "Ein Ziel erscheint immer nur in einer Zelle eines sichtbar markierten Rasters, jedes Mal in einer anderen. Man springt mit dem Blick hin und tippt die Zelle an, bevor das Ziel nach kurzer Zeit wieder ausblendet. Mit der Stufe wird das Raster größer (3 × 3, später 4 × 4), die Anzeigedauer kürzer und der Sprung weiter. Gemessen wird die Zeit bis zum Tipp, keine Augenbewegung."
 ziel_funktionen: [sakkaden, auge_hand_koordination, zielbewegung_tempo]
 eingabe: [maus, touch, touchpad]
 tablet_geeignet: mit_anpassung
@@ -72,29 +72,31 @@ belastung:
   sprachabhaengigkeit: 0
 
 # ===== Auswahlhilfe =====
-voraussetzungen: ["Maus, Touchpad oder Touchscreen; Maus auf ruhiger Unterlage", "scharfes Sehen über das ganze Spielfeld (am Monitor bis ≈ 35° breit, am Tablet ≈ 23°) in Bildschirmabstand", "Ziele von anfangs ≈ 1,5° bis ≈ 0,6° Sehwinkel (Level 15; mit maximaler Combo ≈ 0,5°) erkennen", "kein Farbsehen nötig (ein roter Punkt mit weißem Kern auf fast Schwarz)", "Blick und Hand ohne Pause über 1–3 min schnell wechseln können"]
+voraussetzungen: ["Maus, Touchpad oder Touchscreen; Maus auf ruhiger Unterlage", "scharfes Sehen über das ganze Raster in Bildschirmabstand", "ein einzelnes, großes Ziel erkennen (kein feines Detail nötig)", "Blick und Hand ohne Pause über einige Minuten schnell wechseln können"]
 vorsicht_bei: [photosensitive_epilepsie, migraene_lichtempfindlich, presbyopie_gleitsicht, gesichtsfeldausfall, sehbehinderung_niedriger_visus, nystagmus, trockenes_auge_bildschirm, tremor_parkinson, hand_arm_beschwerden, kognitive_einschraenkung, aufmerksamkeitsprobleme]
 geeignet_fuer: ["große, schnelle Blick-Zeige-Sprünge zwischen festen Bildschirmpositionen üben", "Blick und Hand auf ein plötzlich erscheinendes Ziel ausrichten (Zielerfassung ohne Ablenker)", "spielerische Übung mit steigendem Tempo für Jugendliche und Erwachsene mit Freude an Zeitdruck", "Aufwärmen vor Flick- und Zielerfassungsübungen (501, 508, 704)"]
-weniger_geeignet_fuer: ["Messung von Sakkadenlatenz oder -genauigkeit (keine Blickmessung, Klickzeit enthält die Handbewegung)", "reine Blickübung ohne Handeinsatz", "Menschen, die ohne Zeitdruck üben sollen oder möchten", "Gleitsichtträger:innen am großen Monitor im Vollfenster", "Lichtempfindliche: roter Fehlerblitz bei jedem Fehler (abschaltbar)", "Ältere oder Einsteiger:innen ab etwa Level 8 (Lebensdauer < 0,85 s bei weiten Sprüngen)"]
+weniger_geeignet_fuer: ["Messung von Sakkadenlatenz oder -genauigkeit (keine Blickmessung, Klickzeit enthält die Handbewegung)", "reine Blickübung ohne Handeinsatz", "Menschen, die ohne Zeitdruck üben sollen oder möchten", "Gleitsichtträger:innen am großen Monitor im Vollfenster", "Ältere oder Einsteiger:innen auf hohen Stufen (kurze Anzeigedauer bei weiten Sprüngen)"]
 evidenz:
   uebungseffekt: stark
   naher_transfer: schwach
   alltag_transfer: fehlend
   kommentar: "Diese Übung wurde nie untersucht; Zeige- und Blickaufgaben werden durch Übung deutlich besser (auch Gerätegewöhnung), Sakkaden-Latenztraining wirkte aber nur an der geübten Position, und ein Nutzen für Sport, E-Sport, Lesen oder Alltag ist nicht belegt (Di Russo et al. 2003; Guo et al. 2025; Fransen 2024)."
 aehnliche_uebungen: [401, 501, 508, 704, 302, 307, 308, 305, 101, 503, 801, 414, 411, 702]
-stichworte: ["Sakkaden", "Blicksprung", "Zielerfassung", "Auge-Hand-Koordination", "Fitts'sches Gesetz", "Kopf-Auge-Koordination", "Gleitsicht", "Express-Sakkaden (Behauptung der Website)", "Zeitdruck", "Combo", "Augentraining (Name des Originals)"]
+stichworte: ["Sakkaden", "Blicksprung", "Zielerfassung", "Auge-Hand-Koordination", "Fitts'sches Gesetz", "Kopf-Auge-Koordination", "Gleitsicht", "Express-Sakkaden", "Zeitdruck", "Combo", "Rastersprünge"]
 ---
 
 # 303 · Blicksprung-Galerie – Ziel an wechselnden Rasterpunkten anklicken
 
-> Original: „Augentraining Online · Blicksprünge trainieren“ – skilldrills.online, Kapitel Reaktionsgeschwindigkeit
-> (`reaction-speed`) · Blickfit: noch nicht umgesetzt (verwandt: `blitzreaktion` mit Randreizen, `zielfang`)
+> Original: „Augentraining Online · Blicksprünge trainieren“ – skilldrills.online, Kapitel Reaktionsgeschwindigkeit (`reaction-speed`) · Blickfit: noch nicht umgesetzt (verwandt: `blitzreaktion` mit Randreizen, `zielfang`)
 
 ## 1. Kurzbeschreibung
 
-Auf fast schwarzem Feld leuchtet an einem von 12 schwach markierten Rasterpunkten (Touch: 9) ein roter Punkt auf, nie zweimal hintereinander am selben
-Ort. Man springt mit dem Blick hin und klickt/tippt ihn an, bevor er verschwindet; dann folgt der nächste. Mit dem Level werden Ziele
-kleiner und kurzlebiger. Trotz des Namens misst das Spiel keine Augenbewegung, sondern die Zeit bis zum Klick.
+Ein Ziel erscheint nacheinander in den Zellen eines sichtbar markierten Rasters (3 × 3, ab Stufe 6 4 × 4), nie zweimal
+hintereinander in derselben Zelle. Man springt mit dem Blick hin und tippt die Zelle an, bevor das Ziel nach kurzer Zeit
+wieder ausblendet; es blendet weich ein und aus, ohne Blitz und ohne Bewegung. Mit der Stufe wird das Raster größer, die
+Anzeigedauer kürzer (von 2,4 s bis auf 0,7 s), und die Mindestweite des Sprungs zum vorigen Ziel wächst. Eine Sitzung
+besteht aus 24 Zielen. Die Übung misst keine Augenbewegung, sondern die Zeit bis zum Tipp (Median der richtigen
+Treffer); sie enthält die Handbewegung und die Geräteverzögerung.
 
 ## 2. Ablauf im Original (Analyse)
 
@@ -149,78 +151,100 @@ Untersuchung“. Einordnung (Prüfung aus Literaturbasis W03, A.2):
 
 ## 4. Optische und okulomotorische Grundlagen
 
-- **Sprungweite und Latenz:** Die Sakkadenlatenz ist zwischen ≈ 0,75° und 12° am kürzesten, steigt zur Peripherie langsam und wird
-  jenseits ≈ 35° unregelmäßig (Kalesnykas & Hallett, 1994). Nahe Knoten (8–12°) sind günstig, weite Sprünge am Monitor (bis ≈ 38°) liegen
-  am Rand und landen oft in zwei Schritten (Hauptsakkade + Korrektur).
-- **Bekannte Orte:** Nur 11 markierte Orte → kleine räumliche Unsicherheit. Prosakkaden-Latenz hängt kaum von der Zahl der Alternativen
-  ab (Kveraga et al., 2002); zufällige Seitenwahl kostet im Gap-Versuch ≈ 15 ms (Fischer & Ramsperger, 1986).
-- **Peripheres Entdecken:** Ziel bis ≈ 35° neben dem Blickort, aber groß (≥ 0,6°), kontrastreich, weißer Kern – Sehschärfe/Farbe kaum begrenzend.
-- **Gleitsicht/Alterssichtigkeit:** Die klare Zwischenzone ist horizontal nur ≈ 13–18° breit (Han et al., 2003): Äußere Spalten werden
-  unscharf oder verlangen Kopfdrehung, die obere Zeile fällt in den Fern-, die untere in den Nahteil; mit Gleitsicht wird der Kopf ≈ 7°
-  stärker angehoben (Jaschinski et al., 2015). Empfehlung: Bildschirmbrille, kleineres Fenster, Kopfbewegung erlauben; Tablet ≈ 35–40 cm.
-- **Trockenes Auge, Bildschirm:** seltenes Blinzeln (Patel et al., 1991) – kurze Runden. Bei 60 Hz ≤ 17 ms Bildwartezeit (*eigene Rechnung*).
+- **Sprungweite und Latenz:** Die Sakkadenlatenz ist bei Sprüngen zwischen etwa 0,75° und 12° am kürzesten, steigt zur
+  Peripherie langsam und wird jenseits von etwa 35° unregelmäßig (Kalesnykas & Hallett, 1994). Weite Sprünge landen oft
+  in zwei Schritten (Hauptsakkade plus Korrektur); leichtes Unterschießen ist normal (49 % der Prosakkaden; Bargary et
+  al., 2017). Zur Orientierung: Bei 40 cm Abstand entsprechen 10 cm auf dem Bildschirm etwa 14°.
+- **Latenz und Hand:** Die mediane Latenz einer Prosakkade liegt bei etwa 177 ms (Bargary et al., 2017); die Hand beginnt
+  rund 100 ms nach der Sakkade (Prablanc et al., 1979). Die Zeit bis zum Tipp wird daher überwiegend von der
+  Handbewegung bestimmt und sagt nichts über die Latenz der Augen.
+- **Bekannte Orte:** Die Zellen des Rasters sind dauerhaft sichtbar, mögliche Zielorte sind also bekannt – die räumliche
+  Unsicherheit ist klein. Die Latenz von Prosakkaden hängt kaum von der Zahl der Alternativen ab (Kveraga et al., 2002);
+  eine zufällige Seitenwahl kostet im Versuch mit Lücke zwischen den Zielen etwa 15 ms (Fischer & Ramsperger, 1986).
+- **Peripheres Entdecken:** Das Ziel liegt außerhalb der Blickmitte, ist aber groß und kontrastreich; Sehschärfe und
+  Farbsehen begrenzen das Entdecken kaum.
+- **Kopfbeteiligung:** Ab etwa 20° Blickwinkel beteiligt sich der Kopf zunehmend an der Orientierung (Freedman, 2008);
+  bei großem Raster und Gleitsichtbrille ist das ungünstig.
+- **Gleitsicht und Alterssichtigkeit:** Die klare Zwischenzone von Gleitsichtgläsern ist horizontal nur etwa 13–18° breit
+  (Han et al., 2003): Äußere Spalten werden unscharf oder verlangen eine Kopfdrehung, die obere Zeile fällt in den Fern-,
+  die untere in den Nahteil; mit Gleitsicht wird der Kopf im Mittel etwa 7° höher gehalten (Jaschinski et al., 2015).
+  Hilfreich sind eine Bildschirmbrille, ein kleineres Fenster und freie Kopfbewegung; Tablet in etwa 35–40 cm Abstand.
+- **Trockenes Auge:** Am Bildschirm wird seltener geblinzelt (Patel et al., 1991) – kurze Runden. Bei 60 Hz wartet ein
+  neues Ziel höchstens 17 ms auf das nächste Bild.
 
 ## 5. Neurowissenschaftliche Grundlagen
 
-Sakkaden steuert ein verteiltes Netzwerk aus parietalen und frontalen Rindenfeldern (u. a. frontales Augenfeld), Basalganglien, Thalamus,
-Colliculus superior, Kleinhirn und Formatio reticularis; Funktionen sind meist nicht einem Areal allein zuzuordnen (Munoz, 2002).
-Sakkaden sind zu kurz für visuelle Rückmeldung während des Sprungs; ihre Weite wird vorab geplant und bei anhaltender Fehlgenauigkeit
-über das okulomotorische Kleinhirn nachjustiert (Hopp & Fuchs, 2004) – ausgelöst im Labor durch unbemerktes Verschieben des Ziels
-während der Sakkade, was das Spiel weder tut noch messen kann. Beim Zeigen bleibt der Blick bis zum Ende der Handbewegung am Ziel
-„verankert“ (Neggers & Bekkering, 2000). „Subkortikale Direktauslösung“ für schnelle Klicks ist durch nichts belegt.
+Sakkaden steuert ein verteiltes Netzwerk aus parietalen und frontalen Rindenfeldern (unter anderem dem frontalen
+Augenfeld), Basalganglien, Thalamus, Colliculus superior, Kleinhirn und Formatio reticularis; Funktionen lassen sich meist
+nicht einem Areal allein zuordnen (Munoz, 2002). Sakkaden sind zu kurz für eine visuelle Rückmeldung während des
+Sprungs; ihre Weite wird vorab geplant und bei anhaltender Ungenauigkeit über das okulomotorische Kleinhirn nachjustiert
+(Hopp & Fuchs, 2004) – im Labor ausgelöst durch unbemerktes Verschieben des Ziels während der Sakkade, was diese Übung
+weder tut noch messen kann. Beim Zeigen bleibt der Blick bis zum Ende der Handbewegung am Ziel „verankert“ (Neggers &
+Bekkering, 2000). Eine „subkortikale Direktauslösung“ schneller Tipps ist durch nichts belegt.
 
 ## 6. Motorische Grundlagen
 
-- **Fitts'sches Gesetz:** Bewegungszeit steigt mit log₂(2A/W) (Fitts, 1954). *Grobe eigene Abschätzung* mit 3,7–4,9 bit/s Maus-Durchsatz
-  (Soukoreff & MacKenzie, 2004), Level 1 (Trefferzone 84 px): eine Spalte (≈ 460 px, 3,5 bit) ≈ 0,7–0,9 s, drei Spalten (≈ 1.380 px,
-  5,0 bit) ≈ 1,0–1,4 s – plus ≈ 0,2–0,3 s bis Bewegungsbeginn; nach dieser Schätzung sind weite Sprünge am Monitor schon bei 1,3 s knapp (Geübte mit hoher Mausempfindlichkeit deutlich schneller; nicht gemessen). Die Hand startet
-  ≈ 100 ms nach der Sakkade, Latenzen schwach gekoppelt (Prablanc et al., 1979) – die Klickzeit bestimmt überwiegend die Handbewegung.
-- **Touch:** Tippen verkürzte die Bewegungszeit gegenüber der Maus bei Älteren um 35 %, bei Jüngeren um 16 % (Findlater et al., 2013). Die
-  Touch-Trefferzone bleibt bis Level 15 ≈ 11 mm, bei maximaler Combo ≈ 9,6 mm (Empfehlung 9,2 mm; Parhi et al., 2006; *eigene Rechnung*).
-  Hand und Arm verdecken Teile des Rasters. Kleine Ziele belasten zitternde Hände (Parkinson-Tremor 3–6 Hz; McAuley & Marsden, 2000).
+- **Fitts’sches Gesetz:** Die Bewegungszeit steigt mit log₂(2A/W) aus Weg A und Zielbreite W (Fitts, 1954); der
+  Durchsatz der Maus liegt bei 3,7–4,9 bit/s (Soukoreff & MacKenzie, 2004). Weite Sprünge zu kleinen Zielen kosten daher
+  deutlich mehr Zeit als nahe zu großen. Die Hand startet etwa 100 ms nach der Sakkade, beide Latenzen sind nur schwach
+  gekoppelt (Prablanc et al., 1979).
+- **Touch:** Tippen verkürzte die Bewegungszeit gegenüber der Maus bei Älteren um 35 %, bei Jüngeren um 16 % (Findlater et
+  al., 2013). Die Zellen sind Trefferflächen von mindestens 48 px Kantenlänge (rund 9 mm auf einem Tablet; empfohlen
+  werden 9,2 mm, Parhi et al., 2006). Hand und Arm verdecken Teile des Rasters. Kleine Ziele belasten zitternde Hände
+  (Parkinson-Tremor 3–6 Hz; McAuley & Marsden, 2000).
 
 ## 7. Einflussfaktoren und Messgrenzen
 
-- **Gerät:** Browser-Zeiten enthalten 58–133 ms Geräteanteil (Pronk et al., 2020), Tablet-Tipplatenzen 48–276 ms (Casiez et al., 2017).
-  Fenstergröße und Gerät ändern Sprungweiten, Sehwinkel und Raster (4 × 3 vs. 3 × 3) – nur Selbstvergleich unter gleichen Bedingungen.
-- **Auswahleffekt:** „Ø Reaktion“ zählt nur Treffer; mit sinkender Lebensdauer fallen langsame Sprünge heraus, der Mittelwert „verbessert“
-  sich allein durch den Levelanstieg (*eigene Analyse*). Zufällige Sprungweiten (≈ 8–38°; kürzester Sprung eine Zeile ≈ 8–9°) streuen die Klickzeit zusätzlich.
-- **Alter, Stabilität:** 60–79-Jährige haben längere Sakkadenlatenzen und -dauern als 20–30-Jährige (Munoz et al., 1998). Sakkadenmaße
-  sind stabil (Retest r = 0,685–0,884; Bargary et al., 2017); die Klickzeit dieses Spiels wurde nie auf Zuverlässigkeit geprüft.
+- **Gerät:** Zeiten im Browser enthalten 58–133 ms Geräteanteil (Pronk et al., 2020), Tipp-Latenzen auf Tablets 48–276 ms
+  (Casiez et al., 2017). Bildschirmgröße und Ausrichtung ändern Sprungweiten und Sehwinkel; verglichen wird nur mit sich
+  selbst unter gleichen Bedingungen. Messungen am Menschen streuen, daher zählt der Median über viele Ziele und der
+  Verlauf über mehrere Sitzungen (Mountford et al., 2004, S. 43–44).
+- **Auswahleffekt:** Der Median zählt nur richtige Treffer. Mit sinkender Anzeigedauer fallen langsame Sprünge heraus
+  (ohne Tipp ist das Ziel weg), sodass sich der Median allein durch den Stufenanstieg verbessern kann. Die Sprungweiten
+  streuen die Zeit zusätzlich.
+- **Alter, Stabilität:** 60–79-Jährige haben längere Sakkadenlatenzen und -dauern als 20–30-Jährige (Munoz et al., 1998).
+  Sakkadenmaße sind stabil (Retest r = 0,685–0,884; Bargary et al., 2017); für die Zeit bis zum Tipp dieser Übung liegen
+  keine Zuverlässigkeitsdaten vor.
 
 ## 8. Studienlage: Trainierbarkeit und Übertragung
 
-- **Übungseffekt (stark):** Zeige- und Zielerfassungsaufgaben werden durch Wiederholung schneller; in digitalem Sport-Sehtraining sind
-  Effekte in trainingsähnlichen Tests gut fünfmal so groß wie in unähnlichen (SMD 2,66 vs. 0,50; Guo et al., 2025).
-- **Naher Transfer (schwach):** Übung erhöht den Anteil von Express-Sakkaden, senkt deren Latenz aber nur von 105 auf 98 ms (Fischer &
-  Ramsperger, 1986); Sakkaden-Latenztraining wirkte in einem Einzelfall nur an der geübten Position (Di Russo et al., 2003).
+- **Übungseffekt (stark):** Zeige- und Zielerfassungsaufgaben werden durch Wiederholung schneller; in digitalem
+  Sport-Sehtraining sind die Effekte in trainingsähnlichen Tests gut fünfmal so groß wie in unähnlichen (SMD 2,66 vs.
+  0,50; Guo et al., 2025).
+- **Naher Transfer (schwach):** Übung erhöht den Anteil von Express-Sakkaden, senkt deren Latenz aber nur von 105 auf
+  98 ms (Fischer & Ramsperger, 1986); ein Training der Sakkadenlatenz wirkte in einem Einzelfall nur an der geübten
+  Position (Di Russo et al., 2003).
 - **Alltagstransfer (fehlend):** Kein Beleg für Lesen (Rayner et al., 2016), Sport, E-Sport oder Verkehr; für allgemeine
-  Wahrnehmungstrainings fehlt Evidenz für Ferntransfer auf Sportleistung (Fransen, 2024; Simons et al., 2016).
+  Wahrnehmungstrainings fehlt die Evidenz für einen Ferntransfer auf Sportleistung (Fransen, 2024; Simons et al., 2016).
 
-## 9. Auswahlhinweise für die KI
+## 9. Auswahlhinweise
 
-- **Passt, wenn …** große, schnelle Blick-Zeige-Sprünge zu einem einzelnen, plötzlich erscheinenden Ziel geübt werden sollen; jemand Tempo
-  und Punkte mag; als Aufwärmen vor Flick-/Zielerfassungsübungen.
-- **Weniger passend, wenn …** eine Reaktionszeit bestimmt werden soll (101 bzw. Blitzreaktion); Blickbewegungen ohne Hand geübt werden
-  sollen; Impulskontrolle (102) oder symbolische Wahlreaktion (202) gemeint ist; ohne Zeitdruck geübt werden soll (204).
+- **Passt, wenn …** Blick-Zeige-Sprünge zu einem einzelnen, plötzlich erscheinenden Ziel geübt werden sollen; jemand Tempo
+  mag; als Aufwärmen vor Flick- und Zielerfassungsübungen.
+- **Weniger passend, wenn …** eine Reaktionszeit bestimmt werden soll (101/Blitzreaktion); Blickbewegungen ohne Hand
+  geübt werden sollen; Impulskontrolle (102) oder symbolische Wahlreaktion (202) gemeint ist; ohne Zeitdruck geübt werden
+  soll (204).
 - **Vorsicht / anpassen bei …**
-  - `photosensitive_epilepsie`, `migraene_lichtempfindlich`: roter radialer Fehlerblitz bei jedem Fehler (Details 302) – Blitz abschalten.
-  - `presbyopie_gleitsicht`: Sprünge bis ≈ 35° übersteigen die klare Gleitsichtzone – kleineres Fenster, Bildschirmbrille.
-  - `gesichtsfeldausfall`, `sehbehinderung_niedriger_visus`, `nystagmus`: Randziele werden übersehen, kurze Fixationen auf kleine Ziele
-    (ab Level 10) sind erschwert – eher Übungen ohne Zeitdruck. `trockenes_auge_bildschirm`: seltenes Blinzeln – kurze Runden.
-  - `tremor_parkinson`, `hand_arm_beschwerden`: weite, schnelle Zeigebewegungen über Minuten. `kognitive_einschraenkung`,
-    `aufmerksamkeitsprobleme`: sich verschärfender Zeitdruck, Blitz, Ton, Wackeln – als Spiel auf niedriger Stufe, nicht als Test.
-- **Kombiniert gut mit …** 101 (Reaktion am festen Ort), 401/801 (Randreize bei ruhigem Blick), 404 (langsame Folgebewegung als
-  Gegenpol), 508 (Zielerfassung nach Helligkeit zwischen ähnlichen Kugeln).
-- **Überschneidungen:** **Dubletten:** 307 (ein Ziel an einer von fünf Türen) und 308 (an einer von acht Deckungskanten) sind dieselbe
-  Aufgabe mit weniger Orten und kürzeren Sprüngen – nie zusammen vorschlagen. **Gleiche Engine:** 302–308 teilen Level-, Combo-, Zeit- und
-  Fehlerregeln (Level alle 1.750 Punkte, Combo bis 3,0×, +2 s je Treffer, −1 s je Fehler, roter Fehlerblitz, Bildwackeln) – pro Einheit
-  höchstens eine davon, allenfalls eine zweite mit anderem Schwerpunkt (ruhende Ziele 302/303/307/308, bewegte 304/305/306). Mit 101 und
-  503 teilt 303 das Reagieren auf ein plötzlich erscheinendes Ziel, dort aber am festen Ort ohne weite Zeigebewegung; mit 102 nur die
-  Combo-Mechanik; mit 202 die Ortswahl, die hier räumlich kompatibel und daher kaum Hick-belastet ist (Kveraga et al., 2002). Nächster
-  Verwandter im FPS-Kapitel ist 501 (Flicks zu völlig zufälligen Orten, gleiche Sichtbarkeit 1.300 → 380 ms, aber 1.800 Punkte je Level),
-  ähnlich 704 (zwei schrumpfende Ziele, 1.400 Punkte je Level) – als Steigerung geeignet (303 als Aufwärmen davor), nicht als weitere
-  Übung gleichen Typs.
+  - `photosensitive_epilepsie`, `migraene_lichtempfindlich`: Das Ziel blendet weich ein und aus, es gibt keine Blitze und
+    keine roten Warneffekte; bei bekannter Lichtempfindlichkeit dennoch kurze Serien.
+  - `presbyopie_gleitsicht`: weite Sprünge übersteigen die klare Gleitsichtzone – kleineres Fenster, Bildschirmbrille.
+  - `gesichtsfeldausfall`, `sehbehinderung_niedriger_visus`, `nystagmus`: Ziele am Rand werden leichter übersehen, kurze
+    Fixationen auf kleine Ziele sind erschwert – eher Übungen ohne Zeitdruck. `trockenes_auge_bildschirm`: seltenes
+    Blinzeln – kurze Runden.
+  - `tremor_parkinson`, `hand_arm_beschwerden`: schnelle Zeigebewegungen über Minuten. `kognitive_einschraenkung`,
+    `aufmerksamkeitsprobleme`: zunehmender Zeitdruck – als Spiel auf niedriger Stufe, nicht als Test.
+  - Doppelbilder, plötzlicher einseitiger Sehverlust, Kopfschmerz mit Sehverschlechterung, Schwindel oder Zittern sind
+    Anlass zur ärztlichen Abklärung und kein Übungsthema (Muchnick, 2008, S. 6, 28).
+- **Kombiniert gut mit …** 101 (Reaktion am festen Ort), 401/801 (Randreize bei ruhigem Blick), 404 (langsame
+  Folgebewegung als Gegenpol), 508 (Zielerfassung nach Helligkeit zwischen ähnlichen Kugeln).
+- **Überschneidungen:** **Dubletten:** 307 (ein Ziel an einer von fünf Türen) und 308 (an einer von acht Deckungskanten)
+  sind dieselbe Aufgabe mit weniger Orten und kürzeren Sprüngen – nie zusammen vorschlagen. Ruhende Ziele zeigen 302,
+  303, 307 und 308, bewegte 304, 305 und 306; pro Einheit höchstens eine davon, allenfalls eine zweite mit anderem
+  Schwerpunkt. Mit 101 und 503 teilt 303 das Reagieren auf ein plötzlich erscheinendes Ziel, dort aber am festen Ort ohne
+  weite Zeigebewegung; mit 202 die Ortswahl, die hier räumlich kompatibel und daher kaum durch die Zahl der Alternativen
+  belastet ist (Kveraga et al., 2002). Nächster Verwandter im Kapitel Zielen ist 501 (Flicks zu zufälligen Orten), ähnlich
+  704 (zwei schrumpfende Ziele) – als Steigerung geeignet (303 als Aufwärmen davor), nicht als weitere Übung gleichen
+  Typs.
 
 ## 10. Schwächen des Originals und Empfehlungen für eine Blickfit-Umsetzung
 
@@ -280,3 +304,5 @@ während der Sakkade, was das Spiel weder tut noch messen kann. Beim Zeigen blei
   https://doi.org/10.1093/brain/123.8.1545; Parhi et al. (2006), https://doi.org/10.1145/1152215.1152260; Patel et al. (1991),
   https://doi.org/10.1097/00006324-199111000-00010; Pronk et al. (2020), https://doi.org/10.3758/s13428-019-01321-2; Simons et al. (2016),
   https://doi.org/10.1177/1529100616661983; Soukoreff & MacKenzie (2004), https://doi.org/10.1016/j.ijhcs.2004.09.001.
+- Muchnick, B. G. (2008). *Clinical Medicine in Optometric Practice* (2nd ed.). Mosby/Elsevier. https://openlibrary.org/isbn/9780323029612 – Warnzeichen mit ärztlichem Abklärungsbedarf (Kap. 1, S. 6; Kap. 3, S. 28)
+- Mountford, J., Ruston, D., & Dave, T. (2004). *Orthokeratology: Principles and Practice*. Butterworth-Heinemann. https://openlibrary.org/isbn/9780750640077 – Wiederholbarkeit von Messungen am Auge, Mehrfachmessung (S. 43–44)

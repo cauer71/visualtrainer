@@ -12,7 +12,7 @@ export const science: ScienceEntry = {
       research:
         'Zeige- und Zielaufgaben werden mit Übung deutlich schneller; ein Teil davon ist Gewöhnung an Gerät und Aufgabe. In Studien blieb Blicksprung-Training oft an den geübten Ort gebunden, und ein Nutzen für Sport, Lesen oder Alltag ist nicht belegt. Die Übung misst keine Augenbewegung, sondern nur die Zeit bis zum Tipp – inklusive Handbewegung und Gerätelatenz. Vergleiche dich nur mit dir selbst auf demselben Gerät.',
       improved:
-        'Ziel blendet weich ein und aus (kein Blitzen), das Raster ist sichtbar markiert, Stufen regeln Rastergröße, Anzeigedauer und Sprungweite, die Schwierigkeit passt sich adaptiv an, große Trefferflächen (Zellen ≥ 9 mm), Hoch- und Querformat, Median der Zeit nur über richtige Treffer.',
+        'Das Ziel blendet weich ein und aus, und das Raster ist sichtbar markiert, damit die möglichen Zielorte bekannt sind. Die Stufe bestimmt Rastergröße (3 × 3, ab Stufe 6 4 × 4), Anzeigedauer und Mindestweite des Sprungs; sie steigt nach drei richtigen Treffern in Folge und sinkt nach einem Fehler. Die Zellen sind große Trefferflächen (mindestens etwa 9 mm), das Raster nutzt Hoch- und Querformat. Gewertet wird der erste Tipp je Ziel: richtige Zelle, falsche Zelle oder Ziel weg. Gemessen wird die Zeit bis zum Tipp (Median der richtigen Treffer), keine Augenbewegung; sie enthält also auch die Handbewegung und die Geräteverzögerung.',
     },
     it: {
       trains: 'Orientare sguardo e mano verso un bersaglio che compare all’improvviso – con salti tra posizioni fisse della griglia.',
@@ -20,7 +20,7 @@ export const science: ScienceEntry = {
       research:
         'I compiti di puntamento diventano nettamente più rapidi con l’esercizio; in parte è abitudine al dispositivo e al compito. Negli studi l’allenamento dei salti dello sguardo restava spesso legato alla posizione esercitata, e un’utilità per sport, lettura o vita quotidiana non è dimostrata. L’esercizio non misura i movimenti oculari, ma solo il tempo fino al tocco – compresi movimento della mano e latenza del dispositivo. Confrontati solo con te stesso sullo stesso dispositivo.',
       improved:
-        'Il bersaglio compare e scompare gradualmente (nessun lampo), la griglia è segnata in modo visibile, i livelli regolano dimensione della griglia, durata e ampiezza del salto, la difficoltà si adatta, grandi aree di tocco (celle ≥ 9 mm), formato verticale e orizzontale, mediana del tempo solo sui colpi corretti.',
+        'Il bersaglio compare e scompare gradualmente e la griglia è segnata in modo visibile, così le posizioni possibili sono note. Il livello determina la dimensione della griglia (3 × 3, dal livello 6 4 × 4), la durata di visualizzazione e l’ampiezza minima del salto; sale dopo tre colpi corretti di fila e scende dopo un errore. Le celle sono ampie aree di tocco (almeno circa 9 mm) e la griglia sfrutta il formato verticale e orizzontale. Conta il primo tocco per ogni bersaglio: cella giusta, cella sbagliata o bersaglio sparito. Si misura il tempo fino al tocco (mediana dei colpi corretti), non un movimento oculare; comprende quindi anche il movimento della mano e la latenza del dispositivo.',
     },
   },
   sources: [
