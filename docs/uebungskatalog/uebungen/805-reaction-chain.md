@@ -85,7 +85,7 @@ aehnliche_uebungen: [511, 104, 808, 705, 804, 509, 501, 802, 803, 407, 102]
 stichworte: ["Abbremsen", "Stillhalten", "Interzeption", "Fadenkreuz vorhalten", "Crosshair Placement", "Overflick", "Überschießen", "Woodworth", "Stop-Signal", "Maus", "Pointer-Lock", "bildfrequenzabhängig"]
 ---
 
-# 805 · Fadenkreuz in die Bahn stellen und stillhalten
+# 805 · In die Bahn: den Finger vorab auf den Durchlaufpunkt setzen
 
 > Original: „Maus bremsen beim Aim“ (Reaction Chain) – skilldrills.online, Kapitel Körper & Reflexe (`physical`, Unterkapitel `reflex-training`) · Blickfit-Übung: In die Bahn (`in-die-bahn`)
 

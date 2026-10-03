@@ -85,7 +85,7 @@ aehnliche_uebungen: [705, 707, 706, 811, 808, 807, 702, 704, 104]
 stichworte: ["Bahnsteuerung", "Steering Law", "Korridor", "Mittellinie", "Überkreuzbewegung", "Auge-Hand-Koordination", "Mauspräzision", "Zeiger ziehen", "Neuromythos", "Maus"]
 ---
 
-# 810 · Diagonal-Korridor – Zeiger von Rand zu Rand durch eine schmale Bahn ziehen
+# 810 · Diagonal-Korridor: eine Kugel mit dem Finger durch einen schmalen, schrägen Gang ziehen
 
 > Original: „Hand-Auge-Koordination Test“ (Cross-Body Movement) – skilldrills.online, Kapitel „physical“ / „coordination“ · Blickfit-Übung: Diagonal-Korridor (`diagonal-korridor`)
 

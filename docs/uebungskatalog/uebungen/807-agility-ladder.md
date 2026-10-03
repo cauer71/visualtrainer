@@ -85,7 +85,7 @@ aehnliche_uebungen: [809, 802, 810, 708, 707, 104, 405]
 stichworte: ["Koordinationsleiter", "Agility Ladder", "Auge-Hand-Koordination", "Abfangen bewegter Ziele", "Interzeption", "motorische Sequenz", "Chunking", "Rhythmus", "Maus", "Zickzack"]
 ---
 
-# 807 · Koordinationsleiter mit dem Mauszeiger – Sprossen im Zickzack abfangen
+# 807 · Sprossen-Leiter: Felder im Zickzack genau im Takt antippen
 
 > Original: „Koordinationsleiter Übungen“ – skilldrills.online, Kapitel „physical“ / „fitness“ · Blickfit-Übung: Sprossen-Leiter (`sprossen-leiter`)
 

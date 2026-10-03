@@ -119,51 +119,52 @@ Es gibt keine Vorlage auf skilldrills.online; das Kapitel „Kognition“ der We
 
 ## 4. Optische und okulomotorische Grundlagen
 
-- **Sehanforderung gering:** Die Kacheln sind ≈ 3–4° groß, Zahlen und Formen kontrastreich auf dunklem Grund. Sehschärfe und Kontrast begrenzen die Leistung kaum; auch bei leicht unscharfem Bild bleiben Formen und große Ziffern erkennbar (Herleitung). Feine Details (Buchstaben im Erklärtext, Pfeilrichtung in 45°-Schritten) brauchen etwas mehr Schärfe.
+- **Sehanforderung gering:** Auf einem 10,9-Zoll-Tablet in 40 cm Abstand erscheinen die Kacheln etwa 3,6° groß (als Umrechnung gilt: Bei 40 cm Abstand entspricht 1 cm etwa 1,4°); Zahlen und Formen stehen kontrastreich auf dunklem Grund. Sehschärfe und Kontrast begrenzen die Leistung kaum; auch bei leicht unscharfem Bild bleiben Formen und große Ziffern erkennbar (eigene Einschätzung). Feine Details (Buchstaben im Erklärtext, Pfeilrichtung in 45°-Schritten) brauchen etwas mehr Schärfe.
 - **Blickverhalten:** Das Lesen der Reihe erzeugt kleine Sakkaden von Glied zu Glied, dann springt der Blick zu den vier Tasten. Es gibt keine Blickfolge, keinen Reizwechsel unter Zeitdruck und keine Peripherie-Aufgabe.
-- **Naharbeit:** Ein 3-min-Durchgang belastet die Naharbeit gering (Wert 1). Längeres Grübeln bei starrem Blick kann die Lidschlagrate senken (allgemein bekannt bei Bildschirmarbeit; für diese Übung nicht untersucht), deshalb bewusst blinzeln.
+- **Naharbeit:** Ein 3-min-Durchgang belastet die Naharbeit gering. Längeres Grübeln bei starrem Blick kann die Lidschlagrate senken (allgemein bekannt bei Bildschirmarbeit; für diese Übung nicht untersucht), deshalb bewusst blinzeln.
 - **Brillenträger:** Reihe und Tasten liegen vertikal untereinander; bei Gleitsicht am Tablet in Nahdistanz meist bequem durch den Nahteil, ohne den Kopf stark zu bewegen. Wer die Kacheln nur unscharf sieht, sollte das Tablet an den Nahteil-Abstand anpassen oder die Nahbrille aufsetzen; das ist eine Bedienhilfe, keine Sehaussage.
 - **Farbe:** Die Übung ist auch bei Farbsehschwäche (≈ 8 % der Männer, ≈ 0,4 % der Frauen in Europa; Birch, 2012) lösbar, weil Formen sich in der Gestalt unterscheiden und nicht über Farbe.
 
 ## 5. Neurowissenschaftliche Grundlagen
 
-- **Kernprozess:** Induktives Schließen ist das Erschließen einer abstrakten Regel aus Beispielen. Bei ähnlichen Matrizen-Aufgaben liegen die Unterschiede zwischen Personen vor allem im Erschließen abstrakter Regeln und im Verwalten von Teilzielen im Arbeitsgedächtnis (Carpenter et al., 1990; Abstract). Deshalb steht `schlussfolgern` auf 3 und `arbeitsgedaechtnis` auf 2: Man muss Abstände und Zwischenergebnisse kurz mitführen, besonders bei verschränkten Reihen.
-- **Kognitive Flexibilität und Hemmung (je 1):** Die naheliegende, aber falsche Regel („gleicher Abstand“) muss verworfen werden. Die Ablenker sind genau darauf gebaut; das ist eine Gestaltungsabsicht, kein gemessener Effekt.
+- **Kernprozess:** Induktives Schließen ist das Erschließen einer abstrakten Regel aus Beispielen. Bei ähnlichen Matrizen-Aufgaben liegen die Unterschiede zwischen Personen vor allem im Erschließen abstrakter Regeln und im Verwalten von Teilzielen im Arbeitsgedächtnis (Carpenter et al., 1990). Deshalb gelten Schlussfolgern (hoch) und Arbeitsgedächtnis (mittel) als Kernanforderungen: Man muss Abstände und Zwischenergebnisse kurz mitführen, besonders bei verschränkten Reihen.
+- **Kognitive Flexibilität und Hemmung (Nebenrollen):** Die naheliegende, aber falsche Regel („gleicher Abstand“) muss verworfen werden. Die Ablenker sind genau darauf gebaut; das ist eine Gestaltungsabsicht, kein gemessener Effekt.
 - **Hirnregionen:** Für Reihen-Aufgaben werden in der Literatur häufig frontale und parietale Netzwerke genannt. Eine belastbare Aussage „diese Übung trainiert Region X“ lässt sich daraus **nicht** ableiten und wird nicht gemacht.
-- **Lernen der Regeln:** Mit Übung erkennt man Regeltypen (Abstand, Wechsel, Verdopplung) schneller. Ob das auf neue Regeltypen übergeht, ist offen; vgl. Klauer & Phye (2008; Training induktiven Schließens bei Kindern, Abstract).
+- **Lernen der Regeln:** Mit Übung erkennt man Regeltypen (Abstand, Wechsel, Verdopplung) schneller. Ob das auf neue Regeltypen übergeht, ist offen; vgl. Klauer & Phye (2008; Training induktiven Schließens bei Kindern).
 
 ## 6. Motorische Grundlagen
 
-Motorisch anspruchslos: Ein Tipp auf eine große Taste (mindestens 64 px hoch), kein Tempo, keine Genauigkeitsvorgabe, kein Wischen. Tremor oder eingeschränkte Feinmotorik stören kaum (Wert 0 für alle motorischen Merkmale). Die Antwort zählt sofort beim Tippen (kein Rückgängigmachen); um Fehltipps zu verringern, sind die Tasten groß und mit Abstand gesetzt. Tastaturbedienung (1–4) ist als Alternative vorhanden.
+Motorisch anspruchslos: Ein Tipp auf eine große Taste (mindestens 64 px hoch), kein Tempo, keine Genauigkeitsvorgabe, kein Wischen. Tremor oder eingeschränkte Feinmotorik stören kaum. Die Antwort zählt sofort beim Tippen (kein Rückgängigmachen); um Fehltipps zu verringern, sind die Tasten groß und mit Abstand gesetzt. Tastaturbedienung (1–4) ist als Alternative vorhanden.
 
 ## 7. Einflussfaktoren und Messgrenzen
 
 - **Wenige Aufgaben:** 10 Aufgaben ergeben eine grobe Schätzung der Stufe. Die Treppe (Levitt, 1971) braucht viele Umkehrpunkte, um zuverlässig zu sein; die „erreichte Stufe“ ist deshalb ein Selbstvergleichswert, kein Messwert.
 - **Aufgabenpool:** Nur 26 Regelbausteine; bei häufiger Nutzung erkennt man die Bausteine wieder. Der Übungseffekt betrifft dann teils das Wiedererkennen der Regeltypen und nicht das freie Schlussfolgern.
 - **Rechenfertigkeit und Alphabet:** Zahlenreihen setzen Kopfrechnen voraus, Buchstabenreihen sichere Alphabetkenntnis. Das kann die Stufe beeinflussen, ohne dass das Schlussfolgern schlechter ist.
-- **Alter, Müdigkeit, Motivation:** In Querschnittsdaten beginnen Unterschiede in manchen kognitiven Fähigkeiten schon ab etwa 20–30 Jahren (Salthouse, 2009; Abstract). Kurzzeitiger Schlafmangel wirkt eher auf Daueraufmerksamkeit als auf Schlussfolgern (Lim & Dinges, 2010; Metaanalyse). Das Ergebnis hängt zudem von Tagesform und Aufmerksamkeit ab.
+- **Alter, Müdigkeit, Motivation:** In Querschnittsdaten beginnen Unterschiede in manchen kognitiven Fähigkeiten schon ab etwa 20–30 Jahren (Salthouse, 2009). Kurzzeitiger Schlafmangel wirkt eher auf Daueraufmerksamkeit als auf Schlussfolgern (Lim & Dinges, 2010; Metaanalyse). Das Ergebnis hängt zudem von Tagesform und Aufmerksamkeit ab.
 - **Zeit:** Die Zeit ist nur Information und geht nicht in die Stufe ein. Sie ist nicht mit einer Reaktionszeit vergleichbar.
 - **Gerät:** Keine Abhängigkeit von Bildfrequenz oder Latenz; Bildschirmgröße bestimmt die Kachelgröße.
 
 ## 8. Studienlage: Trainierbarkeit und Übertragung
 
-- **Übungseffekt: stark (für die Aufgabenart).** In ACTIVE verbesserte sich die trainierte Fähigkeit bei 74 % der Übenden zuverlässig (Ball et al., 2002); nach 10 Jahren blieb der Effekt bestehen (Rebok et al., 2014). Auch ein früheres Training des induktiven Schließens bei Älteren wirkte, selbst bei zuvor gemessenem Abbau (Willis & Schaie, 1986). Für **unsere** Version fehlen Studien.
-- **Naher Transfer: mittel.** Ähnliche Aufgaben mit derselben Struktur (andere Reihen, Matrizen) profitieren am ehesten. In einer Übersicht zu Kindern verbesserte Training induktiven Schließens fluide Intelligenz und schulisches Lernen (Klauer & Phye, 2008; 74 Experimente, ~3.600 Kinder; Abstract), Übertragung auf Erwachsene ist damit nicht gezeigt. Insgesamt bleibt der Transfer oft aufgabennah (Gathercole et al., 2019; für Arbeitsgedächtnis).
+- **Übungseffekt: stark (für die Aufgabenart).** In ACTIVE verbesserte sich die trainierte Fähigkeit bei 74 % der Übenden zuverlässig (Ball et al., 2002); nach 10 Jahren blieb der Effekt bestehen (Rebok et al., 2014). Auch ein früheres Training des induktiven Schließens bei Älteren wirkte, selbst bei zuvor gemessenem Abbau (Willis & Schaie, 1986). Für diese Übung fehlen Studien.
+- **Naher Transfer: mittel.** Ähnliche Aufgaben mit derselben Struktur (andere Reihen, Matrizen) profitieren am ehesten. In einer Übersicht zu Kindern verbesserte Training induktiven Schließens fluide Intelligenz und schulisches Lernen (Klauer & Phye, 2008; 74 Experimente, etwa 3.600 Kinder), Übertragung auf Erwachsene ist damit nicht gezeigt. Insgesamt bleibt der Transfer oft aufgabennah (Gathercole et al., 2019; für Arbeitsgedächtnis).
 - **Alltagstransfer: schwach.** In ACTIVE berichteten nach 5 Jahren nur die Reasoning-Übenden signifikant weniger Schwierigkeiten bei Alltagsaktivitäten (d = 0,29; Willis et al., 2006), nach 10 Jahren alle drei Trainingsgruppen (Reasoning d = 0,38; Rebok et al., 2014). Das sind **Selbstberichte**, nach 2 Jahren war noch kein Effekt zu sehen (Ball et al., 2002). Objektive Alltagsleistung, Fahrsicherheit oder Demenzrisiko wurden für das Reasoning-Training nicht gezeigt.
 - **Allgemeine Intelligenz: fehlend.** Metaanalysen finden kaum Effekte des kognitiven Trainings auf allgemeine geistige Fähigkeiten (Sala & Gobet, 2019); Online-Hirntraining überträgt sich nicht auf ungeübte Aufgaben (Owen et al., 2010). Gesamtschau: keine Studie erfüllte alle Qualitätskriterien (Simons et al., 2016).
 - **Häufigkeit:** Bis zu 3 Einheiten pro Woche; mehr war nicht wirksamer (Lampit et al., 2014).
-- **Seriöse Formulierung:** „Beim Reihen-Rätsel findest du die Regel hinter einer Reihe. Ähnliche Aufgaben wurden in einer großen Studie mit älteren Menschen geübt – die geübte Fähigkeit blieb über Jahre besser. Unsere Version selbst ist nicht untersucht.“
+- **Einordnung:** Beim Reihen-Rätsel findet man die Regel hinter einer Reihe. Ähnliche Aufgaben wurden in einer großen Studie mit älteren Menschen geübt, und die geübte Fähigkeit blieb über Jahre besser. Diese Übung selbst ist nicht untersucht; Zeit pro Aufgabe und erreichte Stufe sind Werte für den Vergleich mit sich selbst, keine Normwerte.
 
 ## 9. Auswahlhinweise für die KI
 
 - **Passt, wenn …** jemand eine ruhige Denkübung ohne Zeitdruck sucht; Muster erkennen und Regeln ableiten geübt werden soll; eine Übung für Ältere mit großen Tasten gefragt ist; ein Tablet mit Touch genutzt wird; Sehschärfe oder Nahsicht etwas eingeschränkt sind (große Reize, keine Farbabhängigkeit).
 - **Weniger passend, wenn …** Blickmotorik, Peripherie, Reaktion oder Tempo trainiert werden sollen; jemand Rechen- oder Alphabetregeln nicht sicher beherrscht; Kinder unter etwa 8 Jahren; ein belastbarer Verlaufswert oder ein Normvergleich gewünscht ist.
 - **Vorsicht / anpassen bei …**
-  - `kognitive_einschraenkung`: Höhere Stufen können frustrieren; auf niedriger Stufe beginnen, Erklärtext nutzen. Kein Therapieanspruch.
+  - `kognitive_einschraenkung`: Höhere Stufen können frustrieren; auf niedriger Stufe beginnen, Erklärtext nutzen. Kein Therapieanspruch. Neu auftretende Gedächtnis- oder Denkstörungen gehören ärztlich abgeklärt; die Übung ist kein Screening und kein Test (Muchnick, 2008, S. 7, 28–30).
   - `lese_rechtschreib_schwaeche`: Buchstabenreihen setzen sicheren Umgang mit dem Alphabet voraus; Zahlen- und Formenreihen bevorzugen.
   - `kinder_unter_6`: Rechenregeln und Alphabet in der Regel noch nicht sicher; nicht untersucht.
   - `sehbehinderung_niedriger_visus`, `presbyopie_gleitsicht`: Kacheln sind groß, aber der Erklärtext ist klein; Tablet in den Nahteil-Abstand bringen oder Schrift/Bildschirm vergrößern.
-- **Kombiniert gut mit …** 204 (Zahlenjagd, Konzentration), 207 (Zeichen-Code, Symbol-Zahl-Zuordnung), 604 (N-Back, Arbeitsgedächtnis), 811 (Muster merken, visuelles Gedächtnis); als ruhiger Abschluss nach schnellen Konzentrationsübungen (Sitzungsvorschlag in Dokument 04, 9.3).
+- **Kombiniert gut mit …** 204 (Zahlenjagd, Konzentration), 207 (Zeichen-Code, Symbol-Zahl-Zuordnung), 604 (N-Back, Arbeitsgedächtnis), 811 (Muster merken, visuelles Gedächtnis); als ruhiger Abschluss nach schnellen Konzentrationsübungen.
+- Treten beim Üben Doppelbilder, plötzlicher Sehverlust, Kopfschmerz mit Sehverschlechterung, Schwindel oder Zittern auf, sollte das ärztlich abgeklärt werden, statt weiterzuüben (Muchnick, 2008, S. 6, 28).
 - Keine Diagnosen, keine Heilversprechen; nicht als Intelligenz- oder Gedächtnistest darstellen.
 
 ## 10. Schwächen und Empfehlungen (Blickfit-Umsetzung)
@@ -182,7 +183,7 @@ Die Übung ist bereits umgesetzt; offene Punkte:
 ## 11. Quellen
 
 ### Von der Website angegeben
-- – (keine, eigene Übung)
+(keine, eigene Übung)
 
 ### Weitere Fachliteratur
 - Ball, K., Berch, D. B., Helmers, K. F., Jobe, J. B., Leveck, M. D., Marsiske, M., Morris, J. N., Rebok, G. W., Smith, D. M., Tennstedt, S. L., Unverzagt, F. W., Willis, S. L., & ACTIVE Study Group. (2002). Effects of cognitive training interventions with older adults: A randomized controlled trial. *JAMA*, *288*(18), 2271–2281. https://doi.org/10.1001/jama.288.18.2271 – Reasoning-Training (serielle Muster), 74 % Verbesserung, kein Alltagseffekt nach 2 Jahren (Crossref geprüft; Abstract gelesen).
@@ -201,3 +202,4 @@ Die Übung ist bereits umgesetzt; offene Punkte:
 - Lim, J., & Dinges, D. F. (2010). A meta-analysis of the impact of short-term sleep deprivation on cognitive variables. *Psychological Bulletin*, *136*(3), 375–389. https://doi.org/10.1037/a0018883 – Schlafmangel wirkt am stärksten auf einfache Aufmerksamkeit (Crossref geprüft; Inhalt aus Literaturbasis W02).
 - Levitt, H. (1971). Transformed up-down methods in psychoacoustics. *The Journal of the Acoustical Society of America*, *49*(2B), 467–477. https://doi.org/10.1121/1.1912375 – adaptive Treppe (2-down/1-up ≈ 71 %).
 - Wilson, R. C., Shenhav, A., Straccia, M., & Cohen, J. D. (2019). The Eighty Five Percent Rule for optimal learning. *Nature Communications*, *10*, 4646. https://doi.org/10.1038/s41467-019-12552-4 – Zielquote beim Lernen (Crossref geprüft).
+- Muchnick, B. G. (2008). *Clinical Medicine in Optometric Practice* (2nd ed.). Mosby/Elsevier. https://openlibrary.org/isbn/9780323029612 – Lehrbuch: Warnzeichen mit Abklärungsbedarf (S. 6, 28), Gedächtnisstörungen als neurologisches Symptom (S. 7); Gedächtnisprüfung als klinische Untersuchung, nicht als Training (S. 29–30).

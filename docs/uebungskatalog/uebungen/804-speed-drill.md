@@ -85,7 +85,7 @@ aehnliche_uebungen: [702, 501, 508, 704, 104, 302, 802, 801, 805, 301]
 stichworte: ["Zielerfassung", "schrumpfende Ziele", "bewegte Ziele", "Fitts'sches Gesetz", "Woodworth", "Flick", "Aim-Training", "Auge-Hand-Koordination", "Speed-Accuracy-Trade-off", "Maus", "Pointer-Lock", "Combo"]
 ---
 
-# 804 · Schrumpfende Ziele schnell anklicken
+# 804 · Schrumpfende Ziele: den kleinsten zuerst antippen
 
 > Original: „Reaktionstest – Schrumpfende Ziele schnell und präzise treffen“ (Speed Drill) – skilldrills.online, Kapitel Körper & Reflexe (`physical`, Unterkapitel `fitness`) · Blickfit-Übung: Schrumpfende Ziele (`schrumpfende-ziele`)
 

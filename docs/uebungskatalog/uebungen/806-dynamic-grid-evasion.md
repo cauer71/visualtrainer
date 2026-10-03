@@ -85,7 +85,7 @@ aehnliche_uebungen: [803, 801, 401, 202, 302, 103, 108, 501, 702, 805]
 stichworte: ["Wahlreaktion", "räumliche Wahlreaktion", "Ausweichen", "3x3-Raster", "verdeckte Aufmerksamkeit", "covert orienting", "Merkmalsabwesenheit", "Suchasymmetrie", "Zeitdruck", "peripheres Erfassen", "Maus", "Pointer-Lock", "Photosensitivität"]
 ---
 
-# 806 · Raster-Ausweichen – bedrohte Felder erkennen und in ein sicheres Feld wechseln
+# 806 · Raster-Ausweichen: ein freies Feld antippen, bevor die besetzten belegt sind
 
 > Original: „Reaktionstest online – Raster-Ausweichspiel“ (Dynamic Grid Evasion) – skilldrills.online, Kapitel Körper & Reflexe (`physical`/`coordination`) · Blickfit-Übung: Raster-Ausweichen (`raster-ausweichen`)
 

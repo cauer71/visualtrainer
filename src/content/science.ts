@@ -573,17 +573,17 @@ export const SCIENCE: Record<string, ScienceEntry> = {
         trains: 'Die Regel hinter einer Zahlen-, Buchstaben- oder Formenreihe finden und die Reihe fortsetzen – in Ruhe, ohne Zeitdruck.',
         daily: 'Überall, wo man Muster erkennt und daraus schließt: Pläne und Abläufe verstehen, Regelmäßigkeiten bemerken.',
         research:
-          'Ähnliche Reihen-Aufgaben wurden in einer großen Studie mit älteren Menschen (ACTIVE) in einem betreuten Kurs geübt – die geübte Fähigkeit blieb über Jahre besser. Im Alltag berichteten die Teilnehmenden nur selbst von kleinen Vorteilen; eine allgemeine Verbesserung des Denkens ist nicht belegt. Unsere Version ist davon inspiriert, aber selbst nicht untersucht.',
+          'Ähnliche Reihen-Aufgaben wurden in einer großen Studie mit älteren Menschen (ACTIVE) in einem betreuten Kurs geübt – die geübte Fähigkeit blieb über Jahre besser. Im Alltag berichteten die Teilnehmenden nur selbst von kleinen Vorteilen; eine allgemeine Verbesserung des Denkens ist nicht belegt. Unsere Version ist davon inspiriert, aber selbst nicht untersucht. Neu auftretende Gedächtnis- oder Denkstörungen, Doppelbilder oder plötzliche Sehverschlechterung gehören ärztlich abgeklärt; die Übung ist weder Test noch Diagnose (Lehrbuchwissen: Muchnick, 2008).',
         improved:
-          'Neu in dieser Kategorie (beim Vorbild fehlt „Denken“ ganz). Die Aufgaben werden jedes Mal neu erzeugt, die falschen Antworten entsprechen typischen Denkfehlern, und nach jeder Antwort wird die Regel in Alltagssprache erklärt – wie im Studienkurs, der Strategien vermittelte. Kein Zeitdruck, Schwierigkeit passt sich an (≈ 70 % richtig).',
+          'Die Aufgaben werden bei jedem Durchgang neu erzeugt (26 Regelbausteine auf 8 Stufen mit Zahlen-, Buchstaben-, Formen- und Pfeilreihen), die falschen Antworten entsprechen typischen Denkfehlern, und nach jeder Antwort wird die Regel in Alltagssprache erklärt; in der Studie, an die die Aufgabenart angelehnt ist, wurden Strategien vermittelt. Es gibt vier große Antworttasten und keinen Zeitdruck, weiter geht es erst mit „Weiter“. Eine Sitzung hat zehn Aufgaben, und die Stufe passt sich an (zwei richtige Antworten in Folge machen es schwerer, ein Fehler leichter; Ziel sind etwa 70 % richtig). Die Zeit pro Aufgabe wird nur als Information gezeigt und geht nicht in die Stufe ein. Formen unterscheiden sich immer in der Gestalt, die Farbe ist nur eine Zugabe.',
       },
       it: {
         trains: 'Trovare la regola dietro una serie di numeri, lettere o forme e continuarla – con calma, senza fretta.',
         daily: 'Ovunque si riconoscano schemi e se ne traggano conclusioni: capire piani e procedure, notare regolarità.',
         research:
-          'Compiti simili con serie sono stati allenati in un grande studio con persone anziane (ACTIVE) in un corso guidato – la capacità allenata è rimasta migliore per anni. Nella vita quotidiana i partecipanti hanno riferito solo piccoli vantaggi percepiti; un miglioramento generale del pensiero non è dimostrato. La nostra versione ne è ispirata, ma non è stata studiata.',
+          'Compiti simili con serie sono stati allenati in un grande studio con persone anziane (ACTIVE) in un corso guidato – la capacità allenata è rimasta migliore per anni. Nella vita quotidiana i partecipanti hanno riferito solo piccoli vantaggi percepiti; un miglioramento generale del pensiero non è dimostrato. La nostra versione ne è ispirata, ma non è stata studiata. Disturbi della memoria o del pensiero di nuova insorgenza, visione doppia o improvviso peggioramento della vista vanno chiariti dal medico; l’esercizio non è né un test né una diagnosi (manuale: Muchnick, 2008).',
         improved:
-          'Nuovo in questa categoria (nell’originale il “pensiero” manca del tutto). I compiti vengono generati ogni volta, le risposte sbagliate corrispondono a tipici errori di ragionamento e dopo ogni risposta la regola viene spiegata con parole semplici – come nel corso dello studio, che insegnava strategie. Nessuna fretta, la difficoltà si adatta (≈ 70 % di risposte giuste).',
+          'I compiti vengono generati di nuovo a ogni turno (26 regole di base su 8 livelli, con serie di numeri, lettere, forme e frecce), le risposte sbagliate corrispondono a tipici errori di ragionamento e dopo ogni risposta la regola viene spiegata con parole semplici; nello studio a cui si ispira questo tipo di compito venivano insegnate delle strategie. Ci sono quattro grandi tasti di risposta e nessuna pressione di tempo, si prosegue solo con «Avanti». Una sessione ha dieci compiti e il livello si adatta (due risposte giuste di fila lo rendono più difficile, un errore più facile; l’obiettivo è circa il 70 % di risposte giuste). Il tempo per compito viene mostrato solo come informazione e non entra nel livello. Le forme si distinguono sempre per la figura, il colore è solo un di più.',
       },
     },
     sources: [
@@ -592,6 +592,7 @@ export const SCIENCE: Record<string, ScienceEntry> = {
       src('Rebok et al. (2014). Ten-year effects of the ACTIVE cognitive training trial on cognition and everyday functioning in older adults. J Am Geriatr Soc', 'https://doi.org/10.1111/jgs.12607'),
       src('Basak, Qin & O’Connell (2020). Differential effects of cognitive training modules in healthy aging and mild cognitive impairment: A comprehensive meta-analysis. Psychology and Aging', 'https://doi.org/10.1037/pag0000442'),
       src('Stojanoski et al. (2018). Targeted training: Converging evidence against the transferable benefits of online brain training on cognitive function. Neuropsychologia', 'https://doi.org/10.1016/j.neuropsychologia.2018.07.013'),
+      src('Muchnick (2008). Clinical Medicine in Optometric Practice, 2nd ed. Mosby/Elsevier, S. 6, 7, 28–30 (Warnzeichen mit Abklärungsbedarf; Gedächtnisprüfung als klinische Untersuchung)', 'https://openlibrary.org/isbn/9780323029612'),
     ],
   },
   ...Object.fromEntries(

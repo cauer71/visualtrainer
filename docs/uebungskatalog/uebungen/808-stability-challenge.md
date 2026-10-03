@@ -85,7 +85,7 @@ aehnliche_uebungen: [705, 504, 509, 707, 104, 505, 514, 810]
 stichworte: ["Stabilität", "Kompensations-Tracking", "Störgrößen ausgleichen", "Fadenkreuz halten", "ruhige Hand", "visuo-manuelle Regelung", "intermittierende Korrektur", "Maus", "Recoil", "kein Gleichgewichtstraining"]
 ---
 
-# 808 · Fadenkreuz gegen Wind halten – Ausgleichs-Tracking mit der Maus
+# 808 · Gegen den Wind: die Marke mit dem Finger im Ring halten
 
 > Original: „Maus-Stabilitätstest“ („Stability Challenge“) – skilldrills.online, Kapitel „physical“ / „balance-training“ · Blickfit-Übung: Gegen den Wind (`gegen-den-wind`)
 

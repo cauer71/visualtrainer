@@ -52,7 +52,7 @@ export function checkNachfuehrenExercise(def: ExerciseDefinition, science: Scien
       expect(['strong', 'medium', 'weak']).toContain(science.evidence);
       expect(science.sources.length).toBeGreaterThanOrEqual(3);
       for (const s of science.sources) {
-        expect(s.url).toMatch(/^https:\/\/doi\.org\/10\./);
+        expect(s.url).toMatch(/^https:\/\/(doi\.org\/10\.|openlibrary\.org\/isbn\/)/);
         expect(s.label.length).toBeGreaterThan(20);
       }
       expect(new Set(science.sources.map((s) => s.url)).size).toBe(science.sources.length);

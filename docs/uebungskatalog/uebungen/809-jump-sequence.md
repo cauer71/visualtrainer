@@ -85,7 +85,7 @@ aehnliche_uebungen: [807, 104, 802, 407, 414, 515]
 stichworte: ["Abfangen", "Interzeption", "Flugparabel", "Timing", "Haltedauer", "Vorausschätzen", "Auge-Hand-Koordination", "Maus", "Sprungspiel", "Combo"]
 ---
 
-# 809 · Sprung-Abfangen mit dem Mauszeiger – Absprung dosieren und ein fliegendes Ziel treffen
+# 809 · Sprungweite: die Kugel mit dem Finger auf die Zielmarke dosieren
 
 > Original: „Sprungsequenz & Flugbahn-Abfangen“ (Seitentitel „Sprungkrafttraining online | Sprungfolge-Spiel“) – skilldrills.online, Kapitel „physical“ / „fitness“ · Blickfit-Übung: Sprungweite (`sprung-abfangen`)
 

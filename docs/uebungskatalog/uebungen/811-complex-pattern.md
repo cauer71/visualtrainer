@@ -85,7 +85,7 @@ aehnliche_uebungen: [603, 607, 605, 601, 810, 707, 706]
 stichworte: ["Muster merken", "Pfad nachzeichnen", "visuell-räumliches Kurzzeitgedächtnis", "Visual Patterns Test", "Chunking", "Zeichnen aus dem Gedächtnis", "Maus ziehen", "Complex Pattern", "kein Körpertraining"]
 ---
 
-# 811 · Muster merken und nachzeichnen – Pfad aus dem Gedächtnis ziehen
+# 811 · Muster nachzeichnen: einen kurz gezeigten Linienzug aus dem Gedächtnis mit dem Finger nachzeichnen
 
 > Original: „Muster merken Test“ („Complex Pattern Pro“) – skilldrills.online, Kapitel „physical“ / „coordination“ · Blickfit-Übung: Muster nachzeichnen (`muster-nachzeichnen`)
 
@@ -131,7 +131,7 @@ Quelle: Seitentext und ausgelieferter Spielcode (Chunks 16603 und 6226, abgerufe
 ## 6. Motorische Grundlagen
 - **Zeichenbewegung:** Beim Zeichnen sinkt das Tempo an stark gekrümmten Stellen automatisch (Zwei-Drittel-Potenzgesetz; Lacquaniti et al., 1983). Das Abbremsen an Scheitelpunkten geschieht also von selbst.
 - **Teilstrecken:** Jede Strecke zwischen zwei Stützpunkten ähnelt einer Zielbewegung mit Anfangsimpuls und Feinkorrektur (Woodworth, 1899; Elliott et al., 2001), allerdings zu einem erinnerten, nicht sichtbaren Ziel; daher ist die Streuung größer.
-- **Toleranz:** Gewertet wird nicht der Pixelabstand zur Vorlage, sondern ob die Stützpunkte in der richtigen Reihenfolge getroffen werden (großzügiger Fangradius um jeden Punkt). Das Zeichentempo wird nicht belohnt, und es gibt kein Zeitlimit für das Nachzeichnen.
+- **Toleranz:** Gewertet wird nicht der Abstand der gezeichneten Linie zur gezeigten, sondern ob die Stützpunkte in der richtigen Reihenfolge getroffen werden (großzügiger Fangradius um jeden Punkt). Das Zeichentempo wird nicht belohnt, und es gibt kein Zeitlimit für das Nachzeichnen.
 - **Tremor:** Physiologischer Tremor liegt um etwa 10 Hz, Parkinson-Tremor bei 3–6 Hz (McAuley & Marsden, 2000); bei dem großzügigen Fangradius fällt er hier kaum ins Gewicht.
 
 ## 7. Einflussfaktoren und Messgrenzen
