@@ -468,9 +468,11 @@ export class Runner {
     const block = (e: Event) => {
       if (e.cancelable) e.preventDefault();
     };
+    // Zusätzlich für Übungen mit Zeicheneingabe: Ziffer 0, Buchstaben, „?“ und Rücktaste (die übrigen ignorieren unbekannte Tasten)
+    const TEXT_KEY = /^(?:[0a-zA-Z?]|Backspace)$/;
     const KEYS = [' ', 'Enter', 'ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
     const key = (e: KeyboardEvent) => {
-      if (!this.ex.keyDown || e.repeat || e.altKey || e.ctrlKey || e.metaKey || !KEYS.includes(e.key)) return;
+      if (!this.ex.keyDown || e.repeat || e.altKey || e.ctrlKey || e.metaKey || !(KEYS.includes(e.key) || TEXT_KEY.test(e.key))) return;
       e.preventDefault();
       if (this.paused || this.finished || !this.started) return;
       const pn = performance.now();

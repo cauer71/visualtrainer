@@ -340,12 +340,23 @@ export interface Exercise {
   pointerUp?(p: PointerInfo): void;
   /**
    * Optionale Tastatursteuerung (Computer): ' ' (Leertaste), 'Enter', 'ArrowLeft', 'ArrowRight',
-   * 'ArrowUp', 'ArrowDown' sowie Ziffern '1'–'9'. t = virtuelle Zeit des Tastendrucks.
+   * 'ArrowUp', 'ArrowDown', Ziffern '0'–'9', Buchstaben ('a'–'z', 'A'–'Z'), '?' und 'Backspace'. t = virtuelle Zeit des
+   * Tastendrucks. Übungen ignorieren Tasten, die sie nicht brauchen.
    */
   keyDown?(key: string, t: number): void;
   /** Bühne hat sich in der Größe geändert */
   resize?(w: number, h: number): void;
   destroy?(): void;
+}
+
+/**
+ * Prüfbild im Intro (ohne Wertung), z. B. zwei Farbflächen zum Prüfen einer Rot-Grün-Brille: Titel, Erklärtext und
+ * Flächen (Farbe und Beschriftung, die Farbe ist nie der einzige Hinweis).
+ */
+export interface ColorCheckInfo {
+  title: string;
+  text: string;
+  panels: Array<{ color: string; label: string }>;
 }
 
 export interface ExerciseDefinition {
@@ -371,5 +382,7 @@ export interface ExerciseDefinition {
   params?: readonly ParamDef[];
   /** `true` = die Übung rechnet in cm/Sehwinkel (`ctx.calib`); das Intro weist auf die Kalibrierung hin */
   usesCalibration?: boolean;
+  /** Prüfbild, das das Intro unter den Einstellungen zeigt (aus den aktuellen Einstellungen und den Texten der Sprache) */
+  colorCheck?: (params: ExerciseParams, texts: ExerciseTexts) => ColorCheckInfo;
   create(ctx: ExerciseContext): Exercise;
 }

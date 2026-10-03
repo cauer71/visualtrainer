@@ -11,6 +11,7 @@ import { useApp } from '../app-context';
 import { DemoPlayer } from '../components/DemoPlayer';
 import { ExerciseOptions } from '../components/ExerciseOptions';
 import { CalibNotice, ExerciseParams } from '../components/ExerciseParams';
+import { ColorCheck } from '../components/ColorCheck';
 import { ArtIcon, Icon } from '../components/Icon';
 import { FeedbackButton } from '../components/FeedbackDialog';
 import { LaborBadge } from '../components/LaborBadge';
@@ -119,6 +120,7 @@ function Intro({ def, series, onStart }: { def: ExerciseDefinition; series: Seri
           </ol>
           <CalibNotice def={def} version={paramsVersion} />
           <ExerciseParams def={def} onChange={() => setParamsVersion((v) => v + 1)} />
+          <ColorCheck def={def} version={paramsVersion} />
           <ExerciseOptions def={def} texts={tx.options} />
           <button type="button" class="btn btn-primary btn-xl btn-block" onClick={onStart}>
             <Icon name="play" size={22} /> {ui.intro.start}

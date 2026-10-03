@@ -109,6 +109,7 @@ import { laborSequenzGedaechtnis } from './labor-sequenz-gedaechtnis';
 import { laborWoerterBauen } from './labor-woerter-bauen';
 import { laborZeichenFinden } from './labor-zeichen-finden';
 import { laborMentaleRotation } from './labor-mentale-rotation';
+import { laborRotGruenLesen } from './labor-rot-gruen-lesen';
 
 /** Reihenfolge = Anzeige-Reihenfolge innerhalb der Bereiche */
 export const EXERCISES: ExerciseDefinition[] = [
@@ -212,6 +213,7 @@ export const EXERCISES: ExerciseDefinition[] = [
   laborWoerterBauen,
   laborZeichenFinden,
   laborMentaleRotation,
+  laborRotGruenLesen,
 ];
 
 /** Marke der Labor-Übungen (cm/Sehwinkel, Einstellungen, Kalibrierung); sie stehen nicht im Tagestraining */

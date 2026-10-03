@@ -2001,6 +2001,42 @@ p {
   accent-color: var(--primary);
   cursor: pointer;
 }
+/* Prüfbild (z. B. Rot-Grün-Brille): zwei Farbflächen mit Beschriftung auf schwarzem Grund */
+.colorcheck {
+  display: grid;
+  gap: 10px;
+  padding: 14px;
+  border: 2px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+}
+.colorcheck-title {
+  font-size: 17px;
+  font-weight: 800;
+}
+.colorcheck-panels {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 0;
+  padding: 10px;
+  border-radius: 10px;
+  background: #000;
+}
+.colorcheck-panel {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  text-align: center;
+}
+.colorcheck-swatch {
+  height: 64px;
+  border-radius: 8px;
+}
+.colorcheck-panel figcaption {
+  font-weight: 700;
+  color: #e8eef7;
+}
 .notice-calib p + p {
   margin-top: 6px;
 }

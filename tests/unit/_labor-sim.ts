@@ -95,6 +95,8 @@ export interface Sim {
   ghost: FakeGhost;
   /** Aufrufe von `g.fillText` – Texte, die gezeichnet wurden (nur wenn `recordText`) */
   texts: string[];
+  /** Dieselben Aufrufe mit der Füllfarbe zum Zeitpunkt des Zeichnens (nur wenn `recordText`) */
+  textFills: Array<{ s: string; fill: string }>;
 }
 
 export interface SimOpts {
@@ -149,6 +151,7 @@ function run(def: ExerciseDefinition, o: SimOpts): Sim {
   const progress: number[] = [];
   const sounds: string[] = [];
   const texts: string[] = [];
+  const textFills: Array<{ s: string; fill: string }> = [];
   let exRef: Exercise | null = null;
   const ghost = new FakeGhost((x, y, t) => exRef?.pointerDown?.({ id: -1, x, y, t, type: 'ghost' } satisfies PointerInfo));
   const stage = {
@@ -223,7 +226,11 @@ function run(def: ExerciseDefinition, o: SimOpts): Sim {
   const g2 = o.recordText
     ? (new Proxy(fakeG() as object, {
         get: (t, k: string, r) => {
-          if (k === 'fillText') return (s: string) => texts.push(String(s));
+          if (k === 'fillText')
+            return (s: string) => {
+              texts.push(String(s));
+              textFills.push({ s: String(s), fill: String(Reflect.get(t, 'fillStyle', r)) });
+            };
           return Reflect.get(t, k, r);
         },
         set: (t, k: string, v) => Reflect.set(t, k, v),
@@ -250,7 +257,7 @@ function run(def: ExerciseDefinition, o: SimOpts): Sim {
     o.afterFrame?.(ex, now, ctx);
   }
   ex.destroy?.();
-  return { result, seconds: endAt / 1000, toasts, captions, labels, scores, progress, ghostTaps: ghost.taps, sounds, ghost, texts };
+  return { result, seconds: endAt / 1000, toasts, captions, labels, scores, progress, ghostTaps: ghost.taps, sounds, ghost, texts, textFills };
 }
 
 /** Wert einer Zusatzkennzahl */

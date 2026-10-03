@@ -1,6 +1,8 @@
 # Labor-Übungen in Blickfit portieren (Anleitung für Phase B)
 
 Der Labor-Prototyp (Branch `origin/labor-offline-prototyp`, Ordner `labor/`, reines HTML/JS, CommonJS) hat 14 Übungen.
+Dazu kommt als 15. Übung der Marke „Labor“ `labor-rot-gruen-lesen` (Rot-Grün-Brille): keine Portierung, sondern eine eigene Umsetzung der
+klassischen dichoptischen Aufgabe (`src/exercises/labor-rot-gruen-lesen/`; Prüfbild im Intro über `ExerciseDefinition.colorCheck`).
 Sie werden in Blickfit **neu geschrieben** (TypeScript/Preact, Canvas-Modul wie die Übungen unter `src/exercises/`), nicht kopiert:
 der Prototyp wird nicht ins Repository übernommen, nur portiert. Phase A hat die Grundlage gebaut und als Vorbild **eine**
 Übung portiert: **`labor-spot-touch`** (aus `ex/spots.js` + `help/spots.js`). Orientiere dich an ihr, Datei für Datei.
