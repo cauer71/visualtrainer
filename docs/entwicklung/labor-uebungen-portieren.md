@@ -3,12 +3,13 @@
 Der Labor-Prototyp (Branch `origin/labor-offline-prototyp`, Ordner `labor/`, reines HTML/JS, CommonJS) hat 14 Übungen (dazu die Gleichgewichts-Übungen, siehe Abschnitt 9).
 Dazu kommt als 15. Übung der Marke „Labor“ `labor-rot-gruen-lesen` (Rot-Grün-Brille): keine Portierung, sondern eine eigene Umsetzung der
 klassischen dichoptischen Aufgabe (`src/exercises/labor-rot-gruen-lesen/`; Prüfbild im Intro über `ExerciseDefinition.colorCheck`).
-Als 16. und 17. kommen `labor-fusion` („Fusion – Bilder verschmelzen“, aus `ex/fusion.js`) und `labor-stereo` („Tiefe sehen – Zufallspunkte“,
-aus `ex/stereo.js`): neu geschrieben mit dem Farbpaar-/Brillen-Baukasten `src/exercises/_shared/anaglyph.ts` (gemeinsam mit Rot-Grün-Lesen:
-Farben und Helligkeit je Farbe, Δ ↔ cm ↔ Pixel ↔ Winkelsekunden, Konvergenz/Divergenz, Prüfbild Schritt für Schritt) und mit dem **Trainer-Regler**
-für den Versatz während der Übung (`docs/entwicklung/neue-uebung.md`, Abschnitt „Trainer-Regler“). Insgesamt gibt es damit **17 Labor-Übungen**:
-14 aus dem Prototyp (Mapping in Abschnitt 5) plus drei neue bzw. ergänzte (Rot-Grün-Lesen, Fusion, Tiefe sehen).
-Die Funktionsprüfungen (hess, worth, schober, diplopia, vertical, projection) und die Gleichgewichts-Übungen des Prototyps sind **nicht** übernommen.
+Dazu kommen nach der ersten Portierung (alle normale Labor-Übungen: Trainer- und Entwickler-Ansicht, Filter „Labor“, Auswahl für Benutzer, nicht im Tagestraining):
+
+- **Rot-Grün-Lesen**, **Fusion** (`labor-fusion`, aus `ex/fusion.js`) und **Tiefe sehen** (`labor-stereo`, aus `ex/stereo.js`): neu geschrieben mit dem Farbpaar-/Brillen-Baukasten `src/exercises/_shared/anaglyph.ts` (Farben und Helligkeit je Farbe, Δ ↔ cm ↔ Pixel ↔ Winkelsekunden, Konvergenz/Divergenz, Prüfbild Schritt für Schritt) und mit dem **Trainer-Regler** für den Versatz während der Übung (`docs/entwicklung/neue-uebung.md`, Abschnitt „Trainer-Regler“).
+- **Fünf Gleichgewichts-Übungen** (siehe Abschnitt 9).
+- Sechs **Funktionsübungen** `labor-hess`, `labor-worth`, `labor-schober`, `labor-diplopie`, `labor-vertikale` und `labor-projektion` (Prototyp `ex/hess.js`, `worth.js`, `schober.js`, `diplopia.js`, `vertical.js`, `projection.js`), gemeinsame Bausteine in `src/exercises/_shared/pruefung-*.ts`, Tests `tests/unit/pruefung*.test.ts`, `labor-{hess,worth,schober,diplopie,vertikale,projektion}-logic.test.ts` und `tests/e2e/pruefungen.mjs`. Ihre Texte beschreiben **Funktionsübungen nach dem Prinzip des klassischen Verfahrens** („kein Ersatz für die Untersuchung“), zeigen nur „Übungswerte“ (Grad, Δ, cm) ohne Deutung, ohne Richtwerte und ohne das Wort „Test“; bei Schober steht „Vorzeichenregeln nur hergeleitet, nicht gegen ein Messgerät geprüft“ in Hinweisen und Ergebnis. Als Hauptwert dient die Zahl der Eingaben (`count`), weil es für Grad/Δ/cm keine Einheit in `MetricUnit` gibt; die Messgrößen stehen in den Detailtabellen.
+
+Insgesamt gibt es damit **28 Labor-Übungen**: 14 aus dem Prototyp (Mapping in Abschnitt 5), Rot-Grün-Lesen, Fusion, Tiefe sehen, fünf Gleichgewichts-Übungen und sechs Funktionsübungen.
 Sie werden in Blickfit **neu geschrieben** (TypeScript/Preact, Canvas-Modul wie die Übungen unter `src/exercises/`), nicht kopiert:
 der Prototyp wird nicht ins Repository übernommen, nur portiert. Phase A hat die Grundlage gebaut und als Vorbild **eine**
 Übung portiert: **`labor-spot-touch`** (aus `ex/spots.js` + `help/spots.js`). Orientiere dich an ihr, Datei für Datei.
