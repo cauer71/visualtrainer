@@ -201,7 +201,7 @@ const de = {
       weak: 'wenig untersucht',
     },
     sources: 'Quellen',
-    improved: 'Was wir verbessert haben',
+    improved: 'So ist die Übung aufgebaut',
     principlesTitle: 'Wie die Übungen aufgebaut sind',
     principles: [
       'Jede Übung passt die Schwierigkeit laufend an: So übst du immer knapp an deiner Grenze – dort lernt man am meisten.',
@@ -419,7 +419,7 @@ const it: UiStrings = {
       weak: 'poco studiato',
     },
     sources: 'Fonti',
-    improved: 'Cosa abbiamo migliorato',
+    improved: 'Come è costruito l’esercizio',
     principlesTitle: 'Come sono costruiti gli esercizi',
     principles: [
       'Ogni esercizio adatta continuamente la difficoltà: così ti alleni sempre vicino al tuo limite – dove si impara di più.',

@@ -9,7 +9,6 @@ import { exerciseHref, href } from '../router';
 interface Item {
   nr: number;
   name: string;
-  nameOriginal: string;
   kapitel: string;
   kurz: string;
   ziel: string[];
@@ -24,7 +23,6 @@ interface Item {
   weniger: string[];
   aehnlich: number[];
   blickfit: string | null;
-  quelle: string | null;
 }
 
 let cache: Promise<Item[]> | null = null;
@@ -75,7 +73,7 @@ export function Catalog() {
       if (chapter && i.kapitel !== chapter) return false;
       if (onlyPlayable && !playable(i)) return false;
       if (!t) return true;
-      const hay = `${i.nr} ${i.name} ${i.nameOriginal} ${i.kurz} ${i.ziel.map((z) => PROFIL_LABEL[z] ?? z).join(' ')}`.toLowerCase();
+      const hay = `${i.nr} ${i.name} ${i.kurz} ${i.ziel.map((z) => PROFIL_LABEL[z] ?? z).join(' ')}`.toLowerCase();
       return hay.includes(t);
     });
   }, [items, q, chapter, onlyPlayable]);
@@ -180,11 +178,6 @@ export function CatalogEntry({ nr }: { nr: string }) {
             ) : (
               <span class="chip">{opt.catalogNotPlayable}</span>
             )}
-            {item.quelle ? (
-              <a class="btn btn-ghost btn-sm" href={item.quelle} target="_blank" rel="noopener noreferrer">
-                {opt.catalogOriginal}: {item.nameOriginal.length > 40 ? 'skilldrills.online' : item.nameOriginal}
-              </a>
-            ) : null}
           </div>
           <p class="notice notice-info">
             <Icon name="info" size={18} /> {opt.catalogDisclaimer}

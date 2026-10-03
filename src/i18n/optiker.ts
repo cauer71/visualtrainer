@@ -37,7 +37,7 @@ const de = {
   allExercises: 'Alle spielbaren Übungen',
   catalogTitle: 'Übungskatalog',
   catalogLead:
-    'Alle Übungen der Vorlage skilldrills.online (Nr. 101–811) und eigene Übungen (Nr. 9xx), jeweils mit Anforderungsprofil und geprüften Quellen. Die Beschreibungen sind Trainingsinformationen, keine medizinische Beratung.',
+    'Alle Übungen mit Nummer, Anforderungsprofil, Vorsichtshinweisen, Studienlage und geprüften Quellen. Die Beschreibungen sind Trainingsinformationen, keine medizinische Beratung.',
   catalogSearch: 'Suchen (Nummer, Name, Stichwort)',
   catalogAll: 'Alle Kapitel',
   catalogOnlyPlayable: 'nur spielbare',
@@ -60,7 +60,6 @@ const de = {
   catalogSimilar: 'Ähnliche Übungen',
   catalogPlay: 'Spielbare Blickfit-Übung öffnen',
   catalogInput: 'Eingabe',
-  catalogOriginal: 'Original',
   catalogFullText: 'Ausführliche Beschreibung und Quellen',
   catalogDisclaimer: 'Trainings- und Produktinformation, keine medizinische Beratung oder Diagnose. Studienlage bezieht sich auf ähnliche Aufgaben, nicht auf Wirksamkeit dieser Übung.',
   scale: ['nicht gefordert', 'gering', 'mittel', 'hoch'],
@@ -124,7 +123,7 @@ const it: Dict = {
   allExercises: 'Tutti gli esercizi giocabili',
   catalogTitle: 'Catalogo degli esercizi',
   catalogLead:
-    'Tutti gli esercizi del modello skilldrills.online (n. 101–811) ed esercizi propri (n. 9xx), con profilo dei requisiti e fonti verificate. I testi sono in tedesco. Sono informazioni di allenamento, non consulenza medica.',
+    'Tutti gli esercizi con numero, profilo dei requisiti, avvertenze, stato degli studi e fonti verificate. I testi sono in tedesco. Sono informazioni di allenamento, non consulenza medica.',
   catalogSearch: 'Cerca (numero, nome, parola chiave)',
   catalogAll: 'Tutti i capitoli',
   catalogOnlyPlayable: 'solo giocabili',
@@ -147,7 +146,6 @@ const it: Dict = {
   catalogSimilar: 'Esercizi simili',
   catalogPlay: 'Apri l’esercizio Blickfit giocabile',
   catalogInput: 'Input',
-  catalogOriginal: 'Originale',
   catalogFullText: 'Descrizione completa e fonti',
   catalogDisclaimer: 'Informazione di allenamento e di prodotto, non consulenza né diagnosi medica. Lo stato degli studi riguarda compiti simili, non l’efficacia di questo esercizio.',
   scale: ['non richiesto', 'basso', 'medio', 'alto'],
