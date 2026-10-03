@@ -1,13 +1,13 @@
 import type { ExerciseTexts } from '../../core/types';
 
-// Quelle: Labor-Prototyp (help/follow.js), für Blickfit geglättet: du-Form, einfache Sprache, Fachwörter erklärt
+// Stil: du-Form, einfache Sprache, Fachwörter erklärt
 // („Augen-Hand-Verfolgung“, „Toleranz“ → „Spielraum um das Ziel“, „Kennzahlen“ erklärt).
 // Formulierungsregeln (Optiker-Seite): nur beschreiben, was man in der Übung tut; keine Wirk-, Heil- oder
 // Sicherheitsversprechen, kein „Test“, keine Normwerte, Vergleich nur mit sich selbst auf diesem Gerät.
-// Aus dem Prototyp NICHT übernommen: „trainiert das gleitende Verfolgen“ (Wirkversprechen), „Gleitende Augenbewegungen über
+// Nicht aufgenommen: „trainiert das gleitende Verfolgen“ (Wirkversprechen), „Gleitende Augenbewegungen über
 // längere Zeit sind ermüdend“ und „Schnelle Armbewegungen belasten Schulter und Ellenbogen“ (nicht belegt; als Pausenhinweis
 // formuliert). Die Faustregeln unter „So wird es leichter/schwerer“ sind eigene Festlegungen, keine Vorgaben aus der Forschung.
-// `short` in params: Vorlage für die Kurzfassung der Einstellungen auf der Ergebnisseite ({v} = Wert).
+// `short` in params: Muster für die Kurzfassung der Einstellungen auf der Ergebnisseite ({v} = Wert).
 
 export const de: ExerciseTexts = {
   title: 'Ziel verfolgen',

@@ -1,14 +1,14 @@
 import type { ExerciseTexts } from '../../core/types';
 
-// Quelle: Labor-Prototyp (help/saccade.js), für Blickfit geglättet: du-Form, einfache Sprache, Fachwörter erklärt
+// Stil: du-Form, einfache Sprache, Fachwörter erklärt
 // („Sakkaden“ → Blickwechsel/Blicksprünge, „Sehwinkel“ erklärt, „Streuung“ erklärt).
 // Formulierungsregeln (Optiker-Seite): nur beschreiben, was man in der Übung tut; keine Wirk-, Heil- oder
 // Sicherheitsversprechen, kein „Test“, keine Normwerte, Vergleich nur mit sich selbst auf diesem Gerät.
-// Aus dem Prototyp NICHT übernommen: „Das schult präzise Blicksprünge (Sakkaden), das Halten eines Rhythmus …“ (Wirkversprechen),
+// Nicht aufgenommen: „Das schult präzise Blicksprünge (Sakkaden), das Halten eines Rhythmus …“ (Wirkversprechen),
 // „Das Sprechen zwingt dazu, wirklich zu fixieren“ und „stellt sicher, dass der Blick tatsächlich dort angekommen ist“ (nicht
-// belegt, die App kann den Blick nicht prüfen), „bei Lichtempfindlichkeit vorher ärztlichen Rat einholen“ (ersetzt durch die
-// Formulierung der anderen Übungen). Die Faustregeln unter „So wird es leichter/schwerer“ sind eigene Festlegungen.
-// `short` in params: Vorlage für die Kurzfassung der Einstellungen auf der Ergebnisseite ({v} = Wert).
+// belegt, die App kann den Blick nicht prüfen). Die Hinweise zu Lichtempfindlichkeit folgen der Formulierung der anderen
+// Übungen. Die Faustregeln unter „So wird es leichter/schwerer“ sind eigene Festlegungen.
+// `short` in params: Muster für die Kurzfassung der Einstellungen auf der Ergebnisseite ({v} = Wert).
 
 export const de: ExerciseTexts = {
   title: 'Takt-Sakkaden',
@@ -56,7 +56,7 @@ export const de: ExerciseTexts = {
     positions: 'Wie viele verschiedene Positionen das gewählte Muster hat.',
   },
   tips: {
-    read: 'Lies jedes Zeichen vollständig laut, auch wenn es leicht scheint: Das Sprechen hilft dir, bei der Sache zu bleiben. Ob du es tust, kann die App nicht prüfen – das liegt bei dir.',
+    read: 'Lies jedes Zeichen vollständig laut, auch wenn es leicht scheint. Ob du es tust, kann die App nicht prüfen – das liegt bei dir.',
     slower: 'Viele Zeichen hast du nicht rechtzeitig erreicht. Probiere einen langsameren Takt (zum Beispiel 40 bis 50) oder größere Zeichen – und ändere immer nur eine Einstellung.',
     stray: 'Du tippst öfter neben das Zeichen. Erst genau hinschauen und zielen, dann schneller werden.',
     faster: 'Du triffst fast alle Zeichen. Wenn du magst, mach genau eine Einstellung schwerer: schnellerer Takt, kleinere Zeichen oder das Raster 3 × 3.',
@@ -173,7 +173,7 @@ export const it: ExerciseTexts = {
     positions: 'Quante posizioni diverse ha il modello scelto.',
   },
   tips: {
-    read: 'Leggi ogni segno per intero a voce alta, anche se sembra facile: parlare ti aiuta a restare concentrato. Se lo fai davvero, l’app non può verificarlo – dipende da te.',
+    read: 'Leggi ogni segno per intero a voce alta, anche se sembra facile. Se lo fai davvero, l’app non può verificarlo – dipende da te.',
     slower: 'Molti segni non li hai raggiunti in tempo. Prova un ritmo più lento (per esempio da 40 a 50) o segni più grandi – e cambia sempre una sola impostazione.',
     stray: 'Tocchi spesso accanto al segno. Prima guarda con attenzione e mira, poi diventa più veloce.',
     faster: 'Colpisci quasi tutti i segni. Se vuoi, rendi più difficile una sola impostazione: ritmo più veloce, segni più piccoli o la griglia 3 × 3.',

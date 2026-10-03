@@ -1,14 +1,14 @@
 import type { ExerciseTexts } from '../../core/types';
 
-// Quelle: Labor-Prototyp (help/wordbuild.js), für Blickfit geglättet: du-Form, einfache Sprache, Fachwörter erklärt
+// Stil: du-Form, einfache Sprache, Fachwörter erklärt
 // (Anagramm = Buchstaben eines Wortes in anderer Reihenfolge, Median erklärt).
-// Streichungen gegenüber dem Prototyp: „Wer häufig vorkommende Buchstabengruppen als Einheit erkennt, löst schneller“ als
+// Nicht aufgenommen: „Wer häufig vorkommende Buchstabengruppen als Einheit erkennt, löst schneller“ als
 // Tatsachenbehauptung (nur noch als Tipp formuliert), „trainiert das Wortbild …“ (Wirkversprechen), die Behauptung, der Übungseffekt
 // verschiebe sich auf das Wort (jetzt als „unsere Überlegung, nicht belegt“ gekennzeichnet).
 // Die italienische Wortliste und die italienischen Texte wurden nicht von Muttersprachlerinnen oder Muttersprachlern geprüft.
 // Formulierungsregeln (Optiker-Seite): nur beschreiben, was man in der Übung tut; keine Wirk-, Heil- oder
 // Sicherheitsversprechen, kein „Test“, keine Normwerte, Vergleich nur mit sich selbst auf diesem Gerät.
-// `short` in params: Vorlage für die Kurzfassung der Einstellungen auf der Ergebnisseite ({v} = Wert; „|“ trennt die Form
+// `short` in params: Muster für die Kurzfassung der Einstellungen auf der Ergebnisseite ({v} = Wert; „|“ trennt die Form
 // für genau 1 von der Form für andere Zahlen).
 
 export const de: ExerciseTexts = {
