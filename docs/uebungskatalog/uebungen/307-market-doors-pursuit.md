@@ -12,7 +12,7 @@ blickfit_umsetzung: {kennung: "fuenf-tueren", name: "Fünf Türen", unterschiede
 stand: 2026-09-30
 
 # ===== Überblick =====
-kurzbeschreibung: "In einer Reihe stehen fünf dunkle Türöffnungen. In einer zufällig gewählten Tür erscheint plötzlich ein roter Punkt; man bringt den Zeiger hin und klickt oder tippt ihn an, bevor er wieder verschwindet. Mit den Punkten werden die Ziele kleiner, kürzer sichtbar und folgen dichter aufeinander."
+kurzbeschreibung: "Fünf Türen stehen in einer Reihe. In einer unvorhersehbar gewählten Tür erscheint kurz ein Stern; man tippt die Tür an, bevor er wieder verschwindet. Mit der Stufe ist der Stern kürzer zu sehen (von etwa 1,5 auf etwa 0,4 Sekunden). Gemessen werden die Trefferquote und die Zeit bis zum Tipp, keine Reaktionszeit."
 ziel_funktionen: [auge_hand_koordination, zielbewegung_tempo]
 eingabe: [maus, touch, touchpad]
 tablet_geeignet: mit_anpassung
@@ -72,27 +72,33 @@ belastung:
   sprachabhaengigkeit: 0
 
 # ===== Auswahlhilfe =====
-voraussetzungen: ["Maus, Touchpad oder Touchscreen; Maus auf ruhiger Unterlage", "ruhende Ziele von ≈ 1,5° bis ≈ 0,5° Sehwinkel erkennen", "waagrechtes Blickfeld von ≈ 23° (in der Seite) bzw. ≈ 39° (Vollbild am Monitor) überblicken", "kein Farbsehen nötig (Ziel immer rot mit weißem Kern auf Fast-Schwarz)", "Querformat: im Hochformat-Vollbild und am Handy hochkant nur 4 Türen im 2 × 2-Raster"]
+voraussetzungen: ["Maus, Touchpad, Touchscreen oder Zifferntasten 1–5", "einen großen Stern in einer von fünf Türen erkennen", "die ganze Türreihe überblicken", "kein Farbsehen nötig (das Ziel ist ein Stern)"]
 vorsicht_bei: [photosensitive_epilepsie, migraene_lichtempfindlich, presbyopie_gleitsicht, gesichtsfeldausfall, sehbehinderung_niedriger_visus, nystagmus, trockenes_auge_bildschirm, tremor_parkinson, hand_arm_beschwerden, kognitive_einschraenkung, aufmerksamkeitsprobleme]
-geeignet_fuer: ["auf ein plötzlich an einem von fünf bekannten Orten erscheinendes Ziel mit Blick und Zeiger reagieren (räumliche Wahlreaktion mit Zeigen)", "Auge-Hand-Koordination und schnelle, kurze Zielbewegungen in waagrechter Richtung üben", "Strategie üben: Zeiger in der Mitte auf Zielhöhe bereithalten statt zu raten", "Aufwärmen vor FPS-Übungen mit ruhenden Zielen (501, 508, 511)"]
-weniger_geeignet_fuer: ["Messung der Reaktionszeit (Wert enthält Zeigerweg, Gerätelatenz und nur Treffer)", "visuelle Suche zwischen Ablenkern (es gibt nur ein Ziel, das sofort hervorsticht; dafür 103)", "Impulskontrolle (keine Nicht-Klick-Reize; dafür 102, 511)", "Menschen, die ohne Zeitdruck üben sollen", "Gleitsichtträger:innen im Vollbild (äußere Türen weit außerhalb der klaren Zwischenzone)", "Lichtempfindliche: roter Fehlerblitz bei jedem Fehler, standardmäßig an"]
+geeignet_fuer: ["auf ein plötzlich an einem von fünf bekannten Orten erscheinendes Ziel mit Blick und Hand reagieren (räumliche Wahlreaktion mit Zeigen)", "Auge-Hand-Koordination und schnelle, kurze Zielbewegungen in waagrechter Richtung üben", "nicht raten, sondern die Tür erkennen und gezielt tippen", "Aufwärmen vor Zielübungen mit ruhenden Zielen (501, 508, 511)"]
+weniger_geeignet_fuer: ["Messung der Reaktionszeit (die Zeit bis zum Tipp enthält Zeigerweg und Gerätelatenz)", "visuelle Suche zwischen Ablenkern (es gibt nur ein Ziel, das sofort hervorsticht; dafür 103)", "Impulskontrolle (keine Nicht-Tipp-Reize; dafür 102, 511)", "Menschen, die ohne Zeitdruck üben sollen", "Gleitsichtträger:innen bei breiter Türreihe (äußere Türen außerhalb der klaren Zwischenzone)"]
 evidenz:
   uebungseffekt: stark
   naher_transfer: schwach
   alltag_transfer: fehlend
   kommentar: "Diese Übung wurde nie untersucht; Zeige- und Reaktionsaufgaben werden durch Übung deutlich besser (auch durch Gewöhnung an Gerät und Strategie), Effekte auf unähnliche Tests sind viel kleiner, ein Nutzen für E-Sport, Sport oder Verkehr ist nicht belegt (Guo et al. 2025; Simons et al. 2016; Fransen 2024)."
 aehnliche_uebungen: [303, 308, 511, 501, 508, 503, 101, 202, 702, 704, 302, 401, 102]
-stichworte: ["räumliche Wahlreaktion", "Zeigen", "Auge-Hand-Koordination", "abrupt erscheinendes Ziel", "Sakkaden waagrecht", "Fitts'sches Gesetz", "Vorab-Positionierung", "Crosshair Placement", "Winkel prüfen (Name des Originals)", "Zeitdruck", "Combo", "Touch"]
+stichworte: ["räumliche Wahlreaktion", "Zeigen", "Auge-Hand-Koordination", "abrupt erscheinendes Ziel", "Sakkaden waagrecht", "Fitts'sches Gesetz", "Vorab-Positionierung", "Zeitdruck", "Combo", "Touch"]
 ---
 
 # 307 · Fünf Türen – Ziel an zufälliger Öffnung anklicken
 
-> Original: „Aim-Training: Winkel prüfen“ – skilldrills.online, Kapitel Reaktionsgeschwindigkeit (`reaction-speed`) ·
-> Blickfit: noch nicht umgesetzt (verwandt: `blitzreaktion` = 101, Reaktion in der Mitte und am Rand ohne Zielen)
+> Original: „Aim-Training: Winkel prüfen“ – skilldrills.online, Kapitel Reaktionsgeschwindigkeit (`reaction-speed`) · Blickfit: noch nicht umgesetzt (verwandt: `blitzreaktion` = 101, Reaktion in der Mitte und am Rand ohne Zielen)
 
 ## 1. Kurzbeschreibung
 
-Auf einem fast schwarzen Feld stehen fünf schmale, kaum sichtbare Türöffnungen nebeneinander. Nach einer kurzen Pause erscheint in einer zufällig gewählten Tür plötzlich ein roter Punkt mit weißem Kern. Man führt den Zeiger dorthin und klickt oder tippt ihn an, bevor er wieder verschwindet. Treffer bringen Punkte und Zeit, Fehlklicks und verpasste Ziele kosten Zeit und brechen die Serie. Trotz des Titels „Winkel prüfen“ muss man nichts absuchen: Es ist eine räumliche Wahlreaktion mit schneller Zeigebewegung zu einem von fünf festen Orten.
+Fünf Türen stehen in einer Reihe nebeneinander. Nach einer kurzen, zufällig langen Pause erscheint in einer der Türen ein
+Stern, den man antippt, bevor er wieder verschwindet; getroffen ist die richtige Tür, die ganze Türspalte ist
+Trefferfläche. Der Stern blendet weich ein und aus, ohne Blitz. Die Tür wechselt unvorhersehbar: Es kommt nie dieselbe Tür
+direkt hintereinander und kein Lauf wie 1-2-3. Auf der ersten Stufe ist der Stern etwa 1,5 s zu sehen, auf der höchsten
+etwa 0,4 s. Wer eine falsche Tür tippt, sieht mit Kreuz und gestricheltem Ring die richtige. Am Computer wählen die Tasten
+1 bis 5 die Tür. Die Sitzung hat 26 Durchgänge; gemessen werden die Trefferquote und die Zeit vom ersten gezeichneten Bild
+des Sterns bis zum Tipp (Median). Es ist eine räumliche Wahlreaktion mit Zeigen auf einen von fünf bekannten Orten, keine
+Suche zwischen Ablenkern und keine Reaktionszeitmessung.
 
 ## 2. Ablauf im Original (Analyse)
 
@@ -131,59 +137,120 @@ Die Seite beschreibt den Drill als „kompakte visuelle Suchschleife“ für FPS
 
 ## 4. Optische und okulomotorische Grundlagen
 
-- **Sehwinkel:** Ziele 1,5° (Level 1) bis 0,6° (Level 15), bei hoher Combo ≈ 0,5°; für normale Sehschärfe groß und kontrastreich. Begrenzend ist das rasche Entdecken außerhalb der Blickmitte, nicht das Detail.
-- **Exzentrizität und Blicksprünge:** Wartet man in der Mitte, liegen die Ziele in der Seite bei 0°, ≈ 5,7° oder ≈ 11,3° (Vollbild bis ≈ 20°). Die Sakkadenlatenz ist zwischen 0,75° und 12° am kürzesten und steigt nach außen langsam an (Kalesnykas & Hallett, 1994). Eine 10°-Sakkade dauert ≈ 40 ms (Gibaldi & Sabatini, 2021). Bis ≈ 20° dreht sich der Kopf kaum mit (< 5°), darüber zunehmend (Freedman, 2008) – im Vollbild werden Kopfbewegungen nötig.
-- **Bildschirm:** Die Ziele stehen still, Bewegungsunschärfe spielt keine Rolle. Ende-zu-Ende-Latenz Maus → Bild 21–37 ms (120 bzw. 60 Hz), Tippen am Tablet 48–276 ms je nach Gerät und Toolkit (Casiez et al., 2017); das verlängert die gemessene Zeit, verschiebt aber anders als bei bewegten Zielen (306) nicht den Treffpunkt.
-- **Gleitsicht/Alterssichtigkeit:** Die Türreihe ist in der Seite ≈ 23° breit, im Vollbild ≈ 39°. Der klare Zwischenbereich von Gleitsichtgläsern ist nur ≈ 13–18° breit (Han et al., 2003): Die äußeren Türen sieht man durch die unscharfen Seitenzonen, wenn man den Kopf nicht dreht. Gleitsichtträger halten den Kopf am Bildschirm zudem ≈ 7° höher (Jaschinski et al., 2015). Besser: Bildschirm-/Arbeitsplatzbrille, kein Vollbild, Reihe auf Augenhöhe oder leicht darunter. Am Tablet in ≈ 35–40 cm brauchen Alterssichtige eine Nahkorrektur (Presbyope halten schon Smartphones im Mittel weiter weg, ≈ 40 statt ≈ 33 cm; Boccardo et al., 2023).
-- **Trockenes Auge:** Am Bildschirm sinkt die Blinzelrate im Mittel auf ≈ ein Fünftel (Patel et al., 1991); bei kurzen Anzeigezeiten blinzelt man plausibel eher noch seltener (für diese Übung nicht gemessen).
-- **Farbe/Kontrast:** Rot auf Fast-Schwarz mit weißem Kern; bei Rot-Grün-Schwäche (≈ 8 % der Männer; Birch, 2012) wirkt Rot dunkler, der weiße Kern bleibt gut sichtbar (eigene Einschätzung). Die Türen selbst sind sehr kontrastarm, für die Aufgabe aber unwichtig.
+- **Sehwinkel:** Der Stern ist für normale Sehschärfe groß und kontrastreich. Begrenzend ist das rasche Entdecken
+  außerhalb der Blickmitte, nicht das Detail. Zur Orientierung: Bei 40 cm Abstand entspricht 1 cm auf dem Bildschirm etwa
+  1,4°.
+- **Exzentrizität und Blicksprünge:** Die Sakkadenlatenz ist zwischen 0,75° und 12° am kürzesten und steigt nach außen
+  langsam an (Kalesnykas & Hallett, 1994). Eine 10°-Sakkade dauert etwa 40 ms (Gibaldi & Sabatini, 2021). Bis etwa 20°
+  dreht sich der Kopf kaum mit (< 5°), darüber zunehmend (Freedman, 2008); bei breiter Türreihe auf großem Bildschirm
+  werden Kopfbewegungen nötig.
+- **Bildschirm:** Der Stern steht still, Bewegungsunschärfe spielt keine Rolle. Ende-zu-Ende-Latenz vom Mausklick bis zum
+  Bild 21–37 ms (120 bzw. 60 Hz), beim Tippen auf dem Tablet 48–276 ms je nach Gerät und Programmierumgebung (Casiez et
+  al., 2017); das verlängert die gemessene Zeit, verschiebt aber anders als bei bewegten Zielen nicht den Treffpunkt.
+- **Gleitsicht und Alterssichtigkeit:** Der klare Zwischenbereich von Gleitsichtgläsern ist nur etwa 13–18° breit (Han et
+  al., 2003): Die äußeren Türen einer breiten Reihe sieht man durch die unscharfen Seitenzonen, wenn man den Kopf nicht
+  dreht. Gleitsichtträger halten den Kopf am Bildschirm zudem etwa 7° höher (Jaschinski et al., 2015). Besser sind eine
+  Bildschirm- oder Arbeitsplatzbrille, ein kleineres Fenster und die Reihe auf Augenhöhe oder leicht darunter. Am Tablet
+  in etwa 35–40 cm brauchen Alterssichtige eine Nahkorrektur (Presbyope halten Smartphones im Mittel weiter weg, etwa 40
+  statt etwa 33 cm; Boccardo et al., 2023).
+- **Trockenes Auge:** Am Bildschirm sinkt die Blinzelrate im Mittel auf etwa ein Fünftel (Patel et al., 1991); bei kurzen
+  Anzeigezeiten blinzelt man plausibel eher noch seltener (für diese Übung nicht gemessen).
+- **Form statt Farbe:** Das Ziel ist ein Stern und wird an der Form erkannt, nicht nur an der Farbe; bei Rot-Grün-Schwäche
+  (rund 8 % der Männer; Birch, 2012) bleibt es sichtbar.
 
 ## 5. Neurowissenschaftliche Grundlagen
 
-Zu dieser Aufgabe gibt es keine Bildgebungs- oder Trainingsstudie; die Website nennt keine Hirnregionen. Relevante Befunde aus der Grundlagenforschung:
+Zu dieser Aufgabe gibt es keine Bildgebungs- oder Trainingsstudie. Relevante Befunde aus der Grundlagenforschung:
 
-- **Aufmerksamkeitsfang durch plötzliches Erscheinen:** Objekte mit abruptem Beginn werden bevorzugt verarbeitet (Yantis & Jonides, 1984). Für das Entdecken ist ein Vorab-Absuchen der Türen deshalb unnötig.
-- **Aufmerksamkeit und Blicksprung sind gekoppelt:** Vor einer Sakkade wird die Aufmerksamkeit zwingend auf das Sakkadenziel gelenkt; benachbarte Orte werden dann kaum verarbeitet (Deubel & Schneider, 1996). Das Auge springt meist zuerst, die Hand folgt ≈ 100 ms später (Prablanc et al., 1979).
-- **Räumliche Erwartung:** Ein gültiger Hinweis auf den Reizort verkürzt die Entdeckungszeit; Aufmerksamkeit lässt sich aber kaum auf zwei nicht benachbarte Orte zugleich richten (Posner et al., 1980). Bei fünf gleich wahrscheinlichen Türen gibt es keinen gültigen Hinweis – nur die Zielhöhe und der ungefähre Zeitpunkt (Pause 550–750 ms bei Level 1) sind vorhersehbar.
-- **Wahl mit hoher Reiz-Reaktions-Kompatibilität:** Zeigen und Blicken auf den Reizort brauchen kaum Zuordnungsarbeit (Proctor & Schneider, 2018; Kveraga et al., 2002) – anders als die symbolische Wahlreaktion in 202 (Pfeil-Duell).
+- **Aufmerksamkeitsfang durch plötzliches Erscheinen:** Objekte mit abruptem Beginn werden bevorzugt verarbeitet (Yantis
+  & Jonides, 1984). Für das Entdecken ist ein Vorab-Absuchen der Türen deshalb unnötig.
+- **Aufmerksamkeit und Blicksprung sind gekoppelt:** Vor einer Sakkade wird die Aufmerksamkeit zwingend auf das
+  Sakkadenziel gelenkt; benachbarte Orte werden dann kaum verarbeitet (Deubel & Schneider, 1996). Das Auge springt meist
+  zuerst, die Hand folgt etwa 100 ms später (Prablanc et al., 1979).
+- **Räumliche Erwartung:** Ein gültiger Hinweis auf den Reizort verkürzt die Entdeckungszeit; Aufmerksamkeit lässt sich
+  aber kaum auf zwei nicht benachbarte Orte zugleich richten (Posner et al., 1980). Weil die Tür unvorhersehbar wechselt,
+  gibt es hier keinen gültigen Hinweis; nur der ungefähre Zeitpunkt (Pause 0,55–1,15 s) ist eingegrenzt.
+- **Wahl mit hoher Reiz-Reaktions-Kompatibilität:** Zeigen und Blicken auf den Reizort brauchen kaum Zuordnungsarbeit
+  (Proctor & Schneider, 2018; Kveraga et al., 2002) – anders als die symbolische Wahlreaktion in 202 (Pfeil-Duell). Bei
+  direktem Zeigen steigt die Reaktionszeit daher mit der Zahl der Orte nur wenig.
 
 „Trainiert Region X“ lässt sich daraus nicht ableiten.
 
 ## 6. Motorische Grundlagen
 
-- **Zielbewegung:** Die Bewegungszeit steigt mit log₂(2A/W) (Fitts, 1954); schneller Anfangsimpuls plus visuelle Endkorrektur (Elliott et al., 2010). Maus-Durchsatz nach ISO-Methode 3,7–4,9 bit/s (Soukoreff & MacKenzie, 2004).
-- **Schwierigkeitsindex je Weg** (*grobe eigene Abschätzung*, Trefferzone als Zielbreite, Monitor in der Seite): Level 1 → Nachbartür 2,4 bit, zwei Türen 3,4 bit, ganze Reihe 4,4 bit; Level 10 → 3,1 / 4,1 / 5,1 bit. Mit Bewegungszeit ≈ ID/Durchsatz (3,7–4,9 bit/s) plus Reaktion (≈ 0,3 s) ist ein Weg über die ganze Reihe schon bei Level 1 knapp (≈ 1,2–1,5 s gegenüber 1,3 s Anzeigedauer), Ziele zwei Türen entfernt reichen ab etwa Level 5–7 (Anzeigedauer ≈ 1,06–0,91 s) kaum noch; bei Level 15 (380 ms) praktisch nur noch Ziele an der Zeigerposition. Hohe Level belohnen also Ausgangslage und Glück beim Zufallsort.
-- **Touch vs. Maus:** Touch verkürzte die Bewegungszeit bei Älteren um 35 %, bei Jüngeren um 16 % (Findlater et al., 2013); am Tablet entfällt der Zeigerweg zum Teil, die Hand muss aber über die Reihe wandern und verdeckt Türen. Trefferzone am Tablet: Level 1 ≈ 21 mm, Level 15 ≈ 11 mm, mit maximaler Combo ≈ 9,6 mm – über der Empfehlung von 9,2 mm (Parhi et al., 2006); sichtbar sind dann aber nur ≈ 4–5 mm (eigene Rechnung).
-- **Tremor:** physiologisch mit zentralem Anteil um ≈ 10 Hz, Parkinson 3–6 Hz (McAuley & Marsden, 2000); kleine Ziele unter Zeitdruck belasten zitternde oder schmerzende Hände.
+- **Zielbewegung:** Die Bewegungszeit steigt mit log₂(2A/W) (Fitts, 1954); schneller Anfangsimpuls plus visuelle
+  Endkorrektur (Elliott et al., 2010). Der Durchsatz der Maus liegt bei 3,7–4,9 bit/s (Soukoreff & MacKenzie, 2004). Weil
+  die ganze Türspalte Trefferfläche ist, ist die Zielbreite groß und die Aufgabe weniger eine Präzisionsaufgabe als eine
+  Aufgabe, die richtige Tür zu wählen und schnell zu erreichen.
+- **Touch und Maus:** Touch verkürzte die Bewegungszeit bei Älteren um 35 %, bei Jüngeren um 16 % (Findlater et al.,
+  2013); am Tablet entfällt der Zeigerweg zum Teil, die Hand muss aber über die Reihe wandern und kann Türen verdecken.
+  Die Trefferfläche (ganze Türspalte, mindestens 24 px Radius) liegt über der für Touch empfohlenen Zielgröße von 9,2 mm
+  (Parhi et al., 2006).
+- **Tremor:** physiologisch mit zentralem Anteil um etwa 10 Hz, bei Parkinson 3–6 Hz (McAuley & Marsden, 2000); wegen
+  der großen Trefferfläche stört er hier wenig.
 
 ## 7. Einflussfaktoren und Messgrenzen
 
-- **Feldgröße ändert die Aufgabe:** Türgröße ist auf 96 × 160 px begrenzt, der Abstand wächst mit der Breite. Im Vollbild sind die Wege fast doppelt so lang wie in der Seite, im Hochformat gibt es nur vier Türen. Punkte und Level sind nur bei gleicher Darstellung vergleichbar.
-- **Gerät:** Browser-Messungen enthalten 58–133 ms Geräteanteil (Pronk et al., 2020); geringere lokale Latenz verbesserte in einem Shooter die Trefferquote (Liu et al., 2021). Nur Selbstvergleich am selben Gerät ist sinnvoll.
-- **Strategie statt Fähigkeit:** Wo der Zeiger wartet (Mitte, Zielhöhe), bestimmt einen großen Teil der Zeit; der Zufallsort lässt einzelne Durchgänge stark schwanken.
-- **Rückkopplung:** Combo erhöht Punkte (bis × 3), damit Level und Schwierigkeit; das Level sinkt nie, die Rundendauer hängt am Erfolg. „Ø Reaktion“ ist durch die Auswahl der Treffer verzerrt (Abschnitt 3). Aim-Trainer-Kennzahlen können sehr zuverlässig sein (ICC 0,947–0,995 bei nur 10 Esportlern an 2 Terminen, anderes Programm), zeigen aber teils Lerneffekte zwischen Terminen (Rogers et al., 2024).
-- **Alter:** Das reine Entdecken ist altersunabhängig (≈ 131 ms), die motorischen Anteile werden langsamer (Woods et al., 2015); die Wahl-RT verlangsamt sich über das ganze Erwachsenenalter (Der & Deary, 2006).
+- **Feldgröße:** Türbreite und Abstand hängen von der Bildschirmgröße ab; die Wege und damit die Zeiten sind nur bei
+  gleicher Darstellung vergleichbar.
+- **Gerät:** Gemessen wird die Zeit vom ersten gezeichneten Bild des Sterns bis zum Tipp. Sie enthält Anzeige- und
+  Eingabeverzögerung; Browser-Messungen enthalten 58–133 ms Geräteanteil (Pronk et al., 2020); geringere lokale Latenz
+  verbesserte in einem Shooter die Trefferquote (Liu et al., 2021). Nur der Vergleich mit sich selbst am selben Gerät ist
+  sinnvoll. Messungen am Menschen streuen von Durchgang zu Durchgang; deshalb zählt der Median über die 26 Durchgänge,
+  und aussagekräftig ist der Verlauf über mehrere Sitzungen (Mountford et al., 2004, S. 43–44).
+- **Selbstregulierung:** Die Stufe passt sich nach Erfolg an (steigt nach drei Treffern in Folge, sinkt nach einem
+  Fehler); der Zufallsort lässt einzelne Durchgänge stark schwanken.
+- **Zuverlässigkeit:** Kennzahlen kommerzieller Zielübungs-Programme können sehr zuverlässig sein (ICC 0,947–0,995 bei nur
+  10 E-Sportlern an 2 Terminen), zeigen aber teils Lerneffekte zwischen Terminen (Rogers et al., 2024); für diese
+  Übung liegen keine Zuverlässigkeitsdaten vor.
+- **Alter:** Das reine Entdecken ist altersunabhängig (etwa 131 ms), die motorischen Anteile werden langsamer (Woods et
+  al., 2015); die Wahl-Reaktionszeit verlangsamt sich über das ganze Erwachsenenalter (Der & Deary, 2006).
 
 ## 8. Studienlage: Trainierbarkeit und Übertragung
 
-- **Übungseffekt (stark):** Zeige- und Reaktionsaufgaben werden durch Wiederholung schneller und genauer; ein Teil ist Gewöhnung an Gerät, Regeln und Wartestrategie. Bei digitalem Sport-Sehtraining war der Reaktionseffekt in trainingsähnlichen Tests gut fünfmal so groß wie in unähnlichen (SMD 2,66 vs. 0,50; Guo et al., 2025). Die einfache Reaktionszeit selbst ist kaum übbar (Basner et al., 2018).
-- **Naher Transfer (schwach):** keine Studie zu dieser Übung. Sakkaden-Latenztraining wirkte in einer Einzelfallübung nur an der geübten Position (Di Russo et al., 2003); Meta-Analysen zu Actionspielen widersprechen sich (Bediou et al., 2018: g = 0,34 mit Publikationsbias; Sala et al., 2018: kleine bis keine Effekte).
-- **Alltagstransfer (fehlend):** kein Beleg für E-Sport („Ecken checken“ im Spiel), Sport, Verkehr oder Beruf; Ferntransfer allgemeiner Wahrnehmungs-/Kognitionstrainings auf Sport ist nicht belegt (Fransen, 2024; Simons et al., 2016).
+- **Übungseffekt (stark):** Zeige- und Reaktionsaufgaben werden durch Wiederholung schneller und genauer; ein Teil ist
+  Gewöhnung an Gerät und Regeln. Bei digitalem Sport-Sehtraining war der Reaktionseffekt in trainingsähnlichen Tests gut
+  fünfmal so groß wie in unähnlichen (SMD 2,66 vs. 0,50; Guo et al., 2025). Die einfache Reaktionszeit selbst ist kaum
+  übbar (Basner et al., 2018).
+- **Naher Transfer (schwach):** keine Studie zu dieser Übung. Ein Training der Sakkadenlatenz wirkte in einer
+  Einzelfallübung nur an der geübten Position (Di Russo et al., 2003); Meta-Analysen zu Actionspielen widersprechen sich
+  (Bediou et al., 2018: g = 0,34 mit Publikationsbias; Sala et al., 2018: kleine bis keine Effekte).
+- **Alltagstransfer (fehlend):** kein Beleg für Sport, Verkehr oder Beruf; ein Ferntransfer allgemeiner Wahrnehmungs- und
+  Kognitionstrainings auf Sport ist nicht belegt (Fransen, 2024; Simons et al., 2016).
 
-## 9. Auswahlhinweise für die KI
+## 9. Auswahlhinweise
 
-- **Passt, wenn …** schnelle Reaktion mit Blick und Zeiger auf einen von wenigen bekannten Orten geübt werden soll, waagrechte Auge-Hand-Folgen gefragt sind oder jemand eine einfache, gut verständliche Spielregel mit steigendem Tempo mag; auch als Strategieübung („bereit in der Mitte, auf Zielhöhe“).
-- **Weniger passend, wenn …** eine saubere Reaktionszeit gefragt ist (101/Blitzreaktion, 503), Impulskontrolle geübt werden soll (102/Stopp & Los, 511), eine symbolische Wahlreaktion gemeint ist (202/Pfeil-Duell), echte Suche zwischen Ablenkern (103/Suchbild) oder ruhiges Üben ohne Zeitdruck.
+- **Passt, wenn …** schnelle Reaktion mit Blick und Hand auf einen von wenigen bekannten Orten geübt werden soll, eine
+  einfache, gut verständliche Spielregel mit steigendem Tempo gefragt ist; als Aufwärmen vor Zielübungen mit ruhenden
+  Zielen.
+- **Weniger passend, wenn …** eine saubere Reaktionszeit gefragt ist (101/Blitzreaktion, 503), Impulskontrolle geübt
+  werden soll (102/Stopp & Los, 511), eine symbolische Wahlreaktion gemeint ist (202/Pfeil-Duell), echte Suche zwischen
+  Ablenkern (103/Suchbild) oder ruhiges Üben ohne Zeitdruck.
 - **Vorsicht / anpassen bei …**
-  - `photosensitive_epilepsie`, `migraene_lichtempfindlich`: roter Fehlerblitz (standardmäßig an) bei jedem Fehlklick und Ablauf; meist einzeln, bei Dauerklicken rechnerisch > 3/s möglich (WCAG-2.3.1-Grenze; nicht gemessen). Blitz abschalten.
-  - `presbyopie_gleitsicht`: äußere Türen außerhalb der klaren Zwischenzone – kein Vollbild, Bildschirmbrille, Kopf mitdrehen.
-  - `gesichtsfeldausfall`, `sehbehinderung_niedriger_visus`: Ziele bis ≈ 11° (Vollbild ≈ 20°) seitlich und bis ≈ 0,5° klein; Ziele auf der Ausfallseite verfallen unbemerkt.
-  - `nystagmus`: rasche Blicksprünge und kurze Fixationen auf kleine Ziele (bis ≈ 0,5°) unter Zeitdruck sind erschwert – niedrige Stufe oder Übungen ohne Zeitdruck.
-  - `trockenes_auge_bildschirm`: seltenes Blinzeln im Schnellspiel; kurze Runden, Pausen.
-  - `tremor_parkinson`, `hand_arm_beschwerden`: kleine Ziele unter Zeitdruck, Runden ohne Pausenfunktion, die sich bei Erfolg verlängern.
-  - `kognitive_einschraenkung`, `aufmerksamkeitsprobleme`: sich verschärfender Zeitdruck, Rückmeldung mit Blitz, Ton und Wackeln – eher als Spiel auf niedriger Stufe, nicht als Test.
-- **Kombiniert gut mit …** 101 (Reaktion ohne Zielen, Mitte/Rand), 401/801 (Randreize bei ruhigem Blick), 511 (Weiterführung: Kanten mit Köder-Zielen und Frühklick-Strafe), 702 (bewegte Ziele mit längerer Lebensdauer, Präzision).
-- **Überschneidungen:** **Dubletten:** **303** (ein Ziel an einem von 12 Rasterpunkten) und **308** (an einer von acht Deckungskanten) sind dieselbe Aufgabe mit gleichen Level-, Combo- und Zeitregeln – nie zusammen vorschlagen. **Gleiche Engine:** 302–308 teilen Level-, Combo-, Zeit- und Fehlerregeln (Level alle 1.750 Punkte, Combo bis 3,0×, +2 s je Treffer, −1 s je Fehler, roter Fehlerblitz, Bildwackeln) – pro Einheit höchstens eine davon, allenfalls eine zweite mit anderem Schwerpunkt (ruhende Ziele 302/303/307/308, bewegte 304/305/306). **511** (FPS) lässt das Ziel ebenfalls an einer Kante auftauchen (nur zwei Kanten, echtes Vorab-Positionieren möglich) und fordert zusätzlich Hemmung durch Köder-Ziele. **501** (FPS) sind Flicks zu völlig zufälligen Orten, **508** Zielerfassung nach Helligkeit. **101** und **503** messen einfache Reaktion am festen Ort ohne Zeigerweg, **102** Impulskontrolle, **202** symbolische Wahlreaktion – all das fehlt hier.
+  - `photosensitive_epilepsie`, `migraene_lichtempfindlich`: Der Stern blendet weich ein und aus, es gibt keine Blitze und
+    keine roten Warneffekte; bei bekannter Lichtempfindlichkeit dennoch kurze Sitzungen.
+  - `presbyopie_gleitsicht`: äußere Türen einer breiten Reihe liegen außerhalb der klaren Zwischenzone – kleineres
+    Fenster, Bildschirmbrille, Kopf mitdrehen.
+  - `gesichtsfeldausfall`, `sehbehinderung_niedriger_visus`: Türen seitlich der Mitte; Sterne auf der Ausfallseite
+    verfallen unbemerkt (Ausfälle lassen sich nach dem Verlauf der Sehbahn einordnen; Muchnick, 2008, S. 32).
+  - `nystagmus`: rasche Blicksprünge und kurze Fixationen unter Zeitdruck sind erschwert – niedrige Stufe oder Übungen
+    ohne Zeitdruck.
+  - `trockenes_auge_bildschirm`: seltenes Blinzeln bei schnellen Aufgaben; kurze Sitzungen, Pausen.
+  - `tremor_parkinson`, `hand_arm_beschwerden`: großflächige Ziele, wenige Tipps; wenig belastend.
+  - `kognitive_einschraenkung`, `aufmerksamkeitsprobleme`: zunehmender Zeitdruck – eher als Spiel auf niedriger Stufe,
+    nicht als Test.
+  - Doppelbilder, plötzlicher einseitiger Sehverlust, Kopfschmerz mit Sehverschlechterung, Schwindel oder Zittern sind
+    Anlass zur ärztlichen Abklärung und kein Übungsthema (Muchnick, 2008, S. 6, 28). Bei Beschwerden während der Übung
+    pausieren oder abbrechen.
+- **Kombiniert gut mit …** 101 (Reaktion ohne Zielen, Mitte/Rand), 401/801 (Randreize bei ruhigem Blick), 511
+  (Weiterführung: Kanten mit Köder-Zielen und Frühklick-Strafe), 702 (bewegte Ziele mit längerer Lebensdauer, Präzision).
+- **Überschneidungen:** **Dubletten:** **303** (ein Ziel in einer Zelle eines Rasters) und **308** (an einer von acht
+  Deckungskanten) sind im Aufbau dieselbe Aufgabe mit anderer Ortsanzahl – nie zusammen vorschlagen. Ruhende Ziele zeigen
+  302, 303, 307 und 308, bewegte 304, 305 und 306; pro Einheit höchstens eine davon, allenfalls eine zweite mit anderem
+  Schwerpunkt. **511** lässt das Ziel ebenfalls an einer Kante auftauchen (nur zwei Kanten, echtes Vorab-Positionieren
+  möglich) und fordert zusätzlich Hemmung durch Köder-Ziele. **501** sind Flicks zu völlig zufälligen Orten, **508**
+  Zielerfassung nach Helligkeit. **101** und **503** messen einfache Reaktion am festen Ort ohne Zeigerweg, **102**
+  Impulskontrolle, **202** symbolische Wahlreaktion – all das fehlt hier.
 
 ## 10. Schwächen des Originals und Empfehlungen für eine Blickfit-Umsetzung
 
@@ -199,7 +266,7 @@ Zu dieser Aufgabe gibt es keine Bildgebungs- oder Trainingsstudie; die Website n
 ### Von der Website angegeben
 
 - Rayner, K. (1998). Eye movements in reading and information processing: 20 years of research. *Psychological Bulletin, 124*(3), 372–422. https://doi.org/10.1037/0033-2909.124.3.372 – **Prüfung:** DOI stimmt ✓ (nur Abstract); **stützt die Aussage der Website:** teilweise (allgemeine Übersicht zu Augenbewegungen bei Lesen und Informationsverarbeitung; zu dieser Aufgabe mit einem auffälligen Einzelziel nicht spezifisch).
-- Donders, F. C. (1969). On the speed of mental processes (Übersetzung des Originals von 1868). *Acta Psychologica, 30*, 412–431. https://doi.org/10.1016/0001-6918(69)90065-1 – **Prüfung:** DOI stimmt ✓ (Website nennt 1868 und die Übersetzung 1969 korrekt; Inhalt über Sekundärquellen); **stützt:** teilweise (Verarbeitungsstufen Wahrnehmen – Auswählen – Ausführen korrekt; Zeigebewegung und Browserlatenz behandelt Donders nicht).
+- Donders, F. C. (1969). On the speed of mental processes (Übersetzung der Arbeit von 1868). *Acta Psychologica, 30*, 412–431. https://doi.org/10.1016/0001-6918(69)90065-1 – **Prüfung:** DOI stimmt ✓ (Website nennt 1868 und die Übersetzung 1969 korrekt; Inhalt über Sekundärquellen); **stützt:** teilweise (Verarbeitungsstufen Wahrnehmen – Auswählen – Ausführen korrekt; Zeigebewegung und Browserlatenz behandelt Donders nicht).
 - Krauzlis, R. J. (2004). Recasting the smooth pursuit eye movement system. *Journal of Neurophysiology, 91*(2), 591–603. https://doi.org/10.1152/jn.00801.2003 – **Prüfung:** DOI stimmt ✓ (Abstract); **stützt:** nein (Folgebewegung; die Ziele dieser Übung stehen still).
 - Woods, D. L., Wyma, J. M., Yund, E. W., Herron, T. J., & Reed, B. (2015). Factors influencing the latency of simple reaction time. *Frontiers in Human Neuroscience, 9*, 131. https://doi.org/10.3389/fnhum.2015.00131 – **Prüfung:** DOI stimmt ✓ (Volltext); **stützt:** ja für „Gerät und Bedingungen beeinflussen den Wert“; nein für die Reaktions-Bänder (nur einfache RT, 231 bzw. 213 ms; keine Zeigeaufgabe).
 
@@ -222,3 +289,5 @@ Alle DOIs am 29.09.2026 per Crossref geprüft; Inhalte über PubMed-Abstracts bz
 - Casiez, G., Pietrzak, T., Marchal, D., Poulmane, S., Falce, M., & Roussel, N. (2017). Characterizing latency in touch and button-equipped interactive systems. In *Proceedings of UIST '17* (S. 29–39). ACM. https://doi.org/10.1145/3126594.3126606 – Ende-zu-Ende-Latenz Maus/Tablet.
 - Guo, Y., Yuan, T., Yang, M., & Qiu, J. (2025). Does the "learning effect" caused by digital devices exaggerate sports visual training outcomes? A systematic review and meta-analysis. *Frontiers in Physiology, 16*, 1664572. https://doi.org/10.3389/fphys.2025.1664572 – ähnliche vs. unähnliche Tests.
 - Ergänzend zitiert (Kurzangaben, Details in der Literaturbasis W03): Basner et al. (2018), https://doi.org/10.1093/sleep/zsx187 · Bediou et al. (2018), https://doi.org/10.1037/bul0000130 · Birch (2012), https://doi.org/10.1364/JOSAA.29.000313 · Boccardo et al. (2023), https://doi.org/10.1371/journal.pone.0282947 · Der & Deary (2006), https://doi.org/10.1037/0882-7974.21.1.62 · Di Russo et al. (2003), https://doi.org/10.1016/S0042-6989(03)00299-2 · Elliott et al. (2010), https://doi.org/10.1037/a0020958 · Findlater et al. (2013), https://doi.org/10.1145/2470654.2470703 · Fransen (2024), https://doi.org/10.1007/s40279-024-02060-x · Gibaldi & Sabatini (2021), https://doi.org/10.3758/s13428-020-01388-2 · Heitz (2014), https://doi.org/10.3389/fnins.2014.00150 · Jaschinski et al. (2015), https://doi.org/10.1111/cxo.12248 · Liu et al. (2021), https://doi.org/10.1145/3411764.3445245 · McAuley & Marsden (2000), https://doi.org/10.1093/brain/123.8.1545 · Parhi et al. (2006), https://doi.org/10.1145/1152215.1152260 · Patel et al. (1991), https://doi.org/10.1097/00006324-199111000-00010 · Rogers et al. (2024), https://doi.org/10.3389/fspor.2024.1309991 · Sala et al. (2018), https://doi.org/10.1037/bul0000139 · Simons et al. (2016), https://doi.org/10.1177/1529100616661983 · W3C (2024), *WCAG 2.2*, Kriterium 2.3.1, https://www.w3.org/TR/WCAG22/ (Norm, keine DOI).
+- Muchnick, B. G. (2008). *Clinical Medicine in Optometric Practice* (2nd ed.). Mosby/Elsevier. https://openlibrary.org/isbn/9780323029612 – Gesichtsfeldausfälle nach Sehbahnverlauf, Warnzeichen mit ärztlichem Abklärungsbedarf (Kap. 1, S. 6; Kap. 3, S. 28, 32)
+- Mountford, J., Ruston, D., & Dave, T. (2004). *Orthokeratology: Principles and Practice*. Butterworth-Heinemann. https://openlibrary.org/isbn/9780750640077 – Wiederholbarkeit von Messungen am Auge, Mehrfachmessung (S. 43–44)
