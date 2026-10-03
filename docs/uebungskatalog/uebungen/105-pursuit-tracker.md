@@ -2,7 +2,7 @@
 # ===== Kennung =====
 nr: 105
 kennung: pursuit-tracker
-name: "Glatte Blickfolge (Ball mit dem Zeiger verfolgen)"
+name: "Glatte Blickfolge (Ball mit den Augen verfolgen, Zeichen erkennen)"
 name_original: "Glatte Blickfolge | Zielverfolgung – Pursuit Tracker Pro"
 kapitel: "Visuelle Wahrnehmung"
 kapitel_original: "visual"
@@ -12,10 +12,10 @@ blickfit_umsetzung: {kennung: "scharf-in-bewegung", name: "Scharf in Bewegung", 
 stand: 2026-09-29
 
 # ===== Überblick =====
-kurzbeschreibung: "Ein orangefarbener Ball schwebt in unvorhersehbaren Kurven über den Bildschirm. Man hält Mauszeiger oder Finger möglichst dauerhaft auf dem Ball; je länger der Kontakt am Stück, desto mehr Punkte. Nebenbei sollen die Augen dem Ball folgen."
-ziel_funktionen: [kontinuierliche_steuerung, auge_hand_koordination]
-eingabe: [maus, touch]
-tablet_geeignet: mit_anpassung
+kurzbeschreibung: "Ein heller Ball gleitet in weichen, nicht vorhersagbaren Kurven über den Bildschirm; man folgt ihm nur mit den Augen. Kurz erscheint in ihm ein „C“ (Landolt-Ring), und man tippt auf den Knopf, in dessen Richtung die Öffnung zeigt. Mit der Stufe wird der Ball schneller und das C kürzer gezeigt."
+ziel_funktionen: [blickfolge, sehschaerfe_detail]
+eingabe: [touch, maus, tastatur]
+tablet_geeignet: ja
 dauer_sekunden: 45
 schwierigkeit_anpassung: "Kein Levelsystem, sondern Kopplung an Punkte und Serie: Ball-Höchsttempo = 6 + 0,1 × Punkte + 0,5 × Serie (px pro Bild), Ballradius = max(9, 18 − 0,04 × Punkte) px. Wer gut ist, bekommt automatisch einen schnelleren, kleineren Ball."
 messgroessen: ["Punkte (+5 je 60 Kontaktbilder am Stück)", "Serie (Streak)", "Genauigkeit in % (Kontaktbilder / alle Bilder)", "Note S+ bis F (Wurzelskala, Referenz 180 Punkte)", "Bestwert lokal", "sinnvoll ergänzt: Abstand Zeiger–Ball (Mittel/Streuung), Zeitverzug (Lag) zwischen Zeiger und Ball, Zielgeschwindigkeit in °/s, Bildwiederholrate"]
@@ -23,18 +23,18 @@ messgroessen: ["Punkte (+5 je 60 Kontaktbilder am Stück)", "Serie (Streak)", "G
 # ===== Anforderungsprofil 0–3 (alle Schlüssel angeben) =====
 anforderungsprofil:
   visuell:
-    sehschaerfe_detail: 0
+    sehschaerfe_detail: 3
     kontrast: 0
     farbunterscheidung: 0
     stereosehen: 0
     peripheres_sehen: 1
     nutzbares_sehfeld: 0
-    blickfolge: 2
+    blickfolge: 3
     sakkaden: 1
     fixation: 0
     bewegungswahrnehmung: 2
     visuelle_suche: 0
-    visuelle_verarbeitungsgeschwindigkeit: 0
+    visuelle_verarbeitungsgeschwindigkeit: 2
     zeitliche_aufloesung: 0
     naharbeit_dauer: 1
   kognitiv:
@@ -48,16 +48,16 @@ anforderungsprofil:
     kurzzeitgedaechtnis_visuell_raeumlich: 0
     verarbeitungsgeschwindigkeit: 1
     antizipation: 1
-    entscheidung_wahlreaktion: 0
+    entscheidung_wahlreaktion: 1
     lesen_sprache: 0
     schlussfolgern: 0
   motorisch:
     einfache_reaktion: 0
-    auge_hand_koordination: 3
-    zielbewegung_tempo: 1
-    zielbewegung_praezision: 1
-    kontinuierliche_steuerung: 3
-    ruhige_hand: 1
+    auge_hand_koordination: 0
+    zielbewegung_tempo: 0
+    zielbewegung_praezision: 0
+    kontinuierliche_steuerung: 0
+    ruhige_hand: 0
     fingergeschwindigkeit: 0
     fingersequenz_bimanual: 0
     ganzkoerper: 0
@@ -73,14 +73,14 @@ belastung:
 
 # ===== Auswahlhilfe =====
 voraussetzungen: ["Maus mit ruhiger, glatter Unterlage (Zeigerbeschleunigung aus) oder Touchscreen", "Gut korrigierte Sicht auf Bildschirmabstand (bei Alterssichtigkeit Nah- bzw. Arbeitsplatzbrille)", "Ausreichend Bildschirmhelligkeit; Farbsehen nicht nötig (Farbwechsel orange/grün ist nur zusätzlicher Hinweis)", "Bildschirmrate bekannt (60 Hz empfohlen, weil das Tempo im Original an die Bildrate gekoppelt ist)"]
-vorsicht_bei: [tremor_parkinson, hand_arm_beschwerden, nystagmus, trockenes_auge_bildschirm, presbyopie_gleitsicht, kopfschmerz_asthenopie]
-geeignet_fuer: ["Hand-Auge-Nachführen eines gleichmäßig bewegten Ziels üben (manuelles Tracking)", "Mausführung (Unterarm/Handgelenk, ruhig statt ruckartig) trainieren", "Vorausschauendes statt hinterherlaufendes Zeigen erleben", "Kurze, spielerische Aufwärmübung ohne Zeitstrafe"]
-weniger_geeignet_fuer: ["Gezieltes Üben der reinen Augenfolge ohne Hand (Augenbewegung wird nicht gemessen)", "Tablet ohne Anpassung (Finger verdeckt den Ball und muss ununterbrochen aufliegen)", "Menschen mit Handzittern oder Beschwerden im Arm", "Geräte mit 120–240 Hz, wenn Vergleichbarkeit gewünscht ist (Tempo steigt proportional zur Bildrate)"]
+vorsicht_bei: [nystagmus, sehbehinderung_niedriger_visus, presbyopie_gleitsicht, schwindel_vestibulaer, trockenes_auge_bildschirm, kopfschmerz_asthenopie]
+geeignet_fuer: ["die Augenfolge eines gleichmäßig bewegten Ziels üben, verbunden mit einer kleinen Detailaufgabe", "Erkennen kurz gezeigter Zeichen in Bewegung bei langsam steigendem Tempo", "Kopf ruhig halten und nur die Augen bewegen", "kurze, ruhige Übung ohne Zeitstrafe, auch am Tablet (Antwort per großem Knopf)"]
+weniger_geeignet_fuer: ["Üben der Hand-Auge-Nachführung (keine Handbewegung nötig; dafür 104, 705, 707)", "Menschen ohne ausreichend scharfes Sehen im Bildschirmabstand (das C ist ≈ 1° groß, die Lücke ≈ 13 Bogenminuten)", "Menschen mit Nystagmus oder Schwindel bei Bewegungsreizen", "Messung der Augenbewegung selbst (das Blickverhalten wird nicht erfasst)"]
 evidenz:
   uebungseffekt: mittel
   naher_transfer: schwach
   alltag_transfer: fehlend
-  kommentar: "Pursuit-Folgebewegung ist kurzzeitig lernbar (Eibenberger et al., 2012: 2 × 6 min an 3 Tagen, n = 10 + 10, Augenmessung im Labor, nicht diese Aufgabe; McHugh & Bahill 1985, Sekundärangabe in docs/wissenschaft/02); direkte Belege für die Zeigernachführung dieser Übung fehlen. Zudem die Übung misst die Hand, nicht das Auge; Belege für Übertragung auf Sport, Lesen oder Bildschirmkomfort fehlen (Guo et al., 2025; Simons et al., 2016)."
+  kommentar: "Kurzes Pursuit-Training mit quasi-zufällig bewegtem Ziel verbesserte die Folgebewegung und der Effekt hielt Tage an (Eibenberger et al., 2012: 2 × 6 min an 3 Tagen, n = 10 + 10, Augenmessung im Labor, nicht diese Aufgabe); direkte Belege für diese Übung fehlen. Die Übung erfasst, ob das Zeichen erkannt wird, nicht die Augenbewegung selbst; Belege für Übertragung auf Sport, Lesen oder Bildschirmkomfort fehlen (Guo et al., 2025; Simons et al., 2016)."
 aehnliche_uebungen: [104, 106, 305, 401, 402, 403, 404, 407, 505, 707]
 stichworte: ["smooth pursuit", "Blickfolge", "manuelles Tracking", "Zeigerverfolgung", "Auge-Hand", "Time on Target", "Aufholsakkaden", "dynamische Sehschärfe (Blickfit)"]
 ---
@@ -90,7 +90,8 @@ stichworte: ["smooth pursuit", "Blickfolge", "manuelles Tracking", "Zeigerverfol
 > Original: „Glatte Blickfolge | Zielverfolgung“ (Pursuit Tracker Pro) – skilldrills.online, Kapitel „Visuelle Wahrnehmung“ (visual) · Blickfit: „Scharf in Bewegung“ (umgesetzt, aber andere Aufgabe, s. Abschnitt 10)
 
 ## 1. Kurzbeschreibung
-Ein orangefarbener Ball schwebt 45 Sekunden lang in weichen, aber zufälligen Kurven über einen dunklen Bildschirm. Man hält den Mauszeiger (oder den Finger) auf dem Ball und versucht, ihn nie zu verlieren. Für jede volle Sekunde ununterbrochenen Kontakts gibt es 5 Punkte; wer gut ist, bekommt einen schnelleren und kleineren Ball. Die Website nennt das „Training der glatten Blickfolge“. Tatsächlich wird aber die **Handbewegung** gemessen (der Zeiger folgt dem Ball). Die Augen müssen dem Ball folgen, damit das gelingt, ihr Verhalten wird jedoch nicht erfasst.
+
+Ein heller Ball gleitet in weichen, nicht vorhersagbaren Kurven über den dunklen Bildschirm. Man folgt ihm nur mit den Augen, nicht mit dem Kopf. Immer wieder erscheint für einen kurzen Moment (anfangs 0,5 s, auf hohen Stufen 0,22 s) im Ball ein „C“ (Landolt-Ring) mit einer Öffnung nach rechts, links, oben oder unten. Danach leuchten vier große Knöpfe auf, und man tippt auf den, in dessen Richtung die Öffnung zeigte. Ein Durchgang besteht aus 20 solchen Zeichen. Die Stufe passt sich an: Nach drei richtigen Antworten wird der Ball schneller, nach einer falschen langsamer; die Schwierigkeit kommt aus dem Tempo und der kurzen Anzeigezeit, nicht aus einer Frist für die Antwort. Geübt wird, einem bewegten Ziel ruhig mit den Augen zu folgen und dabei ein kleines Detail zu erkennen.
 
 ## 2. Ablauf im Original (Analyse)
 Quelle der Zahlen: Code-Analyse in `docs/skilldrills-analyse.md` (Abschnitt 5, aus dem ausgelieferten Spielcode); Regeltext und Website-Texte aus der Seite. Ableitungen in °/s sind **eigene Rechnungen** (≈ 36–40 px pro Grad, s. Abschnitt 4).
@@ -117,40 +118,48 @@ Quelle der Zahlen: Code-Analyse in `docs/skilldrills-analyse.md` (Abschnitt 5, a
 - **Weitere Punkte ohne Beleg:** Mausempfehlung (800 DPI, 30–45 cm pro 360°), „sechs Augenmuskeln erbringen Höchstleistung“, Palming, „Formel-1-Piloten“. Die Zitate zu Lisberger (2010) und Woods et al. (2015) stützen die genannten Aussagen nicht (s. Abschnitt 11).
 
 ## 4. Optische und okulomotorische Grundlagen
-- **Glatte Folgebewegung:** hält das Bild eines langsam bewegten Ziels auf der Fovea. Latenz ≈ 100 ± 5 ms bei Zielen ≥ 5 °/s; die Beschleunigung sättigt bei ≈ 50 °/s² (Carl & Gellman, 1987). Stationärer Gain ≈ 0,95 bei 5–30 °/s (Robinson et al., 1986). Der Gain sinkt mit Tempo (−10 % horizontal, −20 % vertikal bei strukturiertem Hintergrund; Collewijn & Tamminga, 1984).
-- **Unvorhersehbarkeit kostet Gain:** Bei pseudo-zufälligen Bahnen fiel der Gain von 0,92 auf 0,53, als die schnellste Frequenzkomponente von 0,39 auf 1,56 Hz stieg (Barnes et al., 1987). Die zufälligen Kicks des Originals (≈ 3/s) sind also für die Augen eine eher schwere Bahn; Vorhersage über extraretinale Signale (Barnes, 2008) hilft nur teilweise.
-- **Aufholsakkaden:** Auslöser ist die vorhergesagte Zeit bis zum Verfehlen des Ziels (Eye crossing time): Liegt sie zwischen 40 und 180 ms, reicht rein glatte Verfolgung, sonst folgt eine Sakkade nach ≈ 125 ms (de Brouwer et al., 2002). Ihre Dauer ist amplitudenabhängig (≈ 2,7 ms pro Grad; Baloh et al., 1975, Basis-Fakt in der Literaturbasis W01).
-- **Sehwinkel (eigene Rechnung):** iPad 40 cm ≈ 36 px/°, Desktop 60 cm bei 96 ppi ≈ 40 px/° (docs/wissenschaft/02, Abschn. 4). Ball Ø 36 px ≈ 0,9–1,0° (Start), Kontaktzone ≈ 2,5–2,9°. 1 °/s ≈ 7 mm/s bei 40 cm.
-- **Bildschirm:** Auf Sample-and-hold-Displays verschmiert jedes Bild um v/f (Grad); bei 10 °/s und 60 Hz ≈ 10 Bogenminuten. Für diese Übung unkritisch (großer Ball, kein Detail), aber bei schnellem Ball wirkt das Bild unscharf.
-- **Brille und Alter:** Gleitsicht: Der Ball rast durchs Feld, dabei wandert der Blick durch Bereiche mit seitlicher Unschärfe; Neu-Träger zeigen stark unterschiedliche Kopf-/Augenstrategien und passen sie über Wochen an (Hutchings et al., 2007, n = 10; ob mehr Kopfbewegung, ist individuell). Für Bildschirmabstand ist eine Arbeitsplatzbrille besser. Ältere haben geringeren Pursuit-Gain bei allen Tempi (75–93 vs. 18–43 J.; Moschner & Baloh, 1994); Helligkeit hilft (Long & Crambert, 1990). Bildschirmarbeit senkte die Lidschlagrate im Mittel ≈ 5-fach (Patel et al., 1991); die Tränenfilm-Stabilität war dort unverändert, Beschwerden durch trockene Augen sind aber möglich – Pausen und Lidschlag beachten.
+
+- **Glatte Folgebewegung:** Sie hält das Bild eines langsam bewegten Ziels auf der Fovea. Latenz ≈ 100 ± 5 ms bei Zielen ≥ 5 °/s; die Beschleunigung sättigt bei ≈ 50 °/s² (Carl & Gellman, 1987). Stationärer Gain ≈ 0,95 bei 5–30 °/s (Robinson et al., 1986). Der Gain sinkt mit dem Tempo (−10 % horizontal, −20 % vertikal bei strukturiertem Hintergrund; Collewijn & Tamminga, 1984). Individuell bleibt er weit über 30 °/s hoch (bei 5 untersuchten Personen ≈ 0,9 bis 100 °/s, bei einer Person nur ≈ 0,6; Meyer et al., 1985). Antrieb ist der Netzhautschlupf, also die Bildverschiebung auf der Netzhaut (Leigh & Zee, 2015). Folgebewegung und Sakkaden sind getrennte, aber verknüpfte Steuerungen (Rashbass, 1961; Krauzlis, 2004).
+- **Unvorhersehbarkeit kostet Gain:** Bei pseudo-zufälligen Bahnen fiel der Gain von 0,92 auf 0,53, als die schnellste Frequenzkomponente von 0,39 auf 1,56 Hz stieg (Barnes et al., 1987). Die Bahn der Übung ist weich (Winkelgeschwindigkeit als Produkt zweier langsamer Schwingungen), aber nicht vorhersagbar; Vorhersage über extraretinale Signale (Barnes, 2008) hilft nur teilweise; Folgebewegungen auf unvorhersehbare Zielbahnen sind ein eigenes Forschungsfeld (Bahill et al., 1980).
+- **Aufholsakkaden:** Auslöser ist die vorhergesagte Zeit bis zum Verfehlen des Ziels: Liegt sie zwischen 40 und 180 ms, reicht rein glatte Verfolgung, sonst folgt eine Sakkade nach ≈ 125 ms (de Brouwer et al., 2002).
+- **Dynamische Sehschärfe:** Ein kleines Zeichen an einem bewegten Ziel zu erkennen, ist eine eigene Fähigkeit, die mit dem Tempo und im Alter nachlässt; Teile der schlechteren Leistung Älterer sind Beleuchtungseffekte (Long & Crambert, 1990). In Laborstudien ließ sie sich durch Üben verbessern (Long & Rourke, 1989); der Vorteil von Baseballspielern liegt eher in den Augenbewegungen als in der Bildverarbeitung (Uchida et al., 2012).
+- **Sehwinkel (eigene Rechnung, Tablet quer, 40 cm):** Der Ball hat ≈ 4° Durchmesser, das C ≈ 1,0° (Strich und Lücke je ein Fünftel des Durchmessers, Lücke ≈ 13 Bogenminuten), das Tempo reicht von ≈ 3 bis ≈ 35 °/s. 1 °/s entspricht ≈ 7 mm/s.
+- **Bildschirm:** Auf Sample-and-hold-Displays verschmiert jedes Bild um v/f (Grad); bei 10 °/s und 60 Hz sind das ≈ 10 Bogenminuten – bei schnellem Ball wirkt das Bild leicht unscharf.
+- **Brille und Alter:** Bei Gleitsicht wandert der Blick mit dem Ball durch Bereiche mit seitlicher Unschärfe; Neu-Träger zeigen stark unterschiedliche Kopf-/Augenstrategien und passen sie über Wochen an (Hutchings et al., 2007, n = 10). Für den Bildschirmabstand ist eine Arbeitsplatzbrille besser; um das C zu erkennen, ist eine gute Nahkorrektur nötig. Ältere haben einen geringeren Pursuit-Gain bei allen Tempi (75–93 vs. 18–43 J.; Moschner & Baloh, 1994). Bildschirmarbeit senkte die Lidschlagrate im Mittel ≈ 5-fach (Patel et al., 1991); Pausen und Lidschlag beachten.
+- **Praxis der Blickfolgeübungen:** In der funktionellen Optometrie ist der an einer Schnur hängende, angestoßene Ball mit aufgedruckten Buchstaben eine klassische Übungsform für die Blickfolge. Er wird waagerecht, senkrecht, schräg und in Kreisen (im und gegen den Uhrzeigersinn) bewegt, der Kopf bleibt ruhig; später liest man die Buchstaben auf dem Ball, und gesteigert wird über Tempo oder Körperhaltung. Das ist Praxis- und Erfahrungswissen, eine Wirkung ist nicht belegt. Bei Ballsportarten wie Kricket springt der Blick schon vor dem Aufsprung zum erwarteten Aufsprungpunkt (Land & McLeod, 2000). Die Bildschirmübung folgt diesem Gedanken (bewegtes Ziel mit Zeichen, Kopf ruhig), ersetzt die Übung am echten Ball mit ihrem Auge-Hand-Anteil aber nicht.
+- **Klinische Prüfung:** Ärzte prüfen die Augenfolgebewegungen, indem die Augen einem nahen Ziel folgen, das in einem „H“ geführt wird (Hirnnerven III, IV und VI; Muchnick, 2008, S. 32–35). Die Übung ist keine solche Prüfung und misst die Augenbewegung nicht.
 
 ## 5. Neurowissenschaftliche Grundlagen
-Bewegungssignale aus V1 werden in MT/MST (mittlere Schläfen-/mediale obere Schläfenregion) nach Richtung und Tempo ausgewertet und über das frontale Augenfeld (FEF), Brückenkerne und Kleinhirn (Flocculus/Paraflocculus, posteriorer Vermis) zu den Augenmuskelkernen geleitet; beteiligt sind auch Basalganglien und der Colliculus superior (Thier & Ilg, 2005; Krauzlis, 2004; Lisberger, 2010). Aufmerksamkeit erhöht den Gain für das gewählte Ziel, Vorhersage nutzt Efferenzkopie und Gedächtnis für die Geschwindigkeit (Barnes, 2008). Die **Handsteuerung** kommt dazu: Sensomotorischer Kortex, Parietalkortex und Kleinhirn koordinieren Auge und Hand. Welche dieser Strukturen die Übung „trainiert“, ist nicht untersucht; Aussagen wie „stärkt FEF-Plastizität“ sind unbelegt. Die Übung ist ein Verhaltenstest, keine Hirnmessung.
+
+Bewegungssignale aus V1 werden in MT/MST (mittlere Schläfen-/mediale obere Schläfenregion) nach Richtung und Tempo ausgewertet und über das frontale Augenfeld (FEF), Brückenkerne und Kleinhirn (Flocculus/Paraflocculus, posteriorer Vermis) zu den Augenmuskelkernen geleitet; beteiligt sind auch Basalganglien und der Colliculus superior (Thier & Ilg, 2005; Krauzlis, 2004; Lisberger, 2010). Aufmerksamkeit erhöht den Gain für das gewählte Ziel, Vorhersage nutzt Efferenzkopie und Gedächtnis für die Geschwindigkeit (Barnes, 2008). Für das Erkennen des C kommen die Verarbeitung feiner Details in der Sehrinde und die Entscheidung über die Richtung hinzu. Welche dieser Strukturen die Übung „trainiert“, ist nicht untersucht; Aussagen wie „stärkt die Plastizität des frontalen Augenfelds“ sind unbelegt. Die Übung ist ein Verhaltensmaß, keine Hirnmessung.
 
 ## 6. Motorische Grundlagen
-- **Manuelles Tracking ist intermittierend, nicht stetig:** Korrekturen kommen in Schüben: Bei langsamen Bahnen zeigte sich eine kleine Fehler-Totzone (≈ 0,8° am Auge), bei schnelleren Bahnen passte ein Mindestabstand von ≈ 170 ms zwischen Korrekturen (Miall et al., 1993). Daraus folgt das „Ruckeln“ auch geübter Personen; die Anweisung „gleite stets“ ist nur eine Faustregel.
-- **Kontinuierliche Steuerung (Cursor auf Ziel):** Latenz von Auge zu Hand kommt zur Sehlatenz; der Zeiger läuft dem Ball in der Regel etwas hinterher, weil der Ball nicht vorhersehbar ist. Mit Augenfolge sind Interzeptions- und Nachführfehler kleiner (de la Malla et al., 2017).
-- **Ruhige Hand:** Physiologischer Tremor ≈ 8–12 Hz (McAuley & Marsden, 2000); bei der großen Kontaktzone kaum begrenzend. Bei Parkinson ist der Tremor langsamer (3–6 Hz) und stört mehr.
-- **Eingabe:** Maus (Ellenbogen für große, Handgelenk für kleine Bewegungen) oder Touch. Am Touchscreen **verdeckt der Finger das Ziel** und drückt dauerhaft; das ist für Auge-Hand-Übung unnatürlich und ermüdet. Zielgrößen für Touch: ≥ 9 mm (Parhi et al., 2006, s. Blickfit-Empfehlung).
+
+- **Antwort:** Ein Tipp (oder eine Pfeiltaste) auf einen von vier großen Knöpfen am unteren Rand; es gibt keine Nachführbewegung der Hand und kein Zielen auf den Ball. Der Finger verdeckt also nicht das Ziel. Die Knöpfe leuchten erst nach dem Zeichen auf, damit sie den Blick nicht vom Ball weglocken. Zielgrößen für Touch: ≥ 9 mm (Parhi et al., 2006).
+- **Auge und Hand:** Wo Hand und Auge gemeinsam nachführen, laufen Interzeptions- und Nachführfehler mit Augenfolge kleiner aus (de la Malla et al., 2017); hier wird nur die Augenfolge gefordert.
+- **Kopf und Haltung:** Dem Ball wird nur mit den Augen gefolgt; der Kopf bleibt ruhig. Als Einflussgröße der Augenführung gilt in der Praxis der funktionellen Optometrie auch die Körperhaltung (Praxisangabe, nicht belegt); aufrecht und entspannt sitzen.
 
 ## 7. Einflussfaktoren und Messgrenzen
-- **Bildrate:** Alles pro Bild gerechnet: 120/144/240 Hz machen den Ball 2–4-mal schneller. Vergleiche zwischen Geräten sind nicht sinnvoll; Ergebnisse immer mit Bildrate speichern.
-- **Zufall:** Bahn ist zufällig; Ergebnis einer 45-s-Runde streut stark. Die Rückkopplung von Punkten auf Tempo und Ballgröße macht die Punktzahl schwer vergleichbar (guter Lauf → schwerere Bahn).
-- **Zeiger ≠ Auge:** Das Ergebnis sagt nichts darüber, wie gut die Augenfolge ist. Zwei Personen mit gleichem Ergebnis können ganz unterschiedlich blicken.
-- **Latenz und Maus:** Systemlatenz (Maus, Monitor, Browser) verzögert den Zeiger. Zeigerbeschleunigung und Unterlage verändern die Leistung erheblich.
-- **Lerneffekt:** Die Bahn ist zufällig, aber die Aufgabe wird schnell geübt (Zeigergefühl, Mausempfindlichkeit); Verbesserungen über wenige Tage sind eher Geräte- und Aufgabengewöhnung.
-- **Alter und Ermüdung:** siehe Abschnitt 4. 45 s sind kurz; Aufmerksamkeitsabfall spielt eine geringe Rolle, aber Augen- und Armermüdung bei mehreren Durchgängen.
+
+- **Tempo und Bildrate:** Die Bahn wird in Echtzeit gerechnet; auf 60- und 120-Hz-Geräten ist das Tempo gleich.
+- **Zufall:** Die Bahn ist zufällig; das Ergebnis eines Durchgangs mit 20 Zeichen streut. Weil sich die Stufe nach den Antworten anpasst, zeigt vor allem das erreichte Tempo, wie gut es läuft.
+- **Blick wird nicht gemessen:** Das Ergebnis sagt nichts darüber, wie die Augen dem Ball folgen. Zwei Personen mit gleichem Ergebnis können ganz unterschiedlich blicken.
+- **Messung am Menschen:** Messungen am Menschen streuen stärker als an Prüfkörpern; darum zählt der Verlauf über mehrere Durchgänge, nicht ein Einzelwert (Mountford et al., 2004, S. 43–44).
+- **Lerneffekt:** Die Bahn ist zufällig, aber die Aufgabe wird schnell geübt; Verbesserungen über wenige Tage sind eher Gewöhnung an Gerät und Aufgabe.
+- **Alter und Ermüdung:** Siehe oben (Alter und Optik). 20 Zeichen sind kurz; Augenermüdung kann bei mehreren Durchgängen hintereinander zunehmen.
 
 ## 8. Studienlage: Trainierbarkeit und Übertragung
-- **Übungseffekt (mittel, indirekt belegt; die Aufgabe selbst ist nicht untersucht):** Kurzes Pursuit-Training mit quasi-zufällig bewegtem Ziel (2 × 6 min an 3 Tagen) verbesserte die Folgebewegung; Effekt noch 5 Tage später (Eibenberger et al., 2012; kleine Studie, n = 10 + 10). Dass sich Zeigernachführung in genau dieser Aufgabe verbessert, ist plausibel, aber hier nicht direkt untersucht (Miall et al., 1993 beschreibt nur Nachführmuster; McHugh & Bahill, 1985, Sekundärangabe).
-- **Naher Transfer (schwach):** Andere Folgeaufgaben mit Auge oder Hand könnten profitieren; kaum geprüft.
-- **Alltagstransfer (fehlend):** Für Sport, Lesen, Autofahren oder Bildschirmkomfort ist kein Nutzen durch diese Übung belegt. Sport-Sehtraining zeigt große Effekte fast nur bei Ähnlichkeit von Trainings- und Testaufgabe (Guo et al., 2025); „Gehirntraining“ hat wenig Fernwirkung (Simons et al., 2016). Bei Bildschirmbeschwerden sind Ursachen meist okulomotorisch oder Trockenheit; Wirksamkeit von Übungen ist unbewiesen (Rosenfield, 2011).
+
+- **Übungseffekt (mittel, indirekt belegt; die Aufgabe selbst ist nicht untersucht):** Kurzes Pursuit-Training mit quasi-zufällig bewegtem Ziel (2 × 6 min an 3 Tagen) verbesserte die Folgebewegung; Effekt noch 5 Tage später (Eibenberger et al., 2012; kleine Studie, n = 10 + 10). Für die dynamische Sehschärfe gibt es Trainingsstudien im Labor (Long & Rourke, 1989); digitales Sehtraining zeigte bei Sportlerinnen und Sportlern keinen Vorteil gegenüber Placebo (Shekar et al., 2021). Dass sich das Erkennen des C in dieser Aufgabe verbessert, ist plausibel, aber nicht direkt untersucht.
+- **Naher Transfer (schwach):** Andere Folgeaufgaben könnten profitieren; kaum geprüft.
+- **Alltagstransfer (fehlend):** Für Sport, Lesen, Autofahren oder Bildschirmkomfort ist kein Nutzen durch diese Übung belegt. Sport-Sehtraining zeigt große Effekte fast nur bei Ähnlichkeit von Trainings- und Testaufgabe (Guo et al., 2025); „Gehirntraining“ hat wenig Fernwirkung (Simons et al., 2016). Bei Bildschirmbeschwerden sind die Ursachen meist okulomotorisch oder Trockenheit; die Wirksamkeit von Übungen ist unbewiesen (Rosenfield, 2011).
 
 ## 9. Auswahlhinweise für die KI
-- **Passt, wenn** jemand die Zeigernachführung eines gleichmäßig bewegten Ziels üben will (Profil: kontinuierliche_steuerung 3, auge_hand_koordination 3, Antizipation 1), eine kurze, ruhige Übung mit Maus ohne Strafen sucht und keine feinen Details erkennen muss.
-- **Weniger passend, wenn** die Augenfolge selbst geübt werden soll (dann Blickfit „Scharf in Bewegung“ bzw. 401–404, 407), wenn nur ein Tablet vorhanden ist, bei Zeitdruck-Empfindlichkeit oder wenn Vergleichbarkeit über Geräte nötig ist.
-- **Vorsicht / anpassen bei:** `tremor_parkinson` und `hand_arm_beschwerden` (dauerndes Nachführen, Haltearbeit), `nystagmus` (Folgebewegung selbst betroffen), `trockenes_auge_bildschirm` und `kopfschmerz_asthenopie` (starres Schauen, Lidschlag ↓; Pausen), `presbyopie_gleitsicht` (Blick durch Nahteil unten bzw. Kopfbewegung; Bildschirmabstand prüfen). Keine Diagnose, kein Ersatz für Sehprüfung.
-- **Blickfit-Umsetzung (Original ↔ Blickfit):** „Scharf in Bewegung“ fordert zusätzlich `sehschaerfe_detail` 3, `blickfolge` 3, `visuelle_verarbeitungsgeschwindigkeit` 2, `entscheidung_wahlreaktion` 1 und verlangt keine Handnachführung (`kontinuierliche_steuerung` 0, `auge_hand_koordination` 0). Für Menschen mit Handproblemen oder Tablet-Nutzer ist die Blickfit-Version die bessere Wahl; bei Presbyopie ist eine gute Nahkorrektur nötig, um das C zu erkennen.
+
+- **Passt, wenn** jemand die Augenfolge eines gleichmäßig bewegten Ziels mit einer kleinen Detailaufgabe üben will (Profil: Blickfolge 3, Sehschärfe_Detail 3, Verarbeitungsgeschwindigkeit 2), eine kurze, ruhige Übung ohne Strafen am Tablet oder Computer sucht und keine Handnachführung braucht.
+- **Weniger passend, wenn** die Hand-Auge-Nachführung geübt werden soll (dafür 104, 705, 707), das Sehen im Bildschirmabstand nicht ausreicht (das C ≈ 1°), bei Nystagmus oder wenn die Augenbewegung selbst gemessen werden soll.
+- **Vorsicht / anpassen bei:** `nystagmus` (Folgebewegung selbst betroffen); `trockenes_auge_bildschirm` und `kopfschmerz_asthenopie` (starres Schauen, Lidschlag ↓; Pausen); `presbyopie_gleitsicht` (Blick durch den Nahteil bzw. Kopfbewegung; Bildschirmabstand prüfen, gute Nahkorrektur für das C); `sehbehinderung_niedriger_visus` (Zeichen ≈ 1°); `schwindel_vestibulaer` (bewegter Ball, kurze Durchgänge, bei Unwohlsein abbrechen). Keine Diagnose, kein Ersatz für eine Sehprüfung; das Ergebnis mit dem C ist kein Sehtest.
+- **Abklärung vor dem Üben:** Doppelbilder, plötzlicher einseitiger Sehverlust, Lichtblitze, neue Schleier, Kopfschmerz mit Sehverschlechterung, Schwindel oder Zittern gehören ärztlich abgeklärt; sie sind kein Anlass zum Üben (Muchnick, 2008, S. 6, 28). Wiederkehrender Schwindel oder Kopfschmerz beim Üben sollte nicht allein den Übungen angelastet werden.
 - **Kombiniert gut mit:** 104 (Zielfang: Springen und Zielen), 401–404 (reine Blickfolge in verschiedenen Bahnen), 407 (Vorhersage), 705 (ruhige Hand), 707 (Pfad nachfahren).
 
 ## 10. Schwächen des Originals und Empfehlungen für eine Blickfit-Umsetzung
@@ -169,10 +178,11 @@ Bewegungssignale aus V1 werden in MT/MST (mittlere Schläfen-/mediale obere Schl
 - Rashbass, C. (1961). The relationship between saccadic and smooth tracking eye movements. *The Journal of Physiology, 159*(2), 326–338. https://doi.org/10.1113/jphysiol.1961.sp006811 – **Prüfung:** DOI stimmt ✓ (Crossref), Titel auf der Website leicht falsch („smooth pursuit“); **stützt die Aussage der Website:** ja (Folgebewegung und Sakkaden haben verschiedene Antriebe: Geschwindigkeit vs. Positionsfehler; Inhalt nur aus Metadaten und Sekundärangaben der Literaturbasis).
 - Krauzlis, R. J. (2004). Recasting the smooth pursuit eye movement system. *Journal of Neurophysiology, 91*(2), 591–603. https://doi.org/10.1152/jn.00801.2003 – **Prüfung:** DOI stimmt ✓ (Abstract); **stützt:** teilweise (Netzwerk MT/MST, FEF, Kleinhirn, Basalganglien, Colliculus superior – ja; „eigenständige Schaltkreise für Sakkaden“ – nein, Krauzlis betont die gemeinsame Kaskade).
 - Leigh, R. J., & Zee, D. S. (2015). *The neurology of eye movements* (5. Aufl.). Oxford University Press. https://doi.org/10.1093/med/9780199969289.001.0001 – **Prüfung:** Website-DOI 10.1093/med/9780199969203.001.0001 **falsch**, korrekt ist ...969289... ✓ (Crossref); Buch, Inhalt nicht eingesehen; **stützt:** ja (plausibel: Netzhautschlupf als Antrieb, Aufholsakkaden; die Dauer 20–40 ms passt zur Hauptsequenz).
-- Lisberger, S. G. (2010). Visual tracking in primates: Neural mechanisms of smooth pursuit eye movements. *Current Opinion in Neurobiology, 20*(4), 405–410. – **Prüfung:** ✗ nicht auffindbar; die angegebene DOI 10.1016/j.conb.2010.04.004 gehört zu Semaan & Kauffman (2010), einem Artikel zur Entwicklung reproduktiver Schaltkreise. Vermutlich gemeint: Lisberger (2010), *Neuron, 66*(4), 477–491 (s. „Weitere Fachliteratur“). **Stützt:** nein (die Aussagen „Top 1 %“ und „Overshoot bei Hitboxen“ gehen aus keiner Quelle hervor).
+- Lisberger, S. G. (2010). Visual tracking in primates: Neural mechanisms of smooth pursuit eye movements. *Current Opinion in Neurobiology, 20*(4), 405–410. – **Prüfung:** ✗ nicht auffindbar; die angegebene DOI 10.1016/j.conb.2010.04.004 gehört zu Semaan & Kauffman (2010), einem Artikel zur Entwicklung reproduktiver Schaltkreise. Vermutlich gemeint: Lisberger (2010), *Neuron, 66*(4), 477–491 (s. „Weitere Fachliteratur“). **stützt:** nein (die Aussagen „Top 1 %“ und „Overshoot bei Hitboxen“ gehen aus keiner Quelle hervor).
 - Barnes, G. R. (2008). Cognitive processes involved in smooth pursuit eye movements. *Brain and Cognition, 68*(3), 309–326. https://doi.org/10.1016/j.bandc.2008.08.020 – **Prüfung:** DOI stimmt ✓ (Crossref, Abstract); **stützt:** teilweise (Vorhersage, Aufmerksamkeit – ja; „Training erleichtert Lesen und senkt digitale Augenbelastung“ – steht nicht darin).
 - Woods, D. L., Wyma, J. M., Yund, E. W., Herron, T. J., & Reed, B. (2015). Factors influencing the latency of simple reaction time. *Frontiers in Human Neuroscience, 9*, 131. https://doi.org/10.3389/fnhum.2015.00131 – **Prüfung:** DOI stimmt ✓; **stützt:** nein (behandelt einfache Reaktionszeit und Hardware, nicht Zeitmessung der Zielverfolgung).
-- Nur im Fließtext genannt: Bahill, A. T., Iandolo, M. J., & Troost, B. T. (1980). Smooth pursuit eye movements in response to unpredictable target waveforms. *Vision Research, 20*(11), 923–931. https://doi.org/10.1016/0042-6989(80)90073-5 – **Prüfung:** DOI stimmt ✓ (Metadaten); **stützt:** unklar (Thema unvorhersehbare Zielbahnen passt, die Zahl „30–40 °/s“ nicht geprüft). Land, M. F., & McLeod, P. (2000). From eye movements to actions: how batsmen hit the ball. *Nature Neuroscience, 3*(12), 1340–1345. https://doi.org/10.1038/81887 – **Prüfung:** Die Seite nennt keine DOI; DOI 10.1038/81887 ✓ (Crossref); **stützt:** teilweise (Vorhersage bei Ballsport, aber ein Cricketschlag ist keine Zeigernachführung).
+- Bahill, A. T., Iandolo, M. J., & Troost, B. T. (1980). Smooth pursuit eye movements in response to unpredictable target waveforms. *Vision Research, 20*(11), 923–931. https://doi.org/10.1016/0042-6989(80)90073-5 – **Prüfung:** DOI stimmt ✓ (Metadaten); **stützt:** unklar (Thema unvorhersehbare Zielbahnen passt, die Zahl „30–40 °/s“ nicht geprüft).
+- Land, M. F., & McLeod, P. (2000). From eye movements to actions: how batsmen hit the ball. *Nature Neuroscience, 3*(12), 1340–1345. https://doi.org/10.1038/81887 – **Prüfung:** Die Seite nennt keine DOI; DOI 10.1038/81887 ✓ (Crossref); **stützt:** teilweise (Vorhersage bei Ballsport, aber ein Cricketschlag ist keine Zeigernachführung).
 
 ### Weitere Fachliteratur
 Alle DOIs am 30.09.2026 über Crossref geprüft (Titel, Erstautor:in, Jahr, Zeitschrift, Band, Seiten stimmen).
@@ -183,9 +193,7 @@ Alle DOIs am 30.09.2026 über Crossref geprüft (Titel, Erstautor:in, Jahr, Zeit
 - Barnes, G. R., Donnelly, S. F., & Eason, R. D. (1987). Predictive velocity estimation in the pursuit reflex response to pseudo-random and step displacement stimuli in man. *The Journal of Physiology, 389*, 111–136. https://doi.org/10.1113/jphysiol.1987.sp016649 – Gain sinkt bei unvorhersehbaren Bahnen.
 - de Brouwer, S., Yuksel, D., Blohm, G., Missal, M., & Lefèvre, P. (2002). What triggers catch-up saccades during visual tracking? *Journal of Neurophysiology, 87*(3), 1646–1650. https://doi.org/10.1152/jn.00432.2001 – Auslöser von Aufholsakkaden.
 - Thier, P., & Ilg, U. J. (2005). The neural basis of smooth-pursuit eye movements. *Current Opinion in Neurobiology, 15*(6), 645–652. https://doi.org/10.1016/j.conb.2005.10.013 – beteiligte Hirnstrukturen.
-- Lisberger, S. G. (2010). Visual guidance of smooth-pursuit eye movements: Sensation, action, and what happens in between. *Neuron, 66*(4), 477–491. https://doi.org/10.1016/j.neuron.2010.03.027 – wahrscheinlich gemeinter Lisberger-Artikel (Sensomotorik der Folgebewegung).
-- Miall, R. C., Weir, D. J., & Stein, J. F. (1993). Intermittency in human manual tracking tasks. *Journal of Motor Behavior, 25*(1), 53–63. https://doi.org/10.1080/00222895.1993.9941639 – Manuelles Tracking läuft in Schüben.
-- McAuley, J. H., & Marsden, C. D. (2000). Physiological and pathological tremors and rhythmic central motor control. *Brain, 123*(8), 1545–1567. https://doi.org/10.1093/brain/123.8.1545 – Tremor.
+- Lisberger, S. G. (2010). Visual guidance of smooth-pursuit eye movements: Sensation, action, and what happens in between. *Neuron, 66*(4), 477–491. https://doi.org/10.1016/j.neuron.2010.03.027 – sensomotorische Grundlagen der Folgebewegung.
 - Eibenberger, K., Ring, M., & Haslwanter, T. (2012). Sustained effects for training of smooth pursuit plasticity. *Experimental Brain Research, 218*(1), 81–89. https://doi.org/10.1007/s00221-012-3009-8 – Kurztraining der Folgebewegung.
 - Moschner, C., & Baloh, R. W. (1994). Age-related changes in visual tracking. *Journal of Gerontology, 49*(5), M235–M238. https://doi.org/10.1093/geronj/49.5.M235 – Alter und Gain.
 - Long, G. M., & Crambert, R. F. (1990). The nature and basis of age-related changes in dynamic visual acuity. *Psychology and Aging, 5*(1), 138–143. https://doi.org/10.1037/0882-7974.5.1.138 – Alter, Leuchtdichte.
@@ -197,4 +205,8 @@ Alle DOIs am 30.09.2026 über Crossref geprüft (Titel, Erstautor:in, Jahr, Zeit
 - Rosenfield, M. (2011). Computer vision syndrome: A review of ocular causes and potential treatments. *Ophthalmic and Physiological Optics, 31*(5), 502–515. https://doi.org/10.1111/j.1475-1313.2011.00834.x – Bildschirmbeschwerden, unbewiesene Behandlungen.
 - Guo, Y., Yuan, T., Yang, M., & Qiu, J. (2025). Does the "learning effect" caused by digital devices exaggerate sports visual training outcomes? A systematic review and meta-analysis. *Frontiers in Physiology, 16*, 1664572. https://doi.org/10.3389/fphys.2025.1664572 – Transfer nur bei ähnlichen Aufgaben.
 - Simons, D. J., Boot, W. R., Charness, N., Gathercole, S. E., Chabris, C. F., Hambrick, D. Z., & Stine-Morrow, E. A. L. (2016). Do "brain-training" programs work? *Psychological Science in the Public Interest, 17*(3), 103–186. https://doi.org/10.1177/1529100616661983 – Evidenz zu „Gehirntraining“.
-- Weitere Angaben (Baloh et al., 1975; McHugh & Bahill, 1985; Parhi et al., 2006; de la Malla et al., 2017) stammen aus der Literaturbasis W01 bzw. docs/wissenschaft/02 und sind dort geprüft; sie sind hier als Sekundärangaben gekennzeichnet.
+- Weitere Angaben (Baloh et al., 1975; McHugh & Bahill, 1985) – **stützt:** keine (nicht aufgenommen)
+- Parhi, P., Karlson, A. K., & Bederson, B. B. (2006). Target size study for one-handed thumb use on small touchscreen devices. In *Proceedings of MobileHCI '06* (S. 203–210). ACM. https://doi.org/10.1145/1152215.1152260 – Touch-Zielgröße ≥ 9,2 mm.
+- de la Malla, C., Smeets, J. B. J., & Brenner, E. (2017). Potential systematic interception errors are avoided when tracking the target with one's eyes. *Scientific Reports, 7*, 10793. https://doi.org/10.1038/s41598-017-11200-5 – Blickfolge vermeidet Interzeptionsfehler.
+- Muchnick, B. G. (2008). *Clinical Medicine in Optometric Practice* (2nd ed.). Mosby/Elsevier. https://openlibrary.org/isbn/9780323029612 – Warnzeichen mit Abklärungsbedarf (S. 6, 28), Prüfung der Augenfolgebewegungen (S. 32–35), Gesichtsfeldausfälle nach Sehbahnverlauf (S. 32).
+- Mountford, J., Ruston, D., & Dave, T. (2004). *Orthokeratology: Principles and Practice*. Butterworth-Heinemann. https://openlibrary.org/isbn/9780750640077 – Genauigkeit und Wiederholbarkeit von Messungen am Menschen, Mehrfachmessung (S. 17–18, 24, 43–44).

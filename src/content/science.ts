@@ -222,17 +222,17 @@ export const SCIENCE: Record<string, ScienceEntry> = {
         trains: 'Einem bewegten Ziel ruhig mit den Augen folgen und dabei ein kleines Detail erkennen.',
         daily: 'Schilder oder Hausnummern im Vorbeifahren lesen, einen Ball im Blick behalten, eine Anzeigetafel.',
         research:
-          'Details auf bewegten Objekten zu erkennen ist eine eigene Fähigkeit, die mit dem Tempo und im Alter nachlässt. In Laborstudien ließ sie sich durch Üben verbessern. Eine Wirkung auf Alltag, Verkehr oder Sport ist nicht nachgewiesen. Die Übung ersetzt keine Brille und keine Untersuchung – eine gut angepasste Nahkorrektur ist Voraussetzung.',
+          'Details auf bewegten Objekten zu erkennen ist eine eigene Fähigkeit, die mit dem Tempo und im Alter nachlässt. In Laborstudien ließ sie sich durch Üben verbessern. Eine Wirkung auf Alltag, Verkehr oder Sport ist nicht nachgewiesen. Die Übung ersetzt keine Brille und keine Untersuchung – eine gut angepasste Nahkorrektur ist Voraussetzung. Ärzte prüfen die Augenfolgebewegung anders, etwa mit dem „H“-Muster; diese Übung ist keine Prüfung und misst die Augenbewegung nicht. Bei neuen Doppelbildern oder plötzlichem Sehverlust gehört die Abklärung zur Ärztin oder zum Arzt, nicht in die Übung.',
         improved:
-          'Statt nur mit dem Finger einem Ball zu folgen, erzwingt das kurz eingeblendete Sehzeichen (Landolt-Ring) das Folgen mit den Augen. Das Tempo passt sich an, die Bewegung ist weich und nicht vorhersehbar, alles zeitbasiert.',
+          'Man folgt dem Ball nur mit den Augen; ein kurz eingeblendetes Sehzeichen (Landolt-Ring) im Ball macht das Mitgehen zur Voraussetzung der Aufgabe, denn nur wer dem Ball ruhig folgt, erkennt die Öffnung. Das Zeichen hat eine feste Größe unabhängig vom Ball und vier mögliche Richtungen; beantwortet wird mit einem großen Knopf, nicht mit dem Finger auf dem Ball, und die Knöpfe leuchten erst nach dem Zeichen auf, damit sie den Blick nicht weglocken. Das Tempo passt sich an (nach drei richtigen Antworten schneller, nach einer falschen langsamer), und die Anzeigedauer des Zeichens sinkt von 0,5 auf 0,22 s. Die Bahn ist weich und nicht vorhersehbar und wird in Echtzeit gerechnet, ist also auf jedem Gerät gleich schnell. Das Ergebnis zeigt, ob das Zeichen erkannt wurde, nicht wie die Augen dem Ball folgen.',
       },
       it: {
         trains: 'Seguire con calma con lo sguardo un bersaglio in movimento e riconoscere nel frattempo un piccolo dettaglio.',
         daily: 'Leggere cartelli o numeri civici passando, tenere d’occhio una palla, un tabellone.',
         research:
-          'Riconoscere dettagli su oggetti in movimento è una capacità a sé, che cala con la velocità e con l’età. Negli studi di laboratorio è migliorata con l’esercizio. Un effetto sulla vita quotidiana, sul traffico o sullo sport non è dimostrato. L’esercizio non sostituisce occhiali né visite – una buona correzione da vicino è il presupposto.',
+          'Riconoscere dettagli su oggetti in movimento è una capacità a sé, che cala con la velocità e con l’età. Negli studi di laboratorio è migliorata con l’esercizio. Un effetto sulla vita quotidiana, sul traffico o sullo sport non è dimostrato. L’esercizio non sostituisce occhiali né visite – una buona correzione da vicino è il presupposto. I medici esaminano i movimenti oculari di inseguimento in altro modo, per esempio con lo schema a «H»; questo esercizio non è un esame e non misura il movimento degli occhi. In caso di nuova visione doppia o perdita improvvisa della vista bisogna rivolgersi al medico, non esercitarsi.',
         improved:
-          'Invece di seguire una palla solo con il dito, il simbolo mostrato per un attimo (anello di Landolt) obbliga a seguire con gli occhi. La velocità si adatta, il movimento è fluido e imprevedibile, tutto basato sul tempo.',
+          'Si segue la palla solo con gli occhi; un simbolo mostrato per un attimo (anello di Landolt) dentro la palla rende il seguirla una condizione del compito, perché solo chi segue la palla con calma riconosce l’apertura. Il simbolo ha una dimensione fissa, indipendente dalla palla, e quattro direzioni possibili; si risponde con un grande pulsante e non con il dito sulla palla, e i pulsanti si illuminano solo dopo il simbolo, per non distogliere lo sguardo. La velocità si adatta (dopo tre risposte giuste più veloce, dopo una sbagliata più lenta) e il tempo di visualizzazione del simbolo scende da 0,5 a 0,22 s. Il percorso è fluido e imprevedibile e viene calcolato in tempo reale, quindi ha la stessa velocità su ogni dispositivo. Il risultato mostra se il simbolo è stato riconosciuto, non come gli occhi seguono la palla.',
       },
     },
     sources: [
@@ -240,6 +240,7 @@ export const SCIENCE: Record<string, ScienceEntry> = {
       src('Long & Crambert (1990). The nature and basis of age-related changes in dynamic visual acuity. Psychology and Aging', 'https://doi.org/10.1037/0882-7974.5.1.138'),
       src('Uchida et al. (2012). Origins of superior dynamic visual acuity in baseball players. PLoS ONE', 'https://doi.org/10.1371/journal.pone.0031530'),
       src('Shekar et al. (2021). Efficacy of a digital sports vision training program for improving visual abilities in collegiate baseball and softball athletes. Optometry and Vision Science', 'https://doi.org/10.1097/OPX.0000000000001740'),
+      src('Muchnick (2008). Clinical Medicine in Optometric Practice, 2nd ed., S. 6, 32–35. Mosby/Elsevier', 'https://openlibrary.org/isbn/9780323029612'),
     ],
   },
 
