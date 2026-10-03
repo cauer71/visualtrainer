@@ -85,7 +85,7 @@ aehnliche_uebungen: [410, 415, 414, 405, 404, 407, 403, 412, 105, 513, 512, 303]
 stichworte: ["smooth pursuit", "Aufholsakkaden", "catch-up saccades", "Richtungsumkehr", "Tempowechsel", "unvorhersagbare Bewegung", "Blickverfolgung", "rein visuell", "ohne Eingabe", "Sichtfeldwechsel (nur Name)"]
 ---
 
-# 411 · Blickfolge bei zufälligen Tempo- und Richtungswechseln (Original: „Sichtfeldwechsel“)
+# 411 · Blickfolge bei zufälligen Tempo- und Richtungswechseln
 
 ## 1. Kurzbeschreibung
 
