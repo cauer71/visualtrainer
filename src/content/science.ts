@@ -393,17 +393,17 @@ export const SCIENCE: Record<string, ScienceEntry> = {
         trains: 'Nur auf das Wichtige achten: Es zählt, wohin der Pfeil zeigt – nicht, wo er steht oder wohin seine Nachbarn zeigen.',
         daily: 'Überall, wo Nebensächliches ablenkt: ein Schild lesen, während daneben etwas blinkt, oder bei der Arbeit Störendes ausblenden.',
         research:
-          'Die Übung beruht auf bekannten Aufgaben aus der Forschung (räumlicher Stroop- und Flanker-Effekt). In der geübten Aufgabe wird man mit Übung schneller, auch im höheren Alter. Dass sich das auf „Konzentration allgemein“ oder den Alltag überträgt, ist nicht belegt. Der Unterschied zwischen passenden und widersprüchlichen Pfeilen schwankt von Tag zu Tag stark – deshalb ist er nur ein Zusatzwert.',
+          'Die Übung beruht auf bekannten Aufgaben aus der Forschung (räumlicher Stroop- und Flanker-Effekt). In der geübten Aufgabe wird man mit Übung schneller, auch im höheren Alter. Dass sich das auf „Konzentration allgemein“ oder den Alltag überträgt, ist nicht belegt. Der Unterschied zwischen passenden und widersprüchlichen Pfeilen schwankt von Tag zu Tag stark – deshalb ist er nur ein Zusatzwert. Wie bei jeder Messung am Menschen sagt der Median vieler Durchgänge mehr als ein Einzelwert (Mountford et al. 2004, aus der Hornhautvermessung übertragen).',
         improved:
-          'Farbfrei und sprachfrei statt Farbwörter (für Menschen mit Rot-Grün-Schwäche und in beiden Sprachen gleich), passende und widersprüchliche Durchgänge je zur Hälfte gemischt, keine direkten Wiederholungen, frame-genaue Reaktionszeit, Raten unter 150 ms wird nicht gewertet, Antwortfrist passt sich an (≈ 80 % richtig).',
+          'Der Pfeil erscheint farbfrei und sprachfrei, sodass die Aufgabe in beiden Sprachen gleich ist und auch bei Rot-Grün-Schwäche funktioniert. Zuerst zeigt er nach links oder rechts, später in eine von vier Diagonalrichtungen; Nachbarpfeile kommen erst danach hinzu. Passende und widersprüchliche Durchgänge sind je zur Hälfte gemischt, ohne direkte Wiederholung von Richtung oder Platz. Die Reaktionszeit wird bildgenau erfasst, Antworten unter 150 ms gelten als geraten und zählen nicht. Die Antwortfrist passt sich so an, dass etwa vier von fünf Antworten richtig sind; gezeigt werden die erreichte Stufe, die Treffsicherheit und der Median der Reaktionszeit, der Zeitverlust durch widersprüchliche Reize nur als Zusatzwert.',
       },
       it: {
         trains: 'Badare solo a ciò che conta: vale la direzione della freccia – non dove si trova o dove puntano le vicine.',
         daily: 'Ovunque i dettagli secondari distraggano: leggere un cartello mentre accanto qualcosa lampeggia, o ignorare le interruzioni al lavoro.',
         research:
-          'L’esercizio si basa su compiti noti della ricerca (effetto Stroop spaziale ed effetto flanker). Nel compito allenato si diventa più veloci con la pratica, anche in età avanzata. Che questo si trasferisca alla “concentrazione in generale” o alla vita quotidiana non è dimostrato. La differenza tra frecce concordi e discordanti varia molto da un giorno all’altro – per questo è solo un valore aggiuntivo.',
+          'L’esercizio si basa su compiti noti della ricerca (effetto Stroop spaziale ed effetto flanker). Nel compito allenato si diventa più veloci con la pratica, anche in età avanzata. Che questo si trasferisca alla “concentrazione in generale” o alla vita quotidiana non è dimostrato. La differenza tra frecce concordi e discordanti varia molto da un giorno all’altro – per questo è solo un valore aggiuntivo. Come in ogni misurazione sulle persone, la mediana di molte prove dice più di un singolo valore (Mountford et al. 2004, principio tratto dalla misurazione della cornea).',
         improved:
-          'Senza colori e senza parole invece delle parole-colore (adatto a chi confonde rosso e verde e uguale in entrambe le lingue), metà prove concordi e metà discordanti mescolate, nessuna ripetizione diretta, tempo di reazione preciso al fotogramma, risposte sotto i 150 ms non contano, il tempo a disposizione si adatta (≈ 80 % di risposte giuste).',
+          'La freccia compare senza colori e senza parole, così il compito è identico nelle due lingue e funziona anche per chi confonde rosso e verde. All’inizio punta a sinistra o a destra, poi in una di quattro direzioni diagonali; le frecce vicine si aggiungono solo dopo. Le prove concordi e quelle discordanti sono mescolate metà e metà, senza ripetizioni dirette di direzione o posizione. Il tempo di reazione è rilevato con precisione al fotogramma; le risposte sotto i 150 ms valgono come tentativi a caso e non vengono contate. Il tempo a disposizione si adatta in modo che circa quattro risposte su cinque siano giuste; vengono mostrati il livello raggiunto, la precisione e la mediana del tempo di reazione, mentre la perdita di tempo dovuta agli stimoli discordanti è solo un valore aggiuntivo.',
       },
     },
     sources: [
@@ -413,6 +413,7 @@ export const SCIENCE: Record<string, ScienceEntry> = {
       src('Wilkinson & Yang (2012). Plasticity of inhibition in older adults: Retest practice and transfer effects. Psychology and Aging', 'https://doi.org/10.1037/a0025926'),
       src('Hedge, Powell & Sumner (2018). The reliability paradox: Why robust cognitive tasks do not produce reliable individual differences. Behavior Research Methods', 'https://doi.org/10.3758/s13428-017-0935-1'),
       src('Birch (2012). Worldwide prevalence of red-green color deficiency. J Opt Soc Am A', 'https://doi.org/10.1364/JOSAA.29.000313'),
+      src('Mountford, Ruston & Dave (2004). Orthokeratology: Principles and Practice. Butterworth-Heinemann, S. 43–44', 'https://openlibrary.org/isbn/9780750640077'),
     ],
   },
 

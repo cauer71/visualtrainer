@@ -2,7 +2,7 @@
 # ===== Kennung =====
 nr: 202
 kennung: reaction-time
-name: "Farbregel-Klick (Wahlreaktion Rot/Blau mit Regelwechsel)"
+name: "Wahlreaktion auf Pfeilrichtungen (Entscheidungstempo bei zwei und vier Möglichkeiten)"
 name_original: "Wahlreaktionszeit-Test – Entscheidungstempo (Überschrift im Spiel: „Reaktionszeit-Test“)"
 kapitel: "Kognition & Aufmerksamkeit"
 kapitel_original: "cognitive"
@@ -16,11 +16,11 @@ blickfit_umsetzung:
 stand: 2026-09-30
 
 # ===== Überblick =====
-kurzbeschreibung: "Auf dunklem Feld liegen immer ein roter und ein blauer Kreis an zufälligen Stellen; ein kleines Banner oben sagt, welche Farbe gerade gilt („ROTES ZIEL“ oder „BLAUES ZIEL“). Man klickt oder tippt den passenden Kreis, bevor die Frist abläuft; danach springen beide an neue Orte, und ab Level 2 wechselt die geltende Farbe nach einigen Treffern."
-ziel_funktionen: [entscheidung_wahlreaktion, kognitive_flexibilitaet, auge_hand_koordination, zielbewegung_tempo]
-eingabe: [touch, maus, touchpad]
+kurzbeschreibung: "Ein weißer Pfeil zeigt nach links oder rechts, später in eine von vier Diagonalrichtungen; man tippt so schnell wie möglich die zugehörige Taste. Die Zeit bis zum Tipp wird bildgenau gemessen und als Median der richtigen Antworten ausgewiesen; die Antwortfrist passt sich an, sodass etwa vier von fünf Antworten richtig sind. Mit der Stufe wächst die Zahl der Möglichkeiten von zwei auf vier; eine zweite Stufenfolge mit gelernten Zuordnungen (3, 6 und 9 Zeichen-Zahl-Paare) bietet der Zeichen-Code (207)."
+ziel_funktionen: [entscheidung_wahlreaktion, verarbeitungsgeschwindigkeit]
+eingabe: [touch, maus, tastatur]
 tablet_geeignet: ja
-dauer_sekunden: 45   # nominell; +2 s je Treffer (max. 60 s) verlängern die Runde bei guter Leistung auf ≈ 2–2,5 min (eigene Simulation)
+dauer_sekunden: 66
 schwierigkeit_anpassung: "Level = Punkte/1.750 + 1 (stufenlos, steigt nur; Start immer 1). Antwortfrist je Zielpaar (Code): 1.350 ms (Level 1) → 1.105 (5) → 732 (10) → 430 (15) → 283 ms (20), bei hoher Combo zusätzlich bis 30 % kürzer. Bis 1.750 Punkte (≈ 14–18 Treffer) gilt nur ROT; ab Level 2 wechselt die Farbregel nach 6, ab Level 3 nach 5, ab 6 nach 4, ab 9 nach 3, ab 12 nach 2 Treffern."
 messgroessen: ["Original: Punkte, Genauigkeit (Treffer ÷ Treffer + Fehlziele + abgelaufene Fristen), Treffer, höchstes Level, maximale Combo, Buchstabennote F–S+", "Original misst keine Reaktionszeit, obwohl der Name das nahelegt", "sinnvoll: Median-Zeit bis zum richtigen Klick, getrennt nach Durchgängen direkt nach einem Regelwechsel und Regelwiederholungen (Wechselkosten)", "sinnvoll: Fehlziele direkt nach einem Wechsel (Beharrungsfehler) getrennt von übrigen Fehlern", "sinnvoll: Entscheidungs- und Bewegungszeit trennen (fester Startpunkt, z. B. Ruhetaste)"]
 
@@ -29,75 +29,73 @@ anforderungsprofil:
   visuell:
     sehschaerfe_detail: 1
     kontrast: 0
-    farbunterscheidung: 2
+    farbunterscheidung: 0
     stereosehen: 0
-    peripheres_sehen: 1
-    nutzbares_sehfeld: 1
+    peripheres_sehen: 0
+    nutzbares_sehfeld: 0
     blickfolge: 0
-    sakkaden: 2
+    sakkaden: 0
     fixation: 0
     bewegungswahrnehmung: 0
-    visuelle_suche: 1
+    visuelle_suche: 0
     visuelle_verarbeitungsgeschwindigkeit: 1
     zeitliche_aufloesung: 0
     naharbeit_dauer: 1
   kognitiv:
     daueraufmerksamkeit: 1
-    selektive_aufmerksamkeit: 1
-    inhibition: 1
-    geteilte_aufmerksamkeit: 1
-    kognitive_flexibilitaet: 2
+    selektive_aufmerksamkeit: 2
+    inhibition: 2
+    geteilte_aufmerksamkeit: 0
+    kognitive_flexibilitaet: 0
     arbeitsgedaechtnis: 1
     kurzzeitgedaechtnis_verbal: 0
     kurzzeitgedaechtnis_visuell_raeumlich: 0
-    verarbeitungsgeschwindigkeit: 2
+    verarbeitungsgeschwindigkeit: 3
     antizipation: 0
-    entscheidung_wahlreaktion: 2
-    lesen_sprache: 1
+    entscheidung_wahlreaktion: 3
+    lesen_sprache: 0
     schlussfolgern: 0
   motorisch:
     einfache_reaktion: 1
-    auge_hand_koordination: 3
-    zielbewegung_tempo: 3
+    auge_hand_koordination: 1
+    zielbewegung_tempo: 1
     zielbewegung_praezision: 1
     kontinuierliche_steuerung: 0
     ruhige_hand: 0
-    fingergeschwindigkeit: 0
+    fingergeschwindigkeit: 1
     fingersequenz_bimanual: 0
     ganzkoerper: 0
     gleichgewicht: 0
     ausdauer_belastung: 0
 belastung:
   zeitdruck: 3
-  flimmern_lichtreize: 2
+  flimmern_lichtreize: 1
   bewegungsreize_schwindel: 0
   koerperliche_belastung: 0
   sturzrisiko: 0
-  sprachabhaengigkeit: 1
+  sprachabhaengigkeit: 0
 
 # ===== Auswahlhilfe =====
 voraussetzungen: ["Rot und Blau sicher unterscheiden – die Farbe ist das einzige Merkmal der Ziele", "kleines Banner oben lesen oder an seiner Farbe erkennen (12–14 px, ≈ 0,25° Buchstabenhöhe am Monitor)", "Zeiger oder Finger schnell an wechselnde Orte im ganzen Bildschirm bringen (Maus, Touchpad oder Touch; keine Tastatursteuerung)", "Korrektur bzw. Abstand, mit denen die ganze Bildschirmfläche scharf ist (Vollbild)"]
-vorsicht_bei: [photosensitive_epilepsie, migraene_lichtempfindlich, farbsehschwaeche, presbyopie_gleitsicht, gesichtsfeldausfall, trockenes_auge_bildschirm, tremor_parkinson, hand_arm_beschwerden, kognitive_einschraenkung, aufmerksamkeitsprobleme, kinder_unter_6]
-geeignet_fuer: ["schnelles Zeigen oder Tippen auf wechselnde Orte mit einer einfachen Farbentscheidung (Auge-Hand-Koordination unter Zeitdruck)", "spielerischer Einstieg in Regelwechsel mit nur zwei Regeln (ROT/BLAU)", "Tablet mit großen Zielen (≈ 15 mm) und ohne Tastatur"]
-weniger_geeignet_fuer: ["Messen oder gezieltes Üben der Wahlreaktionszeit – keine Zeitmessung, immer nur 2 Alternativen, die Zeigebewegung überdeckt die Entscheidung (dafür Pfeil-Duell/Zeichen-Code, vgl. 207)", "Vergleich zwischen Personen, Geräten oder Sitzungen (Rundendauer wächst mit der Leistung, Frist in ms unabhängig von Gerätelatenz und Bildschirmgröße)", "Menschen mit Rot-Blau-Unterscheidungsproblemen oder Lichtempfindlichkeit (roter Fehlerblitz)", "ruhiges Üben ohne Zeitdruck oder mit Pausen"]
+vorsicht_bei: [photosensitive_epilepsie, migraene_lichtempfindlich, presbyopie_gleitsicht, tremor_parkinson, hand_arm_beschwerden, kognitive_einschraenkung, aufmerksamkeitsprobleme, kinder_unter_6]
+geeignet_fuer: ["schnelle Wahlreaktionen üben: eine Richtung erkennen und mit einer festen Taste beantworten, ohne Farben oder Wörter zu lesen", "beobachten, wie die Antwortzeit mit der Zahl der Möglichkeiten (zwei, vier) steigt und mit Übung flacher wird", "kurze Einheit mit Zeitmessung (Median über viele Durchgänge) am Tablet, am Computer mit Maus oder mit Pfeiltasten"]
+weniger_geeignet_fuer: ["Üben des schnellen Zeigens auf wechselnde Orte (die Tasten stehen fest, es gibt keine Zeigebewegung über den Bildschirm)", "einfache Reaktion ohne Wahl (dafür Blitzreaktion, 101) oder Impulskontrolle (102)", "Vergleich zwischen Personen, Geräten oder Eingabearten (Touch, Maus und Tasten liefern unterschiedliche Zeiten)", "ruhiges Üben ohne Zeitdruck"]
 evidenz:
   uebungseffekt: stark
   naher_transfer: schwach
   alltag_transfer: fehlend
-  kommentar: "Wahlreaktions- und Zeigeaufgaben werden mit Übung zuverlässig schneller, der Zuwachs pro Alternative flacht ab (Mowbray & Rhoades 1959; Proctor & Schneider 2018). Zu dieser Browserübung gibt es keine Studie; computergestütztes Aufmerksamkeitstraining zeigte bei gesunden Älteren keinen signifikanten Effekt auf Aufmerksamkeit und exekutive Funktionen (Lampit et al. 2014), Aufgabenwechsel-Training erreicht nach wenigen Sitzungen ein Plateau ohne fernen Transfer (Zhao et al. 2020). Ein Alltagsnutzen ist nicht belegt."
+  kommentar: "Wahlreaktions- und Zeigeaufgaben werden mit Übung zuverlässig schneller, der Zuwachs pro Alternative flacht ab (Mowbray & Rhoades 1959; Proctor & Schneider 2018). Zu dieser Übung gibt es keine Studie; computergestütztes Aufmerksamkeitstraining zeigte bei gesunden Älteren keinen signifikanten Effekt auf Aufmerksamkeit und exekutive Funktionen (Lampit et al. 2014), und Übersichten finden keinen belastbaren Ferntransfer von „Gehirntraining“ (Simons et al. 2016; Sala & Gobet 2019). Ein Alltagsnutzen ist nicht belegt."
 aehnliche_uebungen: [201, 207, 302, 510, 802, 102, 101, 501, 702]
 stichworte: ["Wahlreaktion", "Choice Reaction Time", "Hick-Hyman-Gesetz", "Reiz-Reaktions-Kompatibilität", "Farbentscheidung Rot/Blau", "Regelwechsel", "Aufgabenwechsel", "Zeigebewegung", "Fitts'sches Gesetz", "Auge-Hand-Koordination", "Zeitdruck", "Combo", "keine Reaktionszeitmessung", "Reaktionszeit-Test (Name des Originals)"]
 ---
 
-# 202 · Farbregel-Klick (Wahlreaktion Rot/Blau mit Regelwechsel)
+# 202 · Wahlreaktion auf Pfeilrichtungen (Entscheidungstempo bei zwei und vier Möglichkeiten)
 
-> Original: „Wahlreaktionszeit-Test – Entscheidungstempo“ (im Spiel „Reaktionszeit-Test“) – skilldrills.online, Kapitel
-> Kognition & Aufmerksamkeit (`cognitive`, Unterkapitel `processing-speed`) · Blickfit: keine eigene Übung – als Stufen in
-> **Pfeil-Duell** (2 → 4 Richtungen) und **Zeichen-Code** (3 → 6 → 9 Paare) aufgegangen
+> Original: „Wahlreaktionszeit-Test – Entscheidungstempo“ (im Spiel „Reaktionszeit-Test“) – skilldrills.online, Kapitel Kognition & Aufmerksamkeit (`cognitive`, Unterkapitel `processing-speed`) · Blickfit: keine eigene Übung – als Stufen in **Pfeil-Duell** (2 → 4 Richtungen) und **Zeichen-Code** (3 → 6 → 9 Paare) aufgegangen
 
 ## 1. Kurzbeschreibung
 
-Im Vollbild liegen auf fast schwarzem Grund immer genau zwei Kreise: ein roter und ein blauer, jeweils an zufälliger Stelle. Oben in der Mitte steht klein, welche Farbe gerade gilt („ROTES ZIEL“ / „BLAUES ZIEL“). Man klickt oder tippt so schnell wie möglich den passenden Kreis; danach springen beide sofort an neue Orte. Wer zu lange braucht oder die falsche Farbe trifft, verliert Zeit und Serie. Mit den Punkten werden die Fristen kürzer, und die geltende Farbe wechselt immer öfter. Trotz des Namens wird keine Reaktionszeit gemessen – es ist eine Zeige-Aufgabe mit einfacher Farbwahl und Regelwechsel.
+Ein weißer Pfeil erscheint auf dunklem Grund und zeigt zunächst nach links oder rechts, später in eine von vier Diagonalrichtungen. Man tippt so schnell wie möglich die Taste der gezeigten Richtung; wo der Pfeil steht, spielt keine Rolle, obwohl sein Platz der Richtung in der Hälfte der Durchgänge widerspricht. Vor jedem Pfeil steht 500 ms lang ein Fixationskreuz; danach bleibt der Pfeil bis zur Antwort oder bis zum Ablauf der Frist sichtbar. Die Frist verkürzt sich von etwa 2 Sekunden auf etwa 0,5 Sekunden und passt sich der eigenen Trefferquote an (etwa vier von fünf richtig). Die Zeit bis zum Tipp wird bildgenau gemessen und als Median der richtigen Antworten ausgewiesen; Antworten unter 150 ms gelten als geraten und zählen nicht. In den Stufen 1 bis 10 wächst die Zahl der Möglichkeiten von zwei auf vier; mit gelernten Zuordnungen (3, 6 und 9 Zeichen-Zahl-Paare) lässt sich dasselbe Prinzip im Zeichen-Code üben (siehe 207).
 
 ## 2. Ablauf im Original (Analyse)
 
@@ -129,57 +127,51 @@ Die Seite beschreibt den Drill als Wahlreaktionszeit-Test nach dem Hick'schen Ge
 
 ## 4. Optische und okulomotorische Grundlagen
 
-- **Sehwinkel:** Kreise ≈ 2° (Kern ≈ 1,5°) – für Sehschärfe unkritisch, auch bei deutlich reduziertem Visus. Kleiner ist das Banner: 12–14 px fette Großbuchstaben ≈ 0,22–0,26° ≈ 13–16′ Buchstabenhöhe am Monitor, lesbar ab Visus ≈ 0,3–0,4 (eigene Rechnung; die Textfarbe verrät die Regel auch ohne Lesen).
-- **Blicksprünge:** Ziele liegen jedes Mal ≥ 7°, im Mittel 12–18° vom letzten entfernt; man sucht die richtige Farbe (Farb-Einzelreiz, „Pop-out“; Treisman & Gelade, 1980) und springt mit dem Blick hin. Die Latenz von Blicksprüngen zu sichtbaren Zielen lag bei über 1.000 gesunden jungen Erwachsenen im Median bei ≈ 177 ms (Bargary et al., 2017; Wert aus der Literaturbasis, nicht am Volltext neu geprüft) und hängt nicht von der Zahl möglicher Ziele ab (Kveraga et al., 2002). Beim Zeigen bleibt der Blick bis zum Bewegungsende am Ziel „verankert“ (Neggers & Bekkering, 2000); da die neuen Kreise erst beim Klick erscheinen, passt der Ablauf dazu.
-- **Farbe:** Rot gegen Cyan-Blau unterscheidet sich in Farbton und Helligkeit. Bei Rot-Grün-Schwäche (≈ 8 % der Männer, ≈ 0,4 % der Frauen in Europa; Birch, 2012) bleibt diese Unterscheidung meist möglich, Rot wirkt bei Protanopie aber dunkler (eigene Einschätzung, nicht getestet). Die Farbunterscheidung lässt ab ≈ 60 Jahren nach, am stärksten auf der Blau-Gelb-Achse (Paramei & Oakley, 2014). Die Farbe ist das einzige Merkmal der Ziele – das widerspricht WCAG 2.2, 1.4.1.
-- **Gleitsicht/Alterssichtigkeit:** Die Zielzone reicht im Vollbild über ≈ 32° × 16° (Monitor). Mit Gleitsichtgläsern sieht man untere Ziele durch Zwischen- und Nahteil, seitliche durch die unscharfen Randzonen; die nutzbare Breite dieser Zonen unterscheidet sich je nach Glasdesign deutlich (Sheedy, 2004; Größenordnung nicht geprüft); bei Gleitsicht-Neulingen nahmen vertikale Kopfbewegungen zu, mit großer Streuung zwischen Personen (Hutchings et al., 2007; nur 10 Teilnehmende). Das Banner liegt oben (Fernteil). Günstiger: Bildschirm-/Arbeitsplatzbrille, kleineres Fenster oder größerer Abstand. Am Tablet in 35–40 cm ist eine Nahkorrektur nötig (Smartphone-Studie: Presbyope halten das Gerät weiter weg, 39,7 vs. 33,4 cm; Boccardo et al., 2023).
-- **Trockenes Auge:** Bildschirmarbeit senkt die Lidschlagrate im Mittel etwa auf ein Fünftel (Patel et al., 1991); bei einer sich selbst verlängernden Runde von 2–2,5 min unter Zeitdruck ist das zu beachten.
-- **Stereosehen** spielt keine Rolle (flache Kreise, keine Tiefe).
+- **Reizgröße:** Pfeil und Antworttasten sind große weiße Flächen auf dunklem Grund (am Tablet Pfeil mindestens etwa 1,5°, Tasten mindestens etwa 15 mm; bei 40 cm Abstand entspricht 1 cm etwa 1,4°). Für die Sehschärfe ist die Aufgabe unkritisch, auch bei deutlich reduziertem Visus; begrenzend ist das Erkennen und Entscheiden, nicht die Sichtbarkeit.
+- **Blickführung:** Das Fixationskreuz legt den Blick vor jedem Durchgang in die Mitte. Der Pfeil erscheint dort oder um etwa 2° versetzt; die Tasten stehen fest und tragen selbst einen Pfeil, es gibt also nichts zu suchen oder zu lesen.
+- **Farbsehen:** Die Übung verlangt keine Farbunterscheidung. Eine Rot-Grün-Schwäche (etwa 8 % der Männer, 0,4 % der Frauen; Birch, 2012) beeinflusst die Aufgabe nicht.
+- **Brille:** Pfeil und Tasten liegen im Bereich weniger Grad bis zur Bildschirmbreite. Bei Gleitsichtbrillen können die äußeren Tasten in den seitlichen Unschärfezonen liegen, deren Breite sich zwischen Glasdesigns deutlich unterscheidet (Sheedy, 2004); Gleitsicht-Neulinge bewegen den Kopf mehr (Hutchings et al., 2007). Pfeil und Tasten durch den Nah- bzw. Zwischenbereich zu sehen, ist meist günstiger.
+- **Trockenes Auge:** Bildschirmarbeit senkt die Lidschlagrate im Mittel auf etwa ein Fünftel (Patel et al., 1991). Eine Sitzung dauert nur etwa eine Minute; bei mehreren Durchgängen hintereinander helfen bewusstes Blinzeln und Pausen.
 
 ## 5. Neurowissenschaftliche Grundlagen
 
-Zu diesem Spiel gibt es keine Bildgebungs- oder Trainingsstudie. Relevante Grundlagen:
-
-- **Wählen zwischen sichtbaren Zielen:** Nach einer einflussreichen Sichtweise werden mehrere mögliche Handlungen parallel vorbereitet und konkurrieren, bis eine ausgewählt ist (Cisek & Kalaska, 2010). In Wahl-Zeigeaufgaben zeigt die Krümmung der Bewegungsbahn, wie Aufmerksamkeit und Entscheidung während der Bewegung noch zwischen den Zielen schwanken (Song & Nakayama, 2009). Für 202 heißt das: Entscheidung und Bewegung laufen überlappend, nicht nacheinander – eine reine „Entscheidungszeit“ lässt sich aus einem Klick nicht ablesen.
-- **Warum Hick hier kaum greift:** Blicksprünge zu sichtbaren Zielen (Kveraga et al., 2002) und gezielte Handbewegungen zu hoch kompatiblen Zielen (Wright et al., 2007) wurden durch mehr Alternativen nicht langsamer. Kveraga et al. vermuteten dafür einen Sonderweg über den Colliculus superior; Wright et al. fanden dasselbe bei Handbewegungen und führen es eher auf die hohe Reiz-Reaktions-Kompatibilität zurück.
-- **Regelwechsel und Hemmung** gehören zu den exekutiven Funktionen, an denen präfrontale Netzwerke beteiligt sind (Übersicht Diamond, 2013). Eine gezielte Wirkung dieses Spiels auf das „Frontalhirn“ ist nicht belegt.
-- **Farb-Pop-out:** Ein einzelnes Ziel, das sich nur in der Farbe unterscheidet, wird ohne serielle Suche gefunden (Treisman & Gelade, 1980) – die visuelle Suche ist hier deshalb Nebensache.
+- **Wählen zwischen Antworten:** Nach einer einflussreichen Sichtweise werden mehrere mögliche Handlungen parallel vorbereitet und konkurrieren, bis eine ausgewählt ist (Cisek & Kalaska, 2010). Entscheidung und Bewegung laufen demnach überlappend, nicht nacheinander; aus der Zeit bis zum Tipp lässt sich eine reine „Entscheidungszeit“ nicht herauslesen.
+- **Zahl der Möglichkeiten:** Die Wahlreaktionszeit steigt etwa mit dem Logarithmus der Zahl der gleich wahrscheinlichen Möglichkeiten (Hick, 1952; Hyman, 1953). Wie stark, hängt von der Reiz-Antwort-Kompatibilität und von der Übung ab; bei hoch kompatiblen Zuordnungen kann der Anstieg sehr klein sein (Fitts & Seeger, 1953; Wright et al., 2007; Übersicht: Proctor & Schneider, 2018). Beim Pfeil-Duell entspricht die Pfeilrichtung dem Ort der Taste; im Zeichen-Code (207) muss die Zuordnung dagegen gelernt und nachgeschlagen werden, sodass das Hick-Prinzip dort stärker wirkt.
+- **Ort als Störgröße:** Weil der Platz des Pfeils in der Hälfte der Durchgänge der Richtung widerspricht, enthält jede Wahl einen kleinen Konflikt (räumlicher Stroop-Effekt, siehe 201). Dass die Übung bestimmte Hirnregionen „trainiert“, ist nicht untersucht.
 
 ## 6. Motorische Grundlagen
 
-- **Zielbewegung (Fitts'sches Gesetz):** Bewegungszeit ≈ a + b × log₂(2A/W) (Fitts, 1954). Mit Weg A ≈ 12–18° und Zielgröße W = 80 px ergibt sich ein Schwierigkeitsindex von ≈ 3,5 Bit (iPad) bis ≈ 4,1 Bit (Monitor, Vollbild) – *eigene Rechnung*. Die Zeigebewegung ist damit meist der größte Zeitanteil; die Farbentscheidung zwischen zwei Möglichkeiten entspricht 1 Bit.
-- **Frist und Speed-Accuracy-Trade-off:** Schnelleres Antworten erhöht die Fehlerrate (Heitz, 2014). Weil Fehlziele und abgelaufene Fristen gleich bestraft werden (−1 s, Combo 0), lohnt sich beim Ablauf der Frist ein Rateklick – das fördert impulsives Klicken.
-- **Touch vs. Maus:** Am Touchscreen war die Bewegungszeit gegenüber der Maus bei Älteren um 35 %, bei Jüngeren um 16 % kürzer, mit weniger Fehlern (Findlater et al., 2013). Am Tablet ist 202 daher eher leichter; die tippende Hand verdeckt aber Teile der Fläche. Mit Maus oder Touchpad muss der Zeiger quer über den ganzen Bildschirm.
-- **Präzision und Tremor:** Die Ziele sind groß (≈ 15 mm am iPad, über der WCAG-AAA-Größe von 44 × 44 CSS-px); Genauigkeit begrenzt kaum. Belastend für zitternde oder schmerzende Hände ist eher das Tempo: bei 0,6–1 s pro Ziel ≈ 1–1,7 gezielte Klicks pro Sekunde über 2 min ohne Pause.
+- **Tippen auf große Tasten:** Die Zielbewegung folgt dem Fitts'schen Gesetz (Bewegungszeit steigt mit Weg und sinkt mit Zielgröße; Fitts, 1954); bei so großen Tasten ist ihr Anteil klein, die Zeit geht überwiegend in Erkennen und Entscheiden auf.
+- **Tempo und Genauigkeit:** Schnelleres Antworten erhöht die Fehlerrate (Heitz, 2014). Richtige Antworten heben die Stufe um 0,25 an, falsche oder zu langsame senken sie um 1; dieses gewichtete Auf-Ab-Verfahren (Kaernbach, 1991) hält die Trefferquote bei etwa 80 %. Rateantworten unter 150 ms zählen nicht, sodass blindes Tippen sich nicht lohnt.
+- **Eingabeart:** Bei Zeigeaufgaben war der Touchscreen im Vergleich zur Maus bei Älteren um 35 %, bei Jüngeren um 16 % schneller, mit weniger Fehlern (Findlater et al., 2013). Mit Pfeiltasten entfällt die Zielbewegung weitgehend. Touch-Web-Apps messen Zeiten um etwa 58–70 ms zu lang (Pronk et al., 2020).
+- **Tremor, Hand und Arm:** Die Tasten sind groß; belastend ist eher das Tempo (etwa eine Antwort pro 0,5 bis 2 Sekunden) über die Dauer von etwa einer Minute.
 
 ## 7. Einflussfaktoren und Messgrenzen
 
-- **Gerät:** Die Frist ist in ms festgelegt, die Eingabe- und Anzeigeverzögerung zieht davon ab. Web-Apps messen auf Touchgeräten um ≈ 58–70 ms zu lange (Pronk et al., 2020); Tablets haben so effektiv kürzere Fristen. Die Kreise haben feste Pixelgröße, die Wege wachsen mit der Bildschirmgröße – der Schwierigkeitsindex hängt vom Bildschirm ab (Abschnitt 6).
-- **Rundendauer und Punkte:** Zeitbonus und nie sinkendes Level koppeln Dauer, Punkte, Endlevel und Genauigkeit aneinander; Punkte und Note messen vor allem, wie lange man durchhält. Die Combo verkürzt die Frist um bis zu 30 %, nach einem Fehler wird es schlagartig leichter.
-- **Messgrößen:** Die Genauigkeit am Ende ist durch die Schlusskette abgelaufener Fristen strukturell gedrückt (Simulation ≈ 60–65 %). Wechselkosten wären als persönlicher Wert ohnehin wenig zuverlässig: Differenzwerte klassischer Aufgaben hatten Test-Retest-Werte von 0 bis 0,82 (Hedge et al., 2018).
-- **Alter:** Wahlreaktion verlangsamt sich über das ganze Erwachsenenalter (Der & Deary, 2006), Blicksprünge sind mit 20–30 Jahren am schnellsten (Munoz et al., 1998). Bei der Frist von 1.350 ms im ersten Level kommen auch Ältere mit, die Fristen ab Level ≈ 8 (< 900 ms) begrenzen sie früher.
-- **Übung und Strategie:** Mitzählen der Treffer macht die Wechsel vorhersehbar (feste Trefferzahl je Level); wer das Banner nur aus dem Augenwinkel prüft statt hinzuschauen, spart Blicksprünge – solche Strategien verändern, was gefordert wird.
+- **Gerät und Eingabeart:** Die Antwortfrist ist in Millisekunden festgelegt, Eingabe- und Anzeigeverzögerung gehen davon ab. Touch, Maus und Pfeiltasten liefern unterschiedliche Zeiten (Pronk et al., 2020; Findlater et al., 2013); Vergleiche gelten deshalb nur auf demselben Gerät mit derselben Eingabeart. Am Menschen streuen Messwerte stärker als an Prüfkörpern, und eine hohe Korrelation zweier Verfahren bedeutet noch keine Übereinstimmung; Mehrfachmessung und Mittelung sind sinnvoll (Grundsatz aus der Hornhautvermessung: Mountford et al., 2004, S. 24 und 43–44). Das Pfeil-Duell weist deshalb den Median über viele Durchgänge aus, nicht einzelne Zeiten.
+- **Abfolge der Durchgänge:** Richtung und Platz wiederholen sich nicht direkt; bei zwei Richtungen wären strikte Wechsel vorhersagbar, deshalb sind dort höchstens zwei gleiche Antworten in Folge erlaubt. Die Hälfte der Durchgänge ist widerspruchsfrei, die Hälfte widersprüchlich.
+- **Zuverlässigkeit von Differenzwerten:** Der Zeitverlust durch widersprüchliche Reize ist als persönlicher Wert oft unzuverlässig (Test-Retest in sieben Aufgaben von 0 bis 0,82; Hedge et al., 2018) und wird nur als Zusatzwert gezeigt.
+- **Alter:** Die Wahlreaktionszeit verlangsamt sich über das ganze Erwachsenenalter, die einfache Reaktionszeit kaum vor dem 50. Lebensjahr (Der & Deary, 2006). Die Antwortfrist beginnt großzügig bei etwa 2 s und passt sich an; die Startstufe wird von Sitzung zu Sitzung übernommen.
 
 ## 8. Studienlage: Trainierbarkeit und Übertragung
 
-- **Übungseffekt (stark):** Wahlreaktionen werden mit Übung schneller; der Zuwachs pro zusätzlicher Alternative wird kleiner – nach 5 Sitzungen à 1.000 Durchgängen sank der Unterschied zwischen 8 und 2 Alternativen von fast 500 auf gut 300 ms (Mowbray & Rhoades, 1959; berichtet in Proctor & Schneider, 2018). Auch Zeigeaufgaben werden durch Wiederholung schneller; ein Teil ist Gewöhnung an Gerät, Fristen und Strategie.
-- **Naher Transfer (schwach):** keine Studie zu dieser Übung. Intensives Aufgabenwechsel-Training erreichte nach wenigen Sitzungen ein Plateau; ähnliche Wechselaufgaben profitierten, ferne nicht (Zhao et al., 2020).
-- **Alltagstransfer (fehlend):** Computergestütztes Training bei gesunden Älteren (52 RCTs) zeigte keinen signifikanten Effekt auf Aufmerksamkeit und exekutive Funktionen (Lampit et al., 2014); Übersichten finden keinen belastbaren Ferntransfer von „Gehirntraining“ (Simons et al., 2016; Sala & Gobet, 2019). Für Sport, E-Sport, Verkehr oder Beruf gibt es keinen Beleg.
+- **Übungseffekt (stark):** Wahlreaktionen werden mit Übung schneller; der Zuwachs pro zusätzlicher Alternative wird kleiner. Nach 5 Sitzungen à 1.000 Durchgängen sank der Unterschied zwischen 8 und 2 Alternativen von fast 500 auf gut 300 ms (Mowbray & Rhoades, 1959; berichtet in Proctor & Schneider, 2018). Ein Teil des Gewinns ist Gewöhnung an Gerät, Fristen und Strategie.
+- **Naher Transfer (schwach):** Zu dieser Übung gibt es keine Studie. Computergestütztes Training bei gesunden Älteren (52 randomisierte Studien) zeigte keinen signifikanten Effekt auf Aufmerksamkeit und exekutive Funktionen (Lampit et al., 2014).
+- **Alltagstransfer (fehlend):** Übersichten finden keinen belastbaren Ferntransfer von „Gehirntraining“ (Simons et al., 2016; Sala & Gobet, 2019). Für Sport, Verkehr oder Beruf gibt es keinen Beleg.
+- **Seriöse Formulierung:** „Du übst, schnell die passende Taste zur Pfeilrichtung zu wählen. Mit Übung wirst du darin schneller; ob das im Alltag hilft, ist nicht belegt.“
 
 ## 9. Auswahlhinweise für die KI
 
-- **Passt, wenn …** schnelles Zeigen/Tippen auf wechselnde Orte mit einer leichten Entscheidung geübt werden soll, jemand einen spielerischen Einstieg in Regelwechsel sucht (nur zwei Regeln) oder am Tablet ohne Tastatur geübt wird.
-- **Weniger passend, wenn …** eine echte Wahlreaktion mit Zeitmessung gemeint ist (Pfeil-Duell; 207/Zeichen-Code), einfache Reaktion (101) oder Impulskontrolle (102) im Vordergrund steht, ruhig ohne Zeitdruck geübt werden soll oder Ergebnisse verglichen werden sollen.
+- **Passt, wenn …** eine kurze Wahlreaktionsaufgabe mit Zeitmessung gewünscht ist, die ohne Farben und Wörter auskommt und am Tablet, mit Maus oder mit Pfeiltasten gespielt werden kann; auch als Einstieg in Aufgaben mit mehreren Antwortmöglichkeiten.
+- **Weniger passend, wenn …** schnelles Zeigen auf wechselnde Orte geübt werden soll (die Tasten stehen fest), eine einfache Reaktion ohne Wahl (101) oder Impulskontrolle (102) im Vordergrund steht, ruhig ohne Zeitdruck geübt werden soll oder Ergebnisse zwischen Personen oder Geräten verglichen werden sollen.
 - **Vorsicht / anpassen bei …**
-  - `photosensitive_epilepsie`, `migraene_lichtempfindlich`: roter radialer Fehlerblitz (standardmäßig an) bei jedem Fehlziel und jeder abgelaufenen Frist. In der Schlusskette folgen Blitze im Takt der Frist (Level 10: ≈ 1,4/s); ab Level ≈ 18 (Frist < 333 ms) sind mehr als 3 Blitze pro Sekunde möglich, die Grenze von WCAG 2.2, 2.3.1 (eigene Rechnung, nicht gemessen). Blitz abschalten.
-  - `farbsehschwaeche`: Farbe ist das einzige Zielmerkmal; Rot/Blau ist bei Rot-Grün-Schwäche meist unterscheidbar, im Alter und bei Blau-Gelb-Störungen unsicherer – vorher kurz prüfen lassen.
-  - `presbyopie_gleitsicht`: Ziele über die ganze Bildfläche, Banner oben – Arbeitsplatzbrille, kein Vollbild auf großen Monitoren, Kopf mitbewegen erlaubt.
-  - `gesichtsfeldausfall`: Ziele erscheinen irgendwo in ≈ 32° × 16°; Ziele und Bannerwechsel auf der ausgefallenen Seite werden leicht übersehen.
-  - `trockenes_auge_bildschirm`: seltener Lidschlag über eine unvorhersehbar lange Runde – bewusst blinzeln, Pause danach.
-  - `tremor_parkinson`, `hand_arm_beschwerden`: ≈ 1–1,7 schnelle Zielbewegungen pro Sekunde ohne Pausenfunktion.
-  - `kognitive_einschraenkung`, `aufmerksamkeitsprobleme`, `kinder_unter_6`: unangekündigte Regelwechsel, kleiner Text, sich selbst verschärfender Zeitdruck mit Blitz und Strafton – allenfalls als Spiel auf niedriger Stufe, nicht als Test.
-- **Kombiniert gut mit …** 207 (symbolische Zuordnung mit echtem Hick-Anteil), 102 (Hemmung ohne Zeigeweg), 404 (ruhige Blickfolge als Ausgleich ohne Zeitdruck).
-- **Überschneidungen:** **Gleiche Engine** wie 302–308 und die Combo-Drills dieses Kapitels (201, 205, 206, 207): Level alle 1.750 Punkte, Combo bis × 3, +2 s je Treffer, −1 s je Fehler, roter Fehlerblitz – pro Einheit höchstens eine davon. **302** ist mechanisch am nächsten (mehrere ruhende Ziele mit Frist, ohne Farbregel). **510** und **802** verlangen ebenfalls eine Farbentscheidung beim Zielen (510: rot vor gelb, grün nie; 802: grüne fangen, rote fallen lassen) – nicht mit 202 in einer Einheit. **201** nutzt ebenfalls Farbe unter Zeitdruck (Farbwort-Stroop), **206** einen unangekündigten Wechsel des Zielsymbols. **Blickfit:** Pfeil-Duell (Stufen 1–10) ersetzt 202 – nicht zusätzlich vorschlagen.
+  - `photosensitive_epilepsie`, `migraene_lichtempfindlich`: kein Blitz, aber rasche Reizfolge auf dunklem Grund; vorsichtshalber kurz probieren und bei Beschwerden abbrechen.
+  - `presbyopie_gleitsicht`: äußere Tasten können in seitlichen Unschärfezonen liegen; Gerät in Leseabstand halten, Nahkorrektur prüfen.
+  - `tremor_parkinson`, `hand_arm_beschwerden`: etwa eine Antwort pro 0,5 bis 2 Sekunden über rund eine Minute, ohne Pausenfunktion.
+  - `kognitive_einschraenkung`, `aufmerksamkeitsprobleme`, `kinder_unter_6`: Zeitdruck mit kürzer werdender Frist; allenfalls als Spiel auf niedriger Stufe, nicht als Test.
+- **Warnzeichen:** Doppelbilder, plötzlicher einseitiger Sehverlust, Lichtblitze, neue Schleier, Kopfschmerz mit Sehverschlechterung oder neu auftretender Schwindel gehören ärztlich abgeklärt (Aufzählung der Warnsymptome in der Anamnese: Muchnick, 2008, S. 6, 17 und 28); ein Übungsprogramm ersetzt das nicht.
+- **Kombiniert gut mit …** 207 (Zuordnung mit gelernten Paaren, echter Hick-Anteil), 102 (Hemmung ohne Wahl), 201 (Konflikt zwischen Richtung und Ort), 404 (ruhige Blickfolge als Ausgleich ohne Zeitdruck).
+- **Abgrenzung:** 202 beschreibt die Wahl nach Richtung; 201 stellt den Konflikt zwischen Reizmerkmalen in den Vordergrund. Pro Einheit genügt eine der beiden, da sie dieselbe Übung betreffen.
 
 ## 10. Schwächen des Originals und Empfehlungen für eine Blickfit-Umsetzung
 
@@ -198,25 +190,37 @@ Blickfit hat 202 bewusst **nicht** als eigene Übung übernommen (docs/wissensch
 - Hick, W. E. (1952). On the rate of gain of information. *Quarterly Journal of Experimental Psychology, 4*(1), 11–26. https://doi.org/10.1080/17470215208416600 – **Prüfung:** DOI stimmt ✓; **stützt:** ja für das Gesetz selbst, aber für diese Übung ohne Bedeutung (immer 2 Alternativen, hoch kompatibles Zeigen).
 - Hyman, R. (1953). Stimulus information as a determinant of reaction time. *Journal of Experimental Psychology, 45*(3), 188–196. https://doi.org/10.1037/h0056940 – **Prüfung:** DOI stimmt ✓; **stützt:** ja (Wahl-RT steigt mit der Informationsmenge in Bit), Einschränkung wie bei Hick.
 - Der, G., & Deary, I. J. (2006). Age and sex differences in reaction time in adulthood: Results from the United Kingdom Health and Lifestyle Survey. *Psychology and Aging, 21*(1), 62–73. https://doi.org/10.1037/0882-7974.21.1.62 – **Prüfung:** DOI stimmt ✓; **stützt:** nein für „Profispieler und Spitzenathleten 180–230 ms“ (Bevölkerungsstichprobe, n = 7.130); teilweise für den Altersverlauf (Wahl-RT wird über das ganze Erwachsenenalter langsamer, „durch Training stabilisierbar“ steht dort nicht).
-- Woods, D. L., Wyma, J. M., Yund, E. W., Herron, T. J., & Reed, B. (2015). Factors influencing the latency of simple reaction time. *Frontiers in Human Neuroscience, 9*, 131. https://doi.org/10.3389/fnhum.2015.00131 – **Prüfung:** DOI stimmt ✓ (Volltext); **stützt:** ja für „Gerät verzögert das Ergebnis“ (17,8 ms Hardware bei 60-Hz-LCD + 1-kHz-Maus), nein für „144-Hz-Monitor und 1.000-Hz-Sensor minimieren Latenzen“ (nicht untersucht; nur einfache RT).
+- Woods, D. L., Wyma, J. M., Yund, E. W., Herron, T. J., & Reed, B. (2015). Factors influencing the latency of simple reaction time. *Frontiers in Human Neuroscience, 9*, 131. https://doi.org/10.3389/fnhum.2015.00131 – **Prüfung:** DOI stimmt ✓ (Volltext); **stützt:** ja für „Gerät verzögert das Ergebnis“ (17,8 ms Hardware bei 60-Hz-LCD + 1-kHz-Maus), nein für „144-Hz-Monitor und 1.000-Hz-Sensor minimieren Latenzen“ (nicht untersucht; nur einfache RT). – in der öffentlichen Beschreibung nicht zitiert; **stützt (öffentliche Fassung):** nein
 
 ### Weitere Fachliteratur
-
 Alle DOIs am 29./30.09.2026 per Crossref geprüft; Inhalte über PubMed-Abstracts, die Literaturbasis W02 bzw. `docs/wissenschaft/04`.
-
-- Bargary, G., Bosten, J. M., Goodbourn, P. T., Lawrance-Owen, A. J., Hogg, R. E., & Mollon, J. D. (2017). Individual differences in human eye movements: An oculomotor signature? *Vision Research, 141*, 157–169. https://doi.org/10.1016/j.visres.2017.03.001 – Sakkadenlatenz Median 177 ms.
+- Bargary, G., Bosten, J. M., Goodbourn, P. T., Lawrance-Owen, A. J., Hogg, R. E., & Mollon, J. D. (2017). Individual differences in human eye movements: An oculomotor signature? *Vision Research, 141*, 157–169. https://doi.org/10.1016/j.visres.2017.03.001 – Sakkadenlatenz Median 177 ms. – in der öffentlichen Beschreibung nicht zitiert; **stützt (öffentliche Fassung):** nein
+- Birch, J. (2012). Worldwide prevalence of red-green color deficiency. *Journal of the Optical Society of America A*, 29(3), 313–320. https://doi.org/10.1364/JOSAA.29.000313 – Häufigkeit der Farbsehschwäche
 - Cisek, P., & Kalaska, J. F. (2010). Neural mechanisms for interacting with a world full of action choices. *Annual Review of Neuroscience, 33*, 269–298. https://doi.org/10.1146/annurev.neuro.051508.135409 – parallele Vorbereitung und Auswahl möglicher Handlungen.
+- Der, G., & Deary, I. J. (2006). Age and sex differences in reaction time in adulthood: Results from the United Kingdom Health and Lifestyle Survey. *Psychology and Aging, 21*(1), 62–73. https://doi.org/10.1037/0882-7974.21.1.62 – Altersverlauf der Reaktionszeiten
+- Ergänzend zitiert (Kurzangaben, Details in der Literaturbasis W02): Birch (2012), https://doi.org/10.1364/JOSAA.29.000313 · Boccardo et al. (2023), https://doi.org/10.1371/journal.pone.0282947 · Diamond (2013), https://doi.org/10.1146/annurev-psych-113011-143750 · Hedge et al. (2018), https://doi.org/10.3758/s13428-017-0935-1 · Heitz (2014), https://doi.org/10.3389/fnins.2014.00150 · Hutchings et al. (2007), https://doi.org/10.1111/j.1475-1313.2006.00460.x · Lampit et al. (2014), https://doi.org/10.1371/journal.pmed.1001756 · Monsell (2003), https://doi.org/10.1016/S1364-6613(03)00028-7 · Munoz et al. (1998), https://doi.org/10.1007/s002210050473 · Paramei & Oakley (2014), https://doi.org/10.1364/JOSAA.31.00A375 · Patel et al. (1991), https://doi.org/10.1097/00006324-199111000-00010 · Pronk et al. (2020), https://doi.org/10.3758/s13428-019-01321-2 · Sala & Gobet (2019), https://doi.org/10.1016/j.tics.2018.10.004 · Sheedy (2004), https://doi.org/10.1016/S1529-1839(04)70021-4 · Simons et al. (2016), https://doi.org/10.1177/1529100616661983 · Treisman & Gelade (1980), https://doi.org/10.1016/0010-0285(80)90005-5 · W3C (2024), *WCAG 2.2*, Kriterien 1.4.1 und 2.3.1, https://www.w3.org/TR/WCAG22/ (Norm, keine DOI). – Sammelzeile der Arbeitsfassung; **stützt (öffentliche Fassung):** nein
 - Findlater, L., Froehlich, J. E., Fattal, K., Wobbrock, J. O., & Dastyar, T. (2013). Age-related differences in performance with touchscreens compared to traditional mouse input. In *Proceedings of CHI '13* (S. 343–346). ACM. https://doi.org/10.1145/2470654.2470703 – Touch vs. Maus nach Alter.
-- Fitts, P. M. (1954). The information capacity of the human motor system in controlling the amplitude of movement. *Journal of Experimental Psychology, 47*(6), 381–391. https://doi.org/10.1037/h0055392 – Fitts'sches Gesetz.
 - Fitts, P. M., & Seeger, C. M. (1953). S-R compatibility: Spatial characteristics of stimulus and response codes. *Journal of Experimental Psychology, 46*(3), 199–210. https://doi.org/10.1037/h0062827 – Reiz-Reaktions-Kompatibilität.
-- Kveraga, K., Boucher, L., & Hughes, H. C. (2002). Saccades operate in violation of Hick's law. *Experimental Brain Research, 146*(3), 307–314. https://doi.org/10.1007/s00221-002-1168-8 – Blicksprünge zu sichtbaren Zielen ohne Hick-Anstieg.
+- Fitts, P. M. (1954). The information capacity of the human motor system in controlling the amplitude of movement. *Journal of Experimental Psychology, 47*(6), 381–391. https://doi.org/10.1037/h0055392 – Fitts'sches Gesetz.
+- Hedge, C., Powell, G., & Sumner, P. (2018). The reliability paradox: Why robust cognitive tasks do not produce reliable individual differences. *Behavior Research Methods*, 50(3), 1166–1186. https://doi.org/10.3758/s13428-017-0935-1 – Zuverlässigkeit von Differenzwerten
+- Heitz, R. P. (2014). The speed-accuracy tradeoff: History, physiology, methodology, and behavior. *Frontiers in Neuroscience*, 8, 150. https://doi.org/10.3389/fnins.2014.00150 – Tempo und Genauigkeit
+- Hutchings, N., Irving, E. L., Jung, N., Dowling, L. M., Wells, K. A., & Lillakas, L. (2007). Eye and head movement alterations in naïve progressive addition lens wearers. *Ophthalmic and Physiological Optics*, 27(2), 142–153. https://doi.org/10.1111/j.1475-1313.2006.00460.x – Kopfbewegungen bei Gleitsicht
+- Kaernbach, C. (1991). Simple adaptive testing with the weighted up-down method. *Perception & Psychophysics*, 49(3), 227–229. https://doi.org/10.3758/BF03214307 – gewichtetes Auf-Ab-Verfahren
+- Kveraga, K., Boucher, L., & Hughes, H. C. (2002). Saccades operate in violation of Hick's law. *Experimental Brain Research, 146*(3), 307–314. https://doi.org/10.1007/s00221-002-1168-8 – Blicksprünge zu sichtbaren Zielen ohne Hick-Anstieg. – in der öffentlichen Beschreibung nicht zitiert; **stützt (öffentliche Fassung):** nein
+- Lampit, A., Hallock, H., & Valenzuela, M. (2014). Computerized cognitive training in cognitively healthy older adults: A systematic review and meta-analysis of effect modifiers. *PLoS Medicine*, 11(11), e1001756. https://doi.org/10.1371/journal.pmed.1001756 – Computertraining bei gesunden Älteren
+- Mountford, J., Ruston, D., & Dave, T. (2004). *Orthokeratology: Principles and Practice*. Butterworth-Heinemann. https://openlibrary.org/isbn/9780750640077 – Messgrundsätze: Streuung am Menschen, Korrelation ist keine Übereinstimmung (S. 24, 43–44)
 - Mowbray, G. H., & Rhoades, M. V. (1959). On the reduction of choice reaction times with practice. *Quarterly Journal of Experimental Psychology, 11*(1), 16–23. https://doi.org/10.1080/17470215908416282 – Übung flacht die Hick-Steigung ab.
-- Neggers, S. F. W., & Bekkering, H. (2000). Ocular gaze is anchored to the target of an ongoing pointing movement. *Journal of Neurophysiology, 83*(2), 639–651. https://doi.org/10.1152/jn.2000.83.2.639 – Blick bleibt während des Zeigens am Ziel.
+- Muchnick, B. G. (2008). *Clinical Medicine in Optometric Practice* (2. Aufl.). Mosby/Elsevier. https://openlibrary.org/isbn/9780323029612 – Warnsymptome des Auges und neurologische Warnzeichen (S. 6, 17, 28)
+- Neggers, S. F. W., & Bekkering, H. (2000). Ocular gaze is anchored to the target of an ongoing pointing movement. *Journal of Neurophysiology, 83*(2), 639–651. https://doi.org/10.1152/jn.2000.83.2.639 – Blick bleibt während des Zeigens am Ziel. – in der öffentlichen Beschreibung nicht zitiert; **stützt (öffentliche Fassung):** nein
+- Patel, S., Henderson, R., Bradley, L., Galloway, B., & Hunter, L. (1991). Effect of visual display unit use on blink rate and tear stability. *Optometry and Vision Science*, 68(11), 888–892. https://doi.org/10.1097/00006324-199111000-00010 – Lidschlag bei Bildschirmarbeit
 - Proctor, R. W., & Schneider, D. W. (2018). Hick's law for choice reaction time: A review. *Quarterly Journal of Experimental Psychology, 71*(6), 1281–1299. https://doi.org/10.1080/17470218.2017.1322622 – Gültigkeit, Kompatibilität, Übung.
-- Roelofs, A. (2018). One hundred fifty years after Donders: Insights from unpublished data, a replication, and modeling of his reaction times. *Acta Psychologica, 191*, 228–233. https://doi.org/10.1016/j.actpsy.2018.10.002 – Donders' Originalaufgabe.
-- Rogers, R. D., & Monsell, S. (1995). Costs of a predictable switch between simple cognitive tasks. *Journal of Experimental Psychology: General, 124*(2), 207–231. https://doi.org/10.1037/0096-3445.124.2.207 – Wechselkosten und Vorbereitungszeit.
-- Song, J.-H., & Nakayama, K. (2009). Hidden cognitive states revealed in choice reaching tasks. *Trends in Cognitive Sciences, 13*(8), 360–366. https://doi.org/10.1016/j.tics.2009.04.009 – Wahl-Zeigeaufgaben, Bahnkrümmung.
-- Thompson, J. J., Blair, M. R., & Henrey, A. J. (2014). Over the hill at 24: Persistent age-related cognitive-motor decline in reaction times in an ecologically valid video game task begins in early adulthood. *PLoS ONE, 9*(4), e94215. https://doi.org/10.1371/journal.pone.0094215 – Altersverlauf ab 24 Jahren.
+- Pronk, T., Wiers, R. W., Molenkamp, B., & Murre, J. (2020). Mental chronometry in the pocket? Timing accuracy of web applications on touchscreen and keyboard devices. *Behavior Research Methods*, 52(3), 1371–1382. https://doi.org/10.3758/s13428-019-01321-2 – Touch-Latenz
+- Roelofs, A. (2018). One hundred fifty years after Donders: Insights from unpublished data, a replication, and modeling of his reaction times. *Acta Psychologica, 191*, 228–233. https://doi.org/10.1016/j.actpsy.2018.10.002 – Donders' Originalaufgabe. – in der öffentlichen Beschreibung nicht zitiert; **stützt (öffentliche Fassung):** nein
+- Rogers, R. D., & Monsell, S. (1995). Costs of a predictable switch between simple cognitive tasks. *Journal of Experimental Psychology: General, 124*(2), 207–231. https://doi.org/10.1037/0096-3445.124.2.207 – Wechselkosten und Vorbereitungszeit. – in der öffentlichen Beschreibung nicht zitiert; **stützt (öffentliche Fassung):** nein
+- Sala, G., & Gobet, F. (2019). Cognitive training does not enhance general cognition. *Trends in Cognitive Sciences*, 23(1), 9–20. https://doi.org/10.1016/j.tics.2018.10.004 – kein belastbarer Ferntransfer
+- Sheedy, J. E. (2004). Progressive addition lenses—matching the specific lens to patient needs. *Optometry*, 75(2), 83–102. https://doi.org/10.1016/S1529-1839(04)70021-4 – Zonenbreiten von Gleitsichtgläsern
+- Simons, D. J., Boot, W. R., Charness, N., Gathercole, S. E., Chabris, C. F., Hambrick, D. Z., & Stine-Morrow, E. A. L. (2016). Do “brain-training” programs work? *Psychological Science in the Public Interest*, 17(3), 103–186. https://doi.org/10.1177/1529100616661983 – Übersicht zu „Gehirntraining“
+- Song, J.-H., & Nakayama, K. (2009). Hidden cognitive states revealed in choice reaching tasks. *Trends in Cognitive Sciences, 13*(8), 360–366. https://doi.org/10.1016/j.tics.2009.04.009 – Wahl-Zeigeaufgaben, Bahnkrümmung. – in der öffentlichen Beschreibung nicht zitiert; **stützt (öffentliche Fassung):** nein
+- Thompson, J. J., Blair, M. R., & Henrey, A. J. (2014). Over the hill at 24: Persistent age-related cognitive-motor decline in reaction times in an ecologically valid video game task begins in early adulthood. *PLoS ONE, 9*(4), e94215. https://doi.org/10.1371/journal.pone.0094215 – Altersverlauf ab 24 Jahren. – in der öffentlichen Beschreibung nicht zitiert; **stützt (öffentliche Fassung):** nein
 - Wright, C. E., Marino, V. F., Belovsky, S. A., & Chubb, C. (2007). Visually guided, aimed movements can be unaffected by stimulus–response uncertainty. *Experimental Brain Research, 179*(3), 475–496. https://doi.org/10.1007/s00221-006-0805-z – Zeigebewegungen ohne Hick-Anstieg bei hoher Kompatibilität.
-- Zhao, X., Wang, H., & Maes, J. H. R. (2020). Training and transfer effects of extensive task-switching training in students. *Psychological Research, 84*(2), 389–403. https://doi.org/10.1007/s00426-018-1059-7 – Plateau, naher, kein ferner Transfer.
-- Ergänzend zitiert (Kurzangaben, Details in der Literaturbasis W02): Birch (2012), https://doi.org/10.1364/JOSAA.29.000313 · Boccardo et al. (2023), https://doi.org/10.1371/journal.pone.0282947 · Diamond (2013), https://doi.org/10.1146/annurev-psych-113011-143750 · Hedge et al. (2018), https://doi.org/10.3758/s13428-017-0935-1 · Heitz (2014), https://doi.org/10.3389/fnins.2014.00150 · Hutchings et al. (2007), https://doi.org/10.1111/j.1475-1313.2006.00460.x · Lampit et al. (2014), https://doi.org/10.1371/journal.pmed.1001756 · Monsell (2003), https://doi.org/10.1016/S1364-6613(03)00028-7 · Munoz et al. (1998), https://doi.org/10.1007/s002210050473 · Paramei & Oakley (2014), https://doi.org/10.1364/JOSAA.31.00A375 · Patel et al. (1991), https://doi.org/10.1097/00006324-199111000-00010 · Pronk et al. (2020), https://doi.org/10.3758/s13428-019-01321-2 · Sala & Gobet (2019), https://doi.org/10.1016/j.tics.2018.10.004 · Sheedy (2004), https://doi.org/10.1016/S1529-1839(04)70021-4 · Simons et al. (2016), https://doi.org/10.1177/1529100616661983 · Treisman & Gelade (1980), https://doi.org/10.1016/0010-0285(80)90005-5 · W3C (2024), *WCAG 2.2*, Kriterien 1.4.1 und 2.3.1, https://www.w3.org/TR/WCAG22/ (Norm, keine DOI).
+- Zhao, X., Wang, H., & Maes, J. H. R. (2020). Training and transfer effects of extensive task-switching training in students. *Psychological Research, 84*(2), 389–403. https://doi.org/10.1007/s00426-018-1059-7 – Plateau, naher, kein ferner Transfer. – in der öffentlichen Beschreibung nicht zitiert; **stützt (öffentliche Fassung):** nein
