@@ -58,7 +58,7 @@ export const it: ExerciseTexts = {
     'Se riesce, la sequenza si allunga. Due errori chiudono il turno.',
   ],
   why:
-    'Nel percorso luminoso ricordi un ordine di luoghi – un po’ come un breve tragitto che ti impari. Il compito proviene dalla ricerca sulla memoria; con la pratica vai più avanti, soprattutto con strategie come «due a destra, uno in alto». Che questo aiuti nella vita di tutti i giorni non è dimostrato.',
+    'Nel percorso luminoso ricordi un ordine di luoghi – un po’ come un breve tragitto che memorizzi. Il compito proviene dalla ricerca sulla memoria; con la pratica vai più avanti, soprattutto con strategie come «due a destra, uno in alto». Che questo aiuti nella vita di tutti i giorni non è dimostrato.',
   goodFor: ['Ricordare i percorsi', 'Tenere a mente ordini', 'Concentrarsi con calma'],
   captions: {
     watch: 'Guarda: i blocchi si illuminano',
