@@ -2,7 +2,7 @@
 # ===== Kennung =====
 nr: 603
 kennung: grid-memorization
-name: "Rastermuster merken (Memory Matrix)"
+name: "Rastermuster merken"
 name_original: "Visueller Gedächtnistest online – Memory Matrix (Grid Memorization Pro)"
 kapitel: "Gedächtnis"
 kapitel_original: "memory"
@@ -12,7 +12,7 @@ blickfit_umsetzung: {kennung: "rastermuster", name: "Rastermuster", unterschiede
 stand: 2026-09-29
 
 # ===== Überblick =====
-kurzbeschreibung: "In einem 4×4- oder 5×5-Raster leuchten 1,5 Sekunden lang mehrere Felder gleichzeitig auf. Danach tippt man alle Felder an, die geleuchtet haben (Reihenfolge egal); jedes richtige Muster ist ein Feld größer (beim Wechsel auf 5×5 wieder 5 Felder), ein falsches Feld beendet den Versuch ohne Abzug."
+kurzbeschreibung: "In einem Raster leuchten einige Felder kurz weich auf. Danach tippt man alle Felder an, die geleuchtet haben (Reihenfolge egal). Gelingen zwei Muster in Folge, wird das nächste umfangreicher; zwei falsche Tipps beenden ein Muster."
 ziel_funktionen: [kurzzeitgedaechtnis_visuell_raeumlich]
 eingabe: [touch, maus]
 tablet_geeignet: ja
@@ -75,7 +75,7 @@ belastung:
 voraussetzungen: ["ein ≈ 7–14 cm großes Raster (≈ 10–14° bei 40 cm) auf einen Blick erfassen können", "Touch oder Maus; keine Tastatur, kein Lesen, keine Farbunterscheidung für die Aufgabe nötig", "1,5 s Einprägezeit ohne Wiederholung akzeptieren"]
 vorsicht_bei: [gesichtsfeldausfall, aufmerksamkeitsprobleme, kognitive_einschraenkung, kinder_unter_6, photosensitive_epilepsie, migraene_lichtempfindlich, tremor_parkinson]
 geeignet_fuer: ["kurzes, sprachfreies Üben, ein gleichzeitig gezeigtes Muster aus Orten zu behalten (DE/IT gleich)", "Merkstrategien ausprobieren: Felder zu Formen gruppieren, Muster benennen ('L', 'Treppe')", "sitzende, ruhige Übung am Tablet mit großen Tippflächen", "Selbstvergleich über Wochen auf demselben Gerät"]
-weniger_geeignet_fuer: ["Einstufung des 'visuellen Gedächtnisses' oder Normvergleich (keine Normen, kein Test im diagnostischen Sinn)", "Reihenfolge-/Sequenzgedächtnis (→ 607, 601)", "Menschen, die ohne Rückstufung schnell frustriert sind (Stufe sinkt nie)", "Blickmotorik- oder Tempotraining (Augen- und Handbewegungen sind Nebensache)"]
+weniger_geeignet_fuer: ["Einstufung des 'visuellen Gedächtnisses' oder Normvergleich (keine Normen, kein Test im diagnostischen Sinn)", "Reihenfolge-/Sequenzgedächtnis (→ 607, 601)", "Menschen, denen die Anzeigedauer von rund zwei Sekunden zu knapp ist (sie lässt sich nicht verlängern)", "Blickmotorik- oder Tempotraining (Augen- und Handbewegungen sind Nebensache)"]
 evidenz:
   uebungseffekt: stark
   naher_transfer: schwach
@@ -92,9 +92,7 @@ stichworte: ["Memory Matrix", "Rastergedächtnis", "Mustergedächtnis", "Visual 
 
 ## 1. Kurzbeschreibung
 
-In einem dunklen 4×4-Raster leuchten für eineinhalb Sekunden einige Felder lila auf. Danach tippt man alle Felder an, die
-geleuchtet haben – die Reihenfolge ist egal. Ein fehlerfreies Muster bringt beim nächsten Mal ein Feld mehr; nach 7 Feldern
-wechselt das Raster auf 5×5. Ein falsches Feld beendet den Versuch, und es folgt ein neues Muster gleicher Größe.
+In einem dunklen Raster (von 3×3 bis 6×6 Feldern, je nach Stufe) leuchten einige Felder weich auf: etwa 1,6 Sekunden plus 0,1 Sekunden je Feld. Danach tippt man genau die Felder an, die geleuchtet haben; die Reihenfolge ist egal, und ein Zähler zeigt, wie viele noch fehlen. Richtige Tipps zeigen einen Haken, falsche ein Kreuz. Zwei falsche Tipps beenden das Muster, ein einzelner Fehltipp nicht. Die Muster sind zufällig, mit höchstens zwei Feldern je Zeile und Spalte. Zwei gemeisterte Muster in Folge führen eine der zwölf Stufen höher (mehr Felder oder größeres Raster), ein nicht gemeistertes eine Stufe tiefer. Eine Sitzung besteht aus einer festen Zahl von Mustern, ohne Zeitlimit.
 
 ## 2. Ablauf im Original (Analyse)
 
@@ -141,93 +139,51 @@ samt „Klickfrequenzen“.
 
 ## 4. Optische und okulomotorische Grundlagen
 
-- **Reizgröße (Herleitung; Raster = min(88 vw, 44 vh) laut Code):** 10,9″-Tablet (1 CSS-px ≈ 0,19 mm) bei 40 cm quer:
-  Raster ≈ 69 mm ≈ 9,9°, Zelle 4×4 ≈ 15 mm ≈ 2,2°, 5×5 ≈ 12 mm ≈ 1,7°; hochkant ≈ 100 mm ≈ 14,2° (Zellen 3,2° / 2,6°).
-  Smartphone bei 33 cm: Zelle 5×5 ≈ 10 mm ≈ 1,7°. Große Felder (Lila auf fast Schwarz, Kontrast ≈ 3,7:1, Rand ≈ 7,5:1; eigene Rechnung aus den Farbwerten):
-  **Sehschärfe und Kontrast begrenzen nicht**, leichte Unschärfe stört kaum.
-- **Erfassen in 1,5 s:** Fixationen dauern bei Szenen ≈ 330 ms, Sakkadenlatenzen ≥ 150–175 ms (Rayner, 1998) → nur ≈ 4–5
-  Fixationen (Herleitung). Das Muster muss weitgehend als Ganzes aus Blickmitte und naher Peripherie (± 5–7°) aufgenommen
-  werden. Crowding spielt bei Abständen ≥ 1,7° und Feldern ohne Detail kaum eine Rolle.
-- **Blick:** Augenbewegungen beim Behalten stören vor allem das Orts-, weniger das Formgedächtnis (Postle et al., 2006);
-  beim Abruf hilft eher der Blick zum Ort (Johansson & Johansson, 2014). „Blick ruhig in der Mitte“ ist nicht geprüft.
-- **Brille:** Das Raster liegt zentral; die seitliche Unschärfe von Gleitsichtgläsern (Sheedy, 2004) fällt bei großen,
-  hellen Feldern wenig ins Gewicht. Ab ≈ 40 Jahren ist eine Nahkorrektur für Text und Bedienelemente trotzdem angenehm
-  (Charman, 2008); am Monitor (60–70 cm) ist eine Arbeitsplatzbrille günstiger als der Gleitsicht-Nahteil.
-- **Farbe und Licht:** Die Aufgabe braucht keine Farbunterscheidung (Helligkeit). Nur die Rückmeldung grün/rot ist bei
-  Rot-Grün-Schwäche (≈ 8 % der Männer) schwer lesbar; das rote Aufblitzen zeigt Fehler zusätzlich. Ein Aufleuchten pro
-  Versuch liegt weit unter 3 Blitzen/s (WCAG 2.3.1); das rote Vollbild-Aufblitzen kann Lichtempfindliche stören (Rot als
-  Zusatzfaktor; Fisher et al., 2005).
+- **Reizgröße:** Die Felder sind große, einfache Flächen (Mittenabstand mindestens etwa 52, höchstens 128 Pixel); auf kleinen Bildschirmen wird das Raster verkleinert, damit die Felder groß genug bleiben. Leuchtende Felder sind hell und tragen zusätzlich eine Raute. Zur Orientierung: Bei 40 cm Abstand entspricht 1 cm auf dem Bildschirm etwa 1,4°. **Sehschärfe und Kontrast begrenzen die Leistung nicht**, leichte Unschärfe stört kaum.
+- **Erfassen in knapp zwei bis drei Sekunden:** Fixationen dauern bei Szenen etwa 330 ms, Sakkadenlatenzen betragen mindestens 150–175 ms (Rayner, 1998). In der Anzeigezeit bleiben daher grob fünf bis acht Fixationen (Herleitung). Das Muster muss weitgehend als Ganzes aus Blickmitte und naher Peripherie aufgenommen werden. Crowding spielt bei den Feldabständen und Feldern ohne Detail kaum eine Rolle.
+- **Blick:** Augenbewegungen beim Behalten stören vor allem das Orts-, weniger das Formgedächtnis (Postle et al., 2006); beim Abruf hilft eher der Blick zum Ort (Johansson & Johansson, 2014). „Blick ruhig in der Mitte“ ist als Strategie nicht geprüft.
+- **Brille:** Das Raster liegt zentral; die seitliche Unschärfe von Gleitsichtgläsern (Sheedy, 2004) fällt bei großen, hellen Feldern wenig ins Gewicht. Ab etwa 40 Jahren ist eine Nahkorrektur für Text und Bedienelemente trotzdem angenehm (Charman, 2008); am Monitor (60–70 cm) ist eine Arbeitsplatzbrille günstiger als der Gleitsicht-Nahteil.
+- **Farbe und Licht:** Die Aufgabe braucht keine Farbunterscheidung, sondern nur Helligkeit. Rückmeldungen erscheinen nie nur in Farbe (Haken, Kreuz, Umriss). Die Felder blenden weich ein und aus (etwa 0,2 bzw. 0,3 s), es gibt ein Aufleuchten pro Versuch, kein Blitzen, kein Vollbild-Aufleuchten und kein Rot. Das liegt weit unter 3 Blitzen pro Sekunde (WCAG 2.2, SC 2.3.1); gesättigtes Rot gilt als Zusatzfaktor für Lichtempfindliche (Fisher et al., 2005) und kommt hier nicht vor.
 
 ## 5. Neurowissenschaftliche Grundlagen
 
-- **Kapazität:** Das visuelle Kurzzeitgedächtnis ist begrenzt, abhängig von der Information je Objekt (Alvarez & Cavanagh,
-  2004) und individuell verschieden (≈ 1,5–5 Objekte; Vogel & Machizawa, 2004). Wie viele „Objekte“ ein Muster aus n
-  Feldern ist, hängt von seiner Struktur ab (Herleitung aus Brown et al., 2006; Kemps, 2001).
-- **Statisch vs. sequenziell:** VPT und Corsi dissoziieren bei Patient:innen und unter selektiver Interferenz (Della Sala et
-  al., 1999); visuelles und räumliches Kurzzeitgedächtnis sind auch bei Gesunden trennbar (Klauer & Zhao, 2004). Die Übung
-  liegt nahe am VPT, enthält aber Ortsinformation.
-- **Sensorischer Speicher:** Bei Matrixmustern wirkt ein hochkapazitiver, maskierbarer Speicher nur ≈ 100 ms, danach ein
-  begrenztes, komplexitätsabhängiges Kurzzeitgedächtnis (Phillips, 1974; Inhalt über Sekundärquellen). Die „250–500 ms“
-  der Website sind eine grobe Vereinfachung.
-- **Hirnregionen:** Die Aktivität im hinteren Parietalkortex folgt der begrenzten Menge gespeicherter Szeneninformation
-  (fMRT; Todd & Marois, 2004). Dass die Übung Regionen „trainiert“ oder den Speicher „erweitert“, ist nicht belegt.
+- **Kapazität:** Das visuelle Kurzzeitgedächtnis ist begrenzt, abhängig von der Information je Objekt (Alvarez & Cavanagh, 2004) und individuell verschieden (etwa 1,5–5 Objekte; Vogel & Machizawa, 2004; Luck & Vogel, 1997). Gezählt werden dabei Objekte bzw. Einheiten (Cowan, 2001), keine Rasterfelder. Wie viele „Objekte“ ein Muster aus n Feldern ist, hängt von seiner Struktur ab (Herleitung aus Brown et al., 2006; Kemps, 2001).
+- **Statisch vs. sequenziell:** Muster-Aufgaben (Visual Patterns Test, VPT) und Folgen-Aufgaben (Corsi) dissoziieren bei Patient:innen und unter selektiver Interferenz (Della Sala et al., 1999); visuelles und räumliches Kurzzeitgedächtnis sind auch bei Gesunden trennbar (Klauer & Zhao, 2004), passend zu den Komponenten Visual Cache und Inner Scribe (Logie, 1995). Die Übung liegt nahe am VPT, verlangt aber das Wiedergeben von Orten im Raster.
+- **Benennen und Gestalt:** Leicht benennbare Muster wurden etwa 16 % besser behalten (10,1 gegenüber 8,7 Feldern; n = 60; Brown et al., 2006). Strukturierte Anordnungen (Symmetrie, Fortsetzung) werden besser behalten (Kemps, 2001, Corsi-Pfade). Die Muster dieser Übung sind zufällig, haben aber höchstens zwei Felder je Zeile und Spalte, damit sich nicht einzelne Muster als „Strich“ merken lassen.
+- **Sensorischer Speicher:** Bei Matrixmustern wirkt ein hochkapazitiver, maskierbarer Speicher nur etwa 100 ms, danach ein begrenztes, komplexitätsabhängiges Kurzzeitgedächtnis (Phillips, 1974; Inhalt über Sekundärquellen).
+- **Hirnregionen:** Die Aktivität im hinteren Parietalkortex folgt der begrenzten Menge gespeicherter Szeneninformation (fMRT; Todd & Marois, 2004). Dass die Übung Regionen „trainiert“ oder den Speicher „erweitert“, ist nicht belegt.
 
 ## 6. Motorische Grundlagen
 
-- Einzel-Tipps auf große Ziele (Tablet 12–23 mm, Smartphone ≈ 10–12,5 mm; Herleitung) über den ≈ 9,2 mm für Daumenziele
-  (Parhi et al., 2006); Präzision begrenzt nicht.
-- Weil die Uhr nur beim Eingeben läuft, bringt zügiges Tippen etwas mehr Versuche (`zielbewegung_tempo` 1). Bei ≈ 0,45 s
-  je Feld reichen ≈ 45 s Eingabezeit für den fehlerfreien Weg bis 12 Felder (Herleitung) – die Zeit ist selten der Engpass.
-- `pointerdown`: Schon ein versehentliches Aufsetzen (Handballen, Tremor) auf ein falsches Feld beendet den Versuch; es
-  gibt kein Rückgängig.
+- Einzel-Tipps auf große Ziele; als Mindestgröße für Daumenziele werden etwa 9 mm genannt (Parhi et al., 2006), die Felder liegen am Tablet deutlich darüber. Präzision begrenzt nicht.
+- Es gibt kein Zeitlimit; zügiges Tippen bringt keinen Vorteil.
+- Bereits markierte Felder werden ignoriert, ein doppeltes Antippen schadet also nicht, und ein einzelner Fehltipp beendet das Muster noch nicht. Das mindert die Folgen eines versehentlichen Aufsetzens (Tremor, Handballen); ein zweiter falscher Tipp beendet das Muster dennoch, und es gibt kein Rückgängig.
 
 ## 7. Einflussfaktoren und Messgrenzen
 
-- **Wenige Versuche, Zufall:** 12–18 Versuche mit unterschiedlich strukturierten Zufallsmustern. Stabile
-  Kapazitätsschätzungen brauchen Hunderte Durchgänge (α > .9 bei 540; Xu et al., 2018). Alles-oder-nichts-Wertung und
-  fehlender Abstieg machen Endstufe und Punkte zu einem groben, eher optimistischen Maß.
-- **Alter:** Das visuelle Arbeitsgedächtnis erreicht seinen Gipfel um ≈ 20 Jahre und nimmt danach deutlich ab; 55-Jährige
-  lagen im Mittel unter 8- bis 9-Jährigen (N = 55.753; Brockmole & Logie, 2013). Keine Alters- oder Normvergleiche; der
-  Start mit 5 Feldern ist für manche Ältere schon schwer. Kinder: Komponenten ab ≈ 6 Jahren trennbar, Wachstum bis in die
-  Jugend (Gathercole et al., 2004).
-- **Gerät und Strategie:** Raster je nach Fensterhöhe 55–116 mm; Hoch- vs. Querformat ändert den Sehwinkel um ≈ 40 % –
-  nur auf demselben Gerät und in derselben Ausrichtung vergleichen. Wer Muster benennt („Treppe links oben“), nutzt
-  verbale Kodierung mit (Brown et al., 2006; daher `kurzzeitgedaechtnis_verbal` 1).
+- **Wenige Muster, Zufall:** Eine Sitzung hat nur wenige Muster mit unterschiedlich strukturierten Zufallsmustern. Stabile Kapazitätsschätzungen brauchen Hunderte Durchgänge (α > 0,9 bei 540; Xu et al., 2018). Die Treppe (zwei gemeisterte Muster → eine Stufe höher, ein nicht gemeistertes → eine tiefer) konvergiert auf etwa 71 % Erfolg (Levitt, 1971), braucht dafür aber viele Umkehrpunkte. Die Stufe nach einer Sitzung ist daher ein grobes Maß. Allgemein streuen Messungen am Menschen; aussagekräftiger als ein Einzelwert ist der Verlauf über mehrere Sitzungen, etwa als Median (zum Grundsatz der Wiederholmessung: Mountford et al., 2004, S. 44).
+- **Alter:** Das visuelle Arbeitsgedächtnis erreicht seinen Gipfel um etwa 20 Jahre und nimmt danach deutlich ab; 55-Jährige lagen im Mittel unter 8- bis 9-Jährigen (N = 55.753; Brockmole & Logie, 2013). Keine Alters- oder Normvergleiche. Kinder: Komponenten ab etwa 6 Jahren trennbar, Wachstum bis in die Jugend (Gathercole et al., 2004).
+- **Gerät und Strategie:** Die Rastergröße hängt vom Bildschirm ab; auf kleinen Bildschirmen wird das Raster verkleinert, und Hoch- und Querformat ändern den Sehwinkel. Ergebnisse deshalb nur auf demselben Gerät und in derselben Ausrichtung vergleichen. Wer Muster benennt („Treppe links oben“), nutzt verbale Kodierung mit (Brown et al., 2006).
 
 ## 8. Studienlage: Trainierbarkeit und Übertragung
 
-- **Übungseffekt – stark:** Im Online-Training wurde jede geübte Aufgabe besser (N = 11.430; Owen et al., 2010), ebenso nach
-  10 Wochen kommerziellem Training (Kable et al., 2017). Eingeübte Muster werden gezielt besser (Kemps, 2001).
-- **Naher Transfer – schwach:** Übertragung vor allem bei gleicher Aufgabenstruktur, beim visuell-räumlichen *seriellen*
-  Erinnern eher als beim verbalen (Gathercole et al., 2019). Das betrifft Corsi-artige Folgen (→ 607, dort „mittel“); diese
-  Übung zeigt ein statisches Muster ohne Reihenfolge. Ein eigener Trainingsnachweis für Rastermuster-Aufgaben fehlt.
-- **Alltagstransfer – fehlend:** Kein ferner Transfer gegen behandelte Kontrollgruppen (Melby-Lervåg et al., 2016). Nach 10
-  Wochen kommerziellem Training verbesserten sich Standardtests nicht stärker als nach Videospielen (n = 128; Kable et al.,
-  2017). Eine Studie mit 49 gemischten Übungen fand einen kleinen Vorteil gegenüber Kreuzworträtseln (d = 0,26; N = 4.715;
-  Hardy et al., 2015); fünf der sieben Autor:innen waren beim Anbieter angestellt, und Einzelübungen lassen sich daraus
-  nicht bewerten.
+- **Übungseffekt – stark:** Im Online-Training wurde jede geübte Aufgabe besser (N = 11.430; Owen et al., 2010), ebenso nach 10 Wochen kommerziellem Training (Kable et al., 2017). Eingeübte Muster werden gezielt besser (Kemps, 2001).
+- **Naher Transfer – schwach:** Übertragung vor allem bei gleicher Aufgabenstruktur, beim visuell-räumlichen *seriellen* Erinnern eher als beim verbalen (Gathercole et al., 2019). Das betrifft Corsi-artige Folgen (→ 607, dort „mittel“); diese Übung zeigt ein statisches Muster ohne Reihenfolge. Ein eigener Trainingsnachweis für Rastermuster-Aufgaben fehlt.
+- **Alltagstransfer – fehlend:** Kein ferner Transfer gegen behandelte Kontrollgruppen (Melby-Lervåg et al., 2016). Nach 10 Wochen kommerziellem Training verbesserten sich Standardtests nicht stärker als nach Videospielen (n = 128; Kable et al., 2017). Eine Studie mit 49 gemischten Übungen fand einen kleinen Vorteil gegenüber Kreuzworträtseln (d = 0,26; N = 4.715; Hardy et al., 2015); fünf der sieben Autor:innen waren beim Anbieter angestellt, und Einzelübungen lassen sich daraus nicht bewerten.
 
-## 9. Auswahlhinweise für die KI
+## 9. Auswahlhinweise
 
-- **Passt, wenn …** jemand ruhig und sprachfrei (DE/IT gleich) das kurze Merken räumlicher Muster üben oder Gruppier- und
-  Benennstrategien ausprobieren möchte; am Tablet mit Touch; ohne Bewegungs- oder Flimmerreize.
-- **Weniger passend, wenn …** Reihenfolgen geübt werden sollen (→ 607, 601); Blickmotorik oder Reaktion im Vordergrund
-  stehen; eine „Gedächtnis-Einstufung“ erwartet wird (keine Normen, keine Diagnose); 1,5 s Einprägezeit zu knapp sind.
-- **Vorsicht / anpassen bei …** `gesichtsfeldausfall` (Muster aus ≈ 10–14° in 1,5 s; Randfelder werden eventuell
-  übersehen – kleineres Raster, längere Anzeige); `aufmerksamkeitsprobleme` (verpasste 1,5 s = verlorener Versuch;
-  räumliches Speichern bei Kindern mit ADHS deutlich schwächer, Effektstärke 0,85; Martinussen et al., 2005);
-  `kognitive_einschraenkung` und `kinder_unter_6` (Start mit 5 Feldern, kein Abstieg, Alles-oder-nichts);
-  `photosensitive_epilepsie`, `migraene_lichtempfindlich` (rotes Vollbild-Aufblitzen bei jedem Fehler, zwar einzeln und
-  unter 3/s, aber gesättigtes Rot – Effekte abschalten); `tremor_parkinson` (Fehlberührung beim Aufsetzen beendet den
-  Versuch, Abschnitt 6);
-  Alterssichtigkeit und Gleitsicht sind hier wenig kritisch.
-- **Kombiniert gut mit …** 607 (Corsi-Pfad, sequenzielles Gegenstück), 605 (Objekt-Ort), 811 (Muster merken), 601 (Senso),
-  106 (Mehrfach-Objektverfolgung, dynamisch statt statisch).
-- **Abgrenzung in der Gruppe (keine Dublette):** Am nächsten verwandt ist 605. Beide nutzen dasselbe Raster (min(88 vw,
-  44 vh)) und dieselbe Einprägezeit von 1,5 s. Bei 603 merkt man sich nur, *wo* Felder geleuchtet haben, und tippt alle
-  an. Bei 605 muss man sich merken, *was wo* lag (Symbole unterscheiden), und beantwortet nur eine Frage je Anordnung.
-  607 zeigt die Orte nacheinander und verlangt die Reihenfolge. 606 hat denselben Aufbau („alles gleichzeitig zeigen,
-  alles in beliebiger Reihenfolge wiedergeben“) mit Wörtern.
+- **Passt, wenn …** jemand ruhig und sprachfrei (DE/IT gleich) das kurze Merken räumlicher Muster üben oder Gruppier- und Benennstrategien ausprobieren möchte; am Tablet mit Touch; ohne Bewegungs- oder Flimmerreize.
+- **Weniger passend, wenn …** Reihenfolgen geübt werden sollen (→ 607, 601); Blickmotorik oder Reaktion im Vordergrund stehen; eine „Gedächtnis-Einstufung“ erwartet wird (keine Normen, keine Diagnose); die Anzeigedauer von rund zwei Sekunden zu knapp ist.
+- **Vorsicht / anpassen bei …**
+  - `gesichtsfeldausfall`: Das Muster verteilt sich über das Raster; Randfelder werden eventuell übersehen. Gesichtsfeldausfälle folgen dem Verlauf der Sehbahn (einäugig vor, halbseitig am und hinter dem Chiasma; Muchnick, 2008, S. 32). Wer einen Ausfall kennt, sollte die Übung nur nach Rücksprache nutzen; die Übung ersetzt keine Untersuchung.
+  - `aufmerksamkeitsprobleme`: Eine verpasste Anzeige bedeutet ein verlorenes Muster; räumliches Speichern ist bei Kindern mit ADHS deutlich schwächer (Effektstärke 0,85; Martinussen et al., 2005).
+  - `kognitive_einschraenkung`, `kinder_unter_6`: Das kleinste Muster hat drei Felder; es gibt keine leichtere Stufe.
+  - `photosensitive_epilepsie`, `migraene_lichtempfindlich`: weich ein- und ausgeblendete Felder, kein Blitzen, kein rotes Aufleuchten; vorsorglich gelistet, bei Beschwerden abbrechen.
+  - `tremor_parkinson`: Ein zweiter falscher Tipp beendet das Muster (siehe Motorische Grundlagen).
+  - Allgemein: Bei Doppelbildern, plötzlichem Sehverlust, Schwindel oder Kopfschmerz mit Sehverschlechterung die Übung abbrechen und ärztlich abklären lassen (vgl. Muchnick, 2008, S. 6, 28). Alterssichtigkeit und Gleitsicht sind hier wenig kritisch.
+- **Kombiniert gut mit …** 607 (Corsi-Pfad, sequenzielles Gegenstück), 605 (Objekt-Ort), 811 (Muster merken), 601 (Farbfolge), 106 (Mehrfach-Objektverfolgung, dynamisch statt statisch).
+- **Abgrenzung in der Gruppe (keine Dublette):** Am nächsten verwandt ist 605. Beide nutzen ein Raster und zeigen die Anordnung für kurze Zeit. Bei 603 merkt man sich nur, *wo* Felder geleuchtet haben, und tippt alle an. Bei 605 muss man sich merken, *was wo* lag (Symbole unterscheiden), und beantwortet nur eine Frage je Anordnung. 607 zeigt die Orte nacheinander und verlangt die Reihenfolge. 606 hat denselben Aufbau („alles gleichzeitig zeigen, alles in beliebiger Reihenfolge wiedergeben“) mit Wörtern.
 
 ## 10. Schwächen des Originals und Empfehlungen für eine Blickfit-Umsetzung
 
@@ -246,76 +202,37 @@ samt „Klickfrequenzen“.
 
 ### Von der Website angegeben
 
-- Cowan, N. (2001). The magical number 4 in short-term memory: A reconsideration of mental storage capacity. *Behavioral and
-  Brain Sciences*, 24(1), 87–114. https://doi.org/10.1017/S0140525X01003922 – **Prüfung:** DOI stimmt ✓; **stützt:**
-  teilweise/nein (≈ 4 Chunks unter Randbedingungen; „5 Felder = physiologische Grenze“ folgt nicht).
-- Baddeley, A. (2000). The episodic buffer: A new component of working memory? *Trends in Cognitive Sciences*, 4(11),
-  417–423. https://doi.org/10.1016/S1364-6613(00)01538-2 – **Prüfung:** DOI stimmt ✓; **stützt:** nein (episodischer Puffer,
-  nicht Visual Cache/Inner Scribe).
-- Logie, R. H. (1995). *Visuo-spatial working memory*. Lawrence Erlbaum. – **Prüfung:** Buch, keine DOI (Neuauflage 2014:
-  https://doi.org/10.4324/9781315804743 ✓); **stützt:** ja (Modell; empirisch gestützt durch Della Sala et al., 1999).
-- Corsi, P. M. (1972). *Human memory and the medial temporal region of the brain* [Dissertation, McGill University]. –
-  **Prüfung:** Hochschulschrift, keine DOI, nicht eingesehen; **stützt:** teilweise (Ursprung des Block-Tappings; die
-  „anatomische Trennung von der Zahlenspanne“ ist daraus nicht prüfbar).
-- Luck, S. J., & Vogel, E. K. (1997). The capacity of visual working memory for features and conjunctions. *Nature*,
-  390(6657), 279–281. https://doi.org/10.1038/36846 – **Prüfung:** DOI stimmt ✓; **stützt:** teilweise (≈ 4 einfache
-  Objekte; nicht auf Rasterfelder übertragbar).
-- Milner, B. (1971). Interhemispheric differences in the localization of psychological processes in man. *British Medical
-  Bulletin*, 27(3), 272–277. https://doi.org/10.1093/oxfordjournals.bmb.a070866 – **Prüfung:** DOI stimmt ✓ (kein
-  Abstract); **stützt:** teilweise (gilt als Erstbeschreibung des Block-Tappings; Inhalt nicht selbst eingesehen).
-- Woods, D. L., Wyma, J. M., Yund, E. W., Herron, T. J., & Reed, B. (2015). Factors influencing the latency of simple
-  reaction time. *Frontiers in Human Neuroscience*, 9, 131. https://doi.org/10.3389/fnhum.2015.00131 – **Prüfung:** DOI
-  stimmt ✓; **stützt:** nein (nur einfache Reaktionszeit; nichts zu Einprägefenstern oder Musterspannen).
-- Nur im Fließtext: Della Sala, S., Gray, C., Baddeley, A., Allamano, N., & Wilson, L. (1999). Pattern span: A tool for
-  unwelding visuo-spatial memory. *Neuropsychologia*, 37(10), 1189–1199. https://doi.org/10.1016/S0028-3932(98)00159-6 –
-  **Prüfung:** DOI stimmt ✓; **stützt:** ja (VPT vs. Corsi trennbar). · Della Sala et al. (1997), VPT-Manual – Testmanual,
-  keine DOI, nicht eingesehen; „6–7 Felder“ nicht prüfbar und nicht übertragbar. · Wertheimer, M. (1923). Untersuchungen
-  zur Lehre von der Gestalt. II. *Psychologische Forschung*, 4(1), 301–350. https://doi.org/10.1007/BF00410640 –
-  **Prüfung:** DOI stimmt ✓; **stützt:** ja für Gestaltgesetze, „−60 % Last“ ohne Beleg.
+- Cowan, N. (2001). The magical number 4 in short-term memory: A reconsideration of mental storage capacity. *Behavioral and Brain Sciences*, 24(1), 87–114. https://doi.org/10.1017/S0140525X01003922 – **Prüfung:** DOI stimmt ✓; **stützt:** teilweise/nein (≈ 4 Chunks unter Randbedingungen; „5 Felder = physiologische Grenze“ folgt nicht).
+- Logie, R. H. (1995). *Visuo-spatial working memory*. Lawrence Erlbaum. – **Prüfung:** Buch, keine DOI (Neuauflage 2014: https://doi.org/10.4324/9781315804743 ✓); **stützt:** ja (Modell; empirisch gestützt durch Della Sala et al., 1999).
+- Luck, S. J., & Vogel, E. K. (1997). The capacity of visual working memory for features and conjunctions. *Nature*, 390(6657), 279–281. https://doi.org/10.1038/36846 – **Prüfung:** DOI stimmt ✓; **stützt:** teilweise (≈ 4 einfache Objekte; nicht auf Rasterfelder übertragbar).
 
 ### Weitere Fachliteratur
 
-- Alvarez, G. A., & Cavanagh, P. (2004). The capacity of visual short-term memory is set both by visual information load and
-  by number of objects. *Psychological Science*, 15(2), 106–111. https://doi.org/10.1111/j.0963-7214.2004.01502006.x
-- Brockmole, J. R., & Logie, R. H. (2013). Age-related change in visual working memory: A study of 55,753 participants aged
-  8–75. *Frontiers in Psychology*, 4, 12. https://doi.org/10.3389/fpsyg.2013.00012 – Altersverlauf.
-- Brown, L. A., Forbes, D., & McConnell, J. (2006). Limiting the use of verbal coding in the Visual Patterns Test. *Quarterly
-  Journal of Experimental Psychology*, 59(7), 1169–1176. https://doi.org/10.1080/17470210600665954 – VPT-Werte, 3 s.
-- Gathercole, S. E., Dunning, D. L., Holmes, J., & Norris, D. (2019). Working memory training involves learning new skills.
-  *Journal of Memory and Language*, 105, 19–42. https://doi.org/10.1016/j.jml.2018.10.003 – Transfer bei gleicher Struktur.
-- Hardy, J. L., Nelson, R. A., Thomason, M. E., Sternberg, D. A., Katovich, K., Farzin, F., & Scanlon, M. (2015). Enhancing
-  cognitive abilities with comprehensive training: A large, online, randomized, active-controlled trial. *PLOS ONE*, 10(9),
-  e0134467. https://doi.org/10.1371/journal.pone.0134467 – Anbieterstudie, d = 0,26 (Abstract via Europe PMC).
-- Kable, J. W., Caulfield, M. K., Falcone, M., et al. (2017). No effect of commercial cognitive training on brain activity,
-  choice behavior, or cognitive performance. *The Journal of Neuroscience*, 37(31), 7390–7402.
-  https://doi.org/10.1523/JNEUROSCI.2832-16.2017 – nur geübte Aufgaben besser (PM).
-- Kemps, E. (2001). Complexity effects in visuo-spatial working memory: Implications for the role of long-term memory.
-  *Memory*, 9(1), 13–27. https://doi.org/10.1080/09658210042000012 – Gestaltstruktur, musterspezifisches Lernen (PM).
-- Klauer, K. C., & Zhao, Z. (2004). Double dissociations in visual and spatial short-term memory. *Journal of Experimental
-  Psychology: General*, 133(3), 355–381. https://doi.org/10.1037/0096-3445.133.3.355
-- Martinussen, R., Hayden, J., Hogg-Johnson, S., & Tannock, R. (2005). A meta-analysis of working memory impairments in
-  children with attention-deficit/hyperactivity disorder. *Journal of the American Academy of Child & Adolescent
-  Psychiatry*, 44(4), 377–384. https://doi.org/10.1097/01.chi.0000153228.72591.73
-- Melby-Lervåg, M., Redick, T. S., & Hulme, C. (2016). Working memory training does not improve performance on measures of
-  intelligence or other measures of "far transfer". *Perspectives on Psychological Science*, 11(4), 512–534.
-  https://doi.org/10.1177/1745691616635612
-- Owen, A. M., Hampshire, A., Grahn, J. A., et al. (2010). Putting brain training to the test. *Nature*, 465(7299), 775–778.
-  https://doi.org/10.1038/nature09042
-- Phillips, W. A. (1974). On the distinction between sensory storage and short-term visual memory. *Perception &
-  Psychophysics*, 16(2), 283–290. https://doi.org/10.3758/BF03203943 – Inhalt über Sekundärquellen.
-- Postle, B. R., Idzikowski, C., Della Sala, S., Logie, R. H., & Baddeley, A. D. (2006). The selective disruption of spatial
-  working memory by eye movements. *Quarterly Journal of Experimental Psychology*, 59(1), 100–120.
-  https://doi.org/10.1080/17470210500151410
-- Rayner, K. (1998). Eye movements in reading and information processing: 20 years of research. *Psychological Bulletin*,
-  124(3), 372–422. https://doi.org/10.1037/0033-2909.124.3.372
-- Todd, J. J., & Marois, R. (2004). Capacity limit of visual short-term memory in human posterior parietal cortex. *Nature*,
-  428(6984), 751–754. https://doi.org/10.1038/nature02466 (PM)
-- Vogel, E. K., & Machizawa, M. G. (2004). Neural activity predicts individual differences in visual working memory capacity.
-  *Nature*, 428(6984), 748–751. https://doi.org/10.1038/nature02447
-- Xu, Z., Adam, K. C. S., Fang, X., & Vogel, E. K. (2018). The reliability and stability of visual working memory capacity.
-  *Behavior Research Methods*, 50(2), 576–588. https://doi.org/10.3758/s13428-017-0886-6
-- Aus der geprüften Literaturbasis: Charman (2008), https://doi.org/10.1111/j.1444-0938.2008.00256.x · Fisher et al. (2005),
-  https://doi.org/10.1111/j.1528-1167.2005.31405.x · Gathercole et al. (2004), https://doi.org/10.1037/0012-1649.40.2.177 ·
-  Johansson & Johansson (2014), https://doi.org/10.1177/0956797613498260 · Levitt (1971), https://doi.org/10.1121/1.1912375 ·
-  Parhi et al. (2006), https://doi.org/10.1145/1152215.1152260 · Pronk et al. (2020), https://doi.org/10.3758/s13428-019-01321-2
-  · Sheedy (2004), https://doi.org/10.1016/S1529-1839(04)70021-4 · W3C (2024), WCAG 2.2, https://www.w3.org/TR/WCAG22/
+- Alvarez, G. A., & Cavanagh, P. (2004). The capacity of visual short-term memory is set both by visual information load and by number of objects. *Psychological Science*, 15(2), 106–111. https://doi.org/10.1111/j.0963-7214.2004.01502006.x
+- Brockmole, J. R., & Logie, R. H. (2013). Age-related change in visual working memory: A study of 55,753 participants aged 8–75. *Frontiers in Psychology*, 4, 12. https://doi.org/10.3389/fpsyg.2013.00012 – Altersverlauf.
+- Brown, L. A., Forbes, D., & McConnell, J. (2006). Limiting the use of verbal coding in the Visual Patterns Test. *Quarterly Journal of Experimental Psychology*, 59(7), 1169–1176. https://doi.org/10.1080/17470210600665954 – VPT-Werte, 3 s.
+- Charman, W. N. (2008). The eye in focus: Accommodation and presbyopia. *Clinical and Experimental Optometry*, 91(3), 207–225. https://doi.org/10.1111/j.1444-0938.2008.00256.x – Akkommodation im Alter
+- Della Sala, S., Gray, C., Baddeley, A., Allamano, N., & Wilson, L. (1999). Pattern span: A tool for unwelding visuo-spatial memory. *Neuropsychologia*, 37(10), 1189–1199. https://doi.org/10.1016/S0028-3932(98)00159-6 – Muster und Folgen sind trennbar
+- Fisher, R. S., Harding, G., Erba, G., Barkley, G. L., & Wilkins, A. (2005). Photic- and pattern-induced seizures: A review for the Epilepsy Foundation of America Working Group. *Epilepsia*, 46(9), 1426–1441. https://doi.org/10.1111/j.1528-1167.2005.31405.x – Blitzfrequenzen, Rot als Risikofaktor
+- Gathercole, S. E., Dunning, D. L., Holmes, J., & Norris, D. (2019). Working memory training involves learning new skills. *Journal of Memory and Language*, 105, 19–42. https://doi.org/10.1016/j.jml.2018.10.003 – Transfer bei gleicher Struktur.
+- Gathercole, S. E., Pickering, S. J., Ambridge, B., & Wearing, H. (2004). The structure of working memory from 4 to 15 years of age. *Developmental Psychology*, 40(2), 177–190. https://doi.org/10.1037/0012-1649.40.2.177 – Entwicklung bei Kindern
+- Hardy, J. L., Nelson, R. A., Thomason, M. E., Sternberg, D. A., Katovich, K., Farzin, F., & Scanlon, M. (2015). Enhancing cognitive abilities with comprehensive training: A large, online, randomized, active-controlled trial. *PLOS ONE*, 10(9), e0134467. https://doi.org/10.1371/journal.pone.0134467 – Anbieterstudie, d = 0,26 (Abstract via Europe PMC).
+- Johansson, R., & Johansson, M. (2014). Look here, eye movements play a functional role in memory retrieval. *Psychological Science*, 25(1), 236–242. https://doi.org/10.1177/0956797613498260 – Blick zum Ort beim Abruf
+- Kable, J. W., Caulfield, M. K., Falcone, M., et al. (2017). No effect of commercial cognitive training on brain activity, choice behavior, or cognitive performance. *The Journal of Neuroscience*, 37(31), 7390–7402. https://doi.org/10.1523/JNEUROSCI.2832-16.2017 – nur geübte Aufgaben besser (PM).
+- Kemps, E. (2001). Complexity effects in visuo-spatial working memory: Implications for the role of long-term memory. *Memory*, 9(1), 13–27. https://doi.org/10.1080/09658210042000012 – Gestaltstruktur, musterspezifisches Lernen (PM).
+- Klauer, K. C., & Zhao, Z. (2004). Double dissociations in visual and spatial short-term memory. *Journal of Experimental Psychology: General*, 133(3), 355–381. https://doi.org/10.1037/0096-3445.133.3.355
+- Levitt, H. (1971). Transformed up-down methods in psychoacoustics. *The Journal of the Acoustical Society of America*, 49(2B), 467–477. https://doi.org/10.1121/1.1912375 – Treppenverfahren, Konvergenzpunkt
+- Martinussen, R., Hayden, J., Hogg-Johnson, S., & Tannock, R. (2005). A meta-analysis of working memory impairments in children with attention-deficit/hyperactivity disorder. *Journal of the American Academy of Child & Adolescent Psychiatry*, 44(4), 377–384. https://doi.org/10.1097/01.chi.0000153228.72591.73
+- Melby-Lervåg, M., Redick, T. S., & Hulme, C. (2016). Working memory training does not improve performance on measures of intelligence or other measures of "far transfer". *Perspectives on Psychological Science*, 11(4), 512–534. https://doi.org/10.1177/1745691616635612
+- Mountford, J., Ruston, D., & Dave, T. (2004). *Orthokeratology: Principles and Practice*. Butterworth-Heinemann. https://openlibrary.org/isbn/9780750640077 – Messwerte streuen, Wiederholmessung sinnvoll (S. 44)
+- Muchnick, B. G. (2008). *Clinical Medicine in Optometric Practice* (2. Aufl.). Mosby/Elsevier. https://openlibrary.org/isbn/9780323029612 – Warnzeichen mit Abklärungsbedarf (S. 6, 28), Gesichtsfeldausfälle nach Sehbahnverlauf (S. 32)
+- Owen, A. M., Hampshire, A., Grahn, J. A., et al. (2010). Putting brain training to the test. *Nature*, 465(7299), 775–778. https://doi.org/10.1038/nature09042
+- Parhi, P., Karlson, A. K., & Bederson, B. B. (2006). Target size study for one-handed thumb use on small touchscreen devices. In *Proceedings of the 8th Conference on Human-Computer Interaction with Mobile Devices and Services* (S. 203–210). https://doi.org/10.1145/1152215.1152260 – Mindestgröße für Daumenziele
+- Phillips, W. A. (1974). On the distinction between sensory storage and short-term visual memory. *Perception & Psychophysics*, 16(2), 283–290. https://doi.org/10.3758/BF03203943 – Inhalt über Sekundärquellen.
+- Postle, B. R., Idzikowski, C., Della Sala, S., Logie, R. H., & Baddeley, A. D. (2006). The selective disruption of spatial working memory by eye movements. *Quarterly Journal of Experimental Psychology*, 59(1), 100–120. https://doi.org/10.1080/17470210500151410
+- Rayner, K. (1998). Eye movements in reading and information processing: 20 years of research. *Psychological Bulletin*, 124(3), 372–422. https://doi.org/10.1037/0033-2909.124.3.372
+- Sheedy, J. E. (2004). Progressive addition lenses – matching the specific lens to patient needs. *Optometry – Journal of the American Optometric Association*, 75(2), 83–102. https://doi.org/10.1016/S1529-1839(04)70021-4 – seitliche Unschärfe von Gleitsichtgläsern
+- Todd, J. J., & Marois, R. (2004). Capacity limit of visual short-term memory in human posterior parietal cortex. *Nature*, 428(6984), 751–754. https://doi.org/10.1038/nature02466 (PM)
+- Vogel, E. K., & Machizawa, M. G. (2004). Neural activity predicts individual differences in visual working memory capacity. *Nature*, 428(6984), 748–751. https://doi.org/10.1038/nature02447
+- W3C (2024). *Web Content Accessibility Guidelines (WCAG) 2.2* (SC 2.3.1 Three Flashes). https://www.w3.org/TR/WCAG22/ – Norm, keine DOI
+- Xu, Z., Adam, K. C. S., Fang, X., & Vogel, E. K. (2018). The reliability and stability of visual working memory capacity. *Behavior Research Methods*, 50(2), 576–588. https://doi.org/10.3758/s13428-017-0886-6
