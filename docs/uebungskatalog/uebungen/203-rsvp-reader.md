@@ -14,7 +14,7 @@ stand: 2026-09-30
 # ===== Überblick =====
 kurzbeschreibung: "Ein Zielwort wird zuerst groß gezeigt. Danach erscheinen acht bis zehn Wörter einzeln in der Bildmitte, weich ein- und ausgeblendet; sobald das Zielwort auftaucht, tippt man auf die Fläche, bei allen anderen Wörtern nicht. Mit steigender Stufe verkürzt sich die Anzeigedauer von 700 auf 350 Millisekunden (höchstens 2,5 Wörter pro Sekunde); das Antwortfenster bleibt mindestens 600 Millisekunden lang. Es geht um das Wiedererkennen eines bekannten Wortes, nicht um Lesen mit Verständnis; Lesetempo wird nicht gemessen."
 ziel_funktionen: [visuelle_verarbeitungsgeschwindigkeit, daueraufmerksamkeit, inhibition]
-eingabe: [touch, maus]
+eingabe: [touch, maus, tastatur]
 tablet_geeignet: ja
 dauer_sekunden: 80
 schwierigkeit_anpassung: "Fünf feste Tempostufen (Code): 250, 350, 480, 650, 850 Wörter/min, also 240, 171, 125, 92 und 71 ms pro Wort. Stufe = min(5, ⌊Punkte / 200⌋ + 1): alle 2 Treffer eine Stufe, nach 8 Treffern (800 Punkte) ist Stufe 5 erreicht. Start immer auf Stufe 1; der Text ist ein fester Absatz von 80 Wörtern in Endlosschleife."
@@ -146,7 +146,7 @@ Quelle: Seitentext und ausgelieferter Spielcode (Chunk `54416-….js` mit Spiell
 
 ## 6. Motorische Grundlagen
 
-- **Tippen:** Ein Tipp irgendwo auf die Fläche genügt; es gibt keine Ziel- oder Präzisionsanforderung. Zielwort und Wörter in der Bildmitte wechseln sich ab, entscheidend ist der Zeitpunkt des Tipps.
+- **Tippen:** Ein Tipp irgendwo auf die Fläche genügt (am Computer auch Leertaste oder Eingabetaste); es gibt keine Ziel- oder Präzisionsanforderung. Zielwort und Wörter in der Bildmitte wechseln sich ab, entscheidend ist der Zeitpunkt des Tipps.
 - **Reaktionszeit:** Die einfache visuelle Reaktionszeit Erwachsener liegt bei etwa 231 ms (213 ms ohne Gerätelatenz) und steigt um etwa 0,55 ms je Lebensjahr; die reine Entdeckungszeit eines Lichtreizes liegt bei etwa 131 ms (Woods et al., 2015). Das Erkennen eines bestimmten Wortes ist eine Auswahlreaktion und dauert länger; deshalb ist das Antwortfenster nie kürzer als 600 ms. Tipps früher als 150 ms nach Beginn des Zielworts gelten der Anzeige davor und werden nicht als Treffer gewertet; Doppeltipps innerhalb von 350 ms werden ignoriert.
 - **Eingabe:** Touch-Web-Apps messen Zeiten um etwa 58–70 ms zu lang (Pronk et al., 2020); Zeiten sind deshalb nur innerhalb desselben Geräts vergleichbar.
 
@@ -201,7 +201,7 @@ Schwächen des Originals und Vorgaben, falls je umgesetzt:
 - Rayner, K. (1998). Eye movements in reading and information processing: 20 years of research. *Psychological Bulletin*, *124*(3), 372–422. https://doi.org/10.1037/0033-2909.124.3.372 – **Prüfung:** DOI stimmt ✓; **stützt die Aussage der Website:** teilweise (die Forschung spricht von „optimaler Blickposition“, nicht „ORP“; Wörter werden auch außerhalb erkannt, Rayner et al., 2016) – in der öffentlichen Beschreibung nicht zitiert; **stützt (öffentliche Fassung):** nein
 - Rayner, K., Schotter, E. R., Masson, M. E. J., Potter, M. C., & Treiman, R. (2016). So much to read, so little time: How do we read, and can speed reading help? *Psychological Science in the Public Interest*, *17*(1), 4–34. https://doi.org/10.1177/1529100615623267 – **Prüfung:** DOI stimmt ✓; **stützt die Aussage der Website:** nein (für „bis zu 80 % der Lesezeit“; die Übersicht widerlegt genau das: ≈ 10 %; Verdoppeln des Tempos ohne Verständnisverlust unwahrscheinlich)
 - Woods, D. L., Wyma, J. M., Yund, E. W., Herron, T. J., & Reed, B. (2015). Factors influencing the latency of simple reaction time. *Frontiers in Human Neuroscience*, *9*, 131. https://doi.org/10.3389/fnhum.2015.00131 – **Prüfung:** DOI stimmt ✓; **stützt die Aussage der Website:** nein (für „144 Hz sichern präzise Frame-Intervalle ohne Flackern“; Studie misst Reaktionszeiten, nicht Bildflackern)
-- *Ohne Quelle:* „Mit Training sind 400–600 WPM realistisch“ und „trainiert lexikalische Entschlüsselung im visuellen Wortformareal“ – **Prüfung:** keine Quelle angegeben; **stützt:** nein (siehe Abschnitt 3); „Erwachsene lesen 200–250 WPM“ – **stützt:** ja (Brysbaert, 2019).
+- *Ohne Quelle:* „Mit Training sind 400–600 WPM realistisch“ und „trainiert lexikalische Entschlüsselung im visuellen Wortformareal“ – **Prüfung:** keine Quelle angegeben; **stützt:** nein (siehe Abschnitt 3); „Erwachsene lesen 200–250 WPM“ – **stützt:** ja (Brysbaert, 2019). – Aussagen ohne Quelle, nur in der Arbeitsfassung; **stützt (öffentliche Fassung):** nein
 
 ### Weitere Fachliteratur
 - Acklin, D., & Papesh, M. H. (2017). Modern speed-reading apps do not foster reading comprehension. *The American Journal of Psychology*, *130*(2), 183–199. https://doi.org/10.5406/amerjpsyc.130.2.0183 – statischer Text besser verstanden als RSVP mit 700/1.000 WPM

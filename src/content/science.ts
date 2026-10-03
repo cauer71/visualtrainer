@@ -427,7 +427,7 @@ export const SCIENCE: Record<string, ScienceEntry> = {
         research:
           'Aufgaben dieser Art („Vigilanz“) werden seit Jahrzehnten erforscht. Fast allen fällt das Aufpassen mit der Zeit schwerer – das ist normal und zeigt, warum Pausen wichtig sind. Dass ein solches Training die Aufmerksamkeit im Alltag verbessert, ist nicht belegt. Die Übung ist kein Aufmerksamkeits- oder ADHS-Test.',
         improved:
-          'Klassisches Format mit seltenen Zielen (keine Dublette zu „Stopp & Los“), feste Dauer ohne Zeitbonus, farbfreie Zeichen, weiches Ein- und Ausblenden statt Blitzen. Getrennt ausgewertet werden Treffer, Auslassungen, Fehlalarme und richtig ausgelassene Zeichen – je Hälfte, damit man sieht, wie gut man durchhält. Kein Alarmton bei Fehlern.',
+          'Das Format folgt klassischen Daueraufmerksamkeitsaufgaben: Getippt wird nur bei einem seltenen Ziel (18 von 100 Zeichen), nicht bei häufigen Zeichen. Die Dauer ist fest ohne Zeitbonus, die Zeichen sind farbfrei und werden weich ein- und ausgeblendet statt zu blitzen. Getrennt ausgewertet werden Treffer, Auslassungen, Fehlalarme und richtig ausgelassene Zeichen, je für die erste und die zweite Hälfte, damit man sieht, wie gut man durchhält. Die Schwierigkeit richtet sich danach, wie ähnlich die anderen Zeichen dem Ziel sind, und bleibt während der Sitzung gleich. Fehler lösen keinen Alarmton aus.',
       },
       it: {
         trains: 'Restare attenti per qualche minuto e non perdere un segnale raro – anche quando a lungo non succede nulla.',
@@ -435,7 +435,7 @@ export const SCIENCE: Record<string, ScienceEntry> = {
         research:
           'I compiti di questo tipo (“vigilanza”) sono studiati da decenni. Quasi a tutti con il tempo diventa più difficile restare attenti – è normale e mostra perché le pause sono importanti. Che un allenamento del genere migliori l’attenzione nella vita quotidiana non è dimostrato. L’esercizio non è un test dell’attenzione né dell’ADHD.',
         improved:
-          'Formato classico con bersagli rari (nessun doppione di “Stop o via”), durata fissa senza bonus di tempo, segni senza colori, comparsa e scomparsa morbide invece di lampi. Vengono valutati separatamente colpi, omissioni, falsi allarmi e segni giustamente ignorati – per ogni metà, così si vede quanto si tiene duro. Nessun suono d’allarme in caso di errore.',
+          'Il formato segue i classici compiti di attenzione sostenuta: si tocca solo davanti a un bersaglio raro (18 segni su 100), non davanti ai segni frequenti. La durata è fissa, senza bonus di tempo; i segni sono senza colori e compaiono e scompaiono in modo morbido invece di lampeggiare. Vengono valutati separatamente colpi, omissioni, falsi allarmi e segni giustamente ignorati, per ciascuna metà, così si vede quanto si tiene duro. La difficoltà dipende da quanto i segni distraenti assomigliano al bersaglio e resta uguale per tutta la sessione. Gli errori non provocano alcun suono d’allarme.',
       },
     },
     sources: [
@@ -457,7 +457,7 @@ export const SCIENCE: Record<string, ScienceEntry> = {
         research:
           'Symbol-Zahl-Aufgaben werden in der Forschung genutzt, um das Verarbeitungstempo zu beschreiben – sie reagieren empfindlich auf Müdigkeit und Alter. Anfangs wird man spürbar schneller, danach erreicht man ein persönliches Niveau; das ist normal. Eine Übertragung auf andere Fähigkeiten oder den Alltag ist kaum belegt. Die Werte sind kein medizinischer Test.',
         improved:
-          'Der Schlüssel steht nie in der Reihenfolge der Tasten (das Vorbild war rein über die Position lösbar), wird jede Sitzung neu gemischt und nutzt eigene, gut unterscheidbare Formen. Große Tasten, feste Dauer ohne Zeitbonus, Stufen mit 3, 6 und 9 Paaren, Hauptwert = richtige Zuordnungen pro Minute auf der erreichten Stufe.',
+          'Der Schlüssel steht nie in der Reihenfolge der Tasten, sodass man die Zahl wirklich ablesen muss und die Aufgabe sich nicht über die Position lösen lässt. Er wird in jeder Sitzung und bei jedem Stufenwechsel neu gemischt und verwendet eigene, gut unterscheidbare Formen. Die Stufen haben 3, 6 und 9 Paare und richten sich nach den richtigen Zuordnungen je Block von acht Zeichen. Die Tasten sind groß, die Dauer ist fest, und es gibt weder Zeitbonus noch Zeitstrafe. Hauptwert sind die richtigen Zuordnungen pro Minute auf der erreichten Stufe.',
       },
       it: {
         trains: 'Tradurre simboli in numeri nel modo più rapido e sicuro possibile – con una chiave che cambia ogni volta.',
@@ -465,7 +465,7 @@ export const SCIENCE: Record<string, ScienceEntry> = {
         research:
           'I compiti simbolo-numero sono usati nella ricerca per descrivere la velocità di elaborazione – sono sensibili alla stanchezza e all’età. All’inizio si diventa nettamente più veloci, poi si raggiunge un livello personale; è normale. Un trasferimento ad altre capacità o alla vita quotidiana è poco dimostrato. I valori non sono un test medico.',
         improved:
-          'La chiave non è mai nell’ordine dei tasti (l’originale si risolveva solo con la posizione), viene rimescolata a ogni sessione e usa forme proprie ben distinguibili. Tasti grandi, durata fissa senza bonus di tempo, livelli con 3, 6 e 9 coppie, valore principale = abbinamenti corretti al minuto al livello raggiunto.',
+          'La chiave non è mai nell’ordine dei tasti, così il numero va davvero letto e il compito non si risolve con la sola posizione. Viene rimescolata a ogni sessione e a ogni cambio di livello e usa forme proprie ben distinguibili. I livelli hanno 3, 6 e 9 coppie e dipendono dalle risposte giuste in ogni blocco di otto simboli. I tasti sono grandi, la durata è fissa e non ci sono né bonus di tempo né penalità. Il valore principale sono gli abbinamenti corretti al minuto al livello raggiunto.',
       },
     },
     sources: [
@@ -516,7 +516,7 @@ export const SCIENCE: Record<string, ScienceEntry> = {
         research:
           'Jeder Regelwechsel kostet ein paar hundert Millisekunden – das geht allen so, mit dem Alter oft etwas mehr. Mit Übung werden die Wechsel in der Übung flüssiger, und ähnliche Wechselaufgaben profitieren teilweise mit. Dass das die Konzentration oder Intelligenz allgemein verbessert, ist nicht belegt.',
         improved:
-          'Echter Aufgabenwechsel statt zweier gleichzeitiger Ströme, Regelwechsel immer angekündigt und nie nur über Farbe (Rahmenform, Symbol, Frage und Tastenform), Einzelblöcke und gemischter Block, Vorwarnzeit passt sich an. Wechsel- und Mischkosten in Millisekunden als Zusatzwerte.',
+          'Der Wechsel zwischen den beiden Regeln wird immer vorher angekündigt: Rahmenform, Symbol und Frage zeigen die geltende Regel, auch Form und Beschriftung der Tasten passen dazu, und Farbe dient nur als Zugabe. Beide Regeln werden mit denselben zwei Tasten beantwortet, sodass ein reiner Aufgabenwechsel gemessen wird und nicht das gleichzeitige Bearbeiten zweier Aufgaben. Eine Sitzung beginnt mit je einem kurzen Block pro Regel und geht dann in einen gemischten Block mit etwa 50 Prozent Regelwechseln über. Die Vorwarnzeit zwischen Hinweis und Ziffer passt sich der eigenen Leistung an. Wechsel- und Mischkosten werden in Millisekunden als Zusatzwerte gezeigt; Hauptwert ist die erreichte Stufe.',
       },
       it: {
         trains: 'Passare da una regola all’altra: a volte conta “pari o dispari”, a volte “minore o maggiore di 5” – la cornice dice quale regola vale.',
@@ -524,7 +524,7 @@ export const SCIENCE: Record<string, ScienceEntry> = {
         research:
           'Ogni cambio di regola costa qualche centinaio di millisecondi – succede a tutti, con l’età spesso un po’ di più. Con la pratica i cambi nell’esercizio diventano più fluidi e in parte ne beneficiano anche compiti simili. Che questo migliori la concentrazione o l’intelligenza in generale non è dimostrato.',
         improved:
-          'Vero cambio di compito invece di due flussi contemporanei, cambio di regola sempre annunciato e mai solo tramite il colore (forma della cornice, simbolo, domanda e forma dei tasti), blocchi singoli e blocco misto, tempo di preavviso adattivo. Costi di cambio e di mescolanza in millisecondi come valori aggiuntivi.',
+          'Il cambio tra le due regole è sempre annunciato prima: forma della cornice, simbolo e domanda indicano la regola in vigore, anche forma ed etichetta dei tasti sono coerenti e il colore è solo un’aggiunta. Entrambe le regole si applicano con gli stessi due tasti, così si misura un vero cambio di compito e non l’esecuzione simultanea di due compiti. Una sessione inizia con un breve blocco per ciascuna regola e passa poi a un blocco misto con circa il 50 per cento di cambi di regola. Il tempo di preavviso tra l’indicazione e la cifra si adatta alla prestazione personale. I costi di cambio e di mescolanza vengono mostrati in millisecondi come valori aggiuntivi; il valore principale è il livello raggiunto.',
       },
     },
     sources: [
