@@ -12,7 +12,7 @@ export const science: ScienceEntry = {
       research:
         'Ziehen ist schwieriger als einfaches Zeigen: Es dauert länger und führt häufiger zu Fehlern. Eine Zielbewegung besteht aus einem schnellen Hauptimpuls und einer Feinkorrektur am Ende; bei bewegten Zielen landen die Endpunkte oft hinter dem Ziel. Beim Ziehen mit dem Finger verdeckt die Hand das Ziel leicht – deshalb liegt der Ball hier über dem Finger. In der Aufgabe wird man mit Übung besser; motorisches Lernen bleibt aber eng an die geübte Aufgabe gebunden. Ein Nutzen für den Alltag ist nicht belegt.',
       improved:
-        'Für den Finger gebaut (Ball über dem Finger, großer Ring, Finger darf irgendwo aufsetzen), Tempo in Echtzeit, Einstieg mit ruhigem Ring und erst später Richtungswechsel, sichtbarer Zeitbalken statt verstecktem Zeitfenster, Schwierigkeit in beide Richtungen angepasst, Zeitüberschreitungen werden mitgezählt, kein Blitz und kein Wackeln, Rückmeldung über Formen und ✓/✗.',
+        'Der Finger darf irgendwo aufsetzen; der Ball hängt über dem Finger, damit die Hand ihn nicht verdeckt, und der Ring ist großzügig bemessen. Das Tempo des Rings wird in Echtzeit gerechnet, auf den ersten Stufen bewegt er sich ruhig, erst später kommen Richtungswechsel hinzu. Ein Zeitbalken zeigt die verbleibende Zeit je Durchgang. Mit der Stufe werden Ring und Ball kleiner, der Ring schneller und das Zeitfenster kürzer; die Schwierigkeit passt sich nach oben und unten an. Eine Zeitüberschreitung zählt als Fehlversuch. Rückmeldung geben Formen und ✓/✗, ohne Blitz und ohne Wackeln. Gemessen werden die Trefferquote und die mittlere Dauer je Durchgang.',
     },
     it: {
       trains: 'Occhio e mano nel trascinare: guidare una palla con il dito verso un bersaglio che si sposta e rilasciarla al momento giusto.',
@@ -20,7 +20,7 @@ export const science: ScienceEntry = {
       research:
         'Trascinare è più difficile che puntare: richiede più tempo e provoca più errori. Un movimento verso una meta consiste in un rapido impulso principale e in una correzione fine alla fine; con bersagli in movimento i punti finali spesso cadono dietro il bersaglio. Trascinando con il dito la mano copre facilmente il bersaglio – per questo qui la palla sta sopra il dito. Nel compito con l’esercizio si migliora; l’apprendimento motorio resta però legato al compito esercitato. Un beneficio per la vita quotidiana non è dimostrato.',
       improved:
-        'Pensato per il dito (palla sopra il dito, anello grande, il dito può appoggiarsi ovunque), velocità in tempo reale, inizio con anello tranquillo e cambi di direzione solo più avanti, barra del tempo visibile invece di una finestra nascosta, difficoltà adattata in entrambe le direzioni, scadenze di tempo conteggiate, niente lampi né scosse, riscontro con forme e ✓/✗.',
+        'Il dito può appoggiarsi ovunque; la palla sta sopra il dito, così la mano non la copre, e l’anello è generoso. La velocità dell’anello è calcolata in tempo reale: nei primi livelli si muove con calma, solo più avanti si aggiungono i cambi di direzione. Una barra del tempo mostra il tempo rimasto per ogni turno. Con il livello, anello e palla diventano più piccoli, l’anello più veloce e la finestra di tempo più breve; la difficoltà si adatta verso l’alto e verso il basso. Una scadenza del tempo conta come tentativo fallito. Il riscontro è dato da forme e ✓/✗, senza lampi e senza tremolii. Si misurano la percentuale di turni con la palla nell’anello e la durata media per turno.',
     },
   },
   sources: [
