@@ -1,6 +1,6 @@
 {
  "stand": "2026-09-29",
- "anzahl": 86,
+ "anzahl": 87,
  "uebungen": [
   {
    "nr": 101,
@@ -12803,6 +12803,154 @@
     "Praxisangaben nicht belegt"
    ],
    "datei": "uebungen/905-vier-ziele-wechsel.md"
+  },
+  {
+   "nr": 906,
+   "kennung": "pendelball",
+   "name": "Pendelball (pendelnder Ball mit Buchstaben, Bahnfolge in einer Sitzung)",
+   "name_original": "– (eigene Blickfit-Übung, Praxisform der funktionellen Optometrie ohne Titel)",
+   "kapitel": "Eigene Blickfit-Übungen",
+   "kapitel_original": "",
+   "unterkapitel_original": "",
+   "quelle_url": "",
+   "blickfit_umsetzung": {
+    "kennung": "pendelball",
+    "name": "Pendelball",
+    "unterschiede": "Eigene Umsetzung als Touch-Übung ohne Wirkversprechen: Die Kugel pendelt gleichmäßig nach der Uhr (Sinus bzw. gleichmäßige Drehung) in sechs festen Bahnformen hintereinander; auf der Kugel erscheint weich ein Buchstabe, den man aus vier großen Buttons wählt. 25 Stufen, je Schritt genau ein Parameter (Tempo, Weite, Buchstabengröße, Anzeigedauer, Buchstabenmenge, Bahnfolge, Kugelgröße); Anpassung nach jeder Bahn. Gemessen wird nur, ob der Buchstabe erkannt wird – nicht der Blick und nicht die Kopfhaltung."
+   },
+   "stand": "2026-10-03",
+   "kurzbeschreibung": "Eine Kugel pendelt nacheinander waagrecht, senkrecht, schräg (zwei Richtungen) und im Kreis (rechtsherum, linksherum). Man folgt ihr bei möglichst ruhigem Kopf nur mit den Augen und erkennt einen Buchstaben, der kurz weich auf ihr erscheint; man tippt ihn unter vier großen Buttons an. Zwischen den Bahnen gibt es eine ruhige Pause. Gemessen wird nur, ob der Buchstabe erkannt wird – nicht der Blick.",
+   "ziel_funktionen": [
+    "blickfolge",
+    "bewegungswahrnehmung",
+    "antizipation"
+   ],
+   "eingabe": [
+    "touch",
+    "maus",
+    "tastatur"
+   ],
+   "tablet_geeignet": "ja",
+   "dauer_sekunden": 120,
+   "schwierigkeit_anpassung": "25 Stufen (maßgeblich ist die Stufentabelle im Kopf von src/exercises/pendelball/logic.ts); jeder Schritt ändert genau einen Parameter: Periode des Pendelns (4,0 → 2,2 s), halbe Bahnweite (20 → 30 % der Bühnenbreite, also die Bahn höchstens 60 % breit), Buchstabenhöhe (7,0 → 2,8 u, 1 u = 1 % der kürzeren Seite, nie unter 18 px), Anzeigedauer inklusive Ein- und Ausblenden (1100 → 600 ms), Buchstabenmenge (sehr verschieden → teils ähnlich → ähnlich, z. B. B D P R), Bahnfolge (fest → gemischt ab Stufe 12) und Kugelgröße (Radius 0,95 → 0,80 der Buchstabenhöhe). Die Spitzengeschwindigkeit der Kugel bleibt auf jeder Stufe und Bühne bei höchstens etwa 24°/s (bei 40 cm Abstand). Anpassung nach jeder Bahn (je etwa 3 Buchstaben): ≥ 85 % richtig → eine Stufe schwerer (bis zur ersten Umkehr zwei Stufen), < 65 % → eine Stufe leichter, dazwischen gleich. Startstufe = eine Stufe unter der erreichten Stufe der letzten Sitzung.",
+   "messgroessen": [
+    "Hauptwert: erreichte Stufe (höchste Stufe, auf der eine Bahn zu mindestens 65 % richtig war)",
+    "Treffer je Bahnform (Tabelle: richtig von gezeigt)",
+    "Treffsicherheit in Prozent",
+    "Ø Antwortzeit vom Erscheinen des Buchstabens bis zum Tippen (nur richtige Antworten; nur Vergleich mit sich selbst)",
+    "Fehler und Auslassungen (Antwortfrist 2,5 s nach Ende der Anzeige)",
+    "keine Messung von Blick, Augenbewegung oder Kopfhaltung; keine Normwerte"
+   ],
+   "anforderungsprofil": {
+    "visuell": {
+     "sehschaerfe_detail": 2,
+     "kontrast": 1,
+     "farbunterscheidung": 0,
+     "stereosehen": 0,
+     "peripheres_sehen": 1,
+     "nutzbares_sehfeld": 0,
+     "blickfolge": 3,
+     "sakkaden": 0,
+     "fixation": 1,
+     "bewegungswahrnehmung": 2,
+     "visuelle_suche": 0,
+     "visuelle_verarbeitungsgeschwindigkeit": 2,
+     "zeitliche_aufloesung": 0,
+     "naharbeit_dauer": 1
+    },
+    "kognitiv": {
+     "daueraufmerksamkeit": 2,
+     "selektive_aufmerksamkeit": 1,
+     "inhibition": 0,
+     "geteilte_aufmerksamkeit": 1,
+     "kognitive_flexibilitaet": 0,
+     "arbeitsgedaechtnis": 1,
+     "kurzzeitgedaechtnis_verbal": 0,
+     "kurzzeitgedaechtnis_visuell_raeumlich": 0,
+     "verarbeitungsgeschwindigkeit": 1,
+     "antizipation": 2,
+     "entscheidung_wahlreaktion": 2,
+     "lesen_sprache": 1,
+     "schlussfolgern": 0
+    },
+    "motorisch": {
+     "einfache_reaktion": 0,
+     "auge_hand_koordination": 1,
+     "zielbewegung_tempo": 0,
+     "zielbewegung_praezision": 0,
+     "kontinuierliche_steuerung": 0,
+     "ruhige_hand": 0,
+     "fingergeschwindigkeit": 0,
+     "fingersequenz_bimanual": 0,
+     "ganzkoerper": 0,
+     "gleichgewicht": 0,
+     "ausdauer_belastung": 0
+    }
+   },
+   "belastung": {
+    "zeitdruck": 1,
+    "flimmern_lichtreize": 0,
+    "bewegungsreize_schwindel": 1,
+    "koerperliche_belastung": 0,
+    "sturzrisiko": 0,
+    "sprachabhaengigkeit": 1
+   },
+   "voraussetzungen": [
+    "Tablet auf einem Ständer, ruhig und mittig vor der Person (Abstand etwa 40 cm, immer gleich); Kopf möglichst ruhig, nur die Augen folgen",
+    "Großbuchstaben von etwa 0,6° bis etwa 1,6° Höhe (etwa 22–57 px am Tablet in 40 cm) auch auf der bewegten Kugel erkennen können; die Buchstaben werden mit der Stufe kleiner und ähnlicher",
+    "Buchstaben des lateinischen Alphabets kennen",
+    "Mit dem Finger Felder von mindestens etwa 72 px treffen können (vier große Buttons unten)",
+    "Brille bzw. Nahbrille so wie im Alltag verwenden und notieren"
+   ],
+   "vorsicht_bei": [
+    "nystagmus",
+    "schielen_binokular",
+    "amblyopie",
+    "sehbehinderung_niedriger_visus",
+    "presbyopie_gleitsicht",
+    "kopfschmerz_asthenopie",
+    "schwindel_vestibulaer",
+    "kinder_unter_6",
+    "lese_rechtschreib_schwaeche"
+   ],
+   "geeignet_fuer": [
+    "Einer gleichmäßig bewegten Kugel bei ruhigem Kopf in festen Bahnformen folgen und dabei ein kurz gezeigtes Zeichen erkennen, mit schrittweiser Steigerung jeweils nur eines Merkmals",
+    "Sechs Bahnformen nacheinander üben (waagrecht, senkrecht, zwei Schräge, zwei Kreise) und in der Ergebnistabelle sehen, bei welcher Bahn das Erkennen leichter oder schwerer fällt",
+    "Vergleich mit sich selbst: erreichte Stufe, Treffer je Bahn und Antwortzeit über mehrere Sitzungen auf demselben Gerät",
+    "Vorführung der Übung in Geschäft und Beratung – ohne Wirkanspruch und ohne Diagnose"
+   ],
+   "weniger_geeignet_fuer": [
+    "Messung oder Beurteilung der Augenfolgebewegung: die App misst den Blick nicht, das Zeichen lässt sich auch mit einzelnen Blicksprüngen erkennen",
+    "Kontrolle der Kopfhaltung: sie wird nicht erfasst",
+    "Ersatz für die klinische Prüfung der Augenbewegungen durch eine Fachperson",
+    "Diagnose, Normvergleich, Therapie oder Reha (nicht vorgesehen, nicht möglich)",
+    "Menschen mit Nystagmus, Schielen oder Doppelbildern, wenn aus dem Ergebnis auf das Auge geschlossen werden soll"
+   ],
+   "evidenz": {
+    "uebungseffekt": "schwach",
+    "naher_transfer": "unklar",
+    "alltag_transfer": "fehlend",
+    "kommentar": "Für die Pendelball-Form mit Buchstaben bei ruhigem Kopf gibt es nach einer Literaturrecherche keine Studie; sie ist eine Praxisform der funktionellen Optometrie und nicht durch Studien belegt. Für verwandte Aufgaben (Folgebewegung vorhersagbarer Bahnen) zeigen kleine Laborstudien mit Blickmessung Übungseffekte, die einige Tage anhielten (Eibenberger et al. 2012); Erkennen von Zeichen auf bewegten Zielen ist als dynamische Sehschärfe untersucht (Ludvigh & Miller 1958; Brown 1972). Übungen zur Blickfolge gelten bei Lernschwierigkeiten als nicht wirksam (Handler et al. 2011). Bei trainingsähnlicher Aufgabe werden Effekte überschätzt; ein Alltagsnutzen ist nicht belegt."
+   },
+   "aehnliche_uebungen": [
+    402,
+    403,
+    404,
+    905
+   ],
+   "stichworte": [
+    "hängender Ball mit Buchstaben",
+    "Pendelball",
+    "Blickfolge",
+    "glatte Folgebewegung",
+    "dynamische Sehschärfe",
+    "Bahnfolge",
+    "Kopf ruhig",
+    "funktionelle Optometrie",
+    "kein Eye-Tracking",
+    "Praxisform nicht belegt"
+   ],
+   "datei": "uebungen/906-pendelball.md"
   }
  ]
 }

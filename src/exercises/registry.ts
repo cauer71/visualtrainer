@@ -92,6 +92,7 @@ import { richtungWort } from './richtung-wort';
 import { seiteErkennen } from './seite-erkennen';
 import { zahlBuchstabeWirbel } from './zahl-buchstabe-wirbel';
 import { vierZieleWechsel } from './vier-ziele-wechsel';
+import { pendelball } from './pendelball';
 import { laborSpotTouch } from './labor-spot-touch';
 import { laborZieleOrdnen } from './labor-ziele-ordnen';
 import { laborWahlreaktion } from './labor-wahlreaktion';
@@ -196,6 +197,7 @@ export const EXERCISES: ExerciseDefinition[] = [
   seiteErkennen,
   zahlBuchstabeWirbel,
   vierZieleWechsel,
+  pendelball,
   laborSpotTouch,
   laborZieleOrdnen,
   laborWahlreaktion,
