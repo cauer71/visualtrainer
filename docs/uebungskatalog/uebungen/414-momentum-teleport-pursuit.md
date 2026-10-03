@@ -12,7 +12,7 @@ blickfit_umsetzung: {kennung: "sprungziel", name: "Sprungziel", unterschiede: "T
 stand: 2026-09-29
 
 # ===== Überblick =====
-kurzbeschreibung: "Ein leuchtender Punkt gleitet auf dunklem Grund geradlinig über den Bildschirm und springt bei Standardtempo alle 1,2 Sekunden ohne Vorwarnung an einen zufälligen anderen Ort, wo er mit gleicher Richtung und gleichem Tempo weiterfliegt. Man springt mit dem Blick hinterher und folgt ihm dann wieder gleichmäßig; es gibt keine Eingabe, keine Punkte und keine Leistungsmessung."
+kurzbeschreibung: "Eine helle Kugel läuft gleichmäßig über den Bildschirm, blendet in unregelmäßigen Abständen weich aus und taucht an einem anderen Ort weich wieder auf, wo sie mit gleicher Richtung und gleichem Tempo weiterläuft. Man findet sie mit einem Blicksprung wieder und folgt ihr dann gleichmäßig. Kurz nach dem Auftauchen erscheint in ihr ein Landolt-Ring, dessen Öffnungsrichtung man über einen großen Button meldet. Sprungweite, Zeit bis zum Zeichen und Tempo passen sich an. Gemessen wird nur das Erkennen des Zeichens."
 ziel_funktionen: [sakkaden, blickfolge]
 eingabe: [maus, touch]
 tablet_geeignet: mit_anpassung
@@ -74,13 +74,13 @@ belastung:
 # ===== Auswahlhilfe =====
 voraussetzungen: ["30–120 s ohne Unterbrechung auf den Bildschirm schauen können", "ruhige Sitzposition: Monitor 50–70 cm, Tablet auf Ständer ca. 40 cm, Querformat", "passende Korrektion für den Bildschirmabstand (bei Alterssichtigkeit Zwischen- bzw. Nahkorrektur, möglichst Arbeitsplatzbrille)", "Gesichtsfeld über die ganze Bildschirmfläche nutzbar (Sprünge an beliebige Orte)", "kein Farbsehen nötig (Zielfarbe frei wählbar)", "keine Hand-Eingabe während der Übung (nur Start per Klick/Tipp)"]
 vorsicht_bei: [photosensitive_epilepsie, migraene_lichtempfindlich, nystagmus, schwindel_vestibulaer, gesichtsfeldausfall, presbyopie_gleitsicht, trockenes_auge_bildschirm, kopfschmerz_asthenopie, kinder_unter_6]
-geeignet_fuer: ["Wechsel aus großem Blicksprung und anschließender glatter Blickfolge üben (sinnvoll bei Tempo 0,5–1,5×, ca. 5–25°/s, Sprung alle 2,4–0,8 s)", "Steigerung nach gleichförmiger Folge (412 = dieselbe Bewegung ohne Sprünge, 404); eigener Zweig neben den Richtungswechsel-Übungen 415 → 410 → 411", "rein visuelles Aufwärmen vor Zielwechsel- oder Tracking-Übungen", "Personen, die für eine Übung keine Hand einsetzen können oder wollen"]
-weniger_geeignet_fuer: ["wer Rückmeldung, Punkte oder einen Fortschrittswert erwartet (das Original misst nichts)", "Übungsziel Auge-Hand-Koordination oder Zielwechsel mit der Hand (dafür 104, 105, 502, 505)", "Gleitsichtträger:innen im Vollbild bei streng ruhigem Kopf (Sprünge führen oft in seitliche Unschärfezonen)", "Menschen mit Gesichtsfeldeinschränkung (Ziel taucht im nicht gesehenen Bereich wieder auf)", "Einsteiger:innen und Ältere bei Tempo ab 2× (Sprung alle 0,6 s, kaum noch Zeit für ruhige Folge)", "Kinder, die ohne Punkte und Rückmeldung schnell die Motivation verlieren"]
+geeignet_fuer: ["Wechsel aus Blicksprung und anschließender glatter Blickfolge üben (in niedrigen bis mittleren Stufen)", "Steigerung nach gleichförmiger Folge (412 = dieselbe Bewegung ohne Sprünge, 404); eigener Zweig neben den Richtungswechsel-Übungen 415 → 410 → 411", "rein visuelles Aufwärmen vor Zielwechsel- oder Tracking-Übungen", "Personen, die für eine Übung keine Hand-Zielbewegung einsetzen können oder wollen (nur Antworttipp)"]
+weniger_geeignet_fuer: ["wer eine Messung der Augenbewegung erwartet – geprüft wird nur das Erkennen des Zeichens", "Übungsziel Auge-Hand-Koordination oder Zielwechsel mit der Hand (dafür 104, 105, 502, 505)", "Gleitsichtträger:innen im Vollbild bei streng ruhigem Kopf (Sprünge führen oft in seitliche Unschärfezonen)", "Menschen mit Gesichtsfeldeinschränkung (Ziel taucht im nicht gesehenen Bereich wieder auf)", "Einsteiger:innen und Ältere auf hohen Stufen (kaum noch Zeit für ruhige Folge)", "Kinder, die abstrakte Aufgaben nicht durchhalten"]
 evidenz:
   uebungseffekt: schwach
   naher_transfer: fehlend
   alltag_transfer: fehlend
-  kommentar: "Die Übung selbst wurde nie untersucht; die Grundlagen (Sakkaden auf bewegte Ziele, Übergang in die Folgebewegung) sind im Labor gut beschrieben, Folgebewegung ist dort in wenigen Sitzungen trainierbar, mit Belohnung für genaues Folgen deutlich stärker als ohne (Madelain & Krauzlis 2003; Eibenberger et al. 2012) – ohne Rückmeldung und ohne Messung ist ein Übungseffekt nur plausibel, ein Nutzen für Sport, E-Sport oder Alltag nicht belegt."
+  kommentar: "Die Übung selbst wurde nie untersucht; die Grundlagen (Sakkaden auf bewegte Ziele, Übergang in die Folgebewegung) sind im Labor gut beschrieben, Folgebewegung ist dort in wenigen Sitzungen trainierbar, mit Belohnung für genaues Folgen deutlich stärker als ohne (Madelain & Krauzlis 2003; Eibenberger et al. 2012) – ohne Blickmessung ist ein Übungseffekt nur plausibel, ein Nutzen für Sport, Bildschirmspiele oder Alltag nicht belegt."
 aehnliche_uebungen: [412, 410, 415, 411, 409, 407, 404, 303, 401, 501, 502, 508]
 stichworte: ["Positionssprung", "Step-Ramp", "sakkadische Wiederaufnahme", "Sakkade auf bewegtes Ziel", "smooth pursuit", "Aufholsakkaden", "Geschwindigkeitsgedächtnis", "Teleport", "Blickverfolgung", "rein visuell", "ohne Eingabe"]
 ---
@@ -91,7 +91,7 @@ stichworte: ["Positionssprung", "Step-Ramp", "sakkadische Wiederaufnahme", "Sakk
 
 ## 1. Kurzbeschreibung
 
-Auf fast schwarzem Grund gleitet ein roter, leuchtender Punkt (≈ 0,7–0,85°) geradlinig und prallt an den Rändern ab. Bei Standardtempo verschwindet er alle 1,2 s schlagartig und taucht im selben Moment irgendwo anders auf – im Mittel ≈ 20° entfernt –, wo er mit **derselben Richtung und demselben Tempo** weiterfliegt. Man folgt ihm nur mit den Augen: auf der Strecke gleichmäßig mitgehen, nach dem Sprung mit einem Blicksprung hinterher und sofort wieder mitgleiten. Das Original misst nichts und gibt keine Rückmeldung.
+Eine helle Kugel läuft gleichmäßig über den Bildschirm. In unregelmäßigen Abständen blendet sie weich aus und taucht an einem anderen Ort weich wieder auf; dort läuft sie mit derselben Richtung und demselben Tempo weiter. Man folgt ihr nur mit den Augen: auf der Strecke gleichmäßig mitgehen, nach dem Auftauchen mit einem Blicksprung zur neuen Stelle und sofort wieder mitgleiten. Kurz nach dem Auftauchen erscheint in der Kugel ein Landolt-Ring („C“), den man nur erkennt, wenn man sie rechtzeitig wiedergefunden hat; man meldet über einen großen Button unten, wohin die Öffnung zeigt. Sprungweite, die Zeit bis zum Zeichen, Tempo und Zeichengröße steigen in Stufen und passen sich über die 14 Durchgänge einer Runde an das Ergebnis an. Gemessen wird nur, ob das Zeichen erkannt wird, nicht, ob die Augen tatsächlich springen.
 
 ## 2. Ablauf im Original (Analyse)
 
@@ -137,58 +137,56 @@ Grundlage: Seitentext und Spielcode (seitenspezifischer Chunk `88915-…js` plus
 
 ## 4. Optische und okulomotorische Grundlagen
 
-- **Sehwinkel:** Ziel ≈ 0,7–0,85° (Monitor 60 cm), ≈ 0,9° (Tablet 40 cm) – weit über der Auflösungsgrenze; Sehschärfe nicht leistungsbegrenzend. Hoher Kontrast und plötzliches Erscheinen machen das Ziel auch peripher gut auffindbar.
-- **Reaktionskette je Sprung (Literatur + eigene Abschätzung):** Sakkadenlatenz auf einen unerwarteten Ort ≈ 150–200 ms (reguläre Sakkaden ≈ 150 ms mit Lücke, Fischer & Ramsperger, 1984), Dauer ≈ 55–100 ms (Baloh et al., 1975). In dieser Zeit fliegt das Ziel bei 1× 3–4° weiter; die Sakkade rechnet das nur teilweise ein (Gellman & Carl, 1991), der Rest wird nach ≈ 125 ms per Aufholsakkade korrigiert (de Brouwer et al., 2002a). Anlauf der Folgebewegung ≈ 100 ms (Carl & Gellman, 1987), nach Sakkaden verstärkt (Lisberger, 1998, an Affen). Summe ≈ 0,3–0,4 s bis zur stabilen Folge → bei 1× bleiben ≈ 0,8 s ruhige Folge, ab 2–3× kaum noch.
-- **Folgebewegung:** 9–16°/s (1×) liegt im gut verfolgbaren Bereich; der glatte Gain ist stets < 0,95 und sinkt mit dem Tempo (Collewijn & Tamminga, 1984); ≈ 90 % Gain bis ≈ 100°/s bei den meisten (Meyer et al., 1985). Ab 5× sind die Strecken kürzer als die Reaktionskette.
-- **Bewegungsunschärfe:** Verschmierung ≈ Geschwindigkeit ÷ Bildfrequenz, bei 1×/60 Hz ≈ 9–16′ (eigene Rechnung), bei 72 Bildern/s etwas weniger.
-- **Blickfeld und Gleitsicht:** Vollbild 24 Zoll in 60 cm ≈ 48° × 28° (wie 410/411), Sprünge bis ≈ 50° (Diagonale). Der scharfe Zwischenbereich einer Gleitsichtbrille ist seitlich nur ≈ 13–18° breit statt ≈ 60° bei Einstärkengläsern (Han et al., 2003); neue Träger:innen bewegen mehr den Kopf (Hutchings et al., 2007). Bei ruhigem Kopf landet der Blick nach vielen Sprüngen in der Randunschärfe, unten im zu starken Nahteil → Arbeitsplatzbrille, kleineres Feld oder Kopfbewegung zulassen. Monitoroberkante etwa auf Augenhöhe.
-- **Akkommodation:** 60 cm ≈ 1,7 dpt, 40 cm ≈ 2,5 dpt – bei Alterssichtigkeit passende Zwischen-/Nahkorrektur nötig.
-- **Kontrast/Farbe:** Rot #ef4444 auf #050508 ≈ 5,4 : 1, Weiß 20 : 1, Gelb ≈ 10,6 : 1 (WCAG-Rechnung, vgl. 410). Bei Protan-Schwäche wirkt Rot dunkler; ≈ 8 % der Männer haben eine Rot-Grün-Schwäche (Birch, 2012).
+- **Sehwinkel:** Die Kugel ist groß und kontrastreich, die Sehschärfe nicht leistungsbegrenzend; das plötzliche Wiedererscheinen macht sie auch peripher gut auffindbar. Schwierig wird nur das kleine Zeichen. Bei 40 cm Abstand entspricht 1 cm auf dem Schirm etwa 1,4°.
+- **Reaktionskette je Sprung (Literatur + eigene Abschätzung):** Die Sakkadenlatenz auf einen unerwartet auftauchenden Ort beträgt ≈ 150–200 ms (reguläre Sakkaden ≈ 150 ms mit Lücke, Fischer & Ramsperger, 1984), die Dauer ≈ 55–100 ms (Baloh et al., 1975). In dieser Zeit läuft das Ziel weiter; die Sakkade rechnet das nur teilweise ein (Gellman & Carl, 1991), der Rest wird nach ≈ 125 ms per Aufholsakkade korrigiert (de Brouwer et al., 2002a). Der Anlauf der Folgebewegung dauert ≈ 100 ms (Carl & Gellman, 1987) und ist nach Sakkaden verstärkt (Lisberger, 1998, an Affen). Insgesamt vergehen so etwa 0,3–0,4 s bis zur stabilen Folge. Das Zeichen erscheint je nach Stufe 700 bis 280 ms nach Beginn des Einblendens; auf den hohen Stufen bleibt also nur wenig Zeit.
+- **Folgebewegung:** Das Grundtempo der Übung steigt über die Stufen von etwa 10 auf etwa 43 % der kürzeren Bildseite pro Sekunde, das sind auf einem Tablet in 40 cm Abstand grob 2 bis 10°/s und damit im gut verfolgbaren Bereich. Der glatte Gain ist stets < 0,95 und sinkt mit dem Tempo (Collewijn & Tamminga, 1984); ≈ 90 % Gain bis ≈ 100°/s bei den meisten Personen (Meyer et al., 1985).
+- **Sprungweite:** Sie wächst über die Stufen von 16 auf 77 % der kürzeren Bildseite, auf einem Tablet in 40 cm Abstand grob von 3,5° auf 17°.
+- **Weiches Ein- und Ausblenden:** Das Ausblenden dauert 170 ms, es folgen 60 ms Dunkel und 170 ms Einblenden; Aus- und Einblenden sind sinusförmig und nie schlagartig. Die Verschmierung des bewegten Ziels beträgt etwa Geschwindigkeit ÷ Bildfrequenz (eigene Rechnung).
+- **Blickfeld und Gleitsicht:** Die Sprünge führen über das ganze Feld. Der scharfe Zwischenbereich einer Gleitsichtbrille ist seitlich nur ≈ 13–18° breit statt ≈ 60° bei Einstärkengläsern (Han et al., 2003); neue Träger:innen bewegen mehr den Kopf (Hutchings et al., 2007). Bei ruhigem Kopf landet der Blick nach vielen Sprüngen in der Randunschärfe, unten im zu starken Nahteil; daher Arbeitsplatzbrille, kleineres Feld oder Kopfbewegung zulassen, Oberkante des Bildschirms etwa auf Augenhöhe.
+- **Akkommodation:** 60 cm ≈ 1,7 dpt, 40 cm ≈ 2,5 dpt (Rechenregel: Kehrwert des Abstands in Metern); bei Alterssichtigkeit passende Zwischen- oder Nahkorrektur.
 - **Trockenes Auge:** Bildschirmarbeit senkt die Lidschlagrate im Mittel auf ein Fünftel (Patel et al., 1991).
-- **Alter:** geringerer Folge-Gain und längere Sakkaden-Reaktionszeit im Alter (Moschner & Baloh, 1994); bei 5–8-Jährigen sind Sakkaden langsam und stark schwankend (Munoz et al., 1998).
+- **Alter:** Geringerer Folge-Gain und längere Sakkaden-Reaktionszeit im Alter (Moschner & Baloh, 1994); bei 5–8-Jährigen sind Sakkaden langsam und stark schwankend (Munoz et al., 1998).
 
 ## 5. Neurowissenschaftliche Grundlagen
 
-- **Sakkade:** Die Auslösung beruht auf einer Konkurrenz zwischen Fixieren und Wegbewegen auf einer Salienzkarte, mit getrenntem Wann- und Wohin-Pfad (Findlay & Walker, 1999); ein plötzlich erscheinendes, helles Ziel ist dabei stark salient. Colliculus superior und FEF sind zentrale Stationen (Krauzlis, 2004).
+- **Sakkade:** Die Auslösung beruht auf einer Konkurrenz zwischen Fixieren und Wegbewegen auf einer Salienzkarte, mit getrenntem Wann- und Wohin-Pfad (Findlay & Walker, 1999); ein plötzlich erscheinendes, helles Ziel ist dabei stark salient. Colliculus superior und FEF sind zentrale Stationen (Krauzlis, 2004). Klassisch gilt: Positionsfehler lösen Sakkaden aus, Geschwindigkeitsfehler treiben die Folgebewegung (Rashbass, 1961).
 - **Folgebewegung:** Bewegungssignale aus MT/MST erreichen über das Folgeareal des FEF, Brückenkerne und Kleinhirn die Augenmuskelkerne; ≈ 100 ms Bewegung werden in den Start übersetzt (Lisberger, 2010).
 - **Kopplung:** Sakkade und Folge gelten als zwei Ergebnisse eines gemeinsamen sensomotorischen Prozesses (Orban de Xivry & Lefèvre, 2007); Positionsinformation speist auch die Folgebewegung (Blohm et al., 2005).
-- **Vorhersage:** Extraretinale Signale und ein Kurzzeitspeicher für Geschwindigkeit stützen die Folge (Barnes, 2008); vorhersagbares Timing erlaubt vorausgreifende Augenbewegungen (Kowler et al., 2019). Beim festen 1,2-s-Takt ist der **Zeitpunkt** vorhersagbar, der **Ort** nie. Ob das „Hirnareale stärkt“, ist nicht untersucht.
+- **Vorhersage:** Extraretinale Signale und ein Kurzzeitspeicher für Geschwindigkeit stützen die Folge (Barnes, 2008); vorhersagbares Timing erlaubt vorausgreifende Augenbewegungen (Kowler et al., 2019). Der Abstand zwischen den Sprüngen ist hier unregelmäßig, der **Ort** des Wiederauftauchens nie vorhersagbar. Ob die Übung „Hirnareale stärkt“, ist nicht untersucht.
 
 ## 6. Motorische Grundlagen
 
-- Keine Hand-Eingabe; die „Motorik“ sind die Augenbewegungen selbst → motorische Profilwerte 0.
-- Wer Maus oder Finger mitführt, macht daraus eine unbewertete Zielwechsel-/Nachführaufgabe (vgl. 502, 505); am Tablet verdeckt der Finger das Ziel. Gerät stabil aufstellen, aufrecht sitzen; ruhiger Kopf nur, wenn gezielt die Augenbewegung geübt werden soll.
+- Die Eingabe beschränkt sich auf das Antworten per Tipp oder Klick unten; die „Motorik“ der Übung sind die Augenbewegungen selbst, deshalb sind die motorischen Profilwerte 0.
+- Wer Maus oder Finger mitführt, macht daraus eine unbewertete Zielwechsel- oder Nachführaufgabe (vgl. 502, 505). Gerät stabil aufstellen, aufrecht sitzen; ruhiger Kopf nur, wenn gezielt die Augenbewegung geübt werden soll.
 
 ## 7. Einflussfaktoren und Messgrenzen
 
-- **Keine Messung:** Fortschritt nur subjektiv; die „Stufe“ ist das gewählte Tempo.
-- **Gerät/Abstand:** Tempo in px/s → °/s hängt von Pixeldichte und Abstand ab; die Sprungweite hängt von der Fenstergröße ab (Tablet ≈ 14°, 24-Zoll-Monitor ≈ 20°, großer Monitor mehr). Vergleiche nur am selben Gerät und Abstand.
-- **Kopplung von Tempo und Takt:** Ein Regler ändert Geschwindigkeit **und** Sprunghäufigkeit – beides lässt sich nicht getrennt steigern.
-- **Gewöhnung:** Der feste Takt wird schnell gelernt; subjektive Besserung kann Aufgabengewöhnung sein. „Random Speed“ macht im Mittel schneller und die Sprünge häufiger.
+- **Keine Messung der Augenbewegung:** Das Ergebnis zeigt nur, ob das Zeichen erkannt wurde; die Stufe gibt die erreichte Sprungweite, Zeit bis zum Zeichen und das Tempo an.
+- **Gerät/Abstand:** Tempo und Sprungweite sind in Bildschirmeinheiten festgelegt; die Winkelwerte hängen von Bildschirmgröße und Abstand ab. Touch und Maus unterscheiden sich in Zeitbedarf und Streuung. Vergleiche nur am selben Gerät und Abstand.
+- **Kopplung von Tempo und Weite:** Mit der Stufe steigen Sprungweite, Tempo, Zeichengröße und -dauer gemeinsam; einzelne Größen lassen sich nicht getrennt steigern.
+- **Gewöhnung:** Der Rhythmus der Sprünge ist unregelmäßig, aber die Aufgabe wird schnell vertraut; subjektive Besserung kann Aufgabengewöhnung sein. Messungen am Menschen streuen von Durchgang zu Durchgang; erst mehrere Runden (Median) erlauben eine Einschätzung (Mountford et al., 2004, S. 43–44).
 - **Person:** Ermüdung, Alter, Aufmerksamkeit, Brillenversorgung, Gesichtsfeld.
 
 ## 8. Studienlage: Trainierbarkeit und Übertragung
 
-- **Übungseffekt – schwach:** Keine Studie zu dieser Aufgabe. Analogien: 2 × 6 min Folgen eines quasi-zufällig bewegten Ziels an 3 Tagen verbesserten die Folge noch nach 5 Tagen (Eibenberger et al., 2012; je N = 10). Mit Belohnung für genaues Folgen stieg der Gain bei kurz verdeckten Zielen nach 8–10 Tagessitzungen von 0,59 auf 0,89, mit zufälliger Belohnung nur von 0,60 auf 0,63, ohne Belohnung (reine Wiederholung) von 0,63 auf 0,71 (Madelain & Krauzlis, 2003) – Rückmeldung verstärkt das Lernen deutlich; das Original gibt keine.
-- **Naher Transfer – fehlend:** Nicht untersucht, ob schnelleres Wiederfinden auf andere Blickaufgaben übergeht. Der
-  schwache Laborhinweis auf Übertrag bei reinem Folgetraining (Eibenberger et al., 2012; Grundlage der Einstufung
-  „schwach“ bei 409–413 und 415) betrifft nur die Folgebewegung, nicht den Kern dieser Übung (Sakkade auf das
-  versetzte Ziel) – daher hier strenger eingestuft, wie bei der Sakkaden-Übung 407.
-- **Alltagstransfer – fehlend:** Kein Beleg für Shooter, Ballsport oder Verkehr (Fransen, 2024; Simons et al., 2016; Guo et al., 2025).
+- **Übungseffekt – schwach:** Keine Studie zu dieser Aufgabe. Analogien: 2 × 6 min Folgen eines quasi-zufällig bewegten Ziels an 3 Tagen verbesserten die Folge noch nach 5 Tagen (Eibenberger et al., 2012; je N = 10). Mit Belohnung für genaues Folgen stieg der Gain bei kurz verdeckten Zielen nach 8–10 Tagessitzungen von 0,59 auf 0,89, mit zufälliger Belohnung nur von 0,60 auf 0,63, ohne Belohnung (reine Wiederholung) von 0,63 auf 0,71 (Madelain & Krauzlis, 2003). Rückmeldung verstärkt das Lernen deutlich; die Übung zeigt zwar nach jedem Durchgang ✓/✗, belohnt aber nicht das genaue Folgen selbst.
+- **Naher Transfer – fehlend:** Nicht untersucht, ob schnelleres Wiederfinden auf andere Blickaufgaben übergeht. Der schwache Laborhinweis auf Übertrag bei reinem Folgetraining (Eibenberger et al., 2012; Grundlage der Einstufung „schwach“ bei 409–413 und 415) betrifft nur die Folgebewegung, nicht den Kern dieser Übung (Sakkade auf das versetzte Ziel); daher hier strenger eingestuft, wie bei der Sakkaden-Übung 407.
+- **Alltagstransfer – fehlend:** Kein Beleg für Ballsport, Verkehr oder Bildschirmspiele (Fransen, 2024; Simons et al., 2016; Guo et al., 2025).
+- Erfahrungswissen aus der funktionellen Optometrie, nicht belegt: Man beginnt am eigenen Arbeitspunkt und steigert in kleinen, selbst gesteuerten Schritten; die Stufen der Übung folgen diesem Vorgehen.
 
 ## 9. Auswahlhinweise für die KI
 
-- **Passt, wenn …** der Übergang von einem großen Blicksprung in eine glatte Folgebewegung geübt werden soll, ohne Hand-Eingabe; als Steigerung nach 412 (dieselbe Bewegung ohne Sprünge), 404 (gleichförmig) und 303 (Sprünge auf ruhende Ziele), parallel zu 410. Unter 409–415 fordert diese Übung Blicksprünge und das Erfassen am Bildrand am stärksten (`sakkaden` 3, `peripheres_sehen` 2). Einstellung: Tempo 0,5–1,0× zum Einstieg, bis 1,5× für Geübte; Richtungslinie zuerst an, später „Hide Line“; „Random Speed“ erst als Steigerung; 3–5 × 60 s mit Pausen und bewusstem Blinzeln.
-- **Weniger passend, wenn …** Rückmeldung gewünscht ist, das Ziel Auge-Hand-Koordination ist (104, 105, 502, 505) oder hohe Tempi gewählt würden (ab 2× für Einsteiger:innen und Ältere, ab 3× für alle).
+- **Passt, wenn …** der Übergang von einem Blicksprung in eine glatte Folgebewegung geübt werden soll, ohne Hand-Eingabe; als Steigerung nach 412 (gleichförmige Bewegung ohne Sprünge), 404 (gleichförmig) und 303 (Sprünge auf ruhende Ziele), parallel zu 410. Unter 409–415 fordert diese Übung Blicksprünge und das Erfassen am Bildrand am stärksten (`sakkaden` 3, `peripheres_sehen` 2). Niedrige Stufen zum Einstieg; 3–5 Runden mit Pausen und bewusstem Blinzeln.
+- **Weniger passend, wenn …** das Ziel Auge-Hand-Koordination ist (104, 105, 502, 505), eine Messung der Augenbewegung gewünscht ist oder hohe Stufen gewählt würden (für Einsteiger:innen und Ältere erst nach längerem Üben).
 - **Vorsicht / anpassen bei …**
-  - `photosensitive_epilepsie`, `migraene_lichtempfindlich`: Jeder Sprung ist ein Hell-Dunkel-Wechsel an zwei Orten; mehr als 3 Sprünge pro Sekunde ab ≈ 4× (mit „Random Speed“ ab ≈ 3×; eigene Simulation), ab ≈ 4× springt das Ziel zudem von Bild zu Bild über seinen Durchmesser hinaus. Die Leuchtfläche liegt bei Standardgröße weit unter der Flächenschwelle 0,006 sr (Harding et al., 2005; WCAG 2.3.1) – formal unkritisch, trotzdem Tempo ≤ 1,5×, „Neon Glow“ aus, Day Mode meiden. Deshalb `flimmern_lichtreize` 1 (gering) – anders als die stetig bewegten Ziele in 410–413 und 415 (0), aber weit unter dem blinkenden Ziel in 409 (3).
-  - `gesichtsfeldausfall`: Das Ziel taucht an beliebigen Orten wieder auf, auch im ausgefallenen Bereich – Frust- und Überforderungsgefahr.
+  - `photosensitive_epilepsie`, `migraene_lichtempfindlich`: Jeder Sprung ist ein Aus- und Einblenden an zwei Orten; zwischen zwei Sprüngen läuft die Kugel mindestens 0,8 s gleichmäßig, Aus- und Einblenden dauern je ≥ 150 ms und verlaufen sinusförmig, nie schlagartig. Die Leuchtfläche liegt bei üblichem Betrachtungsabstand weit unter der Flächenschwelle 0,006 sr (Harding et al., 2005; WCAG 2.3.1) und weit unter 3 Wechseln pro Sekunde, formal also unkritisch. Trotzdem `flimmern_lichtreize` 1 (gering), anders als die stetig bewegten Ziele in 410–413 und 415 (0), aber weit unter dem blinkenden Ziel in 409 (3).
+  - `gesichtsfeldausfall`: Das Ziel taucht an beliebigen Orten wieder auf, auch im ausgefallenen Bereich; Frust- und Überforderungsgefahr. Gesichtsfeldausfälle lassen sich nach dem Verlauf der Sehbahn einordnen (vor dem Chiasma meist einäugig, am Chiasma ungleichseitig, dahinter gleichseitig; Muchnick, 2008, S. 32), werden aber oft nur durch eine Untersuchung entdeckt (ebd., S. 5, Einzelfall). Die Übung ist kein Gesichtsfeldtest; neue oder unklare Ausfälle gehören ärztlich abgeklärt.
   - `presbyopie_gleitsicht`: Sprünge in seitliche Unschärfezonen → Kopfbewegung erlauben, kleineres Feld, Arbeitsplatzbrille.
   - `nystagmus`: Folge und Zielfinden können eingeschränkt sein.
-  - `schwindel_vestibulaer`: plötzliche, große Blickwechsel im Vollbild; kleines Ziel auf ruhigem Grund, daher meist gering.
-  - `trockenes_auge_bildschirm`, `kopfschmerz_asthenopie`: 60 s konzentriertes Schauen mit wenig Lidschlag; kurze Blöcke, Pausen.
-  - `kinder_unter_6`: abstrakte Aufgabe ohne Rückmeldung über 60 s – nicht empfohlen.
-- **Kombiniert gut mit …** 412 (**dieselbe Bewegung** ohne Sprünge – Vorstufe), 409 (dieselbe Bewegung, statt Sprüngen Dunkelphasen: das Ziel taucht auf der vorhergesagten Bahn wieder auf, hier an einem zufälligen Ort), 303 (Blicksprünge auf ruhende Ziele), 407 (Verdeckung, Landepunkt), Richtungswechsel-Reihe 415 → 410 → 411 (Haken statt Sprünge), 401 (peripheres Erkennen), 502/508 (Zielwechsel mit Hand).
+  - `schwindel_vestibulaer`: plötzliche, große Blickwechsel im Vollbild; kleines Ziel auf ruhigem Grund, daher meist gering. Wiederkehrender Schwindel gehört ärztlich abgeklärt (Muchnick, 2008, S. 18, 28).
+  - `trockenes_auge_bildschirm`, `kopfschmerz_asthenopie`: konzentriertes Schauen mit wenig Lidschlag; kurze Blöcke, Pausen.
+  - `kinder_unter_6`: abstrakte Aufgabe, nicht empfohlen.
+- **Kombiniert gut mit …** 412 (gleichförmige Grundbewegung ohne Sprünge – Vorstufe), 409 (statt Sprüngen Dunkelphasen: das Ziel taucht auf der vorhergesagten Bahn wieder auf, hier an einem zufälligen Ort), 303 (Blicksprünge auf ruhende Ziele), 407 (Verdeckung, Landepunkt), Richtungswechsel-Reihe 415 → 410 → 411, 401 (peripheres Erkennen), 502/508 (Zielwechsel mit Hand).
 
 Keine Diagnose, keine Heilversprechen: Trainingsaufgabe für gesunde Nutzer:innen, kein Test der Augenbeweglichkeit.
 
@@ -210,9 +208,6 @@ Keine Diagnose, keine Heilversprechen: Trainingsaufgabe für gesunde Nutzer:inne
 - Krauzlis, R. J. (2004). Recasting the smooth pursuit eye movement system. *Journal of Neurophysiology, 91*(2), 591–603. https://doi.org/10.1152/jn.00801.2003 – **Prüfung:** DOI stimmt ✓; **stützt:** teilweise (Übergang Sakkade → Folge; betont aber gemeinsame statt getrennte Architektur).
 - Barnes, G. R. (2008). Cognitive processes involved in smooth pursuit eye movements. *Brain and Cognition, 68*(3), 309–326. https://doi.org/10.1016/j.bandc.2008.08.020 – **Prüfung:** DOI stimmt ✓; **stützt:** ja für Geschwindigkeitsgedächtnis und Vorhersage; nein für die Zuordnung zum Kleinhirn und die Leistungsstufen.
 - Woods, D. L., Wyma, J. M., Yund, E. W., Herron, T. J., & Reed, B. (2015). Factors influencing the latency of simple reaction time. *Frontiers in Human Neuroscience, 9*, 131. https://doi.org/10.3389/fnhum.2015.00131 – **Prüfung:** DOI stimmt ✓; **stützt:** nein (einfache Reaktionszeit; nichts zu Zielreakquisition in Shootern oder 144/240-Hz-Monitoren).
-- Nur im Fließtext: „Leigh & Zee (2015)“ – Leigh, R. J., & Zee, D. S. (2015). *The neurology of eye movements* (5th ed.). Oxford University Press. https://doi.org/10.1093/med/9780199969289.001.0001 – **Prüfung:** Buch, DOI stimmt ✓ (Inhalt nicht eingesehen); **stützt:** unklar („Kopfbewegung destabilisiert die Foveazentrierung, Kinn fixieren“ nicht belegt).
-- Die Leistungstabelle („Referenzdaten … 50–70 cm, 1,0–2,0×“) nennt keine Quelle; keine der zitierten Arbeiten enthält solche Werte.
-
 ### Weitere Fachliteratur
 
 - Baloh, R. W., Sills, A. W., Kumley, W. E., & Honrubia, V. (1975). Quantitative measurement of saccade amplitude, duration, and velocity. *Neurology, 25*(11), 1065–1070. https://doi.org/10.1212/WNL.25.11.1065 – Sakkadendauer ≈ 2,7 ms pro Grad (N = 25)
@@ -243,3 +238,5 @@ Keine Diagnose, keine Heilversprechen: Trainingsaufgabe für gesunde Nutzer:inne
 - Simons, D. J., Boot, W. R., Charness, N., Gathercole, S. E., Chabris, C. F., Hambrick, D. Z., & Stine-Morrow, E. A. L. (2016). Do "brain-training" programs work? *Psychological Science in the Public Interest, 17*(3), 103–186. https://doi.org/10.1177/1529100616661983 – Transfer von Hirntraining
 - Spjut, J., Boudaoud, B., Binaee, K., Kim, J., Majercik, A., McGuire, M., Luebke, D., & Kim, J. (2019). Latency of 30 ms benefits first person targeting tasks more than refresh rate above 60 Hz. In *SIGGRAPH Asia 2019 Technical Briefs* (S. 110–113). ACM. https://doi.org/10.1145/3355088.3365170 – Latenz wichtiger als Bildfrequenz
 - World Wide Web Consortium. (2024). *Web Content Accessibility Guidelines (WCAG) 2.2*, Erfolgskriterien 2.2.2, 2.3.1 (Norm, keine DOI). https://www.w3.org/TR/WCAG22/ – Blitz-Flächenschwelle, Pause-Pflicht
+- Muchnick, B. G. (2008). *Clinical Medicine in Optometric Practice* (2nd ed.). Mosby/Elsevier. https://openlibrary.org/isbn/9780323029612 – S. 5, 18, 28, 32: Gesichtsfeldausfälle nach Verlauf der Sehbahn; Schwindel und andere neurologische Warnzeichen verlangen ärztliche Abklärung
+- Mountford, J., Ruston, D., & Dave, T. (2004). *Orthokeratology: Principles and Practice*. Butterworth-Heinemann. https://openlibrary.org/isbn/9780750640077 – S. 43–44: Wiederholbarkeit von Messungen am Menschen geringer als an Prüfkörpern
