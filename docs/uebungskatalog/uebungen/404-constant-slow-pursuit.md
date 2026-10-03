@@ -12,7 +12,7 @@ blickfit_umsetzung: {kennung: "sanfte-blickfolge", name: "Sanfte Blickfolge", un
 stand: 2026-09-29
 
 # ===== Überblick =====
-kurzbeschreibung: "Ein leuchtender Punkt gleitet im Vollbild auf einer verschlungenen, sich wiederholenden Kurve (Lissajous-Figur) über fast den ganzen Bildschirm. Man folgt ihm mit den Augen bei ruhigem Kopf; Maus oder Finger dürfen als Hilfe mitlaufen, es wird aber nichts gemessen."
+kurzbeschreibung: "Eine Kugel gleitet auf einer weichen, sich wiederholenden Schlaufenbahn (Lissajous-Figur 2 : 3) über den Bildschirm. Man folgt ihr ruhig mit den Augen bei ruhigem Kopf und meldet ein kurz in der Kugel erscheinendes Zeichen (Landolt-Ring). Das Tempo steigt stufenweise. Ob die Augen wirklich folgen, wird nicht gemessen."
 ziel_funktionen: [blickfolge]
 eingabe: [maus, touch]
 tablet_geeignet: mit_anpassung
@@ -74,8 +74,8 @@ belastung:
 # ===== Auswahlhilfe =====
 voraussetzungen: ["Bildschirm oder Tablet (Querformat, Ständer) in 40–70 cm Abstand, Kopf möglichst ruhig", "Scharfes Sehen im Zwischenbereich über eine Bahn von ≈ 37° × 21° (Monitor) bzw. ≈ 25° × 17° (Tablet) – Arbeitsplatzbrille oder Einstärkenglas günstiger als Gleitsicht", "Maus oder Finger nur zum Starten; Mitführen freiwillig und ohne Wertung", "Bereitschaft, ohne Rückmeldung 30–120 s konzentriert zu folgen"]
 vorsicht_bei: [presbyopie_gleitsicht, schwindel_vestibulaer, reisekrankheit, nystagmus, schielen_binokular, trockenes_auge_bildschirm, kopfschmerz_asthenopie, kinder_unter_6]
-geeignet_fuer: ["ruhiger Einstieg in glatte Blickfolge bei 0,5–1× (≈ 3–16°/s am Monitor) ohne Reaktions- und Handdruck", "zweidimensionale Blickfolge mit waagrechten und senkrechten Anteilen an einer gleichmäßig wiederkehrenden Kurve", "schrittweises Steigern mit nur einer Änderung pro Durchgang (Tempo, Bahn ausblenden, Zufallstempo)", "kurze Augenübung ohne Blitzreize, auch als Aufwärmen vor schwereren Blickfolge-Übungen (403, 405–407, 409)"]
-weniger_geeignet_fuer: ["alle, die Rückmeldung oder einen Leistungswert erwarten (das Original misst nichts)", "Gleitsichtträger:innen am großen Monitor ohne Kopfbewegung (Bahn weit über den scharfen Zwischenbereich hinaus, auch senkrecht)", "Ziel Reaktion, Peripherie, Handgenauigkeit oder 'besser lesen'", "Tempo ab ≈ 5× für Ungeübte und Ältere (Spitzen > 80°/s, ruckende Darstellung)", "Tablet mit Finger-Mitführen (Finger verdeckt den Punkt)"]
+geeignet_fuer: ["ruhiger Einstieg in glatte Blickfolge auf den niedrigen Stufen (≈ 5–9°/s am Tablet in 40 cm) ohne Reaktions- und Handdruck", "zweidimensionale Blickfolge mit waagrechten und senkrechten Anteilen an einer gleichmäßig wiederkehrenden Kurve", "schrittweises Steigern in kleinen Stufen, die dem eigenen Ergebnis folgen (Tempo, Zeichengröße, Anzeigedauer, Hilfslinie)", "kurze Augenübung ohne Blitzreize, auch als Aufwärmen vor schwereren Blickfolge-Übungen (403, 405–407, 409)"]
+weniger_geeignet_fuer: ["alle, die einen Leistungswert oder einen Fortschritt in Prozent erwarten (das Ergebnis gilt nur im Vergleich mit sich selbst)", "Gleitsichtträger:innen am großen Monitor ohne Kopfbewegung (die Bahn reicht weit über den scharfen Zwischenbereich hinaus, auch senkrecht)", "Ziel Reaktion, Peripherie, Handgenauigkeit oder 'besser lesen'", "hohe Stufen für Ungeübte und Ältere (Tempo bis ≈ 24°/s)"]
 evidenz:
   uebungseffekt: mittel
   naher_transfer: schwach
@@ -87,15 +87,17 @@ stichworte: ["smooth pursuit", "glatte Blickfolge", "sanfte Blickfolge", "Lissaj
 
 # 404 · Sanfte Blickfolge (Lissajous-Bahn)
 
-> Original: „Übung für sanfte Blickfolge – Langsames Ziel · Blickstabilität“ („Constant Slow Pursuit“) –
-> skilldrills.online, Kapitel Blickverfolgung (`visual-tracking`) · Blickfit: noch nicht umgesetzt
+> Original: „Übung für sanfte Blickfolge – Langsames Ziel · Blickstabilität“ („Constant Slow Pursuit“) – skilldrills.online, Kapitel Blickverfolgung (`visual-tracking`) · Blickfit: noch nicht umgesetzt
 
 ## 1. Kurzbeschreibung
 
-Auf fast schwarzem Grund (wahlweise weiß) läuft ein roter Leuchtpunkt mit weißem Kern auf einer verschlungenen
-Kurve, die fast den ganzen Bildschirm ausfüllt; eine schwache blaue Linie zeigt die Bahn. Man folgt dem Punkt mit
-den Augen und hält den Kopf ruhig; Maus oder Finger dürfen mitlaufen (ein Fadenkreuz zeigt sie an). Es gibt
-keine Punkte und keine Fehlerwertung – die Übung ist ein ruhiger Einstieg in die glatte Blickfolge.
+Auf ruhigem, dunklem Grund läuft eine Kugel mit gleichmäßigem Tempo auf einer weichen, in sich geschlossenen Schlaufenbahn
+(Lissajous-Figur im Verhältnis 2 : 3) mit waagrechten und senkrechten Anteilen; eine schwache Hilfslinie zeigt die Bahn und blendet auf
+höheren Stufen aus. In den engsten Bögen bremst die Kugel nur leicht ab. Man folgt ihr ruhig mit den Augen und hält den Kopf still. In
+unregelmäßigen Abständen erscheint kurz ein Landolt-Ring („C“) in der Kugel, nur bei fast vollem Tempo; mit einem großen Button unten
+meldet man, wohin seine Öffnung zeigt (←, ↑, ↓, →). Eine Sitzung umfasst 20 Zeichen. Das Tempo steigt stufenweise (am Tablet in 40 cm
+Abstand von etwa 5 auf etwa 24°/s), dazu werden Zeichengröße und Anzeigedauer (650 bis 240 ms) strenger. Die Bahn ist höchstens 60 % der
+Bildschirmbreite breit. Ob die Augen wirklich folgen, wird nicht gemessen, nur ob das Zeichen erkannt wird.
 
 ## 2. Ablauf im Original (Analyse)
 
@@ -158,89 +160,98 @@ Die Referenztabelle („Orientierung 0,5–1,0× … Nur Referenz“) nennt ausd
 
 ## 4. Optische und okulomotorische Grundlagen
 
-- **Sehwinkel:** Ring Ø 32 px ≈ 0,85–0,9° – Visus kaum gefordert. Kleine, in die Fovea passende Ziele – und ein
-  zentraler Punkt auf größeren Objekten – gingen mit mehr Aufholsakkaden einher (Heinen et al., 2016). Da das Ziel
-  hier immer einen weißen Mittelpunkt hat, ist offen, ob ein größerer Radius (25–50 px) das Folgen ruhiger macht.
-- **Tempo:** Bei 0,5–1× (3–16°/s) folgen Gesunde gut glatt; Latenz bei unvorhersehbarem Start ≈ 100 ms (Carl &
-  Gellman, 1987). Die Schwingungen (0,1–0,14 Hz bei 1×) sind langsam und gut vorhersagbar; bei pseudozufälligen
-  Mehrfrequenzreizen hing der Gain an der höchsten Frequenz (0,92 bei 0,39 Hz, 0,53 bei 1,56 Hz; Barnes et al.,
-  1987) – die periodische Bahn hier ist leichter vorhersagbar, die Werte sind nur grobe Orientierung. Bei 9×
-  (0,95/1,26 Hz, Spitzen 100–140°/s) ist überwiegend sakkadisches Folgen zu erwarten; bei gleichförmiger
-  Rampenbewegung erreichten im Labor 4 von 5 Versuchspersonen ≈ 90 % Gain bis 100°/s, die fünfte nur ≈ 60 % dieser
-  Werte (Meyer et al., 1985).
-- **Richtung und Kurven:** waagrecht wird besser gefolgt als senkrecht (Rottach et al., 1996); die 3 : 4-Figur hat
-  einen großen senkrechten Anteil (±10,7° am Monitor, anders als die flache Acht 402). In engen Kurven verlangsamt
-  das Auge gesetzmäßig (Zwei-Drittel-Gesetz; de'Sperati & Viviani, 1997).
-- **Hintergrund:** Rot auf Fast-Schwarz ist kontrastreich; strukturierte Hintergründe senken den Gain (Collewijn &
-  Tamminga, 1984), Raster und Scanlines sind hier aber sehr schwach. Der helle Modus (weißes Vollbild) kann blenden.
-- **Gleitsicht/Arbeitsplatz:** Das scharfe Sehfeld im Zwischenbereich war bei 60 cm mit zwei
-  Gleitsichtgläsern nur ≈ 13° bzw. 18° breit (Einstärkenglas 60°); Kopfbewegungen dauerten länger, der Blick kam
-  später zur Ruhe (Han et al., 2003; waagrechtes Lesen, n = 11). Die 37° × 21° große Bahn führt durch seitliche Unschärfezonen und senkrecht durch
-  verschiedene Wirkungszonen (unten Nahteil, oben Fernteil) → Arbeitsplatzbrille, kleineres Gerät oder mehr Abstand,
-  Kopf bewusst mitbewegen.
-- **Nähe, Auge, Farbe, Alter:** 40 cm ≈ 2,5 dpt, 60 cm ≈ 1,7 dpt Akkommodation bzw. Nahkorrektur. Lidschlag am
-  Bildschirm ≈ 11,6/min (Portello et al., 2013) – bei trockenem Auge kurze Blöcke. Farbe trägt keine Information.
-  Bei 75–93-Jährigen ist der Gain bei allen Tempi niedriger (Moschner & Baloh, 1994) → 0,5–1×, großer Zielradius.
+- **Sehwinkel:** Der Landolt-Ring misst 6 % der kürzeren Bildschirmseite (Stufe 1) und wird mit der Stufe kleiner (nie unter 30 px); die
+  Öffnung ist ein Fünftel des Durchmessers. Am 11-Zoll-Tablet in 40 cm sind das etwa 1,4° bis etwa 0,8° – die Sehschärfe ist kaum gefordert.
+  Kleine, in die Fovea passende Ziele – und ein zentraler Punkt auf größeren Objekten – gingen mit mehr Aufholsakkaden einher (Heinen et al.,
+  2016).
+- **Tempo:** Bei 5–24°/s folgen Gesunde gut glatt; Latenz bei unvorhersehbarem Start ≈ 100 ms (Carl & Gellman, 1987). Die Bahn wiederholt
+  sich und ist gut vorhersagbar; bei pseudozufälligen Mehrfrequenzreizen hing der Gain an der höchsten Frequenz (0,92 bei 0,39 Hz, 0,53 bei
+  1,56 Hz; Barnes et al., 1987) – eine periodische Bahn ist leichter vorhersagbar, die Werte sind nur grobe Orientierung. Bei gleichförmiger
+  Rampenbewegung erreichten im Labor 4 von 5 Versuchspersonen ≈ 90 % Gain bis 100°/s, die fünfte nur ≈ 60 % dieser Werte (Meyer et al.,
+  1985); das höchste Tempo dieser Übung liegt deutlich darunter.
+- **Richtung und Kurven:** Waagrecht wird besser gefolgt als senkrecht (Rottach et al., 1996); die 2 : 3-Figur hat einen größeren senkrechten
+  Anteil als die flache Acht (402). In engen Kurven verlangsamt das Auge gesetzmäßig (Zwei-Drittel-Gesetz; de'Sperati & Viviani, 1997); die
+  Kugel bremst deshalb in den engsten Bögen leicht ab (nie unter 55 % des Tempos) und läuft sonst mit vollem Tempo.
+- **Hintergrund:** Der Hintergrund bleibt ruhig und ohne Struktur; strukturierte Hintergründe senken den Gain (Collewijn & Tamminga, 1984).
+- **Gleitsicht/Arbeitsplatz:** Das scharfe Sehfeld im Zwischenbereich war bei 60 cm mit zwei Gleitsichtgläsern nur ≈ 13° bzw. 18° breit
+  (Einstärkenglas 60°); Kopfbewegungen dauerten länger, der Blick kam später zur Ruhe (Han et al., 2003; waagrechtes Lesen, n = 11). Die Bahn
+  führt durch seitliche Unschärfezonen und senkrecht durch verschiedene Wirkungszonen (unten Nahteil, oben Fernteil) → Arbeitsplatzbrille,
+  kleineres Gerät oder mehr Abstand, Kopf bewusst mitbewegen.
+- **Nähe, Auge, Farbe, Alter:** 40 cm ≈ 2,5 dpt, 60 cm ≈ 1,7 dpt Akkommodation bzw. Nahkorrektur (Rechenregel: 20 cm = 5 dpt, 10 cm = 10 dpt). Lidschlag
+  am Bildschirm ≈ 11,6/min (Portello et al., 2013) – bei trockenem Auge kurze Blöcke. Farbe trägt keine Information. Bei 75–93-Jährigen ist
+  der Gain bei allen Tempi niedriger (Moschner & Baloh, 1994) → niedrige Stufen.
 
 ## 5. Neurowissenschaftliche Grundlagen
 
-- Bewegungssignale aus MT/V5 und MST werden über frontales und supplementäres Augenfeld, Brückenkerne und Kleinhirn in
-  Folgebewegung umgesetzt (Lencer & Trillenberg, 2008); Basalganglien und Colliculus superior sind beteiligt, Folge
-  und Sakkaden teilen eine Architektur (Krauzlis, 2004).
-- Bei wiederkehrenden Bahnen nutzt das System gespeicherte Geschwindigkeits- und Zeitinformation (Barnes, 2008).
-  Affen folgten 2D-Summen aus Sinusschwingungen (Lissajous-ähnlich) mit Gain ≈ 0,83 und ≈ 6° Phasenfehler – nur durch
-  Vorhersage erklärbar; eine schnellere Schwingung auf der anderen Achse senkte den Gain etwas (Kettner et al., 1996).
-  Beim Menschen ist der Vorhersageanteil bei einfachen 2D-Summen am größten (Soechting et al., 2010).
-- Dass die Übung bestimmte Hirnareale „trainiert“, ist nicht belegt – die Website behauptet es auch nicht.
+- Bewegungssignale aus MT/V5 und MST werden über frontales und supplementäres Augenfeld, Brückenkerne und Kleinhirn in Folgebewegung
+  umgesetzt (Lencer & Trillenberg, 2008); Basalganglien und Colliculus superior sind beteiligt, Folge und Sakkaden teilen eine Architektur
+  (Krauzlis, 2004).
+- Bei wiederkehrenden Bahnen nutzt das System gespeicherte Geschwindigkeits- und Zeitinformation (Barnes, 2008). Affen folgten 2D-Summen
+  aus Sinusschwingungen (Lissajous-ähnlich) mit Gain ≈ 0,83 und ≈ 6° Phasenfehler – nur durch Vorhersage erklärbar; eine schnellere
+  Schwingung auf der anderen Achse senkte den Gain etwas (Kettner et al., 1996). Beim Menschen ist der Vorhersageanteil bei einfachen
+  2D-Summen am größten (Soechting et al., 2010).
+- Dass die Übung bestimmte Hirnareale „trainiert“, ist nicht belegt.
+- **Klinischer Hintergrund:** Die äußeren Augenmuskeln werden klinisch geprüft, indem die Augen einem nahen Ziel folgen, das in einem „H“
+  geführt wird; die Prüfung betrifft die Hirnnerven III, IV und VI (Muchnick, 2008, S. 32–35). Diese Übung ist keine solche Prüfung.
 
 ## 6. Motorische Grundlagen
 
-Die eigentliche „Motorik“ ist die Augenbewegung (glatte Folge + Aufholsakkaden). Freiwilliges Mitführen von Maus oder
-Finger ist manuelles Nachführen mit intermittierenden Korrekturen (Leistungsspitze 0,5–1,8 Hz, ≈ 170 ms Abstand;
-Miall et al., 1993). Da das Mitführen freiwillig ist und das Fadenkreuz nicht ausgewertet wird, ist nur die
-Auge-Hand-Koordination als Nebenrolle eingetragen (1), kontinuierliche Steuerung nicht (0) – dieselbe Regel wie bei 407
-(freiwilliges, ungewertetes Fadenkreuz, vom Seitentext empfohlen); bei 402/403, deren Seiten das Mitführen nicht
-empfehlen, sind alle motorischen Werte 0. Am Tablet hinkt der Zeiger wegen Touch-Latenz (Safari-Canvas ≈ 77 ms; Casiez et al., 2017)
-bei 8°/s ≈ 0,6° hinterher, und die Fingerkuppe (≈ 1,5–2° in 40 cm, eigene Rechnung) verdeckt das Ziel.
+Die „Motorik“ der Übung ist die Augenbewegung (glatte Folge + Aufholsakkaden); gefordert ist nur ein Tipp auf einen großen Button unten.
+Wer freiwillig mit Maus oder Finger mitfährt (nicht gefordert, nicht gewertet), führt manuell nach, mit intermittierenden Korrekturen
+(Leistungsspitze 0,5–1,8 Hz, ≈ 170 ms Abstand; Miall et al., 1993). Mitführen der Hand glättete im Labor die Augenfolge bei Sinusbewegungen
+über ≈ 1 Hz (Koken & Erkelens, 1992) bzw. bei einer unvorhersehbaren Bahn mit Cursor am Manipulandum (Danion & Flanagan, 2018); für langsame
+Schwingungen wie hier ist das nicht gezeigt. Am Tablet hinkt ein Zeiger wegen Touch-Latenz (Safari-Canvas ≈ 77 ms; Casiez et al., 2017)
+hinterher, und die Fingerkuppe verdeckt das Ziel.
 
 ## 7. Einflussfaktoren und Messgrenzen
 
-- **Keine Messung:** Ob glatt gefolgt wurde, bleibt offen; eigene Blicksprünge bemerkt man oft nicht.
-- **Gerät:** Bildgröße, Seitenverhältnis und Abstand ändern Bahnform und °/s stark (Tabelle Abschnitt 2) – „1×“ ist
-  kein fester Reiz; ≤ 77 Bilder/s, bei hohem Tempo ruckendes Bild; Pixeldichte auf 1,5 begrenzt.
-- **Person:** Alter, Müdigkeit, Konzentration. Die Figur (28,6 s) läuft in 60 s nur gut zweimal durch – Lernen der
-  ganzen Figur ist begrenzt, lokal sind die langsamen Schwingungen aber gut vorhersagbar.
+- **Keine Blickmessung:** Ob glatt gefolgt wurde, bleibt offen; das Zeichen lässt sich auch mit einzelnen Blicksprüngen erkennen, und eigene
+  Blicksprünge bemerkt man oft nicht.
+- **Gerät:** Bildgröße, Seitenverhältnis und Abstand ändern Bahnform und °/s stark – „Stufe 5“ ist kein fester Reiz. Ergebnisse verschiedener
+  Geräte (Touch, Maus, Tablet, Monitor) nicht gleichsetzen: Zwei Verfahren können ähnliche Tendenzen zeigen, ohne dieselben Werte zu liefern
+  (Mountford et al., 2004, S. 24).
+- **Person:** Alter, Müdigkeit, Konzentration. Eine Sitzung umfasst nur 20 Zeichen; Lernen der ganzen Figur ist begrenzt, lokal sind die
+  langsamen Schwingungen aber gut vorhersagbar.
+- **Streuung:** Messungen am Menschen streuen stärker als an Prüfkörpern; ein einzelner Durchgang sagt wenig, und aussagekräftig ist nur der
+  Verlauf über mehrere Sitzungen (Mountford et al., 2004, S. 43–44).
 
 ## 8. Studienlage: Trainierbarkeit und Übertragung
 
-- **Übungseffekt – mittel:** Vorhersagbare Wellenformen wurden nach 100–200 s deutlich genauer verfolgt (Fehler 0,5 →
-  0,1 deg²; McHugh & Bahill, 1985); 2 × 6 min Training an 3 Tagen wirkte 5 Tage nach (n = 10 + 10; Eibenberger et
-  al., 2012) – Laborbefunde mit Eyetracker, nicht mit dieser Übung.
+- **Übungseffekt – mittel:** Vorhersagbare Wellenformen wurden nach 100–200 s deutlich genauer verfolgt (Fehler 0,5 → 0,1 deg²; McHugh &
+  Bahill, 1985); 2 × 6 min Training an 3 Tagen wirkte 5 Tage nach (n = 10 + 10; Eibenberger et al., 2012) – Laborbefunde mit Eyetracker,
+  nicht mit dieser Übung. Lissajous-Bahnen sind ein Laborparadigma der Blickfolgeforschung (z. B. Benson et al., 2012), dort stets mit
+  Eyetracker.
 - **Naher Transfer – schwach:** kaum Daten, ob eine feste Bahn andere Bahnen, Tempi oder Richtungen verbessert.
-- **Alltagstransfer – fehlend:** kein Beleg für Lesen, Sport oder Verkehr. Große Effekte digitaler Sehtrainings
-  entstehen vor allem, wenn Training und Test gleich sind (Guo, Yuan et al., 2025); „Brain-Training“ verbessert meist
-  nur die geübte Aufgabe (Simons et al., 2016).
+- **Alltagstransfer – fehlend:** kein Beleg für Lesen, Sport oder Verkehr. Große Effekte digitaler Sehtrainings entstehen vor allem, wenn
+  Training und Test gleich sind (Guo, Yuan et al., 2025); „Brain-Training“ verbessert meist nur die geübte Aufgabe (Simons et al., 2016).
+  Ohne Eyetracker lässt sich Blickfolge nicht beurteilen; die Übung erlaubt keinen Rückschluss auf die eigene Blickfolge.
+- **Praxisangaben (Erfahrungswissen, nicht belegt):** In der Sehtherapie werden Folgebewegungen klassisch an einem an einer Schnur hängenden
+  Ball mit Buchstaben geübt, der in verschiedene Richtungen und im Kreis schwingt, bei ruhigem Kopf. Man beginnt am eigenen Arbeitspunkt und
+  steigert in kleinen, selbst gesteuerten Schritten (Tempo, Richtungen, Zeichen auf dem Ziel). Wirksamkeitsbelege dafür liegen nicht vor.
 
 ## 9. Auswahlhinweise für die KI
 
-- **Passt, wenn …** ruhige 2D-Blickfolge ohne Reaktions- und Handdruck geübt werden soll; Einstieg oder Aufwärmen bei
-  0,5–1× mit großem Zielradius; kurze Augenübung ohne Blitzreize; Steigern mit einer Änderung pro Durchgang.
-- **Weniger passend, wenn …** Rückmeldung erwartet wird; Reaktion, Peripherie oder Handgenauigkeit das Ziel sind;
-  „besser lesen“ oder „bessere Sehkraft“ erwartet wird (nicht belegt, von der Website selbst verneint).
-- **Vorsicht / anpassen bei …** `presbyopie_gleitsicht` (Bahn durch Unschärfezonen → Kopf mitbewegen,
-  Arbeitsplatzbrille); `schwindel_vestibulaer`, `reisekrankheit` (großflächige Bewegung; Menschen mit visuellem
-  Schwindel reagieren auf Bewegungsreize, Bronstein, 1995 → langsam beginnen, bei Übelkeit abbrechen); `nystagmus`,
-  `schielen_binokular` (Folge oft verändert – keine Rückschlüsse); `trockenes_auge_bildschirm`,
-  `kopfschmerz_asthenopie` (seltener Lidschlag, heller Modus blendet → kurze Blöcke, dunkler Modus); `kinder_unter_6`
-  (Folgebewegung reift bis ins Jugendalter).
-- **Kombiniert gut mit …** 402 (Acht), 403 (Sinus), 405/406 (Richtungswechsel), 409 (Folgen während echter
-  Dunkelphasen), 407 (Blicksprung auf ein abbremsendes Ziel – keine Verdeckung), 412 (Nachzieh-Spur), 105 „Scharf in
-  Bewegung“ (überprüfbare Erkennung am bewegten Ziel), 707/514 (Nachführen mit Wertung).
-- **Fast gleich (Dubletten in der Gruppe):** 402 und 403 haben denselben Aufbau – ein Leuchtpunkt, gleiche Einstellungen,
-  nur Augenfolge, keine Messung; es unterscheidet sich nur die Bahn: 404 große 2D-Lissajous-Figur (≈ 37° × 21°) mit
-  dem größten senkrechten Anteil, 402 flache Acht, 403 senkrechte Welle mit Knick am Rand. Für eine Auswahl genügt meist
-  eine davon; 404 hat die sachlichste Anleitung (Einstieg, eine Änderung pro Durchgang), 402 bei 1× das gleichmäßigste
-  Tempo (≈ ±20 % statt Faktor ≈ 5 entlang der Bahn).
+- **Passt, wenn …** ruhige 2D-Blickfolge ohne Reaktions- und Handdruck geübt werden soll; als Einstieg oder Aufwärmen auf den niedrigen Stufen
+  mit großem Zeichen; als kurze Augenübung ohne Blitzreize; bei Steigerung in kleinen Schritten.
+- **Weniger passend, wenn …** ein Leistungswert erwartet wird; Reaktion, Peripherie oder Handgenauigkeit das Ziel sind; „besser lesen“ oder
+  „bessere Sehkraft“ erwartet wird (nicht belegt).
+- **Vorsicht / anpassen bei …**
+  - `presbyopie_gleitsicht`: Bahn durch Unschärfezonen → Kopf mitbewegen, Arbeitsplatzbrille.
+  - `schwindel_vestibulaer`, `reisekrankheit`: großflächige Bewegung; Menschen mit visuellem Schwindel reagieren auf Bewegungsreize (Bronstein,
+    1995) → langsam beginnen, bei Übelkeit abbrechen.
+  - `nystagmus`, `schielen_binokular`: Folge oft verändert – keine Rückschlüsse ziehen.
+  - `trockenes_auge_bildschirm`, `kopfschmerz_asthenopie`: seltener Lidschlag → kurze Blöcke.
+  - `kinder_unter_6`: Die Folgebewegung reift bis ins Jugendalter.
+  - Warnzeichen: Doppelbilder, plötzlicher einseitiger Sehverlust, Lichtblitze oder neue Schleier, Kopfschmerz mit Sehverschlechterung,
+    Schwindel oder neu auftretendes Zittern gehören in eine ärztliche Abklärung (Muchnick, 2008, S. 6, 28); dann nicht üben. Bei Schmerzen,
+    Schwindel, Übelkeit oder anhaltendem Verschwommensehen abbrechen.
+- **Kombiniert gut mit …** 402 (Acht), 403 (Sinus), 405/406 (Richtungswechsel), 409 (Folgen während Dunkelphasen), 407 (Blicksprung auf ein
+  abbremsendes Ziel), 412 (Nachzieh-Spur), 105 „Scharf in Bewegung“ (überprüfbare Erkennung am bewegten Ziel), 707/514 (Nachführen mit Wertung).
+- **Abgrenzung in der Gruppe:** 402–406 teilen den Aufbau (Kugel mit Landolt-Ring, Antwort per Button) und unterscheiden sich in der Bahn:
+  404 weiche Lissajous-Schlaufe (2 : 3) mit dem größten senkrechten Anteil und nahezu gleichmäßigem Tempo, 402 flache Acht, 403 Sinuswelle mit
+  steigender Wellenzahl, 405 Zickzack mit schärfer werdendem Knick, 406 Dreieck mit abrupten Ecken. Für eine Auswahl genügt meist eine davon.
+
+Keine Diagnose, kein Heil- oder Sehversprechen.
 
 ## 10. Schwächen des Originals und Empfehlungen für eine Blickfit-Umsetzung
 
@@ -287,3 +298,5 @@ bei 8°/s ≈ 0,6° hinterher, und die Fingerkuppe (≈ 1,5–2° in 40 cm, eige
 - Rottach, K. G., Zivotofsky, A. Z., Das, V. E., Averbuch-Heller, L., Discenna, A. O., Poonyathalang, A., & Leigh, R. J. (1996). Comparison of horizontal, vertical and diagonal smooth pursuit eye movements in normal human subjects. *Vision Research, 36*(14), 2189–2195. https://doi.org/10.1016/0042-6989(95)00302-9 – horizontal > vertikal
 - Simons, D. J., Boot, W. R., Charness, N., Gathercole, S. E., Chabris, C. F., Hambrick, D. Z., & Stine-Morrow, E. A. L. (2016). Do "brain-training" programs work? *Psychological Science in the Public Interest, 17*(3), 103–186. https://doi.org/10.1177/1529100616661983 – kaum Ferntransfer
 - Soechting, J. F., Rao, H. M., & Juveli, J. Z. (2010). Incorporating prediction in models for two-dimensional smooth pursuit. *PLoS ONE, 5*(9), e12574. https://doi.org/10.1371/journal.pone.0012574 – 2D-Vorhersage beim Menschen
+- Muchnick, B. G. (2008). *Clinical Medicine in Optometric Practice* (2nd ed.). Mosby/Elsevier. https://openlibrary.org/isbn/9780323029612 – Warnzeichen, Augenbewegungsprüfung, Sehbahn (S. 6, 28, 32–35)
+- Mountford, J., Ruston, D., & Dave, T. (2004). *Orthokeratology: Principles and Practice*. Butterworth-Heinemann. https://openlibrary.org/isbn/9780750640077 – Messgrundsätze: Wiederholbarkeit, Mehrfachmessung (S. 24, 43–44)

@@ -12,7 +12,7 @@ blickfit_umsetzung: {kennung: "zwei-ziele", name: "Zwei Ziele", unterschiede: "T
 stand: 2026-09-29
 
 # ===== Überblick =====
-kurzbeschreibung: "Links pendelt ein Leuchtpunkt gleichmäßig auf und ab, rechts einer hin und her. Man soll den Blick ruhig zur Bildmitte richten und beide Bewegungen gleichzeitig aus dem Augenwinkel mitverfolgen; das Original stellt keine Aufgabe, gibt keine Rückmeldung und misst nichts."
+kurzbeschreibung: "Der Blick bleibt auf einem Kreuz in der Bildmitte; links und rechts schweben je eine bis zwei Kugeln mit gleichem, gleichmäßigem Tempo. Gelegentlich stockt eine von ihnen kurz, und man tippt auf die Seite, auf der es geschah. Tippen ohne Stockung zählt als Fehlalarm. Ob der Blick wirklich in der Mitte bleibt, wird nicht gemessen."
 ziel_funktionen: [geteilte_aufmerksamkeit, peripheres_sehen]
 eingabe: [maus, touch]
 tablet_geeignet: mit_anpassung
@@ -74,28 +74,31 @@ belastung:
 # ===== Auswahlhilfe =====
 voraussetzungen: ["Bildschirm im Querformat, möglichst groß, Abstand 50–70 cm (Tablet 40 cm, Ständer), Kopf ruhig und mittig", "beide Bildschirmhälften müssen gleichzeitig im Gesichtsfeld sein (Ziele bis ≈ 17° links und ≈ 22° rechts der Mitte am 24″-Monitor)", "Bereitschaft, 30–120 s ohne Rückmeldung konzentriert zu bleiben", "Maus oder Finger nur zum Starten"]
 vorsicht_bei: [presbyopie_gleitsicht, gesichtsfeldausfall, farbsehschwaeche, nystagmus, schwindel_vestibulaer, reisekrankheit, trockenes_auge_bildschirm, kopfschmerz_asthenopie, aufmerksamkeitsprobleme, kognitive_einschraenkung, kinder_unter_6]
-geeignet_fuer: ["ruhiges Hinschauen zur Mitte bei gleichzeitigem Wahrnehmen von Bewegung links und rechts erleben (verdeckte Aufmerksamkeit, 'aus dem Augenwinkel')", "Einstieg in Aufgaben mit geteilter Aufmerksamkeit ohne Hand- und Reaktionsdruck, vor 106 (Mehrfach-Objektverfolgung) oder 205/206", "kurze Augenübung ohne Blitzreize bei langsamem Tempo (0,5–2×)"]
-weniger_geeignet_fuer: ["alle, die Rückmeldung oder einen Leistungswert erwarten (das Original misst nichts)", "Ziel Blickfolge (dafür 402–404) oder Hand-Auge-Koordination (104, 305)", "Menschen mit bekanntem Gesichtsfeldausfall einer Seite (eine Hälfte ist dann kaum wahrnehmbar – Übung frustriert, keine Aussage über Ursache)", "kleine Smartphone-Bildschirme (beide Ziele liegen dann fast zentral, die Aufgabe verliert ihren Kern)"]
+geeignet_fuer: ["ruhiges Hinschauen zur Mitte bei gleichzeitigem Wahrnehmen von Bewegung links und rechts erleben (verdeckte Aufmerksamkeit, 'aus dem Augenwinkel')", "Einstieg in Aufgaben mit geteilter Aufmerksamkeit und einfacher Antwort (links oder rechts), vor 106 (Mehrfach-Objektverfolgung) oder 205/206", "kurze Augenübung ohne Blitzreize, auf den niedrigen Stufen bei sehr langsamem Tempo"]
+weniger_geeignet_fuer: ["alle, die einen Leistungswert oder einen Fortschritt in Prozent erwarten (das Ergebnis gilt nur im Vergleich mit sich selbst)", "Ziel Blickfolge (dafür 402–404) oder Hand-Auge-Koordination (104, 305)", "Menschen mit bekanntem Gesichtsfeldausfall einer Seite (eine Hälfte ist dann kaum wahrnehmbar – die Übung frustriert, keine Aussage über die Ursache)", "kleine Smartphone-Bildschirme (beide Bahnen liegen dann fast zentral, die Aufgabe verliert ihren Kern)"]
 evidenz:
   uebungseffekt: unklar
   naher_transfer: schwach
   alltag_transfer: fehlend
-  kommentar: "Mehrfach-Objektverfolgung mit Ablenkern ist gut übbar (Vater et al., 2021), diese Übung hat aber weder Ablenker noch Aufgabe noch Messung; Transfer von MOT-Training auf ungeübte Aufgaben und Sport ist schwach (Vater et al., 2021; Harenberg et al., 2022), Videospiel-Metaanalysen sind uneinheitlich (Bediou et al., 2018; Sala et al., 2018)."
+  kommentar: "Mehrfach-Objektverfolgung mit gleich aussehenden Ablenkern ist gut übbar (Vater et al., 2021); diese Übung hat keine Ablenker in diesem Sinn, und ihre Aufgabe – eine Stockung bemerken und die Seite melden – wurde nicht untersucht. Transfer von MOT-Training auf ungeübte Aufgaben und Sport ist schwach (Vater et al., 2021; Harenberg et al., 2022), Videospiel-Metaanalysen sind uneinheitlich (Bediou et al., 2018; Sala et al., 2018)."
 aehnliche_uebungen: [106, 205, 206, 401, 108, 801]
 stichworte: ["geteilte Aufmerksamkeit", "divided attention", "verdeckte Aufmerksamkeit", "covert attention", "Multiple Object Tracking", "MOT", "Halbfeld-Vorteil", "bilateral field advantage", "peripheres Sehen", "Blickanker", "zentrale Fixation", "Split-Screen"]
 ---
 
 # 408 · Zwei Ziele, zwei Hälften (geteilte Aufmerksamkeit bei ruhigem Blick)
 
-> Original: „Geteilte Aufmerksamkeit: Blickverfolgung – Zwei Ziele in getrennten Bildschirmbereichen“ („Split-Screen
-> Tracking“) – skilldrills.online, Kapitel Blickverfolgung (`visual-tracking`) · Blickfit: noch nicht umgesetzt
-> (verwandt: „Kugel-Detektiv“ → 106, „Doppelt gefordert“ → 205)
+> Original: „Geteilte Aufmerksamkeit: Blickverfolgung – Zwei Ziele in getrennten Bildschirmbereichen“ („Split-Screen Tracking“) – skilldrills.online, Kapitel Blickverfolgung (`visual-tracking`) · Blickfit: noch nicht umgesetzt (verwandt: „Kugel-Detektiv“ → 106, „Doppelt gefordert“ → 205)
 
 ## 1. Kurzbeschreibung
 
-Eine schwache senkrechte Linie teilt das dunkle Bild. Links pendelt ein roter Leuchtpunkt gleichmäßig auf und ab, rechts
-einer hin und her; an den Bahnenden kehren beide abrupt um. Man soll weich zur Mitte schauen und beide Bewegungen
-gleichzeitig „aus dem Augenwinkel“ verfolgen, ohne hinzuspringen – ohne Aufgabe, Punkte oder Rückmeldung.
+Auf ruhigem Grund steht in der Mitte ein Fixierkreuz, auf dem der Blick bleiben soll. In jeder Bildschirmhälfte schweben eine (ab Stufe 8:
+zwei) Kugeln in weichen Kurven; alle laufen mit exakt gleichem, konstantem Tempo, die Bahnen sind spiegelbildlich um die Mitte angeordnet.
+Gelegentlich stockt eine einzelne Kugel kurz: Sie bremst weich bis zum Halt und läuft wieder an. Wer das bemerkt, tippt auf die betroffene
+Seite (die ganze Bildschirmhälfte oder der große Button unten); die Buttons sehen immer gleich aus und verraten das Ereignis nicht. Tippen
+ohne Stockung zählt als Fehlalarm, damit Raten nichts bringt. Eine Sitzung umfasst 16 Ereignisse. In 20 Stufen (3-down/1-up) steigt das Tempo
+(am Tablet in 40 cm Abstand von etwa 2,5 auf etwa 11°/s), die Stockung wird kürzer (1 100 auf bis zu 380 ms), und ab Stufe 8 gibt es zwei
+Kugeln je Seite. Ausgewiesen werden Treffsicherheit, Reaktionszeit und Tipps ohne Stopp. Ob der Blick wirklich in der Mitte bleibt, wird
+nicht gemessen.
 
 ## 2. Ablauf im Original (Analyse)
 
@@ -157,72 +160,83 @@ misst weder Blick noch Wahrnehmung, keine Quelle enthält Tempostufen, Seitendif
 
 ## 4. Optische und okulomotorische Grundlagen
 
-- **Peripheres Sehen:** Bei Blick zur Mitte liegen die Ziele 2–22° seitlich. Sehschärfe und Formerkennung fallen zur
-  Peripherie stark ab (Strasburger et al., 2011), Geschwindigkeit wird dort aber ähnlich fein unterschieden wie zentral
-  (≈ 6 % im jeweils günstigen Tempobereich, peripher eher bei höherem Tempo; McKee & Nakayama, 1984). Ein kontrastreicher Punkt von Ø ≈ 0,85° ist überall sichtbar – gefordert ist das
-  **Wahrnehmen von Bewegung ohne Hinschauen**, nicht Visus.
-- **Ruhiger Blick:** Er wird nicht kontrolliert; viele blicken spontan abwechselnd zu den Zielen. Beim Mehrfach-Tracking
-  hilft ein Blick ins Zentrum der Ziele (Fehd & Seiffert, 2010); ein vorgeschriebenes Blickmuster verschlechtert die
-  Leistung eher (Vater et al., 2021, mit Verweis auf Fehd & Seiffert). Wer einem Ziel folgt, folgt bei Zweitaufgabe schlechter (Hutton & Tegally, 2005).
-- **Tempo:** 1× (≈ 6°/s) ist sehr langsam; bei 9× springt ein Ziel am 60-Hz-Bildschirm ≈ 0,9° (ein Durchmesser) pro Bild.
-- **Gleitsicht/Arbeitsplatz:** Der klare Zwischenbereich war bei zwei untersuchten Gleitsicht-Designs in 60 cm nur
-  ≈ 13–18° breit; Augen- und Kopfbewegungen dauerten länger als mit Einstärkengläsern (Han et al., 2003). Beim Mittelblick sieht man die Ziele durch die seitlichen Unschärfezonen –
-  für einen großen Punkt vermutlich unkritisch (nicht untersucht); wer hinspringt, blickt 12–22° zur Seite und beim
-  linken Ziel in Fern- bzw. Nahteil. Arbeitsplatzbrille oder kleineres Bild günstiger, Monitor mittig.
-- **Trockenes Auge:** Beim Lesen am Bildschirm ≈ 11,6 Lidschläge/min, davon im Mittel 16 % unvollständig (Portello et al., 2013); Starren zur Mitte
-  kann das verstärken → kurze Durchgänge, blinzeln. Farbe trägt keine Information; bei Rot-Schwäche (Protan-Typ)
-  wirkt der Standard-Rotpunkt auf Schwarz dunkler → hellere Farbe wählen (eigene Einschätzung, nicht untersucht).
+- **Peripheres Sehen:** Die Bahnen liegen seitlich der Mitte, höchstens 30 % der Bühnenbreite weit (am 11-Zoll-Tablet quer in 40 cm rund
+  2–10° seitlich, am 24-Zoll-Monitor in 60 cm bis etwa 15°; Rechenregel: bei 40 cm Abstand entspricht 1 cm etwa 1,4°). Sehschärfe und
+  Formerkennung fallen zur Peripherie stark ab (Strasburger et al., 2011), Geschwindigkeit wird dort aber ähnlich fein unterschieden wie
+  zentral (≈ 6 % im jeweils günstigen Tempobereich, peripher eher bei höherem Tempo; McKee & Nakayama, 1984). Gefordert ist das
+  **Wahrnehmen einer Bewegungsänderung ohne Hinschauen**, nicht Visus.
+- **Ruhiger Blick:** Er wird nicht kontrolliert; viele blicken spontan abwechselnd zu den Kugeln. Beim Mehrfach-Tracking hilft ein Blick ins
+  Zentrum der Ziele (Fehd & Seiffert, 2010); ein vorgeschriebenes Blickmuster verschlechtert die Leistung eher (Vater et al., 2021, mit Verweis
+  auf Fehd & Seiffert). Wer einem Ziel folgt, folgt bei Zweitaufgabe schlechter (Hutton & Tegally, 2005).
+- **Tempo:** Das Tempo ist sehr langsam (≈ 2,5–11°/s), die Kugeln laufen stets gleich schnell; jede Verlangsamung ist damit eindeutig die gesuchte
+  Abweichung und keine natürliche Kurve.
+- **Gleitsicht/Arbeitsplatz:** Der klare Zwischenbereich war bei zwei untersuchten Gleitsicht-Designs in 60 cm nur ≈ 13–18° breit; Augen- und
+  Kopfbewegungen dauerten länger als mit Einstärkengläsern (Han et al., 2003). Beim Mittelblick sieht man die Kugeln durch die seitlichen
+  Unschärfezonen – für große, helle Kugeln vermutlich unkritisch (nicht untersucht); wer hinspringt, blickt zur Seite und beim Blick nach unten
+  in den Nahteil. Arbeitsplatzbrille oder kleineres Bild günstiger, Bildschirm mittig.
+- **Trockenes Auge:** Beim Lesen am Bildschirm ≈ 11,6 Lidschläge/min, davon im Mittel 16 % unvollständig (Portello et al., 2013); Starren zur
+  Mitte kann das verstärken → kurze Durchgänge, blinzeln. Farbe trägt keine Information: Die Kugeln sind gleichmäßig hell.
 
 ## 5. Neurowissenschaftliche Grundlagen
 
-Aufmerksames Verfolgen bewegter Ziele bei ruhigem Blick aktiviert beidseits Parietalkortex (intraparietaler Sulcus, oberer
-Parietallappen, Präcuneus), frontale Augenfelder und den MT-Komplex (MT/MST); parietal und frontal war das Signal mehr als doppelt
-so groß wie beim bloßen Anschauen, das Muster ähnelt dem bei Aufmerksamkeitswechseln und Augenbewegungen (Culham et al.,
-1998; Aufgabe: 3 von 9 gleich aussehenden Kugeln verfolgen, also mit Ablenkern). Getrennte Halbfeld-Ressourcen sind für Kapazität (Alvarez & Cavanagh, 2005) und Wechselkosten beim Halbfeldwechsel
-(Strong & Alvarez, 2020) belegt, ein
-„Hemisphärentraining“ oder „Stärken“ der Netzwerke durch diese Übung nicht.
+Aufmerksames Verfolgen bewegter Ziele bei ruhigem Blick aktiviert beidseits Parietalkortex (intraparietaler Sulcus, oberer Parietallappen,
+Präcuneus), frontale Augenfelder und den MT-Komplex (MT/MST); parietal und frontal war das Signal mehr als doppelt so groß wie beim bloßen
+Anschauen, das Muster ähnelt dem bei Aufmerksamkeitswechseln und Augenbewegungen (Culham et al., 1998; Aufgabe: 3 von 9 gleich aussehenden
+Kugeln verfolgen, also mit Ablenkern). Getrennte Halbfeld-Ressourcen sind für Kapazität (Alvarez & Cavanagh, 2005) und Wechselkosten beim
+Halbfeldwechsel (Strong & Alvarez, 2020) belegt; ein „Hemisphärentraining“ oder „Stärken“ der Netzwerke durch diese Übung ist nicht belegt.
 
 ## 6. Motorische Grundlagen
 
-Keine Handbewegung gefordert (alle motorischen Merkmale 0); die „Motorik“ ist das **Unterdrücken** von Blicksprüngen.
+Gefordert ist ein einzelner Tipp auf eine Seite (ganze Bildschirmhälfte oder großer Button), keine Zielgenauigkeit; die „Motorik“ der Übung ist
+das **Unterdrücken** von Blicksprüngen. Der Tipp muss innerhalb von 1,4 s nach Beginn der Stockung erfolgen.
 
 ## 7. Einflussfaktoren und Messgrenzen
 
-Ohne Eyetracker oder Kontrollaufgabe ist nicht erkennbar, ob man springt, folgt oder ruhig bleibt. °/s und Exzentrizität
-hängen von Bildschirm, Abstand, Ausrichtung und Kopfhaltung ab (am Smartphone liegen beide Ziele nahe der Mitte). Alter,
-Müdigkeit und Konzentration wirken mit; Seitenunterschiede sind (Pseudoneglect, asymmetrische Bahnen) kein Befund.
+- **Keine Blickmessung:** Ohne Eyetracker ist nicht erkennbar, ob man springt, folgt oder ruhig bleibt; gemessen wird nur, ob die Seite richtig
+  gemeldet wurde.
+- **Gerät:** °/s und Exzentrizität hängen von Bildschirm, Abstand, Ausrichtung und Kopfhaltung ab (am Smartphone liegen beide Bahnen nahe der
+  Mitte). Ergebnisse verschiedener Geräte (Touch, Maus, Tablet, Monitor) nicht gleichsetzen: Zwei Verfahren können ähnliche Tendenzen zeigen,
+  ohne dieselben Werte zu liefern (Mountford et al., 2004, S. 24).
+- **Person:** Alter, Müdigkeit und Konzentration wirken mit; Seitenunterschiede sind bei Gesunden normal (Pseudoneglect; Jewell & McCourt, 2000)
+  und kein Befund.
+- **Streuung:** Messungen am Menschen streuen stärker als an Prüfkörpern; die Reaktionszeit einzelner Ereignisse sagt wenig, daher werden 16
+  Ereignisse zusammengefasst, und aussagekräftig ist nur der Verlauf über mehrere Sitzungen (Mountford et al., 2004, S. 43–44).
 
 ## 8. Studienlage: Trainierbarkeit und Übertragung
 
-- **Übungseffekt – unklar:** MOT-Aufgaben mit Ablenkern werden durch Üben deutlich besser (Vater et al., 2021); hier
-  gibt es weder definierte Leistung noch Rückmeldung – eine Verbesserung ist weder messbar noch untersucht. Anders als
-  bei den Blickfolge-Übungen 402–406 (deren Laborvorbilder dieselbe Tätigkeit auch ohne Rückmeldung untersuchten) fehlt
-  ein passendes Laborvorbild: MOT-Studien arbeiten mit Ablenkern und Antwort.
-- **Naher Transfer – schwach:** In einer randomisierten Studie (N = 31) stieg die MOT-Leistung stark (ηp² = 0,43),
-  Entscheidungen und naher Transfer nicht (Harenberg et al., 2022); von 16 Neurotracker-Interventionsstudien war keine
-  präregistriert (Vater et al., 2021). Videospiel-Metaanalysen: kleine (Interventionen g = 0,34, Publikationsbias, nachträgliches Erratum; Bediou et
-  al., 2018) bis keine Effekte (Sala et al., 2018).
-- **Alltagstransfer – fehlend:** Sport-, E-Sport- oder Verkehrsnutzen ist für keine ähnliche Aufgabe ohne Ablenker belegt.
+- **Übungseffekt – unklar:** MOT-Aufgaben mit Ablenkern werden durch Üben deutlich besser (Vater et al., 2021). Diese Übung hat keine Ablenker
+  im Sinne der MOT-Forschung (die Schwierigkeit entsteht hier aus dem Bemerken der Stockung, nicht aus Verwechslung); eine Studie zu genau dieser
+  Aufgabe gibt es nicht. In MOT mit Ablenkern senkt schon das zweite Ziel die Grenzgeschwindigkeit um ≈ 30 % (Alvarez & Franconeri, 2007; auf diese Aufgabe nicht direkt übertragbar); die Gruppierung von Zielen zu einem gemeinsamen Objekt erleichtert das Verfolgen (Yantis, 1992), die Kugeln hier bewegen sich jedoch unabhängig voneinander. Actionspieler verfolgen im Mittel etwa zwei Objekte mehr (Green & Bavelier, 2006); ein Kausalnachweis fehlt.
+- **Naher Transfer – schwach:** In einer randomisierten Studie (N = 31) stieg die MOT-Leistung stark (ηp² = 0,43), Entscheidungen und naher
+  Transfer nicht (Harenberg et al., 2022); von 16 Neurotracker-Interventionsstudien war keine präregistriert (Vater et al., 2021).
+  Videospiel-Metaanalysen: kleine (Interventionen g = 0,34, Publikationsbias, nachträgliches Erratum; Bediou et al., 2018) bis keine Effekte
+  (Sala et al., 2018).
+- **Alltagstransfer – fehlend:** Sport-, E-Sport- oder Verkehrsnutzen ist für keine ähnliche Aufgabe belegt.
 
 ## 9. Auswahlhinweise für die KI
 
-- **Passt, wenn …** Wahrnehmen „aus dem Augenwinkel“ bei ruhigem Blick erlebt werden soll; als ruhiger Einstieg
-  (0,5–2×, Linien sichtbar) vor 106 oder 205/206; ohne Hand- und Reaktionsaufgabe.
-- **Weniger passend, wenn …** Rückmeldung gewünscht ist; Blickfolge, Reaktion oder Lesen das Ziel sind; nur ein
-  Smartphone vorhanden ist.
-- **Vorsicht / anpassen bei …** `presbyopie_gleitsicht` (Unschärfezonen beim Hinschauen → Arbeitsplatzbrille, kleineres
-  Bild, Kopf erlauben); `gesichtsfeldausfall` (eine Hälfte kaum sichtbar; wer ein Ziel dauerhaft nicht bemerkt, sollte
-  das fachlich abklären lassen statt es als Trainingsrückstand zu deuten); `farbsehschwaeche` (Standard-Rot wirkt bei
-  Protan-Typ dunkler und in der Peripherie weniger auffällig → Weiß oder Gelb wählen, wie bei 401); `nystagmus` (ruhiger
-  Blick erschwert); `schwindel_vestibulaer`, `reisekrankheit` (Dauerbewegung beidseits, zwar kleine Ziele, aber bei
-  Unwohlsein abbrechen); `trockenes_auge_bildschirm`,
-  `kopfschmerz_asthenopie` (Starren → kurz, Pausen); `aufmerksamkeitsprobleme`, `kognitive_einschraenkung`
-  (Doppelaufgabe ohne Rückmeldung); `kinder_unter_6` („nicht hinschauen“ kaum umsetzbar).
-- **Kombiniert gut mit …** 401 (Peripherie bei Fixation), 106 (MOT), 205/206 (Doppelaufgaben mit Messung), 108, 403/404
-  (Gegenstück: echte Blickfolge – nicht ähnlich, daher nicht unter `aehnliche_uebungen`).
-- **Abgrenzung in der Gruppe:** 401 ist die nächste Verwandte, aber keine Dublette – dort ruht die Mitte (Fixierkreuz)
-  und kurze Randreize tauchen überall plötzlich auf, hier bewegen sich zwei dauerhaft sichtbare Ziele langsam in
-  festen Bahnen links und rechts. Beide haben im Original keine Antwort und keine Messung.
+- **Passt, wenn …** Wahrnehmen „aus dem Augenwinkel“ bei ruhigem Blick erlebt werden soll; als ruhiger Einstieg auf den niedrigen Stufen vor
+  106 oder 205/206; mit einfacher Antwort (links oder rechts) und ohne Zeitdruck im engeren Sinn.
+- **Weniger passend, wenn …** ein Leistungswert gewünscht ist; Blickfolge, Reaktion oder Lesen das Ziel sind; nur ein Smartphone vorhanden ist.
+- **Vorsicht / anpassen bei …**
+  - `presbyopie_gleitsicht`: Unschärfezonen beim Hinschauen → Arbeitsplatzbrille, kleineres Bild, Kopf erlauben.
+  - `gesichtsfeldausfall`: Eine Hälfte ist kaum sichtbar; wer eine Seite dauerhaft nicht bemerkt, sollte das fachlich abklären lassen, statt es
+    als Trainingsrückstand zu deuten. Gesichtsfeldausfälle zeigen, wo im Verlauf der Sehbahn eine Schädigung liegt: vor der Kreuzung meist
+    einäugig, am Chiasma ungleichseitige, dahinter gleichseitige Halbseitenausfälle (Muchnick, 2008, S. 32).
+  - `farbsehschwaeche`: Farbe trägt keine Information; die Kugeln sind gleichmäßig hell.
+  - `nystagmus`: Ruhiger Blick erschwert.
+  - `schwindel_vestibulaer`, `reisekrankheit`: Dauerbewegung beidseits, zwar kleine Ziele, aber bei Unwohlsein abbrechen.
+  - `trockenes_auge_bildschirm`, `kopfschmerz_asthenopie`: Starren → kurz üben, Pausen.
+  - `aufmerksamkeitsprobleme`, `kognitive_einschraenkung`: Doppelaufgabe (Mitte halten, Seiten beobachten).
+  - `kinder_unter_6`: „Nicht hinschauen“ kaum umsetzbar.
+  - Warnzeichen: Doppelbilder, plötzlicher einseitiger Sehverlust, Lichtblitze oder neue Schleier, Kopfschmerz mit Sehverschlechterung,
+    Schwindel oder neu auftretendes Zittern gehören in eine ärztliche Abklärung (Muchnick, 2008, S. 6, 28); dann nicht üben.
+- **Kombiniert gut mit …** 401 (Peripherie bei Fixation), 106 (MOT), 205/206 (Doppelaufgaben mit Messung), 108, 403/404 (Gegenstück: echte
+  Blickfolge).
+- **Abgrenzung in der Gruppe:** 401 ist die nächste Verwandte, aber keine Dublette – dort ruht die Mitte (Fixierkreuz), und kurze Randreize
+  tauchen plötzlich auf; hier bewegen sich dauerhaft sichtbare Kugeln langsam links und rechts, und gemeldet wird eine Stockung.
+
+Keine Diagnose, kein Heil- oder Sehversprechen.
 
 ## 10. Schwächen des Originals und Empfehlungen für eine Blickfit-Umsetzung
 
@@ -238,10 +252,10 @@ Müdigkeit und Konzentration wirken mit; Seitenunterschiede sind (Pseudoneglect,
 
 ### Von der Website angegeben
 - Pylyshyn, Z. W., & Storm, R. W. (1988). Tracking multiple independent targets: Evidence for a parallel tracking mechanism. *Spatial Vision, 3*(3), 179–197. https://doi.org/10.1163/156856888X00122 – **Prüfung:** DOI stimmt ✓; **stützt die Aussage der Website:** teilweise (paralleles Verfolgen bis 5 von 10 Objekten ja; keine Geschwindigkeitsnormen, keine Stufen, Aufgabe mit Ablenkern)
-- „Alvarez, G. A., & Cavanagh, P. (2005). *Cognitive Psychology, 50*(2), 126–143. doi 10.1016/j.cogpsych.2004.08.001“ – **Prüfung:** Zeitschrift und DOI falsch (die DOI gehört zu Bucciarelli & Johnson-Laird, „Naïve deontics“); richtig: Alvarez, G. A., & Cavanagh, P. (2005). Independent resources for attentional tracking in the left and right visual hemifields. *Psychological Science, 16*(8), 637–643. https://doi.org/10.1111/j.1467-9280.2005.01587.x; **stützt:** teilweise (Halbfeld-Vorteil ja, aber bei Kapazitätsgrenze mit Ablenkern; Aussage zu Hemisphären- und Augendominanz nein)
+- Alvarez, G. A., & Cavanagh, P. (2005). Independent resources for attentional tracking in the left and right visual hemifields. *Psychological Science, 16*(8), 637–643. https://doi.org/10.1111/j.1467-9280.2005.01587.x – **Prüfung:** Die Website nennt Zeitschrift und DOI falsch (die DOI gehört zu Bucciarelli & Johnson-Laird, „Naïve deontics“); richtig: Alvarez, G. A., & Cavanagh, P. (2005). Independent resources for attentional tracking in the left and right visual hemifields. *Psychological Science, 16*(8), 637–643. https://doi.org/10.1111/j.1467-9280.2005.01587.x; **stützt:** teilweise (Halbfeld-Vorteil ja, aber bei Kapazitätsgrenze mit Ablenkern; Aussage zu Hemisphären- und Augendominanz nein)
 - Awh, E., & Pashler, H. (2000). Evidence for split attentional foci. *Journal of Experimental Psychology: Human Perception and Performance, 26*(2), 834–846. https://doi.org/10.1037/0096-1523.26.2.834 – **Prüfung:** DOI stimmt ✓; **stützt:** ja (Aufmerksamkeit auf zwei getrennte Orte verteilbar; kein Trainingsbeleg)
 - Cavanagh, P., & Alvarez, G. A. (2005). Tracking multiple targets with multifocal attention. *Trends in Cognitive Sciences, 9*(7), 349–354. https://doi.org/10.1016/j.tics.2005.05.009 – **Prüfung:** DOI stimmt ✓; **stützt:** ja (multifokale Aufmerksamkeit als Modell; nichts zu Training oder Stufen)
-- „Green, C. S., & Bavelier, D. (2006). … *Cognition, 101*(1), 217–245. doi 10.1016/j.cognition.2005.10.005“ – **Prüfung:** DOI falsch (gehört zu Saxe, Tzelnic & Carey, Säuglingsstudie); richtig: Green, C. S., & Bavelier, D. (2006). Enumeration versus multiple object tracking: The case of action video game players. *Cognition, 101*(1), 217–245. https://doi.org/10.1016/j.cognition.2005.10.004 (Korrigendum 2020: https://doi.org/10.1016/j.cognition.2020.104198); **stützt:** teilweise (Actionspieler ≈ 2 Objekte mehr, kleiner Trainingsnachweis; Minimap-/Tunnelblick-Aussage nicht in der Quelle, Metaanalysen uneinheitlich)
+- Green, C. S., & Bavelier, D. (2006). Enumeration versus multiple object tracking: The case of action video game players. *Cognition, 101*(1), 217–245. https://doi.org/10.1016/j.cognition.2005.10.004 – **Prüfung:** Die Website nennt eine falsche DOI (gehört zu Saxe, Tzelnic & Carey, Säuglingsstudie); richtig: Green, C. S., & Bavelier, D. (2006). Enumeration versus multiple object tracking: The case of action video game players. *Cognition, 101*(1), 217–245. https://doi.org/10.1016/j.cognition.2005.10.004 (Korrigendum 2020: https://doi.org/10.1016/j.cognition.2020.104198); **stützt:** teilweise (Actionspieler ≈ 2 Objekte mehr, kleiner Trainingsnachweis; Minimap-/Tunnelblick-Aussage nicht in der Quelle, Metaanalysen uneinheitlich)
 - Woods, D. L., Wyma, J. M., Yund, E. W., Herron, T. J., & Reed, B. (2015). Factors influencing the latency of simple reaction time. *Frontiers in Human Neuroscience, 9*, 131. https://doi.org/10.3389/fnhum.2015.00131 – **Prüfung:** DOI stimmt ✓; **stützt:** nein (Reaktionszeit-Latenzen; nichts zu 144/240 Hz, Bewegungsunschärfe oder dieser Aufgabe)
 
 ### Weitere Fachliteratur
@@ -261,3 +275,5 @@ Müdigkeit und Konzentration wirken mit; Seitenunterschiede sind (Pseudoneglect,
 - Strong, R. W., & Alvarez, G. A. (2020). Hemifield-specific control of spatial attention and working memory: Evidence from hemifield crossover costs. *Journal of Vision, 20*(8), 24. https://doi.org/10.1167/jov.20.8.24 – halbfeldspezifische Steuerung (Abstract geprüft)
 - Vater, C., Gray, R., & Holcombe, A. O. (2021). A critical systematic review of the Neurotracker perceptual-cognitive training tool. *Psychonomic Bulletin & Review, 28*(5), 1458–1483. https://doi.org/10.3758/s13423-021-01892-2 – Trainierbarkeit, Transfer, Blickvorgabe
 - Yantis, S. (1992). Multielement visual tracking: Attention and perceptual organization. *Cognitive Psychology, 24*(3), 295–340. https://doi.org/10.1016/0010-0285(92)90010-Y – Gruppierung erleichtert Tracking
+- Muchnick, B. G. (2008). *Clinical Medicine in Optometric Practice* (2nd ed.). Mosby/Elsevier. https://openlibrary.org/isbn/9780323029612 – Warnzeichen, Augenbewegungsprüfung, Sehbahn (S. 6, 28, 32–35)
+- Mountford, J., Ruston, D., & Dave, T. (2004). *Orthokeratology: Principles and Practice*. Butterworth-Heinemann. https://openlibrary.org/isbn/9780750640077 – Messgrundsätze: Wiederholbarkeit, Mehrfachmessung (S. 24, 43–44)

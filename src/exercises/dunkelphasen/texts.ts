@@ -9,7 +9,7 @@ export const de: ExerciseTexts = {
     'Tippe unten, wohin die Öffnung zeigt.',
   ],
   why:
-    'Im Alltag verschwindet Bewegtes oft kurz: hinter einem Pfosten, einem Baum, einer Hand. Hier blendet die Kugel weich aus, läuft unsichtbar weiter und taucht wieder auf – du musst ahnen, wo sie ist. Anders als beim blinkenden Original gibt es kein Flackern: Sie blendet mindestens 0,2 Sekunden lang sanft aus und wieder ein, und es gibt höchstens alle 2 Sekunden eine Dunkelphase. Die Übung ersetzt weder Brille noch Augenuntersuchung. Ob dein Blick wirklich mitgeht, wird nicht gemessen, und ob sich die Übung auf den Alltag überträgt, ist nicht belegt.',
+    'Im Alltag verschwindet Bewegtes oft kurz: hinter einem Pfosten, einem Baum, einer Hand. Hier blendet die Kugel weich aus, läuft unsichtbar weiter und taucht wieder auf – du musst ahnen, wo sie ist. Es gibt kein Flackern: Sie blendet mindestens 0,2 Sekunden lang sanft aus und wieder ein, und es gibt höchstens alle 2 Sekunden eine Dunkelphase. Die Übung ersetzt weder Brille noch Augenuntersuchung. Ob dein Blick wirklich mitgeht, wird nicht gemessen, und ob sich die Übung auf den Alltag überträgt, ist nicht belegt.',
   goodFor: ['Verdecktes Bewegtes vorausahnen', 'Den Faden nicht verlieren', 'Ruhig bleiben, wenn etwas kurz fehlt'],
   captions: {
     follow: 'Folge der Kugel – auch im Dunkeln',
@@ -42,7 +42,7 @@ export const it: ExerciseTexts = {
     'Tocca in basso dove punta l’apertura.',
   ],
   why:
-    'Nella vita di tutti i giorni ciò che si muove sparisce spesso per un attimo: dietro un palo, un albero, una mano. Qui la sfera sfuma piano, corre invisibile e riappare – devi intuire dove si trova. A differenza dell’originale lampeggiante non c’è nessun sfarfallio: sfuma piano e ricompare in almeno 0,2 secondi, e c’è al massimo una fase di buio ogni 2 secondi. L’esercizio non sostituisce né gli occhiali né una visita oculistica. Non viene misurato se il tuo sguardo la segue davvero, e non è dimostrato che l’esercizio si trasferisca alla vita di tutti i giorni.',
+    'Nella vita di tutti i giorni ciò che si muove sparisce spesso per un attimo: dietro un palo, un albero, una mano. Qui la sfera sfuma piano, corre invisibile e riappare – devi intuire dove si trova. Non c’è nessun sfarfallio: sfuma piano e ricompare in almeno 0,2 secondi, e c’è al massimo una fase di buio ogni 2 secondi. L’esercizio non sostituisce né gli occhiali né una visita oculistica. Non viene misurato se il tuo sguardo la segue davvero, e non è dimostrato che l’esercizio si trasferisca alla vita di tutti i giorni.',
   goodFor: ['Prevedere ciò che è nascosto', 'Non perdere il filo', 'Restare calmi quando qualcosa manca per un attimo'],
   captions: {
     follow: 'Segui la sfera – anche al buio',

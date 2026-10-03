@@ -2,7 +2,7 @@
 # ===== Kennung =====
 nr: 409
 kennung: strobe-prediction-pursuit
-name: "Blickfolge mit Dunkelphasen (Stroboskop-Ziel)"
+name: "Blickfolge mit Dunkelphasen (Ziel blendet weich aus)"
 name_original: "Stroboskopisches Sehtraining – Blickvorhersage bei intermittierender Sicht (Strobe/Occlusion Prediction Pursuit)"
 kapitel: "Blickverfolgung"
 kapitel_original: "visual-tracking"
@@ -12,7 +12,7 @@ blickfit_umsetzung: {kennung: "dunkelphasen", name: "Dunkelphasen", unterschiede
 stand: 2026-09-29
 
 # ===== Überblick =====
-kurzbeschreibung: "Ein kleiner leuchtender Punkt gleitet geradlinig über einen dunklen Bildschirm und prallt an den Rändern ab. In festem Takt verschwindet er für etwa ein Drittel der Zeit; man folgt ihm nur mit den Augen weiter und versucht, dort zu sein, wo er wieder auftaucht."
+kurzbeschreibung: "Eine Kugel gleitet geradlinig über den dunklen Bildschirm. Gelegentlich blendet sie weich aus, läuft unsichtbar weiter und taucht wieder auf; danach erscheint kurz ein Zeichen (Landolt-Ring) in ihr, dessen Öffnungsrichtung man meldet. Man folgt ihr nur mit den Augen und versucht, dort zu sein, wo sie wieder auftaucht. Es gibt kein Flackern: höchstens eine Dunkelphase alle 2 Sekunden."
 ziel_funktionen: [blickfolge, antizipation]
 eingabe: [maus, touch]
 tablet_geeignet: mit_anpassung
@@ -74,28 +74,32 @@ belastung:
 # ===== Auswahlhilfe =====
 voraussetzungen: ["Keine bekannte Photosensitivität/Epilepsie (das Ziel blinkt je nach Tempo und Gerät 0,3 bis ≈ 7-mal pro Sekunde, mit 'Random Speed' bis ≈ 12-mal; Standardfarbe Rot #ef4444 ist vorsichtshalber als gesättigtes Rot zu werten)", "Bildschirm in ruhiger Umgebung, Kopf möglichst ruhig, Abstand 40–70 cm", "Ausreichende Sicht im Zwischenbereich (Bildschirmbrille oder Einstärkenglas günstiger als Gleitsicht)", "Maus oder Finger nur zum Starten; während der Übung keine Eingabe"]
 vorsicht_bei: [photosensitive_epilepsie, migraene_lichtempfindlich, kopfschmerz_asthenopie, trockenes_auge_bildschirm, nystagmus, schwindel_vestibulaer, gesichtsfeldausfall, presbyopie_gleitsicht, sehbehinderung_niedriger_visus, kinder_unter_6]
-geeignet_fuer: ["vorausschauende (prädiktive) Blickfolge üben: den Blick weiterbewegen, obwohl das Ziel kurz fehlt", "Einstieg in Verdeckungsaufgaben mit regelmäßigem, vorhersagbarem Takt (bei 0,5–2× Tempo lange Dunkelphasen von ≈ 0,3–1 s)", "ruhige Augenübung ohne Hand- oder Körpereinsatz", "Ergänzung zu gleichförmiger Blickfolge (412 = dieselbe Bewegung ohne Dunkelphasen, 404 Lissajous-Bahn) und zur Einzelverdeckung (407)"]
-weniger_geeignet_fuer: ["Menschen mit Photosensitivität, Epilepsie in der Familie oder lichtempfindlicher Migräne", "alle, die eine Rückmeldung oder einen Leistungswert erwarten (das Original misst nichts)", "Gleitsichtträger:innen an großen Monitoren (Ziel läuft über die ganze Bildbreite in die unscharfe Randzone)", "Kinder, die abstrakte Aufgaben ohne Rückmeldung nicht durchhalten", "Ziel 'Reaktion' oder 'Zielgenauigkeit der Hand' (keine Handlung gefordert)"]
+geeignet_fuer: ["vorausschauende (prädiktive) Blickfolge üben: den Blick weiterbewegen, obwohl das Ziel kurz fehlt", "Einstieg in Verdeckungsaufgaben mit vorhersagbarer, gerader Bahn (auf den niedrigen Stufen hilft ein schwacher Umriss im Dunkeln)", "ruhige Augenübung mit Zeichenaufgabe und Rückmeldung, ohne Flackerreize", "Ergänzung zu gleichförmiger Blickfolge (412, 404) und zur Einzelverdeckung (407)"]
+weniger_geeignet_fuer: ["Menschen mit Photosensitivität, Epilepsie in der Familie oder lichtempfindlicher Migräne (trotz des weichen Ausblendens vorher ärztlichen Rat einholen)", "alle, die einen Leistungswert oder einen Fortschritt in Prozent erwarten (das Ergebnis gilt nur im Vergleich mit sich selbst)", "Gleitsichtträger:innen an großen Monitoren (das Ziel läuft über die ganze Bildbreite in die unscharfe Randzone)", "Kinder, die abstrakte Aufgaben nicht durchhalten", "Ziel 'Reaktion' oder 'Zielgenauigkeit der Hand' (gefordert ist nur ein Tipp als Antwort)"]
 evidenz:
   uebungseffekt: schwach
   naher_transfer: schwach
   alltag_transfer: fehlend
-  kommentar: "Blickfolge während einer Verdeckung ist im Labor mit Rückmeldung trainierbar (Gain 0,59 → 0,89, Madelain & Krauzlis 2003), ohne Rückmeldung nur wenig (0,63 → 0,71); das Original gibt keine Rückmeldung. Naher Transfer nur als schwacher Laborhinweis: Übertrag auf ungeübte Geschwindigkeiten in der belohnten Gruppe (Madelain & Krauzlis 2003), kurzes Folgetraining ohne Belohnung verbesserte die Folgebewegung in einem anderen Test (Eibenberger et al. 2012, N = 10). Die zitierte Strobe-Brillen-Forschung (Sportübungen mit Shutterbrille, ganzes Gesichtsfeld) ist auf ein blinkendes Bildschirmziel nicht übertragbar; ein Alltagsnutzen ist nicht untersucht."
+  kommentar: "Blickfolge während einer Verdeckung ist im Labor mit Rückmeldung trainierbar (Gain 0,59 → 0,89, Madelain & Krauzlis 2003), ohne Rückmeldung nur wenig (0,63 → 0,71); diese Übung meldet nach jedem Zeichen zurück, ist aber eine andere Aufgabe als die Laborstudie. Naher Transfer nur als schwacher Laborhinweis: Übertrag auf ungeübte Geschwindigkeiten in der belohnten Gruppe (Madelain & Krauzlis 2003), kurzes Folgetraining ohne Belohnung verbesserte die Folgebewegung in einem anderen Test (Eibenberger et al. 2012, N = 10). Die Strobe-Brillen-Forschung (Sportübungen mit Shutterbrille, ganzes Gesichtsfeld) ist auf ein weich ausblendendes Bildschirmziel nicht übertragbar; ein Alltagsnutzen ist nicht untersucht."
 aehnliche_uebungen: [412, 407, 414, 404, 403, 406, 105, 107, 104, 109]
 stichworte: ["Verdeckung", "Okklusion", "target blanking", "prädiktive Blickfolge", "smooth pursuit", "Antizipation", "extraretinale Signale", "Geschwindigkeitsgedächtnis", "Stroboskop", "Photosensitivität"]
 ---
 
-# 409 · Blickfolge mit Dunkelphasen (Stroboskop-Ziel)
+# 409 · Blickfolge mit Dunkelphasen (Ziel blendet weich aus)
 
-> Original: „Stroboskopisches Sehtraining – Blickvorhersage bei intermittierender Sicht“ – skilldrills.online,
-> Kapitel Blickverfolgung (`visual-tracking`) · Blickfit: noch nicht umgesetzt
+> Original: „Stroboskopisches Sehtraining – Blickvorhersage bei intermittierender Sicht“ – skilldrills.online, Kapitel Blickverfolgung (`visual-tracking`) · Blickfit: noch nicht umgesetzt
 
 ## 1. Kurzbeschreibung
 
-Ein kleiner roter Punkt gleitet auf geraden Bahnen über einen fast schwarzen Bildschirm und prallt an den Rändern ab;
-im festen Takt ist er zwei Drittel der Zeit sichtbar, ein Drittel dunkel. Man folgt ihm nur mit den Augen, führt die
-Bewegung im Dunkeln weiter und will beim Wiederauftauchen schon dort sein. Keine Handaufgabe, keine Punkte, keine
-Rückmeldung; ohne „Hide Line“ bleibt im Dunkeln ein schwacher Umrissring sichtbar.
+Auf ruhigem, dunklem Grund läuft eine weißliche Kugel mit gleichmäßigem Tempo geradeaus; vor dem Rand dreht sie weich bei (kein harter
+Abprall). Gelegentlich blendet sie sinusförmig aus, läuft unsichtbar und gerade weiter und blendet wieder ein. Direkt danach erscheint kurz
+ein Landolt-Ring („C“) in der Kugel; mit einem großen Button unten meldet man, wohin seine Öffnung zeigt (←, ↑, ↓, →). Man folgt der Kugel nur
+mit den Augen und versucht, beim Wiederauftauchen schon dort zu sein. Eine Sitzung umfasst 10 Dunkelphasen mit je einem Zeichen. Es gibt kein
+Flackern: Jede Blende dauert mindestens 200 ms, es gibt höchstens eine Dunkelphase alle 2 s, keinen Leuchtsaum und kein Rot; vor der Übung
+steht ein Hinweis für lichtempfindliche Menschen. In 20 Stufen werden die Dunkelphase (Ein- und Ausblenden 330 auf 200 ms, völlige
+Dunkelheit dazwischen 0,2 auf 0,7 s), die Zeit bis zum Zeichen (700 auf 280 ms), das Tempo (am Tablet in 40 cm von etwa 3 auf etwa 8°/s) und die
+Zeichengröße strenger; auf den Stufen 1–3 zeigt ein schwacher Umriss im Dunkeln, wo die Kugel ist, bis Stufe 8 blendet er aus. Nach jedem
+Zeichen gibt es ✓/✗ als Rückmeldung. Ob die Augen im Dunkeln wirklich weiterlaufen, wird nicht gemessen, nur ob das Zeichen erkannt wird.
 
 ## 2. Ablauf im Original (Analyse)
 
@@ -150,85 +154,91 @@ Sehschärfe, Antizipation und Kurzzeitgedächtnis; Nutzen für NHL/MLB/NFL und E
 
 ## 4. Optische und okulomotorische Grundlagen
 
-- **Sehwinkel/Tempo:** Ziel ≈ 0,85° (24″-Full-HD, 60 cm), ≈ 1,2° am 11″-Tablet in 30 cm – Visus kaum gefordert. Bei 1×
-  ≈ 9–16°/s (Monitor) bzw. 13–23°/s (Tablet, 30 cm), bei 5× ≈ 47–82°/s, bei 9× ≈ 85–150°/s. Glatte Folgebewegung reicht
-  im Labor bei 4 von 5 Personen bis ≈ 100°/s mit ≈ 90 % Gain (Meyer et al., 1985); ab ≈ 5× wird die Übung
-  vermutlich zunehmend sakkadisch (eigene Einschätzung, zusätzlich erschwert durch das Blinken).
-- **Im Dunkeln:** Augengeschwindigkeit ≈ 190 ms unverändert, dann 40–60 % (Becker & Fuchs, 1985); bei 1 s Verdeckung
-  ≈ 30 % (Lencer et al., 2004). Vorhersage wird nur bei 0,5–2× (Dunkelphase ≈ 270–1 000 ms) wirklich gefordert.
-- **Kontrast/Bildschirm:** Der Ring im Dunkeln hat relative Leuchtdichte ≈ 0,024 gegen ≈ 0,0016 (eigene sRGB-Rechnung)
-  – bei Raumlicht schlecht sichtbar. Bei 45–77 Bildern/s springt das Ziel bei hohem Tempo (5×: ≈ 30–50 px/Bild).
-- **Gleitsicht:** scharfer Zwischenbereich seitlich nur ≈ 13–18°, längere Kopf- und Augenbewegungen am Bildschirm
-  (Han et al., 2003, Lesen in 60 cm);
-  ein 24″-Monitor in 60 cm ist ≈ 48° breit – das Ziel läuft in die Randunschärfe, unten in den Nahteil. Kopfbewegung
-  zulassen; besser Bildschirmbrille oder kleineres Feld. **Presbyopie:** am Tablet Nahkorrektur nötig.
-- **Weiteres:** Konzentriertes Verfolgen senkt die Lidschlagrate (trockenes Auge). Farbe nicht aufgabenrelevant; bei
-  Protan wirkt Rot dunkel → Weiß/Gelb (Rot-Grün-Schwäche ≈ 8 % der Männer; Birch, 2012). Folge-Gain bei
-  75–93-Jährigen geringer, besonders bei hohem Tempo (Moschner & Baloh, 1994).
+- **Tempo und Ziel:** Das Tempo liegt am Tablet in 40 cm bei etwa 3–8°/s; glatte Folgebewegung reicht im Labor bei 4 von 5 Personen bis ≈ 100°/s
+  mit ≈ 90 % Gain (Meyer et al., 1985) – die Folge selbst ist also leicht, schwierig ist die Sichtlücke. Der Landolt-Ring hat eine Öffnung von
+  einem Fünftel des Durchmessers; die Sehschärfe ist kaum gefordert.
+- **Im Dunkeln:** Bei Verdeckung bleibt die Augengeschwindigkeit ≈ 190 ms unverändert, dann sinkt sie auf 40–60 % (Becker & Fuchs, 1985); bei
+  1 s Verdeckung sind es ≈ 30 % (Lencer et al., 2004). Eine Dunkelphase dauert hier insgesamt etwa 0,9 s (Stufe 1) bis 1,1 s (Stufe 20), davon
+  0,2 bis 0,7 s völlige Dunkelheit. Das Auge bremst bei Verdeckung ohnehin ab; das ist normal und kein Zeichen von „Untrainiertheit“.
+- **Blenden statt Blinken:** Das Ziel blendet mit einer halben Kosinuswelle aus und ein, jede Halbwelle dauert mindestens 200 ms – gleichwertig
+  einer Sinusschwingung von höchstens 2,5 Hz; eine Dunkelphase beginnt höchstens alle 2 s (≤ 0,5 Hz). Die Bahn bleibt in der Dunkelphase gerade:
+  Läuft das Ziel auf eine Wand zu, wird es vorher zur freien Seite gelenkt, und das Zeichen erscheint nur, wenn noch genug freie Strecke vor ihm
+  liegt.
+- **Gleitsicht:** Der scharfe Zwischenbereich ist seitlich nur ≈ 13–18° breit; am Bildschirm dauerten Kopf- und Augenbewegungen mit Gleitsicht
+  länger (Han et al., 2003, Lesen in 60 cm). Ein 24-Zoll-Monitor in 60 cm ist ≈ 48° breit – das Ziel läuft in die Randunschärfe, unten in den
+  Nahteil. Kopfbewegung zulassen; besser Bildschirmbrille oder kleineres Feld. **Presbyopie:** am Tablet Nahkorrektur nötig (Rechenregel: 40 cm =
+  2,5 dpt, 20 cm = 5 dpt, 10 cm = 10 dpt).
+- **Weiteres:** Konzentriertes Verfolgen senkt die Lidschlagrate (trockenes Auge). Die Kugel ist weißlich, Farbe trägt keine Information; eine
+  Rot-Grün-Schwäche (≈ 8 % der Männer; Birch, 2012) beeinträchtigt die Aufgabe daher kaum. Der Folge-Gain ist bei 75–93-Jährigen geringer, besonders bei
+  hohem Tempo (Moschner & Baloh, 1994).
 
 ## 5. Neurowissenschaftliche Grundlagen
 
-Bei sichtbarem Ziel liefern MT/V5 und MST das Bewegungssignal, FEF-Folgeareal und Kleinhirn setzen es um. Ohne Ziel
-treiben Efferenzkopie und ein Kurzzeitspeicher für Geschwindigkeit und Zeitpunkt die Folgebewegung weiter
-(extraretinale Signale; Bennett & Barnes, 2003). Blickfolge ohne sichtbares Ziel aktivierte zusätzlich FEF, supplementäres
-Augenfeld, Parietalkortex, dorsolateralen präfrontalen Kortex, Kleinhirn und Basalganglien (fMRT, N = 16; Lencer et
-al., 2004). Die Stärke des extraretinalen Signals ist mit Belohnung lernbar (Madelain & Krauzlis, 2003); dass diese
-Übung Areale „stärkt“, ist nicht belegt.
+Bei sichtbarem Ziel liefern MT/V5 und MST das Bewegungssignal, FEF-Folgeareal und Kleinhirn setzen es um. Ohne Ziel treiben Efferenzkopie und
+ein Kurzzeitspeicher für Geschwindigkeit und Zeitpunkt die Folgebewegung weiter (extraretinale Signale; Bennett & Barnes, 2003). Blickfolge ohne
+sichtbares Ziel aktivierte zusätzlich FEF, supplementäres Augenfeld, Parietalkortex, dorsolateralen präfrontalen Kortex, Kleinhirn und Basalganglien
+(fMRT, N = 16; Lencer et al., 2004). Die Stärke des extraretinalen Signals ist mit Belohnung lernbar (Madelain & Krauzlis, 2003); dass diese Übung
+Areale „stärkt“, ist nicht belegt. Klinisch werden die äußeren Augenmuskeln geprüft, indem die Augen einem nahen Ziel folgen, das in einem „H“ geführt
+wird; die Prüfung betrifft die Hirnnerven III, IV und VI (Muchnick, 2008, S. 32–35); diese Übung ist keine solche Prüfung.
 
 ## 6. Motorische Grundlagen
 
-Keine Handbewegung (Eingabe nur zum Start) – alle motorischen Merkmale 0; die „Motorik“ sind Folgebewegung und
-Aufholsakkaden. Ruhiger Kopf isoliert die Augenbewegung, bei Gleitsicht ist Kopfbewegung normal. Eine Fassung mit
-Tipp-Antwort (Abschnitt 10) brächte Auge-Hand-Koordination, Timing und Touch-Latenz hinzu.
+Außer dem Antworttipp keine Handbewegung; die „Motorik“ der Übung sind Folgebewegung und Aufholsakkaden. Ein ruhiger Kopf isoliert die
+Augenbewegung, bei Gleitsicht ist Kopfbewegung normal.
 
 ## 7. Einflussfaktoren und Messgrenzen
 
-- **Gerät verändert die Aufgabe:** 90-Hz-Tablet blinkt ≈ 25 % langsamer, 144-Hz-Monitor ≈ 20 % schneller als 60 Hz.
-- **Abstand, Einstellungen, Person:** am nahen Tablet mehr °/s; ohne „Hide Line“ kaum Vorhersage; Alter, Müdigkeit.
-- **Messqualität:** Das Original misst nichts; Gain/Sakkaden nur mit Eyetracker, sonst indirekt über Tipp-Fehler.
+- **Keine Blickmessung:** Gain und Sakkaden lassen sich nur mit Eyetracker bestimmen; hier wird nur das Erkennen des Zeichens nach dem
+  Wiederauftauchen gewertet. Es lässt sich auch lösen, wenn der Blick im Dunkeln zurückbleibt und erst danach aufholt.
+- **Gerät:** Das Zeitverhalten (Blenden, Dunkelphase) ist zeitbasiert und unabhängig von der Bildrate; Grad pro Sekunde hängen von Bildgröße und
+  Abstand ab (am nahen Tablet mehr °/s). Ergebnisse verschiedener Geräte (Touch, Maus, Tablet, Monitor) nicht gleichsetzen: Zwei Verfahren können
+  ähnliche Tendenzen zeigen, ohne dieselben Werte zu liefern (Mountford et al., 2004, S. 24).
+- **Einstellung und Person:** Der schwache Umriss auf den niedrigen Stufen erleichtert die Vorhersage; Alter, Müdigkeit, Konzentration.
+- **Streuung:** Messungen am Menschen streuen stärker als an Prüfkörpern; ein einzelnes Zeichen sagt wenig, und aussagekräftig ist nur der Verlauf
+  über mehrere Sitzungen (Mountford et al., 2004, S. 43–44).
 
 ## 8. Studienlage: Trainierbarkeit und Übertragung
 
-- **Übungseffekt – schwach:** Laborgain während Verdeckung mit belohnendem Ton bei genauer Folge 0,59 → 0,89 (8–10
-  Tagessitzungen), ohne Ton nur
-  0,63 → 0,71 (Madelain & Krauzlis, 2003); das Original gibt keine Rückmeldung.
-- **Naher Transfer – schwach:** Übertrag auf ungeübte Geschwindigkeiten und strukturierten Hintergrund nur in der
-  belohnten Laborgruppe (Madelain & Krauzlis, 2003); kurzes Folgetraining ohne Belohnung (quasi-zufälliges Ziel,
-  2 × 6 min an 3 Tagen) verbesserte die Folgebewegung in einem anderen Test (Step-Ramp), 5 Tage später noch messbar
-  (Eibenberger et al., 2012, N = 10). Für Dunkelphasen-Folgen ohne Rückmeldung (wie im Original) nicht eigens untersucht
+- **Übungseffekt – schwach:** Laborgain während Verdeckung mit belohnendem Ton bei genauer Folge 0,59 → 0,89 (8–10 Tagessitzungen), ohne Ton nur
+  0,63 → 0,71 (Madelain & Krauzlis, 2003). Diese Übung gibt Rückmeldung (✓/✗ nach jedem Zeichen), aber nicht für genaues Folgen, sondern fürs
+  Erkennen; ob das ähnlich wirkt, ist nicht untersucht.
+- **Naher Transfer – schwach:** Übertrag auf ungeübte Geschwindigkeiten und strukturierten Hintergrund nur in der belohnten Laborgruppe (Madelain &
+  Krauzlis, 2003); kurzes Folgetraining ohne Belohnung (quasi-zufälliges Ziel, 2 × 6 min an 3 Tagen) verbesserte die Folgebewegung in einem
+  anderen Test (Step-Ramp), 5 Tage später noch messbar (Eibenberger et al., 2012, N = 10). Für Dunkelphasen-Folgen wie hier nicht eigens untersucht
   – gleiche Einstufung wie bei den übrigen Blickfolge-Übungen 410–413 und 415.
-- **Alltagstransfer – fehlend:** Strobe-Brillen: in sportspezifischen Tests nach längerem Training
-  ≈ 5–6 % besser, akut schlechter, uneinheitliche Protokolle (17 Studien; Vera et al., 2026); für ein blinkendes
-  Bildschirmziel keine Studie gefunden (PubMed, 09/2026).
+- **Alltagstransfer – fehlend:** Strobe-Brillen (Shutterbrillen über das ganze Gesichtsfeld, z. B. 100 ms offen / 67–900 ms zu) bei Sportübungen:
+  Kurzzeitgedächtnis und zentrale Bewegungsempfindlichkeit besser (Appelbaum et al., 2012; Appelbaum et al., 2011), ein Timing-Vorteil nur
+  kurzfristig (sofort und nach 10 min, nicht nach 10 Tagen; Smith & Mitroff, 2012), Eishockey nur als kleine, unverblindete Pilotstudie (Mitroff et
+  al., 2013); eine Metaanalyse (17 Studien, sportspezifische Tests) fand akut schlechtere, nach längerem Training ≈ 5–6 % bessere Leistungen bei
+  uneinheitlichen Protokollen (Vera et al., 2026; Überblick: Wilkins & Appelbaum, 2020). Dynamische Sehschärfe wurde nie gemessen. Für ein
+  weich ausblendendes Bildschirmziel wurde keine Studie gefunden (PubMed, 09/2026).
+- **Praxisangaben (Erfahrungswissen, nicht belegt):** Aufgaben mit Sichtlücken werden in der Praxis am eigenen Arbeitspunkt begonnen und in
+  kleinen, selbst gesteuerten Schritten gesteigert.
 
 ## 9. Auswahlhinweise für die KI
 
-- **Passt, wenn …** vorausschauendes Folgen mit den Augen ohne Hand- und Körpereinsatz geübt werden soll, als
-  Schritt nach 412 (dieselbe Bewegung ohne Dunkelphasen) bzw. 404 – nur mit 0,5–2× und „Hide Line“ sinnvoll. Unter den
-  Übungen 409–415 fordert nur diese die Vorhersage über Sichtlücken (`antizipation` 3).
-- **Weniger passend, wenn …** Rückmeldung/Fortschritt gewünscht oder Reaktion bzw. Handgenauigkeit das Ziel ist.
+- **Passt, wenn …** vorausschauendes Folgen mit den Augen mit einfacher Antwort geübt werden soll, als Schritt nach 412 (dieselbe Bewegung ohne
+  Dunkelphasen) bzw. 404; auf den niedrigen Stufen mit schwachem Umriss beginnen. Unter den Übungen 409–415 fordert nur diese die Vorhersage über
+  Sichtlücken (`antizipation` 3).
+- **Weniger passend, wenn …** ein Leistungswert gewünscht ist oder Reaktion bzw. Handgenauigkeit das Ziel ist.
 - **Vorsicht / anpassen bei …**
-  - `photosensitive_epilepsie`: harter Hell-Dunkel-Wechsel (Hub relative Leuchtdichte ≈ 0,17, Kern ≈ 1,0; eigene
-    Rechnung), bis ≈ 7, mit „Random Speed“ bis ≈ 12 Blitze/s; auslösend sind 1–65 Hz (am stärksten 15–25 Hz), bei
-    5–24-Jährigen häufiger, rote Blitze sind ein eigener Faktor (Fisher et al., 2005). Harding-Grenzen: ≥ 3 Blitze/s,
-    ≥ 0,006 sr, ≥ 20 cd/m²; zusätzlich gilt jeder Wechsel zu/von gesättigtem Rot als Risiko (Harding et al., 2005) –
-    das Standardziel ist Rot: #ef4444 erreicht mit linearisierten sRGB-Werten R/(R+G+B) ≈ 0,88 und liegt damit über der
-    WCAG-Arbeitsdefinition für „gesättigtes Rot“ (≥ 0,8); mit 8-Bit-Werten wären es nur 0,64 – die Rechenweise ist in
-    WCAG nicht ausdrücklich festgelegt, daher vorsichtshalber als gesättigtes Rot werten (eigene Rechnung). WCAG 2.3.1: nicht mehr als 3 Blitze/s oder unter den Flächengrenzen (0,006 sr ≈ 25 % eines
-    10°-Feldes). Das Standardziel am Monitor erreicht ≈ 3–13 % dieser Fläche, die Maximalgröße samt Leuchtsaum am Tablet
-    (30 cm) nähert sich der Grenze. Die Blickfit-Grenze (≤ 2,5 Hz) wird ab ≈ 3,2–3,8×, WCAG 2.3.2 (≤ 3 Blitze/s) ab
-    ≈ 3,8–4,7× überschritten (je nach Bildrate 75/60 Bilder/s; eigene Rechnung), mit „Random Speed“ schon ab ≈ 2× →
-    immer Warnhinweis, niedriges Tempo, nicht Rot.
-  - `migraene_lichtempfindlich`, `kopfschmerz_asthenopie`: kurze Sätze, bei Unwohlsein abbrechen;
-    `trockenes_auge_bildschirm`: blinzeln, Pausen; `nystagmus`: Folgebewegung evtl. eingeschränkt;
-    `presbyopie_gleitsicht`: kleineres Feld, Kopfbewegung; `sehbehinderung_niedriger_visus`: größer, Weiß/Gelb;
-    `schwindel_vestibulaer`: kleines Ziel auf ruhigem Grund, daher meist gering – hohe Tempi meiden (wie 412);
-    `gesichtsfeldausfall`: das Ziel taucht nach der Dunkelphase einige Grad neben dem Blick auf und kann im ausgefallenen
-    Bereich verloren gehen; `kinder_unter_6`: abstrakt, ohne Rückmeldung, Blinkreiz – nicht empfohlen.
-- **Kombiniert gut mit …** 412 (dieselbe Bewegung – Geraden mit Randabprallern, gleiches Tempo – ohne Dunkelphase;
-  ohne Blinken praktisch eine Dublette, daher als Vorstufe), 414 (dieselbe Bewegung, statt Dunkelphasen Sprünge an einen
-  neuen Ort), 407 (einzelne Verdeckung mit Landepunkt), 404/403 (andere Bahnen), 105, 107 (Verdeckung mit gemessenem
-  Zeitfehler), 104 (Vorhersage mit der Hand).
+  - `photosensitive_epilepsie`: Die Kugel blinkt nicht, sie blendet weich aus und ein (jede Blende mindestens 200 ms, höchstens eine Dunkelphase
+    alle 2 s, also ≤ 0,5 Hz; kein Leuchtsaum, kein Rot, keine Vollflächeneffekte). Als auslösend gelten Frequenzen von 1–65 Hz (am stärksten
+    15–25 Hz), bei 5–24-Jährigen häufiger; rote Blitze sind ein eigener Faktor (Fisher et al., 2005). Die Grenzwerte (≥ 3 Blitze/s, Flächenschwelle
+    0,006 sr, gesättigtes Rot; Harding et al., 2005; W3C, 2024) werden nicht erreicht. Trotzdem Warnhinweis beachten und bei Unwohlsein abbrechen.
+    Anfälle und Epilepsie gehören zu den neurologischen Vorerkrankungen, nach denen in der Anamnese gefragt wird (Muchnick, 2008, S. 7); das Lehrbuch
+    äußert sich nicht zu Lichtreizen.
+  - `migraene_lichtempfindlich`, `kopfschmerz_asthenopie`: kurze Sätze, bei Unwohlsein abbrechen.
+  - `trockenes_auge_bildschirm`: blinzeln, Pausen. `nystagmus`: Folgebewegung evtl. eingeschränkt. `presbyopie_gleitsicht`: kleineres Feld,
+    Kopfbewegung. `sehbehinderung_niedriger_visus`: größer, hell auf dunkel.
+  - `schwindel_vestibulaer`: kleines Ziel auf ruhigem Grund, daher meist gering – hohe Stufen meiden.
+  - `gesichtsfeldausfall`: Das Ziel taucht nach der Dunkelphase einige Grad neben dem Blick auf und kann im ausgefallenen Bereich verloren gehen.
+  - `kinder_unter_6`: abstrakt, Dunkelphasen – nicht empfohlen.
+  - Warnzeichen: Doppelbilder, plötzlicher einseitiger Sehverlust, Lichtblitze oder neue Schleier, Kopfschmerz mit Sehverschlechterung, Schwindel
+    oder neu auftretendes Zittern gehören in eine ärztliche Abklärung (Muchnick, 2008, S. 6, 28); dann nicht üben.
+- **Kombiniert gut mit …** 412 (dieselbe Bewegung ohne Dunkelphase; als Vorstufe), 414 (dieselbe Bewegung, statt Dunkelphasen Sprünge an einen neuen
+  Ort), 407 (einzelne Verdeckung mit Landepunkt), 404/403 (andere Bahnen), 105, 107 (Verdeckung mit gemessenem Zeitfehler), 104 (Vorhersage mit
+  der Hand).
 
 Keine Diagnose, kein Heil- oder Sehversprechen; ein Nutzen für Sehen, Sport oder Verkehr ist nicht belegt.
 
@@ -248,17 +258,12 @@ Keine Diagnose, kein Heil- oder Sehversprechen; ein Nutzen für Sehen, Sport ode
 
 ### Von der Website angegeben
 
-- Appelbaum, L. G., Cain, M. S., Schroeder, J. E., Darling, E. F., & Mitroff, S. R. (2011). Stroboscopic visual
-  training improves information encoding in short-term memory. *PLOS ONE, 6*(10), e27056.
-  https://doi.org/10.1371/journal.pone.0027056 – **Prüfung:** DOI falsch (Sundqvist et al., 2011, Tundra-Pflanzen);
+- Appelbaum, L. G., Cain, M. S., Schroeder, J. E., Darling, E. F., & Mitroff, S. R. (2012). Stroboscopic visual training improves information encoding in short-term memory. *Attention, Perception, & Psychophysics, 74*(8), 1681–1691. https://doi.org/10.3758/s13414-012-0344-6 – **Prüfung:** Die Website nennt Jahr, Zeitschrift und eine falsche DOI (die DOI gehört zu einer anderen Arbeit) (Sundqvist et al., 2011, Tundra-Pflanzen);
   richtig: (**2012**), *Attention, Perception, & Psychophysics, 74*(8), 1681–1691, https://doi.org/10.3758/s13414-012-0344-6
   ✓; **stützt die Aussage der Website:** teilweise – Kurzzeitgedächtnis nach Brillentraining besser; nichts zu Blickfolge.
-- Mitroff, S. R., Friesen, P., Bennett, D., Yoo, H., & Appelbaum, L. G. (2013). Enhancing ice hockey skills through
-  stroboscopic training. *Athletic Training & Sports Health Care, 5*(6), 261–264.
-  https://doi.org/10.3928/19425864-20131030-02 – **Prüfung:** DOI stimmt ✓, letzter Autor aber Reichow, A. W., Titel
+- Mitroff, S. R., Friesen, P., Bennett, D., Yoo, H., & Reichow, A. W. (2013). Enhancing ice hockey skills through stroboscopic visual training: A pilot study. *Athletic Training & Sports Health Care, 5*(6), 261–264. https://doi.org/10.3928/19425864-20131030-02 – **Prüfung:** DOI stimmt ✓; die Website nennt den letzten Autor falsch und den Titel
   verkürzt; **stützt die Aussage der Website:** teilweise – kleiner unverblindeter Pilot; Antizipation nicht gemessen.
-- Smith, T. Q., & Mitroff, S. R. (2016). Stroboscopic training enhances anticipatory timing. *Journal of Sports
-  Sciences, 34*(18), 1735–1742. https://doi.org/10.1080/02640414.2014.926384 – **Prüfung:** DOI falsch (Mooses et al.,
+- Smith, T. Q., & Mitroff, S. R. (2012). Stroboscopic training enhances anticipatory timing. *International Journal of Exercise Science, 5*(4), 344–353. https://doi.org/10.70252/OTSW1297 – **Prüfung:** Die Website nennt Jahr, Zeitschrift und eine falsche DOI (Mooses et al.,
   Laufökonomie); richtig: (**2012**), *International Journal of Exercise Science, 5*(4), 344–353,
   https://doi.org/10.70252/OTSW1297 ✓; **stützt die Aussage der Website:** teilweise – Timing nur kurzfristig besser.
 - Bennett, S. J., Orban de Xivry, J. J., Barnes, G. R., & Lefèvre, P. (2007). Target velocity prediction and the
@@ -267,9 +272,7 @@ Keine Diagnose, kein Heil- oder Sehversprechen; ein Nutzen für Sehen, Sport ode
   nächstliegend Bennett et al. (2007), „Target acceleration can be extracted and represented
   within the predictive drive to ocular pursuit“, *J. Neurophysiol. 98*(3), 1405–1414, https://doi.org/10.1152/jn.00132.2007 ✓; **stützt die Aussage
   der Website:** nein für „Training stärkt Kleinhirn/FEF“; teilweise für Geschwindigkeitsgedächtnis.
-- Appelbaum, L. G., Schroeder, J. E., Cain, M. S., & Mitroff, S. R. (2012). Improved visual cognition through
-  stroboscopic training. *Frontiers in Psychology, 3*, 276. https://doi.org/10.3389/fpsyg.2012.00276 – **Prüfung:** DOI
-  falsch (Nagai, 2012); richtig: (**2011**), *Front. Psychol., 2*, 276, https://doi.org/10.3389/fpsyg.2011.00276 ✓;
+- Appelbaum, L. G., Schroeder, J. E., Cain, M. S., & Mitroff, S. R. (2011). Improved visual cognition through stroboscopic training. *Frontiers in Psychology, 2*, 276. https://doi.org/10.3389/fpsyg.2011.00276 – **Prüfung:** Die Website nennt das Jahr und eine falsche DOI (Nagai, 2012); richtig: (**2011**), *Front. Psychol., 2*, 276, https://doi.org/10.3389/fpsyg.2011.00276 ✓;
   **stützt die Aussage der Website:** teilweise – zentral besser, peripher/MOT nicht; Sehschärfe nicht gemessen.
 - Woods, D. L., Wyma, J. M., Yund, E. W., Herron, T. J., & Reed, B. (2015). Factors influencing the latency of simple
   reaction time. *Frontiers in Human Neuroscience, 9*, 131. https://doi.org/10.3389/fnhum.2015.00131 – **Prüfung:** DOI
@@ -311,6 +314,5 @@ Keine Diagnose, kein Heil- oder Sehversprechen; ein Nutzen für Sehen, Sport ode
   accomplishments to guide future studies. *International Review of Sport and Exercise Psychology, 13*(1), 65–80.
   https://doi.org/10.1080/1750984X.2019.1582081
 - W3C (2024). *Web Content Accessibility Guidelines (WCAG) 2.2*, SC 2.3.1/2.3.2. https://www.w3.org/TR/WCAG22/ – Norm, keine DOI
-
-Prüfvermerk: DOIs am 29.09.2026 per Crossref geprüft; Inhalte über PubMed-Abstracts bzw. Volltext (Wilkins &
-Appelbaum, 2020). Frequenzen, Sehwinkel, Leuchtdichten und Raumwinkel sind eigene Berechnungen aus Code und Formeln.
+- Muchnick, B. G. (2008). *Clinical Medicine in Optometric Practice* (2nd ed.). Mosby/Elsevier. https://openlibrary.org/isbn/9780323029612 – Warnzeichen, Augenbewegungsprüfung, Sehbahn (S. 6, 28, 32–35)
+- Mountford, J., Ruston, D., & Dave, T. (2004). *Orthokeratology: Principles and Practice*. Butterworth-Heinemann. https://openlibrary.org/isbn/9780750640077 – Messgrundsätze: Wiederholbarkeit, Mehrfachmessung (S. 24, 43–44)

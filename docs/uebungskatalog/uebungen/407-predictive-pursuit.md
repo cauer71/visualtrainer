@@ -2,7 +2,7 @@
 # ===== Kennung =====
 nr: 407
 kennung: predictive-pursuit
-name: "Landepunkt vorhersehen – Blicksprung auf ein abbremsendes Ziel (Original: „Prädiktive Blickverfolgung bei Verdeckung“)"
+name: "Landepunkt vorhersehen (Ball hinter einer Wand)"
 name_original: "Prädiktive Blickverfolgung bei Verdeckung (Predictive Pursuit)"
 kapitel: "Blickverfolgung"
 kapitel_original: "visual-tracking"
@@ -12,7 +12,7 @@ blickfit_umsetzung: {kennung: "landepunkt", name: "Landepunkt", unterschiede: "T
 stand: 2026-09-29
 
 # ===== Überblick =====
-kurzbeschreibung: "Ein leuchtender Punkt schnellt im festen Takt (Standardtempo alle 2,2 s) von seiner Ruheposition zu einem zufälligen neuen Ort, wird dabei stetig langsamer (anfangs am schnellsten) und bleibt kurz stehen. Man springt mit dem Blick hinterher und versucht – ohne die abschaltbare Hilfslinie – schon beim Start vorherzusehen, wo er landet; anders als der Seitentext verspricht, wird das Ziel nie verdeckt und nichts gemessen."
+kurzbeschreibung: "Ein Ball fliegt in einem Bogen über die Bühne und verschwindet für einen Teil des Flugs hinter einer Wand. Sobald er verdeckt ist, tippt man auf die Stelle am Boden, an der er landen wird. Danach wird die Wand durchsichtig: Landepunkt, Tipp und Abweichung werden gezeigt. Verdeckung, Tempo und Bogenhöhe passen sich an. Wohin der Blick geht, wird nicht gemessen, nur wo getippt wird."
 ziel_funktionen: [sakkaden]
 eingabe: [maus, touch]
 tablet_geeignet: mit_anpassung
@@ -74,28 +74,31 @@ belastung:
 # ===== Auswahlhilfe =====
 voraussetzungen: ["Bildschirm oder Tablet (quer) auf fester Unterlage, Abstand 40–70 cm, Kopf möglichst ruhig", "Scharfes Sehen im Zwischenbereich über fast die ganze Bildbreite (Monitor ≈ 48° × 17°) – Arbeitsplatzbrille oder Einstärkenglas günstiger als Gleitsicht", "Maus oder Finger nur zum Starten; Mitführen des Fadenkreuzes freiwillig und ohne Wertung", "Bereitschaft, ohne Rückmeldung 30–120 s konzentriert mitzugehen"]
 vorsicht_bei: [presbyopie_gleitsicht, schwindel_vestibulaer, reisekrankheit, nystagmus, schielen_binokular, trockenes_auge_bildschirm, kopfschmerz_asthenopie, kinder_unter_6]
-geeignet_fuer: ["Blicksprünge auf ein sich bewegendes, abbremsendes Ziel mit anschließendem kurzem Nachfolgen üben", "Vorausschauendes Zielen mit dem Blick: Landepunkt aus Richtung und Anfangstempo schätzen (mit ausgeblendeter Linie)", "Steigerung nach 303 (ruhende Sprungziele) und vor 414/409 (Sprünge bzw. Dunkelphasen während laufender Bewegung)", "kurze Augenübung ohne Blitzreize und ohne Hand- oder Körpereinsatz"]
-weniger_geeignet_fuer: ["alle, die Rückmeldung oder einen Leistungswert erwarten (das Original misst nichts)", "Ziel 'Verfolgen hinter einer Verdeckung' – das Original verdeckt nie; dafür 409", "Ziel glatte, lange Blickfolge (Bewegungen dauern < 1 s und beginnen ruckartig; dafür 402–404)", "Gleitsichtträger:innen am großen Monitor (Landepunkte über fast die ganze Bildbreite, oben/unten in Fern- und Nahteil)", "Tempo ab ≈ 3× (Ziel hat ≈ 80 % der Strecke hinter sich, bevor der Blick startet – fast reine Reaktionssprünge, ruckendes Bild)"]
+geeignet_fuer: ["Bewegungen vorausahnen: den Landepunkt eines kurz verdeckten Balls aus Richtung und Tempo schätzen", "Aufgabe mit Rückmeldung: Nach jedem Tipp werden Landepunkt und Abweichung gezeigt", "Steigerung nach 303 (ruhende Sprungziele) und vor 414/409 (Sprünge bzw. Dunkelphasen während laufender Bewegung)", "kurze Übung ohne Blitzreize, mit einem Tipp je Durchgang"]
+weniger_geeignet_fuer: ["alle, die einen Leistungswert oder einen Fortschritt in Prozent erwarten (das Ergebnis gilt nur im Vergleich mit sich selbst)", "Ziel 'Blickfolge hinter einer Verdeckung' (der Blick wird nicht gemessen; dafür 409)", "Ziel glatte, lange Blickfolge (ein Flug dauert nur etwa 1 bis 2,4 s; dafür 402–404)", "Gleitsichtträger:innen am großen Monitor (Der Ball fliegt über große Teile der Bildbreite, oben und unten durch Fern- und Nahteil)", "hohe Stufen für Ungeübte (bis zu 80 % der Flugzeit verdeckt, kurze Flugdauer)"]
 evidenz:
   uebungseffekt: schwach
   naher_transfer: fehlend
   alltag_transfer: fehlend
-  kommentar: "Blicksprünge auf bewegte Ziele berücksichtigen Position und Tempo des Ziels (de Brouwer et al., 2002b), und vorhersagbare Bewegungsabläufe werden im Labor rasch gelernt (Barnes, 2008; Kowler et al., 2019) – plausibel ist daher eine Gewöhnung an die feste Abbremsdynamik; untersucht ist diese Aufgabe nicht, die zitierten Verdeckungs-Lernstudien (Madelain & Krauzlis, 2003) betreffen einen anderen Reiz, und ein Nutzen für Sport, E-Sport oder Alltag ist nicht belegt."
+  kommentar: "Blicksprünge auf bewegte Ziele berücksichtigen Position und Tempo des Ziels (de Brouwer et al., 2002b), und vorhersagbare Bewegungsabläufe werden im Labor rasch gelernt (Barnes, 2008; Kowler et al., 2019). Bei kurz verdeckten Zielen verbesserte sich die Blickfolge mit Rückmeldung nach 8–10 Sitzungen (Madelain & Krauzlis, 2003) – mit Blickmessung und in einer anderen Aufgabe als dieser Tipp-Aufgabe. Eine Trainingsstudie zu dieser Aufgabe gibt es nicht, und ein Nutzen für Sport, E-Sport oder Alltag ist nicht belegt."
 aehnliche_uebungen: [409, 414, 303, 410, 411, 415, 405, 406, 402, 403, 404, 105, 104, 501, 508]
 stichworte: ["Landepunkt", "Vorhersage", "prädiktive Sakkade", "Aufholsakkade", "catch-up saccade", "abbremsendes Ziel", "Blicksprung auf bewegtes Ziel", "Antizipation", "Verdeckung (nur im Seitentext)", "smooth pursuit", "Vorhaltemaß"]
 ---
 
-# 407 · Landepunkt vorhersehen – Blicksprung auf ein abbremsendes Ziel
+# 407 · Landepunkt vorhersehen (Ball hinter einer Wand)
 
-> Original: „Prädiktive Blickverfolgung bei Verdeckung“ („Predictive Pursuit“) – skilldrills.online, Kapitel
-> Blickverfolgung (`visual-tracking`) · Blickfit: noch nicht umgesetzt
+> Original: „Prädiktive Blickverfolgung bei Verdeckung“ („Predictive Pursuit“) – skilldrills.online, Kapitel Blickverfolgung (`visual-tracking`) · Blickfit: noch nicht umgesetzt
 
 ## 1. Kurzbeschreibung
 
-Ein roter Leuchtpunkt schnellt in festem Takt zu einem zufälligen Ort, wird immer langsamer, bleibt kurz stehen und
-startet erneut. Eine schwache Linie zeigt den Weg zum Landepunkt; ohne sie muss man ihn aus Richtung und Anfangstempo
-erahnen. Man folgt mit den Augen – anders als Titel und Text sagen, wird der Punkt **nie verdeckt**, und es gibt
-weder Punkte noch Genauigkeitswerte oder Rückmeldung.
+Auf ruhigem Grund steht ein Ball am Boden. Er fliegt in einer echten Wurfparabel (Flugzeit mit dt aufsummiert, also
+unabhängig von der Bildrate) über die Bühne und verschwindet für einen Teil des Flugs hinter einer Wand. Sobald er verdeckt ist, tippt man
+auf die Stelle am Boden, an der er landen wird; ein früherer Tipp zählt nicht, und nach der Landezeit bleiben noch etwa 1,6 s zum Antworten.
+Danach wird die Wand durchsichtig: Man sieht den Ball landen, den eigenen Tipp und die Abweichung in Prozent der Bildschirmbreite sowie
+✓/✗; als Treffer gilt ein Tipp höchstens 6 % der Bildschirmbreite vom Landepunkt entfernt. Eine Sitzung umfasst 14 Würfe. In 20 Stufen
+(3-down/1-up) steigt der verdeckte Anteil der Flugzeit von 40 auf 80 %, die Flugdauer sinkt von 2,4 auf 1,1 s, und der Bogen wird höher
+(30 bis 78 % der verfügbaren Höhe). Hauptwert ist die Stufe, dazu kommt die mittlere Abweichung. Wohin der Blick dabei geht, wird nicht
+gemessen, nur wo getippt wird.
 
 ## 2. Ablauf im Original (Analyse)
 
@@ -161,67 +164,83 @@ Vorhersage (Woods et al., 2015); Vorwärtsmodelle blieben im Alter „hochgradig
 
 ## 4. Optische und okulomotorische Grundlagen
 
-- **Was das Auge tatsächlich tut:** Die Bewegung beginnt ruckartig mit hohem Tempo (1× am Monitor ≈ 64°/s im Mittel) –
-  deutlich über dem, was die glatte Folge aus dem Stand erreicht (Latenz ≈ 100 ms, Anfangsbeschleunigung begrenzt:
-  Carl & Gellman, 1987). Das Auge antwortet daher mit einem **Blicksprung** (reguläre Latenz ≈ 150 ms und mehr, Express-Sakkaden ≈ 100 ms: Fischer &
-  Ramsperger, 1984); bis dahin hat das Ziel bei 1× schon ≈ 40–50 % der Strecke zurückgelegt, bei 3× ≈ 80 %. Die langsame
-  Endphase kann glatt mitverfolgt werden, die Ruhephase ist Fixation.
-- **Vorhersage im Blicksprung:** Aufholsakkaden verrechnen Positionsfehler **und** Zieltempo, brauchen ≈ 90 ms, um
-  Bahnänderungen einzubeziehen; der Tempo-Anteil sättigt oberhalb ≈ 15°/s (de Brouwer et al., 2002b). Ob der Blick beim
-  abbremsenden Ziel vor- oder nachläuft, ist nicht untersucht. Sakkade und Folge arbeiten als ein Prozess (Orban de
-  Xivry & Lefèvre, 2007).
-- **Sehwinkel/Tempo:** Ziel Ø ≈ 0,84–0,9°, Visus kaum gefordert; die Linie ist kontrastarm (22 %). Ab ≈ 3× hat das Ziel
-  ≈ 80 % der Strecke hinter sich, bevor der Blick startet – dann fast reine Reaktionssakkade wie in 303; sinnvoll sind 0,5–2×.
-- **Gleitsicht/Arbeitsplatz:** Landepunkte über ≈ 48° × 17° (Monitor, 60 cm); der scharfe Bereich der zwei
-  untersuchten Gleitsichtgläser war in 60 cm nur ≈ 13–18° breit (Einstärkenglas ≈ 60°); Blick und Kopf brauchten
-  damit länger, bis das Bild ruhig stand (Han et al., 2003, n = 11). Punkte oben
-  fallen Richtung Fernteil, unten Richtung Nahteil – Arbeitsplatzbrille, kleineres Feld, Kopfbewegung zulassen; Tablet in
-  40 cm ≈ 2,5 dpt. **Trockenes Auge:** ≈ 11,6 Lidschläge/min beim Lesen am Bildschirm, im Mittel 16 % unvollständig (Portello et al., 2013)
-  → Ruhephasen zum Blinzeln nutzen. **Alter:** Folge lässt nach, Vorhersage bleibt (Sprenger et al., 2011) → 0,5–1×.
+- **Was das Auge tun kann:** Das Auge kann dem fliegenden Ball glatt folgen (Latenz ≈ 100 ms bei unvorhersehbarem Start, Anfangsbeschleunigung begrenzt: Carl & Gellman, 1987) und mit Aufholsakkaden nachsetzen
+  (reguläre Latenz ≈ 150 ms und mehr, Express-Sakkaden ≈ 100 ms: Fischer & Ramsperger, 1984). Aufholsakkaden verrechnen Positionsfehler
+  **und** Zieltempo, brauchen ≈ 90 ms, um Bahnänderungen einzubeziehen; der Tempo-Anteil sättigt oberhalb ≈ 15°/s (de Brouwer et al., 2002b).
+  Sakkade und Folge arbeiten als ein Prozess (Orban de Xivry & Lefèvre, 2007). Folgt der Blick dem Ball, wird die Vorhersage der Bewegung
+  besser (Spering et al., 2011).
+- **Verdeckung:** Verschwindet ein bewegtes Ziel, bremst das Auge nach ≈ 190 ms ab und behält nur ≈ 40–60 % seines Tempos (Becker & Fuchs,
+  1985); vor einem erwarteten Wiederauftauchen beschleunigt es vorausschauend wieder (Bennett & Barnes, 2003). Bei Ausblendung sind frontales
+  und supplementäres Augenfeld, parietaler und präfrontaler Kortex und Kleinhirn aktiver (Lencer et al., 2004). In dieser Übung taucht der
+  Ball im Flug nicht wieder auf; die Wand wird erst nach dem Tipp durchsichtig.
+- **Sehwinkel und Wege:** Der Ball hat einen Durchmesser von etwa 5 % der kürzeren Bildschirmseite (am 11-Zoll-Tablet in 40 cm etwa 1,2°); die
+  Sehschärfe ist kaum gefordert. Die Wurfweite beträgt 42–78 % der Bildschirmbreite (am Tablet quer in 40 cm grob 15–25°), die Flugbahn läuft
+  über große Teile des Bildschirms. Zum Antworten muss der Landepunkt aus Richtung und Tempo des sichtbaren Bahnabschnitts geschätzt werden.
+- **Gleitsicht/Arbeitsplatz:** Der scharfe Bereich der zwei untersuchten Gleitsichtgläser war in 60 cm nur ≈ 13–18° breit (Einstärkenglas ≈ 60°);
+  Blick und Kopf brauchten damit länger, bis das Bild ruhig stand (Han et al., 2003, n = 11). Würfe über die ganze Bühne führen oben in den
+  Fernteil, unten in den Nahteil – Arbeitsplatzbrille, kleineres Feld, Kopfbewegung zulassen; Tablet in 40 cm ≈ 2,5 dpt (Rechenregel: 20 cm =
+  5 dpt, 10 cm = 10 dpt). **Trockenes Auge:** ≈ 11,6 Lidschläge/min beim Lesen am Bildschirm, im Mittel 16 % unvollständig (Portello et al., 2013)
+  → Ruhephasen zum Blinzeln nutzen. **Alter:** Folge lässt nach, Vorhersage bleibt (Sprenger et al., 2011) → niedrige Stufen.
 
 ## 5. Neurowissenschaftliche Grundlagen
 
-- Sakkaden auf bewegte Ziele nutzen Bewegungssignale aus MT/MST; frontales Augenfeld, Colliculus superior und Kleinhirn
-  steuern Sakkade und Folge gemeinsam (Krauzlis, 2004; Orban de Xivry & Lefèvre, 2007).
-- Vorhersage beruht auf extraretinalen Signalen (Efferenzkopie, kurzer Speicher für Tempo und Zeitpunkt) und Erwartung
-  (Barnes, 2008; Kowler et al., 2019). Dass die Übung ein Netzwerk „trainiert“, ist nicht untersucht.
+- Sakkaden auf bewegte Ziele nutzen Bewegungssignale aus MT/MST; frontales Augenfeld, Colliculus superior und Kleinhirn steuern Sakkade und
+  Folge gemeinsam (Krauzlis, 2004; Orban de Xivry & Lefèvre, 2007).
+- Vorhersage beruht auf extraretinalen Signalen (Efferenzkopie, kurzer Speicher für Tempo und Zeitpunkt) und Erwartung (Barnes, 2008;
+  Kowler et al., 2019). Dass die Übung ein Netzwerk „trainiert“, ist nicht untersucht.
+- **Klinischer Hintergrund:** Die äußeren Augenmuskeln werden klinisch geprüft, indem die Augen einem nahen Ziel folgen, das in einem „H“
+  geführt wird; die Prüfung betrifft die Hirnnerven III, IV und VI (Muchnick, 2008, S. 32–35). Diese Übung ist keine solche Prüfung.
 
 ## 6. Motorische Grundlagen
 
-Keine Handaufgabe; wer das (ungewertete) Fadenkreuz mitführt, macht je Zyklus eine schnelle Abfangbewegung, deren
-Genauigkeit von den Augenbewegungen mitbestimmt wird (Fooken et al., 2021) – freiwillig und ungewertet, daher nur Auge-Hand-Koordination 1, Zieltempo 0.
+Gefordert ist ein einzelner Zieltipp mit Finger oder Maus je Wurf; die Genauigkeit wird als Abstand zum Landepunkt gewertet. Beim Abfangen
+bewegter Ziele bestimmen die Augenbewegungen die Genauigkeit der Handbewegung mit (Fooken et al., 2021).
 
 ## 7. Einflussfaktoren und Messgrenzen
 
-- **Keine Messung:** Ohne Eyetracker bleibt offen, ob der Blick vorausschauend oder nur reaktiv sprang.
-- **Gerät:** Sprungweiten und °/s hängen von Bildgröße und Abstand ab – „1×“ ist kein fester Reiz; Bildrate ≤ 77/s
-  (gemeinsames Modul, vgl. 406), bei hohem Tempo grobe Bildschritte. **Person:** Alter, Müdigkeit, Konzentration; die
-  feste Abbremsregel wird rasch vertraut, spätere Runden sind leichter, ohne dass das etwas über andere Situationen sagt.
+- **Keine Blickmessung:** Ohne Eyetracker bleibt offen, ob der Blick dem Ball folgte oder vorausschauend zum Landepunkt sprang; gemessen wird
+  nur, wo getippt wird.
+- **Gerät:** Die Trefferzone ist in Prozent der Bildschirmbreite festgelegt und damit auf großen Bildschirmen in Zentimetern und Grad größer;
+  Wurfweiten und °/s hängen von Bildgröße und Abstand ab. Ergebnisse verschiedener Geräte (Touch, Maus, Tablet, Monitor) nicht gleichsetzen:
+  Zwei Verfahren können ähnliche Tendenzen zeigen, ohne dieselben Werte zu liefern (Mountford et al., 2004, S. 24).
+- **Person:** Alter, Müdigkeit, Konzentration; die Wurfform wird rasch vertraut, spätere Würfe sind leichter, ohne dass das etwas über andere
+  Situationen sagt.
+- **Streuung:** Messungen am Menschen streuen stärker als an Prüfkörpern; ein einzelner Wurf sagt wenig, und aussagekräftig ist nur der
+  Verlauf über mehrere Sitzungen (Mountford et al., 2004, S. 43–44).
 
 ## 8. Studienlage: Trainierbarkeit und Übertragung
 
-- **Übungseffekt – schwach:** Vorhersagbare Bewegungsmuster werden im Labor schnell gelernt (Kowler et al., 2019); bei
-  Verdeckung stieg der Folge-Gain mit Belohnung nach 8–10 Tagessitzungen von 0,59 auf 0,89 (Madelain & Krauzlis, 2003,
-  Menschen). Für die tatsächlich gezeigte Aufgabe gibt es keine Trainingsstudie, und ohne Rückmeldung fehlt ein Lernsignal.
+- **Übungseffekt – schwach:** Vorhersagbare Bewegungsmuster werden im Labor schnell gelernt (Kowler et al., 2019); bei Verdeckung stieg der
+  Folge-Gain mit Belohnung nach 8–10 Tagessitzungen von 0,59 auf 0,89 (Madelain & Krauzlis, 2003, Menschen). Hier gibt es mit der
+  Abweichung nach jedem Wurf ein Lernsignal, aber eine Trainingsstudie zu genau dieser Aufgabe fehlt.
 - **Naher Transfer – fehlend:** nicht untersucht (Madelain & Krauzlis: Übertragung auf andere Tempi, aber andere Aufgabe).
-- **Alltagstransfer – fehlend:** keine Studie zu Sport, E-Sport oder Verkehr.
+- **Alltagstransfer – fehlend:** keine Studie zu Sport, E-Sport oder Verkehr. Vorausschauende Blicksprünge gibt es im Sport – Cricket-Schlagleute
+  springen zum erwarteten Aufsetzpunkt, Gute mit kürzerer Latenz (Land & McLeod, 2000); dass ein Bildschirm-Drill das verbessert, ist nicht
+  untersucht.
+- **Praxisangaben (Erfahrungswissen, nicht belegt):** Aufgaben werden in der Praxis am eigenen Arbeitspunkt begonnen und in kleinen, selbst
+  gesteuerten Schritten gesteigert; hier entspricht dem die Stufe, die dem Ergebnis folgt.
 
 ## 9. Auswahlhinweise für die KI
 
-- **Passt, wenn …** Blicksprünge auf bewegte Ziele und Landepunkt-Vorhersage geübt werden sollen (Stufe zwischen 303
-  und 414/409); 0,5–1×, großer Radius, erst mit, dann ohne Linie.
-- **Weniger passend, wenn …** Verdeckung (→ 409), lange glatte Folge (→ 402–404), Rückmeldung oder Handgenauigkeit
-  (→ 501, 104) gesucht sind.
-- **Vorsicht / anpassen bei …** `presbyopie_gleitsicht` (Landepunkte in Fern-, Nah- und seitlichen Unschärfezonen →
-  Arbeitsplatzbrille, kleineres Feld, Kopf mitbewegen); `schwindel_vestibulaer`, `reisekrankheit` (ruckartige Bewegungsstarts über fast die ganze Bildbreite; langsam
-  beginnen, kleineres Feld, bei Übelkeit abbrechen); `nystagmus`, `schielen_binokular` (Blicksprünge/Folge oft verändert – keine
-  Rückschlüsse ziehen); `trockenes_auge_bildschirm`, `kopfschmerz_asthenopie` (Pausen, blinzeln); `kinder_unter_6`
-  (Folgebewegung reift bis ins Jugendalter; Katsanis et al., 1998).
-- **Kombiniert gut mit …** 303 (Sprungziele), 414 (Sprung während der Bewegung), 409 (echte Dunkelphasen), 410/415
-  (unvorhersehbare Richtungswechsel), 105 (Details am bewegten Ziel).
-- **Abgrenzung in der Gruppe:** keine Dublette. Gleicher Aufbau wie 402–406 (ein Leuchtpunkt, gleiche Einstellungen,
-  keine Messung), aber als einzige Übung der Gruppe mit ruckartigem Bewegungsstart und Ruhephase – gefordert sind vor
-  allem Blicksprünge, nicht lange glatte Folge. Trotz des Originaltitels gibt es keine Verdeckung (dafür 409).
+- **Passt, wenn …** Landepunkt-Vorhersage bei verdecktem Ball geübt werden soll (Stufe zwischen 303 und 414/409); auf niedrigen Stufen mit
+  wenig Verdeckung beginnen; eine kurze Übung mit Rückmeldung nach jedem Wurf gewünscht ist.
+- **Weniger passend, wenn …** Blickfolge hinter einer Verdeckung (→ 409), lange glatte Folge (→ 402–404) oder Handgenauigkeit (→ 501, 104)
+  gesucht sind.
+- **Vorsicht / anpassen bei …**
+  - `presbyopie_gleitsicht`: Würfe über die ganze Bühne in Fern-, Nah- und seitliche Unschärfezonen → Arbeitsplatzbrille, kleineres Feld,
+    Kopf mitbewegen.
+  - `schwindel_vestibulaer`, `reisekrankheit`: bewegter Ball über große Teile der Bühne; langsam beginnen, bei Übelkeit abbrechen.
+  - `nystagmus`, `schielen_binokular`: Blicksprünge und Folge oft verändert – keine Rückschlüsse ziehen.
+  - `trockenes_auge_bildschirm`, `kopfschmerz_asthenopie`: Pausen, blinzeln.
+  - `kinder_unter_6`: Die Folgebewegung reift bis ins Jugendalter (Katsanis et al., 1998).
+  - Warnzeichen: Doppelbilder, plötzlicher einseitiger Sehverlust, Lichtblitze oder neue Schleier, Kopfschmerz mit Sehverschlechterung,
+    Schwindel oder neu auftretendes Zittern gehören in eine ärztliche Abklärung (Muchnick, 2008, S. 6, 28); dann nicht üben.
+- **Kombiniert gut mit …** 303 (Sprungziele), 414 (Sprung während der Bewegung), 409 (Dunkelphasen), 410/415 (unvorhersehbare Richtungswechsel),
+  105 (Details am bewegten Ziel).
+- **Abgrenzung in der Gruppe:** keine Dublette. Anders als 402–406 (glatte Blickfolge mit Zeichenaufgabe) und 409 (Folgen während Dunkelphasen)
+  steht hier die Vorhersage eines Landepunkts im Mittelpunkt, geantwortet wird mit einem Zieltipp.
+
+Keine Diagnose, kein Heil- oder Sehversprechen.
 
 ## 10. Schwächen des Originals und Empfehlungen für eine Blickfit-Umsetzung
 
@@ -246,7 +265,7 @@ Genauigkeit von den Augenbewegungen mitbestimmt wird (Fooken et al., 2021) – f
 - Woods, D. L., Wyma, J. M., Yund, E. W., Herron, T. J., & Reed, B. (2015). Factors influencing the latency of simple reaction time. *Frontiers in Human Neuroscience, 9*, 131. https://doi.org/10.3389/fnhum.2015.00131 – **Prüfung:** DOI stimmt ✓; **stützt:** nein (einfache Reaktionszeit und Hardware-Verzögerung; nichts zu 144 Hz oder Bahnvorhersage)
 
 ### Weitere Fachliteratur
-- Becker, W., & Fuchs, A. F. (1985). Prediction in the oculomotor system: Smooth pursuit during transient disappearance of a visual target. *Experimental Brain Research, 57*(3), 562–575. https://doi.org/10.1007/BF00237843 – Tempoabfall bei Verdeckung (Einordnung der Website)
+- Becker, W., & Fuchs, A. F. (1985). Prediction in the oculomotor system: Smooth pursuit during transient disappearance of a visual target. *Experimental Brain Research, 57*(3), 562–575. https://doi.org/10.1007/BF00237843 – Tempoabfall bei Verdeckung
 - Carl, J. R., & Gellman, R. S. (1987). Human smooth pursuit: Stimulus-dependent responses. *Journal of Neurophysiology, 57*(5), 1446–1463. https://doi.org/10.1152/jn.1987.57.5.1446 – Folgelatenz ≈ 100 ms, Anfangsbeschleunigung
 - de Brouwer, S., Missal, M., Barnes, G., & Lefèvre, P. (2002b). Quantitative analysis of catch-up saccades during sustained pursuit. *Journal of Neurophysiology, 87*(4), 1772–1780. https://doi.org/10.1152/jn.00621.2001 – Aufholsakkaden verrechnen Position und Tempo, ≈ 90 ms, Sättigung > 15°/s
 - Fischer, B., & Ramsperger, E. (1984). Human express saccades: Extremely short reaction times of goal directed eye movements. *Experimental Brain Research, 57*(1), 191–195. https://doi.org/10.1007/BF00231145 – Sakkadenlatenz ≈ 100/150 ms
@@ -261,3 +280,5 @@ Genauigkeit von den Augenbewegungen mitbestimmt wird (Fooken et al., 2021) – f
 - Portello, J. K., Rosenfield, M., & Chu, C. A. (2013). Blink rate, incomplete blinks and computer vision syndrome. *Optometry and Vision Science, 90*(5), 482–487. https://doi.org/10.1097/OPX.0b013e31828f09a7 – Lidschlag
 - Spering, M., Schütz, A. C., Braun, D. I., & Gegenfurtner, K. R. (2011). Keep your eyes on the ball: Smooth pursuit eye movements enhance prediction of visual motion. *Journal of Neurophysiology, 105*(4), 1756–1767. https://doi.org/10.1152/jn.00344.2010 – Mitgehen verbessert Bewegungsvorhersage
 - Sprenger, A., Trillenberg, P., Pohlmann, J., Herold, K., Lencer, R., & Helmchen, C. (2011). The role of prediction and anticipation on age-related effects on smooth pursuit eye movements. *Annals of the New York Academy of Sciences, 1233*, 168–176. https://doi.org/10.1111/j.1749-6632.2011.06114.x – Alter
+- Muchnick, B. G. (2008). *Clinical Medicine in Optometric Practice* (2nd ed.). Mosby/Elsevier. https://openlibrary.org/isbn/9780323029612 – Warnzeichen, Augenbewegungsprüfung, Sehbahn (S. 6, 28, 32–35)
+- Mountford, J., Ruston, D., & Dave, T. (2004). *Orthokeratology: Principles and Practice*. Butterworth-Heinemann. https://openlibrary.org/isbn/9780750640077 – Messgrundsätze: Wiederholbarkeit, Mehrfachmessung (S. 24, 43–44)
