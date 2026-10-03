@@ -87,8 +87,7 @@ stichworte: ["Ausweichen", "Kollisionsvermeidung", "Flugbahn vorhersagen", "Anti
 
 # 803 · Ausweichen – roten Geschossen mit dem Zeiger entgehen
 
-> Original: „Maus-Ausweichspiel“ (Spielname „Quick Dodge“) – skilldrills.online, Kapitel Körper & Reflexe
-> (`physical`, Unterkapitel `reflex-training`) · Blickfit: noch nicht umgesetzt
+> Original: „Maus-Ausweichspiel“ (Spielname „Quick Dodge“) – skilldrills.online, Kapitel Körper & Reflexe (`physical`, Unterkapitel `reflex-training`) · Blickfit: noch nicht umgesetzt
 
 ## 1. Kurzbeschreibung
 

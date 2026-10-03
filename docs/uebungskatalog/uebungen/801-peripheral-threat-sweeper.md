@@ -12,7 +12,7 @@ blickfit_umsetzung: {kennung: "randabwehr", name: "Rand im Blick", unterschiede:
 stand: 2026-09-29
 
 # ===== Überblick =====
-kurzbeschreibung: "In der Bildschirmmitte liegt ein runder Schildkern. Aus zufälligen Richtungen fliegen farbige Punkte vom Rand auf ihn zu; man klickt sie mit der Maus an, bevor sie den Kern erreichen. Je mehr Punkte man erwischt, desto schneller und dichter kommen sie."
+kurzbeschreibung: "Die Mitte des Bildschirms ist durch ein Kreuz als ruhiger Blickpunkt markiert. Vom Rand gleiten Punkte geradlinig auf die Mitte zu; man tippt sie an, bevor sie die Mitte erreichen. Mit jedem Erfolg kommen die Punkte schneller, zahlreicher (bis zu vier gleichzeitig) und kleiner, nach Fehlschlägen wird es wieder leichter."
 ziel_funktionen: [auge_hand_koordination, zielbewegung_tempo]
 eingabe: [maus, touchpad]
 tablet_geeignet: nein
@@ -74,28 +74,24 @@ belastung:
 # ===== Auswahlhilfe =====
 voraussetzungen: ["Maus (oder Touchpad) am Computer; das Original nutzt Pointer-Lock und ein eigenes Fadenkreuz", "Bildschirm im Zwischenbereich (50–70 cm) scharf sehen, ohne den Kopf zu heben oder zu senken", "Keine bekannte Lichtempfindlichkeit (rotes Aufblitzen bei jedem Fehler)", "Hohes Tempo tolerieren: ab höheren Leveln bleibt pro Punkt oft weniger als 1 s"]
 vorsicht_bei: [photosensitive_epilepsie, migraene_lichtempfindlich, schwindel_vestibulaer, presbyopie_gleitsicht, gesichtsfeldausfall, sehbehinderung_niedriger_visus, trockenes_auge_bildschirm, hand_arm_beschwerden, tremor_parkinson, aufmerksamkeitsprobleme, kognitive_einschraenkung, kinder_unter_6]
-geeignet_fuer: ["schnelle Auge-Hand-Zielbewegungen zu plötzlich auftauchenden, bewegten Zielen üben", "mehrere Ziele rund um die Mitte gleichzeitig im Blick behalten und nach Dringlichkeit abarbeiten", "spielerisches Reaktionstraining mit hoher Motivation (Combo, Zeitgutschrift) für geübte Maus-Nutzer:innen", "Ergänzung zu ruhigeren Sehfeld-Übungen (108) als temporeiche Variante"]
-weniger_geeignet_fuer: ["Tablet- und Smartphone-Nutzung (Original für Maus gebaut)", "wer gezielt das nutzbare Sehfeld bei ruhigem Blick üben will (Blickposition wird nicht kontrolliert; dafür 108)", "Einsteiger:innen, Ältere oder Menschen mit wenig Mauserfahrung ohne langsamen Modus (kein Einstellungsmenü für Tempo)", "Gleitsichtträger:innen an großen Monitoren", "Menschen, die bei Fehlern durch Blitz und Wackeln gestresst werden"]
+geeignet_fuer: ["schnelle Auge-Hand-Zielbewegungen zu auftauchenden, bewegten Zielen üben", "mehrere Ziele rund um die Mitte gleichzeitig im Blick behalten und nach Dringlichkeit abarbeiten", "den Rand beachten, während die Mitte der Fixpunkt bleibt", "Ergänzung zu ruhigeren Sehfeld-Übungen (108) als temporeiche Variante"]
+weniger_geeignet_fuer: ["wer gezielt das nutzbare Sehfeld bei kontrolliert ruhigem Blick üben will (die Blickposition wird nicht gemessen; dafür 108)", "Menschen, die mit schnell steigendem Tempo und mehreren gleichzeitigen Zielen schnell überfordert sind", "Gleitsichtträger:innen an großen Bildschirmen (seitliche Ziele liegen im unscharfen Bereich)"]
 evidenz:
   uebungseffekt: mittel
   naher_transfer: schwach
   alltag_transfer: fehlend
-  kommentar: "Für dieses Spiel gibt es keine Studie. Übungseffekte in ähnlichen Bildschirmaufgaben sind regelmäßig, schrumpfen aber stark, wenn Test und Training sich unterscheiden (Guo et al., 2025); UFOV-Transfer ist nur für das spezielle Protokoll bei Älteren belegt (Edwards et al., 2018), Peripherie-Werkzeuge im Sport sind ohne Transfer-Nachweis (Vater & Strasburger, 2021)."
+  kommentar: "Für diese Übung gibt es keine Studie. Übungseffekte in ähnlichen Bildschirmaufgaben sind regelmäßig, schrumpfen aber stark, wenn Test und Training sich unterscheiden (Guo et al., 2025); UFOV-Transfer ist nur für das spezielle Protokoll bei Älteren belegt (Edwards et al., 2018), Peripherie-Werkzeuge im Sport sind ohne Transfer-Nachweis (Vater & Strasburger, 2021)."
 aehnliche_uebungen: [802, 302, 502, 510, 804, 803, 401, 108, 104, 205, 106]
 stichworte: ["peripheres Sehen", "nutzbares Sehfeld", "UFOV", "Interzeption", "Abfangen", "Auge-Hand-Koordination", "Fitts", "Mehrfachziele", "Priorisierung", "Aufmerksamkeitsfang", "Mausspiel", "Zeitdruck"]
 ---
 
 # 801 · Randabwehr – heranfliegende Punkte abfangen
 
-> Original: „Peripheres Sehen trainieren“ (Spielname „Peripheral Threat Sweeper“) – skilldrills.online, Kapitel Körper &
-> Reflexe (`physical`, Unterkapitel `reflex-training`) · Blickfit: noch nicht umgesetzt
+> Original: „Peripheres Sehen trainieren“ (Spielname „Peripheral Threat Sweeper“) – skilldrills.online, Kapitel Körper & Reflexe (`physical`, Unterkapitel `reflex-training`) · Blickfit: noch nicht umgesetzt
 
 ## 1. Kurzbeschreibung
 
-In der Mitte liegt ein grüner Ring, der „Schildkern“. Vom Rand eines unsichtbaren Kreises fliegen farbige Punkte aus
-zufälliger Richtung (später auch in Schlangenlinien) auf ihn zu; man klickt sie mit dem Fadenkreuz an, bevor sie ihn berühren.
-Treffer bringen Punkte und Zeit, Fehlklicks und Durchbrüche kosten Zeit und Combo. Trotz Kapitelname **keine Körperübung**,
-sondern ein temporeiches Maus-Abfangspiel.
+Die Mitte des Bildschirms ist durch ein Kreuz markiert; sie bleibt der ruhige Blickpunkt. Vom Rand des Feldes gleiten weich eingeblendete Punkte geradlinig aus wechselnden Richtungen auf die Mitte zu. Man tippt jeden Punkt an, bevor er die Zone um das Kreuz erreicht; ein Tipp ins Leere wird nicht bestraft. Mit steigender Stufe werden die Punkte schneller und kleiner, und es sind bis zu vier gleichzeitig unterwegs; nach Fehlschlägen wird wieder zurückgestuft. Die Sitzung hat eine feste Dauer von 50 Sekunden. Es geht darum, den Rand zu beachten, während die Mitte der Fixpunkt bleibt, und die Punkte nach Dringlichkeit abzufangen. Ob der Blick wirklich in der Mitte bleibt, wird nicht gemessen; es ist keine Körperübung und kein Gesichtsfeldtest.
 
 ## 2. Ablauf im Original (Analyse)
 
@@ -147,84 +143,39 @@ UFOV-Trainingsbefunde gelten für ein spezielles Protokoll (Edwards et al., 2018
 
 ## 4. Optische und okulomotorische Grundlagen
 
-- **Sehwinkel [Herleitung, 24″-FHD, 0,277 mm/px, 60 cm]:** Punkt Ø 28 px ≈ 0,74°, Trefferradius 26 → 20 px ≈ 0,69 → 0,53°,
-  Kern-Radius ≈ 1,2°, Startabstand bei 900 px Spielfeldhöhe ≈ 10,8° (11″-Tablet, 40 cm: ≈ 9°) – etwa die UFOV-Prüfexzentrizität
-  (≈ 10,5°; docs/wissenschaft/03), also knapp außerhalb der Makula (Ø ≈ 17°, Radius ≈ 8,5°) in der nahen Peripherie
-  (Einteilung nach Strasburger et al., 2011). Sehschärfe begrenzt nicht.
-- **Tempo:** 80–650 px/s ≈ 2–17°/s, schnelle Punkte bis ≈ 27°/s – gut sichtbar; begrenzend sind Bewegungszeit und Reihenfolge der Abfangziele. Die Reaktion auf
-  das Erscheinen eines einzelnen Punkts spielt nur eine Nebenrolle, weil meist schon andere Punkte im Anflug sind (anders als bei
-  804 mit immer nur einem Ziel).
-  Die Reaktionszeit steigt mit der Exzentrizität nur wenig, je nach Studie um ≈ 0,3–1,8 ms pro Grad (Überblick bei
-  Strasburger et al., 2011).
-- **Farbe/Kontrast:** Rot auf fast Schwarz ist kontraststark; Rot-Grün-Empfindlichkeit fällt zur Peripherie steiler ab (Hansen
-  et al., 2009). Farbe entscheidet nichts – Farbsehschwäche (≈ 8 % der Männer; Birch, 2012) ist kein Ausschlussgrund.
-- **Blickstrategie:** Natürlich ist „Mitte überwachen – Sakkade zum dringlichsten Punkt – Hand folgt“; die verlangte starre
-  Fixation konkurriert damit und ist anstrengend (bei trockenem Auge Pausen).
-- **Brille:** Mit **Gleitsicht** ist der scharfe Zwischenbereich am Bildschirm nur ≈ 13–18° breit (Han et al., 2003) – seitliche
-  Punkte liegen in der unscharfen Zone, man muss den Kopf drehen. Ab ≈ 40 Jahren reicht die Akkommodation für die Nähe nicht
-  mehr (Charman, 2008): Arbeitsplatzbrille für 50–70 cm oder kleineres Spielfeld.
+- **Sehwinkel:** Die Punkte starten am Rand des Feldes und gleiten bis zu einer Zone um die Mitte. Bei 40 cm Abstand entspricht 1 cm etwa 1,4°; liegt der Rand 8 cm von der Mitte entfernt, beträgt die Exzentrizität am Start etwa 11°. Das liegt in der Größenordnung der Exzentrizität, bei der in Aufgaben zum nutzbaren Sehfeld (UFOV) Ziele erscheinen, und damit knapp außerhalb der Makula (Radius etwa 8,5°) in der nahen Peripherie (Einteilung nach Strasburger et al., 2011). Die Sehschärfe begrenzt nicht.
+- **Tempo:** Die Flugzeit vom Rand bis zur Mitte-Zone beträgt je nach Stufe 4,0 bis 1,4 s. Bei 8 cm Weg und 40 cm Abstand sind das im Mittel etwa 3° bis 8° pro Sekunde (eigene Berechnung). Das ist gut sichtbar; begrenzend sind Bewegungszeit und Reihenfolge der Abfangziele. Die Reaktion auf das Erscheinen eines einzelnen Punkts spielt nur eine Nebenrolle, weil auf höheren Stufen meist schon andere Punkte im Anflug sind. Die Reaktionszeit steigt mit der Exzentrizität nur wenig, je nach Studie um etwa 0,3–1,8 ms pro Grad (Überblick bei Strasburger et al., 2011).
+- **Farbe und Kontrast:** Die Punkte sind hell auf dunklem Grund. Farbe trägt keine Bedeutung; Farbsehschwäche (etwa 8 % der Männer; Birch, 2012) ist kein Ausschlussgrund.
+- **Blickstrategie:** Natürlich wäre „Mitte überwachen – Sakkade zum dringlichsten Punkt – Hand folgt“; die verlangte feste Fixation der Mitte konkurriert damit und ist anstrengend (bei trockenem Auge Pausen). Praxisangabe, nicht belegt: Bei konzentrierter Arbeit an einer Aufgabe soll die Umgebung weiter wahrgenommen werden.
+- **Brille:** Mit **Gleitsicht** ist der scharfe Zwischenbereich am Bildschirm nur etwa 13–18° breit (Han et al., 2003) – seitliche Punkte liegen in der unscharfen Zone, man muss den Kopf drehen. Ab etwa 40 Jahren reicht die Akkommodation für die Nähe nicht mehr (Charman, 2008): Arbeitsplatzbrille für 50–70 cm oder kleineres Spielfeld.
 
 ## 5. Neurowissenschaftliche Grundlagen
 
-Plötzlich auftauchende, bewegte Reize ziehen exogene Aufmerksamkeit an (Maximum nach ≈ 100–120 ms; Carrasco, 2011); beteiligt
-sind nach gängigem Verständnis Colliculus superior, frontoparietale Netzwerke (frontales Augenfeld, Parietalkortex) und für
-die Bewegungsanalyse MT/MST (Überblick, hier nicht einzeln belegt). Das Auswählen des dringlichsten Punkts ist eine
-Prioritätsentscheidung, die Zielbewegung beruht auf parietal-prämotorischen Schleifen und Kleinhirn. Treismans Theorie der
-Suche zwischen Ablenkern passt schlecht (keine Ablenker). Dass das Spiel „den Parietallappen“ verändert, ist nicht belegt.
+Plötzlich auftauchende, bewegte Reize ziehen exogene Aufmerksamkeit an (Maximum nach etwa 100–120 ms; Carrasco, 2011); beteiligt sind nach gängigem Verständnis Colliculus superior, frontoparietale Netzwerke (frontales Augenfeld, Parietalkortex) und für die Bewegungsanalyse MT/MST (Überblick, hier nicht einzeln belegt). Das Auswählen des dringlichsten Punkts ist eine Prioritätsentscheidung, die Zielbewegung beruht auf parietal-prämotorischen Schleifen und Kleinhirn. Dass die Übung „den Parietallappen“ verändert, ist nicht belegt. Zur Einordnung von Gesichtsfeldausfällen: Sie zeigen, wo im Verlauf der Sehbahn eine Schädigung liegt – vor der Kreuzung meist einseitig, an der Kreuzung ungleichseitige Halbseitenausfälle, dahinter gleichseitige (Muchnick, 2008, S. 32). Die Übung misst das nicht und ersetzt keine augenärztliche Untersuchung.
 
 ## 6. Motorische Grundlagen
 
-Jeder Treffer ist eine schnelle Zielbewegung auf ein **bewegtes** Ziel: Anfangsimpuls plus rückmeldungsgestützte Korrektur
-(Elliott et al., 2001). Fitts' Gesetz gilt für ruhende Ziele, für bewegte nur eingeschränkt (Jagacinski et al., 1980). Beim
-Abfangen passen Menschen eher den Treffort als den Zeitpunkt an (Brenner & Smeets, 2015) – hier: nahe am Kern abfangen verkürzt
-den Weg, erhöht aber das Durchbruch-Risiko; das Fadenkreuz bleibt nach einem Treffer am Trefferort. Vor dem Klick wird
-das Fadenkreuz kurz dem bewegten Punkt nachgeführt (Nebenrolle). Jeder Punkt braucht genau einen gezielten Klick – schnelles
-Serienklicken ist nicht gefordert. Ältere bewegen sich
-langsamer und variabler (Ketcham et al., 2002). Fehlklicks werden bestraft (leichte Hemmanforderung). Viele Stunden Computer-/Mausarbeit
-pro Tag hängen mit Hand-Arm-Beschwerden zusammen (IJmker et al., 2007); für kurze Runden ist das nicht untersucht.
+Jeder Treffer ist eine schnelle Zielbewegung auf ein **bewegtes** Ziel: Anfangsimpuls plus rückmeldungsgestützte Korrektur (Elliott et al., 2001). Fitts' Gesetz gilt für ruhende Ziele, für bewegte nur eingeschränkt (Jagacinski et al., 1980). Beim Abfangen passen Menschen eher den Treffort als den Zeitpunkt an (Brenner & Smeets, 2015) – hier: einen Punkt nahe der Mitte abzufangen verkürzt den Weg der Hand, erhöht aber das Risiko, dass er die Zone erreicht. Jeder Punkt braucht genau einen gezielten Tipp; schnelles Serientippen ist nicht gefordert. Ältere bewegen sich langsamer und variabler (Ketcham et al., 2002). Viele Stunden Computer- und Mausarbeit pro Tag hängen mit Hand-Arm-Beschwerden zusammen (IJmker et al., 2007); für kurze Durchgänge ist das nicht untersucht.
 
 ## 7. Einflussfaktoren und Messgrenzen
 
-- **Gerät:** Fenstergröße, Bildfrequenz, Mausempfindlichkeit und End-to-End-Latenz (≈ 62–83 ms in Chrome/Firefox auf einem Testrechner, Browser +15–20 ms gegenüber nativer App;
-  Casiez et al., 2015)
-  verändern die Schwierigkeit stark; Punkte nur auf **gleichem Gerät und gleicher Fenstergröße** vergleichbar.
-- **Punkte:** mischen Tempo, Trefferquote, Combo und Rundenlänge; das Level sinkt nie, eine gute Anfangsphase kann in
-  Fehlerserien kippen. Keine Einzel-Reaktionszeiten, keine Auswertung nach Richtung.
-- **Person und Übung:** Alter, Mauserfahrung, Müdigkeit, Brillenkorrektur, Gesichtsfeld. Strategie und Gerätegewöhnung
-  steigern die Punkte schnell – kein Nachweis einer besseren Sehfunktion.
+- **Gerät:** Bildschirmgröße, Bildfrequenz und End-to-End-Latenz (Zeit von der Eingabe bis zur Bildänderung) verändern die Schwierigkeit; in einer Messung an einem Testrechner lag sie im Browser bei etwa 62–83 ms, der Browser fügte gegenüber einer nativen Anwendung 15–20 ms hinzu (Casiez et al., 2015). Messungen am Menschen streuen außerdem; eine hohe Korrelation zweier Geräte heißt nicht, dass die Werte übereinstimmen (Mountford et al., 2004, S. 24, 43–44). Ergebnisse sind nur **auf demselben Gerät** mit sich selbst vergleichbar.
+- **Kennzahlen:** Gezählt werden abgefangene und durchgelassene Punkte; die Stufe ergibt sich aus dem Verlauf der Erfolge. Die Punkte hängen von Stufe und Entfernung beim Abfangen ab. Es gibt keine Einzel-Reaktionszeiten und keine Auswertung nach Richtung.
+- **Person und Übung:** Alter, Erfahrung mit Touch-Geräten, Müdigkeit, Brillenkorrektur und Gesichtsfeld wirken mit. Strategie und Gerätegewöhnung steigern die Ergebnisse schnell – kein Nachweis einer besseren Sehfunktion.
 
 ## 8. Studienlage: Trainierbarkeit und Übertragung
 
-- **Übungseffekt (mittel):** keine Studie zu diesem Spiel; ähnliche Aufgaben werden mit Übung besser, Effekte sind aber stark
-  aufgebläht, wenn Training und Test ähnlich sind (Reaktionszeit SMD 2,66 vs. 0,50; Guo et al., 2025).
-- **Naher Transfer (schwach):** UFOV-Training (Mitte + Rand, kurze Darbietung, adaptiv) verbessert bei Älteren den UFOV-Wert
-  (Edwards et al., 2018) – anders aufgebaut als dieses Spiel. Actionspiel-Befunde widersprüchlich (Green & Bavelier, 2003;
-  Boot et al., 2008).
-- **Alltag/Sport (fehlend):** In 93 Studien zu Peripherie-Werkzeugen im Sport kontrollierte keine die Blickposition per
-  Eyetracking; Transfer nicht nachgewiesen (Vater & Strasburger, 2021; allgemein Simons et al., 2016).
+- **Übungseffekt (mittel):** keine Studie zu dieser Übung; ähnliche Aufgaben werden mit Übung besser, Effekte sind aber stark aufgebläht, wenn Training und Test ähnlich sind (Reaktionszeit SMD 2,66 vs. 0,50; Guo et al., 2025).
+- **Naher Transfer (schwach):** UFOV-Training (Mitte + Rand, kurze Darbietung, adaptiv) verbessert bei Älteren den UFOV-Wert (Edwards et al., 2018) – anders aufgebaut als diese Übung. Actionspiel-Befunde sind widersprüchlich (Green & Bavelier, 2003; Boot et al., 2008).
+- **Alltag und Sport (fehlend):** In 93 Studien zu Peripherie-Werkzeugen im Sport kontrollierte keine die Blickposition per Eyetracking; Transfer nicht nachgewiesen (Vater & Strasburger, 2021; allgemein Simons et al., 2016).
 
 ## 9. Auswahlhinweise für die KI
 
-- **Passt, wenn …** schnelle Auge-Hand-Zielbewegungen, Mehrziel-Überwachung und Priorisieren unter Zeitdruck geübt werden
-  sollen; für mausgeübte Jugendliche/Erwachsene, die Spielcharakter mögen.
-- **Weniger passend, wenn …** ruhiges Sehfeld-Training, langsames Tempo, Tablet oder vergleichbare Messwerte gewünscht sind.
-- **Vorsicht / anpassen bei …** `photosensitive_epilepsie`, `migraene_lichtempfindlich` (rotes Aufblitzen bei jedem Fehler, bei
-  Fehlerserien mehrmals pro Sekunde möglich; Fisher et al., 2005; WCAG 2.2 SC 2.3.1; die Effekt-Einstellung schaltet laut Code
-  nur das rote Overlay ab, nicht das Wackeln); `schwindel_vestibulaer` (bei jedem Fehler wackelt das ganze Spielfeld, 12 px,
-  abklingend – bei Fehlerserien wiederholte großflächige Bildbewegung); `presbyopie_gleitsicht` (seitliche
-  Ziele unscharf); `gesichtsfeldausfall`, `sehbehinderung_niedriger_visus` (Punkte einer Seite evtl. übersehen – keine Aussage
-  über das Gesichtsfeld ableiten, kein Test); `trockenes_auge_bildschirm` (starre Fixation); `hand_arm_beschwerden`,
-  `tremor_parkinson` (schnelle kleine Zielbewegungen); `aufmerksamkeitsprobleme`, `kognitive_einschraenkung`, `kinder_unter_6`
-  (hoher Zeitdruck, Strafen). Sturz- oder Kreislauf-Vorsicht ist mangels Körperbewegung nicht nötig.
-- **Kombiniert gut mit …** 108 (UFOV-artig, ruhiger Blick), 401 (Randreize bei Blickfolge), 104 (ein bewegtes Ziel), 510/502
-  (Zielauswahl), 205 (geteilte Aufmerksamkeit), 803 (Ausweichen statt Abfangen, ohne Klick).
-- **Abgrenzung innerhalb 801–805:** keine echte Dublette, aber **801, 802 und 804 teilen dieselbe Spiel-Engine** (Level =
-  Punkte/1.750 + 1, +2 s je Treffer bis 60 s, −1 s je Fehler, gleiche Combo-Stufen und Note nach √(Punkte/24.000)) und ein fast
-  gleiches Profil (Auge-Hand-Koordination und Zielbewegungstempo 3, Zeitdruck 3). Engste Verwandte ist **802**: ebenfalls
-  bewegte Ziele per Klick abfangen, dort aber senkrecht fallend, deutlich schneller (400–1.250 px/s statt 80–520 px/s) und mit
-  Rot/Grün-Regel. 801 ist die einzige der drei mit mehreren gleichzeitig anfliegenden Zielen, die **alle** getroffen werden
-  müssen (Priorisieren, geteilte Aufmerksamkeit). 804 hat immer nur ein Ziel, dafür die kleinsten Ziele. 803 und 805 kommen
-  ohne Klick aus. Die drei Engine-Geschwister nicht als „Abwechslung“ hintereinander vorschlagen.
+- **Passt, wenn …** schnelle Auge-Hand-Zielbewegungen, Mehrziel-Überwachung und Priorisieren unter Zeitdruck geübt werden sollen; für Menschen, die den Rand beachten und dabei die Mitte als Fixpunkt halten möchten.
+- **Weniger passend, wenn …** ruhiges Sehfeld-Training (108), langsames Tempo oder vergleichbare Messwerte zwischen Geräten gewünscht sind.
+- **Vorsicht / anpassen bei …** `photosensitive_epilepsie`, `migraene_lichtempfindlich` (Punkte werden weich eingeblendet, es gibt keine Blitze und kein Bildwackeln; dennoch Vorsicht bei starker Lichtempfindlichkeit; Fisher et al., 2005; WCAG 2.2 SC 2.3.1); `schwindel_vestibulaer` (bewegte Punkte aus mehreren Richtungen; bei Schwindel abbrechen); `presbyopie_gleitsicht` (seitliche Ziele unscharf); `gesichtsfeldausfall`, `sehbehinderung_niedriger_visus` (Punkte einer Seite evtl. übersehen – keine Aussage über das Gesichtsfeld ableiten, kein Test); `trockenes_auge_bildschirm` (starre Fixation); `hand_arm_beschwerden`, `tremor_parkinson` (schnelle kleine Zielbewegungen); `aufmerksamkeitsprobleme`, `kognitive_einschraenkung`, `kinder_unter_6` (Zeitdruck, mehrere gleichzeitige Ziele). Sturz- oder Kreislauf-Vorsicht ist mangels Körperbewegung nicht nötig. Plötzliche, auch kurzzeitige Sehausfälle auf einem Auge, Doppelbilder, neue Gesichtsfeldlücken oder Schwindel sind Anlass zur ärztlichen Abklärung (Muchnick, 2008, S. 6, 20–21, 28) und kein Übungsthema.
+- **Kombiniert gut mit …** 108 (UFOV-artig, ruhiger Blick), 401 (Randreize bei Blickfolge), 104 (ein bewegtes Ziel), 510/502 (Zielauswahl), 205 (geteilte Aufmerksamkeit), 803 (Ausweichen statt Abfangen, ohne Tippen).
+- **Abgrenzung innerhalb 801–805:** keine echte Dublette, aber ein ähnliches Profil (Auge-Hand-Koordination und Zielbewegungstempo, Zeitdruck). Engster Verwandter ist 802: ebenfalls bewegte Ziele abfangen, dort aber senkrecht fallend und deutlich schneller, mit Unterscheidung nach Farbe. 801 ist die einzige dieser Übungen mit mehreren gleichzeitig anfliegenden Zielen, die **alle** getroffen werden müssen (Priorisieren, geteilte Aufmerksamkeit). 804 hat immer nur ein Ziel, dafür die kleinsten Ziele. 803 und 805 kommen ohne Tippen aus. Die ähnlichen Übungen nicht als „Abwechslung“ hintereinander vorschlagen.
 
 ## 10. Schwächen des Originals und Empfehlungen für eine Blickfit-Umsetzung
 
@@ -277,3 +228,5 @@ pro Tag hängen mit Hand-Arm-Beschwerden zusammen (IJmker et al., 2007); für ku
 
 Prüfvermerk: Alle DOIs am 29.09.2026 per Crossref geprüft, Inhalte über Abstracts/Volltexte (Gruppen-Literaturbasis W10;
 Johansson et al. 2001 per PubMed). Sehwinkel, Zeiten und Pendelausschläge sind eigene Herleitungen aus Code und Formeln.
+- Mountford, J., Ruston, D., & Dave, T. (2004). *Orthokeratology: Principles and Practice*. Butterworth-Heinemann. https://openlibrary.org/isbn/9780750640077 – Messgenauigkeit, Streuung am Menschen, Korrelation und Übereinstimmung (S. 24, 43–44)
+- Muchnick, B. G. (2008). *Clinical Medicine in Optometric Practice* (2nd ed.). Mosby/Elsevier. https://openlibrary.org/isbn/9780323029612 – Warnzeichen mit Abklärungsbedarf (S. 6, 20–21, 28); Gesichtsfeldausfälle nach Verlauf der Sehbahn (S. 32)
