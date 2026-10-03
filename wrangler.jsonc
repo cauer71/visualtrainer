@@ -1,13 +1,21 @@
 {
-  // Cloudflare Worker, der nur die statischen Dateien aus dist/ ausliefert.
+  // Cloudflare Worker: liefert die statischen Dateien aus dist/ aus und beantwortet /api/* (Rückmeldungen der Trainer).
   // Deploy: npm run deploy  (braucht CLOUDFLARE_API_TOKEN in der Umgebung – NIE ins Repo schreiben)
   "$schema": "https://unpkg.com/wrangler/config-schema.json",
   "name": "blickfit",
   "compatibility_date": "2026-09-01",
   "routes": [{ "pattern": "visual.auer.page", "custom_domain": true }],
   "workers_dev": true,
+  // Der Worker (worker/index.ts) beantwortet nur /api/* (Rückmeldungen der Trainer); alles andere kommt direkt aus dist/.
+  "main": "worker/index.ts",
   "assets": {
     "directory": "./dist",
-    "not_found_handling": "single-page-application"
-  }
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application",
+    "run_worker_first": ["/api/*"]
+  },
+  // D1-Datenbank für die Rückmeldungen (die Tabellen legt der Worker beim ersten Aufruf selbst an)
+  "d1_databases": [
+    { "binding": "DB", "database_name": "blickfit-feedback", "database_id": "92eb587e-8a6d-4d95-9c9a-54b96975830c" }
+  ]
 }

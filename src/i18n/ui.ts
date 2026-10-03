@@ -136,7 +136,7 @@ const de = {
   },
   calib: {
     title: 'Bildschirm kalibrieren',
-    lead: 'Damit Größen in Zentimetern stimmen, braucht die App einmal die Größe deines Bildschirms. Das macht die Person am Gerät oder der Optiker; eine Anmeldung ist nicht nötig. Alles bleibt auf diesem Gerät.',
+    lead: 'Damit Größen in Zentimetern stimmen, braucht die App einmal die Größe deines Bildschirms. Das macht die Person am Gerät oder der Trainer; eine Anmeldung ist nicht nötig. Alles bleibt auf diesem Gerät.',
     back: 'Zurück',
     statusDone: (px: string) => `Kalibriert: ${px} Pixel pro cm`,
     statusNone: (px: string) => `Nicht kalibriert – Schätzung: ${px} Pixel pro cm`,
@@ -354,7 +354,7 @@ const it: UiStrings = {
   },
   calib: {
     title: 'Calibra lo schermo',
-    lead: 'Perché le dimensioni in centimetri siano corrette, l’app ha bisogno una volta delle dimensioni del tuo schermo. Lo fa la persona al dispositivo o l’ottico; non serve registrarsi. Tutto resta su questo dispositivo.',
+    lead: 'Perché le dimensioni in centimetri siano corrette, l’app ha bisogno una volta delle dimensioni del tuo schermo. Lo fa la persona al dispositivo o il trainer; non serve registrarsi. Tutto resta su questo dispositivo.',
     back: 'Indietro',
     statusDone: (px: string) => `Calibrato: ${px} pixel per cm`,
     statusNone: (px: string) => `Non calibrato – stima: ${px} pixel per cm`,

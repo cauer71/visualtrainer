@@ -22,8 +22,8 @@ console.log('kunde -> zielfang blockiert:', await p.locator('.hero').count() > 0
 await p.goto(base + '#/katalog'); await p.waitForTimeout(300);
 console.log('kunde -> katalog blockiert:', await p.locator('.catalog').count() === 0);
 await p.goto(base + '#/'); 
-// Optiker
-await p.click('.role-btn'); await p.click('text=Ich bin Optiker'); await p.waitForTimeout(300);
+// Trainer
+await p.click('.role-btn'); await p.click('text=Ich bin Trainer'); await p.waitForTimeout(300);
 console.log('optiker cards:', await p.locator('.ex-card').count());
 await p.goto(base + '#/optiker'); await p.waitForTimeout(300);
 await p.screenshot({ path: `${out}/3-optiker.png`, fullPage: true });

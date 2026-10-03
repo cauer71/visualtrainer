@@ -1,8 +1,10 @@
 import { useState } from 'preact/hooks';
+import { GENERAL_ID } from '../../feedback/logic';
 import { CUSTOMER_COUNT, DEFAULT_CUSTOMER_IDS } from '../../core/storage';
 import { categoryMeta, EXERCISES, matchesTagFilter, type TagFilter } from '../../exercises/registry';
 import { useApp } from '../app-context';
 import { ArtIcon, Icon } from '../components/Icon';
+import { FeedbackButton } from '../components/FeedbackDialog';
 import { LaborBadge } from '../components/LaborBadge';
 import { TagFilterChips } from '../components/TagFilter';
 import { href } from '../router';
@@ -74,6 +76,15 @@ export function OpticianPage() {
               <span class="ex-card-tagline">{opt.shortcutVrText}</span>
             </span>
           </a>
+        </div>
+        <div class="opt-feedback">
+          <p class="muted">{opt.fbGeneralText}</p>
+          <p class="opt-feedback-actions">
+            <FeedbackButton exercise={GENERAL_ID} name={opt.fbGeneralName} class="btn btn-ghost" />
+            <a class="btn btn-ghost btn-sm" href={href('/entwickler')}>
+              {opt.fbDeveloper}
+            </a>
+          </p>
         </div>
       </section>
 

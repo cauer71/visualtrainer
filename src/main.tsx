@@ -3,6 +3,7 @@ import { brand } from './config/brand';
 import { App } from './ui/App';
 import { flags } from './ui/router';
 import './styles/app.css';
+import './styles/feedback.css';
 
 // Markenfarben als CSS-Variablen
 const root = document.documentElement;

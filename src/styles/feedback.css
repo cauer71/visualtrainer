@@ -1,0 +1,162 @@
+/* Rückmeldungen: Bewertungsdialog (Trainer) und Entwickler-Bereich */
+
+.fb-card {
+  text-align: left;
+  max-height: calc(100dvh - 32px);
+  overflow-y: auto;
+}
+.fb-stars {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.fb-star {
+  min-width: 56px;
+  min-height: 56px;
+  font-size: 34px;
+  line-height: 1;
+  border-radius: var(--radius-sm);
+  border: 2px solid var(--line);
+  background: var(--surface);
+  color: var(--muted);
+  cursor: pointer;
+}
+.fb-star.is-on {
+  color: #b45309;
+  background: var(--warn-soft);
+  border-color: #b45309;
+}
+.fb-star:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 2px;
+}
+.fb-stars-text {
+  min-height: 1.4em;
+}
+.fb-label {
+  font-weight: 600;
+}
+.fb-text {
+  width: 100%;
+  min-height: 120px;
+  resize: vertical;
+  font: inherit;
+}
+.fb-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.fb-error {
+  color: var(--bad);
+  font-weight: 600;
+}
+.fb-thanks {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--good);
+}
+.fb-intro {
+  margin-top: 12px;
+}
+.opt-feedback {
+  margin-top: 16px;
+}
+.opt-feedback-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.dev-login {
+  display: grid;
+  gap: 12px;
+  max-width: 320px;
+  margin-top: 16px;
+}
+.dev-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 12px 0;
+}
+.dev-check {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  color: var(--text-2);
+}
+.dev-exported {
+  background: var(--primary-soft);
+  border: 2px solid var(--primary);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  margin: 12px 0;
+}
+.dev-table-wrap {
+  overflow-x: auto;
+}
+.dev-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--surface);
+  border-radius: var(--radius-sm);
+}
+.dev-table th,
+.dev-table td {
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+.dev-table thead th {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.dev-table tbody th {
+  font-weight: 600;
+}
+.dev-row-btn {
+  all: unset;
+  cursor: pointer;
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+.dev-row-btn:disabled {
+  cursor: default;
+  color: var(--text);
+  text-decoration: none;
+}
+.dev-row-btn:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 2px;
+}
+.dev-id {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--muted);
+}
+.dev-stars {
+  color: #b45309;
+  white-space: nowrap;
+}
+.dev-comments {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+.dev-comments p {
+  margin: 4px 0 8px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.dev-meta {
+  font-size: 0.85rem;
+  color: var(--muted);
+}

@@ -12,6 +12,7 @@ import { DemoPlayer } from '../components/DemoPlayer';
 import { ExerciseOptions } from '../components/ExerciseOptions';
 import { CalibNotice, ExerciseParams } from '../components/ExerciseParams';
 import { ArtIcon, Icon } from '../components/Icon';
+import { FeedbackButton } from '../components/FeedbackDialog';
 import { LaborBadge } from '../components/LaborBadge';
 import { Sparkline } from '../components/Sparkline';
 import { enterImmersive, exitImmersive } from '../immersive';
@@ -179,6 +180,11 @@ function Intro({ def, series, onStart }: { def: ExerciseDefinition; series: Seri
             <p>{tx.why}</p>
             {isOptician ? <a href={href(`/hintergrund/${def.id}`)}>{ui.intro.moreScience} →</a> : null}
           </details>
+          {isOptician ? (
+            <p class="fb-intro">
+              <FeedbackButton exercise={def.id} name={tx.title} />
+            </p>
+          ) : null}
         </div>
       </div>
     </main>
@@ -428,7 +434,7 @@ function ResultView({
   onAgain: () => void;
   onClose: () => void;
 }) {
-  const { ui, lang, bumpData } = useApp();
+  const { ui, lang, bumpData, isOptician } = useApp();
   const tx = def.texts[lang];
   const fmt = createFormatter(lang);
   const { result, save } = outcome;
@@ -596,6 +602,7 @@ function ResultView({
           <button type="button" class="btn btn-ghost" onClick={goHome}>
             {ui.result.overview}
           </button>
+          {isOptician ? <FeedbackButton exercise={def.id} name={tx.title} class="btn btn-ghost" /> : null}
         </div>
         <p class="muted small">{ui.result.practice}</p>
         {brand.appointmentUrl ? (

@@ -206,3 +206,12 @@ tests/
 - Gespeichert werden nur Ergebnisse und Einstellungen im `localStorage` des Geräts; Löschen über „Meine Ergebnisse löschen“.
 - Flackernde Inhalte bleiben unter 3 Hz (WCAG 2.3.1); die Übung „Aus dem Takt“ zeigt zusätzlich einen Hinweis.
 - Unterscheidungen nie nur über Farbe (Rot-Grün-Schwäche).
+
+## Rückmeldungen der Trainer (Bewertung 1–5 Sterne + Kommentar)
+
+- In der Ansicht **Trainer** gibt es bei jeder Übung (Einstieg und Ergebnisseite) und auf der Trainer-Seite (allgemein) den Knopf **Bewerten**: Sterne 1–5 und ein Kommentar für den Entwickler. Gespeichert wird anonym, nur mit einer zufälligen Gerätekennung (ein Gerät zählt je Übung mit seiner letzten Bewertung).
+- **Entwickler-Bereich:** `#/entwickler` (Link unten auf der Trainer-Seite), Passwort wird vom Server geprüft. Dort: Tabelle je Übung (Katalognummer, Ø Sterne, Anzahl, Kommentare), Kommentare einzeln lesen, **alle Kommentare als Textdatei exportieren** (mit Katalognummer, Kennung und Kritik, zum Einfügen in Claude Code) und danach **die exportierten Kommentare löschen** (die Sterne bleiben).
+- **Technik:** `worker/index.ts` (Cloudflare Worker, läuft nur für `/api/*`) und die D1-Datenbank `blickfit-feedback` (Bindung `DB` in `wrangler.jsonc`; die Tabellen legt der Worker beim ersten Aufruf selbst an). Gemeinsame Logik: `src/feedback/logic.ts`.
+- **Passwort:** Standard `726`; ändern mit `npx wrangler secret put ADMIN_PASSWORD` (überschreibt den Standard). Nach 8 Fehlversuchen ist die Adresse 15 Minuten gesperrt. Das ist ein leichter Schutz für unkritische Rückmeldungen, kein Hochsicherheits-Login.
+- **Lokal testen:** `npm run build && npx wrangler dev --local --port 8791`, dann `node tests/e2e/feedback.mjs`. Ohne Worker (`npm run dev`, `vite preview`) lässt sich die Rückmeldung nicht senden.
+

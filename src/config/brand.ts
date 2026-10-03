@@ -41,9 +41,9 @@ export const brand: BrandConfig = {
   appName: 'Blickfit',
   opticianName: 'Optik X',
   logoUrl: '',
-  homepageUrl: '',
-  appointmentUrl: '',
-  privacyUrl: '',
+  homepageUrl: 'https://www.example.com/',
+  appointmentUrl: 'https://www.example.com/termin',
+  privacyUrl: 'https://www.example.com/datenschutz',
   imprintUrl: '',
   // Markenfarbe Grün #79AC2B und Holz-Braun #8C6D4A.
   // Für Buttons mit weißer Schrift wird ein tieferes Grün verwendet (#5A7F20, Kontrast 4,7 : 1),

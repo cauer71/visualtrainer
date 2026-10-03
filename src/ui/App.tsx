@@ -11,6 +11,7 @@ import { Footer, Header } from './components/Chrome';
 import { ExercisePage } from './pages/ExercisePage';
 import { Calibrate } from './pages/Calibrate';
 import { Catalog, CatalogEntry } from './pages/Catalog';
+import { Developer } from './pages/Developer';
 import { Home } from './pages/Home';
 import { OpticianPage } from './pages/OpticianPage';
 import { RoleGate } from './components/RoleGate';
@@ -89,6 +90,8 @@ export function App() {
   else if (route.name === 'catalog' && isOptician) page = <Catalog />;
   else if (route.name === 'catalogEntry' && route.id && isOptician) page = <CatalogEntry nr={route.id} />;
   else if (route.name === 'optiker' && isOptician) page = <OpticianPage />;
+  // Entwickler-Bereich: das Passwort prüft der Server (Rückmeldungen der Trainer)
+  else if (route.name === 'developer') page = <Developer />;
   // Kalibrierung: Sache der Person am Gerät, kein Login und keine Optiker-Ansicht nötig
   else if (route.name === 'calibrate') page = <Calibrate />;
   else page = <Home />;
