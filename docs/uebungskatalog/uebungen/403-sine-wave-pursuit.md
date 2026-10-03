@@ -12,7 +12,7 @@ blickfit_umsetzung: {kennung: "wellenbahn", name: "Wellenbahn", unterschiede: "T
 stand: 2026-09-29
 
 # ===== Überblick =====
-kurzbeschreibung: "Ein leuchtender Punkt wandert im Vollbild auf einer Wellenlinie von links nach rechts und wieder zurück und schwingt dabei ständig auf und ab. Man folgt ihm nur mit den Augen, möglichst ohne Blicksprünge – an den Wellenbergen wird er langsam, beim Durchqueren der Mittellinie schnell."
+kurzbeschreibung: "Eine Kugel wandert auf einer Wellenlinie von links nach rechts und wieder zurück und schwingt dabei auf und ab. Man folgt ihr nur mit den Augen, möglichst ohne Blicksprünge, und meldet ein kurz in der Kugel erscheinendes Zeichen (Landolt-Ring). Mit der Stufe werden die Welle steiler und kürzer und das Tempo höher. Ob die Augen wirklich folgen, wird nicht gemessen."
 ziel_funktionen: [blickfolge]
 eingabe: [maus, touch]
 tablet_geeignet: mit_anpassung
@@ -74,8 +74,8 @@ belastung:
 # ===== Auswahlhilfe =====
 voraussetzungen: ["Bildschirm oder Tablet auf fester Unterlage, Abstand 40–70 cm, Kopf möglichst ruhig", "Scharfes Sehen im Zwischenbereich über die ganze Bildbreite und ±8° nach oben/unten (Arbeitsplatzbrille oder Einstärkenglas günstiger als Gleitsicht)", "Maus oder Finger nur zum Starten; während der Übung keine Eingabe nötig", "Bereitschaft, ohne Rückmeldung 30–120 s konzentriert zu folgen"]
 vorsicht_bei: [presbyopie_gleitsicht, schwindel_vestibulaer, reisekrankheit, nystagmus, schielen_binokular, trockenes_auge_bildschirm, kopfschmerz_asthenopie, kinder_unter_6]
-geeignet_fuer: ["glatte Blickfolge mit ständig wechselndem Tempo und senkrechter Komponente üben (Auf-ab-Folge ist schwerer als waagrechte)", "vorhersagbare, periodische Bewegung: Einstieg in 'vorausschauendes' Folgen bei 0,5–1× (Schwingung 0,26–0,53 Hz)", "Selbstbeobachtung eigener Blicksprünge in der schnellen Wellenmitte und an den seitlichen Umkehrpunkten", "kurze Augenübung ohne Hand- oder Körpereinsatz, ohne Flackerreize"]
-weniger_geeignet_fuer: ["alle, die Rückmeldung oder einen Leistungswert erwarten (das Original misst nichts)", "Gleitsichtträger:innen am großen Monitor (Bahn ≈ 43° breit und ≈ 16° hoch, weit über den scharfen Zwischenbereich hinaus)", "Tempo ab 2× für Ungeübte und Ältere (Schwingung ≥ 1 Hz, Spitzentempo ≥ 50°/s: nahe der Grenze glatter Sinusfolge von ≈ 1,2 Hz, zunehmend Aufholsakkaden)", "Ziel Reaktion, Hand-Zielgenauigkeit, Peripherie oder 'Bildschirmmüdigkeit vorbeugen' (nicht gefordert bzw. nicht belegt)"]
+geeignet_fuer: ["glatte Blickfolge mit wechselnder Auf-ab-Komponente üben (die senkrechte Folge ist schwerer als die waagrechte)", "vorhersagbare, periodische Bewegung: Einstieg in 'vorausschauendes' Folgen auf den niedrigen Stufen (flache, lange Welle)", "Selbstbeobachtung eigener Blicksprünge an den Umkehrpunkten und in den steileren Wellenstücken", "kurze Augenübung ohne Körpereinsatz (nur ein Tipp als Antwort) und ohne Flackerreize"]
+weniger_geeignet_fuer: ["alle, die einen Leistungswert oder einen Fortschritt in Prozent erwarten (das Ergebnis gilt nur im Vergleich mit sich selbst)", "Gleitsichtträger:innen am großen Monitor (die Bahn ist bis zu 60 % der Bildschirmbreite breit, weit über den scharfen Zwischenbereich hinaus)", "hohe Stufen für Ungeübte und Ältere (viele Wellen und höheres Tempo: zunehmend Aufholsakkaden)", "Ziel Reaktion, Hand-Zielgenauigkeit, Peripherie oder 'Bildschirmmüdigkeit vorbeugen' (nicht gefordert bzw. nicht belegt)"]
 evidenz:
   uebungseffekt: mittel
   naher_transfer: schwach
@@ -87,14 +87,17 @@ stichworte: ["Sinuswelle", "sine wave pursuit", "smooth pursuit", "glatte Blickf
 
 # 403 · Sinuswelle (Blickfolge auf einer Wellenbahn)
 
-> Original: „Sinuswellen-Blickverfolgung“ („Sine Wave Pursuit“) – skilldrills.online, Kapitel Blickverfolgung
-> (`visual-tracking`) · Blickfit: noch nicht umgesetzt
+> Original: „Sinuswellen-Blickverfolgung“ („Sine Wave Pursuit“) – skilldrills.online, Kapitel Blickverfolgung (`visual-tracking`) · Blickfit: noch nicht umgesetzt
 
 ## 1. Kurzbeschreibung
 
-Auf fast schwarzem Grund läuft ein roter Leuchtpunkt auf einer dünnen Wellenlinie: waagrecht gleichmäßig von Rand
-zu Rand und zurück, senkrecht ständig auf und ab. Man folgt ihm nur mit den Augen, ohne Kopfbewegung und möglichst
-ohne Blicksprünge. Es gibt keine Aufgabe außer Hinschauen, keine Punkte und keine Auswertung.
+Auf ruhigem, dunklem Grund läuft eine Kugel mit gleichmäßigem Tempo entlang einer Wellenlinie von links nach rechts und wieder zurück;
+am Rand bremst sie weich ab und kehrt um. Man folgt ihr nur mit den Augen, ohne Kopfbewegung und möglichst ohne Blicksprünge. In
+unregelmäßigen Abständen erscheint kurz ein Landolt-Ring („C“) in der Kugel, jedoch nur bei vollem Tempo, nie in der Umkehr; mit einem
+großen Button unten meldet man, wohin seine Öffnung zeigt (←, ↑, ↓, →). Eine Sitzung umfasst 20 Zeichen. In 20 Stufen steigen die
+Wellenzahl über die Bahnbreite (von 1 auf 3,5), der Ausschlag nach oben und unten und das Tempo (am Tablet in 40 cm Abstand von etwa
+3,7 auf etwa 19°/s entlang der Bahn); Zeichengröße und Anzeigedauer (650 bis 240 ms) werden strenger, die Hilfslinie blendet aus. Die
+Bahn ist höchstens 60 % der Bildschirmbreite breit. Ob die Augen wirklich folgen, wird nicht gemessen, nur ob das Zeichen erkannt wird.
 
 ## 2. Ablauf im Original (Analyse)
 
@@ -154,69 +157,95 @@ Die Seite sagt, sie erfasse keine Augenposition, diagnostiziere nichts, und rät
 
 ## 4. Optische und okulomotorische Grundlagen
 
-**Tempo und Frequenz.** Ziel ≈ 0,85°, gut sichtbar. 1× (Spitze ≈ 27°/s) ist gut verfolgbar (waagrecht Gain ≈ 0,9 bis 75°/s bei
-periodischen Bahnen; Buizza & Schmid, 1986; senkrecht etwas niedriger). Begrenzend ist die **Frequenz**: bei ± 10° Ausschlag endet glatte Folge bei
-≈ **1,2 Hz** (Ohashi et al., 1985), hier knapp über 2×; ab 3× (1,6 Hz, ≈ 780°/s²) dürften Sakkaden überwiegen
-(eigene Ableitung, an dieser Übung nicht gemessen).
+**Tempo, Ausschlag und Frequenz.** Der Landolt-Ring misst 6 % der kürzeren Bildschirmseite (Stufe 1) und wird mit der Stufe kleiner (nie
+unter 30 px); die Öffnung ist ein Fünftel des Durchmessers. Am 11-Zoll-Tablet in 40 cm sind das etwa 1,4° bis etwa 0,8° – die
+Sehschärfe ist kaum gefordert. Der Ausschlag der Welle wächst von etwa ±0,9° auf etwa ±2,5° (Tablet quer, 40 cm), die Zahl der Wellen über
+die Bahnbreite von 1 auf 3,5; dadurch steigt bei gleichem Tempo die Frequenz der senkrechten Bewegung. Das Tempo entlang der Bahn
+(bis etwa 19°/s) liegt deutlich unter dem, was gut verfolgt werden kann (waagrecht Gain ≈ 0,9 bis 75°/s bei periodischen Bahnen; Buizza & Schmid,
+1986; senkrecht etwas niedriger). Begrenzend ist eher die **Frequenz**: Bei ±10° Ausschlag endet die glatte Sinusfolge bei ≈ 1,2 Hz
+(Ohashi et al., 1985); wo die Grenze für die kleinen Ausschläge dieser Übung liegt, wurde hier nicht bestimmt. Auf hohen Stufen ist mit
+mehr Aufholsakkaden zu rechnen.
 
-**Senkrechte Komponente und Umkehr.** Die Hauptarbeit ist senkrechte Folge – schwächer als waagrechte, aufwärts
-schwächer als abwärts (Rottach et al., 1996; Ke et al., 2013). Aufholsakkaden kommen, wenn Positions- und Tempofehler
-zu groß werden (de Brouwer et al., 2002), vermutlich vor allem in der schnellen Wellenmitte. Der Knick am Rand (alle 7,9 s bzw. 4,9 s am
-Tablet) verlangt Neuausrichtung: bei unvorhersehbarem Richtungswechsel sinkt das Tempo nach ≈ 90 ms, die Richtung ändert
-sich ab ≈ 130 ms (Soechting et al., 2005); hier ist der Knick nach einigen Durchläufen vorhersehbar.
+**Senkrechte Komponente und Umkehr.** Die Hauptarbeit ist senkrechte Folge – schwächer als waagrechte, aufwärts schwächer als abwärts
+(Rottach et al., 1996; Ke et al., 2013). Aufholsakkaden kommen, wenn Positions- und Tempofehler zu groß werden (de Brouwer et al., 2002),
+vermutlich vor allem in den steileren Wellenstücken. Eine Umkehr verlangt Neuausrichtung: Bei unvorhersehbarem abruptem Richtungswechsel
+sinkt das Tempo nach ≈ 90 ms, die Richtung ändert sich ab ≈ 130 ms (Soechting et al., 2005); hier bremst die Kugel am Rand weich ab, und
+der Wechsel wird nach einigen Durchläufen vorhersehbar.
 
-**Brille und Alter.** Die Bahn ist am Monitor ≈ 43° breit und ≈ 16° hoch; Gleitsichtgläser boten in einer Bildschirm-
-studie bei 60 cm nur 13–18° waagrecht klares Sehfeld gegenüber 60° beim Einstärkenglas (Han et al., 2003); das Auf-ab
-(± 8°) führt zudem durch Glaszonen unterschiedlicher Wirkung. Besser: Arbeitsplatzbrille,
-kleineres Fenster, Kopf mitbewegen. Ältere haben bei allen Tempi niedrigeren Gain (Moschner &
-Baloh, 1994) und sättigen oberhalb ≈ 400°/s² zusätzlich (Zackon & Sharpe, 1987; hier ab ≈ 2×) → 0,5–1×. Grundschulkinder haben
-noch niedrigeren Sinus-Gain (Accardo et al., 1995). Am Bildschirm wird selten und oft unvollständig geblinzelt
-(11,6/min beim Lesen; Portello et al., 2013); für Blickfolge nicht untersucht, bei trockenem Auge aber zu beachten.
+**Brille und Alter.** Die Bahn ist am Tablet gut 20° breit, am großen Monitor deutlich mehr; Gleitsichtgläser boten in einer
+Bildschirmstudie bei 60 cm nur 13–18° waagrecht klares Sehfeld gegenüber 60° beim Einstärkenglas (Han et al., 2003); das Auf und Ab führt
+zudem durch Glaszonen unterschiedlicher Wirkung. Besser: Arbeitsplatzbrille, kleineres Fenster, Kopf mitbewegen. Ältere haben bei allen
+Tempi niedrigeren Gain (Moschner & Baloh, 1994) und sättigen oberhalb ≈ 400°/s² zusätzlich (Zackon & Sharpe, 1987) – niedrige Stufen
+wählen. Grundschulkinder haben noch niedrigeren Sinus-Gain (Accardo et al., 1995). Am Bildschirm wird selten und oft unvollständig
+geblinzelt (11,6/min beim Lesen; Portello et al., 2013); für Blickfolge nicht untersucht, bei trockenem Auge aber zu beachten. Rechenregel
+zur Nähe: 40 cm entsprechen 2,5 dpt, 20 cm 5 dpt, 10 cm 10 dpt.
 
 ## 5. Neurowissenschaftliche Grundlagen
 
-Bewegungssignale aus V5/MT und MST gelangen über frontales und supplementäres Augenfeld, Brückenkerne und Kleinhirn
-zu den Augenmuskelkernen (Ilg & Thier, 2008). Bei periodischen Bahnen werden Tempo und Zeitpunkt früherer Bewegung
-gespeichert und vorausschauend abgerufen (Barnes & Asselman, 1991; Barnes, 2008). Eine Wirkung dieser Übung auf
-bestimmte Hirnregionen ist nicht belegt.
+Bewegungssignale aus V5/MT und MST gelangen über frontales und supplementäres Augenfeld, Brückenkerne und Kleinhirn zu den
+Augenmuskelkernen (Ilg & Thier, 2008). Bei periodischen Bahnen werden Tempo und Zeitpunkt früherer Bewegung gespeichert und
+vorausschauend abgerufen (Barnes & Asselman, 1991; Barnes, 2008). Das Kleinhirn ist an der Folgebewegung beteiligt; ob diese Übung es
+oder bestimmte andere Hirnregionen trainiert, ist nicht untersucht. Der rostrale interstitielle Kern (riMLF) ist ein Sakkaden-Generator
+(Sparks, 2002); der gut belegte Unterschied zwischen senkrechter und waagrechter Folge (Rottach et al., 1996; Ke et al., 2013) lässt sich
+daraus nicht ableiten.
+
+Klinisch werden die äußeren Augenmuskeln geprüft, indem die Augen einem nahen Ziel folgen, das in einem „H“ geführt wird; die Prüfung
+betrifft die Hirnnerven III, IV und VI (Muchnick, 2008, S. 32–35). Diese Übung ist keine solche Prüfung.
 
 ## 6. Motorische Grundlagen
 
-Keine Handbewegung gefordert (ein mitgeführter Zeiger wird nicht bewertet); das Auge erreicht ein neues Tempo in ≈ 130 ms (Robinson, 1965).
+Außer dem Antworttipp ist keine Handbewegung gefordert (Tipp auf einen großen Button unten; ein mitgeführter Zeiger wird nicht bewertet).
+Das Auge erreicht ein neues Tempo in ≈ 130 ms (Robinson, 1965).
 
 ## 7. Einflussfaktoren und Messgrenzen
 
-- **Gerät:** Wellenform und Tempo in Grad hängen von Bildgröße, Seitenverhältnis und Abstand ab – zwischen Geräten
-  nicht vergleichbar; mehr als 60–72 Hz nützen wegen der Drosselung nichts.
-- **Zustand und Messung:** Müdigkeit, Alter und geringer Kontrast (Day Mode, dunkle Farbe) senken den Gain. Das
-  Original misst nichts; Besserung in den ersten Zyklen ist Vorhersage-Lernen, keine „Augenfitness“.
+- **Gerät:** Welle und Tempo in Grad hängen von Bildgröße und Abstand ab – zwischen Geräten nicht vergleichbar. Ergebnisse verschiedener
+  Geräte (Touch, Maus, Tablet, Monitor) nicht gleichsetzen: Zwei Verfahren können ähnliche Tendenzen zeigen, ohne dieselben Werte zu
+  liefern (Mountford et al., 2004, S. 24).
+- **Zustand und Messung:** Müdigkeit, Alter und geringer Kontrast senken den Gain. Ohne Blickmessung bleibt offen, ob glatt gefolgt wurde;
+  eine Besserung in den ersten Zyklen ist vor allem Vorhersage-Lernen (die Bahn wird bekannt) und kein Hinweis auf eine allgemeine
+  Verbesserung der Augenbewegungen.
+- **Streuung:** Messungen am Menschen streuen stärker als an Prüfkörpern; ein einzelner Durchgang sagt wenig, und aussagekräftig ist nur
+  der Verlauf über mehrere Sitzungen (Mountford et al., 2004, S. 43–44).
 
 ## 8. Studienlage: Trainierbarkeit und Übertragung
 
-- **Übungseffekt – mittel:** Vorhersagbare Wellenformen lernen Geübte latenzfrei zu verfolgen (Bahill & McDonald, 1983:
-  mittlerer Fehler 0,32 deg², zeitweise < 0,1 deg²); 2 × 6 min an 3 Tagen wirkten bei 10 Personen noch nach 5 Tagen (Eibenberger
-  et al., 2012) – Laborbefunde mit Eyetracker, nicht mit dieser Übung.
-- **Naher Transfer – schwach:** Training mit quasi-zufälliger Bahn verbesserte einen anderen Folgetest (Schritt-Rampe; Eibenberger et al., 2012), sonst keine Daten.
-- **Alltagstransfer – fehlend:** Keine Studie zu Browser-Blickfolge; große Effekte digitaler Sehtrainings entstehen
-  vor allem bei gerätegleichen Tests (Guo, Yuan et al., 2025).
+- **Übungseffekt – mittel:** Vorhersagbare Wellenformen lernen Geübte latenzfrei zu verfolgen (Bahill & McDonald, 1983: mittlerer Fehler
+  0,32 deg², zeitweise < 0,1 deg²); die Vorhersage baut sich in 2–4 Zyklen auf (Reaktionszeit ≈ 300 → 200 ms bei Dreieckreizen; Barnes &
+  Asselman, 1991), beim Einzelzyklus-Sinus 121 → 43 ms (Barnes et al., 2000); 2 × 6 min an 3 Tagen wirkten bei 10 Personen noch nach
+  5 Tagen (Eibenberger et al., 2012) – Laborbefunde mit Eyetracker, nicht mit dieser Übung. Bei Mischungen mehrerer Sinusschwingungen
+  sinkt der Gain der langsamen Anteile von 0,92 auf 0,53, sobald eine schnelle Komponente von 1,56 Hz dazukommt (Barnes et al., 1987).
+- **Naher Transfer – schwach:** Training mit quasi-zufälliger Bahn verbesserte einen anderen Folgetest (Schritt-Rampe; Eibenberger et al.,
+  2012), sonst keine Daten.
+- **Alltagstransfer – fehlend:** Keine Studie zu bildschirmbasierter Blickfolge im Alltag; große Effekte digitaler Sehtrainings entstehen
+  vor allem bei gerätegleichen Tests (Guo, Yuan et al., 2025). Bildschirmbeschwerden hängen u. a. mit seltenem und unvollständigem
+  Lidschlag zusammen (Portello et al., 2013), nicht mit „untrainierten“ Augenmuskeln; Aussagen zu Durchblutung, Muskelentlastung, Ballsport
+  oder Shooter-Spielen sind nicht belegt.
+- **Praxisangaben (Erfahrungswissen, nicht belegt):** In der Sehtherapie werden Folgebewegungen klassisch an einem an einer Schnur hängenden
+  Ball mit Buchstaben geübt, der in verschiedene Richtungen und im Kreis schwingt, bei ruhigem Kopf. Man beginnt am eigenen Arbeitspunkt und
+  steigert in kleinen, selbst gesteuerten Schritten (Tempo, Richtungen, Zeichen auf dem Ziel). Wirksamkeitsbelege dafür liegen nicht vor.
 
 ## 9. Auswahlhinweise für die KI
 
-- **Passt, wenn …** ruhige, periodische Blickfolge mit senkrechter Komponente geübt werden soll; als Stufe nach
-  404/402; bei 0,5–1× mit großem Ziel; als kurze Augenübung ohne Blitzreize und ohne Handeinsatz.
-- **Weniger passend, wenn …** Rückmeldung, Reaktion, Peripherie, Handgenauigkeit oder „Augenentlastung“ gesucht wird.
-- **Vorsicht / anpassen bei …** `presbyopie_gleitsicht` (Bahn durch Unschärfezonen → Arbeitsplatzbrille, kleineres
-  Fenster, Kopf mitbewegen); `schwindel_vestibulaer`, `reisekrankheit` (ständiges Auf-ab, bei hohem Tempo ruckend;
-  langsam beginnen, bei Übelkeit abbrechen); `nystagmus`, `schielen_binokular` (Folge oft verändert –
-  keine Rückschlüsse); `trockenes_auge_bildschirm`, `kopfschmerz_asthenopie` (seltener Lidschlag → kurz, Pausen);
-  `kinder_unter_6` (Folgebewegung reift bis ins Jugendalter).
-- **Kombiniert gut mit …** 404 (langsame 2D-Folge), 402 (Acht), 405/406 (Richtungswechsel), 413 (Zickzack mit
-  Höhenwechsel), 407 (Blicksprung auf ein abbremsendes Ziel – keine Verdeckung), 105 (Mitführen mit dem Zeiger, mit
-  Wertung), 515 (senkrechtes Mitführen mit der Maus).
-- **Fast gleich (Dubletten in der Gruppe):** 402 und 404 haben denselben Aufbau – ein Leuchtpunkt, gleiche Einstellungen,
-  nur Augenfolge, keine Eingabe, keine Messung; es unterscheidet sich nur die Bahn: 403 waagrechter Lauf mit senkrechter
-  Welle (0,53 Hz bei 1×) und hartem Knick am Rand, 402 flache, überwiegend waagrechte Acht, 404 große 2D-Lissajous-Figur.
-  Für eine Auswahl genügt meist eine davon; 403 ist die mit dem höchsten Spitzentempo (≈ 27°/s bei 1× am Monitor).
+- **Passt, wenn …** ruhige, periodische Blickfolge mit senkrechter Komponente geübt werden soll; als Stufe nach 404/402; auf den niedrigen
+  Stufen mit flacher Welle; als kurze Augenübung ohne Blitzreize.
+- **Weniger passend, wenn …** ein Leistungswert, Reaktion, Peripherie, Handgenauigkeit oder „Augenentlastung“ gesucht wird.
+- **Vorsicht / anpassen bei …**
+  - `presbyopie_gleitsicht`: Bahn durch Unschärfezonen → Arbeitsplatzbrille, kleineres Fenster, Kopf mitbewegen.
+  - `schwindel_vestibulaer`, `reisekrankheit`: ständiges Auf und Ab; langsam beginnen, bei Übelkeit abbrechen.
+  - `nystagmus`, `schielen_binokular`: Folge oft verändert – keine Rückschlüsse ziehen.
+  - `trockenes_auge_bildschirm`, `kopfschmerz_asthenopie`: seltener Lidschlag → kurz üben, Pausen.
+  - `kinder_unter_6`: Die Folgebewegung reift bis ins Jugendalter.
+  - Warnzeichen: Doppelbilder, plötzlicher einseitiger Sehverlust, Lichtblitze oder neue Schleier, Kopfschmerz mit Sehverschlechterung,
+    Schwindel oder neu auftretendes Zittern gehören in eine ärztliche Abklärung (Muchnick, 2008, S. 6, 28); dann nicht üben.
+- **Kombiniert gut mit …** 404 (langsame 2D-Folge), 402 (Acht), 405/406 (Richtungswechsel), 413 (Zickzack mit Höhenwechsel), 407 (Blicksprung
+  auf ein abbremsendes Ziel), 105 (Mitführen mit dem Zeiger, mit Wertung), 515 (senkrechtes Mitführen mit der Maus).
+- **Abgrenzung in der Gruppe:** 402–406 teilen den Aufbau (Kugel mit Landolt-Ring, Antwort per Button) und unterscheiden sich in der Bahn:
+  403 waagrechter Lauf mit senkrechter Welle (Wellenzahl und Ausschlag steigen mit der Stufe) und weicher Umkehr am Rand, 402 flache,
+  überwiegend waagrechte Acht, 404 weiche Lissajous-Schlaufe (2 : 3), 405 Zickzack mit schärfer werdendem Knick, 406 Dreieck mit abrupten
+  Ecken. Für eine Auswahl genügt meist eine davon.
+
+Keine Diagnose, kein Heil- oder Sehversprechen.
 
 ## 10. Schwächen des Originals und Empfehlungen für eine Blickfit-Umsetzung
 
@@ -258,3 +287,5 @@ Keine Handbewegung gefordert (ein mitgeführter Zeiger wird nicht bewertet); das
 - Soechting, J. F., Mrotek, L. A., & Flanders, M. (2005). Smooth pursuit tracking of an abrupt change in target direction: Vector superposition of discrete responses. *Experimental Brain Research, 160*(2), 245–258. https://doi.org/10.1007/s00221-004-2010-2 – Umkehr am Rand
 - Sparks, D. L. (2002). The brainstem control of saccadic eye movements. *Nature Reviews Neuroscience, 3*(12), 952–964. https://doi.org/10.1038/nrn986 – riMLF als Sakkaden-Generator
 - Zackon, D. H., & Sharpe, J. A. (1987). Smooth pursuit in senescence: Effects of target acceleration and velocity. *Acta Oto-Laryngologica, 104*(3–4), 290–297. https://doi.org/10.3109/00016488709107331 – Ältere: Gain und Beschleunigungssättigung
+- Muchnick, B. G. (2008). *Clinical Medicine in Optometric Practice* (2nd ed.). Mosby/Elsevier. https://openlibrary.org/isbn/9780323029612 – Warnzeichen, Augenbewegungsprüfung, Sehbahn (S. 6, 28, 32–35)
+- Mountford, J., Ruston, D., & Dave, T. (2004). *Orthokeratology: Principles and Practice*. Butterworth-Heinemann. https://openlibrary.org/isbn/9780750640077 – Messgrundsätze: Wiederholbarkeit, Mehrfachmessung (S. 24, 43–44)

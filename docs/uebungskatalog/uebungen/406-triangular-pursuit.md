@@ -12,7 +12,7 @@ blickfit_umsetzung: {kennung: "dreiecksbahn", name: "Dreiecksbahn", unterschiede
 stand: 2026-09-29
 
 # ===== Überblick =====
-kurzbeschreibung: "Ein Leuchtpunkt läuft im Vollbild gleichmäßig im Uhrzeigersinn auf einem großen Dreieck: schräg nach rechts unten, waagrecht nach links, schräg nach rechts oben. Man folgt ihm nur mit den Augen und versucht, an den drei Ecken den Richtungswechsel ohne große Blicksprünge mitzumachen."
+kurzbeschreibung: "Eine Kugel läuft mit gleichmäßigem Tempo auf einem gleichseitigen Dreieck, im oder gegen den Uhrzeigersinn; in den Ecken ändert sie abrupt die Richtung (um 120°). Man folgt ihr nur mit den Augen und meldet ein auf den Kanten kurz erscheinendes Zeichen (Landolt-Ring). Auf niedrigen Stufen sind die Ecken abgerundet. Ob die Augen wirklich folgen, wird nicht gemessen."
 ziel_funktionen: [blickfolge]
 eingabe: [maus, touch]
 tablet_geeignet: mit_anpassung
@@ -74,8 +74,8 @@ belastung:
 # ===== Auswahlhilfe =====
 voraussetzungen: ["Bildschirm oder Tablet (quer) auf fester Unterlage, Abstand 40–70 cm, Kopf möglichst ruhig", "Scharfes Sehen im Zwischenbereich über ≈ 32° Breite und ≈ 18° Höhe (Monitor) – Arbeitsplatzbrille oder Einstärkenglas günstiger als Gleitsicht", "Maus oder Finger nur zum Starten; während der Übung keine Eingabe", "Bereitschaft, ohne Rückmeldung 30–120 s konzentriert zu folgen"]
 vorsicht_bei: [presbyopie_gleitsicht, schwindel_vestibulaer, reisekrankheit, nystagmus, schielen_binokular, trockenes_auge_bildschirm, kopfschmerz_asthenopie, kinder_unter_6]
-geeignet_fuer: ["Blickfolge auf geraden Bahnen mit regelmäßigen, vorhersagbaren Richtungswechseln üben (waagrecht und schräg, auch schräg aufwärts)", "Wechsel von glatter Folge zu Aufholsakkade und zurück bewusst erleben (Selbstbeobachtung an den Ecken)", "Steigerung nach 404/402: gleiche Ruhe, aber mit Ecken; zuerst mit Linie, dann ohne, zuletzt mit 'Random Speed'", "kurze Augenübung ohne Hand- oder Körpereinsatz, ohne Blitzreize"]
-weniger_geeignet_fuer: ["alle, die Rückmeldung oder einen Leistungswert erwarten (das Original misst nichts)", "Gleitsichtträger:innen am großen Monitor (Dreieck reicht oben in den Fern-, unten in den Nahbereich des Glases und seitlich in die Unschärfezonen)", "Einsteiger:innen und Ältere ab ≈ 2× (am Monitor schon 30–40°/s) – mit 0,5× beginnen", "Ziel Reaktion, Hand-Zielgenauigkeit, Peripherie oder Lesen (nicht gefordert bzw. nicht belegt)", "Tempo ab ≈ 5× (am Monitor ≈ 80–100°/s, an bzw. über der Grenze der glatten Folge – zunehmend Sakkaden, ruckendes Bild)"]
+geeignet_fuer: ["Blickfolge auf geraden Bahnen mit regelmäßigen, vorhersagbaren Richtungswechseln üben (waagrecht und schräg, auch schräg aufwärts)", "Wechsel von glatter Folge zu Aufholsakkade und zurück bewusst erleben (Selbstbeobachtung an den Ecken)", "Steigerung nach 404/402: gleiche Ruhe, aber mit Ecken; zuerst mit abgerundeten Ecken und sichtbarer Linie, dann mit spitzen Ecken ohne Linie", "kurze Augenübung ohne Körpereinsatz (nur ein Tipp als Antwort) und ohne Blitzreize"]
+weniger_geeignet_fuer: ["alle, die einen Leistungswert oder einen Fortschritt in Prozent erwarten (das Ergebnis gilt nur im Vergleich mit sich selbst)", "Gleitsichtträger:innen am großen Monitor (das Dreieck reicht oben in den Fern-, unten in den Nahbereich des Glases und seitlich in die Unschärfezonen)", "Einsteiger:innen und Ältere auf hohen Stufen – mit niedrigen Stufen beginnen", "Ziel Reaktion, Hand-Zielgenauigkeit, Peripherie oder Lesen (nicht gefordert bzw. nicht belegt)"]
 evidenz:
   uebungseffekt: mittel
   naher_transfer: schwach
@@ -87,15 +87,18 @@ stichworte: ["Dreieck", "Polygon", "Richtungswechsel", "Ecken", "diagonale Blick
 
 # 406 · Dreiecksbahn (Blickfolge mit abrupten Richtungswechseln)
 
-> Original: „Dreieckige Blickverfolgung – Diagonale Blickfolge und Eckpunkt-Reerfassung“ („Triangular Pursuit“) –
-> skilldrills.online, Kapitel Blickverfolgung (`visual-tracking`) · Blickfit: noch nicht umgesetzt
+> Original: „Dreieckige Blickverfolgung – Diagonale Blickfolge und Eckpunkt-Reerfassung“ („Triangular Pursuit“) – skilldrills.online, Kapitel Blickverfolgung (`visual-tracking`) · Blickfit: noch nicht umgesetzt
 
 ## 1. Kurzbeschreibung
 
-Auf fast schwarzem Grund (wahlweise weiß) läuft ein roter Leuchtpunkt mit weißem Kern auf einem großen Dreieck, dessen
-Umriss schwach blau eingezeichnet ist. Er startet an der oberen Spitze und läuft immer im Uhrzeigersinn: schräg nach
-rechts unten, waagrecht nach links, schräg nach rechts oben. Auf jeder Kante ist er gleichmäßig schnell, an den Ecken
-knickt er ohne Abbremsen ab. Man folgt nur mit den Augen; es gibt keine Handaufgabe, keine Punkte und keine Rückmeldung.
+Auf ruhigem, dunklem Grund zeigt eine schwache Hilfslinie ein gleichseitiges Dreieck mit der Spitze oben. Eine Kugel läuft mit
+gleichmäßigem Tempo – auf allen drei Kanten gleich viele Grad pro Sekunde – im oder gegen den Uhrzeigersinn (zufällig gewählt). In den
+Ecken ändert sich die Richtung abrupt um 120°; auf niedrigen Stufen sind die Ecken abgerundet, ab Stufe 9 sind sie spitz. Man folgt der
+Kugel nur mit den Augen bei ruhigem Kopf. In unregelmäßigen Abständen erscheint kurz ein Landolt-Ring („C“) in der Kugel, nur auf den
+Kanten und mit Abstand zu jeder Ecke; mit einem großen Button unten meldet man, wohin seine Öffnung zeigt (←, ↑, ↓, →). Eine Sitzung
+umfasst 20 Zeichen. Das Tempo steigt in 20 Stufen (am Tablet in 40 cm Abstand von etwa 3,7 auf etwa 16°/s), Zeichengröße und
+Anzeigedauer (650 bis 240 ms) werden strenger, die Hilfslinie blendet aus. Die Bahn ist höchstens 60 % der Bildschirmbreite breit. Ob die
+Augen wirklich folgen, wird nicht gemessen, nur ob das Zeichen erkannt wird.
 
 ## 2. Ablauf im Original (Analyse)
 
@@ -149,74 +152,93 @@ Wiedererfassungszeit erheblich“). Stufentabelle von „Elite: Landefehler < 12
 
 ## 4. Optische und okulomotorische Grundlagen
 
-- **Sehwinkel:** Ziel Ø ≈ 0,84° (Monitor) bzw. ≈ 0,9° (Tablet) – Visus kaum gefordert; ein kleines, in die Fovea
-  passendes Ziel erzeugt mehr Aufholsakkaden als ein größeres Objekt (Heinen et al., 2016). Radius 20–30 px (Ø ≈ 1–1,6°)
-  erleichtert Einsteiger:innen zumindest das Wiederfinden an den Ecken (eigene Einschätzung, nicht untersucht).
-- **Kanten:** Folgelatenz ≈ 100 ms (Carl & Gellman, 1987), Gain < 0,95, Aufholsakkaden normal (Collewijn & Tamminga,
-  1984); waagrechte periodische Dreieckbewegung wird bis ≈ 75°/s annähernd linear mit Gain ≈ 0,9 verfolgt (Buizza & Schmid, 1986). 1× (16–21°/s) ist gut
-  machbar, ab 3× steigt der Sakkadenanteil, ab 5× überwiegt er (eigene Einschätzung). Schräg aufwärts ist am schwersten.
-- **Ecken:** Unvorhergesehen antwortet das Auge als Summe „alte Richtung stoppen“ + „neue starten“ (Soechting et al.,
-  2005), die Hand ebenso (Engel et al., 2000). Bei fester Sequenz entsteht nach 2–3 Wiederholungen eine vorausschauende
-  Antwort (Barnes & Schmid, 2002); auf einer Vierecksbahn beginnen Abbremsen und Beschleunigen in der neuen Richtung fast
-  gleichzeitig **vor** der Ecke, stärker bei vorhersagbarem Takt (Barnes & Collins, 2015) – „Random Speed“ nimmt das teilweise weg.
-- **Hintergrund, Alter:** strukturierte Hintergründe senken den glatten Gain waagrecht um ≈ 10 %, senkrecht um ≈ 20 % (Collewijn & Tamminga,
-  1984) → „Scanlines“/Spur weglassen (ein sehr schwaches 40-px-Raster liegt im Code immer im Hintergrund). Mit dem Alter lassen Grundparameter der Folge nach, die Vorhersage bleibt (Sprenger et al., 2011, u. a. mit
-  geglätteter Dreieckbewegung) → 0,5–1× wählen.
-- **Gleitsicht/Arbeitsplatz:** Das Dreieck ist am Monitor ≈ 32° × 18°; das klare Sehfeld zweier untersuchter Gleitsichtgläser war
-  in 60 cm nur ≈ 13° bzw. 18° breit (Einstärkenglas ≈ 60°), mit längeren Augen- und Kopfbewegungen (Han et al., 2003). Die Spitze (18 % Bildhöhe) fällt in
-  den Fernteil, die Basis (82 %) Richtung Nahteil – beides in 60 cm unscharf. Besser Arbeitsplatzbrille, kleineres Feld,
-  Kopfbewegung erlauben. Tablet in 40 cm: ≈ 2,5 dpt Nahbedarf.
-- **Trockenes Auge:** Beim Lesen am Bildschirm (50 cm) im Mittel 11,6 Lidschläge/min, davon
-  ≈ 16 % unvollständig (Portello et al., 2013) → kurze Durchgänge,
-  bewusst blinzeln. Farbe spielt keine Rolle.
+- **Sehwinkel:** Der Landolt-Ring misst 6 % der kürzeren Bildschirmseite (Stufe 1) und wird mit der Stufe kleiner (nie unter 30 px); die
+  Öffnung ist ein Fünftel des Durchmessers. Am 11-Zoll-Tablet in 40 cm sind das etwa 1,4° bis etwa 0,8° – die Sehschärfe ist kaum gefordert.
+  Ein kleines, in die Fovea passendes Ziel erzeugt mehr Aufholsakkaden als ein größeres Objekt (Heinen et al., 2016); ein größerer Ring
+  erleichtert Einsteiger:innen zumindest das Wiederfinden an den Ecken (Einschätzung, nicht untersucht).
+- **Kanten:** Folgelatenz ≈ 100 ms (Carl & Gellman, 1987), Gain < 0,95, Aufholsakkaden normal (Collewijn & Tamminga, 1984); waagrechte
+  periodische Dreieckbewegung wird bis ≈ 75°/s annähernd linear mit Gain ≈ 0,9 verfolgt (Buizza & Schmid, 1986) – das Tempo dieser Übung
+  (bis ≈ 16°/s) liegt deutlich darunter. Schräg aufwärts ist am schwersten (Rottach et al., 1996; Ke et al., 2013).
+- **Ecken:** Unvorhergesehen antwortet das Auge als Summe „alte Richtung stoppen“ + „neue starten“ (Soechting et al., 2005), die Hand ebenso
+  (Engel et al., 2000); Aufholsakkaden folgen nach ≈ 125 ms (de Brouwer et al., 2002). Bei fester Sequenz entsteht nach 2–3 Wiederholungen
+  eine vorausschauende Antwort (Barnes & Schmid, 2002); auf einer Vierecksbahn beginnen Abbremsen und Beschleunigen in der neuen Richtung
+  fast gleichzeitig **vor** der Ecke, stärker bei vorhersagbarem Takt (Barnes & Collins, 2015). Auf niedrigen Stufen nehmen die
+  abgerundeten Ecken der Aufgabe die Schärfe; ab Stufe 9 sind sie spitz.
+- **Hintergrund, Alter:** Strukturierte Hintergründe senken den glatten Gain waagrecht um ≈ 10 %, senkrecht um ≈ 20 % (Collewijn & Tamminga,
+  1984); der Hintergrund der Übung bleibt ruhig. Mit dem Alter lassen Grundparameter der Folge nach, die Vorhersage bleibt (Sprenger et al.,
+  2011, u. a. mit geglätteter Dreieckbewegung) → niedrige Stufen wählen.
+- **Gleitsicht/Arbeitsplatz:** Das Dreieck ist am Monitor deutlich breiter als der scharfe Zwischenbereich; das klare Sehfeld zweier
+  untersuchter Gleitsichtgläser war in 60 cm nur ≈ 13° bzw. 18° breit (Einstärkenglas ≈ 60°), mit längeren Augen- und Kopfbewegungen (Han et
+  al., 2003). Die Spitze fällt in den Fernteil, die Basis Richtung Nahteil – beides in 60 cm unscharf. Besser Arbeitsplatzbrille, kleineres
+  Feld, Kopfbewegung erlauben. Tablet in 40 cm: ≈ 2,5 dpt Nahbedarf (Rechenregel: 20 cm = 5 dpt, 10 cm = 10 dpt).
+- **Trockenes Auge:** Beim Lesen am Bildschirm (50 cm) im Mittel 11,6 Lidschläge/min, davon ≈ 16 % unvollständig (Portello et al., 2013) →
+  kurze Durchgänge, bewusst blinzeln. Farbe spielt keine Rolle.
 
 ## 5. Neurowissenschaftliche Grundlagen
 
-- Signale aus MT/V5 und MST laufen über Folgeareal des frontalen Augenfelds, supplementäres Augenfeld, Brückenkerne und
-  Kleinhirn (Flocculus/Paraflocculus, hinterer Vermis) zu den Augenmuskelkernen (Lencer & Trillenberg, 2008). Nach
-  Vermis-Läsion sank bei Affen der Gain für Dreieckbewegung um bis zu 15 % (Takagi et al., 2000) – Beteiligung, kein Trainingsbeleg.
-- Vorhersagende Folge ist mit frontalem Kortex und Bewegungsarealen verknüpft (Kowler et al., 2019); Geschwindigkeit und
-  Reihenfolge von mindestens vier Bahnabschnitten werden kurz gespeichert (Barnes & Schmid, 2002). Die Aufholsakkade an der
-  Ecke erzeugen Burst-Generatoren im Hirnstamm (Sparks, 2002). Dass die Übung diese Netzwerke „stärkt“, ist nicht untersucht.
+- Signale aus MT/V5 und MST laufen über das Folgeareal des frontalen Augenfelds, das supplementäre Augenfeld, Brückenkerne und Kleinhirn
+  (Flocculus/Paraflocculus, hinterer Vermis) zu den Augenmuskelkernen (Lencer & Trillenberg, 2008). Nach Vermis-Läsion sank bei Affen der Gain
+  für Dreieckbewegung um bis zu 15 % (Takagi et al., 2000) – Beteiligung, kein Trainingsbeleg.
+- Vorhersagende Folge ist mit frontalem Kortex und Bewegungsarealen verknüpft (Kowler et al., 2019); Geschwindigkeit und Reihenfolge von
+  mindestens vier Bahnabschnitten werden kurz gespeichert (Barnes & Schmid, 2002). „Kurvenschneiden“ an Ecken ist normales
+  Vorhersageverhalten, keine Fehlfunktion (Kowler et al., 2019; Collewijn & Tamminga, 1984).
+- Die Aufholsakkade an der Ecke erzeugen Burst-Generatoren im Hirnstamm; die horizontalen (PPRF) und vertikalen (riMLF) Blickzentren sind
+  Generatoren für **Sakkaden**, nicht Schaltstellen der Folge (Sparks, 2002). Mikrosakkaden sind Fixationsbewegungen, keine Aufholsakkaden.
+  Folge und Aufholsakkade arbeiten als ein sensomotorischer Prozess zusammen (Orban de Xivry & Lefèvre, 2007). Dass die Übung diese Netzwerke
+  „stärkt“, ist nicht untersucht.
+- **Klinischer Hintergrund:** Die äußeren Augenmuskeln werden klinisch geprüft, indem die Augen einem nahen Ziel folgen, das in einem „H“
+  geführt wird; die Prüfung betrifft die Hirnnerven III, IV und VI (Muchnick, 2008, S. 32–35). Diese Übung ist keine solche Prüfung.
 
 ## 6. Motorische Grundlagen
 
-Keine Handbewegung gefordert – alle motorischen Merkmale 0; die „Motorik“ ist die Augenbewegung (glatte Folge +
-Aufholsakkaden). Wer mit Finger oder Maus mitfährt, übt manuelles Tracking mit ähnlicher Eckendynamik (Engel et al., 2000).
+Die „Motorik“ der Übung ist die Augenbewegung (glatte Folge + Aufholsakkaden); dazu kommt der Antworttipp auf einen großen Button. Wer
+zusätzlich mit Finger oder Maus mitfährt, übt manuelles Tracking mit ähnlicher Eckendynamik (Engel et al., 2000); die Übung verlangt und
+wertet das nicht.
 
 ## 7. Einflussfaktoren und Messgrenzen
 
-- **Keine Messung** ohne Eyetracker. **Gerät:** Winkel und °/s hängen von Format, Größe und Abstand ab („1×“ ist kein fester Reiz).
-- **Person/Lernen:** Alter, Müdigkeit, Konzentration; die feste Bahn wird nach wenigen Runden vorhergesagt (Barnes &
-  Schmid, 2002) – spätere Runden sind leichter, ohne dass sich die Reaktion auf Unvorhergesehenes ändert.
+- **Keine Blickmessung:** Ob glatt gefolgt wurde, bleibt offen; das Zeichen lässt sich auch mit einzelnen Blicksprüngen erkennen.
+- **Gerät:** Dreieckgröße und °/s hängen von Bildgröße und Abstand ab („Stufe 5“ ist kein fester Reiz); die Form bleibt gleichseitig.
+  Ergebnisse verschiedener Geräte (Touch, Maus, Tablet, Monitor) nicht gleichsetzen: Zwei Verfahren können ähnliche Tendenzen zeigen, ohne
+  dieselben Werte zu liefern (Mountford et al., 2004, S. 24).
+- **Person/Lernen:** Alter, Müdigkeit, Konzentration; die feste Bahn wird nach wenigen Runden vorhergesagt (Barnes & Schmid, 2002) – spätere
+  Runden sind leichter, ohne dass sich die Reaktion auf Unvorhergesehenes ändert.
+- **Streuung:** Messungen am Menschen streuen stärker als an Prüfkörpern; ein einzelner Durchgang sagt wenig, und aussagekräftig ist nur der
+  Verlauf über mehrere Sitzungen (Mountford et al., 2004, S. 43–44).
 
 ## 8. Studienlage: Trainierbarkeit und Übertragung
 
-- **Übungseffekt – mittel:** Vorausschauendes Verfolgen wiederholter Rampensequenzen stellt sich nach 2–3 Durchgängen ein
-  (Barnes & Schmid, 2002); 2 × 6 min Pursuit-Training an 3 Tagen wirkte 5 Tage nach (N = 10 + 10; Eibenberger et al.,
-  2012). Laborbefunde mit Eyetracker, nicht mit dieser Übung.
-- **Naher Transfer – schwach:** gelernt wird vor allem die konkrete Sequenz; ob die Reaktion auf **neue** Richtungswechsel
-  (≈ 90–130 ms; Soechting et al., 2005) schneller wird, ist nicht gezeigt.
+- **Übungseffekt – mittel:** Vorausschauendes Verfolgen wiederholter Rampensequenzen stellt sich nach 2–3 Durchgängen ein (Barnes & Schmid,
+  2002); 2 × 6 min Pursuit-Training an 3 Tagen wirkte 5 Tage nach (N = 10 + 10; Eibenberger et al., 2012). Laborbefunde mit Eyetracker, nicht
+  mit dieser Übung.
+- **Naher Transfer – schwach:** gelernt wird vor allem die konkrete Sequenz; ob die Reaktion auf **neue** Richtungswechsel (≈ 90–130 ms;
+  Soechting et al., 2005) schneller wird, ist nicht gezeigt.
 - **Alltagstransfer – fehlend:** keine Studie zu Sport, E-Sport oder Verkehr.
+- **Praxisangaben (Erfahrungswissen, nicht belegt):** In der Sehtherapie werden Folgebewegungen klassisch an einem an einer Schnur hängenden
+  Ball mit Buchstaben geübt, der in verschiedene Richtungen schwingt, bei ruhigem Kopf. Man beginnt am eigenen Arbeitspunkt und steigert in
+  kleinen, selbst gesteuerten Schritten. Wirksamkeitsbelege dafür liegen nicht vor.
 
 ## 9. Auswahlhinweise für die KI
 
-- **Passt, wenn …** Blickfolge mit regelmäßigen Richtungswechseln ohne Hand- und Reaktionsdruck geübt werden soll; als
-  Steigerung nach 404/402 (0,5–1×, großer Zielradius, Linie sichtbar); als kurze Augenübung ohne Blitzreize.
-- **Weniger passend, wenn …** Rückmeldung gewünscht ist; Reaktion, Peripherie, Handgenauigkeit oder Lesen das Ziel sind.
-- **Vorsicht / anpassen bei …** `presbyopie_gleitsicht` (Fern-, Nah- und seitliche Unschärfezonen → Arbeitsplatzbrille,
-  kleineres Feld, Kopf mitbewegen); `schwindel_vestibulaer`, `reisekrankheit` (abrupte Bewegungswechsel bei ruhigem Kopf, langsam beginnen, bei Übelkeit
-  abbrechen); `nystagmus`, `schielen_binokular` (Folge oft verändert, Doppelbilder möglich – keine Rückschlüsse);
-  `trockenes_auge_bildschirm`, `kopfschmerz_asthenopie` (seltener Lidschlag → kurz, Pausen); `kinder_unter_6`
-  (Folgebewegung reift bis ins Jugendalter).
-- **Kombiniert gut mit …** 404 (Einstieg), 405 (Zickzack), 413, 415/410 (unvorhersehbare Wechsel), 407 (Blicksprung
-  auf ein abbremsendes Ziel), 105, 707.
-- **Fast gleich (Dubletten):** 405 in derselben Gruppe – gerade Strecken mit gleichbleibendem Tempo und Knick ohne
-  Abbremsen, nur Augenfolge, keine Messung; Unterschied: 406 knickt bei 1× alle 1,54 s um 97°/132° auf schrägen und
-  waagrechten Kanten, 405 alle 0,65 s um ≈ 143° auf steilen, überwiegend senkrechten Strecken (schneller, schwerer).
-  Für eine Auswahl genügt meist eine davon; 406 ist die ruhigere Stufe nach 404/402.
-- **Hinweis zum Profil:** Das Merken der Bahnabschnitte (Barnes & Schmid, 2002) steckt im Wert `antizipation`; ein
-  eigener Gedächtniswert wird wie bei 402–405 nicht vergeben, weil die Bahnlinie standardmäßig sichtbar ist.
+- **Passt, wenn …** Blickfolge mit regelmäßigen Richtungswechseln ohne Reaktionsdruck geübt werden soll; als Steigerung nach 404/402 (niedrige
+  Stufen, Linie sichtbar); als kurze Augenübung ohne Blitzreize.
+- **Weniger passend, wenn …** ein Leistungswert gewünscht ist; Reaktion, Peripherie, Handgenauigkeit oder Lesen das Ziel sind.
+- **Vorsicht / anpassen bei …**
+  - `presbyopie_gleitsicht`: Fern-, Nah- und seitliche Unschärfezonen → Arbeitsplatzbrille, kleineres Feld, Kopf mitbewegen.
+  - `schwindel_vestibulaer`, `reisekrankheit`: abrupte Bewegungswechsel bei ruhigem Kopf; langsam beginnen, bei Übelkeit abbrechen.
+  - `nystagmus`, `schielen_binokular`: Folge oft verändert, Doppelbilder möglich – keine Rückschlüsse ziehen.
+  - `trockenes_auge_bildschirm`, `kopfschmerz_asthenopie`: seltener Lidschlag → kurz üben, Pausen.
+  - `kinder_unter_6`: Die Folgebewegung reift bis ins Jugendalter.
+  - Warnzeichen: Doppelbilder, plötzlicher einseitiger Sehverlust, Lichtblitze oder neue Schleier, Kopfschmerz mit Sehverschlechterung,
+    Schwindel oder neu auftretendes Zittern gehören in eine ärztliche Abklärung (Muchnick, 2008, S. 6, 28); dann nicht üben.
+- **Kombiniert gut mit …** 404 (Einstieg), 405 (Zickzack), 413, 415/410 (unvorhersehbare Wechsel), 407 (Blicksprung auf ein abbremsendes Ziel),
+  105, 707.
+- **Abgrenzung in der Gruppe:** 402–406 teilen den Aufbau (Kugel mit Landolt-Ring, Antwort per Button) und unterscheiden sich in der Bahn:
+  406 hat drei Ecken mit je 120° Richtungswechsel auf schrägen und waagrechten Kanten und ist die ruhigere Stufe nach 404/402; 405 knickt an
+  jeder Spitze um 110°–160° auf steilen, überwiegend senkrechten Strecken (schwerer). 402 flache Acht, 403 Sinuswelle, 404 weiche
+  Lissajous-Schlaufe. Für eine Auswahl genügt meist eine davon.
+
+Keine Diagnose, kein Heil- oder Sehversprechen.
 
 ## 10. Schwächen des Originals und Empfehlungen für eine Blickfit-Umsetzung
 
@@ -232,10 +254,10 @@ Aufholsakkaden). Wer mit Finger oder Maus mitfährt, übt manuelles Tracking mit
 ### Von der Website angegeben
 - de Brouwer, S., Yuksel, D., Blohm, G., Missal, M., & Lefèvre, P. (2002). What triggers catch-up saccades during visual tracking? *Journal of Neurophysiology, 87*(3), 1646–1650. https://doi.org/10.1152/jn.00432.2001 – **Prüfung:** DOI stimmt ✓, Erstautorin falsch angegeben („A. J.“ statt S. = Sophie); **stützt die Aussage der Website:** teilweise (Auslöseregel für Aufholsakkaden ja; Ecken, Stufentabelle und Pixelwerte nein)
 - „Heinen, S. J., Badler, J. B., & Ting, W. (2005). Timing and kinematics of saccadic decisions in smooth pursuit. *J Neurophysiol, 94*(4), 2638–2648.“ – **Prüfung:** nicht auffindbar; die DOI 10.1152/jn.00282.2005 gehört zu einer Studie über Gesangslernen bei Zebrafinken. Reale Arbeit derselben Autor:innen: Heinen, S. J., Badler, J. B., & Ting, W. (2005). Timing and velocity randomization similarly affect anticipatory pursuit. *Journal of Vision, 5*(6), 493–503. https://doi.org/10.1167/5.6.1; **stützt:** nein (FEF/SEF-Aussage, Sportnutzen und Stufen nicht belegt)
-- „Orban de Xivry, J. J., & Lefèvre, P. (2007). Saccades and the solution to the aperture problem for smooth pursuit. *Behavioral and Brain Functions, 3*, 33.“ – **Prüfung:** Titel/Zeitschrift nicht existent, DOI 10.1186/1744-9081-3-33 gehört zu einer anderen Arbeit (Heijtz et al., ADHS). Reale Arbeit: Orban de Xivry, J.-J., & Lefèvre, P. (2007). Saccades and pursuit: Two outcomes of a single sensorimotor process. *The Journal of Physiology, 584*(1), 11–23. https://doi.org/10.1113/jphysiol.2007.139881; **stützt:** teilweise (Synergie Sakkade–Folge ja; PPRF/riMLF als Folgezentren nein)
+- Orban de Xivry, J.-J., & Lefèvre, P. (2007). Saccades and pursuit: Two outcomes of a single sensorimotor process. *The Journal of Physiology, 584*(1), 11–23. https://doi.org/10.1113/jphysiol.2007.139881 – **Prüfung:** Titel, Zeitschrift und DOI auf der Website falsch (die DOI gehört zu Heijtz et al., 2007, Calcyon/ADHS); die hier genannte Arbeit existiert, DOI per Crossref ✓; **stützt:** teilweise (Synergie Sakkade–Folge ja; PPRF/riMLF als Folgezentren nein)
 - „Bennett, S. J., & Barnes, G. R. (2006). Timing of predictive saccades during pursuit of targets undergoing angular trajectory changes. *Vision Research, 46*(17), 2736–2746.“ – **Prüfung:** nicht auffindbar (Crossref, PubMed); die DOI 10.1016/j.visres.2006.03.011 gehört zu einer Farbkonstanz-Studie; **stützt:** nein (Antizipation an Ecken ist real, belegt aber durch andere Arbeiten, z. B. Barnes & Collins, 2015)
 - Barnes, G. R. (2008). Cognitive processes involved in smooth pursuit eye movements. *Brain and Cognition, 68*(3), 309–326. https://doi.org/10.1016/j.bandc.2008.08.020 – **Prüfung:** DOI stimmt ✓; **stützt:** teilweise (Vorhersage über extraretinale Signale ja; „40 ms vor dem Scheitel“, Trainingsaufbau nein)
-- Woods, D. L., Wyma, J. M., Yund, E. W., Herron, T. J., & Reed, B. (2015). Factors influencing the latency of simple reaction time. *Frontiers in Human Neuroscience, 9*, 131. https://doi.org/10.3389/fnhum.2015.00131 – **Prüfung:** DOI stimmt ✓; **stützt:** teilweise/nein (Reaktionszeitstudie; Hardware-Verzögerungen durch Bildschirm und USB-Eingabe werden allgemein behandelt, die Werte zu 144/240 Hz und das Eckpunkt-Timing stehen dort nicht; für eine Übung ohne Eingabe ohnehin kaum relevant)
+- Woods, D. L., Wyma, J. M., Yund, E. W., Herron, T. J., & Reed, B. (2015). Factors influencing the latency of simple reaction time. *Frontiers in Human Neuroscience, 9*, 131. https://doi.org/10.3389/fnhum.2015.00131 – **Prüfung:** DOI stimmt ✓; **stützt:** nein (Reaktionszeitstudie; Hardware-Verzögerungen durch Bildschirm und USB-Eingabe werden allgemein behandelt, die Werte zu 144/240 Hz und das Eckpunkt-Timing stehen dort nicht; für eine Übung ohne Eingabe ohnehin kaum relevant)
 - (nur im Text) Leigh, R. J., & Zee, D. S. (2015). *The neurology of eye movements* (5th ed.). Oxford University Press. https://doi.org/10.1093/med/9780199969289.001.0001 – **Prüfung:** Buch, DOI per Crossref geprüft ✓, Inhalt nicht eingesehen; Website nennt hier keine DOI (in anderen Übungen eine falsche); **stützt:** nein („−60 % Mikrosakkaden durch LTD“ nicht prüfbar und unplausibel)
 
 ### Weitere Fachliteratur
@@ -257,3 +279,5 @@ Aufholsakkaden). Wer mit Finger oder Maus mitfährt, übt manuelles Tracking mit
 - Sparks, D. L. (2002). The brainstem control of saccadic eye movements. *Nature Reviews Neuroscience, 3*(12), 952–964. https://doi.org/10.1038/nrn986 – PPRF/riMLF als Sakkadengeneratoren (nur bibliografisch geprüft)
 - Sprenger, A., Trillenberg, P., Pohlmann, J., Herold, K., Lencer, R., & Helmchen, C. (2011). The role of prediction and anticipation on age-related effects on smooth pursuit eye movements. *Annals of the New York Academy of Sciences, 1233*, 168–176. https://doi.org/10.1111/j.1749-6632.2011.06114.x – Vorhersage im Alter erhalten
 - Takagi, M., Zee, D. S., & Tamargo, R. J. (2000). Effects of lesions of the oculomotor cerebellar vermis on eye movements in primate: Smooth pursuit. *Journal of Neurophysiology, 83*(4), 2047–2062. https://doi.org/10.1152/jn.2000.83.4.2047 – Vermis und Dreieckbewegung (Affen)
+- Muchnick, B. G. (2008). *Clinical Medicine in Optometric Practice* (2nd ed.). Mosby/Elsevier. https://openlibrary.org/isbn/9780323029612 – Warnzeichen, Augenbewegungsprüfung, Sehbahn (S. 6, 28, 32–35)
+- Mountford, J., Ruston, D., & Dave, T. (2004). *Orthokeratology: Principles and Practice*. Butterworth-Heinemann. https://openlibrary.org/isbn/9780750640077 – Messgrundsätze: Wiederholbarkeit, Mehrfachmessung (S. 24, 43–44)
