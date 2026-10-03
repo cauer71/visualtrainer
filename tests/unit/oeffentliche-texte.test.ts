@@ -23,7 +23,7 @@ const FORBIDDEN: [string, RegExp][] = [
   ['Original/Originalspiel', /\boriginal(e|s|en|em|er)?\b|\bim original\b/i],
   ['Website/Webseite/Seitentext', /\bwebsite\b|\bwebseite\b|\bseitentext\b|\bseitentitel\b|\bsito web\b|\bpagina web\b/i],
   ['Prototyp', /\bprototyp\w*\b|\bprototipo\b/i],
-  ['Programm-/Seitennamen', /light reaction|entropic grid|vivid visions|youtube|whatsapp|aim ?lab|lumosity|cogmed|brainhq/i],
+  ['Programm-/Seitennamen', /light reaction|entropic grid|vivid visions|youtube|whatsapp|aim ?lab|lumosity|cogmed|brainhq|pointer ?lock/i],
   ['Auftraggeber', /\bauftraggeber\w*\b/i],
   ['interne Unterlagen', /\bVTC\b|mirante|\bcorso n\b/i],
   ['Hinweis auf Analyse des Codes', /ausgelieferte[nrs]? (spiel|code)|spiel-chunk|\[code\]/i],
@@ -33,9 +33,9 @@ const FORBIDDEN: [string, RegExp][] = [
 function scan(label: string, text: string): string[] {
   const hits: string[] = [];
   for (const [what, re] of FORBIDDEN) {
-    const m = text.match(re);
-    if (m) {
-      const i = text.search(re);
+    const all = [...text.matchAll(new RegExp(re.source, re.flags.includes('g') ? re.flags : `${re.flags}g`))];
+    for (const m of all) {
+      const i = m.index ?? 0;
       hits.push(`${label}: ${what} → „…${text.slice(Math.max(0, i - 40), i + 60).replace(/\s+/g, ' ')}…“`);
     }
   }
@@ -51,12 +51,12 @@ describe('Übungskatalog (öffentliche Fassung)', () => {
       const body = publicBody(bodyOf(m.datei));
       bad.push(...scan(String(m.nr), body));
     }
-    expect(bad, bad.slice(0, 40).join('\n')).toEqual([]);
+    expect(bad, bad.join('\n')).toEqual([]);
   });
   it('Übersicht (Name, Kurzbeschreibung, Listen) enthält keine Bezüge auf Vorlagen', () => {
     const bad: string[] = [];
     for (const m of cat.uebungen) bad.push(...scan(`${m.nr} index`, JSON.stringify(publicIndexItem(m))));
-    expect(bad, bad.slice(0, 40).join('\n')).toEqual([]);
+    expect(bad, bad.join('\n')).toEqual([]);
   });
 });
 
@@ -72,6 +72,6 @@ describe('Übungstexte und Hintergrund', () => {
         .join('\n');
       bad.push(...scan(f.replace('../../', ''), text));
     }
-    expect(bad, bad.slice(0, 60).join('\n')).toEqual([]);
+    expect(bad, bad.join('\n')).toEqual([]);
   });
 });
