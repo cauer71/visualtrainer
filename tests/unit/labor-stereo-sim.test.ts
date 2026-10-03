@@ -28,11 +28,10 @@ describe('Definition und Registrierung', () => {
     expect(de.title).toBe('Tiefe sehen – Zufallspunkte');
   });
 
-  it('steht nach der Fusion am Ende der Labor-Gruppe und hat einen Hintergrundtext', () => {
+  it('steht direkt nach der Fusion in der Labor-Gruppe und hat einen Hintergrundtext', () => {
     const labor = EXERCISES.filter((e) => e.tags?.includes('labor')).map((e) => e.id);
     expect(labor.indexOf('labor-stereo')).toBe(labor.indexOf('labor-fusion') + 1);
-    expect(labor[labor.length - 1]).toBe('labor-stereo');
-    expect(labor).toHaveLength(17);
+    expect(labor).toHaveLength(28); // 14 portierte, Rot-Grün-Lesen, Fusion, Tiefe sehen, 5 Gleichgewicht, 6 Funktionsübungen
     expect(SCIENCE['labor-stereo']).toBe(science);
   });
 
