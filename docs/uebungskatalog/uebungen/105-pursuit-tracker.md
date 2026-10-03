@@ -91,7 +91,7 @@ stichworte: ["smooth pursuit", "Blickfolge", "manuelles Tracking", "Zeigerverfol
 
 ## 1. Kurzbeschreibung
 
-Ein heller Ball gleitet in weichen, nicht vorhersagbaren Kurven über den dunklen Bildschirm. Man folgt ihm nur mit den Augen, nicht mit dem Kopf. Immer wieder erscheint für einen kurzen Moment (anfangs 0,5 s, auf hohen Stufen 0,22 s) im Ball ein „C“ (Landolt-Ring) mit einer Öffnung nach rechts, links, oben oder unten. Danach leuchten vier große Knöpfe auf, und man tippt auf den, in dessen Richtung die Öffnung zeigte. Ein Durchgang besteht aus 20 solchen Zeichen. Die Stufe passt sich an: Nach drei richtigen Antworten wird der Ball schneller, nach einer falschen langsamer; die Schwierigkeit kommt aus dem Tempo und der kurzen Anzeigezeit, nicht aus einer Frist für die Antwort. Geübt wird, einem bewegten Ziel ruhig mit den Augen zu folgen und dabei ein kleines Detail zu erkennen.
+Ein heller Ball gleitet in weichen, nicht vorhersagbaren Kurven über den dunklen Bildschirm. Man folgt ihm nur mit den Augen, nicht mit dem Kopf. Immer wieder erscheint für einen kurzen Moment (anfangs 0,5 s, auf hohen Stufen 0,22 s) im Ball ein „C“ (Landolt-Ring) mit einer Öffnung nach rechts, links, oben oder unten. Danach leuchten vier große Knöpfe auf, und man tippt auf den, in dessen Richtung die Öffnung zeigte. Ein Durchgang besteht aus 20 solchen Zeichen. Die Stufe passt sich an: Nach drei richtigen Antworten wird der Ball schneller, nach einer falschen langsamer; für die Antwort bleiben 2,5 s; die Schwierigkeit kommt aus dem Tempo und der kurzen Anzeigezeit, nicht aus Zeitdruck. Geübt wird, einem bewegten Ziel ruhig mit den Augen zu folgen und dabei ein kleines Detail zu erkennen.
 
 ## 2. Ablauf im Original (Analyse)
 Quelle der Zahlen: Code-Analyse in `docs/skilldrills-analyse.md` (Abschnitt 5, aus dem ausgelieferten Spielcode); Regeltext und Website-Texte aus der Seite. Ableitungen in °/s sind **eigene Rechnungen** (≈ 36–40 px pro Grad, s. Abschnitt 4).
@@ -146,7 +146,7 @@ Bewegungssignale aus V1 werden in MT/MST (mittlere Schläfen-/mediale obere Schl
 - **Blick wird nicht gemessen:** Das Ergebnis sagt nichts darüber, wie die Augen dem Ball folgen. Zwei Personen mit gleichem Ergebnis können ganz unterschiedlich blicken.
 - **Messung am Menschen:** Messungen am Menschen streuen stärker als an Prüfkörpern; darum zählt der Verlauf über mehrere Durchgänge, nicht ein Einzelwert (Mountford et al., 2004, S. 43–44).
 - **Lerneffekt:** Die Bahn ist zufällig, aber die Aufgabe wird schnell geübt; Verbesserungen über wenige Tage sind eher Gewöhnung an Gerät und Aufgabe.
-- **Alter und Ermüdung:** Siehe oben (Alter und Optik). 20 Zeichen sind kurz; Augenermüdung kann bei mehreren Durchgängen hintereinander zunehmen.
+- **Alter und Ermüdung:** Siehe oben (Brille und Alter). 20 Zeichen sind kurz; Augenermüdung kann bei mehreren Durchgängen hintereinander zunehmen.
 
 ## 8. Studienlage: Trainierbarkeit und Übertragung
 
