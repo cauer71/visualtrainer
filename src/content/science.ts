@@ -252,17 +252,17 @@ export const SCIENCE: Record<string, ScienceEntry> = {
         trains: 'Mehrere bewegte Objekte gleichzeitig im Blick behalten, während ähnlich aussehende ablenken.',
         daily: 'Kreuzungen mit Autos, Rädern und Fußgängern, Mannschaftssport, Kinder auf dem Spielplatz.',
         research:
-          'Das "Multiple Object Tracking" ist gut erforscht: In der Aufgabe wird man durch Üben zuverlässig besser – auch im höheren Alter. Ob sich das auf Sport oder Straßenverkehr überträgt, ist bisher nicht belegt; eine Nachfolgestudie im Fußball fand keinen Effekt. Hilfreich ist, in die Mitte der Gruppe zu schauen statt einzelnen Kugeln hinterherzublicken.',
+          'Das "Multiple Object Tracking" ist gut erforscht: In der Aufgabe wird man durch Üben zuverlässig besser – auch im höheren Alter. Ob sich das auf Sport oder Straßenverkehr überträgt, ist bisher nicht belegt; eine Nachfolgestudie im Fußball fand keinen Effekt. Hilfreich ist, in die Mitte der Gruppe zu schauen statt einzelnen Kugeln hinterherzublicken. Fällt ein Teil des Gesichtsfelds aus, sind Kugeln dort nicht sichtbar; das ist kein Übungsfehler, unklare Ausfälle gehören augenärztlich abgeklärt.',
         improved:
-          'Mehrere kurze Runden statt eines langen Durchgangs, das Tempo passt sich an (Ziel: etwa drei von vier Runden fehlerfrei), weiche Bewegung ohne harte Zusammenstöße, alles zeitbasiert.',
+          'Eine Sitzung besteht aus sechs kurzen Runden mit je sechs Sekunden Verfolgen, weil sich die Kapazität in kurzen Durchgängen sauberer erfassen lässt als in einem langen. Nach einer fehlerfreien Runde wird das Tempo etwas höher, nach einem Fehler deutlich niedriger, sodass etwa drei von vier Runden fehlerfrei gelingen. Alle Kugeln sind gleich schnell und bewegen sich weich; nahe Kugeln drehen sanft voneinander weg, statt hart zu stoßen, denn enge Begegnungen sind die häufigste Ursache für Verwechslungen. Das Tempo wird in Echtzeit gerechnet und ist auf jedem Gerät gleich. Ein Punkt in der Mitte bietet dem Blick einen Halt, ohne ihn vorzuschreiben; die Auflösung zeigt Treffer und Fehler mit Form und Farbe.',
       },
       it: {
         trains: 'Tenere d’occhio più oggetti in movimento allo stesso tempo, mentre altri simili distraggono.',
         daily: 'Incroci con auto, bici e pedoni, sport di squadra, bambini al parco giochi.',
         research:
-          'Il “Multiple Object Tracking” è molto studiato: nel compito si migliora in modo affidabile con l’allenamento – anche in età avanzata. Non è dimostrato che questo si trasferisca allo sport o al traffico; uno studio successivo nel calcio non ha trovato effetti. Aiuta guardare al centro del gruppo invece di inseguire le singole palline.',
+          'Il “Multiple Object Tracking” è molto studiato: nel compito si migliora in modo affidabile con l’allenamento – anche in età avanzata. Non è dimostrato che questo si trasferisca allo sport o al traffico; uno studio successivo nel calcio non ha trovato effetti. Aiuta guardare al centro del gruppo invece di inseguire le singole palline. Se una parte del campo visivo è assente, le palline lì non si vedono; non è un errore dell’esercizio e le lacune poco chiare vanno fatte controllare dall’oculista.',
         improved:
-          'Più giri brevi invece di un’unica lunga prova, la velocità si adatta (obiettivo: circa tre giri su quattro senza errori), movimento fluido senza urti bruschi, tutto basato sul tempo.',
+          'Una sessione consiste in sei brevi round con sei secondi di inseguimento ciascuno, perché la capacità si rileva in modo più pulito in prove brevi che in una lunga. Dopo un round senza errori la velocità aumenta un po’, dopo un errore diminuisce nettamente, così circa tre round su quattro riescono senza errori. Tutte le palline hanno la stessa velocità e si muovono in modo fluido; quelle vicine si allontanano dolcemente invece di urtarsi, perché gli incontri ravvicinati sono la causa più frequente di scambi. La velocità è calcolata in tempo reale ed è uguale su ogni dispositivo. Un punto al centro offre allo sguardo un appoggio senza imporlo; la risoluzione mostra successi ed errori con forma e colore.',
       },
     },
     sources: [
@@ -271,6 +271,7 @@ export const SCIENCE: Record<string, ScienceEntry> = {
       src('Fehd & Seiffert (2008). Eye movements during multiple object tracking: Where do participants look? Cognition', 'https://doi.org/10.1016/j.cognition.2007.11.008'),
       src('Vater, Gray & Holcombe (2021). A critical systematic review of the Neurotracker perceptual-cognitive training tool. Psychonomic Bulletin & Review', 'https://doi.org/10.3758/s13423-021-01892-2'),
       src('Romeas et al. (2025). No transfer of 3D-Multiple Object Tracking training on game performance in soccer. Psychology of Sport and Exercise', 'https://doi.org/10.1016/j.psychsport.2024.102770'),
+      src('Muchnick (2008). Clinical Medicine in Optometric Practice, 2nd ed., S. 32. Mosby/Elsevier', 'https://openlibrary.org/isbn/9780323029612'),
     ],
   },
 

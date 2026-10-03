@@ -87,8 +87,7 @@ stichworte: ["visuelle Suche", "selektive Aufmerksamkeit", "Distraktoren", "Zeic
 
 # 108 · Zielcode im flimmernden Zeichenraster finden (Entropic Grid)
 
-> Original: „Visuelle Suche | Selektive Aufmerksamkeit“ (Entropic Grid Pro) – skilldrills.online, Kapitel Visuelle Wahrnehmung
-> (`visual`, Unterkapitel `visual-recognition`) · Blickfit: „Blitzblick“ (`src/exercises/blitzblick/`), eine andere UFOV-Aufgabe, siehe Abschnitt 10
+> Original: „Visuelle Suche | Selektive Aufmerksamkeit“ (Entropic Grid Pro) – skilldrills.online, Kapitel Visuelle Wahrnehmung (`visual`, Unterkapitel `visual-recognition`) · Blickfit: „Blitzblick“ (`src/exercises/blitzblick/`), eine andere UFOV-Aufgabe, siehe Abschnitt 10
 
 ## 1. Kurzbeschreibung
 

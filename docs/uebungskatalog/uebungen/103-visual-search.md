@@ -87,8 +87,7 @@ stichworte: ["visuelle Suche", "Konjunktionssuche", "Suchasymmetrie", "selektive
 
 # 103 · Suchbuchstabe im Raster finden (Visuelle Suche, 96 gedrehte Zeichen)
 
-> Original: „Visuelle Suche | Aufmerksamkeitstest“ (Visual Search Pro) – skilldrills.online, Kapitel Visuelle Wahrnehmung
-> (`visual`, Unterkapitel `visual-recognition`) · Blickfit: umgesetzt als „Suchbild“ (`src/exercises/suchbild/`)
+> Original: „Visuelle Suche | Aufmerksamkeitstest“ (Visual Search Pro) – skilldrills.online, Kapitel Visuelle Wahrnehmung (`visual`, Unterkapitel `visual-recognition`) · Blickfit: umgesetzt als „Suchbild“ (`src/exercises/suchbild/`)
 
 ## 1. Kurzbeschreibung
 
