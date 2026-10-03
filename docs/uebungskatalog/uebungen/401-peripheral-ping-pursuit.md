@@ -2,7 +2,7 @@
 # ===== Kennung =====
 nr: 401
 kennung: peripheral-ping-pursuit
-name: "Mitte fixieren, Randblitze bemerken (Peripherer Ping)"
+name: "Mitte fixieren, Randpunkte bemerken (Rand-Ping)"
 name_original: "Peripheres Sehen: zentrale Verfolgung und Randreize (Peripheral Ping Pursuit)"
 kapitel: "Blickverfolgung"
 kapitel_original: "visual-tracking"
@@ -12,7 +12,7 @@ blickfit_umsetzung: {kennung: "rand-ping", name: "Rand-Ping", unterschiede: "Tab
 stand: 2026-09-29
 
 # ===== Überblick =====
-kurzbeschreibung: "Man hält den Blick auf ein ruhendes Kreuz in der Bildmitte, während an zufälligen Stellen des Bildschirms kurz rote Leuchtpunkte aufblitzen, und versucht, sie aus dem Augenwinkel zu bemerken, ohne hinzuschauen. Anders als der Seitentext verspricht, bewegt sich in der Mitte nichts, und das Original wertet keine Antwort aus."
+kurzbeschreibung: "Man hält den Blick auf ein ruhendes Kreuz in der Bildmitte. Dort erscheint kurz ein Zeichen (Kreis oder Quadrat), gleichzeitig blendet am Rand ein heller Punkt weich ein und aus. Danach tippt man den Ort des Punktes und wählt das Zeichen. Rand und Mitte werden getrennt ausgewertet; wohin man blickt, wird nicht gemessen, und die Übung ist kein Gesichtsfeldtest."
 ziel_funktionen: [fixation, peripheres_sehen]
 eingabe: [maus, touch]
 tablet_geeignet: mit_anpassung
@@ -74,30 +74,30 @@ belastung:
 # ===== Auswahlhilfe =====
 voraussetzungen: ["Blick ohne Kontrolle selbstständig in der Mitte halten können (nichts prüft das)", "Abstand 50–70 cm zum Monitor bzw. 35–40 cm zum Tablet, Kopf ruhig", "keine bekannte Photosensitivität (plötzliche rote Leuchtpunkte, bei hohem Tempo ≈ 3 pro Sekunde)", "Maus oder Finger nur zum Starten; die im Text genannte Leertaste hat keine Funktion"]
 vorsicht_bei: [photosensitive_epilepsie, migraene_lichtempfindlich, gesichtsfeldausfall, farbsehschwaeche, trockenes_auge_bildschirm, kopfschmerz_asthenopie, presbyopie_gleitsicht, nystagmus, aufmerksamkeitsprobleme, kinder_unter_6]
-geeignet_fuer: ["ruhiges Fixieren üben, ohne auf plötzlich erscheinende Reize zu blicken (verdeckte Aufmerksamkeit)", "Aufmerksamkeit bewusst auf den ganzen Bildschirm ausweiten, ohne Handlung und ohne Zeitdruck", "Einstieg vor anspruchsvolleren Mitte-und-Rand-Aufgaben (108 Blitzblick/UFOV, 205, 801)"]
-weniger_geeignet_fuer: ["alle, die Rückmeldung, Punkte oder Fortschritt erwarten (das Original misst nichts)", "Ziel 'Blickfolge' (entgegen dem Namen gibt es kein bewegtes zentrales Ziel)", "Ziel 'Reaktionszeit' (keine Antwort vorgesehen)", "Menschen mit Photosensitivität oder lichtempfindlicher Migräne", "Personen mit Gesichtsfeldausfall, die ein Ergebnis als Gesichtsfeldbefund missverstehen könnten"]
+geeignet_fuer: ["ruhiges Fixieren üben, ohne auf plötzlich erscheinende Reize zu blicken (verdeckte Aufmerksamkeit)", "Aufmerksamkeit bewusst auf den ganzen Bildschirm verteilen, während ein kleines Zeichen den Blick in der Mitte hält", "Einstieg vor anspruchsvolleren Mitte-und-Rand-Aufgaben (108 Blitzblick/UFOV, 205, 801)"]
+weniger_geeignet_fuer: ["alle, die einen Leistungswert oder einen Fortschritt in Prozent erwarten (das Ergebnis gilt nur im Vergleich mit sich selbst)", "Ziel 'Blickfolge' (das zentrale Kreuz ruht, nichts bewegt sich)", "Ziel 'Reaktionszeit' (die Antwortgeschwindigkeit wird nicht gewertet)", "Menschen mit Photosensitivität oder lichtempfindlicher Migräne", "Personen mit Gesichtsfeldausfall, die ein Ergebnis als Gesichtsfeldbefund missverstehen könnten"]
 evidenz:
   uebungseffekt: unklar
   naher_transfer: schwach
   alltag_transfer: fehlend
-  kommentar: "Das Original hat keine Antwort und keine Blickkontrolle, ein Lernfortschritt ist daher nicht feststellbar. UFOV-Training (Mitte + Rand, kurze Darbietung, Antwort, Rückmeldung) verbessert die geübte Leistung deutlich (Ball et al., 1988, 2002), ist aber ein anderes Protokoll; 93 Studien zu Peripherie-Trainingsgeräten im Sport prüften nie per Eyetracking, ob überhaupt peripher gesehen wurde (Vater & Strasburger, 2021)."
+  kommentar: "Ohne Blickkontrolle lässt sich nicht feststellen, ob die Aufgabe wirklich mit dem Randsehen gelöst wurde; ein Lernfortschritt am Rand bleibt daher schwer zu deuten. Verwandte Aufgaben (UFOV-Training: Mitte plus Rand, kurze Darbietung, Antwort, Rückmeldung) verbessern die geübte Leistung deutlich (Ball et al., 1988, 2002); 93 Studien zu Peripherie-Trainingsgeräten im Sport prüften nie per Eyetracking, ob überhaupt peripher gesehen wurde (Vater & Strasburger, 2021). Ein Nutzen für Sport, Alltag oder Straßenverkehr ist nicht belegt."
 aehnliche_uebungen: [108, 801, 205, 408, 101, 208, 102, 303, 206]
 stichworte: ["peripheres Sehen", "verdeckte Aufmerksamkeit", "covert attention", "Fixation", "Blickfang", "oculomotor capture", "nutzbares Sehfeld", "UFOV", "Randreiz", "Tunnelblick"]
 ---
 
-# 401 · Mitte fixieren, Randblitze bemerken (Peripherer Ping)
+# 401 · Mitte fixieren, Randpunkte bemerken (Rand-Ping)
 
-> Original: „Peripheres Sehen: zentrale Verfolgung und Randreize“ (englischer Spielname „Peripheral Ping
-> Pursuit“) – skilldrills.online, Kapitel Blickverfolgung (`visual-tracking`) · Blickfit: noch nicht umgesetzt
-> (verwandt: Blickfit „Blitzblick“ → 108, „Doppelt gefordert“ → 205)
+> Original: „Peripheres Sehen: zentrale Verfolgung und Randreize“ (englischer Spielname „Peripheral Ping Pursuit“) – skilldrills.online, Kapitel Blickverfolgung (`visual-tracking`) · Blickfit: noch nicht umgesetzt (verwandt: Blickfit „Blitzblick“ → 108, „Doppelt gefordert“ → 205)
 
 ## 1. Kurzbeschreibung
 
-Die Übung läuft im Vollbild auf fast schwarzem Grund. In der Mitte steht ein dünnes, halbtransparentes Kreuz,
-auf das man den Blick richtet. An zufälligen Stellen des Bildschirms erscheint immer wieder für ¼ bis 1½
-Sekunden ein roter Leuchtpunkt mit weißem Kern („Ping“). Man soll ihn aus dem Augenwinkel bemerken, ohne
-hinzuschauen. Laut Seitentext soll man dabei einer schwebenden Kugel folgen und bei jedem Ping die Leertaste
-drücken; beides ist im ausgelieferten Spiel nicht vorhanden. Es gibt keine Punkte und keine Auswertung.
+Auf ruhigem, dunklem Grund steht in der Mitte ein dünnes Kreuz mit freier Mitte, auf das man den Blick richtet. Dort erscheint
+kurz ein Zeichen (Kreis oder Quadrat); gleichzeitig blendet an einem von 16 bis 24 möglichen Orten am Rand (acht Richtungen,
+zwei bis drei Ringe, die ganze Bühne) ein heller Punkt weich ein und aus – kein Blitzen, kein Leuchtsaum. Anschließend tippt man
+den Ort, an dem der Punkt war, und wählt das Zeichen (Kreis oder Quadrat). Ein Durchgang zählt als ganz richtig, wenn Ort und
+Zeichen stimmen. Die Stufe passt sich an: Die Anzeigedauer sinkt von 1 000 ms auf bis zu 400 ms, ab Stufe 5 kommt ein dritter,
+äußerer Ring hinzu, und der Punkt wird etwas kleiner. Trefferquoten für Rand und Mitte werden getrennt ausgewiesen. Wohin man
+blickt, misst die Übung nicht, und sie prüft das Gesichtsfeld nicht.
 
 ## 2. Ablauf im Original (Analyse)
 
@@ -184,121 +184,126 @@ Gesichtsfeld, behandle keinen Tunnelblick und belege keinen Nutzen im Straßenve
 
 ## 4. Optische und okulomotorische Grundlagen
 
-**Sehwinkel.** 24″-Monitor, 1920 × 1080, 60 cm (≈ 38 px/°): Ping Ø 32 px ≈ 0,85°, Fixierkreuz 48 px ≈ 1,3°.
-Die Pings liegen bis ≈ 23° seitlich und ≈ 13° oben/unten (Ecken ≈ 26°), im Median 14° von der Mitte; ≈ 24 %
-liegen innerhalb von 10°, ≈ 6 % innerhalb von 5° (eigene Simulation der Gleichverteilung). 11″-Tablet quer
-(1194 × 834 CSS-px) in 40 cm: Ping ≈ 0,9°, höchstens ≈ 18°, Median 10°, fast die Hälfte innerhalb von 10°. Das
-horizontale Gesichtsfeld umfasst ≈ 200° (Strasburger et al., 2011) – geübt wird also nur das **nahe bis mittlere
-Umfeld**, nicht das „echte“ weite Randfeld.
+**Sehwinkel.** Allgemein gilt: Bei 40 cm Abstand entspricht 1 cm etwa 1,4°, bei 60 cm etwa 1°. Die Orte der Übung liegen auf
+Ellipsen um die Mitte, die die Bühne nahezu ausfüllen (äußerer Ring bei etwa 97 % des verfügbaren Halbmessers); wie weit „peripher“
+das ist, hängt daher von Gerät und Abstand ab – größenordnungsmäßig etwa 15° neben der Mitte bei einem 11-Zoll-Tablet quer in
+40 cm Abstand und gut 20° bei einem 24-Zoll-Monitor in 60 cm. Der Punkt hat einen Durchmesser von etwa 7 % der kürzeren
+Bildschirmseite (Stufe 1) bis etwa 5 % (Stufe 12). Das horizontale Gesichtsfeld umfasst ≈ 200° (Strasburger et al., 2011) – geübt wird
+also nur das **nahe bis mittlere Umfeld**, nicht das weite Randfeld.
 
-**Entdeckbarkeit.** Ein 0,85° großer, gesättigter roter Punkt mit weißem Kern auf Schwarz, 250–1 500 ms
-sichtbar, ist im ganzen Bildschirmbereich sehr leicht zu sehen; Sehschärfe und Kontrast begrenzen die Leistung
-nicht. Leistungsfelder sind ungleich: waagrecht besser als senkrecht, unten besser als oben (Abrams et al.,
-2012); Gesunde verschieben die Aufmerksamkeit leicht nach links (Pseudoneglect; Jewell & McCourt, 2000).
-Seitenunterschiede sind daher normal und kein Befund.
+**Entdeckbarkeit.** Ein heller Punkt dieser Größe auf dunklem Grund, 400–1 000 ms weich ein- und ausgeblendet, ist im ganzen
+Bildschirmbereich sehr leicht zu sehen; Sehschärfe und Kontrast begrenzen die Leistung nicht. Die Schwierigkeit liegt darin, den Ort
+zu behalten und zugleich das Zeichen in der Mitte zu erkennen. Leistungsfelder sind ungleich: waagrecht besser als senkrecht, unten
+besser als oben (Abrams et al., 2012); Gesunde verschieben die Aufmerksamkeit leicht nach links (Pseudoneglect; Jewell & McCourt,
+2000). Seitenunterschiede sind daher normal und kein Befund.
 
-**Fixation und Blicksprünge.** Die eigentliche Anforderung ist, den Blick **nicht** zum Ping springen zu lassen.
-Im Gap-Paradigma (Fixierpunkt erlischt vor dem Ziel) starten reguläre Sakkaden nach ≈ 150 ms, Express-Sakkaden
-nach ≈ 100 ms (Fischer & Ramsperger, 1984); bleibt der Fixierpunkt wie hier sichtbar, sind die Latenzen eher
-länger. Bei Ping-Dauern ≥ 250 ms reicht die Zeit für einen Kontrollblick trotzdem fast immer. Ohne Blickerfassung weiß niemand, ob
-peripher gesehen wurde.
+**Fixation und Blicksprünge.** Die eigentliche Anforderung ist, den Blick **nicht** zum Punkt springen zu lassen. Im Gap-Paradigma
+(Fixierpunkt erlischt vor dem Ziel) starten reguläre Sakkaden nach ≈ 150 ms, Express-Sakkaden nach ≈ 100 ms (Fischer & Ramsperger,
+1984); bleibt der Fixierpunkt wie hier sichtbar, sind die Latenzen eher länger. Auch bei der kürzesten Anzeigedauer von 400 ms bleibt
+rechnerisch Zeit für einen Kontrollblick. Das Zeichen in der Mitte, das nur ebenso kurz zu sehen ist, gibt einen Grund, dort zu
+bleiben, erzwingt es aber nicht. Ohne Blickerfassung weiß niemand, ob peripher gesehen wurde.
 
 **Brille, Alter, Augen.**
-- **Gleitsicht:** Der scharfe Zwischenbereich ist bei 60 cm nur ≈ 13–18° breit (Han et al., 2003). Für das
-  Fixierkreuz in der Mitte reicht das; Pings in der unteren Hälfte fallen in den Nahteil, weiter außen in die
-  seitliche Unschärfe. Für das Entdecken eines großen, kontrastreichen Punkts ist das vermutlich unkritisch
-  (Einschätzung, nicht untersucht); ein Monitor zu tief oder zu hoch zwingt aber zu Kopfneigung. Günstig:
-  Arbeitsplatzbrille, Bildschirmmitte leicht unter Augenhöhe.
-- **Alterssichtigkeit:** Am Tablet (35–40 cm, 2,5–2,9 dpt) ist eine Nahkorrektur nötig, damit das Kreuz ruhig
-  fixiert werden kann.
-- **Farbsehschwäche** (≈ 8 % der Männer; Birch, 2012): Farbe trägt keine Information, aber Rot wirkt bei
-  Protan-Störungen dunkler und damit weniger auffällig; Weiß oder Gelb wählen.
-- **Trockenes Auge:** Beim 15-minütigen Lesen am Bildschirm lag die Lidschlagrate im Mittel bei 11,6/min, 16 % der
-  Lidschläge waren unvollständig (n = 21; Portello et al., 2013); starres Fixieren verstärkt das. Bewusst blinzeln, kurze Sätze.
-- **Gesichtsfeldausfall:** Nicht bemerkte Pings in einem Bereich können beunruhigen; die Übung ist **kein**
-  Gesichtsfeldtest (so auch die Website). Auffälligkeiten gehören in eine augenärztliche Untersuchung.
+- **Gleitsicht:** Der scharfe Zwischenbereich ist bei 60 cm nur ≈ 13–18° breit (Han et al., 2003). Für das Kreuz in der Mitte reicht das;
+  Punkte in der unteren Hälfte fallen in den Nahteil, weiter außen in die seitliche Unschärfe. Für das Entdecken eines großen,
+  hellen Punkts ist das vermutlich unkritisch (Einschätzung, nicht untersucht); ein Bildschirm zu tief oder zu hoch zwingt aber zu
+  Kopfneigung. Günstig: Arbeitsplatzbrille, Bildschirmmitte leicht unter Augenhöhe.
+- **Alterssichtigkeit:** Am Tablet (35–40 cm, 2,5–2,9 dpt) ist eine Nahkorrektur nötig, damit das Kreuz ruhig fixiert werden kann.
+  Rechenregel: 40 cm entsprechen 2,5 dpt, 20 cm 5 dpt, 10 cm 10 dpt; je näher der Bildschirm, desto größer der Akkommodationsaufwand.
+- **Farbsehschwäche** (≈ 8 % der Männer; Birch, 2012): Farbe trägt keine Information; der Punkt ist hell auf dunklem Grund.
+- **Trockenes Auge:** Beim 15-minütigen Lesen am Bildschirm lag die Lidschlagrate im Mittel bei 11,6/min, 16 % der Lidschläge waren
+  unvollständig (n = 21; Portello et al., 2013); starres Fixieren verstärkt das. Bewusst blinzeln, kurze Einheiten.
+- **Gesichtsfeldausfall:** Nicht bemerkte Punkte in einem Bereich können beunruhigen; die Übung ist **kein** Gesichtsfeldtest.
+  Auffälligkeiten gehören in eine augenärztliche Untersuchung.
 
 ## 5. Neurowissenschaftliche Grundlagen
 
-- **Aufmerksamkeitsnetzwerke:** Ein dorsales frontoparietales Netz (intraparietaler und oberer frontaler Kortex)
-  richtet Aufmerksamkeit zielgerichtet aus; ein ventrales, vorwiegend rechtsseitiges Netz (temporoparietaler
-  Übergang, unterer Frontalkortex) meldet saliente, unerwartete Reize und wirkt als „Unterbrecher“ (Corbetta &
-  Shulman, 2002). Ein plötzlicher Ping spricht genau dieses ventrale System an.
-- **Blickfang und Blickunterdrückung:** Visuelle Onsets haben über die unteren Ebenen der Blicksteuerung
-  (Colliculus superior) automatischen Zugang zum Sakkadensystem; willentliche Blicksteuerung konkurriert damit
-  (Findlay & Walker, 1999). Das Unterdrücken reflexiver Blicksprünge ist am besten mit der Antisakkaden-Aufgabe
-  untersucht, an der frontales Augenfeld, dorsolateraler präfrontaler Kortex und Colliculus superior beteiligt
-  sind (Übersicht: Munoz & Everling, 2004).
-- **Verarbeitungswege:** Das Zwei-Pfade-Modell (ventral „was“, dorsal „wo/wie handeln“; Goodale & Milner, 1992)
-  existiert; der Tipp „verzichte auf Identifikation zugunsten des dorsalen Systems“ ist daraus nicht ableitbar.
-- **Falls ein bewegtes Ziel ergänzt wird (wie beschrieben):** Der Hauptfokus der Aufmerksamkeit liegt während der
-  Blickfolge auf dem Ziel (Lovejoy et al., 2009), daneben besteht eine breite Bevorzugung des Halbfelds in
-  Bewegungsrichtung (Khan et al., 2010); beachtete, plötzlich
-  erscheinende ruhende Randobjekte senken die Folgegeschwindigkeit deutlich (Kerzel et al., 2008), ebenso fordernde
-  Zweitaufgaben (Hutton & Tegally, 2005). Belege, dass die Übung Hirnareale „stärkt“, wurden nicht gefunden.
+- **Verdecktes Orientieren:** Aufmerksamkeit an einem Ort verbessert dort die Entdeckung ohne Blickbewegung (Posner, 1980). Ein weiterer
+  Aufmerksamkeitsfokus kostet aber Verarbeitungseffizienz (Zoom-Modell; Eriksen & St. James, 1986) – die Aufmerksamkeit über den ganzen
+  Bildschirm zu verteilen ist kein Vorteil an sich.
+- **Zapfen und Stäbchen:** Außerhalb der Fovea überwiegen Stäbchen zahlenmäßig (92 Mio. gegenüber 4,6 Mio. Zapfen; Curcio et al., 1990).
+  Bei Bildschirmleuchtdichte und Raumlicht tragen aber vorwiegend Zapfen das Sehen (allgemeines Lehrbuchwissen); dass der Punkt über
+  Stäbchen entdeckt wird, ist nicht belegt. Die Reaktionszeit steigt mit der Exzentrizität (Osaka, 1976).
+- **Tunnelblick:** Belegt ist, dass eine **zentrale** Zusatzlast die Randwahrnehmung einengt (Ringer et al., 2016). Das Zeichen in der Mitte
+  ist eine solche Zusatzlast; wie stark sie die Randaufgabe hier beeinflusst, wird nicht gemessen.
+- **Aufmerksamkeitsnetzwerke:** Ein dorsales frontoparietales Netz (intraparietaler und oberer frontaler Kortex) richtet Aufmerksamkeit
+  zielgerichtet aus; ein ventrales, vorwiegend rechtsseitiges Netz (temporoparietaler Übergang, unterer Frontalkortex) meldet saliente,
+  unerwartete Reize und wirkt als „Unterbrecher“ (Corbetta & Shulman, 2002). Ein plötzlich auftauchender Punkt spricht dieses
+  ventrale System an. Dass diese Netzwerke durch die Übung gestärkt würden, ist nicht untersucht.
+- **Blickfang und Blickunterdrückung:** Visuelle Onsets haben über die unteren Ebenen der Blicksteuerung (Colliculus superior)
+  automatischen Zugang zum Sakkadensystem; willentliche Blicksteuerung konkurriert damit (Findlay & Walker, 1999). Das Unterdrücken
+  reflexiver Blicksprünge ist am besten mit der Antisakkaden-Aufgabe untersucht, an der frontales Augenfeld, dorsolateraler
+  präfrontaler Kortex und Colliculus superior beteiligt sind (Übersicht: Munoz & Everling, 2004).
+- **Verarbeitungswege:** Das Zwei-Pfade-Modell (ventral „was“, dorsal „wo/wie handeln“; Goodale & Milner, 1992) beschreibt getrennte
+  Verarbeitungswege; konkrete Übungsempfehlungen lassen sich daraus nicht ableiten.
+- **Verwandter Fall – Randreize während einer Blickfolge:** Der Hauptfokus der Aufmerksamkeit liegt während der Blickfolge auf dem
+  Ziel (Lovejoy et al., 2009), daneben besteht eine breite Bevorzugung des Halbfelds in Bewegungsrichtung (Khan et al., 2010);
+  beachtete, plötzlich erscheinende ruhende Randobjekte senken die Folgegeschwindigkeit deutlich (Kerzel et al., 2008), ebenso
+  fordernde Zweitaufgaben (Hutton & Tegally, 2005). Diese Übung enthält kein bewegtes Mittelziel.
+- **Klinischer Hintergrund:** Gesichtsfeldausfälle zeigen, wo im Verlauf der Sehbahn eine Schädigung liegt: vor der Kreuzung (Chiasma)
+  meist einäugige Ausfälle, am Chiasma ungleichseitige (heteronyme) Halbseitenausfälle, dahinter gleichseitige (homonyme)
+  Halbseitenausfälle; je weiter hinten, desto deckungsgleicher sind die Ausfälle beider Augen (Muchnick, 2008, S. 32). Das ist
+  Aufgabe der augenärztlichen Untersuchung, nicht dieser Übung.
 
 ## 6. Motorische Grundlagen
 
-- **Original:** keine Handlung, alle motorischen Merkmale 0. Einzige „Motorik“ ist die Augenmotorik in Form
-  stabiler Fixation.
-- **Beschriebene Variante (Leertaste/Tippen):** Dann käme eine einfache Reaktion hinzu. Einfache visuelle
-  Reaktionszeit ≈ 231 ms inklusive ≈ 18 ms Geräteverzögerung im kalibrierten Aufbau (Woods et al., 2015); sie
-  nimmt mit der Exzentrizität zu und mit der Reizgröße ab (Messung bis 50°, nur 2 geübte Personen; Osaka, 1976;
-  genaue Werte je Grad nur im Volltext, nicht geprüft). Die Ende-zu-Ende-Latenz beim Tippen lag je nach Gerät
-  und Software bei 48–276 ms, im Safari-Canvas am iPad Air 2 bei ≈ 77 ms (Casiez et al., 2017) – Reaktionszeiten sind daher nur am selben Gerät vergleichbar.
+- **Handlung:** Die Antwort besteht aus zwei Tipps (Ort des Punktes, dann Zeichen) und ist nicht auf Schnelligkeit angelegt; erst nach
+  7 s ohne Antwort gilt der Durchgang als falsch. Am Computer lässt sich das Zeichen auch mit den Tasten 1 und 2 wählen. Die
+  Augenmotorik, die hier gefordert ist, ist die stabile Fixation.
+- **Hintergrund Reaktionszeit:** Einfache visuelle Reaktionszeit ≈ 231 ms inklusive ≈ 18 ms Geräteverzögerung im kalibrierten Aufbau
+  (Woods et al., 2015); sie nimmt mit der Exzentrizität zu und mit der Reizgröße ab (Messung bis 50°, nur 2 geübte Personen;
+  Osaka, 1976; genaue Werte je Grad nur im Volltext, nicht geprüft). Die Ende-zu-Ende-Latenz beim Tippen lag je nach Gerät und
+  Software bei 48–276 ms, im Safari-Canvas am iPad Air 2 bei ≈ 77 ms (Casiez et al., 2017) – Zeiten sind daher nur am selben Gerät
+  vergleichbar.
 
 ## 7. Einflussfaktoren und Messgrenzen
 
-- **Gerät:** Die Ping-Rate hängt von der verarbeiteten Bildrate ab (45–72 Bilder/s, Abschnitt 2);
-  Bildschirmgröße und Abstand bestimmen, wie weit „peripher“ die Pings überhaupt liegen (18° am Tablet, 26° am
-  24″-Monitor). Ein kleines Fenster oder großer Abstand macht aus der Übung eine zentrale Aufgabe.
-- **Einstellungen:** Ohne Kreuz („Hide Line“) fehlt der Fixierpunkt; hohe Tempi verkürzen die Pings auf 250 ms,
-  was die Entdeckung kaum erschwert, die Reizdichte aber erhöht.
-- **Person:** Müdigkeit, Konzentration, Tagesform; Kinder und Menschen mit Aufmerksamkeitsproblemen halten die
-  Mitte schwerer.
-- **Messqualität:** Das Original misst nichts. Selbst mit Tipp-Antwort bleibt ohne Eyetracker offen, ob die
-  Person fixiert hat; eine Entdeckungsrate ohne Blickkontrolle misst vor allem, ob man hingeschaut hat.
+- **Gerät:** Bildschirmgröße und Abstand bestimmen, wie weit „peripher“ die Orte überhaupt liegen. Ein kleines Fenster oder ein großer
+  Abstand macht aus der Übung eine zentrale Aufgabe. Ergebnisse verschiedener Geräte (Touch, Maus, Tablet, Monitor) nicht
+  gleichsetzen: Zwei Verfahren können ähnliche Tendenzen zeigen, ohne dieselben Werte zu liefern (Mountford et al., 2004, S. 24).
+- **Stufe:** Kürzere Anzeigedauer, der dritte Ring und der kleinere Punkt verändern die Aufgabe; Quoten verschiedener Stufen sind
+  nicht direkt vergleichbar.
+- **Person:** Müdigkeit, Konzentration, Tagesform; Kinder und Menschen mit Aufmerksamkeitsproblemen halten die Mitte schwerer.
+- **Messqualität:** Der Blick wird nicht erfasst. Eine Trefferquote am Rand ohne Blickkontrolle sagt vor allem, ob man hingeschaut hat,
+  nicht, ob man peripher gesehen hat. Messungen am Menschen streuen stärker als an Prüfkörpern; ein einzelner Durchgang sagt wenig,
+  daher werden 16 Durchgänge zusammengefasst, und aussagekräftig ist nur der Verlauf über mehrere Sitzungen (Mountford et al., 2004,
+  S. 43–44).
 
 ## 8. Studienlage: Trainierbarkeit und Übertragung
 
-- **Übungseffekt – unklar.** Ohne Antwort und Rückmeldung gibt es keine messbare Leistung. Anders als bei den
-  Blickfolge-Übungen 402–406, deren Laborvorbilder dieselbe Tätigkeit (einem Ziel mit den Augen folgen) auch ohne
-  Rückmeldung untersuchten, gibt es für bloßes Hinsehen ohne Antwort kein passendes Laborvorbild. Verwandte Aufgaben mit
-  Mitte + Rand, kurzer Darbietung und Rückmeldung (UFOV) sind gut trainierbar: Ältere verbesserten das nutzbare
-  Sehfeld durch Übung (Ball et al., 1988); in der ACTIVE-Studie (2 832 Personen, 65–94 Jahre, 10 betreute
-  Sitzungen) verbesserten sich 87 % der Geschwindigkeitsgruppe verlässlich, ohne Effekt auf das
-  Alltagsfunktionieren nach 2 Jahren (Ball et al., 2002).
-- **Naher Transfer – schwach.** Übungen zum Peripheriesehen im Sport wurden nie per Eyetracking darauf geprüft,
-  ob überhaupt peripher gesehen wurde (93 Studien zu 5 Geräten; Vater & Strasburger, 2021).
-- **Alltagstransfer – fehlend.** Für diese Aufgabe gibt es keine Studie. Hirntrainings verbessern verlässlich
-  die geübte Aufgabe, kaum aber den Alltag (Simons et al., 2016). Die UFOV-Unfallbefunde gelten für ältere
-  Fahrer:innen mit dem Studienprotokoll, nicht für diese Übung.
+- **Übungseffekt – unklar.** Wohin der Blick geht, wird nicht gemessen; ein Fortschritt am Rand lässt sich daher nicht eindeutig dem
+  Randsehen zuschreiben. Verwandte Aufgaben mit Mitte + Rand, kurzer Darbietung und Rückmeldung (UFOV) sind gut trainierbar: Ältere
+  verbesserten das nutzbare Sehfeld durch Übung (Ball et al., 1988); in der ACTIVE-Studie (2 832 Personen, 65–94 Jahre, 10 betreute
+  Sitzungen) verbesserten sich 87 % der Geschwindigkeitsgruppe verlässlich, ohne Effekt auf das Alltagsfunktionieren nach 2 Jahren
+  (Ball et al., 2002). Für die Blickfolge-Übungen 402–406 gibt es dagegen Laborvorbilder derselben Tätigkeit; für diese
+  Mitte-Rand-Aufgabe mit Tipp-Antwort ist das Protokoll ein anderes.
+- **Naher Transfer – schwach.** Übungen zum Peripheriesehen im Sport wurden nie per Eyetracking darauf geprüft, ob überhaupt peripher
+  gesehen wurde (93 Studien zu 5 Geräten; Vater & Strasburger, 2021).
+- **Alltagstransfer – fehlend.** Für diese Aufgabe gibt es keine Studie. Hirntrainings verbessern verlässlich die geübte Aufgabe, kaum
+  aber den Alltag (Simons et al., 2016). Die UFOV-Unfallbefunde gelten für ältere Fahrer:innen mit dem Studienprotokoll, nicht für
+  diese Übung.
 
 ## 9. Auswahlhinweise für die KI
 
-- **Passt, wenn …** jemand ruhiges Fixieren bei ablenkenden Onsets üben oder die Aufmerksamkeit bewusst
-  ausweiten möchte, eine kurze Übung ohne Hand, Zeitdruck oder Bewegungsreize gesucht wird, oder als
-  Aufwärmen vor 108 (Blitzblick/UFOV), 205 oder 801.
-- **Weniger passend, wenn …** Blickfolge, Reaktionszeit oder Rückmeldung das Ziel sind; bei Wunsch nach
-  messbarem Fortschritt.
+- **Passt, wenn …** jemand ruhiges Fixieren bei ablenkenden Reizen üben oder die Aufmerksamkeit bewusst ausweiten möchte, eine kurze
+  Übung ohne Zeitdruck bei der Antwort und ohne Bewegungsreize gesucht wird, oder als Aufwärmen vor 108 (Blitzblick/UFOV), 205 oder 801.
+- **Weniger passend, wenn …** Blickfolge, Reaktionszeit oder ein Leistungswert das Ziel sind.
 - **Vorsicht / anpassen bei …**
-  - `photosensitive_epilepsie`, `migraene_lichtempfindlich`: harte rote Onsets mit Leuchtsaum, bei ≥ 7× im Mittel
-    ≈ 3 pro Sekunde, ab 3× in einzelnen Sekunden bis 4; die Fläche (Ø mit Saum ≈ 1,8°) liegt weit unter der WCAG-Flächengrenze (0,006 sr, etwa 25 % eines
-    10°-Feldes; W3C, 2024), die besonders gefährlichen 15–25 Hz werden nicht erreicht (Fisher et al., 2005). Trotzdem Tempo
-    ≤ 2×, kein „Day Mode“, bei Unwohlsein abbrechen.
-  - `gesichtsfeldausfall`: Übung kann Ausfälle weder erkennen noch ausschließen; Ergebnisse nicht deuten.
-  - `farbsehschwaeche`: Standard-Rot für Protan-Betroffene dunkler; Weiß/Gelb wählen.
-  - `trockenes_auge_bildschirm`, `kopfschmerz_asthenopie`: starres Fixieren, seltener Lidschlag; kurze Durchgänge,
-    Pausen, blinzeln.
-  - `presbyopie_gleitsicht`: Kreuz durch den Zwischenbereich fixieren, Arbeitsplatzbrille, Monitorhöhe.
-  - `nystagmus`: ruhiges Fixieren kann erschwert sein; Übung eventuell frustrierend.
-  - `aufmerksamkeitsprobleme`, `kinder_unter_6`: eintönige Aufgabe ohne Rückmeldung, Blick bleibt schwer in der
-    Mitte.
-- **Kombiniert gut mit …** 108 (Mitte + Rand mit Antwort), 801 (Randreize mit Reaktion), 205/206 (echte
-  Doppelaufgabe), 408 (zwei Ziele links/rechts), 404 (echte Blickfolge), 303 (Gegenstück: bewusste Blicksprünge).
-- **Abgrenzung in der Gruppe:** 408 ist die nächste Verwandte, aber keine Dublette – dort bewegen sich zwei
-  dauerhaft sichtbare Ziele langsam links und rechts (kein Fixierkreuz, keine plötzlichen Onsets), hier ruht die
-  Mitte und kurze Randreize tauchen überall auf. Beide haben im Original keine Antwort und keine Messung.
+  - `photosensitive_epilepsie`, `migraene_lichtempfindlich`: Der Punkt blendet weich ein und aus (mindestens 150 ms je Übergang, kein Blitzen,
+    kein Leuchtsaum), je Durchgang erscheint ein Reiz, und zwischen zwei Reizen liegen mindestens etwa 2 s. Die besonders gefährlichen
+    15–25 Hz werden nicht erreicht (Fisher et al., 2005). Trotzdem bei Unwohlsein abbrechen.
+  - `gesichtsfeldausfall`: Die Übung kann Ausfälle weder erkennen noch ausschließen; Ergebnisse nicht deuten.
+  - `farbsehschwaeche`: Farbe trägt keine Information; der Punkt ist hell auf dunklem Grund.
+  - `trockenes_auge_bildschirm`, `kopfschmerz_asthenopie`: starres Fixieren, seltener Lidschlag; kurze Einheiten, Pausen, blinzeln.
+  - `presbyopie_gleitsicht`: Kreuz durch den Zwischenbereich fixieren, Arbeitsplatzbrille, Bildschirmhöhe.
+  - `nystagmus`: ruhiges Fixieren kann erschwert sein; die Übung kann frustrieren.
+  - `aufmerksamkeitsprobleme`, `kinder_unter_6`: Der Blick bleibt schwer in der Mitte.
+  - Warnzeichen: Doppelbilder, plötzlicher einseitiger Sehverlust, Lichtblitze oder neue Schleier, Kopfschmerz mit Sehverschlechterung,
+    Schwindel oder neu auftretendes Zittern gehören in eine ärztliche Abklärung (Muchnick, 2008, S. 6, 28); dann nicht üben.
+- **Kombiniert gut mit …** 108 (Mitte + Rand mit Kurzdarbietung), 801 (Randreize mit Reaktion), 205/206 (Doppelaufgabe), 408 (zwei Ziele
+  links/rechts), 404 (Blickfolge), 303 (Gegenstück: bewusste Blicksprünge).
+- **Abgrenzung in der Gruppe:** 408 ist die nächste Verwandte, aber keine Dublette – dort bewegen sich zwei dauerhaft sichtbare Ziele
+  langsam links und rechts (kein Fixierkreuz, keine plötzlichen Reize), hier ruht die Mitte und kurze Randreize tauchen verteilt auf.
 
 Keine Diagnose, kein Heil- oder Sehversprechen: Die Übung prüft weder das Gesichtsfeld noch die Fahrtauglichkeit.
 
@@ -373,3 +378,6 @@ Keine Diagnose, kein Heil- oder Sehversprechen: Die Übung prüft weder das Gesi
 - Theeuwes, J., Kramer, A. F., Hahn, S., & Irwin, D. E. (1998). Our eyes do not always go where we want them to go: Capture of the eyes by new objects. *Psychological Science, 9*(5), 379–385. https://doi.org/10.1111/1467-9280.00071 – Blickfang (Abstract geprüft; Prozentangabe nicht geprüft)
 - Vater, C., & Strasburger, H. (2021). Topical review: The top five peripheral vision tools in sport. *Optometry and Vision Science, 98*(7), 704–722. https://doi.org/10.1097/OPX.0000000000001732 – Peripherie-Training im Sport
 - W3C. (2024). *Web Content Accessibility Guidelines (WCAG) 2.2*, SC 2.3.1 Three Flashes or Below Threshold. https://www.w3.org/TR/WCAG22/ – Blitzgrenzen (Web, keine DOI)
+- Muchnick, B. G. (2008). *Clinical Medicine in Optometric Practice* (2nd ed.). Mosby/Elsevier. https://openlibrary.org/isbn/9780323029612 – Warnzeichen, Augenbewegungsprüfung, Sehbahn (S. 6, 28, 32–35)
+- Mountford, J., Ruston, D., & Dave, T. (2004). *Orthokeratology: Principles and Practice*. Butterworth-Heinemann. https://openlibrary.org/isbn/9780750640077 – Messgrundsätze: Wiederholbarkeit, Mehrfachmessung (S. 24, 43–44)
+- Woods, D. L., Wyma, J. M., Yund, E. W., Herron, T. J., & Reed, B. (2015). Factors influencing the latency of simple reaction time. *Frontiers in Human Neuroscience, 9*, 131. https://doi.org/10.3389/fnhum.2015.00131 – einfache Reaktionszeit
