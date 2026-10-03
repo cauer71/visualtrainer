@@ -8256,7 +8256,7 @@
   {
    "nr": 601,
    "kennung": "color-sequence",
-   "name": "Farbfolge merken (Senso)",
+   "name": "Farbfolge merken",
    "name_original": "Senso-Spiel online – Farbenfolge merken und exakt wiederholen (Color Sequence Pro)",
    "kapitel": "Gedächtnis",
    "kapitel_original": "memory",
@@ -8268,7 +8268,7 @@
     "unterschiede": "Tablet-Umsetzung für Touch: große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/leuchtfolge/)."
    },
    "stand": "2026-09-29",
-   "kurzbeschreibung": "Ein großer Kreis in der Bildmitte leuchtet nacheinander in verschiedenen Farben auf. Danach tippt man die Farbfolge auf sechs Farbfeldern in derselben Reihenfolge nach; nach jedem Erfolg wird die Folge um eine Farbe länger, nach einem Fehler um eine kürzer.",
+   "kurzbeschreibung": "Sechs große Felder mit eigener Farbe und eigenem Symbol leuchten nacheinander weich auf. Danach tippt man sie in derselben Reihenfolge nach; nach jedem Erfolg wird die Folge um ein Feld länger, nach einem Fehler um eines kürzer.",
    "ziel_funktionen": [
     "kurzzeitgedaechtnis_visuell_raeumlich",
     "kurzzeitgedaechtnis_verbal"
@@ -8355,21 +8355,21 @@
    ],
    "geeignet_fuer": [
     "kurzes Behalten und geordnetes Wiedergeben von Reihenfolgen üben (serielles Erinnern)",
-    "Merkstrategien ausprobieren: Farben innerlich benennen, in Zweier-/Dreiergruppen bündeln",
+    "Merkstrategien ausprobieren: Farben und Symbole innerlich benennen, in Zweier-/Dreiergruppen bündeln",
     "Gedächtnisübung ohne Lesen, ohne Zahlen und ohne feine Details",
     "Tablet mit Touch, auch bei Alterssichtigkeit ohne Nahkorrektur (große Reize)"
    ],
    "weniger_geeignet_fuer": [
-    "Menschen mit Farbsehschwäche (Blau/Lila bei Deuteranopie praktisch gleich, Rot/Orange erschwert)",
-    "Personen, für die schon 3 Elemente zu viel sind (keine leichtere Stufe)",
+    "Menschen mit ausgeprägter Farbsehschwäche (die Farben sind schwerer zu unterscheiden; Symbole und Positionen tragen die Information mit)",
+    "Personen, für die schon 2 Elemente zu viel sind (keine leichtere Stufe)",
     "Ziele im Bereich Blickmotorik, Reaktion oder Handgenauigkeit",
-    "Fortschrittsmessung über Wochen (45 s ergeben nur ≈ 5–8 Runden, sehr unzuverlässig)"
+    "Fortschrittsmessung über kurze Zeiträume (wenige Runden je Sitzung, die Werte streuen)"
    ],
    "evidenz": {
     "uebungseffekt": "stark",
     "naher_transfer": "schwach",
     "alltag_transfer": "fehlend",
-    "kommentar": "Geübte Aufgaben werden verlässlich besser, auch durch Strategien (Owen et al., 2010; Gathercole et al., 2019). Übertragung zeigt sich fast nur auf Aufgaben mit gleicher Struktur; ferner Transfer und Alltagsnutzen sind mit aktiven Kontrollgruppen nicht belegt (Melby-Lervåg et al., 2016). Zu dieser konkreten Senso-Variante gibt es keine Studien."
+    "kommentar": "Geübte Aufgaben werden verlässlich besser, auch durch Strategien (Owen et al., 2010; Gathercole et al., 2019). Übertragung zeigt sich fast nur auf Aufgaben mit gleicher Struktur; ferner Transfer und Alltagsnutzen sind mit aktiven Kontrollgruppen nicht belegt (Melby-Lervåg et al., 2016). Zu dieser konkreten Übung gibt es keine Studien."
    },
    "aehnliche_uebungen": [
     607,
@@ -8409,7 +8409,7 @@
     "unterschiede": "Tablet-Umsetzung für Touch: große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/zahlenspanne/)."
    },
    "stand": "2026-09-29",
-   "kurzbeschreibung": "Eine Ziffernfolge erscheint kurz als Ganzes auf dem Bildschirm; danach tippt man sie aus dem Gedächtnis in derselben Reihenfolge auf einem Ziffernfeld ein. Jede richtige Folge wird um eine Ziffer länger, jeder Fehler macht sie um eine Ziffer kürzer.",
+   "kurzbeschreibung": "Ziffern erscheinen nacheinander, etwa eine pro Sekunde; danach tippt man die Folge aus dem Gedächtnis in derselben Reihenfolge auf einem Zahlenfeld ein. Jede richtige Folge wird um eine Ziffer länger, jeder Fehler macht sie um eine Ziffer kürzer.",
    "ziel_funktionen": [
     "kurzzeitgedaechtnis_verbal"
    ],
@@ -8499,14 +8499,14 @@
    "geeignet_fuer": [
     "kurzes, spielerisches Üben des Merkens von Ziffernfolgen (Material ähnlich wie Telefon- oder PIN-Nummern; ein Alltagsnutzen ist nicht belegt)",
     "Merkstrategien ausprobieren: Gruppieren in 2er-/3er-Blöcke, inneres Mitsprechen",
-    "sitzende, ruhige Übung ohne Bewegungsreize, gut am Tablet (nur ein abschaltbarer roter Fehler-Schimmer)",
+    "sitzende, ruhige Übung ohne Bewegungsreize, gut am Tablet (weich ein- und ausgeblendete Ziffern, kein Blitzen)",
     "Selbstvergleich über Wochen auf demselben Gerät"
    ],
    "weniger_geeignet_fuer": [
     "Einschätzung der 'Gedächtnisleistung' oder Vergleich mit Normen/IQ-Werten (nicht normiert, keine Diagnose)",
-    "Arbeitsgedächtnis im engeren Sinn (Umordnen, Rückwärts): im Original nur vorwärts",
-    "Menschen, die unter Zeitdruck schnell frustriert sind (Anzeige bis 0,8 s, Eingabe max. 8 s, Rundenzeit 45 s)",
-    "Menschen mit geringem Visus oder Leseschwäche ohne verlängerte Anzeige oder Vorlesefunktion"
+    "Arbeitsgedächtnis im engeren Sinn (Umordnen, Rückwärts): rückwärts gibt es nur wenige Runden und erst nach längeren Vorwärts-Folgen",
+    "Menschen, denen die feste Anzeigedauer von etwa einer Sekunde je Ziffer zu knapp ist",
+    "Menschen mit geringem Visus oder Leseschwäche (die Anzeigedauer lässt sich nicht verlängern, es gibt keine Vorlesefunktion)"
    ],
    "evidenz": {
     "uebungseffekt": "stark",
@@ -8543,7 +8543,7 @@
   {
    "nr": 603,
    "kennung": "grid-memorization",
-   "name": "Rastermuster merken (Memory Matrix)",
+   "name": "Rastermuster merken",
    "name_original": "Visueller Gedächtnistest online – Memory Matrix (Grid Memorization Pro)",
    "kapitel": "Gedächtnis",
    "kapitel_original": "memory",
@@ -8555,7 +8555,7 @@
     "unterschiede": "Tablet-Umsetzung für Touch: große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/rastermuster/)."
    },
    "stand": "2026-09-29",
-   "kurzbeschreibung": "In einem 4×4- oder 5×5-Raster leuchten 1,5 Sekunden lang mehrere Felder gleichzeitig auf. Danach tippt man alle Felder an, die geleuchtet haben (Reihenfolge egal); jedes richtige Muster ist ein Feld größer (beim Wechsel auf 5×5 wieder 5 Felder), ein falsches Feld beendet den Versuch ohne Abzug.",
+   "kurzbeschreibung": "In einem Raster leuchten einige Felder kurz weich auf. Danach tippt man alle Felder an, die geleuchtet haben (Reihenfolge egal). Gelingen zwei Muster in Folge, wird das nächste umfangreicher; zwei falsche Tipps beenden ein Muster.",
    "ziel_funktionen": [
     "kurzzeitgedaechtnis_visuell_raeumlich"
    ],
@@ -8650,7 +8650,7 @@
    "weniger_geeignet_fuer": [
     "Einstufung des 'visuellen Gedächtnisses' oder Normvergleich (keine Normen, kein Test im diagnostischen Sinn)",
     "Reihenfolge-/Sequenzgedächtnis (→ 607, 601)",
-    "Menschen, die ohne Rückstufung schnell frustriert sind (Stufe sinkt nie)",
+    "Menschen, denen die Anzeigedauer von rund zwei Sekunden zu knapp ist (sie lässt sich nicht verlängern)",
     "Blickmotorik- oder Tempotraining (Augen- und Handbewegungen sind Nebensache)"
    ],
    "evidenz": {
@@ -8688,7 +8688,7 @@
   {
    "nr": 604,
    "kennung": "n-back",
-   "name": "N-Back (Buchstabe von vor N Schritten wiedererkennen)",
+   "name": "N-Back (Form von vor N Schritten wiedererkennen)",
    "name_original": "N-Back Test online – Arbeitsgedächtnis (Dual N-Back Training Pro)",
    "kapitel": "Gedächtnis",
    "kapitel_original": "memory",
@@ -8700,7 +8700,7 @@
     "unterschiede": "Tablet-Umsetzung für Touch: große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/rueckblick/)."
    },
    "stand": "2026-09-29",
-   "kurzbeschreibung": "In der Bildschirmmitte erscheint ein großer Buchstabe nach dem anderen. Bei jedem Buchstaben entscheidet man per Knopfdruck, ob er derselbe ist wie der Buchstabe vor N Schritten (Start: 3 Schritte zurück) – man muss also laufend die letzten Buchstaben im Kopf behalten und nachschieben.",
+   "kurzbeschreibung": "In der Bildschirmmitte erscheint eine einfache Form nach der anderen. Bei jeder Form entscheidet man mit zwei Tasten, ob sie dieselbe ist wie die Form vor N Schritten (Start: 1 Schritt zurück) – man muss also laufend die letzten Formen im Kopf behalten und nachschieben.",
    "ziel_funktionen": [
     "arbeitsgedaechtnis"
    ],
@@ -8787,21 +8787,21 @@
    ],
    "geeignet_fuer": [
     "kurzes, forderndes Üben des laufenden Aktualisierens im Arbeitsgedächtnis ('die letzten drei merken und nachschieben')",
-    "Konzentration über 45 s ohne Pause auf einen einzigen Reizstrom halten",
-    "sitzende Übung ohne Bewegungsreize, mit sehr großen Buchstaben – auch bei eingeschränkter Sehschärfe gut lesbar",
+    "Konzentration über mehrere Minuten ohne Pause auf einen einzigen Reizstrom halten",
+    "sitzende Übung ohne Bewegungsreize, mit großen Formen – auch bei eingeschränkter Sehschärfe gut erkennbar",
     "Selbstvergleich über Wochen auf demselben Gerät (mit Vorsicht, siehe Messgrenzen)"
    ],
    "weniger_geeignet_fuer": [
     "Einstufung von Arbeitsgedächtnis, 'fluider Intelligenz' oder IQ (nicht normiert, wenig reliabel, keine Diagnose)",
-    "Einsteiger:innen und Menschen, die bei Überforderung schnell frustriert sind (Start bei 3-Back, Stufe steigt automatisch und fällt nie)",
-    "wer Zeitdruck vermeiden will (Antwortfenster 2,0 → 1,2 s, Uhr läuft durch)",
+    "Menschen, die bei Überforderung schnell frustriert sind (die Stufe wechselt zwischen den Blöcken, die Regel ändert sich mitten in der Sitzung)",
+    "wer Zeitdruck vermeiden will (feste Taktung: alle zwei Sekunden erscheint die nächste Form)",
     "Erwartung einer Alltagswirkung auf Gedächtnis, Konzentration oder Schule"
    ],
    "evidenz": {
     "uebungseffekt": "stark",
     "naher_transfer": "mittel",
     "alltag_transfer": "fehlend",
-    "kommentar": "In N-Back-Trainingsstudien (meist 20+ Sitzungen) verbessert sich die geübte Aufgabe deutlich; auf ungeübte N-Back-Varianten überträgt sich das mittelgroß (g = 0,62), auf andere Arbeitsgedächtnisaufgaben nur klein (g = 0,24) und auf fluide Intelligenz sehr klein (g = 0,16; Soveri et al. 2017); gegen aktive Kontrollgruppen fehlt ferner Transfer (Redick et al. 2013; Melby-Lervåg et al. 2016). Für 45-s-Runden gibt es keine eigenen Studien."
+    "kommentar": "In N-Back-Trainingsstudien (meist 20+ Sitzungen) verbessert sich die geübte Aufgabe deutlich; auf ungeübte N-Back-Varianten überträgt sich das mittelgroß (g = 0,62), auf andere Arbeitsgedächtnisaufgaben nur klein (g = 0,24) und auf fluide Intelligenz sehr klein (g = 0,16; Soveri et al. 2017); gegen aktive Kontrollgruppen fehlt ferner Transfer (Redick et al. 2013; Melby-Lervåg et al. 2016). Für so kurze Durchgänge wie hier gibt es keine eigenen Studien."
    },
    "aehnliche_uebungen": [
     602,
@@ -8849,7 +8849,7 @@
     "unterschiede": "Tablet-Umsetzung für Touch: große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/wo-war-es/)."
    },
    "stand": "2026-09-29",
-   "kurzbeschreibung": "In einem Raster erscheinen 1,5 Sekunden lang mehrere verschiedene Emoji-Symbole. Danach ist das Raster leer, oben wird eines der Symbole als Ziel gezeigt, und man tippt das Feld an, auf dem es lag; jeder Treffer bringt ein Symbol mehr, später ein größeres Raster.",
+   "kurzbeschreibung": "In einem Raster liegen kurz mehrere verschiedene Formen. Danach sind alle Felder leer, eine der Formen wird als Ziel gezeigt, und man tippt das Feld an, auf dem sie lag; mit der Zahl der Symbole wächst die Stufe, später auch das Raster.",
    "ziel_funktionen": [
     "kurzzeitgedaechtnis_visuell_raeumlich"
    ],
@@ -8945,8 +8945,8 @@
    ],
    "weniger_geeignet_fuer": [
     "Einstufung des 'räumlichen Gedächtnisses', Normvergleich oder Gedächtnis-Screening (keine Normen, keine Diagnose)",
-    "Menschen mit deutlich herabgesetzter Sehschärfe (kleine, teils ähnliche Emojis)",
-    "Menschen, die ohne Rückstufung schnell frustriert sind (Stufe sinkt nie)",
+    "Menschen mit deutlich herabgesetzter Sehschärfe (die Formen müssen am Umriss unterschieden werden)",
+    "Menschen, denen die Anzeigezeit zu knapp ist (sie lässt sich nicht verlängern)",
     "reines Muster- oder Sequenzgedächtnis (→ 603, 607)"
    ],
    "evidenz": {
@@ -8985,7 +8985,7 @@
   {
    "nr": 606,
    "kennung": "word-recall",
-   "name": "Wortliste merken (freie Wiedergabe)",
+   "name": "Wortliste merken (Wiedererkennen)",
    "name_original": "Wortgedächtnis-Test – Wörter merken und abrufen (Wort-Recall Pro)",
    "kapitel": "Gedächtnis",
    "kapitel_original": "memory",
@@ -8997,7 +8997,7 @@
     "unterschiede": "Tablet-Umsetzung für Touch: große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/wortliste/)."
    },
    "stand": "2026-09-29",
-   "kurzbeschreibung": "Einige Wörter (anfangs 3) erscheinen zwei Sekunden lang gleichzeitig auf dem Bildschirm; danach tippt man alle erinnerten Wörter in beliebiger Reihenfolge in ein Textfeld. Ist die Liste vollständig und fehlerfrei, kommt ein Wort dazu, sonst fällt eines weg.",
+   "kurzbeschreibung": "Einige Wörter erscheinen nacheinander, jedes etwa zwei Sekunden lang; danach wählt man aus einer Auswahl aus gezeigten und neuen Wörtern die gezeigten aus. Gelingt die Liste, kommt ein Wort dazu, sonst fällt eines weg.",
    "ziel_funktionen": [
     "kurzzeitgedaechtnis_verbal",
     "lesen_sprache"
@@ -9090,23 +9090,23 @@
     "photosensitive_epilepsie"
    ],
    "geeignet_fuer": [
-    "kurzes, spielerisches Merken kleiner Wortlisten (3–5 Wörter) für geübte Leser:innen mit Tastatur",
-    "Ausprobieren, wie viel man bei sehr kurzer Anzeige erfasst",
-    "sitzende, ruhige Übung ohne Bewegungs- oder Farbreize (nur ein abschaltbarer roter Fehler-Schimmer)",
+    "kurzes, spielerisches Merken kleiner Wortlisten für geübte Leser:innen, ohne Tastatur",
+    "Ausprobieren, wie viele Wörter man bei etwa zwei Sekunden Anzeige je Wort behält",
+    "sitzende, ruhige Übung ohne Bewegungs- oder Farbreize (weich ein- und ausgeblendete Wörter, kein Blitzen)",
     "Selbstvergleich über Wochen auf demselben Gerät und in derselben Sprache"
    ],
    "weniger_geeignet_fuer": [
-    "Einüben von Merkstrategien (Geschichte, Bilder, Gruppen): 2 s Anzeige reichen dafür nicht",
-    "Menschen mit Deutsch als Zweitsprache (z. B. italienischsprachige Kund:innen)",
-    "Tablet mit Bildschirmtastatur ab ≈ 5–6 Wörtern (Tipptempo begrenzt, 12-s-Eingabelimit)",
+    "Einüben aufwendiger Merkstrategien (Geschichte, Bilder): etwa zwei Sekunden je Wort reichen dafür nicht",
+    "Menschen, die die gewählte Sprache (Deutsch oder Italienisch) nur als Zweitsprache sprechen",
+    "Menschen, die Wörter nicht zügig lesen können",
     "Einschätzung der 'Gedächtnisleistung' oder Vergleich mit Normen (nicht normiert, keine Diagnose)",
-    "Menschen, die Zeitdruck oder Alles-oder-nichts-Wertung schnell frustriert"
+    "Menschen, die eine Alles-oder-nichts-Wertung schnell frustriert (ab 9 Wörtern ist eine Abweichung erlaubt)"
    ],
    "evidenz": {
     "uebungseffekt": "stark",
     "naher_transfer": "schwach",
     "alltag_transfer": "fehlend",
-    "kommentar": "Wortlistenlernen verbessert sich mit Übung und vor allem mit Strategien deutlich (Geschichtenmethode 93 % vs. 13 % im späteren Abruf nach 12 seriell gelernten Listen, Bower & Clark 1969; Loci-Training, Dresler et al. 2017), doch diese Strategien brauchen Minuten statt 2 s; Online-Gedächtnistraining zeigte keinen Transfer auf untrainierte Aufgaben (Owen et al. 2010), Metaanalysen mit aktiven Kontrollgruppen keinen fernen Transfer (Melby-Lervåg et al. 2016)."
+    "kommentar": "Wortlistenlernen verbessert sich mit Übung und vor allem mit Strategien deutlich (Geschichtenmethode 93 % vs. 13 % im späteren Abruf nach 12 seriell gelernten Listen, Bower & Clark 1969; Loci-Training, Dresler et al. 2017), doch diese Strategien brauchen Minuten, nicht Sekunden; Online-Gedächtnistraining zeigte keinen Transfer auf untrainierte Aufgaben (Owen et al. 2010), Metaanalysen mit aktiven Kontrollgruppen keinen fernen Transfer (Melby-Lervåg et al. 2016)."
    },
    "aehnliche_uebungen": [
     602,
@@ -9149,7 +9149,7 @@
     "unterschiede": "Tablet-Umsetzung für Touch: große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/leuchtpfad/)."
    },
    "stand": "2026-09-29",
-   "kurzbeschreibung": "In einem Raster leuchtet ein Feld nach dem anderen auf und bildet einen zusammenhängenden Weg. Danach tippt man die Felder in derselben Reihenfolge nach; jeder fehlerfreie Weg ist einen Schritt länger, das Raster wächst von 3×3 bis (theoretisch) 7×7.",
+   "kurzbeschreibung": "Neun Blöcke an festen, unregelmäßigen Orten leuchten nacheinander weich auf. Danach tippt man sie in derselben Reihenfolge nach; jede gelungene Folge ist einen Block länger, nach einem Fehler wird sie kürzer, der zweite Fehler beendet die Runde.",
    "ziel_funktionen": [
     "kurzzeitgedaechtnis_visuell_raeumlich"
    ],
@@ -9237,22 +9237,22 @@
    ],
    "geeignet_fuer": [
     "kurzes, sprachfreies Üben, eine Reihenfolge von Orten zu behalten (DE/IT gleich)",
-    "Gruppierstrategien ausprobieren: Weg als Form oder Richtungsfolge merken ('zwei rechts, eins hoch')",
+    "Gruppierstrategien ausprobieren: die Folge als Form oder Richtungsfolge merken ('zwei rechts, eins hoch')",
     "sitzende, ruhige Übung am Tablet mit Touch",
     "Selbstvergleich über Wochen auf demselben Gerät"
    ],
    "weniger_geeignet_fuer": [
     "Einstufung des räumlichen Gedächtnisses oder Vergleich mit Corsi-Normen (anderes Material, keine Normen, kein Test im diagnostischen Sinn)",
     "statische Muster (→ 603) oder Objekt-Ort-Bindung (→ 605)",
-    "Menschen, die ohne Rückstufung schnell frustriert sind (Stufe sinkt nie)",
+    "Menschen, die nach Fehlern schnell frustriert sind (der zweite Fehler beendet die Runde)",
     "Blickmotorik-, Reaktions- oder Tempotraining",
-    "Smartphone quer (Raster ≈ 2 cm, Felder zu klein)"
+    "sehr kleine Bildschirme (die Blöcke werden dann klein)"
    ],
    "evidenz": {
     "uebungseffekt": "stark",
     "naher_transfer": "mittel",
     "alltag_transfer": "fehlend",
-    "kommentar": "Geübte Gedächtnisaufgaben verbessern sich regelmäßig (Owen et al. 2010); Übertragung zeigt sich vor allem auf strukturgleiche Aufgaben, beim visuell-räumlichen seriellen Erinnern eher als beim verbalen (Gathercole et al. 2019); ferner oder Alltagstransfer ist mit aktiven Kontrollgruppen nicht belegt (Melby-Lervåg et al. 2016). Für diese Pfad-Variante selbst gibt es keine Trainingsstudie."
+    "kommentar": "Geübte Gedächtnisaufgaben verbessern sich regelmäßig (Owen et al. 2010); Übertragung zeigt sich vor allem auf strukturgleiche Aufgaben, beim visuell-räumlichen seriellen Erinnern eher als beim verbalen (Gathercole et al. 2019); ferner oder Alltagstransfer ist mit aktiven Kontrollgruppen nicht belegt (Melby-Lervåg et al. 2016). Für diese Variante selbst gibt es keine Trainingsstudie."
    },
    "aehnliche_uebungen": [
     601,
@@ -9281,7 +9281,7 @@
   {
    "nr": 701,
    "kennung": "rapid-tapping",
-   "name": "Klick-Tempo (schnelles Tippen auf eine Kugel)",
+   "name": "Tipp-Tempo (schnelles Tippen auf eine Kugel)",
    "name_original": "CPS-Test | Klickgeschwindigkeit messen (CPS Test – Click speed test)",
    "kapitel": "Motorik",
    "kapitel_original": "motor",
@@ -9293,7 +9293,7 @@
     "unterschiede": "Tablet-Umsetzung für Touch: große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/tipp-tempo/)."
    },
    "stand": "2026-09-29",
-   "kurzbeschreibung": "In der Bildmitte liegt eine grüne Kugel, die ständig schrumpft. Man klickt oder tippt 45 Sekunden lang so schnell wie möglich auf sie; jeder Treffer lässt sie wieder wachsen. Gezählt werden die Klicks pro Sekunde.",
+   "kurzbeschreibung": "In der Bildmitte liegt eine große Kugel. Man tippt oder klickt in drei kurzen Runden mit Pausen so schnell wie möglich auf sie; es zählt immer nur ein Finger. Gezeigt werden die Tipps pro Sekunde und der Abfall von Runde zu Runde.",
    "ziel_funktionen": [
     "fingergeschwindigkeit"
    ],
@@ -9380,16 +9380,16 @@
     "gelenk_ruecken"
    ],
    "geeignet_fuer": [
-    "einfaches, sprachfreies Motorik-Spiel zum Einstieg: Tipp- oder Klicktempo spielerisch erleben",
+    "einfache, sprachfreie Motorik-Übung zum Einstieg: Tipp- oder Klicktempo spielerisch erleben",
     "eigenen Fortschritt im Tipptempo am selben Gerät verfolgen (Übungseffekt ist belegt)",
-    "kurzer Einstieg vor anderen Maus-/Touch-Übungen (702, 704, 708) – dann besser in kurzen Blöcken statt 45 s Höchsttempo, weil schnelles Tippen rasch ermüdet",
-    "Kinder ab Schulalter und Jugendliche mit Spaß an schnellen Wettbewerben"
+    "kurzer Einstieg vor anderen Maus-/Touch-Übungen (702, 704, 708) – in kurzen Runden mit Pausen, weil schnelles Tippen rasch ermüdet",
+    "Kinder ab Schulalter und Jugendliche mit Spaß an schnellen Aufgaben"
    ],
    "weniger_geeignet_fuer": [
     "Menschen mit Sehnenscheiden-, Karpaltunnel-, Daumen- oder Handgelenkbeschwerden",
-    "Menschen mit Tremor oder Parkinson (Frust; Tippen ist dort ein klinisches Untersuchungsitem, Blickfit darf nichts daraus ableiten)",
+    "Menschen mit Tremor oder Parkinson (Frustgefahr; Tippen ist dort ein klinisches Untersuchungsitem, diese Übung ist kein Test und leitet nichts daraus ab)",
     "Ziele im Bereich Sehen oder Blickmotorik (die Übung fordert die Augen praktisch nicht)",
-    "Vergleich mit anderen Personen oder Geräten (Mehrfinger-/Zwei-Tasten-Techniken und Geräteunterschiede verfälschen)"
+    "Vergleich mit anderen Personen oder Geräten (Technik und Geräteunterschiede verfälschen)"
    ],
    "evidenz": {
     "uebungseffekt": "mittel",
@@ -9418,7 +9418,7 @@
   {
    "nr": 702,
    "kennung": "aim-trainer",
-   "name": "Zielklicken – bewegte Ziele mit dem Mauszeiger erfassen",
+   "name": "Zielklicken – bewegte Ziele antippen oder anklicken",
    "name_original": "Aim Trainer Online (Seitentitel: Aim Trainer online | Mauspräzision testen)",
    "kapitel": "Motorik",
    "kapitel_original": "motor",
@@ -9430,7 +9430,7 @@
     "unterschiede": "Touch-Fassung für das Tablet: ohne Maus, Zeigersperre und Zeitstrafen, feste Dauer, große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/ziel-klicken/)."
    },
    "stand": "2026-09-29",
-   "kurzbeschreibung": "Auf dunklem Grund gleiten immer zwei grüne Kreisziele geradlinig umher und prallen an den Rändern ab. Man führt ein Fadenkreuz mit der Maus darauf und klickt, bevor ein Ziel nach seiner Lebensdauer verschwindet; mit steigender Punktzahl werden die Ziele kleiner, schneller und kurzlebiger.",
+   "kurzbeschreibung": "Zwei bis fünf Kreise wandern geradlinig über den Bildschirm, prallen weich am Rand ab und werden größer und kleiner. Man tippt oder klickt sie an; mit jeder Stufe werden sie schneller, kleiner und zahlreicher.",
    "ziel_funktionen": [
     "auge_hand_koordination",
     "zielbewegung_tempo",
@@ -9525,22 +9525,22 @@
    ],
    "geeignet_fuer": [
     "schnelles und genaues Zeigen auf bewegte Ziele üben (Auge-Hand-Koordination unter Zeitdruck)",
-    "Maus-Aufwärmen für Menschen, die gern spielerisch mit Punkten und Serien üben",
-    "Fortschritt mit sich selbst am selben Gerät vergleichen (Trefferquote, Level)",
+    "spielerisches Üben mit Stufen und Trefferquote",
+    "Fortschritt mit sich selbst am selben Gerät vergleichen (Trefferquote, Stufe)",
     "Aufbau nach ruhenden Zielen (708) und vor Mehrziel- oder Flick-Aufgaben (502, 704, 501)"
    ],
    "weniger_geeignet_fuer": [
-    "Tablet ohne Maus (Original blockiert Touch)",
-    "Menschen mit Tremor oder eingeschränkter Handmotorik (kleine, schnelle Ziele, Zeitstrafen)",
-    "Einsteiger:innen und Ältere, die wenig Computererfahrung haben (hoher Zeitdruck, Ziele < 1 s sichtbar)",
-    "wer eine feste, kurze Übungsdauer braucht (Runde verlängert sich bei Treffern)",
+    "wer ruhige Zielbewegungen ohne bewegte Ziele üben möchte (dann 708)",
+    "Menschen mit Tremor oder eingeschränkter Handmotorik (kleine, bewegte Ziele auf den höheren Stufen)",
+    "Einsteiger:innen und Ältere mit wenig Erfahrung in Touch- oder Mausbedienung (mehrere bewegte Ziele, steigendes Tempo)",
+    "wer eine Aufgabe ohne jeden Zeitdruck sucht (die Sitzung dauert fest 45 Sekunden)",
     "Übungsziel reine Blickmotorik ohne Hand (dafür Kapitel 400)"
    ],
    "evidenz": {
     "uebungseffekt": "mittel",
     "naher_transfer": "schwach",
     "alltag_transfer": "fehlend",
-    "kommentar": "Zielbewegungen werden durch Übung in der geübten Aufgabe schneller und genauer (Übungskurven, Aim-Trainer-Messwerte zuverlässig); Übertragung auf andere Aufgaben ist gering, ein Nutzen für Alltag, Beruf oder Spiele wie CS2/Valorant ist für diese Übung nicht untersucht."
+    "kommentar": "Zielbewegungen werden durch Übung in der geübten Aufgabe schneller und genauer (Übungskurven); Übertragung auf andere Aufgaben ist gering, ein Nutzen für Alltag, Beruf oder Spiele ist für diese Übung nicht untersucht."
    },
    "aehnliche_uebungen": [
     704,
@@ -9571,7 +9571,7 @@
   {
    "nr": 703,
    "kennung": "keyboard-recognition",
-   "name": "Tasten-Wahlreaktion (angezeigte Taste blind drücken)",
+   "name": "Tasten-Wahlreaktion (Zeichen der passenden Taste zuordnen)",
    "name_original": "Tastatur-Reaktionszeit-Test | Keybind-Trainer & Tastengeschwindigkeitstest (Keyboard Speed Test)",
    "kapitel": "Motorik",
    "kapitel_original": "motor",
@@ -9583,7 +9583,7 @@
     "unterschiede": "Touch-Fassung für das Tablet: ohne Maus, Zeigersperre und Zeitstrafen, feste Dauer, große Trefferflächen, weiche Übergänge ohne Blitze, adaptive Stufen, Ergebnis nur als Vergleich mit sich selbst (siehe Quelltext src/exercises/tasten-wahl/)."
    },
    "stand": "2026-09-29",
-   "kurzbeschreibung": "In der Bildmitte erscheint groß eine Taste (z. B. „Q“ oder „3“), manchmal eine kurze Folge von 2–3 Tasten oder eine Folge, die man sich 1 s merken muss. Man drückt sie 60 Sekunden lang möglichst schnell auf der echten Tastatur, ohne hinzuschauen; orange „Fallen“-Tasten darf man nicht drücken.",
+   "kurzbeschreibung": "Oben erscheint ein Zeichen (Form mit Buchstabe), unten liegen zwei bis vier große Tasten mit denselben Zeichen. Man tippt möglichst schnell die passende Taste; mit der Stufe kommen mehr Tasten dazu, sie wechseln den Platz, und die Antwortfrist wird knapper.",
    "ziel_funktionen": [
     "entscheidung_wahlreaktion",
     "fingersequenz_bimanual"
@@ -9674,22 +9674,22 @@
     "kinder_unter_6"
    ],
    "geeignet_fuer": [
-    "Wahlreaktion mit fester Reiz-Taste-Zuordnung unter Zeitdruck üben",
-    "Tastenbelegung (z. B. Spiel-Hotkeys oder Zahlenreihe) ohne Blick auf die Tastatur festigen",
-    "Antworthemmung bei seltenen Scheinreizen (Go/No-go-ähnlich) spielerisch erleben",
+    "Wahlreaktion mit Reiz-Taste-Zuordnung unter Zeitvorgabe üben",
+    "erleben, wie die Entscheidungszeit mit der Zahl der Alternativen wächst (Hick'sches Gesetz)",
+    "ruhige, sitzende Übung am Tablet mit großen Tasten und ohne Blitze",
     "eigenen Fortschritt am selben Gerät und mit derselben Tastenauswahl verfolgen"
    ],
    "weniger_geeignet_fuer": [
-    "Tablet- oder Smartphone-Nutzung ohne Tastatur und Maus (Hauptgerät von Blickfit)",
+    "wer Tastenwege auf einer echten Tastatur blind einüben möchte (diese Übung nutzt Bildschirmtasten)",
     "Ziele im Bereich Sehen, Blickmotorik oder Zielgenauigkeit (Augen werden kaum gefordert)",
     "Menschen ohne sichere Buchstaben-/Ziffernkenntnis oder mit Leseschwäche unter Zeitdruck",
-    "Vergleich mit anderen Personen (Werte hängen von Tastenauswahl, Modus, Tastatur und Belegung ab)"
+    "Vergleich mit anderen Personen (Werte hängen von Stufe, Gerät und Zeitmessung ab)"
    ],
    "evidenz": {
     "uebungseffekt": "mittel",
     "naher_transfer": "schwach",
     "alltag_transfer": "fehlend",
-    "kommentar": "Übung verkleinert den Einfluss der Alternativenzahl auf die Wahlreaktionszeit bei gleichbleibender Zuordnung (Proctor & Schneider, 2018; Logan et al., 2016), das Gelernte bleibt aber an Zuordnung und Aufgabe gebunden (Karni et al., 1995); Hemmungstraining zeigt keinen echten Transfer (Enge et al., 2014); Nutzen für Spielleistung oder Alltag ist nicht untersucht."
+    "kommentar": "Übung verkleinert den Einfluss der Alternativenzahl auf die Wahlreaktionszeit bei gleichbleibender Zuordnung (Proctor & Schneider, 2018; Logan et al., 2016), das Gelernte bleibt aber an Zuordnung und Aufgabe gebunden (Karni et al., 1995); Nutzen für Spielleistung oder Alltag ist nicht untersucht."
    },
    "aehnliche_uebungen": [
     202,

@@ -65,8 +65,10 @@ export function publicIndexItem(m) {
     kapitel: m.kapitel,
     kurz: m.kurzbeschreibung,
     ziel: m.ziel_funktionen,
-    tablet: m.tablet_geeignet,
-    eingabe: m.eingabe,
+    // Alle Übungen sind in dieser App am Tablet per Touch spielbar (und mit der Maus); die Angaben der Arbeitsfassung
+    // beschreiben die Eingabe der Vorlagen und gelten hier nicht.
+    tablet: 'ja',
+    eingabe: ['touch', 'maus'],
     dauer: m.dauer_sekunden ?? null,
     evidenz: m.evidenz,
     vorsicht: m.vorsicht_bei ?? [],

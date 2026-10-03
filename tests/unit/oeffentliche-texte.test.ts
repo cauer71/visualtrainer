@@ -60,6 +60,17 @@ describe('Übungskatalog (öffentliche Fassung)', () => {
   });
 });
 
+describe('Übersicht: Eingabe und Tablet', () => {
+  it('alle Einträge sind per Touch am Tablet spielbar', () => {
+    const cat = katalog as unknown as { uebungen: Record<string, any>[] };
+    for (const m of cat.uebungen) {
+      const i = publicIndexItem(m);
+      expect(i.tablet, String(m.nr)).toBe('ja');
+      expect(i.eingabe, String(m.nr)).toContain('touch');
+    }
+  });
+});
+
 describe('Übungstexte und Hintergrund', () => {
   it('sichtbare Texte (ohne Kommentare) enthalten keine Bezüge auf Vorlagen', () => {
     const bad: string[] = [];
