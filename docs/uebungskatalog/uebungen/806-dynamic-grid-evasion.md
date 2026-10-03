@@ -2,7 +2,7 @@
 # ===== Kennung =====
 nr: 806
 kennung: dynamic-grid-evasion
-name: "Raster-Ausweichen – bedrohte Felder erkennen und in ein sicheres Feld wechseln"
+name: "Raster-Ausweichen: ein freies Feld antippen, bevor die besetzten belegt sind"
 name_original: "Reaktionstest online – Raster-Ausweichspiel (Dynamic Grid Evasion; Seitentitel: Reaktionstest online | Raster-Ausweichspiel)"
 kapitel: "Körper & Reflexe"
 kapitel_original: "physical"
@@ -12,7 +12,7 @@ blickfit_umsetzung: {kennung: "raster-ausweichen", name: "Raster-Ausweichen", un
 stand: 2026-09-29
 
 # ===== Überblick =====
-kurzbeschreibung: "Die Spielfläche ist in 3 × 3 große Felder geteilt. In jeder Welle leuchten einige Felder bernsteinfarben als Warnung auf; bevor sie 'explodieren', muss man den Mauszeiger in ein nicht markiertes Feld bringen. 45 Sekunden lang, mit immer kürzerer Warnzeit und immer mehr bedrohten Feldern."
+kurzbeschreibung: "Der Bildschirm zeigt 3 × 3 Felder. In jeder Welle werden einige Felder als besetzt angekündigt (Schraffur und Symbol, nicht nur Farbe), darunter immer das eigene. Man tippt ein freies Feld an, bevor die Wartezeit abläuft. Mit den Stufen sinkt die Wartezeit und die Zahl besetzter Felder steigt; ruhige Rückmeldung ohne Rot, Blitz oder Wackeln. Kein Reaktionstest: gemessen werden Treffer und Zeit bis zum Tipp einschließlich der Verzögerung des Touchscreens."
 ziel_funktionen: [entscheidung_wahlreaktion, verarbeitungsgeschwindigkeit]
 eingabe: [maus, touchpad]
 tablet_geeignet: nein
@@ -74,29 +74,23 @@ belastung:
 # ===== Auswahlhilfe =====
 voraussetzungen: ["Maus oder Touchpad (Original nutzt Pointer-Lock; auf reinen Touch-Geräten lässt es sich nicht starten)", "Spielfläche vollständig und scharf sehen: bei Alterssichtigkeit passende Zwischen-/Bildschirmkorrektur, Abstand 50–70 cm", "Blinkende bernsteinfarbene und rote Großflächen sowie Bildschirm-Wackeln vertragen", "Farbsehen nicht zwingend (Warnfelder sind auch heller als leere Felder)"]
 vorsicht_bei: [photosensitive_epilepsie, migraene_lichtempfindlich, gesichtsfeldausfall, presbyopie_gleitsicht, hand_arm_beschwerden, aufmerksamkeitsprobleme]
-geeignet_fuer: ["schnelles Entscheiden unter Zeitdruck mit räumlicher Antwort üben (Wahlreaktion mit direkt kompatibler Zuordnung: Zeiger dorthin, wo es sicher ist)", "Aufmerksamkeit über eine große Fläche verteilen und markierte Bereiche auf einen Blick erfassen", "spielerischer, kurzer Einstieg für Jugendliche und Gamer, die Punkte und Serien motivieren", "Maus-Zielbewegungen auf große Ziele unter Zeitdruck (geringe Präzisionsanforderung)"]
-weniger_geeignet_fuer: ["Gleichgewicht, Körperkoordination oder Sturzprävention (keine Körperübung trotz Kapitel 'Körper & Reflexe')", "Personen mit Lichtempfindlichkeit, Migräne oder Epilepsie in der Vorgeschichte (Blinkpuls, rote Vollflächen, Rotblitz)", "Tablet ohne Maus (Original startet auf reinen Touch-Geräten nicht)", "ältere oder langsam reagierende Menschen ab etwa Level 8 (Warnzeit unter 1 s, bis 6–7 bedrohte Felder)", "wer eine faire Leistungseinstufung erwartet (Normtabelle ohne Datengrundlage und mit dem Code nicht erreichbar)"]
+geeignet_fuer: ["schnelles Entscheiden unter einer Frist mit räumlicher Antwort (antippen, wo es frei ist)", "Aufmerksamkeit über eine größere Fläche verteilen und markierte Bereiche auf einen Blick erfassen", "kurze, klar strukturierte Übung mit sichtbarer Rückmeldung für Jugendliche und Erwachsene"]
+weniger_geeignet_fuer: ["Gleichgewicht, Körperkoordination oder Sturzprävention (keine Körperübung)", "Personen mit Lichtempfindlichkeit, Migräne oder Anfallsleiden in der Vorgeschichte (pulsierende Felder, auch wenn sanft)", "ältere oder langsam reagierende Menschen auf höheren Stufen (Wartezeit unter 1 s, bis 7 besetzte Felder)", "wer eine verlässliche Messung der Reaktionszeit oder eine Einstufung erwartet"]
 evidenz:
   uebungseffekt: mittel
   naher_transfer: schwach
   alltag_transfer: fehlend
-  kommentar: "Übungseffekte in Wahlreaktions- und Suchaufgaben sind gut belegt (Übung flacht z. B. die Hick-Steigung ab), für dieses Spiel gibt es aber keine Studie; Transfer auf Spiele, Sport oder Verkehr ist nicht untersucht, und Hirntraining überträgt sich allgemein kaum auf den Alltag (Simons et al., 2016)."
+  kommentar: "Übungseffekte in Wahlreaktions- und Suchaufgaben sind gut belegt (Übung flacht z. B. die Hick-Steigung ab), für diese Übung gibt es aber keine Studie; Transfer auf Sport oder Verkehr ist nicht untersucht, und Hirntraining überträgt sich allgemein kaum auf den Alltag (Simons et al., 2016)."
 aehnliche_uebungen: [803, 801, 401, 202, 302, 103, 108, 501, 702, 805]
 stichworte: ["Wahlreaktion", "räumliche Wahlreaktion", "Ausweichen", "3x3-Raster", "verdeckte Aufmerksamkeit", "covert orienting", "Merkmalsabwesenheit", "Suchasymmetrie", "Zeitdruck", "peripheres Erfassen", "Maus", "Pointer-Lock", "Photosensitivität"]
 ---
 
 # 806 · Raster-Ausweichen – bedrohte Felder erkennen und in ein sicheres Feld wechseln
 
-> Original: „Reaktionstest online – Raster-Ausweichspiel“ (Dynamic Grid Evasion) – skilldrills.online, Kapitel Körper
-> & Reflexe (`physical`/`coordination`) · Blickfit: noch nicht umgesetzt (verwandt: `blitzblick`, `zielfang`)
+> Original: „Reaktionstest online – Raster-Ausweichspiel“ (Dynamic Grid Evasion) – skilldrills.online, Kapitel Körper & Reflexe (`physical`/`coordination`) · Blickfit-Übung: Raster-Ausweichen (`raster-ausweichen`)
 
 ## 1. Kurzbeschreibung
-
-Die Spielfläche ist in neun gleich große Felder (3 × 3) geteilt, ein Fadenkreuz zeigt die Mausposition. In jeder Welle
-pulsieren einige Felder bernsteinfarben; läuft die Warnzeit ab, werden sie rot („Explosion“). Wer dann in einem
-markierten Feld steht, verliert seine Serie, sonst gibt es Punkte. Mit dem Level sinkt die Warnzeit (1,4 → 0,45 s), und
-es bleiben weniger sichere Felder (6 → 2). Trotz Kapitel „Körper“ ist es eine reine Maus-Übung: erkennen, entscheiden,
-Zeiger bewegen.
+Der Bildschirm zeigt neun gleich große Felder (3 × 3); eine Figur („Du“) steht auf einem Feld. In jeder Welle werden einige Felder als besetzt angekündigt, mit Schraffur und Rautensymbol, nicht nur mit Farbe, und sie pulsieren sanft. Das eigene Feld ist immer dabei, man muss also wechseln: Man tippt ein freies Feld an, bevor die Wartezeit abläuft und die besetzten Felder ruhig „belegt“ werden. Ein Tipp auf ein besetztes Feld oder ein zu später Tipp zählt nicht. Eine Sitzung hat zwölf Wellen; die Wartezeit sinkt mit den Stufen von 2,6 auf 0,9 s, die Zahl der besetzten Felder steigt von 3 auf 7 von 9. Jede Welle läuft bis zum Ende der Wartezeit durch, schneller als nötig bringt nichts. Erfasst werden Trefferquote, mittlere Zeit bis zum Tipp und höchste Stufe; es ist kein Reaktionstest.
 
 ## 2. Ablauf im Original (Analyse)
 
@@ -158,82 +152,45 @@ erklärten „ballistischen Flick“ und „Reibungsbremsung“; das Training �
   Warnzeit.
 
 ## 4. Optische und okulomotorische Grundlagen
-
-- **Reize:** groß und kontrastreich (Zelle ≈ 10° × 5,5°), Sehschärfe spielt kaum eine Rolle. Bernstein auf fast Schwarz
-  (#050508) ist auch über die Helligkeit erkennbar; Rot-Grün-Farbsehschwäche (≈ 8 % der Männer; Birch, 2012) erschwert
-  eher Bernstein ↔ Rot (Warnung ↔ Explosion), was für die Entscheidung nicht nötig ist.
-- **Peripherie:** Bei Blick zur Mitte liegen Eckzellen ≈ 11° (Container) bzw. ≈ 19° (Vollbild) exzentrisch – große
-  helle Flächen sind dort gut sichtbar. Ob die **eigene** Zelle bedroht ist, sieht man am schnellsten am Fadenkreuz.
-- **Sakkaden:** Latenz meist ≈ 150–250 ms; nur unter Sonderbedingungen (Lücken-Paradigma) Express-Sakkaden um
-  ≈ 100 ms (Fischer & Ramsperger, 1984). Während
-  einer Zeigebewegung bleibt der Blick am Ziel „verankert“; neue Sakkaden verzögerten sich im Mittel um 155 ms
-  (Neggers & Bekkering, 2000) – bei 0,45 s Warnzeit ist mehrfaches Umschauen zu teuer.
-- **Brille:** In einer Studie mit zwei Gleitsichtgläsern war das klare Zwischenfeld bei 60 cm horizontal nur ≈ 13°
-  bzw. 18° breit (Einstärkenglas ≈ 60°; Han et al., 2003; je nach Glasdesign verschieden). Schon im Container liegen die äußeren Spalten teils außerhalb → Kopf statt
-  Augen bewegen, kleineres Fenster oder Arbeitsplatzbrille; im Vollbild deutlich stärker.
+- **Reize:** Die Felder sind groß, die Sehschärfe spielt kaum eine Rolle. Besetzte Felder sind über Schraffur und Rautensymbol sowie über die Helligkeit erkennbar, nicht nur über die Farbe; eine Rot-Grün-Farbsehschwäche (etwa 8 % der Männer; Birch, 2012) ist daher kein Hindernis. Gesucht ist das Feld ohne Markierung: Einzelmerkmale werden parallel entdeckt (Treisman & Gelade, 1980), ein fehlendes Merkmal wird aber weniger leicht gefunden als ein vorhandenes (Treisman & Souther, 1985).
+- **Peripherie:** Beispielrechnung: Erscheint das Raster aus 40 cm Abstand etwa 30° breit, liegen die Mittelpunkte der Eckfelder bei Blick zur Mitte rund 10–12° seitlich. Bei 40 cm Abstand entspricht 1 cm auf dem Bildschirm etwa 1,4°. Die großen Felder sind dort gut sichtbar; ob das eigene Feld betroffen ist, zeigt die Figur selbst, die immer dabei ist.
+- **Sakkaden:** Reguläre Sakkaden haben Latenzen von meist etwa 150–250 ms; nur unter Sonderbedingungen (Lückenparadigma) treten Express-Sakkaden um 100 ms auf (Fischer & Ramsperger, 1984). Während einer Zeigebewegung bleibt der Blick am Ziel „verankert“; neue Sakkaden verzögerten sich dabei im Mittel um 155 ms (Neggers & Bekkering, 2000). Bei Wartezeiten unter 1 s ist mehrfaches Umschauen deshalb teuer. Die Hand trifft zudem genauer, wenn die Augen zum Ziel dürfen (Abrams et al., 1990).
+- **Brille:** In einer Studie mit zwei Gleitsichtgläsern war das klare Zwischenfeld bei 60 cm horizontal nur etwa 13° bzw. 18° breit (Einstärkenglas etwa 60°; Han et al., 2003; je nach Glasdesign verschieden). Die äußeren Spalten des Rasters können dann außerhalb liegen; man bewegt den Kopf statt der Augen, wählt ein kleineres Fenster oder nutzt eine Arbeitsplatzbrille. Der Akkommodationsaufwand beträgt 1 geteilt durch den Abstand in Metern (2,5 dpt bei 40 cm).
 - **Stereosehen:** nicht gefordert (flache 2D-Anzeige).
 
 ## 5. Neurowissenschaftliche Grundlagen
-
-- **Aufmerksamkeitsnetzwerke:** Ein dorsales Netzwerk (intraparietaler Sulcus, frontales Augenfeld) steuert willentliche
-  räumliche Aufmerksamkeit, ein vorwiegend rechtsseitiges ventrales (temporoparietaler Übergang, ventraler
-  Frontalkortex) lenkt auf auffällige, unerwartete Reize um (Corbetta & Shulman, 2002). Beide sind beteiligt; dass die
-  Übung sie „trainiert“, ist nicht untersucht.
-- **Entscheidung:** Die Antwort ist räumlich direkt kompatibel (Zeiger zum Ort); dann steigt die Wahlreaktionszeit mit
-  der Zahl der Alternativen kaum, und Übung flacht die Steigung weiter ab (Proctor & Schneider, 2018). Eigentliche
-  Aufgabe: „Ist mein Feld bedroht? Wenn ja, welches Nachbarfeld ist frei?“ – eine Go/No-Go-Entscheidung plus Ortswahl.
-- Aussagen zu „motorischem Kleinhirn“ oder „exogener Aufmerksamkeitslenkung im Kortex“ als Trainingseffekt: ohne Beleg.
+- **Aufmerksamkeit:** Hinweisreize am richtigen Ort beschleunigen die Antwort, am falschen verlangsamen sie, auch ohne Blickbewegung (Posner, 1980); plötzlich auftauchende Reize ziehen Aufmerksamkeit an (Yantis & Jonides, 1984). Ein dorsales Netzwerk (intraparietaler Sulcus, frontales Augenfeld) steuert die willentliche räumliche Aufmerksamkeit, ein vorwiegend rechtsseitiges ventrales (temporoparietaler Übergang, ventraler Frontalkortex) lenkt auf auffällige, unerwartete Reize um (Corbetta & Shulman, 2002). Beide sind beteiligt; dass die Übung sie „trainiert“, ist nicht untersucht.
+- **Entscheidung:** Die Antwort ist räumlich direkt kompatibel (tippen dorthin, wo es frei ist); dann steigt die Wahlreaktionszeit mit der Zahl der Alternativen kaum, und Übung flacht die Steigung weiter ab (Proctor & Schneider, 2018). Die eigentliche Aufgabe: Das eigene Feld ist immer besetzt; zu entscheiden ist, welches der freien Felder man antippt.
+- Aussagen zu „motorischem Kleinhirn“ oder „exogener Aufmerksamkeitslenkung im Kortex“ als Trainingseffekt haben für diese Übung keinen Beleg.
 
 ## 6. Motorische Grundlagen
-
-- **Zielbewegung:** Nachbarfeld ≈ 1 bit (diagonal ≈ 1–1,5 bit), über zwei Felder hinweg ≈ 2 bit (Fitts, 1954; ID = log₂(2D/W), Zielbreite = Zellbreite, Weg von Zellmitte zu Zellmitte; eigene Rechnung) – schnell, wenig
-  präzise; Impuls + Korrektur (Elliott et al., 2001) zeigen sich vor allem nahe den Zellgrenzen.
-- **Zeitbudget bei 0,45 s:** Schon die einfache Reaktionszeit liegt bei ≈ 213–231 ms (Woods et al., 2015); dazu kommen
-  Entscheidung und Bewegung. Erfolgreich ist „stehen bleiben, wenn frei; sonst nächstes freies Feld“.
-- **Eingabe:** Maus mit Pointer-Lock; Touchpad möglich, aber langsamer. Browser-Anwendungen überschätzen Reaktionszeiten auf
-  Touch- und Tastaturgeräten durchweg, je nach Gerät unterschiedlich (Pronk et al., 2020) – hier nur für eine
-  Blickfit-Messung relevant, das Original misst keine Reaktionszeit. Viele schnelle Züge in 45 s → bei Hand-Arm-Beschwerden Pausen.
+- **Zielbewegung:** Zum Nachbarfeld ergibt sich ein Schwierigkeitsindex von etwa 1 bit (diagonal 1–1,5 bit), über zwei Felder hinweg etwa 2 bit (Fitts, 1954; ID = log₂(2D/W) mit der Feldbreite als Zielbreite und dem Weg von Feldmitte zu Feldmitte; eigene Rechnung): schnell, wenig präzise. Impuls und Korrektur (Woodworth, 1899; Elliott et al., 2001) zeigen sich vor allem nahe den Feldgrenzen.
+- **Zeitbudget:** Schon die einfache Reaktionszeit liegt bei etwa 213–231 ms (Woods et al., 2015); dazu kommen Entscheidung und Bewegung. Bei 0,9 s Wartezeit bleibt dafür nicht viel Spielraum.
+- **Eingabe:** Getippt wird mit dem Finger. Browser-Anwendungen überschätzen Reaktionszeiten auf Touch- und Tastaturgeräten durchweg, je nach Gerät unterschiedlich (Pronk et al., 2020); die gemessene Zeit enthält daher die Verzögerung des Touchscreens. Viele schnelle Züge hintereinander können bei Hand-Arm-Beschwerden belasten; Pausen einplanen.
 
 ## 7. Einflussfaktoren und Messgrenzen
-
-- **Hoher Zufallsanteil:** Ohne Bewegung 22–67 % überstandene Wellen (≈ 1.860 Punkte); Punkte mischen Leistung,
-  Serienbonus und Zufall. Aussagekräftiger wäre der Anteil überstandener Wellen je Warnzeit.
-- **Keine Reaktionszeitmessung:** Erfasst wird nur „drin/draußen“ im Detonationsmoment; die Hinweise zu
-  `performance.now()` und „< 5 ms Messrauschen“ sind für dieses Spiel irreführend.
-- **Gerät:** Feldgröße (Container/Vollbild), Abstand und Empfindlichkeit ändern Exzentrizität und Weg → nur Vergleich
-  mit sich selbst auf demselben Gerät.
-- **Alter:** einfache Reaktionszeit + 0,55 ms pro Lebensjahr, v. a. motorisch (Woods et al., 2015); Warnzeiten unter
-  0,7 s dürften für viele Ältere frustrierend sein (eigene Einschätzung, nicht untersucht). Strategiewechsel steigern Punkte rasch, ohne neue Grundfähigkeit.
+- **Zufallsanteil:** Wer ohne zu schauen irgendein Feld antippt, träfe ein freies Feld je nach Stufe mit einer Wahrscheinlichkeit von 67 % (3 besetzte Felder) bis 22 % (7 besetzte Felder). Die Trefferquote mischt daher Leistung und Zufall; aussagekräftiger ist der Verlauf über mehrere Sitzungen auf derselben Stufe.
+- **Keine Reaktionszeitmessung:** Gemessen wird das Entscheiden und Tippen unter einer Frist, einschließlich der Verzögerung des Touchscreens. Die mittlere Zeit bis zum Tipp ist nur im Vergleich mit sich selbst auf demselben Gerät sinnvoll. Messungen am Menschen streuen; der Median über mehrere Wellen ist verlässlicher als ein Einzelwert, und hohe Korrelation zweier Verfahren heißt nicht, dass sie dieselben Werte liefern (Mountford et al., 2004, S. 24).
+- **Gerät:** Feldgröße, Abstand und Eingabeart (Touch, Maus) ändern Exzentrizität und Weg; Vergleiche gelten nur auf demselben Gerät.
+- **Alter:** Die einfache Reaktionszeit nimmt um etwa 0,55 ms je Lebensjahr zu, vor allem motorisch (Woods et al., 2015); Wartezeiten unter 1 s dürften für viele Ältere schwierig sein (eigene Einschätzung, nicht untersucht). Die Stufe passt sich an. Strategiewechsel steigern die Ergebnisse rasch, ohne dass eine neue Grundfähigkeit dahintersteht.
 
 ## 8. Studienlage: Trainierbarkeit und Übertragung
-
-- **Übungseffekt – mittel:** Wahlreaktions- und Suchaufgaben werden mit Übung zuverlässig schneller (Proctor & Schneider,
-  2018; Simons et al., 2016); zu diesem Spiel gibt es keine Studie.
-- **Naher Transfer – schwach:** auf ähnliche räumliche Wahlreaktionen am Bildschirm plausibel, aber ungeprüft.
-- **Alltagstransfer – fehlend:** kein Beleg für Sport, E-Sport, Verkehr oder „periphere Wahrnehmung im Alltag“;
-  Hirntraining überträgt sich allgemein kaum (Simons et al., 2016), Actionspiel-Befunde betreffen andere Spiele und viel
-  längere Trainingszeiten (Bediou et al., 2018). Keine Körperübung: keine Aussagen zu Gleichgewicht oder Stürzen.
+- **Übungseffekt (mittel):** Wahlreaktions- und Suchaufgaben werden mit Übung zuverlässig schneller (Proctor & Schneider, 2018; Simons et al., 2016); zu dieser Übung gibt es keine Studie.
+- **Naher Transfer (schwach):** Auf ähnliche räumliche Wahlreaktionen am Bildschirm plausibel, aber ungeprüft.
+- **Alltagstransfer (fehlend):** Es gibt keinen Beleg für Sport, Verkehr oder „periphere Wahrnehmung im Alltag“; Hirntraining überträgt sich allgemein kaum (Simons et al., 2016), und die Befunde zu Actionvideospielen (im Mittel g = 0,34 bei vermutetem Publikationsbias; Bediou et al., 2018) betreffen andere Aufgaben und viel längere Trainingszeiten. Es ist keine Körperübung: keine Aussagen zu Gleichgewicht oder Stürzen.
 
 ## 9. Auswahlhinweise für die KI
-
-- **Passt, wenn …** schnelle räumliche Entscheidungen unter Zeitdruck geübt werden sollen, Aufmerksamkeit über eine
-  große Fläche verteilt werden soll oder eine kurze, motivierende Maus-Übung für Jugendliche/Gamer gesucht wird.
-- **Weniger passend, wenn …** Gleichgewicht, Körperkoordination oder Sturzprävention das Ziel sind (dafür echte Übungen
-  im Stehen); nur ein Tablet vorhanden ist; eine verlässliche Messung erwartet wird; wenig Zeitdruck gewünscht ist
-  (dann 103 oder 108).
+- **Passt, wenn …** schnelle räumliche Entscheidungen unter Frist geübt werden sollen und die Aufmerksamkeit über eine größere Fläche verteilt werden soll; als kurze, klar strukturierte Übung mit sichtbarer Rückmeldung.
+- **Weniger passend, wenn …** Gleichgewicht, Körperkoordination oder Sturzprävention das Ziel sind (dafür echte Übungen im Stehen), eine verlässliche Messung der Reaktionszeit erwartet wird oder wenig Zeitdruck gewünscht ist (dann 103 oder 108).
 - **Vorsicht / anpassen bei …**
-  - `photosensitive_epilepsie`, `migraene_lichtempfindlich`: Bernsteinpuls ≈ 2 Hz auf bis zu 7/9 der Fläche, rote
-    Vollflächen alle 0,8–1,75 s, Rotblitz und Wackeln bei Treffern; unter 3 Hz, aber gesättigtes Rot und große Fläche
-    gelten als Risikomerkmale (Harding et al., 2005).
-  - `gesichtsfeldausfall`: Eckzellen 11–19° exzentrisch; Absuchen unter Zeitdruck ist unfair.
-  - `presbyopie_gleitsicht`: äußere Spalten außerhalb des schmalen Zwischenfelds (Han et al., 2003); kleines Fenster,
-    Kopf mitdrehen, ggf. Arbeitsplatzbrille (Hinweis, keine Beratung).
-  - `hand_arm_beschwerden`: viele schnelle Züge; nicht „explosiv“ und ohne Handballen-Druck spielen.
-  - `aufmerksamkeitsprobleme`: sehr hoher Zeitdruck, rote Fehler-Rückmeldung kann frustrieren.
-- **Kombiniert gut mit …** 803 (Maus-Ausweichen), 801/401 (peripheres Erfassen), 202 (Wahlreaktion), 103/108 (Suche ohne
-  Zeitdruck als Vorstufe), 501/702 (Zielbewegungen). **Abgrenzung in der Gruppe 806–811:** keine Dublette – 806 ist die einzige Wahlreaktion
-  mit Ortswahl; die übrigen fünf sind Auge-Hand-, Steuerungs- bzw. Gedächtnisaufgaben. Nächstverwandt ist 803
-  (Ausweichen vor bewegten Geschossen statt Wahl eines sicheren Feldes).
+  - `photosensitive_epilepsie`, `migraene_lichtempfindlich`: Besetzte Felder pulsieren sanft mit höchstens zwei Schwankungen pro Sekunde, es gibt kein Rot, keinen Vollbild-Blitz und kein Wackeln. Gesättigtes Rot und große Flächen gelten als Risikomerkmale (Harding et al., 2005); dennoch bei bekannter Anfallsneigung oder Migräne mit Lichtempfindlichkeit zurückhaltend sein.
+  - `gesichtsfeldausfall`: Die Eckfelder liegen etwa 10–12° seitlich; Absuchen unter Zeitdruck ist unfair. Gesichtsfeldausfälle lassen sich nach dem Verlauf der Sehbahn zuordnen und gehören augenärztlich abgeklärt (Muchnick, 2008); die Übung ist kein Test.
+  - `presbyopie_gleitsicht`: Äußere Spalten können außerhalb des schmalen Zwischenfelds liegen (Han et al., 2003); kleineres Feld, Kopf mitdrehen, gegebenenfalls Arbeitsplatzbrille.
+  - `hand_arm_beschwerden`: viele schnelle Tipps hintereinander; Pausen einplanen.
+  - `aufmerksamkeitsprobleme`: verhältnismäßig hoher Zeitdruck auf höheren Stufen; die Stufe passt sich an, Pausen anbieten.
+  - Treten beim Üben Doppelbilder, plötzlicher Sehverlust, Kopfschmerz mit Sehverschlechterung, Schwindel oder Zittern auf, sollte das ärztlich abgeklärt werden, statt weiterzuüben (Muchnick, 2008, S. 6, 28).
+- **Kombiniert gut mit …** 803 (Ausweichen), 801/401 (peripheres Erfassen), 202 (Wahlreaktion), 103/108 (Suche ohne Zeitdruck als Vorstufe), 501/702 (Zielbewegungen). **Abgrenzung in der Gruppe 806–811:** keine Dublette – 806 ist die einzige Wahlreaktion mit Ortswahl; die übrigen fünf sind Auge-Hand-, Steuerungs- bzw. Gedächtnisaufgaben. Nächstverwandt ist 803 (Ausweichen vor bewegten Geschossen statt Wahl eines freien Feldes).
+Keine Diagnosen, keine Heilversprechen; Ergebnisse sind keine Normwerte, der Vergleich gilt nur mit sich selbst auf demselben Gerät.
 
 ## 10. Schwächen des Originals und Empfehlungen für eine Blickfit-Umsetzung
 
@@ -307,3 +264,6 @@ erklärten „ballistischen Flick“ und „Reibungsbremsung“; das Training �
 - Yantis, S., & Jonides, J. (1984). Abrupt visual onsets and selective attention: Evidence from visual search. *Journal
   of Experimental Psychology: Human Perception and Performance, 10*(5), 601–621.
   https://doi.org/10.1037/0096-1523.10.5.601 – plötzlich auftauchende Reize ziehen Aufmerksamkeit an.
+- Woods, D. L., Wyma, J. M., Yund, E. W., Herron, T. J., & Reed, B. (2015). Factors influencing the latency of simple reaction time. *Frontiers in Human Neuroscience*, 9, 131. https://doi.org/10.3389/fnhum.2015.00131 – einfache Reaktionszeit und ihre Komponenten (213–231 ms, +0,55 ms je Lebensjahr)
+- Muchnick, B. G. (2008). *Clinical Medicine in Optometric Practice* (2nd ed.). Mosby/Elsevier. https://openlibrary.org/isbn/9780323029612 – Lehrbuch: Warnzeichen mit Abklärungsbedarf (S. 6, 28), Gesichtsfeldausfälle nach Sehbahnverlauf (S. 32)
+- Mountford, J., Ruston, D., & Dave, T. (2004). *Orthokeratology: Principles and Practice*. Butterworth-Heinemann. https://openlibrary.org/isbn/9780750640077 – Lehrbuch: Genauigkeit und Wiederholbarkeit von Messungen, Korrelation ist keine Übereinstimmung (S. 17–18, 24)
