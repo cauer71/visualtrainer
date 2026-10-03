@@ -2,7 +2,7 @@
 # ===== Kennung =====
 nr: 807
 kennung: agility-ladder
-name: "Koordinationsleiter mit dem Mauszeiger – Sprossen im Zickzack abfangen"
+name: "Sprossen-Leiter: Felder im Zickzack genau im Takt antippen"
 name_original: "Koordinationsleiter Übungen (Seitentitel: Koordinationsleiter Übungen | SkillDrills; engl. Spielname: Motor Sequencing (Agility Ladder))"
 kapitel: "Körper & Reflexe"
 kapitel_original: "physical"
@@ -12,7 +12,7 @@ blickfit_umsetzung: {kennung: "sprossen-leiter", name: "Sprossen-Leiter", unters
 stand: 2026-09-29
 
 # ===== Überblick =====
-kurzbeschreibung: "Kleine Leitern mit je vier Sprossen (links–rechts–links–rechts) laufen von oben nach unten über den Bildschirm. Man berührt die Sprossen mit dem Mauszeiger in der richtigen Reihenfolge, bevor die Leiter unten verschwindet – eine Maus-Übung für Auge-Hand-Koordination und Timing, keine Beinarbeit."
+kurzbeschreibung: "Eine ruhende Leiter aus vier bis sieben nummerierten Feldern steht im Zickzack auf dem Bildschirm; ein sanfter Taktgeber gibt den Rhythmus vor. Man tippt die Sprossen von unten nach oben an, jede genau auf ihren Schlag, und sieht bei jedem Feld die Abweichung in Millisekunden (zu früh oder zu spät). Der Takt wird mit den Stufen schneller, aber nie über zwei Schläge pro Sekunde; kein Blitzen, kein Rot, kein Wackeln. Eine Tipp-Aufgabe am Bildschirm, keine Beinarbeit."
 ziel_funktionen: [auge_hand_koordination, zielbewegung_tempo]
 eingabe: [maus, touchpad]
 tablet_geeignet: nein
@@ -74,23 +74,23 @@ belastung:
 # ===== Auswahlhilfe =====
 voraussetzungen: ["Maus (oder Touchpad) am Computer; auf reinen Touch-Geräten lässt sich das Original nicht starten", "45 s konzentriert auf die Bildschirmmitte schauen können", "passende Korrektion für den Bildschirmabstand (bei Alterssichtigkeit Zwischenbereich)", "kein Farbsehen zwingend nötig (Reihenfolge ist immer oben links → unten rechts)"]
 vorsicht_bei: [hand_arm_beschwerden, tremor_parkinson, presbyopie_gleitsicht, migraene_lichtempfindlich, photosensitive_epilepsie]
-geeignet_fuer: ["Auge-Hand-Koordination beim Abfangen gleichmäßig bewegter Ziele üben", "rhythmische, vorausgeplante kleine Zeigerbewegungen (Zickzack) unter steigendem Tempo", "spielerischer Einstieg in Timing-Aufgaben mit einfacher, gleichbleibender Regel", "Gamer:innen, die schnelle, kurze Mausbewegungen üben möchten (ohne Transferversprechen)"]
-weniger_geeignet_fuer: ["Training von Beinarbeit, Schnelligkeit, Gleichgewicht oder Sturzprävention (dafür echte Schritt-/Gleichgewichtsübungen im Stehen)", "Tablet ohne Maus (das Original startet auf reinen Touch-Geräten nicht; eine Touch-Variante wäre leicht umsetzbar, siehe Abschnitt 10)", "Menschen mit Tremor oder Hand-/Armbeschwerden (kleine Trefferzonen, schnelle Wechsel)", "wer ohne Zeitdruck üben möchte (Tempo steigt automatisch und endlos)", "Einsteiger:innen und Ältere, wenn keine Tempobegrenzung eingestellt werden kann"]
+geeignet_fuer: ["Rhythmus halten und mehrere Orte nacheinander zu einem vorgegebenen Zeitpunkt antippen", "rhythmische, vorausgeplante kleine Zeigebewegungen (Zickzack) bei steigendem Tempo", "Timing-Aufgaben mit einfacher, gleichbleibender Regel", "Menschen, die gern kurze, klar strukturierte Übungen mit direkter Rückmeldung in Millisekunden mögen"]
+weniger_geeignet_fuer: ["Training von Beinarbeit, Schnelligkeit, Gleichgewicht oder Sturzprävention (dafür echte Schritt- und Gleichgewichtsübungen im Stehen)", "Menschen mit Tremor oder Hand- und Armbeschwerden bei schnellen Tippfolgen", "wer ohne Takt und ohne Zeitvorgabe üben möchte", "wer eine Reaktionszeitmessung erwartet (gemessen wird die Abweichung vom Taktschlag, einschließlich der Verzögerung des Touchscreens)"]
 evidenz:
   uebungseffekt: mittel
   naher_transfer: schwach
   alltag_transfer: fehlend
-  kommentar: "Übungseffekte in geübten sensomotorischen Aufgaben und Chunking von Sequenzen sind gut belegt, für dieses Spiel gibt es keine Studie; selbst echtes Koordinationsleiter-Training verbesserte Sprint, Agility und Dribbling bei Jugendfußballern nicht stärker als normales Training (kleine Studie, n = 18; Padrón-Cabo et al., 2020); ein Transfer der Mausübung auf Beinarbeit ist unbelegt."
+  kommentar: "Übungseffekte in geübten sensomotorischen Aufgaben und Chunking von Sequenzen sind gut belegt, für diese Übung gibt es keine Studie; selbst echtes Koordinationsleiter-Training verbesserte Sprint, Agility und Dribbling bei Jugendfußballern nicht stärker als normales Training (kleine Studie, n = 18; Padrón-Cabo et al., 2020); ein Transfer der Tippübung auf Beinarbeit ist unbelegt."
 aehnliche_uebungen: [809, 802, 810, 708, 707, 104, 405]
 stichworte: ["Koordinationsleiter", "Agility Ladder", "Auge-Hand-Koordination", "Abfangen bewegter Ziele", "Interzeption", "motorische Sequenz", "Chunking", "Rhythmus", "Maus", "Zickzack"]
 ---
 
-# 807 · Koordinationsleiter mit dem Mauszeiger – Sprossen im Zickzack abfangen
+# 807 · Sprossen-Leiter: Felder im Zickzack genau im Takt antippen
 
-> Original: „Koordinationsleiter Übungen“ – skilldrills.online, Kapitel „physical“ / „fitness“ · Blickfit: noch nicht umgesetzt
+> Original: „Koordinationsleiter Übungen“ – skilldrills.online, Kapitel „physical“ / „fitness“ · Blickfit-Übung: Sprossen-Leiter (`sprossen-leiter`)
 
 ## 1. Kurzbeschreibung
-Auf dunklem Grund laufen schmale Leitern (zwei Holme, vier Sprossen) von oben nach unten durch die Bildmitte. Mit einem Fadenkreuz berührt man die Sprossen der Reihe nach: oben links, dann rechts, dann links, dann rechts – ein Zickzack schräg nach unten. Klicken ist nicht nötig; es genügt, mit dem Zeiger über die markierte Sprosse zu fahren. Jede vollständige Leiter bringt Punkte, fehlerfreie Serien erhöhen den Multiplikator, und die Leitern werden immer schneller. Trotz des Namens bewegt man nur die Hand an der Maus – Beine, Gleichgewicht und Ganzkörperkoordination spielen keine Rolle.
+Eine ruhende Leiter aus vier bis sieben nummerierten Feldern (Sprossen) steht im Zickzack links und rechts, unten beginnend, auf dem Bildschirm. Ein Taktgeber oben schwingt sanft, jeder Schlag ist zu sehen und zu hören; die Sprosse, die an der Reihe ist, „atmet“ im selben Takt, und ein Ring schrumpft zum Schlag hin. Drei Schläge laufen zum Einschwingen vorab. Danach tippt man die Sprossen von unten nach oben an, jede genau auf ihren Schlag. Bei jedem Feld erscheint die Abweichung in Millisekunden mit ✓ oder ✗, zu früh oder zu spät. Eine Leiter gelingt, wenn mindestens drei Viertel der Sprossen im Takt getroffen sind. Der Takt wird mit den Stufen von 1,0 auf 0,5 s verkürzt, nie schneller als zwei Schläge pro Sekunde; eine Sitzung hat acht Leitern. Erfasst werden mittlere Abweichung, Tendenz (früh oder spät) und Fehler. Es ist eine Tipp-Aufgabe am Bildschirm, keine Beinarbeit.
 
 ## 2. Ablauf im Original (Analyse)
 Quelle: Seitentext und ausgelieferter Spielcode (Next.js-Chunks, abgerufen und formatiert 29.09.2026; nur Mechanik notiert). **[Code]** = aus dem Code, **[Text]** = nur Regeltext.
@@ -118,48 +118,42 @@ Quelle: Seitentext und ausgelieferter Spielcode (Next.js-Chunks, abgerufen und f
 - **Normtabelle ohne Datengrundlage:** Die Seite erklärt selbst, keine Nutzerdaten zu sammeln; keine zitierte Arbeit enthält Normen für dieses Spiel. Die Stufen entsprechen der Notenfunktion (Referenz 17.000 Punkte) – Prozentränge sind erfunden. „Level 12–15 = Elite“ passt auch nicht zur Levelmechanik, die fehlerfreie Spieler:innen nach ≈ 17 s über Level 15 hinaus treibt.
 
 ## 4. Optische und okulomotorische Grundlagen
-- **Sehwinkel (eigene Rechnung, 24″ Full-HD, 60 cm ≈ 37,8 px/°):** Trefferzone Ø 36 → 20 px ≈ 57′ → 32′ (≈ 1,0° → 0,5°); seitlicher Hub 80 px ≈ 2,1°; Sprossenabstand 50–75 px ≈ 1,3–2,0°. Die ganze Leiter liegt im zentralen Gesichtsfeld (≈ 3° breit) – peripheres Sehen hat nur eine Nebenrolle (nächste Leiter).
-- **Tempo:** 150–750 px/s ≈ 4–20°/s (Laptop 15,6″/50 cm ≈ 3–15°/s); gut verfolgbar, denn die Augenfolgebewegung erreichte bei vier von fünf Versuchspersonen ≈ 90 % der Zielgeschwindigkeit bis ≈ 100°/s (Meyer et al., 1985). Oberhalb Level 15 steigt das Tempo weiter (Level 30 ≈ 37°/s).
-- **Blickstrategie:** Typisch ist eine Mischung aus Mitverfolgen der Leiter und kleinen Blicksprüngen zur nächsten Sprosse; während einer Zeigebewegung bleibt der Blick am Ziel verankert (Neggers & Bekkering, 2000). Der Website-Tipp „Blick fest in der Mitte“ ist möglich, weil die Leiter nur ≈ 3° breit ist, aber kein belegter Vorteil.
-- **Bildschirm:** Sample-and-hold-Sprünge 12,5 px/Bild bei 60 Hz, 5,2 px bei 144 Hz (eigene Rechnung; Website-Werte stimmen) – bei 20-px-Zonen spürbar. Kontrast: graue Sprossenumrisse (#475569) auf fast schwarzem Grund, aktuelle Sprosse grün; helle Umgebung und Spiegelungen verschlechtern die Erkennbarkeit.
-- **Farbe:** grün (aktuell/erledigt), grau (offen), rot (verpasst). Da die Reihenfolge immer gleich ist, ist Farbsehen nicht nötig; bei Rot-Grün-Schwäche (≈ 8 % der Männer, Birch, 2012) fehlt nur die Hilfe.
-- **Brille:** Die Leiter ist nur ≈ 3° breit und ist damit schmaler als das klare horizontale Sehfeld der beiden in Han et al. (2003) untersuchten Gleitsichtgläser (13° bzw. 18° bei 60 cm; dort ging es um Lesen am Bildschirm). Kritischer ist die senkrechte Blickwanderung mit der Leiter über die Spielfeldhöhe (450 px ≈ 12°): Bei Gleitsicht ändert sich dabei die Wirkung im genutzten Glasbereich, sodass Teile des Weges unscharf sein können, wenn man nur die Augen bewegt (eigene Einordnung, für dieses Spiel nicht untersucht). Eine Arbeitsplatzbrille oder ein etwas niedriger gestellter Bildschirm kann angenehmer sein (Hinweis, keine Beratung). Kein Stereosehen nötig.
+- **Reize:** Die Leiter steht still; die Felder sind groß (mindestens etwa 44 px hoch und 90 px breit), tragen ihre Nummer und füllen den größten Teil der Bühnenhöhe. Als Umrechnung gilt: Bei 40 cm Abstand entspricht 1 cm auf dem Bildschirm etwa 1,4°. Der Taktgeber schwingt sanft mit höchstens zwei Schlägen pro Sekunde, ohne Blitzen. Rückmeldung erfolgt mit ✓/✗ und Zahlen, nicht nur mit Farbe; eine Rot-Grün-Farbsehschwäche (etwa 8 % der Männer; Birch, 2012) ist deshalb kein Hindernis.
+- **Blickstrategie:** Die Reihenfolge ist immer gleich (von unten nach oben im Zickzack) und lässt sich daher vorausplanen; der Blick wechselt von Feld zu Feld. Während einer Zeigebewegung bleibt der Blick am Ziel „verankert“ (Neggers & Bekkering, 2000). Die Blickwechsel zwischen den Feldern müssen sich in den Takt einfügen: Bei 0,5 s je Schlag bleibt dafür wenig Spielraum.
+- **Brille:** Mit Gleitsichtgläsern ist der scharfe Zwischenbereich am Bildschirm nur etwa 13–18° breit (Han et al., 2003; dort ging es um Lesen am Bildschirm). Die Leiter ist schmal genug, die senkrechte Blickwanderung über die ganze Höhe kann aber dazu führen, dass Teile unscharf erscheinen; ob das hier stört, ist nicht untersucht. Eine Arbeitsplatzbrille oder ein etwas tiefer gestellter Bildschirm kann angenehmer sein (Beratung beim Optiker). Der Akkommodationsaufwand beträgt 1 geteilt durch den Abstand in Metern (2,5 dpt bei 40 cm). Stereosehen ist nicht nötig.
 
 ## 5. Neurowissenschaftliche Grundlagen
-- **Sequenzlernen:** Motorisches Fertigkeitslernen stützt sich auf frontoparietale Areale und zwei Schleifensysteme, Kortex–Basalganglien und Kortex–Kleinhirn (Hikosaka et al., 2002). Die Website-Aussage, der „prämotorische Kortex bereite das 4-Sprossen-Paket vor“, ist eine Vereinfachung ohne Beleg für dieses Spiel.
-- **Rhythmisch vs. diskret:** Rhythmische Handgelenksbewegungen aktivieren weniger höhere kortikale Planungsareale als diskrete, auch im selben Gelenk (fMRT, Schaal et al., 2004). Das Spiel liegt dazwischen: gleichmäßiger Wechsel, aber jede Sprosse ist ein bewegtes Einzelziel.
-- **Abfangen:** Wegen sensomotorischer Verzögerungen (visuelle Online-Korrekturen nach im Mittel ≈ 160 ms, Saunders & Knill, 2003) muss die Position der Sprosse vorhergesagt werden. Zeitliche Präzision ist am höchsten, wenn man den Abfangort frei wählen kann (Brenner & Smeets, 2015) – hier ist die seitliche Position fest (±40 px), die Höhe auf der senkrechten Falllinie aber frei wählbar; man kann den Zeiger also auch vorab in die Falllinie setzen und die Sprosse „hineinlaufen“ lassen (eigene Ableitung aus dem Code).
-- **Kein Beleg** für „Training“ bestimmter Hirnregionen oder gemeinsamer „Taktgeber“ für Hand und Fuß.
+- **Sequenzlernen:** Motorisches Fertigkeitslernen stützt sich auf frontoparietale Areale und zwei Schleifensysteme, Kortex–Basalganglien und Kortex–Kleinhirn (Hikosaka et al., 2002). Dass die Übung bestimmte Hirnregionen „trainiert“, ist nicht belegt.
+- **Rhythmisch und diskret:** Rhythmische Handgelenksbewegungen aktivieren weniger höhere kortikale Planungsareale als diskrete, auch im selben Gelenk (fMRT, Schaal et al., 2004). Die Übung liegt dazwischen: Die Folge ist rhythmisch, aber jeder Tipp ist ein diskretes Ziel zu einem festen Zeitpunkt.
+- **Timing:** Wegen sensomotorischer Verzögerungen (visuelle Online-Korrekturen nach im Mittel etwa 160 ms; Saunders & Knill, 2003) muss ein Tipp im Voraus geplant werden; bei kurzen Takten bleibt kaum Zeit für Korrekturen. Beim Abfangen bewegter Ziele ist die zeitliche Präzision am höchsten, wenn man den Treffort frei wählen darf (Brenner & Smeets, 2015); hier sind Ort und Zeit durch Leiter und Takt festgelegt, gewertet wird die Abweichung vom Schlag.
 
 ## 6. Motorische Grundlagen
-- **Bewegungsart:** kleine, schnelle Zickzack-Bewegungen aus Handgelenk/Fingern (≈ 80 px quer, 50–75 px längs), überlagert von der Abwärtsbewegung der Leiter. Da nur Nähe zählt, muss man der Leiter nicht fortlaufend folgen: Möglich ist auch ein Wechsel aus seitlichen Zielbewegungen und Warten in der Falllinie – deshalb überwiegen Zielbewegung unter Zeitdruck und Timing, fortlaufendes Nachführen spielt nur eine Nebenrolle.
-- **Fitts:** Näherungsweise ID = log₂(2A/B) ≈ 2,4–3,5 bit (A ≈ 94–110 px Sprossenabstand, B = 36 → 20 px). Für bewegte Ziele muss die Zielgeschwindigkeit zusätzlich berücksichtigt werden (Jagacinski et al., 1980); Fitts allein beschreibt die Aufgabe daher nur grob.
-- **Zwei Komponenten:** schneller Anfangsimpuls plus visuell geführte Endkorrektur (Woodworth, 1899; Elliott et al., 2001). Bei hohem Tempo bleibt kaum Zeit für Korrekturen → Vorausplanung (Chunking).
-- **Speed-Accuracy:** Da nur Nähe zählt, lohnt ein flüssiger Bogen statt harter Stopps; zu hektische Schwünge überspringen die Zone.
-- **Belastung:** 45 s schnelle Wechsel; die Dauer der Mausnutzung hängt mit Hand-Arm-Beschwerden zusammen (mäßige Evidenz, IJmker et al., 2007). Eine Sitzung ist kurz, Wiederholungen summieren sich.
+- **Bewegungsart:** kleine, schnelle Zickzack-Bewegungen von Hand und Finger von Feld zu Feld, je Schlag ein Tipp; fortlaufendes Nachführen ist nicht nötig. Schnelle Bewegungsfolgen werden vorausgeplant und hierarchisch organisiert (Lashley, 1951, nach Rosenbaum et al., 2007); Sequenzen gliedern sich mit Übung spontan in „Chunks“ (Sakai et al., 2003).
+- **Zielgenauigkeit:** Die Felder sind groß; nach Fitts (1954) bleibt der Schwierigkeitsindex niedrig, die Genauigkeit des Treffens begrenzt kaum. Entscheidend ist das Timing.
+- **Zwei Komponenten:** schneller Anfangsimpuls plus visuell geführte Endkorrektur (Woodworth, 1899; Elliott et al., 2001). Bei kurzen Takten bleibt kaum Zeit für Korrekturen, daher zählt die Vorausplanung. Die Schematheorie (Schmidt, 1975) nimmt ein invariantes relatives Timing von Bewegungsfolgen an; empirisch wird das überwiegend nicht bestätigt (Beek, 1992).
+- **Belastung:** Die Dauer der Zeigearbeit hängt mit Hand-Arm-Beschwerden zusammen (mäßige Evidenz, IJmker et al., 2007). Eine Sitzung ist kurz, Wiederholungen summieren sich.
 
 ## 7. Einflussfaktoren und Messgrenzen
-- **Gerät:** Canvas-Größe (Containerbreite, Windows-Skalierung), Mausempfindlichkeit und Zeigerbeschleunigung verändern die nötigen Handwege; der Website-Tipp „Beschleunigung aus“ ist kein Leistungsgebot (Casiez et al., 2008). Bildrate beeinflusst Treffersicherheit (Abschnitt 2).
-- **Spielfeldhöhe:** Das nutzbare Zeitfenster je Leiter hängt von der Spielfeldhöhe ab (bei 450 px: ≈ 2,2 s bei 150 px/s, ≈ 0,33 s bei 750 px/s; eigene Rechnung, Abschnitt 2) – Punkte sind zwischen Geräten nicht vergleichbar.
-- **Levelmechanik:** Weil Level nie sinken und ohne Obergrenze steigen, endet eine gute Runde in einem Tempo, das kaum jemand hält; die Punkte hängen stark vom Serienbonus ab und streuen dadurch.
-- **Alter:** Ältere haben mehr Schwierigkeiten mit Mausaufgaben (Smith et al., 1999); einfache Reaktion wird mit dem Alter langsamer, v. a. motorisch (Woods et al., 2015).
-- **Übung:** Schnelle Lerneffekte in den ersten Runden; nur Vergleiche mit sich selbst am selben Gerät sind sinnvoll. Die Zuverlässigkeit der Punktzahl ist nicht untersucht.
+- **Gerät:** Die gemessene Abweichung enthält die Verzögerung des Touchscreens; Browser-Anwendungen überschätzen Zeiten auf Touch- und Tastaturgeräten je nach Gerät unterschiedlich (Pronk et al., 2020). Eine gleichbleibende Tendenz zu „spät“ kann deshalb teilweise vom Gerät stammen und ist keine Eigenschaft der Person. Bildschirmgröße und Abstand verändern die Wege zwischen den Feldern; nur Vergleiche mit sich selbst auf demselben Gerät sind sinnvoll.
+- **Messgrößen:** Mittlere Abweichung (Betrag), Tendenz (Vorzeichen) und Fehler sind aus wenigen Tipps je Leiter berechnet und streuen. Messungen am Menschen streuen allgemein; aussagekräftiger als ein Einzelwert ist der Verlauf über mehrere Leitern und Sitzungen (Median), und hohe Korrelation zweier Verfahren heißt nicht, dass sie dieselben Werte liefern (Mountford et al., 2004, S. 24).
+- **Alter:** Ältere haben mehr Schwierigkeiten bei Mausaufgaben (Smith et al., 1999); für das Tippen im Takt ist das nicht untersucht. Die Stufe passt sich an.
+- **Übung:** Schnelle Lerneffekte in den ersten Leitern; die Zuverlässigkeit der Messwerte ist nicht untersucht.
 
 ## 8. Studienlage: Trainierbarkeit und Übertragung
-- **Übungseffekt – mittel:** Menschen werden in geübten sensomotorischen Aufgaben zuverlässig besser; Sequenzen werden mit Übung in Chunks organisiert (Sakai et al., 2003). Für dieses Spiel keine Studien.
-- **Naher Transfer – schwach:** auf ähnliche Maus-Abfangaufgaben plausibel, aber ungeprüft.
-- **Alltagstransfer – fehlend:** Hirntraining verbessert vor allem die geübten Aufgaben, kaum Alltags- leistungen (Simons et al., 2016). Für Beinarbeit gibt es nicht einmal beim echten Leitertraining einen Zusatznutzen gegenüber normalem Training (Padrón-Cabo et al., 2020).
-- **Zum Vergleich (echte Übungen, nicht dieses Spiel):** Schritttraining im Stehen senkte bei Älteren die Sturzrate um ≈ 50 % (Rate Ratio 0,48, Metaanalyse von 7 RCTs; Okubo et al., 2017). Das ist ein Grund, für Mobilitätsziele echte Bewegungsübungen zu empfehlen – nicht diese Maus-Übung.
+- **Übungseffekt (mittel):** Menschen werden in geübten sensomotorischen Aufgaben zuverlässig besser; Sequenzen werden mit Übung in Chunks organisiert (Sakai et al., 2003). Für diese Übung gibt es keine Studie.
+- **Naher Transfer (schwach):** auf ähnliche Tipp- und Timing-Aufgaben am Bildschirm plausibel, aber ungeprüft.
+- **Alltagstransfer (fehlend):** Hirntraining verbessert vor allem die geübten Aufgaben, kaum Alltagsleistungen (Simons et al., 2016). Für Beinarbeit gab es nicht einmal beim echten Leitertraining einen Zusatznutzen gegenüber normalem Training (Padrón-Cabo et al., 2020; kleine Studie, n = 18). Wer Beweglichkeit oder Sturzprävention im Blick hat, ist mit echten Bewegungsübungen besser beraten: Schritttraining im Stehen senkte bei Älteren die Sturzrate um etwa 50 % (Rate Ratio 0,48, Metaanalyse von 7 RCTs; Okubo et al., 2017).
 
 ## 9. Auswahlhinweise für die KI
-- **Passt, wenn …** Auge-Hand-Koordination und Timing beim Abfangen gleichmäßig bewegter Ziele geübt werden sollen; eine einfache, feste Regel gewünscht ist; eine kurze (45 s), spielerische Maus-Übung mit steigendem Tempo passt.
-- **Weniger passend, wenn …** Beinarbeit, Gleichgewicht, Sturzprävention oder Sportschnelligkeit das Ziel sind (keine Körperübung); nur ein Tablet vorhanden ist; ohne Zeitdruck geübt werden soll.
+- **Passt, wenn …** Rhythmus, die Abfolge mehrerer Orte und das genaue Antippen zu einem vorgegebenen Zeitpunkt geübt werden sollen; eine einfache, gleichbleibende Regel und eine kurze, klar strukturierte Tipp-Übung gewünscht sind.
+- **Weniger passend, wenn …** Beinarbeit, Gleichgewicht, Sturzprävention oder Sportschnelligkeit das Ziel sind (keine Körperübung; dafür echte Schritt- und Gleichgewichtsübungen), schnelle Reaktionen gewünscht sind (besser 101/301) oder ganz ohne Takt geübt werden soll.
 - **Vorsicht / anpassen bei …**
-  - `hand_arm_beschwerden`: schnelle, wiederholte Querbewegungen der Maushand.
-  - `tremor_parkinson`: Trefferzonen bis Ø 20 px (≈ 0,5°) an bewegten Zielen.
-  - `presbyopie_gleitsicht`: senkrechte Blickwanderung über die Spielfeldhöhe; Bildschirm tiefer stellen, Arbeitsplatzbrille erwägen.
-  - `migraene_lichtempfindlich`, `photosensitive_epilepsie`: einzelne rote Vollbild-Blitze (480 ms) und Wackeln bei Fehlern; kein periodisches Flackern ≥ 3 Hz, gesättigtes Rot gilt aber als besonders ungünstige Blitzfarbe (Harding et al., 2005); Effekte abschaltbar. Bei schneller Fehlerfolge (Leitern alle 0,4 s) können mehrere Blitze kurz nacheinander auftreten (eigene Ableitung, nicht gemessen).
-- **Kombiniert gut mit …** 104 (Zielverfolgung), 405 (Zickzack-Blickfolge, ohne Hand), 707 (Pfad folgen), 708 (Finger-Sequenzen), 802 (fallende Kugeln per Klick abfangen), 809 (Abfangen auf Flugbahnen), 810 (Zeiger durch Korridor). **Abgrenzung in der Gruppe 806–811:** keine Dublette; nächstverwandt ist 809 (ebenfalls Abfangen bewegter Ziele mit der Maus, dort aber Laden/Timing und träges Lenken ohne Frist statt festem Zickzack-Rhythmus unter hohem Zeitdruck). Keine Diagnosen, keine Heil- oder Leistungsversprechen.
+  - `hand_arm_beschwerden`: viele schnelle Tipps in kurzer Folge; Pausen einplanen.
+  - `tremor_parkinson`: Das Antippen im Takt verlangt gezielte, zeitlich genaue Bewegungen; die Felder sind groß, Zittern kann dennoch zu Abweichungen führen.
+  - `presbyopie_gleitsicht`: senkrechte Blickwanderung über die Leiter; Bildschirm tiefer stellen, Arbeitsplatzbrille erwägen.
+  - `migraene_lichtempfindlich`, `photosensitive_epilepsie`: Der Taktgeber schwingt sanft mit höchstens zwei Schlägen pro Sekunde, es gibt kein Blitzen, kein Rot und kein Wackeln; gesättigtes Rot gilt als besonders ungünstige Blitzfarbe (Harding et al., 2005). Dennoch bei bekannter Lichtempfindlichkeit zurückhaltend sein; die Schläge sind auch hörbar.
+  - Treten beim Üben Doppelbilder, plötzlicher Sehverlust, Kopfschmerz mit Sehverschlechterung, Schwindel oder Zittern auf, sollte das ärztlich abgeklärt werden, statt weiterzuüben (Muchnick, 2008, S. 6, 28).
+- **Kombiniert gut mit …** 104 (Zielverfolgung), 405 (Zickzack-Blickfolge, ohne Hand), 707 (Pfad folgen), 708 (Finger-Sequenzen), 802 (fallende Kugeln abfangen), 809 (Abfangen auf Flugbahnen), 810 (Weg durch einen Korridor). **Abgrenzung in der Gruppe 806–811:** keine Dublette; nächstverwandt ist 809 (ebenfalls zeitliches Treffen, dort aber Abfangen auf Flugbahnen ohne festen Rhythmus statt festem Zickzack im Takt). Keine Diagnosen, keine Heil- oder Leistungsversprechen; Ergebnisse sind keine Normwerte.
 
 ## 10. Schwächen des Originals und Empfehlungen für eine Blickfit-Umsetzung
 - **Touch:** Das Original ist auf dem Tablet nicht steuerbar. Blickfit: Finger ziehen lassen, Zonen größer (≥ Ø 1°, bei 40 cm ≈ 7 mm, z. B. ≈ 36 CSS-px auf einem iPad mit ≈ 132 CSS-px je Zoll; die CSS-Pixelgröße schwankt zwischen Geräten) und leicht versetzte Fingermarke, damit der Finger die Sprosse nicht verdeckt.
@@ -202,3 +196,6 @@ Quelle: Seitentext und ausgelieferter Spielcode (Next.js-Chunks, abgerufen und f
 - Sheppard, J. M., & Young, W. B. (2006). Agility literature review: Classifications, training and testing. *Journal of Sports Sciences, 24*(9), 919–932. https://doi.org/10.1080/02640410500457109 – Definition Agility
 - Simons, D. J., Boot, W. R., Charness, N., Gathercole, S. E., Chabris, C. F., Hambrick, D. Z., & Stine-Morrow, E. A. L. (2016). Do "brain-training" programs work? *Psychological Science in the Public Interest, 17*(3), 103–186. https://doi.org/10.1177/1529100616661983 – Transfer
 - Smith, M. W., Sharit, J., & Czaja, S. J. (1999). Aging, motor control, and the performance of computer mouse tasks. *Human Factors, 41*(3), 389–396. https://doi.org/10.1518/001872099779611102 – Alter und Maus
+- Muchnick, B. G. (2008). *Clinical Medicine in Optometric Practice* (2nd ed.). Mosby/Elsevier. https://openlibrary.org/isbn/9780323029612 – Lehrbuch: Warnzeichen mit Abklärungsbedarf (S. 6, 28)
+- Mountford, J., Ruston, D., & Dave, T. (2004). *Orthokeratology: Principles and Practice*. Butterworth-Heinemann. https://openlibrary.org/isbn/9780750640077 – Lehrbuch: Genauigkeit und Wiederholbarkeit von Messungen, Korrelation ist keine Übereinstimmung (S. 17–18, 24)
+- Pronk, T., Wiers, R. W., Molenkamp, B., & Murre, J. (2020). Mental chronometry in the pocket? Timing accuracy of web applications on touchscreen and keyboard devices. *Behavior Research Methods*, 52(3), 1371–1382. https://doi.org/10.3758/s13428-019-01321-2 – Messgrenzen im Browser bei Touch und Tastatur

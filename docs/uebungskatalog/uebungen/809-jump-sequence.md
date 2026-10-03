@@ -2,7 +2,7 @@
 # ===== Kennung =====
 nr: 809
 kennung: jump-sequence
-name: "Sprung-Abfangen mit dem Mauszeiger – Absprung dosieren und ein fliegendes Ziel treffen"
+name: "Sprungweite: die Kugel mit dem Finger auf die Zielmarke dosieren"
 name_original: "Sprungsequenz & Flugbahn-Abfangen (Seitentitel: Sprungkrafttraining online | Sprungfolge-Spiel | SkillDrills)"
 kapitel: "Körper & Reflexe"
 kapitel_original: "physical"
@@ -12,7 +12,7 @@ blickfit_umsetzung: {kennung: "sprung-abfangen", name: "Sprungweite", unterschie
 stand: 2026-09-29
 
 # ===== Überblick =====
-kurzbeschreibung: "Ein Punkt steht unten auf einer Bodenlinie, darüber fliegt ein runder Zielring geradlinig durch das Bild und prallt von den Rändern ab. Man hält die Maustaste auf dem Punkt gedrückt, um „Sprungkraft“ zu laden, lässt los und lenkt den fliegenden Punkt mit der Maus seitlich in den Ring – eine Maus-Übung für Timing und Vorausschätzen, kein Sprungkrafttraining."
+kurzbeschreibung: "Man zieht mit dem Finger an einer Kraftleiste: je weiter, desto weiter springt die Kugel im Bogen. Sie soll auf der Zielmarke landen. Nach jedem Sprung zeigt die Übung Landepunkt und Abweichung (zu kurz oder zu weit). Mit den Stufen wird das Trefferfeld enger, die Hilfsmarke an der Leiste blendet aus und die Zielabstände streuen stärker. Kein Zeitdruck, kein Blitz, kein Wackeln; gemessen werden nur Zuglänge und Landepunkt – keine Körperübung, kein Sprungkrafttraining."
 ziel_funktionen: [antizipation, auge_hand_koordination]
 eingabe: [maus, touchpad]
 tablet_geeignet: nein
@@ -74,23 +74,23 @@ belastung:
 # ===== Auswahlhilfe =====
 voraussetzungen: ["Maus (oder Touchpad) mit Taste (Drücken–Halten–Loslassen); auf reinen Touch-Geräten lässt sich das Original nicht starten", "bewegte Ziele mit den Augen verfolgen und gleichzeitig den Punkt am unteren Bildrand im Blick behalten", "passende Korrektion für den Bildschirmabstand (bei Alterssichtigkeit Zwischenbereich)", "Farbsehen nicht zwingend nötig (Zustände zusätzlich über Ladebalken und Bewegung erkennbar)"]
 vorsicht_bei: [hand_arm_beschwerden, tremor_parkinson, presbyopie_gleitsicht, migraene_lichtempfindlich, photosensitive_epilepsie]
-geeignet_fuer: ["Vorausschätzen von Ort und Zeitpunkt beim Abfangen gleichmäßig bewegter Ziele", "Dosieren einer Haltedauer (Timing im Bereich ≈ 0,25–0,6 s) in Kombination mit einer Lenkbewegung", "spielerische Auge-Hand-Übung ohne Frist pro Versuch – man darf auf einen günstigen Moment warten", "Gamer:innen, die Timing und Vorhalt bei Sprung-/Wurfmechaniken üben möchten (ohne Transferversprechen)"]
-weniger_geeignet_fuer: ["Sprungkraft, Schnellkraft, Plyometrie, Gleichgewicht oder Sturzprävention (keine Körperübung; dafür echte Übungen im Stand mit Anleitung)", "Tablet ohne Maus (Startknopf wird im Original durch „Mouse Required for Pointer Lock“ ersetzt)", "Menschen mit Hand-/Armbeschwerden (bis ≈ 50–70 Halte-Klicks in 45 s bei zügigem Spiel)", "wer ein stabiles Leistungsmaß sucht (Punkte hängen stark von Serien und Canvas-Größe ab)"]
+geeignet_fuer: ["Dosieren einer Strecke nach Augenmaß und Einschätzen von Wurfbahnen", "Lernen aus Rückmeldung (zu kurz oder zu weit) von Sprung zu Sprung", "Auge-Hand-Übung ohne Frist pro Versuch, im eigenen Tempo", "Menschen, die ruhig und genau zielen möchten, ohne Zeitdruck"]
+weniger_geeignet_fuer: ["Sprungkraft, Schnellkraft, Gleichgewicht oder Sturzprävention (keine Körperübung; dafür echte Übungen im Stand mit Anleitung)", "Menschen mit Hand- oder Armbeschwerden bei wiederholtem Ziehen", "wer ein stabiles, zwischen Geräten vergleichbares Leistungsmaß sucht (Ergebnis hängt von Gerät und Leistenlänge ab)"]
 evidenz:
   uebungseffekt: mittel
   naher_transfer: schwach
   alltag_transfer: fehlend
-  kommentar: "Abfangleistung und Timing verbessern sich mit Übung in der geübten Aufgabe (allgemeine Motorik-Forschung), Studien zu diesem Spiel fehlen; für Sprungkraft oder Sport-Timing gibt es keinen Beleg, und die Website räumt selbst ein, weder Sprung noch Dehnungs-Verkürzungs-Zyklus zu messen."
+  kommentar: "Abfangleistung, Dosieren und Timing verbessern sich mit Übung in der geübten Aufgabe (allgemeine Motorik-Forschung), Studien zu dieser Übung fehlen; für Sprungkraft oder Sport-Timing gibt es keinen Beleg."
 aehnliche_uebungen: [807, 104, 802, 407, 414, 515]
 stichworte: ["Abfangen", "Interzeption", "Flugparabel", "Timing", "Haltedauer", "Vorausschätzen", "Auge-Hand-Koordination", "Maus", "Sprungspiel", "Combo"]
 ---
 
-# 809 · Sprung-Abfangen mit dem Mauszeiger – Absprung dosieren und ein fliegendes Ziel treffen
+# 809 · Sprungweite: die Kugel mit dem Finger auf die Zielmarke dosieren
 
-> Original: „Sprungsequenz & Flugbahn-Abfangen“ (Seitentitel „Sprungkrafttraining online | Sprungfolge-Spiel“) – skilldrills.online, Kapitel „physical“ / „fitness“ · Blickfit: noch nicht umgesetzt (verwandt: `zielfang`)
+> Original: „Sprungsequenz & Flugbahn-Abfangen“ (Seitentitel „Sprungkrafttraining online | Sprungfolge-Spiel“) – skilldrills.online, Kapitel „physical“ / „fitness“ · Blickfit-Übung: Sprungweite (`sprung-abfangen`)
 
 ## 1. Kurzbeschreibung
-Auf schwarzem Grund liegt unten eine Bodenlinie mit einem kleinen Spielerpunkt. Darüber fliegt ein grüner Zielring geradlinig durch das Bild und prallt von den Rändern ab. Man drückt die Maustaste auf dem Punkt, hält sie gedrückt (ein Ladebalken füllt sich) und lässt los: Der Punkt steigt wie ein geworfener Ball auf einer Parabel und fällt zurück. Im Flug zieht die Maus ihn seitlich nach. Trifft er den Ring, gibt es Punkte, und ein neues Ziel erscheint; landet er ohne Treffer, verfällt die Serie. Trotz des Namens „Sprungkrafttraining“ bewegt man nur Finger und Hand an der Maus.
+Eine Kugel steht am Boden, links oder rechts von ihr steht eine Zielmarke (Fähnchen). Unten liegt eine Kraftleiste: Man zieht mit dem Finger an ihr, und je weiter man zieht, desto weiter springt die Kugel. Beim Loslassen springt die Kugel auf einer Wurfparabel (feste Abwurfrichtung, feste Schwerkraft, Flugzeit nach der Zeit gerechnet) und soll auf der Zielmarke landen. Danach zeigen Landepunkt und Abweichung in Prozent der Bildschirmbreite, ob sie zu kurz oder zu weit kam, mit ✓ oder ✗. Das Trefferfeld ist anfangs ±9 % der Bildschirmbreite breit und wird bis auf ±3 % enger; eine Hilfsmarke an der Leiste zeigt zu Beginn die richtige Kraft und blendet bis Stufe 8 aus, die Zielabstände streuen mit den Stufen stärker. Eine Sitzung hat zwölf Sprünge, ohne Zeitdruck. Erfasst werden mittlere Abweichung, Trefferquote und höchste Stufe – nur, wie weit gezogen wird und wo die Kugel landet. Es ist eine Tipp- und Zieh-Übung am Bildschirm, keine Körperübung.
 
 ## 2. Ablauf im Original (Analyse)
 Quelle: Seitentext und ausgelieferter Spielcode (Next.js-Chunk des Spiels und gemeinsame Hilfsmodule, abgerufen und formatiert 29.09.2026; nur Mechanik notiert). **[Code]** = aus dem Code, **[Text]** = nur Regeltext, **[Rechnung]** = eigene Ableitung aus Code-Werten.
@@ -124,49 +124,46 @@ Quelle: Seitentext und ausgelieferter Spielcode (Next.js-Chunk des Spiels und ge
 - **Messtechnik:** Die Werte zu Bildrate (15 px pro Bild bei 900 px/s und 60 Hz) und Abfragerate sind rechnerisch richtig; „Differenzen unter 5 ms = Messrauschen“ ist keine Aussage von Woods et al. (2015).
 
 ## 4. Optische und okulomotorische Grundlagen
-- **Sehwinkel [Rechnung, 24″ Full-HD, 60 cm ≈ 37,8 px/°]:** Spielfeld 800 × 450 px ≈ 21° × 12°. Zielring Ø 70 → 24 px ≈ 1,9° → 0,6°; wirksamer Trefferkreis Ø 98 → 52 px ≈ 2,6° → 1,4°; Spielerpunkt Ø 28 px ≈ 0,7°. Detailsehen spielt eine Nebenrolle.
-- **Tempo:** 120–800 px/s ≈ 3–21°/s, 900 px/s ≈ 24°/s (Laptop 15,6″/50 cm ≈ 2,5–18,5°/s). Das ist mit glatter Folgebewegung gut zu verfolgen (Augengeschwindigkeit ≈ 90 % der Zielgeschwindigkeit bis 100°/s bei vier von fünf Personen; Meyer et al., 1985). Ältere (75–93 Jahre) hatten bei allen Zielgeschwindigkeiten eine geringere Folgegenauigkeit (Gain), mit wachsendem Abstand bei höherem Tempo und höherer Beschleunigung des Ziels (Moschner & Baloh, 1994).
-- **Zwei Blickorte:** Ziel (oben, bewegt) und Spielerpunkt mit Ladebalken (unten, links am Rand) liegen bis ≈ 9° senkrecht auseinander. Man muss das Ziel verfolgen und zugleich Punkt/Ladung abschätzen → Blickwechsel; das nutzbare Sehfeld spielt eine Nebenrolle, weil es keine Frist gibt und man auf einen günstigen Moment warten kann (anders als bei 806). Wer das Ziel mit den Augen verfolgt, ist beim Abfangen weniger anfällig für Täuschungen der Bewegungswahrnehmung (de la Malla et al., 2017, zitiert nach docs/wissenschaft/02, Abschnitt 3.1).
-- **Bildschirm:** Sample-and-hold-Sprünge 13 px pro Bild bei 800 px/s und 60 Hz, 5,6 px bei 144 Hz [Rechnung]; bei 52-px-Trefferkreis unkritisch. Hoher Kontrast (grüne/cyan Linien auf fast Schwarz); Spiegelungen und helle Umgebung verschlechtern die Sicht auf die dünnen Ringe.
-- **Farbe:** Zustände des Spielerpunkts sind grün/orange/rot/cyan codiert – bei Rot-Grün-Schwäche (≈ 8 % der Männer; Birch, 2012) schwer zu unterscheiden, aber durch Ladebalken und Bewegung redundant.
-- **Brille:** Der Blick wechselt oft senkrecht zwischen Ziel und Bodenlinie. Bei Gleitsicht verändert sich dabei der genutzte Glasbereich, und das klare Zwischenfeld am Bildschirm ist schmal (horizontal 13–18°; Han et al., 2003) – Kopf statt Augen bewegen, Bildschirm eher tief, Arbeitsplatzbrille erwägen (Hinweis, keine Beratung). Die Parabel ist ein zweidimensionales Bild: **kein Stereosehen** nötig.
+- **Reizgrößen:** Das Trefferfeld ist ±9 % (Stufe 1) bis ±3 % (Stufe 20) der Bühnenbreite breit; die größte Sprungweite beträgt 80 % der Bühnenbreite. Als Umrechnung gilt: Bei 40 cm Abstand entspricht 1 cm auf dem Bildschirm etwa 1,4°. Beispielrechnung: Erscheint die Bühne aus 40 cm Abstand 30° breit, entsprechen ±9 % etwa ±2,7° und ±3 % etwa ±0,9°. Detailsehen spielt eine Nebenrolle.
+- **Blickorte:** Die Aufgabe verteilt den Blick auf die Kraftleiste unten (Zuglänge, Hilfsmarke), die Kugel und die Zielmarke. Die Weite wird nach Augenmaß aus dem Abstand zwischen Kugel und Marke abgeschätzt und über die Zuglänge eingestellt; auf höheren Stufen fehlt die Hilfsmarke. Die Parabel ist ein zweidimensionales Bild: Stereosehen ist nicht nötig.
+- **Kugelflug:** Der Flug folgt der Wurfphysik; die Flugdauer ist durch Weite, Abwurfwinkel und Schwerkraft festgelegt und hängt nicht von der Bildrate ab. Die glatte Folgebewegung kommt mit solchen Geschwindigkeiten gut zurecht (Augengeschwindigkeit etwa 90 % der Zielgeschwindigkeit bis 100°/s bei vier von fünf Personen; Meyer et al., 1985). Bei älteren Menschen (75–93 Jahre) war die Folgegenauigkeit bei allen Zielgeschwindigkeiten geringer (Moschner & Baloh, 1994).
+- **Farbe und Form:** Rückmeldung erfolgt mit ✓/✗ und Zahlen, nicht nur mit Farbe; eine Rot-Grün-Farbsehschwäche (etwa 8 % der Männer; Birch, 2012) ist deshalb kein Hindernis.
+- **Brille:** Der Blick wechselt zwischen der Leiste unten und der Zielmarke. Bei Gleitsicht ist das klare Zwischenfeld am Bildschirm schmal (horizontal 13–18°; Han et al., 2003); dann Kopf statt Augen bewegen, den Bildschirm eher tief stellen und gegebenenfalls eine Arbeitsplatzbrille erwägen (Beratung beim Optiker). Der Akkommodationsaufwand beträgt 1 geteilt durch den Abstand in Metern (2,5 dpt bei 40 cm).
 
 ## 5. Neurowissenschaftliche Grundlagen
-- **Vorhersage beim Abfangen:** Wegen sensomotorischer Verzögerungen muss der Ort eines bewegten Ziels über Hunderte Millisekunden vorhergesagt werden; visuelle Information wird durch Vorwissen und interne Modelle ergänzt (Zago et al., 2009). Interne Vorwärts- und inverse Modelle sind gut gestützte Konzepte, das Kleinhirn spielt dabei eine Rolle (Kawato, 1999) – ein Trainingseffekt auf das Kleinhirn durch dieses Spiel ist nicht untersucht.
-- **Vorprogrammiert oder laufend gesteuert:** Für sehr schnelle Schlagbewegungen wird eine weitgehend vorprogrammierte Strategie vorgeschlagen (Tresilian, 2005, gegen die vorherrschende Sicht laufender Steuerung); bei längeren Bewegungen wird laufend an die neueste Zielinformation angepasst (Brenner & Smeets, 2011). Das Spiel verbindet beides: Die Ladedauer legt die Höhe fest (nicht mehr änderbar), die Seitensteuerung ist rückgemeldet, aber träge.
-- **Intervall-Timing:** Die Haltedauer (≈ 0,25–0,6 s) ist eine produzierte Zeitspanne. Zeitschätzung im Millisekunden- bis Sekundenbereich und die beteiligten Hirnstrukturen sind gut untersucht; ob es dafür einen eigenen „inneren Taktgeber“ gibt, wird weiter diskutiert (Übersicht Grondin, 2010). Die Ladung ist zusätzlich als Balken sichtbar, sodass man nicht nur „nach Gefühl“ timen muss.
-- **Keine Hemisphären- oder Sprungnetzwerke:** Motorkortex-Aussagen zu „elastischer Energiespeicherung in den Beinstreckern“ haben mit der Maussteuerung nichts zu tun.
+- **Vorhersage und innere Modelle:** Wer die Landestelle einer Kugel auf einer Parabel einschätzt und die Kraft danach wählt, nutzt Vorwissen über die Wurfphysik; beim Abfangen bewegter Objekte wird visuelle Information durch Vorwissen und interne Modelle ergänzt (Zago et al., 2009). Interne Vorwärts- und inverse Modelle sind gut gestützte Konzepte, das Kleinhirn spielt dabei eine Rolle (Kawato, 1999); ein Trainingseffekt auf das Kleinhirn durch diese Übung ist nicht untersucht.
+- **Lernen aus Rückmeldung:** Nach jedem Sprung zeigt die Übung, ob die Kugel zu kurz oder zu weit kam; diese Rückmeldung lässt sich für den nächsten Versuch nutzen. Die Hilfsmarke an der Leiste erleichtert das zu Beginn und blendet bis Stufe 8 aus.
+- **Kein Bezug zu Sprungnetzwerken:** Aussagen zu „elastischer Energiespeicherung in den Beinstreckern“ haben mit dem Ziehen eines Fingers nichts zu tun.
 
 ## 6. Motorische Grundlagen
-- **Bewegungsart:** Finger drückt und hält die Taste (Timing des Loslassens), gleichzeitig führt die Hand die Maus seitlich. Kein Klick-Tempo, keine feinen Zielbewegungen: Der Trefferkreis ist groß (Ø 52–98 px).
-- **Träge Lenkung:** Der Punkt folgt dem Zeiger wie ein System erster Ordnung (Zeitkonstante ≈ 0,22 s). Wer genau auf das Ziel zeigt, kommt zu spät; man muss den Zeiger vor das Ziel setzen (Vorhalt) – ein Grund für den hohen Wert bei `antizipation` und `kontinuierliche_steuerung` = 2.
-- **Zwei Komponenten:** geplanter Anfangsimpuls plus rückgemeldete Korrektur (Woodworth, 1899; Elliott et al., 2001) beschreibt die Lenkphase gut, die Ladephase dagegen ist reines Timing.
-- **Fitts passt kaum:** Das Gesetz gilt für ruhende Ziele; bei bewegten Zielen braucht es Geschwindigkeitsterme (Jagacinski et al., 1980). Beim Abfangen virtueller Ziele war die zeitliche Präzision am höchsten, wenn schnelle Ziele an beliebiger Stelle ihrer Bahn getroffen werden durften (Brenner & Smeets, 2015); das ist hier der Fall, eine Messung für dieses Spiel fehlt.
-- **Belastung:** Bei zügigem Spiel bis ≈ 50–70 Halte-Klicks in 45 s [Rechnung]. Die Dauer der Mausnutzung hängt mit Hand-Arm-Beschwerden zusammen (mäßige Evidenz aus Längsschnittstudien zur Büroarbeit, Hinweise auf Dosis-Wirkung; IJmker et al., 2007) – für 45-s-Runden nur als allgemeiner Hinweis zu verstehen.
+- **Bewegungsart:** Der Finger zieht an der Leiste; die Zuglänge bestimmt die Kraft (fester Verstärkungsfaktor) und damit die Sprungweite, das Loslassen löst den Sprung aus. Es gibt kein Klick-Tempo, und der Finger bleibt unter dem Geschehen, sodass er nichts verdeckt. Die Weite wächst linear mit der Zuglänge: Ein Fehler von 1 % der Bühnenbreite entspricht 1,25 % der Leistenlänge; das engste Trefferfeld (±3 %) verlangt also eine Genauigkeit von etwa ±3,75 % der Leistenlänge.
+- **Zwei Komponenten:** Ein geplanter Anfangsimpuls plus rückmeldungsgesteuerte Korrektur (Woodworth, 1899; Elliott et al., 2001) beschreibt das Ziehen gut: erst grob, dann fein bis zur gewünschten Länge; entschieden wird beim Loslassen.
+- **Fitts'sches Gesetz:** Es gilt für Zielbewegungen auf ruhende Ziele (Fitts, 1954). Hier wird nicht auf das Ziel gezeigt, sondern eine Strecke dosiert; das Gesetz beschreibt die Aufgabe daher nur sehr grob.
+- **Belastung:** Zwölf kurze Züge je Sitzung; die Dauer der Zeigearbeit hängt mit Hand-Arm-Beschwerden zusammen (mäßige Evidenz, IJmker et al., 2007), für kurze Sitzungen nur als allgemeiner Hinweis zu verstehen.
 
 ## 7. Einflussfaktoren und Messgrenzen
-- **Canvas-Größe:** Schwerkraft und Tempo sind in Pixeln festgelegt. Auf höheren Spielfeldern liegen Ziele höher (längeres Laden, längere Fehlsprünge), auf breiteren seltener am Rand – Punkte sind zwischen Geräten und Fenstergrößen nicht vergleichbar.
-- **Maus:** Empfindlichkeit, Zeigerbeschleunigung und Pointer-Lock verändern die nötigen Handwege (Casiez et al., 2008); Tastenlatenz der Maus verschiebt den Absprung um wenige ms.
-- **Levelmechanik:** Level sinkt nie; Serien treiben Level und Tempo schnell hoch. Nach einer langen Serie bleibt das Spiel schnell, auch wenn danach viele Fehler folgen. Punkte hängen stark vom Serienfaktor ab und streuen daher.
-- **Strategie:** Da es keine Frist pro Ziel gibt, kann man auf günstige Momente warten (z. B. Ziel nahe über dem Punkt). Punkte vermischen also Treffsicherheit und Risikobereitschaft.
-- **Alter:** Ältere (60–75 Jahre) hatten mehr Schwierigkeiten mit Mausaufgaben, Altersunterschiede v. a. beim Klicken und Doppelklicken (Smith et al., 1999); die Folgebewegung wird mit dem Alter schwächer (Moschner & Baloh, 1994).
-- **Zuverlässigkeit:** nicht untersucht; nur Vergleiche mit sich selbst am selben Gerät und in derselben Fenstergröße sind sinnvoll.
+- **Gerät und Bühnenbreite:** Weiten und Abweichungen sind in Prozent der Bühnenbreite angegeben; die Schwerkraft wächst mit der Bühnengröße, sodass Flugdauer und Bogen auf jedem Gerät ähnlich sind. Die Länge der Leiste in Zentimetern ändert die nötige Handbewegung; Eingabeart und Unterlage wirken. Nur Vergleiche mit sich selbst auf demselben Gerät sind sinnvoll.
+- **Hilfsmarke:** Solange die Hilfsmarke die richtige Kraft zeigt, misst die Übung vor allem, wie genau man ablesen und ziehen kann, nicht, wie gut man Weiten schätzt; mit dem Ausblenden ab Stufe 8 ändert sich das.
+- **Zufall:** Richtung und Zielabstände sind zufällig und werden mit den Stufen weiter gestreut; einzelne Sprünge streuen stark. Messungen am Menschen streuen allgemein, der Verlauf über mehrere Sprünge und Sitzungen (Median) ist aussagekräftiger als ein Einzelwert (vgl. Mountford et al., 2004, S. 17–18).
+- **Alter:** Ältere (60–75 Jahre) hatten bei Mausaufgaben mehr Schwierigkeiten (Smith et al., 1999); die Folgebewegung wird mit dem Alter schwächer (Moschner & Baloh, 1994). Die Stufe passt sich an.
+- **Zuverlässigkeit:** nicht untersucht; nur Vergleiche mit sich selbst am selben Gerät sind sinnvoll.
 
 ## 8. Studienlage: Trainierbarkeit und Übertragung
-- **Übungseffekt – mittel:** In geübten Abfang- und Timingaufgaben wird man mit Übung in der Regel besser (allgemeiner Befund des motorischen Lernens, hier nicht durch eine eigene Quelle belegt); zu diesem Spiel gibt es keine Studie.
-- **Naher Transfer – schwach:** auf ähnliche Maus-Abfangaufgaben (z. B. Wurf- oder Sprungmechaniken in Spielen) plausibel, aber ungeprüft.
-- **Alltagstransfer – fehlend:** Hirntraining verbessert vor allem die geübten Aufgaben, kaum Alltagsleistungen (Simons et al., 2016). Für Sprungkraft oder Sprung-Timing im Sport gibt es keinen Beleg; physikalisch ist die Aufgabe kein Sprung-Analogon (Abschnitt 3).
-- **Zum Vergleich (echte Übungen, nicht dieses Spiel):** Bewegungstraining mit Gleichgewichts- und Funktionsanteilen senkt bei zu Hause lebenden Älteren die Sturzrate um ≈ 24 % (Sherrington et al., 2019). Wer Sprungkraft oder Mobilität verbessern will, braucht Übungen mit dem Körper – nicht diese Maus-Übung.
+- **Übungseffekt (mittel):** In geübten Zielaufgaben und Dosieraufgaben wird man mit Übung in der Regel besser (allgemeiner Befund des motorischen Lernens, hier nicht durch eine eigene Quelle belegt); zu dieser Übung gibt es keine Studie.
+- **Naher Transfer (schwach):** auf ähnliche Dosier- und Wurfaufgaben am Bildschirm plausibel, aber ungeprüft.
+- **Alltagstransfer (fehlend):** Hirntraining verbessert vor allem die geübten Aufgaben, kaum Alltagsleistungen (Simons et al., 2016). Für Sprungkraft oder Sprung-Timing im Sport gibt es keinen Beleg; die Aufgabe ist kein Sprung, die Flugbahn der Kugel ist eine Darstellung.
+- **Zum Vergleich (echte Übungen, nicht diese Übung):** Bewegungstraining mit Gleichgewichts- und Funktionsanteilen senkt bei zu Hause lebenden Älteren die Sturzrate um etwa 24 % (Sherrington et al., 2019). Wer Sprungkraft oder Mobilität verbessern will, braucht Übungen mit dem Körper.
 
 ## 9. Auswahlhinweise für die KI
-- **Passt, wenn …** Vorausschätzen und Timing beim Abfangen bewegter Ziele geübt werden sollen; eine Übung ohne Frist pro Versuch gewünscht ist (eigenes Tempo beim Absprung); Maus vorhanden ist.
-- **Weniger passend, wenn …** Sprungkraft, Beinarbeit, Gleichgewicht oder Sturzprävention das Ziel sind; nur ein Tablet vorhanden ist; ein vergleichbares Leistungsmaß gebraucht wird.
+- **Passt, wenn …** das Dosieren einer Strecke nach Augenmaß und das Einschätzen von Wurfbahnen geübt werden sollen; eine Übung ohne Zeitdruck gewünscht ist (eigenes Tempo beim Ziehen und Loslassen); ein Gerät mit Touchscreen vorhanden ist.
+- **Weniger passend, wenn …** Sprungkraft, Beinarbeit, Gleichgewicht oder Sturzprävention das Ziel sind; ein vergleichbares Leistungsmaß zwischen Geräten gebraucht wird.
 - **Vorsicht / anpassen bei …**
-  - `hand_arm_beschwerden`: viele Halte-Klicks und gleichzeitiges Seitwärtsführen der Maus.
-  - `tremor_parkinson`: Halten der Taste bei gleichzeitiger Lenkung; Trefferkreis zwar groß, aber bewegt.
-  - `presbyopie_gleitsicht`: häufige senkrechte Blickwechsel (bis ≈ 9°); Kopf mitbewegen, Arbeitsplatzbrille erwägen.
-  - `migraene_lichtempfindlich`, `photosensitive_epilepsie`: roter Vollbild-Blitz (480 ms) und Bildschirm-Wackeln bei jedem Fehlsprung. Im normalen Spiel kommen Blitze seltener als 3-mal pro Sekunde; durch schnelles Klicken ohne Laden sind aber mehrere rote Blitze pro Sekunde möglich. Mehr als 3 Blitze pro Sekunde und Wechsel zu gesättigtem Rot gelten als potenziell anfallsauslösend (Harding et al., 2005). Deshalb Effekte vorher abschalten (Blitz abschaltbar, Wackeln nicht).
-- **Kombiniert gut mit …** 104 (bewegtes Ziel abfangen), 407 (prädiktive Blickfolge), 414 (Sprungziel), 515 (vertikales Tracking), 802 (fallende Kugeln fangen), 807 (Leitersprossen im Zickzack abfangen). **Abgrenzung in der Gruppe 806–811:** keine Dublette; nächstverwandt ist 807 (ebenfalls Abfangen bewegter Ziele mit der Maus, dort aber fester Zickzack-Rhythmus unter hohem Zeitdruck, hier Timing einer Haltedauer und Vorhalt ohne Frist). Keine Diagnosen, keine Heil- oder Leistungsversprechen.
+  - `hand_arm_beschwerden`: wiederholtes Ziehen an der Leiste; Pausen einplanen.
+  - `tremor_parkinson`: Die Zuglänge muss genau gehalten werden; Zittern kann sie verändern, auf hohen Stufen ist das Trefferfeld eng. Die Übung misst kein Zittern; Zittern gehört zu den Symptomen, die ärztlich abgeklärt werden sollten (Muchnick, 2008, S. 28).
+  - `presbyopie_gleitsicht`: Blickwechsel zwischen Leiste und Zielmarke; Kopf mitbewegen, Arbeitsplatzbrille erwägen.
+  - `migraene_lichtempfindlich`, `photosensitive_epilepsie`: Die Übung kommt ohne Blitze, ohne Rot und ohne Wackeln aus; die Rückmeldung erfolgt ruhig mit ✓/✗. Grundsätzlich gelten mehr als 3 Blitze pro Sekunde und Wechsel zu gesättigtem Rot als potenziell anfallsauslösend (Harding et al., 2005).
+  - Treten beim Üben Doppelbilder, plötzlicher Sehverlust, Kopfschmerz mit Sehverschlechterung, Schwindel oder Zittern auf, sollte das ärztlich abgeklärt werden, statt weiterzuüben (Muchnick, 2008, S. 6, 28).
+- **Kombiniert gut mit …** 104 (bewegtes Ziel abfangen), 407 (prädiktive Blickfolge), 414 (Sprungziel), 515 (vertikales Tracking), 802 (fallende Kugeln fangen), 807 (Leitersprossen im Takt antippen). **Abgrenzung in der Gruppe 806–811:** keine Dublette; nächstverwandt ist 807 (ebenfalls zeitlich-räumliches Treffen, dort aber fester Zickzack im Takt, hier das Dosieren einer Weite ohne Frist). Keine Diagnosen, keine Heil- oder Leistungsversprechen; Ergebnisse sind keine Normwerte.
 
 ## 10. Schwächen des Originals und Empfehlungen für eine Blickfit-Umsetzung
 - **Ehrlicher Name:** „Sprungkrafttraining“ streichen; z. B. „Wurfbahn-Abfangen“ als Auge-Hand-/Timing-Übung.
@@ -208,3 +205,5 @@ Quelle: Seitentext und ausgelieferter Spielcode (Next.js-Chunk des Spiels und ge
 - Tresilian, J. R. (1999). Visually timed action: Time-out for 'tau'? *Trends in Cognitive Sciences, 3*(8), 301–310. https://doi.org/10.1016/S1364-6613(99)01352-2 – Kritik an Tau als alleiniger Zeitinformation
 - Tresilian, J. R. (2005). Hitting a moving target: Perception and action in the timing of rapid interceptions. *Perception & Psychophysics, 67*(1), 129–149. https://doi.org/10.3758/BF03195017 – vorprogrammierte schnelle Abfangbewegungen (CR ✓, Abstract PubMed 15912877)
 - Zago, M., McIntyre, J., Senot, P., & Lacquaniti, F. (2009). Visuo-motor coordination and internal models for object interception. *Experimental Brain Research, 192*(4), 571–604. https://doi.org/10.1007/s00221-008-1691-3 – interne Modelle beim Abfangen
+- Muchnick, B. G. (2008). *Clinical Medicine in Optometric Practice* (2nd ed.). Mosby/Elsevier. https://openlibrary.org/isbn/9780323029612 – Lehrbuch: Warnzeichen mit Abklärungsbedarf, darunter Zittern (S. 6, 28)
+- Mountford, J., Ruston, D., & Dave, T. (2004). *Orthokeratology: Principles and Practice*. Butterworth-Heinemann. https://openlibrary.org/isbn/9780750640077 – Lehrbuch: Genauigkeit und Wiederholbarkeit von Messungen, Messungen am Menschen streuen (S. 17–18, 24)
