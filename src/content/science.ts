@@ -402,17 +402,17 @@ export const SCIENCE: Record<string, ScienceEntry> = {
         trains: 'Nur auf das Wichtige achten: Es zählt, wohin der Pfeil zeigt – nicht, wo er steht oder wohin seine Nachbarn zeigen.',
         daily: 'Überall, wo Nebensächliches ablenkt: ein Schild lesen, während daneben etwas blinkt, oder bei der Arbeit Störendes ausblenden.',
         research:
-          'Die Übung beruht auf bekannten Aufgaben aus der Forschung (räumlicher Stroop- und Flanker-Effekt). In der geübten Aufgabe wird man mit Übung schneller, auch im höheren Alter. Dass sich das auf „Konzentration allgemein“ oder den Alltag überträgt, ist nicht belegt. Der Unterschied zwischen passenden und widersprüchlichen Pfeilen schwankt von Tag zu Tag stark – deshalb ist er nur ein Zusatzwert.',
+          'Die Übung beruht auf bekannten Aufgaben aus der Forschung (räumlicher Stroop- und Flanker-Effekt). In der geübten Aufgabe wird man mit Übung schneller, auch im höheren Alter. Dass sich das auf „Konzentration allgemein“ oder den Alltag überträgt, ist nicht belegt. Der Unterschied zwischen passenden und widersprüchlichen Pfeilen schwankt von Tag zu Tag stark – deshalb ist er nur ein Zusatzwert. Wie bei jeder Messung am Menschen sagt der Median vieler Durchgänge mehr als ein Einzelwert (Mountford et al. 2004, aus der Hornhautvermessung übertragen).',
         improved:
-          'Farbfrei und sprachfrei statt Farbwörter (für Menschen mit Rot-Grün-Schwäche und in beiden Sprachen gleich), passende und widersprüchliche Durchgänge je zur Hälfte gemischt, keine direkten Wiederholungen, frame-genaue Reaktionszeit, Raten unter 150 ms wird nicht gewertet, Antwortfrist passt sich an (≈ 80 % richtig).',
+          'Der Pfeil erscheint farbfrei und sprachfrei, sodass die Aufgabe in beiden Sprachen gleich ist und auch bei Rot-Grün-Schwäche funktioniert. Zuerst zeigt er nach links oder rechts, später in eine von vier Diagonalrichtungen; Nachbarpfeile kommen erst danach hinzu. Passende und widersprüchliche Durchgänge sind je zur Hälfte gemischt, ohne direkte Wiederholung von Richtung oder Platz. Die Reaktionszeit wird bildgenau erfasst, Antworten unter 150 ms gelten als geraten und zählen nicht. Die Antwortfrist passt sich so an, dass etwa vier von fünf Antworten richtig sind; gezeigt werden die erreichte Stufe, die Treffsicherheit und der Median der Reaktionszeit, der Zeitverlust durch widersprüchliche Reize nur als Zusatzwert.',
       },
       it: {
         trains: 'Badare solo a ciò che conta: vale la direzione della freccia – non dove si trova o dove puntano le vicine.',
         daily: 'Ovunque i dettagli secondari distraggano: leggere un cartello mentre accanto qualcosa lampeggia, o ignorare le interruzioni al lavoro.',
         research:
-          'L’esercizio si basa su compiti noti della ricerca (effetto Stroop spaziale ed effetto flanker). Nel compito allenato si diventa più veloci con la pratica, anche in età avanzata. Che questo si trasferisca alla “concentrazione in generale” o alla vita quotidiana non è dimostrato. La differenza tra frecce concordi e discordanti varia molto da un giorno all’altro – per questo è solo un valore aggiuntivo.',
+          'L’esercizio si basa su compiti noti della ricerca (effetto Stroop spaziale ed effetto flanker). Nel compito allenato si diventa più veloci con la pratica, anche in età avanzata. Che questo si trasferisca alla “concentrazione in generale” o alla vita quotidiana non è dimostrato. La differenza tra frecce concordi e discordanti varia molto da un giorno all’altro – per questo è solo un valore aggiuntivo. Come in ogni misurazione sulle persone, la mediana di molte prove dice più di un singolo valore (Mountford et al. 2004, principio tratto dalla misurazione della cornea).',
         improved:
-          'Senza colori e senza parole invece delle parole-colore (adatto a chi confonde rosso e verde e uguale in entrambe le lingue), metà prove concordi e metà discordanti mescolate, nessuna ripetizione diretta, tempo di reazione preciso al fotogramma, risposte sotto i 150 ms non contano, il tempo a disposizione si adatta (≈ 80 % di risposte giuste).',
+          'La freccia compare senza colori e senza parole, così il compito è identico nelle due lingue e funziona anche per chi confonde rosso e verde. All’inizio punta a sinistra o a destra, poi in una di quattro direzioni diagonali; le frecce vicine si aggiungono solo dopo. Le prove concordi e quelle discordanti sono mescolate metà e metà, senza ripetizioni dirette di direzione o posizione. Il tempo di reazione è rilevato con precisione al fotogramma; le risposte sotto i 150 ms valgono come tentativi a caso e non vengono contate. Il tempo a disposizione si adatta in modo che circa quattro risposte su cinque siano giuste; vengono mostrati il livello raggiunto, la precisione e la mediana del tempo di reazione, mentre la perdita di tempo dovuta agli stimoli discordanti è solo un valore aggiuntivo.',
       },
     },
     sources: [
@@ -422,6 +422,7 @@ export const SCIENCE: Record<string, ScienceEntry> = {
       src('Wilkinson & Yang (2012). Plasticity of inhibition in older adults: Retest practice and transfer effects. Psychology and Aging', 'https://doi.org/10.1037/a0025926'),
       src('Hedge, Powell & Sumner (2018). The reliability paradox: Why robust cognitive tasks do not produce reliable individual differences. Behavior Research Methods', 'https://doi.org/10.3758/s13428-017-0935-1'),
       src('Birch (2012). Worldwide prevalence of red-green color deficiency. J Opt Soc Am A', 'https://doi.org/10.1364/JOSAA.29.000313'),
+      src('Mountford, Ruston & Dave (2004). Orthokeratology: Principles and Practice. Butterworth-Heinemann, S. 43–44', 'https://openlibrary.org/isbn/9780750640077'),
     ],
   },
 
@@ -435,7 +436,7 @@ export const SCIENCE: Record<string, ScienceEntry> = {
         research:
           'Aufgaben dieser Art („Vigilanz“) werden seit Jahrzehnten erforscht. Fast allen fällt das Aufpassen mit der Zeit schwerer – das ist normal und zeigt, warum Pausen wichtig sind. Dass ein solches Training die Aufmerksamkeit im Alltag verbessert, ist nicht belegt. Die Übung ist kein Aufmerksamkeits- oder ADHS-Test.',
         improved:
-          'Klassisches Format mit seltenen Zielen (keine Dublette zu „Stopp & Los“), feste Dauer ohne Zeitbonus, farbfreie Zeichen, weiches Ein- und Ausblenden statt Blitzen. Getrennt ausgewertet werden Treffer, Auslassungen, Fehlalarme und richtig ausgelassene Zeichen – je Hälfte, damit man sieht, wie gut man durchhält. Kein Alarmton bei Fehlern.',
+          'Das Format folgt klassischen Daueraufmerksamkeitsaufgaben: Getippt wird nur bei einem seltenen Ziel (18 von 100 Zeichen), nicht bei häufigen Zeichen. Die Dauer ist fest ohne Zeitbonus, die Zeichen sind farbfrei und werden weich ein- und ausgeblendet statt zu blitzen. Getrennt ausgewertet werden Treffer, Auslassungen, Fehlalarme und richtig ausgelassene Zeichen, je für die erste und die zweite Hälfte, damit man sieht, wie gut man durchhält. Die Schwierigkeit richtet sich danach, wie ähnlich die anderen Zeichen dem Ziel sind, und bleibt während der Sitzung gleich. Fehler lösen keinen Alarmton aus.',
       },
       it: {
         trains: 'Restare attenti per qualche minuto e non perdere un segnale raro – anche quando a lungo non succede nulla.',
@@ -443,7 +444,7 @@ export const SCIENCE: Record<string, ScienceEntry> = {
         research:
           'I compiti di questo tipo (“vigilanza”) sono studiati da decenni. Quasi a tutti con il tempo diventa più difficile restare attenti – è normale e mostra perché le pause sono importanti. Che un allenamento del genere migliori l’attenzione nella vita quotidiana non è dimostrato. L’esercizio non è un test dell’attenzione né dell’ADHD.',
         improved:
-          'Formato classico con bersagli rari (nessun doppione di “Stop o via”), durata fissa senza bonus di tempo, segni senza colori, comparsa e scomparsa morbide invece di lampi. Vengono valutati separatamente colpi, omissioni, falsi allarmi e segni giustamente ignorati – per ogni metà, così si vede quanto si tiene duro. Nessun suono d’allarme in caso di errore.',
+          'Il formato segue i classici compiti di attenzione sostenuta: si tocca solo davanti a un bersaglio raro (18 segni su 100), non davanti ai segni frequenti. La durata è fissa, senza bonus di tempo; i segni sono senza colori e compaiono e scompaiono in modo morbido invece di lampeggiare. Vengono valutati separatamente colpi, omissioni, falsi allarmi e segni giustamente ignorati, per ciascuna metà, così si vede quanto si tiene duro. La difficoltà dipende da quanto i segni distraenti assomigliano al bersaglio e resta uguale per tutta la sessione. Gli errori non provocano alcun suono d’allarme.',
       },
     },
     sources: [
@@ -465,7 +466,7 @@ export const SCIENCE: Record<string, ScienceEntry> = {
         research:
           'Symbol-Zahl-Aufgaben werden in der Forschung genutzt, um das Verarbeitungstempo zu beschreiben – sie reagieren empfindlich auf Müdigkeit und Alter. Anfangs wird man spürbar schneller, danach erreicht man ein persönliches Niveau; das ist normal. Eine Übertragung auf andere Fähigkeiten oder den Alltag ist kaum belegt. Die Werte sind kein medizinischer Test.',
         improved:
-          'Der Schlüssel steht nie in der Reihenfolge der Tasten (das Vorbild war rein über die Position lösbar), wird jede Sitzung neu gemischt und nutzt eigene, gut unterscheidbare Formen. Große Tasten, feste Dauer ohne Zeitbonus, Stufen mit 3, 6 und 9 Paaren, Hauptwert = richtige Zuordnungen pro Minute auf der erreichten Stufe.',
+          'Der Schlüssel steht nie in der Reihenfolge der Tasten, sodass man die Zahl wirklich ablesen muss und die Aufgabe sich nicht über die Position lösen lässt. Er wird in jeder Sitzung und bei jedem Stufenwechsel neu gemischt und verwendet eigene, gut unterscheidbare Formen. Die Stufen haben 3, 6 und 9 Paare und richten sich nach den richtigen Zuordnungen je Block von acht Zeichen. Die Tasten sind groß, die Dauer ist fest, und es gibt weder Zeitbonus noch Zeitstrafe. Hauptwert sind die richtigen Zuordnungen pro Minute auf der erreichten Stufe.',
       },
       it: {
         trains: 'Tradurre simboli in numeri nel modo più rapido e sicuro possibile – con una chiave che cambia ogni volta.',
@@ -473,7 +474,7 @@ export const SCIENCE: Record<string, ScienceEntry> = {
         research:
           'I compiti simbolo-numero sono usati nella ricerca per descrivere la velocità di elaborazione – sono sensibili alla stanchezza e all’età. All’inizio si diventa nettamente più veloci, poi si raggiunge un livello personale; è normale. Un trasferimento ad altre capacità o alla vita quotidiana è poco dimostrato. I valori non sono un test medico.',
         improved:
-          'La chiave non è mai nell’ordine dei tasti (l’originale si risolveva solo con la posizione), viene rimescolata a ogni sessione e usa forme proprie ben distinguibili. Tasti grandi, durata fissa senza bonus di tempo, livelli con 3, 6 e 9 coppie, valore principale = abbinamenti corretti al minuto al livello raggiunto.',
+          'La chiave non è mai nell’ordine dei tasti, così il numero va davvero letto e il compito non si risolve con la sola posizione. Viene rimescolata a ogni sessione e a ogni cambio di livello e usa forme proprie ben distinguibili. I livelli hanno 3, 6 e 9 coppie e dipendono dalle risposte giuste in ogni blocco di otto simboli. I tasti sono grandi, la durata è fissa e non ci sono né bonus di tempo né penalità. Il valore principale sono gli abbinamenti corretti al minuto al livello raggiunto.',
       },
     },
     sources: [
@@ -495,7 +496,7 @@ export const SCIENCE: Record<string, ScienceEntry> = {
         research:
           'Die Übung verbindet die bekannte Schulte-Tabelle mit dem Prinzip des „Trail Making“ (abwechselnder Pfad). Solche Aufgaben werden vor allem zum Messen verwendet; mit Wiederholung wird man darin schneller. Behauptungen, solche Tabellen würden das periphere Sehen oder das Schnelllesen trainieren, sind wissenschaftlich nicht belegt.',
         improved:
-          'Große Felder und Ziffern (keine Mini-Schrift), gefundene Zahlen bleiben sichtbar (die Suche wird nicht mit jeder Zahl leichter), aufeinanderfolgende Zahlen liegen nie direkt nebeneinander, Zahlen im Kreis und Buchstaben im Quadrat (Form statt Farbe), jede Tafel neu gemischt, feste Dauer ohne Zeitbonus.',
+          'Die Tafel hat große Felder und Ziffern (am Tablet mindestens 12 Millimeter), damit die Ziffern gut lesbar sind. Gefundene Zahlen bleiben sichtbar, sodass die Suche nicht mit jeder Zahl leichter wird, und aufeinanderfolgende Zahlen liegen nie direkt nebeneinander, sodass sich der Weg nicht erraten lässt. Auf höheren Stufen wechselt der Pfad zwischen Zahlen im Kreis und Buchstaben im Quadrat; die Unterscheidung erfolgt über die Form, nicht über Farbe. Jede Tafel wird neu gemischt, die Stufe richtet sich nach der Zeit je Tafel, und eine Sitzung hat eine feste Dauer ohne Zeitbonus, wobei eine angefangene Tafel immer zu Ende gespielt wird. Gezeigt werden die erreichte Stufe, die Zeit pro Zahl, die geschafften Tafeln und die Fehltipps.',
       },
       it: {
         trains: 'Cercare con ordine: trovare i numeri in sequenza – più avanti alternati a lettere (1 – A – 2 – B …).',
@@ -503,7 +504,7 @@ export const SCIENCE: Record<string, ScienceEntry> = {
         research:
           'L’esercizio unisce la nota tabella di Schulte al principio del “Trail Making” (percorso alternato). Compiti del genere si usano soprattutto per misurare; ripetendoli si diventa più veloci. Le affermazioni secondo cui queste tabelle allenerebbero la visione periferica o la lettura veloce non sono dimostrate scientificamente.',
         improved:
-          'Caselle e cifre grandi (niente caratteri minuscoli), i numeri trovati restano visibili (la ricerca non diventa più facile a ogni numero), numeri consecutivi mai uno accanto all’altro, numeri nel cerchio e lettere nel quadrato (forma invece del colore), ogni tabella rimescolata, durata fissa senza bonus di tempo.',
+          'La tabella ha caselle e cifre grandi (sul tablet almeno 12 millimetri), così le cifre sono ben leggibili. I numeri trovati restano visibili, quindi la ricerca non diventa più facile a ogni numero, e i numeri consecutivi non sono mai uno accanto all’altro, così il percorso non si può indovinare. Ai livelli più alti il percorso alterna numeri nel cerchio e lettere nel quadrato; la distinzione avviene tramite la forma, non il colore. Ogni tabella è rimescolata, il livello dipende dal tempo per tabella e la sessione ha una durata fissa senza bonus di tempo; una tabella iniziata viene sempre finita. Vengono mostrati il livello raggiunto, il tempo per numero, le tabelle completate e i tocchi sbagliati.',
       },
     },
     sources: [
@@ -524,7 +525,7 @@ export const SCIENCE: Record<string, ScienceEntry> = {
         research:
           'Jeder Regelwechsel kostet ein paar hundert Millisekunden – das geht allen so, mit dem Alter oft etwas mehr. Mit Übung werden die Wechsel in der Übung flüssiger, und ähnliche Wechselaufgaben profitieren teilweise mit. Dass das die Konzentration oder Intelligenz allgemein verbessert, ist nicht belegt.',
         improved:
-          'Echter Aufgabenwechsel statt zweier gleichzeitiger Ströme, Regelwechsel immer angekündigt und nie nur über Farbe (Rahmenform, Symbol, Frage und Tastenform), Einzelblöcke und gemischter Block, Vorwarnzeit passt sich an. Wechsel- und Mischkosten in Millisekunden als Zusatzwerte.',
+          'Der Wechsel zwischen den beiden Regeln wird immer vorher angekündigt: Rahmenform, Symbol und Frage zeigen die geltende Regel, auch Form und Beschriftung der Tasten passen dazu, und Farbe dient nur als Zugabe. Beide Regeln werden mit denselben zwei Tasten beantwortet, sodass ein reiner Aufgabenwechsel gemessen wird und nicht das gleichzeitige Bearbeiten zweier Aufgaben. Eine Sitzung beginnt mit je einem kurzen Block pro Regel und geht dann in einen gemischten Block mit etwa 50 Prozent Regelwechseln über. Die Vorwarnzeit zwischen Hinweis und Ziffer passt sich der eigenen Leistung an. Wechsel- und Mischkosten werden in Millisekunden als Zusatzwerte gezeigt; Hauptwert ist die erreichte Stufe.',
       },
       it: {
         trains: 'Passare da una regola all’altra: a volte conta “pari o dispari”, a volte “minore o maggiore di 5” – la cornice dice quale regola vale.',
@@ -532,7 +533,7 @@ export const SCIENCE: Record<string, ScienceEntry> = {
         research:
           'Ogni cambio di regola costa qualche centinaio di millisecondi – succede a tutti, con l’età spesso un po’ di più. Con la pratica i cambi nell’esercizio diventano più fluidi e in parte ne beneficiano anche compiti simili. Che questo migliori la concentrazione o l’intelligenza in generale non è dimostrato.',
         improved:
-          'Vero cambio di compito invece di due flussi contemporanei, cambio di regola sempre annunciato e mai solo tramite il colore (forma della cornice, simbolo, domanda e forma dei tasti), blocchi singoli e blocco misto, tempo di preavviso adattivo. Costi di cambio e di mescolanza in millisecondi come valori aggiuntivi.',
+          'Il cambio tra le due regole è sempre annunciato prima: forma della cornice, simbolo e domanda indicano la regola in vigore, anche forma ed etichetta dei tasti sono coerenti e il colore è solo un’aggiunta. Entrambe le regole si applicano con gli stessi due tasti, così si misura un vero cambio di compito e non l’esecuzione simultanea di due compiti. Una sessione inizia con un breve blocco per ciascuna regola e passa poi a un blocco misto con circa il 50 per cento di cambi di regola. Il tempo di preavviso tra l’indicazione e la cifra si adatta alla prestazione personale. I costi di cambio e di mescolanza vengono mostrati in millisecondi come valori aggiuntivi; il valore principale è il livello raggiunto.',
       },
     },
     sources: [
@@ -554,7 +555,7 @@ export const SCIENCE: Record<string, ScienceEntry> = {
         research:
           'Fast jeder wird bei zwei gleichzeitigen Aufgaben langsamer oder ungenauer – mit dem Alter oft mehr. In Laborstudien gelingt das Zusammenspiel mit Übung besser, vor allem in der geübten Aufgabe. Ob sich das auf Gehen, Autofahren oder den Alltag überträgt, ist nicht belegt.',
         improved:
-          'Jede Sitzung misst erst beide Teile einzeln und dann zusammen – so zeigt der Wert „Zusammenspiel“ die echten Kosten der Doppelaufgabe statt nur Punkte. Die versprochene Bewegung ist da (fortlaufende Steueraufgabe), Schwierigkeit passt sich in den Einzelteilen an, Formen statt Farben, Mehrfinger-Bedienung.',
+          'Jede Sitzung misst zuerst die Kugelaufgabe allein, dann die Zeichenaufgabe allein und danach beides zusammen; so zeigt der Wert „Zusammenspiel“ die tatsächlichen Kosten der Doppelaufgabe statt nur Punkte. Die Kugel folgt der Höhe eines Fingers auf einer fortlaufend schwingenden Spur, die Zeichen sind Formen statt Farben und werden mit zwei großen Tasten beantwortet; der Kugel-Finger und die tippende Hand werden getrennt verfolgt (Mehrfinger-Bedienung). In den Einzelteilen passt sich die Schwierigkeit an, im Doppelteil bleibt sie fest, damit die Kosten vergleichbar sind. Der Vorrang wechselt zwischen Kugel und Zeichen, es gibt weder Zeitbonus noch Zeitstrafe, und die Rückmeldung erfolgt nie nur über Farbe.',
       },
       it: {
         trains: 'Due cose insieme: tenere una pallina sul percorso e intanto rispondere a forme che compaiono per un attimo.',
@@ -562,7 +563,7 @@ export const SCIENCE: Record<string, ScienceEntry> = {
         research:
           'Quasi tutti con due compiti contemporanei diventano più lenti o meno precisi – con l’età spesso di più. Negli studi di laboratorio con la pratica il gioco di squadra migliora, soprattutto nel compito allenato. Se questo si trasferisca al camminare, alla guida o alla vita quotidiana non è dimostrato.',
         improved:
-          'Ogni sessione misura prima le due parti da sole e poi insieme – così il valore “gioco di squadra” mostra i veri costi del doppio compito invece di soli punti. Il movimento promesso c’è (compito di guida continuo), la difficoltà si adatta nelle parti singole, forme invece di colori, uso con più dita.',
+          'Ogni sessione misura prima il compito della pallina da solo, poi quello dei segni da solo e infine entrambi insieme; così il valore “gioco di squadra” mostra i veri costi del doppio compito invece di soli punti. La pallina segue l’altezza di un dito su una pista che oscilla di continuo, i segni sono forme invece di colori e si risponde con due grandi tasti; il dito della pallina e la mano che tocca vengono seguiti separatamente (uso con più dita). Nelle parti singole la difficoltà si adatta, nella parte doppia resta fissa, perché i costi siano confrontabili. La priorità passa dalla pallina ai segni e viceversa, non ci sono né bonus di tempo né penalità, e il riscontro non avviene mai solo tramite il colore.',
       },
     },
     sources: [

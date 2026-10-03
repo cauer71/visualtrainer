@@ -2,7 +2,7 @@
 # ===== Kennung =====
 nr: 206
 kennung: multi-tasking
-name: "Zwei-Ströme-Symbolsuche (Multitasking)"
+name: "Weichensteller: Aufgabenwechsel zwischen zwei Regeln (gerade/ungerade, kleiner/größer als 5)"
 name_original: "Multitasking-Test – Zwei Zielströme gleichzeitig verfolgen (Dual-Stream-Tracking)"
 kapitel: "Kognition & Aufmerksamkeit"
 kapitel_original: "cognitive"
@@ -12,11 +12,11 @@ blickfit_umsetzung: {kennung: "weichensteller", name: "Weichensteller", untersch
 stand: 2026-09-29
 
 # ===== Überblick =====
-kurzbeschreibung: "Zwei Bildhälften (bei Hochformat oben und unten), in denen kleine Symbole (▲ ● ■ ★ ◆ …) in entgegengesetzter Richtung vorbeiziehen. Man tippt nur die Symbole an, die zum angezeigten Zielsymbol der jeweiligen Hälfte passen, und lässt alle anderen durchlaufen; nach 20 Sekunden ändert sich das Zielsymbol."
-ziel_funktionen: [geteilte_aufmerksamkeit, selektive_aufmerksamkeit]
-eingabe: [maus, touch]
-tablet_geeignet: mit_anpassung
-dauer_sekunden: 45
+kurzbeschreibung: "Eine Ziffer erscheint in einem Rahmen: Beim Kreis gilt die Frage „gerade oder ungerade?“, beim Quadrat „kleiner oder größer als 5?“. Beide Regeln werden mit denselben zwei Tasten beantwortet; der Rahmen kündigt die Regel immer vorher an (Form, Symbol und Frage, nie nur Farbe). Eine Sitzung beginnt mit je einem kurzen Block pro Regel und geht dann in einen gemischten Block mit häufigem Regelwechsel über. Die Vorwarnzeit zwischen Hinweis und Ziffer verkürzt sich von 1 Sekunde auf bis zu 0,1 Sekunden und passt sich der eigenen Leistung an; als Zusatzwerte werden die Wechsel- und Mischkosten in Millisekunden ausgewiesen."
+ziel_funktionen: [kognitive_flexibilitaet, entscheidung_wahlreaktion]
+eingabe: [touch, maus, tastatur]
+tablet_geeignet: ja
+dauer_sekunden: 90
 schwierigkeit_anpassung: "Stufe = Punkte / 1.750 + 1 (immer Start bei Stufe 1). Mit der Stufe steigen Tempo (Durchlaufzeit 1,25 s → etwa 0,5 s) und Symboldichte (Abstand 950 → 220 ms); ab Stufe 3 (ca. 3.500 Punkte) haben beide Hälften verschiedene Zielsymbole. Zusätzlich beschleunigt die Combo-Serie das Tempo um bis zu 25 %."
 messgroessen: ["Punkte (Bestwert im Browser)", "Genauigkeit in % (Treffer / (Treffer + Fehler))", "längste Serie (Combo)", "erreichte Stufe", "sinnvoll ergänzt: Reaktionszeit je Treffer in ms, Fehlerarten getrennt (falsch angetippt / Ziel verpasst), Leistung je Hälfte"]
 
@@ -27,23 +27,23 @@ anforderungsprofil:
     kontrast: 0
     farbunterscheidung: 0
     stereosehen: 0
-    peripheres_sehen: 2
-    nutzbares_sehfeld: 2
-    blickfolge: 1
-    sakkaden: 2
+    peripheres_sehen: 0
+    nutzbares_sehfeld: 0
+    blickfolge: 0
+    sakkaden: 0
     fixation: 1
-    bewegungswahrnehmung: 1
-    visuelle_suche: 2
+    bewegungswahrnehmung: 0
+    visuelle_suche: 0
     visuelle_verarbeitungsgeschwindigkeit: 2
     zeitliche_aufloesung: 0
     naharbeit_dauer: 1
   kognitiv:
     daueraufmerksamkeit: 1
-    selektive_aufmerksamkeit: 2
+    selektive_aufmerksamkeit: 1
     inhibition: 2
-    geteilte_aufmerksamkeit: 2
-    kognitive_flexibilitaet: 1
-    arbeitsgedaechtnis: 1
+    geteilte_aufmerksamkeit: 0
+    kognitive_flexibilitaet: 3
+    arbeitsgedaechtnis: 2
     kurzzeitgedaechtnis_verbal: 0
     kurzzeitgedaechtnis_visuell_raeumlich: 0
     verarbeitungsgeschwindigkeit: 2
@@ -53,9 +53,9 @@ anforderungsprofil:
     schlussfolgern: 0
   motorisch:
     einfache_reaktion: 0
-    auge_hand_koordination: 2
-    zielbewegung_tempo: 2
-    zielbewegung_praezision: 1
+    auge_hand_koordination: 0
+    zielbewegung_tempo: 0
+    zielbewegung_praezision: 0
     kontinuierliche_steuerung: 0
     ruhige_hand: 0
     fingergeschwindigkeit: 1
@@ -64,33 +64,34 @@ anforderungsprofil:
     gleichgewicht: 0
     ausdauer_belastung: 0
 belastung:
-  zeitdruck: 3
+  zeitdruck: 2
   flimmern_lichtreize: 0
-  bewegungsreize_schwindel: 1
+  bewegungsreize_schwindel: 0
   koerperliche_belastung: 0
   sturzrisiko: 0
   sprachabhaengigkeit: 0
 
 # ===== Auswahlhilfe =====
 voraussetzungen: ["Symbole ca. 1–2° groß sicher unterscheidbar (Brille/Lesebrille für den Bildschirmabstand tragen)", "Maus oder Touchscreen; Vollbild empfohlen", "kein Farbsehen nötig (Symbole grau, Farbe nur als Rückmeldung)", "Schriftart muss alle acht Symbole darstellen (⬣ und ⏣ fehlen in manchen Schriften)"]
-vorsicht_bei: [aufmerksamkeitsprobleme, kognitive_einschraenkung, presbyopie_gleitsicht, gesichtsfeldausfall, sehbehinderung_niedriger_visus, schwindel_vestibulaer, reisekrankheit]
-geeignet_fuer: ["zwei Bildbereiche gleichzeitig im Auge behalten und schnell zwischen ihnen wechseln (geteilte Aufmerksamkeit, Vergleich Mitte/Rand)", "kurze, spielerische Aufmerksamkeits- und Reaktionsübung unter Zeitdruck", "Erleben, wie schnell die Leistung bei zwei gleichzeitigen Aufgaben nachlässt"]
-weniger_geeignet_fuer: ["Üben oder Messen von Aufgabenwechsel (Task Switching) – dafür ist Nr. 206 in der Blickfit-Umsetzung Weichensteller gedacht", "Personen, die ruhig und ohne Zeitdruck üben sollen", "Messung von Reaktionszeit oder Wechselkosten (Original erfasst keine Zeiten)", "Gleitsicht-Träger:innen ohne Anpassung (Ströme laufen bis in die Bildränder)"]
+vorsicht_bei: [aufmerksamkeitsprobleme, kognitive_einschraenkung, presbyopie_gleitsicht, sehbehinderung_niedriger_visus, kinder_unter_6]
+geeignet_fuer: ["zwischen zwei Regeln umschalten und beobachten, wie viel Zeit ein Wechsel kostet (Aufgabenwechsel)", "kurze Konzentrationsübung mit klarer Aufgabe, bei der der Rahmen die geltende Regel anzeigt", "erleben, dass jeder Regelwechsel einen kleinen Moment kostet – das geht allen so"]
+weniger_geeignet_fuer: ["zwei Aufgaben gleichzeitig üben oder messen (dafür 205)", "Menschen, die ruhig und ohne Zeitdruck üben sollen (Vorwarnzeit und Antwortfrist werden kürzer)", "Vergleich der Wechselkosten als persönlicher Einzelwert oder mit anderen Personen (Differenzwerte sind als Einzelwert wenig zuverlässig)", "Kinder, die gerade/ungerade und kleiner/größer als 5 noch nicht sicher unterscheiden"]
 evidenz:
-  uebungseffekt: mittel
-  naher_transfer: schwach
+  uebungseffekt: stark
+  naher_transfer: mittel
   alltag_transfer: fehlend
-  kommentar: "Für dieses Spiel selbst gibt es keine Studie; Übungseffekte in Aufmerksamkeitsaufgaben sind allgemein bekannt, Übertragung auf andere Aufgaben ist dort meist klein. Die starke Evidenz zu Wechselkosten gilt für den klassischen Aufgabenwechsel, den die Blickfit-Umsetzung nachbildet (dort: Übungseffekt stark, naher Transfer mittel)."
+  kommentar: "Für diese Übung selbst gibt es keine Studie. Die starke Evidenz zu Wechselkosten gilt für den klassischen Aufgabenwechsel mit Hinweisreiz, den der Weichensteller nachbildet: Wechsel- und Mischkosten sinken mit Übung (Zhao et al., 2020), und ähnliche Wechselaufgaben profitieren mit; ein Transfer auf ferne Fähigkeiten wurde nicht durchgängig bestätigt (Karbach & Kray, 2009). Ein Alltagsnutzen ist nicht belegt."
 aehnliche_uebungen: [205, 408, 106, 201, 208, 510, 502]
 stichworte: ["Multitasking", "geteilte Aufmerksamkeit", "Doppelstrom", "Aufgabenwechsel", "selektive Aufmerksamkeit", "divided attention", "task switching", "Go/No-Go"]
 ---
 
-# 206 · Zwei-Ströme-Symbolsuche (Multitasking)
+# 206 · Weichensteller: Aufgabenwechsel zwischen zwei Regeln (gerade/ungerade, kleiner/größer als 5)
 
 > Original: „Multitasking-Test – Dual-Stream-Tracking“ – skilldrills.online, Kapitel Kognition & Aufmerksamkeit (cognitive/attention) · Blickfit: Weichensteller (Aufgabenwechsel, kein Doppelstrom)
 
 ## 1. Kurzbeschreibung
-Der Bildschirm ist in zwei Hälften geteilt (Hochformat: oben und unten). In jeder Hälfte ziehen einzelne Symbole in Gegenrichtung vorbei, jede Hälfte zeigt oben ihr Zielsymbol („TARGET“). Man tippt oder klickt nur passende Symbole an; alles andere darf ungehindert durchlaufen. Wer richtig trifft, sammelt Punkte und Zeit, wer falsch tippt oder ein Ziel verpasst, verliert eine Sekunde. Die Übung fordert, beide Hälften abwechselnd im Blick zu behalten (geteilte Aufmerksamkeit) und schnell zu entscheiden, ob ein Symbol passt. Ein „Multitasking“ im strengen Sinn (zwei Aufgaben gleichzeitig ausführen) ist es nicht: Es ist immer dieselbe Aufgabe, nur in zwei Bereichen.
+
+Eine Ziffer (1–4 oder 6–9) wird nach einer von zwei Regeln beurteilt: Beim Kreis lautet die Frage „gerade oder ungerade?“, beim Quadrat „kleiner oder größer als 5?“. Beide Regeln werden mit denselben zwei Tasten beantwortet (links: gerade bzw. kleiner, rechts: ungerade bzw. größer), sodass Reize und Antworten zweiwertig bleiben. Der Wechsel wird immer angekündigt: Rahmenform (Kreis oder Quadrat), Symbol („2/3“ bzw. „< 5 >“) und Frage zeigen die Regel, und auch Form und Beschriftung der Tasten passen dazu; Farbe dient nur als Zugabe. Ablauf eines Durchgangs: Hinweis, Vorwarnzeit, Ziffer (höchstens 3 Sekunden), Rückmeldung, kurze Pause. Eine Sitzung dauert etwa 90 Sekunden: je 5 Durchgänge nur mit Regel A und nur mit Regel B, danach 24 gemischte Durchgänge mit etwa 50 % Regelwechseln (höchstens 4 gleiche Regeln in Folge). Die Vorwarnzeit verkürzt sich von 1 Sekunde bis auf 0,1 Sekunden, und zugleich wird die weiche Antwortfrist von 2,4 auf 0,74 Sekunden kürzer; die Stufe (1–20) passt sich so an, dass etwa vier von fünf Durchgängen gelingen. Es ist ein klassischer Aufgabenwechsel, nicht das gleichzeitige Bearbeiten zweier Aufgaben.
 
 ## 2. Ablauf im Original (Analyse)
 Quelle: ausgelieferter Spielcode (Next.js-Chunk, Stand 29.09.2026; nur Mechanik beschrieben) plus Seitentext. Wo nur der Text spricht, ist es vermerkt.
@@ -114,45 +115,49 @@ Quelle: ausgelieferter Spielcode (Next.js-Chunk, Stand 29.09.2026; nur Mechanik 
 - **Tier-/Perzentiltabelle:** ohne Datengrundlage – die Website schreibt selbst, sie erhebe keine Daten; keine der Quellen enthält Werte für dieses Spiel. „Top 1 %“ ist Dekoration. Auch die Genauigkeitsangabe zählt nur Treffer und Fehler, nicht richtig ignorierte Symbole.
 
 ## 4. Optische und okulomotorische Grundlagen
-- **Blickstrategie:** Die zwei Hälften liegen links und rechts (oder oben/unten) der Blickmitte; wer die Mitte fixiert, sieht beide Ströme nur mit dem peripheren Gesichtsfeld. Symbole in 5–10° Exzentrizität werden schlechter aufgelöst, Nachbarn stören („Crowding“: kritischer Abstand ≈ halbe Exzentrizität; Pelli & Tillman, 2008). Bei Symbolabstand von 220 ms und Tempo 500+ px/s stehen mehrere Zeichen dicht hintereinander – das ist ein **Erkennungs-** und Hinsehproblem, nicht bloß ein Reaktionsproblem.
-- **Sakkaden:** Wechsel zwischen den Hälften erfordert Blicksprünge (Latenz typisch 150–250 ms); Verfolgen einzelner Symbole ist bei ~14°/s und mehr nur teilweise als glatte Blickfolge möglich, hohe Stufen erzwingen Sakkaden. Diese Zahlen sind Erfahrungswerte aus dem Fachgebiet, hier nicht einzeln zitiert.
-- **Sehwinkel und Abstand:** Symbole 1,3–2° (Herleitung Abschnitt 2) sind für normale Sehschärfe gut erkennbar; am Smartphone (Fensterbreite unter 768 px, 45 px) kleiner. Reale Abstände: Smartphone beim Lesen ≈ 32–36 cm (Bababekova et al., 2011), Presbyope halten weiter weg, ≈ 40 cm (Boccardo et al., 2023).
-- **Brille:** Bei Gleitsicht liegen die Bildränder oft im Bereich seitlicher Unschärfe; Neulinge nutzen mehr Kopfbewegungen (Hutchings et al., 2007), und Gleitsichtdesigns unterscheiden sich stark in der Breite der Zonen (Sheedy, 2004). Für diese Übung: Bildschirm-/Arbeitsplatzbrille bzw. Blick durch den passenden Bereich prüfen, Bildschirm nicht zu groß/nah wählen, sonst muss der Kopf mitgedreht werden. Bei trockenem Auge sind lange Bildschirmphasen ohne Blinzeln ungünstig – hier nur 45–60 s.
-- **Farbe:** Symbole sind grau, Rückmeldung blau/rot/Funken; Farbsehschwäche (≈ 8 % der Männer) betrifft die Wertung kaum, aber Rot als Fehler-Rückmeldung ist dann schwer zu erkennen.
+
+- **Hinweis und Ziffer am selben Ort:** Rahmen, Symbol und Ziffer erscheinen in der Bildmitte; die Aufgabe verlangt keine Suche und keine größeren Blicksprünge. Die beiden Tasten stehen links und rechts neben dem Rahmen (auf schmalen Bildschirmen darunter) und zeigen mit Form und Beschriftung, was für die geltende Regel links und rechts bedeutet.
+- **Zeitliche Abfolge:** Zwischen Hinweis und Ziffer liegt die Vorwarnzeit, die von 1 Sekunde auf 0,1 Sekunden schrumpft. Die Ziffer zählt erst ab dem Bild, in dem sie erstmals gezeichnet ist; Antworten unter 150 ms danach gelten als geraten.
+- **Farbe:** Die Regel wird nie nur über Farbe angezeigt (Form, Symbol und Frage; Farbe aus der Okabe-Ito-Palette nur zusätzlich). Eine Farbsehschwäche (etwa 8 % der Männer; Birch, 2012) schränkt die Übung daher nicht ein.
+- **Brille und Abstand:** Alle wichtigen Reize liegen nahe beieinander in der Mitte; nur die Tasten stehen daneben bzw. darunter. Gleitsicht-Neulinge bewegen den Kopf mehr (Hutchings et al., 2007), und die Zonenbreiten der Gläser unterscheiden sich stark (Sheedy, 2004); das Gerät so zu halten, dass Mitte und Tasten durch den Nah- bzw. Zwischenbereich gesehen werden, ist meist günstiger.
+- **Bewegung und Licht:** Es gibt keine bewegten Reize und keine Blitze; die Übung ist für Menschen mit Bewegungsempfindlichkeit unkritisch.
 
 ## 5. Neurowissenschaftliche Grundlagen
-- **Zentraler Engpass:** Bei zwei gleichzeitig zu treffenden Entscheidungen wird die zweite verzögert; als Ort gilt ein Netzwerk im hinteren seitlichen Präfrontalkortex (Dux et al., 2006, fMRT) – „Psychologische Refraktärperiode“ (Pashler, 1994). Das erklärt, warum zwei nahezu gleichzeitig erscheinende Ziele schwerer sind als eines.
-- **Aufgabenwechsel:** Beim Umstellen zwischen Regeln sind ein frontoparietales Netzwerk (inferiore frontale Junktion, posteriorer Parietalkortex) über Aufgabentypen hinweg gemeinsam aktiv (Meta-Analyse, 36 Studien; Kim et al., 2012). Das gilt für klassische Wechselaufgaben, kaum für das Umschalten der Aufmerksamkeit zwischen zwei Strömen.
-- **Selektion und Suche:** Aufmerksames Verfolgen mehrerer bewegter Objekte hängt von getrennten Kapazitäten je Gesichtsfeldhälfte ab (Alvarez & Cavanagh, 2005) – Verhalten, nicht Anatomie-Nachweis.
-- **Zurückhaltung:** Ob das Spiel bestimmte Hirnregionen „trainiert“, ist nicht untersucht; Aussagen der Website zu Parietallappen und Corpus callosum sind Vermutung.
+
+- **Aufgabenwechsel:** Beim Umstellen zwischen Regeln ist ein frontoparietales Netzwerk (inferiore frontale Junktion, posteriorer Parietalkortex) über Aufgabentypen hinweg gemeinsam aktiv (Metaanalyse, 36 Studien; Kim et al., 2012). Wechselkosten sind robust: Sie sinken mit Vorbereitungszeit bis etwa 0,6 s, bleiben aber auch bei 1,2 s als Restkosten bestehen, und zwar im ersten Durchgang der neuen Aufgabe (Rogers & Monsell, 1995; Monsell, 2003: Vorbereitung verringert die Kosten, beseitigt sie nicht).
+- **Zentraler Engpass:** Wenn zwei Entscheidungen nahezu gleichzeitig zu treffen sind, wird die zweite verzögert; als Ort gilt ein Netzwerk im hinteren seitlichen Präfrontalkortex (Dux et al., 2006, fMRT; „psychologische Refraktärperiode“: Pashler, 1994). Der Engpass betrifft die Handlungsauswahl, nicht die Wahrnehmung. Beim Weichensteller kommt immer nur ein Reiz auf einmal.
+- **Zurückhaltung:** Dass die Übung bestimmte Hirnregionen „trainiert“, ist nicht untersucht.
 
 ## 6. Motorische Grundlagen
-- **Auge-Hand:** Jeder Treffer ist ein gezielter Fingerdruck bzw. Klick auf ein sich bewegendes ca. 2° großes Ziel; das Ziel muss daher in den ersten Zehntel­sekunden der Bewegung vorhergesagt werden (Fitts'sches Gesetz: kleinere Ziele und höheres Tempo → mehr Zeit oder mehr Fehler).
-- **Speed-Accuracy:** Die Combo (Faktor bis 3, dazu Tempo +25 %) belohnt schnelle Serien, ein Fehler setzt sie zurück – Tempo wird stärker belohnt als Sorgfalt.
-- **Tablet:** Touch-Geräte messen in Web-Apps Reaktionszeiten immer zu lang (Smartphones im Roboterversuch ca. 58–70 ms), Vergleich zwischen Geräten ist unzuverlässig, innerhalb einer Person verlässlicher (Pronk et al., 2020). Da das Original keine Zeiten erfasst, spielt das nur für Nachfolger eine Rolle.
-- **Mindestgröße Touch-Ziele:** WCAG 2.2 fordert 24 px (AA) bzw. 44 px (AAA); die 45 px kleinen Symbole am Handy liegen an der Grenze, bewegen sich aber.
+
+- **Zwei Tasten:** Beide Regeln werden mit denselben zwei Tasten beantwortet; möglich sind Berührung und Pfeiltasten. Die Antwort ist eine einfache Wahlreaktion mit zwei Alternativen, die Zeit geht in Hinweis-Auswertung und Regelanwendung auf, nicht in die Bewegung.
+- **Frist und Genauigkeit:** Die Antwortfrist beendet den Durchgang nicht, damit die Reaktionszeit vollständig erhalten bleibt; „geschafft“ heißt richtig und innerhalb der Frist. Schnelleres Antworten kostet Genauigkeit; weder Tempo noch Treffer werden mit Punkten oder Combo belohnt, und es gibt keine Zeitstrafe.
+- **Eingabe:** Touch-Geräte messen in Web-Apps Reaktionszeiten zu lang (Smartphones im Roboterversuch etwa 58–70 ms); der Vergleich zwischen Geräten ist unzuverlässig, innerhalb einer Person verlässlicher (Pronk et al., 2020).
 
 ## 7. Einflussfaktoren und Messgrenzen
-- **Gerät:** Punkte hängen von Fensterbreite/Bildschirmgröße ab (die Strecke in px ist die halbe Breite plus 80 px, Zeit fix) – gleiche Stufe ist auf Handy, Tablet und großem Monitor nicht gleich schwer.
-- **Zeitbonus:** Treffer verlängern die Sitzung (+2 s), gute Leistung führt zu längeren Durchgängen; Score, Combo und Stufe sind kein reines Maß.
-- **Kein Basiswert:** Es gibt keinen Einzelstrom-Durchgang; ohne diesen sind „Doppelaufgaben-Kosten“ nicht bestimmbar.
-- **Zufall:** Zielanteil, Höhe und Abstand sind zufällig; keine feste Sequenz, keine Wiederholbarkeit. Schwankungen der Zieldichte verändern die Punkte stark.
-- **Alter/Müdigkeit:** Wechselkosten sind bei Älteren größer, vor allem die Mischkosten beim Bereithalten mehrerer Regeln (Kray & Lindenberger, 2000; Wasylyshyn et al., 2011). Differenzwerte (z. B. Wechselkosten) sind als Gruppenwert robust, als Einzelwert oft unzuverlässig (Hedge et al., 2018).
-- **Übung:** Der Punktestand steigt durch Kennenlernen von Symbolen und Muster; das ist kein Beleg für bessere Aufmerksamkeit.
+
+- **Kennwerte:** Wechselkosten = Median der Reaktionszeit beim Wechsel minus Median bei Wiederholung der Regel; Mischkosten = Median bei Wiederholung im gemischten Block minus Median im Einzelblock. Gewertet werden nur richtige Antworten, ohne den ersten Durchgang eines Blocks und ohne Durchgänge direkt nach einem Fehler. Hauptwert ist die erreichte Stufe.
+- **Zuverlässigkeit:** Differenzwerte wie Wechselkosten sind als Gruppenwert robust, als persönlicher Einzelwert aber oft unzuverlässig (Hedge et al., 2018); sie werden deshalb nur als Zusatzwerte gezeigt.
+- **Abfolge:** Die Regeln folgen zufällig mit etwa 50 % Wechseln, höchstens vier gleiche Regeln in Folge; man kann die Wechsel daher nicht mitzählen.
+- **Alter und Müdigkeit:** Wechselkosten sind bei Älteren größer, vor allem die Mischkosten beim Bereithalten mehrerer Regeln (Kray & Lindenberger, 2000; Wasylyshyn et al., 2011).
+- **Übung:** Wechsel- und Mischkosten sinken deutlich durch Übung, meist mit einem Plateau nach vier bis sechs Sitzungen (Zhao et al., 2020; Kray & Fehér, 2017).
+- **Gerät:** Touch-Latenz und Bildschirmgröße beeinflussen die Zeiten; Vergleiche gelten nur auf demselben Gerät mit derselben Eingabeart.
 
 ## 8. Studienlage: Trainierbarkeit und Übertragung
-- **Für dieses Spiel:** keine Studie.
-- **Verwandter Aufgabenwechsel (Grundlage der Blickfit-Umsetzung):** Wechsel- und Mischkosten sinken deutlich durch Übung, meist mit Plateau nach 4–6 Sitzungen; naher Transfer auf andere Wechselaufgaben ja, fern (Hemmung, Arbeitsgedächtnis, Intelligenz) nicht (Zhao et al., 2020; Kray & Fehér, 2017). Eine frühere Studie fand auch fernen Transfer, besonders bei Kindern und Älteren (Karbach & Kray, 2009); er ließ sich später nicht durchgängig bestätigen.
-- **Doppelaufgaben:** Training mit wechselnden Aufgabenkombinationen verbessert Doppelaufgaben; solche Effekte sind aufgabenspezifisch (siehe Eintrag 205).
-- **Alltag:** Belegt ist nur, dass jeder Aufgabenwechsel Zeit kostet (Übersicht: Kiesel et al., 2010); die Faustregel „eins nach dem anderen“ ist eine naheliegende Schlussfolgerung daraus, keine Aussage dieser Studie. Ein Effekt dieses Spiels auf Verkehr, Beruf oder Lernen ist nicht belegt.
-- **Einstufung:** Übungseffekt mittel (in der Aufgabe wird man besser, für dieses Spiel nicht geprüft), naher Transfer schwach, Alltag fehlend.
+
+- **Übungseffekt (stark):** Wechsel- und Mischkosten sinken deutlich durch Übung, meist mit einem Plateau nach vier bis sechs Sitzungen (Zhao et al., 2020; Kray & Fehér, 2017). Für diese Übung selbst gibt es keine Studie.
+- **Naher Transfer (mittel):** Auf andere Wechselaufgaben überträgt sich das Training, auf ferne Fähigkeiten (Hemmung, Arbeitsgedächtnis, Intelligenz) nicht (Zhao et al., 2020; Kray & Fehér, 2017). Eine frühere Studie fand auch fernen Transfer, besonders bei Kindern und Älteren (Karbach & Kray, 2009); er ließ sich später nicht durchgängig bestätigen.
+- **Alltag (fehlend):** Belegt ist nur, dass jeder Aufgabenwechsel Zeit kostet (Übersicht: Kiesel et al., 2010); die Faustregel „eins nach dem anderen“ ist eine naheliegende Schlussfolgerung daraus, keine Aussage einer Studie. Ein Effekt der Übung auf Verkehr, Beruf oder Lernen ist nicht belegt.
+- **Seriöse Formulierung:** „Beim Weichensteller wechselt die Regel immer wieder. Jeder Wechsel kostet einen kleinen Moment – das geht allen so. Mit etwas Übung werden die Wechsel in dieser Übung flüssiger; dass sich das auf Konzentration oder Alltag überträgt, ist nicht belegt.“
 
 ## 9. Auswahlhinweise für die KI
-- **Passt, wenn** jemand zwei Bildbereiche gleichzeitig im Blick behalten und schnell entscheiden üben möchte, kurze Einheiten (45–60 s) gewünscht sind und Zeitdruck kein Problem ist; Profil: geteilte_aufmerksamkeit/selektive_aufmerksamkeit/inhibition/visuelle_suche 2 (die volle Doppelaufgabe bietet 205 mit geteilte_aufmerksamkeit 3).
-- **Weniger passend, wenn** Aufgabenwechsel oder Wechselkosten geübt werden sollen (→ Blickfit Weichensteller), ruhig und ohne Zeitdruck geübt werden soll, keine Maus/Touch-Möglichkeit besteht oder eine zuverlässige Messung nötig ist.
-- **Vorsicht / anpassen bei:** `aufmerksamkeitsprobleme` (hohe Reizdichte, Zeitdruck, Zeitstrafe abschalten); `presbyopie_gleitsicht` (Symbole reichen bis zu den Bildrändern, Bildschirm nicht zu nah; Arbeitsplatzbrille ggf. sinnvoll); `gesichtsfeldausfall` (Ströme in beiden Hälften); `sehbehinderung_niedriger_visus` (Symbole ca. 1,3–2°). Keine Aussage zu Eignung im medizinischen Sinn.
-- **Kombiniert gut mit:** 205 (geteilte Aufmerksamkeit, Blickfit „Doppelt gefordert“), 408 (zwei Bildhälften verfolgen), 201 (Stroop, Hemmung), 208 (Daueraufmerksamkeit), 510 (Zielauswahl).
-- **Abgrenzung in der Gruppe:** Dublette zu 205 im Sinne von „zwei Dinge im Blick“: 205 zwei verschiedene Aufgaben (Kreis und Ziffern), 206 eine Aufgabe in zwei Bereichen mit laufender Bewegung. Aufgabenwechsel mit Wechselkosten übt keine der beiden (→ Blickfit Weichensteller).
+
+- **Passt, wenn** jemand das Umschalten zwischen zwei klar angekündigten Regeln üben und die Mehrzeit beim Wechsel kennenlernen möchte; eine kurze Einheit (etwa 90 Sekunden) gewünscht ist und Zeitdruck kein Problem darstellt. Profil: kognitive Flexibilität 3, Arbeitsgedächtnis und Entscheidung 2.
+- **Weniger passend, wenn** zwei Aufgaben gleichzeitig geübt werden sollen (→ 205), ruhig und ohne Zeitdruck geübt werden soll oder eine zuverlässige Einzelmessung der Wechselkosten nötig ist.
+- **Vorsicht / anpassen bei:** `aufmerksamkeitsprobleme`, `kognitive_einschraenkung`, `kinder_unter_6` (zwei Regeln merken, Vorwarnzeit und Frist werden kürzer; mit niedriger Stufe beginnen); `presbyopie_gleitsicht`, `sehbehinderung_niedriger_visus` (Nahkorrektur für den Tablet-Abstand, Rahmen und Symbol müssen mühelos erkennbar sein). Keine Aussage zur Eignung im medizinischen Sinn.
+- **Warnzeichen:** Doppelbilder, plötzlicher einseitiger Sehverlust, Lichtblitze, neue Schleier, Kopfschmerz mit Sehverschlechterung oder neu auftretender Schwindel gehören ärztlich abgeklärt (Aufzählung der Warnsymptome in der Anamnese: Muchnick, 2008, S. 6, 17 und 28); ein Übungsprogramm ersetzt das nicht.
+- **Kombiniert gut mit:** 205 (zwei gleichzeitige Aufgaben), 408 (zwei Bildhälften verfolgen), 201 (Konflikt zwischen Richtung und Ort, Hemmung), 208 (Daueraufmerksamkeit), 510 (Zielauswahl).
+- **Abgrenzung in der Gruppe:** 206 übt den Wechsel zwischen zwei Regeln nacheinander (Einzelreiz, Hinweis, Wechselkosten); 205 ist die Übung für zwei verschiedene Aufgaben gleichzeitig. Beide nicht in derselben Einheit.
 
 ## 10. Schwächen des Originals und Empfehlungen für eine Blickfit-Umsetzung
 **Was Blickfit anders macht:** Der Weichensteller ersetzt die Doppelstrom-Suche durch echten **Aufgabenwechsel** (Einzelreiz, zwei Regeln, gleiche zwei Tasten). Der Wechsel wird immer angekündigt (Rahmen Kreis/Quadrat + Symbol „2/3“ bzw. „< 5 >“ + Frage + passende Tastenform), Farbe (Okabe-Ito) nur zusätzlich. Ablauf: Hinweis → Vorwarnzeit → Ziffer (max. 3 s) → Rückmeldung; Antworten unter 150 ms gelten als geraten. Sitzung ≈ 90 s: 5 Durchgänge nur Regel A, 5 nur Regel B, dann 24 gemischt (50 % Wechsel, höchstens 4 gleiche Regeln in Folge). Schwierigkeit: eine Skala, Stufe 1–20 (3-down/1-up, ca. 79 %), Vorwarnzeit 1000 · 0,75^(Stufe−1) ms (bis 100 ms) und eine weiche Antwortfrist 2400 → 740 ms. Kennwerte: Wechselkosten (Median Wechsel − Median Wiederholung), Mischkosten (Median Wiederholung gemischt − Median Reinblock), Hauptwert = Stufe (Differenzwerte sind als Einzelwert wenig verlässlich, Hedge et al., 2018). Pfeiltasten und Touch, keine Zeitstrafe, keine Punkte-Combo, DE/IT. Der Doppelstrom-Charakter des Originals steckt in Blickfit „Doppelt gefordert“ (Nr. 205).
@@ -170,27 +175,29 @@ Quelle: ausgelieferter Spielcode (Next.js-Chunk, Stand 29.09.2026; nur Mechanik 
 - Rogers, R. D., & Monsell, S. (1995). Costs of a predictable switch between simple cognitive tasks. *Journal of Experimental Psychology: General, 124*(2), 207–231. https://doi.org/10.1037/0096-3445.124.2.207 – **Prüfung:** DOI stimmt ✓ (Crossref-Titel mit Tippfehler „predictible“); **stützt die Aussage der Website:** ja (Wechselkosten sinken mit Vorbereitungszeit bis ca. 0,6 s, bleiben auch bei 1,2 s als Restkosten, aber nur im ersten Durchgang der neuen Aufgabe) – gilt für Wahlreaktion mit Hinweis, nicht für das Spiel
 - Monsell, S. (2003). Task switching. *Trends in Cognitive Sciences, 7*(3), 134–140. https://doi.org/10.1016/S1364-6613(03)00028-7 – **Prüfung:** DOI stimmt ✓ (Crossref/PubMed); **stützt die Aussage der Website:** ja (Wechselkosten durch Vorbereitung verringert, nicht beseitigt)
 - Pashler, H. (1994). Dual-task interference in simple tasks: Data and theory. *Psychological Bulletin, 116*(2), 220–244. https://doi.org/10.1037/0033-2909.116.2.220 – **Prüfung:** DOI stimmt ✓; **stützt die Aussage der Website:** teilweise (Engpass betrifft die Handlungsauswahl, nicht die Wahrnehmung; „serielles Time-Sharing“ nur dafür)
-- Wickens, C. D. (2002). Multiple resources and performance prediction. *Theoretical Issues in Ergonomics Science, 3*(2), 159–177. https://doi.org/10.1080/14639220210123806 – **Prüfung:** DOI stimmt ✓; **stützt die Aussage der Website:** kein konkreter Bezug im Seitentext
-- Ophir, E., Nass, C., & Wagner, A. D. (2009). Cognitive control in media multitaskers. *Proceedings of the National Academy of Sciences, 106*(37), 15583–15587. https://doi.org/10.1073/pnas.0903620106 – **Prüfung:** DOI stimmt ✓; **stützt die Aussage der Website:** teilweise (Original ja; Replikationen nur zum Teil, Metaanalyse nach Korrektur nicht signifikant, siehe Wiradhany & Nieuwenstein, 2017)
+- Wickens, C. D. (2002). Multiple resources and performance prediction. *Theoretical Issues in Ergonomics Science, 3*(2), 159–177. https://doi.org/10.1080/14639220210123806 – **Prüfung:** DOI stimmt ✓; **stützt die Aussage der Website:** kein konkreter Bezug im Seitentext – in der öffentlichen Beschreibung nicht zitiert; **stützt (öffentliche Fassung):** nein
+- Ophir, E., Nass, C., & Wagner, A. D. (2009). Cognitive control in media multitaskers. *Proceedings of the National Academy of Sciences, 106*(37), 15583–15587. https://doi.org/10.1073/pnas.0903620106 – **Prüfung:** DOI stimmt ✓; **stützt die Aussage der Website:** teilweise (Original ja; Replikationen nur zum Teil, Metaanalyse nach Korrektur nicht signifikant, siehe Wiradhany & Nieuwenstein, 2017) – in der öffentlichen Beschreibung nicht zitiert; **stützt (öffentliche Fassung):** nein
 - Woods, D. L., Wyma, J. M., Yund, E. W., Herron, T. J., & Reed, B. (2015). Factors influencing the latency of simple reaction time. *Frontiers in Human Neuroscience, 9*, 131. https://doi.org/10.3389/fnhum.2015.00131 – **Prüfung:** DOI stimmt ✓; **stützt die Aussage der Website („144 Hz verringern Schlierenbildung drastisch“):** nein (laut Abstract keine Schlierenmessung und kein Vergleich von Bildwiederholraten; Studie: einfache Reaktionszeit, n = 1.469 in Experiment 1)
-- *Ohne Quelle:* „Hemisphärenkoordination durch Parietallappen und Corpus callosum“, „synaptische Plastizität“, „Elite/Top 1 %“ – **nicht belegt** (siehe Abschnitt 3).
+- *Ohne Quelle:* „Hemisphärenkoordination durch Parietallappen und Corpus callosum“, „synaptische Plastizität“, „Elite/Top 1 %“ – **nicht belegt** (siehe Abschnitt 3). – Aussagen ohne Quelle, nur in der Arbeitsfassung; **stützt (öffentliche Fassung):** nein
 
 ### Weitere Fachliteratur
-- Dux, P. E., Ivanoff, J., Asplund, C. L., & Marois, R. (2006). Isolation of a central bottleneck of information processing with time-resolved fMRI. *Neuron, 52*(6), 1109–1120. https://doi.org/10.1016/j.neuron.2006.11.009 – neuronaler Engpass bei zwei gleichzeitigen Entscheidungen (Crossref ✓, PubMed-Abstract gelesen)
-- Kim, C., Cilles, S. E., Johnson, N. F., & Gold, B. T. (2012). Domain general and domain preferential brain regions associated with different types of task switching: A meta-analysis. *Human Brain Mapping, 33*(1), 130–142. https://doi.org/10.1002/hbm.21199 – frontoparietales Netzwerk beim Aufgabenwechsel, 36 Studien (Crossref ✓, Abstract gelesen)
-- Alvarez, G. A., & Cavanagh, P. (2005). Independent resources for attentional tracking in the left and right visual hemifields. *Psychological Science, 16*(8), 637–643. https://doi.org/10.1111/j.1467-9280.2005.01587.x – getrennte Kapazität je Gesichtsfeldhälfte (Crossref ✓, Abstract gelesen)
-- Kiesel, A., Steinhauser, M., Wendt, M., Falkenstein, M., Jost, K., Philipp, A. M., & Koch, I. (2010). Control and interference in task switching – A review. *Psychological Bulletin, 136*(5), 849–874. https://doi.org/10.1037/a0019842 – Übersicht Wechselkosten (Crossref ✓)
-- Kray, J., & Lindenberger, U. (2000). Adult age differences in task switching. *Psychology and Aging, 15*(1), 126–147. https://doi.org/10.1037/0882-7974.15.1.126 – Alter, Mischkosten (Crossref ✓, Inhalt aus docs/wissenschaft/04)
-- Wasylyshyn, C., Verhaeghen, P., & Sliwinski, M. J. (2011). Aging and task switching: A meta-analysis. *Psychology and Aging, 26*(1), 15–20. https://doi.org/10.1037/a0020912 – Metaanalyse Alter (Crossref ✓, Inhalt aus docs/wissenschaft/04)
-- Zhao, X., Wang, H., & Maes, J. H. R. (2020). Training and transfer effects of extensive task-switching training in students. *Psychological Research, 84*(2), 389–403. https://doi.org/10.1007/s00426-018-1059-7 – Übung, Plateau, kein ferner Transfer (Crossref ✓, Inhalt aus docs/wissenschaft/04)
-- Kray, J., & Fehér, B. (2017). Age differences in the transfer and maintenance of practice-induced improvements in task switching: The impact of working-memory and inhibition demands. *Frontiers in Psychology, 8*, 410. https://doi.org/10.3389/fpsyg.2017.00410 – Training, Transfer, Erhalt nach 6 Monaten (Crossref ✓, Inhalt aus docs/wissenschaft/04)
-- Karbach, J., & Kray, J. (2009). How useful is executive control training? Age differences in near and far transfer of task-switching training. *Developmental Science, 12*(6), 978–990. https://doi.org/10.1111/j.1467-7687.2009.00846.x – Transfer nach Wechseltraining (Crossref ✓, Inhalt aus docs/wissenschaft/04)
-- Hedge, C., Powell, G., & Sumner, P. (2018). The reliability paradox: Why robust cognitive tasks do not produce reliable individual differences. *Behavior Research Methods, 50*(3), 1166–1186. https://doi.org/10.3758/s13428-017-0935-1 – Zuverlässigkeit von Differenzwerten (Crossref ✓, Inhalt aus docs/wissenschaft/04)
-- Wiradhany, W., & Nieuwenstein, M. R. (2017). Cognitive control in media multitaskers: Two replication studies and a meta-analysis. *Attention, Perception, & Psychophysics, 79*(8), 2620–2641. https://doi.org/10.3758/s13414-017-1408-4 – Replikation zu Ophir et al. (Crossref ✓, Abstract gelesen)
-- Uncapher, M. R., & Wagner, A. D. (2018). Minds and brains of media multitaskers: Current findings and future directions. *Proceedings of the National Academy of Sciences, 115*(40), 9889–9896. https://doi.org/10.1073/pnas.1611612115 – Übersicht, Kausalrichtung offen (Crossref ✓, Abstract gelesen)
-- Pelli, D. G., & Tillman, K. A. (2008). The uncrowded window of object recognition. *Nature Neuroscience, 11*(10), 1129–1135. https://doi.org/10.1038/nn.2187 – Crowding, Exzentrizität (Crossref ✓, Abstract gelesen)
-- Hutchings, N., Irving, E. L., Jung, N., Dowling, L. M., Wells, K. A., & Lillakas, L. (2007). Eye and head movement alterations in naïve progressive addition lens wearers. *Ophthalmic and Physiological Optics, 27*(2), 142–153. https://doi.org/10.1111/j.1475-1313.2006.00460.x – Gleitsicht, mehr Kopfbewegung (Crossref ✓, Abstract gelesen)
-- Sheedy, J. E. (2004). Progressive addition lenses—matching the specific lens to patient needs. *Optometry, 75*(2), 83–102. https://doi.org/10.1016/S1529-1839(04)70021-4 – Gleitsichtdesigns (Crossref ✓, Abstract gelesen)
-- Bababekova, Y., Rosenfield, M., Hue, J. E., & Huang, R. R. (2011). Font size and viewing distance of handheld smart phones. *Optometry and Vision Science, 88*(7), 795–797. https://doi.org/10.1097/OPX.0b013e3182198792 – Sehabstand Smartphone (Crossref ✓, Abstract gelesen)
-- Boccardo, L., Gurioli, M., & Grasso, P. A. (2023). Viewing distance and character size in the use of smartphones across the lifespan. *PLoS ONE, 18*(4), e0282947. https://doi.org/10.1371/journal.pone.0282947 – Sehabstand nach Alter (Crossref ✓)
-- Pronk, T., Wiers, R. W., Molenkamp, B., & Murre, J. (2020). Mental chronometry in the pocket? Timing accuracy of web applications on touchscreen and keyboard devices. *Behavior Research Methods, 52*(3), 1371–1382. https://doi.org/10.3758/s13428-019-01321-2 – Zeitgenauigkeit Touch (Crossref ✓, Abstract gelesen)
+- Alvarez, G. A., & Cavanagh, P. (2005). Independent resources for attentional tracking in the left and right visual hemifields. *Psychological Science, 16*(8), 637–643. https://doi.org/10.1111/j.1467-9280.2005.01587.x – getrennte Kapazität je Gesichtsfeldhälfte (Crossref ✓, Abstract gelesen) – in der öffentlichen Beschreibung nicht zitiert; **stützt (öffentliche Fassung):** nein
+- Bababekova, Y., Rosenfield, M., Hue, J. E., & Huang, R. R. (2011). Font size and viewing distance of handheld smart phones. *Optometry and Vision Science, 88*(7), 795–797. https://doi.org/10.1097/OPX.0b013e3182198792 – Sehabstand Smartphone (Crossref ✓, Abstract gelesen) – in der öffentlichen Beschreibung nicht zitiert; **stützt (öffentliche Fassung):** nein
+- Birch, J. (2012). Worldwide prevalence of red-green color deficiency. *Journal of the Optical Society of America A*, 29(3), 313–320. https://doi.org/10.1364/JOSAA.29.000313 – Häufigkeit der Farbsehschwäche
+- Boccardo, L., Gurioli, M., & Grasso, P. A. (2023). Viewing distance and character size in the use of smartphones across the lifespan. *PLoS ONE, 18*(4), e0282947. https://doi.org/10.1371/journal.pone.0282947 – Sehabstand nach Alter (Crossref ✓) – in der öffentlichen Beschreibung nicht zitiert; **stützt (öffentliche Fassung):** nein
+- Dux, P. E., Ivanoff, J., Asplund, C. L., & Marois, R. (2006). Isolation of a central bottleneck of information processing with time-resolved fMRI. *Neuron, 52*(6), 1109–1120. https://doi.org/10.1016/j.neuron.2006.11.009 – neuronaler Engpass bei zwei gleichzeitigen Entscheidungen – **Prüfung:** Crossref ✓, PubMed-Abstract gelesen
+- Hedge, C., Powell, G., & Sumner, P. (2018). The reliability paradox: Why robust cognitive tasks do not produce reliable individual differences. *Behavior Research Methods, 50*(3), 1166–1186. https://doi.org/10.3758/s13428-017-0935-1 – Zuverlässigkeit von Differenzwerten – **Prüfung:** Crossref ✓, Inhalt aus docs/wissenschaft/04
+- Hutchings, N., Irving, E. L., Jung, N., Dowling, L. M., Wells, K. A., & Lillakas, L. (2007). Eye and head movement alterations in naïve progressive addition lens wearers. *Ophthalmic and Physiological Optics, 27*(2), 142–153. https://doi.org/10.1111/j.1475-1313.2006.00460.x – Gleitsicht, mehr Kopfbewegung – **Prüfung:** Crossref ✓, Abstract gelesen
+- Karbach, J., & Kray, J. (2009). How useful is executive control training? Age differences in near and far transfer of task-switching training. *Developmental Science, 12*(6), 978–990. https://doi.org/10.1111/j.1467-7687.2009.00846.x – Transfer nach Wechseltraining – **Prüfung:** Crossref ✓, Inhalt aus docs/wissenschaft/04
+- Kiesel, A., Steinhauser, M., Wendt, M., Falkenstein, M., Jost, K., Philipp, A. M., & Koch, I. (2010). Control and interference in task switching – A review. *Psychological Bulletin, 136*(5), 849–874. https://doi.org/10.1037/a0019842 – Übersicht Wechselkosten – **Prüfung:** Crossref ✓
+- Kim, C., Cilles, S. E., Johnson, N. F., & Gold, B. T. (2012). Domain general and domain preferential brain regions associated with different types of task switching: A meta-analysis. *Human Brain Mapping, 33*(1), 130–142. https://doi.org/10.1002/hbm.21199 – frontoparietales Netzwerk beim Aufgabenwechsel, 36 Studien – **Prüfung:** Crossref ✓, Abstract gelesen
+- Kray, J., & Fehér, B. (2017). Age differences in the transfer and maintenance of practice-induced improvements in task switching: The impact of working-memory and inhibition demands. *Frontiers in Psychology, 8*, 410. https://doi.org/10.3389/fpsyg.2017.00410 – Training, Transfer, Erhalt nach 6 Monaten – **Prüfung:** Crossref ✓, Inhalt aus docs/wissenschaft/04
+- Kray, J., & Lindenberger, U. (2000). Adult age differences in task switching. *Psychology and Aging, 15*(1), 126–147. https://doi.org/10.1037/0882-7974.15.1.126 – Alter, Mischkosten – **Prüfung:** Crossref ✓, Inhalt aus docs/wissenschaft/04
+- Muchnick, B. G. (2008). *Clinical Medicine in Optometric Practice* (2. Aufl.). Mosby/Elsevier. https://openlibrary.org/isbn/9780323029612 – Warnsymptome des Auges und neurologische Warnzeichen (S. 6, 17, 28)
+- Pelli, D. G., & Tillman, K. A. (2008). The uncrowded window of object recognition. *Nature Neuroscience, 11*(10), 1129–1135. https://doi.org/10.1038/nn.2187 – Crowding, Exzentrizität (Crossref ✓, Abstract gelesen) – in der öffentlichen Beschreibung nicht zitiert; **stützt (öffentliche Fassung):** nein
+- Pronk, T., Wiers, R. W., Molenkamp, B., & Murre, J. (2020). Mental chronometry in the pocket? Timing accuracy of web applications on touchscreen and keyboard devices. *Behavior Research Methods, 52*(3), 1371–1382. https://doi.org/10.3758/s13428-019-01321-2 – Zeitgenauigkeit Touch – **Prüfung:** Crossref ✓, Abstract gelesen
+- Sheedy, J. E. (2004). Progressive addition lenses—matching the specific lens to patient needs. *Optometry, 75*(2), 83–102. https://doi.org/10.1016/S1529-1839(04)70021-4 – Gleitsichtdesigns – **Prüfung:** Crossref ✓, Abstract gelesen
+- Uncapher, M. R., & Wagner, A. D. (2018). Minds and brains of media multitaskers: Current findings and future directions. *Proceedings of the National Academy of Sciences, 115*(40), 9889–9896. https://doi.org/10.1073/pnas.1611612115 – Übersicht, Kausalrichtung offen (Crossref ✓, Abstract gelesen) – in der öffentlichen Beschreibung nicht zitiert; **stützt (öffentliche Fassung):** nein
+- Wasylyshyn, C., Verhaeghen, P., & Sliwinski, M. J. (2011). Aging and task switching: A meta-analysis. *Psychology and Aging, 26*(1), 15–20. https://doi.org/10.1037/a0020912 – Metaanalyse Alter – **Prüfung:** Crossref ✓, Inhalt aus docs/wissenschaft/04
+- Wiradhany, W., & Nieuwenstein, M. R. (2017). Cognitive control in media multitaskers: Two replication studies and a meta-analysis. *Attention, Perception, & Psychophysics, 79*(8), 2620–2641. https://doi.org/10.3758/s13414-017-1408-4 – Replikation zu Ophir et al. (Crossref ✓, Abstract gelesen) – in der öffentlichen Beschreibung nicht zitiert; **stützt (öffentliche Fassung):** nein
+- Zhao, X., Wang, H., & Maes, J. H. R. (2020). Training and transfer effects of extensive task-switching training in students. *Psychological Research, 84*(2), 389–403. https://doi.org/10.1007/s00426-018-1059-7 – Übung, Plateau, kein ferner Transfer – **Prüfung:** Crossref ✓, Inhalt aus docs/wissenschaft/04
