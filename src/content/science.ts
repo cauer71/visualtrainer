@@ -192,17 +192,17 @@ export const SCIENCE: Record<string, ScienceEntry> = {
         trains: 'Auge und Hand zusammen: ein bewegtes Ziel sehen, seine Bahn vorausahnen und im richtigen Moment treffen.',
         daily: 'Einen Ball fangen, nach etwas Rollendem greifen, Spiele mit Kindern oder Enkeln, Rückschlagsport.',
         research:
-          'Beim Abfangen sagt das Gehirn die Bahn laufend voraus und korrigiert ständig nach – bei schnellen Zielen tippt man typischerweise leicht dahinter. In der Aufgabe werden Treffsicherheit und Timing mit Übung besser. Dass sich das auf Ballsport oder Alltag überträgt, ist nur schwach belegt.',
+          'Beim Abfangen sagt das Gehirn die Bahn laufend voraus und korrigiert ständig nach – bei schnellen Zielen tippt man typischerweise leicht dahinter. In der Aufgabe werden Treffsicherheit und Timing mit Übung besser. Dass sich das auf Ballsport oder Alltag überträgt, ist nur schwach belegt. Eine ähnliche Zeigebewegung nutzen Ärzte klinisch (Finger-Nase-Versuch); die Übung ist kein solcher Test und ersetzt keine Untersuchung.',
         improved:
-          'Tempo in echter Zeit (gleich schnell auf 60- und 120-Hz-Geräten), große Touch-Ziele, adaptive Schwierigkeit (Tempo, Zielgröße, Zeit) und eine Auswertung, ob du eher vor oder hinter das Ziel tippst.',
+          'Der Punkt bewegt sich in Echtzeit und ist deshalb auf 60- und 120-Hz-Geräten und auf jeder Bildschirmgröße gleich schnell. Mit der Stufe wird er schneller, etwas kleiner und bleibt kürzer; drei gefangene Ziele machen es schwerer, ein verfehltes leichter, sodass etwa vier von fünf Zielen gelingen. Das Tempo schwankt von Ziel zu Ziel leicht, und ab Stufe 6 laufen sanfte Kurven, damit man jedes Mal neu vorausschätzen muss. Die Trefferfläche ist größer als der sichtbare Punkt und auf den Finger abgestimmt. Bei jedem Tipp wird gemessen, ob er hinter oder vor dem Punkt liegt; daraus entsteht am Ende der persönliche Tipp. Die Runde dauert 45 s, Fehltipps kosten keine Zeit.',
       },
       it: {
         trains: 'Occhio e mano insieme: vedere un bersaglio in movimento, prevederne il percorso e colpirlo al momento giusto.',
         daily: 'Prendere una palla, afferrare qualcosa che rotola, giocare con bambini o nipoti, sport con la racchetta.',
         research:
-          'Per intercettare, il cervello prevede continuamente il percorso e corregge di continuo – con bersagli veloci di solito si tocca un po’ dietro. Nel compito precisione e tempismo migliorano con l’allenamento. Il trasferimento agli sport con la palla o alla vita quotidiana è dimostrato solo debolmente.',
+          'Per intercettare, il cervello prevede continuamente il percorso e corregge di continuo – con bersagli veloci di solito si tocca un po’ dietro. Nel compito precisione e tempismo migliorano con l’allenamento. Il trasferimento agli sport con la palla o alla vita quotidiana è dimostrato solo debolmente. Un movimento di puntamento simile viene usato clinicamente dai medici (prova indice-naso); l’esercizio non è un test del genere e non sostituisce una visita.',
         improved:
-          'Velocità in tempo reale (uguale su schermi a 60 e 120 Hz), bersagli grandi per il tocco, difficoltà adattiva (velocità, dimensione, tempo) e un’analisi se tocchi più davanti o dietro al bersaglio.',
+          'Il punto si muove in tempo reale ed è quindi ugualmente veloce su schermi a 60 e 120 Hz e con qualsiasi dimensione dello schermo. Con il livello diventa più veloce, un po’ più piccolo e resta visibile meno a lungo; tre bersagli presi rendono tutto più difficile, uno mancato più facile, così riesce circa quattro bersagli su cinque. La velocità varia leggermente da bersaglio a bersaglio e dal livello 6 compaiono curve dolci, così bisogna ogni volta stimare di nuovo in anticipo. L’area di tocco è più grande del punto visibile ed è adatta al dito. A ogni tocco si misura se cade dietro o davanti al punto; ne nasce il consiglio personale alla fine. Il round dura 45 s e i tocchi sbagliati non costano tempo.',
       },
     },
     sources: [
@@ -210,6 +210,7 @@ export const SCIENCE: Record<string, ScienceEntry> = {
       src('Brouwer, Brenner & Smeets (2002). Hitting moving objects: Is target speed used in guiding the hand? Experimental Brain Research', 'https://doi.org/10.1007/s00221-001-0980-x'),
       src('Laby & Appelbaum (2021). Vision and on-field performance: A critical review of visual assessment and training studies with athletes. Optometry and Vision Science', 'https://doi.org/10.1097/OPX.0000000000001729'),
       src('Parhi, Karlson & Bederson (2006). Target size study for one-handed thumb use on small touchscreen devices. MobileHCI', 'https://doi.org/10.1145/1152215.1152260'),
+      src('Muchnick (2008). Clinical Medicine in Optometric Practice, 2nd ed., S. 6, 28. Mosby/Elsevier', 'https://openlibrary.org/isbn/9780323029612'),
     ],
   },
 
