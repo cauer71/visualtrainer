@@ -2,7 +2,7 @@
 # ===== Kennung =====
 nr: 304
 kennung: fps-tracking-trainer
-name: "Pendelndes Ziel abfangen – Klick auf ein bewegtes Ziel mit Richtungswechseln"
+name: "Pendelndes Ziel abfangen – im richtigen Moment tippen"
 name_original: "Aim-Training online (Seitentitel: Aim-Training online | SkillDrills; Untertitel: Tracking · Bewegliche Ziele verfolgen)"
 kapitel: "Reaktionsgeschwindigkeit"
 kapitel_original: "reaction-speed"
@@ -12,7 +12,7 @@ blickfit_umsetzung: {kennung: "pendel-fang", name: "Pendel-Fang", unterschiede: 
 stand: 2026-09-30
 
 # ===== Überblick =====
-kurzbeschreibung: "Ein roter Punkt taucht am linken oder rechten Rand auf und pendelt auf einer waagrechten Linie hin und her; in zufälligen Abständen kehrt er die Richtung um. Man verfolgt ihn mit Blick und Zeiger und muss ihn anklicken oder antippen, bevor er verschwindet. Gewertet wird nur der Treffer, nicht das Draufbleiben."
+kurzbeschreibung: "Ein Ziel schwingt gleichmäßig auf einer waagrechten Linie hin und her; in der Mitte liegt ein markierter Fangbereich. Man verfolgt das Ziel mit dem Blick und tippt irgendwo auf den Bildschirm, wenn es im Fangbereich ist. Die Übung zeigt die Abweichung in Millisekunden und in Prozent der Bahnbreite samt Tendenz (eher zu früh oder zu spät). Mit der Stufe wird die Schwingung schneller und der Fangbereich enger."
 ziel_funktionen: [blickfolge, bewegungswahrnehmung, antizipation, auge_hand_koordination]
 eingabe: [maus, touch, touchpad]
 tablet_geeignet: mit_anpassung
@@ -72,27 +72,33 @@ belastung:
   sprachabhaengigkeit: 0
 
 # ===== Auswahlhilfe =====
-voraussetzungen: ["Maus, Touchpad oder Touchscreen; Maus auf ruhiger Unterlage", "Ziele von ≈ 1,5° bis unter 0,5° Sehwinkel erkennen, die sich mit ≈ 5–26°/s bewegen", "passende Korrektion für den Bildschirmabstand über die ganze Bahnbreite (bis ≈ 37° im Vollbild am Monitor)", "kein Farbsehen nötig (ein einziges rotes Ziel mit weißem Kern auf Schwarz)", "Tablet quer halten (hochkant ist die Bahn sehr kurz)"]
+voraussetzungen: ["Maus, Touchpad, Touchscreen oder Leertaste; irgendwo auf dem Bildschirm zu tippen genügt", "ein großes, kontrastreiches Ziel erkennen, das gleichmäßig hin und her schwingt", "passende Korrektion für den Bildschirmabstand über die ganze Bahnbreite", "kein Farbsehen nötig", "Tablet quer halten (hochkant ist die Bahn kürzer)"]
 vorsicht_bei: [photosensitive_epilepsie, migraene_lichtempfindlich, nystagmus, presbyopie_gleitsicht, gesichtsfeldausfall, sehbehinderung_niedriger_visus, trockenes_auge_bildschirm, kopfschmerz_asthenopie, tremor_parkinson, hand_arm_beschwerden, kognitive_einschraenkung, aufmerksamkeitsprobleme]
-geeignet_fuer: ["einem waagrecht bewegten Ziel mit Blick und Zeiger folgen und im richtigen Moment treffen", "Richtungswechsel erkennen und den Treffpunkt vorausschätzen (Vorhalt)", "spielerisches Aufwärmen für Jugendliche und Erwachsene mit Freude an Tempo und Punkten", "Einstieg vor echten Tracking-Übungen mit Haltezeit (505, 512, 514)"]
-weniger_geeignet_fuer: ["Messung von Blickfolge oder Reaktionszeit (keine Blickmessung; 'Ø Reaktion' enthält die Verfolgungszeit)", "ruhiges Blickfolgetraining ohne Zeitdruck (dafür 404, 105)", "Lichtempfindliche: roter Fehlerblitz bei jedem Fehler und Ablauf (abschaltbar)", "Gleitsichtträger:innen im Vollbild am großen Monitor", "Ältere oder Einsteiger:innen ab etwa Level 8–10 (Umkehr alle < 0,6 s, Zeitfenster < 0,1 s)", "Tablet im Hochformat"]
+geeignet_fuer: ["einem waagrecht schwingenden Ziel mit dem Blick folgen und im richtigen Moment tippen", "den Zeitpunkt des Durchgangs durch die Mitte vorausschätzen (Vorhalt)", "spielerisches Aufwärmen für Jugendliche und Erwachsene mit Freude an Tempo und Punkten", "Einstieg vor echten Tracking-Übungen mit Haltezeit (505, 512, 514)"]
+weniger_geeignet_fuer: ["Messung von Blickfolge oder Reaktionszeit (keine Blickmessung; gemessen wird der Zeitpunkt des Tipps)", "ruhiges Blickfolgetraining ohne Zeitdruck (dafür 404, 105)", "Gleitsichtträger:innen im Vollbild am großen Monitor", "Ältere oder Einsteiger:innen auf hohen Stufen (schnelle Schwingung, schmaler Fangbereich)", "Tablet im Hochformat"]
 evidenz:
   uebungseffekt: stark
   naher_transfer: schwach
   alltag_transfer: fehlend
   kommentar: "Die Übung selbst wurde nie untersucht; Zeige- und Abfangaufgaben werden durch Wiederholung deutlich besser, zu einem großen Teil durch Gewöhnung an Gerät und Strategie (Guo et al. 2025); Effekte auf unähnliche Tests sind viel kleiner, ein Nutzen für E-Sport, Sport oder Alltag ist nicht belegt (Bediou et al. 2018 vs. Sala et al. 2018; Fransen 2024)."
 aehnliche_uebungen: [305, 306, 512, 505, 513, 514, 104, 105, 410, 415, 707, 503, 101]
-stichworte: ["bewegtes Ziel", "Abfangen", "Interzeption", "Richtungswechsel", "glatte Blickfolge", "Aufholsakkaden", "Vorhalt", "Auge-Hand-Koordination", "Aim-Training", "Tracking (Name des Originals)", "Combo", "Latenz", "Touch"]
+stichworte: ["bewegtes Ziel", "Abfangen", "Interzeption", "Richtungswechsel", "glatte Blickfolge", "Aufholsakkaden", "Vorhalt", "Auge-Hand-Koordination", "Aim-Training", "Pendel", "Combo", "Latenz", "Touch"]
 ---
 
-# 304 · Pendelndes Ziel abfangen – Klick auf ein bewegtes Ziel mit Richtungswechseln
+# 304 · Pendelndes Ziel abfangen – im richtigen Moment tippen
 
-> Original: „Aim-Training online“ (Untertitel „Tracking · Bewegliche Ziele verfolgen“) – skilldrills.online, Kapitel
-> Reaktionsgeschwindigkeit (`reaction-speed`) · Blickfit: noch nicht umgesetzt (verwandt: `zielfang`)
+> Original: „Aim-Training online“ (Untertitel „Tracking · Bewegliche Ziele verfolgen“) – skilldrills.online, Kapitel Reaktionsgeschwindigkeit (`reaction-speed`) · Blickfit: noch nicht umgesetzt (verwandt: `zielfang`)
 
 ## 1. Kurzbeschreibung
 
-Auf einem fast schwarzen Feld erscheint ein roter Punkt mit weißem Kern am linken oder rechten Rand und läuft auf einer waagrechten Linie in Feldmitte los. In zufälligen, mit dem Level kürzer werdenden Abständen kehrt er um; an den Rändern prallt er ab. Man folgt ihm mit Blick und Zeiger und klickt bzw. tippt ihn an, bevor er nach einer festen Zeit verschwindet. Treffer bringen Punkte und Zeit, Fehlklicks und verpasste Punkte kosten Zeit und brechen die Serie. Trotz des Titels „Tracking“ zählt nur der Treffer – es ist eine Abfangaufgabe mit Blickfolge.
+Ein Ziel schwingt gleichmäßig auf einer waagrechten Linie hin und her; in der Mitte liegt ein markierter Fangbereich.
+Man tippt irgendwo auf den Bildschirm (am Computer genügt die Leertaste), wenn das Ziel im Fangbereich ist. Danach zeigt
+ein Ring, wo das Ziel beim Tipp war, mit Haken oder Kreuz, und das Ergebnis nennt die Abweichung in Millisekunden und in
+Prozent der Bahnbreite mit Tendenz (eher zu früh oder zu spät). Die Bewegung folgt einer Sinuskurve und ist damit
+vorhersagbar: Der Ort ist bekannt, es zählt allein der richtige Moment. Mit der Stufe wird die Schwingung schneller und
+weiter, und der Fangbereich wird enger; Änderungen blenden weich über. Eine Sitzung besteht aus 18 Versuchen. Die Übung
+verlangt, dem Ziel mit dem Blick zu folgen und den Moment des Durchgangs vorauszuschätzen; gewertet wird allein der
+Tipp, nicht der Blick.
 
 ## 2. Ablauf im Original (Analyse)
 
@@ -132,54 +138,124 @@ Die Seite richtet sich an FPS- und Battle-Royale-Spieler:innen, verspricht „sa
 
 ## 4. Optische und okulomotorische Grundlagen
 
-- **Sehwinkel und Kontrast:** Ziel Ø 1,5° (Level 1) bis ≈ 0,5° (hohe Combo), Minimum 12 px ≈ 0,3°; rot auf Schwarz, hoher Kontrast. Begrenzend ist nicht das Detail, sondern Bewegung und Timing. Bei Protanopie wirkt Rot dunkler; der weiße Kern bleibt sichtbar (eigene Einschätzung).
-- **Tempo:** ≈ 5°/s (Level 1) bis ≈ 26°/s (Level 15 mit Combo). Der Gain (Augen- ÷ Zielgeschwindigkeit) liegt beim Gesunden unter 0,95 und sinkt mit dem Tempo (Collewijn & Tamminga, 1984); Normwert in 1.058 jungen Erwachsenen 0,80 (Spanne 0,31–1,08) mit 0,64 Aufholsakkaden/s (Bargary et al., 2017).
-- **Richtungsumkehr:** Die Folgebewegung startet erst ≈ 100 ms nach einer Bewegungsänderung (Carl & Gellman, 1987). *Eigene Übertragung auf die Umkehr:* Läuft das Auge 100 ms in die alte Richtung weiter, entsteht ein Abstand von 2 × Tempo × 0,1 s – Level 1 ≈ 1,1° (etwa der Radius der Trefferzone), Level 15 ≈ 3,7°, mit Combo ≈ 5° – ab mittleren Levels also ein Vielfaches des Trefferradius (≈ 0,45° auf Level 15). Eine Aufholsakkade folgt, wenn der Fehler nicht binnen 40–180 ms „von selbst“ schrumpft (de Brouwer et al., 2002).
-- **Vorhersagbarkeit:** Die Umkehrungen kommen zufällig, entsprechend ≈ 0,5–0,7 Hz (Level 1) bis ≈ 1,3–2,2 Hz (Level 15) bzw. bis ≈ 3 Hz mit Combo (*eigene Rechnung*, halbe Periode = Umkehrabstand). Bei pseudozufälliger Bewegung (Summe von vier Sinusschwingungen, je ± 3,3°/s) fiel der Gain der langsamen Anteile von 0,92 auf 0,53, wenn die schnellste Komponente von 0,39 auf 1,56 Hz stieg; die schnelle Komponente selbst wurde weiter gut verfolgt (Barnes et al., 1987). Die Übertragung auf die Umkehrungen hier ist eine Analogie. Vorhersage hilft nur bei erwartbarer Bewegung (Kowler et al., 2019) – hier nur an den Randmarken.
-- **Gleitsicht/Alterssichtigkeit:** Die Bahn liegt günstig auf Augenhöhe, ist aber im Vollbild (≈ 37°) oder eingebettet (≈ 22°) breiter als die klare Zwischenzone von Gleitsichtgläsern (≈ 13–18°; Han et al., 2003) → Unschärfe am Bahnende oder Kopfbewegung. Besser Bildschirmbrille, kleines Fenster, Blick geradeaus auf Bahnhöhe. Der Gain sinkt im Alter bei allen Tempi, umso mehr bei schnellen Zielen (Moschner & Baloh, 1994).
-- **Bildschirm/Latenz:** Ende-zu-Ende Maus → Bild 36,6 ms bei 60 Hz, 21,1 ms bei 120 Hz (Bestfall: 1.000-Hz-Maus, natives Programm, kein Browser); Touch-Geräte 48–276 ms je nach Gerät, System und Toolkit (Casiez et al., 2017). *Eigene Rechnung:* Bei 694 px/s wandert das Ziel schon in diesen 36,6 ms ≈ 25 px – mehr als der Trefferradius samt Zugabe (17 px); im Browser ist die Latenz eher höher. Man muss also um die Gerätelatenz vorhalten, und das Maß ändert sich mit dem Gerät.
-- **Trockenes Auge:** Die Blinzelrate sinkt am Bildschirm im Mittel auf ≈ ein Fünftel (Patel et al., 1991); anhaltendes Verfolgen ohne Pause verstärkt das eher.
+- **Sehwinkel und Kontrast:** Ziel und Fangbereich sind groß und kontrastreich. Begrenzend ist nicht das Detail, sondern
+  Bewegung und Timing. Zur Orientierung: Bei 40 cm Abstand entspricht 1 cm auf dem Bildschirm etwa 1,4°.
+- **Bewegung und Tempo:** Das Ziel ist in der Mitte am schnellsten und kehrt an den Enden gleichmäßig um; die Schwingdauer
+  beträgt 5,0 s auf der ersten und 2,8 s auf der letzten Stufe. Die glatte Folgebewegung der Augen erreicht beim Gesunden
+  eine Verstärkung (Gain, Augen- ÷ Zielgeschwindigkeit) unter 0,95, die mit dem Tempo sinkt (Collewijn & Tamminga, 1984);
+  in einem Standardversuch mit 1.058 jungen Erwachsenen lag sie im Mittel bei 0,80 (Spanne 0,31–1,08), mit 0,64
+  Aufholsakkaden je Sekunde (Bargary et al., 2017). Die Folgebewegung reagiert auf Geschwindigkeitsfehler, Positionsfehler
+  korrigieren Aufholsakkaden (Rashbass, 1961); diese werden ausgelöst, wenn der Positionsfehler nicht binnen 40–180 ms von selbst
+  schrumpft (de Brouwer et al., 2002).
+- **Vorhersagbarkeit:** Ein gleichmäßiges Pendeln lässt sich vorausahnen, und die Folgebewegung kann Vorhersagen nutzen
+  (Kowler et al., 2019). Bei unvorhersehbarer, schneller Bewegung ist das anders: Bei pseudozufälliger Bewegung (Summe von
+  vier Sinusschwingungen) fiel der Gain der langsamen Anteile von 0,92 auf 0,53, wenn die schnellste Komponente von 0,39
+  auf 1,56 Hz stieg (Barnes et al., 1987). Die Folgebewegung startet erst etwa 100 ms nach einer Bewegungsänderung (Carl &
+  Gellman, 1987); die gleichmäßigen Umkehrpunkte hier sind dagegen erwartbar.
+- **Klinische Prüfung der Folgebewegung:** Die äußeren Augenmuskeln werden klinisch geprüft, indem die Augen einem nahen
+  Ziel folgen, das in einem „H“ geführt wird; geprüft werden damit Adduktion, Senkung bei Abduktion und Hebung (Hirnnerven
+  III, IV und VI; Muchnick, 2008, S. 32–35). Das Lehrbuch macht keine Aussage zur Qualität der Folgebewegung und keine zu
+  Training.
+- **Praxisangaben zur Durchführung (Erfahrungswissen, nicht belegt):** Bei Blickfolge-Übungen gilt als Hinweis, den Kopf
+  ruhig zu halten und nur die Augen zu bewegen. Eine klassische Übungsform der Sehtherapie ist das Folgen eines an einer
+  Schnur hängenden Balls, oft mit aufgedruckten Buchstaben: Er wird in verschiedenen Richtungen angestoßen (waagrecht,
+  senkrecht, schräg, kreisend im und gegen den Uhrzeigersinn), und gesteigert wird, indem die Buchstaben gelesen werden und
+  die Körperhaltung wechselt. Ein Wirksamkeitsbeleg liegt dafür nicht vor.
+- **Gleitsicht und Alterssichtigkeit:** Die Bahn liegt günstig auf Augenhöhe, kann aber breiter sein als die klare
+  Zwischenzone von Gleitsichtgläsern (etwa 13–18°; Han et al., 2003): Unschärfe am Bahnende oder Kopfbewegung. Besser sind
+  eine Bildschirmbrille, ein kleines Fenster und ein Blick geradeaus auf Bahnhöhe. Der Gain sinkt im Alter bei allen
+  Tempi, bei schnellen Zielen besonders (Moschner & Baloh, 1994).
+- **Bildschirm und Latenz:** Ende-zu-Ende vom Mausklick bis zum Bild 36,6 ms bei 60 Hz und 21,1 ms bei 120 Hz (günstigster
+  Laboraufbau: 1.000-Hz-Maus, natives Programm, kein Browser); Touch-Geräte 48–276 ms je nach Gerät, System und
+  Programmierumgebung (Casiez et al., 2017). Das Ziel bewegt sich in dieser Zeit weiter; man tippt deshalb systematisch
+  etwas später, und das Maß ändert sich mit dem Gerät.
+- **Trockenes Auge:** Die Blinzelrate sinkt am Bildschirm im Mittel auf etwa ein Fünftel (Patel et al., 1991); anhaltendes
+  Verfolgen ohne Pause verstärkt das eher.
 
 ## 5. Neurowissenschaftliche Grundlagen
 
-Zu dieser Aufgabe gibt es keine Bildgebungs- oder Trainingsstudie. Die Folgebewegung wird von einem Netzwerk aus frontalem Augenfeld, Kleinhirn, Basalganglien und Colliculus superior gesteuert, das dem Sakkadensystem ähnelt (Krauzlis, 2004); vorhersagende Anteile hängen mit frontaler Aktivität und Bewegungsarealen der Sehrinde zusammen (Kowler et al., 2019). Beim Mitführen mit der Hand ändert sich die Blickstrategie: Der Blick bleibt gleich nahe am Ziel, aber glatter (Danion & Flanagan, 2018). Die Handsteuerung passt Richtung und Beschleunigung laufend an die Zielbewegung an, mit ≈ 110 bzw. ≈ 200 ms Verzögerung (Brenner et al., 1998). „Trainiert Region X“ lässt sich daraus nicht ableiten; die Website behauptet das auch nicht.
+Zu dieser Aufgabe gibt es keine Bildgebungs- oder Trainingsstudie. Die Folgebewegung wird von einem Netzwerk aus
+frontalem Augenfeld, Kleinhirn, Basalganglien und Colliculus superior gesteuert, das dem Sakkadensystem ähnelt
+(Krauzlis, 2004); vorhersagende Anteile hängen mit frontaler Aktivität und Bewegungsarealen der Sehrinde zusammen
+(Kowler et al., 2019). Die Handsteuerung passt Richtung und Beschleunigung laufend an die Zielbewegung an, mit etwa 110
+bzw. 200 ms Verzögerung (Brenner et al., 1998). „Trainiert Region X“ lässt sich daraus nicht ableiten.
 
 ## 6. Motorische Grundlagen
 
-- **Manuelles Nachführen ist intermittierend:** Korrekturen erfolgen stoßweise; die stoßweisen Anteile (0,5–1,8 Hz) gingen stark zurück, wenn der eigene Zeiger nicht sichtbar war. Bei langsamen Zielen zeigte sich eine Fehler-Totzone von ≈ 0,8°, bei schnellen passte die Fehlerverteilung zu ≈ 170 ms Pause zwischen Korrekturen (Miall et al., 1993; Joystick, Modellinterpretation der Autoren). Die Genauigkeit beim Maus-Tracking reicht bis ≈ 2 Hz und sinkt mit hohem Alter und motorischer Einschränkung (Riviere & Thakor, 1996).
-- **Folge für die Übung (eigene Ableitung):** Bei Umkehrabständen von 230–385 ms (Level 15) bzw. 160–270 ms (Combo) kann die Hand kaum jede Umkehr beantworten, bevor die nächste kommt (Beschleunigungsanpassung ≈ 200 ms; Brenner et al., 1998). Erfolgreich ist dann eher „Mitte der Pendelbewegung halten und im richtigen Moment klicken“ – also Abfangen statt Tracking.
-- **Timing-Präzision:** Beim Treffen bewegter Ziele streut der Zeitpunkt um ≈ 20 ms, der Ort um ≈ 5 mm (Brenner & Smeets, 2009). *Eigene Ableitung:* Zeitfenster von 27–49 ms bei ruhendem Zeiger in hohen Levels (Tabelle) liegen damit nahe an dieser Streuung; wer den Zeiger mitführt, vergrößert das Fenster. Klicks auf bewegte Ziele landen systematisch hinter dem Ziel, umso mehr, je schneller es ist (Huang et al., 2018); für bewegte Ziele passt Fitts' Gesetz nur mit Geschwindigkeitsterm (Jagacinski et al., 1980).
-- **Touch vs. Maus:** Gegenüber der Maus verkürzte Touch die Bewegungszeit bei Älteren um 35 %, bei Jüngeren um 16 % (ruhende Ziele; Findlater et al., 2013). Dank Zugabe bleibt die Trefferzone am Tablet bis Level 15 über der Empfehlung von 9,2 mm (Parhi et al., 2006): *eigene Rechnung* ≈ 11 mm, mit Combo ≈ 9,6 mm, ab Level 20 mit Combo ≈ 8,8 mm; sichtbar sind dann nur ≈ 3–5 mm. Ohne Fadenkreuz und mit verdeckender Hand ist Touch reines Vorhersagen.
-- **Tremor:** physiologisch ≈ 8–12 Hz, Parkinson 3–6 Hz (McAuley & Marsden, 2000); kleine, schnelle Ziele belasten zitternde oder schmerzende Hände.
+- **Timing-Präzision:** Beim Treffen bewegter Ziele streut der Zeitpunkt der Hand um etwa 20 ms, der Ort um etwa 5 mm
+  (Brenner & Smeets, 2009). Das Zeitfenster, in dem das Ziel im Fangbereich liegt, schrumpft rechnerisch von etwa 350 ms
+  auf der ersten auf etwa 75 ms auf der letzten Stufe (Verhältnis aus Breite des Fangbereichs und Tempo; auf kleinen
+  Bildschirmen ist es wegen der Mindestbreite von 44 px größer). Auf hohen Stufen ist es damit schmal im Vergleich zur
+  natürlichen Streuung.
+- **Tipps auf bewegte Ziele:** Sie landen im Mittel hinter dem Ziel, umso mehr, je schneller es ist (Huang et al., 2018);
+  für bewegte Ziele passt das Fitts’sche Gesetz nur mit einem Geschwindigkeitsterm (Jagacinski et al., 1980). Die Übung
+  zeigt deshalb die Tendenz (eher zu früh oder zu spät) und nicht nur den Betrag.
+- **Touch und Maus:** Gegenüber der Maus verkürzte Touch die Bewegungszeit bei Älteren um 35 %, bei Jüngeren um 16 %
+  (ruhende Ziele; Findlater et al., 2013). Weil irgendwo auf dem Bildschirm getippt wird, verdeckt die Hand das Ziel nicht,
+  und die Trefferfläche spielt keine Rolle.
+- **Tremor:** physiologisch etwa 8–12 Hz, bei Parkinson 3–6 Hz (McAuley & Marsden, 2000); da nicht gezielt werden muss,
+  stört er hier wenig.
 
 ## 7. Einflussfaktoren und Messgrenzen
 
-- **Gerät:** Anzeige- und Eingabelatenz bestimmen den nötigen Vorhalt (Abschnitt 4); im Shooter brachten 10 ms weniger Latenz messbar mehr Treffer (+0,8 % Trefferquote; Liu et al., 2021). Browser-Messungen enthalten 58–133 ms Geräteanteil (Pronk et al., 2020). Monitor, Tablet und Fenstergröße ändern zudem Sehwinkel und Bahnbreite. **Nur Selbstvergleich am selben Gerät** ist sinnvoll.
-- **Rückkopplung:** Combo erhöht Punkte (bis × 3) und damit Level und Schwierigkeit; das Level sinkt nie, und Treffer verlängern die Runde. Punkte, Endlevel und Dauer hängen deshalb eng zusammen.
-- **Messgrößen:** „Ø Reaktion“ enthält die Verfolgungszeit und nur Treffer; sie „verbessert“ sich allein, weil die Lebensdauer mit dem Level sinkt (Auswahleffekt, eigene Analyse). Kennzahlen eines kommerziellen Aim-Trainers (KovaaK’s, N = 10) waren an zwei Terminen sehr zuverlässig (ICC 0,947–0,995); signifikant besser wurde man zwischen den Terminen nur in einer von vier Aufgaben (Rogers et al., 2024) – für dieses Original nicht untersucht.
-- **Zustand und Alter:** Im Alter ist der Folge-Gain bei allen Tempi niedriger (Moschner & Baloh, 1994); Müdigkeit dürfte zusätzlich schaden (plausibel, hier nicht eigens belegt). Der Zeitdruck steigert sich selbst.
+- **Gerät:** Anzeige- und Eingabelatenz bestimmen, wie früh man tippen muss; in einem Shooter brachten 10 ms weniger
+  Latenz messbar mehr Treffer (+0,8 % Trefferquote; Liu et al., 2021). Browser-Messungen enthalten 58–133 ms Geräteanteil
+  (Pronk et al., 2020). Bildschirmgröße und Ausrichtung ändern Bahnbreite und Sehwinkel. **Nur der Vergleich mit sich
+  selbst am selben Gerät** ist sinnvoll. Messungen am Menschen streuen von Versuch zu Versuch; aussagekräftiger als ein
+  einzelner Tipp sind der Mittelwert über die 18 Versuche und der Verlauf über mehrere Sitzungen (Mountford et al., 2004,
+  S. 43–44).
+- **Messgrößen:** Trefferquote, mittlere Abweichung in ms und in Prozent der Bahnbreite und Tendenz (Median der
+  vorzeichenbehafteten Abweichung); Versuche ohne Tipp werden getrennt gezählt. Gewertet wird der Zeitpunkt des Tipps
+  selbst, nicht der des nächsten Bildes. Es werden keine Augenbewegungen gemessen. Kennzahlen eines kommerziellen
+  Zielübungs-Programms (N = 10) waren an zwei Terminen sehr zuverlässig (ICC 0,947–0,995); signifikant besser wurde man
+  zwischen den Terminen nur in einer von vier Aufgaben (Rogers et al., 2024).
+- **Zustand und Alter:** Im Alter ist der Folge-Gain bei allen Tempi niedriger (Moschner & Baloh, 1994); Müdigkeit dürfte
+  zusätzlich schaden (plausibel, hier nicht eigens belegt). Auch die Körperhaltung gilt in der Praxis als Einflussgröße
+  auf die Augenführung (Erfahrungswissen, nicht belegt).
 
 ## 8. Studienlage: Trainierbarkeit und Übertragung
 
-- **Übungseffekt (stark):** Für diese Übung gibt es keine Daten. Dass man in der geübten Aufgabe besser wird, ist für Zeige- und Abfangaufgaben gut belegt und bei digitalem Sport-Sehtraining deutlich zu sehen (Einstufung wie bei 302, 303 und 305–308), beruht aber zu einem großen Teil auf Gewöhnung an Gerät und Aufgabe: Bei der Reaktionszeit war der Effekt mit trainingsähnlichem Test gut fünfmal so groß wie mit unähnlichem (SMD 2,66 vs. 0,50; Guo et al., 2025). In einem kommerziellen Aim-Trainer verbesserte sich zwischen zwei Terminen nur eine von vier Aufgaben (Rogers et al., 2024) – eine Zuverlässigkeitsstudie mit zwei Messungen, keine Trainingsstudie.
-- **Naher Transfer (schwach):** keine Studie zu dieser Übung. Meta-Analysen zu Actionspielen widersprechen sich (Bediou et al., 2018: g = 0,34 mit Publikationsbias; Sala et al., 2018: kleine bis keine Effekte).
-- **Alltagstransfer (fehlend):** kein Beleg für bessere Spiel-, Sport- oder Verkehrsleistung; Ferntransfer allgemeiner Wahrnehmungs-/Kognitionstrainings auf Sport ist nicht belegt (Fransen, 2024; Simons et al., 2016).
+- **Übungseffekt (stark):** Für diese Übung gibt es keine Daten. Dass man in der geübten Aufgabe besser wird, ist für
+  Zeige- und Abfangaufgaben gut belegt und bei digitalem Sport-Sehtraining deutlich zu sehen, beruht aber zu einem großen
+  Teil auf Gewöhnung an Gerät und Aufgabe: Bei der Reaktionszeit war der Effekt mit trainingsähnlichem Test gut fünfmal
+  so groß wie mit unähnlichem (SMD 2,66 vs. 0,50; Guo et al., 2025). In einem kommerziellen Zielübungs-Programm
+  verbesserte sich zwischen zwei Terminen nur eine von vier Aufgaben (Rogers et al., 2024) – eine
+  Zuverlässigkeitsstudie mit zwei Messungen, keine Trainingsstudie.
+- **Naher Transfer (schwach):** keine Studie zu dieser Übung. Meta-Analysen zu Actionspielen widersprechen sich (Bediou
+  et al., 2018: g = 0,34 mit Publikationsbias; Sala et al., 2018: kleine bis keine Effekte).
+- **Alltagstransfer (fehlend):** kein Beleg für bessere Spiel-, Sport- oder Verkehrsleistung; ein Ferntransfer
+  allgemeiner Wahrnehmungs- und Kognitionstrainings auf Sport ist nicht belegt (Fransen, 2024; Simons et al., 2016).
 
-## 9. Auswahlhinweise für die KI
+## 9. Auswahlhinweise
 
-- **Passt, wenn …** Blickfolge und Treffen eines bewegten Ziels gemeinsam geübt werden sollen, jemand Richtungswechsel und Vorhalt spielerisch üben möchte, Tempo und Punkte motivieren; als Aufwärmen vor Tracking-Übungen.
-- **Weniger passend, wenn …** ruhige Blickfolge ohne Handaufgabe gewünscht ist (404, 105), eine Reaktionszeit gefragt ist (101/Blitzreaktion), Impulskontrolle geübt werden soll (102/Stopp & Los), symbolische Wahlreaktion gemeint ist (202/Pfeil-Duell) oder echtes Halten auf dem Ziel geübt werden soll (505, 514, 707).
+- **Passt, wenn …** Blickfolge und Timing gegenüber einem gleichmäßig bewegten Ziel gemeinsam geübt werden sollen, jemand
+  den Moment eines Durchgangs abschätzen möchte, Tempo motiviert; als Aufwärmen vor Blickfolge-Übungen.
+- **Weniger passend, wenn …** ruhige Blickfolge ohne Handaufgabe gewünscht ist (404, 105), eine Reaktionszeit gefragt
+  ist (101/Blitzreaktion), Impulskontrolle geübt werden soll (102/Stopp & Los), symbolische Wahlreaktion gemeint ist
+  (202/Pfeil-Duell) oder Halten auf dem Ziel geübt werden soll (505, 514, 707).
 - **Vorsicht / anpassen bei …**
-  - `photosensitive_epilepsie`, `migraene_lichtempfindlich`: roter Fehlerblitz bei jedem Fehlklick und Ablauf (wie 302: unter der allgemeinen WCAG-Blitzschwelle, aber gesättigtes Rot; *eigene Rechnung:* allein durch Abläufe höchstens ≈ 1,6–1,9 Blitze/s auf Level 15 bzw. ≈ 2,0–2,7/s auf Level 20, schnelle Fehlklickfolgen können mehr erzeugen; nicht gemessen) plus Bildwackeln → Blitz abschalten.
-  - `nystagmus`: Kern ist die Folgebewegung; mit unwillkürlichen Augenbewegungen sind Umkehrungen schwer zu verfolgen.
-  - `presbyopie_gleitsicht`: Bahn breiter als die Zwischenzone → kleines Fenster, Bildschirmbrille.
-  - `gesichtsfeldausfall`: neue Ziele tauchen am linken oder rechten Bahnende auf (im Vollbild ≈ 18° seitlich der Mitte) – auf der Ausfallseite werden sie spät bemerkt.
-  - `sehbehinderung_niedriger_visus`: Ziele bis < 0,5°, schnell bewegt.
-  - `trockenes_auge_bildschirm`, `kopfschmerz_asthenopie`: anhaltendes Verfolgen, variable Rundendauer bis mehrere Minuten → Pausen, Runde begrenzen.
-  - `tremor_parkinson`, `hand_arm_beschwerden`: kleine schnelle Ziele, Maus-Tracking über 2 Hz nicht mehr genau.
-  - `kognitive_einschraenkung`, `aufmerksamkeitsprobleme`: sich selbst verschärfender Zeitdruck, Fehlerrückmeldung mit Blitz, Ton und Wackeln – eher als Spiel auf niedriger Stufe, nicht als Test.
-- **Kombiniert gut mit …** 404/105 (ruhige Blickfolge ohne Klick), 707 (Halten auf einem Pfad), 101 (Reaktion ohne Bewegung).
-- **Überschneidungen:** **Dublette:** 305 (dieselbe Abfangaufgabe mit gleicher Lebensdauer 1.300 → 380 ms, dort zweidimensional mit Abprallen) – nie zusammen vorschlagen. **Gleiche Engine:** 302–308 teilen Level-, Combo-, Zeit- und Fehlerregeln (Level alle 1.750 Punkte, Combo bis 3,0×, +2 s je Treffer, −1 s je Fehler, roter Fehlerblitz, Bildwackeln) – pro Einheit höchstens eine davon, allenfalls eine zweite mit anderem Schwerpunkt (ruhende Ziele 302/303/307/308, bewegte 304/305/306). 306 fängt mehrere fallende Ziele ab (zusätzlich Reihenfolge wählen). 505 und 512 zeigen fast dieselbe Bewegung (waagrechte Bahn, zufällige Umkehr; 512 alle 450 → 150 ms), 513 Zickzack-Bahnen; dort wird aber die Zeit mit dem Fadenkreuz auf dem Ziel gezählt (ohne Klick, nur Maus) – echtes Tracking statt Abfangen. Mit 101 und 503 teilt 304 den Zeitdruck, dort aber mit ruhendem Reiz und echter Reaktionszeit; mit 102 nur die Fehlerstrafe; mit 202 keine Regelwahl.
+  - `photosensitive_epilepsie`, `migraene_lichtempfindlich`: Die Übung kommt ohne Blitze, Wackeln und rote Warneffekte
+    aus; Treffer und Fehler erscheinen als Haken oder Kreuz mit Ring. Bei bekannter Lichtempfindlichkeit dennoch kurze
+    Serien.
+  - `nystagmus`: Kern ist die Folgebewegung; mit unwillkürlichen Augenbewegungen ist das Ziel schwer zu verfolgen.
+  - `presbyopie_gleitsicht`: Bahn kann breiter sein als die Zwischenzone → kleines Fenster, Bildschirmbrille.
+  - `gesichtsfeldausfall`: Die Bahnenden liegen seitlich der Mitte – auf der Ausfallseite wird das Ziel dort spät
+    bemerkt.
+  - `sehbehinderung_niedriger_visus`: Das Ziel ist groß; bei schneller Schwingung dennoch schwer zu fassen.
+  - `trockenes_auge_bildschirm`, `kopfschmerz_asthenopie`: anhaltendes Verfolgen → Pausen, Sitzung begrenzen.
+  - `tremor_parkinson`, `hand_arm_beschwerden`: kaum betroffen, da irgendwo getippt wird.
+  - `kognitive_einschraenkung`, `aufmerksamkeitsprobleme`: zunehmende Anforderung – eher als Spiel auf niedriger Stufe,
+    nicht als Test.
+  - Doppelbilder, Lichtblitze, Kopfschmerz mit Sehverschlechterung, Schwindel oder Zittern sind Anlass zur ärztlichen
+    Abklärung und kein Übungsthema (Muchnick, 2008, S. 6, 28). Bei Beschwerden während der Übung pausieren oder abbrechen.
+- **Kombiniert gut mit …** 404/105 (ruhige Blickfolge ohne Tipp), 707 (Halten auf einem Pfad), 101 (Reaktion ohne
+  Bewegung).
+- **Überschneidungen:** **Ähnlich:** 305 (Abfangen eines Ziels, das zweidimensional abprallt) – nicht zusammen
+  vorschlagen. Ruhende Ziele zeigen 302, 303, 307 und 308, bewegte 304, 305 und 306; pro Einheit höchstens eine davon,
+  allenfalls eine zweite mit anderem Schwerpunkt. 306 fängt mehrere fallende Ziele ab (zusätzlich Reihenfolge wählen).
+  505 und 512 zeigen eine ähnliche waagrechte Bewegung mit zufälliger Umkehr, 513 Zickzack-Bahnen; dort wird aber die
+  Zeit mit dem Fadenkreuz auf dem Ziel gezählt (ohne Tipp, nur Maus) – Halten statt Abfangen. Mit 101 und 503 teilt 304 den
+  Zeitdruck, dort aber mit ruhendem Reiz und echter Reaktionszeit; mit 202 keine Regelwahl.
 
 ## 10. Schwächen des Originals und Empfehlungen für eine Blickfit-Umsetzung
 
@@ -197,7 +273,7 @@ Zu dieser Aufgabe gibt es keine Bildgebungs- oder Trainingsstudie. Die Folgebewe
 - Krauzlis, R. J. (2004). Recasting the smooth pursuit eye movement system. *Journal of Neurophysiology, 91*(2), 591–603. https://doi.org/10.1152/jn.00801.2003 – **Prüfung:** DOI stimmt ✓ (Crossref, Abstract); **stützt die Aussage der Website:** teilweise (Netzwerk und Steuerung der Augen-Folgebewegung ja; die Übung misst Mausklicks, nicht Augen – die Seite sagt das selbst).
 - Rashbass, C. (1961). The relationship between saccadic and smooth tracking eye movements. *The Journal of Physiology, 159*(2), 326–338. https://doi.org/10.1113/jphysiol.1961.sp006811 – **Prüfung:** DOI stimmt ✓, **Titel auf der Website ungenau** („pursuit“ statt „tracking“); nur Metadaten, Inhalt (Step-Ramp) über Sekundärliteratur; **stützt:** teilweise (Folgebewegung reagiert auf Geschwindigkeit, Sakkaden auf Position – für Augen, nicht für Klicks).
 - Green, C. S., & Bavelier, D. (2003). Action video game modifies visual selective attention. *Nature, 423*(6939), 534–537. https://doi.org/10.1038/nature01647 – **Prüfung:** DOI stimmt ✓ (Abstract); **stützt:** nein (Aufmerksamkeitsaufgaben nach Actionspielen, kein Tracking; Transfer umstritten).
-- Woods, D. L., Wyma, J. M., Yund, E. W., Herron, T. J., & Reed, B. (2015). Factors influencing the latency of simple reaction time. *Frontiers in Human Neuroscience, 9*, 131. https://doi.org/10.3389/fnhum.2015.00131 – **Prüfung:** DOI stimmt ✓ (Volltext); **stützt:** teilweise (Hardware verlängert Reaktionszeiten, gemessen aber nur an einem 60-Hz-Aufbau; zu bewegten Zielen und Bildraten nichts).
+- Woods, D. L., Wyma, J. M., Yund, E. W., Herron, T. J., & Reed, B. (2015). Factors influencing the latency of simple reaction time. *Frontiers in Human Neuroscience, 9*, 131. https://doi.org/10.3389/fnhum.2015.00131 – **Prüfung:** DOI stimmt ✓ (Volltext); **stützt (für diese Übung):** nein (nicht verwendet; Prüfung der Quelle: teilweise) (Hardware verlängert Reaktionszeiten, gemessen aber nur an einem 60-Hz-Aufbau; zu bewegten Zielen und Bildraten nichts).
 
 ### Weitere Fachliteratur
 
@@ -210,14 +286,13 @@ Alle DOIs am 29.09.2026 per Crossref geprüft; Inhalte über PubMed-Abstracts bz
 - Carl, J. R., & Gellman, R. S. (1987). Human smooth pursuit: Stimulus-dependent responses. *Journal of Neurophysiology, 57*(5), 1446–1463. https://doi.org/10.1152/jn.1987.57.5.1446 – Latenz der Folgebewegung (≈ 100 ms).
 - Casiez, G., Pietrzak, T., Marchal, D., Poulmane, S., Falce, M., & Roussel, N. (2017). Characterizing latency in touch and button-equipped interactive systems. In *Proceedings of UIST '17* (S. 29–39). ACM. https://doi.org/10.1145/3126594.3126606 – Ende-zu-Ende-Latenz Maus/Touch.
 - Collewijn, H., & Tamminga, E. P. (1984). Human smooth and saccadic eye movements during voluntary pursuit of different target motions on different backgrounds. *The Journal of Physiology, 351*, 217–250. https://doi.org/10.1113/jphysiol.1984.sp015242 – Gain < 0,95, sinkt mit Tempo.
-- Danion, F. R., & Flanagan, J. R. (2018). Different gaze strategies during eye versus hand tracking of a moving target. *Scientific Reports, 8*, 10059. https://doi.org/10.1038/s41598-018-28434-6 – Blickstrategie beim Handtracking.
 - de Brouwer, S., Yuksel, D., Blohm, G., Missal, M., & Lefèvre, P. (2002). What triggers catch-up saccades during visual tracking? *Journal of Neurophysiology, 87*(3), 1646–1650. https://doi.org/10.1152/jn.00432.2001 – Auslöser von Aufholsakkaden.
 - Han, Y., Ciuffreda, K. J., Selenow, A., & Ali, S. R. (2003). Dynamic interactions of eye and head movements when reading with single-vision and progressive lenses in a simulated computer-based environment. *Investigative Ophthalmology & Visual Science, 44*(4), 1534–1545. https://doi.org/10.1167/iovs.02-0507 – Gleitsicht am Bildschirm.
 - Huang, J., Tian, F., Fan, X., Zhang, X. (L.), & Zhai, S. (2018). Understanding the uncertainty in 1D unidirectional moving target selection. In *Proceedings of CHI 2018* (S. 1–12). ACM. https://doi.org/10.1145/3173574.3173811 – Klicks landen hinter bewegten Zielen.
 - Jagacinski, R. J., Repperger, D. W., Ward, S. L., & Moran, M. S. (1980). A test of Fitts' law with moving targets. *Human Factors, 22*(2), 225–233. https://doi.org/10.1177/001872088002200211 – Fitts mit Geschwindigkeitsterm.
 - Kowler, E., Rubinstein, J. F., Santos, E. M., & Wang, J. (2019). Predictive smooth pursuit eye movements. *Annual Review of Vision Science, 5*, 223–246. https://doi.org/10.1146/annurev-vision-091718-014901 – Vorhersage in der Folgebewegung.
 - Liu, S., Claypool, M., Kuwahara, A., Sherman, J., & Scovell, J. J. (2021). Lower is better? The effects of local latencies on competitive first-person shooter game players. In *Proceedings of CHI 2021* (S. 1–12). ACM. https://doi.org/10.1145/3411764.3445245 – Latenz und Trefferquote im Shooter.
-- Miall, R. C., Weir, D. J., & Stein, J. F. (1993). Intermittency in human manual tracking tasks. *Journal of Motor Behavior, 25*(1), 53–63. https://doi.org/10.1080/00222895.1993.9941639 – intermittierendes Nachführen.
 - Moschner, C., & Baloh, R. W. (1994). Age-related changes in visual tracking. *Journal of Gerontology, 49*(5), M235–M238. https://doi.org/10.1093/geronj/49.5.M235 – Folge-Gain im Alter.
-- Riviere, C. N., & Thakor, N. V. (1996). Effects of age and disability on tracking tasks with a computer mouse: Accuracy and linearity. *Journal of Rehabilitation Research and Development, 33*(1), 6–15. PMID 8868412 – Zeitschrift ohne DOI, PubMed-Abstract geprüft; Maus-Tracking bis ≈ 2 Hz.
-- Ergänzend zitiert (Kurzangaben, Details in der Literaturbasis W03): Bediou et al. (2018), https://doi.org/10.1037/bul0000130 · Findlater et al. (2013), https://doi.org/10.1145/2470654.2470703 · Fransen (2024), https://doi.org/10.1007/s40279-024-02060-x · Guo et al. (2025), https://doi.org/10.3389/fphys.2025.1664572 · McAuley & Marsden (2000), https://doi.org/10.1093/brain/123.8.1545 · Parhi et al. (2006), https://doi.org/10.1145/1152215.1152260 · Patel et al. (1991), https://doi.org/10.1097/00006324-199111000-00010 · Pronk et al. (2020), https://doi.org/10.3758/s13428-019-01321-2 · Rogers et al. (2024), https://doi.org/10.3389/fspor.2024.1309991 · Sala et al. (2018), https://doi.org/10.1037/bul0000139 · Simons et al. (2016), https://doi.org/10.1177/1529100616661983.
+- Ergänzend zitiert (Kurzangaben): Bediou et al. (2018), https://doi.org/10.1037/bul0000130 · Findlater et al. (2013), https://doi.org/10.1145/2470654.2470703 · Fransen (2024), https://doi.org/10.1007/s40279-024-02060-x · Guo et al. (2025), https://doi.org/10.3389/fphys.2025.1664572 · McAuley & Marsden (2000), https://doi.org/10.1093/brain/123.8.1545 · Parhi et al. (2006), https://doi.org/10.1145/1152215.1152260 · Patel et al. (1991), https://doi.org/10.1097/00006324-199111000-00010 · Pronk et al. (2020), https://doi.org/10.3758/s13428-019-01321-2 · Rogers et al. (2024), https://doi.org/10.3389/fspor.2024.1309991 · Sala et al. (2018), https://doi.org/10.1037/bul0000139 · Simons et al. (2016), https://doi.org/10.1177/1529100616661983.
+- Muchnick, B. G. (2008). *Clinical Medicine in Optometric Practice* (2nd ed.). Mosby/Elsevier. https://openlibrary.org/isbn/9780323029612 – Prüfung der Augenfolgebewegung (H-Muster), Warnzeichen mit ärztlichem Abklärungsbedarf (Kap. 1, S. 6; Kap. 3, S. 28, 32–35)
+- Mountford, J., Ruston, D., & Dave, T. (2004). *Orthokeratology: Principles and Practice*. Butterworth-Heinemann. https://openlibrary.org/isbn/9780750640077 – Wiederholbarkeit von Messungen am Auge, Mehrfachmessung (S. 43–44)

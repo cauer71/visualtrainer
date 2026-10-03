@@ -12,7 +12,7 @@ blickfit_umsetzung: {kennung: "sekunden-gefuehl", name: "Sekundengefühl", unter
 stand: 2026-09-30
 
 # ===== Überblick =====
-kurzbeschreibung: "Eine Zielzeit wie '3,482 s' wird kurz angezeigt und verschwindet; dann läuft die Zeit unsichtbar, und man tippt oder klickt in dem Moment, in dem man glaubt, dass genau diese Zeit vergangen ist. Trotz des Namens ist es kein Reaktionstest, sondern eine Übung für das Zeitgefühl (Zeitproduktion im Sekundenbereich)."
+kurzbeschreibung: "Eine Zielzeit zwischen 1 und 8 Sekunden wird kurz genannt; dann läuft die Zeit ohne sichtbare Uhr, und man tippt in dem Moment, in dem man glaubt, dass sie vergangen ist. Danach zeigt die Übung die Abweichung in Millisekunden mit Vorzeichen (zu früh oder zu spät). Es ist keine Reaktionsaufgabe, sondern eine Übung für das Zeitgefühl (Zeitproduktion im Sekundenbereich)."
 ziel_funktionen: [antizipation, zeitliche_aufloesung]
 eingabe: [maus, touch, touchpad]
 tablet_geeignet: ja
@@ -72,7 +72,7 @@ belastung:
   sprachabhaengigkeit: 1
 
 # ===== Auswahlhilfe =====
-voraussetzungen: ["Dezimalzahlen mit drei Nachkommastellen verstehen ('4,372 s')", "Ziffern von ≈ 1,2° Sehwinkel lesen (am Bildschirm in 40–60 cm unkritisch)", "Tipp/Klick irgendwo auf die Fläche genügt – kein Zielen nötig", "ruhige Umgebung; Ablenkung verlängert und streut die geschätzten Zeiten"]
+voraussetzungen: ["Dezimalzahlen mit einer Nachkommastelle verstehen ('4,0 s')", "große Ziffern der Zielzeit lesen (am Bildschirm in 40–60 cm unkritisch)", "Tipp/Klick irgendwo auf die Fläche genügt – kein Zielen nötig", "ruhige Umgebung; Ablenkung verlängert und streut die geschätzten Zeiten"]
 vorsicht_bei: [photosensitive_epilepsie, migraene_lichtempfindlich, trockenes_auge_bildschirm, farbsehschwaeche, kognitive_einschraenkung, kinder_unter_6, aufmerksamkeitsprobleme]
 geeignet_fuer: ["Zeitgefühl im Bereich 1–8 s üben (innere Uhr, Zählen, Rhythmus) mit Rückmeldung in Millisekunden", "ruhige Übung ohne Zielbewegung, Blicksprünge oder Handgeschicklichkeit – auch für Gleitsichtträger:innen und bei Hand-/Armbeschwerden", "Ergänzung zu echten Reaktionsaufgaben (101, 503) und zu Timing auf bewegte Reize (107, 409)"]
 weniger_geeignet_fuer: ["Ziel 'Reaktionszeit messen oder üben' – die Übung misst keine Reaktionszeit (dafür 101, 503, 802)", "Vergleich zwischen Personen oder Geräten (Geräteverzögerung verschiebt jedes Ergebnis um mehrere 10 ms)", "Kinder, die Dezimalzahlen noch nicht lesen", "Menschen, die bei Wartezeiten ohne sichtbares Geschehen schnell ungeduldig werden"]
@@ -80,22 +80,24 @@ evidenz:
   uebungseffekt: mittel
   naher_transfer: schwach
   alltag_transfer: fehlend
-  kommentar: "Zeitproduktion wird mit intensivem Üben gleichmäßiger und überträgt sich teilweise auf benachbarte Dauern und von Ton auf Bild (Bartolo & Merchant 2009); beim Unterscheiden kurzer Intervalle blieb der Gewinn auf die geübte Dauer beschränkt (Wright et al. 1997). Studien zu dieser Browserübung oder zu Alltagsnutzen gibt es nicht; die Trainingszahl der Website (15–30 ms) beruft sich auf eine Actionspiel-Übersicht (Dye et al. 2009), die diesen Wert nicht nennt."
+  kommentar: "Zeitproduktion wird mit intensivem Üben gleichmäßiger und überträgt sich teilweise auf benachbarte Dauern und von Ton auf Bild (Bartolo & Merchant 2009); beim Unterscheiden kurzer Intervalle blieb der Gewinn auf die geübte Dauer beschränkt (Wright et al. 1997). Studien zu dieser Bildschirmübung oder zu einem Alltagsnutzen gibt es nicht."
 aehnliche_uebungen: [101, 503, 107, 409, 407, 109, 802, 102, 202]
 stichworte: ["Zeitschätzung", "Zeitproduktion", "Intervall-Timing", "innere Uhr", "Zeitgefühl", "Weber-Gesetz", "Zählen", "Rückmeldung in ms", "kein Reaktionstest", "Timing"]
 ---
 
 # 301 · Sekunden schätzen (Zeitintervall treffen)
 
-> Original: „Reaktionstest – Visuelle Reaktionszeit in Millisekunden messen“ – skilldrills.online, Kapitel
-> Reaktionsgeschwindigkeit (`reaction-speed`) · Blickfit: noch nicht umgesetzt (verwandt: „Punktlandung“, Umsetzung von 107)
+> Original: „Reaktionstest – Visuelle Reaktionszeit in Millisekunden messen“ – skilldrills.online, Kapitel Reaktionsgeschwindigkeit (`reaction-speed`) · Blickfit: noch nicht umgesetzt (verwandt: „Punktlandung“, Umsetzung von 107)
 
 ## 1. Kurzbeschreibung
 
-In der Bildmitte erscheint kurz eine Zielzeit, z. B. „3,482 s“. Verschwindet sie, läuft unsichtbar die Zeit; man tippt
-oder klickt irgendwo, wenn man glaubt, dass genau diese Zeit vergangen ist, und sieht sofort die eigene Zeit und die
-Abweichung („+37 ms“). In der Toleranz gibt es Punkte und Kombo, sonst wackelt das Bild und blitzt rot. Die Seite nennt
-das „Reaktionstest“ – tatsächlich geht es um **Zeitgefühl** (Zeitproduktion), nicht um Schnelligkeit.
+Eine Zielzeit zwischen 1 und 8 Sekunden wird kurz in der Bildmitte genannt, etwa „3,0 s“. Nach „Los“ läuft die Zeit ohne
+sichtbare Uhr; man tippt (am Computer genügt die Leertaste), wenn man glaubt, dass die Zielzeit vergangen ist. Danach
+erscheinen die eigene Zeit und die Abweichung in Millisekunden, mit Vorzeichen (zu früh oder zu spät), auf einem
+Zeitstrahl. Eine Sitzung hat sieben Durchgänge mit festen, aufsteigenden Zielzeiten. Auf der ersten Stufe füllt sich ein
+dezenter Hilfsring bis zur Zielzeit; ab der zweiten Stufe entfällt er, und das Toleranzfenster wird enger. Die Übung ist
+keine Reaktionsaufgabe, sondern eine Übung für das **Zeitgefühl** (Zeitproduktion im Sekundenbereich): Es kommt kein
+Signal, auf das man schnell antwortet.
 
 ## 2. Ablauf im Original (Analyse)
 
@@ -152,80 +154,91 @@ exaktes Zeitgefühl“ und „mentale Chronometrie (Zeitintervallschätzung)“.
 
 ## 4. Optische und okulomotorische Grundlagen
 
-- **Sehschärfe (eigene Rechnung):** Zielzahl (Ziffernhöhe ≈ 45 px) am 24″-Full-HD-Monitor in 60 cm ≈ 12,5 mm ≈ 1,2°, am
-  11″-Tablet in 40 cm ≈ 1,2°; ms-Abweichung ≈ 0,5°. Auch bei deutlich herabgesetztem Visus lesbar.
-- **Blick:** Alles liegt in der Mitte (≈ 3° um den Punkt); keine Blickfolge, keine Sakkaden, keine Suche. **Gleitsicht**
-  unkritisch, wenn die Mitte durch den Zwischenbereich gesehen wird (Bildschirm eher tiefer; mit Gleitsicht hält man den
-  Kopf ≈ 7° höher, Jaschinski et al., 2015). Alterssichtige dürften 1,2°-Ziffern in 60 cm meist auch ohne Zwischenkorrektur lesen (eigene
-  Einschätzung, nicht geprüft).
-- **Farbe:** Die Bewertungsstufe steckt nur in der Farbe der ms-Zahl (Gold, Grün, Blau, Cyan, Orange, Magenta, Rot). Bei
-  Rot-Grün-Schwäche (≈ 8 % der Männer; Birch, 2012) bleiben ms-Zahl, Wackeln und Ton – Relevanz gering.
-- **Lichtreize (grobe eigene Rechnung, keine Messung):** Bei Fehlern steigt die relative Leuchtdichte der Mitte kurz von
-  ≈ 0,002 auf ≈ 0,09 (ΔL ≈ 0,085, knapp unter der WCAG-Schwelle 0,10); Rotanteil 0,63 (sRGB) bzw. 0,86 (linear), also
-  Grenzbereich „roter Blitz“. Da nach jedem Fehler ≥ 0,5 s Zielanzeige folgt, sind höchstens ≈ 2 Blitze/s möglich (< 3/s;
-  W3C, 2024). Rot bleibt ein Risikofaktor für lichtausgelöste Anfälle (Fisher et al., 2005).
-- **Trockenes Auge:** Starren auf die Mitte bis 8 s; am Bildschirm fällt die Blinzelrate im Mittel auf ein Fünftel (Patel
-  et al., 1991). **Stereosehen** wird nicht gebraucht.
+- **Sehschärfe:** Die Zielzeit wird in großen Ziffern gezeigt und ist auch bei deutlich herabgesetzter Sehschärfe lesbar.
+  Zur Orientierung: Bei 40 cm Abstand entspricht 1 cm auf dem Bildschirm etwa 1,4°.
+- **Blick:** Alles liegt in der Bildmitte; es gibt keine Blickfolge, keine Sakkaden und keine Suche. **Gleitsichtbrillen**
+  sind unkritisch, wenn die Mitte durch den Zwischenbereich gesehen wird (der Bildschirm steht dafür eher tiefer; mit
+  Gleitsicht hält man den Kopf im Mittel etwa 7° höher, Jaschinski et al., 2015).
+- **Farbe:** Das Ergebnis erscheint immer zugleich als Zahl, Wort und Symbol („zu früh“, „zu spät“, Haken); die Farbe
+  trägt keine eigene Information. Eine Rot-Grün-Schwäche (rund 8 % der Männer; Birch, 2012) spielt daher kaum eine Rolle.
+- **Lichtreize:** Alle Einblendungen laufen weich über mindestens 120 ms; es gibt keine Blitze und keine roten
+  Warneffekte. Das ist bei lichtempfindlichen Personen ein Vorteil. Rot gilt als Risikofaktor für lichtausgelöste
+  Anfälle (Fisher et al., 2005).
+- **Trockenes Auge:** Die Mitte wird bis zu 8 s lang fixiert; am Bildschirm sinkt die Blinzelrate im Mittel auf etwa ein
+  Fünftel (Patel et al., 1991). Zwischen den Durchgängen bewusst blinzeln. **Stereosehen** wird nicht gebraucht.
 
 ## 5. Neurowissenschaftliche Grundlagen
 
-- **Zeitnetzwerk:** Zeitverarbeitung im Sekundenbereich stützt sich auf Kleinhirn, supplementär-motorisches Areal,
+- **Zeitnetzwerk:** Die Zeitverarbeitung im Sekundenbereich stützt sich auf Kleinhirn, supplementär-motorisches Areal,
   präfrontalen und parietalen Kortex und Basalganglien (Grondin, 2010); Merchant et al. (2013) beschreiben einen
-  kortiko-thalamo-basalganglionären Kernmechanismus mit aufgabenabhängigen Arealen. Ein „Training“ bestimmter Regionen durch
-  diese Übung ist nicht belegt.
+  kortiko-thalamo-basalganglionären Kernmechanismus mit aufgabenabhängigen Arealen. Ein „Training“ bestimmter Regionen
+  durch diese Übung ist nicht belegt.
 - **Weber-Gesetz:** Die Streuung wächst grob proportional zur Dauer; zwischen 1 und 2 s ist der Weber-Bruch aber nicht
   konstant (bei 1,5–2 s höher als bei 1 s). Beim Unterscheiden von 500-ms-Intervallen lag er für Lichtsignale höher
-  (≈ 7–28 %) als für Töne (≈ 4–10 %). Beim Unterscheiden hilft explizites Zählen ab ≈ 1,2 s (alles Grondin, 2010,
-  Übersicht) – der 1-s-Puls liefert das Zählraster mit. Werte für Zeit*produktion* von 1–8 s nennt die Übersicht nicht.
-- **Aufmerksamkeit/Gedächtnis:** Nebenaufgaben machten 2- und 5-s-Produktionen länger und/oder variabler, und über viele
-  Durchgänge wurden Produktionen allmählich länger (Brown, 1997). Die Zielzahl muss im Arbeitsgedächtnis bleiben.
-- Die von der Seite beschriebene Kette Netzhaut → V1 → Motorkortex bestimmt hier nur den konstanten Startversatz.
+  (etwa 7–28 %) als für Töne (etwa 4–10 %). Beim Unterscheiden hilft explizites Zählen ab etwa 1,2 s (alles Grondin, 2010,
+  Übersicht). Werte für Zeit*produktion* von 1–8 s nennt die Übersicht nicht. Die Toleranz der Übung wächst deshalb mit
+  der Zielzeit (je Stufe ein fester Anteil der Zielzeit, mindestens 100 ms).
+- **Aufmerksamkeit und Gedächtnis:** Nebenaufgaben machten 2- und 5-s-Produktionen länger und/oder variabler, und über
+  viele Durchgänge wurden Produktionen allmählich länger (Brown, 1997). Die Zielzeit muss im Arbeitsgedächtnis bleiben.
+- Der Weg vom Sehen von „Los“ bis zum Tipp (Netzhaut, visueller Kortex, Motorkortex) bestimmt hier nur den konstanten
+  Startversatz, nicht die Schätzung selbst.
 
 ## 6. Motorische Grundlagen
 
-Ein Tipp/Klick an beliebiger Stelle – keine Zielbewegung, kein Fitts'sches Gesetz, keine Präzision; Tremor stört kaum.
-Relevant ist nur das Timing des Auslösens; Schalterweg bzw. Touch-Erkennung gehen als fester Versatz in die Abweichung ein.
+Ein Tipp an beliebiger Stelle der Fläche oder ein Tastendruck: keine Zielbewegung, kein Fitts’sches Gesetz, keine
+Präzisionsanforderung; ein Tremor stört kaum. Relevant ist nur das Timing des Auslösens. Schalterweg und Touch-Erkennung
+gehen als fester Versatz in die Abweichung ein.
 
 ## 7. Einflussfaktoren und Messgrenzen
 
-- **Geräteversatz:** Die Messung startet beim programmseitigen Ausblenden; gesehen wird es erst nach der Anzeigeverzögerung,
-  und der Klick zählt erst nach der Eingabeverzögerung – beide addieren sich zur gemessenen Zeit (eigene Analyse).
-  Ende-zu-Ende-Latenz: 1000-Hz-Maus mit nativer Anwendung 36,6 ms (60 Hz) bzw. 21,1 ms (120 Hz); Tippen auf Smartphones
-  und Tablets 48–276 ms je nach Gerät, System und Programmierumgebung; iPad Air 2, Safari mit Canvas 77 ms (Casiez et
-  al., 2017). Wer exakt schätzt, wird „zu spät“ gewertet und gleicht das über die Rückmeldung aus –
-  Ergebnisse sind **nur auf demselben Gerät vergleichbar**; „EXACT“ hängt stark von Zufall und Gerät ab.
-- **Messgrößen:** Der „Durchschnittsfehler“ ignoriert Fehlversuche und Vorzeichen; die Schlussnote misst Spieldauer.
-- **Strategie:** Mit Pulszählen und drehenden Ringen als „Uhr“ wird die Aufgabe teilweise extern getaktet.
-- **Alter/Zustand:** Ablenkung verlängert und streut Produktionen (Brown, 1997); Ältere produzieren im Mittel kürzere Dauern und schätzen variabler (Meta-Analyse; Block et al., 1998).
-- **Übungseffekt:** schnelle Verbesserung, teils durch Anpassen an Gerät und Pulsraster statt durch „besseres Zeitgefühl“.
+- **Geräteversatz:** Die Zeit läuft ab dem Bild, in dem „Los“ erstmals gezeichnet wird; gesehen wird es erst nach der
+  Anzeigeverzögerung, und der Tipp zählt erst nach der Eingabeverzögerung. Beide addieren sich zur gemessenen Zeit und
+  bleiben als fester Versatz in der Tendenz enthalten. Ende-zu-Ende-Latenzen aus der Literatur: 1000-Hz-Maus mit nativer
+  Anwendung 36,6 ms (60 Hz) bzw. 21,1 ms (120 Hz); Tippen auf Smartphones und Tablets 48–276 ms je nach Gerät, System und
+  Programmierumgebung; iPad Air 2, Safari mit Canvas 77 ms (Casiez et al., 2017). Browser verlängern gemessene
+  Reaktionszeiten zusätzlich um etwa 58–133 ms (Pronk et al., 2020). Wer exakt schätzt, wird deshalb als „zu spät“
+  gewertet und gleicht das über die Rückmeldung aus. Ergebnisse sind **nur auf demselben Gerät vergleichbar**.
+- **Streuung der Einzelwerte:** Messungen am Menschen streuen von Durchgang zu Durchgang stärker als an Prüfkörpern.
+  Aussagekräftiger als ein einzelner Durchgang sind der Mittelwert mehrerer Durchgänge und der Verlauf über mehrere
+  Sitzungen; ein hoher Zusammenhang zwischen zwei Geräten bedeutet noch keine Übereinstimmung der Werte. Das gilt
+  allgemein für Messungen am lebenden Auge (Mountford et al., 2004, S. 24, 43–44) und erst recht für den Vergleich von
+  Touch und Maus.
+- **Strategie:** Wer innerlich im Takt zählt, gibt sich ein eigenes Zählraster; das erklärt einen Teil des
+  Übungseffekts. Auf der ersten Stufe dient der Hilfsring als sichtbares Raster, ab der zweiten fehlt es.
+- **Alter und Zustand:** Ablenkung verlängert und streut Produktionen (Brown, 1997); Ältere produzieren im Mittel kürzere
+  Dauern und schätzen variabler (Meta-Analyse; Block et al., 1998).
+- **Übungseffekt:** Schnelle Verbesserungen gehen teils auf das Anpassen an Gerät und Hilfsring zurück statt auf ein
+  „besseres Zeitgefühl“.
 
 ## 8. Studienlage: Trainierbarkeit und Übertragung
 
-- **Übungseffekt – mittel:** Intensives Üben von 450-, 650- oder 850-ms-Produktionen senkte die Streuung deutlich (Bartolo
-  & Merchant, 2009). Für 1–8 s mit visuellem Taktgeber fehlen passende Studien.
+- **Übungseffekt – mittel:** Intensives Üben von 450-, 650- oder 850-ms-Produktionen senkte die Streuung deutlich
+  (Bartolo & Merchant, 2009). Für Zielzeiten von 1–8 s mit sichtbarer Hilfe auf der ersten Stufe fehlen passende Studien.
 - **Naher Transfer – schwach:** Bei Bartolo & Merchant (2009) übertrug sich das Gelernte auf Bildreize und benachbarte
-  Dauern, abnehmend mit dem Abstand; beim Unterscheiden von Intervallen blieb der Gewinn nach 10 × 1 h auf die geübte Dauer
-  (100 ms) beschränkt (Wright et al., 1997).
-- **Alltagstransfer – fehlend:** Keine Studie zeigt Nutzen dieser oder ähnlicher Übungen für Spiel, Sport oder Verkehr.
+  Dauern, abnehmend mit dem Abstand; beim Unterscheiden von Intervallen blieb der Gewinn nach 10 × 1 h auf die geübte
+  Dauer (100 ms) beschränkt (Wright et al., 1997).
+- **Alltagstransfer – fehlend:** Keine Studie zeigt einen Nutzen dieser oder ähnlicher Übungen für Spiel, Sport oder
+  Verkehr.
 
-## 9. Auswahlhinweise für die KI
+## 9. Auswahlhinweise
 
 - **Passt, wenn …** Zeitgefühl, Rhythmus oder geduldiges Abwarten mit präziser Rückmeldung gewünscht sind; eine ruhige
   Übung ohne Blicksprünge, Zielbewegungen und Handgeschick gesucht wird (Gleitsicht, Hand-/Armbeschwerden, Tremor); als
   ruhiger Kontrast zu schnellen Reaktionsübungen.
 - **Weniger passend, wenn …** Reaktionsgeschwindigkeit das Ziel ist (101, 503, 802; Wahl/Hemmung 202, 102); Ergebnisse
   zwischen Personen oder Geräten verglichen werden sollen; Kinder noch keine Dezimalzahlen lesen.
-- **Vorsicht / anpassen bei …** `photosensitive_epilepsie`, `migraene_lichtempfindlich` (roter Blitz bei jedem Fehler,
-  unter den WCAG-Grenzen, aber rot; Effekte abschalten); `trockenes_auge_bildschirm` (langes Fixieren, Blinzelpausen);
-  `farbsehschwaeche` (Stufe nur per Farbe, gering); `kognitive_einschraenkung`, `kinder_unter_6` (abstrakte Zahlen);
-  `aufmerksamkeitsprobleme` (bis 8 s Warten ohne Geschehen, Kombo-Frust; kurze Serien).
-- **Kombiniert gut mit …** 101 (echte einfache Reaktion), 107 (Timing auf herankommende Kugel), 409/407 (Vorhersage bei
+- **Vorsicht / anpassen bei …** `photosensitive_epilepsie`, `migraene_lichtempfindlich` (die Übung kommt ohne Blitze und
+  Warnfarben aus; bei bekannter Lichtempfindlichkeit dennoch kurze Serien); `trockenes_auge_bildschirm` (langes Fixieren,
+  Blinzelpausen); `kognitive_einschraenkung`, `kinder_unter_6` (abstrakte Zahlen); `aufmerksamkeitsprobleme` (bis zu 8 s
+  Warten ohne Geschehen; kurze Serien). Doppelbilder, plötzlicher Sehverlust, Lichtblitze, Kopfschmerz mit
+  Sehverschlechterung, Schwindel oder Zittern sind Anlass zur ärztlichen Abklärung und kein Übungsthema (Muchnick, 2008).
+- **Kombiniert gut mit …** 101 (einfache Reaktion), 107 (Timing auf eine herankommende Kugel), 409/407 (Vorhersage bei
   Verdeckung), 109 (Takt-Unterschiede); als ruhiger Kontrast zu einer schnellen Übung aus 302–308.
-- **Überschneidungen:** Mit 101 (Light Reaction) und 503 (Instant Response) teilt 301 nur den Namen „Reaktionstest“ und die
-  ms-Rückmeldung – dort wird auf einen Reiz reagiert, hier gibt es keinen. Mit 102 (Go/No-Go) und 202 (Wahlreaktion) keine
-  Gemeinsamkeit außer dem Klick; 802 (Lineal-Falltest) misst echte Reaktion. Inhaltlich am nächsten sind 107 (Timing auf einen
-  sichtbar herankommenden Reiz) und 409/407 (Vorhersage während einer Verdeckung). Keine Dublette in 302–308: Diese nutzen eine
-  gemeinsame Zeitdruck-Engine mit Zeigeaufgaben, 301 nicht.
+- **Überschneidungen:** Mit 101 und 503 teilt 301 nur die Rückmeldung in Millisekunden – dort wird auf einen Reiz
+  reagiert, hier gibt es keinen. Mit 102 (Go/No-Go) und 202 (Wahlreaktion) besteht keine Gemeinsamkeit außer dem Tipp;
+  802 (Lineal-Falltest) misst eine echte Reaktion. Inhaltlich am nächsten sind 107 (Timing auf einen sichtbar
+  herankommenden Reiz) und 409/407 (Vorhersage während einer Verdeckung). Die Übungen 302–308 nutzen eine gemeinsame
+  Zeitdruck-Engine mit Zeigeaufgaben, 301 nicht.
 
 ## 10. Schwächen des Originals und Empfehlungen für eine Blickfit-Umsetzung
 
@@ -245,19 +258,18 @@ Relevant ist nur das Timing des Auslösens; Schalterweg bzw. Touch-Erkennung geh
 
 - Kosinski, R. J. (2008). *A literature review on reaction time*. Clemson University (ohne DOI). – **Prüfung:** nicht per
   DOI prüfbar, unbegutachtet; nur Fassung „Last updated September 2013“ gefunden und gelesen
-  (http://www.cognaction.org/cogs105/readings/clemson.rt.pdf); **stützt:** teilweise (≈ 190 ms Licht, Computermessung
+  (http://www.cognaction.org/cogs105/readings/clemson.rt.pdf); **stützt (für diese Übung):** nein (nicht verwendet; Prüfung der Quelle: teilweise) (≈ 190 ms Licht, Computermessung
   ≈ 268 ms; keine „Elite“-Grenzen, Stäbchen-Reize *langsamer*). Für Zeitschätzung nicht einschlägig.
 - Woods, D. L., Wyma, J. M., Yund, E. W., Herron, T. J., & Reed, B. (2015). Factors influencing the latency of simple
   reaction time. *Frontiers in Human Neuroscience, 9*, 131. https://doi.org/10.3389/fnhum.2015.00131 – **Prüfung:** DOI
-  stimmt ✓ (Volltext PMC4374455); **stützt:** teilweise (231 ms; Hardware 17,8 ms mit 60-Hz-LCD + Gaming-Maus; 144/240 Hz,
+  stimmt ✓ (Volltext PMC4374455); **stützt (für diese Übung):** nein (nicht verwendet; Prüfung der Quelle: teilweise) (231 ms; Hardware 17,8 ms mit 60-Hz-LCD + Gaming-Maus; 144/240 Hz,
   Perzentile und `performance.now()` kommen nicht vor).
 - Jain, A., Bansal, R., Kumar, A., & Singh, K. D. (2015). A comparative study of visual and auditory reaction times on the
   basis of gender and physical activity levels of medical first year students. *International Journal of Applied and Basic
   Medical Research, 5*(2), 124–127. https://doi.org/10.4103/2229-516X.157168 – **Prüfung:** DOI stimmt ✓ (Volltext
-  PMC4456887); **stützt:** teilweise (auditiv < visuell, n = 120; ms-Werte nur als Lehrbuchzitat).
+  PMC4456887); **stützt (für diese Übung):** nein (nicht verwendet; Prüfung der Quelle: teilweise) (auditiv < visuell, n = 120; ms-Werte nur als Lehrbuchzitat).
 - Shelton, J., & Kumar, G. P. (2010). Comparison between auditory and visual simple reaction times. *Neuroscience &
-  Medicine, 1*(1), 30–32. https://doi.org/10.4236/nm.2010.11004 – **Prüfung:** DOI stimmt ✓ (Abstract); **stützt:**
-  teilweise (n = 14: 284 vs. 331 ms; nicht die absoluten 140–170 ms; „Hörrinde im Hirnstamm“ anatomisch falsch).
+  Medicine, 1*(1), 30–32. https://doi.org/10.4236/nm.2010.11004 – **Prüfung:** DOI stimmt ✓ (Abstract); **stützt (für diese Übung):** nein (nicht verwendet; Prüfung der Quelle: teilweise) (n = 14: 284 vs. 331 ms; nicht die absoluten 140–170 ms; „Hörrinde im Hirnstamm“ anatomisch falsch).
 - Dye, M. W. G., Green, C. S., & Bavelier, D. (2009). Increasing speed of processing with action video games. *Current
   Directions in Psychological Science, 18*(6), 321–326. https://doi.org/10.1111/j.1467-8721.2009.01660.x – **Prüfung:** DOI
   stimmt ✓ (Volltext PMC2871325); **stützt:** nein (Actionspiele: 50 h −13 % vs. −6 % RT; keine „15–30 ms“).
@@ -266,7 +278,7 @@ Relevant ist nur das Timing des Auslösens; Schalterweg bzw. Touch-Erkennung geh
   **Prüfung:** DOI stimmt ✓ (Abstract; Erratum 2009); **stützt:** teilweise (einfache RT bis ≈ 50 J. kaum langsamer;
   „18–24 J.“, „2–6 ms/Jahrzehnt“ und Trainingsaussage nicht im Abstract).
 - Smith, A. (2002). Effects of caffeine on human behavior. *Food and Chemical Toxicology, 40*(9), 1243–1255.
-  https://doi.org/10.1016/S0278-6915(02)00096-0 – **Prüfung:** DOI stimmt ✓ (Abstract); **stützt:** teilweise (mehr
+  https://doi.org/10.1016/S0278-6915(02)00096-0 – **Prüfung:** DOI stimmt ✓ (Abstract); **stützt (für diese Übung):** nein (nicht verwendet; Prüfung der Quelle: teilweise) (mehr
   Wachheit, bessere einfache Aufgaben vor allem bei Müdigkeit; keine ms-Zahl).
 
 ### Weitere Fachliteratur
@@ -293,9 +305,6 @@ Relevant ist nur das Timing des Auslösens; Schalterweg bzw. Touch-Erkennung geh
 - Pronk, T., Wiers, R. W., Molenkamp, B., & Murre, J. (2020). Mental chronometry in the pocket? Timing accuracy of web
   applications on touchscreen and keyboard devices. *Behavior Research Methods, 52*(3), 1371–1382.
   https://doi.org/10.3758/s13428-019-01321-2 – Browser-Verzögerung.
-- Cao, D., Zele, A. J., & Pokorny, J. (2007). Linking impulse response functions to reaction time: Rod and cone reaction
-  time data and a computational model. *Vision Research, 47*(8), 1060–1074. https://doi.org/10.1016/j.visres.2006.11.027 –
-  Stäbchen langsamer.
 - Jaschinski, W., König, M., Mekontso, T. M., Ohlendorf, A., & Welscher, M. (2015). Computer vision syndrome in presbyopia
   and beginning presbyopia: Effects of spectacle lens type. *Clinical and Experimental Optometry, 98*(3), 228–233.
   https://doi.org/10.1111/cxo.12248 – Kopfhaltung mit Gleitsicht.
@@ -307,6 +316,5 @@ Relevant ist nur das Timing des Auslösens; Schalterweg bzw. Touch-Erkennung geh
 - Fisher, R. S., Harding, G., Erba, G., Barkley, G. L., & Wilkins, A. (2005). Photic- and pattern-induced seizures: A review
   for the Epilepsy Foundation of America Working Group. *Epilepsia, 46*(9), 1426–1441.
   https://doi.org/10.1111/j.1528-1167.2005.31405.x – Rot als Risikofaktor.
-- W3C (2024). *WCAG 2.2*, Kriterium 2.3.1 (Norm, keine DOI). https://www.w3.org/TR/WCAG22/ · MDN Web Docs (o. J.).
-  *Performance: now()* (technische Dokumentation, abgerufen 29.09.2026).
-  https://developer.mozilla.org/en-US/docs/Web/API/Performance/now – Blitzgrenzen; Zeitauflösung 100 µs.
+- Muchnick, B. G. (2008). *Clinical Medicine in Optometric Practice* (2nd ed.). Mosby/Elsevier. https://openlibrary.org/isbn/9780323029612 – Warnzeichen mit ärztlichem Abklärungsbedarf (Kap. 1, S. 6; Kap. 3, S. 28)
+- Mountford, J., Ruston, D., & Dave, T. (2004). *Orthokeratology: Principles and Practice*. Butterworth-Heinemann. https://openlibrary.org/isbn/9780750640077 – Genauigkeit und Wiederholbarkeit von Messungen am Auge (S. 17–18, 24, 43–44)
