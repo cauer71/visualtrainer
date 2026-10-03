@@ -343,17 +343,17 @@ export const SCIENCE: Record<string, ScienceEntry> = {
         trains: 'In einem kurzen Augenblick gleichzeitig erfassen, was in der Mitte und was am Rand ist.',
         daily: 'Autofahren, Kreuzungen, Menschenmengen – überall, wo man Mitte und Umgebung zugleich im Blick braucht.',
         research:
-          'Die Übung ist an einen gut untersuchten Test angelehnt ("Useful Field of View"). In einer großen Studie mit älteren Menschen (ACTIVE) verbesserte ein ähnliches, betreutes Training genau diese Fähigkeit deutlich und über Jahre. Unsere Online-Version ist davon inspiriert, aber selbst nicht wissenschaftlich geprüft – sie ersetzt keine Fahreignungs- oder Sehuntersuchung.',
+          'Die Übung ist an einen gut untersuchten Test angelehnt ("Useful Field of View"). In einer großen Studie mit älteren Menschen (ACTIVE) verbesserte ein ähnliches, betreutes Training genau diese Fähigkeit deutlich und über Jahre. Unsere Online-Version ist davon inspiriert, aber selbst nicht wissenschaftlich geprüft – sie ersetzt keine Fahreignungs- oder Sehuntersuchung. Bei Gesichtsfeldausfällen können Randreize im Ausfallbereich liegen; das ist kein Übungsfehler, und unklare Ausfälle gehören augenärztlich abgeklärt.',
         improved:
-          'Aufbau wie im Studienprotokoll: Aufgabe in der Mitte plus Ziel am Rand, später mit Ablenkern, danach eine Maske, damit kein "Nachbild" hilft. Die Anzeigezeit passt sich an – bis hinunter zu einem einzigen Bild (≈ 17 ms).',
+          'Jeder Durchgang folgt dem Aufbau der Studienprotokolle: Nach einer kurzen Fixation erscheinen für einen Moment ein Fahrzeug in der Mitte und ein Stern an einer von acht Randpositionen, ab Stufe 9 zusätzlich Dreiecke als Ablenker; danach überdeckt eine Maske das Bild, damit kein Nachbild hilft. Geantwortet wird zweimal (Fahrzeug und Position), und nur wenn beides stimmt, zählt der Durchgang; Raten gelingt so nur in einem von 16 Fällen. Die Anzeigezeit wird in ganzen Bildern aus der gemessenen Bildrate umgesetzt, von 0,5 s bis hinunter zu einem einzigen Bild, und Durchgänge mit Rucklern zählen nicht für die Stufe. Nach einer richtigen Antwort wird es eine Stufe schwerer, nach einer falschen drei Stufen leichter, sodass etwa drei von vier Durchgängen gelingen. Die Reize sind kurz und ohne Flimmern, die Maske ist weich; die Übung ist kein Sehfeldtest und sagt nichts über die Fahreignung.',
       },
       it: {
         trains: 'Cogliere in un attimo, allo stesso tempo, cosa c’è al centro e cosa ai lati.',
         daily: 'Guidare, incroci, folle – ovunque serva tenere d’occhio centro e dintorni insieme.',
         research:
-          'L’esercizio si ispira a un test molto studiato (“Useful Field of View”). In un grande studio con persone anziane (ACTIVE) un allenamento simile e supervisionato ha migliorato proprio questa capacità in modo netto e per anni. La nostra versione online ne è ispirata, ma non è stata verificata scientificamente – non sostituisce visite di idoneità alla guida o della vista.',
+          'L’esercizio si ispira a un test molto studiato (“Useful Field of View”). In un grande studio con persone anziane (ACTIVE) un allenamento simile e supervisionato ha migliorato proprio questa capacità in modo netto e per anni. La nostra versione online ne è ispirata, ma non è stata verificata scientificamente – non sostituisce visite di idoneità alla guida o della vista. In caso di deficit del campo visivo gli stimoli periferici possono cadere nell’area assente; non è un errore dell’esercizio e le lacune poco chiare vanno fatte controllare dall’oculista.',
         improved:
-          'Struttura come nel protocollo degli studi: compito al centro più bersaglio ai lati, poi con distrattori, seguito da una maschera perché non aiuti una “immagine residua”. Il tempo di visualizzazione si adatta – fino a una sola immagine (≈ 17 ms).',
+          'Ogni prova segue la struttura dei protocolli degli studi: dopo una breve fissazione compaiono per un attimo un veicolo al centro e una stella in una di otto posizioni periferiche, dal livello 9 anche triangoli come distrattori; poi una maschera copre l’immagine, perché non aiuti una immagine residua. Si risponde due volte (veicolo e posizione) e la prova conta solo se entrambe le risposte sono giuste; così indovinare riesce solo una volta su 16. Il tempo di visualizzazione viene realizzato in fotogrammi interi in base alla frequenza misurata, da 0,5 s fino a un solo fotogramma, e le prove con scatti non contano per il livello. Dopo una risposta giusta il livello sale di uno, dopo una sbagliata scende di tre, così riescono circa tre prove su quattro. Gli stimoli sono brevi e senza sfarfallio, la maschera è morbida; l’esercizio non è un test del campo visivo e non dice nulla sull’idoneità alla guida.',
       },
     },
     sources: [
@@ -361,6 +361,7 @@ export const SCIENCE: Record<string, ScienceEntry> = {
       src('Ball et al. (2010). Cognitive training decreases motor vehicle collision involvement of older drivers. J Am Geriatr Soc', 'https://doi.org/10.1111/j.1532-5415.2010.03138.x'),
       src('Aust & Edwards (2016). Incremental validity of Useful Field of View subtests for the prediction of instrumental activities of daily living. J Clin Exp Neuropsychology', 'https://doi.org/10.1080/13803395.2015.1125453'),
       src('Simons et al. (2016). Do "brain-training" programs work? Psychological Science in the Public Interest', 'https://doi.org/10.1177/1529100616661983'),
+      src('Muchnick (2008). Clinical Medicine in Optometric Practice, 2nd ed., S. 32. Mosby/Elsevier', 'https://openlibrary.org/isbn/9780323029612'),
     ],
   },
 

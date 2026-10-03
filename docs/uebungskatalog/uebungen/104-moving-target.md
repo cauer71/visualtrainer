@@ -85,7 +85,7 @@ aehnliche_uebungen: [105, 106, 501, 508, 509, 702, 305, 107]
 stichworte: ["Zielfang", "Interzeption", "Auge-Hand-Koordination", "Vorhalt", "smooth pursuit", "Sakkaden", "Fitts", "Maus", "Touch", "Zeitdruck", "Combo"]
 ---
 
-# 104 · Zielfang (springender Punkt, der weiterwandert)
+# 104 · Zielfang (bewegten Punkt abfangen)
 
 > Original: „Zielverfolgung | Auge-Hand-Koordination" (Moving Target Pro) – skilldrills.online, Kapitel Visuelle Wahrnehmung (`visual`), Unterkapitel `tracking-accuracy` · Blickfit: umgesetzt als „Zielfang" (`src/exercises/zielfang/`)
 
@@ -204,7 +204,7 @@ Alle DOIs am 29.09.2026 über Crossref geprüft (Titel, Erstautor:in, Jahr, Zeit
 - Pronk, T., Wiers, R. W., Molenkamp, B., & Murre, J. (2020). Mental chronometry in the pocket? Timing accuracy of web applications on touchscreen and keyboard devices. *Behavior Research Methods, 52*(3), 1371–1382. https://doi.org/10.3758/s13428-019-01321-2 – Touch-Zeitmessung im Browser.
 - Guo, Y., Yuan, T., Yang, M., & Qiu, J. (2025). Does the "learning effect" caused by digital devices exaggerate sports visual training outcomes? A systematic review and meta-analysis. *Frontiers in Physiology, 16*, 1664572. https://doi.org/10.3389/fphys.2025.1664572 – Transfer nur bei ähnlichen Aufgaben.
 - Simons, D. J., Boot, W. R., Charness, N., Gathercole, S. E., Chabris, C. F., Hambrick, D. Z., & Stine-Morrow, E. A. L. (2016). Do "brain-training" programs work? *Psychological Science in the Public Interest, 17*(3), 103–186. https://doi.org/10.1177/1529100616661983 – Gehirntraining-Evidenz.
-- Lochhead, L., Feng, J., Laby, D. M., & Appelbaum, L. G. (2024). Training vision in athletes to improve sports performance: A systematic review of the literature. *International Review of Sport and Exercise Psychology, 19*(2), 333–355. https://doi.org/10.1080/1750984X.2024.2437385 – Sport-Sehtraining (online 2024).
+- Lochhead, L., Feng, J., Laby, D. M., & Appelbaum, L. G. (2024). Training vision in athletes to improve sports performance: A systematic review of the literature. *International Review of Sport and Exercise Psychology, 19*(2), 333–355. https://doi.org/10.1080/1750984X.2024.2437385 – Sport-Sehtraining.
 - Laby, D. M., & Appelbaum, L. G. (2021). Review: Vision and on-field performance: A critical review of visual assessment and training studies with athletes. *Optometry and Vision Science, 98*(7), 723–731. https://doi.org/10.1097/OPX.0000000000001729 – kritische Übersicht.
 - Wilson, R. C., Shenhav, A., Straccia, M., & Cohen, J. D. (2019). The Eighty Five Percent Rule for optimal learning. *Nature Communications, 10*, 4646. https://doi.org/10.1038/s41467-019-12552-4 – Zielquote der adaptiven Stufung in Blickfit.
 - Charman, W. N. (2008). The eye in focus: Accommodation and presbyopia. *Clinical and Experimental Optometry, 91*(3), 207–225. https://doi.org/10.1111/j.1444-0938.2008.00256.x – Presbyopie ab ≈ 40 Jahren.

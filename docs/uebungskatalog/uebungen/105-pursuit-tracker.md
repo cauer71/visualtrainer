@@ -85,7 +85,7 @@ aehnliche_uebungen: [104, 106, 305, 401, 402, 403, 404, 407, 505, 707]
 stichworte: ["smooth pursuit", "Blickfolge", "manuelles Tracking", "Zeigerverfolgung", "Auge-Hand", "Time on Target", "Aufholsakkaden", "dynamische Sehschärfe (Blickfit)"]
 ---
 
-# 105 · Glatte Blickfolge (Ball mit dem Zeiger verfolgen)
+# 105 · Glatte Blickfolge (Ball mit den Augen verfolgen, Zeichen erkennen)
 
 > Original: „Glatte Blickfolge | Zielverfolgung“ (Pursuit Tracker Pro) – skilldrills.online, Kapitel „Visuelle Wahrnehmung“ (visual) · Blickfit: „Scharf in Bewegung“ (umgesetzt, aber andere Aufgabe, s. Abschnitt 10)
 

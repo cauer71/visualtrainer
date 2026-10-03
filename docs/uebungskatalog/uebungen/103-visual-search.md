@@ -85,7 +85,7 @@ aehnliche_uebungen: [108, 204, 208, 207, 201, 303, 109]
 stichworte: ["visuelle Suche", "Konjunktionssuche", "Suchasymmetrie", "selektive Aufmerksamkeit", "Ablenker", "Crowding", "Sakkaden", "Buchstabenraster", "Suchbild", "Set Size"]
 ---
 
-# 103 · Suchbuchstabe im Raster finden (Visuelle Suche, 96 gedrehte Zeichen)
+# 103 · Suchzeichen im Feld finden (Visuelle Suche mit ähnlichen Zeichen)
 
 > Original: „Visuelle Suche | Aufmerksamkeitstest“ (Visual Search Pro) – skilldrills.online, Kapitel Visuelle Wahrnehmung (`visual`, Unterkapitel `visual-recognition`) · Blickfit: umgesetzt als „Suchbild“ (`src/exercises/suchbild/`)
 

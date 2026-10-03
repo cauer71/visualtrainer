@@ -85,7 +85,7 @@ aehnliche_uebungen: [503, 102, 202, 208, 401, 301, 703, 107]
 stichworte: ["einfache Reaktionszeit", "Simple Reaction Time", "Lichtreiz", "Blitz", "Vorperiode", "Hazardrate", "Frühstart", "Antizipation", "Daueraufmerksamkeit", "PVT", "Combo", "Antwortfenster", "Tippen irgendwo", "Photosensitivität", "Blitzreaktion"]
 ---
 
-# 101 · Lichtreaktion – beim weißen Aufblitzen in der Bildmitte tippen
+# 101 · Lichtreaktion – bei einem aufleuchtenden Licht so schnell wie möglich tippen
 
 > Original: „Reaktionstest: Visuelle Reaktionszeit“ („Light Reaction Pro“) – skilldrills.online, Kapitel Visuelle Wahrnehmung (`visual`, Unterkapitel `reaction-speed`) · Blickfit: umgesetzt als **„Blitzreaktion“** (`src/exercises/blitzreaktion/`), mit deutlich anderem Aufbau (Abschnitt 10)
 
@@ -213,7 +213,7 @@ Die Seite beschreibt einen Test der „visuomotorischen Latenz“ mit Vier-Phase
 - Jaschinski, W., König, M., Mekontso, T. M., Ohlendorf, A., & Welscher, M. (2015). Computer vision syndrome in presbyopia and beginning presbyopia: Effects of spectacle lens type. *Clinical and Experimental Optometry, 98*(3), 228–233. https://doi.org/10.1111/cxo.12248 – Kopfhaltung mit Gleitsicht.
 - Kaernbach, C. (1991). Simple adaptive testing with the weighted up-down method. *Perception & Psychophysics, 49*(3), 227–229. https://doi.org/10.3758/BF03214307 – Zeitziel der Blickfit-Version.
 - Kida, N., Oda, S., & Matsumura, M. (2005). Intensive baseball practice improves the Go/Nogo reaction time, but not the simple reaction time. *Cognitive Brain Research, 22*(2), 257–264. https://doi.org/10.1016/j.cogbrainres.2004.09.003
-- Lochhead, L., Feng, J., Laby, D. M., & Appelbaum, L. G. (2026). Training vision in athletes to improve sports performance: A systematic review of the literature. *International Review of Sport and Exercise Psychology, 19*(2), 333–355. https://doi.org/10.1080/1750984X.2024.2437385 – Sport-Sehtraining (online 2024).
+- Lochhead, L., Feng, J., Laby, D. M., & Appelbaum, L. G. (2026). Training vision in athletes to improve sports performance: A systematic review of the literature. *International Review of Sport and Exercise Psychology, 19*(2), 333–355. https://doi.org/10.1080/1750984X.2024.2437385 – Sport-Sehtraining.
 - Niemi, P., & Näätänen, R. (1981). Foreperiod and simple reaction time. *Psychological Bulletin, 89*(1), 133–162. https://doi.org/10.1037/0033-2909.89.1.133 – Vorperiode, zeitliche Erwartung.
 - Osaka, N. (1976). Reaction time as a function of peripheral retinal locus around fovea: Effect of stimulus size. *Perceptual and Motor Skills, 43*(2), 603–606. https://doi.org/10.2466/pms.1976.43.2.603 – Reizgröße × Exzentrizität.
 - Patel, S., Henderson, R., Bradley, L., Galloway, B., & Hunter, L. (1991). Effect of visual display unit use on blink rate and tear stability. *Optometry and Vision Science, 68*(11), 888–892. https://doi.org/10.1097/00006324-199111000-00010
