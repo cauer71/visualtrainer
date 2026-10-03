@@ -2,7 +2,7 @@
 # ===== Kennung =====
 nr: 205
 kennung: divided-attention
-name: "Geteilte Aufmerksamkeit (Kreis antippen und gerade Ziffern melden)"
+name: "Doppelt gefordert: Kugel auf der Spur halten und Zeichen beantworten (Doppelaufgabe)"
 name_original: "Test der geteilten Aufmerksamkeit – Bewegtes Ziel und Zahlen gleichzeitig verarbeiten (Divided Attention)"
 kapitel: "Kognition & Aufmerksamkeit"
 kapitel_original: "cognitive"
@@ -12,11 +12,11 @@ blickfit_umsetzung: {kennung: "doppelt-gefordert", name: "Doppelt gefordert", un
 stand: 2026-09-30
 
 # ===== Überblick =====
-kurzbeschreibung: "Auf dem Bildschirm erscheint ein blauer Kreis an wechselnden Stellen, den man antippt, während daneben Ziffern laufen und man bei jeder geraden Ziffer eine MATCH-Taste drückt. Es sind also zwei Aufgaben gleichzeitig zu beachten; bei Fehlern und verpassten Reizen gehen Combo und Zeit verloren."
-ziel_funktionen: [geteilte_aufmerksamkeit]
-eingabe: [maus, touch]
+kurzbeschreibung: "Ein Finger hält eine Kugel auf einer sanft schwingenden Spur, während die andere Hand kurz gezeigte Zeichen (Kreis oder Quadrat) mit zwei großen Tasten beantwortet. Jede Sitzung misst zuerst die Kugelaufgabe allein, dann die Zeichenaufgabe allein und danach beides zugleich, mit wechselndem Vorrang. Aus dem Vergleich ergeben sich die Kosten der Doppelaufgabe in Prozent („Zusammenspiel“); die Schwierigkeit der Einzelteile passt sich der eigenen Leistung an. Eine Sitzung dauert etwa zwei Minuten und wird im Sitzen gespielt."
+ziel_funktionen: [geteilte_aufmerksamkeit, kontinuierliche_steuerung]
+eingabe: [touch, maus, tastatur]
 tablet_geeignet: ja
-dauer_sekunden: 45
+dauer_sekunden: 120
 schwierigkeit_anpassung: "Automatisch über den Punktestand: Level = max(Level, Punkte/1.750 + 1). Kreis-Anzeigedauer 1.800 ms (Level 1) → 1.004 ms (L10) → 613 ms (L15) → 425 ms (L20); Ziffernwechsel 2.000 → 300 ms; Kreis schrumpft bis auf 45 % (ab L15); Pause bis zum nächsten Kreis 500–700 → 80–140 ms; hoher Combo verkürzt alle Zeiten um bis zu 25 %. Kein manueller Regler."
 messgroessen: ["Punkte", "Trefferquote gesamt", "Kreis-Treffer", "Ziffern-Treffer", "höchste Combo", "Fehler", "erreichtes Level"]
 
@@ -28,11 +28,11 @@ anforderungsprofil:
     farbunterscheidung: 0
     stereosehen: 0
     peripheres_sehen: 1
-    nutzbares_sehfeld: 2
-    blickfolge: 0
+    nutzbares_sehfeld: 1
+    blickfolge: 1
     sakkaden: 2
     fixation: 1
-    bewegungswahrnehmung: 0
+    bewegungswahrnehmung: 1
     visuelle_suche: 1
     visuelle_verarbeitungsgeschwindigkeit: 2
     zeitliche_aufloesung: 0
@@ -40,7 +40,7 @@ anforderungsprofil:
   kognitiv:
     daueraufmerksamkeit: 1
     selektive_aufmerksamkeit: 1
-    inhibition: 1
+    inhibition: 0
     geteilte_aufmerksamkeit: 3
     kognitive_flexibilitaet: 1
     arbeitsgedaechtnis: 0
@@ -53,29 +53,29 @@ anforderungsprofil:
     schlussfolgern: 0
   motorisch:
     einfache_reaktion: 1
-    auge_hand_koordination: 2
-    zielbewegung_tempo: 2
+    auge_hand_koordination: 3
+    zielbewegung_tempo: 1
     zielbewegung_praezision: 2
-    kontinuierliche_steuerung: 0
+    kontinuierliche_steuerung: 3
     ruhige_hand: 0
     fingergeschwindigkeit: 1
-    fingersequenz_bimanual: 0
+    fingersequenz_bimanual: 2
     ganzkoerper: 0
     gleichgewicht: 0
     ausdauer_belastung: 0
 belastung:
   zeitdruck: 3
-  flimmern_lichtreize: 1
-  bewegungsreize_schwindel: 0
+  flimmern_lichtreize: 0
+  bewegungsreize_schwindel: 1
   koerperliche_belastung: 0
   sturzrisiko: 0
   sprachabhaengigkeit: 0
 
 # ===== Auswahlhilfe =====
 voraussetzungen: ["Ziffern 0–9 lesen und gerade/ungerade unterscheiden können", "Antippen eines Kreises (ca. 30–80 Bildpunkte) und einer Taste muss möglich sein", "Ton ist nicht nötig, aber vorhanden (Zeit- und Treffertöne)"]
-vorsicht_bei: [aufmerksamkeitsprobleme, kognitive_einschraenkung, presbyopie_gleitsicht, hand_arm_beschwerden]
-geeignet_fuer: ["Erleben und Üben, wie zwei gleichzeitige Anforderungen sich gegenseitig stören (Doppelaufgabe)", "schnelles Umschalten zwischen einem Ort auf dem Bildschirm und einer Ziffernanzeige", "Reaktionsspiel mit klarer Sofort-Rückmeldung für Kund:innen ohne Vorkenntnisse"]
-weniger_geeignet_fuer: ["Blickfolge (der Kreis bewegt sich trotz Ankündigung nicht kontinuierlich)", "saubere Messung von Doppelaufgaben-Kosten (keine Einzelaufgaben-Basislinie; dafür Blickfit 'Doppelt gefordert')", "Menschen, die unter Zeitdruck schnell gestresst sind oder mit Mausklicks Mühe haben", "Vergleich zwischen Sitzungen (Sitzungslänge und Schwierigkeit hängen von der Leistung ab)"]
+vorsicht_bei: [aufmerksamkeitsprobleme, kognitive_einschraenkung, presbyopie_gleitsicht, hand_arm_beschwerden, tremor_parkinson]
+geeignet_fuer: ["erleben und üben, wie zwei gleichzeitige Anforderungen einander stören (Doppelaufgabe), mit sichtbarer Kostenmessung gegenüber den Einzelaufgaben", "gleichzeitig kontinuierlich steuern (ein Finger) und kurz auftauchende Zeichen beantworten (andere Hand)", "Kund:innen ohne Vorkenntnisse, die eine klare Rückmeldung wünschen (✓/✗ statt Punkte)"]
+weniger_geeignet_fuer: ["Menschen mit Hand-Arm-Beschwerden oder Tremor (kontinuierliches Steuern mit einem Finger, Tippen mit der anderen Hand)", "Menschen, die ruhig und ohne Zeitdruck üben sollen (die Zeichen erscheinen nur etwa 0,4 s lang)", "Üben der glatten Blickfolge im engeren Sinn (die Kugel folgt der Fingerhöhe; Blickbewegungen werden nicht gemessen)", "Vergleich mit anderen Personen (Einzelwerte der Doppelaufgabe sind kein Maßstab für andere)"]
 evidenz:
   uebungseffekt: mittel
   naher_transfer: schwach
@@ -85,12 +85,13 @@ aehnliche_uebungen: [206, 408, 208, 207, 106]
 stichworte: ["geteilte Aufmerksamkeit", "Dual-Task", "Doppelaufgabe", "Multitasking", "Parität", "gerade Zahl", "Doppelaufgaben-Kosten", "Blickwechsel"]
 ---
 
-# 205 · Geteilte Aufmerksamkeit (Kreis antippen und gerade Ziffern melden)
+# 205 · Doppelt gefordert: Kugel auf der Spur halten und Zeichen beantworten (Doppelaufgabe)
 
 > Original: „Test der geteilten Aufmerksamkeit" – skilldrills.online, Kapitel Kognition (attention) · Blickfit: umgesetzt als „Doppelt gefordert"
 
 ## 1. Kurzbeschreibung
-Man sieht ein dunkles Spielfeld, in dem ein blauer Kreis auftaucht. Er wird angetippt, bevor er wieder verschwindet. Daneben zeigt ein Ziffernfeld laufend einzelne Ziffern von 0 bis 9; bei jeder geraden Ziffer (0, 2, 4, 6, 8) muss man die Taste MATCH drücken, bei ungeraden nichts tun. Beide Aufgaben laufen gleichzeitig weiter, und jede verpasste oder falsche Reaktion kostet Combo und Zeit. Fachlich ist das eine **Doppelaufgabe (Dual-Task)**: Zwei Anforderungen konkurrieren um dieselbe begrenzte Verarbeitungskapazität, sodass meist mindestens eine schlechter wird als allein.
+
+Die Übung besteht aus zwei Aufgaben, die zuerst einzeln und dann gemeinsam gespielt werden. Aufgabe A: Eine Kugel sitzt auf einer senkrechten Leiste und folgt der Höhe eines Fingers; sie soll auf einer sanft schwingenden Spur bleiben, die von rechts heranläuft. Der Finger darf irgendwo im Feld liegen, damit er Kugel und Spur nicht verdeckt. Aufgabe B: Alle zwei bis drei Sekunden erscheint kurz (etwa 0,4 Sekunden) ein Kreis oder ein Quadrat, das mit der passenden von zwei großen Tasten beantwortet wird (Form statt Farbe). Der Ablauf dauert etwa zwei Minuten: A allein (20 s), B allein (20 s), dann beides zugleich (60 s), wobei der Vorrang in der Mitte wechselt („achte besonders auf die Kugel“ bzw. „auf die Zeichen“). In den Einzelteilen stellt sich die Schwierigkeit auf etwa 80 % ein und bleibt im Doppelteil fest, sodass die Kosten der Doppelaufgabe (Doppel gegenüber Einzel) vergleichbar sind. Fachlich ist das eine **Doppelaufgabe (Dual-Task)**: Zwei Anforderungen konkurrieren um dieselbe begrenzte Verarbeitungskapazität, sodass meist mindestens eine schlechter wird als allein.
 
 ## 2. Ablauf im Original (Analyse)
 Quelle: Seitentext und ausgelieferter Spielcode (Stand 30.09.2026, nur Mechanik beschrieben); ergänzend `docs/skilldrills-kognition-analyse.md`.
@@ -116,39 +117,49 @@ Quelle: Seitentext und ausgelieferter Spielcode (Stand 30.09.2026, nur Mechanik 
 - Nach Wickens (2002) stören sich Aufgaben stärker, wenn beide **denselben Kanal** nutzen; hier sind beide visuell – die Website stellt es umgekehrt dar.
 
 ## 4. Optische und okulomotorische Grundlagen
-- **Sakkaden statt Folgebewegung:** Der Blick springt zwischen Kreis (wechselnde Stelle) und Ziffernfeld. Kreis und Ziffer lassen sich nicht gleichzeitig scharf sehen; die Aufmerksamkeit kann nur kurz aus dem Augenwinkel „parken". Typische Sakkadendauer 30–70 ms plus Vorbereitung (Latenz ca. 200 ms; Lehrbuchwerte ohne Einzelquelle) – bei Kreiszeiten unter ca. 600 ms (ab Level 15) kaum zusätzliche Blicksprünge möglich.
-- **Sehwinkel (Tablet 40 cm, 0,19 mm/px, ca. 36 px/° [H]):** Kreis 64–80 px ≈ 1,8–2,2°; bei 45 % ≈ 29–36 px ≈ 0,8–1,0°. Ziffer (Schrift 36–60 px) ≈ 0,7–1,2° hoch – für normale Sehschärfe gut lesbar, aber bei weiter Entfernung vom Ziffernfeld nur mit Blicksprung.
-- **Brille:** Bei Gleitsicht liegt das Spielfeld am Tablet meist im Nahteil unten; der Kreis erscheint aber auf **15–85 % der Fläche**, also auch in seitlichen Randzonen mit Unschärfe, die zu Kopfbewegungen führen (Hutchings et al., 2007: Neulinge nutzen mehr Kopfbewegungen; Sheedy, 2004: Zonenbreiten unterscheiden sich stark). Das verlängert Wege und verzerrt die Leistung. Presbyope halten Geräte weiter weg (39,7 vs. 33,4 cm; Boccardo et al., 2023) – Sehwinkel sinkt entsprechend; Arbeitsplatz-/Nahbrille prüfen. Realer Abstand Smartphone 32–36 cm (Bababekova et al., 2011).
-- **Farbe:** Kreis blau auf dunklem Grund, Rückmeldung farbig; die Aufgabe selbst braucht keine Farbunterscheidung (Farbsehschwäche ≈ 8 % der Männer meist unproblematisch).
-- **Belastung:** Schnelle Ziffernwechsel (bis 3 Hz) und ein pulsierender Ring am Kreis: kein Flimmern im kritischen Bereich (unter 50 ms wechselnd), aber lange Bildschirmphasen können bei trockenem Auge oder Asthenopie anstrengen.
+
+- **Blickwechsel:** Kugel und Spur liegen im linken Feld, die Zeichen-Tasten rechts. Beides lässt sich nicht gleichzeitig scharf sehen; die Aufmerksamkeit kann nur kurz aus dem Augenwinkel „parken“. Typische Sakkadendauer 30–70 ms plus Vorbereitung (Latenz etwa 200 ms; Lehrbuchwerte ohne Einzelquelle). Weil die Zeichen nur etwa 0,4 s erscheinen, bleibt wenig Zeit für zusätzliche Blicksprünge; sinnvoll ist ein ruhiger Wechsel des Blicks zwischen Spur und Zeichenfeld.
+- **Spur und Vorschau:** Die Spur läuft von rechts heran (Vorschau wie auf einer Straße), sodass sich die Bewegung vorausplanen lässt; die Kugel folgt der Fingerhöhe. Wo der Finger liegt, ist gleichgültig, ein Finger am linken Rand verdeckt nichts.
+- **Brille und Abstand:** Die beiden Aufgabenfelder liegen auseinander; bei Gleitsicht können die seitlichen Bereiche in Unschärfezonen liegen, was zu Kopfbewegungen führt (Hutchings et al., 2007: Neulinge nutzen mehr Kopfbewegungen; Sheedy, 2004: Zonenbreiten unterscheiden sich stark). Presbyope halten Geräte weiter weg (39,7 gegenüber 33,4 cm; Boccardo et al., 2023); der Sehwinkel sinkt entsprechend, eine Arbeitsplatz- oder Nahbrille ist zu prüfen. Der reale Abstand am Smartphone liegt bei 32–36 cm (Bababekova et al., 2011).
+- **Farbe:** Die Aufgabe braucht keine Farbunterscheidung; die Rückmeldung erfolgt nie nur über Farbe (✓/✗-Symbole, gestrichelter Ring mit Pfeil bei „neben der Spur“). Eine Farbsehschwäche (etwa 8 % der Männer) ist daher unproblematisch.
+- **Belastung:** Die Spur schwingt sanft, ohne Flimmern und Blitze; lange Bildschirmphasen können bei trockenem Auge oder Asthenopie dennoch anstrengen.
 
 ## 5. Neurowissenschaftliche Grundlagen
-- Doppelaufgaben beanspruchen ein frontoparietales Netzwerk der Aufmerksamkeitssteuerung; zeitaufgelöste fMRT zeigte einen zentralen Engpass im hinteren seitlichen präfrontalen Kortex (und möglicherweise im oberen medialen Frontallappen) beim gleichzeitigen Auswählen zweier Antworten (Dux et al., 2006). Auch in einer früheren fMRT-Studie war bei gleichzeitigen Aufgaben ein präfrontaler Bereich stärker aktiv (Szameitat et al., 2002).
-- Die Zahlenaufgabe (Parität) ist eine einfache Wahlreaktion mit Entscheidung „gerade/ungerade" (Vorrang: Auswahl) – Ort und Zeit der Kreise verlangen visuelle Aufmerksamkeitsverlagerung und Augen-Hand-Koordination (Parietalkortex). „Trainiert Region X" ist mit dieser Übung nicht belegt.
+
+- Doppelaufgaben beanspruchen ein frontoparietales Netzwerk der Aufmerksamkeitssteuerung; zeitaufgelöste fMRT zeigte einen zentralen Engpass im hinteren seitlichen präfrontalen Kortex (und möglicherweise im oberen medialen Frontallappen) beim gleichzeitigen Auswählen zweier Antworten (Dux et al., 2006). Auch in einer früheren fMRT-Studie war bei gleichzeitigen Aufgaben ein präfrontaler Bereich stärker aktiv (Szameitat et al., 2002). Der Engpass betrifft die Antwortauswahl, nicht die Wahrnehmung (Pashler, 1994).
+- Nach dem Modell mehrerer Ressourcen stören sich zwei Aufgaben stärker, wenn beide denselben Kanal nutzen (Wickens, 2002); hier sind beide Aufgaben visuell, was mehr Interferenz erwarten lässt. Die Zeichenaufgabe ist eine einfache Wahlreaktion (Form), die Kugelaufgabe eine fortlaufende Steuerung mit Augen-Hand-Koordination (Parietalkortex). „Trainiert Region X“ ist mit dieser Übung nicht belegt.
 - Bei Älteren sind die Doppelaufgaben-Kosten in der Antwortzeit etwas größer, als allgemeine Verlangsamung erwarten lässt; sie bleiben klein und hängen kaum von der Aufgabenschwierigkeit ab. Bei der Genauigkeit fand die Metaanalyse keinen altersspezifischen Nachteil (Verhaeghen et al., 2003).
 
 ## 6. Motorische Grundlagen
-- **Kreis treffen:** Zeigebewegung mit Genauigkeits- und Tempoanforderung (Fitts'sches Gesetz: Zeit steigt mit Weg und sinkt mit Zielgröße). Ziel schrumpft auf 29–36 px, Weg bis zur halben Bildschirmbreite.
-- **MATCH:** einfacher Tastendruck, aber nur nach Entscheidung (Wahlreaktion mit Antwortunterdrückung bei ungeraden Ziffern; Inhibition). Ohne eigene Fingerzuordnung liegen beide Antworten bei Maus am selben Zeiger – Bewegungskosten für das Umschalten sind ein Teil der „Aufmerksamkeitskosten".
-- **Tablet:** Pointer-Down reagiert sofort; Touch-Latenz in Web-Apps ist eher länger (iPhone ca. 58 ms, Galaxy ca. 66–70 ms; Pronk et al., 2020). Fingergröße verdeckt bei kleinem Kreis das Ziel.
+
+- **Kugel führen:** Ein Finger steuert die Höhe der Kugel fortlaufend; die Bewegung ist zeitbasiert und unabhängig von der Bildrate. Das verlangt Augen-Hand-Koordination und ruhige Handführung, aber keine Zielgenauigkeit im Sinne des Fitts'schen Gesetzes.
+- **Zeichen beantworten:** Zwei große Tasten (Kreis, Quadrat), alternativ Pfeiltasten oder die Tasten 1 und 2: eine einfache Wahlreaktion mit zwei Alternativen. Die Tasten liegen im Zeichenfeld, getrennt vom Kugelfeld, sodass Tipps die Kugel-Steuerung nicht stören und umgekehrt (der Kugel-Finger wird über seine Pointer-ID verfolgt).
+- **Eingabe:** Touch-Web-Apps messen Zeiten um etwa 58–70 ms zu lang (iPhone etwa 58 ms, Galaxy etwa 66–70 ms; Pronk et al., 2020); die Finger verdecken bei kleinen Zielen Teile der Fläche, weshalb die Felder getrennt liegen.
 
 ## 7. Einflussfaktoren und Messgrenzen
-- **Alter:** einfache Reaktionszeit +0,55 ms pro Lebensjahr (Woods et al., 2015); die Doppelaufgaben-Kosten in der Antwortzeit sind bei Älteren etwas größer als durch allgemeine Verlangsamung erklärbar, in der Genauigkeit nicht (Verhaeghen et al., 2003).
-- **Müdigkeit/Schlaf:** wirkt vor allem auf einfache Daueraufmerksamkeit (Lim & Dinges, 2010).
-- **Individuelle Unterschiede:** Einzelne (ca. 2,5 % von 200) zeigen im Simulator kaum Doppelaufgaben-Kosten (Watson & Strayer, 2010) – Einzelwerte der Übung sind kein Maßstab für andere.
-- **Messqualität:** keine Einzelaufgaben-Basislinie → Punkte mischen die Fähigkeit in jeder Aufgabe mit dem Tempo des Zeigers; Sitzungen sind durch Zeitbonus und Levelanstieg unterschiedlich lang und schwer, daher nicht vergleichbar. Übungseffekt (Kurve wird auch durch Kenntnis der Bedienung besser) und Differenzwerte sind als Einzelwert oft unzuverlässig (Hedge et al., 2018). Absolute Zeiten hängen stark vom Gerät ab.
+
+- **Alter:** Die einfache Reaktionszeit steigt um etwa 0,55 ms pro Lebensjahr (Woods et al., 2015); die Doppelaufgaben-Kosten in der Antwortzeit sind bei Älteren etwas größer als durch allgemeine Verlangsamung erklärbar, in der Genauigkeit nicht (Verhaeghen et al., 2003).
+- **Müdigkeit und Schlaf:** wirken vor allem auf einfache Daueraufmerksamkeit (Lim & Dinges, 2010).
+- **Individuelle Unterschiede:** Einzelne (etwa 2,5 % von 200) zeigen im Simulator kaum Doppelaufgaben-Kosten (Watson & Strayer, 2010); Einzelwerte der Übung sind kein Maßstab für andere.
+- **Messqualität:** Jede Sitzung misst beide Teile erst einzeln und dann zusammen; der Wert „Zusammenspiel“ ist das Mittel aus (Doppel ÷ Einzel) beider Teile, je höchstens 100 %. Weil beide Basislinien aus derselben Sitzung und Stufe stammen, ist er von der Stufe unabhängig und über Sitzungen vergleichbar. Differenzwerte bleiben als Einzelwert dennoch oft unzuverlässig (Hedge et al., 2018); der Übungseffekt enthält auch die Gewöhnung an die Bedienung, und absolute Zeiten hängen stark vom Gerät ab.
+- **Wechselnder Vorrang:** Der Vorrang wechselt in der Mitte des Doppelteils (Training mit wechselnder Priorität: Kramer et al., 1995; Vorteil für Ältere nicht gesichert: Yu et al., 2026).
 
 ## 8. Studienlage: Trainierbarkeit und Übertragung
+
 - **Übungseffekt (mittel):** Doppelaufgaben-Kosten sinken mit Übung bei Jung und Alt (Kramer et al., 1995; Bherer et al., 2005; Übersicht Strobach & Schubert, 2017). Ein adaptives Fahr-plus-Schilder-Spiel senkte bei 60- bis 85-Jährigen die Kosten von −64 % auf −16 % (6 Monate später −22 %; je Gruppe 15–16 Personen; Anguera et al., 2013).
 - **Naher Transfer (schwach):** Übertragung auf neue Aufgabenkombinationen mit neuen Reizen (Bherer et al., 2005); für diese Übung nicht geprüft.
-- **Alltagstransfer (fehlend):** Für Bildschirmübungen nicht belegt. Zu echtem Gehen mit Zweitaufgabe gibt es kleine Studien mit motorisch-kognitivem Training (Silsupadol et al., 2009); das ist eine andere Übungsform. Fahren: Die Übung ersetzt keine Fahrpraxis; Telefonieren am Steuer bleibt gefährlich (Caird et al., 2008: Reaktionszeit +0,25 s).
+- **Alltagstransfer (fehlend):** Für Bildschirmübungen nicht belegt. Zu echtem Gehen mit Zweitaufgabe gibt es kleine Studien mit motorisch-kognitivem Training (Silsupadol et al., 2009); das ist eine andere Übungsform. Telefonieren verdoppelte im Fahrsimulator übersehene Signale (Strayer & Johnston, 2001) und verlängerte die Reaktionszeit um etwa 0,25 s (Caird et al., 2008); die Übung ersetzt keine Fahrpraxis, und Telefonieren am Steuer bleibt gefährlich.
+- **Praxisangabe, nicht belegt:** In der Sehtherapie werden Aufgaben, die Raum und Zeit zugleich fordern, auch mit einem Metronom und einer Zusatzaufgabe geübt (etwa Bewegungsabläufe im Takt mit einer Denkaufgabe); außerdem gilt es als sinnvoll, am eigenen Arbeitspunkt zu beginnen und in kleinen Schritten zu steigern. Für Bildschirmübungen ist der Nutzen nicht untersucht.
+- **Seriöse Formulierung:** „Hier siehst du – bitte im Sitzen –, was dich das Doppelte kostet, und übst das Zusammenspiel. Ob sich das aufs Gehen oder Autofahren überträgt, ist nicht belegt.“
 
 ## 9. Auswahlhinweise für die KI
-- **Passt, wenn** die Person üben oder erleben möchte, zwei Dinge gleichzeitig zu beachten, schnell zwischen Ort und Symbol umzuschalten, oder ein kurzes Reaktionsspiel mit Zeitdruck sucht. Profil: geteilte Aufmerksamkeit 3, Entscheidung 2, Inhibition 1 (nur ungerade Ziffern nicht melden).
-- **Weniger passend, wenn** die Person glatte Blickfolge (401–415), saubere Vergleichsmessung von Doppelaufgaben-Kosten (dann Blickfit „Doppelt gefordert") oder ruhige Übungen ohne Zeitdruck (Belastung `zeitdruck` 3) sucht.
-- **Vorsicht / anpassen bei** `aufmerksamkeitsprobleme` und `kognitive_einschraenkung` (Überforderung, Frust durch Zeitstrafe); `presbyopie_gleitsicht` (Blick durch seitliche Zonen, Kopfbewegung; Abstand und Brille prüfen); `hand_arm_beschwerden` (schnelle Zeigebewegungen). Nur als Auswahlhinweis, keine medizinische Aussage. Nicht während Fahren, Gehen oder anderer riskanter Tätigkeit.
-- **Kombiniert gut mit:** 206 (Multitasking), 408 (Geteilte Aufmerksamkeit: Blickverfolgung), 207 (Symbol-Zahl), 208 (Daueraufmerksamkeit).
-- **Abgrenzung in der Gruppe:** 205 ist die einzige echte Doppelaufgabe (zwei verschiedene Aufgaben gleichzeitig, geteilte Aufmerksamkeit 3). 206 ist dieselbe Aufgabe in zwei Bildhälften (geteilte Aufmerksamkeit 2, mit Bewegungs- und Suchanteil); beide nicht in derselben Einheit.
+
+- **Passt, wenn** die Person üben oder erleben möchte, zwei Dinge gleichzeitig zu beachten (kontinuierlich steuern und nebenbei Zeichen beantworten), und die Kosten der Doppelaufgabe gegenüber den Einzelaufgaben sehen will. Profil: geteilte Aufmerksamkeit 3, kontinuierliche Steuerung 3, Entscheidung 2.
+- **Weniger passend, wenn** die Person glatte Blickfolge (401–415), ruhige Übungen ohne Zeitdruck oder eine Vergleichsmessung zwischen Personen sucht.
+- **Vorsicht / anpassen bei** `aufmerksamkeitsprobleme` und `kognitive_einschraenkung` (Überforderung durch zwei gleichzeitige Aufgaben); `presbyopie_gleitsicht` (Blick durch seitliche Zonen, Kopfbewegung; Abstand und Brille prüfen); `hand_arm_beschwerden` und `tremor_parkinson` (kontinuierliches Steuern mit einem Finger, Tippen mit der anderen Hand). Nur als Auswahlhinweis, keine medizinische Aussage. Die Übung wird im Sitzen gespielt, nicht während Fahren, Gehen oder anderer riskanter Tätigkeit.
+- **Warnzeichen:** Doppelbilder, plötzlicher einseitiger Sehverlust, Lichtblitze, neue Schleier, Kopfschmerz mit Sehverschlechterung oder neu auftretender Schwindel gehören ärztlich abgeklärt (Aufzählung der Warnsymptome in der Anamnese: Muchnick, 2008, S. 6, 17 und 28); ein Übungsprogramm ersetzt das nicht.
+- **Kombiniert gut mit:** 206 (Aufgabenwechsel), 408 (Geteilte Aufmerksamkeit: Blickverfolgung), 207 (Symbol-Zahl), 208 (Daueraufmerksamkeit).
+- **Abgrenzung in der Gruppe:** 205 ist die einzige echte Doppelaufgabe (zwei verschiedene Aufgaben gleichzeitig, geteilte Aufmerksamkeit 3). 206 beschreibt dagegen den Wechsel zwischen zwei Regeln nacheinander; beide nicht in derselben Einheit.
 
 ## 10. Schwächen des Originals und Empfehlungen für eine Blickfit-Umsetzung
 - **Keine Einzelaufgaben-Basislinie** → keine Doppelaufgaben-Kosten. Blickfit: Teil A allein, Teil B allein, dann beides; Ergebnis „Zusammenspiel" = Doppel ÷ Einzel je Teilaufgabe (Anguera et al., 2013).
@@ -165,27 +176,29 @@ Quelle: Seitentext und ausgelieferter Spielcode (Stand 30.09.2026, nur Mechanik 
 - Pashler, H. (1994). Dual-task interference in simple tasks: Data and theory. *Psychological Bulletin, 116*(2), 220–244. https://doi.org/10.1037/0033-2909.116.2.220 – **Prüfung:** DOI stimmt ✓ (Crossref); **stützt die Aussage der Website:** ja (zentraler Engpass bei der Antwortauswahl).
 - Wickens, C. D. (2002). Multiple resources and performance prediction. *Theoretical Issues in Ergonomics Science, 3*(2), 159–177. https://doi.org/10.1080/14639220210123806 – **Prüfung:** DOI stimmt ✓; **stützt:** ja, aber gegen die Übung: beide Aufgaben sind visuell, was nach dem Modell mehr Interferenz bedeutet.
 - Strayer, D. L., & Johnston, W. A. (2001). Driven to distraction: Dual-task studies of simulated driving and conversing on a cellular telephone. *Psychological Science, 12*(6), 462–466. https://doi.org/10.1111/1467-9280.00386 – **Prüfung:** DOI stimmt ✓; **stützt:** ja als Grundlage (Telefonieren verdoppelte übersehene Signale im Simulator); kein Beleg, dass die Übung das Fahren verbessert.
-- Spelke, E., Hirst, W., & Neisser, U. (1976). Skills of divided attention. *Cognition, 4*(3), 215–230. https://doi.org/10.1016/0010-0277(76)90018-4 – **Prüfung:** DOI stimmt ✓; **stützt:** teilweise (nur 2 Personen, 17 Wochen; „Beweis" der Automatisierung überzogen, vgl. Hirst et al., 1980).
+- Spelke, E., Hirst, W., & Neisser, U. (1976). Skills of divided attention. *Cognition, 4*(3), 215–230. https://doi.org/10.1016/0010-0277(76)90018-4 – **Prüfung:** DOI stimmt ✓; **stützt:** teilweise (nur 2 Personen, 17 Wochen; „Beweis" der Automatisierung überzogen, vgl. Hirst et al., 1980). – in der öffentlichen Beschreibung nicht zitiert; **stützt (öffentliche Fassung):** nein
 - Woods, D. L., Wyma, J. M., Yund, E. W., Herron, T. J., & Reed, B. (2015). Factors influencing the latency of simple reaction time. *Frontiers in Human Neuroscience, 9*, 131. https://doi.org/10.3389/fnhum.2015.00131 – **Prüfung:** DOI stimmt ✓; **stützt:** nein (60-Hz-Anzeige; Aussage zu 144 Hz und Bewegungskonturen steht dort nicht).
-- Ohne Quelle genannt: „Schlafmangel … Tunnelblick", „Top 1 %/Perzentile", „10–15 Minuten täglich" – **Prüfung:** keine Quelle; teils nicht stützbar (siehe Abschnitt 3).
+- Ohne Quelle genannt: „Schlafmangel … Tunnelblick", „Top 1 %/Perzentile", „10–15 Minuten täglich" – **Prüfung:** keine Quelle; teils nicht stützbar (siehe Abschnitt 3). – Aussagen ohne Quelle, nur in der Arbeitsfassung; **stützt (öffentliche Fassung):** nein
 
 ### Weitere Fachliteratur
-- Dux, P. E., Ivanoff, J., Asplund, C. L., & Marois, R. (2006). Isolation of a central bottleneck of information processing with time-resolved fMRI. *Neuron, 52*(6), 1109–1120. https://doi.org/10.1016/j.neuron.2006.11.009 – präfrontaler Engpass (Crossref und PubMed geprüft)
-- Szameitat, A. J., Schubert, T., Müller, K., & von Cramon, D. Y. (2002). Localization of executive functions in dual-task performance with fMRI. *Journal of Cognitive Neuroscience, 14*(8), 1184–1199. https://doi.org/10.1162/089892902760807195 – Hirnaktivität bei Doppelaufgaben (Crossref geprüft, Abstract gelesen)
-- Kramer, A. F., Larish, J. F., & Strayer, D. L. (1995). Training for attentional control in dual task settings: A comparison of young and old adults. *Journal of Experimental Psychology: Applied, 1*(1), 50–76. https://doi.org/10.1037/1076-898X.1.1.50 – Training mit wechselnder Priorität; Inhalt über Sekundärquellen
-- Bherer, L., Kramer, A. F., Peterson, M. S., Colcombe, S., Erickson, K., & Becic, E. (2005). Training effects on dual-task performance: Are there age-related differences in plasticity of attentional control? *Psychology and Aging, 20*(4), 695–709. https://doi.org/10.1037/0882-7974.20.4.695 – Übungseffekt und Übertragung auf neue Kombinationen
 - Anguera, J. A., Boccanfuso, J., Rintoul, J. L., et al. (2013). Video game training enhances cognitive control in older adults. *Nature, 501*(7465), 97–101. https://doi.org/10.1038/nature12486 – Kosten −64 % → −16 %; kleine Gruppen
-- Verhaeghen, P., Steitz, D. W., Sliwinski, M. J., & Cerella, J. (2003). Aging and dual-task performance: A meta-analysis. *Psychology and Aging, 18*(3), 443–460. https://doi.org/10.1037/0882-7974.18.3.443 – Alterseffekt
-- Strobach, T., & Schubert, T. (2017). Mechanisms of practice-related reductions of dual-task interference with simple tasks: Data and theory. *Advances in Cognitive Psychology, 13*(1), 28–41. https://doi.org/10.5709/acp-0204-7 – Mechanismen des Übungseffekts
-- Hirst, W., Spelke, E. S., Reaves, C. C., Caharack, G., & Neisser, U. (1980). Dividing attention without alternation or automaticity. *Journal of Experimental Psychology: General, 109*(1), 98–117. https://doi.org/10.1037/0096-3445.109.1.98 – Einordnung von Spelke et al.
-- Caird, J. K., Willness, C. R., Steel, P., & Scialfa, C. (2008). A meta-analysis of the effects of cell phones on driver performance. *Accident Analysis & Prevention, 40*(4), 1282–1293. https://doi.org/10.1016/j.aap.2008.01.009 – Telefon am Steuer, Reaktionszeit +0,25 s
-- Watson, J. M., & Strayer, D. L. (2010). Supertaskers: Profiles in extraordinary multitasking ability. *Psychonomic Bulletin & Review, 17*(4), 479–485. https://doi.org/10.3758/PBR.17.4.479 – individuelle Unterschiede
-- Silsupadol, P., Shumway-Cook, A., Lugade, V., et al. (2009). Effects of single-task versus dual-task training on balance performance in older adults: A double-blind, randomized controlled trial. *Archives of Physical Medicine and Rehabilitation, 90*(3), 381–387. https://doi.org/10.1016/j.apmr.2008.09.559 – Doppelaufgaben-Training beim Gehen (anderes Setting)
-- Lim, J., & Dinges, D. F. (2010). A meta-analysis of the impact of short-term sleep deprivation on cognitive variables. *Psychological Bulletin, 136*(3), 375–389. https://doi.org/10.1037/a0018883 – Schlafmangel
-- Hutchings, N., Irving, E. L., Jung, N., Dowling, L. M., Wells, K. A., & Lillakas, L. (2007). Eye and head movement alterations in naïve progressive addition lens wearers. *Ophthalmic and Physiological Optics, 27*(2), 142–153. https://doi.org/10.1111/j.1475-1313.2006.00460.x – Gleitsicht, Kopfbewegung
-- Sheedy, J. E. (2004). Progressive addition lenses—matching the specific lens to patient needs. *Optometry, 75*(2), 83–102. https://doi.org/10.1016/S1529-1839(04)70021-4 – Zonenbreiten
-- Boccardo, L., Gurioli, M., & Grasso, P. A. (2023). Viewing distance and character size in the use of smartphones across the lifespan. *PLoS ONE, 18*(4), e0282947. https://doi.org/10.1371/journal.pone.0282947 – Abstand Presbyopie
-- Pronk, T., Wiers, R. W., Molenkamp, B., & Murre, J. (2020). Mental chronometry in the pocket? Timing accuracy of web applications on touchscreen and keyboard devices. *Behavior Research Methods, 52*(3), 1371–1382. https://doi.org/10.3758/s13428-019-01321-2 – Touch-Latenz
-- Hedge, C., Powell, G., & Sumner, P. (2018). The reliability paradox: Why robust cognitive tasks do not produce reliable individual differences. *Behavior Research Methods, 50*(3), 1166–1186. https://doi.org/10.3758/s13428-017-0935-1 – Zuverlässigkeit von Differenzwerten
 - Bababekova, Y., Rosenfield, M., Hue, J. E., & Huang, R. R. (2011). Font size and viewing distance of handheld smart phones. *Optometry and Vision Science, 88*(7), 795–797. https://doi.org/10.1097/OPX.0b013e3182198792 – reale Sehabstände am Smartphone (32–36 cm)
+- Bherer, L., Kramer, A. F., Peterson, M. S., Colcombe, S., Erickson, K., & Becic, E. (2005). Training effects on dual-task performance: Are there age-related differences in plasticity of attentional control? *Psychology and Aging, 20*(4), 695–709. https://doi.org/10.1037/0882-7974.20.4.695 – Übungseffekt und Übertragung auf neue Kombinationen
+- Boccardo, L., Gurioli, M., & Grasso, P. A. (2023). Viewing distance and character size in the use of smartphones across the lifespan. *PLoS ONE, 18*(4), e0282947. https://doi.org/10.1371/journal.pone.0282947 – Abstand Presbyopie
+- Caird, J. K., Willness, C. R., Steel, P., & Scialfa, C. (2008). A meta-analysis of the effects of cell phones on driver performance. *Accident Analysis & Prevention, 40*(4), 1282–1293. https://doi.org/10.1016/j.aap.2008.01.009 – Telefon am Steuer, Reaktionszeit +0,25 s
+- Dux, P. E., Ivanoff, J., Asplund, C. L., & Marois, R. (2006). Isolation of a central bottleneck of information processing with time-resolved fMRI. *Neuron, 52*(6), 1109–1120. https://doi.org/10.1016/j.neuron.2006.11.009 – präfrontaler Engpass (Crossref und PubMed geprüft)
+- Hedge, C., Powell, G., & Sumner, P. (2018). The reliability paradox: Why robust cognitive tasks do not produce reliable individual differences. *Behavior Research Methods, 50*(3), 1166–1186. https://doi.org/10.3758/s13428-017-0935-1 – Zuverlässigkeit von Differenzwerten
+- Hirst, W., Spelke, E. S., Reaves, C. C., Caharack, G., & Neisser, U. (1980). Dividing attention without alternation or automaticity. *Journal of Experimental Psychology: General, 109*(1), 98–117. https://doi.org/10.1037/0096-3445.109.1.98 – Einordnung von Spelke et al. – in der öffentlichen Beschreibung nicht zitiert; **stützt (öffentliche Fassung):** nein
+- Hutchings, N., Irving, E. L., Jung, N., Dowling, L. M., Wells, K. A., & Lillakas, L. (2007). Eye and head movement alterations in naïve progressive addition lens wearers. *Ophthalmic and Physiological Optics, 27*(2), 142–153. https://doi.org/10.1111/j.1475-1313.2006.00460.x – Gleitsicht, Kopfbewegung
+- Kramer, A. F., Larish, J. F., & Strayer, D. L. (1995). Training for attentional control in dual task settings: A comparison of young and old adults. *Journal of Experimental Psychology: Applied, 1*(1), 50–76. https://doi.org/10.1037/1076-898X.1.1.50 – Training mit wechselnder Priorität; Inhalt über Sekundärquellen
+- Lim, J., & Dinges, D. F. (2010). A meta-analysis of the impact of short-term sleep deprivation on cognitive variables. *Psychological Bulletin, 136*(3), 375–389. https://doi.org/10.1037/a0018883 – Schlafmangel
+- Muchnick, B. G. (2008). *Clinical Medicine in Optometric Practice* (2. Aufl.). Mosby/Elsevier. https://openlibrary.org/isbn/9780323029612 – Warnsymptome des Auges und neurologische Warnzeichen (S. 6, 17, 28)
+- Pronk, T., Wiers, R. W., Molenkamp, B., & Murre, J. (2020). Mental chronometry in the pocket? Timing accuracy of web applications on touchscreen and keyboard devices. *Behavior Research Methods, 52*(3), 1371–1382. https://doi.org/10.3758/s13428-019-01321-2 – Touch-Latenz
+- Sheedy, J. E. (2004). Progressive addition lenses—matching the specific lens to patient needs. *Optometry, 75*(2), 83–102. https://doi.org/10.1016/S1529-1839(04)70021-4 – Zonenbreiten
+- Silsupadol, P., Shumway-Cook, A., Lugade, V., et al. (2009). Effects of single-task versus dual-task training on balance performance in older adults: A double-blind, randomized controlled trial. *Archives of Physical Medicine and Rehabilitation, 90*(3), 381–387. https://doi.org/10.1016/j.apmr.2008.09.559 – Doppelaufgaben-Training beim Gehen (anderes Setting)
+- Strobach, T., & Schubert, T. (2017). Mechanisms of practice-related reductions of dual-task interference with simple tasks: Data and theory. *Advances in Cognitive Psychology, 13*(1), 28–41. https://doi.org/10.5709/acp-0204-7 – Mechanismen des Übungseffekts
+- Szameitat, A. J., Schubert, T., Müller, K., & von Cramon, D. Y. (2002). Localization of executive functions in dual-task performance with fMRI. *Journal of Cognitive Neuroscience, 14*(8), 1184–1199. https://doi.org/10.1162/089892902760807195 – Hirnaktivität bei Doppelaufgaben (Crossref geprüft, Abstract gelesen)
+- Verhaeghen, P., Steitz, D. W., Sliwinski, M. J., & Cerella, J. (2003). Aging and dual-task performance: A meta-analysis. *Psychology and Aging, 18*(3), 443–460. https://doi.org/10.1037/0882-7974.18.3.443 – Alterseffekt
+- Watson, J. M., & Strayer, D. L. (2010). Supertaskers: Profiles in extraordinary multitasking ability. *Psychonomic Bulletin & Review, 17*(4), 479–485. https://doi.org/10.3758/PBR.17.4.479 – individuelle Unterschiede
+- Woods, D. L., Wyma, J. M., Yund, E. W., Herron, T. J., & Reed, B. (2015). Factors influencing the latency of simple reaction time. *Frontiers in Human Neuroscience, 9*, 131. https://doi.org/10.3389/fnhum.2015.00131 – einfache Reaktionszeit, Altersabhängigkeit
 - Yu, X., Omar Dev, R. D., & Harun, M. M. (2026). Effect of variable priority cognitive-motor dual-task training on cognitive and physical function in older adults: A systematic review. *Brain Sciences, 16*(3), 308. https://doi.org/10.3390/brainsci16030308 – wechselnde Priorität, Vorteil nicht gesichert (aus Literaturbasis übernommen)

@@ -487,7 +487,7 @@ export const SCIENCE: Record<string, ScienceEntry> = {
         research:
           'Die Übung verbindet die bekannte Schulte-Tabelle mit dem Prinzip des „Trail Making“ (abwechselnder Pfad). Solche Aufgaben werden vor allem zum Messen verwendet; mit Wiederholung wird man darin schneller. Behauptungen, solche Tabellen würden das periphere Sehen oder das Schnelllesen trainieren, sind wissenschaftlich nicht belegt.',
         improved:
-          'Große Felder und Ziffern (keine Mini-Schrift), gefundene Zahlen bleiben sichtbar (die Suche wird nicht mit jeder Zahl leichter), aufeinanderfolgende Zahlen liegen nie direkt nebeneinander, Zahlen im Kreis und Buchstaben im Quadrat (Form statt Farbe), jede Tafel neu gemischt, feste Dauer ohne Zeitbonus.',
+          'Die Tafel hat große Felder und Ziffern (am Tablet mindestens 12 Millimeter), damit die Ziffern gut lesbar sind. Gefundene Zahlen bleiben sichtbar, sodass die Suche nicht mit jeder Zahl leichter wird, und aufeinanderfolgende Zahlen liegen nie direkt nebeneinander, sodass sich der Weg nicht erraten lässt. Auf höheren Stufen wechselt der Pfad zwischen Zahlen im Kreis und Buchstaben im Quadrat; die Unterscheidung erfolgt über die Form, nicht über Farbe. Jede Tafel wird neu gemischt, die Stufe richtet sich nach der Zeit je Tafel, und eine Sitzung hat eine feste Dauer ohne Zeitbonus, wobei eine angefangene Tafel immer zu Ende gespielt wird. Gezeigt werden die erreichte Stufe, die Zeit pro Zahl, die geschafften Tafeln und die Fehltipps.',
       },
       it: {
         trains: 'Cercare con ordine: trovare i numeri in sequenza – più avanti alternati a lettere (1 – A – 2 – B …).',
@@ -495,7 +495,7 @@ export const SCIENCE: Record<string, ScienceEntry> = {
         research:
           'L’esercizio unisce la nota tabella di Schulte al principio del “Trail Making” (percorso alternato). Compiti del genere si usano soprattutto per misurare; ripetendoli si diventa più veloci. Le affermazioni secondo cui queste tabelle allenerebbero la visione periferica o la lettura veloce non sono dimostrate scientificamente.',
         improved:
-          'Caselle e cifre grandi (niente caratteri minuscoli), i numeri trovati restano visibili (la ricerca non diventa più facile a ogni numero), numeri consecutivi mai uno accanto all’altro, numeri nel cerchio e lettere nel quadrato (forma invece del colore), ogni tabella rimescolata, durata fissa senza bonus di tempo.',
+          'La tabella ha caselle e cifre grandi (sul tablet almeno 12 millimetri), così le cifre sono ben leggibili. I numeri trovati restano visibili, quindi la ricerca non diventa più facile a ogni numero, e i numeri consecutivi non sono mai uno accanto all’altro, così il percorso non si può indovinare. Ai livelli più alti il percorso alterna numeri nel cerchio e lettere nel quadrato; la distinzione avviene tramite la forma, non il colore. Ogni tabella è rimescolata, il livello dipende dal tempo per tabella e la sessione ha una durata fissa senza bonus di tempo; una tabella iniziata viene sempre finita. Vengono mostrati il livello raggiunto, il tempo per numero, le tabelle completate e i tocchi sbagliati.',
       },
     },
     sources: [
@@ -546,7 +546,7 @@ export const SCIENCE: Record<string, ScienceEntry> = {
         research:
           'Fast jeder wird bei zwei gleichzeitigen Aufgaben langsamer oder ungenauer – mit dem Alter oft mehr. In Laborstudien gelingt das Zusammenspiel mit Übung besser, vor allem in der geübten Aufgabe. Ob sich das auf Gehen, Autofahren oder den Alltag überträgt, ist nicht belegt.',
         improved:
-          'Jede Sitzung misst erst beide Teile einzeln und dann zusammen – so zeigt der Wert „Zusammenspiel“ die echten Kosten der Doppelaufgabe statt nur Punkte. Die versprochene Bewegung ist da (fortlaufende Steueraufgabe), Schwierigkeit passt sich in den Einzelteilen an, Formen statt Farben, Mehrfinger-Bedienung.',
+          'Jede Sitzung misst zuerst die Kugelaufgabe allein, dann die Zeichenaufgabe allein und danach beides zusammen; so zeigt der Wert „Zusammenspiel“ die tatsächlichen Kosten der Doppelaufgabe statt nur Punkte. Die Kugel folgt der Höhe eines Fingers auf einer fortlaufend schwingenden Spur, die Zeichen sind Formen statt Farben und werden mit zwei großen Tasten beantwortet; der Kugel-Finger und die tippende Hand werden getrennt verfolgt (Mehrfinger-Bedienung). In den Einzelteilen passt sich die Schwierigkeit an, im Doppelteil bleibt sie fest, damit die Kosten vergleichbar sind. Der Vorrang wechselt zwischen Kugel und Zeichen, es gibt weder Zeitbonus noch Zeitstrafe, und die Rückmeldung erfolgt nie nur über Farbe.',
       },
       it: {
         trains: 'Due cose insieme: tenere una pallina sul percorso e intanto rispondere a forme che compaiono per un attimo.',
@@ -554,7 +554,7 @@ export const SCIENCE: Record<string, ScienceEntry> = {
         research:
           'Quasi tutti con due compiti contemporanei diventano più lenti o meno precisi – con l’età spesso di più. Negli studi di laboratorio con la pratica il gioco di squadra migliora, soprattutto nel compito allenato. Se questo si trasferisca al camminare, alla guida o alla vita quotidiana non è dimostrato.',
         improved:
-          'Ogni sessione misura prima le due parti da sole e poi insieme – così il valore “gioco di squadra” mostra i veri costi del doppio compito invece di soli punti. Il movimento promesso c’è (compito di guida continuo), la difficoltà si adatta nelle parti singole, forme invece di colori, uso con più dita.',
+          'Ogni sessione misura prima il compito della pallina da solo, poi quello dei segni da solo e infine entrambi insieme; così il valore “gioco di squadra” mostra i veri costi del doppio compito invece di soli punti. La pallina segue l’altezza di un dito su una pista che oscilla di continuo, i segni sono forme invece di colori e si risponde con due grandi tasti; il dito della pallina e la mano che tocca vengono seguiti separatamente (uso con più dita). Nelle parti singole la difficoltà si adatta, nella parte doppia resta fissa, perché i costi siano confrontabili. La priorità passa dalla pallina ai segni e viceversa, non ci sono né bonus di tempo né penalità, e il riscontro non avviene mai solo tramite il colore.',
       },
     },
     sources: [
