@@ -131,17 +131,17 @@ export const SCIENCE: Record<string, ScienceEntry> = {
         trains: 'Schnell und gleichmäßig auf ein plötzlich auftauchendes Licht reagieren – in der Mitte und am Rand.',
         daily: 'Überall, wo etwas unerwartet auftaucht: im Verkehr, beim Sport, bei der Arbeit.',
         research:
-          'Die Aufgabe entspricht dem in der Schlafforschung genutzten Reaktionstest (PVT), der sehr empfindlich auf Müdigkeit reagiert. In der Übung wird man anfangs besser, danach bleibt die reine Reaktionszeit meist stabil – sie gilt als kaum trainierbar. Eine Übertragung auf Straßenverkehr oder Sport ist nicht belegt. Touchscreens messen je nach Gerät 30–130 ms zu lang, deshalb nur mit sich selbst vergleichen.',
+          'Die Aufgabe entspricht dem in der Schlafforschung genutzten Reaktionstest (PVT), der sehr empfindlich auf Müdigkeit reagiert. In der Übung wird man anfangs besser, danach bleibt die reine Reaktionszeit meist stabil – sie gilt als kaum trainierbar. Eine Übertragung auf Straßenverkehr oder Sport ist nicht belegt. Touchscreens messen je nach Gerät 30–130 ms zu lang, deshalb nur mit sich selbst vergleichen. Messungen am Menschen streuen von Durchgang zu Durchgang; aussagekräftig ist daher der Median über viele Durchgänge, nicht ein Einzelwert.',
         improved:
-          'Nicht vorhersagbare Wartezeiten (Raten lohnt sich nicht), gelegentliche Durchgänge ohne Licht, "zu früh" unter 100 ms, Median statt Mittelwert, Schwankung und Mitte/Rand getrennt ausgewertet, präzise Zeitmessung über die Eingabezeitstempel.',
+          'Ein Messblock besteht aus 2 Aufwärmreizen und 24 gewerteten Reizen, je ein Drittel in der Mitte, auf einem mittleren und auf einem äußeren Ring. Die Wartezeit ist nicht vorhersagbar (1 s plus ein zufälliger Anteil), und gelegentlich folgt gar kein Licht; so lohnt sich Raten nicht. Ein Tipp vor dem Licht oder weniger als 100 ms danach zählt als „zu früh“ und wird getrennt gezählt, ohne Zeitstrafe. Gemessen wird über die Zeitstempel der Eingabe; ausgewertet werden der Median, weil er einzelne Aussetzer ausblendet, die Schwankung sowie Mitte und Rand getrennt. Ein persönliches Zeitziel passt sich an und bestimmt nur die Punkte, nicht den Reiz. Die Zeiten sind kein Normwert, sondern für den Vergleich mit sich selbst auf demselben Gerät gedacht.',
       },
       it: {
         trains: 'Reagire in modo rapido e costante a una luce che compare all’improvviso – al centro e ai lati.',
         daily: 'Ovunque qualcosa compaia inaspettatamente: nel traffico, nello sport, al lavoro.',
         research:
-          'Il compito corrisponde al test di reazione usato nella ricerca sul sonno (PVT), molto sensibile alla stanchezza. All’inizio si migliora, poi il tempo di reazione puro resta per lo più stabile – è considerato poco allenabile. Un trasferimento al traffico o allo sport non è dimostrato. A seconda del dispositivo i touchscreen misurano 30–130 ms in più: confrontati solo con te stesso.',
+          'Il compito corrisponde al test di reazione usato nella ricerca sul sonno (PVT), molto sensibile alla stanchezza. All’inizio si migliora, poi il tempo di reazione puro resta per lo più stabile – è considerato poco allenabile. Un trasferimento al traffico o allo sport non è dimostrato. A seconda del dispositivo i touchscreen misurano 30–130 ms in più: confrontati solo con te stesso. Le misure sulle persone variano da una prova all’altra; è quindi significativa la mediana su molte prove, non un singolo valore.',
         improved:
-          'Attese imprevedibili (indovinare non conviene), passaggi occasionali senza luce, “troppo presto” sotto i 100 ms, mediana invece della media, variabilità e centro/lati valutati separatamente, misura precisa tramite i timestamp dell’input.',
+          'Un blocco di misura consiste in 2 stimoli di riscaldamento e 24 stimoli valutati, un terzo al centro, un terzo su un anello intermedio e un terzo su un anello esterno. L’attesa è imprevedibile (1 s più una parte casuale) e ogni tanto non segue alcuna luce, così indovinare non conviene. Un tocco prima della luce o meno di 100 ms dopo conta come “troppo presto” e viene contato a parte, senza penalità di tempo. La misura si basa sui timestamp dell’input; si valutano la mediana, perché esclude i singoli lapsus, la variabilità e, separatamente, centro e lati. Un obiettivo di tempo personale si adatta e determina solo i punti, non lo stimolo. I tempi non sono un valore normativo, ma servono al confronto con se stessi sullo stesso dispositivo.',
       },
     },
     sources: [
@@ -150,6 +150,7 @@ export const SCIENCE: Record<string, ScienceEntry> = {
       src('Pronk et al. (2020). Mental chronometry in the pocket? Timing accuracy of web applications on touchscreen and keyboard devices. Behavior Research Methods', 'https://doi.org/10.3758/s13428-019-01321-2'),
       src('Appelbaum & Erickson (2018). Sports vision training: A review of the state-of-the-art in digital training techniques. Int. Review of Sport and Exercise Psychology', 'https://doi.org/10.1080/1750984X.2016.1266376'),
       src('Guo et al. (2025). Does the "learning effect" caused by digital devices exaggerate sports visual training outcomes? Frontiers in Physiology', 'https://doi.org/10.3389/fphys.2025.1664572'),
+      src('Mountford, Ruston & Dave (2004). Orthokeratology: Principles and Practice, S. 43–44. Butterworth-Heinemann', 'https://openlibrary.org/isbn/9780750640077'),
     ],
   },
 
