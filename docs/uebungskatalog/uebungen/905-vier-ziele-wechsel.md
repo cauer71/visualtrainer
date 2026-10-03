@@ -190,7 +190,7 @@ Mit steigender Stufe ändert sich je Schritt genau ein Merkmal: Buchstabengröß
 
 ## 7. Einflussfaktoren und Messgrenzen
 
-### 7.1 Was die Messgröße „Zeit von Tipp zu Tipp“ ist – und nicht ist
+### Was die Messgröße „Zeit von Tipp zu Tipp“ ist – und nicht ist
 
 **Sie ist** die Zeit zwischen dem Antippen eines Buchstabens und dem Antippen des nächsten (`event.timeStamp`), der erste Tipp einer Runde zählt nicht. **Sie ist nicht** die Sakkadenlatenz, keine Fixationsdauer, kein Maß für „Augenmuskeln“, kein Maß für Aufmerksamkeit allein und kein Gütemaß für das Sehen. Die App hat **keinen Eye-Tracker**; wohin die Person wann blickt, ist unbekannt. „Reaktionszeit“ passt nicht, weil es keinen Reiz gibt, auf den reagiert wird; die Person bestimmt das Tempo selbst.
 
@@ -207,7 +207,7 @@ Mit steigender Stufe ändert sich je Schritt genau ein Merkmal: Buchstabengröß
 
 Die Anteile **überlappen**, deshalb gibt es **keine Summe** und keine Möglichkeit, aus „Tipp zu Tipp“ einen Anteil herauszurechnen. Plausibel ist nur: **Der Fingerweg ist vermutlich der größte Einzelposten**, besonders beim Wechsel zwischen weit entfernten Tafeln. Unterschiede zwischen zwei Sitzungen können deshalb ebenso von Haltung, Abstand, Hand, Finger, Tablet-Neigung oder Brille kommen wie von den Augen. Eine Zeit **nach einem Fehler** enthält die Korrektur und ist mit anderen nicht vergleichbar (sie geht deshalb nicht in den Mittelwert ein). Sehr kurze Zeiten beim Tafelwechsel (deutlich unter 200 ms) sind bei 15 cm Fingerweg nicht plausibel und könnten Doppeltipps sein; Folgetipps innerhalb von 100 ms werden ignoriert. Absolute Zeiten sind nicht mit Laborwerten vergleichbar – und sollen es nicht sein.
 
-### 7.2 Tafelwechsel nach Richtung: Richtung ist Weg – und braucht viele Wiederholungen
+### Tafelwechsel nach Richtung: Richtung ist Weg – und braucht viele Wiederholungen
 
 - **Richtung, Weg und Armbewegung sind verknüpft.** Bei vier Tafeln in den Ecken sind die waagerechten Wege im Querformat länger als die senkrechten, die diagonalen am längsten (siehe Motorische Grundlagen: ≈ 154 / 84 / 175 mm). Der Unterschied waagerecht – senkrecht beträgt allein durch die Weglänge **≈ 80–100 ms** (Rechnung) – mehr als die Richtungsunterschiede der Sakkadenlatenz (nach oben etwas schneller als nach unten, waagerecht schneller als senkrecht: ≈ 20–50 ms; Dafoe et al. 2007; Greene et al. 2020). Im Hochformat dreht sich das um. „Schnellste und langsamste Richtung“ zeigt daher vor allem, **welcher Weg** kurz oder lang war.
 - **Welche Richtungen vorkommen, hängt von der Tafelreihenfolge ab.** Beim Umlauf im Uhrzeigersinn (oben links → oben rechts → unten rechts → unten links) kommen → ↓ ← ↑ je gleich oft vor; bei der Leserichtung (oben links → oben rechts → unten links → unten rechts) kommen → (zweimal), ↙ und ↖ vor, in unterschiedlicher Häufigkeit und mit unterschiedlichem Weg. Richtungsmittel verschiedener Reihenfolgen sind deshalb nicht vergleichbar.
@@ -215,18 +215,18 @@ Die Anteile **überlappen**, deshalb gibt es **keine Summe** und keine Möglichk
 - **Folge:** Die Richtungsmittel sind als „Wege auf diesem Gerät, keine Augenwerte“ zu lesen und nur im Verlauf über mehrere Sitzungen **auf gleichem Gerät, gleicher Stufe und gleicher Haltung** sinnvoll.
 - **Wege sind in jedem Umlauf gleich, nur der Zeilenwechsel ändert sie.** Entsprechende Zellen der vier Tafeln haben immer denselben Abstand; nur beim Übergang von der letzten Tafel zur ersten (Position p → p+1) ändert sich der Weg beim Zeilenwechsel um bis zu eine Tafelbreite.
 
-### 7.3 Wechsel nach 2 Buchstaben: „Sprungkosten“ sind überwiegend Fingerweg
+### Wechsel nach 2 Buchstaben: „Sprungkosten“ sind überwiegend Fingerweg
 
 Bei Wechsel-Granularität 2 tippt man zwei Buchstaben auf derselben Tafel, dann wechselt man. Der Zeitunterschied „Tafelwechsel – innerhalb derselben Tafel“ wird **Sprungkosten** genannt. Er enthält den Blickwechsel (≈ 32–68 ms Sakkadendauer plus Latenzanteile), aber auch den **längeren Fingerweg** (≈ 2–3 bit Schwierigkeitsunterschied ≈ 0,2–0,4 s bei 100–130 ms/bit; Rechnung) und Suchen. Die Sprungkosten sagen deshalb **nichts Verlässliches über den Blick**; sie sind nur als Vergleich mit früher auf diesem Gerät zu lesen. In der Fachliteratur wird auch eine gröbere Aufteilung beschrieben (eine ganze Zeile je Tafel; Marinoff, 2016); Zeiten werden dort nicht erhoben.
 
-### 7.4 Ermüdung innerhalb einer Runde
+### Ermüdung innerhalb einer Runde
 
 - Der „Vigilance decrement“ ist an langer, eintöniger Beobachtung gemessen worden (Mackworth 1948: 2 h; starker Empfindlichkeitsverlust schon nach 5 min bei stark degradierten Reizen: Nuechterlein et al. 1983). **Hier** dauert eine Runde nur etwa 40–150 s, es gibt keinen seltenen Reiz, und die Person bestimmt das Tempo – der klassische Vigilanzabfall ist nicht der erwartete Hauptfaktor.
 - Die Stufe bleibt **innerhalb einer Runde gleich**; sie ändert sich nur zwischen den Runden. Im Vergleich „erste vs. letzte Hälfte“ überlagern sich deshalb **Üben** (Sakkadenaufgaben werden mit Wiederholung schneller, genauer, stabiler: Karantinos et al. 2025), **Ermüdung**, der Verlauf **im Raster** (später sind mehr Buchstaben blass, das Suchen wird leichter; Zeilenwechsel ändern den Weg) und Zufall. Eine Verlangsamung am Ende ist **nicht eindeutig** Ermüdung.
 - **Pausen:** Ob kurze Aufgabenwechsel oder Pausen ein Dekrement verhindern, ist **umstritten** (Ariga & Lleras 2011: ja; Helton & Russell 2012: nein, n = 498). Die Pause zwischen den Runden ist eine Bedienhilfe, keine Wirkaussage.
 - **Anzeige:** „erste Hälfte / letzte Hälfte“ ist ein **Hinweis mit Vorbehalt** („kann Üben, Ermüdung oder den Verlauf im Raster zeigen“), nur auf gleicher Stufe zu vergleichen und kein Ermüdungswert.
 
-### 7.5 Weitere Messgrenzen
+### Weitere Messgrenzen
 
 - **Stufenentscheidung am Rundenende** (Binomialverteilung, unabhängige Tipps, Fehler = falscher Tipp). Eine Runde hat 36 (3 × 3), 64 (4 × 4) oder 100 (5 × 5) Tipps; „≥ 90 %“ heißt hier mindestens 33 von 36, 58 von 64 bzw. 90 von 100. Bei wahrer Trefferquote 85 % steigt man in ≈ 19 % (n = 36), 14 % (n = 64) bzw. 10 % (n = 100) der Runden auf; bei 90 % in ≈ 51 %, 54 % bzw. 58 %; bei 95 % in ≈ 90 %, 96 % bzw. 99 %. Bei 75 % richtig sinkt man (< 75 %) in ≈ 41 %, 43 % bzw. 45 % der Runden. Wegen der vielen Tipps ist die Entscheidung weniger verrauscht als bei kurzen Abschnitten, die erreichte Stufe bleibt aber ein **grober** Hauptwert. Tatsächliche Fehler häufen sich meist (z. B. bei Konzentrationsabfall), die Annahme unabhängiger Tipps ist nur eine Näherung.
 - **Fehler:** Ein falscher Buchstabe ist ein Fehler (weiches ✗, kein Strafabzug), die Wiederholung am richtigen Ziel zählt für die Trefferquote, nicht für die Zeit (siehe oben). Ein Tipp in die Leere zählt nicht.
