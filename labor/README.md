@@ -28,8 +28,26 @@ Dieses Verzeichnis ist unabhängig vom Blickfit-Build: Es hat eine eigene `packa
 | **Wörter bauen** | Gedächtnis und Konzentration | Durcheinandergewürfelte Buchstaben zum Wort ordnen |
 | **Zeichen finden** | Gedächtnis und Konzentration | Alle Exemplare eines Zielzeichens in einem Raster ähnlicher Zeichen antippen |
 | **Mentale Rotation** | Gedächtnis und Konzentration | Gedrehte Figur: gleich oder gespiegelt? Mit Anstieg der Antwortzeit je 90° |
+| **Fusionstraining** | Binokulares Sehen (Rot-Blau-Brille) | Versatz der Bilder beider Augen wächst und schrumpft; Bruch- und Erholungspunkt in Prismendioptrien |
+| **Tiefensehen (Zufallspunkte)** | Binokulares Sehen (Rot-Blau-Brille) | Schwebendes Quadrat in Zufallspunkten lokalisieren; adaptive Schwelle in Winkelsekunden |
+| **Richtungsentscheidung** | Gleichgewicht und Körper (ohne Sensor) | Pfeilrichtung oder Gegenrichtung angeben, per Berührung oder mit bestätigender Hilfsperson |
+| **Plattform-Orientierung** | Gleichgewicht und Körper (ohne Sensor) | Körper nach Reiz in eine Richtung orientieren; Hilfsperson bestätigt, App misst die Zeit |
+| **Gleichgewicht und Touch** | Gleichgewicht und Körper (ohne Sensor) | Spot-Touch im Stand; Hilfsperson zählt Verluste des Gleichgewichts |
+| **Slalom** | Gleichgewicht und Körper (ohne Sensor) | Kugel per Zeiger, Pfeiltasten oder Gerätekippen durch Tore steuern |
+| **Invasoren** | Gleichgewicht und Körper (ohne Sensor) | Zielpunkt unter fallende Schiffe steuern und halten |
+| **Hess-Schirm (digital)** | Funktionsprüfung (Fachperson) | Zielraster und Zeiger getrennt je Auge, Abweichungen und Flächenvergleich |
+| **Worth-Vierpunkttest (digital)** | Funktionsprüfung (Fachperson) | Lichter zählen: Fusion, Unterdrückung oder Doppelbilder |
+| **Schober-Test (digital)** | Funktionsprüfung (Fachperson) | Kreuz in Ring mittig schieben; Phorie in Prismendioptrien |
+| **Diplopie-Karte (digital)** | Funktionsprüfung (Fachperson) | Neun Blickrichtungen: ein oder zwei Bilder, Versatz ausgleichen |
+| **Subjektive visuelle Vertikale** | Funktionsprüfung (Fachperson) | Linie im Dunkeln senkrecht einstellen; Abweichung in Grad |
+| **Orts-Projektion** | Funktionsprüfung (Fachperson) | Kurz gesehenen Punkt nach dem Verschwinden antippen; Fehlervektor und Bias |
 
 Ergebnisse werden nur lokal im Browser gespeichert (letzte 100) und lassen sich als CSV exportieren (Semikolon, UTF-8 mit BOM für Excel).
+
+## Besondere Übungsgruppen
+* **Rot-Blau-Brille:** Fusionstraining, Tiefensehen, Hess, Worth, Schober und Diplopie-Karte zeigen jedem Auge ein eigenes Bild (Rot und Blau auf dunklem Grund). Jede Übung beginnt auf Wunsch mit einem Brillentest (Seite des roten Glases, Helligkeit). Versatz wird in Prismendioptrien (Δ) bzw. Winkelsekunden aus Abstand und Kalibrierung berechnet.
+* **Gleichgewicht ohne Sensor:** Die Plattform wird nicht ausgelesen. Eine Hilfsperson bestätigt per Taste (Leertaste = richtig, X = falsch, B = Gleichgewicht verloren) oder Knopf; „Slalom“ und „Invasoren“ nutzen Zeiger, Pfeiltasten oder Gerätekippen. Nicht enthalten: Messwerte der Plattform.
+* **Funktionsprüfungen für Fachpersonen:** Hess, Worth, Schober, Diplopie-Karte, subjektive Vertikale und Orts-Projektion sind digitale Näherungen klassischer Verfahren. Sie liefern Messwerte, keine Befunde und keine Normbereiche. Vorzeichen und Umrechnungen (besonders beim Schober-Test) sind aus dem Prinzip hergeleitet und vor klinischer Nutzung gegen ein bekanntes Messverfahren zu prüfen. Die Verantwortung für Einsatz und Deutung liegt bei der anwendenden Fachperson.
 
 ## Dokumentation
 * **In der App:** *Hilfe* (allgemein: Aufbau, Kalibrierung, Training planen, Ergebnisse lesen, Messgenauigkeit, Sicherheit, Datenschutz, Glossar), pro Übung eine aufklappbare *Anleitung* (Zweck, Vorbereitung, Ablauf, Tipps, Steigern, Sicherheit, Hintergrund, Literatur), Hilfetexte unter jeder Einstellung und die Bedeutung jeder Kennzahl in der Ergebnisansicht.
@@ -42,6 +60,9 @@ Ergebnisse werden nur lokal im Browser gespeichert (letzte 100) und lassen sich 
 index.html, style.css, app.js     Oberfläche (Menü, Anleitung, Einstellungen, Kalibrierung, Ergebnisse, Hilfe)
 lib/core.js                       Registry, Kalibrierung (cm/Grad), Zufall mit Seed, Statistik, CSV, Speicher, Audio, Hilfe-Register
 lib/draw.js                       Zeichenhilfen (Text, Schaltflächen, Formen, Raster)
+lib/anaglyph.js                   Rot-Blau-Brille: Farben je Auge, Versatz in cm/Δ/Winkelsekunden, Brillentest
+lib/gaze.js                       Blickraster (Hess, 3×3) und Umrechnung Winkel ↔ Bildschirmort
+lib/input.js                      Steuerung: Zeiger, Pfeiltasten, Gerätekippen
 lib/adaptive.js                   Adaptives Stufenverfahren (2 richtig → schwerer, 1 falsch → leichter)
 lib/words.js                      Eigene Wortliste
 ex/*.js                           eine Datei je Übung: Parameterliste, reine Logik-Klasse, Darstellung (run)
@@ -69,7 +90,7 @@ Größen immer in cm angeben und über `env.calib` umrechnen. Einstellungsmaske,
 ```
 node --test "test/*.test.js"
 ```
-Die Tests decken die Logik aller 14 Übungen ab (Zeitabläufe, Zufall mit festem Seed, Grenzfälle, Kennzahlen), Kalibrierung, Statistik, CSV, Speicher, das adaptive Verfahren und die Vollständigkeit der Dokumentation. Ein **Rauchtest** führt den Darstellungscode jeder Übung mit einem Fake-Canvas aus (Zeichnen, Eingaben, Aufräumen). Ein **Offline-Wächter** prüft, dass im Quellcode keine Netzwerkfunktionen (`fetch`, `XMLHttpRequest`, `WebSocket` …), keine `http(s)://`-Adressen und kein `innerHTML` vorkommen und dass `index.html` Verbindungen per Sicherheitsregel sperrt.
+Die Tests (243) decken die Logik aller 27 Übungen ab (Zeitabläufe, Zufall mit festem Seed, Grenzfälle, Kennzahlen), Kalibrierung, Statistik, CSV, Speicher, das adaptive Verfahren und die Vollständigkeit der Dokumentation. Ein **Rauchtest** führt den Darstellungscode jeder Übung mit einem Fake-Canvas aus (Zeichnen, Eingaben, Aufräumen). Ein **Offline-Wächter** prüft, dass im Quellcode keine Netzwerkfunktionen (`fetch`, `XMLHttpRequest`, `WebSocket` …), keine `http(s)://`-Adressen und kein `innerHTML` vorkommen und dass `index.html` Verbindungen per Sicherheitsregel sperrt.
 
 ## Bekannte Grenzen
 * Die Darstellung wurde **noch nicht in einem echten Browser** geprüft (Aussehen, Touch-Gefühl, Ton). Getestet sind die Logik und, mit Fake-Canvas, der Ablauf des Darstellungscodes.

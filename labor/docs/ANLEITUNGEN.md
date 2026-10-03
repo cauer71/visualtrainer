@@ -5,39 +5,65 @@ Diese Datei wird mit `node tools/gen-docs.js` aus den Texten in `help/` erzeugt 
 ## Inhalt
 
 - [Allgemeine Anleitung](#allgemeine-anleitung)
-- [1. Buchstabentafel](#ex-chart)
-- [2. Wahlreaktion](#ex-choice)
-- [3. Spot-Touch](#ex-spots)
-- [4. Doppelaufgabe](#ex-dual)
-- [5. Zeichen finden](#ex-findchars)
-- [6. Blitz-Erkennung](#ex-flash)
-- [7. Ziel verfolgen](#ex-follow)
-- [8. Bewegte Ziele ordnen](#ex-ordering)
-- [9. Peripheres Erkennen](#ex-periphery)
-- [10. Mentale Rotation](#ex-rotation)
-- [11. Takt-Sakkaden](#ex-saccade)
-- [12. Sequenz-Gedächtnis](#ex-sequence)
-- [13. Start-Ziel-Reaktion](#ex-sprint)
-- [14. Wörter bauen](#ex-wordbuild)
+- [1. Spot-Touch](#ex-spots)
+- [2. Gleichgewicht und Touch](#ex-balancetouch)
+- [3. Buchstabentafel](#ex-chart)
+- [4. Wahlreaktion](#ex-choice)
+- [5. Diplopie-Karte (digital)](#ex-diplopia)
+- [6. Richtungsentscheidung](#ex-directions)
+- [7. Doppelaufgabe](#ex-dual)
+- [8. Zeichen finden](#ex-findchars)
+- [9. Blitz-Erkennung](#ex-flash)
+- [10. Ziel verfolgen](#ex-follow)
+- [11. Fusionstraining (Rot-Blau-Brille)](#ex-fusion)
+- [12. Hess-Schirm (digital)](#ex-hess)
+- [13. Invasoren](#ex-invaders)
+- [14. Bewegte Ziele ordnen](#ex-ordering)
+- [15. Plattform-Orientierung (mit Bestätigung)](#ex-orient)
+- [16. Peripheres Erkennen](#ex-periphery)
+- [17. Orts-Projektion](#ex-projection)
+- [18. Mentale Rotation](#ex-rotation)
+- [19. Takt-Sakkaden](#ex-saccade)
+- [20. Schober-Test (digital)](#ex-schober)
+- [21. Sequenz-Gedächtnis](#ex-sequence)
+- [22. Slalom](#ex-slalom)
+- [23. Start-Ziel-Reaktion](#ex-sprint)
+- [24. Tiefensehen (Zufallspunkte)](#ex-stereo)
+- [25. Subjektive visuelle Vertikale](#ex-vertical)
+- [26. Wörter bauen](#ex-wordbuild)
+- [27. Worth-Vierpunkttest (digital)](#ex-worth)
 
 ## Übersicht der Übungen
 
 | Übung | Gruppe | Kurzbeschreibung |
 |---|---|---|
+| Spot-Touch | Wahrnehmung und Koordination | Farbige Punkte erscheinen zufällig und müssen schnell berührt werden. |
+| Gleichgewicht und Touch | Gleichgewicht und Körper (ohne Sensor) | Punkte berühren im Stand; eine Hilfsperson zählt jeden Verlust des Gleichgewichts. |
 | Buchstabentafel | Blicksteuerung und Lesen | Zeichengruppen im Raster Schritt für Schritt lesen, selbst getaktet oder im Metronom-Takt. |
 | Wahlreaktion | Wahrnehmung und Koordination | Reiz erkennen und die passende Schaltfläche so schnell wie möglich drücken. |
-| Spot-Touch | Wahrnehmung und Koordination | Farbige Punkte erscheinen zufällig und müssen schnell berührt werden. |
+| Diplopie-Karte (digital) | Funktionsprüfung (Fachperson) | In neun Blickrichtungen angeben, ob ein oder zwei Bilder erscheinen, und den Versatz ausgleichen. |
+| Richtungsentscheidung | Gleichgewicht und Körper (ohne Sensor) | Pfeilrichtung (oder Gegenrichtung) angeben, per Berührung oder mit Bestätigung durch eine Hilfsperson. |
 | Doppelaufgabe | Aufmerksamkeit | Mitte: Zielzahl erkennen und berühren. Rand: Punkte berühren, ohne hinzuschauen. |
 | Zeichen finden | Gedächtnis und Konzentration | Alle Exemplare eines Zielzeichens in einem Raster ähnlicher Zeichen antippen. |
 | Blitz-Erkennung | Peripheres Sehen und schnelle Erkennung | Sehr kurz eingeblendete Zeichen erfassen und eintippen, optional mit automatischer Schwellenbestimmung. |
 | Ziel verfolgen | Wahrnehmung und Koordination | Den Finger auf einem gleichmäßig bewegten Ziel halten. |
+| Fusionstraining (Rot-Blau-Brille) | Binokulares Sehen (Rot-Blau-Brille) | Versatz zwischen den Bildern beider Augen langsam erhöhen und senken; Bruch- und Erholungspunkt in Δ. |
+| Hess-Schirm (digital) | Funktionsprüfung (Fachperson) | Zielraster mit einem Auge sehen, Zeiger mit dem anderen auf das Ziel setzen; beide Augen im Wechsel. |
+| Invasoren | Gleichgewicht und Körper (ohne Sensor) | Zielpunkt seitlich unter fallende Schiffe steuern und dort halten, bis sie verschwinden. |
 | Bewegte Ziele ordnen | Wahrnehmung und Koordination | Bewegte Zahlen, Buchstaben, Wörter oder Rechenaufgaben in der richtigen Reihenfolge berühren. |
+| Plattform-Orientierung (mit Bestätigung) | Gleichgewicht und Körper (ohne Sensor) | Punkt leuchtet in einer Richtung auf; Körper dorthin orientieren, Hilfsperson bestätigt, App misst die Zeit. |
 | Peripheres Erkennen | Peripheres Sehen und schnelle Erkennung | Blick in der Mitte halten und kurz am Rand aufblitzende Buchstaben erkennen. |
+| Orts-Projektion | Funktionsprüfung (Fachperson) | Kurz aufblitzenden Punkt nach dem Verschwinden an seinem Ort antippen; Abweichung und systematische Verschiebung. |
 | Mentale Rotation | Gedächtnis und Konzentration | Entscheiden, ob eine gedrehte Figur dieselbe oder ihr Spiegelbild ist. |
 | Takt-Sakkaden | Blicksteuerung und Lesen | Ein Zeichen springt im Metronom-Takt zwischen festen Punkten. |
+| Schober-Test (digital) | Funktionsprüfung (Fachperson) | Kreuz (ein Auge) in Ring (anderes Auge) mittig schieben; Versatz in Prismendioptrien als Phorie-Maß. |
 | Sequenz-Gedächtnis | Gedächtnis und Konzentration | Eine Folge aufleuchtender Felder merken und in gleicher Reihenfolge antippen. |
+| Slalom | Gleichgewicht und Körper (ohne Sensor) | Kugel seitlich durch von oben kommende Tore steuern (Zeiger, Pfeiltasten oder Gerätekippen). |
 | Start-Ziel-Reaktion | Wahrnehmung und Koordination | Startfläche halten, bei Aufleuchten des Ziels loslassen und das Ziel berühren. |
+| Tiefensehen (Zufallspunkte) | Binokulares Sehen (Rot-Blau-Brille) | In Zufallspunkten ein vor oder hinter der Fläche schwebendes Quadrat lokalisieren; Schwelle in Winkelsekunden. |
+| Subjektive visuelle Vertikale | Funktionsprüfung (Fachperson) | Eine Linie im Dunkeln als senkrecht einstellen; Abweichung von der echten Senkrechten in Grad. |
 | Wörter bauen | Gedächtnis und Konzentration | Durcheinandergewürfelte Buchstaben zu einem Wort ordnen. |
+| Worth-Vierpunkttest (digital) | Funktionsprüfung (Fachperson) | Lichter zählen: zeigt, ob beide Augen zusammenarbeiten, eines unterdrückt wird oder Doppelbilder bestehen. |
 
 ## Allgemeine Anleitung
 
@@ -77,6 +103,36 @@ Eine falsche Kalibrierung verfälscht alle Größen und Winkelangaben, aber nich
 - Übung ausführen. Mit „Abbrechen“ oben rechts kannst du jederzeit zurück zu den Einstellungen; ein abgebrochener Durchlauf wird nicht gespeichert.
 - Ergebnis ansehen. Die Kennzahlen werden mit Erklärung angezeigt und automatisch lokal gespeichert. Du kannst die Einzelwerte als CSV-Datei exportieren (Semikolon-getrennt, öffnet sich direkt in Excel).
 - „Nochmal“ startet mit denselben Einstellungen. Für Vergleiche über mehrere Tage die Einstellungen nicht ändern.
+
+### Rot-Blau-Brille (Anaglyphen)
+
+Einige Übungen und Prüfungen (Fusionstraining, Tiefensehen, Hess-Schirm, Worth, Schober, Diplopie-Karte) zeigen jedem Auge ein eigenes Bild. Dafür brauchst du eine Rot-Blau-Brille (auch Rot-Cyan genannt): Ein Glas ist rot, das andere blau oder cyan. Auf dunklem Grund sieht das Auge hinter dem Rotfilter nur rote Bildteile und das Auge hinter dem Blaufilter nur blaue.
+
+- Brillentest: Die Übungen beginnen auf Wunsch mit einem Brillentest. Halte ein Auge zu: Du darfst nur ein Quadrat sehen, das andere muss fast verschwinden. Stimmt es nicht, wechsle mit der Schaltfläche die Seite des roten Glases. Mit „heller“ und „dunkler“ gleichst du Farben aus, bis kein Geisterbild mehr bleibt.
+- Raum: möglichst dunkel, ohne Spiegelungen. Die Bildschirmhelligkeit hoch einstellen und Nachtmodus und Farbfilter ausschalten.
+- Mit Korrekturbrille: Die Rot-Blau-Brille am besten darüber tragen oder eine Überbrille verwenden. Kontaktlinsen sind unproblematisch.
+- Grenzen: Anaglyphen zeigen leichte Farbsäume und der Bildschirm löst nur etwa ein Pixel auf. Feine Messwerte (zum Beispiel Stereoschwellen unter einer Bogenminute) sind damit nicht zuverlässig.
+- Die Zuordnung der Farben zu den Augen ist eine Einstellung der Übung (rotes Glas links oder rechts). Eine falsche Einstellung vertauscht die Aussagen zu rechtem und linkem Auge.
+
+### Balance-Plattform ohne Messausgang
+
+Eine Balance-Plattform ohne USB- oder Sensorausgang kann von der App nicht ausgelesen werden. Die Übungen der Gruppe „Gleichgewicht und Körper (ohne Sensor)“ sind deshalb so gebaut, dass sie trotzdem nutzbar bleiben.
+
+- Mit Hilfsperson: Bei „Richtungsentscheidung“ (Eingabe „Hilfsperson“), „Plattform-Orientierung“ und „Gleichgewicht und Touch“ beobachtet eine zweite Person die Bewegung und bestätigt per Taste oder Knopf. Die App misst die Zeiten und zählt Ereignisse.
+- Mit Eingabegerät: „Slalom“ und „Invasoren“ lassen sich per Zeiger, Pfeiltasten oder Gerätekippen steuern. Ein Fußschalter oder ein Adapter, der Tastendrücke sendet, kann eine Plattform ersetzen.
+- Nicht enthalten: Messwerte der Plattform (Schwankung, Ausschlag, Schwerpunktbahn). Dafür wäre ein Gerät mit Messausgang nötig.
+- Sicherheit: Plattformen und instabile Flächen bergen Sturzgefahr. Sicherung, Haltegriff und Aufsicht sind Pflicht, bei Schwindel sofort abbrechen.
+
+### Funktionsprüfungen für Fachpersonen
+
+Die Gruppe „Funktionsprüfung (Fachperson)“ enthält digitale Formen klassischer Verfahren: Hess-Schirm, Worth-Vierpunkttest, Schober-Test, Diplopie-Karte, subjektive visuelle Vertikale und Orts-Projektion. Sie sind für Personen gedacht, die diese Verfahren fachlich beherrschen und die Ergebnisse einordnen können.
+
+- Keine Befunde: Die App liefert Messwerte, aber keine Diagnose und keine Normbereiche. Die Deutung gehört in die Hand von Augenärztin, Augenarzt, Orthoptistin, Optometrist oder Fachpersonal der Neurologie und HNO.
+- Näherungen: Die digitalen Formen weichen vom klassischen Verfahren ab (Rot-Blau statt Rot-Grün, Zeigen auf einem Bildschirm, Projektion auf eine ebene Fläche, Bildschirmauflösung). Werte sind nicht mit Werten anderer Verfahren austauschbar.
+- Vor klinischer Nutzung prüfen: Vorzeichen und Umrechnungen (zum Beispiel beim Schober-Test) sind aus dem Prinzip hergeleitet und sollten gegen ein bekanntes Messverfahren oder einen Prismenkompensator geprüft werden.
+- Haftung und Verantwortung liegen bei der Person, die die Messung veranlasst und deutet. Dieses Dokument ersetzt keine Qualifikation und keine Zulassung.
+- Vorbereitung ist entscheidend: genauer Abstand, Kalibrierung, gerade Aufstellung, ruhiger Kopf und abgedunkelter Raum. Ohne sie sind die Werte nicht verwertbar.
+- Beschwerden: Bei neu aufgetretenen Doppelbildern, Schwindel oder Kopfschmerz ärztlich abklären lassen, bevor getestet oder trainiert wird.
 
 ### Training planen und steigern
 
@@ -133,167 +189,19 @@ Die gespeicherten Daten bleiben, bis du sie unter „Ergebnisse“ löscht oder 
 - **Arbeitsgedächtnis**: Kurzzeitiger Speicher, in dem Information gehalten und bearbeitet wird; die Kapazität ist begrenzt (oft um 4 bis 7 Elemente).
 - **Maske**: Reiz, der unmittelbar nach einer kurzen Einblendung gezeigt wird und das Nachwirken des Bildes im Auge unterbindet.
 - **Persistenz**: Wie lange ein Reiz sichtbar bleibt.
+- **Prismendioptrie (Δ)**: Maß für Ablenkung: 1 Δ entspricht 1 cm Versatz auf 1 m Entfernung. Wird für Fusionsbreite, Phorien und Doppelbild-Versatz verwendet.
+- **Fusion**: Verschmelzen der Bilder beider Augen zu einem Bild. Die Fusionsbreite ist der Versatz, bis zu dem das gelingt.
+- **Konvergenz und Divergenz**: Einwärtsdrehen (Konvergenz) und Auswärtsdrehen (Divergenz) der Augen, um Objekte in unterschiedlicher Entfernung einfach zu sehen.
+- **Phorie**: Ruhelage der Augen ohne gemeinsames Bild: Esophorie (nach innen), Exophorie (nach außen) und Höhenabweichungen. Wird mit getrennten Bildern gemessen.
+- **Suppression (Unterdrückung)**: Das Gehirn blendet das Bild eines Auges aus, um Doppelbilder zu vermeiden.
+- **Diplopie**: Doppeltsehen: Ein Objekt wird als zwei Bilder wahrgenommen.
+- **Disparität und Stereopsis**: Leichter Unterschied der Bilder beider Augen, aus dem das Gehirn Tiefe berechnet (Stereopsis). Angabe in Winkelsekunden: 3.600 Winkelsekunden sind ein Grad.
+- **Anaglyphen**: Bilder, die in zwei Farben überlagert sind, so dass eine Rot-Blau-Brille jedem Auge ein eigenes Bild zeigt.
 - **Adaptives Verfahren**: Die Schwierigkeit passt sich automatisch an deine Antworten an, bis sich ein stabiler Schwellenwert ergibt.
-
-<a id="ex-chart"></a>
-
-## 1. Buchstabentafel
-
-*Gruppe: Blicksteuerung und Lesen*
-
-### Wofür die Übung gedacht ist
-
-Du liest eine Tafel aus Zeichengruppen Schritt für Schritt. Eine Markierung zeigt das jeweils nächste Zeichen, du sprichst es laut aus. Selbst getaktet misst die App deinen Lesefluss; im Metronom-Takt trainierst du gleichmäßiges Tempo. Die Übung schult Blicksprünge, Lesefluss und das Erkennen von Zeichen im Gedränge.
-
-### Vorbereitung
-
-- Kalibrierung durchführen, damit Zeichen- und Abstandsgrößen stimmen.
-- Sitz etwa 50 bis 60 cm vor dem Bildschirm; der Kopf bleibt ruhig, nur die Augen wandern.
-- Wähle einen Raum, in dem du laut sprechen kannst. Wer nicht laut sprechen kann, liest leise innerlich mit, das Training ist dann aber weniger kontrolliert.
-
-### So läuft die Übung ab
-
-1. Tafelgröße, Zeichen je Gruppe und Abstände einstellen. Für den Einstieg: 4×4 Gruppen mit je 3 Buchstaben.
-2. Tempo wählen: „Selbst bestimmt“ (Tippen = weiter) oder „Metronom-Takt“.
-3. Selbst bestimmt: Tippe oder drücke die Leertaste zum Starten. Das erste Zeichen wird markiert. Lies es laut und tippe anschließend, damit die Markierung zum nächsten springt.
-4. Metronom: Nach einer Taktlänge springt die Markierung im Takt von selbst weiter. Lies jedes markierte Zeichen laut, bevor der nächste Schlag kommt.
-5. Nach dem letzten Zeichen erscheinen die Kennzahlen.
-
-### Tipps
-
-- Schau in die Mitte des markierten Zeichens und lies es vollständig. Nicht schon zum nächsten schielen.
-- Beim Tippen im Selbsttempo nicht hetzen: Ein gleichmäßiger Rhythmus ist wertvoller als einzelne schnelle Schritte.
-- Bei Leseordnung „Erst alle ersten Zeichen, dann alle zweiten“ zwingt die Tafel zu größeren Sprüngen und stärkerem Gedränge; sie ist anspruchsvoller als „Gruppe für Gruppe“.
-- Vergleiche Durchläufe nur bei gleicher Tafel und gleichem Abstand.
-- Zu enge Zeichen: Ein größerer Abstand zwischen den Zeichen erleichtert das Erkennen (weniger Gedränge).
-
-### Leichter und schwerer machen
-
-- Leichter: weniger Gruppen (3×3), nur 1 oder 2 Zeichen je Gruppe, größere Zeichen (3 cm), größere Abstände, „Gruppe für Gruppe“, Selbsttempo oder langsamer Takt (40 bis 50).
-- Schwerer: größere Tafel (5×6), 4 bis 5 Zeichen je Gruppe, kleinere Zeichen (1 bis 1,5 cm), kleine Abstände zwischen den Zeichen (Gedränge), „Erst alle ersten …“, schneller Takt (70 bis 100).
-- Wenn die Tafel nicht ins Feld passt, wird sie automatisch verkleinert; das erkennst du am Hinweis unten.
-- Ziel: Gesamtzeit verkürzen und die Gleichmäßigkeit verbessern (kleinerer Wert bei „Streuung / Mittel“).
-
-### Hinweise zur Sicherheit
-
-- Bei Augenermüdung, Brennen oder Kopfschmerz sofort pausieren.
-- Bei sehr kleinen Zeichen nicht zusammenkneifen; lieber die Zeichen vergrößern.
-- Wenn Doppelbilder auftreten, abbrechen und fachlich abklären lassen.
-
-### Hintergrund
-
-Das Lesen von Zeichentafeln in fester Reihenfolge ist ein klassisches Verfahren, um Blicksprünge und Lesefluss zu üben und zu vergleichen. Zeichen, die dicht nebeneinander stehen, sind schwerer zu erkennen als einzelne (Crowding). Dieser Effekt nimmt mit dem Abstand von der Blickmitte zu, deshalb wirkt die Tafel besonders, wenn man die Zeichen im Augenwinkel „mitnimmt“. Die Gleichmäßigkeit des Tempos (Streuung geteilt durch Mittel) ist eine einfache Kennzahl für flüssiges Lesen.
-
-### Einstellungen
-
-| Einstellung | Wertebereich | Standard | Bedeutung |
-|---|---|---|---|
-| Zeilen (Gruppen) | 1 bis 8 (Schritt 1) | 4 | Zeilen mit Zeichengruppen. |
-| Spalten (Gruppen) | 1 bis 8 (Schritt 1) | 4 | Spalten mit Zeichengruppen. |
-| Zeichen je Gruppe | 1 bis 6 (Schritt 1) | 3 | Zeichen je Gruppe. Mehr Zeichen verlängern die Tafel und verstärken das Gedränge. |
-| Zeichen | Buchstaben / Ziffern | Buchstaben | Buchstaben oder Ziffern 1 bis 9. Innerhalb einer Gruppe kommt jedes Zeichen nur einmal vor. |
-| Zeichenhöhe (cm) | 0.8 bis 8 (Schritt 0.2) | 2 | Zeichenhöhe in Zentimetern. |
-| Abstand zwischen Zeichen einer Gruppe (cm) | 0 bis 3 (Schritt 0.1) | 0.4 | Abstand zwischen den Zeichen einer Gruppe. Kleinere Abstände verstärken das Gedränge (Crowding). |
-| Abstand zwischen Gruppen (cm) | 0.5 bis 10 (Schritt 0.5) | 3 | Abstand zwischen den Gruppen. Größere Abstände verlangen größere Blicksprünge. |
-| Leseordnung | Gruppe für Gruppe / Erst alle ersten Zeichen, dann alle zweiten … | Gruppe für Gruppe | „Gruppe für Gruppe“: erst alle Zeichen der ersten Gruppe, dann der zweiten und so weiter. „Erst alle ersten Zeichen, dann alle zweiten …“: pro Durchgang durch die Tafel jeweils eine Position jeder Gruppe. |
-| Tempo | Selbst bestimmt (Tippen = weiter) / Metronom-Takt | Selbst bestimmt (Tippen = weiter) | „Selbst bestimmt“: du tippst, wenn du ein Zeichen gelesen hast. „Metronom-Takt“: die Markierung springt im eingestellten Takt. |
-| Takt (Schläge pro Minute, nur Metronom) | 20 bis 140 (Schritt 2) | 60 | Schläge pro Minute beim Metronom-Takt. Nur wirksam bei „Metronom-Takt“. |
-
-### Kennzahlen
-
-| Kennzahl (Schlüssel) | Bedeutung |
-|---|---|
-| `symbols` | Anzahl der gelesenen Zeichen auf der Tafel. |
-| `total` | Gesamtzeit vom ersten bis zum letzten Zeichen. |
-| `per_min` | Gelesene Zeichen pro Minute (Lesegeschwindigkeit). |
-| `step_mean` | Nur Selbsttempo: mittlere Zeit pro Zeichen. |
-| `step_sd` | Nur Selbsttempo: Streuung der Zeit pro Zeichen. |
-| `step_cv` | Nur Selbsttempo: Streuung geteilt durch Mittelwert in Prozent. Kleinere Werte bedeuten gleichmäßigeres Lesen. |
-| `bpm` | Nur Metronom-Takt: der eingestellte Takt. |
-
-<a id="ex-choice"></a>
-
-## 2. Wahlreaktion
-
-*Gruppe: Wahrnehmung und Koordination*
-
-### Wofür die Übung gedacht ist
-
-Du trainierst, einen Reiz schnell zu erkennen und die passende Antwort zu wählen. In der Mitte erscheint eine Farbe oder Form, unten drückst du die Schaltfläche mit derselben Farbe oder Form. Die Übung misst, wie schnell und wie genau du unter Zeitdruck zwischen mehreren Möglichkeiten entscheidest.
-
-### Vorbereitung
-
-- Sitz bequem, der Zeigefinger der dominanten Hand schwebt über der Mitte der Schaltflächen.
-- Prüfe, dass du alle Farben gut unterscheiden kannst. Bei Farbsehschwäche die Reizart „Formen“ wählen.
-- Die Einstellung „Reizgröße“ hängt von der Kalibrierung ab; sonst ist keine besondere Vorbereitung nötig.
-
-### So läuft die Übung ab
-
-1. Anzahl der Reize, Antwortmöglichkeiten und Reizart einstellen. Der Einstieg gelingt mit 4 Farben und 40 Reizen.
-2. „Start“ drücken. In der Mitte steht zunächst ein kleines Kreuz.
-3. Nach einer zufälligen Wartezeit erscheint ein Reiz. Drücke so schnell wie möglich die passende Schaltfläche.
-4. Wartest du zu lange, verschwindet der Reiz und zählt als „keine Antwort“. Drückst du bevor ein Reiz erscheint, zählt das als „zu früh“.
-5. Nach dem letzten Reiz erscheinen Genauigkeit und Reaktionszeiten.
-
-### Tipps
-
-- Schau auf die Mitte, nicht auf die Schaltflächen. Die Position der Schaltflächen lernst du nach wenigen Durchgängen.
-- Nicht vorher raten und drücken: Zu frühe Antworten werden gezählt, aber nicht gewertet.
-- Bleib mit dem Finger nahe an der Mitte der Schaltflächenreihe, damit alle Wege gleich kurz sind.
-- Wenn du viele Fehler machst, lass dir mehr Zeit. Wenn du fast keine machst, kannst du schneller werden.
-
-### Leichter und schwerer machen
-
-- Leichter: 2 oder 3 Antwortmöglichkeiten, lange Antwortzeit (1.500 ms und mehr), Farben.
-- Schwerer: 5 oder 6 Möglichkeiten, kürzere Antwortzeit (600 bis 900 ms), Formen, kürzere und stärker schwankende Wartezeiten.
-- Die Reaktionszeit steigt mit der Zahl der Möglichkeiten; das ist normal und kein Zeichen von Verschlechterung.
-- Ziel: Genauigkeit über 95 % halten und dabei die Reaktionszeit senken.
-
-### Hinweise zur Sicherheit
-
-- Die Übung zeigt abrupt wechselnde Farben. Bei Lichtempfindlichkeit vorher ärztlichen Rat einholen.
-- Bei Ermüdung oder Konzentrationsabfall abbrechen; die Werte werden dann unzuverlässig.
-
-### Hintergrund
-
-Je mehr Antwortmöglichkeiten es gibt, desto länger dauert die Entscheidung. Dieser Zusammenhang wird als Hick-Hyman-Gesetz beschrieben: Die Reaktionszeit wächst etwa mit dem Logarithmus der Zahl gleich wahrscheinlicher Möglichkeiten. Zusätzlich gibt es einen Austausch zwischen Tempo und Genauigkeit: Wer schneller antwortet, macht mehr Fehler. Deshalb werden beide Kennzahlen zusammen ausgewertet.
-
-### Literatur
-
-- Hick, W. E. (1952). On the rate of gain of information. Quarterly Journal of Experimental Psychology, 4, 11–26.
-- Hyman, R. (1953). Stimulus information as a determinant of reaction time. Journal of Experimental Psychology, 45, 188–196.
-
-*Die Literaturangaben stammen aus dem Gedächtnis des Autors und sollten vor einer Weitergabe geprüft werden.*
-
-### Einstellungen
-
-| Einstellung | Wertebereich | Standard | Bedeutung |
-|---|---|---|---|
-| Anzahl der Reize | 10 bis 200 (Schritt 5) | 40 | Anzahl der Reize im Durchlauf. Die Reize sind gleichmäßig auf die Möglichkeiten verteilt. |
-| Anzahl der Antwort-Schaltflächen | 2 bis 6 (Schritt 1) | 4 | Anzahl der Farben beziehungsweise Formen und damit der Schaltflächen. Mehr Möglichkeiten verlangen längere Entscheidungen. |
-| Reizart | Farben / Formen | Farben | „Farben“: ein farbiger Kreis, passende Farb-Schaltfläche drücken. „Formen“: eine weiße Form, die Schaltfläche mit derselben Form drücken. |
-| Antwortzeit je Reiz (ms) | 300 bis 3000 (Schritt 50) | 1500 | Wie lange du für die Antwort Zeit hast, bevor sie als fehlend gewertet wird. |
-| Wartezeit mindestens (ms) | 300 bis 3000 (Schritt 50) | 600 | Kürzeste Wartezeit zwischen zwei Reizen. |
-| Wartezeit höchstens (ms) | 300 bis 5000 (Schritt 50) | 1800 | Längste Wartezeit zwischen zwei Reizen. Die tatsächliche Wartezeit liegt zufällig zwischen Minimum und Maximum, damit du den Zeitpunkt nicht erraten kannst. |
-| Reizgröße (cm) | 2 bis 12 (Schritt 0.5) | 6 | Größe des Reizes in Zentimetern. |
-| Ton bei Antwort | Aus / An | Aus | Kurzer Ton bei jeder Antwort (hoch bei richtig, tief sonst). |
-
-### Kennzahlen
-
-| Kennzahl (Schlüssel) | Bedeutung |
-|---|---|
-| `correct` | Anzahl der richtigen Antworten. |
-| `wrong` | Antworten mit der falschen Schaltfläche. |
-| `omissions` | Reize, bei denen du innerhalb der Antwortzeit nichts gedrückt hast. |
-| `early` | Schaltflächen, die vor Erscheinen eines Reizes gedrückt wurden. Nicht in der Wertung. |
-| `accuracy` | Anteil richtiger Antworten an allen Reizen. |
-| `rt_mean` | Mittlere Zeit vom Erscheinen des Reizes bis zur richtigen Antwort. Enthält die Verzögerung von Bildschirm und Touch. |
-| `rt_median` | Mittlere Zeit nach Sortierung der Einzelwerte, weniger empfindlich gegen Ausreißer. |
-| `rt_sd` | Streuung der Reaktionszeiten. Kleinere Werte bedeuten gleichmäßigeres Reagieren. |
 
 <a id="ex-spots"></a>
 
-## 3. Spot-Touch
+## 1. Spot-Touch
 
 *Gruppe: Wahrnehmung und Koordination*
 
@@ -374,9 +282,412 @@ Die Reaktionszeit setzt sich aus Wahrnehmen, Entscheiden und Bewegen zusammen. D
 | `rt_sd` | Streuung der Reaktionszeiten. Kleinere Werte bedeuten gleichmäßigeres Reagieren. |
 | `rate` | Getroffene Punkte pro Minute. Berücksichtigt auch die Pausen, vergleichbar nur bei gleicher Pausen- und Sichtbarkeitseinstellung. |
 
+<a id="ex-balancetouch"></a>
+
+## 2. Gleichgewicht und Touch
+
+*Gruppe: Gleichgewicht und Körper (ohne Sensor)*
+
+### Wofür die Übung gedacht ist
+
+Du löst Spot-Touch im Stand, zum Beispiel beidbeinig, einbeinig, im Tandemstand oder auf einer instabilen Fläche. Eine Hilfsperson zählt jeden Verlust des Gleichgewichts. So siehst du, wie sich die Touch-Leistung und die Standfestigkeit gegenseitig beeinflussen (Doppelaufgabe aus Haltung und Sehen).
+
+### Vorbereitung
+
+- Kalibrierung durchführen, damit der Punktdurchmesser in Zentimetern stimmt.
+- Stelle den Bildschirm so, dass du im Stand bequem jeden Punkt erreichst, ohne dich zu verrenken. Ein Tablet auf einem Ständer in Brusthöhe eignet sich.
+- Sorge für Sicherheit: Haltegriff, Wand oder Hilfsperson in Reichweite, rutschfeste Unterlage, sicheres Schuhwerk.
+- Eine Hilfsperson drückt die Taste B oder den Knopf links unten bei jedem Verlust des Gleichgewichts (Absetzen, Abstützen, Ausfallschritt, Festhalten).
+- Lege vorher fest, was als Verlust zählt, und halte diese Regel bei Wiederholungen ein.
+
+### So läuft die Übung ab
+
+1. Standposition und Dauer wählen. Starte mit beidbeinigem Stand und 60 Sekunden.
+2. „Start“ drücken, in Position gehen und das Fixationskreuz im Blick halten.
+3. Berühre jeden erscheinenden Punkt so schnell wie möglich. Verschwindet er vorher, zählt er als verpasst.
+4. Die Hilfsperson drückt bei jedem Verlust des Gleichgewichts „Gleichgewicht verloren“ (Taste B).
+5. Nach Ablauf der Zeit erscheinen Touch-Kennzahlen und die Zahl der Verluste, auch pro Minute.
+
+### Tipps
+
+- Mache zuerst einen Durchlauf im festen Stand als Vergleichswert und wechsle erst dann zu instabileren Positionen.
+- Atme gleichmäßig und stütze dich nicht auf den Bildschirm.
+- Berühre die Punkte mit der Fingerspitze und führe die Hand ruhig; hektische Armbewegungen stören die Balance.
+- Mit Fixationskreuz bleibt der Blick in der Mitte, die Punkte werden nur aus dem Augenwinkel wahrgenommen. Das macht die Aufgabe deutlich schwerer.
+- Notiere die Standposition zu jedem Durchlauf; sie wird in den Einzelwerten mitgespeichert.
+
+### Leichter und schwerer machen
+
+- Leichter: großer Stand, große Punkte (7 bis 9 cm), lange Sichtbarkeit (3 bis 4 s), Fixationskreuz aus.
+- Schwerer: Tandemstand oder Einbeinstand, kleinere Punkte (3 bis 4 cm), kurze Sichtbarkeit (1 bis 1,5 s), Zone „Nur Peripherie“, Fixationskreuz an.
+- Mit instabiler Fläche zunächst nur kurze Durchläufe (20 bis 30 Sekunden).
+- Ziel: Weniger Verluste pro Minute bei gleicher Trefferquote.
+
+### Hinweise zur Sicherheit
+
+- Einbeinstand, Tandemstand und instabile Flächen bergen Sturzgefahr. Sicherung und Aufsicht sind Pflicht.
+- Bei Schwindel, Unsicherheit oder Schmerzen sofort abbrechen.
+- Personen mit Gleichgewichtsstörungen, Gelenkbeschwerden oder nach Verletzungen nur nach Absprache mit der behandelnden Fachperson.
+- Die App misst die Standfestigkeit nicht selbst; die Zahl der Verluste hängt von der Aufmerksamkeit der Hilfsperson ab.
+
+### Hintergrund
+
+Gleichgewicht ist keine rein automatische Leistung: Wer gleichzeitig eine Aufgabe lösen muss, hat weniger Aufmerksamkeit für die Haltungskontrolle, und umgekehrt leidet die Aufgabe, wenn die Haltung viel Aufmerksamkeit braucht. Dieser Effekt wird in Studien zu Doppelaufgaben und Sturzrisiko genutzt. Die Übung bildet das nach: Die Touch-Aufgabe ist die zweite Aufgabe, die Verluste des Gleichgewichts zeigen, wie viel Haltungskontrolle verloren geht.
+
+### Literatur
+
+- Woollacott, M., & Shumway-Cook, A. (2002). Attention and the control of posture and gait: a review of an emerging area of research. Gait & Posture, 16, 1–14.
+
+*Die Literaturangaben stammen aus dem Gedächtnis des Autors und sollten vor einer Weitergabe geprüft werden.*
+
+### Einstellungen
+
+| Einstellung | Wertebereich | Standard | Bedeutung |
+|---|---|---|---|
+| Standposition (nur zur Dokumentation) | Beidbeinig, fest / Auf instabiler Fläche / Plattform / Einbeinig / Tandemstand (ein Fuß vor dem anderen) | Beidbeinig, fest | Standposition zur Dokumentation (beidbeinig, instabile Fläche, einbeinig, Tandemstand). Sie wird nur gespeichert und beeinflusst die Übung nicht. |
+| Dauer (s) | 20 bis 300 (Schritt 10) | 60 | Dauer des Durchlaufs in Sekunden. Für die Verluste pro Minute sind mindestens 30 bis 60 Sekunden sinnvoll. |
+| Durchmesser der Spots (cm) | 2 bis 15 (Schritt 0.5) | 6 | Durchmesser der Punkte in Zentimetern. Größere Punkte sind leichter zu treffen. |
+| Sichtbarkeit je Spot (s) | 0.5 bis 8 (Schritt 0.1) | 2 | Wie lange ein Punkt sichtbar bleibt, bevor er als verpasst gilt. |
+| Pause bis zum nächsten Spot (ms) | 0 bis 3000 (Schritt 50) | 500 | Pause in Millisekunden zwischen einem Treffer und dem nächsten Punkt. |
+| Zone | Gesamte Fläche / Nur Peripherie / Nur Zentrum | Gesamte Fläche | „Gesamte Fläche“, „Nur Peripherie“ oder „Nur Zentrum“. Die Peripherie ist besonders anspruchsvoll im Stand. |
+| Fixationskreuz in der Mitte | Ja / Nein | Ja | Zeigt ein Kreuz in der Mitte und hält die Punkte davon fern. Der Blick soll dort bleiben. |
+
+### Kennzahlen
+
+| Kennzahl (Schlüssel) | Bedeutung |
+|---|---|
+| `hits` | Anzahl der rechtzeitig getroffenen Punkte. |
+| `misses` | Punkte, die verschwunden sind, bevor sie berührt wurden. |
+| `stray` | Berührungen, die keinen Punkt getroffen haben. |
+| `accuracy` | Anteil der getroffenen an allen gezeigten Punkten. |
+| `rt_mean` | Mittlere Zeit vom Erscheinen eines Punktes bis zur Berührung, nur für Treffer. |
+| `losses` | Wie oft die Hilfsperson einen Verlust des Gleichgewichts gemeldet hat. |
+| `losses_per_min` | Verluste des Gleichgewichts pro Minute, vergleichbar zwischen Durchläufen unterschiedlicher Dauer. |
+
+<a id="ex-chart"></a>
+
+## 3. Buchstabentafel
+
+*Gruppe: Blicksteuerung und Lesen*
+
+### Wofür die Übung gedacht ist
+
+Du liest eine Tafel aus Zeichengruppen Schritt für Schritt. Eine Markierung zeigt das jeweils nächste Zeichen, du sprichst es laut aus. Selbst getaktet misst die App deinen Lesefluss; im Metronom-Takt trainierst du gleichmäßiges Tempo. Die Übung schult Blicksprünge, Lesefluss und das Erkennen von Zeichen im Gedränge.
+
+### Vorbereitung
+
+- Kalibrierung durchführen, damit Zeichen- und Abstandsgrößen stimmen.
+- Sitz etwa 50 bis 60 cm vor dem Bildschirm; der Kopf bleibt ruhig, nur die Augen wandern.
+- Wähle einen Raum, in dem du laut sprechen kannst. Wer nicht laut sprechen kann, liest leise innerlich mit, das Training ist dann aber weniger kontrolliert.
+
+### So läuft die Übung ab
+
+1. Tafelgröße, Zeichen je Gruppe und Abstände einstellen. Für den Einstieg: 4×4 Gruppen mit je 3 Buchstaben.
+2. Tempo wählen: „Selbst bestimmt“ (Tippen = weiter) oder „Metronom-Takt“.
+3. Selbst bestimmt: Tippe oder drücke die Leertaste zum Starten. Das erste Zeichen wird markiert. Lies es laut und tippe anschließend, damit die Markierung zum nächsten springt.
+4. Metronom: Nach einer Taktlänge springt die Markierung im Takt von selbst weiter. Lies jedes markierte Zeichen laut, bevor der nächste Schlag kommt.
+5. Nach dem letzten Zeichen erscheinen die Kennzahlen.
+
+### Tipps
+
+- Schau in die Mitte des markierten Zeichens und lies es vollständig. Nicht schon zum nächsten schielen.
+- Beim Tippen im Selbsttempo nicht hetzen: Ein gleichmäßiger Rhythmus ist wertvoller als einzelne schnelle Schritte.
+- Bei Leseordnung „Erst alle ersten Zeichen, dann alle zweiten“ zwingt die Tafel zu größeren Sprüngen und stärkerem Gedränge; sie ist anspruchsvoller als „Gruppe für Gruppe“.
+- Vergleiche Durchläufe nur bei gleicher Tafel und gleichem Abstand.
+- Zu enge Zeichen: Ein größerer Abstand zwischen den Zeichen erleichtert das Erkennen (weniger Gedränge).
+
+### Leichter und schwerer machen
+
+- Leichter: weniger Gruppen (3×3), nur 1 oder 2 Zeichen je Gruppe, größere Zeichen (3 cm), größere Abstände, „Gruppe für Gruppe“, Selbsttempo oder langsamer Takt (40 bis 50).
+- Schwerer: größere Tafel (5×6), 4 bis 5 Zeichen je Gruppe, kleinere Zeichen (1 bis 1,5 cm), kleine Abstände zwischen den Zeichen (Gedränge), „Erst alle ersten …“, schneller Takt (70 bis 100).
+- Wenn die Tafel nicht ins Feld passt, wird sie automatisch verkleinert; das erkennst du am Hinweis unten.
+- Ziel: Gesamtzeit verkürzen und die Gleichmäßigkeit verbessern (kleinerer Wert bei „Streuung / Mittel“).
+
+### Hinweise zur Sicherheit
+
+- Bei Augenermüdung, Brennen oder Kopfschmerz sofort pausieren.
+- Bei sehr kleinen Zeichen nicht zusammenkneifen; lieber die Zeichen vergrößern.
+- Wenn Doppelbilder auftreten, abbrechen und fachlich abklären lassen.
+
+### Hintergrund
+
+Das Lesen von Zeichentafeln in fester Reihenfolge ist ein klassisches Verfahren, um Blicksprünge und Lesefluss zu üben und zu vergleichen. Zeichen, die dicht nebeneinander stehen, sind schwerer zu erkennen als einzelne (Crowding). Dieser Effekt nimmt mit dem Abstand von der Blickmitte zu, deshalb wirkt die Tafel besonders, wenn man die Zeichen im Augenwinkel „mitnimmt“. Die Gleichmäßigkeit des Tempos (Streuung geteilt durch Mittel) ist eine einfache Kennzahl für flüssiges Lesen.
+
+### Einstellungen
+
+| Einstellung | Wertebereich | Standard | Bedeutung |
+|---|---|---|---|
+| Zeilen (Gruppen) | 1 bis 8 (Schritt 1) | 4 | Zeilen mit Zeichengruppen. |
+| Spalten (Gruppen) | 1 bis 8 (Schritt 1) | 4 | Spalten mit Zeichengruppen. |
+| Zeichen je Gruppe | 1 bis 6 (Schritt 1) | 3 | Zeichen je Gruppe. Mehr Zeichen verlängern die Tafel und verstärken das Gedränge. |
+| Zeichen | Buchstaben / Ziffern | Buchstaben | Buchstaben oder Ziffern 1 bis 9. Innerhalb einer Gruppe kommt jedes Zeichen nur einmal vor. |
+| Zeichenhöhe (cm) | 0.8 bis 8 (Schritt 0.2) | 2 | Zeichenhöhe in Zentimetern. |
+| Abstand zwischen Zeichen einer Gruppe (cm) | 0 bis 3 (Schritt 0.1) | 0.4 | Abstand zwischen den Zeichen einer Gruppe. Kleinere Abstände verstärken das Gedränge (Crowding). |
+| Abstand zwischen Gruppen (cm) | 0.5 bis 10 (Schritt 0.5) | 3 | Abstand zwischen den Gruppen. Größere Abstände verlangen größere Blicksprünge. |
+| Leseordnung | Gruppe für Gruppe / Erst alle ersten Zeichen, dann alle zweiten … | Gruppe für Gruppe | „Gruppe für Gruppe“: erst alle Zeichen der ersten Gruppe, dann der zweiten und so weiter. „Erst alle ersten Zeichen, dann alle zweiten …“: pro Durchgang durch die Tafel jeweils eine Position jeder Gruppe. |
+| Tempo | Selbst bestimmt (Tippen = weiter) / Metronom-Takt | Selbst bestimmt (Tippen = weiter) | „Selbst bestimmt“: du tippst, wenn du ein Zeichen gelesen hast. „Metronom-Takt“: die Markierung springt im eingestellten Takt. |
+| Takt (Schläge pro Minute, nur Metronom) | 20 bis 140 (Schritt 2) | 60 | Schläge pro Minute beim Metronom-Takt. Nur wirksam bei „Metronom-Takt“. |
+
+### Kennzahlen
+
+| Kennzahl (Schlüssel) | Bedeutung |
+|---|---|
+| `symbols` | Anzahl der gelesenen Zeichen auf der Tafel. |
+| `total` | Gesamtzeit vom ersten bis zum letzten Zeichen. |
+| `per_min` | Gelesene Zeichen pro Minute (Lesegeschwindigkeit). |
+| `step_mean` | Nur Selbsttempo: mittlere Zeit pro Zeichen. |
+| `step_sd` | Nur Selbsttempo: Streuung der Zeit pro Zeichen. |
+| `step_cv` | Nur Selbsttempo: Streuung geteilt durch Mittelwert in Prozent. Kleinere Werte bedeuten gleichmäßigeres Lesen. |
+| `bpm` | Nur Metronom-Takt: der eingestellte Takt. |
+
+<a id="ex-choice"></a>
+
+## 4. Wahlreaktion
+
+*Gruppe: Wahrnehmung und Koordination*
+
+### Wofür die Übung gedacht ist
+
+Du trainierst, einen Reiz schnell zu erkennen und die passende Antwort zu wählen. In der Mitte erscheint eine Farbe oder Form, unten drückst du die Schaltfläche mit derselben Farbe oder Form. Die Übung misst, wie schnell und wie genau du unter Zeitdruck zwischen mehreren Möglichkeiten entscheidest.
+
+### Vorbereitung
+
+- Sitz bequem, der Zeigefinger der dominanten Hand schwebt über der Mitte der Schaltflächen.
+- Prüfe, dass du alle Farben gut unterscheiden kannst. Bei Farbsehschwäche die Reizart „Formen“ wählen.
+- Die Einstellung „Reizgröße“ hängt von der Kalibrierung ab; sonst ist keine besondere Vorbereitung nötig.
+
+### So läuft die Übung ab
+
+1. Anzahl der Reize, Antwortmöglichkeiten und Reizart einstellen. Der Einstieg gelingt mit 4 Farben und 40 Reizen.
+2. „Start“ drücken. In der Mitte steht zunächst ein kleines Kreuz.
+3. Nach einer zufälligen Wartezeit erscheint ein Reiz. Drücke so schnell wie möglich die passende Schaltfläche.
+4. Wartest du zu lange, verschwindet der Reiz und zählt als „keine Antwort“. Drückst du bevor ein Reiz erscheint, zählt das als „zu früh“.
+5. Nach dem letzten Reiz erscheinen Genauigkeit und Reaktionszeiten.
+
+### Tipps
+
+- Schau auf die Mitte, nicht auf die Schaltflächen. Die Position der Schaltflächen lernst du nach wenigen Durchgängen.
+- Nicht vorher raten und drücken: Zu frühe Antworten werden gezählt, aber nicht gewertet.
+- Bleib mit dem Finger nahe an der Mitte der Schaltflächenreihe, damit alle Wege gleich kurz sind.
+- Wenn du viele Fehler machst, lass dir mehr Zeit. Wenn du fast keine machst, kannst du schneller werden.
+
+### Leichter und schwerer machen
+
+- Leichter: 2 oder 3 Antwortmöglichkeiten, lange Antwortzeit (1.500 ms und mehr), Farben.
+- Schwerer: 5 oder 6 Möglichkeiten, kürzere Antwortzeit (600 bis 900 ms), Formen, kürzere und stärker schwankende Wartezeiten.
+- Die Reaktionszeit steigt mit der Zahl der Möglichkeiten; das ist normal und kein Zeichen von Verschlechterung.
+- Ziel: Genauigkeit über 95 % halten und dabei die Reaktionszeit senken.
+
+### Hinweise zur Sicherheit
+
+- Die Übung zeigt abrupt wechselnde Farben. Bei Lichtempfindlichkeit vorher ärztlichen Rat einholen.
+- Bei Ermüdung oder Konzentrationsabfall abbrechen; die Werte werden dann unzuverlässig.
+
+### Hintergrund
+
+Je mehr Antwortmöglichkeiten es gibt, desto länger dauert die Entscheidung. Dieser Zusammenhang wird als Hick-Hyman-Gesetz beschrieben: Die Reaktionszeit wächst etwa mit dem Logarithmus der Zahl gleich wahrscheinlicher Möglichkeiten. Zusätzlich gibt es einen Austausch zwischen Tempo und Genauigkeit: Wer schneller antwortet, macht mehr Fehler. Deshalb werden beide Kennzahlen zusammen ausgewertet.
+
+### Literatur
+
+- Hick, W. E. (1952). On the rate of gain of information. Quarterly Journal of Experimental Psychology, 4, 11–26.
+- Hyman, R. (1953). Stimulus information as a determinant of reaction time. Journal of Experimental Psychology, 45, 188–196.
+
+*Die Literaturangaben stammen aus dem Gedächtnis des Autors und sollten vor einer Weitergabe geprüft werden.*
+
+### Einstellungen
+
+| Einstellung | Wertebereich | Standard | Bedeutung |
+|---|---|---|---|
+| Anzahl der Reize | 10 bis 200 (Schritt 5) | 40 | Anzahl der Reize im Durchlauf. Die Reize sind gleichmäßig auf die Möglichkeiten verteilt. |
+| Anzahl der Antwort-Schaltflächen | 2 bis 6 (Schritt 1) | 4 | Anzahl der Farben beziehungsweise Formen und damit der Schaltflächen. Mehr Möglichkeiten verlangen längere Entscheidungen. |
+| Reizart | Farben / Formen | Farben | „Farben“: ein farbiger Kreis, passende Farb-Schaltfläche drücken. „Formen“: eine weiße Form, die Schaltfläche mit derselben Form drücken. |
+| Antwortzeit je Reiz (ms) | 300 bis 3000 (Schritt 50) | 1500 | Wie lange du für die Antwort Zeit hast, bevor sie als fehlend gewertet wird. |
+| Wartezeit mindestens (ms) | 300 bis 3000 (Schritt 50) | 600 | Kürzeste Wartezeit zwischen zwei Reizen. |
+| Wartezeit höchstens (ms) | 300 bis 5000 (Schritt 50) | 1800 | Längste Wartezeit zwischen zwei Reizen. Die tatsächliche Wartezeit liegt zufällig zwischen Minimum und Maximum, damit du den Zeitpunkt nicht erraten kannst. |
+| Reizgröße (cm) | 2 bis 12 (Schritt 0.5) | 6 | Größe des Reizes in Zentimetern. |
+| Ton bei Antwort | Aus / An | Aus | Kurzer Ton bei jeder Antwort (hoch bei richtig, tief sonst). |
+
+### Kennzahlen
+
+| Kennzahl (Schlüssel) | Bedeutung |
+|---|---|
+| `correct` | Anzahl der richtigen Antworten. |
+| `wrong` | Antworten mit der falschen Schaltfläche. |
+| `omissions` | Reize, bei denen du innerhalb der Antwortzeit nichts gedrückt hast. |
+| `early` | Schaltflächen, die vor Erscheinen eines Reizes gedrückt wurden. Nicht in der Wertung. |
+| `accuracy` | Anteil richtiger Antworten an allen Reizen. |
+| `rt_mean` | Mittlere Zeit vom Erscheinen des Reizes bis zur richtigen Antwort. Enthält die Verzögerung von Bildschirm und Touch. |
+| `rt_median` | Mittlere Zeit nach Sortierung der Einzelwerte, weniger empfindlich gegen Ausreißer. |
+| `rt_sd` | Streuung der Reaktionszeiten. Kleinere Werte bedeuten gleichmäßigeres Reagieren. |
+
+<a id="ex-diplopia"></a>
+
+## 5. Diplopie-Karte (digital)
+
+*Gruppe: Funktionsprüfung (Fachperson)*
+
+### Wofür die Übung gedacht ist
+
+Digitale Diplopie-Karte für Fachpersonen. In neun Blickrichtungen (Mitte und acht Randpunkte) erscheint ein Ziel; ein Auge sieht es rot, das andere blau. Die Person gibt an, ob sie ein Bild oder zwei sieht. Bei zwei Bildern schiebt sie das blaue auf das rote; der nötige Versatz in Prismendioptrien ist das Maß der Abweichung in dieser Blickrichtung. Am Ende zeigt eine Karte, wo Doppelbilder auftreten.
+
+### Vorbereitung
+
+- Rot-Blau-Brille (Rot-Cyan) aufsetzen; mit Korrekturbrille am besten eine Überbrille verwenden oder die Brille über der Sehhilfe tragen.
+- Raum abdunkeln und die Bildschirmhelligkeit hoch einstellen, damit die Farben sauber getrennt werden (rot nur für ein Auge, blau nur für das andere).
+- Kalibrierung gewissenhaft durchführen und den echten Abstand zum Bildschirm eintragen (üblich 50 cm). Der Blickwinkel der Randpunkte hängt davon und von der Bildschirmgröße ab; auf kleinen Bildschirmen wird er verkleinert und in den Kennzahlen genannt.
+- Der Kopf bleibt ruhig und mittig vor dem Bildschirm, am besten mit Kinn- und Stirnstütze. Es bewegen sich nur die Augen.
+- Zeigegerät: Maus oder Stift sind genauer als der Finger.
+- Wer Doppelbilder hat, sollte vorher wissen, dass die Messung diese bewusst auslöst; sie kann kurz unangenehm sein.
+
+### So läuft die Übung ab
+
+1. Blickwinkel einstellen (Standard 15 Grad) und Brillentest durchführen.
+2. In der ersten Blickrichtung erscheint ein Ziel. Die Person richtet den Blick darauf und gibt an, ob sie „Ein Bild“ oder „Zwei Bilder“ sieht.
+3. Bei „Zwei Bilder“ erscheint zusätzlich ein blaues Bild neben dem roten. Die Person schiebt das blaue durch Ziehen oder Tippen auf das rote, bis sie nur noch eines sieht, und drückt „Deckungsgleich“.
+4. Bei „Ein Bild“ geht es sofort zur nächsten Richtung. Die Reihenfolge der neun Richtungen ist zufällig.
+5. Zum Schluss zeigt eine Karte alle Richtungen: grün (einfach) oder rot (doppelt) mit einer Linie für den Versatz. Mit „Weiter“ erscheinen die Kennzahlen.
+
+### Tipps
+
+- Kopf ruhig halten und den Blick wirklich auf das Ziel richten, nicht auf den Zeiger.
+- Bei nur ganz leichtem Doppelbild genau hinschauen: Ein kleiner Versatz wird leicht übersehen.
+- Eine Pause zwischen den Richtungen hilft den Augen, wenn die Doppelbilder anstrengen.
+- Die Messung kann nicht erkennen, ob die Person tatsächlich in die Richtung blickt; Anleitung und Kontrolle durch die Fachperson sind wichtig.
+- Für Verlaufskontrollen immer denselben Blickwinkel und Abstand verwenden.
+
+### Leichter und schwerer machen
+
+- Gröber: kleiner Blickwinkel (10 Grad) oder größere Ziele.
+- Umfassender: größerer Blickwinkel (25 bis 30 Grad, setzt einen breiten Bildschirm voraus) und kleines Ziel.
+- Der Test ist ein Messverfahren und wird nicht trainiert.
+
+### Hinweise zur Sicherheit
+
+- Das Ergebnis ist ein Hilfsmittel für Fachpersonen und kein Befund. Die Deutung gehört in die Hand von Augenärztin, Augenarzt, Orthoptistin oder Optometrist.
+- Das Verfahren ist eine Näherung: Rot-Blau-Trennung, Projektion auf eine ebene Fläche und Einstellen per Zeigegerät. Die Werte sind nicht mit denen anderer Verfahren austauschbar.
+- Bei Beschwerden, plötzlichen neuen Doppelbildern oder Kopfschmerz abbrechen und ärztlich abklären lassen.
+- Kleine Bildschirme verkleinern den Blickwinkel; die Kennzahl „Tatsächlicher Blickwinkel“ beachten.
+
+### Hintergrund
+
+Bei Störungen der Augenbewegung treten Doppelbilder oft nur in bestimmten Blickrichtungen auf. Eine Diplopie-Karte hält fest, in welchen der neun Hauptblickrichtungen Doppelbilder bestehen und wie groß der Versatz ist. Hier wird der Versatz gemessen, indem die Person das Bild des einen Auges auf das des anderen schiebt: Die nötige Verschiebung entspricht der Abweichung der Augen. Der Versatz wird in Prismendioptrien angegeben (1 Δ entspricht 1 cm auf 1 m Abstand). Positive waagerechte Werte bedeuten, dass das blaue Bild nach rechts geschoben wurde, positive senkrechte Werte nach oben.
+
+### Literatur
+
+- von Noorden, G. K., & Campos, E. C. Binocular Vision and Ocular Motility: Theory and Management of Strabismus. Mosby.
+
+*Die Literaturangaben stammen aus dem Gedächtnis des Autors und sollten vor einer Weitergabe geprüft werden.*
+
+### Einstellungen
+
+| Einstellung | Wertebereich | Standard | Bedeutung |
+|---|---|---|---|
+| Blickwinkel der Randpunkte (°) | 5 bis 35 (Schritt 5) | 15 | Blickwinkel der acht Randpunkte in Grad. Die Mitte hat immer 0 Grad. Auf kleinen Bildschirmen wird der Winkel verkleinert. |
+| Zielgröße (cm) | 0.5 bis 2.5 (Schritt 0.1) | 1 | Durchmesser des Ziels in Zentimetern. |
+| Rotes Glas vor dem | linken Auge / rechten Auge | linken Auge | Auf welcher Seite das rote Glas der Brille sitzt. Meist ist es das linke, bei manchen Brillen das rechte. Im Brillentest siehst du, ob die Einstellung stimmt: Beim Zuhalten eines Auges darf nur ein Quadrat sichtbar sein. |
+| Brillentest vorher | Ja / Nein | Ja | Zeigt vor dem Start ein rotes und ein blaues Quadrat, damit du Brillenseite und Helligkeit prüfen kannst. Bei „Nein“ startet die Übung sofort mit den eingestellten Werten. |
+
+### Kennzahlen
+
+| Kennzahl (Schlüssel) | Bedeutung |
+|---|---|
+| `positions` | Anzahl der geprüften Blickrichtungen (höchstens neun). |
+| `double` | Anzahl der Blickrichtungen, in denen Doppelbilder gemeldet wurden. |
+| `double_pct` | Anteil der Richtungen mit Doppelbildern an allen geprüften Richtungen. |
+| `sep_mean` | Mittlerer Versatz in Prismendioptrien über alle Richtungen mit Doppelbildern (Betrag aus waagerecht und senkrecht). |
+| `sep_max` | Größter Versatz in Prismendioptrien in einer einzelnen Richtung. |
+| `center_double` | 1, wenn bereits in der Mitte Doppelbilder gemeldet wurden, 0, wenn nicht. Fehlt der Wert, wurde die Mitte nicht geprüft. |
+| `eff_deg` | Tatsächlicher Blickwinkel der Randpunkte. Kleiner als eingestellt, wenn der Bildschirm das Raster nicht aufnehmen konnte. |
+
+<a id="ex-directions"></a>
+
+## 6. Richtungsentscheidung
+
+*Gruppe: Gleichgewicht und Körper (ohne Sensor)*
+
+### Wofür die Übung gedacht ist
+
+Du trainierst, die Richtung eines Pfeils schnell und sicher zuzuordnen. Ein Pfeil zeigt in eine von vier oder acht Richtungen; du gibst entweder dieselbe Richtung oder die Gegenrichtung an. Die Eingabe erfolgt per Berührung auf einem Richtungsfeld oder mit einer Hilfsperson, die bestätigt, ob du die Richtung mit dem Körper (zum Beispiel mit einer Balance-Plattform) richtig ausgeführt hast.
+
+### Vorbereitung
+
+- Kalibrierung durchführen, damit die Pfeilgröße in Zentimetern stimmt.
+- Berührungsmodus: Sitz oder stehe so, dass du das Richtungsfeld unten sicher erreichst.
+- Modus mit Hilfsperson: Die Person steht stabil, zum Beispiel auf einer Plattform, mit Haltegriff oder einer Sicherung in Reichweite. Die Hilfsperson sitzt am Bildschirm und sieht die Bewegung.
+- Die App kann keine Plattform auslesen. Die Hilfsperson bestätigt jede Antwort mit „Richtig“ (Leertaste) oder „Falsch“ (Taste X).
+- Zeige und vereinbare vorher, welche Körperbewegung zu welcher Richtung gehört (zum Beispiel Neigen nach vorn für oben).
+
+### So läuft die Übung ab
+
+1. Anzahl der Pfeile, Richtungen, Aufgabe und Eingabeart einstellen. Beginne mit 4 Richtungen, „In Pfeilrichtung“ und Berührung.
+2. „Start“ drücken. In der Mitte steht zunächst ein kleines Kreuz.
+3. Nach einer zufälligen Wartezeit erscheint ein Pfeil. Gib die Richtung an: im Berührungsmodus auf das passende Feld tippen, mit Hilfsperson die Bewegung ausführen und bestätigen lassen.
+4. Bei „In Gegenrichtung“ gilt die entgegengesetzte Richtung als richtig (Pfeil nach oben bedeutet unten).
+5. Wird die Antwortzeit überschritten, zählt der Pfeil als „keine Antwort“. Nach dem letzten Pfeil erscheinen die Kennzahlen.
+
+### Tipps
+
+- Beginne mit der Pfeilrichtung und wechsle erst bei sicherer Ausführung zur Gegenrichtung. Sie ist deutlich anspruchsvoller, weil die automatische Zuordnung unterdrückt werden muss.
+- Schau in die Mitte und lasse den Pfeil kommen, statt die Richtungsfelder abzusuchen.
+- Antworte so schnell, wie es sicher geht. Ein falscher Treffer kostet mehr als ein paar Millisekunden.
+- Die Hilfsperson sollte ehrlich und gleichmäßig bestätigen; schwankende Strenge verfälscht die Zeiten.
+- Wechsle nach der Hälfte die Aufgabe und vergleiche die Genauigkeit.
+
+### Leichter und schwerer machen
+
+- Leichter: 4 Richtungen, In Pfeilrichtung, lange Antwortzeit (3.000 ms und mehr), große Pfeile.
+- Schwerer: 8 Richtungen, In Gegenrichtung, kurze Antwortzeit (1.000 bis 1.500 ms), kürzere und schwankendere Wartezeiten.
+- Mit Plattform: erst im Sitzen oder bei stabiler Standfläche, dann schrittweise instabiler.
+- Ziel: Genauigkeit über 95 Prozent halten und dabei die Reaktionszeit senken.
+
+### Hinweise zur Sicherheit
+
+- Auf Plattformen und instabilen Flächen besteht Sturzgefahr. Sicherung, Haltegriff und Aufsicht sind Pflicht; bei Schwindel oder Unsicherheit sofort abbrechen.
+- Nicht barfuß oder in Socken auf glatten Flächen üben, wenn eine Plattform benutzt wird.
+- Bei Lichtempfindlichkeit beachten: Die Pfeile wechseln abrupt.
+- Die App misst die Körperbewegung nicht. Die Zeit enthält die Reaktion der Hilfsperson.
+
+### Hintergrund
+
+Die Zuordnung eines Reizes zu einer Antwort ist am schnellsten, wenn Reiz und Antwort räumlich übereinstimmen (Reiz-Reaktions-Kompatibilität). Die Gegenrichtung ist inkompatibel: Die naheliegende Reaktion muss unterdrückt und die andere gewählt werden, das verlängert die Reaktionszeit und erhöht die Fehlerquote. Mit acht Richtungen steigt außerdem die Zahl der Alternativen. Die Übung trainiert diese schnelle Zuordnung, optional mit einer Körperbewegung als Antwort.
+
+### Literatur
+
+- Fitts, P. M., & Seeger, C. M. (1953). S-R compatibility: Spatial characteristics of stimulus and response codes. Journal of Experimental Psychology, 46, 199–210.
+- Simon, J. R. (1969). Reactions toward the source of stimulation. Journal of Experimental Psychology, 81, 174–176.
+
+*Die Literaturangaben stammen aus dem Gedächtnis des Autors und sollten vor einer Weitergabe geprüft werden.*
+
+### Einstellungen
+
+| Einstellung | Wertebereich | Standard | Bedeutung |
+|---|---|---|---|
+| Anzahl der Pfeile | 10 bis 120 (Schritt 2) | 32 | Anzahl der Pfeile im Durchlauf. Die Richtungen sind gleichmäßig verteilt. |
+| Richtungen | 4 (oben, rechts, unten, links) / 8 (mit Diagonalen) | 4 (oben, rechts, unten, links) | 4 Richtungen (oben, rechts, unten, links) oder 8 Richtungen (zusätzlich die Diagonalen). Mehr Richtungen sind schwerer. |
+| Aufgabe | In Pfeilrichtung / In Gegenrichtung | In Pfeilrichtung | „In Pfeilrichtung“: Die Antwort entspricht dem Pfeil. „In Gegenrichtung“: Die entgegengesetzte Richtung ist richtig. |
+| Eingabe | Berührung auf dem Richtungsfeld / Hilfsperson bestätigt | Berührung auf dem Richtungsfeld | „Berührung auf dem Richtungsfeld“: Du tippst die Richtung selbst an. „Hilfsperson bestätigt“: Du führst die Richtung mit dem Körper aus, die Hilfsperson drückt Richtig oder Falsch. |
+| Antwortzeit je Pfeil (ms) | 500 bis 8000 (Schritt 100) | 2500 | Wie lange nach dem Erscheinen des Pfeils geantwortet werden darf. Danach zählt der Pfeil als keine Antwort. |
+| Wartezeit mindestens (ms) | 300 bis 3000 (Schritt 100) | 800 | Kürzeste Wartezeit zwischen zwei Pfeilen. |
+| Wartezeit höchstens (ms) | 300 bis 5000 (Schritt 100) | 2000 | Längste Wartezeit. Die tatsächliche Zeit liegt zufällig dazwischen, damit der Zeitpunkt nicht erraten werden kann. |
+| Pfeilgröße (cm) | 3 bis 16 (Schritt 0.5) | 8 | Größe des Pfeils in Zentimetern. |
+| Ton bei Antwort | Aus / An | Aus | Kurzer Ton bei Antwort (hoch bei richtig, tief bei falsch). |
+
+### Kennzahlen
+
+| Kennzahl (Schlüssel) | Bedeutung |
+|---|---|
+| `correct` | Anzahl der richtigen Antworten. |
+| `wrong` | Antworten mit falscher Richtung (bei Hilfsperson: als Falsch bestätigt). |
+| `omissions` | Pfeile, auf die innerhalb der Antwortzeit nicht geantwortet wurde. |
+| `early` | Antworten, die gegeben wurden, bevor ein Pfeil erschien. Sie zählen nicht in der Wertung. |
+| `accuracy` | Anteil richtiger Antworten an allen Pfeilen. |
+| `rt_mean` | Mittlere Zeit vom Erscheinen des Pfeils bis zur richtigen Antwort. Mit Hilfsperson enthält sie deren Reaktionszeit. |
+| `rt_median` | Mittlere Zeit nach Sortierung der Einzelwerte, weniger empfindlich gegen Ausreißer. |
+| `rt_sd` | Streuung der Reaktionszeiten. Kleinere Werte bedeuten gleichmäßigeres Reagieren. |
+
 <a id="ex-dual"></a>
 
-## 4. Doppelaufgabe
+## 7. Doppelaufgabe
 
 *Gruppe: Aufmerksamkeit*
 
@@ -458,7 +769,7 @@ Wenn zwei Aufgaben gleichzeitig bearbeitet werden, sinkt die Leistung meist in m
 
 <a id="ex-findchars"></a>
 
-## 5. Zeichen finden
+## 8. Zeichen finden
 
 *Gruppe: Gedächtnis und Konzentration*
 
@@ -529,7 +840,7 @@ Aufgaben, in denen Zielzeichen aus ähnlichen Zeichen herausgesucht werden, geh�
 
 <a id="ex-flash"></a>
 
-## 6. Blitz-Erkennung
+## 9. Blitz-Erkennung
 
 *Gruppe: Peripheres Sehen und schnelle Erkennung*
 
@@ -610,7 +921,7 @@ Kurze Einblendungen mit anschließender Abfrage (Tachistoskop-Prinzip) zeigen, w
 
 <a id="ex-follow"></a>
 
-## 7. Ziel verfolgen
+## 10. Ziel verfolgen
 
 *Gruppe: Wahrnehmung und Koordination*
 
@@ -680,9 +991,250 @@ Beim gleitenden Verfolgen (Smooth Pursuit) folgen die Augen einem bewegten Ziel 
 | `losses` | Wie oft du das Ziel verloren hast, nachdem du es erreicht hattest. |
 | `touch_pct` | Anteil der Zeit, in der der Finger den Bildschirm berührt hat, egal wo. |
 
+<a id="ex-fusion"></a>
+
+## 11. Fusionstraining (Rot-Blau-Brille)
+
+*Gruppe: Binokulares Sehen (Rot-Blau-Brille)*
+
+### Wofür die Übung gedacht ist
+
+Du trainierst und misst, wie weit deine Augen zwei leicht verschobene Bilder zu einem einzigen verschmelzen können (Fusionsbreite). Ein Ziel wird jedem Auge in einer eigenen Farbe gezeigt. Der Versatz der Bilder wächst langsam, bis du Doppelbilder siehst (Bruchpunkt). Danach schrumpft er, bis das Bild wieder einfach wird (Erholungspunkt). Die Werte stehen in Prismendioptrien (Δ).
+
+### Vorbereitung
+
+- Rot-Blau-Brille (Rot-Cyan) aufsetzen; mit Korrekturbrille am besten eine Überbrille verwenden oder die Brille über der Sehhilfe tragen.
+- Raum abdunkeln und die Bildschirmhelligkeit hoch einstellen, damit die Farben sauber getrennt werden (rot nur für ein Auge, blau nur für das andere).
+- Kalibrierung gewissenhaft durchführen und den echten Abstand zum Bildschirm eintragen: Die Prismendioptrien werden aus Bildversatz und Abstand berechnet.
+- Sitz aufrecht, Kopf gerade und ruhig, Blick auf die Mitte des Ziels. Eine Kinnstütze verbessert die Wiederholbarkeit.
+
+### So läuft die Übung ab
+
+1. Richtung, Geschwindigkeit und Zahl der Wiederholungen einstellen. Starte mit Konvergenz und Divergenz im Wechsel, 1,5 Δ pro Sekunde.
+2. Brillentest durchführen und mit „Weiter“ bestätigen.
+3. Zu Beginn jedes Durchgangs siehst du ein einfaches Bild. Halte es ruhig im Blick.
+4. Der Versatz wächst langsam. Sobald das Bild doppelt wird oder auseinanderfällt, drückst du „Doppelt“ oder die Leertaste.
+5. Nun schrumpft der Versatz wieder. Sobald das Bild wieder zu einem verschmilzt, drückst du „Wieder einfach“.
+6. Fehlt dir einer der beiden kleinen Kontrollstriche (rot oben, blau unten), drückst du „Ein Strich fehlt“. Nach allen Durchgängen erscheinen die Kennzahlen.
+
+### Tipps
+
+- Entspannt schauen, nicht anstrengen: Zu viel Anstrengung verändert die Werte und ermüdet schnell.
+- Drücke ehrlich beim ersten Anzeichen von Doppelbildern, nicht erst, wenn sie deutlich auseinanderliegen.
+- Konvergenz (Bild rückt näher, Augen drehen nach innen) und Divergenz (Bild rückt weg, Augen drehen nach außen) fallen oft unterschiedlich aus. Das ist normal.
+- Mache zwischen den Durchgängen kurze Pausen und blinzle, damit die Augen nicht austrocknen.
+- Mehrere Wiederholungen mitteln Zufall heraus. Für einen Verlaufsvergleich immer gleiche Einstellungen und gleichen Abstand benutzen.
+
+### Leichter und schwerer machen
+
+- Leichter: langsamere Änderung (0,5 bis 1 Δ pro Sekunde), große Ziele (8 bis 10 cm), nur eine Richtung.
+- Schwerer: schnellere Änderung (3 bis 5 Δ pro Sekunde), kleines Ziel (3 bis 4 cm), beide Richtungen im Wechsel, mehr Wiederholungen.
+- Als Trainingsziel gilt ein größerer Bruchpunkt bei gleichbleibend guter Erholung; die Erholung liegt typischerweise unter dem Bruchpunkt.
+- Wenn Bruch und Erholung über die Wochen näher an die Obergrenze rücken, erhöhe die Obergrenze (Standard 25 Δ).
+
+### Hinweise zur Sicherheit
+
+- Das Ergebnis ist ein Hilfsmittel für Fachpersonen und kein Befund. Die Deutung gehört in die Hand von Augenärztin, Augenarzt, Orthoptistin oder Optometrist.
+- Wer wegen Schielen, Doppelbildern oder Kopfschmerzen behandelt wird, trainiert nur nach Absprache mit der behandelnden Fachperson.
+- Bei anhaltenden Doppelbildern, Schwindel oder Kopfschmerz nach dem Training sofort aufhören und ärztlich abklären lassen.
+- Der Versatz ist durch die Bildschirmauflösung begrenzt und bei kleinen Werten nur grob einstellbar.
+
+### Hintergrund
+
+Beide Augen sehen leicht unterschiedliche Bilder. Das Gehirn verschmilzt sie zu einem Bild (Fusion), solange der Versatz innerhalb der Fusionsbreite liegt. Wird der Versatz größer, bricht die Fusion zusammen und es entstehen Doppelbilder. Die Fusionsbreite wird in der Orthoptik und Optometrie als Bruch- und Erholungspunkt in Prismendioptrien gemessen: 1 Δ entspricht 1 cm Ablenkung auf 1 m Entfernung. Hier wird der Versatz nicht durch Prismen, sondern durch verschobene Bilder erzeugt, die je Auge in Rot und Blau getrennt sind. Die Werte sind deshalb Vergleichswerte und kein Ersatz für eine Prismenmessung.
+
+### Literatur
+
+- Scheiman, M., & Wick, B. Clinical Management of Binocular Vision: Heterophoric, Accommodative, and Eye Movement Disorders. Lippincott Williams & Wilkins.
+
+*Die Literaturangaben stammen aus dem Gedächtnis des Autors und sollten vor einer Weitergabe geprüft werden.*
+
+### Einstellungen
+
+| Einstellung | Wertebereich | Standard | Bedeutung |
+|---|---|---|---|
+| Richtung | Konvergenz und Divergenz im Wechsel / Nur Konvergenz (Bild rückt näher) / Nur Divergenz (Bild rückt weg) | Konvergenz und Divergenz im Wechsel | „Konvergenz“: Das Bild rückt scheinbar näher (die Augen müssen nach innen drehen). „Divergenz“: Das Bild rückt scheinbar weg (die Augen müssen nach außen drehen). „Im Wechsel“ misst beide nacheinander. |
+| Änderungsgeschwindigkeit (Δ pro Sekunde) | 0.5 bis 6 (Schritt 0.5) | 1.5 | Wie schnell der Versatz wächst und schrumpft, in Prismendioptrien pro Sekunde. Langsamere Änderung ist genauer, schnellere trainiert die Anpassungsfähigkeit. |
+| Obergrenze des Versatzes (Δ) | 5 bis 45 (Schritt 1) | 25 | Größter Versatz in Prismendioptrien. Wird er erreicht, ohne dass das Bild bricht, wird das als Obergrenze gewertet und der Versatz geht wieder zurück. |
+| Wiederholungen je Richtung | 1 bis 6 (Schritt 1) | 3 | Wie oft jede Richtung wiederholt wird. Mehr Wiederholungen ergeben zuverlässigere Mittelwerte, verlängern aber die Übung. |
+| Zieldurchmesser (cm) | 2 bis 14 (Schritt 0.5) | 6 | Durchmesser des Ziels in Zentimetern. Größere Ziele sind leichter zu fusionieren. |
+| Rotes Glas vor dem | linken Auge / rechten Auge | linken Auge | Auf welcher Seite das rote Glas der Brille sitzt. Meist ist es das linke, bei manchen Brillen das rechte. Im Brillentest siehst du, ob die Einstellung stimmt: Beim Zuhalten eines Auges darf nur ein Quadrat sichtbar sein. |
+| Brillentest vorher | Ja / Nein | Ja | Zeigt vor dem Start ein rotes und ein blaues Quadrat, damit du Brillenseite und Helligkeit prüfen kannst. Bei „Nein“ startet die Übung sofort mit den eingestellten Werten. |
+
+### Kennzahlen
+
+| Kennzahl (Schlüssel) | Bedeutung |
+|---|---|
+| `trials` | Anzahl der abgeschlossenen Durchgänge (Bruch und Erholung gemeldet oder bis zur Grenze gelaufen). |
+| `break_conv` | Mittlerer Versatz in Prismendioptrien, bei dem das Bild bei Konvergenz doppelt wurde (Bruchpunkt). Größer bedeutet größere Fusionsbreite. |
+| `rec_conv` | Mittlerer Versatz, bei dem das Bild bei Konvergenz nach dem Bruch wieder einfach wurde (Erholungspunkt). Liegt normalerweise unter dem Bruchpunkt. |
+| `break_div` | Mittlerer Versatz in Prismendioptrien, bei dem das Bild bei Divergenz doppelt wurde. Die Divergenzbreite ist meist kleiner als die Konvergenzbreite. |
+| `rec_div` | Mittlerer Versatz, bei dem das Bild bei Divergenz wieder einfach wurde. |
+| `capped` | Anzahl der Durchgänge, in denen das Bild bis zur eingestellten Obergrenze nicht brach. Die Bruchwerte sind dann nach oben abgeschnitten. |
+| `no_recovery` | Anzahl der Durchgänge, in denen das Bild auch bei Versatz null nicht wieder einfach wurde. Das kann auf Unterdrückung, Ermüdung oder falsche Bedienung hindeuten. |
+| `suppression` | Wie oft du gemeldet hast, dass ein Kontrollstrich fehlt. Fehlt regelmäßig derselbe Strich, kann ein Auge das Bild unterdrücken; bitte fachlich abklären lassen. |
+
+<a id="ex-hess"></a>
+
+## 12. Hess-Schirm (digital)
+
+*Gruppe: Funktionsprüfung (Fachperson)*
+
+### Wofür die Übung gedacht ist
+
+Digitale Form des Hess-Schirms für Fachpersonen. Jedes Auge sieht ein eigenes Zeichen: ein Auge nur den Zielpunkt eines Rasters, das andere nur einen Zeiger. Die Person setzt den Zeiger dorthin, wo er aus ihrer Sicht auf dem Ziel liegt. Danach tauschen die Augen die Rollen. Das Ergebnis zeigt, wie stark und in welche Richtung die Augen in verschiedenen Blickrichtungen voneinander abweichen.
+
+### Vorbereitung
+
+- Rot-Blau-Brille (Rot-Cyan) aufsetzen; mit Korrekturbrille am besten eine Überbrille verwenden oder die Brille über der Sehhilfe tragen.
+- Raum abdunkeln und die Bildschirmhelligkeit hoch einstellen, damit die Farben sauber getrennt werden (rot nur für ein Auge, blau nur für das andere).
+- Kalibrierung gewissenhaft durchführen: Bildschirmbreite und Abstand bestimmen, wie die Blickwinkel in Bildschirmorte umgerechnet werden. Üblich ist ein Abstand von 50 cm.
+- Der Kopf muss während der gesamten Messung ruhig und mittig vor dem Raster bleiben, am besten mit Kinn- und Stirnstütze. Es dürfen sich nur die Augen bewegen.
+- Der Bildschirm steht senkrecht und auf Augenhöhe. Für große Blickwinkel (30 Grad und mehr) ist ein breiter Bildschirm nötig; auf kleinen Bildschirmen wird das Raster automatisch verkleinert und die Kennzahlen nennen den tatsächlichen Winkel.
+- Zeigegerät: Eine Maus oder ein Stift ist genauer als der Finger, der den Zeiger verdeckt.
+
+### So läuft die Übung ab
+
+1. Größten Blickwinkel, Raster (voll mit 25 Punkten oder nur innen mit 9) und Durchgänge einstellen. Standard: 20 Grad, voll, beide Durchgänge.
+2. Brillentest durchführen. Beim Zuhalten eines Auges darf nur das Zeichen der anderen Farbe sichtbar sein.
+3. Durchgang A: Das Auge hinter dem roten Glas sieht den roten Zielpunkt und fixiert ihn. Das andere Auge sieht nur den blauen Zeiger.
+4. Setze den Zeiger durch Ziehen oder Tippen dorthin, wo er genau auf dem roten Ziel zu liegen scheint, und drücke „OK“ (Enter). Der Zeiger beginnt jeweils in der Mitte.
+5. Nach allen Punkten folgt Durchgang B mit vertauschten Rollen (blaues Ziel, roter Zeiger). Bei „Nur ein Durchgang“ entfällt er.
+6. Zum Schluss zeigt die Karte den Soll-Umriss (grau) und die gesetzten Umrisse von A (rot) und B (blau). Mit „Weiter“ erscheinen die Kennzahlen.
+
+### Tipps
+
+- Fixiere das Ziel, nicht den Zeiger. Der Zeiger wird nur mit dem anderen Auge wahrgenommen und muss im Kopf auf das Ziel gelegt werden.
+- Setze zügig, nicht grübelnd. Es zählt der erste Eindruck der Deckung.
+- Wiederhole bei Unsicherheit einzelne Punkte nicht, sondern schließe den Durchgang ab und wiederhole bei Bedarf den ganzen Test.
+- Beide Durchgänge unter gleichen Bedingungen (Licht, Abstand, Kopfhaltung) durchführen.
+- Plane Pausen ein: Das volle Raster mit zwei Durchgängen dauert etwa 10 Minuten und ist anstrengend.
+
+### Leichter und schwerer machen
+
+- Einfacher: nur das innere Raster (9 Punkte), ein Durchgang, kleinerer Blickwinkel (10 bis 15 Grad).
+- Genauer: volles Raster, beide Durchgänge, 30 Grad (setzt einen breiten Bildschirm voraus), kleine Ziel- und Zeigergröße.
+- Für Verlaufskontrollen immer dieselben Einstellungen, denselben Abstand und dieselbe Kopfhaltung verwenden.
+- Die Übung ist ein Messverfahren und wird nicht „trainiert“.
+
+### Hinweise zur Sicherheit
+
+- Das Ergebnis ist ein Hilfsmittel für Fachpersonen und kein Befund. Die Deutung gehört in die Hand von Augenärztin, Augenarzt, Orthoptistin oder Optometrist.
+- Das Verfahren ist eine Näherung an den klassischen Hess-Lancaster-Test: Rot-Blau statt Rot-Grün, Zeigen mit Finger oder Maus statt mit Lichtzeiger, Projektion auf eine ebene Fläche. Die Werte sind nicht mit Werten des klassischen Verfahrens austauschbar.
+- Bei Doppelbildern, Kopfschmerz oder Schwindel die Messung abbrechen. Pausen einlegen.
+- Wer neu aufgetretene Doppelbilder hat, braucht ärztliche Abklärung vor jedem Training und diese Messung ersetzt sie nicht.
+- Kleine Bildschirme verkleinern das Raster; die Winkel in den Kennzahlen beachten.
+
+### Hintergrund
+
+Der Hess-Schirm (nach Hess, Lancaster) dient dazu, Augenbewegungsstörungen zu erkennen und nach Augenmuskeln zuzuordnen. Mit einer Rot-Grün-Brille sieht ein Auge nur das Zielraster, das andere nur den Lichtzeiger; das Raster hat 25 Punkte in zwei Ringen (innen 15, außen 30 Grad). Die Person legt den Zeiger auf die wahrgenommenen Zielpunkte. Die Abweichungen ergeben je Auge ein Bild, das kleiner oder verzerrt ist, wenn ein Muskel nicht richtig arbeitet. Hier wird das Raster auf eine ebene Fläche projiziert (Ort = Abstand mal Tangens des Winkels). Die App berechnet Abweichungen in Grad und die Fläche des Randumrisses im Verhältnis zum Sollwert und vergleicht beide Durchgänge. Die Deutung nach Muskeln gehört in die Hand von Fachpersonal und wird von der App nicht vorgenommen.
+
+### Literatur
+
+- von Noorden, G. K., & Campos, E. C. Binocular Vision and Ocular Motility: Theory and Management of Strabismus. Mosby.
+
+*Die Literaturangaben stammen aus dem Gedächtnis des Autors und sollten vor einer Weitergabe geprüft werden.*
+
+### Einstellungen
+
+| Einstellung | Wertebereich | Standard | Bedeutung |
+|---|---|---|---|
+| Größter Blickwinkel (°) | 10 bis 35 (Schritt 5) | 20 | Größter Blickwinkel in Grad (äußerer Ring). Der innere Ring liegt bei der Hälfte. Ist der Bildschirm zu klein, wird das Raster verkleinert. |
+| Raster | Voll (25 Punkte: innen und außen) / Nur innen (9 Punkte) | Voll (25 Punkte: innen und außen) | „Voll“: 25 Punkte (9 innen, 16 außen). „Nur innen“: nur die 9 inneren Punkte, kürzer und für kleine Bildschirme geeignet. |
+| Durchgänge | Beide Augen als Fixierauge / Nur ein Durchgang | Beide Augen als Fixierauge | „Beide Augen als Fixierauge“: zwei Durchgänge mit vertauschten Rollen. „Nur ein Durchgang“: nur das Auge hinter dem roten Glas fixiert. |
+| Größe des Zielpunkts (cm) | 0.4 bis 2 (Schritt 0.1) | 0.8 | Durchmesser des Zielpunkts in Zentimetern. Kleine Ziele erhöhen die Genauigkeit der Platzierung. |
+| Größe des Zeigers (cm) | 0.4 bis 2 (Schritt 0.1) | 0.8 | Durchmesser des Zeigers in Zentimetern. |
+| Rotes Glas vor dem | linken Auge / rechten Auge | linken Auge | Auf welcher Seite das rote Glas der Brille sitzt. Meist ist es das linke, bei manchen Brillen das rechte. Im Brillentest siehst du, ob die Einstellung stimmt: Beim Zuhalten eines Auges darf nur ein Quadrat sichtbar sein. |
+| Brillentest vorher | Ja / Nein | Ja | Zeigt vor dem Start ein rotes und ein blaues Quadrat, damit du Brillenseite und Helligkeit prüfen kannst. Bei „Nein“ startet die Übung sofort mit den eingestellten Werten. |
+
+### Kennzahlen
+
+| Kennzahl (Schlüssel) | Bedeutung |
+|---|---|
+| `placed` | Anzahl der gesetzten Punkte insgesamt (Punkte je Durchgang mal Durchgänge). |
+| `dev_a` | Mittlere Abweichung zwischen gesetztem und echtem Ziel in Grad im Durchgang A (Fixierauge hinter dem roten Glas). Größere Werte bedeuten stärkere Abweichung. |
+| `dev_b` | Mittlere Abweichung in Grad im Durchgang B (Fixierauge hinter dem blauen Glas). |
+| `area_a` | Fläche des Umrisses der äußeren Punkte von Durchgang A im Verhältnis zum Sollwert. Unter 100 Prozent bedeutet ein kleineres, über 100 Prozent ein größeres gesetztes Feld. |
+| `area_b` | Dasselbe für Durchgang B. |
+| `area_ratio` | Verhältnis der Flächen A zu B. Deutliche Abweichungen von 1 bedeuten Seitenunterschiede zwischen den beiden Fixierungen; die Deutung gehört in Fachhand. |
+| `eff_deg` | Tatsächlicher größter Blickwinkel des Rasters. Kleiner als eingestellt, wenn der Bildschirm das Raster nicht aufnehmen konnte. |
+| `clamped` | 1, wenn das Raster wegen eines zu kleinen Bildschirms verkleinert wurde, sonst 0. |
+
+<a id="ex-invaders"></a>
+
+## 13. Invasoren
+
+*Gruppe: Gleichgewicht und Körper (ohne Sensor)*
+
+### Wofür die Übung gedacht ist
+
+Du steuerst einen Zielpunkt am unteren Rand seitlich unter fallende Raumschiffe und hältst ihn dort, bis das Schiff verschwindet. Die Übung trainiert das gezielte, ruhige Ausrichten auf bewegte Ziele. Gesteuert wird mit Zeiger, Pfeiltasten oder durch Kippen des Geräts; eine Balance-Plattform wird nicht ausgelesen.
+
+### Vorbereitung
+
+- Kalibrierung durchführen, damit Toleranz und Fallgeschwindigkeit in Zentimetern stimmen.
+- Zeiger: Der Zielpunkt folgt der waagerechten Position von Maus oder Finger, gut zum Einstieg.
+- Pfeiltasten: Links und rechts steuern den Zielpunkt (auch A und D). Geräte, die Tastendrücke senden, lassen sich so einbinden.
+- Kippen: Das Gerät wird nach links oder rechts geneigt (Tablet oder Handy mit Neigungssensor, nicht in jedem Browser verfügbar).
+- Auf einer Plattform brauchst du Sicherung und eine Hilfsperson für die Bedienung.
+
+### So läuft die Übung ab
+
+1. Dauer, Schiffstakt, Fallgeschwindigkeit und Haltezeit einstellen. Starte mit 60 Sekunden, 2,2 Sekunden Takt, 8 cm pro Sekunde.
+2. Steuerung wählen und „Start“ drücken. Von oben erscheinen rote Schiffe und fallen.
+3. Steuere den gelben Zielpunkt unter ein Schiff. Sobald du ausgerichtet bist (Toleranz), füllt sich ein grüner Ring um das Schiff.
+4. Halte die Ausrichtung, bis der Ring voll ist: Das Schiff ist getroffen. Weichst du ab, baut sich der Fortschritt rasch ab.
+5. Schiffe, die den unteren Rand erreichen, zählen als verpasst. Nach der Dauer erscheinen die Kennzahlen.
+
+### Tipps
+
+- Wähle das tiefste Schiff zuerst; es ist am dringendsten.
+- Steuere mit kleinen, früh begonnenen Bewegungen und halte dann ruhig. Wer ständig nachkorrigiert, baut den Ring nicht auf.
+- Schiffe im oberen Viertel können noch nicht gehalten werden. Du kannst dich vorbereiten, aber nicht schon dort halten.
+- Mit Pfeiltasten und Kippen ist die Trägheit höher als beim Zeiger; plane mehr Weg ein.
+- Wenn zwei Schiffe nahe beieinander fallen, entscheide dich schnell für eines.
+
+### Leichter und schwerer machen
+
+- Leichter: langsamer Takt (3 bis 4 Sekunden), langsame Fallgeschwindigkeit (4 bis 6 cm/s), kurze Haltezeit (200 bis 300 ms), große Toleranz (3 bis 4 cm).
+- Schwerer: schneller Takt (1 bis 1,5 Sekunden), hohe Fallgeschwindigkeit (14 bis 20 cm/s), lange Haltezeit (600 bis 1.000 ms), kleine Toleranz (1 cm).
+- Mit Pfeiltasten oder Kippen statt Zeiger steigt der Anspruch deutlich.
+- Ziel: höhere Trefferquote bei steigender Geschwindigkeit.
+
+### Hinweise zur Sicherheit
+
+- Bei Lichtempfindlichkeit beachten: Die Szene bewegt sich ständig.
+- Beim Kippen des Geräts auf sicheren Stand achten, damit es nicht herunterfällt.
+- Auf Plattformen besteht Sturzgefahr; Sicherung und Aufsicht sind Pflicht.
+- Bei Schwindel oder Übelkeit sofort abbrechen.
+
+### Hintergrund
+
+Das Ausrichten auf ein bewegtes Ziel und das Halten dieser Ausrichtung verbindet Verfolgen, Vorausschau und ruhige Feinmotorik. Die Haltezeit sorgt dafür, dass nicht nur kurz vorbeigefahren, sondern wirklich gehalten wird, ähnlich wie das Halten einer Position auf einer Plattform. Die App nutzt nur Eingaben, die ein gewöhnlicher Browser liefern kann; eine Plattform mit eigenem Messwert-Ausgang ist nicht eingebunden.
+
+### Einstellungen
+
+| Einstellung | Wertebereich | Standard | Bedeutung |
+|---|---|---|---|
+| Dauer (s) | 20 bis 180 (Schritt 10) | 60 | Dauer des Durchlaufs in Sekunden. |
+| Neues Schiff alle (ms) | 800 bis 5000 (Schritt 100) | 2200 | Alle wie viele Millisekunden ein neues Schiff erscheint. Kürzere Zeiten bringen mehr Schiffe gleichzeitig. |
+| Fallgeschwindigkeit (cm/s) | 3 bis 25 (Schritt 1) | 8 | Fallgeschwindigkeit der Schiffe in Zentimetern pro Sekunde. |
+| Haltezeit zum Treffen (ms) | 100 bis 1500 (Schritt 50) | 400 | Wie lange die Ausrichtung gehalten werden muss, bis das Schiff getroffen ist, in Millisekunden. |
+| Toleranz seitlich (cm) | 0.5 bis 6 (Schritt 0.5) | 2 | Seitliche Toleranz in Zentimetern: Innerhalb dieses Abstands zählt der Zielpunkt als ausgerichtet. |
+| Steuerung | Zeiger (Maus/Touch) / Pfeiltasten links/rechts / Gerät kippen (nur wenn vom Gerät unterstützt) | Zeiger (Maus/Touch) | „Zeiger“: Der Zielpunkt folgt der waagerechten Position von Maus oder Finger. „Pfeiltasten“: Links und rechts. „Gerät kippen“: Neigung nach links und rechts, nur mit passendem Gerät. |
+
+### Kennzahlen
+
+| Kennzahl (Schlüssel) | Bedeutung |
+|---|---|
+| `destroyed` | Anzahl der getroffenen Schiffe. |
+| `missed` | Anzahl der Schiffe, die den unteren Rand erreicht haben. |
+| `accuracy` | Anteil der getroffenen an allen gewerteten Schiffen. |
+| `t_mean` | Mittlere Zeit vom Erscheinen eines Schiffes bis zu seinem Treffer. Kleiner bedeutet schneller und sauberer ausgerichtet. |
+
 <a id="ex-ordering"></a>
 
-## 8. Bewegte Ziele ordnen
+## 14. Bewegte Ziele ordnen
 
 *Gruppe: Wahrnehmung und Koordination*
 
@@ -759,9 +1311,85 @@ Das Ordnen von Zahlen und Buchstaben gleicht klassischen Verbindungsaufgaben der
 | `t_mean` | Mittlere Zeit zwischen zwei richtigen Berührungen. Enthält Suchen und Treffen. |
 | `t_sd` | Streuung dieser Zeiten. Hohe Werte deuten auf einzelne schwer zu findende Ziele hin. |
 
+<a id="ex-orient"></a>
+
+## 15. Plattform-Orientierung (mit Bestätigung)
+
+*Gruppe: Gleichgewicht und Körper (ohne Sensor)*
+
+### Wofür die Übung gedacht ist
+
+Du übst die gezielte Orientierung des Körpers nach einem visuellen Reiz. Ein Punkt leuchtet in einer von vier oder acht Richtungen auf; du bewegst deinen Körper in diese Richtung, zum Beispiel durch Neigen einer Balance-Plattform. Eine Hilfsperson bestätigt, wann die Richtung erreicht ist, und die App misst die Zeit bis zur Bestätigung. Optional folgt die Rückkehr zur Mitte.
+
+### Vorbereitung
+
+- Kalibrierung durchführen, damit die Punktgröße in Zentimetern stimmt.
+- Die Person steht oder sitzt auf der Plattform mit Haltegriff, Sicherung oder Geländer in Reichweite. Eine Hilfsperson sitzt am Bildschirm und sieht die Plattform.
+- Die App kann die Plattform nicht auslesen. Die Hilfsperson bestätigt „Erreicht“ per Leertaste oder Knopf und „Falsche Richtung“ per Taste X. Ein USB-Fußschalter, der Tastendrücke sendet, funktioniert als Eingabe.
+- Vereinbart vorher, welche Neigung zu welcher Richtung gehört (zum Beispiel Neigung nach vorn für oben) und ab welcher Lage „Erreicht“ gilt.
+- Der Bildschirm sollte auf Augenhöhe stehen, damit die Person den Kopf nicht neigen muss.
+
+### So läuft die Übung ab
+
+1. Anzahl der Ziele, Richtungen, Rückkehr zur Mitte und Zeitlimit einstellen. Starte mit 4 Richtungen und Rückkehr zur Mitte.
+2. „Start“ drücken. Die Person steht ruhig in der Mitte.
+3. Nach der Pause leuchtet ein gelber Punkt in einer Richtung auf. Die Person orientiert sich dorthin.
+4. Sobald die Richtung erreicht ist, drückt die Hilfsperson „Erreicht“. Wurde eine falsche Richtung eingenommen, drückt sie „Falsche Richtung“.
+5. Bei aktivierter Rückkehr färbt sich die Mitte; die Person kehrt zurück, die Hilfsperson bestätigt erneut. Nach dem letzten Ziel erscheinen die Kennzahlen.
+
+### Tipps
+
+- Die Hilfsperson sollte stets nach derselben Regel bestätigen, damit die Zeiten vergleichbar bleiben.
+- Die Person soll ruhig und kontrolliert bewegen. Schnelles Ausschlagen mit anschließendem Wackeln ist kein Erfolg.
+- Zur Auswertung die Zeiten je Richtung betrachten: Auffällige Unterschiede zwischen Richtungen sind ein Hinweis auf Schwächen oder Gewohnheiten.
+- Kurze Pausen zwischen Durchgängen verhindern Ermüdung der Beine.
+- Beim Umstieg auf 8 Richtungen zuerst die Diagonalen separat üben.
+
+### Leichter und schwerer machen
+
+- Leichter: 4 Richtungen, lange Pause und Zeitlimit (10 bis 20 Sekunden), große Punkte, Rückkehr zur Mitte an.
+- Schwerer: 8 Richtungen, kurzes Zeitlimit (3 bis 5 Sekunden), kleine Punkte, kürzere Pausen, instabilere Standfläche.
+- Ohne Rückkehr zur Mitte werden Richtungswechsel direkt trainiert, das ist anspruchsvoller.
+- Ziel: Zeit bis zum Ziel verkürzen, ohne dass Fehler zunehmen.
+
+### Hinweise zur Sicherheit
+
+- Plattformen bergen Sturzgefahr. Sicherung, Haltegriff und Aufsicht sind Pflicht. Bei Schwindel, Unsicherheit oder Schmerzen sofort abbrechen.
+- Nicht in Socken auf glatten Böden üben. Sicheres Schuhwerk oder rutschfeste Unterlage verwenden.
+- Personen mit Gleichgewichtsstörungen, Gelenkproblemen oder nach Operationen trainieren nur nach Absprache mit der behandelnden Fachperson.
+- Die Zeit enthält die Reaktion der Hilfsperson und ist nur zwischen gleichen Hilfspersonen und Aufbauten vergleichbar.
+
+### Hintergrund
+
+Gleichgewichts- und Orientierungstraining mit visuellem Ziel koppelt Wahrnehmung und Körperbewegung: Der Reiz wird gesehen, die Zielrichtung bestimmt und eine kontrollierte Bewegung ausgeführt. Ohne Sensor misst die App nur die Zeit bis zur Bestätigung durch eine Person; Qualität der Bewegung, Ausschlag und Schwankung werden nicht erfasst. Wer solche Größen braucht, benötigt eine Plattform mit Messwertausgabe.
+
+### Einstellungen
+
+| Einstellung | Wertebereich | Standard | Bedeutung |
+|---|---|---|---|
+| Anzahl der Ziele | 8 bis 80 (Schritt 2) | 24 | Anzahl der Ziele im Durchlauf. Die Richtungen sind gleichmäßig verteilt. |
+| Richtungen | 4 (oben, rechts, unten, links) / 8 (mit Diagonalen) | 4 (oben, rechts, unten, links) | 4 Richtungen oder 8 Richtungen (mit Diagonalen). Mehr Richtungen sind anspruchsvoller. |
+| Rückkehr zur Mitte nach jedem Ziel | Ja / Nein | Ja | Bei „Ja“ muss die Person nach jedem Ziel zur Mitte zurückkehren, was ebenfalls bestätigt und gemessen wird. |
+| Pause vor dem nächsten Ziel (ms) | 500 bis 5000 (Schritt 100) | 1500 | Pause in Millisekunden zwischen Bestätigung und nächstem Ziel. |
+| Zeitlimit je Ziel (s, 0 = keines) | 0 bis 30 (Schritt 1) | 0 | Zeitlimit je Ziel in Sekunden. Nach Ablauf wird es als „Zeitlimit überschritten“ gewertet. 0 bedeutet kein Limit. |
+| Punktgröße (cm) | 1.5 bis 10 (Schritt 0.5) | 5 | Durchmesser der Punkte in Zentimetern. |
+| Ton bei Ziel und Bestätigung | Aus / An | Aus | Kurzer Ton, wenn ein Ziel erscheint, und bei Bestätigung. |
+
+### Kennzahlen
+
+| Kennzahl (Schlüssel) | Bedeutung |
+|---|---|
+| `reached` | Anzahl der Ziele, die als erreicht bestätigt wurden. |
+| `wrong` | Ziele, bei denen die falsche Richtung eingenommen wurde. |
+| `timeouts` | Ziele, die das Zeitlimit überschritten haben. |
+| `t_mean` | Mittlere Zeit vom Aufleuchten bis zur Bestätigung bei erreichten Zielen. Enthält die Reaktion der Hilfsperson. |
+| `t_median` | Mittlere Zeit nach Sortierung der Einzelwerte, weniger empfindlich gegen Ausreißer. |
+| `t_sd` | Streuung der Zeiten bis zum Ziel. Kleinere Werte bedeuten gleichmäßigere Ausführung. |
+| `return_mean` | Mittlere Zeit für die Rückkehr zur Mitte (nur mit Rückkehr). |
+
 <a id="ex-periphery"></a>
 
-## 9. Peripheres Erkennen
+## 16. Peripheres Erkennen
 
 *Gruppe: Peripheres Sehen und schnelle Erkennung*
 
@@ -842,9 +1470,83 @@ Zum Rand des Gesichtsfelds nehmen Schärfe und Erkennungsleistung stark ab. Wie 
 | `threshold` | Geschätzte kürzeste Anzeigedauer, bei der du noch zuverlässig antwortest (Mittel der letzten Umkehrpunkte). Nur bei automatischer Anpassung und wenn genug Umkehrpunkte vorliegen. |
 | `duration` | Die fest eingestellte Anzeigedauer. |
 
+<a id="ex-projection"></a>
+
+## 17. Orts-Projektion
+
+*Gruppe: Funktionsprüfung (Fachperson)*
+
+### Wofür die Übung gedacht ist
+
+Du prüfst, wie genau du einen gesehenen Ort in eine Zeigebewegung übersetzt. Ein Punkt blitzt kurz auf, während du die Mitte fixierst, und verschwindet. Nach einer einstellbaren Wartezeit tippst du auf die Stelle, wo er war. Die App berechnet den Fehler, die systematische Verschiebung (Bias) und die Streuung deiner Antworten.
+
+### Vorbereitung
+
+- Kalibrierung durchführen, damit Abweichungen in Zentimetern und Grad stimmen.
+- Sitz etwa 50 bis 60 cm vom Bildschirm entfernt, Kopf ruhig und mittig. Der Zeigefinger der dominanten Hand liegt locker in der Nähe der Mitte.
+- Sorge für gleichmäßiges Licht. Spiegelungen auf dem Bildschirm verändern die Wahrnehmung des Ortes.
+- Für Vergleiche immer dieselbe Hand, denselben Abstand und dasselbe Gerät benutzen.
+
+### So läuft die Übung ab
+
+1. Anzahl der Punkte, Anzeigedauer und Wartezeit einstellen. Standard: 20 Punkte, 300 ms Anzeige, keine Wartezeit.
+2. „Start“ drücken. In der Mitte erscheint ein kleines Kreuz; dort bleibt der Blick.
+3. Ein Punkt blitzt kurz an einer Stelle auf und verschwindet.
+4. Sobald „Tippe dorthin, wo der Punkt war“ erscheint, tippst du auf die Stelle, wo du ihn gesehen hast.
+5. Bei eingeschalteter Rückmeldung siehst du kurz den echten Ort und deine Antwort. Nach allen Punkten erscheinen die Kennzahlen.
+
+### Tipps
+
+- Bleibe wirklich mit dem Blick auf dem Kreuz, auch wenn der Punkt am Rand erscheint.
+- Tippe gleich nach dem Aufleuchten, ohne lange zu überlegen. Der erste Eindruck ist meist der genaueste.
+- Mit Wartezeit prüfst du zusätzlich das räumliche Gedächtnis: Bei längeren Wartezeiten wird die Abweichung oft größer.
+- Die Rückmeldung zeigt dir, in welche Richtung du systematisch abweichst. Nutze das zum Lernen oder schalte sie für reine Messungen aus.
+- Mehr Punkte (30 bis 40) liefern zuverlässigere Mittelwerte für die Verschiebung.
+
+### Leichter und schwerer machen
+
+- Leichter: lange Anzeige (500 bis 1.000 ms), keine Wartezeit, ganze Fläche, Rückmeldung an.
+- Schwerer: kurze Anzeige (100 bis 150 ms), Wartezeit (2.000 bis 5.000 ms), Zone „Nur Peripherie“, Rückmeldung aus.
+- Als Messung eignet sich ein fester Satz (zum Beispiel 30 Punkte, 300 ms, ohne Wartezeit), der regelmäßig wiederholt wird.
+- Ziel beim Training: kleinere mittlere Abweichung und kleinere Streuung.
+
+### Hinweise zur Sicherheit
+
+- Das Ergebnis ist ein Hilfsmittel und kein Diagnoseverfahren. Auffällige systematische Verschiebungen können von Gerät, Haltung oder Aufmerksamkeit abhängen.
+- Bei Lichtempfindlichkeit beachten: Der Punkt blitzt kurz auf.
+- Bei Schwindel oder Augenbeschwerden pausieren.
+- Die App kann nicht prüfen, ob der Blick in der Mitte geblieben ist.
+
+### Hintergrund
+
+Wenn wir nach einem gesehenen Ort greifen oder zeigen, muss das Gehirn den Ort im Blickfeld in eine Handbewegung übersetzen (Auge-Hand-Projektion). Dabei können systematische Verschiebungen entstehen, etwa wenn Reiz und Zeigebewegung nicht in derselben Blickrichtung liegen, bei Müdigkeit oder durch Schiefhaltung des Kopfes. Der Mittelwert der Fehlervektoren (Bias) zeigt eine solche Verschiebung, die Streuung die Unsicherheit der Antworten. Wartezeiten prüfen zusätzlich das kurzfristige räumliche Gedächtnis.
+
+### Einstellungen
+
+| Einstellung | Wertebereich | Standard | Bedeutung |
+|---|---|---|---|
+| Anzahl der Punkte | 6 bis 60 (Schritt 2) | 20 | Anzahl der Punkte im Durchlauf. Mehr Punkte ergeben zuverlässigere Mittelwerte. |
+| Anzeigedauer (ms) | 50 bis 2000 (Schritt 50) | 300 | Wie lange der Punkt sichtbar ist, in Millisekunden. Kurze Zeiten sind anspruchsvoller. |
+| Wartezeit bis zum Antippen (ms) | 0 bis 5000 (Schritt 250) | 0 | Wartezeit in Millisekunden zwischen Verschwinden des Punktes und Freigabe der Antwort. Längere Zeiten beanspruchen das räumliche Gedächtnis. |
+| Zone | Gesamte Fläche / Nur Peripherie | Gesamte Fläche | „Gesamte Fläche“: überall. „Nur Peripherie“: nur im äußeren Bereich weit weg von der Mitte. |
+| Sollort nach der Antwort zeigen | Ja / Nein | Ja | Bei „Ja“ wird nach der Antwort kurz der echte Ort mit deiner Antwort gezeigt. Das hilft beim Lernen, ist für reine Messungen aber nicht nötig. |
+| Punktgröße (cm) | 0.5 bis 3 (Schritt 0.5) | 1 | Durchmesser des Punktes in Zentimetern. |
+
+### Kennzahlen
+
+| Kennzahl (Schlüssel) | Bedeutung |
+|---|---|
+| `n` | Anzahl der beantworteten Punkte. |
+| `err_mean` | Mittlerer Abstand zwischen Antwort und echtem Ort in Zentimetern. |
+| `err_deg` | Mittlerer Abstand als Sehwinkel in Grad, berechnet über den eingestellten Abstand. |
+| `bias_x` | Mittlere seitliche Verschiebung der Antworten in Zentimetern. Positiv bedeutet nach rechts verschoben. |
+| `bias_y` | Mittlere senkrechte Verschiebung der Antworten in Zentimetern. Positiv bedeutet nach oben verschoben. |
+| `scatter` | Streuung der Antworten um ihren eigenen Mittelpunkt in Zentimetern. Kleine Werte bedeuten sichere, wiederholbare Antworten. |
+| `rt_mean` | Mittlere Zeit von der Freigabe der Antwort bis zum Tippen. |
+
 <a id="ex-rotation"></a>
 
-## 10. Mentale Rotation
+## 18. Mentale Rotation
 
 *Gruppe: Gedächtnis und Konzentration*
 
@@ -917,7 +1619,7 @@ Die Aufgabe geht auf klassische Versuche zur mentalen Rotation zurück: Versuchs
 
 <a id="ex-saccade"></a>
 
-## 11. Takt-Sakkaden
+## 19. Takt-Sakkaden
 
 *Gruppe: Blicksteuerung und Lesen*
 
@@ -993,9 +1695,90 @@ Beim Lesen und Suchen springen die Augen in kurzen, ruckartigen Bewegungen (Sakk
 | `lat_mean` | Nur im Berührungsmodus: mittlere Zeit vom Schlag bis zur Berührung. Kleinere Werte bedeuten schnelleres Erfassen und Greifen. |
 | `lat_sd` | Nur im Berührungsmodus: Streuung dieser Zeiten. Kleinere Werte zeigen einen gleichmäßigeren Rhythmus. |
 
+<a id="ex-schober"></a>
+
+## 20. Schober-Test (digital)
+
+*Gruppe: Funktionsprüfung (Fachperson)*
+
+### Wofür die Übung gedacht ist
+
+Digitale Form des Schober-Tests für Fachpersonen (Phorie-Messung mit getrennten Bildern). Ein Auge sieht nur ein Kreuz, das andere nur einen Ring. Die Person verschiebt das Kreuz in kleinen Schritten, bis es mittig im Ring erscheint. Der nötige Versatz in Prismendioptrien ist ein Maß für die Ruhelage der Augen (Eso- oder Exophorie, Höhenabweichung).
+
+### Vorbereitung
+
+- Rot-Blau-Brille (Rot-Cyan) aufsetzen; mit Korrekturbrille am besten eine Überbrille verwenden oder die Brille über der Sehhilfe tragen.
+- Raum abdunkeln und die Bildschirmhelligkeit hoch einstellen, damit die Farben sauber getrennt werden (rot nur für ein Auge, blau nur für das andere).
+- Kalibrierung gewissenhaft durchführen und den echten Abstand zum Bildschirm eintragen. Der Versatz wird aus Bildversatz und Abstand in Prismendioptrien umgerechnet.
+- Die Person sitzt aufrecht, der Kopf ist gerade und ruhig, der Blick geht auf die Mitte des Rings. Eine Kinnstütze erhöht die Wiederholbarkeit.
+- Der Bildschirm muss gerade stehen (Wasserwaage), sonst verfälscht eine Schräglage die senkrechte Messung.
+- Für Vergleiche immer dieselbe Brille, denselben Abstand und dieselbe Farbzuordnung (welches Auge das Kreuz sieht) verwenden.
+
+### So läuft die Übung ab
+
+1. Richtungen, Schrittweite und Startversatz einstellen. Standard: waagerecht und senkrecht, 0,5 Δ Schritt, 6 Δ Start.
+2. Brillentest durchführen. Beim Zuhalten eines Auges darf nur das Zeichen der anderen Farbe zu sehen sein.
+3. Das Kreuz erscheint zunächst deutlich neben der Mitte des Rings. Die Person verschiebt es mit den Pfeilen (kleiner und großer Schritt), bis es genau mittig liegt.
+4. Bei Mitte „Mittig“ (Enter) drücken. Die Messung wiederholt sich von der anderen Seite (Start links statt rechts oder oben statt unten).
+5. Bei „Waagerecht und senkrecht“ folgen zwei weitere Messungen für die senkrechte Richtung. Danach erscheinen die Kennzahlen.
+
+### Tipps
+
+- Immer von beiden Seiten messen: Wer nur von einer Seite kommt, stoppt oft zu früh. Der Unterschied beider Messungen ist selbst ein Maß für die Sicherheit der Einstellung.
+- Die Person soll auf den Ring schauen und das Kreuz nur „mitwahrnehmen“, nicht fixieren und nicht wandern lassen.
+- Bei feinen Einstellungen kleine Schritte benutzen und zwischendurch blinzeln.
+- Zeit lassen: Das Bild kann kurz schwanken, bevor sich eine Lage einstellt.
+- Die Messung nicht an einem Tag mit starker Ermüdung der Augen durchführen.
+
+### Leichter und schwerer machen
+
+- Gröber: Schrittweite 1 oder 2 Δ, größerer Ring.
+- Genauer: Schrittweite 0,25 Δ, mehrere Messungen an verschiedenen Tagen.
+- Zur Verlaufskontrolle immer dieselben Einstellungen verwenden.
+- Der Test ist ein Messverfahren und wird nicht trainiert.
+
+### Hinweise zur Sicherheit
+
+- Das Ergebnis ist ein Hilfsmittel für Fachpersonen und kein Befund. Die Deutung gehört in die Hand von Augenärztin, Augenarzt, Orthoptistin oder Optometrist.
+- Vorzeichen und Umrechnung sind aus dem Prinzip hergeleitet (siehe unten) und müssen vor klinischer Nutzung gegen ein bekanntes Messverfahren oder einen Prismenkompensator geprüft werden.
+- Die Bildschirmauflösung begrenzt die Feineinstellung; sehr kleine Werte sind nicht zuverlässig.
+- Bei Doppelbildern, die nicht beseitigt werden können, oder bei Beschwerden die Messung abbrechen und ärztlich abklären lassen.
+
+### Hintergrund
+
+Beim Schober-Test werden die Bilder beider Augen getrennt (hier durch Rot-Blau-Filter), so dass die Augen nicht mehr durch das gemeinsame Bild zusammengehalten werden. Sie nehmen ihre Ruhelage (Phorie) ein. Sieht das rechte Auge das Kreuz und ist esophor (Auge nach innen), erscheint das Kreuz rechts vom Ring und wird zum Ausgleich nach links geschoben. Die App wertet das so aus: Waagerecht bedeutet ein Pluswert Esophorie, ein Minuswert Exophorie. Senkrecht bedeutet ein Pluswert rechts höher (rechts hyper), ein Minuswert links höher. Beim linken Auge ist es spiegelbildlich; die App berücksichtigt, welches Auge das Kreuz sieht. Ein Prismendioptrie entspricht 1 cm Versatz auf 1 m Entfernung.
+
+### Literatur
+
+- von Noorden, G. K., & Campos, E. C. Binocular Vision and Ocular Motility: Theory and Management of Strabismus. Mosby.
+
+*Die Literaturangaben stammen aus dem Gedächtnis des Autors und sollten vor einer Weitergabe geprüft werden.*
+
+### Einstellungen
+
+| Einstellung | Wertebereich | Standard | Bedeutung |
+|---|---|---|---|
+| Richtungen | Waagerecht und senkrecht / Nur waagerecht / Nur senkrecht | Waagerecht und senkrecht | „Waagerecht und senkrecht“ misst beide Richtungen nacheinander, je zweimal von entgegengesetzten Startseiten. |
+| Schrittweite (Δ) | 0.25 bis 2 (Schritt 0.25) | 0.5 | Schrittweite beim Verschieben in Prismendioptrien. Kleinere Schritte erlauben feinere Einstellung. Der große Schritt ist das Vierfache. |
+| Startversatz (Δ, beidseitig) | 2 bis 14 (Schritt 1) | 6 | Anfangsversatz des Kreuzes in Prismendioptrien. Er wird einmal nach der einen und einmal nach der anderen Seite gesetzt. |
+| Das Kreuz ist | rot (Ring blau) / blau (Ring rot) | rot (Ring blau) | Welches Auge das Kreuz sieht: Bei „rot“ das Auge hinter dem roten Glas, bei „blau“ das Auge hinter dem blauen Glas. Der Ring wird dem anderen Auge gezeigt. |
+| Ringdurchmesser (cm) | 2 bis 12 (Schritt 0.5) | 5 | Durchmesser des Rings in Zentimetern. |
+| Rotes Glas vor dem | linken Auge / rechten Auge | linken Auge | Auf welcher Seite das rote Glas der Brille sitzt. Meist ist es das linke, bei manchen Brillen das rechte. Im Brillentest siehst du, ob die Einstellung stimmt: Beim Zuhalten eines Auges darf nur ein Quadrat sichtbar sein. |
+| Brillentest vorher | Ja / Nein | Ja | Zeigt vor dem Start ein rotes und ein blaues Quadrat, damit du Brillenseite und Helligkeit prüfen kannst. Bei „Nein“ startet die Übung sofort mit den eingestellten Werten. |
+
+### Kennzahlen
+
+| Kennzahl (Schlüssel) | Bedeutung |
+|---|---|
+| `runs` | Anzahl der abgeschlossenen Messungen. |
+| `h_phoria` | Mittlere waagerechte Abweichung in Prismendioptrien: positiv bedeutet Esophorie, negativ Exophorie (nach der in dieser Anleitung beschriebenen Herleitung). |
+| `h_sd` | Unterschied der beiden waagerechten Messungen (von beiden Startseiten). Kleinere Werte bedeuten sicherere Einstellung. |
+| `v_phoria` | Mittlere senkrechte Abweichung in Prismendioptrien: positiv bedeutet rechts höher, negativ links höher. |
+| `v_sd` | Unterschied der beiden senkrechten Messungen. Kleinere Werte bedeuten sicherere Einstellung. |
+
 <a id="ex-sequence"></a>
 
-## 12. Sequenz-Gedächtnis
+## 21. Sequenz-Gedächtnis
 
 *Gruppe: Gedächtnis und Konzentration*
 
@@ -1076,9 +1859,82 @@ Die Aufgabe ähnelt dem bekannten Blockspannen-Test (Corsi). Er misst, wie viele
 | `rt_mean` | Mittlere Zeit zwischen zwei richtigen Eingaben. Lange Zeiten zeigen Unsicherheit, sehr kurze Zeiten ein sicheres Abrufen. |
 | `total` | Gesamtdauer der Übung in Sekunden. |
 
+<a id="ex-slalom"></a>
+
+## 22. Slalom
+
+*Gruppe: Gleichgewicht und Körper (ohne Sensor)*
+
+### Wofür die Übung gedacht ist
+
+Du steuerst eine Kugel seitlich durch Tore, die von oben nach unten laufen. Die Übung trainiert vorausschauendes, gleichmäßiges Steuern und das Einschätzen der Torlücke. Gesteuert wird mit Zeiger, Pfeiltasten oder durch Kippen des Geräts. Eine Balance-Plattform wird nicht ausgelesen.
+
+### Vorbereitung
+
+- Kalibrierung durchführen, damit Torweite und Abstände in Zentimetern stimmen.
+- Zeiger: Mit Maus oder Finger folgt die Kugel der waagerechten Position. Das ist die einfachste Steuerung und eignet sich zum Ausprobieren.
+- Pfeiltasten: Links und rechts steuern die Kugel; auch A und D funktionieren. Ein Gerät, das Tastendrücke sendet (etwa eine Plattform mit Tastaturausgabe), lässt sich so einbinden.
+- Kippen: Das Gerät selbst wird nach links oder rechts geneigt. Das setzt ein Gerät mit Neigungssensor voraus (Tablet oder Handy) und funktioniert nicht in jedem Browser; bei Fehlschlag auf Zeiger wechseln.
+- Wenn du auf einer Plattform übst, brauchst du eine Sicherung und eine Hilfsperson, die die Übung bedient.
+
+### So läuft die Übung ab
+
+1. Dauer, Torweite und Geschwindigkeit einstellen. Starte mit 60 Sekunden, 12 cm Lücke, 14 cm pro Sekunde.
+2. Steuerung wählen und „Start“ drücken. Die Kugel sitzt unten, Tore laufen von oben herab.
+3. Steuere die Kugel durch die Lücke jedes Tores, ohne die Stangen (blaue Balken) zu berühren.
+4. Berührst du eine Stange, blitzt der Bildschirm kurz rot und die Serie bricht ab.
+5. Mit der Zeit werden die Tore schneller (Beschleunigung). Nach der Dauer erscheinen die Kennzahlen.
+
+### Tipps
+
+- Schau auf das übernächste Tor, nicht auf die Kugel. Wer vorausschaut, steuert ruhiger.
+- Kleine, früh begonnene Bewegungen sind besser als große, späte Korrekturen.
+- Bei Pfeiltasten und Kippen ruhig halten: ständiges Hin- und Herwackeln ist anstrengender als eine geglättete Linie.
+- Die Mitte der Lücke zählt: Die Kennzahl „Abweichung von der Torlückenmitte“ zeigt, wie sauber du fährst.
+- Beginne mit weiten Toren und langsamer Geschwindigkeit, bis du den Rhythmus spürst.
+
+### Leichter und schwerer machen
+
+- Leichter: weite Lücke (16 bis 20 cm), langsame Geschwindigkeit (6 bis 10 cm/s), keine Beschleunigung.
+- Schwerer: enge Lücke (6 bis 8 cm), hohe Geschwindigkeit (20 bis 30 cm/s), 40 bis 80 Prozent Beschleunigung pro Minute, kleiner Abstand zwischen den Toren.
+- Mit Pfeiltasten oder Kippen ist die Aufgabe schwerer als mit Zeiger, weil die Kugel nicht augenblicklich folgt.
+- Ziel: Mehr Tore in Folge ohne Fehler und kleinere Abweichung von der Mitte.
+
+### Hinweise zur Sicherheit
+
+- Bei Lichtempfindlichkeit beachten: Der Bildschirm blitzt bei Fehlern kurz rot und die Szene bewegt sich schnell.
+- Beim Kippen des Geräts auf sicheren Stand und feste Haltung achten, damit es nicht herunterfällt.
+- Auf Plattformen besteht Sturzgefahr; Sicherung und Aufsicht sind Pflicht.
+- Bei Schwindel oder Übelkeit sofort abbrechen; Bewegung im Bildschirm kann Reisekrankheit auslösen.
+
+### Hintergrund
+
+Das Steuern durch Hindernisse verlangt Vorausschau, Abschätzen von Abständen und feine, rechtzeitig dosierte Bewegungen. Wie bei vielen Fahr- und Ausweichaufgaben gilt: Wer weiter vorausschaut, korrigiert weniger. Die Aufgabe ähnelt Slalom-Übungen auf einer Balance-Plattform, nutzt aber nur Eingaben, die ein gewöhnlicher Browser liefern kann (Zeiger, Tasten, Gerätekippen). Eine Plattform mit eigenem Messwert-Ausgang ist dazu nicht eingebunden.
+
+### Einstellungen
+
+| Einstellung | Wertebereich | Standard | Bedeutung |
+|---|---|---|---|
+| Dauer (s) | 20 bis 180 (Schritt 10) | 60 | Dauer des Durchlaufs in Sekunden. |
+| Weite der Torlücke (cm) | 4 bis 24 (Schritt 1) | 12 | Weite der Lücke zwischen den Stangen eines Tores in Zentimetern. Enge Lücken verlangen genaueres Steuern. |
+| Anfangsgeschwindigkeit (cm/s) | 4 bis 40 (Schritt 1) | 14 | Anfangsgeschwindigkeit, mit der die Tore herabkommen, in Zentimetern pro Sekunde. |
+| Beschleunigung (% pro Minute) | 0 bis 100 (Schritt 5) | 20 | Um wie viel Prozent die Geschwindigkeit pro Minute zunimmt. 0 hält sie gleich. |
+| Abstand zwischen Toren (cm) | 8 bis 30 (Schritt 1) | 14 | Abstand zwischen zwei aufeinanderfolgenden Toren in Zentimetern. Kleinere Abstände lassen weniger Zeit zum Umsteuern. |
+| Steuerung | Zeiger (Maus/Touch: Kugel folgt der waagerechten Position) / Pfeiltasten links/rechts / Gerät kippen (nur wenn vom Gerät unterstützt) | Zeiger (Maus/Touch: Kugel folgt der waagerechten Position) | „Zeiger“: Die Kugel folgt der waagerechten Position von Maus oder Finger. „Pfeiltasten“: Links und rechts steuern die Kugel. „Gerät kippen“: Neigung nach links und rechts, nur mit passendem Gerät. |
+
+### Kennzahlen
+
+| Kennzahl (Schlüssel) | Bedeutung |
+|---|---|
+| `passed` | Anzahl der Tore, durch deren Lücke die Kugel gefahren ist. |
+| `hits` | Wie oft die Kugel eine Stange berührt hat. |
+| `accuracy` | Anteil der durchfahrenen an allen gewerteten Toren. |
+| `streak` | Längste Serie hintereinander durchfahrener Tore ohne Fehler. |
+| `center_dev` | Mittlerer seitlicher Abstand der Kugel von der Mitte der Torlücke beim Durchfahren, nur für geschaffte Tore. Kleiner bedeutet sauberer gefahren. |
+
 <a id="ex-sprint"></a>
 
-## 13. Start-Ziel-Reaktion
+## 23. Start-Ziel-Reaktion
 
 *Gruppe: Wahrnehmung und Koordination*
 
@@ -1155,9 +2011,173 @@ Die Reaktionszeit beschreibt die Zeitspanne vom Reiz bis zum Beginn der Bewegung
 | `rt_sd` | Streuung der Reaktionszeiten. Kleinere Werte bedeuten gleichmäßigeres Reagieren. |
 | `mt_mean` | Mittlere Zeit vom Loslassen bis zur Berührung des Ziels. Hängt von Abstand und Zielgröße ab. |
 
+<a id="ex-stereo"></a>
+
+## 24. Tiefensehen (Zufallspunkte)
+
+*Gruppe: Binokulares Sehen (Rot-Blau-Brille)*
+
+### Wofür die Übung gedacht ist
+
+Du trainierst und misst das Tiefensehen mit Zufallspunkten. In einem Feld aus Punkten schwebt ein Quadrat vor oder hinter der Fläche; du gibst an, wo es liegt (oben, unten, links, rechts). Mit der automatischen Anpassung verringert die App den Tiefenunterschied, bis deine persönliche Schwelle in Winkelsekunden ermittelt ist.
+
+### Vorbereitung
+
+- Rot-Blau-Brille (Rot-Cyan) aufsetzen; mit Korrekturbrille am besten eine Überbrille verwenden oder die Brille über der Sehhilfe tragen.
+- Raum abdunkeln und die Bildschirmhelligkeit hoch einstellen, damit die Farben sauber getrennt werden (rot nur für ein Auge, blau nur für das andere).
+- Kalibrierung gewissenhaft durchführen und den echten Abstand zum Bildschirm eintragen: Die Disparität wird in Winkelsekunden aus Abstand und Bildversatz berechnet.
+- Kopf ruhig halten, Blick auf die Mitte des Punktfeldes. Eine Kinnstütze verbessert die Messung.
+- Wähle ein Gerät mit hoher Auflösung. Der kleinste einstellbare Versatz entspricht etwa einem Pixel (wird in den Kennzahlen angegeben).
+
+### So läuft die Übung ab
+
+1. Anzahl der Durchgänge und Startwert einstellen. Beginne mit der automatischen Anpassung und 600 Winkelsekunden.
+2. Brillentest durchführen und „Weiter“ drücken.
+3. Du siehst ein Feld aus roten und blauen Punkten. In einem der vier Bereiche schwebt ein Quadrat deutlich vor oder hinter dem Rest.
+4. Tippe die Schaltfläche, die zur Lage des Quadrats passt: Oben, Unten, Links oder Rechts. Raten ist erlaubt.
+5. Du erfährst kurz, ob es richtig war. Nach allen Durchgängen erscheinen Trefferquote und geschätzte Schwelle.
+
+### Tipps
+
+- Lass den Blick weich werden und schau auf das ganze Feld statt auf einzelne Punkte. Tiefe zeigt sich eher als Gesamteindruck.
+- Wenn du nichts siehst, rate und mache weiter. Ein zu langes Starren erzeugt keine Tiefe, sondern Ermüdung.
+- Prüfe vor der ersten Messung im Brillentest, dass kein Geisterbild entsteht (durch ein Auge nur eine Farbe).
+- Bei vielen Wiederholungen sind Pausen alle 5 Minuten sinnvoll.
+- Vergleiche Werte nur bei gleicher Brille, gleichem Gerät und gleichem Abstand.
+
+### Leichter und schwerer machen
+
+- Leichter: größere Start-Disparität (1.000 bis 2.000 Winkelsekunden), größeres Quadrat (7 bis 10 cm), mehr Punkte.
+- Schwerer: kleinere Start-Disparität (100 bis 300 Winkelsekunden), kleineres Quadrat (3 cm), Rauschen im Hintergrund an.
+- Mit der automatischen Anpassung wird die Disparität nach zwei richtigen Antworten kleiner und nach jedem Fehler größer. Die Schwelle ist der Wert, bei dem du etwa 70 Prozent richtig hast.
+- Als Trainingsziel gilt eine sinkende Schwelle über Wochen bei gleichen Einstellungen.
+
+### Hinweise zur Sicherheit
+
+- Das Ergebnis ist ein Hilfsmittel für Fachpersonen und kein Befund. Die Deutung gehört in die Hand von Augenärztin, Augenarzt, Orthoptistin oder Optometrist.
+- Rot-Blau-Darstellung hat technische Grenzen: Es bleiben Farbsäume sichtbar und der Bildschirm löst nur etwa ein Pixel auf. Die Schwelle ist für klinische Stereotests (etwa 40 Winkelsekunden und kleiner) nicht aussagekräftig.
+- Schwindel, Kopfschmerz oder Augenbrennen sind ein Grund, sofort zu pausieren.
+- Bei Verdacht auf fehlendes Tiefensehen (zum Beispiel nach Schielen) fachlich abklären lassen, statt zu trainieren.
+
+### Hintergrund
+
+Weil die Augen etwa sechs Zentimeter auseinander stehen, sehen sie jeden Punkt der Umgebung unter leicht verschiedenem Winkel. Der Unterschied (Disparität) wird vom Gehirn als Tiefe gedeutet (Stereopsis). Zufallspunkt-Bilder (nach Julesz) enthalten Tiefe nur im Unterschied beider Augenbilder und keine Hinweise für ein einzelnes Auge. Hier wird jedes Augenbild in einer Farbe gezeichnet, die nur das passende Auge durch seinen Filter sieht. Die Disparität wird in Winkelsekunden angegeben (eine Winkelsekunde ist der 3.600ste Teil eines Grades) und aus Bildversatz und Abstand berechnet.
+
+### Literatur
+
+- Julesz, B. (1960). Binocular depth perception of computer-generated patterns. Bell System Technical Journal, 39, 1125–1162.
+
+*Die Literaturangaben stammen aus dem Gedächtnis des Autors und sollten vor einer Weitergabe geprüft werden.*
+
+### Einstellungen
+
+| Einstellung | Wertebereich | Standard | Bedeutung |
+|---|---|---|---|
+| Anzahl der Durchgänge | 12 bis 80 (Schritt 2) | 30 | Anzahl der Durchgänge. Für eine zuverlässige Schwelle sollten es mindestens 30 sein. |
+| Start-Disparität (Winkelsekunden) | 20 bis 3600 (Schritt 20) | 600 | Anfängliche Disparität in Winkelsekunden. Bei fester Disparität wird immer dieser Wert benutzt. |
+| Disparität automatisch anpassen | Ja (Schwelle bestimmen) / Nein (fest) | Ja (Schwelle bestimmen) | Bei „Ja“ wird die Disparität nach zwei richtigen Antworten kleiner und nach jedem Fehler größer. So ermittelt die App deine Schwelle. |
+| Kantenlänge des Punktfeldes (cm) | 8 bis 26 (Schritt 1) | 14 | Kantenlänge des quadratischen Punktfeldes in Zentimetern. Ein größeres Feld ist leichter zu überblicken. |
+| Kantenlänge des Quadrats (cm) | 2 bis 10 (Schritt 0.5) | 5 | Kantenlänge des schwebenden Quadrats in Zentimetern. Kleinere Quadrate sind schwerer. |
+| Anzahl der Punkte | 150 bis 1500 (Schritt 50) | 600 | Anzahl der Punkte im Feld. Mehr Punkte liefern mehr Tiefeninformation, wirken aber auch dichter. |
+| Punktdurchmesser (cm) | 0.1 bis 0.6 (Schritt 0.05) | 0.25 | Durchmesser der einzelnen Punkte in Zentimetern. Kleinere Punkte erlauben feinere Disparität, sind aber schwerer zu sehen. |
+| Rauschen im Hintergrund | Ja (verdeckt Hinweise) / Nein | Ja (verdeckt Hinweise) | Bei „Ja“ bekommen die Punkte außerhalb des Quadrats zufällige, größere Tiefenunterschiede. Das verdeckt Hinweise, die man ohne Tiefensehen erkennen könnte, macht die Aufgabe aber schwerer. |
+| Rotes Glas vor dem | linken Auge / rechten Auge | linken Auge | Auf welcher Seite das rote Glas der Brille sitzt. Meist ist es das linke, bei manchen Brillen das rechte. Im Brillentest siehst du, ob die Einstellung stimmt: Beim Zuhalten eines Auges darf nur ein Quadrat sichtbar sein. |
+| Brillentest vorher | Ja / Nein | Ja | Zeigt vor dem Start ein rotes und ein blaues Quadrat, damit du Brillenseite und Helligkeit prüfen kannst. Bei „Nein“ startet die Übung sofort mit den eingestellten Werten. |
+
+### Kennzahlen
+
+| Kennzahl (Schlüssel) | Bedeutung |
+|---|---|
+| `correct` | Anzahl der Durchgänge, in denen du die Lage des Quadrats richtig angegeben hast. |
+| `accuracy` | Anteil richtiger Antworten an allen Durchgängen. |
+| `chance` | Trefferquote, die du durch reines Raten erwarten würdest (vier Möglichkeiten: 25 Prozent). |
+| `rt_mean` | Mittlere Zeit vom Erscheinen des Feldes bis zur Antwort. |
+| `px_arcsec` | Disparität, die einem einzelnen Pixel entspricht. Schwellen unterhalb dieses Wertes sind technisch nicht zuverlässig. |
+| `threshold` | Geschätzte Schwelle in Winkelsekunden: Mittel der letzten Umkehrpunkte der automatischen Anpassung. Nur bei automatischer Anpassung und wenn genug Umkehrpunkte vorliegen. |
+| `final_arcsec` | Disparität, mit der der letzte Durchgang gezeigt wurde. |
+| `fixed_arcsec` | Die fest eingestellte Disparität (nur ohne automatische Anpassung). |
+
+<a id="ex-vertical"></a>
+
+## 25. Subjektive visuelle Vertikale
+
+*Gruppe: Funktionsprüfung (Fachperson)*
+
+### Wofür die Übung gedacht ist
+
+Messung der subjektiven visuellen Vertikalen für Fachpersonen. Eine helle Linie auf dunklem Grund wird so eingestellt, dass sie senkrecht erscheint. Entweder dreht sich die Linie langsam und wird gestoppt, oder sie wird mit Tasten verstellt. Die Starts wechseln zwischen rechts und links geneigt. Die App berechnet die Abweichung von der echten Senkrechten.
+
+### Vorbereitung
+
+- Das Gerät steht gerade und fest, am besten auf einem Ständer. Prüfe mit einer Wasserwaage, dass der Bildschirmrand wirklich senkrecht ist: Eine schiefe Aufstellung verfälscht die Messung direkt.
+- Der Raum ist so dunkel wie möglich. Rahmen, Möbelkanten und Fensterkreuze sind sichtbare Hinweise auf die Senkrechte und stören die Messung.
+- Die Person sitzt aufrecht, der Kopf ist gerade und ruhig, Blick auf die Mitte des Bildschirms. Keine Kopfneigung.
+- Sehhilfe nur tragen, wenn sie für den Abstand nötig ist. Eine Brille mit schief sitzendem Gestell kann ebenfalls verfälschen.
+- Kalibrierung ist für die Länge der Linie wichtig; die Winkelmessung selbst hängt davon nicht ab.
+
+### So läuft die Übung ab
+
+1. Verfahren, Anzahl der Einstellungen und Startneigung einstellen. Standard: Drehen und stoppen, 8 Einstellungen, 25 Grad größte Startneigung.
+2. „Start“ drücken. Die Linie erscheint geneigt und ändert bei „Drehen“ langsam ihre Neigung auf die Senkrechte zu.
+3. Verfahren „Drehen“: Sobald die Linie senkrecht erscheint, „Senkrecht“ oder die Leertaste drücken. Die Linie dreht sonst weiter über die Senkrechte hinaus und kehrt bei 45 Grad um.
+4. Verfahren „Einstellen“: Mit den Schaltflächen (−2°, −0,5°, +0,5°, +2°) oder den Pfeiltasten die Linie senkrecht einstellen und dann bestätigen.
+5. Jede zweite Einstellung beginnt von der anderen Seite. Nach allen Einstellungen erscheinen Mittelwert, Betrag, Streuung und der Unterschied je nach Startseite.
+
+### Tipps
+
+- Beurteile die Linie, nicht den Bildschirmrand: Bei schmalen Bildschirmen den Raum so einrichten, dass der Rand nicht stört.
+- Beim Verfahren „Drehen“ wirken Reaktionszeit und Drehgeschwindigkeit zusammen: Langsamer drehen verringert den Überschwung. Für feine Messungen 0,5 bis 1,5 Grad pro Sekunde wählen.
+- Nicht zu lange auf die Linie starren; nach einigen Sekunden verändert sich der Eindruck. Entscheide zügig nach dem ersten Eindruck.
+- Mindestens 8 Einstellungen, besser 10 bis 12, damit Streuung und Mittelwert aussagekräftig sind.
+- Unterschiede zwischen den Startseiten (Hysterese) sind normal; sie werden gesondert angegeben.
+
+### Leichter und schwerer machen
+
+- Gröber: größere Startneigung (30 bis 40 Grad) und schnelleres Drehen.
+- Genauer: kleinere Startneigung (10 bis 15 Grad), langsames Drehen (0,5 bis 1 Grad pro Sekunde) und mehr Einstellungen (12 bis 20).
+- Das Verfahren „Einstellen“ ist unabhängig von der Reaktionszeit und daher meist genauer, braucht aber mehr Zeit.
+- Der Test ist ein Messverfahren und wird nicht trainiert.
+
+### Hinweise zur Sicherheit
+
+- Das Ergebnis ist ein Hilfsmittel für Fachpersonen und kein Befund. Die Deutung gehört in die Hand von Fachpersonal (Augenheilkunde, Neurologie, HNO).
+- Ohne gerade Aufstellung und ohne abgedunkelten Raum ist das Ergebnis nicht verwertbar.
+- Bei Schwindel, Übelkeit oder Kopfschmerz nach der Messung eine Pause einlegen und bei anhaltenden Beschwerden ärztlichen Rat suchen.
+- Die App gibt keine Normbereiche an. Je nach Verfahren und Gerät fallen sie unterschiedlich aus.
+
+### Hintergrund
+
+Die subjektive visuelle Vertikale ist die Richtung, die eine Person im Dunkeln als senkrecht empfindet. Sie hängt vom Zusammenspiel von Gleichgewichtsorgan, Sehsystem und Körperwahrnehmung ab und weicht bei bestimmten Störungen des Gleichgewichtssystems von der echten Senkrechten ab. Gemessen wird üblicherweise in abgedunkeltem Raum mit einer leuchtenden Linie. Hier wird die Abweichung in Grad angegeben: Positive Werte bedeuten eine Neigung im Uhrzeigersinn, negative gegen den Uhrzeigersinn. Die Streuung zeigt, wie sicher die Einstellungen sind.
+
+### Literatur
+
+- Böhmer, A., & Rickenmann, J. (1995). The subjective visual vertical as a clinical parameter of vestibular function in peripheral vestibular diseases. Journal of Vestibular Research, 5, 35–46.
+
+*Die Literaturangaben stammen aus dem Gedächtnis des Autors und sollten vor einer Weitergabe geprüft werden.*
+
+### Einstellungen
+
+| Einstellung | Wertebereich | Standard | Bedeutung |
+|---|---|---|---|
+| Anzahl der Einstellungen | 4 bis 20 (Schritt 2) | 8 | Anzahl der Einstellungen. Die Startseite wechselt von Einstellung zu Einstellung. Mindestens 8 sind sinnvoll. |
+| Verfahren | Drehen und stoppen / Mit Tasten einstellen | Drehen und stoppen | „Drehen und stoppen“: Die Linie dreht sich langsam und wird gestoppt. „Mit Tasten einstellen“: Die Linie wird mit Schaltflächen oder Pfeiltasten verstellt. |
+| Drehgeschwindigkeit (°/s, nur Drehen) | 0.5 bis 6 (Schritt 0.5) | 1.5 | Drehgeschwindigkeit in Grad pro Sekunde (nur Verfahren „Drehen“). Langsamer ist genauer. |
+| Größte Startneigung (°) | 10 bis 40 (Schritt 5) | 25 | Größte Anfangsneigung in Grad. Jeder Start liegt zufällig zwischen 60 und 100 Prozent dieses Wertes. |
+| Länge der Linie (cm) | 6 bis 30 (Schritt 1) | 16 | Länge der Linie in Zentimetern. Längere Linien erlauben eine feinere Beurteilung der Neigung. |
+
+### Kennzahlen
+
+| Kennzahl (Schlüssel) | Bedeutung |
+|---|---|
+| `n` | Anzahl der abgeschlossenen Einstellungen. |
+| `dev_mean` | Mittlere Abweichung von der Senkrechten in Grad. Positiv bedeutet im Uhrzeigersinn geneigt, negativ gegen den Uhrzeigersinn. |
+| `dev_abs` | Mittlerer Betrag der Abweichung, unabhängig von der Richtung. |
+| `dev_sd` | Streuung der Einstellungen in Grad. Kleine Werte bedeuten sichere, wiederholbare Einstellungen. |
+| `hysteresis` | Mittelwert der Einstellungen mit Start rechts geneigt minus Mittelwert mit Start links geneigt. Große Werte zeigen eine Abhängigkeit von der Startseite. |
+
 <a id="ex-wordbuild"></a>
 
-## 14. Wörter bauen
+## 26. Wörter bauen
 
 *Gruppe: Gedächtnis und Konzentration*
 
@@ -1221,4 +2241,84 @@ Das Umordnen von Buchstaben (Anagramme) beansprucht das Arbeitsgedächtnis und d
 | `t_median` | Mittlere Zeit nach Sortierung, weniger empfindlich gegen einzelne schwere Wörter. |
 | `total` | Gesamtzeit vom Start bis zum letzten gelösten Wort, in Sekunden. |
 | `lpm` | Gelöste Buchstaben pro Minute, ein Maß für das Gesamttempo. |
+
+<a id="ex-worth"></a>
+
+## 27. Worth-Vierpunkttest (digital)
+
+*Gruppe: Funktionsprüfung (Fachperson)*
+
+### Wofür die Übung gedacht ist
+
+Digitale Form des Worth-Vierpunkttests für Fachpersonen. Vier Lichter stehen in Rautenform: oben ein rotes, links und rechts je ein blaues, unten ein weißes. Jedes Auge sieht durch sein Farbglas nur Teile davon. Die Person gibt an, wie viele Lichter sie sieht. Die Zahl zeigt, ob beide Augen zusammenarbeiten, ob ein Auge unterdrückt wird oder ob Doppelbilder bestehen.
+
+### Vorbereitung
+
+- Rot-Blau-Brille (Rot-Cyan) aufsetzen; mit Korrekturbrille am besten eine Überbrille verwenden oder die Brille über der Sehhilfe tragen.
+- Raum deutlich abdunkeln: Der Test arbeitet mit leuchtenden Punkten auf dunklem Grund. Raumlicht verändert das Ergebnis.
+- Kalibrierung durchführen und den Abstand zum Bildschirm eintragen. Der Test wird üblicherweise in der Nähe (etwa 33 cm) und in der Ferne (etwa 6 m) mit unterschiedlicher Lichtgröße durchgeführt; hier steht dafür die wechselnde Lichtgröße (klein und 2,5-fach groß).
+- Die Person sitzt ruhig mit geradem Kopf, Blick auf die Mitte der Raute. Die Brille muss richtig herum aufgesetzt sein; im Brillentest prüfen.
+- Der Befund ist nur aussagekräftig, wenn die Person weder rät noch durch Zudrücken der Augen etwas verändert.
+
+### So läuft die Übung ab
+
+1. Anzahl der Darbietungen, Lichtgröße und Größenwechsel einstellen. Standard: 4 Darbietungen, 1,2 cm, Größe wechselt.
+2. Brillentest durchführen und „Weiter“ drücken.
+3. Die Person betrachtet die vier Lichter und zählt, wie viele sie sieht. Es sind nur die Lichter, nicht die Farben zu zählen.
+4. Antwort per Schaltfläche eingeben: 2, 3, 4, 5 oder „Unklar“ (wenn die Zahl wechselt oder nicht bestimmbar ist).
+5. Nach allen Darbietungen erscheinen die Zählung je Kategorie und die Übereinstimmung der Antworten.
+
+### Tipps
+
+- Frage nach der Anzahl der Lichter, nicht nach Farben. Suggestive Fragen vermeiden.
+- Lasse bei Unsicherheit die Person kurz das Auge wechseln (zudecken), um die Brille zu prüfen, und beginne danach neu.
+- Verändere die Lichtgröße (klein und groß), um zu sehen, ob sich das Ergebnis mit der Fixationsgröße ändert.
+- Dokumentiere, ob das Ergebnis stabil oder wechselnd ist. Wechselnde Antworten sind selbst eine Information.
+- Teste in ruhiger Umgebung ohne Zeitdruck.
+
+### Leichter und schwerer machen
+
+- Einfacher: große Lichter (2 bis 4 cm).
+- Genauer: kleine Lichter (0,5 bis 1 cm) und mehr Darbietungen (8 bis 12), damit sich Muster zeigen.
+- Zur Verlaufskontrolle immer dieselbe Lichtgröße, denselben Abstand und dasselbe Raumlicht verwenden.
+- Der Test ist ein Messverfahren und wird nicht trainiert.
+
+### Hinweise zur Sicherheit
+
+- Das Ergebnis ist ein Hilfsmittel für Fachpersonen und kein Befund. Die Deutung gehört in die Hand von Augenärztin, Augenarzt, Orthoptistin oder Optometrist.
+- Die Zuordnung der Lichterzahl zu Kategorien setzt eine Brille mit Rot- und Blauglas und die richtige Brillenseite voraus. Falsch eingestellte Seite vertauscht die Aussagen zu Rot und Blau.
+- Antworten wie 2 oder 3 Lichter sprechen für Unterdrückung oder einseitiges Sehen unter diesen Testbedingungen, nicht automatisch für eine Erkrankung.
+- Neu aufgetretene Doppelbilder immer ärztlich abklären lassen.
+
+### Hintergrund
+
+Der Test geht auf Claude Worth zurück. Vor ein Auge kommt ein Rotfilter, vor das andere ein Grün- (hier Blau-) Filter. Das rote Licht sieht nur das Auge hinter dem Rotfilter, die beiden grünen (hier blauen) Lichter nur das andere, das weiße Licht sehen beide Augen (es erscheint in der Farbe des jeweiligen Filters). Arbeiten beide Augen zusammen, entstehen vier Lichter. Sieht nur das Auge hinter dem Rotfilter etwas, sind es zwei, sieht nur das andere, sind es drei. Fünf Lichter entsprechen Doppelbildern. Die App ordnet die Zahlen diesen Kategorien zu; die Interpretation gehört in Fachhand.
+
+### Literatur
+
+- von Noorden, G. K., & Campos, E. C. Binocular Vision and Ocular Motility: Theory and Management of Strabismus. Mosby.
+
+*Die Literaturangaben stammen aus dem Gedächtnis des Autors und sollten vor einer Weitergabe geprüft werden.*
+
+### Einstellungen
+
+| Einstellung | Wertebereich | Standard | Bedeutung |
+|---|---|---|---|
+| Anzahl der Darbietungen | 2 bis 12 (Schritt 1) | 4 | Anzahl der Darbietungen. Mehr Darbietungen zeigen, ob die Antwort stabil ist. |
+| Durchmesser der Lichter (cm) | 0.3 bis 4 (Schritt 0.1) | 1.2 | Durchmesser der Lichter in Zentimetern. Größere Lichter entsprechen einer Fixation in der Nähe. |
+| Größe wechseln (klein und groß im Wechsel) | Ja (großes Licht = 2,5-fach) / Nein | Ja (großes Licht = 2,5-fach) | Bei „Ja“ wechseln kleine und 2,5-fach große Lichter ab, um den Einfluss der Lichtgröße zu zeigen. |
+| Rotes Glas vor dem | linken Auge / rechten Auge | linken Auge | Auf welcher Seite das rote Glas der Brille sitzt. Meist ist es das linke, bei manchen Brillen das rechte. Im Brillentest siehst du, ob die Einstellung stimmt: Beim Zuhalten eines Auges darf nur ein Quadrat sichtbar sein. |
+| Brillentest vorher | Ja / Nein | Ja | Zeigt vor dem Start ein rotes und ein blaues Quadrat, damit du Brillenseite und Helligkeit prüfen kannst. Bei „Nein“ startet die Übung sofort mit den eingestellten Werten. |
+
+### Kennzahlen
+
+| Kennzahl (Schlüssel) | Bedeutung |
+|---|---|
+| `trials` | Anzahl der Darbietungen mit Antwort. |
+| `fusion` | Antworten mit vier Lichtern: Hinweis auf Zusammenarbeit beider Augen unter diesen Bedingungen. |
+| `red_only` | Antworten mit zwei Lichtern: Es trägt nur das Auge hinter dem roten Glas bei, das andere Auge wird unterdrückt oder ausgeblendet. |
+| `blue_only` | Antworten mit drei Lichtern: Es trägt nur das Auge hinter dem blauen Glas bei, das Auge hinter Rot wird unterdrückt oder ausgeblendet. |
+| `diplopia` | Antworten mit fünf Lichtern: Doppelbilder. |
+| `unclear` | Antworten „unklar“ oder mit einer anderen Zahl. |
+| `consistency` | Anteil der häufigsten Antwort an allen Antworten. Niedrige Werte bedeuten wechselnde Antworten. |
 

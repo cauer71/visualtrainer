@@ -65,7 +65,10 @@ const SHORT = {
   spots: { durationS: 10 }, saccade: { durationS: 10, bpm: 140 }, sequence: { maxErrors: 1 }, ordering: { count: 3 },
   choice: { trials: 10, stimulusMs: 300, waitMinMs: 300, waitMaxMs: 300 }, sprint: { trials: 5, minDelayMs: 500, maxDelayMs: 500 },
   flash: { trials: 5 }, periphery: { trials: 8 }, dual: { durationS: 20 }, chart: { rows: 1, cols: 2, groupSize: 2 },
-  wordbuild: { words: 3, wordLength: 3 }, findchars: { rounds: 1, rows: 2, cols: 3 }, rotation: { trials: 6 }, follow: { durationS: 10 }
+  wordbuild: { words: 3, wordLength: 3 }, findchars: { rounds: 1, rows: 2, cols: 3 }, rotation: { trials: 6 }, follow: { durationS: 10 },
+  fusion: { glassesCheck: 'no', repeats: 1 }, stereo: { glassesCheck: 'no', trials: 12 }, directions: { trials: 10 }, orient: { trials: 8, waitMs: 500 },
+  balancetouch: { durationS: 20 }, slalom: { durationS: 20 }, invaders: { durationS: 20 }, hess: { glassesCheck: 'no', grid: 'inner', passes: 'one' },
+  worth: { glassesCheck: 'no', repeats: 2 }, schober: { glassesCheck: 'no' }, diplopia: { glassesCheck: 'no' }, vertical: { trials: 4 }, projection: { trials: 6 }
 };
 
 const finishedIds = [];
@@ -146,4 +149,24 @@ test('Darstellung sprint: voller Ablauf mit gezielten Eingaben (Startfläche hal
   assert.equal(summary.trials.length, 5);
   assert.equal((windowListeners.pointerup || []).length, 0, 'Fenster-Handler entfernt');
   handle.stop();
+});
+
+test('Brillentest: Seite wechseln, Helligkeit ändern, „Weiter“ startet die Übung', function () {
+  ['fusion', 'stereo', 'hess', 'worth', 'schober', 'diplopia'].forEach(function (id) {
+    const ex = VT.get(id);
+    rafQueue = []; cancelled = new Set();
+    const h = makeEnv(1280, 720);
+    const p = VT.sanitizeParams(ex, Object.assign(VT.defaultsOf(ex), SHORT[id] || {}, { glassesCheck: 'yes' }));
+    const handle = ex.run(h.env, p, function () {});
+    frames(h, 5, 16);
+    const drawnCheck = h.log.calls;
+    assert.ok(drawnCheck > 20, id + ': Brillentest gezeichnet');
+    [[300, 720 - 120 - 64 + 20], [100, 720 - 120 + 20], [330, 720 - 120 + 20], [950, 720 - 120 + 20], [1180, 720 - 120 + 20]].forEach(function (pt) { fire(h.listeners, 'pointerdown', pt[0], pt[1]); });
+    frames(h, 3, 16);
+    fire(h.listeners, 'pointerdown', 640, 720 - 30);
+    frames(h, 20, 16);
+    assert.ok(h.log.calls > drawnCheck, id + ': Übung läuft nach dem Brillentest');
+    handle.stop();
+    assert.equal((h.listeners.pointerdown || []).length, 0, id + ': Handler entfernt');
+  });
 });

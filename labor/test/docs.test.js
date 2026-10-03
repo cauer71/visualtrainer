@@ -12,7 +12,7 @@ fs.readdirSync(path.join(root, 'help')).filter(function (f) { return f.endsWith(
 const exercises = VT.list();
 
 test('Es gibt Übungen, und jede hat eine Anleitung', function () {
-  assert.ok(exercises.length >= 14, 'Übungen: ' + exercises.length);
+  assert.ok(exercises.length >= 27, 'Übungen: ' + exercises.length);
   exercises.forEach(function (ex) { assert.ok(VT.getHelp(ex.id), 'Anleitung fehlt: ' + ex.id); });
 });
 
@@ -76,7 +76,7 @@ test('Allgemeine Hilfe: alle Abschnitte und ein Glossar', function () {
   const g = VT.getGeneralHelp();
   assert.ok(g && g.sections.length >= 8);
   const ids = g.sections.map(function (s) { return s.id; });
-  ['zweck', 'aufbau', 'kalibrierung', 'ablauf', 'training', 'ergebnisse', 'messgenauigkeit', 'sicherheit', 'datenschutz', 'glossar'].forEach(function (id) {
+  ['zweck', 'aufbau', 'kalibrierung', 'ablauf', 'brille', 'plattform', 'fachpersonen', 'training', 'ergebnisse', 'messgenauigkeit', 'sicherheit', 'datenschutz', 'glossar'].forEach(function (id) {
     assert.ok(ids.indexOf(id) >= 0, 'Abschnitt ' + id);
   });
   g.sections.forEach(function (s) { assert.ok(s.title && (s.paragraphs || s.list || s.glossary), s.id); });

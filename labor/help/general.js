@@ -50,6 +50,45 @@
         ]
       },
       {
+        id: 'brille', title: 'Rot-Blau-Brille (Anaglyphen)',
+        paragraphs: [
+          'Einige Übungen und Prüfungen (Fusionstraining, Tiefensehen, Hess-Schirm, Worth, Schober, Diplopie-Karte) zeigen jedem Auge ein eigenes Bild. Dafür brauchst du eine Rot-Blau-Brille (auch Rot-Cyan genannt): Ein Glas ist rot, das andere blau oder cyan. Auf dunklem Grund sieht das Auge hinter dem Rotfilter nur rote Bildteile und das Auge hinter dem Blaufilter nur blaue.'
+        ],
+        list: [
+          'Brillentest: Die Übungen beginnen auf Wunsch mit einem Brillentest. Halte ein Auge zu: Du darfst nur ein Quadrat sehen, das andere muss fast verschwinden. Stimmt es nicht, wechsle mit der Schaltfläche die Seite des roten Glases. Mit „heller“ und „dunkler“ gleichst du Farben aus, bis kein Geisterbild mehr bleibt.',
+          'Raum: möglichst dunkel, ohne Spiegelungen. Die Bildschirmhelligkeit hoch einstellen und Nachtmodus und Farbfilter ausschalten.',
+          'Mit Korrekturbrille: Die Rot-Blau-Brille am besten darüber tragen oder eine Überbrille verwenden. Kontaktlinsen sind unproblematisch.',
+          'Grenzen: Anaglyphen zeigen leichte Farbsäume und der Bildschirm löst nur etwa ein Pixel auf. Feine Messwerte (zum Beispiel Stereoschwellen unter einer Bogenminute) sind damit nicht zuverlässig.',
+          'Die Zuordnung der Farben zu den Augen ist eine Einstellung der Übung (rotes Glas links oder rechts). Eine falsche Einstellung vertauscht die Aussagen zu rechtem und linkem Auge.'
+        ]
+      },
+      {
+        id: 'plattform', title: 'Balance-Plattform ohne Messausgang',
+        paragraphs: [
+          'Eine Balance-Plattform ohne USB- oder Sensorausgang kann von der App nicht ausgelesen werden. Die Übungen der Gruppe „Gleichgewicht und Körper (ohne Sensor)“ sind deshalb so gebaut, dass sie trotzdem nutzbar bleiben.'
+        ],
+        list: [
+          'Mit Hilfsperson: Bei „Richtungsentscheidung“ (Eingabe „Hilfsperson“), „Plattform-Orientierung“ und „Gleichgewicht und Touch“ beobachtet eine zweite Person die Bewegung und bestätigt per Taste oder Knopf. Die App misst die Zeiten und zählt Ereignisse.',
+          'Mit Eingabegerät: „Slalom“ und „Invasoren“ lassen sich per Zeiger, Pfeiltasten oder Gerätekippen steuern. Ein Fußschalter oder ein Adapter, der Tastendrücke sendet, kann eine Plattform ersetzen.',
+          'Nicht enthalten: Messwerte der Plattform (Schwankung, Ausschlag, Schwerpunktbahn). Dafür wäre ein Gerät mit Messausgang nötig.',
+          'Sicherheit: Plattformen und instabile Flächen bergen Sturzgefahr. Sicherung, Haltegriff und Aufsicht sind Pflicht, bei Schwindel sofort abbrechen.'
+        ]
+      },
+      {
+        id: 'fachpersonen', title: 'Funktionsprüfungen für Fachpersonen',
+        paragraphs: [
+          'Die Gruppe „Funktionsprüfung (Fachperson)“ enthält digitale Formen klassischer Verfahren: Hess-Schirm, Worth-Vierpunkttest, Schober-Test, Diplopie-Karte, subjektive visuelle Vertikale und Orts-Projektion. Sie sind für Personen gedacht, die diese Verfahren fachlich beherrschen und die Ergebnisse einordnen können.'
+        ],
+        list: [
+          'Keine Befunde: Die App liefert Messwerte, aber keine Diagnose und keine Normbereiche. Die Deutung gehört in die Hand von Augenärztin, Augenarzt, Orthoptistin, Optometrist oder Fachpersonal der Neurologie und HNO.',
+          'Näherungen: Die digitalen Formen weichen vom klassischen Verfahren ab (Rot-Blau statt Rot-Grün, Zeigen auf einem Bildschirm, Projektion auf eine ebene Fläche, Bildschirmauflösung). Werte sind nicht mit Werten anderer Verfahren austauschbar.',
+          'Vor klinischer Nutzung prüfen: Vorzeichen und Umrechnungen (zum Beispiel beim Schober-Test) sind aus dem Prinzip hergeleitet und sollten gegen ein bekanntes Messverfahren oder einen Prismenkompensator geprüft werden.',
+          'Haftung und Verantwortung liegen bei der Person, die die Messung veranlasst und deutet. Dieses Dokument ersetzt keine Qualifikation und keine Zulassung.',
+          'Vorbereitung ist entscheidend: genauer Abstand, Kalibrierung, gerade Aufstellung, ruhiger Kopf und abgedunkelter Raum. Ohne sie sind die Werte nicht verwertbar.',
+          'Beschwerden: Bei neu aufgetretenen Doppelbildern, Schwindel oder Kopfschmerz ärztlich abklären lassen, bevor getestet oder trainiert wird.'
+        ]
+      },
+      {
         id: 'training', title: 'Training planen und steigern',
         list: [
           'Häufigkeit und Dauer: Besser kurz und regelmäßig als lang und selten. Bewährt haben sich 2 bis 4 Einheiten pro Woche mit 10 bis 20 Minuten, verteilt auf zwei bis vier Übungen.',
@@ -114,6 +153,14 @@
           ['Arbeitsgedächtnis', 'Kurzzeitiger Speicher, in dem Information gehalten und bearbeitet wird; die Kapazität ist begrenzt (oft um 4 bis 7 Elemente).'],
           ['Maske', 'Reiz, der unmittelbar nach einer kurzen Einblendung gezeigt wird und das Nachwirken des Bildes im Auge unterbindet.'],
           ['Persistenz', 'Wie lange ein Reiz sichtbar bleibt.'],
+          ['Prismendioptrie (Δ)', 'Maß für Ablenkung: 1 Δ entspricht 1 cm Versatz auf 1 m Entfernung. Wird für Fusionsbreite, Phorien und Doppelbild-Versatz verwendet.'],
+          ['Fusion', 'Verschmelzen der Bilder beider Augen zu einem Bild. Die Fusionsbreite ist der Versatz, bis zu dem das gelingt.'],
+          ['Konvergenz und Divergenz', 'Einwärtsdrehen (Konvergenz) und Auswärtsdrehen (Divergenz) der Augen, um Objekte in unterschiedlicher Entfernung einfach zu sehen.'],
+          ['Phorie', 'Ruhelage der Augen ohne gemeinsames Bild: Esophorie (nach innen), Exophorie (nach außen) und Höhenabweichungen. Wird mit getrennten Bildern gemessen.'],
+          ['Suppression (Unterdrückung)', 'Das Gehirn blendet das Bild eines Auges aus, um Doppelbilder zu vermeiden.'],
+          ['Diplopie', 'Doppeltsehen: Ein Objekt wird als zwei Bilder wahrgenommen.'],
+          ['Disparität und Stereopsis', 'Leichter Unterschied der Bilder beider Augen, aus dem das Gehirn Tiefe berechnet (Stereopsis). Angabe in Winkelsekunden: 3.600 Winkelsekunden sind ein Grad.'],
+          ['Anaglyphen', 'Bilder, die in zwei Farben überlagert sind, so dass eine Rot-Blau-Brille jedem Auge ein eigenes Bild zeigt.'],
           ['Adaptives Verfahren', 'Die Schwierigkeit passt sich automatisch an deine Antworten an, bis sich ein stabiler Schwellenwert ergibt.']
         ]
       }
