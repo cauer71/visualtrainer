@@ -373,17 +373,17 @@ export const SCIENCE: Record<string, ScienceEntry> = {
         trains: 'Feine Unterschiede im Rhythmus erkennen: Welches Feld pulsiert anders als die anderen?',
         daily: 'Ein ruhiges Konzentrationsspiel – z. B. als Abwechslung zwischen den anderen Übungen.',
         research:
-          'Menschen können Taktunterschiede von etwa 8 % unterscheiden. Trainingsstudien bei Gesunden gibt es kaum, ein Alltagsnutzen ist nicht belegt. Die "Flimmerverschmelzung" (50–90 Hz) lässt sich an einem Bildschirm weder messen noch trainieren – das behaupten wir deshalb auch nicht.',
+          'Menschen können Taktunterschiede von etwa 8 % unterscheiden. Trainingsstudien bei Gesunden gibt es kaum, ein Alltagsnutzen ist nicht belegt. Die "Flimmerverschmelzung" (50–90 Hz) lässt sich an einem Bildschirm weder messen noch trainieren – das behaupten wir deshalb auch nicht. Wer an einem Anfallsleiden leidet oder sehr lichtempfindlich ist, sollte vorher ärztlich Rücksprache halten.',
         improved:
-          'Alle Felder gleich hell und zufällig versetzt (man findet das Feld wirklich über den Rhythmus, nicht über die Helligkeit), anpassbarer Unterschied – und strenge Sicherheitsgrenzen: höchstens 2,5 Pulse pro Sekunde, nur sanftes Pulsieren mit geringem Helligkeitsunterschied.',
+          'Alle Felder pulsieren gleich hell und mit zufälliger Phase, sodass sich das abweichende Feld nur über den Rhythmus finden lässt, nicht über Helligkeit oder Gleichtakt der Nachbarn. Das Grundtempo wechselt von Durchgang zu Durchgang, damit man keinen festen Takt lernen kann, und das Zielfeld ist zufällig schneller oder langsamer. Der Tempounterschied beginnt bei 40 % und wird nach zwei richtigen Antworten kleiner, nach einer falschen wieder größer; geantwortet werden kann erst nach zwei Sekunden Zuschauen, denn der Vergleich braucht mehrere Pulse und Raten lohnt nicht. Für das Pulsieren gelten strenge Sicherheitsgrenzen: höchstens 2,5 Pulse pro Sekunde, ein sanfter Verlauf mit geringem Helligkeitsunterschied, kein Rot, keine Störblitze und nach höchstens neun Sekunden ein ruhiges Standbild. Die Rückmeldung erscheint als ruhiger Rahmen.',
       },
       it: {
         trains: 'Riconoscere piccole differenze di ritmo: quale riquadro pulsa diversamente dagli altri?',
         daily: 'Un tranquillo gioco di concentrazione – per esempio come pausa tra gli altri esercizi.',
         research:
-          'Le persone distinguono differenze di ritmo di circa l’8 %. Studi di allenamento su persone sane quasi non esistono e un beneficio nella vita quotidiana non è dimostrato. La “fusione dello sfarfallio” (50–90 Hz) su uno schermo non si può né misurare né allenare – per questo non lo affermiamo.',
+          'Le persone distinguono differenze di ritmo di circa l’8 %. Studi di allenamento su persone sane quasi non esistono e un beneficio nella vita quotidiana non è dimostrato. La “fusione dello sfarfallio” (50–90 Hz) su uno schermo non si può né misurare né allenare – per questo non lo affermiamo. Chi soffre di crisi epilettiche o è molto sensibile alla luce dovrebbe prima consultare un medico.',
         improved:
-          'Tutti i riquadri ugualmente luminosi e sfasati a caso (si trova il riquadro davvero dal ritmo, non dalla luminosità), differenza adattabile – e limiti di sicurezza severi: al massimo 2,5 pulsazioni al secondo, solo una pulsazione dolce con poca differenza di luminosità.',
+          'Tutti i riquadri pulsano con la stessa luminosità e con fase casuale, così il riquadro diverso si trova solo dal ritmo, non dalla luminosità né dal sincronismo dei vicini. Il ritmo di base cambia da una prova all’altra, per non poter imparare un tempo fisso, e il riquadro bersaglio è a caso più veloce o più lento. La differenza di ritmo parte dal 40 % e dopo due risposte giuste diventa più piccola, dopo una sbagliata di nuovo più grande; si può rispondere solo dopo due secondi di osservazione, perché il confronto richiede più impulsi e tirare a indovinare non conviene. Per la pulsazione valgono limiti di sicurezza severi: al massimo 2,5 impulsi al secondo, un andamento dolce con poca differenza di luminosità, niente rosso, niente lampi di disturbo e, dopo al massimo nove secondi, un’immagine ferma e calma. Il riscontro appare come una cornice tranquilla.',
       },
     },
     sources: [
@@ -391,6 +391,7 @@ export const SCIENCE: Record<string, ScienceEntry> = {
       src('Harding et al. (2005). Photic- and pattern-induced seizures: Expert consensus of the Epilepsy Foundation of America Working Group. Epilepsia', 'https://doi.org/10.1111/j.1528-1167.2005.31305.x'),
       src('W3C (2023). Web Content Accessibility Guidelines (WCAG) 2.2 – Success Criterion 2.3.1 Three Flashes or Below Threshold', 'https://www.w3.org/TR/WCAG22/'),
       src('ITU-R BT.1702. Guidance for the reduction of photosensitive epileptic seizures caused by television', 'https://www.itu.int/rec/R-REC-BT.1702/en'),
+      src('Muchnick (2008). Clinical Medicine in Optometric Practice, 2nd ed., S. 7. Mosby/Elsevier', 'https://openlibrary.org/isbn/9780323029612'),
     ],
   },
   'pfeil-duell': {
