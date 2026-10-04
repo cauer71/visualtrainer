@@ -1,9 +1,8 @@
-/** Browser-Seite der Rückmeldungen: Gerätekennung, Senden und Entwickler-Abfragen. */
+/** Browser-Seite der Rückmeldungen: Kürzel, Senden und Entwickler-Abfragen. */
 import { brand } from '../config/brand';
-import type { FeedbackRow, Submission } from './logic';
+import { cleanTrainer, type FeedbackRow, type Submission } from './logic';
 
-const DEVICE_KEY = `${brand.storageKey}:device`;
-const STARS_KEY = `${brand.storageKey}:stars`;
+const TRAINER_KEY = `${brand.storageKey}:trainer`;
 const PASSWORD_KEY = `${brand.storageKey}:dev`;
 
 function read(storage: Storage | undefined, key: string): string | null {
@@ -22,34 +21,12 @@ function write(storage: Storage | undefined, key: string, value: string | null):
   }
 }
 
-/** Zufällige Kennung dieses Geräts (keine Person): damit zählt ein Gerät je Übung nur mit seiner letzten Bewertung. */
-export function deviceId(): string {
-  let id = read(globalThis.localStorage, DEVICE_KEY);
-  if (!id || !/^[A-Za-z0-9-]{8,64}$/.test(id)) {
-    id = globalThis.crypto?.randomUUID?.() ?? `d${Date.now().toString(36)}${Math.random().toString(36).slice(2, 10)}`;
-    write(globalThis.localStorage, DEVICE_KEY, id);
-  }
-  return id;
+/** Zuletzt benutztes Kürzel auf diesem Gerät (nur zur Vorbelegung; bleibt im Browser, wird nur mit einer Rückmeldung gesendet). */
+export function savedTrainer(): string {
+  return cleanTrainer(read(globalThis.localStorage, TRAINER_KEY));
 }
-
-export function lastStars(exercise: string): number | null {
-  try {
-    const v = JSON.parse(read(globalThis.localStorage, STARS_KEY) ?? '{}') as Record<string, number>;
-    const n = v[exercise];
-    return typeof n === 'number' && n >= 1 && n <= 5 ? n : null;
-  } catch {
-    return null;
-  }
-}
-
-function rememberStars(exercise: string, stars: number): void {
-  try {
-    const v = JSON.parse(read(globalThis.localStorage, STARS_KEY) ?? '{}') as Record<string, number>;
-    v[exercise] = stars;
-    write(globalThis.localStorage, STARS_KEY, JSON.stringify(v));
-  } catch {
-    /* egal */
-  }
+export function saveTrainer(trainer: string): void {
+  write(globalThis.localStorage, TRAINER_KEY, cleanTrainer(trainer) || null);
 }
 
 export class ApiError extends Error {
@@ -79,13 +56,13 @@ async function call<T>(path: string, init?: RequestInit): Promise<T> {
   return data as T;
 }
 
-export async function sendFeedback(input: Omit<Submission, 'device'>): Promise<void> {
+export async function sendFeedback(input: Submission): Promise<void> {
   await call('/api/feedback', {
     method: 'POST',
     headers: { 'content-type': 'application/json' },
-    body: JSON.stringify({ ...input, device: deviceId() }),
+    body: JSON.stringify(input),
   });
-  if (input.stars !== null) rememberStars(input.exercise, input.stars);
+  saveTrainer(input.trainer);
 }
 
 // ---------------------------------------------------------------- Entwickler

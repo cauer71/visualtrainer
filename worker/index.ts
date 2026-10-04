@@ -37,8 +37,8 @@ const LOCK_MS = 15 * 60 * 1000;
 
 let schemaReady: Promise<void> | null = null;
 function ensureSchema(db: D1Database): Promise<void> {
-  schemaReady ??= db
-    .batch([
+  schemaReady ??= (async () => {
+    await db.batch([
       db.prepare(
         `CREATE TABLE IF NOT EXISTS feedback (
            id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -46,18 +46,23 @@ function ensureSchema(db: D1Database): Promise<void> {
            stars INTEGER,
            comment TEXT NOT NULL DEFAULT '',
            device TEXT NOT NULL DEFAULT '',
+           trainer TEXT NOT NULL DEFAULT '',
            lang TEXT NOT NULL DEFAULT 'de',
            created_at TEXT NOT NULL
          )`,
       ),
       db.prepare('CREATE INDEX IF NOT EXISTS feedback_exercise ON feedback (exercise)'),
       db.prepare('CREATE TABLE IF NOT EXISTS auth_fail (ip TEXT PRIMARY KEY, count INTEGER NOT NULL, first_at INTEGER NOT NULL)'),
-    ])
-    .then(() => undefined)
-    .catch((e) => {
-      schemaReady = null;
-      throw e;
-    });
+    ]);
+    // Ältere Datenbanken (vor dem Kürzel) bekommen die Spalte nachträglich
+    const cols = await db.prepare('PRAGMA table_info(feedback)').all<{ name: string }>();
+    if (!cols.results.some((c) => c.name === 'trainer')) {
+      await db.prepare("ALTER TABLE feedback ADD COLUMN trainer TEXT NOT NULL DEFAULT ''").run();
+    }
+  })().catch((e) => {
+    schemaReady = null;
+    throw e;
+  });
   return schemaReady;
 }
 
@@ -99,7 +104,7 @@ interface DbRow {
   exercise: string;
   stars: number | null;
   comment: string;
-  device: string;
+  trainer: string;
   lang: string;
   created_at: string;
 }
@@ -120,8 +125,8 @@ async function handle(request: Request, env: Env): Promise<Response> {
     const parsed = parseSubmission(body);
     if (!parsed.ok) return json({ error: parsed.error }, 400);
     const v = parsed.value;
-    await env.DB.prepare('INSERT INTO feedback (exercise, stars, comment, device, lang, created_at) VALUES (?, ?, ?, ?, ?, ?)')
-      .bind(v.exercise, v.stars, v.comment, v.device, v.lang, new Date().toISOString())
+    await env.DB.prepare('INSERT INTO feedback (exercise, stars, comment, trainer, lang, created_at) VALUES (?, ?, ?, ?, ?, ?)')
+      .bind(v.exercise, v.stars, v.comment, v.trainer, v.lang, new Date().toISOString())
       .run();
     return json({ ok: true });
   }
@@ -130,8 +135,8 @@ async function handle(request: Request, env: Env): Promise<Response> {
     if (request.method !== 'GET') return json({ error: 'Nur GET.' }, 405);
     const denied = await checkAdmin(request, env);
     if (denied) return denied;
-    const { results } = await env.DB.prepare('SELECT id, exercise, stars, comment, device, lang, created_at FROM feedback ORDER BY id').all<DbRow>();
-    const rows: FeedbackRow[] = results.map((r) => ({ id: r.id, exercise: r.exercise, stars: r.stars, comment: r.comment, device: r.device, lang: r.lang, createdAt: r.created_at }));
+    const { results } = await env.DB.prepare('SELECT id, exercise, stars, comment, trainer, lang, created_at FROM feedback ORDER BY id').all<DbRow>();
+    const rows: FeedbackRow[] = results.map((r) => ({ id: r.id, exercise: r.exercise, stars: r.stars, comment: r.comment, trainer: r.trainer, lang: r.lang, createdAt: r.created_at }));
     return json({ rows });
   }
 

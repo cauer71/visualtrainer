@@ -254,7 +254,7 @@ export function Developer() {
                           {r.s.comments.map((c) => (
                             <li key={c.id}>
                               <span class="dev-meta">
-                                {stars(c.stars)} · {formatStamp(new Date(c.createdAt))} · {c.lang.toUpperCase()}
+                                {stars(c.stars)} · {formatStamp(new Date(c.createdAt))} · {c.lang.toUpperCase()}{c.trainer ? ` · ${c.trainer}` : ''}
                               </span>
                               <p>{c.comment}</p>
                               <button type="button" class="btn btn-ghost btn-sm" disabled={busy} onClick={() => clear([c.id])}>

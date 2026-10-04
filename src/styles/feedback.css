@@ -42,6 +42,11 @@
   resize: vertical;
   font: inherit;
 }
+.fb-trainer {
+  width: 100%;
+  max-width: 280px;
+  font: inherit;
+}
 .fb-actions {
   display: flex;
   gap: 12px;

@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'preact/hooks';
-import { lastStars, sendFeedback } from '../../feedback/client';
-import { MAX_COMMENT } from '../../feedback/logic';
+import { savedTrainer, sendFeedback } from '../../feedback/client';
+import { MAX_COMMENT, MAX_TRAINER } from '../../feedback/logic';
 import { useApp } from '../app-context';
 import { Icon } from './Icon';
 
@@ -22,7 +22,8 @@ type Phase = 'edit' | 'sending' | 'done';
 
 export function FeedbackDialog({ exercise, name, onClose }: { exercise: string; name: string; onClose: () => void }) {
   const { opt, lang } = useApp();
-  const [stars, setStars] = useState<number | null>(() => lastStars(exercise));
+  const [stars, setStars] = useState<number | null>(null);
+  const [trainer, setTrainer] = useState(() => savedTrainer());
   const [comment, setComment] = useState('');
   const [phase, setPhase] = useState<Phase>('edit');
   const [error, setError] = useState<string | null>(null);
@@ -43,7 +44,7 @@ export function FeedbackDialog({ exercise, name, onClose }: { exercise: string; 
     setPhase('sending');
     setError(null);
     try {
-      await sendFeedback({ exercise, stars, comment, lang });
+      await sendFeedback({ exercise, stars, comment, trainer, lang });
       setPhase('done');
     } catch {
       setPhase('edit');
@@ -98,6 +99,20 @@ export function FeedbackDialog({ exercise, name, onClose }: { exercise: string; 
               value={comment}
               onInput={(e) => setComment((e.target as HTMLTextAreaElement).value)}
             />
+            <label class="fb-label" for="fb-trainer">
+              {opt.fbTrainer}
+            </label>
+            <input
+              id="fb-trainer"
+              class="input fb-trainer"
+              type="text"
+              maxLength={MAX_TRAINER}
+              autoComplete="off"
+              value={trainer}
+              onInput={(e) => setTrainer((e.target as HTMLInputElement).value)}
+              onFocus={(e) => (e.target as HTMLInputElement).select()}
+            />
+            <p class="muted small">{opt.fbTrainerHint}</p>
             {error ? (
               <p class="fb-error" role="alert">
                 {error}

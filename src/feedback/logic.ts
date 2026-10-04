@@ -8,6 +8,8 @@
 export const GENERAL_ID = 'allgemein';
 export const MAX_COMMENT = 1500;
 export const MAX_STARS = 5;
+/** Optionales Kürzel des Trainers (kein Name nötig): höchstens so viele Zeichen */
+export const MAX_TRAINER = 20;
 
 export interface Submission {
   exercise: string;
@@ -15,8 +17,8 @@ export interface Submission {
   stars: number | null;
   /** getrimmt, kann leer sein, wenn Sterne vergeben wurden */
   comment: string;
-  /** zufällige Gerätekennung (keine Person): ein Gerät zählt je Übung nur mit seiner letzten Bewertung */
-  device: string;
+  /** optionales Kürzel des Trainers, damit sich mehrere Trainer an einem Gerät unterscheiden lassen (leer = anonym) */
+  trainer: string;
   lang: 'de' | 'it';
 }
 
@@ -25,7 +27,7 @@ export interface FeedbackRow {
   exercise: string;
   stars: number | null;
   comment: string;
-  device: string;
+  trainer: string;
   lang: string;
   /** ISO-Zeit (UTC) */
   createdAt: string;
@@ -34,7 +36,12 @@ export interface FeedbackRow {
 export type ParseResult = { ok: true; value: Submission } | { ok: false; error: string };
 
 const EXERCISE_RE = /^[a-z0-9][a-z0-9-]{0,63}$/;
-const DEVICE_RE = /^[A-Za-z0-9-]{8,64}$/;
+
+/** Kürzel säubern: nur Buchstaben, Ziffern, Leerzeichen und . _ -, höchstens MAX_TRAINER Zeichen */
+export function cleanTrainer(raw: unknown): string {
+  if (typeof raw !== 'string') return '';
+  return raw.replace(/[^\p{L}\p{N} ._-]/gu, '').replace(/\s+/g, ' ').trim().slice(0, MAX_TRAINER).trim();
+}
 
 export function parseSubmission(raw: unknown): ParseResult {
   if (!raw || typeof raw !== 'object') return { ok: false, error: 'Ungültige Eingabe.' };
@@ -51,37 +58,35 @@ export function parseSubmission(raw: unknown): ParseResult {
   const comment = typeof o.comment === 'string' ? o.comment.replace(/\r\n?/g, '\n').trim() : '';
   if (comment.length > MAX_COMMENT) return { ok: false, error: `Kommentar zu lang (höchstens ${MAX_COMMENT} Zeichen).` };
   if (stars === null && !comment) return { ok: false, error: 'Bitte Sterne oder einen Kommentar angeben.' };
-  const device = typeof o.device === 'string' && DEVICE_RE.test(o.device) ? o.device : '';
+  const trainer = cleanTrainer(o.trainer);
   const lang = o.lang === 'it' ? 'it' : 'de';
-  return { ok: true, value: { exercise, stars, comment, device, lang } };
+  return { ok: true, value: { exercise, stars, comment, trainer, lang } };
 }
 
 export interface ExerciseSummary {
   exercise: string;
-  /** Mittelwert der Sterne (je Gerät nur die letzte Bewertung), null = noch nicht bewertet */
+  /** Mittelwert aller Bewertungen mit Sternen (jede Bewertung zählt einzeln), null = noch nicht bewertet */
   avg: number | null;
-  /** Anzahl der Bewertungen mit Sternen (je Gerät eine) */
+  /** Anzahl der Bewertungen mit Sternen */
   count: number;
   /** Kommentare (nicht leer), neueste zuerst */
   comments: FeedbackRow[];
 }
 
-/** Fasst alle Zeilen je Übung zusammen. */
+/** Fasst alle Zeilen je Übung zusammen: jede Bewertung mit Sternen zählt einzeln. */
 export function summarize(rows: readonly FeedbackRow[]): Map<string, ExerciseSummary> {
   const out = new Map<string, ExerciseSummary>();
-  const latest = new Map<string, FeedbackRow>();
+  const sums = new Map<string, { sum: number; n: number }>();
   const sorted = [...rows].sort((a, b) => a.id - b.id);
   for (const r of sorted) {
     if (!out.has(r.exercise)) out.set(r.exercise, { exercise: r.exercise, avg: null, count: 0, comments: [] });
     if (r.comment) out.get(r.exercise)!.comments.unshift(r);
-    if (r.stars !== null) latest.set(r.device ? `${r.exercise}|${r.device}` : `${r.exercise}|#${r.id}`, r);
-  }
-  const sums = new Map<string, { sum: number; n: number }>();
-  for (const r of latest.values()) {
-    const s = sums.get(r.exercise) ?? { sum: 0, n: 0 };
-    s.sum += r.stars as number;
-    s.n += 1;
-    sums.set(r.exercise, s);
+    if (r.stars !== null) {
+      const s = sums.get(r.exercise) ?? { sum: 0, n: 0 };
+      s.sum += r.stars;
+      s.n += 1;
+      sums.set(r.exercise, s);
+    }
   }
   for (const [ex, s] of sums) {
     const e = out.get(ex)!;
@@ -138,8 +143,9 @@ export function buildExportText(rows: readonly FeedbackRow[], info: (exercise: s
     if (g.avg !== null) lines.push(`Bewertung: Ø ${formatAvg(g.avg)} von 5 Sternen (${g.count} ${g.count === 1 ? 'Bewertung' : 'Bewertungen'})`);
     for (const c of [...g.comments].reverse()) {
       const stars = c.stars !== null ? `${c.stars} von 5` : 'ohne Sterne';
+      const who = c.trainer ? `, Trainer ${c.trainer}` : '';
       const [first, ...rest] = c.comment.split('\n');
-      lines.push(`- (${stars}) ${first}`);
+      lines.push(`- (${stars}${who}) ${first}`);
       for (const l of rest) lines.push(`  ${l}`);
     }
   }
