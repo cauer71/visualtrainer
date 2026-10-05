@@ -112,6 +112,8 @@ funktioniert aber auch am Handy und am Computer. Sprachen: **Deutsch** und **Ita
 
 **VR-Labor (Versuch):** unter `/vr/` liegt ein eigener Testbereich für VR-Brillen mit WebXR (Oculus/Meta Quest, Rift). Dort läuft **Kugel-Detektiv 3D** – Mehrfach-Objektverfolgung in einem Würfelraum, bei dem die räumliche Tiefe Teil der Aufgabe ist. Ohne Brille gibt es eine flache Vorschau. Beschreibung, Aufbau und Tests: [`docs/vr-labor.md`](docs/vr-labor.md). Aus dem Optiker-Bereich verlinkt.
 
+**Binocular Mine (Prototyp):** unter `/binokular/` (`https://visual.auer.page/binokular/`) liegt ein eigenständiger Prototyp eines dichoptischen Binokulartrainings mit Anaglyphenbrille (Kalibrierung, ein spielbares Level, adaptive Kontraststeuerung, Session-Protokoll, Therapeutenbereich). Er ist von der Haupt-App getrennt (eigene Seite, eigener Code in `src/binokular/`, kein Link aus der App). Forschungs-/Trainingsprototyp, keine validierte Behandlung. Beschreibung, Architektur und Quellen: [`src/binokular/README.md`](src/binokular/README.md).
+
 **Übungskatalog:** [`docs/uebungskatalog/`](docs/uebungskatalog/UEBERSICHT.md) beschreibt alle 81 Übungen der Vorlage skilldrills.online (Nummern 101–811) sowie das eigene Reihen-Rätsel (901) und vier Übungen nach Handyvideos bzw. Beschreibung des Auftraggebers (902–905: Richtung & Wort, Welche Seite?, Zahlen-Buchstaben-Wirbel, 4-Ziele-Wechsel) und die eigene Übung Pendelball (906) mit Anforderungsprofil, Vorsichtshinweisen und geprüften Quellen – als Grundlage für eine spätere KI-gestützte Übungsauswahl.
 
 Hintergrund, Studienlage und Quellen: Seite „Hintergrund & Studien“ in der App sowie

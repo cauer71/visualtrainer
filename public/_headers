@@ -13,3 +13,5 @@
 /vr/index.html
   Cache-Control: no-cache
 
+/binokular/index.html
+  Cache-Control: no-cache
