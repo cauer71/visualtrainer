@@ -10,11 +10,13 @@ export default defineConfig({
     target: 'es2020',
     sourcemap: false,
     assetsInlineLimit: 8192,
-    // zweite Seite: VR-Labor (/vr/) – three.js wird nur dort geladen
+    // zweite Seite: VR-Labor (/vr/) – three.js wird nur dort geladen;
+    // dritte Seite: Prototyp „Binocular Mine“ (/binokular/), unabhängig von der Haupt-App
     rollupOptions: {
       input: {
         main: 'index.html',
         vr: 'vr/index.html',
+        binokular: 'binokular/index.html',
       },
     },
   },
