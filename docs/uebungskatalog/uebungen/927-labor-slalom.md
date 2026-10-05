@@ -81,7 +81,7 @@ evidenz:
   naher_transfer: unklar
   alltag_transfer: fehlend
   kommentar: "Für genau diese Übung gibt es keine Studie. Steueraufgaben durch einen Kanal werden in der Mensch-Computer-Forschung mit eigenen Modellen beschrieben (Accot & Zhai 1997); Vorausschau beim Steuern ist beim Autofahren gezeigt (Land & Lee 1994), aber nicht auf diese Übung übertragen. Bewegungsprogramme mit echter Bewegung senken bei Älteren die Sturzrate (Sherrington et al. 2019), Exergames wirkten in einem Überblick nur auf die Denkleistung (Gallou-Guyot et al. 2020). Für diese Steuerung am Bildschirm ist kein Alltagsnutzen belegt."
-aehnliche_uebungen: [705, 803, 810, 505, 926]
+aehnliche_uebungen: [705, 803, 810, 505, 926, 928]
 stichworte: ["Slalom", "Tore", "seitliche Steuerung", "Vorausschau", "Steering Law", "Gerät kippen", "Pfeiltasten", "bewegte Bilder", "am besten im Sitzen", "keine Balance-Plattform"]
 ---
 

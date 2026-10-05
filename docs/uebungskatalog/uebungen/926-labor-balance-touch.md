@@ -82,7 +82,7 @@ evidenz:
   naher_transfer: unklar
   alltag_transfer: unklar
   kommentar: "Für genau diese Übung gibt es keine Studie. Bei älteren Menschen mit Gleichgewichtsstörung verbesserte sich das Gehen unter Doppelaufgabe nur nach Doppelaufgaben-Training, reines Gleichgewichtstraining übertrug sich möglicherweise nicht (Silsupadol et al. 2009, 23 Personen). Ein Überblick über 18 Übersichten fand positive Effekte von Doppelaufgaben-Programmen mit Bewegung; Exergames wirkten nur auf die Denkleistung, Übertragung und Sicherheit sind unklar (Gallou-Guyot et al. 2020). Für diese Bildschirmübung und für gesunde Menschen ist kein Nutzen belegt."
-aehnliche_uebungen: [925, 927, 401, 108, 205]
+aehnliche_uebungen: [925, 927, 401, 108, 205, 907, 912]
 stichworte: ["Doppelaufgabe", "Gleichgewicht", "Stand", "Einbeinstand", "Tandemstand", "wacklige Fläche", "Punkte antippen", "Fixationskreuz", "Hilfsperson zählt", "Sturzgefahr", "keine Messung"]
 ---
 

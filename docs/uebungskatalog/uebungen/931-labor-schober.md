@@ -81,7 +81,7 @@ evidenz:
   naher_transfer: fehlend
   alltag_transfer: fehlend
   kommentar: "Funktionsübung nach dem Prinzip des klassischen Verfahrens, kein Ersatz für die Untersuchung. Für das Schober-Verfahren selbst und für die Vorzeichenregeln wurde keine Veröffentlichung gefunden; die Regeln sind nur hergeleitet, nicht gegen ein Messgerät geprüft. Verwandte Phorie-Verfahren sind in sich gut wiederholbar, stimmen untereinander aber nur mittel überein (Facchin & Maffioletti 2021; Alhassan et al. 2015). Für diese digitale Näherung gibt es keine Studie; ein Nutzen als Übung ist nicht belegt."
-aehnliche_uebungen: [929, 930, 932]
+aehnliche_uebungen: [929, 930, 932, 922]
 stichworte: ["Schober-Test", "Kreuz und Ring", "Rot-Grün-Brille", "getrennte Bilder", "Prismendioptrie", "Phorie-Prinzip", "Funktionsübung", "Vorzeichenregeln nur hergeleitet", "Labor-Übung", "kein Ersatz für die Untersuchung"]
 ---
 

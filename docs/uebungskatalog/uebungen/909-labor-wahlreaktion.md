@@ -82,7 +82,7 @@ evidenz:
   naher_transfer: schwach
   alltag_transfer: fehlend
   kommentar: "Die Wahlreaktionszeit steigt ungefähr linear mit dem Logarithmus der Zahl der Möglichkeiten (Hick, 1952; Hyman, 1953; Schneider & Anderson, 2011) und wird durch Übung beeinflusst (Proctor & Schneider, 2018); in der geübten Aufgabe wird man schneller. Bei trainingsähnlicher Prüfung werden Verbesserungen überschätzt (Guo et al., 2025). Für diese Übung gibt es keine Studie, ein Nutzen im Alltag ist nicht belegt."
-aehnliche_uebungen: [202, 703, 102, 806, 503]
+aehnliche_uebungen: [202, 703, 102, 806, 503, 924]
 stichworte: ["Wahlreaktion", "Hick-Hyman-Gesetz", "Tempo und Genauigkeit", "Zeichen-Tasten-Zuordnung", "Farben mit Form", "zufällige Wartezeit", "zu früh getippt", "Reaktionszeit", "Labor"]
 ---
 

@@ -81,7 +81,7 @@ evidenz:
   naher_transfer: fehlend
   alltag_transfer: fehlend
   kommentar: "Funktionsübung nach dem Prinzip des klassischen Verfahrens, kein Ersatz für die Untersuchung. Das klassische Hess-Verfahren ist beschrieben (Roper-Hall 2006; verwandt: Lancaster-Test, Christoff & Guyton 2006; kleine Fallserie: Armesto et al. 2008). Für diese digitale Näherung (Zeigen mit Finger oder Maus, Farben am Bildschirm, ebene Projektion) gibt es keine Studie; die Werte sind nicht mit denen des klassischen Verfahrens austauschbar, und ein Nutzen als Übung ist nicht belegt."
-aehnliche_uebungen: [930, 931, 932]
+aehnliche_uebungen: [930, 931, 932, 921, 922]
 stichworte: ["Hess-Schirm", "Lancaster-Prinzip", "Rot-Grün-Brille", "getrennte Bilder", "Blickrichtungen", "Raster", "Funktionsübung", "keine Deutung", "Labor-Übung", "kein Ersatz für die Untersuchung"]
 ---
 

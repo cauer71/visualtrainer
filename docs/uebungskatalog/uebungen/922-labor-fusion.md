@@ -82,7 +82,7 @@ evidenz:
   naher_transfer: unklar
   alltag_transfer: fehlend
   kommentar: "Für genau diese Aufgabe gibt es keine Studie. Fusionale Vergenz änderte sich bei Konvergenzinsuffizienz in betreuten Praxisprogrammen mit Übungen zu Hause am deutlichsten (CITT 2008; Scheiman et al. 2005); in CITT 2008 lagen Computerübungen zu Hause (33 % erfolgreich oder gebessert) etwa gleichauf mit Placebo (35 %). Für Menschen ohne Befund ist kein Nutzen belegt; die gemeldeten Werte hängen stark von Gerät, Abstand, Tempo und dem eigenen Meldekriterium ab."
-aehnliche_uebungen: [921, 923]
+aehnliche_uebungen: [921, 923, 931]
 stichworte: ["Fusion", "fusionale Vergenz", "Konvergenz", "Divergenz", "Prismendioptrie", "Rot-Grün-Brille", "Anaglyphe", "Doppelbilder melden", "Bruch und Erholung (nur Übungswerte)", "Trainer-Regler", "keine Prismenmessung"]
 ---
 

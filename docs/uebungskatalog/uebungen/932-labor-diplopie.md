@@ -81,7 +81,7 @@ evidenz:
   naher_transfer: fehlend
   alltag_transfer: fehlend
   kommentar: "Funktionsübung nach dem Prinzip des klassischen Verfahrens, kein Ersatz für die Untersuchung. Das Feld des einfachen beidäugigen Sehens wird klinisch auf einem Perimeter bestimmt und bewertet (Woodruff et al. 1987; Fitzsimons & White 1990); verwandt ist der Lancaster-Test (Christoff & Guyton 2006). Für diese digitale Näherung gibt es keine Studie; die Werte sind nicht mit denen anderer Verfahren austauschbar, und ein Nutzen als Übung ist nicht belegt."
-aehnliche_uebungen: [929, 930, 931]
+aehnliche_uebungen: [929, 930, 931, 922, 923]
 stichworte: ["Diplopie", "Doppelbilder", "neun Blickrichtungen", "Karte der Blickrichtungen", "Rot-Grün-Brille", "Prismendioptrie", "Funktionsübung", "keine Deutung", "Labor-Übung", "kein Ersatz für die Untersuchung"]
 ---
 

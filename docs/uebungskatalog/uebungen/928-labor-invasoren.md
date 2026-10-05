@@ -81,7 +81,7 @@ evidenz:
   naher_transfer: fehlend
   alltag_transfer: fehlend
   kommentar: "Für genau diese Übung gibt es keine Studie. Dass man in einer Bildschirmaufgabe besser wird, ist zu erwarten; in Studien zu Bildschirmübungen fallen Verbesserungen aber deutlich größer aus, wenn die Prüfung der geübten Aufgabe ähnelt (Guo et al. 2025). Sturzvorbeugung ist für betreute Programme mit echter Bewegung belegt (Sherrington et al. 2019), Exergames wirkten bei Älteren nur auf kognitive Funktionen, die körperliche Wirkung ist umstritten (Gallou-Guyot et al. 2020) – das lässt sich nicht auf diese Steuerung am Bildschirm übertragen."
-aehnliche_uebungen: [306, 505, 512, 808]
+aehnliche_uebungen: [306, 505, 512, 808, 927]
 stichworte: ["fallende Ziele", "Ausrichten und Halten", "Haltezeit", "Auge-Hand-Koordination", "manuelles Nachführen", "Gerät kippen", "Pfeiltasten", "Fitts'sches Gesetz", "Labor-Übung", "kein Gleichgewichtstraining"]
 ---
 

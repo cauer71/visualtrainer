@@ -82,7 +82,7 @@ evidenz:
   naher_transfer: schwach
   alltag_transfer: fehlend
   kommentar: "Für genau diese Übung gibt es keine Studie. Bei Seh- und Reaktionsübungen mit Handantwort fallen Verbesserungen deutlich größer aus, wenn die Prüfung der geübten Aufgabe ähnelt; ein großer Teil ist Gewöhnung an Aufgabe und Gerät (Guo et al., 2025). Die Zeit für die Zielbewegung folgt dem Fitts'schen Gesetz (Fitts, 1954; MacKenzie, 1992). Übungen für das Randsehen mit Handantwort sind im Sport verbreitet, keine von 93 Studien prüfte den Blick per Eye-Tracking, ein Übertrag auf den Sport ist nicht nachgewiesen (Vater & Strasburger, 2021)."
-aehnliche_uebungen: [501, 702, 302, 401, 503, 913]
+aehnliche_uebungen: [501, 702, 302, 401, 503, 913, 926]
 stichworte: ["Spot-Touch", "Reaktion und Zielbewegung", "Auge-Hand-Koordination", "Fitts'sches Gesetz", "Randsehen mit Kreuz", "Punkte antippen", "Einstellungen in Zentimetern", "Kalibrierung", "kein Eye-Tracking", "Labor"]
 ---
 

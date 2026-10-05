@@ -1,6 +1,6 @@
 {
  "stand": "2026-09-29",
- "anzahl": 87,
+ "anzahl": 115,
  "uebungen": [
   {
    "nr": 101,
@@ -12951,6 +12951,4077 @@
     "Praxisform nicht belegt"
    ],
    "datei": "uebungen/906-pendelball.md"
+  },
+  {
+   "nr": 907,
+   "kennung": "labor-spot-touch",
+   "name": "Spot-Touch (zufällig auftauchende Punkte so schnell wie möglich antippen)",
+   "name_original": "– (eigene Blickfit-Labor-Übung mit Einstellungen)",
+   "kapitel": "Labor",
+   "kapitel_original": "",
+   "unterkapitel_original": "",
+   "quelle_url": "",
+   "blickfit_umsetzung": {
+    "kennung": "labor-spot-touch",
+    "name": "Spot-Touch",
+    "unterschiede": "eigene Labor-Übung mit Einstellungen"
+   },
+   "stand": "2026-10-05",
+   "kurzbeschreibung": "Farbige Punkte erscheinen an zufälligen Stellen und bleiben nur kurz sichtbar. Man tippt jeden Punkt an, sobald er erscheint. Größe in Zentimetern, Sichtbarkeit, Zahl gleichzeitiger Punkte, Pause, Bereich (ganze Fläche, nur Rand, nur Mitte) und ein Kreuz in der Mitte stellt man selbst ein; gemessen wird nur das Tippen, nicht der Blick.",
+   "ziel_funktionen": [
+    "auge_hand_koordination",
+    "zielbewegung_tempo"
+   ],
+   "eingabe": [
+    "touch",
+    "maus"
+   ],
+   "tablet_geeignet": "ja",
+   "dauer_sekunden": 60,
+   "schwierigkeit_anpassung": "Keine Stufen und keine automatische Anpassung; alles über Einstellungen (maßgeblich ist PARAMS in src/exercises/labor-spot-touch/logic.ts): Dauer 10–600 s (Standard 60), Durchmesser der Punkte 1–15 cm (5; auf der Bühne höchstens 0,9 × kürzere Seite), Sichtbarkeit je Punkt 0,3–10 s (1,5), gleichzeitige Punkte 1–5 (1), Pause nach Treffer oder Ablauf 0–3000 ms (300), Bereich ganze Fläche / nur Rand (ab 60 % des Feldradius) / nur Mitte (bis 45 %), Kreuz in der Mitte ja/nein, Ton (ändert die Vergleichbarkeit nicht). Schwerer: kleinere Punkte, kürzere Sichtbarkeit, mehrere Punkte, kürzere Pause, nur Rand mit Kreuz. Faustregel der Übung (keine Vorgabe aus der Forschung): in drei Durchläufen über 90 % → eine Einstellung schwerer, unter 70 % → leichter, immer nur eine Einstellung ändern.",
+   "messgroessen": [
+    "Hauptwert: getroffene Punkte",
+    "verpasste Punkte",
+    "Fehltipps (daneben)",
+    "Trefferquote (Treffer an allen gezeigten Punkten)",
+    "Reaktionszeit vom Erscheinen bis zur Berührung: Mittel, Median, Streuung (nur Treffer)",
+    "Treffer pro Minute",
+    "Vergleich nur mit Durchläufen gleicher Einstellungen auf demselben Gerät; keine Normwerte, keine Blickmessung"
+   ],
+   "anforderungsprofil": {
+    "visuell": {
+     "sehschaerfe_detail": 0,
+     "kontrast": 0,
+     "farbunterscheidung": 0,
+     "stereosehen": 0,
+     "peripheres_sehen": 2,
+     "nutzbares_sehfeld": 1,
+     "blickfolge": 0,
+     "sakkaden": 2,
+     "fixation": 1,
+     "bewegungswahrnehmung": 0,
+     "visuelle_suche": 1,
+     "visuelle_verarbeitungsgeschwindigkeit": 1,
+     "zeitliche_aufloesung": 0,
+     "naharbeit_dauer": 1
+    },
+    "kognitiv": {
+     "daueraufmerksamkeit": 1,
+     "selektive_aufmerksamkeit": 1,
+     "inhibition": 0,
+     "geteilte_aufmerksamkeit": 1,
+     "kognitive_flexibilitaet": 0,
+     "arbeitsgedaechtnis": 0,
+     "kurzzeitgedaechtnis_verbal": 0,
+     "kurzzeitgedaechtnis_visuell_raeumlich": 0,
+     "verarbeitungsgeschwindigkeit": 2,
+     "antizipation": 0,
+     "entscheidung_wahlreaktion": 1,
+     "lesen_sprache": 0,
+     "schlussfolgern": 0
+    },
+    "motorisch": {
+     "einfache_reaktion": 2,
+     "auge_hand_koordination": 3,
+     "zielbewegung_tempo": 3,
+     "zielbewegung_praezision": 1,
+     "kontinuierliche_steuerung": 0,
+     "ruhige_hand": 0,
+     "fingergeschwindigkeit": 1,
+     "fingersequenz_bimanual": 0,
+     "ganzkoerper": 0,
+     "gleichgewicht": 0,
+     "ausdauer_belastung": 0
+    }
+   },
+   "belastung": {
+    "zeitdruck": 2,
+    "flimmern_lichtreize": 1,
+    "bewegungsreize_schwindel": 0,
+    "koerperliche_belastung": 1,
+    "sturzrisiko": 0,
+    "sprachabhaengigkeit": 0
+   },
+   "voraussetzungen": [
+    "Bildschirm einmal kalibrieren (Karte im Scheckkartenformat), damit die Größen in Zentimetern stimmen",
+    "Etwa 50–60 cm Abstand, jede Stelle des Bildschirms bequem mit dem Finger erreichbar; Hand locker über der Fläche, nicht aufgestützt",
+    "Punkte von 1 bis 15 cm Durchmesser sehen und mit dem Finger treffen können (Trefferfläche mindestens 24 px bzw. Radius plus 0,3 cm)",
+    "Für Vergleiche immer dieselbe Hand, derselbe Abstand, dasselbe Gerät und dieselben Einstellungen"
+   ],
+   "vorsicht_bei": [
+    "photosensitive_epilepsie",
+    "migraene_lichtempfindlich",
+    "gesichtsfeldausfall",
+    "tremor_parkinson",
+    "hand_arm_beschwerden"
+   ],
+   "geeignet_fuer": [
+    "Auf plötzlich auftauchende Ziele schnell mit der Hand reagieren und sie treffen (Sehen, Entscheiden und Zielbewegung zusammen)",
+    "Mit Kreuz in der Mitte und „nur Rand“: Punkte aus dem Augenwinkel bemerken und antippen, ohne hinzuschauen (Bitte, keine Kontrolle)",
+    "Schwierigkeit selbst fein einstellen: Größe, Sichtbarkeit, Zahl gleichzeitiger Punkte, Pause und Bereich einzeln ändern",
+    "Vergleich mit sich selbst: Treffer, Trefferquote und Reaktionszeit über mehrere Durchläufe mit gleichen Einstellungen"
+   ],
+   "weniger_geeignet_fuer": [
+    "Messung des Randsehens oder des Gesichtsfelds: der Blick wird nicht gemessen, Punkte am Rand können auch angeschaut werden",
+    "Messung der reinen Reaktionszeit: die Zeit enthält Zielbewegung und Geräteverzögerung",
+    "Diagnose, Normvergleich oder Ranglisten",
+    "Menschen, die den Arm nicht über den ganzen Bildschirm führen können oder starke Beschwerden in Hand und Arm haben"
+   ],
+   "evidenz": {
+    "uebungseffekt": "mittel",
+    "naher_transfer": "schwach",
+    "alltag_transfer": "fehlend",
+    "kommentar": "Für genau diese Übung gibt es keine Studie. Bei Seh- und Reaktionsübungen mit Handantwort fallen Verbesserungen deutlich größer aus, wenn die Prüfung der geübten Aufgabe ähnelt; ein großer Teil ist Gewöhnung an Aufgabe und Gerät (Guo et al., 2025). Die Zeit für die Zielbewegung folgt dem Fitts'schen Gesetz (Fitts, 1954; MacKenzie, 1992). Übungen für das Randsehen mit Handantwort sind im Sport verbreitet, keine von 93 Studien prüfte den Blick per Eye-Tracking, ein Übertrag auf den Sport ist nicht nachgewiesen (Vater & Strasburger, 2021)."
+   },
+   "aehnliche_uebungen": [
+    501,
+    702,
+    302,
+    401,
+    503,
+    913,
+    926
+   ],
+   "stichworte": [
+    "Spot-Touch",
+    "Reaktion und Zielbewegung",
+    "Auge-Hand-Koordination",
+    "Fitts'sches Gesetz",
+    "Randsehen mit Kreuz",
+    "Punkte antippen",
+    "Einstellungen in Zentimetern",
+    "Kalibrierung",
+    "kein Eye-Tracking",
+    "Labor"
+   ],
+   "datei": "uebungen/907-labor-spot-touch.md"
+  },
+  {
+   "nr": 908,
+   "kennung": "labor-ziele-ordnen",
+   "name": "Bewegte Ziele ordnen (bewegte Zahlen, Buchstaben, Wörter oder Rechnungen der Reihe nach berühren)",
+   "name_original": "– (eigene Blickfit-Labor-Übung mit Einstellungen)",
+   "kapitel": "Labor",
+   "kapitel_original": "",
+   "unterkapitel_original": "",
+   "quelle_url": "",
+   "blickfit_umsetzung": {
+    "kennung": "labor-ziele-ordnen",
+    "name": "Bewegte Ziele ordnen",
+    "unterschiede": "eigene Labor-Übung mit Einstellungen"
+   },
+   "stand": "2026-10-05",
+   "kurzbeschreibung": "Zahlen, Buchstaben, Wörter oder Rechnungen bewegen sich über die Fläche – geradeaus mit Abprall am Rand oder gleichmäßig auf einer Kreis- oder Ellipsenbahn. Man berührt sie in der richtigen Reihenfolge (z. B. 1, 2, 3 … oder nach dem Alphabet); ein richtig berührtes Ziel verschwindet. Inhalt, Anzahl, Bewegungsart, Tempo, Zeichengröße und ein Zeitlimit stellt man selbst ein; Hauptwert ist die Gesamtzeit.",
+   "ziel_funktionen": [
+    "visuelle_suche",
+    "auge_hand_koordination"
+   ],
+   "eingabe": [
+    "touch",
+    "maus"
+   ],
+   "tablet_geeignet": "ja",
+   "dauer_sekunden": 90,
+   "schwierigkeit_anpassung": "Keine Stufen und keine automatische Anpassung; alles über Einstellungen (maßgeblich ist PARAMS in src/exercises/labor-ziele-ordnen/logic.ts): Inhalt (Zahlen aufsteigend, Zahlen absteigend, Buchstaben oder deutsche Wörter nach dem Alphabet, Summen oder Produkte nach dem Ergebnis), Anzahl der Ziele 3–15 (Standard 8), Bewegung geradeaus mit Abprall / Kreisbahn / Ellipsenbahn, Tempo 1–30 cm/s (6), Zeichenhöhe 1,5–8 cm (3; auf kleinen Bildschirmen verkleinert, nie unter die Touch-Mindestgröße), Umlaufrichtung (nur Bahnen), Zeitlimit 0–300 s (0 = keines), Ton. Schwerer: mehr Ziele, höheres Tempo, Wörter oder Rechnungen, Zahlen absteigend, kleinere Zeichen. Faustregel der Übung (keine Vorgabe aus der Forschung): ohne Fehler fertig → eine Einstellung schwerer; immer nur eine Einstellung ändern.",
+   "messgroessen": [
+    "Hauptwert: Gesamtzeit vom Start bis zum letzten Ziel (mit Zeitlimit höchstens das Limit)",
+    "richtige Ziele (von der Anzahl)",
+    "falsche Ziele berührt",
+    "Danebengetippt (kein Ziel getroffen)",
+    "Zeit pro Ziel: Mittel und Streuung",
+    "Vergleich nur mit Durchläufen gleicher Einstellungen auf demselben Gerät; keine Normwerte"
+   ],
+   "anforderungsprofil": {
+    "visuell": {
+     "sehschaerfe_detail": 1,
+     "kontrast": 0,
+     "farbunterscheidung": 0,
+     "stereosehen": 0,
+     "peripheres_sehen": 1,
+     "nutzbares_sehfeld": 2,
+     "blickfolge": 2,
+     "sakkaden": 2,
+     "fixation": 0,
+     "bewegungswahrnehmung": 2,
+     "visuelle_suche": 3,
+     "visuelle_verarbeitungsgeschwindigkeit": 1,
+     "zeitliche_aufloesung": 0,
+     "naharbeit_dauer": 1
+    },
+    "kognitiv": {
+     "daueraufmerksamkeit": 1,
+     "selektive_aufmerksamkeit": 2,
+     "inhibition": 1,
+     "geteilte_aufmerksamkeit": 1,
+     "kognitive_flexibilitaet": 1,
+     "arbeitsgedaechtnis": 2,
+     "kurzzeitgedaechtnis_verbal": 0,
+     "kurzzeitgedaechtnis_visuell_raeumlich": 1,
+     "verarbeitungsgeschwindigkeit": 2,
+     "antizipation": 2,
+     "entscheidung_wahlreaktion": 0,
+     "lesen_sprache": 1,
+     "schlussfolgern": 0
+    },
+    "motorisch": {
+     "einfache_reaktion": 0,
+     "auge_hand_koordination": 3,
+     "zielbewegung_tempo": 2,
+     "zielbewegung_praezision": 2,
+     "kontinuierliche_steuerung": 0,
+     "ruhige_hand": 0,
+     "fingergeschwindigkeit": 0,
+     "fingersequenz_bimanual": 0,
+     "ganzkoerper": 0,
+     "gleichgewicht": 0,
+     "ausdauer_belastung": 0
+    }
+   },
+   "belastung": {
+    "zeitdruck": 1,
+    "flimmern_lichtreize": 0,
+    "bewegungsreize_schwindel": 2,
+    "koerperliche_belastung": 0,
+    "sturzrisiko": 0,
+    "sprachabhaengigkeit": 1
+   },
+   "voraussetzungen": [
+    "Bildschirm einmal kalibrieren, damit die Zeichenhöhe in Zentimetern stimmt",
+    "Etwa 50–60 cm Abstand, Hand locker über der Fläche",
+    "Je nach Inhalt: Zahlen bis 15 der Reihe nach, Alphabet, deutsche Wörter alphabetisch ordnen (Umlaute wie im Wörterbuch) oder Kopfrechnen (Summen bis 60, Einmaleins)",
+    "Für Wörter und Rechnungen Zeichen ab etwa 3 cm wählen, damit sie auch in Bewegung lesbar sind",
+    "Bewegte Ziele mit dem Finger treffen können (Trefferfläche: Kästchen plus 0,3 cm, mindestens 48 px Kantenlänge)"
+   ],
+   "vorsicht_bei": [
+    "schwindel_vestibulaer",
+    "reisekrankheit",
+    "kopfschmerz_asthenopie",
+    "presbyopie_gleitsicht",
+    "lese_rechtschreib_schwaeche",
+    "kognitive_einschraenkung",
+    "photosensitive_epilepsie"
+   ],
+   "geeignet_fuer": [
+    "Das nächste Ziel einer Reihenfolge zwischen bewegten Ablenkern suchen und treffen (Suchen, Ordnen im Kopf und Zielen zusammen)",
+    "Schwierigkeit über Inhalt steuern: Zahlen → Buchstaben → Wörter → Rechnungen, ohne die Bewegung zu ändern",
+    "Vorhersehbare Bewegung (Kreis, Ellipse) gegen unregelmäßige (Abprall) vergleichen",
+    "Vergleich mit sich selbst: Gesamtzeit und Fehler über mehrere Durchläufe mit gleichen Einstellungen"
+   ],
+   "weniger_geeignet_fuer": [
+    "Messung von Aufmerksamkeit, Verarbeitungstempo oder Exekutivfunktionen: keine Verbindungsaufgabe im klinischen Sinn, keine Normwerte",
+    "Menschen mit Schwindel bei bewegten Mustern (allenfalls langsames Tempo)",
+    "Menschen ohne sichere Kenntnis von Alphabet oder deutscher Rechtschreibung (Wörter) oder ohne Kopfrechnen (Rechnungen)",
+    "Reine Blickfolge oder reine Reaktion üben"
+   ],
+   "evidenz": {
+    "uebungseffekt": "mittel",
+    "naher_transfer": "schwach",
+    "alltag_transfer": "fehlend",
+    "kommentar": "Bei wiederholten Verbindungsaufgaben mit Zahlen und Buchstaben treten deutliche Übungseffekte auf, auch bei wöchentlicher Wiederholung über drei Wochen (Buck et al., 2008); die Leistung spiegelt vor allem Tempo und flüssiges Denken (Salthouse, 2011). Bewegte Ziele, Wörter oder Rechnungen als Berührungsaufgabe sind nicht untersucht; bei trainingsähnlicher Prüfung werden Verbesserungen überschätzt (Guo et al., 2025). Die Einstufung gilt für die Aufgabenart, nicht für diese Übung."
+   },
+   "aehnliche_uebungen": [
+    904,
+    204,
+    708,
+    106,
+    502
+   ],
+   "stichworte": [
+    "Ziele ordnen",
+    "Reihenfolge berühren",
+    "bewegte Ziele",
+    "visuelle Suche",
+    "Verbindungsaufgabe",
+    "Trail Making",
+    "Zahlenfolge",
+    "Alphabet",
+    "Kopfrechnen",
+    "Kreisbahn",
+    "Labor"
+   ],
+   "datei": "uebungen/908-labor-ziele-ordnen.md"
+  },
+  {
+   "nr": 909,
+   "kennung": "labor-wahlreaktion",
+   "name": "Wahlreaktion (zu einem Zeichen schnell die passende von 2 bis 6 Tasten tippen)",
+   "name_original": "– (eigene Blickfit-Labor-Übung mit Einstellungen)",
+   "kapitel": "Labor",
+   "kapitel_original": "",
+   "unterkapitel_original": "",
+   "quelle_url": "",
+   "blickfit_umsetzung": {
+    "kennung": "labor-wahlreaktion",
+    "name": "Wahlreaktion",
+    "unterschiede": "eigene Labor-Übung mit Einstellungen"
+   },
+   "stand": "2026-10-05",
+   "kurzbeschreibung": "Nach einer zufälligen Wartezeit erscheint in der Mitte ein Zeichen – eine Farbe mit Form oder eine weiße Form. Man tippt unten so schnell wie möglich die passende Taste. Anzahl der Tasten (2 bis 6), Zeichenart, Antwortzeit, Wartezeit, Zeichengröße und Anzahl der Zeichen stellt man selbst ein; Hauptwert ist die Genauigkeit, dazu die Reaktionszeit.",
+   "ziel_funktionen": [
+    "entscheidung_wahlreaktion"
+   ],
+   "eingabe": [
+    "touch",
+    "maus",
+    "tastatur"
+   ],
+   "tablet_geeignet": "ja",
+   "dauer_sekunden": 120,
+   "schwierigkeit_anpassung": "Keine Stufen und keine automatische Anpassung; alles über Einstellungen (maßgeblich ist PARAMS in src/exercises/labor-wahlreaktion/logic.ts): Anzahl der Zeichen 10–200 (Standard 40, gleichmäßig auf die Tasten verteilt), Anzahl der Tasten 2–6 (4), Zeichenart Farben mit Form / Formen ohne Farbe, Antwortzeit je Zeichen 300–3000 ms (1500), Wartezeit mindestens 300–3000 ms (600) und höchstens 300–5000 ms (1800), Zeichengröße 2–12 cm (6), Ton. Schwerer: mehr Tasten, kürzere Antwortzeit, Formen, kürzere und stärker schwankende Wartezeit. Faustregel der Übung (keine Vorgabe aus der Forschung): mehrere Durchläufe über 95 % → eine Einstellung schwerer, unter 80 % → leichter, immer nur eine Einstellung ändern.",
+   "messgroessen": [
+    "Hauptwert: Genauigkeit (richtige Antworten an allen gezeigten Zeichen)",
+    "richtige und falsche Antworten, keine Antwort (Antwortzeit abgelaufen)",
+    "zu früh getippt (vor dem Zeichen oder in den ersten 100 ms danach; nicht gewertet)",
+    "Reaktionszeit bis zur richtigen Antwort: Mittel, Median, Streuung",
+    "Vergleich nur mit Durchläufen gleicher Einstellungen auf demselben Gerät; keine Normwerte"
+   ],
+   "anforderungsprofil": {
+    "visuell": {
+     "sehschaerfe_detail": 0,
+     "kontrast": 0,
+     "farbunterscheidung": 1,
+     "stereosehen": 0,
+     "peripheres_sehen": 0,
+     "nutzbares_sehfeld": 0,
+     "blickfolge": 0,
+     "sakkaden": 1,
+     "fixation": 1,
+     "bewegungswahrnehmung": 0,
+     "visuelle_suche": 0,
+     "visuelle_verarbeitungsgeschwindigkeit": 1,
+     "zeitliche_aufloesung": 0,
+     "naharbeit_dauer": 1
+    },
+    "kognitiv": {
+     "daueraufmerksamkeit": 2,
+     "selektive_aufmerksamkeit": 1,
+     "inhibition": 1,
+     "geteilte_aufmerksamkeit": 0,
+     "kognitive_flexibilitaet": 0,
+     "arbeitsgedaechtnis": 1,
+     "kurzzeitgedaechtnis_verbal": 0,
+     "kurzzeitgedaechtnis_visuell_raeumlich": 1,
+     "verarbeitungsgeschwindigkeit": 2,
+     "antizipation": 1,
+     "entscheidung_wahlreaktion": 3,
+     "lesen_sprache": 0,
+     "schlussfolgern": 0
+    },
+    "motorisch": {
+     "einfache_reaktion": 2,
+     "auge_hand_koordination": 1,
+     "zielbewegung_tempo": 1,
+     "zielbewegung_praezision": 0,
+     "kontinuierliche_steuerung": 0,
+     "ruhige_hand": 0,
+     "fingergeschwindigkeit": 0,
+     "fingersequenz_bimanual": 0,
+     "ganzkoerper": 0,
+     "gleichgewicht": 0,
+     "ausdauer_belastung": 0
+    }
+   },
+   "belastung": {
+    "zeitdruck": 2,
+    "flimmern_lichtreize": 1,
+    "bewegungsreize_schwindel": 0,
+    "koerperliche_belastung": 0,
+    "sturzrisiko": 0,
+    "sprachabhaengigkeit": 0
+   },
+   "voraussetzungen": [
+    "Bildschirm einmal kalibrieren, damit die Zeichengröße in Zentimetern stimmt",
+    "Formen (Kreis, Dreieck, Quadrat, Stern, Raute, Kreuz) sicher unterscheiden; Farben sind nie allein entscheidend",
+    "Hand locker über der Mitte der Tasten; Tasten mindestens 56 px groß, auf dem Handy bei vielen Tasten in zwei Reihen",
+    "Wahlweise Tastatur: Ziffern 1 bis 6 statt Tippen"
+   ],
+   "vorsicht_bei": [
+    "photosensitive_epilepsie",
+    "migraene_lichtempfindlich",
+    "farbsehschwaeche",
+    "aufmerksamkeitsprobleme",
+    "kognitive_einschraenkung"
+   ],
+   "geeignet_fuer": [
+    "Schnell und richtig zwischen mehreren Möglichkeiten wählen (Zeichen der passenden Taste zuordnen)",
+    "Den Austausch zwischen Tempo und Genauigkeit erleben: Genauigkeit und Zeit werden zusammen gezeigt",
+    "Schwierigkeit über die Zahl der Tasten (2 bis 6) und die Antwortzeit stufenlos einstellen",
+    "Vergleich mit sich selbst: Genauigkeit und Reaktionszeit über mehrere Durchläufe mit gleichen Einstellungen"
+   ],
+   "weniger_geeignet_fuer": [
+    "Messung der Reaktionsfähigkeit, etwa für Verkehr oder Beruf: keine Normwerte, Touch misst Zeiten zu lang",
+    "Zielbewegung oder Handgenauigkeit üben (Tasten sind groß und fest)",
+    "Randsehen oder Blickbewegungen üben",
+    "Menschen mit Lichtempfindlichkeit, wenn kurze Antwortzeiten gewählt werden"
+   ],
+   "evidenz": {
+    "uebungseffekt": "mittel",
+    "naher_transfer": "schwach",
+    "alltag_transfer": "fehlend",
+    "kommentar": "Die Wahlreaktionszeit steigt ungefähr linear mit dem Logarithmus der Zahl der Möglichkeiten (Hick, 1952; Hyman, 1953; Schneider & Anderson, 2011) und wird durch Übung beeinflusst (Proctor & Schneider, 2018); in der geübten Aufgabe wird man schneller. Bei trainingsähnlicher Prüfung werden Verbesserungen überschätzt (Guo et al., 2025). Für diese Übung gibt es keine Studie, ein Nutzen im Alltag ist nicht belegt."
+   },
+   "aehnliche_uebungen": [
+    202,
+    703,
+    102,
+    806,
+    503,
+    924
+   ],
+   "stichworte": [
+    "Wahlreaktion",
+    "Hick-Hyman-Gesetz",
+    "Tempo und Genauigkeit",
+    "Zeichen-Tasten-Zuordnung",
+    "Farben mit Form",
+    "zufällige Wartezeit",
+    "zu früh getippt",
+    "Reaktionszeit",
+    "Labor"
+   ],
+   "datei": "uebungen/909-labor-wahlreaktion.md"
+  },
+  {
+   "nr": 910,
+   "kennung": "labor-start-ziel",
+   "name": "Start-Ziel-Reaktion (Finger halten, beim Aufleuchten loslassen und das Ziel berühren)",
+   "name_original": "– (eigene Blickfit-Labor-Übung mit Einstellungen)",
+   "kapitel": "Labor",
+   "kapitel_original": "",
+   "unterkapitel_original": "",
+   "quelle_url": "",
+   "blickfit_umsetzung": {
+    "kennung": "labor-start-ziel",
+    "name": "Start-Ziel-Reaktion",
+    "unterschiede": "eigene Labor-Übung mit Einstellungen"
+   },
+   "stand": "2026-10-05",
+   "kurzbeschreibung": "Man legt den Finger auf eine Startfläche unten und hält ihn dort. Nach einer zufälligen Wartezeit leuchtet darüber ein Ziel auf; man lässt so schnell wie möglich los und berührt das Ziel. Reaktionszeit (bis zum Loslassen) und Bewegungszeit (Weg zum Ziel) werden getrennt gemessen. Wartezeit, Abstand, Zielgröße in Zentimetern, Zielposition und Anzahl der Durchgänge stellt man selbst ein.",
+   "ziel_funktionen": [
+    "einfache_reaktion",
+    "zielbewegung_tempo"
+   ],
+   "eingabe": [
+    "touch",
+    "maus"
+   ],
+   "tablet_geeignet": "ja",
+   "dauer_sekunden": 90,
+   "schwierigkeit_anpassung": "Keine Stufen und keine automatische Anpassung; alles über Einstellungen (maßgeblich ist PARAMS in src/exercises/labor-start-ziel/logic.ts): Anzahl der Durchgänge 5–60 (Standard 15, Fehlstarts zählen nicht mit), Wartezeit mindestens 500–5000 ms (1000) und höchstens 500–8000 ms (3500), Abstand Start–Ziel 5–60 cm (20; auf das Feld begrenzt), Durchmesser des Ziels 1,5–12 cm (4), Zielposition immer oben / zufällig im Halbkreis (bis 60° nach links oder rechts), Ton. Schwerer: kleineres Ziel, größerer Abstand, zufällige Richtung, stärker schwankende Wartezeit. Faustregel der Übung (keine Vorgabe aus der Forschung): Reaktions- und Bewegungszeit getrennt ansehen; ohne Fehlstarts und Fehltipps fertig → eine Einstellung schwerer; immer nur eine Einstellung ändern.",
+   "messgroessen": [
+    "Hauptwert: Reaktionszeit Loslassen (Mittel; über alle Durchgänge mit Loslassen)",
+    "Reaktionszeit Median und Streuung",
+    "Bewegungszeit zum Ziel (Mittel; nur erfolgreiche Durchgänge)",
+    "erfolgreiche Durchgänge",
+    "Fehlstarts (zu früh losgelassen, vor dem Ziel oder in den ersten 100 ms)",
+    "Fehltipps neben das Ziel",
+    "Vergleich nur mit Durchläufen gleicher Einstellungen auf demselben Gerät; keine Normwerte"
+   ],
+   "anforderungsprofil": {
+    "visuell": {
+     "sehschaerfe_detail": 0,
+     "kontrast": 0,
+     "farbunterscheidung": 0,
+     "stereosehen": 0,
+     "peripheres_sehen": 1,
+     "nutzbares_sehfeld": 0,
+     "blickfolge": 0,
+     "sakkaden": 1,
+     "fixation": 1,
+     "bewegungswahrnehmung": 0,
+     "visuelle_suche": 0,
+     "visuelle_verarbeitungsgeschwindigkeit": 1,
+     "zeitliche_aufloesung": 0,
+     "naharbeit_dauer": 1
+    },
+    "kognitiv": {
+     "daueraufmerksamkeit": 2,
+     "selektive_aufmerksamkeit": 0,
+     "inhibition": 2,
+     "geteilte_aufmerksamkeit": 0,
+     "kognitive_flexibilitaet": 0,
+     "arbeitsgedaechtnis": 0,
+     "kurzzeitgedaechtnis_verbal": 0,
+     "kurzzeitgedaechtnis_visuell_raeumlich": 0,
+     "verarbeitungsgeschwindigkeit": 1,
+     "antizipation": 1,
+     "entscheidung_wahlreaktion": 0,
+     "lesen_sprache": 0,
+     "schlussfolgern": 0
+    },
+    "motorisch": {
+     "einfache_reaktion": 3,
+     "auge_hand_koordination": 2,
+     "zielbewegung_tempo": 3,
+     "zielbewegung_praezision": 1,
+     "kontinuierliche_steuerung": 0,
+     "ruhige_hand": 1,
+     "fingergeschwindigkeit": 0,
+     "fingersequenz_bimanual": 0,
+     "ganzkoerper": 0,
+     "gleichgewicht": 0,
+     "ausdauer_belastung": 0
+    }
+   },
+   "belastung": {
+    "zeitdruck": 2,
+    "flimmern_lichtreize": 1,
+    "bewegungsreize_schwindel": 0,
+    "koerperliche_belastung": 1,
+    "sturzrisiko": 0,
+    "sprachabhaengigkeit": 0
+   },
+   "voraussetzungen": [
+    "Bildschirm einmal kalibrieren, damit Abstand und Zielgröße in Zentimetern stimmen",
+    "Bildschirm flach oder leicht geneigt; START unten in der Mitte, das Ziel darüber; Hand so stützen, dass der Zeigefinger ohne Druck auf START ruht",
+    "Finger mehrere Sekunden ruhig auf einer Fläche halten und dann gezielt ein Ziel von 1,5 bis 12 cm treffen können",
+    "Für Vergleiche immer dieselbe Hand, Haltung, Geräteneigung und dieselben Einstellungen"
+   ],
+   "vorsicht_bei": [
+    "photosensitive_epilepsie",
+    "migraene_lichtempfindlich",
+    "hand_arm_beschwerden",
+    "tremor_parkinson",
+    "aufmerksamkeitsprobleme"
+   ],
+   "geeignet_fuer": [
+    "Aus der Ruhe heraus auf ein Signal reagieren und dann gezielt zugreifen – Reaktion und Bewegung getrennt sehen",
+    "Geduldig bereit sein: auf das Signal warten, ohne zu früh loszulassen",
+    "Mit Abstand und Zielgröße die Bewegungszeit verändern (Fitts'sches Gesetz) und die Reaktionszeit davon getrennt beobachten",
+    "Vergleich mit sich selbst: Reaktions- und Bewegungszeit über mehrere Durchläufe mit gleichen Einstellungen"
+   ],
+   "weniger_geeignet_fuer": [
+    "Messung der Reaktionsfähigkeit für Verkehr oder Beruf: keine Normwerte, Touch misst Zeiten zu lang",
+    "Entscheidungen zwischen mehreren Möglichkeiten üben (nur ein Ziel)",
+    "Blickbewegungen, Randsehen oder Suchen üben",
+    "Menschen, die den Finger nicht ruhig auf einer Fläche halten können"
+   ],
+   "evidenz": {
+    "uebungseffekt": "schwach",
+    "naher_transfer": "unklar",
+    "alltag_transfer": "fehlend",
+    "kommentar": "Die einfache Reaktionszeit besteht aus Erkennen und Bewegungsbeginn (Woods et al., 2015), die Bewegungszeit folgt dem Fitts'schen Gesetz (Fitts, 1954; Soukoreff & MacKenzie, 2004). Für die Messung über das Loslassen einer Startfläche auf dem Touchscreen gibt es keine Studie. Verbesserungen in trainingsähnlichen Prüfungen sind zu großen Teilen Gewöhnung an Aufgabe und Gerät (Guo et al., 2025); ein Nutzen im Alltag ist nicht belegt."
+   },
+   "aehnliche_uebungen": [
+    503,
+    101,
+    501,
+    511,
+    907
+   ],
+   "stichworte": [
+    "Start-Ziel-Reaktion",
+    "Reaktionszeit und Bewegungszeit",
+    "Loslassen",
+    "Fehlstart",
+    "einfache Reaktion",
+    "Fitts'sches Gesetz",
+    "zufällige Wartezeit",
+    "Zielbewegung",
+    "Labor"
+   ],
+   "datei": "uebungen/910-labor-start-ziel.md"
+  },
+  {
+   "nr": 911,
+   "kennung": "labor-blitz-erkennung",
+   "name": "Blitz-Erkennung (kurz gezeigte Ziffern oder Buchstaben erfassen und eintippen)",
+   "name_original": "– (eigene Blickfit-Labor-Übung mit Einstellungen)",
+   "kapitel": "Labor",
+   "kapitel_original": "",
+   "unterkapitel_original": "",
+   "quelle_url": "",
+   "blickfit_umsetzung": {
+    "kennung": "labor-blitz-erkennung",
+    "name": "Blitz-Erkennung",
+    "unterschiede": "eigene Labor-Übung mit Einstellungen"
+   },
+   "stand": "2026-10-05",
+   "kurzbeschreibung": "Nach einem Kreuz in der Mitte erscheinen für Bruchteile einer Sekunde 1 bis 6 Ziffern oder Buchstaben, danach wahlweise kurz eine graue Maske. Man tippt die Zeichen in der richtigen Reihenfolge über ein Tastenfeld ein. Anzahl und Art der Zeichen, Anzeigedauer, Maske, Zeichengröße und Durchgänge stellt man selbst ein; auf Wunsch sucht die Übung die Anzeigedauer, um die sich das Ergebnis einpendelt.",
+   "ziel_funktionen": [
+    "visuelle_verarbeitungsgeschwindigkeit"
+   ],
+   "eingabe": [
+    "touch",
+    "maus"
+   ],
+   "tablet_geeignet": "ja",
+   "dauer_sekunden": 120,
+   "schwierigkeit_anpassung": "Einstellungen (maßgeblich ist PARAMS in src/exercises/labor-blitz-erkennung/logic.ts): Durchgänge 5–100 (Standard 20), Zeichenart Ziffern (10) / Buchstaben (18), Zeichen pro Durchgang 1–6 (3; kein Zeichen doppelt), Anzeigedauer 10–2000 ms (200; gezeigt in ganzen Bildern, bei 60 Hz ≈ 17 ms je Bild), Maske nach der Anzeige ja/nein (150 ms), Zeichenhöhe 1–12 cm (3; auf der Bühne begrenzt). Wahlweise „Dauer automatisch anpassen“: zwei ganz richtige Durchgänge in Folge → Anzeige kürzer (× 0,8), ein Fehler → länger (× 1,25), gerechnet in ganzen Bildern, nie unter 1 Bild; Schwelle = Mittel der letzten Umkehrpunkte (rechnerisch etwa 70 % richtig, bei kurzen Läufen ungenau). Faustregel der Übung (keine Vorgabe aus der Forschung): drei Durchläufe über 90 % → eine Einstellung schwerer, unter 60 % → leichter.",
+   "messgroessen": [
+    "Hauptwert: Anteil ganz richtiger Durchgänge",
+    "richtige Zeichen an der richtigen Stelle (Anteil)",
+    "Eingabezeit (Mittel)",
+    "mit automatischer Anpassung: geschätzte Schwelle der Dauer in ms und in Bildern",
+    "gemessene Anzeigedauer (Mittel und Schwankung), geschätzte Bildwiederholrate, gestörte Durchgänge",
+    "tatsächliche Zeichenhöhe",
+    "Vergleich nur mit Durchläufen gleicher Einstellungen auf demselben Gerät; keine Normwerte, keine Blickmessung"
+   ],
+   "anforderungsprofil": {
+    "visuell": {
+     "sehschaerfe_detail": 1,
+     "kontrast": 1,
+     "farbunterscheidung": 0,
+     "stereosehen": 0,
+     "peripheres_sehen": 1,
+     "nutzbares_sehfeld": 2,
+     "blickfolge": 0,
+     "sakkaden": 0,
+     "fixation": 2,
+     "bewegungswahrnehmung": 0,
+     "visuelle_suche": 0,
+     "visuelle_verarbeitungsgeschwindigkeit": 3,
+     "zeitliche_aufloesung": 1,
+     "naharbeit_dauer": 1
+    },
+    "kognitiv": {
+     "daueraufmerksamkeit": 1,
+     "selektive_aufmerksamkeit": 1,
+     "inhibition": 0,
+     "geteilte_aufmerksamkeit": 0,
+     "kognitive_flexibilitaet": 0,
+     "arbeitsgedaechtnis": 1,
+     "kurzzeitgedaechtnis_verbal": 2,
+     "kurzzeitgedaechtnis_visuell_raeumlich": 1,
+     "verarbeitungsgeschwindigkeit": 2,
+     "antizipation": 1,
+     "entscheidung_wahlreaktion": 0,
+     "lesen_sprache": 1,
+     "schlussfolgern": 0
+    },
+    "motorisch": {
+     "einfache_reaktion": 0,
+     "auge_hand_koordination": 1,
+     "zielbewegung_tempo": 0,
+     "zielbewegung_praezision": 0,
+     "kontinuierliche_steuerung": 0,
+     "ruhige_hand": 0,
+     "fingergeschwindigkeit": 0,
+     "fingersequenz_bimanual": 0,
+     "ganzkoerper": 0,
+     "gleichgewicht": 0,
+     "ausdauer_belastung": 0
+    }
+   },
+   "belastung": {
+    "zeitdruck": 1,
+    "flimmern_lichtreize": 2,
+    "bewegungsreize_schwindel": 0,
+    "koerperliche_belastung": 0,
+    "sturzrisiko": 0,
+    "sprachabhaengigkeit": 0
+   },
+   "voraussetzungen": [
+    "Bildschirm einmal kalibrieren, damit die Zeichenhöhe in Zentimetern stimmt",
+    "Etwa 50–60 cm Abstand; Spiegelungen und grelles Licht vermeiden",
+    "Ziffern bzw. lateinische Großbuchstaben sicher erkennen; Blick auf das Kreuz in der Mitte halten",
+    "Keine bekannte Lichtempfindlichkeit oder Epilepsie (kurze Helligkeitswechsel, höchstens einer pro Sekunde, kleine Fläche)"
+   ],
+   "vorsicht_bei": [
+    "photosensitive_epilepsie",
+    "migraene_lichtempfindlich",
+    "kopfschmerz_asthenopie",
+    "sehbehinderung_niedriger_visus",
+    "presbyopie_gleitsicht",
+    "lese_rechtschreib_schwaeche",
+    "aufmerksamkeitsprobleme"
+   ],
+   "geeignet_fuer": [
+    "Aus einem sehr kurzen Blick möglichst viel aufnehmen und kurz behalten (Ziffern oder Buchstaben eintippen)",
+    "Schwierigkeit über Zahl der Zeichen, Anzeigedauer und Maske fein einstellen",
+    "Mit automatischer Anpassung eine persönliche Anzeigedauer-Schwelle bei festen Einstellungen über Wochen vergleichen",
+    "Vergleich mit sich selbst auf demselben Gerät und bei ähnlichem Licht"
+   ],
+   "weniger_geeignet_fuer": [
+    "Messung von Sehschärfe, Wahrnehmungstempo oder Gedächtnis (kein validiertes Verfahren, keine Normwerte)",
+    "Menschen mit Lichtempfindlichkeit, Epilepsie oder Migräne mit Lichtauslösern",
+    "Blickbewegungen, Blickfolge oder Handgenauigkeit üben",
+    "Vergleiche zwischen Geräten (Bildwiederholrate und Bildschirmtechnik bestimmen die wahre Dauer)"
+   ],
+   "evidenz": {
+    "uebungseffekt": "schwach",
+    "naher_transfer": "unklar",
+    "alltag_transfer": "fehlend",
+    "kommentar": "Grundlage sind Laborbefunde zur Kurzdarbietung: Direkt nach kurzer Anzeige ist mehr verfügbar, als man berichten kann, es schwindet schnell (Sperling, 1960); eine Maske kann das Gesehene unsichtbar machen (Enns & Di Lollo, 2000). Für diese Übung gibt es keine Studie; Verbesserungen in trainingsähnlichen Prüfungen sind zu großen Teilen Gewöhnung (Guo et al., 2025). Ein Nutzen für Alltag, Sport oder Verkehr ist nicht belegt."
+   },
+   "aehnliche_uebungen": [
+    108,
+    203,
+    602,
+    912
+   ],
+   "stichworte": [
+    "Blitz-Erkennung",
+    "Kurzdarbietung",
+    "Anzeigedauer in Bildern",
+    "Maskierung",
+    "ikonisches Gedächtnis",
+    "Ziffern merken",
+    "adaptive Treppe",
+    "Schwelle",
+    "Bildwiederholrate",
+    "Labor"
+   ],
+   "datei": "uebungen/911-labor-blitz-erkennung.md"
+  },
+  {
+   "nr": 912,
+   "kennung": "labor-peripheres-erkennen",
+   "name": "Peripheres Erkennen (Blick in der Mitte, kurz aufblitzenden Buchstaben am Rand erkennen)",
+   "name_original": "– (eigene Blickfit-Labor-Übung mit Einstellungen)",
+   "kapitel": "Labor",
+   "kapitel_original": "",
+   "unterkapitel_original": "",
+   "quelle_url": "",
+   "blickfit_umsetzung": {
+    "kennung": "labor-peripheres-erkennen",
+    "name": "Peripheres Erkennen",
+    "unterschiede": "eigene Labor-Übung mit Einstellungen"
+   },
+   "stand": "2026-10-05",
+   "kurzbeschreibung": "Man schaut auf eine wechselnde Zahl in der Mitte. Nach einer zufälligen Zeit blitzt links oder rechts (wahlweise auch oben oder unten) kurz ein Buchstabe auf; danach tippt man aus 2 bis 6 Antwortfeldern den gesehenen Buchstaben an. Abstand von der Mitte als Sehwinkel in Grad, Anzeigedauer, Buchstabengröße, Richtungen und Zahl der Antworten stellt man selbst ein; auf Wunsch sucht die Übung die Anzeigedauer, um die sich das Ergebnis einpendelt. Der Blick wird nicht gemessen.",
+   "ziel_funktionen": [
+    "peripheres_sehen",
+    "fixation"
+   ],
+   "eingabe": [
+    "touch",
+    "maus"
+   ],
+   "tablet_geeignet": "ja",
+   "dauer_sekunden": 120,
+   "schwierigkeit_anpassung": "Einstellungen (maßgeblich ist PARAMS in src/exercises/labor-peripheres-erkennen/logic.ts): Durchgänge 8–120 (Standard 32), Abstand von der Mitte 2–40° Sehwinkel (10°; umgerechnet über Kalibrierung und eingetragenen Sehabstand, auf das Machbare begrenzt), Richtungen links/rechts oder alle vier, Anzeigedauer 10–1500 ms (150; in ganzen Bildern), Buchstabenhöhe 1–12 cm (3), Antwortmöglichkeiten 2–6 (4). Wahlweise „Dauer automatisch anpassen“: zwei richtige Antworten in Folge → kürzer (× 0,8), ein Fehler → länger (× 1,25), gerechnet in ganzen Bildern; Schwelle = Mittel der letzten Umkehrpunkte (rechnerisch etwa 70 % richtig, bei kurzen Läufen ungenau). Faustregel der Übung (keine Vorgabe aus der Forschung): drei Durchläufe über 90 % → eine Einstellung schwerer, nahe am Zufallsniveau → leichter.",
+   "messgroessen": [
+    "Hauptwert: richtig erkannte Buchstaben (Anteil), mit Zufallsniveau als Bezug (100 % geteilt durch die Zahl der Antworten)",
+    "richtig links/rechts und oben/unten getrennt",
+    "tatsächlicher Abstand von der Mitte in Grad (Mittel; begrenzt, wenn der Bildschirm den Winkel nicht zulässt)",
+    "Antwortzeit (Mittel, nur Information)",
+    "mit automatischer Anpassung: geschätzte Schwelle der Dauer in ms und Bildern",
+    "gemessene Anzeigedauer, geschätzte Bildwiederholrate, gestörte Durchgänge",
+    "Vergleich nur mit Durchläufen gleicher Einstellungen im selben Sehabstand auf demselben Gerät; keine Normwerte, keine Blickmessung, keine Gesichtsfeldprüfung"
+   ],
+   "anforderungsprofil": {
+    "visuell": {
+     "sehschaerfe_detail": 1,
+     "kontrast": 1,
+     "farbunterscheidung": 0,
+     "stereosehen": 0,
+     "peripheres_sehen": 3,
+     "nutzbares_sehfeld": 2,
+     "blickfolge": 0,
+     "sakkaden": 0,
+     "fixation": 3,
+     "bewegungswahrnehmung": 0,
+     "visuelle_suche": 0,
+     "visuelle_verarbeitungsgeschwindigkeit": 2,
+     "zeitliche_aufloesung": 1,
+     "naharbeit_dauer": 1
+    },
+    "kognitiv": {
+     "daueraufmerksamkeit": 2,
+     "selektive_aufmerksamkeit": 1,
+     "inhibition": 2,
+     "geteilte_aufmerksamkeit": 1,
+     "kognitive_flexibilitaet": 0,
+     "arbeitsgedaechtnis": 0,
+     "kurzzeitgedaechtnis_verbal": 0,
+     "kurzzeitgedaechtnis_visuell_raeumlich": 0,
+     "verarbeitungsgeschwindigkeit": 1,
+     "antizipation": 0,
+     "entscheidung_wahlreaktion": 1,
+     "lesen_sprache": 1,
+     "schlussfolgern": 0
+    },
+    "motorisch": {
+     "einfache_reaktion": 0,
+     "auge_hand_koordination": 1,
+     "zielbewegung_tempo": 0,
+     "zielbewegung_praezision": 0,
+     "kontinuierliche_steuerung": 0,
+     "ruhige_hand": 0,
+     "fingergeschwindigkeit": 0,
+     "fingersequenz_bimanual": 0,
+     "ganzkoerper": 0,
+     "gleichgewicht": 0,
+     "ausdauer_belastung": 0
+    }
+   },
+   "belastung": {
+    "zeitdruck": 1,
+    "flimmern_lichtreize": 2,
+    "bewegungsreize_schwindel": 0,
+    "koerperliche_belastung": 0,
+    "sturzrisiko": 0,
+    "sprachabhaengigkeit": 0
+   },
+   "voraussetzungen": [
+    "Bildschirm kalibrieren und den echten Sehabstand eintragen; dann in diesem Abstand sitzen, Kopf mittig vor dem Bildschirm (der Winkel hängt davon ab)",
+    "Blick ruhig auf der Zahl in der Mitte halten können und ehrlich nicht zum Rand schauen",
+    "Lateinische Großbuchstaben sicher kennen",
+    "Keine bekannte Lichtempfindlichkeit oder Epilepsie (kurzes Aufblitzen höchstens einmal pro Sekunde, Zahl in der Mitte wechselt etwa 1,7-mal pro Sekunde)"
+   ],
+   "vorsicht_bei": [
+    "photosensitive_epilepsie",
+    "migraene_lichtempfindlich",
+    "gesichtsfeldausfall",
+    "nystagmus",
+    "amblyopie",
+    "sehbehinderung_niedriger_visus",
+    "kopfschmerz_asthenopie"
+   ],
+   "geeignet_fuer": [
+    "Etwas am Rand des Blickfelds erkennen, während man in der Mitte hinschaut (Blick halten und Randwahrnehmung zusammen)",
+    "Abstand, Dauer und Größe getrennt verändern und sehen, wie sie das Erkennen bestimmen",
+    "Mit automatischer Anpassung eine Schwelle der Dauer bei festem Abstand über Wochen vergleichen",
+    "Links/rechts und oben/unten getrennt betrachten – als eigene Beobachtung ohne Diagnose"
+   ],
+   "weniger_geeignet_fuer": [
+    "Prüfung oder Beurteilung des Gesichtsfelds – die Übung ist keine Perimetrie und ersetzt keine Untersuchung",
+    "Kontrolle des Blicks: ohne Eye-Tracking kann zum Rand geschaut werden",
+    "Große Exzentrizitäten auf Tablets oder Handys (Winkel über etwa 13° passen meist nicht)",
+    "Menschen mit Lichtempfindlichkeit, Epilepsie oder lichtausgelöster Migräne"
+   ],
+   "evidenz": {
+    "uebungseffekt": "schwach",
+    "naher_transfer": "schwach",
+    "alltag_transfer": "fehlend",
+    "kommentar": "Das nützliche Sehfeld wird mit dem Alter kleiner und ließ sich durch Übung teilweise vergrößern (Ball et al., 1988); Sehschärfe, Reaktionszeit und Zeichenerkennung ändern sich mit dem Abstand von der Mitte (Anstis, 1974; Strasburger et al., 2011). In 93 Studien zu Randseh-Übungen im Sport prüfte keine den Blick per Eye-Tracking, ein Übertrag auf den Sport ist nicht nachgewiesen (Vater & Strasburger, 2021). Für diese Übung gibt es keine Studie; Verbesserungen in trainingsähnlichen Prüfungen sind zu großen Teilen Gewöhnung (Guo et al., 2025)."
+   },
+   "aehnliche_uebungen": [
+    401,
+    108,
+    408,
+    911,
+    913,
+    934,
+    926
+   ],
+   "stichworte": [
+    "peripheres Erkennen",
+    "Randsehen",
+    "Exzentrizität in Grad",
+    "Fixation",
+    "Kurzdarbietung",
+    "nützliches Sehfeld",
+    "Sehabstand",
+    "adaptive Treppe",
+    "kein Eye-Tracking",
+    "keine Perimetrie",
+    "Labor"
+   ],
+   "datei": "uebungen/912-labor-peripheres-erkennen.md"
+  },
+  {
+   "nr": 913,
+   "kennung": "labor-doppelaufgabe",
+   "name": "Doppelaufgabe (Zielzahl in der Mitte und Punkte am Rand gleichzeitig beachten)",
+   "name_original": "– (eigene Blickfit-Labor-Übung mit Einstellungen)",
+   "kapitel": "Labor",
+   "kapitel_original": "",
+   "unterkapitel_original": "",
+   "quelle_url": "",
+   "blickfit_umsetzung": {
+    "kennung": "labor-doppelaufgabe",
+    "name": "Doppelaufgabe",
+    "unterschiede": "eigene Labor-Übung mit Einstellungen"
+   },
+   "stand": "2026-10-05",
+   "kurzbeschreibung": "In der Mitte wechselt eine Zahlenfolge; erscheint die Zielzahl (z. B. 7), berührt man den Kreis in der Mitte. Gleichzeitig tauchen am Rand Punkte auf, die man ebenfalls antippt; der Blick soll in der Mitte bleiben. Mit den Modi „Nur Mitte“ und „Nur Rand“ sieht man, wie sich jede Aufgabe allein verhält. Tempo der Zahlen, Zielzahl, Anteil der Zielzahlen, Größe und Sichtbarkeit der Randpunkte und Dauer stellt man selbst ein.",
+   "ziel_funktionen": [
+    "geteilte_aufmerksamkeit",
+    "peripheres_sehen",
+    "nutzbares_sehfeld",
+    "auge_hand_koordination"
+   ],
+   "eingabe": [
+    "touch",
+    "maus"
+   ],
+   "tablet_geeignet": "ja",
+   "dauer_sekunden": 60,
+   "schwierigkeit_anpassung": "Keine Stufen und keine automatische Anpassung; alles über Einstellungen (maßgeblich ist PARAMS in src/exercises/labor-doppelaufgabe/logic.ts): Aufgaben beide gleichzeitig / nur Mitte / nur Rand (Vergleichsbasis, jeder Modus mit eigenem Verlauf), Dauer 20–300 s (Standard 60), Zahlenwechsel alle 400–2500 ms (900; nie schneller als 2,5 Wechsel pro Sekunde), Zielzahl 1–9 (7), Anteil der Zielzahlen 5–50 % (20), Größe der Randpunkte 1–12 cm (5; neben dem Kreis in der Mitte begrenzt), Sichtbarkeit der Randpunkte 0,4–6 s (1,5), Pause zwischen Randpunkten 0–3000 ms (400), Ton. Schwerer: schnellerer Zahlenwechsel, mehr Zielzahlen, kleinere Randpunkte, kürzere Sichtbarkeit und Pause. Die „Kosten“ der Doppelaufgabe ergeben sich aus dem eigenen Vergleich der drei Modi mit sonst gleichen Einstellungen (kein Maß aus der Forschung).",
+   "messgroessen": [
+    "Hauptwert: erkannte Zielzahlen in der Mitte (im Modus „Nur Rand“: getroffene Punkte)",
+    "Mitte: gezeigte und verpasste Zielzahlen, Berührungen ohne Zielzahl, Reaktionszeit (Mittel)",
+    "Rand: getroffene und verpasste Punkte, Fehltipps, Reaktionszeit (Mittel)",
+    "Vergleich der Modi „Beide“, „Nur Mitte“, „Nur Rand“ durch die Person selbst (nicht automatisch)",
+    "Vergleich nur mit Durchläufen gleicher Einstellungen auf demselben Gerät; keine Normwerte, keine Blickmessung"
+   ],
+   "anforderungsprofil": {
+    "visuell": {
+     "sehschaerfe_detail": 1,
+     "kontrast": 0,
+     "farbunterscheidung": 0,
+     "stereosehen": 0,
+     "peripheres_sehen": 3,
+     "nutzbares_sehfeld": 3,
+     "blickfolge": 0,
+     "sakkaden": 1,
+     "fixation": 2,
+     "bewegungswahrnehmung": 0,
+     "visuelle_suche": 1,
+     "visuelle_verarbeitungsgeschwindigkeit": 2,
+     "zeitliche_aufloesung": 0,
+     "naharbeit_dauer": 1
+    },
+    "kognitiv": {
+     "daueraufmerksamkeit": 2,
+     "selektive_aufmerksamkeit": 2,
+     "inhibition": 2,
+     "geteilte_aufmerksamkeit": 3,
+     "kognitive_flexibilitaet": 1,
+     "arbeitsgedaechtnis": 1,
+     "kurzzeitgedaechtnis_verbal": 0,
+     "kurzzeitgedaechtnis_visuell_raeumlich": 0,
+     "verarbeitungsgeschwindigkeit": 2,
+     "antizipation": 0,
+     "entscheidung_wahlreaktion": 1,
+     "lesen_sprache": 0,
+     "schlussfolgern": 0
+    },
+    "motorisch": {
+     "einfache_reaktion": 2,
+     "auge_hand_koordination": 3,
+     "zielbewegung_tempo": 2,
+     "zielbewegung_praezision": 1,
+     "kontinuierliche_steuerung": 0,
+     "ruhige_hand": 0,
+     "fingergeschwindigkeit": 0,
+     "fingersequenz_bimanual": 0,
+     "ganzkoerper": 0,
+     "gleichgewicht": 0,
+     "ausdauer_belastung": 0
+    }
+   },
+   "belastung": {
+    "zeitdruck": 2,
+    "flimmern_lichtreize": 1,
+    "bewegungsreize_schwindel": 0,
+    "koerperliche_belastung": 1,
+    "sturzrisiko": 0,
+    "sprachabhaengigkeit": 0
+   },
+   "voraussetzungen": [
+    "Bildschirm einmal kalibrieren, damit die Punktgröße in Zentimetern stimmt",
+    "Etwa 50–60 cm Abstand; der Blick bleibt möglichst in der Mitte, die Hand wechselt zwischen Mitte und Rand",
+    "Ziffern 1 bis 9 sicher erkennen",
+    "Für den Vergleich je einen Durchlauf in jedem der drei Modi mit sonst gleichen Einstellungen spielen",
+    "Keine bekannte Lichtempfindlichkeit (Zahl wechselt höchstens 2,5-mal pro Sekunde, Punkte erscheinen und verschwinden)"
+   ],
+   "vorsicht_bei": [
+    "photosensitive_epilepsie",
+    "migraene_lichtempfindlich",
+    "aufmerksamkeitsprobleme",
+    "kognitive_einschraenkung",
+    "gesichtsfeldausfall",
+    "hand_arm_beschwerden",
+    "tremor_parkinson"
+   ],
+   "geeignet_fuer": [
+    "Zwei Aufgaben gleichzeitig erledigen: auf eine Zielzahl in der Mitte achten und auf Punkte am Rand reagieren",
+    "Mit „Nur Mitte“ und „Nur Rand“ selbst sehen, wie viel die zweite Aufgabe kostet (eigene Beobachtung)",
+    "Schwierigkeit beider Teilaufgaben getrennt einstellen (Zahlentempo, Zielanteil, Punktgröße, Sichtbarkeit)",
+    "Vergleich mit sich selbst je Modus über mehrere Durchläufe mit gleichen Einstellungen"
+   ],
+   "weniger_geeignet_fuer": [
+    "Messung der Aufmerksamkeit oder der Fahreignung (kein validiertes Verfahren, keine Normwerte)",
+    "Kontrolle des Blicks: ohne Eye-Tracking können die Randpunkte angeschaut werden",
+    "Menschen mit Lichtempfindlichkeit oder Epilepsie",
+    "Einsteiger, die eine der beiden Teilaufgaben allein noch nicht sicher beherrschen (erst „Nur Mitte“ und „Nur Rand“)"
+   ],
+   "evidenz": {
+    "uebungseffekt": "mittel",
+    "naher_transfer": "schwach",
+    "alltag_transfer": "fehlend",
+    "kommentar": "Zwei einfache Aufgaben gleichzeitig stören sich, vor allem bei der Wahl der Handlung (Pashler, 1994). Übung verringert diese Störung in Laboraufgaben: Einige Personen erreichten nach mäßig viel Übung praktisch perfekte Zeitteilung (Schumacher et al., 2001), meist verkürzte sich der Engpass nur (Ruthruff et al., 2006). Für diese Übung (Berührung, Zahlenfolge mit Zielzahl, Randpunkte) gibt es keine Studie; Verbesserungen in trainingsähnlichen Prüfungen sind zu großen Teilen Gewöhnung (Guo et al., 2025). Ein Nutzen im Alltag ist nicht belegt."
+   },
+   "aehnliche_uebungen": [
+    205,
+    408,
+    401,
+    108,
+    208,
+    907
+   ],
+   "stichworte": [
+    "Doppelaufgabe",
+    "geteilte Aufmerksamkeit",
+    "Zielzahl",
+    "Randpunkte",
+    "nützliches Sehfeld",
+    "Doppelaufgaben-Kosten",
+    "Vergleichsmodi",
+    "Fixation",
+    "kein Eye-Tracking",
+    "Labor"
+   ],
+   "datei": "uebungen/913-labor-doppelaufgabe.md"
+  },
+  {
+   "nr": 914,
+   "kennung": "labor-ziel-verfolgen",
+   "name": "Ziel verfolgen (Finger auf einem gleichmäßig wandernden Ziel halten)",
+   "name_original": "– (eigene Blickfit-Übung, Labor, kein Vorbild)",
+   "kapitel": "Labor",
+   "kapitel_original": "",
+   "unterkapitel_original": "",
+   "quelle_url": "",
+   "blickfit_umsetzung": {
+    "kennung": "labor-ziel-verfolgen",
+    "name": "Ziel verfolgen",
+    "unterschiede": "eigene Labor-Übung mit Einstellungen"
+   },
+   "stand": "2026-10-05",
+   "kurzbeschreibung": "Ein Ziel wandert mit gleichmäßigem Tempo auf einer geschlossenen Bahn (Ellipse, liegende Acht oder verschlungene Kurve). Man legt den Finger darauf und gleitet mit, ohne abzusetzen; gezählt wird die Zeit, in der der Finger auf dem Ziel liegt. Bahn, Tempo, Zielgröße, Spielraum und Dauer stellt man selbst ein. Der Blick wird nicht gemessen.",
+   "ziel_funktionen": [
+    "kontinuierliche_steuerung",
+    "auge_hand_koordination",
+    "blickfolge"
+   ],
+   "eingabe": [
+    "touch",
+    "maus"
+   ],
+   "tablet_geeignet": "ja",
+   "dauer_sekunden": 30,
+   "schwierigkeit_anpassung": "Keine Stufen, keine automatische Anpassung: Die Schwierigkeit ergibt sich aus den Einstellungen. Dauer 10–180 s (Standard 30 s); Bahn Ellipse (Standard, gut vorhersehbar), liegende Acht oder verschlungene Kurve (Lissajous 3:2, wechselnde Krümmung); Tempo 2–40 cm/s (Standard 8 cm/s, entlang der Bahn gleichmäßig); Zieldurchmesser 1–10 cm (Standard 3 cm); Spielraum um das Ziel 0–3 cm (Standard 0,5 cm); Bahn anzeigen ja/nein (ohne Bahn muss man vorhersehen). Trefferradius mindestens 24 px. Nach dem Lauf schlägt ein Tipp vor, genau eine Einstellung leichter oder schwerer zu machen (eigene Faustregel: ≥ 90 % auf dem Ziel und höchstens 2 Verluste → schwerer, < 50 % → leichter).",
+   "messgroessen": [
+    "Hauptwert: Zeit auf dem Ziel in Prozent der ganzen Laufzeit (auch der Zeit ohne Finger)",
+    "Zeit auf dem Ziel in Sekunden",
+    "längste Verfolgung am Stück",
+    "verlorene Verbindungen (nach erstem Erreichen)",
+    "Zeit mit Fingerkontakt in Prozent",
+    "mittlere Abweichung Finger–Zielmitte in cm (nur bei Fingerkontakt)",
+    "kein Blickmaß, keine Normwerte; Vergleich nur bei gleichen Einstellungen"
+   ],
+   "anforderungsprofil": {
+    "visuell": {
+     "sehschaerfe_detail": 0,
+     "kontrast": 0,
+     "farbunterscheidung": 0,
+     "stereosehen": 0,
+     "peripheres_sehen": 1,
+     "nutzbares_sehfeld": 0,
+     "blickfolge": 3,
+     "sakkaden": 1,
+     "fixation": 0,
+     "bewegungswahrnehmung": 2,
+     "visuelle_suche": 0,
+     "visuelle_verarbeitungsgeschwindigkeit": 0,
+     "zeitliche_aufloesung": 0,
+     "naharbeit_dauer": 1
+    },
+    "kognitiv": {
+     "daueraufmerksamkeit": 2,
+     "selektive_aufmerksamkeit": 0,
+     "inhibition": 0,
+     "geteilte_aufmerksamkeit": 0,
+     "kognitive_flexibilitaet": 0,
+     "arbeitsgedaechtnis": 0,
+     "kurzzeitgedaechtnis_verbal": 0,
+     "kurzzeitgedaechtnis_visuell_raeumlich": 0,
+     "verarbeitungsgeschwindigkeit": 0,
+     "antizipation": 2,
+     "entscheidung_wahlreaktion": 0,
+     "lesen_sprache": 0,
+     "schlussfolgern": 0
+    },
+    "motorisch": {
+     "einfache_reaktion": 0,
+     "auge_hand_koordination": 3,
+     "zielbewegung_tempo": 0,
+     "zielbewegung_praezision": 1,
+     "kontinuierliche_steuerung": 3,
+     "ruhige_hand": 2,
+     "fingergeschwindigkeit": 0,
+     "fingersequenz_bimanual": 0,
+     "ganzkoerper": 0,
+     "gleichgewicht": 0,
+     "ausdauer_belastung": 1
+    }
+   },
+   "belastung": {
+    "zeitdruck": 1,
+    "flimmern_lichtreize": 0,
+    "bewegungsreize_schwindel": 1,
+    "koerperliche_belastung": 1,
+    "sturzrisiko": 0,
+    "sprachabhaengigkeit": 0
+   },
+   "voraussetzungen": [
+    "Bildschirm einmal kalibrieren, damit Zielgröße und Tempo in Zentimetern stimmen",
+    "die ganze Bahn bequem mit dem Finger erreichen (etwa 50–60 cm Abstand, Hand nicht auf dem Rahmen abstützen)",
+    "sauberer Bildschirm, damit der Finger gleitet",
+    "mit der Maus: Taste gedrückt halten und mitführen"
+   ],
+   "vorsicht_bei": [
+    "tremor_parkinson",
+    "hand_arm_beschwerden",
+    "nystagmus",
+    "schwindel_vestibulaer",
+    "presbyopie_gleitsicht",
+    "trockenes_auge_bildschirm",
+    "kopfschmerz_asthenopie"
+   ],
+   "geeignet_fuer": [
+    "Auge und Hand gemeinsam einem gleichmäßig bewegten Ziel nachführen",
+    "ruhiges, fortlaufendes Führen mit dem Finger ohne Absetzen üben",
+    "Schwierigkeit selbst fein einstellen (Bahn, Tempo, Größe, Spielraum) und jeweils nur eine Einstellung ändern",
+    "Vergleich mit sich selbst bei gleichen Einstellungen, auf demselben Gerät und mit derselben Hand"
+   ],
+   "weniger_geeignet_fuer": [
+    "Messung oder Beurteilung der Augenfolgebewegung: gemessen wird nur der Finger",
+    "Ersatz für die klinische Prüfung der Augenbewegungen",
+    "schnelle Zielsprünge, Reaktion oder Entscheidungen üben",
+    "Menschen, die den Arm nicht längere Zeit anheben können"
+   ],
+   "evidenz": {
+    "uebungseffekt": "schwach",
+    "naher_transfer": "unklar",
+    "alltag_transfer": "fehlend",
+    "kommentar": "Für das Führen mit dem Finger auf einem bewegten Ziel am Bildschirm gibt es keine Studie. Augen- und Handführung reagieren ähnlich auf Richtungswechsel (Engel et al. 2000), beim Mitführen mit der Hand folgen die Augen genauer (Danion & Flanagan 2018); kurzes Üben des Augenfolgens verbesserte in einer kleinen Studie die anschließende Folge (Eibenberger et al. 2012). Gewöhnung an Aufgabe und Gerät überschätzt Effekte (Guo et al. 2025); ein Alltagsnutzen ist nicht belegt."
+   },
+   "aehnliche_uebungen": [
+    514,
+    507,
+    505,
+    707,
+    402,
+    404
+   ],
+   "stichworte": [
+    "Ziel verfolgen",
+    "Augen-Hand-Verfolgung",
+    "manuelles Tracking",
+    "glatte Folgebewegung",
+    "Finger mitführen",
+    "Ellipse",
+    "liegende Acht",
+    "Lissajous",
+    "Spielraum",
+    "Zeit auf dem Ziel",
+    "Labor",
+    "Einstellungen"
+   ],
+   "datei": "uebungen/914-labor-ziel-verfolgen.md"
+  },
+  {
+   "nr": 915,
+   "kennung": "labor-takt-sakkaden",
+   "name": "Takt-Sakkaden (Blickwechsel zu einem im Takt springenden Zeichen)",
+   "name_original": "– (eigene Blickfit-Übung, Labor, kein Vorbild)",
+   "kapitel": "Labor",
+   "kapitel_original": "",
+   "unterkapitel_original": "",
+   "quelle_url": "",
+   "blickfit_umsetzung": {
+    "kennung": "labor-takt-sakkaden",
+    "name": "Takt-Sakkaden",
+    "unterschiede": "eigene Labor-Übung mit Einstellungen"
+   },
+   "stand": "2026-10-05",
+   "kurzbeschreibung": "Ein Zeichen (Ziffer, Buchstabe oder Silbe) springt im Takt eines Metronoms zwischen festen Punkten, zum Beispiel den vier Ecken. Man schaut bei ruhigem Kopf hin und liest es laut; auf Wunsch tippt man es zusätzlich an, solange es zu sehen ist. Takt, Anordnung, Reihenfolge, Zeichenart, Größe und Dauer stellt man selbst ein. Gemessen wird nur das Tippen, nicht der Blick.",
+   "ziel_funktionen": [
+    "sakkaden",
+    "visuelle_verarbeitungsgeschwindigkeit",
+    "antizipation"
+   ],
+   "eingabe": [
+    "touch",
+    "maus"
+   ],
+   "tablet_geeignet": "ja",
+   "dauer_sekunden": 60,
+   "schwierigkeit_anpassung": "Keine Stufen, keine automatische Anpassung: Die Schwierigkeit ergibt sich aus den Einstellungen. Takt 20–140 Schläge/min (Standard 60; höchstens ≈ 2,3 Zeichenwechsel pro Sekunde); Dauer 10–300 s (Standard 60 s; Zahl der Schläge = Dauer × Takt ÷ 60); Zeichengröße 1–12 cm (Standard 3 cm, auf kleinen Bühnen verkleinert, damit sich Zeichen nicht überlappen); Anordnung vier Ecken (Standard), vier Ecken und Mitte, links/rechts, oben/unten, Raster 3 × 3; Reihenfolge der Reihe nach (Standard, vorhersehbar) oder zufällig (nie zweimal derselbe Punkt); Zeichen Ziffern (Standard), Buchstaben, Silben; „Berühren im Takt“ nein (Standard, nur lesen) oder ja; Metronom-Ton an/aus (ändert die Vergleichbarkeit nicht). Eigene Faustregel nach dem Lauf: mit Berühren über 90 % Treffer → eine Einstellung schwerer, unter 70 % → leichter.",
+   "messgroessen": [
+    "ohne Berühren: Zahl der gezeigten Zeichen (steht durch Dauer und Takt fest, keine Leistungsangabe)",
+    "mit Berühren: Trefferquote (berührte von gezeigten Zeichen)",
+    "mit Berühren: im Takt berührt, nicht berührt, Fehltipps daneben",
+    "mit Berühren: Verzögerung nach dem Schlag (Mittel und Streuung, nur Treffer)",
+    "größter Sprung in cm und als Sehwinkel (aus dem eingestellten Abstand)",
+    "kein Blickmaß, keine Prüfung des lauten Lesens, keine Normwerte"
+   ],
+   "anforderungsprofil": {
+    "visuell": {
+     "sehschaerfe_detail": 1,
+     "kontrast": 0,
+     "farbunterscheidung": 0,
+     "stereosehen": 0,
+     "peripheres_sehen": 1,
+     "nutzbares_sehfeld": 0,
+     "blickfolge": 0,
+     "sakkaden": 3,
+     "fixation": 1,
+     "bewegungswahrnehmung": 0,
+     "visuelle_suche": 0,
+     "visuelle_verarbeitungsgeschwindigkeit": 2,
+     "zeitliche_aufloesung": 1,
+     "naharbeit_dauer": 1
+    },
+    "kognitiv": {
+     "daueraufmerksamkeit": 2,
+     "selektive_aufmerksamkeit": 0,
+     "inhibition": 0,
+     "geteilte_aufmerksamkeit": 1,
+     "kognitive_flexibilitaet": 0,
+     "arbeitsgedaechtnis": 0,
+     "kurzzeitgedaechtnis_verbal": 0,
+     "kurzzeitgedaechtnis_visuell_raeumlich": 0,
+     "verarbeitungsgeschwindigkeit": 1,
+     "antizipation": 2,
+     "entscheidung_wahlreaktion": 0,
+     "lesen_sprache": 1,
+     "schlussfolgern": 0
+    },
+    "motorisch": {
+     "einfache_reaktion": 1,
+     "auge_hand_koordination": 2,
+     "zielbewegung_tempo": 2,
+     "zielbewegung_praezision": 1,
+     "kontinuierliche_steuerung": 0,
+     "ruhige_hand": 0,
+     "fingergeschwindigkeit": 0,
+     "fingersequenz_bimanual": 0,
+     "ganzkoerper": 0,
+     "gleichgewicht": 0,
+     "ausdauer_belastung": 0
+    }
+   },
+   "belastung": {
+    "zeitdruck": 2,
+    "flimmern_lichtreize": 1,
+    "bewegungsreize_schwindel": 0,
+    "koerperliche_belastung": 0,
+    "sturzrisiko": 0,
+    "sprachabhaengigkeit": 1
+   },
+   "voraussetzungen": [
+    "Bildschirm einmal kalibrieren und den Abstand angeben, damit Größen in cm und der Sprung als Sehwinkel stimmen",
+    "etwa 50–60 cm Abstand, Kopf ruhig, nur die Augen bewegen",
+    "Ziffern, Buchstaben oder Silben laut lesen können (oder leise innerlich mitlesen)",
+    "Raum, in dem laut gesprochen werden kann; für den Takt Ton an oder Kopfhörer"
+   ],
+   "vorsicht_bei": [
+    "photosensitive_epilepsie",
+    "migraene_lichtempfindlich",
+    "nystagmus",
+    "gesichtsfeldausfall",
+    "presbyopie_gleitsicht",
+    "kopfschmerz_asthenopie",
+    "trockenes_auge_bildschirm",
+    "lese_rechtschreib_schwaeche"
+   ],
+   "geeignet_fuer": [
+    "Blickwechsel zwischen weit auseinanderliegenden Punkten in einem gleichmäßigen Takt üben",
+    "Zeichen beim Ankommen des Blicks rasch erfassen und laut lesen",
+    "wahlweise zusätzlich im Takt antippen (Blick und Hand zusammen)",
+    "Takt, Anordnung und Zeichenart selbst einstellen und mit sich selbst vergleichen"
+   ],
+   "weniger_geeignet_fuer": [
+    "Messung oder Beurteilung von Blicksprüngen: der Blick wird nicht gemessen",
+    "Menschen mit Lichtempfindlichkeit oder epileptischen Anfällen in der Vorgeschichte",
+    "Umgebungen, in denen nicht laut gelesen werden kann (dann leise mitlesen)",
+    "Ersatz für die augenärztliche oder optometrische Untersuchung der Augenbewegungen"
+   ],
+   "evidenz": {
+    "uebungseffekt": "schwach",
+    "naher_transfer": "unklar",
+    "alltag_transfer": "fehlend",
+    "kommentar": "Für das Springen eines Zeichens im Takt mit lautem Lesen und Antippen gibt es keine Studie. Beim Wiederholen von Blicksprung-Aufgaben wurden gesunde Erwachsene genauer, schneller und gleichmäßiger (Karantinos et al. 2025, andere Aufgaben, mit Blickmessung). Gewöhnung an Aufgabe und Gerät überschätzt Effekte (Guo et al. 2025). Das Üben zu einem Metronom ist eine Praxisangabe der funktionellen Optometrie ohne Wirksamkeitsbeleg; ein Alltagsnutzen ist nicht belegt."
+   },
+   "aehnliche_uebungen": [
+    303,
+    905,
+    204,
+    506,
+    807,
+    916
+   ],
+   "stichworte": [
+    "Sakkaden",
+    "Blickwechsel",
+    "Metronom",
+    "Takt",
+    "laut lesen",
+    "vier Ecken",
+    "Raster 3 × 3",
+    "Zeichen antippen",
+    "Sehwinkel",
+    "funktionelle Optometrie",
+    "Labor",
+    "Einstellungen"
+   ],
+   "datei": "uebungen/915-labor-takt-sakkaden.md"
+  },
+  {
+   "nr": 916,
+   "kennung": "labor-buchstabentafel",
+   "name": "Buchstabentafel (Zeichengruppen Schritt für Schritt lesen, im eigenen Tempo oder im Takt)",
+   "name_original": "– (eigene Blickfit-Übung, Labor, kein Vorbild)",
+   "kapitel": "Labor",
+   "kapitel_original": "",
+   "unterkapitel_original": "",
+   "quelle_url": "",
+   "blickfit_umsetzung": {
+    "kennung": "labor-buchstabentafel",
+    "name": "Buchstabentafel",
+    "unterschiede": "eigene Labor-Übung mit Einstellungen"
+   },
+   "stand": "2026-10-05",
+   "kurzbeschreibung": "Eine Tafel aus Gruppen von Buchstaben oder Ziffern wird Zeichen für Zeichen gelesen: Ein Rahmen markiert das nächste Zeichen, man liest es laut und tippt irgendwo, dann springt die Marke weiter – oder sie springt im Takt von selbst. Tafelgröße, Zeichen je Gruppe, Zeichenhöhe, Abstände, Leseordnung und Tempo stellt man selbst ein. Gemessen wird die Zeit, nicht der Blick.",
+   "ziel_funktionen": [
+    "sakkaden",
+    "verarbeitungsgeschwindigkeit",
+    "selektive_aufmerksamkeit"
+   ],
+   "eingabe": [
+    "touch",
+    "maus",
+    "tastatur"
+   ],
+   "tablet_geeignet": "ja",
+   "dauer_sekunden": 90,
+   "schwierigkeit_anpassung": "Keine Stufen, keine automatische Anpassung: Die Schwierigkeit ergibt sich aus den Einstellungen. Zeilen und Spalten je 1–8 Gruppen (Standard 4 × 4); Zeichen je Gruppe 1–6 (Standard 3, innerhalb einer Gruppe verschieden); Buchstaben (Standard) oder Ziffern 1–9; Zeichenhöhe 0,8–8 cm (Standard 2 cm); Abstand zwischen Zeichen 0–3 cm (Standard 0,4 cm; klein = mehr Gedränge); Abstand zwischen Gruppen 0,5–10 cm (Standard 3 cm; groß = weitere Blickwechsel); Leseordnung „Gruppe für Gruppe“ (Standard) oder „erst alle ersten Zeichen, dann alle zweiten …“; Tempo eigenes Tempo (Standard, Tippen = weiter) oder Takt 20–140 Schläge/min (Standard 60); Ton an/aus. Passt die Tafel nicht ins Feld, wird sie verkleinert (Hinweis unter 90 %).",
+   "messgroessen": [
+    "Hauptwert: Gesamtzeit vom ersten bis zum letzten Zeichen (im Takt durch Zeichenzahl × Taktlänge festgelegt, keine Leistungsangabe)",
+    "gelesene Zeichen und Zeichen pro Minute",
+    "nur im eigenen Tempo: Zeit pro Zeichen (Mittel, Streuung) und Gleichmäßigkeit (Streuung zu Mittel, ab zwei Zeitabständen)",
+    "nur im Takt: eingestellter Takt",
+    "Verkleinerung der Tafel in Prozent (wenn unter 90 %)",
+    "kein Blickmaß, keine Prüfung des Lesens, keine Normwerte"
+   ],
+   "anforderungsprofil": {
+    "visuell": {
+     "sehschaerfe_detail": 2,
+     "kontrast": 0,
+     "farbunterscheidung": 0,
+     "stereosehen": 0,
+     "peripheres_sehen": 1,
+     "nutzbares_sehfeld": 0,
+     "blickfolge": 0,
+     "sakkaden": 3,
+     "fixation": 1,
+     "bewegungswahrnehmung": 0,
+     "visuelle_suche": 1,
+     "visuelle_verarbeitungsgeschwindigkeit": 1,
+     "zeitliche_aufloesung": 0,
+     "naharbeit_dauer": 2
+    },
+    "kognitiv": {
+     "daueraufmerksamkeit": 2,
+     "selektive_aufmerksamkeit": 2,
+     "inhibition": 0,
+     "geteilte_aufmerksamkeit": 0,
+     "kognitive_flexibilitaet": 1,
+     "arbeitsgedaechtnis": 0,
+     "kurzzeitgedaechtnis_verbal": 0,
+     "kurzzeitgedaechtnis_visuell_raeumlich": 0,
+     "verarbeitungsgeschwindigkeit": 2,
+     "antizipation": 1,
+     "entscheidung_wahlreaktion": 0,
+     "lesen_sprache": 2,
+     "schlussfolgern": 0
+    },
+    "motorisch": {
+     "einfache_reaktion": 0,
+     "auge_hand_koordination": 0,
+     "zielbewegung_tempo": 0,
+     "zielbewegung_praezision": 0,
+     "kontinuierliche_steuerung": 0,
+     "ruhige_hand": 0,
+     "fingergeschwindigkeit": 1,
+     "fingersequenz_bimanual": 0,
+     "ganzkoerper": 0,
+     "gleichgewicht": 0,
+     "ausdauer_belastung": 0
+    }
+   },
+   "belastung": {
+    "zeitdruck": 1,
+    "flimmern_lichtreize": 1,
+    "bewegungsreize_schwindel": 0,
+    "koerperliche_belastung": 0,
+    "sturzrisiko": 0,
+    "sprachabhaengigkeit": 1
+   },
+   "voraussetzungen": [
+    "Bildschirm einmal kalibrieren und den Abstand angeben, damit Zeichenhöhe und Abstände in cm stimmen",
+    "etwa 50–60 cm Abstand, Kopf ruhig, nur die Augen wandern",
+    "Buchstaben des lateinischen Alphabets oder Ziffern sicher lesen können",
+    "Raum, in dem laut gelesen werden kann (sonst leise innerlich mitlesen)"
+   ],
+   "vorsicht_bei": [
+    "photosensitive_epilepsie",
+    "migraene_lichtempfindlich",
+    "sehbehinderung_niedriger_visus",
+    "presbyopie_gleitsicht",
+    "nystagmus",
+    "amblyopie",
+    "kopfschmerz_asthenopie",
+    "trockenes_auge_bildschirm",
+    "lese_rechtschreib_schwaeche",
+    "kinder_unter_6"
+   ],
+   "geeignet_fuer": [
+    "viele eng gesetzte Zeichen der Reihe nach erfassen, mit Blickwechseln von Zeichen zu Zeichen und von Gruppe zu Gruppe",
+    "Gedränge (dicht stehende Zeichen) und Abstände gezielt einstellen",
+    "im eigenen Tempo einen ruhigen, gleichmäßigen Rhythmus finden oder im Takt mithalten",
+    "Vergleich mit sich selbst bei gleicher Tafel, gleichem Abstand und auf demselben Gerät"
+   ],
+   "weniger_geeignet_fuer": [
+    "Messung oder Beurteilung von Blicksprüngen oder Lesefähigkeit: gemessen wird nur, wann getippt wird",
+    "Menschen, die Buchstaben oder Ziffern nicht sicher lesen können",
+    "Ersatz für eine Untersuchung der Sehschärfe oder der Augenbewegungen",
+    "Übungen, bei denen Treffgenauigkeit der Hand gefordert ist"
+   ],
+   "evidenz": {
+    "uebungseffekt": "schwach",
+    "naher_transfer": "unklar",
+    "alltag_transfer": "fehlend",
+    "kommentar": "Zu Buchstabentafeln dieser Art (Hart-Charts) und ihrer Wirkung auf Blickwechsel fand eine Fachdatenbank-Suche keine Studie; Wirkangaben aus der Sehtherapie sind Praxisangaben ohne Beleg. Belegt sind Grundlagen: Gedränge begrenzt Erkennen und Lesetempo (Pelli & Tillman 2008; Whitney & Levi 2011), enger Abstand vermehrt Verwechslungen (Liu & Arditi 2001). Verbesserung beim Wiederholen ist zum Teil Gewöhnung (Guo et al. 2025); ein Alltagsnutzen ist nicht belegt."
+   },
+   "aehnliche_uebungen": [
+    905,
+    204,
+    915,
+    103,
+    919
+   ],
+   "stichworte": [
+    "Buchstabentafel",
+    "Hart-Chart",
+    "Zeichengruppen",
+    "Gedränge",
+    "Crowding",
+    "Blickwechsel",
+    "laut lesen",
+    "eigenes Tempo",
+    "Metronom",
+    "Gleichmäßigkeit",
+    "Labor",
+    "Einstellungen"
+   ],
+   "datei": "uebungen/916-labor-buchstabentafel.md"
+  },
+  {
+   "nr": 917,
+   "kennung": "labor-sequenz-gedaechtnis",
+   "name": "Sequenz-Gedächtnis (aufleuchtende Felder in derselben Reihenfolge antippen)",
+   "name_original": "– (eigene Blickfit-Übung, Labor, kein Vorbild)",
+   "kapitel": "Labor",
+   "kapitel_original": "",
+   "unterkapitel_original": "",
+   "quelle_url": "",
+   "blickfit_umsetzung": {
+    "kennung": "labor-sequenz-gedaechtnis",
+    "name": "Sequenz-Gedächtnis",
+    "unterschiede": "eigene Labor-Übung mit Einstellungen"
+   },
+   "stand": "2026-10-05",
+   "kurzbeschreibung": "Felder eines Rasters leuchten nacheinander auf; danach tippt man sie in genau derselben Reihenfolge an. Jede richtig wiederholte Folge wird um ein Feld länger, ein Fehler beendet die Runde. Rastergröße, Startlänge, Leuchtdauer, Pausen und die Regeln für die nächste Folge und nach Fehlern stellt man selbst ein. Hauptwert ist die längste richtige Folge.",
+   "ziel_funktionen": [
+    "kurzzeitgedaechtnis_visuell_raeumlich",
+    "arbeitsgedaechtnis"
+   ],
+   "eingabe": [
+    "touch",
+    "maus"
+   ],
+   "tablet_geeignet": "ja",
+   "dauer_sekunden": 120,
+   "schwierigkeit_anpassung": "Keine Stufen; die Folge wird innerhalb des Laufs länger (jede richtig wiederholte Folge + 1 Feld). Einstellungen: Raster 2–8 Zeilen × 2–10 Spalten (Standard 3 × 3); Startlänge 1–10 (Standard 2); Leuchtdauer je Feld 400–3000 ms (Standard 700 ms, nie kürzer als 400 ms); Pause zwischen den Feldern 0–1500 ms (Standard 250 ms); nächste Folge „alte Folge plus ein Feld“ (Standard) oder „komplett neue Folge“; nach einem Fehler gleiche Länge mit neuer Folge (Standard), eine Länge kürzer oder von vorn; Ende nach 0–20 Fehlern (Standard 3; 0 = unbegrenzt), bei Länge 3–40 (Standard 20) oder nach Zeitlimit 0–900 s (Standard 0 = kein Limit). Eigene Faustregel: über mehrere Läufe über 90 % richtige Eingaben → eine Einstellung schwerer.",
+   "messgroessen": [
+    "Hauptwert: längste vollständig richtig wiederholte Folge",
+    "richtig wiederholte Folgen",
+    "Fehler",
+    "richtige Eingaben in Prozent",
+    "Zeit pro richtiger Eingabe (Mittel, enthält Geräteverzögerung)",
+    "Gesamtzeit einschließlich Anzeige",
+    "keine Normwerte, kein Blickmaß; Vergleich nur bei gleichen Einstellungen"
+   ],
+   "anforderungsprofil": {
+    "visuell": {
+     "sehschaerfe_detail": 0,
+     "kontrast": 0,
+     "farbunterscheidung": 0,
+     "stereosehen": 0,
+     "peripheres_sehen": 1,
+     "nutzbares_sehfeld": 1,
+     "blickfolge": 0,
+     "sakkaden": 1,
+     "fixation": 0,
+     "bewegungswahrnehmung": 0,
+     "visuelle_suche": 0,
+     "visuelle_verarbeitungsgeschwindigkeit": 1,
+     "zeitliche_aufloesung": 0,
+     "naharbeit_dauer": 1
+    },
+    "kognitiv": {
+     "daueraufmerksamkeit": 2,
+     "selektive_aufmerksamkeit": 1,
+     "inhibition": 0,
+     "geteilte_aufmerksamkeit": 0,
+     "kognitive_flexibilitaet": 0,
+     "arbeitsgedaechtnis": 2,
+     "kurzzeitgedaechtnis_verbal": 0,
+     "kurzzeitgedaechtnis_visuell_raeumlich": 3,
+     "verarbeitungsgeschwindigkeit": 0,
+     "antizipation": 0,
+     "entscheidung_wahlreaktion": 0,
+     "lesen_sprache": 0,
+     "schlussfolgern": 0
+    },
+    "motorisch": {
+     "einfache_reaktion": 0,
+     "auge_hand_koordination": 1,
+     "zielbewegung_tempo": 0,
+     "zielbewegung_praezision": 1,
+     "kontinuierliche_steuerung": 0,
+     "ruhige_hand": 0,
+     "fingergeschwindigkeit": 0,
+     "fingersequenz_bimanual": 0,
+     "ganzkoerper": 0,
+     "gleichgewicht": 0,
+     "ausdauer_belastung": 0
+    }
+   },
+   "belastung": {
+    "zeitdruck": 1,
+    "flimmern_lichtreize": 1,
+    "bewegungsreize_schwindel": 0,
+    "koerperliche_belastung": 0,
+    "sturzrisiko": 0,
+    "sprachabhaengigkeit": 0
+   },
+   "voraussetzungen": [
+    "ruhige Umgebung ohne Ablenkung (Benachrichtigungen aus)",
+    "Felder voneinander unterscheiden und antippen können (Raster passt sich dem Bildschirm an)",
+    "keine Sprache oder Lesefähigkeit nötig"
+   ],
+   "vorsicht_bei": [
+    "photosensitive_epilepsie",
+    "migraene_lichtempfindlich",
+    "gesichtsfeldausfall",
+    "kognitive_einschraenkung",
+    "aufmerksamkeitsprobleme",
+    "kinder_unter_6",
+    "tremor_parkinson"
+   ],
+   "geeignet_fuer": [
+    "Orte und Reihenfolgen kurz merken und wiedergeben",
+    "sprachfreie Gedächtnisaufgabe mit großen Feldern am Tablet",
+    "Strategien wie Gruppieren oder Wege bilden („Ecke – Mitte – Rand“) ausprobieren",
+    "Vergleich mit sich selbst bei gleichen Einstellungen"
+   ],
+   "weniger_geeignet_fuer": [
+    "Gedächtnisdiagnostik oder Normvergleich (keine Normwerte; Fassungen der Aufgabe sind untereinander nicht vergleichbar)",
+    "Blickmotorik, Reaktion oder Handgenauigkeit üben",
+    "Menschen mit Lichtempfindlichkeit oder epileptischen Anfällen in der Vorgeschichte",
+    "Erwartung, dass sich allgemeine Denk- oder Lesefähigkeit verbessert"
+   ],
+   "evidenz": {
+    "uebungseffekt": "mittel",
+    "naher_transfer": "schwach",
+    "alltag_transfer": "fehlend",
+    "kommentar": "Die Aufgabe ähnelt der Corsi-Blockspanne, deren Fassungen sich stark unterscheiden (Berch et al. 1998). Gedächtnistraining verbesserte in einer Auswertung von 87 Veröffentlichungen die geübten und ähnliche Gedächtnisaufgaben, aber nicht überzeugend andere Fähigkeiten (Melby-Lervåg et al. 2016). Für genau diese Übung gibt es keine Studie; ein Alltagsnutzen ist nicht belegt."
+   },
+   "aehnliche_uebungen": [
+    607,
+    601,
+    603,
+    605,
+    811
+   ],
+   "stichworte": [
+    "Sequenz-Gedächtnis",
+    "Corsi-Blockspanne",
+    "räumliche Merkspanne",
+    "Reihenfolge merken",
+    "Arbeitsgedächtnis",
+    "Chunking",
+    "Raster",
+    "aufleuchtende Felder",
+    "sprachfrei",
+    "Labor",
+    "Einstellungen"
+   ],
+   "datei": "uebungen/917-labor-sequenz-gedaechtnis.md"
+  },
+  {
+   "nr": 918,
+   "kennung": "labor-woerter-bauen",
+   "name": "Wörter bauen (durcheinandergewürfelte Buchstaben zu einem Wort ordnen)",
+   "name_original": "– (eigene Blickfit-Übung, Labor, kein Vorbild)",
+   "kapitel": "Labor",
+   "kapitel_original": "",
+   "unterkapitel_original": "",
+   "quelle_url": "",
+   "blickfit_umsetzung": {
+    "kennung": "labor-woerter-bauen",
+    "name": "Wörter bauen",
+    "unterschiede": "eigene Labor-Übung mit Einstellungen"
+   },
+   "stand": "2026-10-05",
+   "kurzbeschreibung": "Unten liegen die Buchstaben eines Wortes durcheinander, oben leere Felder. Man tippt die Buchstaben in der Reihenfolge an, die ein Wort ergibt; „Zurück“ nimmt den letzten Buchstaben weg. Jedes Wort der Liste aus denselben Buchstaben gilt als richtig. Wortlänge, Zahl der Wörter und Kachelgröße stellt man selbst ein; die Wörter richten sich nach der Sprache (Deutsch oder Italienisch). Hauptwert ist die Zeit pro Wort.",
+   "ziel_funktionen": [
+    "lesen_sprache",
+    "arbeitsgedaechtnis",
+    "kognitive_flexibilitaet"
+   ],
+   "eingabe": [
+    "touch",
+    "maus"
+   ],
+   "tablet_geeignet": "ja",
+   "dauer_sekunden": 120,
+   "schwierigkeit_anpassung": "Keine Stufen, keine automatische Anpassung: Die Schwierigkeit ergibt sich aus den Einstellungen. Wortlänge 3–8 Buchstaben (Standard 5; längere Wörter meist schwerer); Zahl der Wörter 3–30 (Standard 8; bei vielen Wörtern kommen einzelne mehrmals vor); Kachelgröße 1,5–5 cm (Standard 2,5 cm; auf schmalen Bildschirmen verkleinert, mindestens 36 px); Ton an/aus (ändert die Vergleichbarkeit nicht). Kleine eigene Wortliste häufiger Hauptwörter (Deutsch rund 130 Wörter, Italienisch je Länge mindestens 11). Eigene Faustregel: immer nur eine Einstellung ändern; ohne Fehler → längere Wörter.",
+   "messgroessen": [
+    "Hauptwert: Zeit pro Wort (Mittel, vom Erscheinen der Buchstaben bis zum richtigen Wort, inklusive falscher Versuche)",
+    "Zeit pro Wort (Median)",
+    "falsche Versuche",
+    "gelöste Wörter (steht fest, keine Leistungsangabe)",
+    "Gesamtzeit ohne Pausen",
+    "Buchstaben pro Minute",
+    "langsamstes Wort",
+    "keine Normwerte; Vergleich nur in derselben Sprache und bei gleichen Einstellungen"
+   ],
+   "anforderungsprofil": {
+    "visuell": {
+     "sehschaerfe_detail": 1,
+     "kontrast": 0,
+     "farbunterscheidung": 0,
+     "stereosehen": 0,
+     "peripheres_sehen": 0,
+     "nutzbares_sehfeld": 0,
+     "blickfolge": 0,
+     "sakkaden": 1,
+     "fixation": 0,
+     "bewegungswahrnehmung": 0,
+     "visuelle_suche": 1,
+     "visuelle_verarbeitungsgeschwindigkeit": 0,
+     "zeitliche_aufloesung": 0,
+     "naharbeit_dauer": 1
+    },
+    "kognitiv": {
+     "daueraufmerksamkeit": 1,
+     "selektive_aufmerksamkeit": 1,
+     "inhibition": 1,
+     "geteilte_aufmerksamkeit": 0,
+     "kognitive_flexibilitaet": 2,
+     "arbeitsgedaechtnis": 3,
+     "kurzzeitgedaechtnis_verbal": 1,
+     "kurzzeitgedaechtnis_visuell_raeumlich": 0,
+     "verarbeitungsgeschwindigkeit": 1,
+     "antizipation": 0,
+     "entscheidung_wahlreaktion": 0,
+     "lesen_sprache": 3,
+     "schlussfolgern": 1
+    },
+    "motorisch": {
+     "einfache_reaktion": 0,
+     "auge_hand_koordination": 1,
+     "zielbewegung_tempo": 0,
+     "zielbewegung_praezision": 1,
+     "kontinuierliche_steuerung": 0,
+     "ruhige_hand": 0,
+     "fingergeschwindigkeit": 0,
+     "fingersequenz_bimanual": 0,
+     "ganzkoerper": 0,
+     "gleichgewicht": 0,
+     "ausdauer_belastung": 0
+    }
+   },
+   "belastung": {
+    "zeitdruck": 1,
+    "flimmern_lichtreize": 0,
+    "bewegungsreize_schwindel": 0,
+    "koerperliche_belastung": 0,
+    "sturzrisiko": 0,
+    "sprachabhaengigkeit": 3
+   },
+   "voraussetzungen": [
+    "sicheres Lesen und Schreiben einfacher Hauptwörter in der eingestellten Sprache (Deutsch oder Italienisch)",
+    "Bildschirm einmal kalibrieren, damit die Kachelgröße in cm stimmt",
+    "Buchstaben auf Kacheln antippen können (mindestens 36 px)"
+   ],
+   "vorsicht_bei": [
+    "lese_rechtschreib_schwaeche",
+    "kinder_unter_6",
+    "kognitive_einschraenkung",
+    "aufmerksamkeitsprobleme"
+   ],
+   "geeignet_fuer": [
+    "Buchstaben im Kopf umordnen und ein passendes Wort finden",
+    "ruhige Wortaufgabe ohne Zeitlimit als Abwechslung zu Blick- und Reaktionsübungen",
+    "Schwierigkeit über die Wortlänge einstellen",
+    "Vergleich mit sich selbst in derselben Sprache und bei gleicher Wortlänge"
+   ],
+   "weniger_geeignet_fuer": [
+    "Menschen, die die eingestellte Sprache nicht sicher lesen und schreiben",
+    "Blickmotorik, Reaktion oder Handgenauigkeit üben",
+    "Lese- oder Rechtschreibförderung mit Wirkanspruch (nicht belegt)",
+    "häufiges Üben mit der Erwartung neuer Wörter (die Liste ist klein)"
+   ],
+   "evidenz": {
+    "uebungseffekt": "schwach",
+    "naher_transfer": "unklar",
+    "alltag_transfer": "fehlend",
+    "kommentar": "Wie schwer ein Anagramm ist, hängt von Eigenschaften der Lösung ab, etwa Buchstabenpaaren, Anfangsbuchstabe und nötigen Umstellungen (Gilhooly & Johnson 1978; Mendelsohn & O’Brien 1974); Teilwissen baut sich auch bei plötzlicher Lösung schrittweise auf (Novick & Sherman 2003). Die Studien nutzten englische Wörter. Ein Trainingseffekt über das Wiedererkennen der kleinen Wortliste hinaus ist nicht untersucht; ein Nutzen für Lesen, Schreiben oder Alltag ist nicht belegt."
+   },
+   "aehnliche_uebungen": [
+    606,
+    203,
+    901,
+    902
+   ],
+   "stichworte": [
+    "Wörter bauen",
+    "Anagramm",
+    "Buchstaben ordnen",
+    "Wortbild",
+    "Umstellen",
+    "Arbeitsgedächtnis",
+    "Lesen",
+    "Deutsch",
+    "Italienisch",
+    "kein Zeitlimit",
+    "Labor",
+    "Einstellungen"
+   ],
+   "datei": "uebungen/918-labor-woerter-bauen.md"
+  },
+  {
+   "nr": 919,
+   "kennung": "labor-zeichen-finden",
+   "name": "Zeichen finden (alle gleichen Zeichen in einem Raster ähnlicher Zeichen antippen)",
+   "name_original": "– (eigene Blickfit-Übung, Labor, kein Vorbild)",
+   "kapitel": "Labor",
+   "kapitel_original": "",
+   "unterkapitel_original": "",
+   "quelle_url": "",
+   "blickfit_umsetzung": {
+    "kennung": "labor-zeichen-finden",
+    "name": "Zeichen finden",
+    "unterschiede": "eigene Labor-Übung mit Einstellungen"
+   },
+   "stand": "2026-10-05",
+   "kurzbeschreibung": "Oben steht ein Zielzeichen, darunter ein Raster aus sehr ähnlichen Zeichen (zum Beispiel b, d, p, q). Man tippt jedes gleiche Zeichen an, nicht die ähnlichen, und tippt „Fertig“, wenn man nichts mehr findet. Zeichenvorrat, Rastergröße, Anteil der Zielzeichen, Feldgröße und Zahl der Tafeln stellt man selbst ein. Hauptwert ist die Genauigkeit; der Blick wird nicht gemessen.",
+   "ziel_funktionen": [
+    "visuelle_suche",
+    "selektive_aufmerksamkeit"
+   ],
+   "eingabe": [
+    "touch",
+    "maus"
+   ],
+   "tablet_geeignet": "ja",
+   "dauer_sekunden": 120,
+   "schwierigkeit_anpassung": "Keine Stufen, keine automatische Anpassung: Die Schwierigkeit ergibt sich aus den Einstellungen. Zeichenvorrat „b d p q“ (Standard, Spiegelpaare), Ziffern (1 7 4 9 6 2 5 3), ähnliche Buchstaben (O Q C G D U E F) oder gemischt; Raster 2–12 Zeilen × 2–16 Spalten (Standard 5 × 8); Anteil der Zielzeichen 5–50 % (Standard 20 %; weniger = schwerer); Feldgröße 1–6 cm (Standard 2,5 cm; Zeichen mindestens ≈ 22 px, Feld mindestens 36 px); Zahl der Tafeln 1–20 (Standard 5). Passt das Raster nicht auf den Bildschirm, wird es gedreht oder für diese Tafel verkleinert (Hinweis im Ergebnis). Das Zielzeichen wechselt reihum durch den Vorrat. Eigene Faustregel: Genauigkeit über mehrere Läufe über 95 % → eine Einstellung schwerer.",
+   "messgroessen": [
+    "Hauptwert: Genauigkeit = gefundene ÷ (gefundene + übersehene + falsch getippte) in Prozent",
+    "Zielzeichen gefunden",
+    "Zielzeichen übersehen (bei „Fertig“)",
+    "falsche Zeichen getippt",
+    "Zeit pro gefundenem Zeichen (enthält Geräteverzögerung)",
+    "Gesamtzeit (Summe der Tafelzeiten)",
+    "kein Blickmaß, keine Aussage über Lesen oder Augen, keine Normwerte"
+   ],
+   "anforderungsprofil": {
+    "visuell": {
+     "sehschaerfe_detail": 2,
+     "kontrast": 0,
+     "farbunterscheidung": 0,
+     "stereosehen": 0,
+     "peripheres_sehen": 1,
+     "nutzbares_sehfeld": 1,
+     "blickfolge": 0,
+     "sakkaden": 2,
+     "fixation": 0,
+     "bewegungswahrnehmung": 0,
+     "visuelle_suche": 3,
+     "visuelle_verarbeitungsgeschwindigkeit": 1,
+     "zeitliche_aufloesung": 0,
+     "naharbeit_dauer": 2
+    },
+    "kognitiv": {
+     "daueraufmerksamkeit": 2,
+     "selektive_aufmerksamkeit": 3,
+     "inhibition": 2,
+     "geteilte_aufmerksamkeit": 0,
+     "kognitive_flexibilitaet": 1,
+     "arbeitsgedaechtnis": 1,
+     "kurzzeitgedaechtnis_verbal": 0,
+     "kurzzeitgedaechtnis_visuell_raeumlich": 0,
+     "verarbeitungsgeschwindigkeit": 2,
+     "antizipation": 0,
+     "entscheidung_wahlreaktion": 1,
+     "lesen_sprache": 1,
+     "schlussfolgern": 0
+    },
+    "motorisch": {
+     "einfache_reaktion": 0,
+     "auge_hand_koordination": 2,
+     "zielbewegung_tempo": 1,
+     "zielbewegung_praezision": 1,
+     "kontinuierliche_steuerung": 0,
+     "ruhige_hand": 0,
+     "fingergeschwindigkeit": 0,
+     "fingersequenz_bimanual": 0,
+     "ganzkoerper": 0,
+     "gleichgewicht": 0,
+     "ausdauer_belastung": 0
+    }
+   },
+   "belastung": {
+    "zeitdruck": 1,
+    "flimmern_lichtreize": 0,
+    "bewegungsreize_schwindel": 0,
+    "koerperliche_belastung": 0,
+    "sturzrisiko": 0,
+    "sprachabhaengigkeit": 0
+   },
+   "voraussetzungen": [
+    "Bildschirm einmal kalibrieren, damit die Feldgröße in cm stimmt",
+    "kleine, ähnliche Zeichen (Buchstaben des lateinischen Alphabets oder Ziffern) sicher unterscheiden können",
+    "Felder von mindestens 36 px antippen können"
+   ],
+   "vorsicht_bei": [
+    "sehbehinderung_niedriger_visus",
+    "presbyopie_gleitsicht",
+    "gesichtsfeldausfall",
+    "lese_rechtschreib_schwaeche",
+    "kinder_unter_6",
+    "aufmerksamkeitsprobleme",
+    "kopfschmerz_asthenopie",
+    "trockenes_auge_bildschirm"
+   ],
+   "geeignet_fuer": [
+    "ein Zielzeichen zwischen sehr ähnlichen Zeichen suchen und genau unterscheiden",
+    "systematisches Absuchen (Zeile für Zeile) üben",
+    "Schwierigkeit über Zeichenvorrat, Rastergröße und Anteil der Zielzeichen einstellen",
+    "ruhige Suchaufgabe ohne bewegte Reize und ohne Lichtreize"
+   ],
+   "weniger_geeignet_fuer": [
+    "Aussagen über Lesen, Rechtschreibung oder Augen (misst die Übung nicht)",
+    "Blickfolge, Reaktion oder Tempo unter Zeitdruck üben",
+    "Menschen mit deutlich eingeschränkter Sehschärfe bei kleinen Feldern",
+    "Lese- oder Rechtschreibförderung mit Wirkanspruch (nicht belegt)"
+   ],
+   "evidenz": {
+    "uebungseffekt": "mittel",
+    "naher_transfer": "schwach",
+    "alltag_transfer": "fehlend",
+    "kommentar": "Suche wird schwerer, je ähnlicher Ziel und Störzeichen sind (Duncan & Humphreys 1989); die Ähnlichkeit von Buchstaben ist ungleich verteilt (Mueller & Weidemann 2012). Suchleistung verbessert sich in Laborstudien mit Übung schnell und dauerhaft (Sireteanu & Rettenbach 1995; andere Aufgaben). Für genau diese Übung gibt es keine Studie; ob Üben der Zeichensuche Lesen oder Rechtschreibung beeinflusst, ist nicht belegt."
+   },
+   "aehnliche_uebungen": [
+    103,
+    204,
+    208,
+    916
+   ],
+   "stichworte": [
+    "Zeichen finden",
+    "visuelle Suche",
+    "b d p q",
+    "Spiegelbuchstaben",
+    "ähnliche Zeichen",
+    "Suchaufgabe",
+    "Genauigkeit",
+    "Zeile für Zeile",
+    "Gedränge",
+    "Labor",
+    "Einstellungen"
+   ],
+   "datei": "uebungen/919-labor-zeichen-finden.md"
+  },
+  {
+   "nr": 920,
+   "kennung": "labor-mentale-rotation",
+   "name": "Mentale Rotation (gedrehte Figur: dieselbe oder ihr Spiegelbild?)",
+   "name_original": "– (eigene Blickfit-Übung, Labor, kein Vorbild)",
+   "kapitel": "Labor",
+   "kapitel_original": "",
+   "unterkapitel_original": "",
+   "quelle_url": "",
+   "blickfit_umsetzung": {
+    "kennung": "labor-mentale-rotation",
+    "name": "Mentale Rotation",
+    "unterschiede": "eigene Labor-Übung mit Einstellungen"
+   },
+   "stand": "2026-10-05",
+   "kurzbeschreibung": "Links steht eine flache Figur aus Quadraten, rechts eine gedrehte Figur. Man entscheidet, ob sie nur gedreht ist („Gleich“) oder ihr Spiegelbild („Gespiegelt“). Zahl der Aufgaben, Quadrate pro Figur, Drehwinkel (Vielfache von 90° oder 45°), Quadratgröße und ein optionales Zeitlimit stellt man selbst ein. Hauptwert ist die Genauigkeit; dazu kommen Antwortzeit und ihr Anstieg mit dem Drehwinkel.",
+   "ziel_funktionen": [
+    "kurzzeitgedaechtnis_visuell_raeumlich",
+    "arbeitsgedaechtnis",
+    "entscheidung_wahlreaktion"
+   ],
+   "eingabe": [
+    "touch",
+    "maus",
+    "tastatur"
+   ],
+   "tablet_geeignet": "ja",
+   "dauer_sekunden": 150,
+   "schwierigkeit_anpassung": "Keine Stufen, keine automatische Anpassung: Die Schwierigkeit ergibt sich aus den Einstellungen. Zahl der Aufgaben 6–80 (Standard 24; für den Anstieg der Antwortzeit mindestens 20 sinnvoll); Quadrate pro Figur 4–9 (Standard 6; mehr meist schwerer); Drehwinkel Vielfache von 90° (Standard; 0°, 90°, 180°, 270°) oder von 45° (schwerer, Figur auch schräg zum Raster); Quadratgröße 0,6–3 cm (Standard 1,2 cm); Zeitlimit je Aufgabe 0–60 s (Standard 0 = kein Limit; Überschreitung zählt als nicht richtig). Winkel und „gleich/gespiegelt“ kommen ausgewogen vor. Eigene Faustregel: über mehrere Läufe über 90 % → eine Einstellung schwerer, unter 70 % → leichter.",
+   "messgroessen": [
+    "Hauptwert: Genauigkeit (richtige Antworten in Prozent; Raten ergäbe etwa 50 %)",
+    "richtige Antworten",
+    "Antwortzeit richtiger Antworten (Mittel und Median)",
+    "Anstieg der Antwortzeit je 90° Drehung (erst ab 6 richtigen Antworten mit 3 Winkelstufen; nur Vergleich mit sich selbst)",
+    "keine Normwerte, kein Richtwert für den Anstieg"
+   ],
+   "anforderungsprofil": {
+    "visuell": {
+     "sehschaerfe_detail": 1,
+     "kontrast": 0,
+     "farbunterscheidung": 0,
+     "stereosehen": 0,
+     "peripheres_sehen": 0,
+     "nutzbares_sehfeld": 0,
+     "blickfolge": 0,
+     "sakkaden": 1,
+     "fixation": 0,
+     "bewegungswahrnehmung": 0,
+     "visuelle_suche": 0,
+     "visuelle_verarbeitungsgeschwindigkeit": 0,
+     "zeitliche_aufloesung": 0,
+     "naharbeit_dauer": 1
+    },
+    "kognitiv": {
+     "daueraufmerksamkeit": 1,
+     "selektive_aufmerksamkeit": 0,
+     "inhibition": 1,
+     "geteilte_aufmerksamkeit": 0,
+     "kognitive_flexibilitaet": 0,
+     "arbeitsgedaechtnis": 2,
+     "kurzzeitgedaechtnis_verbal": 0,
+     "kurzzeitgedaechtnis_visuell_raeumlich": 3,
+     "verarbeitungsgeschwindigkeit": 1,
+     "antizipation": 0,
+     "entscheidung_wahlreaktion": 2,
+     "lesen_sprache": 0,
+     "schlussfolgern": 1
+    },
+    "motorisch": {
+     "einfache_reaktion": 0,
+     "auge_hand_koordination": 0,
+     "zielbewegung_tempo": 0,
+     "zielbewegung_praezision": 0,
+     "kontinuierliche_steuerung": 0,
+     "ruhige_hand": 0,
+     "fingergeschwindigkeit": 0,
+     "fingersequenz_bimanual": 0,
+     "ganzkoerper": 0,
+     "gleichgewicht": 0,
+     "ausdauer_belastung": 0
+    }
+   },
+   "belastung": {
+    "zeitdruck": 0,
+    "flimmern_lichtreize": 0,
+    "bewegungsreize_schwindel": 0,
+    "koerperliche_belastung": 0,
+    "sturzrisiko": 0,
+    "sprachabhaengigkeit": 0
+   },
+   "voraussetzungen": [
+    "Bildschirm einmal kalibrieren, damit die Quadratgröße in cm stimmt",
+    "zwei große Antwortknöpfe antippen (mit Symbol und Wort) oder Pfeiltasten links/rechts nutzen",
+    "keine Lesefähigkeit für die Aufgabe selbst nötig"
+   ],
+   "vorsicht_bei": [
+    "kognitive_einschraenkung",
+    "kinder_unter_6",
+    "sehbehinderung_niedriger_visus",
+    "presbyopie_gleitsicht"
+   ],
+   "geeignet_fuer": [
+    "sich vorstellen, wie eine Figur gedreht aussieht, und gleich von gespiegelt unterscheiden",
+    "ruhige, denkorientierte Aufgabe ohne Zeitdruck (Zeitlimit optional)",
+    "Schwierigkeit über Quadratzahl, Drehwinkel und Zeitlimit einstellen",
+    "Vergleich mit sich selbst: Genauigkeit, Antwortzeit und Anstieg je 90° bei gleichen Einstellungen"
+   ],
+   "weniger_geeignet_fuer": [
+    "Blickmotorik, Reaktion oder Handgenauigkeit üben",
+    "Beurteilung räumlicher Fähigkeiten oder Normvergleich (keine Richtwerte)",
+    "Aussagen über den Anstieg aus wenigen Aufgaben (schwankt stark)",
+    "Erwartung eines Alltagsnutzens (nicht belegt)"
+   ],
+   "evidenz": {
+    "uebungseffekt": "mittel",
+    "naher_transfer": "mittel",
+    "alltag_transfer": "fehlend",
+    "kommentar": "In einer Auswertung von 217 Studien verbesserte Training räumliche Fähigkeiten im Mittel (Effektstärke 0,47) und übertrug sich auf nicht geübte räumliche Aufgaben (Uttal et al. 2013); in einer Studie mit 31 Personen übertrug sich Rotationsüben auf neue Figuren und eine andere räumliche Aufgabe (Wright et al. 2008). Das waren andere Aufgaben und Trainingspläne; für genau diese Übung gibt es keine Studie, ein Alltagsnutzen ist nicht belegt."
+   },
+   "aehnliche_uebungen": [
+    903,
+    901,
+    603,
+    811
+   ],
+   "stichworte": [
+    "mentale Rotation",
+    "räumliches Vorstellen",
+    "Spiegelbild",
+    "gleich oder gespiegelt",
+    "Drehwinkel",
+    "Antwortzeit",
+    "Anstieg je 90°",
+    "Quadratfiguren",
+    "kein Zeitdruck",
+    "Labor",
+    "Einstellungen"
+   ],
+   "datei": "uebungen/920-labor-mentale-rotation.md"
+  },
+  {
+   "nr": 921,
+   "kennung": "labor-rot-gruen-lesen",
+   "name": "Rot-Grün-Lesen (Zeichenfolge in zwei Farben mit Rot-Grün-Brille lesen und eintippen)",
+   "name_original": "– (eigene Blickfit-Labor-Übung, kein Vorbild)",
+   "kapitel": "Labor",
+   "kapitel_original": "",
+   "unterkapitel_original": "",
+   "quelle_url": "",
+   "blickfit_umsetzung": {
+    "kennung": "labor-rot-gruen-lesen",
+    "name": "Rot-Grün-Lesen",
+    "unterschiede": "eigene Labor-Übung mit Einstellungen"
+   },
+   "stand": "2026-10-05",
+   "kurzbeschreibung": "Auf Schwarz steht eine Folge aus Ziffern oder Buchstaben, die Zeichen sind abwechselnd oder gemischt rot und grün (wahlweise cyan oder blau). Mit einer Rot-Grün-Brille sieht jedes Auge nur die Zeichen seiner Farbe hell; man liest die ganze Folge mit beiden Augen und tippt sie der Reihe nach ein, nicht Gesehenes mit „?“. Länge, Zeichenart, Größe in cm, Farbverteilung, Anzeigedauer und Farben stellt man selbst ein; optional ein Versatz der beiden Farbbilder in Prismendioptrien.",
+   "ziel_funktionen": [
+    "naharbeit_dauer",
+    "sehschaerfe_detail",
+    "kurzzeitgedaechtnis_verbal"
+   ],
+   "eingabe": [
+    "touch",
+    "maus",
+    "tastatur"
+   ],
+   "tablet_geeignet": "ja",
+   "dauer_sekunden": 120,
+   "schwierigkeit_anpassung": "Keine Stufen und keine automatische Anpassung; alles über Einstellungen (maßgeblich ist PARAMS in src/exercises/labor-rot-gruen-lesen/logic.ts): Zeichenart (Ziffern, Buchstaben ohne leicht verwechselbare, gemischt), Länge der Folge (4–12 Zeichen, Standard 6), Zeichenhöhe (0,6–4 cm, Standard 1,2 cm ≈ 1,7° bei 40 cm), Verteilung der Farben (abwechselnd oder zufällig mit mindestens einem Drittel je Farbe), Anzeigedauer (unbegrenzt, 8, 4 oder 2 s; danach aus dem Gedächtnis), Anzahl der Folgen (6–20, Standard 10), Farbpaar (Rot–Grün, Rot–Cyan, Rot–Blau), Helligkeit gemeinsam (80–100 %) und je Farbe (30–100 %), Kontrollstriche (aus/an), Versatz der Farbbilder 0–12 Δ (Konvergenz oder Divergenz, optional langsamer Aufbau über bis zu 10 Folgen; der erste Durchgang hat immer 0 Δ). In der Trainer-Ansicht kann der Versatz während der Übung verändert werden (höchstens 2 Δ je Tastendruck). Faustregel der Texte (keine Vorgabe aus der Forschung): in drei Durchläufen über 90 % ganz richtig → eine Einstellung schwerer, unter 50 % → leichter; immer nur eine Einstellung ändern.",
+   "messgroessen": [
+    "Ganz richtige Folgen (Anzahl und Anteil)",
+    "Richtige Zeichen (Anteil und Anzahl)",
+    "Fehlende oder verwechselte Zeichen je Farbe (erst ab 20 Zeichen je Farbe gezeigt; Hinweis, kein Befund)",
+    "Fehlende oder verwechselte Zeichen nach Auge (nur gültig, wenn das linke Glas richtig eingestellt ist; Hinweis, kein Befund)",
+    "Eingabezeit je Folge (enthält bei unbegrenzter Anzeige das Lesen und die Touch-Verzögerung)",
+    "Zeichenhöhe in cm und Sehwinkel; Anzeigedauer; Versatz in Δ, cm und px",
+    "Kontrollstriche: Folgen mit gemeldetem fehlendem Strich je Farbe",
+    "keine Messung von Blick, Brillensitz oder Augenstellung; keine Normwerte"
+   ],
+   "anforderungsprofil": {
+    "visuell": {
+     "sehschaerfe_detail": 2,
+     "kontrast": 1,
+     "farbunterscheidung": 2,
+     "stereosehen": 0,
+     "peripheres_sehen": 0,
+     "nutzbares_sehfeld": 1,
+     "blickfolge": 0,
+     "sakkaden": 2,
+     "fixation": 1,
+     "bewegungswahrnehmung": 0,
+     "visuelle_suche": 0,
+     "visuelle_verarbeitungsgeschwindigkeit": 1,
+     "zeitliche_aufloesung": 0,
+     "naharbeit_dauer": 3
+    },
+    "kognitiv": {
+     "daueraufmerksamkeit": 1,
+     "selektive_aufmerksamkeit": 1,
+     "inhibition": 0,
+     "geteilte_aufmerksamkeit": 0,
+     "kognitive_flexibilitaet": 0,
+     "arbeitsgedaechtnis": 1,
+     "kurzzeitgedaechtnis_verbal": 2,
+     "kurzzeitgedaechtnis_visuell_raeumlich": 0,
+     "verarbeitungsgeschwindigkeit": 1,
+     "antizipation": 0,
+     "entscheidung_wahlreaktion": 0,
+     "lesen_sprache": 2,
+     "schlussfolgern": 0
+    },
+    "motorisch": {
+     "einfache_reaktion": 0,
+     "auge_hand_koordination": 1,
+     "zielbewegung_tempo": 0,
+     "zielbewegung_praezision": 0,
+     "kontinuierliche_steuerung": 0,
+     "ruhige_hand": 0,
+     "fingergeschwindigkeit": 0,
+     "fingersequenz_bimanual": 0,
+     "ganzkoerper": 0,
+     "gleichgewicht": 0,
+     "ausdauer_belastung": 0
+    }
+   },
+   "belastung": {
+    "zeitdruck": 0,
+    "flimmern_lichtreize": 0,
+    "bewegungsreize_schwindel": 0,
+    "koerperliche_belastung": 0,
+    "sturzrisiko": 0,
+    "sprachabhaengigkeit": 1
+   },
+   "voraussetzungen": [
+    "Rot-Grün-Brille (oder Rot-Cyan-Brille mit dem Farbpaar Rot–Blau), bei Korrekturbrille als Überbrille",
+    "Keine Rot-Grün-Farbsehschwäche; Prüfbild im Intro: mit dem roten Glas muss die grüne Fläche dunkel erscheinen und umgekehrt",
+    "Nachtmodus und Farbfilter des Geräts aus, gedämpftes Raumlicht, keine Spiegelungen",
+    "Bildschirm einmal kalibriert (Bankkarte) und Abstand eingetragen, sonst gelten Größen nur als Schätzung (38 px/cm, 40 cm)",
+    "Ziffern oder lateinische Großbuchstaben sicher kennen",
+    "Abstand etwa 40 cm, Kopf ruhig"
+   ],
+   "vorsicht_bei": [
+    "farbsehschwaeche",
+    "schielen_binokular",
+    "amblyopie",
+    "kopfschmerz_asthenopie",
+    "schwindel_vestibulaer",
+    "presbyopie_gleitsicht",
+    "sehbehinderung_niedriger_visus",
+    "trockenes_auge_bildschirm",
+    "kinder_unter_6"
+   ],
+   "geeignet_fuer": [
+    "Eine ruhige Leseaufgabe, bei der beide Augen beteiligt bleiben müssen: jedes Auge sieht nur einen Teil der Folge",
+    "Einstellbare Aufgabe für Trainerin oder Trainer: Länge, Größe, Anzeigedauer, Farbverteilung und optional ein kleiner Versatz der beiden Bilder, je Schritt eine Einstellung",
+    "Vergleich mit sich selbst bei gleichen Einstellungen auf demselben Gerät (ganz richtige Folgen, richtige Zeichen, Eingabezeit)",
+    "Vorführung des Prinzips der Bildtrennung mit Farbfiltern in Geschäft und Beratung – ohne Wirkanspruch und ohne Befund"
+   ],
+   "weniger_geeignet_fuer": [
+    "Menschen mit Rot-Grün-Farbsehschwäche (die Farbtrennung funktioniert dann nicht verlässlich)",
+    "Beurteilung des beidäugigen Sehens, einer Unterdrückung oder einer Schielstellung: die Auswertung nach Farbe und Auge ist nur ein Hinweis, kein Befund",
+    "Prismenmessung oder Ersatz einer Untersuchung (der Versatz ist eine Übungseinstellung)",
+    "Üben räumlicher Tiefe: alle Zeichen liegen in der Bildschirmebene",
+    "Diagnose, Therapie oder Normvergleich"
+   ],
+   "evidenz": {
+    "uebungseffekt": "schwach",
+    "naher_transfer": "unklar",
+    "alltag_transfer": "fehlend",
+    "kommentar": "Für genau diese Aufgabe gibt es keine Studie. Dichoptische Aufgaben (jedem Auge ein anderes Bild) werden bei Amblyopie untersucht; die Ergebnisse sind gemischt (Hess et al. 2010; Li et al. 2013; Tsirlin et al. 2015; Holmes et al. 2016). Vergenzübungen zeigten bei Konvergenzinsuffizienz nur in betreuten Praxisprogrammen deutliche Änderungen (CITT 2008; Scheiman et al. 2005). Für Menschen mit gesunder Binokularfunktion ist kein Nutzen belegt; in der eigenen Aufgabe wird man durch Gewöhnung an Brille, Gerät und Zeichen besser."
+   },
+   "aehnliche_uebungen": [
+    922,
+    923,
+    905,
+    602
+   ],
+   "stichworte": [
+    "Rot-Grün-Brille",
+    "Anaglyphe",
+    "dichoptisch",
+    "beidäugig lesen",
+    "Bildtrennung",
+    "Zeichenfolge",
+    "Versatz in Prismendioptrien",
+    "Konvergenz",
+    "Divergenz",
+    "Kontrollstriche",
+    "kein Stereosehen",
+    "kein Befund"
+   ],
+   "datei": "uebungen/921-labor-rot-gruen-lesen.md"
+  },
+  {
+   "nr": 922,
+   "kennung": "labor-fusion",
+   "name": "Fusion – Bilder verschmelzen (Versatz mit Rot-Grün-Brille, Doppelt und wieder einfach melden)",
+   "name_original": "– (eigene Blickfit-Labor-Übung, kein Vorbild)",
+   "kapitel": "Labor",
+   "kapitel_original": "",
+   "unterkapitel_original": "",
+   "quelle_url": "",
+   "blickfit_umsetzung": {
+    "kennung": "labor-fusion",
+    "name": "Fusion – Bilder verschmelzen",
+    "unterschiede": "eigene Labor-Übung mit Einstellungen"
+   },
+   "stand": "2026-10-05",
+   "kurzbeschreibung": "Mit einer Rot-Grün-Brille sieht jedes Auge ein Ziel aus zwei Ringen und einem Mittelpunkt in seiner Farbe. Der Versatz der beiden Bilder wächst langsam (in Prismendioptrien), bis man „Doppelt“ meldet, und schrumpft dann, bis man „Wieder einfach“ meldet – in Richtung Konvergenz, Divergenz oder im Wechsel. Tempo, Obergrenze, Wiederholungen, Zielgröße und Farben stellt man selbst ein; eine Trainerin oder ein Trainer kann den Versatz auch selbst führen. Die Werte sind Übungswerte, keine Prismenmessung.",
+   "ziel_funktionen": [
+    "naharbeit_dauer",
+    "fixation",
+    "daueraufmerksamkeit"
+   ],
+   "eingabe": [
+    "touch",
+    "maus",
+    "tastatur"
+   ],
+   "tablet_geeignet": "ja",
+   "dauer_sekunden": 150,
+   "schwierigkeit_anpassung": "Keine Stufen und keine automatische Anpassung; alles über Einstellungen (maßgeblich ist PARAMS in src/exercises/labor-fusion/logic.ts): Richtung (im Wechsel, nur Konvergenz, nur Divergenz), Versatzsteuerung (automatisch mit 0,5–6 Δ pro Sekunde, Standard 1,5; oder nur Trainer-Regler), Startversatz (0–10 Δ, Standard 0), Obergrenze (5–40 Δ, Standard 25; auf kleinen Bildschirmen begrenzt), Wiederholungen je Richtung (1–6, Standard 3), Zieldurchmesser (2–14 cm, Standard 6), Farbpaar und Helligkeit je Farbe, Prüfbild im Intro. Leichter laut Texten: langsamer, größeres Ziel, eine Richtung, kleine Obergrenze; schwerer: schneller, kleineres Ziel (3–4 cm), beide Richtungen, mehr Wiederholungen. Trainer-Regler: höchstens 2 Δ je Tastendruck, bei „automatisch“ als Zusatz, bei „Trainer“ allein bestimmend.",
+   "messgroessen": [
+    "„Doppelt“ gemeldet bei (Mittel, in Δ) gesamt und je Richtung",
+    "„Wieder einfach“ gemeldet bei (Mittel, in Δ) je Richtung",
+    "Abgeschlossene Durchgänge; Durchgänge bis zur Obergrenze ohne „Doppelt“; Durchgänge ohne „Wieder einfach“",
+    "Meldungen „Strich fehlt“ je Farbe (Hinweis, kein Befund)",
+    "Obergrenze und Zieldurchmesser in Δ, cm und px; Änderungen am Trainer-Regler mit Zeitpunkt",
+    "Übungswerte: keine Prismenmessung, keine Fusionsbreite, keine Normwerte; ein höherer Wert ist nicht „besser“"
+   ],
+   "anforderungsprofil": {
+    "visuell": {
+     "sehschaerfe_detail": 1,
+     "kontrast": 1,
+     "farbunterscheidung": 2,
+     "stereosehen": 1,
+     "peripheres_sehen": 0,
+     "nutzbares_sehfeld": 0,
+     "blickfolge": 0,
+     "sakkaden": 0,
+     "fixation": 3,
+     "bewegungswahrnehmung": 1,
+     "visuelle_suche": 0,
+     "visuelle_verarbeitungsgeschwindigkeit": 0,
+     "zeitliche_aufloesung": 0,
+     "naharbeit_dauer": 3
+    },
+    "kognitiv": {
+     "daueraufmerksamkeit": 2,
+     "selektive_aufmerksamkeit": 1,
+     "inhibition": 0,
+     "geteilte_aufmerksamkeit": 0,
+     "kognitive_flexibilitaet": 0,
+     "arbeitsgedaechtnis": 0,
+     "kurzzeitgedaechtnis_verbal": 0,
+     "kurzzeitgedaechtnis_visuell_raeumlich": 0,
+     "verarbeitungsgeschwindigkeit": 0,
+     "antizipation": 0,
+     "entscheidung_wahlreaktion": 1,
+     "lesen_sprache": 0,
+     "schlussfolgern": 0
+    },
+    "motorisch": {
+     "einfache_reaktion": 1,
+     "auge_hand_koordination": 0,
+     "zielbewegung_tempo": 0,
+     "zielbewegung_praezision": 0,
+     "kontinuierliche_steuerung": 0,
+     "ruhige_hand": 0,
+     "fingergeschwindigkeit": 0,
+     "fingersequenz_bimanual": 0,
+     "ganzkoerper": 0,
+     "gleichgewicht": 0,
+     "ausdauer_belastung": 0
+    }
+   },
+   "belastung": {
+    "zeitdruck": 0,
+    "flimmern_lichtreize": 0,
+    "bewegungsreize_schwindel": 0,
+    "koerperliche_belastung": 0,
+    "sturzrisiko": 0,
+    "sprachabhaengigkeit": 0
+   },
+   "voraussetzungen": [
+    "Rot-Grün-Brille (oder Rot-Cyan-Brille mit dem Farbpaar Rot–Blau), bei Korrekturbrille als Überbrille",
+    "Keine Rot-Grün-Farbsehschwäche; Prüfbild im Intro Schritt für Schritt (je ein Auge zuhalten, Glas wählen, Helligkeit je Farbe einstellen)",
+    "Bildschirm kalibriert und Sehentfernung eingetragen, sonst sind Δ, cm und px nur geschätzt",
+    "Gedämpftes Raumlicht, Nachtmodus und Farbfilter aus, Abstand etwa 40 cm, Kopf ruhig",
+    "Ehrlich beim ersten Anzeichen „Doppelt“ melden können"
+   ],
+   "vorsicht_bei": [
+    "farbsehschwaeche",
+    "schielen_binokular",
+    "amblyopie",
+    "nystagmus",
+    "kopfschmerz_asthenopie",
+    "schwindel_vestibulaer",
+    "presbyopie_gleitsicht",
+    "trockenes_auge_bildschirm",
+    "kinder_unter_6"
+   ],
+   "geeignet_fuer": [
+    "Unter Anleitung das Zusammenspiel beider Augen bei langsam wachsendem Versatz üben, mit eigener Meldung von „Doppelt“ und „Wieder einfach“",
+    "Trainerin oder Trainer führt den Versatz mit dem Regler selbst und sieht jede Änderung im Ergebnis",
+    "Vergleich mit sich selbst bei gleichen Einstellungen, auf demselben Gerät und im gleichen Abstand, je Richtung getrennt",
+    "Vorführung des Prinzips getrennter Bilder für beide Augen – ohne Wirkanspruch und ohne Befund"
+   ],
+   "weniger_geeignet_fuer": [
+    "Prismenmessung, Bestimmung einer Fusionsbreite oder von Bruch- und Erholungspunkten als Befund",
+    "Ersatz einer orthoptischen oder optometrischen Untersuchung",
+    "Menschen mit Rot-Grün-Farbsehschwäche",
+    "Üben ohne Absprache bei Schielen, Doppelbildern oder Beschwerden",
+    "Diagnose, Therapie oder Normvergleich"
+   ],
+   "evidenz": {
+    "uebungseffekt": "schwach",
+    "naher_transfer": "unklar",
+    "alltag_transfer": "fehlend",
+    "kommentar": "Für genau diese Aufgabe gibt es keine Studie. Fusionale Vergenz änderte sich bei Konvergenzinsuffizienz in betreuten Praxisprogrammen mit Übungen zu Hause am deutlichsten (CITT 2008; Scheiman et al. 2005); in CITT 2008 lagen Computerübungen zu Hause (33 % erfolgreich oder gebessert) etwa gleichauf mit Placebo (35 %). Für Menschen ohne Befund ist kein Nutzen belegt; die gemeldeten Werte hängen stark von Gerät, Abstand, Tempo und dem eigenen Meldekriterium ab."
+   },
+   "aehnliche_uebungen": [
+    921,
+    923,
+    931
+   ],
+   "stichworte": [
+    "Fusion",
+    "fusionale Vergenz",
+    "Konvergenz",
+    "Divergenz",
+    "Prismendioptrie",
+    "Rot-Grün-Brille",
+    "Anaglyphe",
+    "Doppelbilder melden",
+    "Bruch und Erholung (nur Übungswerte)",
+    "Trainer-Regler",
+    "keine Prismenmessung"
+   ],
+   "datei": "uebungen/922-labor-fusion.md"
+  },
+  {
+   "nr": 923,
+   "kennung": "labor-stereo",
+   "name": "Tiefe sehen – Zufallspunkte (schwebendes Quadrat mit Rot-Grün-Brille finden)",
+   "name_original": "– (eigene Blickfit-Labor-Übung, kein Vorbild)",
+   "kapitel": "Labor",
+   "kapitel_original": "",
+   "unterkapitel_original": "",
+   "quelle_url": "",
+   "blickfit_umsetzung": {
+    "kennung": "labor-stereo",
+    "name": "Tiefe sehen – Zufallspunkte",
+    "unterschiede": "eigene Labor-Übung mit Einstellungen"
+   },
+   "stand": "2026-10-05",
+   "kurzbeschreibung": "In einem Feld aus Zufallspunkten schwebt ein Quadrat vor oder hinter der Fläche; mit einer Rot-Grün-Brille sieht jedes Auge sein eigenes Punktbild, und nur der kleine Unterschied zwischen beiden (Disparität) lässt das Quadrat räumlich erscheinen. Man tippt, wo es liegt: oben, unten, links oder rechts. Die Disparität in Winkelsekunden wird automatisch angepasst, bleibt fest oder wird von der Trainerin oder dem Trainer geführt; Feld, Quadrat, Punkte, Rauschen und Farben sind einstellbar. Übungswerte, keine Messung einer Stereoschwelle.",
+   "ziel_funktionen": [
+    "stereosehen",
+    "fixation",
+    "entscheidung_wahlreaktion"
+   ],
+   "eingabe": [
+    "touch",
+    "maus",
+    "tastatur"
+   ],
+   "tablet_geeignet": "ja",
+   "dauer_sekunden": 120,
+   "schwierigkeit_anpassung": "Einstellungen (maßgeblich ist PARAMS in src/exercises/labor-stereo/logic.ts): Anzahl der Durchgänge (8–80, Standard 24), Start-Disparität (20–3600″, Standard 600″), Disparitätssteuerung (automatisch: nach zwei richtigen Antworten in Folge × 0,8, nach jedem Fehler × 1,25, Grenzen 20–3600″; fest; oder nur Trainer-Regler), Kantenlänge des Punktfelds (8–26 cm, Standard 14), des Quadrats (2–10 cm, Standard 5, höchstens 60 % des Felds), Punktzahl (150–1500, Standard 600), Punktdurchmesser (0,1–0,6 cm, Standard 0,25), Rauschen im Hintergrund (an/aus), Farbpaar und Helligkeit je Farbe. Trainer-Regler: Schritt 100″, höchstens 400″ je Tastendruck; bei „automatisch“ und „fest“ als Zusatz. Leichter laut Texten: 1000–2000″, großes Quadrat, mehr Punkte, kein Rauschen; schwerer: kleinere Disparität, Quadrat 3 cm, Rauschen an. Die feinste mögliche Stufe ist ein Pixel (am Tablet in 40 cm etwa 100″).",
+   "messgroessen": [
+    "Richtige Antworten (Anzahl und Anteil; Raten ergibt etwa 25 %)",
+    "Letzte Disparität in Winkelsekunden und Bereich der gezeigten Disparitäten",
+    "Antwortzeit (Mittel; enthält die Touch-Verzögerung)",
+    "Richtige Antworten getrennt für Quadrat vor und hinter der Fläche",
+    "Disparität eines Pixels als feinste Stufe des Bildschirms",
+    "Änderungen am Trainer-Regler mit Zeitpunkt",
+    "Übungswerte: keine Stereoschwelle, keine Aussage über Stereosehen oder Sehschärfe, keine Normwerte"
+   ],
+   "anforderungsprofil": {
+    "visuell": {
+     "sehschaerfe_detail": 2,
+     "kontrast": 1,
+     "farbunterscheidung": 2,
+     "stereosehen": 3,
+     "peripheres_sehen": 0,
+     "nutzbares_sehfeld": 1,
+     "blickfolge": 0,
+     "sakkaden": 0,
+     "fixation": 2,
+     "bewegungswahrnehmung": 0,
+     "visuelle_suche": 1,
+     "visuelle_verarbeitungsgeschwindigkeit": 0,
+     "zeitliche_aufloesung": 0,
+     "naharbeit_dauer": 2
+    },
+    "kognitiv": {
+     "daueraufmerksamkeit": 1,
+     "selektive_aufmerksamkeit": 1,
+     "inhibition": 0,
+     "geteilte_aufmerksamkeit": 0,
+     "kognitive_flexibilitaet": 0,
+     "arbeitsgedaechtnis": 0,
+     "kurzzeitgedaechtnis_verbal": 0,
+     "kurzzeitgedaechtnis_visuell_raeumlich": 1,
+     "verarbeitungsgeschwindigkeit": 0,
+     "antizipation": 0,
+     "entscheidung_wahlreaktion": 2,
+     "lesen_sprache": 0,
+     "schlussfolgern": 0
+    },
+    "motorisch": {
+     "einfache_reaktion": 0,
+     "auge_hand_koordination": 1,
+     "zielbewegung_tempo": 0,
+     "zielbewegung_praezision": 0,
+     "kontinuierliche_steuerung": 0,
+     "ruhige_hand": 0,
+     "fingergeschwindigkeit": 0,
+     "fingersequenz_bimanual": 0,
+     "ganzkoerper": 0,
+     "gleichgewicht": 0,
+     "ausdauer_belastung": 0
+    }
+   },
+   "belastung": {
+    "zeitdruck": 0,
+    "flimmern_lichtreize": 0,
+    "bewegungsreize_schwindel": 0,
+    "koerperliche_belastung": 0,
+    "sturzrisiko": 0,
+    "sprachabhaengigkeit": 0
+   },
+   "voraussetzungen": [
+    "Rot-Grün-Brille (oder Rot-Cyan-Brille mit dem Farbpaar Rot–Blau), bei Korrekturbrille als Überbrille",
+    "Keine Rot-Grün-Farbsehschwäche; Prüfbild im Intro ohne Geisterbild",
+    "Bildschirm kalibriert und echte Sehentfernung eingetragen; daraus werden Winkelsekunden berechnet",
+    "Gedämpftes Raumlicht, Nachtmodus und Farbfilter aus, Abstand etwa 40 cm, Kopf ruhig",
+    "Mit dem Finger eine von vier beschrifteten Tasten wählen können"
+   ],
+   "vorsicht_bei": [
+    "farbsehschwaeche",
+    "schielen_binokular",
+    "amblyopie",
+    "kopfschmerz_asthenopie",
+    "schwindel_vestibulaer",
+    "presbyopie_gleitsicht",
+    "sehbehinderung_niedriger_visus",
+    "kinder_unter_6"
+   ],
+   "geeignet_fuer": [
+    "Räumliches Sehen mit Zufallspunktbildern als Aufgabe am Tablet: nur wer die beiden Augenbilder zusammen nutzt, findet das Quadrat",
+    "Einstellbare Aufgabe für Trainerin oder Trainer, mit automatischer Anpassung, festem Wert oder eigener Führung der Disparität",
+    "Vergleich mit sich selbst bei gleichen Einstellungen, gleicher Brille, gleichem Gerät und Abstand",
+    "Vorführung des Prinzips der Zufallspunktbilder – ohne Wirkanspruch und ohne Befund"
+   ],
+   "weniger_geeignet_fuer": [
+    "Messung einer Stereoschwelle oder Ersatz einer klinischen Untersuchung des Stereosehens",
+    "Klärung, ob räumliches Sehen fehlt (zum Beispiel nach Schielen): abklären lassen statt üben",
+    "Menschen mit Rot-Grün-Farbsehschwäche",
+    "Sehr feine Disparitäten: der Bildschirm verschiebt nur in ganzen Pixeln",
+    "Diagnose, Therapie oder Normvergleich"
+   ],
+   "evidenz": {
+    "uebungseffekt": "schwach",
+    "naher_transfer": "unklar",
+    "alltag_transfer": "fehlend",
+    "kommentar": "Für genau diese Aufgabe gibt es keine Studie. Zufallspunktbilder sind seit Julesz (1960) ein Mittel der Tiefensehforschung. In einer kleinen Studie mit fünf Erwachsenen mit gestörtem Binokularsehen erholte sich das Stereosehen nach Tausenden Durchgängen Wahrnehmungslernen deutlich, aber mit geringerer Auflösung und Genauigkeit (Ding & Levi 2011). Für Menschen ohne Befund ist kein Nutzen belegt, für den Alltag gibt es keinen Beleg."
+   },
+   "aehnliche_uebungen": [
+    922,
+    921
+   ],
+   "stichworte": [
+    "Stereosehen",
+    "Zufallspunktbild",
+    "Random-Dot-Stereogramm",
+    "Disparität",
+    "Winkelsekunden",
+    "Rot-Grün-Brille",
+    "Anaglyphe",
+    "Stufenverfahren",
+    "Pixelgrenze",
+    "keine Stereoschwelle"
+   ],
+   "datei": "uebungen/923-labor-stereo.md"
+  },
+  {
+   "nr": 924,
+   "kennung": "labor-richtungen",
+   "name": "Richtungen (Pfeil einer von vier oder acht Richtungen zuordnen, per Touch oder mit dem Körper)",
+   "name_original": "– (eigene Blickfit-Labor-Übung, kein Vorbild)",
+   "kapitel": "Labor",
+   "kapitel_original": "",
+   "unterkapitel_original": "",
+   "quelle_url": "",
+   "blickfit_umsetzung": {
+    "kennung": "labor-richtungen",
+    "name": "Richtungen",
+    "unterschiede": "eigene Labor-Übung mit Einstellungen"
+   },
+   "stand": "2026-10-05",
+   "kurzbeschreibung": "Nach einer zufälligen Wartezeit erscheint ein großer Pfeil in eine von vier oder acht Richtungen. Man gibt so schnell wie möglich seine Richtung oder die Gegenrichtung an – per Tipp auf ein Richtungsfeld oder mit einer Körperbewegung, während eine Hilfsperson „Richtig“ oder „Falsch“ tippt. Anzahl, Richtungen, Regel, Eingabe, Antwortzeit, Wartezeit und Pfeilgröße stellt man selbst ein. Gezählt werden richtige, falsche, fehlende und zu frühe Antworten und die Reaktionszeit.",
+   "ziel_funktionen": [
+    "entscheidung_wahlreaktion",
+    "visuelle_verarbeitungsgeschwindigkeit",
+    "auge_hand_koordination"
+   ],
+   "eingabe": [
+    "touch",
+    "maus",
+    "tastatur",
+    "koerper_ohne_geraet"
+   ],
+   "tablet_geeignet": "ja",
+   "dauer_sekunden": 90,
+   "schwierigkeit_anpassung": "Keine Stufen und keine automatische Anpassung; alles über Einstellungen (maßgeblich ist PARAMS in src/exercises/labor-richtungen/logic.ts): Anzahl der Pfeile (10–120, Standard 32, Richtungen gleichmäßig verteilt), Richtungen (4 oder 8), Regel (in Pfeilrichtung oder Gegenrichtung), Eingabe (Berührung oder Hilfsperson), Antwortzeit je Pfeil (500–8000 ms, Standard 2500; mit Hilfsperson mindestens 1500 ms), Wartezeit zufällig zwischen 300–3000 und 300–5000 ms (Standard 800–2000 ms), Pfeilgröße (3–16 cm, Standard 8), Ton (ändert die Wertung nicht). Leichter laut Texten: vier Richtungen, Pfeilrichtung, 3000 ms und mehr, große Pfeile, Berührung; schwerer: acht Richtungen, Gegenrichtung, 1000–1500 ms, kürzere und stärker schwankende Wartezeit. Faustregel der Texte (keine Vorgabe aus der Forschung): in drei Durchläufen über 95 % → eine Einstellung schwerer.",
+   "messgroessen": [
+    "Richtige Antworten und Genauigkeit (Anteil an allen Pfeilen)",
+    "Falsche Richtung (mit Hilfsperson: „Falsch“ getippt)",
+    "Keine Antwort in der Antwortzeit",
+    "Zu früh (vor dem Pfeil oder weniger als 0,1 s danach; nicht gewertet)",
+    "Reaktionszeit richtiger Antworten: Mittel, Median, Streuung (mit Hilfsperson einschließlich deren Reaktion und der Körperbewegung)",
+    "Zeit je Richtung (Zählwerte, keine Wertung)",
+    "keine Messung von Bewegung, Gleichgewicht oder Haltung; keine Normwerte"
+   ],
+   "anforderungsprofil": {
+    "visuell": {
+     "sehschaerfe_detail": 0,
+     "kontrast": 0,
+     "farbunterscheidung": 0,
+     "stereosehen": 0,
+     "peripheres_sehen": 0,
+     "nutzbares_sehfeld": 0,
+     "blickfolge": 0,
+     "sakkaden": 1,
+     "fixation": 1,
+     "bewegungswahrnehmung": 0,
+     "visuelle_suche": 0,
+     "visuelle_verarbeitungsgeschwindigkeit": 2,
+     "zeitliche_aufloesung": 0,
+     "naharbeit_dauer": 1
+    },
+    "kognitiv": {
+     "daueraufmerksamkeit": 1,
+     "selektive_aufmerksamkeit": 1,
+     "inhibition": 2,
+     "geteilte_aufmerksamkeit": 0,
+     "kognitive_flexibilitaet": 1,
+     "arbeitsgedaechtnis": 1,
+     "kurzzeitgedaechtnis_verbal": 0,
+     "kurzzeitgedaechtnis_visuell_raeumlich": 1,
+     "verarbeitungsgeschwindigkeit": 2,
+     "antizipation": 0,
+     "entscheidung_wahlreaktion": 3,
+     "lesen_sprache": 0,
+     "schlussfolgern": 0
+    },
+    "motorisch": {
+     "einfache_reaktion": 1,
+     "auge_hand_koordination": 2,
+     "zielbewegung_tempo": 2,
+     "zielbewegung_praezision": 1,
+     "kontinuierliche_steuerung": 0,
+     "ruhige_hand": 0,
+     "fingergeschwindigkeit": 0,
+     "fingersequenz_bimanual": 0,
+     "ganzkoerper": 1,
+     "gleichgewicht": 1,
+     "ausdauer_belastung": 0
+    }
+   },
+   "belastung": {
+    "zeitdruck": 2,
+    "flimmern_lichtreize": 1,
+    "bewegungsreize_schwindel": 0,
+    "koerperliche_belastung": 1,
+    "sturzrisiko": 1,
+    "sprachabhaengigkeit": 0
+   },
+   "voraussetzungen": [
+    "Bildschirm auf Augenhöhe, sicher sitzen oder stehen",
+    "Mit dem Finger eine von vier oder acht Tasten von mindestens 56 px treffen (Berührung) – oder eine Hilfsperson, die die Körperbewegung beurteilt und tippt",
+    "Mit Hilfsperson: vorher vereinbaren, welche Bewegung zu welcher Richtung gehört; Wand oder fester Stuhl in Reichweite, rutschfester Boden",
+    "Bildschirm kalibriert, damit die Pfeilgröße in cm stimmt",
+    "Richtungen oben/unten/links/rechts (und Schrägen) sicher zuordnen können"
+   ],
+   "vorsicht_bei": [
+    "sturzgefahr",
+    "schwindel_vestibulaer",
+    "herz_kreislauf",
+    "gelenk_ruecken",
+    "photosensitive_epilepsie",
+    "kognitive_einschraenkung"
+   ],
+   "geeignet_fuer": [
+    "Schnelle Zuordnung eines Richtungszeichens zu einer Antwort üben, mit wählbarer Schwierigkeit (vier oder acht Richtungen, Pfeil- oder Gegenrichtung)",
+    "Unterdrücken der naheliegenden Antwort bei der Gegenrichtung",
+    "Mit Hilfsperson: Richtungsaufgabe mit Körperbewegung im sicheren Stand oder Sitz, die Hilfsperson bestätigt",
+    "Vergleich mit sich selbst bei gleichen Einstellungen auf demselben Gerät (und mit derselben Hilfsperson)"
+   ],
+   "weniger_geeignet_fuer": [
+    "Messung von Schrittzeit, Gleichgewicht oder Sturzrisiko (die App sieht die Bewegung nicht)",
+    "Menschen, die nicht sicher stehen können, wenn mit Körperbewegung geübt werden soll",
+    "Normvergleich der Reaktionszeit (Touch- und Gerätelatenz, Hilfsperson)",
+    "Diagnose, Therapie oder Sturzvorbeugung ohne betreutes Programm"
+   ],
+   "evidenz": {
+    "uebungseffekt": "schwach",
+    "naher_transfer": "unklar",
+    "alltag_transfer": "fehlend",
+    "kommentar": "Für genau diese Übung gibt es keine Studie. Dass räumlich passende Reiz-Antwort-Zuordnungen schneller sind, ist ein altes, robustes Ergebnis (Fitts & Seeger 1953; Simon 1969). Schritt-Training mit echten Schritten verminderte bei Älteren Stürze und verbesserte Wahl-Schrittreaktionszeit (Okubo et al. 2017); das waren betreute Programme, keine Bildschirmübung. Bei Bildschirmübungen werden Effekte überschätzt, wenn der Test der Übung ähnelt (Guo et al. 2025)."
+   },
+   "aehnliche_uebungen": [
+    202,
+    201,
+    902,
+    703,
+    925,
+    909
+   ],
+   "stichworte": [
+    "Wahlreaktion",
+    "Pfeilrichtung",
+    "Gegenrichtung",
+    "Reiz-Reaktions-Kompatibilität",
+    "Richtungen zuordnen",
+    "acht Richtungen",
+    "Hilfsperson",
+    "Körperbewegung",
+    "Schritt-Training (nur Einordnung)",
+    "Sturzgefahr beachten"
+   ],
+   "datei": "uebungen/924-labor-richtungen.md"
+  },
+  {
+   "nr": 925,
+   "kennung": "labor-orientierung",
+   "name": "Orientierung (auf einen aufleuchtenden Punkt hin eine Körperrichtung einnehmen, Hilfsperson bestätigt)",
+   "name_original": "– (eigene Blickfit-Labor-Übung, kein Vorbild)",
+   "kapitel": "Labor",
+   "kapitel_original": "",
+   "unterkapitel_original": "",
+   "quelle_url": "",
+   "blickfit_umsetzung": {
+    "kennung": "labor-orientierung",
+    "name": "Orientierung",
+    "unterschiede": "eigene Labor-Übung mit Einstellungen"
+   },
+   "stand": "2026-10-05",
+   "kurzbeschreibung": "Auf dem Bildschirm leuchtet ein Punkt in einer von vier oder acht Richtungen auf. Man bewegt sich im sicheren Stand kontrolliert in diese Richtung (zum Beispiel Neigen oder ein Schritt), und eine Hilfsperson tippt „Erreicht“ oder „Falsche Richtung“; wahlweise folgt die Rückkehr zur Mitte. Die App misst nur die Zeit bis zum Tipp der Hilfsperson. Anzahl, Richtungen, Rückkehr, Pause, Zeitlimit und Punktgröße stellt man selbst ein. Sturzgefahr: Halt und Hilfsperson in Reichweite.",
+   "ziel_funktionen": [
+    "ganzkoerper",
+    "gleichgewicht",
+    "entscheidung_wahlreaktion"
+   ],
+   "eingabe": [
+    "koerper_ohne_geraet",
+    "touch",
+    "maus",
+    "tastatur"
+   ],
+   "tablet_geeignet": "ja",
+   "dauer_sekunden": 150,
+   "schwierigkeit_anpassung": "Keine Stufen und keine automatische Anpassung; alles über Einstellungen (maßgeblich ist PARAMS in src/exercises/labor-orientierung/logic.ts): Anzahl der Ziele (8–80, Standard 24, Richtungen gleichmäßig verteilt), Richtungen (4 oder 8), Rückkehr zur Mitte (ja/nein), Pause zwischen den Zielen (500–5000 ms, Standard 1500), Zeitlimit je Ziel (0 = keines bis 30 s, Standard keines), Punktgröße (1,5–10 cm, Standard 5), Ton (ändert die Wertung nicht). Leichter laut Texten: vier Richtungen, lange Pause, Zeitlimit 10–20 s oder keines, große Punkte, Rückkehr zur Mitte; schwerer: acht Richtungen, Zeitlimit 3–5 s, kleinere Punkte, kürzere Pausen, ohne Rückkehr zur Mitte. Unruhigere Standfläche erst später und nur mit Sicherung und Aufsicht.",
+   "messgroessen": [
+    "Erreichte Ziele (von der Hilfsperson bestätigt)",
+    "Falsche Richtung",
+    "Zeitlimit überschritten (nur mit Zeitlimit)",
+    "Zeit bis zur Bestätigung: Mittel, Median, Streuung (enthält die Reaktion der Hilfsperson)",
+    "Zeit zurück zur Mitte (Mittel; nur mit Rückkehr)",
+    "Zeit je Richtung (Zählwerte, keine Wertung)",
+    "keine Messung von Bewegung, Gleichgewicht, Haltung oder Sturzrisiko; keine Normwerte"
+   ],
+   "anforderungsprofil": {
+    "visuell": {
+     "sehschaerfe_detail": 0,
+     "kontrast": 0,
+     "farbunterscheidung": 0,
+     "stereosehen": 0,
+     "peripheres_sehen": 1,
+     "nutzbares_sehfeld": 1,
+     "blickfolge": 0,
+     "sakkaden": 1,
+     "fixation": 0,
+     "bewegungswahrnehmung": 0,
+     "visuelle_suche": 0,
+     "visuelle_verarbeitungsgeschwindigkeit": 1,
+     "zeitliche_aufloesung": 0,
+     "naharbeit_dauer": 0
+    },
+    "kognitiv": {
+     "daueraufmerksamkeit": 1,
+     "selektive_aufmerksamkeit": 1,
+     "inhibition": 0,
+     "geteilte_aufmerksamkeit": 1,
+     "kognitive_flexibilitaet": 0,
+     "arbeitsgedaechtnis": 1,
+     "kurzzeitgedaechtnis_verbal": 0,
+     "kurzzeitgedaechtnis_visuell_raeumlich": 2,
+     "verarbeitungsgeschwindigkeit": 1,
+     "antizipation": 0,
+     "entscheidung_wahlreaktion": 2,
+     "lesen_sprache": 0,
+     "schlussfolgern": 0
+    },
+    "motorisch": {
+     "einfache_reaktion": 1,
+     "auge_hand_koordination": 0,
+     "zielbewegung_tempo": 0,
+     "zielbewegung_praezision": 0,
+     "kontinuierliche_steuerung": 0,
+     "ruhige_hand": 0,
+     "fingergeschwindigkeit": 0,
+     "fingersequenz_bimanual": 0,
+     "ganzkoerper": 3,
+     "gleichgewicht": 3,
+     "ausdauer_belastung": 1
+    }
+   },
+   "belastung": {
+    "zeitdruck": 1,
+    "flimmern_lichtreize": 0,
+    "bewegungsreize_schwindel": 0,
+    "koerperliche_belastung": 2,
+    "sturzrisiko": 2,
+    "sprachabhaengigkeit": 0
+   },
+   "voraussetzungen": [
+    "Sicher stehen können; Wand oder fester Stuhl in Reichweite, rutschfester Boden, feste Schuhe, keine Stolperstellen",
+    "Eine Hilfsperson, die die Bewegung sieht und „Erreicht“ oder „Falsche Richtung“ tippt (Tasten mindestens 56 px, Tastatur Leertaste und X)",
+    "Vorher vereinbart: welche Neigung oder welcher Schritt zu welcher Richtung gehört und ab wann „Erreicht“ gilt",
+    "Bildschirm auf Augenhöhe, ruhig auf Ständer oder Tisch oder von der Hilfsperson gehalten; kalibriert, damit die Punktgröße stimmt"
+   ],
+   "vorsicht_bei": [
+    "sturzgefahr",
+    "schwindel_vestibulaer",
+    "herz_kreislauf",
+    "gelenk_ruecken",
+    "kognitive_einschraenkung",
+    "kinder_unter_6"
+   ],
+   "geeignet_fuer": [
+    "Auf einen sichtbaren Reiz hin gezielt und kontrolliert eine Körperrichtung einnehmen und zur Mitte zurückkehren, unter Aufsicht im sicheren Stand",
+    "Richtung auf dem Bildschirm in eine Körperbewegung übersetzen (vier oder acht Richtungen)",
+    "Vergleich mit sich selbst bei gleicher Hilfsperson, gleichem Aufbau und gleichen Einstellungen",
+    "Ergänzung in einem betreuten Bewegungsprogramm – ohne eigenen Wirkanspruch"
+   ],
+   "weniger_geeignet_fuer": [
+    "Messung von Gleichgewicht, Schrittzeit, Haltung oder Sturzrisiko (die App sieht die Bewegung nicht)",
+    "Üben ohne Hilfsperson oder ohne sicheren Halt",
+    "Menschen, die nicht sicher stehen können oder bei Schwindel ohne ärztliche Rücksprache",
+    "Normvergleich der Zeiten",
+    "Diagnose oder Therapie"
+   ],
+   "evidenz": {
+    "uebungseffekt": "schwach",
+    "naher_transfer": "unklar",
+    "alltag_transfer": "unklar",
+    "kommentar": "Für genau diese Übung gibt es keine Studie. Schritt-Training mit echten Schritten auf Reize hin verminderte bei Menschen ab 60 Jahren in betreuten Programmen Stürze und verbesserte Wahl-Schrittreaktionszeit und Gleichgewichtstests (Okubo et al. 2017); Gleichgewichts- und Funktionsübungen senken die Sturzrate (Sherrington et al. 2019). Die Übung ähnelt solchen Aufgaben, ist aber nicht untersucht; für gesunde Menschen ist kein Nutzen belegt, und die Zeit hängt an der Hilfsperson."
+   },
+   "aehnliche_uebungen": [
+    924,
+    926,
+    202,
+    933
+   ],
+   "stichworte": [
+    "Orientierung",
+    "Körperrichtung",
+    "Neigen",
+    "Schritt",
+    "Rückkehr zur Mitte",
+    "Hilfsperson",
+    "Wahl-Schrittaufgabe (nur Einordnung)",
+    "Gleichgewicht",
+    "Sturzgefahr",
+    "keine Messung"
+   ],
+   "datei": "uebungen/925-labor-orientierung.md"
+  },
+  {
+   "nr": 926,
+   "kennung": "labor-balance-touch",
+   "name": "Balance-Touch (Punkte im Stand antippen, Hilfsperson zählt Gleichgewichtsverluste)",
+   "name_original": "– (eigene Blickfit-Labor-Übung, kein Vorbild)",
+   "kapitel": "Labor",
+   "kapitel_original": "",
+   "unterkapitel_original": "",
+   "quelle_url": "",
+   "blickfit_umsetzung": {
+    "kennung": "labor-balance-touch",
+    "name": "Balance-Touch",
+    "unterschiede": "eigene Labor-Übung mit Einstellungen"
+   },
+   "stand": "2026-10-05",
+   "kurzbeschreibung": "Man steht vor einem Tablet auf einem Ständer und tippt Punkte an, die nacheinander an zufälligen Stellen erscheinen und nach kurzer Zeit wieder verschwinden – im festen Stand, einbeinig, im Tandemstand oder auf einer wackligen Fläche. Eine Hilfsperson tippt jeden Verlust des Gleichgewichts auf einer eigenen Taste. Standposition, Dauer, Punktgröße, Sichtbarkeit, Pause, Bereich und ein Kreuz in der Mitte stellt man selbst ein. Die App misst die Tipp-Leistung und zählt die Taps der Hilfsperson, nicht das Gleichgewicht. Sturzgefahr: Halt und Hilfsperson in Reichweite.",
+   "ziel_funktionen": [
+    "gleichgewicht",
+    "auge_hand_koordination",
+    "geteilte_aufmerksamkeit"
+   ],
+   "eingabe": [
+    "touch",
+    "maus",
+    "tastatur"
+   ],
+   "tablet_geeignet": "ja",
+   "dauer_sekunden": 60,
+   "schwierigkeit_anpassung": "Keine Stufen und keine automatische Anpassung; alles über Einstellungen (maßgeblich ist PARAMS in src/exercises/labor-balance-touch/logic.ts): Standposition (beidbeinig fest, wacklige Fläche, einbeinig, Tandemstand; wird nur gespeichert und gehört zum Vergleich), Dauer (20–300 s, Standard 60), Punktdurchmesser (2–15 cm, Standard 6; höchstens 40 % der kürzeren Feldseite), Sichtbarkeit je Punkt (0,5–8 s, Standard 2), Pause nach Treffer oder Ablauf (0–3000 ms, Standard 500), Bereich (ganze Fläche, nur Rand, nur Mitte), Kreuz in der Mitte (Standard an). Leichter laut Texten: fester beidbeiniger Stand, Punkte 7–9 cm, Sichtbarkeit 3–4 s, Kreuz aus; schwerer: erst später und nur mit Sicherung Tandem- oder Einbeinstand, Punkte 3–4 cm, Sichtbarkeit 1–1,5 s, nur Rand, Kreuz an. Auf wackligen Flächen zuerst nur 20–30 s.",
+   "messgroessen": [
+    "Getroffene und verpasste Punkte, Trefferquote (getroffen an allen gezeigten)",
+    "Fehltipps (daneben, ohne Abzug)",
+    "Reaktionszeit getroffener Punkte: Mittel, Median, Streuung",
+    "Von der Hilfsperson gezählte Verluste des Gleichgewichts und Verluste pro Minute",
+    "Standposition (gespeichert, Teil des Vergleichs)",
+    "keine Messung von Gleichgewicht, Haltung oder Blick; keine Normwerte"
+   ],
+   "anforderungsprofil": {
+    "visuell": {
+     "sehschaerfe_detail": 0,
+     "kontrast": 0,
+     "farbunterscheidung": 0,
+     "stereosehen": 0,
+     "peripheres_sehen": 2,
+     "nutzbares_sehfeld": 2,
+     "blickfolge": 0,
+     "sakkaden": 1,
+     "fixation": 2,
+     "bewegungswahrnehmung": 0,
+     "visuelle_suche": 1,
+     "visuelle_verarbeitungsgeschwindigkeit": 2,
+     "zeitliche_aufloesung": 0,
+     "naharbeit_dauer": 1
+    },
+    "kognitiv": {
+     "daueraufmerksamkeit": 2,
+     "selektive_aufmerksamkeit": 1,
+     "inhibition": 1,
+     "geteilte_aufmerksamkeit": 3,
+     "kognitive_flexibilitaet": 0,
+     "arbeitsgedaechtnis": 0,
+     "kurzzeitgedaechtnis_verbal": 0,
+     "kurzzeitgedaechtnis_visuell_raeumlich": 0,
+     "verarbeitungsgeschwindigkeit": 1,
+     "antizipation": 0,
+     "entscheidung_wahlreaktion": 0,
+     "lesen_sprache": 0,
+     "schlussfolgern": 0
+    },
+    "motorisch": {
+     "einfache_reaktion": 2,
+     "auge_hand_koordination": 3,
+     "zielbewegung_tempo": 2,
+     "zielbewegung_praezision": 1,
+     "kontinuierliche_steuerung": 0,
+     "ruhige_hand": 0,
+     "fingergeschwindigkeit": 0,
+     "fingersequenz_bimanual": 0,
+     "ganzkoerper": 1,
+     "gleichgewicht": 3,
+     "ausdauer_belastung": 1
+    }
+   },
+   "belastung": {
+    "zeitdruck": 2,
+    "flimmern_lichtreize": 1,
+    "bewegungsreize_schwindel": 0,
+    "koerperliche_belastung": 1,
+    "sturzrisiko": 2,
+    "sprachabhaengigkeit": 0
+   },
+   "voraussetzungen": [
+    "Sicher stehen können; Wand oder fester Stuhl in Reichweite, rutschfester Boden, feste Schuhe",
+    "Eine Hilfsperson in Reichweite, die Verluste des Gleichgewichts nach vorher festgelegter Regel tippt (Taste mindestens 56 px oder Taste B)",
+    "Tablet auf einem Ständer etwa in Brusthöhe, jeder Punkt ohne Verrenken erreichbar; nicht auf den Bildschirm stützen",
+    "Bildschirm kalibriert, damit die Punktgröße in cm stimmt",
+    "Einbein-, Tandemstand und wacklige Flächen nur mit Sicherung und Aufsicht"
+   ],
+   "vorsicht_bei": [
+    "sturzgefahr",
+    "schwindel_vestibulaer",
+    "herz_kreislauf",
+    "gelenk_ruecken",
+    "photosensitive_epilepsie",
+    "hand_arm_beschwerden",
+    "kognitive_einschraenkung"
+   ],
+   "geeignet_fuer": [
+    "Unter Aufsicht eine Doppelaufgabe aus Stehen und Antippen üben, mit schrittweise anspruchsvollerer Standposition",
+    "Mit Kreuz in der Mitte: Punkte aus dem Augenwinkel wahrnehmen, während der Blick in der Mitte bleibt (als Bitte, nicht kontrolliert)",
+    "Vergleich mit sich selbst bei gleicher Standposition, gleicher Hilfsperson und gleichen Einstellungen",
+    "Ergänzung in einem betreuten Bewegungsprogramm – ohne eigenen Wirkanspruch"
+   ],
+   "weniger_geeignet_fuer": [
+    "Messung des Gleichgewichts, der Haltung oder des Sturzrisikos (die gezählten Verluste sind Zählwerte der Hilfsperson)",
+    "Üben ohne Hilfsperson oder ohne sicheren Halt",
+    "Menschen, die nicht sicher stehen können, oder bei Schwindel ohne ärztliche Rücksprache",
+    "Normvergleich von Trefferquote oder Reaktionszeit",
+    "Diagnose oder Therapie"
+   ],
+   "evidenz": {
+    "uebungseffekt": "schwach",
+    "naher_transfer": "unklar",
+    "alltag_transfer": "unklar",
+    "kommentar": "Für genau diese Übung gibt es keine Studie. Bei älteren Menschen mit Gleichgewichtsstörung verbesserte sich das Gehen unter Doppelaufgabe nur nach Doppelaufgaben-Training, reines Gleichgewichtstraining übertrug sich möglicherweise nicht (Silsupadol et al. 2009, 23 Personen). Ein Überblick über 18 Übersichten fand positive Effekte von Doppelaufgaben-Programmen mit Bewegung; Exergames wirkten nur auf die Denkleistung, Übertragung und Sicherheit sind unklar (Gallou-Guyot et al. 2020). Für diese Bildschirmübung und für gesunde Menschen ist kein Nutzen belegt."
+   },
+   "aehnliche_uebungen": [
+    925,
+    927,
+    401,
+    108,
+    205,
+    907,
+    912
+   ],
+   "stichworte": [
+    "Doppelaufgabe",
+    "Gleichgewicht",
+    "Stand",
+    "Einbeinstand",
+    "Tandemstand",
+    "wacklige Fläche",
+    "Punkte antippen",
+    "Fixationskreuz",
+    "Hilfsperson zählt",
+    "Sturzgefahr",
+    "keine Messung"
+   ],
+   "datei": "uebungen/926-labor-balance-touch.md"
+  },
+  {
+   "nr": 927,
+   "kennung": "labor-slalom",
+   "name": "Slalom (Kugel seitlich durch herablaufende Tore steuern – Finger, Pfeiltasten oder Kippen)",
+   "name_original": "– (eigene Blickfit-Labor-Übung, kein Vorbild)",
+   "kapitel": "Labor",
+   "kapitel_original": "",
+   "unterkapitel_original": "",
+   "quelle_url": "",
+   "blickfit_umsetzung": {
+    "kennung": "labor-slalom",
+    "name": "Slalom",
+    "unterschiede": "eigene Labor-Übung mit Einstellungen"
+   },
+   "stand": "2026-10-05",
+   "kurzbeschreibung": "Tore aus zwei Stangen mit einer Lücke laufen von oben nach unten; eine Kugel unten wird seitlich so gesteuert, dass sie durch jede Lücke fährt – mit dem Finger, den Pfeiltasten oder durch Kippen des Geräts. Das verlangt Vorausschau und rechtzeitig dosierte Bewegungen. Dauer, Torlücke, Geschwindigkeit, Beschleunigung, Abstand der Tore und Steuerung stellt man selbst ein. Gezählt werden durchfahrene Tore, berührte Stangen, längste Serie und die Abweichung von der Mitte der Lücke. Am besten im Sitzen.",
+   "ziel_funktionen": [
+    "kontinuierliche_steuerung",
+    "antizipation",
+    "zielbewegung_praezision"
+   ],
+   "eingabe": [
+    "touch",
+    "maus",
+    "tastatur"
+   ],
+   "tablet_geeignet": "ja",
+   "dauer_sekunden": 60,
+   "schwierigkeit_anpassung": "Keine Stufen und keine automatische Anpassung; alles über Einstellungen (maßgeblich ist PARAMS in src/exercises/labor-slalom/logic.ts): Dauer (20–180 s, Standard 60), Torlücke (4–24 cm, Standard 12; höchstens 80 % der Feldbreite, mindestens Kugeldurchmesser + 1,2 cm), Geschwindigkeit der Tore (4–40 cm/s, Standard 14), Beschleunigung (0–100 % pro Minute, Standard 20), Abstand der Tore (8–30 cm, Standard 14; höchstens 60 % der Feldhöhe), Steuerung (Finger/Zeiger, Pfeiltasten oder A/D, Kippen des Geräts). Leichter laut Texten: Lücke 16–20 cm, 6–10 cm/s, keine Beschleunigung, Finger; schwerer: Lücke 6–8 cm, 20–30 cm/s, 40–80 % Beschleunigung pro Minute, kleiner Torabstand; Pfeiltasten und Kippen sind schwerer als der Finger. Faustregel der Texte (keine Vorgabe aus der Forschung): in drei Durchläufen über 90 % der Tore → eine Einstellung schwerer, unter 60 % → leichter.",
+   "messgroessen": [
+    "Durchfahrene Tore und Trefferquote (an allen gewerteten Toren)",
+    "Berührte Stangen (je Tor höchstens einmal)",
+    "Längste Serie ohne Fehler",
+    "Mittlere seitliche Abweichung von der Mitte der Lücke bei geschafften Toren (cm)",
+    "Tatsächlich benutzte Torlücke und Torabstand (cm)",
+    "keine Messung von Haltung, Gleichgewicht oder Blick; keine Normwerte"
+   ],
+   "anforderungsprofil": {
+    "visuell": {
+     "sehschaerfe_detail": 0,
+     "kontrast": 0,
+     "farbunterscheidung": 0,
+     "stereosehen": 0,
+     "peripheres_sehen": 1,
+     "nutzbares_sehfeld": 1,
+     "blickfolge": 1,
+     "sakkaden": 1,
+     "fixation": 0,
+     "bewegungswahrnehmung": 2,
+     "visuelle_suche": 0,
+     "visuelle_verarbeitungsgeschwindigkeit": 1,
+     "zeitliche_aufloesung": 0,
+     "naharbeit_dauer": 1
+    },
+    "kognitiv": {
+     "daueraufmerksamkeit": 2,
+     "selektive_aufmerksamkeit": 1,
+     "inhibition": 0,
+     "geteilte_aufmerksamkeit": 0,
+     "kognitive_flexibilitaet": 0,
+     "arbeitsgedaechtnis": 0,
+     "kurzzeitgedaechtnis_verbal": 0,
+     "kurzzeitgedaechtnis_visuell_raeumlich": 0,
+     "verarbeitungsgeschwindigkeit": 1,
+     "antizipation": 3,
+     "entscheidung_wahlreaktion": 1,
+     "lesen_sprache": 0,
+     "schlussfolgern": 0
+    },
+    "motorisch": {
+     "einfache_reaktion": 0,
+     "auge_hand_koordination": 2,
+     "zielbewegung_tempo": 1,
+     "zielbewegung_praezision": 2,
+     "kontinuierliche_steuerung": 3,
+     "ruhige_hand": 1,
+     "fingergeschwindigkeit": 0,
+     "fingersequenz_bimanual": 0,
+     "ganzkoerper": 0,
+     "gleichgewicht": 0,
+     "ausdauer_belastung": 0
+    }
+   },
+   "belastung": {
+    "zeitdruck": 2,
+    "flimmern_lichtreize": 0,
+    "bewegungsreize_schwindel": 2,
+    "koerperliche_belastung": 0,
+    "sturzrisiko": 1,
+    "sprachabhaengigkeit": 0
+   },
+   "voraussetzungen": [
+    "Am besten im Sitzen; wer steht oder auf einer Plattform balanciert, braucht Wand oder festen Stuhl in Reichweite und eine Hilfsperson",
+    "Steuerung mit dem Finger über die ganze Feldbreite, mit Pfeiltasten (oder A/D) oder durch Kippen des Geräts (beidhändig festhalten; der Browser fragt erst nach Tippen auf „Kippen einschalten“ nach der Erlaubnis)",
+    "Bildschirm kalibriert, damit Torlücke, Abstände und Geschwindigkeit in cm stimmen",
+    "Bewegte Bilder über die Dauer des Durchlaufs vertragen"
+   ],
+   "vorsicht_bei": [
+    "schwindel_vestibulaer",
+    "reisekrankheit",
+    "migraene_lichtempfindlich",
+    "sturzgefahr",
+    "tremor_parkinson",
+    "hand_arm_beschwerden"
+   ],
+   "geeignet_fuer": [
+    "Eine Bewegung vorausschauend dosieren: die Kugel rechtzeitig zur nächsten Lücke steuern",
+    "Fortlaufende seitliche Steuerung mit wählbarer Eingabe (Finger direkt, Tasten oder Kippen mit Verzögerung)",
+    "Vergleich mit sich selbst bei gleichen Einstellungen, gleicher Steuerung und gleichem Gerät",
+    "Kurze, spielerische Aufgabe im Sitzen ohne Lesen"
+   ],
+   "weniger_geeignet_fuer": [
+    "Gleichgewichtstraining oder Messung der Haltung (auch das Kippen des Geräts ist kein Gleichgewichtstraining)",
+    "Menschen mit Schwindel oder Übelkeit bei bewegten Bildern",
+    "Auslesen einer Balance-Plattform (die App sieht nur Tastendrücke)",
+    "Normvergleich, Diagnose oder Therapie"
+   ],
+   "evidenz": {
+    "uebungseffekt": "schwach",
+    "naher_transfer": "unklar",
+    "alltag_transfer": "fehlend",
+    "kommentar": "Für genau diese Übung gibt es keine Studie. Steueraufgaben durch einen Kanal werden in der Mensch-Computer-Forschung mit eigenen Modellen beschrieben (Accot & Zhai 1997); Vorausschau beim Steuern ist beim Autofahren gezeigt (Land & Lee 1994), aber nicht auf diese Übung übertragen. Bewegungsprogramme mit echter Bewegung senken bei Älteren die Sturzrate (Sherrington et al. 2019), Exergames wirkten in einem Überblick nur auf die Denkleistung (Gallou-Guyot et al. 2020). Für diese Steuerung am Bildschirm ist kein Alltagsnutzen belegt."
+   },
+   "aehnliche_uebungen": [
+    705,
+    803,
+    810,
+    505,
+    926,
+    928
+   ],
+   "stichworte": [
+    "Slalom",
+    "Tore",
+    "seitliche Steuerung",
+    "Vorausschau",
+    "Steering Law",
+    "Gerät kippen",
+    "Pfeiltasten",
+    "bewegte Bilder",
+    "am besten im Sitzen",
+    "keine Balance-Plattform"
+   ],
+   "datei": "uebungen/927-labor-slalom.md"
+  },
+  {
+   "nr": 928,
+   "kennung": "labor-invasoren",
+   "name": "Invasoren (Zielpunkt unter fallende Raumschiffe steuern und dort halten)",
+   "name_original": "– (eigene Labor-Übung, kein Vorbild)",
+   "kapitel": "Labor",
+   "kapitel_original": "",
+   "unterkapitel_original": "",
+   "quelle_url": "",
+   "blickfit_umsetzung": {
+    "kennung": "labor-invasoren",
+    "name": "Invasoren",
+    "unterschiede": "eigene Labor-Übung mit Einstellungen"
+   },
+   "stand": "2026-10-05",
+   "kurzbeschreibung": "Raumschiffe fallen von oben. Man steuert einen Zielpunkt am unteren Rand seitlich unter ein Schiff und hält ihn dort, bis sich ein Ring um das Schiff gefüllt hat; dann ist es getroffen. Schiffe, die unten ankommen, zählen als verpasst. Gesteuert wird mit dem Finger, der Maus, den Pfeiltasten oder durch Kippen des Geräts; Tempo, Haltezeit und Toleranz stellt man selbst ein.",
+   "ziel_funktionen": [
+    "auge_hand_koordination",
+    "kontinuierliche_steuerung",
+    "antizipation"
+   ],
+   "eingabe": [
+    "touch",
+    "maus",
+    "tastatur"
+   ],
+   "tablet_geeignet": "ja",
+   "dauer_sekunden": 60,
+   "schwierigkeit_anpassung": "Keine Stufen; alles über Einstellungen (Standard in Klammern): Dauer 20–180 s (60 s), neues Schiff alle 800–5000 ms (2200 ms), Fallgeschwindigkeit 3–25 cm/s (8 cm/s), Haltezeit 100–1500 ms (400 ms), seitliche Toleranz 0,5–6 cm (2 cm, höchstens ein Viertel der Feldbreite), Steuerung Finger/Maus, Pfeiltasten (auch A/D) oder Gerät kippen (voller Ausschlag ab ±20°, Totzone ±2°, Mitte = Haltung beim Start). Größen in cm nach Kalibrierung; Schiffsgröße etwa 8 % der kürzeren Feldseite (0,6–1,6 cm). Leichter: langsame Schiffe (4–6 cm/s), seltener neue Schiffe, kurze Haltezeit, große Toleranz, Finger. Schwerer: schnellere und häufigere Schiffe, längere Haltezeit, kleine Toleranz; Pfeiltasten oder Kippen sind schwerer als der Finger. Faustregel der App (keine Vorgabe aus der Forschung): über 90 % in drei Durchläufen → eine Einstellung schwerer, unter 60 % → leichter.",
+   "messgroessen": [
+    "Hauptwert: getroffene Schiffe",
+    "verpasste Schiffe",
+    "Trefferquote (getroffene an allen gewerteten Schiffen)",
+    "Zeit vom Erscheinen bis zum Treffer (Mittel und Median; enthält die Touch-Verzögerung)",
+    "tatsächlich geltende Toleranz in cm",
+    "Vergleich nur mit gleichen Einstellungen und gleicher Steuerung; keine Normwerte; keine Messung von Haltung oder Gleichgewicht"
+   ],
+   "anforderungsprofil": {
+    "visuell": {
+     "sehschaerfe_detail": 0,
+     "kontrast": 0,
+     "farbunterscheidung": 0,
+     "stereosehen": 0,
+     "peripheres_sehen": 1,
+     "nutzbares_sehfeld": 1,
+     "blickfolge": 2,
+     "sakkaden": 1,
+     "fixation": 0,
+     "bewegungswahrnehmung": 2,
+     "visuelle_suche": 1,
+     "visuelle_verarbeitungsgeschwindigkeit": 0,
+     "zeitliche_aufloesung": 0,
+     "naharbeit_dauer": 1
+    },
+    "kognitiv": {
+     "daueraufmerksamkeit": 1,
+     "selektive_aufmerksamkeit": 1,
+     "inhibition": 0,
+     "geteilte_aufmerksamkeit": 1,
+     "kognitive_flexibilitaet": 0,
+     "arbeitsgedaechtnis": 0,
+     "kurzzeitgedaechtnis_verbal": 0,
+     "kurzzeitgedaechtnis_visuell_raeumlich": 0,
+     "verarbeitungsgeschwindigkeit": 1,
+     "antizipation": 2,
+     "entscheidung_wahlreaktion": 1,
+     "lesen_sprache": 0,
+     "schlussfolgern": 0
+    },
+    "motorisch": {
+     "einfache_reaktion": 1,
+     "auge_hand_koordination": 3,
+     "zielbewegung_tempo": 1,
+     "zielbewegung_praezision": 2,
+     "kontinuierliche_steuerung": 3,
+     "ruhige_hand": 2,
+     "fingergeschwindigkeit": 0,
+     "fingersequenz_bimanual": 0,
+     "ganzkoerper": 0,
+     "gleichgewicht": 0,
+     "ausdauer_belastung": 0
+    }
+   },
+   "belastung": {
+    "zeitdruck": 2,
+    "flimmern_lichtreize": 0,
+    "bewegungsreize_schwindel": 1,
+    "koerperliche_belastung": 0,
+    "sturzrisiko": 1,
+    "sprachabhaengigkeit": 0
+   },
+   "voraussetzungen": [
+    "Bildschirm einmal kalibriert, damit Toleranz und Fallgeschwindigkeit in Zentimetern stimmen",
+    "Am besten im Sitzen; wer steht oder auf einer Unterlage balanciert, braucht Wand oder festen Stuhl in Reichweite und eine Hilfsperson",
+    "Für „Gerät kippen“: Gerät mit Lagesensor, mit beiden Händen fest gehalten; der Browser fragt erst nach dem Antippen nach der Erlaubnis",
+    "Seitliche Fingerbewegung über die Breite des Feldes oder Pfeiltasten"
+   ],
+   "vorsicht_bei": [
+    "sturzgefahr",
+    "schwindel_vestibulaer",
+    "reisekrankheit",
+    "kopfschmerz_asthenopie",
+    "tremor_parkinson",
+    "hand_arm_beschwerden"
+   ],
+   "geeignet_fuer": [
+    "Einen Zielpunkt seitlich unter bewegte Ziele führen und die Ausrichtung kurz ruhig halten (Auge-Hand-Abstimmung mit Haltezeit)",
+    "Das nächste Ziel wählen (tiefstes Schiff zuerst) bei einstellbarem Tempo",
+    "Vergleich der Steuerarten Finger, Pfeiltasten und Kippen mit sich selbst",
+    "Vergleich mit sich selbst über mehrere Durchläufe mit gleichen Einstellungen auf demselben Gerät"
+   ],
+   "weniger_geeignet_fuer": [
+    "Messung von Gleichgewicht, Haltung oder Reaktionsfähigkeit (die App misst nur Zählwerte der Übung)",
+    "Gleichgewichts- oder Sturzvorbeugungstraining: das Kippen des Geräts ist kein Gleichgewichtstraining",
+    "Menschen, die ohne Sicherung stehen oder balancieren würden",
+    "Diagnose, Normvergleich, Therapie oder Reha"
+   ],
+   "evidenz": {
+    "uebungseffekt": "schwach",
+    "naher_transfer": "fehlend",
+    "alltag_transfer": "fehlend",
+    "kommentar": "Für genau diese Übung gibt es keine Studie. Dass man in einer Bildschirmaufgabe besser wird, ist zu erwarten; in Studien zu Bildschirmübungen fallen Verbesserungen aber deutlich größer aus, wenn die Prüfung der geübten Aufgabe ähnelt (Guo et al. 2025). Sturzvorbeugung ist für betreute Programme mit echter Bewegung belegt (Sherrington et al. 2019), Exergames wirkten bei Älteren nur auf kognitive Funktionen, die körperliche Wirkung ist umstritten (Gallou-Guyot et al. 2020) – das lässt sich nicht auf diese Steuerung am Bildschirm übertragen."
+   },
+   "aehnliche_uebungen": [
+    306,
+    505,
+    512,
+    808,
+    927
+   ],
+   "stichworte": [
+    "fallende Ziele",
+    "Ausrichten und Halten",
+    "Haltezeit",
+    "Auge-Hand-Koordination",
+    "manuelles Nachführen",
+    "Gerät kippen",
+    "Pfeiltasten",
+    "Fitts'sches Gesetz",
+    "Labor-Übung",
+    "kein Gleichgewichtstraining"
+   ],
+   "datei": "uebungen/928-labor-invasoren.md"
+  },
+  {
+   "nr": 929,
+   "kennung": "labor-hess",
+   "name": "Hess-Schirm (Funktionsübung mit Rot-Grün-Brille: Zeiger auf das Ziel des anderen Auges legen)",
+   "name_original": "– (eigene Labor-Übung nach dem Prinzip des klassischen Hess-Schirms)",
+   "kapitel": "Labor",
+   "kapitel_original": "",
+   "unterkapitel_original": "",
+   "quelle_url": "",
+   "blickfit_umsetzung": {
+    "kennung": "labor-hess",
+    "name": "Hess-Schirm",
+    "unterschiede": "eigene Labor-Übung mit Einstellungen"
+   },
+   "stand": "2026-10-05",
+   "kurzbeschreibung": "Funktionsübung nach dem Prinzip des klassischen Hess-Schirms, kein Ersatz für die Untersuchung. Mit einer Rot-Grün-Brille sieht ein Auge nur einen Zielpunkt eines Rasters, das andere nur einen Zeiger. Man legt den Zeiger dorthin, wo er auf dem Ziel zu liegen scheint, Punkt für Punkt; danach tauschen die Augen die Rollen. Am Ende zeigt eine Karte alle gesetzten Punkte; die App deutet nichts.",
+   "ziel_funktionen": [
+    "fixation",
+    "auge_hand_koordination"
+   ],
+   "eingabe": [
+    "touch",
+    "maus",
+    "tastatur"
+   ],
+   "tablet_geeignet": "ja",
+   "dauer_sekunden": 300,
+   "schwierigkeit_anpassung": "Keine Stufen; Einstellungen (Standard in Klammern): größter Blickwinkel 10–35° (20°; der innere Ring liegt bei der Hälfte), Raster voll mit 25 Punkten (9 innen, 16 außen) oder nur innen (9 Punkte), Durchgänge beide oder nur einer, Größe des Zielpunkts 0,4–2 cm (0,8 cm), Größe des Zeigers 0,4–2 cm (0,8 cm), dazu Brille und Farben: linkes Glas rot oder grün/cyan/blau, Farbpaar Rot–Grün, Rot–Cyan oder Rot–Blau (für Rot-Cyan-Brillen), Helligkeit je Farbe 30–100 %, Prüfbild einfach oder Schritt für Schritt. Passt das Raster nicht auf den Bildschirm, wird es verkleinert; der tatsächliche Winkel steht im Ergebnis. Leichter/kürzer: nur innen, ein Durchgang, 10–15°, größere Ziele. Umfangreicher: volles Raster, beide Durchgänge, großer Winkel (braucht einen breiten Bildschirm).",
+   "messgroessen": [
+    "Hauptwert: gesetzte Punkte (Zahl der Eingaben, keine Leistung)",
+    "Übungswert je Durchgang: mittlerer Abstand zwischen gesetztem Ort und Ziel in Grad",
+    "Übungswert je Durchgang: Fläche des Umrisses der gesetzten äußeren Punkte in Prozent des Sollumrisses, Verhältnis A zu B",
+    "tatsächlicher größter Blickwinkel, Abstand aus der Kalibrierung",
+    "Zeit je Punkt (enthält die Touch-Verzögerung)",
+    "keine Deutung, keine Richtwerte, keine Messung des Blicks"
+   ],
+   "anforderungsprofil": {
+    "visuell": {
+     "sehschaerfe_detail": 1,
+     "kontrast": 1,
+     "farbunterscheidung": 2,
+     "stereosehen": 0,
+     "peripheres_sehen": 1,
+     "nutzbares_sehfeld": 0,
+     "blickfolge": 0,
+     "sakkaden": 1,
+     "fixation": 3,
+     "bewegungswahrnehmung": 0,
+     "visuelle_suche": 0,
+     "visuelle_verarbeitungsgeschwindigkeit": 0,
+     "zeitliche_aufloesung": 0,
+     "naharbeit_dauer": 2
+    },
+    "kognitiv": {
+     "daueraufmerksamkeit": 2,
+     "selektive_aufmerksamkeit": 1,
+     "inhibition": 1,
+     "geteilte_aufmerksamkeit": 1,
+     "kognitive_flexibilitaet": 0,
+     "arbeitsgedaechtnis": 0,
+     "kurzzeitgedaechtnis_verbal": 0,
+     "kurzzeitgedaechtnis_visuell_raeumlich": 0,
+     "verarbeitungsgeschwindigkeit": 0,
+     "antizipation": 0,
+     "entscheidung_wahlreaktion": 0,
+     "lesen_sprache": 0,
+     "schlussfolgern": 0
+    },
+    "motorisch": {
+     "einfache_reaktion": 0,
+     "auge_hand_koordination": 3,
+     "zielbewegung_tempo": 0,
+     "zielbewegung_praezision": 2,
+     "kontinuierliche_steuerung": 1,
+     "ruhige_hand": 1,
+     "fingergeschwindigkeit": 0,
+     "fingersequenz_bimanual": 0,
+     "ganzkoerper": 0,
+     "gleichgewicht": 0,
+     "ausdauer_belastung": 0
+    }
+   },
+   "belastung": {
+    "zeitdruck": 0,
+    "flimmern_lichtreize": 0,
+    "bewegungsreize_schwindel": 0,
+    "koerperliche_belastung": 0,
+    "sturzrisiko": 0,
+    "sprachabhaengigkeit": 0
+   },
+   "voraussetzungen": [
+    "Rot-Grün-Brille (bei Rot-Cyan-Brillen Farbpaar Rot–Blau wählen), bei Korrekturbrille am besten als Überbrille",
+    "Bildschirm kalibriert, senkrecht auf Augenhöhe, Abstand wie bei der Kalibrierung angegeben",
+    "Kopf ruhig und mittig vor dem Raster, nur die Augen bewegen sich; Raum eher abgedunkelt",
+    "Normales Rot-Grün-Farbsehen (sonst trennen sich die Bilder nicht richtig)",
+    "Maus oder Stift ist genauer als der Finger, der den Zeiger verdeckt",
+    "Für große Winkel ein breiter Bildschirm; auf Tablets wird das Raster meist verkleinert"
+   ],
+   "vorsicht_bei": [
+    "farbsehschwaeche",
+    "schielen_binokular",
+    "amblyopie",
+    "nystagmus",
+    "kopfschmerz_asthenopie",
+    "photosensitive_epilepsie",
+    "presbyopie_gleitsicht",
+    "sehbehinderung_niedriger_visus",
+    "kinder_unter_6"
+   ],
+   "geeignet_fuer": [
+    "Das Prinzip eines klassischen Verfahrens mit getrennten Bildern erfahrbar machen (Funktionsübung, kein Ersatz für die Untersuchung)",
+    "Ruhig fixieren und einen Zeiger, den nur das andere Auge sieht, genau auf ein Ziel legen",
+    "Vorführung in Beratung und Geschäft – ohne Befund, ohne Richtwerte und ohne Wirkanspruch",
+    "Vergleich mit sich selbst bei gleichen Einstellungen, gleichem Abstand und gleicher Kopfhaltung"
+   ],
+   "weniger_geeignet_fuer": [
+    "Diagnose, Befund oder Verlaufskontrolle von Augenmuskelstörungen (dafür gibt es die Untersuchung bei Fachleuten)",
+    "Menschen mit Rot-Grün-Farbsehschwäche",
+    "Kleine Kinder",
+    "Kurze Pausenübung (das volle Raster mit zwei Durchgängen dauert mehrere Minuten)",
+    "Normvergleich oder Deutung der Karte"
+   ],
+   "evidenz": {
+    "uebungseffekt": "fehlend",
+    "naher_transfer": "fehlend",
+    "alltag_transfer": "fehlend",
+    "kommentar": "Funktionsübung nach dem Prinzip des klassischen Verfahrens, kein Ersatz für die Untersuchung. Das klassische Hess-Verfahren ist beschrieben (Roper-Hall 2006; verwandt: Lancaster-Test, Christoff & Guyton 2006; kleine Fallserie: Armesto et al. 2008). Für diese digitale Näherung (Zeigen mit Finger oder Maus, Farben am Bildschirm, ebene Projektion) gibt es keine Studie; die Werte sind nicht mit denen des klassischen Verfahrens austauschbar, und ein Nutzen als Übung ist nicht belegt."
+   },
+   "aehnliche_uebungen": [
+    930,
+    931,
+    932,
+    921,
+    922
+   ],
+   "stichworte": [
+    "Hess-Schirm",
+    "Lancaster-Prinzip",
+    "Rot-Grün-Brille",
+    "getrennte Bilder",
+    "Blickrichtungen",
+    "Raster",
+    "Funktionsübung",
+    "keine Deutung",
+    "Labor-Übung",
+    "kein Ersatz für die Untersuchung"
+   ],
+   "datei": "uebungen/929-labor-hess.md"
+  },
+  {
+   "nr": 930,
+   "kennung": "labor-worth",
+   "name": "Worth-Vier-Punkte (Funktionsübung mit Rot-Grün-Brille: Lichter zählen)",
+   "name_original": "– (eigene Labor-Übung nach dem Prinzip des klassischen Worth-Vier-Punkte-Verfahrens)",
+   "kapitel": "Labor",
+   "kapitel_original": "",
+   "unterkapitel_original": "",
+   "quelle_url": "",
+   "blickfit_umsetzung": {
+    "kennung": "labor-worth",
+    "name": "Worth-Vier-Punkte",
+    "unterschiede": "eigene Labor-Übung mit Einstellungen"
+   },
+   "stand": "2026-10-05",
+   "kurzbeschreibung": "Funktionsübung nach dem Prinzip des klassischen Worth-Vier-Punkte-Verfahrens, kein Ersatz für die Untersuchung. Vier Lichter stehen in einer Raute: oben ein rotes, links und rechts je ein grünes, unten ein weißes. Mit einer Rot-Grün-Brille sieht jedes Auge nur Teile davon; man zählt, wie viele Lichter man sieht, und tippt die Zahl (2, 3, 4, 5 oder „Unklar“). Die App zählt nur die Antworten und deutet sie nicht.",
+   "ziel_funktionen": [
+    "fixation"
+   ],
+   "eingabe": [
+    "touch",
+    "maus",
+    "tastatur"
+   ],
+   "tablet_geeignet": "ja",
+   "dauer_sekunden": 90,
+   "schwierigkeit_anpassung": "Keine Stufen; Einstellungen (Standard in Klammern): Anzahl der Darbietungen 2–12 (4), Durchmesser der Lichter 0,3–4 cm (1,2 cm; auf kleinen Bildschirmen begrenzt, die gezeichnete Größe steht im Ergebnis), Größe wechseln ja/nein (ja: abwechselnd klein und 2,5-fach groß), dazu Brille und Farben: linkes Glas rot oder grün/cyan/blau, Farbpaar Rot–Grün, Rot–Cyan oder Rot–Blau, Helligkeit je Farbe 30–100 %, Prüfbild einfach oder Schritt für Schritt. Leichter: größere Lichter (2–4 cm). Umfangreicher: kleine Lichter (0,5–1 cm) und mehr Darbietungen (8–12), damit sich zeigt, wie einheitlich die Antworten sind.",
+   "messgroessen": [
+    "Hauptwert: beantwortete Darbietungen (Zahl der Eingaben, keine Leistung)",
+    "Übungswert: wie oft 2, 3, 4 oder 5 Lichter bzw. „Unklar“ gemeldet wurden",
+    "Übungswert: Anteil der häufigsten Antwort an allen Antworten (Einheitlichkeit)",
+    "gezeichnete Größe der Lichter in cm, Zuordnung der Lichter zu den Augen",
+    "mittlere Antwortzeit",
+    "keine Deutung der Zahl, keine Richtwerte"
+   ],
+   "anforderungsprofil": {
+    "visuell": {
+     "sehschaerfe_detail": 1,
+     "kontrast": 1,
+     "farbunterscheidung": 2,
+     "stereosehen": 0,
+     "peripheres_sehen": 1,
+     "nutzbares_sehfeld": 1,
+     "blickfolge": 0,
+     "sakkaden": 0,
+     "fixation": 2,
+     "bewegungswahrnehmung": 0,
+     "visuelle_suche": 0,
+     "visuelle_verarbeitungsgeschwindigkeit": 0,
+     "zeitliche_aufloesung": 0,
+     "naharbeit_dauer": 1
+    },
+    "kognitiv": {
+     "daueraufmerksamkeit": 1,
+     "selektive_aufmerksamkeit": 1,
+     "inhibition": 0,
+     "geteilte_aufmerksamkeit": 0,
+     "kognitive_flexibilitaet": 0,
+     "arbeitsgedaechtnis": 0,
+     "kurzzeitgedaechtnis_verbal": 0,
+     "kurzzeitgedaechtnis_visuell_raeumlich": 0,
+     "verarbeitungsgeschwindigkeit": 0,
+     "antizipation": 0,
+     "entscheidung_wahlreaktion": 1,
+     "lesen_sprache": 0,
+     "schlussfolgern": 0
+    },
+    "motorisch": {
+     "einfache_reaktion": 0,
+     "auge_hand_koordination": 1,
+     "zielbewegung_tempo": 0,
+     "zielbewegung_praezision": 0,
+     "kontinuierliche_steuerung": 0,
+     "ruhige_hand": 0,
+     "fingergeschwindigkeit": 0,
+     "fingersequenz_bimanual": 0,
+     "ganzkoerper": 0,
+     "gleichgewicht": 0,
+     "ausdauer_belastung": 0
+    }
+   },
+   "belastung": {
+    "zeitdruck": 0,
+    "flimmern_lichtreize": 0,
+    "bewegungsreize_schwindel": 0,
+    "koerperliche_belastung": 0,
+    "sturzrisiko": 0,
+    "sprachabhaengigkeit": 0
+   },
+   "voraussetzungen": [
+    "Rot-Grün-Brille (bei Rot-Cyan-Brillen Farbpaar Rot–Blau wählen), bei Korrekturbrille am besten als Überbrille",
+    "Raum eher abgedunkelt, Kopf gerade und ruhig, Augen offen",
+    "Normales Rot-Grün-Farbsehen",
+    "Zahlen 2 bis 5 kennen und Lichter zählen können",
+    "Bildschirm kalibriert (für die Größe der Lichter in cm)"
+   ],
+   "vorsicht_bei": [
+    "farbsehschwaeche",
+    "schielen_binokular",
+    "amblyopie",
+    "photosensitive_epilepsie",
+    "kopfschmerz_asthenopie",
+    "kinder_unter_6",
+    "kognitive_einschraenkung"
+   ],
+   "geeignet_fuer": [
+    "Das Prinzip eines klassischen Verfahrens mit getrennten Bildern erfahrbar machen (Funktionsübung, kein Ersatz für die Untersuchung)",
+    "Ruhig auf die Mitte der Raute schauen und die gesehenen Lichter zählen",
+    "Kurze Vorführung in Beratung und Geschäft – ohne Befund, ohne Richtwerte",
+    "Prüfen, ob Brille, Glasseite und Helligkeit für die übrigen Brillenübungen passen"
+   ],
+   "weniger_geeignet_fuer": [
+    "Deutung der Zahl der Lichter (Unterdrückung, Verschmelzung, Doppelbilder) – das gehört in Fachhand",
+    "Menschen mit Rot-Grün-Farbsehschwäche",
+    "Kleine Kinder (Antworten in Worten oder durch Berühren sind in diesem Alter unsicher)",
+    "Diagnose, Normvergleich, Therapie"
+   ],
+   "evidenz": {
+    "uebungseffekt": "fehlend",
+    "naher_transfer": "fehlend",
+    "alltag_transfer": "fehlend",
+    "kommentar": "Funktionsübung nach dem Prinzip des klassischen Verfahrens, kein Ersatz für die Untersuchung. Das Worth-Vier-Punkte-Verfahren ist seit mehr als hundert Jahren beschrieben und wird von Fachleuten genutzt (Roper-Hall 2004); bei kleinen Kindern hängt die Zuverlässigkeit stark von der Art der Antwort ab (Lueder & Arnoldi 1996). Für diese digitale Näherung gibt es keine Studie; ein Nutzen als Übung ist nicht belegt."
+   },
+   "aehnliche_uebungen": [
+    929,
+    931,
+    932,
+    921,
+    922
+   ],
+   "stichworte": [
+    "Worth-Vier-Punkte",
+    "Worth 4 Dot",
+    "Rot-Grün-Brille",
+    "Lichter zählen",
+    "getrennte Bilder",
+    "beidäugiges Sehen",
+    "Funktionsübung",
+    "keine Deutung",
+    "Labor-Übung",
+    "kein Ersatz für die Untersuchung"
+   ],
+   "datei": "uebungen/930-labor-worth.md"
+  },
+  {
+   "nr": 931,
+   "kennung": "labor-schober",
+   "name": "Schober-Kreuz im Ring (Funktionsübung mit Rot-Grün-Brille: Kreuz des einen Auges in den Ring des anderen schieben)",
+   "name_original": "– (eigene Labor-Übung nach dem Prinzip des klassischen Schober-Verfahrens)",
+   "kapitel": "Labor",
+   "kapitel_original": "",
+   "unterkapitel_original": "",
+   "quelle_url": "",
+   "blickfit_umsetzung": {
+    "kennung": "labor-schober",
+    "name": "Schober-Kreuz im Ring",
+    "unterschiede": "eigene Labor-Übung mit Einstellungen"
+   },
+   "stand": "2026-10-05",
+   "kurzbeschreibung": "Funktionsübung nach dem Prinzip des klassischen Schober-Verfahrens, kein Ersatz für die Untersuchung. Mit einer Rot-Grün-Brille sieht ein Auge nur ein Kreuz, das andere nur einen Ring. Man schiebt das Kreuz in kleinen Schritten, bis es mittig im Ring zu liegen scheint – waagrecht und senkrecht, je zweimal von entgegengesetzten Seiten. Die Verschiebung wird in Prismendioptrien angezeigt; die Vorzeichenregeln sind nur hergeleitet, nicht gegen ein Messgerät geprüft.",
+   "ziel_funktionen": [
+    "fixation"
+   ],
+   "eingabe": [
+    "touch",
+    "maus",
+    "tastatur"
+   ],
+   "tablet_geeignet": "ja",
+   "dauer_sekunden": 180,
+   "schwierigkeit_anpassung": "Keine Stufen; Einstellungen (Standard in Klammern): Richtungen waagrecht und senkrecht (4 Durchgänge) oder nur eine (2 Durchgänge), Schrittweite 0,25–2 Δ (0,5 Δ; großer Schritt = das Vierfache), Startversatz 2–14 Δ (6 Δ, einmal zur einen, einmal zur anderen Seite; auf kleinen Bildschirmen begrenzt), Farbe des Kreuzes rot oder in der zweiten Farbe (legt fest, welches Auge das Kreuz sieht), Ringdurchmesser 2–12 cm (5 cm), dazu Brille und Farben: linkes Glas, Farbpaar Rot–Grün, Rot–Cyan oder Rot–Blau, Helligkeit je Farbe 30–100 %, Prüfbild. Gröber: Schrittweite 1–2 Δ, größerer Ring. Feiner: 0,25 Δ (die Bildschirmauflösung begrenzt sehr kleine Schritte).",
+   "messgroessen": [
+    "Hauptwert: fertige Durchgänge (Zahl der Eingaben, keine Leistung)",
+    "Übungswert waagrecht: Verschiebung des Kreuzes in Δ nach der hergeleiteten Regel (+ zur Nase hin, − zur Schläfe hin) und Unterschied der beiden Durchgänge",
+    "Übungswert senkrecht: Verschiebung in Δ (+ rechts höher, − links höher) und Unterschied der beiden Durchgänge",
+    "Umrechnung 1 Δ = 1 cm auf 1 m mit dem Abstand der Kalibrierung, tatsächlicher Startversatz",
+    "Zeit je Durchgang (enthält die Touch-Verzögerung)",
+    "Vorzeichenregeln nur hergeleitet, nicht gegen ein Messgerät geprüft; keine Deutung, keine Richtwerte"
+   ],
+   "anforderungsprofil": {
+    "visuell": {
+     "sehschaerfe_detail": 1,
+     "kontrast": 1,
+     "farbunterscheidung": 2,
+     "stereosehen": 0,
+     "peripheres_sehen": 0,
+     "nutzbares_sehfeld": 0,
+     "blickfolge": 0,
+     "sakkaden": 0,
+     "fixation": 3,
+     "bewegungswahrnehmung": 0,
+     "visuelle_suche": 0,
+     "visuelle_verarbeitungsgeschwindigkeit": 0,
+     "zeitliche_aufloesung": 0,
+     "naharbeit_dauer": 2
+    },
+    "kognitiv": {
+     "daueraufmerksamkeit": 1,
+     "selektive_aufmerksamkeit": 1,
+     "inhibition": 0,
+     "geteilte_aufmerksamkeit": 1,
+     "kognitive_flexibilitaet": 0,
+     "arbeitsgedaechtnis": 0,
+     "kurzzeitgedaechtnis_verbal": 0,
+     "kurzzeitgedaechtnis_visuell_raeumlich": 0,
+     "verarbeitungsgeschwindigkeit": 0,
+     "antizipation": 0,
+     "entscheidung_wahlreaktion": 1,
+     "lesen_sprache": 0,
+     "schlussfolgern": 0
+    },
+    "motorisch": {
+     "einfache_reaktion": 0,
+     "auge_hand_koordination": 1,
+     "zielbewegung_tempo": 0,
+     "zielbewegung_praezision": 0,
+     "kontinuierliche_steuerung": 0,
+     "ruhige_hand": 0,
+     "fingergeschwindigkeit": 0,
+     "fingersequenz_bimanual": 0,
+     "ganzkoerper": 0,
+     "gleichgewicht": 0,
+     "ausdauer_belastung": 0
+    }
+   },
+   "belastung": {
+    "zeitdruck": 0,
+    "flimmern_lichtreize": 0,
+    "bewegungsreize_schwindel": 0,
+    "koerperliche_belastung": 0,
+    "sturzrisiko": 0,
+    "sprachabhaengigkeit": 0
+   },
+   "voraussetzungen": [
+    "Rot-Grün-Brille (bei Rot-Cyan-Brillen Farbpaar Rot–Blau wählen), bei Korrekturbrille am besten als Überbrille",
+    "Bildschirm kalibriert, gerade aufgestellt (sonst verfälscht eine Schräglage die senkrechte Richtung), echter Abstand angegeben",
+    "Kopf gerade und ruhig, Blick auf die Mitte des Rings, Raum eher abgedunkelt",
+    "Normales Rot-Grün-Farbsehen"
+   ],
+   "vorsicht_bei": [
+    "farbsehschwaeche",
+    "schielen_binokular",
+    "amblyopie",
+    "kopfschmerz_asthenopie",
+    "photosensitive_epilepsie",
+    "presbyopie_gleitsicht",
+    "kinder_unter_6"
+   ],
+   "geeignet_fuer": [
+    "Das Prinzip eines klassischen Verfahrens mit getrennten Bildern erfahrbar machen (Funktionsübung, kein Ersatz für die Untersuchung)",
+    "Ruhig fixieren und eine Lage fein einstellen, je zweimal von entgegengesetzten Seiten",
+    "Vorführung in Beratung und Geschäft – ohne Befund, ohne Richtwerte, mit dem Hinweis auf hergeleitete Vorzeichenregeln",
+    "Vergleich mit sich selbst bei gleichen Einstellungen, gleichem Abstand, gleicher Brille und Farbzuordnung"
+   ],
+   "weniger_geeignet_fuer": [
+    "Messung einer Phorie oder Befund (Vorzeichenregeln nur hergeleitet, nicht gegen ein Messgerät geprüft; Werte nicht mit anderen Verfahren austauschbar)",
+    "Menschen mit Rot-Grün-Farbsehschwäche",
+    "Kleine Kinder",
+    "Diagnose, Normvergleich, Therapie"
+   ],
+   "evidenz": {
+    "uebungseffekt": "fehlend",
+    "naher_transfer": "fehlend",
+    "alltag_transfer": "fehlend",
+    "kommentar": "Funktionsübung nach dem Prinzip des klassischen Verfahrens, kein Ersatz für die Untersuchung. Für das Schober-Verfahren selbst und für die Vorzeichenregeln wurde keine Veröffentlichung gefunden; die Regeln sind nur hergeleitet, nicht gegen ein Messgerät geprüft. Verwandte Phorie-Verfahren sind in sich gut wiederholbar, stimmen untereinander aber nur mittel überein (Facchin & Maffioletti 2021; Alhassan et al. 2015). Für diese digitale Näherung gibt es keine Studie; ein Nutzen als Übung ist nicht belegt."
+   },
+   "aehnliche_uebungen": [
+    929,
+    930,
+    932,
+    922
+   ],
+   "stichworte": [
+    "Schober-Test",
+    "Kreuz und Ring",
+    "Rot-Grün-Brille",
+    "getrennte Bilder",
+    "Prismendioptrie",
+    "Phorie-Prinzip",
+    "Funktionsübung",
+    "Vorzeichenregeln nur hergeleitet",
+    "Labor-Übung",
+    "kein Ersatz für die Untersuchung"
+   ],
+   "datei": "uebungen/931-labor-schober.md"
+  },
+  {
+   "nr": 932,
+   "kennung": "labor-diplopie",
+   "name": "Diplopie-Karte (Funktionsübung mit Rot-Grün-Brille: in neun Blickrichtungen ein Bild oder zwei?)",
+   "name_original": "– (eigene Labor-Übung nach dem Prinzip einer Karte der Blickrichtungen)",
+   "kapitel": "Labor",
+   "kapitel_original": "",
+   "unterkapitel_original": "",
+   "quelle_url": "",
+   "blickfit_umsetzung": {
+    "kennung": "labor-diplopie",
+    "name": "Diplopie-Karte",
+    "unterschiede": "eigene Labor-Übung mit Einstellungen"
+   },
+   "stand": "2026-10-05",
+   "kurzbeschreibung": "Funktionsübung nach dem Prinzip einer Karte der Blickrichtungen, kein Ersatz für die Untersuchung. In neun Blickrichtungen (Mitte und acht Randpunkte) erscheint ein Ziel; mit einer Rot-Grün-Brille sieht ein Auge es rot, das andere in der zweiten Farbe. Man sagt, ob man ein Bild oder zwei sieht, und schiebt bei zwei Bildern das zweite auf das erste. Am Ende zeigt eine Karte alle Richtungen; die App deutet nichts.",
+   "ziel_funktionen": [
+    "fixation",
+    "entscheidung_wahlreaktion"
+   ],
+   "eingabe": [
+    "touch",
+    "maus",
+    "tastatur"
+   ],
+   "tablet_geeignet": "ja",
+   "dauer_sekunden": 180,
+   "schwierigkeit_anpassung": "Keine Stufen; Einstellungen (Standard in Klammern): Blickwinkel der Randpunkte 5–35° (15°; auf kleinen Bildschirmen verkleinert, der tatsächliche Winkel steht im Ergebnis), Größe des Ziels 0,5–2,5 cm (1 cm), dazu Brille und Farben: linkes Glas, Farbpaar Rot–Grün, Rot–Cyan oder Rot–Blau, Helligkeit je Farbe 30–100 %, Prüfbild einfach oder Schritt für Schritt. Leichter: kleinerer Blickwinkel (10°) und größere Ziele. Umfangreicher: größerer Winkel (25–30°, braucht einen breiten Bildschirm) und kleinere Ziele.",
+   "messgroessen": [
+    "Hauptwert: geprüfte Blickrichtungen (Zahl der Eingaben, keine Leistung)",
+    "Übungswert: Richtungen mit gemeldeten Doppelbildern (Anzahl und Anteil), Antwort in der Mitte",
+    "Übungswert: Versatz des zweiten Bildes in Δ (Mittel und größter Wert; waagrecht + nach rechts, senkrecht + nach oben – nur Beschreibung der Verschiebung)",
+    "Karte der geprüften Richtungen (Kreis = ein Bild, Quadrat = zwei Bilder)",
+    "tatsächlicher Blickwinkel, Zeit je Richtung (enthält die Touch-Verzögerung)",
+    "keine Deutung, keine Richtwerte"
+   ],
+   "anforderungsprofil": {
+    "visuell": {
+     "sehschaerfe_detail": 1,
+     "kontrast": 1,
+     "farbunterscheidung": 2,
+     "stereosehen": 0,
+     "peripheres_sehen": 1,
+     "nutzbares_sehfeld": 0,
+     "blickfolge": 0,
+     "sakkaden": 1,
+     "fixation": 3,
+     "bewegungswahrnehmung": 0,
+     "visuelle_suche": 0,
+     "visuelle_verarbeitungsgeschwindigkeit": 0,
+     "zeitliche_aufloesung": 0,
+     "naharbeit_dauer": 2
+    },
+    "kognitiv": {
+     "daueraufmerksamkeit": 1,
+     "selektive_aufmerksamkeit": 1,
+     "inhibition": 0,
+     "geteilte_aufmerksamkeit": 1,
+     "kognitive_flexibilitaet": 0,
+     "arbeitsgedaechtnis": 0,
+     "kurzzeitgedaechtnis_verbal": 0,
+     "kurzzeitgedaechtnis_visuell_raeumlich": 0,
+     "verarbeitungsgeschwindigkeit": 0,
+     "antizipation": 0,
+     "entscheidung_wahlreaktion": 2,
+     "lesen_sprache": 0,
+     "schlussfolgern": 0
+    },
+    "motorisch": {
+     "einfache_reaktion": 0,
+     "auge_hand_koordination": 2,
+     "zielbewegung_tempo": 0,
+     "zielbewegung_praezision": 2,
+     "kontinuierliche_steuerung": 1,
+     "ruhige_hand": 1,
+     "fingergeschwindigkeit": 0,
+     "fingersequenz_bimanual": 0,
+     "ganzkoerper": 0,
+     "gleichgewicht": 0,
+     "ausdauer_belastung": 0
+    }
+   },
+   "belastung": {
+    "zeitdruck": 0,
+    "flimmern_lichtreize": 0,
+    "bewegungsreize_schwindel": 0,
+    "koerperliche_belastung": 0,
+    "sturzrisiko": 0,
+    "sprachabhaengigkeit": 0
+   },
+   "voraussetzungen": [
+    "Rot-Grün-Brille (bei Rot-Cyan-Brillen Farbpaar Rot–Blau wählen), bei Korrekturbrille am besten als Überbrille",
+    "Bildschirm kalibriert, echter Abstand angegeben, Kopf ruhig und mittig (nur die Augen bewegen sich)",
+    "Normales Rot-Grün-Farbsehen",
+    "Maus oder Stift ist genauer als der Finger",
+    "Für große Blickwinkel ein breiter Bildschirm; auf Tablets wird der Winkel meist verkleinert"
+   ],
+   "vorsicht_bei": [
+    "farbsehschwaeche",
+    "schielen_binokular",
+    "amblyopie",
+    "nystagmus",
+    "kopfschmerz_asthenopie",
+    "photosensitive_epilepsie",
+    "presbyopie_gleitsicht",
+    "kinder_unter_6"
+   ],
+   "geeignet_fuer": [
+    "Das Prinzip einer Karte der Blickrichtungen mit getrennten Bildern erfahrbar machen (Funktionsübung, kein Ersatz für die Untersuchung)",
+    "In jeder Richtung ruhig fixieren und entscheiden: ein Bild oder zwei",
+    "Vorführung in Beratung und Geschäft – ohne Befund, ohne Richtwerte",
+    "Vergleich mit sich selbst bei gleichen Einstellungen, gleichem Abstand und gleicher Kopfhaltung"
+   ],
+   "weniger_geeignet_fuer": [
+    "Abklärung neu aufgetretener Doppelbilder (gehört sofort ärztlich abgeklärt, nicht geübt)",
+    "Bestimmung des Feldes des einfachen beidäugigen Sehens oder ein Befund (dafür gibt es klinische Verfahren)",
+    "Menschen mit Rot-Grün-Farbsehschwäche",
+    "Kleine Kinder",
+    "Diagnose, Normvergleich, Therapie"
+   ],
+   "evidenz": {
+    "uebungseffekt": "fehlend",
+    "naher_transfer": "fehlend",
+    "alltag_transfer": "fehlend",
+    "kommentar": "Funktionsübung nach dem Prinzip des klassischen Verfahrens, kein Ersatz für die Untersuchung. Das Feld des einfachen beidäugigen Sehens wird klinisch auf einem Perimeter bestimmt und bewertet (Woodruff et al. 1987; Fitzsimons & White 1990); verwandt ist der Lancaster-Test (Christoff & Guyton 2006). Für diese digitale Näherung gibt es keine Studie; die Werte sind nicht mit denen anderer Verfahren austauschbar, und ein Nutzen als Übung ist nicht belegt."
+   },
+   "aehnliche_uebungen": [
+    929,
+    930,
+    931,
+    922,
+    923
+   ],
+   "stichworte": [
+    "Diplopie",
+    "Doppelbilder",
+    "neun Blickrichtungen",
+    "Karte der Blickrichtungen",
+    "Rot-Grün-Brille",
+    "Prismendioptrie",
+    "Funktionsübung",
+    "keine Deutung",
+    "Labor-Übung",
+    "kein Ersatz für die Untersuchung"
+   ],
+   "datei": "uebungen/932-labor-diplopie.md"
+  },
+  {
+   "nr": 933,
+   "kennung": "labor-vertikale",
+   "name": "Subjektive Vertikale (Funktionsübung: helle Linie im Dunkeln senkrecht einstellen)",
+   "name_original": "– (eigene Labor-Übung nach dem Prinzip der subjektiven visuellen Vertikalen)",
+   "kapitel": "Labor",
+   "kapitel_original": "",
+   "unterkapitel_original": "",
+   "quelle_url": "",
+   "blickfit_umsetzung": {
+    "kennung": "labor-vertikale",
+    "name": "Subjektive Vertikale",
+    "unterschiede": "eigene Labor-Übung mit Einstellungen"
+   },
+   "stand": "2026-10-05",
+   "kurzbeschreibung": "Funktionsübung nach dem Prinzip der subjektiven visuellen Vertikalen, kein Ersatz für die Untersuchung. Eine helle Linie auf dunklem Grund soll so eingestellt werden, dass sie senkrecht wirkt: Entweder dreht sie sich langsam und man stoppt sie, oder man stellt sie mit Tasten ein. Die Starts wechseln zwischen rechts und links geneigt. Die App zeigt die Abweichung von der echten Senkrechten in Grad und deutet sie nicht; keine Brille nötig.",
+   "ziel_funktionen": [
+    "fixation",
+    "entscheidung_wahlreaktion"
+   ],
+   "eingabe": [
+    "touch",
+    "maus",
+    "tastatur"
+   ],
+   "tablet_geeignet": "ja",
+   "dauer_sekunden": 150,
+   "schwierigkeit_anpassung": "Keine Stufen; Einstellungen (Standard in Klammern): Anzahl der Einstellungen 4–20, gerade Zahlen (8; Startseite wechselt), Verfahren „Drehen und stoppen“ oder „Mit Tasten einstellen“ (Drehen), Drehgeschwindigkeit 0,5–6 °/s (1,5 °/s; Umkehr bei 45°), größte Startneigung 10–40° (25°; jeder Start zufällig zwischen 60 und 100 % davon), Länge der Linie 6–30 cm (16 cm; auf kleinen Bildschirmen begrenzt). Gröber: größere Startneigung (30–40°) und schnelleres Drehen. Feiner: kleinere Startneigung (10–15°), langsames Drehen (0,5–1 °/s) und mehr Einstellungen (12–20). „Einstellen“ hängt nicht von der Reaktionszeit ab, dauert aber länger.",
+   "messgroessen": [
+    "Hauptwert: fertige Einstellungen (Zahl der Eingaben, keine Leistung)",
+    "Übungswert: mittlere Einstellung in Grad (+ im Uhrzeigersinn, − gegen den Uhrzeigersinn)",
+    "Übungswert: mittlerer Betrag der Abweichung und Streuung der Einstellungen",
+    "Übungswert: Unterschied je nach Startseite (Mittel bei Start rechts minus Start links geneigt)",
+    "Zeit je Einstellung (beim Drehen inklusive der Zeit, die die Linie braucht)",
+    "gilt nur bei gerade stehendem Gerät und aufrechtem Kopf; keine Deutung, keine Richtwerte"
+   ],
+   "anforderungsprofil": {
+    "visuell": {
+     "sehschaerfe_detail": 1,
+     "kontrast": 0,
+     "farbunterscheidung": 0,
+     "stereosehen": 0,
+     "peripheres_sehen": 0,
+     "nutzbares_sehfeld": 0,
+     "blickfolge": 0,
+     "sakkaden": 0,
+     "fixation": 2,
+     "bewegungswahrnehmung": 1,
+     "visuelle_suche": 0,
+     "visuelle_verarbeitungsgeschwindigkeit": 0,
+     "zeitliche_aufloesung": 0,
+     "naharbeit_dauer": 1
+    },
+    "kognitiv": {
+     "daueraufmerksamkeit": 1,
+     "selektive_aufmerksamkeit": 1,
+     "inhibition": 1,
+     "geteilte_aufmerksamkeit": 0,
+     "kognitive_flexibilitaet": 0,
+     "arbeitsgedaechtnis": 0,
+     "kurzzeitgedaechtnis_verbal": 0,
+     "kurzzeitgedaechtnis_visuell_raeumlich": 0,
+     "verarbeitungsgeschwindigkeit": 0,
+     "antizipation": 1,
+     "entscheidung_wahlreaktion": 2,
+     "lesen_sprache": 0,
+     "schlussfolgern": 0
+    },
+    "motorisch": {
+     "einfache_reaktion": 1,
+     "auge_hand_koordination": 0,
+     "zielbewegung_tempo": 0,
+     "zielbewegung_praezision": 0,
+     "kontinuierliche_steuerung": 0,
+     "ruhige_hand": 0,
+     "fingergeschwindigkeit": 0,
+     "fingersequenz_bimanual": 0,
+     "ganzkoerper": 0,
+     "gleichgewicht": 0,
+     "ausdauer_belastung": 0
+    }
+   },
+   "belastung": {
+    "zeitdruck": 0,
+    "flimmern_lichtreize": 0,
+    "bewegungsreize_schwindel": 1,
+    "koerperliche_belastung": 0,
+    "sturzrisiko": 0,
+    "sprachabhaengigkeit": 0
+   },
+   "voraussetzungen": [
+    "Gerät gerade und fest aufgestellt (mit einer Wasserwaage prüfen, dass der Bildschirmrand wirklich senkrecht ist)",
+    "Raum so weit wie möglich abgedunkelt; Rahmen, Möbelkanten und Fensterkreuze geben Hinweise auf die Senkrechte und stören",
+    "Aufrecht sitzen, Kopf gerade",
+    "Bildschirm kalibriert (für die Länge der Linie in cm)",
+    "Keine Rot-Grün-Brille nötig"
+   ],
+   "vorsicht_bei": [
+    "schwindel_vestibulaer",
+    "reisekrankheit",
+    "migraene_lichtempfindlich",
+    "kopfschmerz_asthenopie",
+    "photosensitive_epilepsie",
+    "nystagmus"
+   ],
+   "geeignet_fuer": [
+    "Das Prinzip der subjektiven visuellen Vertikalen erfahrbar machen (Funktionsübung, kein Ersatz für die Untersuchung)",
+    "Ruhig auf eine Linie schauen und entscheiden, wann sie senkrecht wirkt, abwechselnd von beiden Seiten",
+    "Vorführung in Beratung und Geschäft – ohne Befund, ohne Richtwerte",
+    "Vergleich mit sich selbst bei gleichen Einstellungen und gleicher Aufstellung des Geräts"
+   ],
+   "weniger_geeignet_fuer": [
+    "Abklärung von Schwindel oder Gleichgewichtsstörungen (gehört in ärztliche Hand)",
+    "Messung ohne gerade Aufstellung oder ohne abgedunkelten Raum",
+    "Gleichgewichtstraining (die Übung verlangt kein Gleichgewicht und misst es nicht)",
+    "Diagnose, Normvergleich, Therapie"
+   ],
+   "evidenz": {
+    "uebungseffekt": "fehlend",
+    "naher_transfer": "fehlend",
+    "alltag_transfer": "fehlend",
+    "kommentar": "Funktionsübung nach dem Prinzip des klassischen Verfahrens, kein Ersatz für die Untersuchung. Die subjektive visuelle Vertikale ist bei Störungen des Gleichgewichtsorgans und des Hirnstamms klinisch untersucht (Böhmer & Rickenmann 1995; Dieterich & Brandt 1993); einfache Verfahren mit Eimer oder Smartphone wurden in kleinen Studien verglichen (Dai et al. 2020; Wengier et al. 2021). Für diese Bildschirmfassung gibt es keine Studie; ein Nutzen als Übung ist nicht belegt."
+   },
+   "aehnliche_uebungen": [
+    931,
+    934,
+    925
+   ],
+   "stichworte": [
+    "subjektive visuelle Vertikale",
+    "SVV",
+    "Senkrechte einstellen",
+    "Linie drehen und stoppen",
+    "Startseite wechseln",
+    "Gleichgewichtsorgan",
+    "Funktionsübung",
+    "keine Deutung",
+    "Labor-Übung",
+    "kein Ersatz für die Untersuchung"
+   ],
+   "datei": "uebungen/933-labor-vertikale.md"
+  },
+  {
+   "nr": 934,
+   "kennung": "labor-projektion",
+   "name": "Orts-Projektion (Funktionsübung: kurz gesehenen Punkt aus der Erinnerung antippen)",
+   "name_original": "– (eigene Labor-Übung, Zeigen auf einen kurz gesehenen Ort)",
+   "kapitel": "Labor",
+   "kapitel_original": "",
+   "unterkapitel_original": "",
+   "quelle_url": "",
+   "blickfit_umsetzung": {
+    "kennung": "labor-projektion",
+    "name": "Orts-Projektion",
+    "unterschiede": "eigene Labor-Übung mit Einstellungen"
+   },
+   "stand": "2026-10-05",
+   "kurzbeschreibung": "Funktionsübung nach dem Prinzip des klassischen Verfahrens (Zeigen auf einen kurz gesehenen Ort), kein Ersatz für die Untersuchung. Man schaut auf ein Kreuz in der Mitte; ein Punkt erscheint kurz und verschwindet. Nach einer einstellbaren Wartezeit tippt man dorthin, wo er war. Die App zeigt, wie weit die Antworten vom Punkt lagen, ob sie im Mittel in eine Richtung verschoben waren und wie stark sie streuten; sie deutet nichts. Keine Brille nötig.",
+   "ziel_funktionen": [
+    "peripheres_sehen",
+    "fixation",
+    "auge_hand_koordination"
+   ],
+   "eingabe": [
+    "touch",
+    "maus"
+   ],
+   "tablet_geeignet": "ja",
+   "dauer_sekunden": 90,
+   "schwierigkeit_anpassung": "Keine Stufen; Einstellungen (Standard in Klammern): Anzahl der Punkte 6–60, gerade Zahlen (20), Anzeigedauer des Punktes 100–2000 ms (300 ms; an die Bildwiederholrate gebunden), Wartezeit bis zum Tippen 0–5000 ms (0), Zone gesamte Fläche oder nur Rand (außerhalb der inneren 60 %), Ort nach der Antwort zeigen ja/nein (ja), Punktgröße 0,5–3 cm (1 cm). Orte zufällig mit 2 cm Rand und 2 cm Abstand zur Mitte. Leichter: lange Anzeige (500–1000 ms), keine Wartezeit, ganze Fläche, Ort zeigen. Schwieriger: kurze Anzeige (100–150 ms), Wartezeit (2000–5000 ms), nur Rand, Ort nicht zeigen.",
+   "messgroessen": [
+    "Hauptwert: beantwortete Punkte (Zahl der Eingaben, keine Leistung)",
+    "Übungswert: mittlere Abweichung der Antworten in cm und als Sehwinkel",
+    "Übungswert: mittlere seitliche und senkrechte Verschiebung (+ rechts bzw. oben)",
+    "Übungswert: Streuung der Antworten um ihren eigenen Mittelpunkt",
+    "Zeit von der Freigabe bis zum Tippen (enthält die Touch-Verzögerung)",
+    "keine Messung des Blicks; keine Deutung, keine Richtwerte"
+   ],
+   "anforderungsprofil": {
+    "visuell": {
+     "sehschaerfe_detail": 0,
+     "kontrast": 1,
+     "farbunterscheidung": 0,
+     "stereosehen": 0,
+     "peripheres_sehen": 3,
+     "nutzbares_sehfeld": 2,
+     "blickfolge": 0,
+     "sakkaden": 1,
+     "fixation": 3,
+     "bewegungswahrnehmung": 0,
+     "visuelle_suche": 0,
+     "visuelle_verarbeitungsgeschwindigkeit": 2,
+     "zeitliche_aufloesung": 0,
+     "naharbeit_dauer": 1
+    },
+    "kognitiv": {
+     "daueraufmerksamkeit": 1,
+     "selektive_aufmerksamkeit": 1,
+     "inhibition": 2,
+     "geteilte_aufmerksamkeit": 1,
+     "kognitive_flexibilitaet": 0,
+     "arbeitsgedaechtnis": 1,
+     "kurzzeitgedaechtnis_verbal": 0,
+     "kurzzeitgedaechtnis_visuell_raeumlich": 2,
+     "verarbeitungsgeschwindigkeit": 1,
+     "antizipation": 0,
+     "entscheidung_wahlreaktion": 0,
+     "lesen_sprache": 0,
+     "schlussfolgern": 0
+    },
+    "motorisch": {
+     "einfache_reaktion": 0,
+     "auge_hand_koordination": 3,
+     "zielbewegung_tempo": 0,
+     "zielbewegung_praezision": 2,
+     "kontinuierliche_steuerung": 0,
+     "ruhige_hand": 1,
+     "fingergeschwindigkeit": 0,
+     "fingersequenz_bimanual": 0,
+     "ganzkoerper": 0,
+     "gleichgewicht": 0,
+     "ausdauer_belastung": 0
+    }
+   },
+   "belastung": {
+    "zeitdruck": 1,
+    "flimmern_lichtreize": 1,
+    "bewegungsreize_schwindel": 0,
+    "koerperliche_belastung": 0,
+    "sturzrisiko": 0,
+    "sprachabhaengigkeit": 0
+   },
+   "voraussetzungen": [
+    "Etwa 50–60 cm vor dem Bildschirm sitzen, Kopf ruhig in der Mitte; Abstand bei der Kalibrierung angeben",
+    "Bildschirm kalibriert (Abweichung in cm und Grad)",
+    "Blick auf dem Kreuz halten können, auch wenn der Punkt am Rand erscheint",
+    "Mit Finger, Stift oder Maus einen Ort auf dem Bildschirm antippen; Spiegelungen vermeiden",
+    "Keine Rot-Grün-Brille nötig"
+   ],
+   "vorsicht_bei": [
+    "photosensitive_epilepsie",
+    "migraene_lichtempfindlich",
+    "gesichtsfeldausfall",
+    "sehbehinderung_niedriger_visus",
+    "nystagmus",
+    "tremor_parkinson",
+    "hand_arm_beschwerden",
+    "aufmerksamkeitsprobleme"
+   ],
+   "geeignet_fuer": [
+    "Einen kurz am Rand gesehenen Ort bei ruhigem Blick erfassen und aus der Erinnerung antippen (Funktionsübung, kein Ersatz für die Untersuchung)",
+    "Mit der Rückmeldung sehen, in welche Richtung die eigenen Antworten abweichen",
+    "Wartezeit und Anzeigedauer getrennt einstellen (Erfassen kurz gezeigter Orte, Merken des Ortes)",
+    "Vergleich mit sich selbst bei gleichen Einstellungen, gleicher Hand, gleichem Abstand und Gerät"
+   ],
+   "weniger_geeignet_fuer": [
+    "Prüfung des Gesichtsfeldes oder ein Befund (die App misst den Blick nicht und deutet nichts)",
+    "Menschen, die den Blick nicht in der Mitte halten können oder wollen (die Aufgabe ändert sich dann)",
+    "Diagnose, Normvergleich, Therapie"
+   ],
+   "evidenz": {
+    "uebungseffekt": "unklar",
+    "naher_transfer": "fehlend",
+    "alltag_transfer": "fehlend",
+    "kommentar": "Funktionsübung nach dem Prinzip des klassischen Verfahrens, kein Ersatz für die Untersuchung. Laborstudien zum Zeigen auf kurz gesehene oder erinnerte Ziele beschreiben blickabhängige Fehler (Henriques et al. 1998), eine nur kurz anhaltende Ortsrepräsentation (Lemay & Proteau 2002) und den Einfluss begleitender Augenbewegungen (van Donkelaar & Staub 2000). Für diese Übung am Bildschirm gibt es keine Studie; ob die Antworten mit Übung genauer werden, ist offen, ein Nutzen für Alltag, Sport oder Verkehr ist nicht belegt."
+   },
+   "aehnliche_uebungen": [
+    401,
+    605,
+    108,
+    506,
+    912
+   ],
+   "stichworte": [
+    "Ortsprojektion",
+    "Zeigen auf erinnerte Ziele",
+    "kurz gezeigter Punkt",
+    "Fixationskreuz",
+    "Rand sehen",
+    "Auge-Hand",
+    "räumliches Kurzzeitgedächtnis",
+    "Funktionsübung",
+    "Labor-Übung",
+    "kein Ersatz für die Untersuchung"
+   ],
+   "datei": "uebungen/934-labor-projektion.md"
   }
  ]
 }

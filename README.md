@@ -11,7 +11,7 @@ funktioniert aber auch am Handy und am Computer. Sprachen: **Deutsch** und **Ita
 - adaptive Schwierigkeit (Staircase-Verfahren), Verlauf, Bestwerte, persönliche Tipps
 - **Zwei Ansichten** (Knopf in der Kopfzeile, beim ersten Öffnen Auswahl):
   **Kunde** sieht nur drei vom Optiker gewählte Übungen (Voreinstellung: Blitzreaktion, Kugel-Detektiv, Suchbild);
-  **Trainer** sieht alle 114 Übungen, „Hintergrund & Studien“, den **Übungskatalog** (87 Einträge mit Anforderungsprofil, Quellen)
+  **Trainer** sieht alle 114 Übungen, „Hintergrund & Studien“, den **Übungskatalog** (115 Einträge mit Anforderungsprofil, Quellen)
   und wählt im Optiker-Bereich die Kunden-Übungen. Die Wahl ist eine Ansicht, **kein Zugangsschutz** (kein Login, alles im Browser gespeichert).
 - **Trainer-Regler**: Bei den Übungen mit Rot-Grün-Brille (Rot-Grün-Lesen, Fusion, Tiefe sehen) kann die Trainer-Ansicht den Versatz bzw. die Disparität
   während der Übung in kleinen Schritten verändern (schmale Leiste außerhalb des Reizfelds, jede Änderung steht mit Zeitpunkt im Ergebnis); die Benutzer-Ansicht hat sie nicht.

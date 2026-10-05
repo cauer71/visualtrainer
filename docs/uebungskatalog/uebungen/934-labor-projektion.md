@@ -81,7 +81,7 @@ evidenz:
   naher_transfer: fehlend
   alltag_transfer: fehlend
   kommentar: "Funktionsübung nach dem Prinzip des klassischen Verfahrens, kein Ersatz für die Untersuchung. Laborstudien zum Zeigen auf kurz gesehene oder erinnerte Ziele beschreiben blickabhängige Fehler (Henriques et al. 1998), eine nur kurz anhaltende Ortsrepräsentation (Lemay & Proteau 2002) und den Einfluss begleitender Augenbewegungen (van Donkelaar & Staub 2000). Für diese Übung am Bildschirm gibt es keine Studie; ob die Antworten mit Übung genauer werden, ist offen, ein Nutzen für Alltag, Sport oder Verkehr ist nicht belegt."
-aehnliche_uebungen: [401, 605, 108, 506]
+aehnliche_uebungen: [401, 605, 108, 506, 912]
 stichworte: ["Ortsprojektion", "Zeigen auf erinnerte Ziele", "kurz gezeigter Punkt", "Fixationskreuz", "Rand sehen", "Auge-Hand", "räumliches Kurzzeitgedächtnis", "Funktionsübung", "Labor-Übung", "kein Ersatz für die Untersuchung"]
 ---
 

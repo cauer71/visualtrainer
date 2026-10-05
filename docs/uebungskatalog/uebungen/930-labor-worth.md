@@ -81,7 +81,7 @@ evidenz:
   naher_transfer: fehlend
   alltag_transfer: fehlend
   kommentar: "Funktionsübung nach dem Prinzip des klassischen Verfahrens, kein Ersatz für die Untersuchung. Das Worth-Vier-Punkte-Verfahren ist seit mehr als hundert Jahren beschrieben und wird von Fachleuten genutzt (Roper-Hall 2004); bei kleinen Kindern hängt die Zuverlässigkeit stark von der Art der Antwort ab (Lueder & Arnoldi 1996). Für diese digitale Näherung gibt es keine Studie; ein Nutzen als Übung ist nicht belegt."
-aehnliche_uebungen: [929, 931, 932]
+aehnliche_uebungen: [929, 931, 932, 921, 922]
 stichworte: ["Worth-Vier-Punkte", "Worth 4 Dot", "Rot-Grün-Brille", "Lichter zählen", "getrennte Bilder", "beidäugiges Sehen", "Funktionsübung", "keine Deutung", "Labor-Übung", "kein Ersatz für die Untersuchung"]
 ---
 

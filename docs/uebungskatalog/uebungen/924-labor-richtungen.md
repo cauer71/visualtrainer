@@ -82,7 +82,7 @@ evidenz:
   naher_transfer: unklar
   alltag_transfer: fehlend
   kommentar: "Für genau diese Übung gibt es keine Studie. Dass räumlich passende Reiz-Antwort-Zuordnungen schneller sind, ist ein altes, robustes Ergebnis (Fitts & Seeger 1953; Simon 1969). Schritt-Training mit echten Schritten verminderte bei Älteren Stürze und verbesserte Wahl-Schrittreaktionszeit (Okubo et al. 2017); das waren betreute Programme, keine Bildschirmübung. Bei Bildschirmübungen werden Effekte überschätzt, wenn der Test der Übung ähnelt (Guo et al. 2025)."
-aehnliche_uebungen: [202, 201, 902, 703, 925]
+aehnliche_uebungen: [202, 201, 902, 703, 925, 909]
 stichworte: ["Wahlreaktion", "Pfeilrichtung", "Gegenrichtung", "Reiz-Reaktions-Kompatibilität", "Richtungen zuordnen", "acht Richtungen", "Hilfsperson", "Körperbewegung", "Schritt-Training (nur Einordnung)", "Sturzgefahr beachten"]
 ---
 

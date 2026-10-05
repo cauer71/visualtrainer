@@ -82,7 +82,7 @@ evidenz:
   naher_transfer: schwach
   alltag_transfer: fehlend
   kommentar: "Das nützliche Sehfeld wird mit dem Alter kleiner und ließ sich durch Übung teilweise vergrößern (Ball et al., 1988); Sehschärfe, Reaktionszeit und Zeichenerkennung ändern sich mit dem Abstand von der Mitte (Anstis, 1974; Strasburger et al., 2011). In 93 Studien zu Randseh-Übungen im Sport prüfte keine den Blick per Eye-Tracking, ein Übertrag auf den Sport ist nicht nachgewiesen (Vater & Strasburger, 2021). Für diese Übung gibt es keine Studie; Verbesserungen in trainingsähnlichen Prüfungen sind zu großen Teilen Gewöhnung (Guo et al., 2025)."
-aehnliche_uebungen: [401, 108, 408, 911, 913]
+aehnliche_uebungen: [401, 108, 408, 911, 913, 934, 926]
 stichworte: ["peripheres Erkennen", "Randsehen", "Exzentrizität in Grad", "Fixation", "Kurzdarbietung", "nützliches Sehfeld", "Sehabstand", "adaptive Treppe", "kein Eye-Tracking", "keine Perimetrie", "Labor"]
 ---
 

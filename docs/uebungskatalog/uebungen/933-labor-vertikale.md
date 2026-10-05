@@ -81,7 +81,7 @@ evidenz:
   naher_transfer: fehlend
   alltag_transfer: fehlend
   kommentar: "Funktionsübung nach dem Prinzip des klassischen Verfahrens, kein Ersatz für die Untersuchung. Die subjektive visuelle Vertikale ist bei Störungen des Gleichgewichtsorgans und des Hirnstamms klinisch untersucht (Böhmer & Rickenmann 1995; Dieterich & Brandt 1993); einfache Verfahren mit Eimer oder Smartphone wurden in kleinen Studien verglichen (Dai et al. 2020; Wengier et al. 2021). Für diese Bildschirmfassung gibt es keine Studie; ein Nutzen als Übung ist nicht belegt."
-aehnliche_uebungen: [931, 934]
+aehnliche_uebungen: [931, 934, 925]
 stichworte: ["subjektive visuelle Vertikale", "SVV", "Senkrechte einstellen", "Linie drehen und stoppen", "Startseite wechseln", "Gleichgewichtsorgan", "Funktionsübung", "keine Deutung", "Labor-Übung", "kein Ersatz für die Untersuchung"]
 ---
 

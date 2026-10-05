@@ -81,7 +81,7 @@ evidenz:
   naher_transfer: unklar
   alltag_transfer: unklar
   kommentar: "Für genau diese Übung gibt es keine Studie. Schritt-Training mit echten Schritten auf Reize hin verminderte bei Menschen ab 60 Jahren in betreuten Programmen Stürze und verbesserte Wahl-Schrittreaktionszeit und Gleichgewichtstests (Okubo et al. 2017); Gleichgewichts- und Funktionsübungen senken die Sturzrate (Sherrington et al. 2019). Die Übung ähnelt solchen Aufgaben, ist aber nicht untersucht; für gesunde Menschen ist kein Nutzen belegt, und die Zeit hängt an der Hilfsperson."
-aehnliche_uebungen: [924, 926, 202]
+aehnliche_uebungen: [924, 926, 202, 933]
 stichworte: ["Orientierung", "Körperrichtung", "Neigen", "Schritt", "Rückkehr zur Mitte", "Hilfsperson", "Wahl-Schrittaufgabe (nur Einordnung)", "Gleichgewicht", "Sturzgefahr", "keine Messung"]
 ---
 
