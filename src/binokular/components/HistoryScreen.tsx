@@ -5,6 +5,12 @@ import { t } from '../texts';
 import { ColumnChart, LineChart, type Point } from './charts';
 import { clock, de, download, pct, Screen } from './common';
 
+/** gespielte Level einer Session kompakt: „1 ★★★ · 2 ★★☆ · 3 –“ (– = nicht geschafft) */
+export function levelSummary(s: SessionRecord): string {
+  const parts = s.attempts.filter((a) => a.result !== 'aborted').map((a) => `${a.levelNumber} ${a.result === 'completed' ? '★'.repeat(a.stars) + '☆'.repeat(3 - a.stars) : '–'}`);
+  return parts.length ? parts.join(' · ') : '–';
+}
+
 const short = (date: string) => {
   const [, m, d] = date.split('-');
   return `${Number(d)}.${Number(m)}.`;
@@ -73,6 +79,7 @@ export function HistoryScreen({ sessions, onBack }: { sessions: SessionRecord[];
                     <th>{t.thStart}</th>
                     <th>{t.thActive}</th>
                     <th>{t.thLevels}</th>
+                    <th>{t.thLevelNos}</th>
                     <th>{t.thStars}</th>
                     <th>{t.thSuccess}</th>
                     <th>{t.thErrors}</th>
@@ -91,6 +98,7 @@ export function HistoryScreen({ sessions, onBack }: { sessions: SessionRecord[];
                       <td>
                         {s.levelsCompleted}/{s.levelsPlayed}
                       </td>
+                      <td class="bm-levelcell">{levelSummary(s)}</td>
                       <td>{s.stars}</td>
                       <td>{pct(s.successRate)}</td>
                       <td>{s.errors}</td>

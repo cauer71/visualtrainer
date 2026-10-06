@@ -734,3 +734,110 @@ input:focus-visible {
 .bm-fine-expert {
   margin: 12px 0;
 }
+
+/* Levelauswahl: 10 Karten, neutral grau; gesperrte gedimmt, aktuelles Level mit hellem Rand */
+.bm-levels {
+  list-style: none;
+  margin: 12px 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 10px;
+}
+.bm-levels li {
+  display: flex;
+}
+.bm-level {
+  width: 100%;
+  height: 100%;
+  min-height: 96px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 4px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--btn-line);
+  background: var(--btn);
+  color: var(--text);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  touch-action: manipulation;
+  transition: background var(--fade), border-color var(--fade);
+}
+.bm-level:hover:not(:disabled) {
+  background: #2e2e2e;
+}
+.bm-level:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+}
+.bm-level.is-current {
+  border: 2px solid #f2f2f2;
+}
+.bm-level.is-locked {
+  opacity: 0.45;
+  cursor: default;
+}
+.bm-level-no {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+}
+.bm-level-name {
+  font-weight: 600;
+  font-size: 0.95rem;
+  hyphens: auto;
+  overflow-wrap: anywhere;
+}
+.bm-level-stars {
+  color: #d6d6d6;
+  letter-spacing: 3px;
+  font-size: 1.05rem;
+}
+.bm-modal-card.bm-modal-wide {
+  max-width: 900px;
+}
+.bm-modal-wide .bm-levels {
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+}
+.bm-modal-wide .bm-level {
+  min-height: 72px;
+}
+.bm-chip.is-dim {
+  opacity: 0.55;
+}
+.bm-sound {
+  margin: 4px 0 12px;
+}
+.bm-levelcell {
+  white-space: nowrap;
+}
+@media (max-width: 1599px) {
+  .bm-hud-name {
+    display: none;
+  }
+}
+@media (max-width: 1000px), (max-height: 500px) {
+  .bm-hud-soundtext {
+    display: none;
+  }
+}
+@media (max-height: 500px) {
+  .bm-levels {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 6px;
+  }
+  .bm-level {
+    min-height: 64px;
+    padding: 6px 8px;
+  }
+  .bm-level-name {
+    font-size: 0.8rem;
+  }
+  .bm-modal-wide .bm-level-name {
+    display: none;
+  }
+}

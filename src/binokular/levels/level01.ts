@@ -54,8 +54,9 @@ export const level01: LevelDef = {
   maxFailuresForStar: 0,
   difficulty: {
     objectSize: 0.9,
-    contrast: { amblyopic: 1, fellow: 1, neutral: 1, distractor: 0.35 },
+    contrast: { amblyopic: 1, fellow: 1, target: 1, neutral: 1, distractor: 0.35 },
     moveSpeed: 2.5,
+    hazardSpeed: 0,
     objectCount: 9,
     pairDistance: 6,
     distraction: 0.15,
@@ -68,5 +69,5 @@ export const level01: LevelDef = {
     { amblyopic: ['key'], fellow: ['door'], note: 'Schlüssel ↔ Tür' },
     { amblyopic: ['switch'], fellow: ['platform'], note: 'Schalter ↔ Plattform' },
   ],
-  solverRobot: 'robotA',
+  solverRobots: ['robotA'],
 };

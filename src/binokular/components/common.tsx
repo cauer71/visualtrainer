@@ -123,3 +123,16 @@ export function ShapeIcon({ shape, size = 28 }: { shape: string; size?: number }
     </svg>
   );
 }
+
+/** Lautsprecher-Symbol (neutral): 0 = aus (mit Kreuz), 1–3 Bögen = Lautstärke */
+export function SpeakerIcon({ level, size = 22 }: { level: 0 | 1 | 2 | 3; size?: number }) {
+  return (
+    <svg viewBox="0 0 24 24" width={size} height={size} aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3 9h4l5-4v14l-5-4H3z" fill="currentColor" />
+      {level === 0 && <path d="M16 9l5 6M21 9l-5 6" />}
+      {level >= 1 && <path d="M15.5 10a3 3 0 0 1 0 4" />}
+      {level >= 2 && <path d="M18 7.5a6.5 6.5 0 0 1 0 9" />}
+      {level >= 3 && <path d="M20.5 5a10 10 0 0 1 0 14" />}
+    </svg>
+  );
+}

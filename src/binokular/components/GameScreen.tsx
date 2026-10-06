@@ -1,15 +1,18 @@
 /**
- * Spielbildschirm: verbindet Spiellogik (Engine), Darstellung (vision/renderer), Session-Protokoll,
- * adaptive Kontraststeuerung, Suppressions-Kontrollen, Pausen und Debug-Ansichten.
+ * Spielbildschirm: verbindet Spiellogik (Engine), Darstellung (vision/renderer), Ton (audio/), Session-Protokoll,
+ * adaptive Kontraststeuerung, Suppressions-Kontrollen, Pausen, Levelwechsel und Debug-Ansichten.
+ * Die Session läuft über Levelwechsel weiter; jedes Level wird einzeln protokolliert (Level, Sterne, Fehler, Zeit).
  */
 import { useEffect, useMemo, useRef, useState } from 'preact/hooks';
+import { playGameEvents, type AudioPrefs, type SoundPlayer, type Volume } from '../audio';
+import { afterLevel } from '../data/progress';
 import { DIFFICULTY_EFFECT, visionOf } from '../data/settings';
-import { MAX_SESSIONS, type Store } from '../data/storage';
+import { audioPrefsOf, MAX_SESSIONS, type Store } from '../data/storage';
 import { Engine, type EngineOptions } from '../game/engine';
-import { applyCommand, BOTH_EYES, solveLevel, type SolverCommand } from '../game/solver';
+import { applyCommand, BOTH_EYES, commandReady, solveLevel, type SolverCommand } from '../game/solver';
 import { calcStars, parTimeS } from '../game/stars';
-import type { GameObject } from '../game/types';
-import { levelByNumber, nextLevelNumber } from '../levels';
+import type { GameEvent, GameObject } from '../game/types';
+import { LEVELS, levelByNumber } from '../levels';
 import { adaptContrast, decreaseContrast, outcomeOf } from '../therapy/contrast';
 import { SessionRecorder, type AttemptResult, type EndReason, type SessionRecord } from '../therapy/session';
 import {
@@ -25,12 +28,14 @@ import {
 } from '../therapy/suppression';
 import { t } from '../texts';
 import { filterOf } from '../vision/color';
-import { cellAt, DEBUG_KEYS, fitLayout, renderAnaglyphSim, renderScene, type DebugView, type Layout } from '../vision/renderer';
-import { clock, de, ShapeIcon } from './common';
+import { cellAt, DEBUG_KEYS, fitLayout, renderAnaglyphSim, renderScene, visibleCells, type DebugView, type Layout } from '../vision/renderer';
+import { clock, de, ShapeIcon, SpeakerIcon } from './common';
+import { LevelGrid } from './LevelSelect';
 
-type Phase = 'playing' | 'check' | 'pauseOffer' | 'paused' | 'levelEnd' | 'ended';
+type Phase = 'playing' | 'check' | 'pauseOffer' | 'paused' | 'levelEnd' | 'chooseLevel' | 'ended';
 
 interface LevelResult {
+  number: number;
   completed: boolean;
   stars: number;
   activeMs: number;
@@ -42,6 +47,7 @@ interface LevelResult {
 interface Hud {
   sessionMs: number;
   level: number;
+  levelName: string;
   delivered: number;
   required: number;
   failures: number;
@@ -53,6 +59,10 @@ interface Hud {
 type Props = {
   store: Store;
   update: (fn: (s: Store) => Store) => void;
+  /** Level, mit dem das Spiel beginnt */
+  startLevel: number;
+  sound: SoundPlayer;
+  onAudio: (a: AudioPrefs) => void;
   autoplay: boolean;
   forceDebug: boolean;
   /** nur für Tests: erste Kontrollaufgabe nach n Sekunden */
@@ -60,11 +70,23 @@ type Props = {
   onEnd: (rec: SessionRecord) => void;
 };
 
-/** Automatik: so viel schneller laufen die Roboter */
+/** Automatik: so viel schneller laufen die Roboter (die wandernde Gefahr behält ihr Tempo) */
 const AUTOPLAY_SPEED = 4;
 const AUTOPLAY_GAP_MS = 180;
+/** Ziehen ab dieser Strecke (px) verschiebt den Ausschnitt statt zu tippen */
+const DRAG_PX = 10;
+/** Kamera hält den Roboter so viele Felder vom Rand entfernt */
+const CAMERA_MARGIN = 1.5;
 
-export function GameScreen({ store, update, autoplay, forceDebug, firstCheckS, onEnd }: Props) {
+/** nächste Stufe des Ton-Knopfs: aus → leise → mittel → laut → aus */
+function nextAudio(a: AudioPrefs): AudioPrefs {
+  if (!a.on) return { on: true, volume: 'LOW' };
+  const order: Volume[] = ['LOW', 'MEDIUM', 'HIGH'];
+  const i = order.indexOf(a.volume);
+  return i >= order.length - 1 ? { on: false, volume: a.volume } : { on: true, volume: order[i + 1] };
+}
+
+export function GameScreen({ store, update, startLevel: initialLevel, sound, onAudio, autoplay, forceDebug, firstCheckS, onEnd }: Props) {
   const settingsRef = useRef(store.settings);
   settingsRef.current = store.settings;
   const calRef = useRef(store.calibration);
@@ -75,6 +97,9 @@ export function GameScreen({ store, update, autoplay, forceDebug, firstCheckS, o
   const stageRef = useRef<HTMLDivElement>(null);
   const offRef = useRef<HTMLCanvasElement | null>(null);
   const layoutRef = useRef<Layout | null>(null);
+  const camRef = useRef<{ x: number; y: number } | null>(null);
+  const followRef = useRef(true);
+  const dragRef = useRef<{ id: number; x: number; y: number; cam: { x: number; y: number }; moved: boolean } | null>(null);
 
   const [phase, setPhase] = useState<Phase>('playing');
   const phaseRef = useRef<Phase>('playing');
@@ -82,12 +107,16 @@ export function GameScreen({ store, update, autoplay, forceDebug, firstCheckS, o
     phaseRef.current = p;
     setPhase(p);
   };
-  const [message, setMessage] = useState<string>(t.messages.selectRobot);
+  const firstLevel = levelByNumber(initialLevel);
+  const [message, setMessage] = useState<string>(t.levelIntro[firstLevel.id] ?? t.messages.selectRobot);
   const [result, setResult] = useState<LevelResult | null>(null);
   const [view, setView] = useState<DebugView>('BINOCULAR');
   const viewRef = useRef<DebugView>('BINOCULAR');
   viewRef.current = view;
+  const [cellPx, setCellPx] = useState(0);
+  const cellPxRef = useRef(0);
   const debug = forceDebug || store.settings.debugMode;
+  const audio = audioPrefsOf(store);
 
   const rec = useMemo(
     () =>
@@ -111,12 +140,12 @@ export function GameScreen({ store, update, autoplay, forceDebug, firstCheckS, o
       objectSize: lvl.difficulty.objectSize * (s.objectSizePercent / 100) * eff.sizeFactor,
       distraction: Math.min(1, lvl.difficulty.distraction + eff.extraDistraction),
       moveSpeed: lvl.difficulty.moveSpeed * eff.speedFactor * (autoplay ? AUTOPLAY_SPEED : 1),
+      hazardSpeed: lvl.difficulty.hazardSpeed * eff.speedFactor,
     };
   };
 
-  const startLevelNo = levelByNumber(store.progress.level).number;
   const engineRef = useRef<Engine>(null as unknown as Engine);
-  if (!engineRef.current) engineRef.current = new Engine(levelByNumber(startLevelNo), engineOpts(startLevelNo));
+  if (!engineRef.current) engineRef.current = new Engine(firstLevel, engineOpts(firstLevel.number));
   const autoRef = useRef<{ cmds: SolverCommand[]; i: number; nextAt: number } | null>(null);
   const timers = useRef({
     sessionMs: 0,
@@ -138,6 +167,7 @@ export function GameScreen({ store, update, autoplay, forceDebug, firstCheckS, o
     return {
       sessionMs: timers.current.sessionMs,
       level: e.level.number,
+      levelName: t.levelNames[e.level.nameKey] ?? '',
       delivered: snap.delivered,
       required: snap.required,
       failures: snap.failures,
@@ -147,6 +177,19 @@ export function GameScreen({ store, update, autoplay, forceDebug, firstCheckS, o
     };
   }
 
+  /** Ereignisse der Spiellogik: Text (letztes Ereignis mit Text) und Töne */
+  function handleEvents(evs: GameEvent[]) {
+    if (!evs.length) return;
+    for (let i = evs.length - 1; i >= 0; i--) {
+      const txt = t.messages[evs[i].msg];
+      if (txt) {
+        setMessage(txt);
+        break;
+      }
+    }
+    playGameEvents(sound, evs);
+  }
+
   function prepareAutoplay(n: number) {
     if (!autoplay) return;
     const r = solveLevel(levelByNumber(n), BOTH_EYES, engineOpts(n));
@@ -154,12 +197,15 @@ export function GameScreen({ store, update, autoplay, forceDebug, firstCheckS, o
   }
 
   function startLevel(n: number) {
-    engineRef.current = new Engine(levelByNumber(n), engineOpts(n));
+    const lvl = levelByNumber(n);
+    engineRef.current = new Engine(lvl, engineOpts(lvl.number));
+    camRef.current = null;
+    followRef.current = true;
     timers.current.levelStartAt = rec.elapsed();
     levelOpen.current = true;
-    setMessage(t.messages.selectRobot);
+    setMessage(t.levelIntro[lvl.id] ?? t.messages.selectRobot);
     setResult(null);
-    prepareAutoplay(n);
+    prepareAutoplay(lvl.number);
     go('playing');
     setHud(hudOf());
   }
@@ -205,19 +251,16 @@ export function GameScreen({ store, update, autoplay, forceDebug, firstCheckS, o
     saveProgress((st) => ({
       ...st,
       settings: { ...st.settings, fellowEyeContrast: step.fellowEyeContrast },
-      progress: {
-        ...st.progress,
-        consecutiveFailures: step.consecutiveFailures,
-        level: completed ? nextLevelNumber(lvl.number) : lvl.number,
-        bestStars: { ...st.progress.bestStars, [lvl.id]: Math.max(st.progress.bestStars[lvl.id] ?? 0, stars) },
-      },
+      progress: afterLevel(st.progress, { number: lvl.number, id: lvl.id, completed, stars, consecutiveFailures: step.consecutiveFailures }, LEVELS.length),
       activeSession: rec.snapshot(),
     }));
     if (res === 'restarted') {
       startLevel(lvl.number);
       return;
     }
-    setResult({ completed, stars, activeMs: e.elapsedMs, failures: e.failures, before, after: step.fellowEyeContrast });
+    if (completed) sound.play('levelComplete', { stars });
+    else sound.play('levelTimeout');
+    setResult({ number: lvl.number, completed, stars, activeMs: e.elapsedMs, failures: e.failures, before, after: step.fellowEyeContrast });
     go('levelEnd');
   }
 
@@ -231,6 +274,7 @@ export function GameScreen({ store, update, autoplay, forceDebug, firstCheckS, o
     }
     const final = rec.finish(reason);
     go('ended');
+    sound.play('sessionEnd');
     saveProgress((st) => ({ ...st, sessions: [...st.sessions, final].slice(-MAX_SESSIONS), activeSession: null }));
     onEnd(final);
   }
@@ -239,6 +283,8 @@ export function GameScreen({ store, update, autoplay, forceDebug, firstCheckS, o
     const shape = randomShape(Math.random, lastShape.current);
     lastShape.current = shape;
     checkRef.current = { shape, t: now };
+    // Hinweiston: immer derselbe, verrät das Symbol nicht
+    sound.play('check');
     go('check');
   }
 
@@ -262,11 +308,27 @@ export function GameScreen({ store, update, autoplay, forceDebug, firstCheckS, o
     go('playing');
   }
 
+  function pause() {
+    rec.pauseBegin();
+    sound.play('pause');
+    go('paused');
+  }
+
+  function resume() {
+    rec.pauseEnd();
+    sound.play('resume');
+    go('playing');
+  }
+
   function runAuto(now: number) {
     const a = autoRef.current;
     const e = engineRef.current;
     if (!a || a.i >= a.cmds.length || !e.isIdle() || now < a.nextAt) return;
-    applyCommand(e, a.cmds[a.i++]);
+    const cmd = a.cmds[a.i];
+    // wandernde Gefahr: erst losschicken, wenn der Weg laut Zeitplan frei ist
+    if (!commandReady(e, cmd)) return;
+    a.i++;
+    applyCommand(e, cmd);
     a.nextAt = now + AUTOPLAY_GAP_MS;
   }
 
@@ -283,8 +345,7 @@ export function GameScreen({ store, update, autoplay, forceDebug, firstCheckS, o
       rec.addActive(dt);
       tm.sinceCheck += dt;
       tm.sincePauseOffer += dt;
-      const evs = e.drainEvents();
-      if (evs.length) setMessage(t.messages[evs[evs.length - 1].msg]);
+      handleEvents(e.drainEvents());
       if (e.status === 'won') finishLevel('completed');
       else if (e.elapsedMs >= s.maxLevelMinutes * 60000) finishLevel('timeout');
       else if (autoplay) runAuto(now);
@@ -300,7 +361,32 @@ export function GameScreen({ store, update, autoplay, forceDebug, firstCheckS, o
     if (tm.sessionMs >= s.sessionMinutes * 60000) endSession('time');
   }
 
-  function draw(now: number) {
+  /** Kamera (nur große Level bzw. kleine Bildschirme): hält den ausgewählten Roboter im Bild, weich nachgeführt */
+  function layoutFor(cols: number, rows: number, w: number, h: number, dt: number): Layout {
+    const e = engineRef.current;
+    const focus = e.focusPoint();
+    if (!camRef.current) camRef.current = { ...focus };
+    let l = fitLayout(cols, rows, w, h, camRef.current);
+    if (!l.scrollX && !l.scrollY) return l;
+    if (e.snapshot().moving) followRef.current = true;
+    if (followRef.current && !dragRef.current?.moved) {
+      const v = visibleCells(l);
+      const cam = { ...camRef.current };
+      const target = { ...cam };
+      if (focus.x < v.x0 + CAMERA_MARGIN) target.x -= v.x0 + CAMERA_MARGIN - focus.x;
+      else if (focus.x + 1 > v.x1 - CAMERA_MARGIN) target.x += focus.x + 1 - (v.x1 - CAMERA_MARGIN);
+      if (focus.y < v.y0 + CAMERA_MARGIN) target.y -= v.y0 + CAMERA_MARGIN - focus.y;
+      else if (focus.y + 1 > v.y1 - CAMERA_MARGIN) target.y += focus.y + 1 - (v.y1 - CAMERA_MARGIN);
+      const k = Math.min(1, dt / 220);
+      camRef.current = { x: cam.x + (target.x - cam.x) * k, y: cam.y + (target.y - cam.y) * k };
+      l = fitLayout(cols, rows, w, h, camRef.current);
+    }
+    // Kamera an den Rändern festhalten (sonst „klebt“ sie beim Zurückziehen)
+    camRef.current = { x: (w / 2 - l.ox) / l.cell - 0.5, y: (h / 2 - l.oy) / l.cell - 0.5 };
+    return l;
+  }
+
+  function draw(now: number, dt: number) {
     const cv = canvasRef.current;
     const stage = stageRef.current;
     if (!cv || !stage) return;
@@ -318,14 +404,23 @@ export function GameScreen({ store, update, autoplay, forceDebug, firstCheckS, o
     if (!g) return;
     const e = engineRef.current;
     const scene = e.scene();
-    const layout = fitLayout(scene.cols, scene.rows, w, h);
+    const layout = layoutFor(scene.cols, scene.rows, w, h, dt);
     layoutRef.current = layout;
+    if (layout.cell !== cellPxRef.current) {
+      cellPxRef.current = layout.cell;
+      setCellPx(layout.cell);
+    }
+    // Kamera-Versatz für Tests sichtbar machen (ohne Neuzeichnen der Oberfläche)
+    const cam = `${layout.ox},${layout.oy}`;
+    if (stage.dataset.cam !== cam) stage.dataset.cam = cam;
     const vis = visionOf(settingsRef.current, calRef.current);
     const overlay: GameObject[] = [];
     const c = checkRef.current;
     if (phaseRef.current === 'check' && c) {
-      const x = (scene.cols - 1) / 2;
-      const y = (scene.rows - 1) / 2 - 0.3;
+      // Kontrollsymbol in der Mitte des sichtbaren Ausschnitts
+      const v = visibleCells(layout);
+      const x = Math.max(0, Math.min(scene.cols - 1, (v.x0 + v.x1) / 2 - 0.5));
+      const y = Math.max(0, Math.min(scene.rows - 1, (v.y0 + v.y1) / 2 - 0.8));
       overlay.push({ id: 'probe-frame', kind: 'probe', x, y, w: 1, eyeVisibility: 'BOTH', contrast: 1, size: 2, alpha: 1 });
       overlay.push({ id: 'probe', kind: 'probe', x, y, w: 1, eyeVisibility: 'AMBLYOPIC', contrast: 1, size: 1.5, alpha: checkAlpha(now - c.t), flags: { shape: c.shape } });
     }
@@ -349,14 +444,14 @@ export function GameScreen({ store, update, autoplay, forceDebug, firstCheckS, o
 
   // Hauptschleife
   useEffect(() => {
-    prepareAutoplay(startLevelNo);
+    prepareAutoplay(firstLevel.number);
     let raf = 0;
     let last = performance.now();
     const frame = (now: number) => {
       const dt = Math.min(100, Math.max(0, now - last));
       last = now;
       step(dt, now);
-      draw(now);
+      draw(now, dt);
       if (now - timers.current.lastHud > 250) {
         timers.current.lastHud = now;
         setHud(hudOf());
@@ -378,33 +473,65 @@ export function GameScreen({ store, update, autoplay, forceDebug, firstCheckS, o
     return () => window.removeEventListener('keydown', onKey);
   }, [debug]);
 
-  const onPointerDown = (ev: PointerEvent) => {
-    if (phaseRef.current !== 'playing' || viewRef.current === 'ANAGLYPH_SIM') return;
+  function tapAt(clientX: number, clientY: number) {
     const cv = canvasRef.current;
     const l = layoutRef.current;
     if (!cv || !l) return;
-    ev.preventDefault();
     const r = cv.getBoundingClientRect();
     const e = engineRef.current;
-    const c = cellAt(l, e.cols, e.rows, ev.clientX - r.left, ev.clientY - r.top);
+    const c = cellAt(l, e.cols, e.rows, clientX - r.left, clientY - r.top);
     if (!c) return;
+    followRef.current = true;
     e.tap(c.x, c.y);
-    const evs = e.drainEvents();
-    if (evs.length) setMessage(t.messages[evs[evs.length - 1].msg]);
+    handleEvents(e.drainEvents());
     setHud(hudOf());
+  }
+
+  // Touch und Maus (Pointer Events): kurzes Antippen = Feld antippen; Ziehen = Ausschnitt verschieben (große Level)
+  const onPointerDown = (ev: PointerEvent) => {
+    if (phaseRef.current !== 'playing' || viewRef.current === 'ANAGLYPH_SIM') return;
+    ev.preventDefault();
+    const cam = camRef.current ?? { x: 0, y: 0 };
+    dragRef.current = { id: ev.pointerId, x: ev.clientX, y: ev.clientY, cam: { ...cam }, moved: false };
+    try {
+      (ev.currentTarget as HTMLElement).setPointerCapture?.(ev.pointerId);
+    } catch {
+      // ältere Browser ohne Pointer Capture
+    }
+  };
+  const onPointerMove = (ev: PointerEvent) => {
+    const d = dragRef.current;
+    const l = layoutRef.current;
+    if (!d || d.id !== ev.pointerId || !l || (!l.scrollX && !l.scrollY)) return;
+    const dx = ev.clientX - d.x;
+    const dy = ev.clientY - d.y;
+    if (!d.moved && Math.hypot(dx, dy) < DRAG_PX) return;
+    d.moved = true;
+    followRef.current = false;
+    camRef.current = { x: l.scrollX ? d.cam.x - dx / l.cell : d.cam.x, y: l.scrollY ? d.cam.y - dy / l.cell : d.cam.y };
+  };
+  const onPointerUp = (ev: PointerEvent) => {
+    const d = dragRef.current;
+    dragRef.current = null;
+    if (!d || d.id !== ev.pointerId || d.moved) return;
+    if (phaseRef.current !== 'playing' || viewRef.current === 'ANAGLYPH_SIM') return;
+    tapAt(ev.clientX, ev.clientY);
   };
 
   const planned = store.settings.sessionMinutes * 60000;
   const s = store.settings;
+  const total = LEVELS.length;
+  const lastDone = result?.completed && result.number >= total;
 
   return (
-    <div class="bm-game" data-phase={phase}>
+    <div class="bm-game" data-phase={phase} data-level={hud.level}>
       <header class="bm-hud" role="toolbar">
         <span class="bm-hud-item bm-hud-session" id="hud-session">
           {t.session} {clock(hud.sessionMs)} / {clock(planned)}
         </span>
-        <span class="bm-hud-item">
+        <span class="bm-hud-item" id="hud-level">
           {t.level} {hud.level}
+          <span class="bm-hud-name"> · {hud.levelName}</span>
         </span>
         <span class="bm-hud-item" id="hud-crystals">
           {t.crystals} {hud.delivered}/{hud.required}
@@ -422,8 +549,7 @@ export function GameScreen({ store, update, autoplay, forceDebug, firstCheckS, o
             class="bm-btn bm-btn-small"
             onClick={() => {
               engineRef.current.dropItem();
-              const evs = engineRef.current.drainEvents();
-              if (evs.length) setMessage(t.messages[evs[evs.length - 1].msg]);
+              handleEvents(engineRef.current.drainEvents());
               setHud(hudOf());
             }}
           >
@@ -432,13 +558,19 @@ export function GameScreen({ store, update, autoplay, forceDebug, firstCheckS, o
         )}
         <button
           class="bm-btn bm-btn-small"
-          id="bm-pause"
-          disabled={phase !== 'playing'}
+          id="bm-sound"
+          aria-label={`${t.sound}: ${audio.on ? t.volumes[audio.volume] : t.soundOff}`}
           onClick={() => {
-            rec.pauseBegin();
-            go('paused');
+            const a = nextAudio(audio);
+            sound.setPrefs(a);
+            onAudio(a);
+            sound.play('select');
           }}
         >
+          <SpeakerIcon level={audio.on ? ({ LOW: 1, MEDIUM: 2, HIGH: 3 } as const)[audio.volume] : 0} />
+          <span class="bm-hud-soundtext">{t.soundHud(audio.on, t.volumes[audio.volume])}</span>
+        </button>
+        <button class="bm-btn bm-btn-small" id="bm-pause" disabled={phase !== 'playing'} onClick={pause}>
           {t.pause}
         </button>
         <button class="bm-btn bm-btn-small bm-btn-stop" id="bm-complaints" onClick={() => endSession('complaints')}>
@@ -457,8 +589,16 @@ export function GameScreen({ store, update, autoplay, forceDebug, firstCheckS, o
           </span>
         </div>
       )}
-      <div class="bm-stage" ref={stageRef}>
-        <canvas ref={canvasRef} class="bm-canvas" onPointerDown={onPointerDown} aria-label={t.appName} />
+      <div class="bm-stage" ref={stageRef} data-cell={cellPx}>
+        <canvas
+          ref={canvasRef}
+          class="bm-canvas"
+          onPointerDown={onPointerDown}
+          onPointerMove={onPointerMove}
+          onPointerUp={onPointerUp}
+          onPointerCancel={() => (dragRef.current = null)}
+          aria-label={t.appName}
+        />
         <p class="bm-msg" role="status" aria-live="polite" id="bm-msg">
           {message}
         </p>
@@ -484,13 +624,7 @@ export function GameScreen({ store, update, autoplay, forceDebug, firstCheckS, o
               <h2 id="po-title">{t.pauseOfferTitle}</h2>
               <p>{t.pauseOfferText}</p>
               <div class="bm-actions">
-                <button
-                  class="bm-btn bm-btn-primary"
-                  onClick={() => {
-                    rec.pauseBegin();
-                    go('paused');
-                  }}
-                >
+                <button class="bm-btn bm-btn-primary" onClick={pause}>
                   {t.takePause}
                 </button>
                 <button class="bm-btn" onClick={() => go('playing')}>
@@ -506,14 +640,7 @@ export function GameScreen({ store, update, autoplay, forceDebug, firstCheckS, o
               <h2 id="pause-title">{t.pausedTitle}</h2>
               <p>{t.pausedText}</p>
               <div class="bm-actions">
-                <button
-                  class="bm-btn bm-btn-primary"
-                  id="bm-resume"
-                  onClick={() => {
-                    rec.pauseEnd();
-                    go('playing');
-                  }}
-                >
+                <button class="bm-btn bm-btn-primary" id="bm-resume" onClick={resume}>
                   {t.resume}
                 </button>
                 <button
@@ -547,16 +674,39 @@ export function GameScreen({ store, update, autoplay, forceDebug, firstCheckS, o
               ) : (
                 <p>{t.levelTimeoutText}</p>
               )}
+              {lastDone && <p id="all-done">{t.allLevelsDone}</p>}
               <p>
-                {t.time} {clock(result.activeMs)} · {t.failures} {result.failures}
+                {t.level} {result.number} · {t.time} {clock(result.activeMs)} · {t.failures} {result.failures}
               </p>
               <p class="bm-muted">{result.before !== result.after ? t.contrastChange(de(result.before), de(result.after)) : t.contrastNow(de(result.after))}</p>
               <div class="bm-actions">
-                <button class="bm-btn bm-btn-primary" id="bm-next" onClick={() => startLevel(store.progress.level)}>
-                  {levelByNumber(store.progress.level).number === engineRef.current.level.number ? t.playAgain : t.nextLevel}
+                {result.completed && !lastDone ? (
+                  <button class="bm-btn bm-btn-primary" id="bm-next" onClick={() => startLevel(result.number + 1)}>
+                    {t.nextLevel}
+                  </button>
+                ) : (
+                  <button class="bm-btn bm-btn-primary" id="bm-next" onClick={() => startLevel(result.number)}>
+                    {t.playAgain}
+                  </button>
+                )}
+                <button class="bm-btn" id="bm-choose" onClick={() => go('chooseLevel')}>
+                  {t.chooseLevel}
                 </button>
                 <button class="bm-btn" id="bm-end" onClick={() => endSession('user')}>
                   {t.endSession}
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+        {phase === 'chooseLevel' && (
+          <div class="bm-modal" role="dialog" aria-labelledby="cl-title" id="choose-level">
+            <div class="bm-modal-card bm-modal-wide">
+              <h2 id="cl-title">{t.levelSelectTitle}</h2>
+              <LevelGrid progress={store.progress} current={store.progress.level} onPick={(n) => startLevel(n)} />
+              <div class="bm-actions">
+                <button class="bm-btn" onClick={() => go('levelEnd')}>
+                  {t.back}
                 </button>
               </div>
             </div>

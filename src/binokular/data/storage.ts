@@ -6,23 +6,23 @@
  * synchron und in allen Zielbrowsern (Windows, Android, iPad) gleich verfügbar. Daten verlassen das Gerät nie;
  * es gibt keine Anmeldung und keine Netzwerkzugriffe.
  */
+import type { AudioPrefs } from '../audio/player';
 import { DEFAULT_CALIBRATION, normalizeCalibration, type Calibration } from '../calibration/calibration';
+import { LEVELS } from '../levels';
 import { DEFAULT_PIN, isValidPin } from '../therapy/pin';
 import type { SessionRecord } from '../therapy/session';
+import { defaultProgress, normalizeProgress, type Progress } from './progress';
 import { DEFAULT_SETTINGS, normalizeSettings, type Settings } from './settings';
 
+export type { Progress } from './progress';
+
+/**
+ * Der Schlüssel bleibt `binokular:v1`: Mit den Leveln 2–10 kamen nur Felder dazu (`progress.unlocked`, `audio`,
+ * Ton-Voreinstellungen). Ältere Daten werden beim Laden ergänzt (`normalizeStore`, getestet).
+ */
 export const STORAGE_KEY = 'binokular:v1';
 /** Obergrenze gespeicherter Sessions (älteste fallen weg) */
 export const MAX_SESSIONS = 500;
-
-export interface Progress {
-  /** Misserfolge in Folge (adaptive Kontraststeuerung) */
-  consecutiveFailures: number;
-  /** aktuelles Level */
-  level: number;
-  /** beste Sterne je Level-ID */
-  bestStars: Record<string, number>;
-}
 
 export interface Store {
   version: 1;
@@ -33,6 +33,8 @@ export interface Store {
   progress: Progress;
   /** Zwischenstand einer laufenden Session (wird beim nächsten Start als „unterbrochen“ abgeschlossen) */
   activeSession: SessionRecord | null;
+  /** Toneinstellung der Person (null = Voreinstellung aus dem Therapeutenbereich) */
+  audio: AudioPrefs | null;
 }
 
 export function defaultStore(): Store {
@@ -42,9 +44,23 @@ export function defaultStore(): Store {
     calibration: structuredCloneSafe(DEFAULT_CALIBRATION),
     sessions: [],
     pin: DEFAULT_PIN,
-    progress: { consecutiveFailures: 0, level: 1, bestStars: {} },
+    progress: defaultProgress(),
     activeSession: null,
+    audio: null,
   };
+}
+
+/** wirksame Toneinstellung: Wahl der Person, sonst Voreinstellung */
+export function audioPrefsOf(s: Store): AudioPrefs {
+  return s.audio ?? { on: s.settings.soundOn, volume: s.settings.soundVolume };
+}
+
+function normalizeAudio(x: unknown): AudioPrefs | null {
+  if (!x || typeof x !== 'object') return null;
+  const o = x as Record<string, unknown>;
+  if (typeof o.on !== 'boolean') return null;
+  const volume = o.volume === 'LOW' || o.volume === 'HIGH' || o.volume === 'MEDIUM' ? o.volume : 'MEDIUM';
+  return { on: o.on, volume };
 }
 
 function structuredCloneSafe<T>(x: T): T {
@@ -61,23 +77,15 @@ export function normalizeStore(x: unknown): Store {
   const d = defaultStore();
   if (!x || typeof x !== 'object') return d;
   const o = x as Record<string, unknown>;
-  const p = (o.progress && typeof o.progress === 'object' ? o.progress : {}) as Record<string, unknown>;
-  const best: Record<string, number> = {};
-  if (p.bestStars && typeof p.bestStars === 'object') {
-    for (const [k, v] of Object.entries(p.bestStars as Record<string, unknown>)) if (typeof v === 'number') best[k] = Math.max(0, Math.min(3, Math.round(v)));
-  }
   return {
     version: 1,
     settings: normalizeSettings(o.settings),
     calibration: normalizeCalibration(o.calibration),
     sessions: Array.isArray(o.sessions) ? o.sessions.filter(isSession).slice(-MAX_SESSIONS) : [],
     pin: typeof o.pin === 'string' && isValidPin(o.pin) ? o.pin : DEFAULT_PIN,
-    progress: {
-      consecutiveFailures: typeof p.consecutiveFailures === 'number' ? Math.max(0, Math.round(p.consecutiveFailures)) : 0,
-      level: typeof p.level === 'number' ? Math.max(1, Math.round(p.level)) : 1,
-      bestStars: best,
-    },
+    progress: normalizeProgress(o.progress, LEVELS.length),
     activeSession: isSession(o.activeSession) ? o.activeSession : null,
+    audio: normalizeAudio(o.audio),
   };
 }
 

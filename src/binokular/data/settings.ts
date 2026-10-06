@@ -5,6 +5,7 @@ import type { ContrastMode } from '../therapy/contrast';
 import { clampContrast } from '../therapy/contrast';
 import type { Eye, Glasses, LeftLens, VisionSettings } from '../vision/color';
 import type { Calibration } from '../calibration/calibration';
+import type { Volume } from '../audio/player';
 
 export type Difficulty = 'EASY' | 'MEDIUM' | 'HARD';
 
@@ -39,6 +40,10 @@ export interface Settings {
   reduceFellowOnSuppression: boolean;
   /** Entwickler-/Debug-Modus (Tasten 1–5 und Umschalter am Bildschirm) */
   debugMode: boolean;
+  /** Voreinstellung Ton (die Person kann im Startbildschirm/Spiel umstellen) */
+  soundOn: boolean;
+  /** Voreinstellung Lautstärke (3 Stufen) */
+  soundVolume: Volume;
 }
 
 export const DEFAULT_SETTINGS: Settings = {
@@ -61,6 +66,8 @@ export const DEFAULT_SETTINGS: Settings = {
   suppressionChecks: true,
   reduceFellowOnSuppression: false,
   debugMode: false,
+  soundOn: true,
+  soundVolume: 'MEDIUM',
 };
 
 /** Wirkung des Schwierigkeitsgrads: Richtzeit-Faktor, zusätzliche Ablenkung, Größenfaktor (nicht nur Tempo) */
@@ -108,6 +115,8 @@ export function normalizeSettings(x: unknown): Settings {
     suppressionChecks: bool(o.suppressionChecks, d.suppressionChecks),
     reduceFellowOnSuppression: bool(o.reduceFellowOnSuppression, d.reduceFellowOnSuppression),
     debugMode: bool(o.debugMode, d.debugMode),
+    soundOn: bool(o.soundOn, d.soundOn),
+    soundVolume: pick(o.soundVolume, ['LOW', 'MEDIUM', 'HIGH'] as const, d.soundVolume),
   };
 }
 

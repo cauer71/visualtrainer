@@ -26,12 +26,36 @@ export interface Layout {
   oy: number;
   width: number;
   height: number;
+  /** Kamera aktiv: Das Raster ist größer als die Fläche (nur ein Ausschnitt sichtbar) */
+  scrollX: boolean;
+  scrollY: boolean;
 }
 
-/** Feldgröße und Versatz, damit das Raster zentriert in die Fläche passt */
-export function fitLayout(cols: number, rows: number, width: number, height: number): Layout {
-  const cell = Math.max(8, Math.floor(Math.min(width / cols, height / rows)));
-  return { cell, ox: Math.floor((width - cell * cols) / 2), oy: Math.floor((height - cell * rows) / 2), width, height };
+/** kleinste Feldgröße (= Trefferfläche) in CSS-Pixeln; darunter zeigt die Kamera nur einen Ausschnitt */
+export const MIN_CELL = 48;
+
+/**
+ * Feldgröße und Versatz. Passt das ganze Raster mit Feldern ≥ `MIN_CELL` in die Fläche, wird es zentriert
+ * (wie bisher). Sonst bleibt die Feldgröße bei `MIN_CELL` und die Kamera zeigt einen Ausschnitt um `center`
+ * (in Feldern), an den Rändern des Rasters begrenzt – Trefferflächen bleiben so immer mindestens 48 px groß.
+ */
+export function fitLayout(cols: number, rows: number, width: number, height: number, center?: { x: number; y: number }): Layout {
+  const fit = Math.floor(Math.min(width / cols, height / rows));
+  const cell = Math.max(8, fit >= MIN_CELL ? fit : Math.min(MIN_CELL, Math.floor(Math.min(width, height) / 2)));
+  const axis = (n: number, size: number, c: number | undefined): { o: number; scroll: boolean } => {
+    const total = n * cell;
+    if (total <= size) return { o: Math.floor((size - total) / 2), scroll: false };
+    const want = Math.round(size / 2 - ((c ?? (n - 1) / 2) + 0.5) * cell);
+    return { o: Math.min(0, Math.max(size - total, want)), scroll: true };
+  };
+  const ax = axis(cols, width, center?.x);
+  const ay = axis(rows, height, center?.y);
+  return { cell, ox: ax.o, oy: ay.o, width, height, scrollX: ax.scroll, scrollY: ay.scroll };
+}
+
+/** sichtbarer Ausschnitt in Feldern (für die Kamera) */
+export function visibleCells(l: Layout): { x0: number; y0: number; x1: number; y1: number } {
+  return { x0: -l.ox / l.cell, y0: -l.oy / l.cell, x1: (l.width - l.ox) / l.cell, y1: (l.height - l.oy) / l.cell };
 }
 
 /** Bildschirmpunkt → Feld (oder null außerhalb) */
@@ -75,7 +99,28 @@ export function renderScene(g: Ctx, scene: Scene, vis: VisionSettings, l: Layout
   g.globalCompositeOperation = 'source-over';
   g.globalAlpha = 1;
   if (opts.view === 'CLASSES') drawClasses(g, layers.flat(), l);
+  drawEdgeHints(g, scene, vis, l);
   g.restore();
+}
+
+/** Kamera: dezente neutrale Pfeile an Rändern, hinter denen das Raster weitergeht */
+function drawEdgeHints(g: Ctx, scene: Scene, vis: VisionSettings, l: Layout): void {
+  if (!l.scrollX && !l.scrollY) return;
+  const c = l.cell;
+  g.fillStyle = grey(vis, 0.55);
+  const tri = (x1: number, y1: number, x2: number, y2: number, x3: number, y3: number) => {
+    g.beginPath();
+    g.moveTo(x1, y1);
+    g.lineTo(x2, y2);
+    g.lineTo(x3, y3);
+    g.closePath();
+    g.fill();
+  };
+  const s = Math.max(8, c * 0.22);
+  if (l.ox < -1) tri(4, l.height / 2, 4 + s, l.height / 2 - s, 4 + s, l.height / 2 + s);
+  if (l.ox + scene.cols * c > l.width + 1) tri(l.width - 4, l.height / 2, l.width - 4 - s, l.height / 2 - s, l.width - 4 - s, l.height / 2 + s);
+  if (l.oy < -1) tri(l.width / 2, 4, l.width / 2 - s, 4 + s, l.width / 2 + s, 4 + s);
+  if (l.oy + scene.rows * c > l.height + 1) tri(l.width / 2, l.height - 4, l.width / 2 - s, l.height - 4 - s, l.width / 2 + s, l.height - 4 - s);
 }
 
 /**
@@ -176,13 +221,22 @@ function drawObject(g: Ctx, o: GameObject, vis: VisionSettings, l: Layout): void
       g.fill();
       break;
     case 'robot':
-      drawRobot(g, cx, cy, s, col, o.flags?.selected === true);
+      drawRobot(g, cx, cy, s, col, o.flags?.selected === true, Number(o.flags?.label ?? 0));
       break;
     case 'key':
-      drawKey(g, cx, cy, s, col);
+      drawKey(g, cx, cy, s, col, Number(o.flags?.mark ?? 0));
       break;
     case 'door':
-      drawDoor(g, l.ox + o.x * c, l.oy + o.y * c, c, col, o.flags?.open === true);
+      drawDoor(g, l.ox + o.x * c, l.oy + o.y * c, c, col, o.flags?.open === true, Number(o.flags?.mark ?? 0));
+      break;
+    case 'plate':
+      drawPlate(g, cx, l.oy + (o.y + 1) * c, s, col, o.flags?.pressed === true);
+      break;
+    case 'decoy':
+      drawDecoy(g, cx, cy, s, col);
+      break;
+    case 'rail':
+      drawRail(g, l.ox + o.x * c, l.oy + (o.y + 1) * c, c, col);
       break;
     case 'switch':
       drawSwitch(g, cx, l.oy + (o.y + 1) * c, s, col, o.flags?.on === true);
@@ -197,7 +251,8 @@ function drawObject(g: Ctx, o: GameObject, vis: VisionSettings, l: Layout): void
       drawBase(g, cx, l.oy + (o.y + 1) * c, s, col, Number(o.flags?.delivered ?? 0), Number(o.flags?.required ?? 0));
       break;
     case 'hazard':
-      drawHazard(g, cx, cy, s, col);
+      if (o.flags?.mobile) drawEmber(g, cx, cy, s, col);
+      else drawHazard(g, cx, cy, s, col);
       break;
     case 'marker':
       g.strokeStyle = col(0.7);
@@ -254,7 +309,7 @@ function drawLamp(g: Ctx, cx: number, top: number, c: number, col: Col): void {
   g.fill();
 }
 
-function drawRobot(g: Ctx, cx: number, cy: number, s: number, col: Col, selected: boolean): void {
+function drawRobot(g: Ctx, cx: number, cy: number, s: number, col: Col, selected: boolean, label: number): void {
   const w = s * 0.62;
   const h = s * 0.46;
   const bx = cx - w / 2;
@@ -286,6 +341,15 @@ function drawRobot(g: Ctx, cx: number, cy: number, s: number, col: Col, selected
   g.beginPath();
   roundRect(g, bx - s * 0.03, by + h + s * 0.03, w + s * 0.06, s * 0.13, s * 0.06);
   g.stroke();
+  // Nummer bei mehreren Robotern: Punkte neben der Antenne (Roboter 2 → 2 Punkte), gleiche Farbe
+  if (label >= 2) {
+    g.fillStyle = col(1);
+    for (let i = 0; i < Math.min(3, label); i++) {
+      g.beginPath();
+      g.arc(cx + s * 0.12 + i * s * 0.09, by - s * 0.08, s * 0.03, 0, Math.PI * 2);
+      g.fill();
+    }
+  }
   if (selected) {
     g.lineWidth = Math.max(2, s * 0.04);
     g.strokeStyle = col(0.85);
@@ -295,7 +359,7 @@ function drawRobot(g: Ctx, cx: number, cy: number, s: number, col: Col, selected
   }
 }
 
-function drawKey(g: Ctx, cx: number, cy: number, s: number, col: Col): void {
+function drawKey(g: Ctx, cx: number, cy: number, s: number, col: Col, mark: number): void {
   g.strokeStyle = col(1);
   g.lineWidth = Math.max(2.5, s * 0.09);
   g.beginPath();
@@ -307,14 +371,29 @@ function drawKey(g: Ctx, cx: number, cy: number, s: number, col: Col): void {
   g.moveTo(cx + s * 0.32, cy);
   g.lineTo(cx + s * 0.32, cy + s * 0.12);
   g.stroke();
+  // Kennzeichen: Punkte über dem Schlüssel (1–3), passend zu den Punkten an der Tür
+  drawMarkDots(g, cx - s * 0.2, cy - s * 0.3, s * 0.055, mark, col);
 }
 
-function drawDoor(g: Ctx, x: number, y: number, c: number, col: Col, open: boolean): void {
+/** 1–3 kleine Punkte nebeneinander um (cx, cy) – Kennzeichen von Schlüssel und Tür (Form, keine Farbe) */
+function drawMarkDots(g: Ctx, cx: number, cy: number, r: number, mark: number, col: Col): void {
+  if (mark <= 0) return;
+  const m = Math.min(3, mark);
+  g.fillStyle = col(1);
+  for (let i = 0; i < m; i++) {
+    g.beginPath();
+    g.arc(cx + (i - (m - 1) / 2) * r * 2.6, cy, Math.max(1.5, r), 0, Math.PI * 2);
+    g.fill();
+  }
+}
+
+function drawDoor(g: Ctx, x: number, y: number, c: number, col: Col, open: boolean, mark: number): void {
   const m = c * 0.1;
   g.lineWidth = Math.max(2, c * 0.05);
   if (open) {
     g.strokeStyle = col(0.45);
     g.strokeRect(x + m, y + m, c - 2 * m, c - m);
+    drawMarkDots(g, x + c * 0.5, y + c * 0.27, c * 0.045, mark, () => col(0.45));
     return;
   }
   g.fillStyle = col(0.45);
@@ -332,6 +411,81 @@ function drawDoor(g: Ctx, x: number, y: number, c: number, col: Col, open: boole
   g.beginPath();
   g.arc(x + c * 0.5, y + c * 0.5, c * 0.07, 0, Math.PI * 2);
   g.fill();
+  // Kennzeichen oberhalb des Schlüssellochs
+  drawMarkDots(g, x + c * 0.5, y + c * 0.27, c * 0.045, mark, col);
+}
+
+/** Druckplatte: flache Platte am Boden mit Pfeil nach unten („draufstellen“); gedrückt flacher */
+function drawPlate(g: Ctx, cx: number, floor: number, s: number, col: Col, pressed: boolean): void {
+  const w = s * 0.7;
+  const h = pressed ? s * 0.06 : s * 0.12;
+  g.fillStyle = col(0.55);
+  g.strokeStyle = col(1);
+  g.lineWidth = Math.max(2, s * 0.05);
+  g.beginPath();
+  roundRect(g, cx - w / 2, floor - h - s * 0.04, w, h + s * 0.04, s * 0.03);
+  g.fill();
+  g.stroke();
+  g.beginPath();
+  g.moveTo(cx, floor - h - s * 0.42);
+  g.lineTo(cx, floor - h - s * 0.14);
+  g.moveTo(cx - s * 0.1, floor - h - s * 0.24);
+  g.lineTo(cx, floor - h - s * 0.14);
+  g.lineTo(cx + s * 0.1, floor - h - s * 0.24);
+  g.stroke();
+}
+
+/** neutraler Ablenker: unregelmäßiger Erzbrocken (kristallähnlich, aber stumpf) */
+function drawDecoy(g: Ctx, cx: number, cy: number, s: number, col: Col): void {
+  const pts: [number, number][] = [
+    [-0.28, 0.32],
+    [-0.33, 0.02],
+    [-0.12, -0.24],
+    [0.14, -0.2],
+    [0.32, 0.06],
+    [0.24, 0.32],
+  ];
+  const by = cy + s * 0.08;
+  g.fillStyle = col(0.45);
+  g.strokeStyle = col(0.8);
+  g.lineWidth = Math.max(1.5, s * 0.04);
+  g.beginPath();
+  pts.forEach(([px, py], i) => (i ? g.lineTo(cx + px * s, by + py * s) : g.moveTo(cx + px * s, by + py * s)));
+  g.closePath();
+  g.fill();
+  g.stroke();
+}
+
+/** Bahn der wandernden Gefahr: gestrichelte Linie knapp über dem Boden */
+function drawRail(g: Ctx, x: number, floor: number, c: number, col: Col): void {
+  g.strokeStyle = col(1);
+  g.lineWidth = Math.max(2, c * 0.04);
+  g.setLineDash([c * 0.12, c * 0.1]);
+  g.beginPath();
+  g.moveTo(x, floor - c * 0.06);
+  g.lineTo(x + c, floor - c * 0.06);
+  g.stroke();
+  g.setLineDash([]);
+}
+
+/** wandernde Glut: runder Glutball mit Strahlen (die Form bleibt ruhig, nur die Lage gleitet) */
+function drawEmber(g: Ctx, cx: number, cy: number, s: number, col: Col): void {
+  const r = s * 0.24;
+  const by = cy + s * 0.1;
+  g.fillStyle = col(0.6);
+  g.strokeStyle = col(1);
+  g.lineWidth = Math.max(2, s * 0.05);
+  g.beginPath();
+  g.arc(cx, by, r, 0, Math.PI * 2);
+  g.fill();
+  g.stroke();
+  g.beginPath();
+  for (let i = 0; i < 8; i++) {
+    const a = (i / 8) * Math.PI * 2;
+    g.moveTo(cx + Math.cos(a) * r * 1.25, by + Math.sin(a) * r * 1.25);
+    g.lineTo(cx + Math.cos(a) * r * 1.6, by + Math.sin(a) * r * 1.6);
+  }
+  g.stroke();
 }
 
 function drawSwitch(g: Ctx, cx: number, floor: number, s: number, col: Col, on: boolean): void {
@@ -504,17 +658,42 @@ function roundRect(g: Ctx, x: number, y: number, w: number, h: number, r: number
 
 const CLASS_LABEL: Record<EyeVisibility, string> = { AMBLYOPIC: 'A', FELLOW: 'F', BOTH: 'B' };
 
+export interface ClassMark {
+  id: string;
+  /** Klasse A/F/B */
+  label: string;
+  /** Rahmen (Spielobjekte) oder nur kleiner Buchstabe (Leitern, Bahn, Deko-Steine, Ablenker – sonst zu unruhig) */
+  frame: boolean;
+}
+
+/** Objekte, die in der Klassenansicht nur einen kleinen Buchstaben bekommen (kein Rahmen) */
+const SMALL_MARK = new Set(['pebble', 'ladder', 'rail', 'decoy']);
+
+/** Objektklassifikation: JEDES Objekt der Szene bekommt eine Klasse (geprüft in Tests für alle Level) */
+export function classMarks(objs: readonly GameObject[]): ClassMark[] {
+  return objs.map((o) => ({ id: o.id, label: CLASS_LABEL[o.eyeVisibility], frame: !SMALL_MARK.has(o.kind) }));
+}
+
 /** Objektklassifikation: Umrandung (durchgezogen/gestrichelt/gepunktet) und Buchstabe je Klasse, neutral weiß */
 function drawClasses(g: Ctx, objs: GameObject[], l: Layout): void {
   const c = l.cell;
+  const marks = classMarks(objs);
   g.save();
-  g.font = `700 ${Math.max(11, Math.round(c * 0.22))}px system-ui, sans-serif`;
   g.textAlign = 'left';
   g.textBaseline = 'top';
-  for (const o of objs) {
-    if (o.kind === 'pebble' || o.kind === 'ladder') continue;
+  objs.forEach((o, i) => {
+    const m = marks[i];
     const x = l.ox + o.x * c + 2;
     const y = l.oy + o.y * c + 2;
+    if (!m.frame) {
+      g.font = `700 ${Math.max(9, Math.round(c * 0.16))}px system-ui, sans-serif`;
+      g.fillStyle = 'rgba(0,0,0,0.7)';
+      g.fillRect(x + c * 0.72 - 2, y + c * 0.7 - 2, c * 0.2, c * 0.2);
+      g.fillStyle = '#d0d0d0';
+      g.fillText(m.label, x + c * 0.72, y + c * 0.7);
+      return;
+    }
+    g.font = `700 ${Math.max(11, Math.round(c * 0.22))}px system-ui, sans-serif`;
     g.strokeStyle = '#ffffff';
     g.lineWidth = 2;
     g.setLineDash(o.eyeVisibility === 'AMBLYOPIC' ? [] : o.eyeVisibility === 'FELLOW' ? [6, 4] : [2, 4]);
@@ -523,8 +702,8 @@ function drawClasses(g: Ctx, objs: GameObject[], l: Layout): void {
     g.fillStyle = 'rgba(0,0,0,0.75)';
     g.fillRect(x, y, c * 0.3, c * 0.28);
     g.fillStyle = '#ffffff';
-    g.fillText(CLASS_LABEL[o.eyeVisibility], x + 3, y + 2);
-  }
+    g.fillText(m.label, x + 3, y + 2);
+  });
   g.restore();
 }
 

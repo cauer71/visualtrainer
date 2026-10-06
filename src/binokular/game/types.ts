@@ -27,7 +27,13 @@ export type ObjectKind =
   | 'lamp'
   | 'pebble'
   | 'marker'
-  | 'probe';
+  | 'probe'
+  /** Druckplatte: Plattform fährt nur, solange ein Roboter darauf steht (Level 4, 10) */
+  | 'plate'
+  /** neutraler Ablenker (Erzbrocken), nicht benutzbar (Level 5 ff.) */
+  | 'decoy'
+  /** Bahn einer wandernden Gefahr (macht die Bewegung vorhersehbar, Level 6 ff.) */
+  | 'rail';
 
 /**
  * Darstellbares Spielobjekt (Szene für den Renderer). Koordinaten in Feldern; Roboter und Plattform dürfen
@@ -76,13 +82,21 @@ export type GameMessage =
   | 'delivered'
   | 'needCrystal'
   | 'hazard'
-  | 'won';
+  | 'won'
+  /** Roboter läuft los (nur Ton, kein Text) */
+  | 'moveStart'
+  /** Plattform setzt sich in Bewegung (nur Ton, kein Text) */
+  | 'platformMoved'
+  | 'plateOn'
+  | 'plateOff';
 
 export interface GameEvent {
   msg: GameMessage;
   /** Feld, auf das sich die Meldung bezieht (z. B. Gefahr) */
   cell?: Cell;
   robotId?: string;
+  /** Gefahr war eine wandernde Gefahr (der Löser merkt sich deren Feld nicht als dauerhaft gefährlich) */
+  mobile?: boolean;
 }
 
 export const cellKey = (x: number, y: number): string => `${x},${y}`;

@@ -1,7 +1,10 @@
 /** Geschützter Therapeutenbereich: Parameter, PIN, Reset, Export (CSV/JSON), Import (JSON) */
 import { useState } from 'preact/hooks';
+import type { Volume } from '../audio';
 import { sessionsToCsv } from '../data/csv';
+import { chooseLevel, defaultProgress, unlockAll } from '../data/progress';
 import { cleanPatientId, type Settings } from '../data/settings';
+import { LEVELS } from '../levels';
 import type { Store } from '../data/storage';
 import { exportSettings, importSettings } from '../data/transfer';
 import { changePin, checkPin } from '../therapy/pin';
@@ -166,6 +169,56 @@ export function TherapistScreen({ store, update, onBack, onHistory }: Props) {
           <Toggle id="f-debug" label={t.debugMode} checked={s.debugMode} onChange={(v) => set({ debugMode: v })} />
         </section>
         <section class="bm-card">
+          <h2>{t.secLevels}</h2>
+          <p class="bm-muted" id="unlocked-info">
+            {store.progress.unlocked >= LEVELS.length ? t.allUnlocked : t.unlockedInfo(store.progress.unlocked, LEVELS.length)}
+          </p>
+          <Choice
+            name="t-start-level"
+            label={t.startLevel}
+            value={String(store.progress.level)}
+            options={LEVELS.map((lv) => ({ value: String(lv.number), label: String(lv.number) }))}
+            onChange={(v) => {
+              update((st) => ({ ...st, progress: chooseLevel(st.progress, Number(v), LEVELS.length, true) }));
+              setNote(t.saved);
+            }}
+          />
+          <button
+            class="bm-btn"
+            id="bm-unlock-all"
+            disabled={store.progress.unlocked >= LEVELS.length}
+            onClick={() => {
+              update((st) => ({ ...st, progress: unlockAll(st.progress, LEVELS.length) }));
+              setNote(t.allUnlocked);
+            }}
+          >
+            {t.unlockAll}
+          </button>
+        </section>
+        <section class="bm-card">
+          <h2>{t.secSound}</h2>
+          <Toggle
+            id="f-sound"
+            label={t.soundPreset}
+            checked={s.soundOn}
+            onChange={(v) => {
+              update((st) => ({ ...st, audio: null, settings: { ...st.settings, soundOn: v } }));
+              setNote(t.saved);
+            }}
+          />
+          <Choice
+            name="t-volume"
+            label={t.volume}
+            value={s.soundVolume}
+            options={(['LOW', 'MEDIUM', 'HIGH'] as Volume[]).map((v) => ({ value: v, label: t.volumes[v] }))}
+            onChange={(v) => {
+              update((st) => ({ ...st, audio: null, settings: { ...st.settings, soundVolume: v } }));
+              setNote(t.saved);
+            }}
+          />
+          <p class="bm-muted">{t.soundPresetHint}</p>
+        </section>
+        <section class="bm-card">
           <h2>{t.secData}</h2>
           <p class="bm-muted">{t.sessionsStored(store.sessions.length)}</p>
           <div class="bm-actions bm-actions-col">
@@ -206,7 +259,7 @@ export function TherapistScreen({ store, update, onBack, onHistory }: Props) {
                   sessions: [],
                   activeSession: null,
                   settings: { ...st.settings, fellowEyeContrast: st.settings.startFellowEyeContrast },
-                  progress: { consecutiveFailures: 0, level: 1, bestStars: {} },
+                  progress: defaultProgress(),
                 }));
                 setNote(t.resetDone);
               }}

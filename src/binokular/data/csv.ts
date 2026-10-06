@@ -2,7 +2,7 @@
  * CSV-Export der Sessions: eine Zeile je Session, Trennzeichen Semikolon, Dezimalkomma (deutsches Excel),
  * UTF-8 mit BOM. Listen (Kontrastverlauf, Kontrollen, Reaktionszeiten, Pausen) stehen kompakt in einer Zelle.
  */
-import type { SessionRecord } from '../therapy/session';
+import type { LevelAttempt, SessionRecord } from '../therapy/session';
 
 export const CSV_COLUMNS = [
   'Session-ID',
@@ -33,7 +33,15 @@ export const CSV_COLUMNS = [
   'Filter links',
   'Geplante Dauer (min)',
   'Ende',
+  'Level-Details',
 ] as const;
+
+const RESULT_DE: Record<LevelAttempt['result'], string> = { completed: 'geschafft', timeout: 'Zeit um', restarted: 'neu gestartet', aborted: 'abgebrochen' };
+
+/** ein Levelversuch kompakt: „L2 geschafft, 3 Sterne, 0 Fehler, 95 s“ */
+export function attemptText(a: LevelAttempt): string {
+  return `L${a.levelNumber} ${RESULT_DE[a.result] ?? a.result}, ${a.stars} Sterne, ${a.failures} Fehler, ${Math.round(a.activeMs / 1000)} s`;
+}
 
 const SEP = ';';
 
@@ -83,6 +91,7 @@ export function sessionRow(s: SessionRecord): string[] {
     s.leftLens === 'RED' ? 'Rot' : s.glasses === 'RED_CYAN' ? 'Cyan' : 'Grün',
     String(s.plannedMinutes),
     s.endReason,
+    s.attempts.map(attemptText).join(' | '),
   ];
 }
 
