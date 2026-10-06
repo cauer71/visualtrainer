@@ -14,8 +14,9 @@ import {
 } from '../calibration/calibration';
 import type { Settings } from '../data/settings';
 import { t } from '../texts';
-import { baseColorOf, filterOf, hsvToRgb, NEUTRAL_LEVEL, rgbCss, rgbToHsvKeep, secondFilter, type CalibratedColors, type HSV, type RGB } from '../vision/color';
+import { baseColorOf, filterOf, NEUTRAL_LEVEL, rgbCss, secondFilter, type CalibratedColors, type RGB } from '../vision/color';
 import { Choice, Screen } from './common';
+import { FineCalibration } from './FineCalibration';
 
 type Props = {
   settings: Settings;
@@ -109,15 +110,6 @@ function Slider({ label, value, max, onInput, id }: { label: string; value: numb
 }
 
 function ColorEditor({ name, color, onChange, idPrefix }: { name: string; color: RGB; onChange: (c: RGB) => void; idPrefix: string }) {
-  // HSV als eigener Zustand: Farbton und Sättigung gehen beim Runden auf RGB und bei Grau/Schwarz nicht verloren.
-  // Ändert sich RGB von außen (RGB-Regler, Zurücksetzen), wird HSV daraus nachgeführt.
-  const hsvRef = useRef<HSV | null>(null);
-  const hsv = rgbToHsvKeep(color, hsvRef.current);
-  hsvRef.current = hsv;
-  const setHsv = (next: HSV) => {
-    hsvRef.current = next;
-    onChange(hsvToRgb(next));
-  };
   return (
     <fieldset class="bm-color-editor">
       <legend>
@@ -127,11 +119,7 @@ function ColorEditor({ name, color, onChange, idPrefix }: { name: string; color:
         <Slider id={`${idPrefix}-r`} label="R" value={color.r} max={255} onInput={(v) => onChange({ ...color, r: v })} />
         <Slider id={`${idPrefix}-g`} label="G" value={color.g} max={255} onInput={(v) => onChange({ ...color, g: v })} />
         <Slider id={`${idPrefix}-b`} label="B" value={color.b} max={255} onInput={(v) => onChange({ ...color, b: v })} />
-        <Slider id={`${idPrefix}-h`} label="H" value={hsv.h} max={360} onInput={(v) => setHsv({ ...hsv, h: v })} />
-        <Slider id={`${idPrefix}-s`} label="S" value={hsv.s} max={100} onInput={(v) => setHsv({ ...hsv, s: v })} />
-        <Slider id={`${idPrefix}-v`} label="V" value={hsv.v} max={100} onInput={(v) => setHsv({ ...hsv, v: v })} />
       </div>
-      <p class="bm-muted bm-sat-hint">{t.calSatHint}</p>
     </fieldset>
   );
 }
@@ -262,13 +250,17 @@ export function CalibrationScreen({ settings, calibration, onSettings, onCalibra
       <details class="bm-card bm-fine">
         <summary>{t.calFine}</summary>
         <p class="bm-muted">{t.calFineHint}</p>
+        <FineCalibration key={`${settings.glasses}-${settings.leftLens}`} settings={settings} colors={calibration.colors} onColors={setColors} />
         <CrosstalkPreview settings={settings} colors={calibration.colors} />
-        <ColorEditor idPrefix="c-red" name={t.calColorRed} color={calibration.colors.red} onChange={(c) => setColors({ ...calibration.colors, red: c })} />
-        {second === 'CYAN' ? (
-          <ColorEditor idPrefix="c-cyan" name={t.calColorCyan} color={calibration.colors.cyan} onChange={(c) => setColors({ ...calibration.colors, cyan: c })} />
-        ) : (
-          <ColorEditor idPrefix="c-green" name={t.calColorGreen} color={calibration.colors.green} onChange={(c) => setColors({ ...calibration.colors, green: c })} />
-        )}
+        <details class="bm-fine-expert">
+          <summary>{t.fineExpert}</summary>
+          <ColorEditor idPrefix="c-red" name={t.calColorRed} color={calibration.colors.red} onChange={(c) => setColors({ ...calibration.colors, red: c })} />
+          {second === 'CYAN' ? (
+            <ColorEditor idPrefix="c-cyan" name={t.calColorCyan} color={calibration.colors.cyan} onChange={(c) => setColors({ ...calibration.colors, cyan: c })} />
+          ) : (
+            <ColorEditor idPrefix="c-green" name={t.calColorGreen} color={calibration.colors.green} onChange={(c) => setColors({ ...calibration.colors, green: c })} />
+          )}
+        </details>
         <button class="bm-btn" onClick={() => setColors(JSON.parse(JSON.stringify(DEFAULT_CALIBRATION.colors)))}>
           {t.calReset}
         </button>

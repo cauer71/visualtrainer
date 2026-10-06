@@ -73,8 +73,21 @@ const de = {
   calRepeat: 'Wiederholen',
   calContinue: 'Weiter',
   calFine: 'Feineinstellung der Farben (für Therapeuten)',
-  calFineHint: 'Ziel: Durch den Rotfilter verschwindet die zweite Form fast ganz, durch den Cyan-/Grünfilter die rote. Werte langsam verändern.',
-  calSatHint: 'S (Sättigung) unter 100 % mischt Weiß bei: Die Farbe wird blasser und enthält dann auch Anteile der anderen Grundfarbe – sie wird für das andere Auge sichtbar (Übersprechen). Für eine saubere Trennung S meist auf 100 % lassen und die Helligkeit mit V einstellen.',
+  calFineHint: 'Ziel: Durch das rote Glas verschwindet die zweite Farbe fast ganz, durch das Cyan- bzw. Grünglas die rote. Statt Reglern wählst du aus Kästen – wie beim Augenoptiker „so oder so?“. Raum abdunkeln, Bildschirm auf mittlere Helligkeit.',
+  fineProgress: (color: string, n: number, round: number) => `Farbe ${n} von 2: ${color} · Runde ${round} von 2 (${round === 1 ? 'grob' : 'fein'})`,
+  fineVanish: (color: string, own: 'LEFT' | 'RIGHT', other: 'LEFT' | 'RIGHT') =>
+    `Schritt 1: ${EYE_ACC[own]} zuhalten und nur mit dem ${EYE_DAT[other]} schauen. Tippe alle ${color}-Kästen an, die du nicht oder kaum siehst (mehrere möglich).`,
+  fineClear: (color: string, other: 'LEFT' | 'RIGHT', own: 'LEFT' | 'RIGHT') =>
+    `Schritt 2: Jetzt ${EYE_ACC[other]} zuhalten und mit dem ${EYE_DAT[own]} schauen. Welcher der markierten ${color}-Kästen ist am deutlichsten? Antippen.`,
+  fineNext: (n: number) => (n === 0 ? 'Weiter (erst Kästen antippen)' : `Weiter mit ${n} ${n === 1 ? 'Kasten' : 'Kästen'}`),
+  fineNone: 'Keiner verschwindet',
+  fineNoneHint: 'Kein Kasten markiert.',
+  fineBack: 'Zurück zu Schritt 1',
+  fineRestart: 'Von vorn',
+  fineTip: 'Verschwindet keiner: Raum dunkler machen, Bildschirmhelligkeit etwas senken oder Spiegelungen vermeiden. „Keiner verschwindet“ nimmt den dunkelsten mittleren Kasten.',
+  fineDone: 'Feinkalibrierung abgeschlossen. Diese Farben werden jetzt verwendet:',
+  fineAgain: 'Feinkalibrierung wiederholen',
+  fineExpert: 'Experte: RGB-Werte direkt eingeben',
   calColorRed: 'Rot',
   calColorCyan: 'Cyan',
   calColorGreen: 'Grün',
@@ -239,4 +252,7 @@ const de = {
 };
 
 export type Texts = typeof de;
+const EYE_ACC = { LEFT: 'das linke Auge', RIGHT: 'das rechte Auge' } as const;
+const EYE_DAT = { LEFT: 'linken Auge', RIGHT: 'rechten Auge' } as const;
+
 export const t: Texts = de;

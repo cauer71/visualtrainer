@@ -44,7 +44,7 @@ src/binokular/
              engine.ts          Spiellogik: tap(x, y), tick(dt), scene(); ohne DOM, ohne Farben
              stars.ts           Sterne aus Abschluss, Zeit, Fehlversuchen
              solver.ts          automatischer Löser mit begrenztem Wissen = Binokular-Prüfer, Autoplay
-  vision/    color.ts           Farbzuordnung je Auge/Filter/Kontrast, RGB/HSV
+  vision/    color.ts           Farbzuordnung je Auge/Filter/Kontrast, RGB/HSV-Umrechnung
              renderer.ts        Canvas-Renderer, Debug-Ansichten, Anaglyphen-Simulation
   levels/    types.ts           Leveldaten und Schwierigkeitsparameter
              level01.ts         Level 1 „Der erste Schacht“
@@ -92,8 +92,13 @@ Erscheint vor dem ersten Spiel (danach über „Kalibrierung“ erneut):
    gemeinsames Objekt – Antwort „linkes Auge / rechtes Auge / beide / keines“.
 3. **Hinweis** aus den Antworten (nur zur Einstellung, keine Bewertung der Person): Zuordnung vertauscht → „Zuordnung tauschen“;
    ein Augenobjekt mit beiden Augen gesehen → Übersprechen, Farben fein einstellen; etwas nicht gesehen → Helligkeit prüfen.
-4. **Feineinstellung (Therapeut):** RGB- und HSV-Regler je Grundfarbe (Rot, Cyan bzw. Grün) mit Vorschau;
-   Ziel: durch den Rotfilter verschwindet die zweite Form fast ganz und umgekehrt. Werkseinstellung per Knopf.
+4. **Feinkalibrierung per Auswahl (statt Regler):** Für jede Grundfarbe (Rot, dann Cyan bzw. Grün) ein Raster
+   aus 3 × 3 Kästen – Farbton leicht verschoben (Spalten) × Helligkeit (Zeilen), Sättigung immer 100 %.
+   Schritt 1 „Verschwinden“: mit dem Auge hinter dem **anderen** Glas schauen und alle Kästen antippen, die man nicht
+   oder kaum sieht (wenig Übersprechen). Schritt 2 „Deutlich“: mit dem Auge hinter dem **passenden** Glas unter den
+   markierten den deutlichsten wählen. Runde 1 grob (±12°, 100/80/60 %), Runde 2 fein um die Wahl (±5°, ±8 %).
+   „Keiner verschwindet“ nimmt den dunkelsten Kasten der mittleren Spalte. Logik: `calibration/fine.ts`,
+   Oberfläche: `components/FineCalibration.tsx`. Für Fachleute bleiben die RGB-Werte unter „Experte“ direkt einstellbar.
 
 Alles wird lokal gespeichert.
 
