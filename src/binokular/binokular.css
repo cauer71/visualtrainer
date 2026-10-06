@@ -668,3 +668,9 @@ input:focus-visible {
     transition: none !important;
   }
 }
+
+/* Hinweis unter den Farbreglern (Sättigung und Übersprechen) */
+.bm-sat-hint {
+  margin: 8px 0 0;
+  font-size: 0.85rem;
+}

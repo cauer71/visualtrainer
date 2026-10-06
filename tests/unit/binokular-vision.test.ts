@@ -11,6 +11,7 @@ import {
   NEUTRAL_LEVEL,
   resolveColor,
   rgbToHsv,
+  rgbToHsvKeep,
   scaleLuminance,
   srgbToLinear,
   throughFilter,
@@ -159,3 +160,36 @@ describe('Layout und Treffer', () => {
     expect(fitLayout(16, 7, 844, 340).cell).toBeGreaterThanOrEqual(48);
   });
 });
+
+describe('HSV-Regler der Kalibrierung: Farbton bleibt erhalten', () => {
+  it('Sättigung auf 0 und wieder hoch ergibt dieselbe Farbe (kein Sprung auf Rot)', () => {
+    let hsv = rgbToHsvKeep({ r: 0, g: 255, b: 255 }, null); // Cyan
+    expect(hsv).toEqual({ h: 180, s: 100, v: 100 });
+    hsv = { ...hsv, s: 0 };
+    const grey = hsvToRgb(hsv);
+    expect(grey).toEqual({ r: 255, g: 255, b: 255 });
+    hsv = rgbToHsvKeep(grey, hsv); // Neuzeichnen mit dem grauen RGB-Wert
+    expect(hsv.h).toBe(180);
+    expect(hsvToRgb({ ...hsv, s: 100 })).toEqual({ r: 0, g: 255, b: 255 });
+  });
+  it('Helligkeit auf 0 und wieder hoch behält Farbton und Sättigung', () => {
+    let hsv = rgbToHsvKeep({ r: 0, g: 255, b: 0 }, null);
+    hsv = rgbToHsvKeep(hsvToRgb({ ...hsv, v: 0 }), { ...hsv, v: 0 });
+    expect(hsv).toEqual({ h: 120, s: 100, v: 0 });
+    expect(hsvToRgb({ ...hsv, v: 100 })).toEqual({ r: 0, g: 255, b: 0 });
+  });
+  it('kleine Sättigung: Farbton driftet beim schrittweisen Hochziehen nicht', () => {
+    let hsv = rgbToHsvKeep({ r: 255, g: 0, b: 0 }, null);
+    hsv = { ...hsv, h: 350 };
+    for (let s = 1; s <= 100; s++) {
+      hsv = { ...hsv, s };
+      hsv = rgbToHsvKeep(hsvToRgb(hsv), hsv);
+      expect(hsv.h).toBe(350);
+    }
+  });
+  it('RGB-Regler von außen werden übernommen', () => {
+    const prev = { h: 180, s: 100, v: 100 };
+    expect(rgbToHsvKeep({ r: 255, g: 0, b: 0 }, prev)).toEqual({ h: 0, s: 100, v: 100 });
+  });
+});
+

@@ -179,6 +179,25 @@ export function rgbToHsv(c: RGB): HSV {
   return { h: Math.round(h), s: Math.round(max === 0 ? 0 : (d / max) * 100), v: Math.round(max * 100) };
 }
 
+/**
+ * HSV aus RGB, aber Farbton (und Sättigung) aus dem vorigen Stand behalten, wo RGB sie nicht festlegt:
+ * Bei Sättigung 0 (Grau) oder Helligkeit 0 (Schwarz) hat eine Farbe keinen Farbton. Ohne Gedächtnis würde
+ * der Farbton dann auf 0° (Rot) springen, und beim Hochziehen der Sättigung entstünde eine andere Farbe.
+ * Außerdem ist der aus gerundeten RGB-Werten berechnete Farbton bei kleiner Sättigung ungenau; deshalb gilt:
+ * Stimmt der vorige HSV-Stand nach dem Runden noch mit RGB überein, bleibt er unverändert.
+ */
+export function rgbToHsvKeep(c: RGB, prev: HSV | null): HSV {
+  if (prev) {
+    const back = hsvToRgb(prev);
+    if (back.r === c.r && back.g === c.g && back.b === c.b) return prev;
+  }
+  const next = rgbToHsv(c);
+  if (!prev) return next;
+  if (next.v === 0) return { h: prev.h, s: prev.s, v: 0 };
+  if (next.s === 0) return { h: prev.h, s: 0, v: next.v };
+  return next;
+}
+
 export function hsvToRgb(hsv: HSV): RGB {
   const h = ((clamp(hsv.h, 0, 360) % 360) + 360) % 360;
   const s = clamp(hsv.s, 0, 100) / 100;

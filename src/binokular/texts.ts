@@ -74,6 +74,7 @@ const de = {
   calContinue: 'Weiter',
   calFine: 'Feineinstellung der Farben (für Therapeuten)',
   calFineHint: 'Ziel: Durch den Rotfilter verschwindet die zweite Form fast ganz, durch den Cyan-/Grünfilter die rote. Werte langsam verändern.',
+  calSatHint: 'S (Sättigung) unter 100 % mischt Weiß bei: Die Farbe wird blasser und enthält dann auch Anteile der anderen Grundfarbe – sie wird für das andere Auge sichtbar (Übersprechen). Für eine saubere Trennung S meist auf 100 % lassen und die Helligkeit mit V einstellen.',
   calColorRed: 'Rot',
   calColorCyan: 'Cyan',
   calColorGreen: 'Grün',
