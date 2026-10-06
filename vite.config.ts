@@ -24,6 +24,8 @@ export default defineConfig({
   preview: { host: true, port: 4173 },
   test: {
     include: ['tests/unit/**/*.test.ts'],
+    // Einige Simulationstests (z. B. komplette Autoplay-Sitzungen) brauchen unter Volllast länger als die Standard-5 s
+    testTimeout: 20000,
     environment: 'node',
   },
 });
