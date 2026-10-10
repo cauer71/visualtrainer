@@ -7,6 +7,8 @@ import { Choice, de, Screen } from './common';
 import { ProfilePicker } from './ProfilePicker';
 
 type Props = {
+  /** Titel des gewählten Spiels */
+  gameTitle: string;
   settings: Settings;
   profiles: readonly ColorProfile[];
   activeProfileId: string;
@@ -16,7 +18,7 @@ type Props = {
   onBack: () => void;
 };
 
-export function SetupScreen({ settings, profiles, activeProfileId, onProfile, onSettings, onPlay, onBack }: Props) {
+export function SetupScreen({ gameTitle, settings, profiles, activeProfileId, onProfile, onSettings, onPlay, onBack }: Props) {
   const profile = findProfile(profiles, activeProfileId);
   const lens = { glasses: profile.mode, leftLens: settings.leftLens };
   const otherName = t.filterName[secondFilter(profile.mode)];
@@ -25,7 +27,7 @@ export function SetupScreen({ settings, profiles, activeProfileId, onProfile, on
   const eyeName = (e: 'LEFT' | 'RIGHT') => (e === 'LEFT' ? t.left : t.right);
   const adj = (e: 'LEFT' | 'RIGHT') => t.colorAdj[colorKind(fullColorOf(filterOf(e, lens), profile))];
   return (
-    <Screen title={t.setupTitle} onBack={onBack}>
+    <Screen title={t.setupTitle(gameTitle)} onBack={onBack}>
       <section class="bm-card">
         <Choice
           name="amb-eye"

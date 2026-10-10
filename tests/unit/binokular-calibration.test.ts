@@ -35,7 +35,7 @@ import {
 import { paletteFromTuning, tuningFromPalette } from '../../src/binokular/calibration/tuning';
 import { DEFAULT_CALIBRATION } from '../../src/binokular/calibration/calibration';
 import { DEFAULT_SETTINGS } from '../../src/binokular/data/settings';
-import { activeProfile, defaultStore, glassesOf, loadStore, normalizeStore, saveStore, STORAGE_KEY, type KeyValue } from '../../src/binokular/data/storage';
+import { activeProfile, defaultGameSettings, defaultStore, glassesOf, loadStore, normalizeStore, saveStore, STORAGE_KEY, type KeyValue } from '../../src/binokular/data/storage';
 import { exportSettings, importSettings } from '../../src/binokular/data/transfer';
 import { srgbToLinear, toHex, type RGB } from '../../src/binokular/vision/color';
 
@@ -329,6 +329,7 @@ describe('Einstellungen-Export mit Profilen (Version 2, Version 1 tolerant)', ()
     const own = makeProfile('Praxis-Monitor', 'RED_CYAN', { red: rgb(255, 0, 0), second: rgb(0, 64, 255), background: rgb(25, 0, 51) }, 'manual', undefined, 'p-praxis');
     const data = {
       settings: { ...DEFAULT_SETTINGS, amblyopicEye: 'RIGHT' as const, leftLens: 'OTHER' as const },
+      games: defaultGameSettings(),
       calibration: { ...DEFAULT_CALIBRATION, completedAt: '2026-10-05T10:00:00.000Z' },
       profiles: normalizeProfiles([own]),
       activeProfileId: 'p-praxis',

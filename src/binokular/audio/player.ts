@@ -98,14 +98,14 @@ export class SoundPlayer {
   }
 
   /** Effekt abspielen; gibt die Zahl der erzeugten Töne zurück (0 = stumm, nicht freigeschaltet, nicht unterstützt) */
-  play(ev: SoundEvent, opts: { stars?: number } = {}): number {
+  play(ev: SoundEvent): number {
     const ctx = this.ctx;
     if (!ctx || !this.prefs.on || this.muted) return 0;
     const master = Math.min(MAX_GAIN, VOLUME_GAIN[this.prefs.volume] ?? VOLUME_GAIN.MEDIUM);
     let made = 0;
     try {
       const t0 = ctx.currentTime + 0.01;
-      for (const note of soundNotes(ev, opts.stars ?? 0)) {
+      for (const note of soundNotes(ev)) {
         if (this.voices >= MAX_VOICES) break;
         const osc = ctx.createOscillator();
         const g = ctx.createGain();

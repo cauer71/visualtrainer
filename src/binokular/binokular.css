@@ -1,5 +1,5 @@
 /*
- * Binocular Mine – dunkles, neutrales Erscheinungsbild.
+ * Binokular – Sehspiele: dunkles, neutrales Erscheinungsbild.
  * Oberfläche nur in Grautönen/Weiß: Die dichoptischen Farben (Rot, Blau bzw. Grün) bleiben dem Spielfeld vorbehalten.
  * Im Spiel selbst sind Texte und Symbole grau (#888), der Hintergrund kommt aus dem aktiven Farbprofil.
  * Keine Blitze, kein Flackern: Einblendungen weich (≥ 150 ms).
@@ -18,26 +18,21 @@
   --axis: #444441;
   --fade: 200ms;
 }
-
 * {
   box-sizing: border-box;
 }
-
-html,
-body {
+html, body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
   font: 16px/1.45 system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   -webkit-text-size-adjust: 100%;
 }
-
 body {
   overflow-x: hidden;
   /* kein Scroll-Anker: Beim Antippen der Fotofelder wachsen Tabellen darunter – das Foto darf nicht wegrutschen */
   overflow-anchor: none;
 }
-
 h1 {
   font-size: 1.6rem;
   margin: 0;
@@ -46,12 +41,10 @@ h2 {
   font-size: 1.15rem;
   margin: 0 0 0.6rem;
 }
-
 .bm-app {
   min-height: 100vh;
   min-height: 100dvh;
 }
-
 .bm-screen {
   max-width: 920px;
   margin: 0 auto;
@@ -61,7 +54,6 @@ h2 {
 .bm-screen.bm-wide {
   max-width: 1200px;
 }
-
 .bm-head {
   display: flex;
   align-items: center;
@@ -77,7 +69,6 @@ h2 {
   gap: 8px;
   flex-wrap: wrap;
 }
-
 .bm-hero {
   display: flex;
   align-items: center;
@@ -90,8 +81,7 @@ h2 {
   color: #cfcfcf;
   flex: none;
 }
-.bm-sub,
-.bm-lead {
+.bm-sub, .bm-lead {
   margin: 4px 0 0;
   color: var(--muted);
 }
@@ -102,7 +92,6 @@ h2 {
   color: var(--muted);
   font-size: 0.92rem;
 }
-
 .bm-card {
   background: var(--card);
   border: 1px solid var(--line);
@@ -114,7 +103,6 @@ h2 {
   margin: 0;
   padding-left: 1.2em;
 }
-
 .bm-safety {
   border: 2px solid #d8d8d8;
   border-radius: 12px;
@@ -129,11 +117,11 @@ h2 {
   font-size: 0.9rem;
   border-width: 1px;
 }
-
 .bm-warn {
   border-color: #d8d8d8;
   border-width: 2px;
 }
+
 
 /* Knöpfe: Trefferfläche mindestens 48 px */
 .bm-btn {
@@ -158,9 +146,7 @@ h2 {
 .bm-btn:hover {
   background: #2e2e2e;
 }
-.bm-btn:focus-visible,
-.bm-chip:focus-within,
-input:focus-visible {
+.bm-btn:focus-visible, .bm-chip:focus-within, input:focus-visible {
   outline: 3px solid #fff;
   outline-offset: 2px;
 }
@@ -192,7 +178,6 @@ input:focus-visible {
   background: #f2f2f2;
   color: #000;
 }
-
 .bm-actions {
   display: flex;
   flex-wrap: wrap;
@@ -209,6 +194,7 @@ input:focus-visible {
   flex-wrap: wrap;
   gap: 8px 24px;
 }
+
 
 /* Auswahl */
 .bm-choice {
@@ -248,7 +234,6 @@ input:focus-visible {
   border-color: #f2f2f2;
   font-weight: 600;
 }
-
 .bm-field {
   display: flex;
   flex-direction: column;
@@ -291,7 +276,6 @@ input:focus-visible {
   font-size: 1.05rem;
   margin: 12px 0 4px;
 }
-
 .bm-file {
   position: relative;
   overflow: hidden;
@@ -302,12 +286,12 @@ input:focus-visible {
   opacity: 0;
   cursor: pointer;
 }
-
 .bm-form {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
   gap: 0 16px;
 }
+
 
 /* Kalibrierung */
 .bm-cal-canvas {
@@ -333,6 +317,7 @@ input:focus-visible {
   border-radius: 4px;
   border: 1px solid #555;
 }
+
 /* Spiel */
 .bm-game {
   position: fixed;
@@ -353,9 +338,6 @@ input:focus-visible {
 }
 .bm-hud-item {
   white-space: nowrap;
-}
-.bm-hud-session {
-  font-weight: 700;
 }
 .bm-hud-spacer {
   flex: 1 1 0;
@@ -381,49 +363,6 @@ input:focus-visible {
   touch-action: none;
   cursor: pointer;
 }
-.bm-msg {
-  position: absolute;
-  left: 10px;
-  bottom: 8px;
-  margin: 0;
-  max-width: min(70%, 640px);
-  padding: 6px 12px;
-  border-radius: 8px;
-  background: rgba(0, 0, 0, 0.78);
-  border: 1px solid #333;
-  color: #e6e6e6;
-  font-size: 0.95rem;
-  pointer-events: none;
-}
-.bm-game[data-phase='check'] .bm-msg {
-  display: none;
-}
-.bm-check {
-  position: absolute;
-  left: 50%;
-  bottom: 8px;
-  transform: translateX(-50%);
-  width: min(96%, 760px);
-  background: rgba(10, 10, 10, 0.94);
-  border: 1px solid #555;
-  border-radius: 12px;
-  padding: 8px 12px 12px;
-  text-align: center;
-  animation: bm-fade var(--fade) ease-out;
-}
-.bm-check p {
-  margin: 0 0 6px;
-  font-weight: 600;
-}
-.bm-check-row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 8px;
-}
-.bm-shape-btn {
-  min-width: 96px;
-}
 .bm-modal {
   position: absolute;
   inset: 0;
@@ -448,15 +387,7 @@ input:focus-visible {
 .bm-modal-card .bm-actions {
   justify-content: center;
 }
-.bm-stars {
-  font-size: 2.6rem;
-  letter-spacing: 6px;
-  margin: 4px 0;
-  color: #555;
-}
-.bm-stars .is-on {
-  color: #f4f4f4;
-}
+
 
 /* Session-Ende */
 .bm-facts {
@@ -471,6 +402,7 @@ input:focus-visible {
   margin: 0;
   font-weight: 600;
 }
+
 
 /* Verlauf */
 .bm-charts {
@@ -541,8 +473,7 @@ input:focus-visible {
   font-size: 0.92rem;
   font-variant-numeric: tabular-nums;
 }
-.bm-table th,
-.bm-table td {
+.bm-table th, .bm-table td {
   padding: 6px 8px;
   border-bottom: 1px solid #262626;
   text-align: left;
@@ -552,64 +483,39 @@ input:focus-visible {
   color: var(--muted);
   font-weight: 600;
 }
-
 .bm-pin {
   max-width: 420px;
 }
 
+
 /* Hochformat: bitte quer halten */
-.bm-rotate {
-  display: none;
-}
-@media (orientation: portrait) and (max-width: 1024px) {
-  .bm-rotate {
-    display: flex;
-    position: fixed;
-    inset: 0;
-    z-index: 50;
-    align-items: center;
-    justify-content: center;
-    padding: 24px;
-    background: #000;
-    font-size: 1.3rem;
-    font-weight: 600;
-    text-align: center;
-  }
-}
+
 
 /* niedrige Querformat-Bildschirme (Handy quer) */
-@media (max-height: 500px) {
-  .bm-screen {
+@media (max-height: 500px) {.bm-screen {
     padding: 10px 16px;
   }
-  .bm-hud {
+.bm-hud {
     gap: 2px 8px;
     font-size: 0.8rem;
     padding: 2px 6px;
   }
-  .bm-hud .bm-btn-small {
+.bm-hud .bm-btn-small {
     min-height: 44px;
     padding: 4px 8px;
     font-size: 0.8rem;
   }
-  .bm-hud-time,
-  .bm-hud-auto {
-    display: none;
-  }
-  .bm-cal-canvas {
+.bm-cal-canvas {
     height: 150px;
   }
-  .bm-stars {
-    font-size: 2rem;
-  }
-  .bm-modal-card {
+.bm-modal-card {
     padding: 10px 14px;
   }
-  .bm-modal-card p {
+.bm-modal-card p {
     margin: 6px 0;
   }
-}
 
+}
 @keyframes bm-fade {
   from {
     opacity: 0;
@@ -618,156 +524,50 @@ input:focus-visible {
     opacity: 1;
   }
 }
-
-@media (prefers-reduced-motion: reduce) {
-  * {
+@media (prefers-reduced-motion: reduce) {* {
     animation: none !important;
     transition: none !important;
   }
+
 }
 
-/* Levelauswahl: 10 Karten, neutral grau; gesperrte gedimmt, aktuelles Level mit hellem Rand */
-.bm-levels {
-  list-style: none;
-  margin: 12px 0;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 10px;
-}
-.bm-levels li {
-  display: flex;
-}
-.bm-level {
-  width: 100%;
-  height: 100%;
-  min-height: 96px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 4px;
-  padding: 10px 12px;
-  border-radius: 12px;
-  border: 1px solid var(--btn-line);
-  background: var(--btn);
-  color: var(--text);
-  font: inherit;
-  text-align: left;
-  cursor: pointer;
-  touch-action: manipulation;
-  transition: background var(--fade), border-color var(--fade);
-}
-.bm-level:hover:not(:disabled) {
-  background: #2e2e2e;
-}
-.bm-level:focus-visible {
-  outline: 3px solid #fff;
-  outline-offset: 2px;
-}
-.bm-level.is-current {
-  border: 2px solid #f2f2f2;
-}
-.bm-level.is-locked {
-  opacity: 0.45;
-  cursor: default;
-}
-.bm-level-no {
-  font-size: 1.5rem;
-  font-weight: 700;
-  line-height: 1;
-}
-.bm-level-name {
-  font-weight: 600;
-  font-size: 0.95rem;
-  hyphens: auto;
-  overflow-wrap: anywhere;
-}
-.bm-level-stars {
-  color: #d6d6d6;
-  letter-spacing: 3px;
-  font-size: 1.05rem;
-}
-.bm-modal-card.bm-modal-wide {
-  max-width: 900px;
-}
-.bm-modal-wide .bm-levels {
-  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-}
-.bm-modal-wide .bm-level {
-  min-height: 72px;
-}
+
+/* Auswahlfelder: gedimmt, wenn der Ton aus ist */
 .bm-chip.is-dim {
   opacity: 0.55;
 }
 .bm-sound {
   margin: 4px 0 12px;
 }
-.bm-levelcell {
-  white-space: nowrap;
-}
-@media (max-width: 1599px) {
-  .bm-hud-name {
+@media (max-width: 1000px), (max-height: 500px) {.bm-hud-soundtext {
     display: none;
   }
+
 }
-@media (max-width: 1000px), (max-height: 500px) {
-  .bm-hud-soundtext {
-    display: none;
-  }
-}
-@media (max-height: 500px) {
-  .bm-levels {
-    grid-template-columns: repeat(5, minmax(0, 1fr));
-    gap: 6px;
-  }
-  .bm-level {
-    min-height: 64px;
-    padding: 6px 8px;
-  }
-  .bm-level-name {
-    font-size: 0.8rem;
-  }
-  .bm-modal-wide .bm-level-name {
-    display: none;
-  }
-}
+
 
 /* Im Spiel: Texte und Symbole grau (für beide Augen sichtbar), keine weißen oder farbigen Flächen */
 .bm-game {
   color: #888;
 }
-.bm-game .bm-hud,
-.bm-game .bm-debugbar {
+.bm-game .bm-hud, .bm-game .bm-debugbar {
   border-bottom-color: #2a2a2a;
 }
-.bm-game .bm-hud .bm-btn,
-.bm-game .bm-check .bm-btn {
+.bm-game .bm-hud .bm-btn {
   background: transparent;
   color: #888;
   border-color: #4a4a4a;
 }
-.bm-game .bm-hud .bm-btn:hover,
-.bm-game .bm-check .bm-btn:hover {
+.bm-game .bm-hud .bm-btn:hover {
   background: rgba(136, 136, 136, 0.12);
 }
 .bm-game .bm-hud .bm-btn-stop {
   border: 2px solid #888;
 }
-.bm-game .bm-hud .bm-btn:focus-visible,
-.bm-game .bm-check .bm-btn:focus-visible {
+.bm-game .bm-hud .bm-btn:focus-visible {
   outline-color: #888;
 }
-.bm-game .bm-msg {
-  color: #888;
-  background: rgba(0, 0, 0, 0.55);
-  border-color: #2a2a2a;
-}
-.bm-game .bm-check {
-  color: #888;
-  background: rgba(0, 0, 0, 0.88);
-  border-color: #3a3a3a;
-}
+
 
 /* Kalibrierung: Profilleiste, Schritte, Fotos, Messbild, Regler */
 .bm-field select {
@@ -803,8 +603,7 @@ input:focus-visible {
   border-radius: 6px;
   border: 1px solid #555;
 }
-.bm-pswatch-red,
-.bm-pswatch-second {
+.bm-pswatch-red, .bm-pswatch-second {
   position: absolute;
   top: 7px;
   width: 16px;
@@ -913,13 +712,13 @@ input:focus-visible {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
-@media (max-width: 640px) {
-  .bm-range {
+@media (max-width: 640px) {.bm-range {
     grid-template-columns: 1fr 3.5em;
   }
-  .bm-range-label {
+.bm-range-label {
     grid-column: 1 / -1;
   }
+
 }
 .bm-fine-preview {
   height: 260px;
@@ -971,4 +770,126 @@ input:focus-visible {
   margin: 0;
   color: #555;
   font-size: 0.9rem;
+}
+
+
+
+/* Spiel: Leiste, Hinweis, Bühne */
+.bm-hud-session {
+  font-weight: 700;
+}
+.bm-hud-item strong {
+  font-weight: 700;
+}
+.bm-msg {
+  position: absolute;
+  left: 50%;
+  bottom: 10px;
+  transform: translateX(-50%);
+  margin: 0;
+  max-width: min(92%, 640px);
+  padding: 6px 12px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.55);
+  border: 1px solid #2a2a2a;
+  color: #888;
+  font-size: 0.95rem;
+  text-align: center;
+  pointer-events: none;
+}
+.bm-orient {
+  top: 8px;
+  bottom: auto;
+}
+.bm-canvas {
+  cursor: default;
+}
+.bm-btn-icon {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.bm-detailcell {
+  min-width: 220px;
+}
+
+/* Startbildschirm: große Spielkarten */
+.bm-start-title {
+  margin: 16px 0 8px;
+}
+.bm-games {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 14px;
+  margin-bottom: 16px;
+}
+.bm-gamecard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  min-height: 220px;
+  padding: 20px 18px;
+  border: 2px solid var(--btn-line);
+  border-radius: 18px;
+  background: var(--card);
+  color: var(--text);
+  font: inherit;
+  text-align: center;
+  cursor: pointer;
+}
+.bm-gamecard:hover {
+  background: #1c1c1c;
+  border-color: #8a8a8a;
+}
+.bm-gamecard:focus-visible {
+  outline: 3px solid #bdbdbd;
+  outline-offset: 3px;
+}
+.bm-card-icon {
+  width: 140px;
+  height: 80px;
+  color: #a3a3a3;
+}
+.bm-card-icon-tall {
+  width: 60px;
+}
+.bm-gamecard-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.bm-gamecard-text {
+  color: var(--muted);
+  font-size: 0.98rem;
+}
+
+/* kleine Bildschirme: Leiste kompakt */
+@media (max-width: 700px), (max-height: 500px) {
+  .bm-hud {
+    gap: 2px 8px;
+    font-size: 0.8rem;
+    padding: 2px 6px;
+  }
+  .bm-hud .bm-btn-small {
+    min-height: 44px;
+    padding: 4px 8px;
+    font-size: 0.8rem;
+  }
+}
+
+/* Pause-Überlagerung im Spiel: ebenfalls grau */
+.bm-game .bm-modal-card {
+  background: rgba(0, 0, 0, 0.92);
+  border-color: #3a3a3a;
+  color: #888;
+}
+.bm-game .bm-modal-card .bm-btn {
+  background: transparent;
+  color: #888;
+  border: 2px solid #5a5a5a;
+}
+.bm-game .bm-modal-card .bm-btn:hover {
+  background: rgba(136, 136, 136, 0.12);
+}
+.bm-game .bm-modal-card .bm-btn:focus-visible {
+  outline-color: #888;
 }

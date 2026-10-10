@@ -10,19 +10,33 @@ import type { AudioPrefs } from '../audio/player';
 import { DEFAULT_CALIBRATION, normalizeCalibration, type Calibration } from '../calibration/calibration';
 import { DEFAULT_PROFILE_ID, findProfile, normalizeProfiles, startProfileFor, type ColorProfile } from '../calibration/profiles';
 import type { Glasses } from '../vision/color';
-import { LEVELS } from '../levels';
+import { DEFAULT_NACH, normalizeNach, type NachSettings } from '../games/nachzeichnen/settings';
+import { DEFAULT_PONG, normalizePong, type PongSettings } from '../games/pong/settings';
 import { DEFAULT_PIN, isValidPin } from '../therapy/pin';
-import type { SessionRecord } from '../therapy/session';
-import { defaultProgress, normalizeProgress, type Progress } from './progress';
+import { normalizeSession, type SessionRecord } from '../therapy/session';
 import { DEFAULT_SETTINGS, normalizeSettings, type Settings } from './settings';
 
-export type { Progress } from './progress';
+/** Einstellungen je Spiel (Therapeutenbereich) */
+export interface GameSettingsMap {
+  nachzeichnen: NachSettings;
+  pong: PongSettings;
+}
+
+export function defaultGameSettings(): GameSettingsMap {
+  return { nachzeichnen: { ...DEFAULT_NACH }, pong: { ...DEFAULT_PONG } };
+}
+
+/** Einstellungen aller Spiele streng prüfen (fehlend/ungültig → Standard) */
+export function normalizeGameSettings(x: unknown): GameSettingsMap {
+  const o = (x && typeof x === 'object' ? x : {}) as Record<string, unknown>;
+  return { nachzeichnen: normalizeNach(o.nachzeichnen), pong: normalizePong(o.pong) };
+}
 
 /**
- * Der Schlüssel bleibt `binokular:v1`: Mit den Leveln 2–10 kamen nur Felder dazu (`progress.unlocked`, `audio`,
- * Ton-Voreinstellungen), mit dem neuen Farbmodell `profiles` und `activeProfileId`. Ältere Daten werden beim Laden
- * ergänzt (`normalizeStore`, getestet): Alte Grundfarben (`calibration.colors`) passen nicht zum neuen Modell und
- * werden verworfen; der alte Brillentyp (`settings.glasses`) wählt das passende Startprofil.
+ * Der Schlüssel bleibt `binokular:v1`. Ältere Daten werden beim Laden bereinigt (`normalizeStore`, getestet):
+ * Alte Grundfarben (`calibration.colors`) passen nicht zum Farbprofil-Modell und werden verworfen; der alte
+ * Brillentyp (`settings.glasses`) wählt das passende Startprofil. Felder des früheren Grabungsspiels (Fortschritt,
+ * Level, Kontrollaufgaben, Sessions mit Leveln, laufende Session) entfallen; unbekannte Felder werden verworfen.
  */
 export const STORAGE_KEY = 'binokular:v1';
 /** Obergrenze gespeicherter Sessions (älteste fallen weg) */
@@ -36,11 +50,10 @@ export interface Store {
   profiles: ColorProfile[];
   /** aktives Profil – liefert Brillentyp und alle Farben des Spielfelds */
   activeProfileId: string;
+  /** Einstellungen der Spiele */
+  games: GameSettingsMap;
   sessions: SessionRecord[];
   pin: string;
-  progress: Progress;
-  /** Zwischenstand einer laufenden Session (wird beim nächsten Start als „unterbrochen“ abgeschlossen) */
-  activeSession: SessionRecord | null;
   /** Toneinstellung der Person (null = Voreinstellung aus dem Therapeutenbereich) */
   audio: AudioPrefs | null;
 }
@@ -52,10 +65,9 @@ export function defaultStore(): Store {
     calibration: structuredCloneSafe(DEFAULT_CALIBRATION),
     profiles: normalizeProfiles([]),
     activeProfileId: DEFAULT_PROFILE_ID,
+    games: defaultGameSettings(),
     sessions: [],
     pin: DEFAULT_PIN,
-    progress: defaultProgress(),
-    activeSession: null,
     audio: null,
   };
 }
@@ -87,11 +99,6 @@ function structuredCloneSafe<T>(x: T): T {
   return JSON.parse(JSON.stringify(x)) as T;
 }
 
-function isSession(x: unknown): x is SessionRecord {
-  const o = x as Record<string, unknown>;
-  return !!o && typeof o === 'object' && typeof o.id === 'string' && typeof o.date === 'string' && typeof o.activeMs === 'number' && Array.isArray(o.attempts);
-}
-
 /** Gespeicherte (evtl. alte oder beschädigte) Daten in einen gültigen Store überführen */
 export function normalizeStore(x: unknown): Store {
   const d = defaultStore();
@@ -108,10 +115,9 @@ export function normalizeStore(x: unknown): Store {
     calibration: normalizeCalibration(o.calibration),
     profiles,
     activeProfileId: findProfile(profiles, wanted).id,
-    sessions: Array.isArray(o.sessions) ? o.sessions.filter(isSession).slice(-MAX_SESSIONS) : [],
+    games: normalizeGameSettings(o.games),
+    sessions: Array.isArray(o.sessions) ? o.sessions.map(normalizeSession).filter((x): x is SessionRecord => x !== null).slice(-MAX_SESSIONS) : [],
     pin: typeof o.pin === 'string' && isValidPin(o.pin) ? o.pin : DEFAULT_PIN,
-    progress: normalizeProgress(o.progress, LEVELS.length),
-    activeSession: isSession(o.activeSession) ? o.activeSession : null,
     audio: normalizeAudio(o.audio),
   };
 }
@@ -135,13 +141,7 @@ export function loadStore(kv: KeyValue | null = browserStorage()): Store {
   if (!kv) return defaultStore();
   try {
     const raw = kv.getItem(STORAGE_KEY);
-    const store = normalizeStore(raw ? JSON.parse(raw) : null);
-    // unterbrochene Session (Seite geschlossen) abschließen
-    if (store.activeSession) {
-      store.sessions = [...store.sessions, { ...store.activeSession, endReason: 'interrupted' as const }].slice(-MAX_SESSIONS);
-      store.activeSession = null;
-    }
-    return store;
+    return normalizeStore(raw ? JSON.parse(raw) : null);
   } catch {
     return defaultStore();
   }

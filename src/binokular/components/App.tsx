@@ -1,50 +1,44 @@
 /**
- * Bildschirmfolge: Start → Kalibrierung (nur bis ein Profil gespeichert oder „Mit Startwerten spielen“ gewählt ist) →
- * Augen/Farben (mit Profilauswahl) → Levelauswahl → Spiel → Session-Ende → Verlauf;
+ * Bildschirmfolge: Start (Spielkarten) → Kalibrierung (nur bis ein Profil gespeichert oder „Mit Startwerten
+ * spielen“ gewählt ist) → Augen/Farben (mit Profilauswahl) → Spiel (GameShell) → Zusammenfassung → Verlauf;
  * Therapeutenbereich. Der Ton (Audio-Modul) wird bei der ersten Nutzergeste freigeschaltet.
  */
 import { useCallback, useEffect, useMemo, useState } from 'preact/hooks';
 import { SoundPlayer, type AudioPrefs } from '../audio';
 import { startProfileFor } from '../calibration/profiles';
-import { chooseLevel } from '../data/progress';
 import type { Settings } from '../data/settings';
-import { activeProfile, audioPrefsOf, loadStore, saveStore, type Store } from '../data/storage';
-import { LEVELS } from '../levels';
+import { activeProfile, audioPrefsOf, loadStore, MAX_SESSIONS, saveStore, type Store } from '../data/storage';
+import { GAMES, type GameId } from '../games';
+import type { GameSummary } from '../games/types';
 import type { SessionRecord } from '../therapy/session';
-import { t } from '../texts';
 import { CalibrationScreen } from './CalibrationScreen';
 import { EndScreen } from './EndScreen';
-import { GameScreen } from './GameScreen';
+import { GameShell } from './GameShell';
 import { HistoryScreen } from './HistoryScreen';
-import { LevelSelectScreen } from './LevelSelect';
 import { SetupScreen } from './SetupScreen';
 import { StartScreen } from './StartScreen';
 import { TherapistScreen } from './TherapistScreen';
 
-type ScreenName = 'start' | 'calibration' | 'setup' | 'levels' | 'game' | 'end' | 'history' | 'therapist';
+type ScreenName = 'start' | 'calibration' | 'setup' | 'game' | 'end' | 'history' | 'therapist';
 
 export interface AppParams {
-  autoplay: boolean;
   debug: boolean;
-  firstCheckS: number | null;
-  /** ?level=N: direkt mit Level N beginnen (Tests/Vorführung) */
-  level: number | null;
-  /** ?sound=1: Ton auch in der Automatik */
-  sound: boolean;
+  /** ?seed=N: fester Zufall (Tests) */
+  seed: number | null;
+  /** ?game=<id>: direkt in dieses Spiel (Tests/Vorführung), ohne Kalibrierung und Augenwahl */
+  game: GameId | null;
 }
 
 export function App({ params }: { params: AppParams }) {
   const [store, setStore] = useState<Store>(() => loadStore());
-  const [screen, setScreen] = useState<ScreenName>('start');
+  const [screen, setScreen] = useState<ScreenName>(params.game ? 'game' : 'start');
   const [back, setBack] = useState<ScreenName>('start');
-  const [last, setLast] = useState<SessionRecord | null>(null);
+  const [gameId, setGameId] = useState<GameId>(params.game ?? 'nachzeichnen');
+  const [last, setLast] = useState<{ rec: SessionRecord; sum: GameSummary } | null>(null);
   const [gameKey, setGameKey] = useState(0);
-  const [gameLevel, setGameLevel] = useState<number>(() => params.level ?? store.progress.level);
 
   const sound = useMemo(() => new SoundPlayer(), []);
   sound.setPrefs(audioPrefsOf(store));
-  // Automatik (Tests, Vorführung) läuft stumm, außer mit ?sound=1
-  sound.muted = params.autoplay && !params.sound;
 
   // AudioContext erst nach der ersten Nutzergeste (iOS/Safari, Chrome)
   useEffect(() => {
@@ -68,94 +62,85 @@ export function App({ params }: { params: AppParams }) {
   const setSettings = (patch: Partial<Settings>) => update((s) => ({ ...s, settings: { ...s.settings, ...patch } }));
   const setProfiles = (profiles: Store['profiles'], activeProfileId: string) => update((s) => ({ ...s, profiles, activeProfileId }));
   const setAudio = (a: AudioPrefs) => update((s) => ({ ...s, audio: a }));
-  const onEnd = useCallback((rec: SessionRecord) => {
-    setLast(rec);
-    setScreen('end');
-  }, []);
+  const onEnd = useCallback(
+    (rec: SessionRecord, sum: GameSummary) => {
+      update((s) => ({ ...s, sessions: [...s.sessions, rec].slice(-MAX_SESSIONS) }));
+      setLast({ rec, sum });
+      setScreen('end');
+    },
+    [update],
+  );
 
   const open = (s: ScreenName, from: ScreenName = 'start') => {
     setBack(from);
     setScreen(s);
     window.scrollTo(0, 0);
   };
-  /** Spiel mit Level n starten. `forced` (nur ?level=N): auch gesperrte Level, ohne die Freischaltung zu ändern */
-  const play = (n: number, forced = false) => {
-    setGameLevel(n);
-    if (!forced) update((s) => ({ ...s, progress: chooseLevel(s.progress, n, LEVELS.length) }));
+  const play = () => {
     setGameKey((k) => k + 1);
     open('game');
   };
+  /** Spielkarte gewählt: ohne Kalibrierung zuerst dorthin, sonst Augen/Farben */
+  const choose = (id: GameId) => {
+    setGameId(id);
+    if (store.calibration.completedAt || store.calibration.startValuesAccepted) open('setup');
+    else open('calibration');
+  };
 
   return (
-    <>
-      <div class="bm-rotate" role="alert">
-        <p>{t.rotate}</p>
-      </div>
-      <main class="bm-app">
-        {screen === 'start' && (
-          <StartScreen
-            calibratedAt={store.calibration.completedAt}
-            profileName={activeProfile(store).name}
-            audio={audioPrefsOf(store)}
-            onAudio={(a) => {
-              setAudio(a);
-              sound.setPrefs(a);
-              sound.unlock();
-              sound.play('select');
-            }}
-            onStart={() => (store.calibration.completedAt || store.calibration.startValuesAccepted ? open('setup') : open('calibration'))}
-            onCalibrate={() => open('calibration')}
-            onHistory={() => open('history')}
-            onTherapist={() => open('therapist')}
-          />
-        )}
-        {screen === 'calibration' && (
-          <CalibrationScreen
-            settings={store.settings}
-            calibration={store.calibration}
-            profiles={store.profiles}
-            activeProfileId={store.activeProfileId}
-            onSettings={setSettings}
-            onProfiles={setProfiles}
-            onCalibration={(c) => update((s) => ({ ...s, calibration: c }))}
-            onDone={() => open('setup', 'calibration')}
-            onPlayDefaults={(mode) => {
-              update((s) => ({ ...s, activeProfileId: startProfileFor(mode).id, calibration: { ...s.calibration, startValuesAccepted: true } }));
-              open('setup', 'calibration');
-            }}
-            onBack={() => open('start')}
-          />
-        )}
-        {screen === 'setup' && (
-          <SetupScreen
-            settings={store.settings}
-            profiles={store.profiles}
-            activeProfileId={store.activeProfileId}
-            onProfile={(id) => update((s) => ({ ...s, activeProfileId: id }))}
-            onSettings={setSettings}
-            onBack={() => open('start')}
-            onPlay={() => (params.level ? play(params.level, true) : open('levels', 'setup'))}
-          />
-        )}
-        {screen === 'levels' && <LevelSelectScreen progress={store.progress} onBack={() => open('setup')} onPlay={(n) => play(n)} />}
-        {screen === 'game' && (
-          <GameScreen
-            key={gameKey}
-            store={store}
-            update={update}
-            startLevel={gameLevel}
-            sound={sound}
-            onAudio={setAudio}
-            autoplay={params.autoplay}
-            forceDebug={params.debug}
-            firstCheckS={params.firstCheckS}
-            onEnd={onEnd}
-          />
-        )}
-        {screen === 'end' && last && <EndScreen session={last} onHistory={() => open('history', 'end')} onStart={() => open('start')} />}
-        {screen === 'history' && <HistoryScreen sessions={store.sessions} onBack={() => open(back === 'therapist' ? 'therapist' : 'start')} />}
-        {screen === 'therapist' && <TherapistScreen store={store} update={update} onBack={() => open('start')} onHistory={() => open('history', 'therapist')} />}
-      </main>
-    </>
+    <main class="bm-app">
+      {screen === 'start' && (
+        <StartScreen
+          calibratedAt={store.calibration.completedAt}
+          profileName={activeProfile(store).name}
+          audio={audioPrefsOf(store)}
+          onAudio={(a) => {
+            setAudio(a);
+            sound.setPrefs(a);
+            sound.unlock();
+            sound.play('select');
+          }}
+          onPlay={choose}
+          onCalibrate={() => open('calibration')}
+          onHistory={() => open('history')}
+          onTherapist={() => open('therapist')}
+        />
+      )}
+      {screen === 'calibration' && (
+        <CalibrationScreen
+          settings={store.settings}
+          calibration={store.calibration}
+          profiles={store.profiles}
+          activeProfileId={store.activeProfileId}
+          onSettings={setSettings}
+          onProfiles={setProfiles}
+          onCalibration={(c) => update((s) => ({ ...s, calibration: c }))}
+          onDone={() => open('setup', 'calibration')}
+          onPlayDefaults={(mode) => {
+            update((s) => ({ ...s, activeProfileId: startProfileFor(mode).id, calibration: { ...s.calibration, startValuesAccepted: true } }));
+            open('setup', 'calibration');
+          }}
+          onBack={() => open('start')}
+        />
+      )}
+      {screen === 'setup' && (
+        <SetupScreen
+          gameTitle={GAMES[gameId].title}
+          settings={store.settings}
+          profiles={store.profiles}
+          activeProfileId={store.activeProfileId}
+          onProfile={(id) => update((s) => ({ ...s, activeProfileId: id }))}
+          onSettings={setSettings}
+          onBack={() => open('start')}
+          onPlay={play}
+        />
+      )}
+      {screen === 'game' && <GameShell key={gameKey} module={GAMES[gameId]} store={store} sound={sound} onAudio={setAudio} params={{ debug: params.debug, seed: params.seed }} onEnd={onEnd} />}
+      {screen === 'end' && last && (
+        <EndScreen session={last.rec} summary={last.sum} onAgain={play} onHistory={() => open('history', 'end')} onStart={() => open('start')} />
+      )}
+      {screen === 'history' && <HistoryScreen sessions={store.sessions} onBack={() => open(back === 'therapist' ? 'therapist' : 'start')} />}
+      {screen === 'therapist' && <TherapistScreen store={store} update={update} onBack={() => open('start')} onHistory={() => open('history', 'therapist')} />}
+    </main>
   );
 }

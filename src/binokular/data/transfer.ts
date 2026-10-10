@@ -1,19 +1,23 @@
 /**
  * Export/Import der Einstellungen als JSON (Therapeutenmodus). Die PIN wird nicht exportiert.
  *
- * Version 2 enthält zusätzlich die eigenen Farbprofile und das aktive Profil. Dateien der Version 1 werden weiter
+ * Version 2 enthält zusätzlich die eigenen Farbprofile, das aktive Profil und die Einstellungen der Spiele (`games`,
+ * fehlt bei älteren Dateien → Standardwerte). Dateien der Version 1 werden weiter
  * gelesen: Ihre alten Grundfarben passen nicht zum neuen Farbmodell und werden verworfen; der alte Brillentyp
  * wählt das passende Startprofil.
  */
 import { normalizeCalibration, type Calibration } from '../calibration/calibration';
 import { exportProfiles, normalizeProfiles, startProfileFor, type ColorProfile } from '../calibration/profiles';
 import { normalizeSettings, type Settings } from './settings';
+import { normalizeGameSettings, type GameSettingsMap } from './storage';
 
 export const EXPORT_FORMAT = 'binokular-einstellungen';
 export const EXPORT_VERSION = 2;
 
 export interface TransferData {
   settings: Settings;
+  /** Einstellungen der Spiele */
+  games: GameSettingsMap;
   calibration: Calibration;
   profiles: ColorProfile[];
   activeProfileId: string;
@@ -26,6 +30,7 @@ export function exportSettings(d: TransferData, now = new Date()): string {
     version: EXPORT_VERSION,
     exportedAt: now.toISOString(),
     settings: d.settings,
+    games: d.games,
     calibration: d.calibration,
     profiles,
     activeProfileId: d.activeProfileId,
@@ -51,5 +56,5 @@ export function importSettings(text: string): ImportResult {
   const fallback = startProfileFor(old.glasses === 'RED_GREEN' ? 'RED_GREEN' : 'RED_CYAN').id;
   const wanted = typeof o.activeProfileId === 'string' ? o.activeProfileId : fallback;
   const active = profiles.some((p) => p.id === wanted) ? wanted : fallback;
-  return { ok: true, settings: normalizeSettings(o.settings), calibration: normalizeCalibration(o.calibration), profiles, activeProfileId: active };
+  return { ok: true, settings: normalizeSettings(o.settings), games: normalizeGameSettings(o.games), calibration: normalizeCalibration(o.calibration), profiles, activeProfileId: active };
 }

@@ -1,11 +1,10 @@
 /**
- * Audio-Effekte von „Binocular Mine“: Ereignis → Klang, stumm erzeugt nichts, Lautstärkegrenze, Start erst nach
+ * Audio-Effekte von „Binokular – Sehspiele“: Ereignis → Klang, stumm erzeugt nichts, Lautstärkegrenze, Start erst nach
  * einer Nutzergeste, keine Fehler ohne Audio-Unterstützung. Mit einer kleinen AudioContext-Attrappe.
  */
 import { describe, expect, it } from 'vitest';
-import { GAME_SOUND, MAX_GAIN, playGameEvents, SOUND_EVENTS, soundDuration, soundNotes, SoundPlayer, VOLUME_GAIN } from '../../src/binokular/audio';
+import { MAX_GAIN, SOUND_EVENTS, soundDuration, soundNotes, SoundPlayer, VOLUME_GAIN } from '../../src/binokular/audio';
 import type { AudioContextLike, AudioParamLike } from '../../src/binokular/audio/player';
-import { t } from '../../src/binokular/texts';
 
 class FakeParam implements AudioParamLike {
   value = 0;
@@ -71,14 +70,13 @@ function setup() {
 const peak = (g: FakeParam) => Math.max(...g.log.map((x) => x[1]));
 
 describe('Ereignis → Klang', () => {
-  it('jedes Ereignis der Spiellogik hat einen Effekt', () => {
-    for (const msg of Object.keys(t.messages)) expect(GAME_SOUND[msg as keyof typeof GAME_SOUND], msg).toBeTruthy();
-    expect(Object.keys(GAME_SOUND).sort()).toEqual(Object.keys(t.messages).sort());
-    for (const ev of Object.values(GAME_SOUND)) expect(SOUND_EVENTS).toContain(ev);
+  it('alle Ereignisse der Spiele haben einen Effekt', () => {
+    for (const ev of ['hit', 'error', 'colorChange', 'goal', 'wall', 'point', 'gameEnd', 'select', 'pause', 'resume'] as const) expect(SOUND_EVENTS).toContain(ev);
+    expect(new Set(SOUND_EVENTS).size).toBe(SOUND_EVENTS.length);
   });
   it('jeder Effekt: kurze, warme Töne (Sinus/Dreieck), keine Dauertöne, nichts Schrilles', () => {
     for (const ev of SOUND_EVENTS) {
-      const notes = soundNotes(ev, 3);
+      const notes = soundNotes(ev);
       expect(notes.length, ev).toBeGreaterThan(0);
       expect(soundDuration(notes), ev).toBeLessThanOrEqual(1.4);
       for (const n of notes) {
@@ -91,27 +89,10 @@ describe('Ereignis → Klang', () => {
       }
     }
   });
-  it('Level geschafft: kurze Melodie plus ein Glockenton je Stern', () => {
-    expect(soundNotes('levelComplete', 0)).toHaveLength(3);
-    expect(soundNotes('levelComplete', 3)).toHaveLength(6);
-    expect(soundNotes('levelComplete', 9)).toHaveLength(6);
-  });
-  it('Kontrollaufgabe: immer derselbe Hinweiston – er hängt von keinem Symbol ab', () => {
-    const a = soundNotes('check');
-    expect(soundNotes('check', 2)).toEqual(a);
-    const { ctx, p } = setup();
-    p.unlock();
-    p.play('check');
-    const f1 = ctx.oscs.map((o) => o.frequency.log[0][1]);
-    p.play('check', { stars: 3 });
-    expect(ctx.oscs.slice(f1.length).map((o) => o.frequency.log[0][1])).toEqual(f1);
-  });
-  it('mehrere Ereignisse auf einmal: jeder Effekt einmal, „gewonnen“ übernimmt das Levelende', () => {
-    const { ctx, p } = setup();
-    p.unlock();
-    const played = playGameEvents(p, [{ msg: 'delivered' }, { msg: 'won' }, { msg: 'switchOn' }, { msg: 'switchOff' }]);
-    expect(played).toEqual(['deliver', 'switch']);
-    expect(ctx.oscs).toHaveLength(soundNotes('deliver').length + soundNotes('switch').length);
+  it('Fehlerton ist weich: tief, kurz, nach unten gleitend', () => {
+    const [n] = soundNotes('error');
+    expect(n.f2).toBeLessThan(n.f);
+    expect(n.f).toBeLessThanOrEqual(300);
   });
 });
 
@@ -133,10 +114,10 @@ describe('Wiedergabe', () => {
     const { ctx, p } = setup();
     p.unlock();
     p.setPrefs({ on: false, volume: 'HIGH' });
-    expect(p.play('deliver')).toBe(0);
+    expect(p.play('goal')).toBe(0);
     p.setPrefs({ on: true, volume: 'HIGH' });
     p.muted = true;
-    expect(p.play('deliver')).toBe(0);
+    expect(p.play('goal')).toBe(0);
     expect(ctx.oscs).toHaveLength(0);
   });
   it('Lautstärke in drei Stufen, nach oben begrenzt; weiche Hüllkurve (leise rein, leise raus)', () => {
@@ -145,7 +126,7 @@ describe('Wiedergabe', () => {
       const { ctx, p } = setup();
       p.unlock();
       p.setPrefs({ on: true, volume: v });
-      for (const ev of SOUND_EVENTS) p.play(ev, { stars: 3 });
+      for (const ev of SOUND_EVENTS) p.play(ev);
       const all = ctx.gains.map(peak);
       expect(Math.max(...all)).toBeLessThanOrEqual(MAX_GAIN);
       peaks.push(Math.max(...all));
@@ -162,7 +143,7 @@ describe('Wiedergabe', () => {
   it('höchstens 8 Töne gleichzeitig; nach dem Ausklingen wieder frei', () => {
     const { ctx, p } = setup();
     p.unlock();
-    for (let i = 0; i < 10; i++) p.play('levelComplete', { stars: 3 });
+    for (let i = 0; i < 10; i++) p.play('goal');
     expect(ctx.oscs).toHaveLength(8);
     for (const o of ctx.oscs) o.onended?.();
     expect(p.play('select')).toBe(1);
@@ -175,10 +156,10 @@ describe('Wiedergabe', () => {
       throw new Error('kein Audio');
     });
     expect(() => broken.unlock()).not.toThrow();
-    expect(broken.play('hazard')).toBe(0);
+    expect(broken.play('error')).toBe(0);
     const failing = new SoundPlayer(() => ({ ...new FakeCtx(), createOscillator: () => { throw new Error('x'); } }) as unknown as AudioContextLike);
     failing.unlock();
-    expect(() => failing.play('door')).not.toThrow();
+    expect(() => failing.play('hit')).not.toThrow();
     // im Test läuft kein Browser: der Standard-Player bleibt einfach stumm
     const def = new SoundPlayer();
     def.unlock();

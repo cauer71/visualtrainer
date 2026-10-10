@@ -1,143 +1,56 @@
 import { describe, expect, it } from 'vitest';
 import { csvCell, CSV_COLUMNS, deNum, sessionsToCsv } from '../../src/binokular/data/csv';
 import { DEFAULT_SETTINGS, normalizeSettings } from '../../src/binokular/data/settings';
-import { defaultStore, loadStore, normalizeStore, saveStore, STORAGE_KEY, type KeyValue } from '../../src/binokular/data/storage';
+import { defaultGameSettings, defaultStore, loadStore, normalizeStore, saveStore, STORAGE_KEY, type KeyValue } from '../../src/binokular/data/storage';
 import { exportSettings, importSettings } from '../../src/binokular/data/transfer';
 import { DEFAULT_CALIBRATION } from '../../src/binokular/calibration/calibration';
 import { normalizeProfiles } from '../../src/binokular/calibration/profiles';
-import { adaptContrast, decreaseContrast, increaseContrast, outcomeOf } from '../../src/binokular/therapy/contrast';
 import { changePin, checkPin, DEFAULT_PIN, isValidPin } from '../../src/binokular/therapy/pin';
-import { minutesPerDay, SessionRecorder } from '../../src/binokular/therapy/session';
-import { checkAlpha, makeRecord, nextCheckDelayMs, randomShape, shouldStartCheck, summarizeSuppression, SUPPRESSION_NOTE } from '../../src/binokular/therapy/suppression';
-
-describe('Adaptive Kontraststeuerung', () => {
-  it('PERCENTUAL: 20 → 22 → 24,2 → 26,6 (+10 % des Werts)', () => {
-    const seq = [20];
-    for (let i = 0; i < 3; i++) seq.push(increaseContrast(seq[seq.length - 1], 'PERCENTUAL'));
-    expect(seq).toEqual([20, 22, 24.2, 26.6]);
-  });
-  it('PERCENTUAL −5 % des Werts, LINEAR ±5 Prozentpunkte, MANUAL unverändert', () => {
-    expect(decreaseContrast(40, 'PERCENTUAL')).toBe(38);
-    expect(increaseContrast(20, 'LINEAR')).toBe(25);
-    expect(decreaseContrast(20, 'LINEAR')).toBe(15);
-    expect(increaseContrast(20, 'MANUAL')).toBe(20);
-    expect(decreaseContrast(20, 'MANUAL')).toBe(20);
-  });
-  it('Grenzen 0–100', () => {
-    expect(increaseContrast(95, 'PERCENTUAL')).toBe(100);
-    expect(increaseContrast(98, 'LINEAR')).toBe(100);
-    expect(decreaseContrast(3, 'LINEAR')).toBe(0);
-    expect(increaseContrast(100, 'PERCENTUAL')).toBe(100);
-  });
-  it('Erfolg = Abschluss mit ≥ 2 Sternen; Abbruch zählt nicht', () => {
-    expect(outcomeOf(true, 3)).toBe('success');
-    expect(outcomeOf(true, 2)).toBe('success');
-    expect(outcomeOf(true, 1)).toBe('failure');
-    expect(outcomeOf(false, 0)).toBe('failure');
-    expect(outcomeOf(false, 0, false)).toBe('neutral');
-  });
-  it('Erfolg erhöht, einzelner Misserfolg nicht, wiederholter Misserfolg (2 in Folge) senkt', () => {
-    const opts = { enabled: true, mode: 'PERCENTUAL' as const };
-    let st = { fellowEyeContrast: 20, consecutiveFailures: 0 };
-    st = adaptContrast(st, 'success', opts);
-    expect(st).toMatchObject({ fellowEyeContrast: 22, consecutiveFailures: 0, changed: 'up' });
-    st = adaptContrast(st, 'failure', opts);
-    expect(st).toMatchObject({ fellowEyeContrast: 22, consecutiveFailures: 1, changed: null });
-    st = adaptContrast(st, 'failure', opts);
-    expect(st).toMatchObject({ fellowEyeContrast: 20.9, consecutiveFailures: 0, changed: 'down' });
-    // Erfolg setzt die Zählung zurück
-    st = adaptContrast({ fellowEyeContrast: 30, consecutiveFailures: 1 }, 'success', opts);
-    expect(st.consecutiveFailures).toBe(0);
-    expect(adaptContrast({ fellowEyeContrast: 30, consecutiveFailures: 1 }, 'neutral', opts)).toMatchObject({ fellowEyeContrast: 30, consecutiveFailures: 1 });
-  });
-  it('abgeschaltet oder MANUAL: keine Änderung', () => {
-    expect(adaptContrast({ fellowEyeContrast: 20, consecutiveFailures: 0 }, 'success', { enabled: false, mode: 'PERCENTUAL' }).fellowEyeContrast).toBe(20);
-    expect(adaptContrast({ fellowEyeContrast: 20, consecutiveFailures: 1 }, 'failure', { enabled: true, mode: 'MANUAL' }).fellowEyeContrast).toBe(20);
-    expect(adaptContrast({ fellowEyeContrast: 20, consecutiveFailures: 0 }, 'success', { enabled: true, mode: 'LINEAR' }).fellowEyeContrast).toBe(25);
-  });
-});
-
-describe('Suppressions-Kontrolle', () => {
-  const rec = (shape: 'circle' | 'star', answer: 'circle' | 'star' | null) => makeRecord(1000, shape, answer, 800);
-  it('Merkmal erst nach wiederholtem Fehlen (2 in Folge)', () => {
-    expect(summarizeSuppression([]).accuracy).toBeNull();
-    expect(summarizeSuppression([rec('circle', null)]).possibleSuppression).toBe(false);
-    expect(summarizeSuppression([rec('circle', null), rec('star', 'star'), rec('circle', 'star')]).possibleSuppression).toBe(false);
-    const s = summarizeSuppression([rec('circle', 'circle'), rec('circle', null), rec('star', 'circle')]);
-    expect(s.possibleSuppression).toBe(true);
-    expect(s.flagEvents).toBe(1);
-    expect(s.accuracy).toBeCloseTo(1 / 3);
-  });
-  it('Protokolltext ohne Diagnose', () => {
-    const s = summarizeSuppression([rec('circle', null), rec('star', null)]);
-    expect(s.note).toBe('Stimulus möglicherweise nicht wahrgenommen.');
-    expect(SUPPRESSION_NOTE).not.toMatch(/diagnos|amblyop|suppression|krank|störung/i);
-    expect(summarizeSuppression([rec('circle', 'circle')]).note).toBe('');
-  });
-  it('ohne Antwort keine Reaktionszeit; richtige Antwort erkannt', () => {
-    expect(makeRecord(5, 'circle', null, 900)).toMatchObject({ correct: false, reactionMs: null });
-    expect(makeRecord(5, 'circle', 'circle', 900)).toMatchObject({ correct: true, reactionMs: 900 });
-  });
-  it('Zeitplan 60–90 s, nur bei ruhendem Spiel, weiche Einblendung', () => {
-    expect(nextCheckDelayMs(() => 0)).toBe(60000);
-    expect(nextCheckDelayMs(() => 0.9999)).toBeLessThanOrEqual(90000);
-    expect(shouldStartCheck(70000, 65000, true, true)).toBe(true);
-    expect(shouldStartCheck(70000, 65000, false, true)).toBe(false);
-    expect(shouldStartCheck(70000, 65000, true, false)).toBe(false);
-    expect(shouldStartCheck(10000, 65000, true, true)).toBe(false);
-    expect(checkAlpha(0)).toBe(0);
-    expect(checkAlpha(150)).toBeCloseTo(0.5);
-    expect(checkAlpha(1000)).toBe(1);
-    expect(checkAlpha(10000)).toBe(0);
-    expect(randomShape(() => 0, 'circle')).not.toBe('circle');
-  });
-});
+import { minutesPerDay, normalizeSession, SessionRecorder } from '../../src/binokular/therapy/session';
 
 describe('Session-Log und CSV', () => {
-  const start = { patientId: 'K-07', amblyopicContrast: 100, fellowEyeContrast: 20, amblyopicEye: 'LEFT' as const, glasses: 'RED_CYAN' as const, leftLens: 'RED' as const, plannedMinutes: 30 };
+  const start = { gameId: 'nachzeichnen' as const, patientId: 'K-07', amblyopicContrast: 100, fellowEyeContrast: 20, amblyopicEye: 'LEFT' as const, glasses: 'RED_CYAN' as const, leftLens: 'RED' as const };
+  const sum = { points: 1, errors: 2, colorChanges: 9, details: { accuracy: 93.5, avgDeviation: 4.2, paths: 1 }, completed: true };
   function sample() {
     let now = new Date(2026, 9, 5, 14, 30, 0).getTime();
     const r = new SessionRecorder(start, () => now);
     now += 60000;
-    r.addActive(55000);
-    r.addAttempt({ levelId: 'level01', levelNumber: 1, activeMs: 55000, result: 'completed', stars: 3, failures: 0, fellowContrastBefore: 20, fellowContrastAfter: 22 });
-    r.contrastChange(22, 'success');
-    r.addSuppression(makeRecord(r.elapsed(), 'star', 'star', 1200));
     r.pauseBegin();
+    expect(r.paused).toBe(true);
     now += 30000;
+    expect(r.activeMs()).toBe(60000);
     r.pauseEnd();
-    now += 90000;
-    r.addActive(80000);
-    r.addAttempt({ levelId: 'level01', levelNumber: 1, activeMs: 80000, result: 'timeout', stars: 0, failures: 2, fellowContrastBefore: 22, fellowContrastAfter: 22 });
-    r.addSuppression(makeRecord(r.elapsed(), 'circle', null, 0));
-    now += 10000;
-    r.addAttempt({ levelId: 'level01', levelNumber: 1, activeMs: 4000, result: 'aborted', stars: 0, failures: 0, fellowContrastBefore: 22, fellowContrastAfter: 22 });
-    return r.finish('user');
+    now += 100000;
+    return r.finish('goal', sum);
   }
   it('alle Felder je Session', () => {
     const s = sample();
+    expect(s.gameId).toBe('nachzeichnen');
     expect(s.date).toBe('2026-10-05');
     expect(s.startTime).toBe('14:30');
     expect(s.durationMs).toBe(190000);
-    expect(s.activeMs).toBe(135000);
     expect(s.pauseMs).toBe(30000);
-    expect(s.pauses).toEqual([{ startMs: 60000, durationMs: 30000 }]);
-    expect(s.levelsPlayed).toBe(2); // Abbruch zählt nicht
-    expect(s.levelsCompleted).toBe(1);
-    expect(s.successRate).toBe(0.5);
-    expect(s.stars).toBe(3);
+    expect(s.pauses).toBe(1);
+    expect(s.activeMs).toBe(160000);
+    expect(s.points).toBe(1);
     expect(s.errors).toBe(2);
+    expect(s.colorChanges).toBe(9);
+    expect(s.completed).toBe(true);
+    expect(s.details.accuracy).toBe(93.5);
     expect(s.amblyopicContrast).toBe(100);
-    expect(s.fellowContrastStart).toBe(20);
-    expect(s.fellowContrastEnd).toBe(22);
-    expect(s.contrastHistory.map((p) => p.value)).toEqual([20, 22]);
-    expect(s.suppressionChecks).toHaveLength(2);
-    expect(s.suppressionAccuracy).toBe(0.5);
-    expect(s.possibleSuppression).toBe(false);
-    expect(s.reactionTimesMs).toEqual([1200]);
-    expect(s.meanReactionMs).toBe(1200);
-    expect(s.endReason).toBe('user');
+    expect(s.fellowEyeContrast).toBe(20);
+    expect(s.endReason).toBe('goal');
     expect(s.patientId).toBe('K-07');
+  });
+  it('Datensatz überlebt die Prüfung unverändert; fremde Felder entfallen, kaputte Datensätze werden verworfen', () => {
+    const s = sample();
+    expect(normalizeSession(JSON.parse(JSON.stringify(s)))).toEqual(s);
+    expect(normalizeSession({ ...s, fremd: 1, details: { x: 'text', y: 2 } })).toMatchObject({ details: { y: 2 } });
+    expect(normalizeSession({ ...s, endReason: 'seltsam' })?.endReason).toBe('interrupted');
+    expect(normalizeSession({ ...s, gameId: 'digger' })).toBeNull();
+    expect(normalizeSession(null)).toBeNull();
+    // Datensatz des früheren Spiels (Level, Sterne, ohne gameId) wird verworfen
+    expect(normalizeSession({ id: 's1', date: '2026-10-05', activeMs: 5, attempts: [], levelsPlayed: 3 })).toBeNull();
   });
   it('CSV: Kopf, eine Zeile je Session, Semikolon, Dezimalkomma, BOM', () => {
     const csv = sessionsToCsv([sample()]);
@@ -150,10 +63,12 @@ describe('Session-Log und CSV', () => {
     expect(row).toHaveLength(CSV_COLUMNS.length);
     const col = (name: string) => row[head.indexOf(name)];
     expect(col('Datum')).toBe('2026-10-05');
-    expect(col('Aktive Spielzeit (min)')).toBe('2,3');
-    expect(col('Erfolgsrate (%)')).toBe('50');
-    expect(col('Kontrastverlauf')).toBe('20,0 > 22,0');
-    expect(col('Suppressionskontrollen')).toBe('star:star circle:-');
+    expect(col('Spiel')).toBe('Nachzeichnen');
+    expect(col('Aktive Spielzeit (min)')).toBe('2,7');
+    expect(col('Punkte')).toBe('1');
+    expect(col('Fehler')).toBe('2');
+    expect(col('Farbwechsel')).toBe('9');
+    expect(col('Spielwerte')).toBe('accuracy=93,5 avgDeviation=4,2 paths=1');
     expect(col('Amblyopes Auge')).toBe('links');
   });
   it('CSV-Zellen maskiert (Trennzeichen, Anführungszeichen, Formeln)', () => {
@@ -163,11 +78,11 @@ describe('Session-Log und CSV', () => {
     expect(deNum(24.25, 1)).toBe('24,3');
     expect(deNum(null)).toBe('');
   });
-  it('Trainingszeit pro Tag', () => {
+  it('Spielzeit pro Tag', () => {
     const a = sample();
     const b = { ...sample(), id: 'b', date: '2026-10-06', activeMs: 600000 };
     expect(minutesPerDay([b, a, a])).toEqual([
-      { date: '2026-10-05', minutes: 4.5 },
+      { date: '2026-10-05', minutes: 5.3 },
       { date: '2026-10-06', minutes: 10 },
     ]);
   });
@@ -192,13 +107,18 @@ describe('Therapeuten-PIN', () => {
 });
 
 describe('Einstellungen: Export/Import und Speicher', () => {
-  it('Rundreise Export → Import ergibt dieselben Einstellungen und Kalibrierung', () => {
-    const settings = { ...DEFAULT_SETTINGS, patientId: 'P-12', age: 9, amblyopicEye: 'RIGHT' as const, leftLens: 'OTHER' as const, fellowEyeContrast: 33.3, contrastMode: 'LINEAR' as const, adaptiveContrast: false, sessionMinutes: 20, difficulty: 'MEDIUM' as const };
+  it('Rundreise Export → Import ergibt dieselben Einstellungen, Spieleinstellungen und Kalibrierung', () => {
+    const settings = { ...DEFAULT_SETTINGS, patientId: 'P-12', age: 9, amblyopicEye: 'RIGHT' as const, leftLens: 'OTHER' as const, fellowEyeContrast: 33.3 };
+    const games = defaultGameSettings();
+    games.nachzeichnen.pathWidth = 24;
+    games.nachzeichnen.changeMode = 'FADE';
+    games.pong.twoPlayer = true;
     const calibration = { ...DEFAULT_CALIBRATION, completedAt: '2026-10-05T10:00:00.000Z' };
-    const r = importSettings(exportSettings({ settings, calibration, profiles: normalizeProfiles([]), activeProfileId: 'start-red-green' }));
+    const r = importSettings(exportSettings({ settings, games, calibration, profiles: normalizeProfiles([]), activeProfileId: 'start-red-green' }));
     expect(r.ok).toBe(true);
     if (!r.ok) return;
     expect(r.settings).toEqual(settings);
+    expect(r.games).toEqual(games);
     expect(r.calibration).toEqual(calibration);
     expect(r.activeProfileId).toBe('start-red-green');
   });
@@ -206,38 +126,69 @@ describe('Einstellungen: Export/Import und Speicher', () => {
     expect(importSettings('{kaputt')).toEqual({ ok: false, error: 'json' });
     expect(importSettings('{"format":"anders"}')).toEqual({ ok: false, error: 'format' });
     expect(importSettings('{"format":"binokular-einstellungen","version":9}')).toEqual({ ok: false, error: 'version' });
-    const r = importSettings(JSON.stringify({ format: 'binokular-einstellungen', version: 1, settings: { amblyopicContrast: 180, fellowEyeContrast: -3, amblyopicEye: 'MITTE', sessionMinutes: 1000, patientId: '<b>Max</b>' } }));
+    const r = importSettings(
+      JSON.stringify({
+        format: 'binokular-einstellungen',
+        version: 2,
+        settings: { amblyopicContrast: 180, fellowEyeContrast: -3, amblyopicEye: 'MITTE', patientId: '<b>Max</b>', sessionMinutes: 1000 },
+        games: { nachzeichnen: { pathWidth: 999, intervalS: 0, changeMode: 'x', errorLimit: -4 }, pong: { gain: 99, ballRadius: 1, targetScore: 'viele', twoPlayer: 'ja' } },
+      }),
+    );
     expect(r.ok).toBe(true);
     if (!r.ok) return;
     expect(r.settings.amblyopicContrast).toBe(100);
     expect(r.settings.fellowEyeContrast).toBe(0);
     expect(r.settings.amblyopicEye).toBe('LEFT');
-    expect(r.settings.sessionMinutes).toBe(90);
     expect(r.settings.patientId).toBe('bMaxb');
-    expect(exportSettings({ settings: DEFAULT_SETTINGS, calibration: DEFAULT_CALIBRATION, profiles: normalizeProfiles([]), activeProfileId: 'start-red-cyan' })).not.toContain('726');
+    expect(r.settings).not.toHaveProperty('sessionMinutes');
+    expect(r.games.nachzeichnen).toMatchObject({ pathWidth: 40, intervalS: 0.5, changeMode: 'HARD', errorLimit: 0 });
+    expect(r.games.pong).toMatchObject({ gain: 3, ballRadius: 12, targetScore: 7, twoPlayer: false });
+    expect(exportSettings({ settings: DEFAULT_SETTINGS, games: defaultGameSettings(), calibration: DEFAULT_CALIBRATION, profiles: normalizeProfiles([]), activeProfileId: 'start-red-cyan' })).not.toContain('726');
+  });
+  it('Datei ohne Spieleinstellungen (ältere Fassung): Standardwerte', () => {
+    const r = importSettings(JSON.stringify({ format: 'binokular-einstellungen', version: 1, settings: {} }));
+    expect(r.ok).toBe(true);
+    if (r.ok) expect(r.games).toEqual(defaultGameSettings());
   });
   it('Standardwerte laut Spezifikation', () => {
     expect(DEFAULT_SETTINGS.amblyopicContrast).toBe(100);
     expect(DEFAULT_SETTINGS.fellowEyeContrast).toBe(20);
-    expect(DEFAULT_SETTINGS.startFellowEyeContrast).toBe(20);
     expect(normalizeSettings(null)).toEqual(DEFAULT_SETTINGS);
+    expect(normalizeSettings({ fellowEyeContrast: 'viel' }).fellowEyeContrast).toBe(20);
   });
-  it('localStorage unter binokular:v1; unterbrochene Session wird beim Laden abgeschlossen', () => {
+  it('localStorage unter binokular:v1; Sessions und Spieleinstellungen bleiben erhalten', () => {
     const mem = new Map<string, string>();
     const kv: KeyValue = { getItem: (k) => mem.get(k) ?? null, setItem: (k, v) => void mem.set(k, v), removeItem: (k) => void mem.delete(k) };
     expect(STORAGE_KEY).toBe('binokular:v1');
     const st = defaultStore();
-    const rec = new SessionRecorder({ patientId: '', amblyopicContrast: 100, fellowEyeContrast: 20, amblyopicEye: 'LEFT', glasses: 'RED_CYAN', leftLens: 'RED', plannedMinutes: 30 }, () => 1000);
-    st.activeSession = rec.snapshot();
+    const rec = new SessionRecorder({ gameId: 'pong', patientId: '', amblyopicContrast: 100, fellowEyeContrast: 20, amblyopicEye: 'LEFT', glasses: 'RED_CYAN', leftLens: 'RED' }, () => 1000);
+    st.sessions.push(rec.finish('score', { points: 7, errors: 3, colorChanges: 40, details: { opponent: 3 }, completed: true }));
+    st.games.pong.targetScore = 11;
     st.pin = '4711';
     expect(saveStore(st, kv)).toBe(true);
     const loaded = loadStore(kv);
-    expect(loaded.activeSession).toBeNull();
     expect(loaded.sessions).toHaveLength(1);
-    expect(loaded.sessions[0].endReason).toBe('interrupted');
+    expect(loaded.sessions[0].endReason).toBe('score');
+    expect(loaded.games.pong.targetScore).toBe(11);
     expect(loaded.pin).toBe('4711');
     expect(normalizeStore({ pin: 'abc', sessions: [{ kaputt: true }] })).toMatchObject({ pin: '726', sessions: [] });
     mem.set(STORAGE_KEY, '{nicht json');
     expect(loadStore(kv)).toEqual(defaultStore());
+  });
+  it('App startet ohne gespeicherte Daten und ohne Speicher (try/catch)', () => {
+    const none: KeyValue = { getItem: () => null, setItem: () => undefined, removeItem: () => undefined };
+    expect(loadStore(none)).toEqual(defaultStore());
+    const broken: KeyValue = {
+      getItem: () => {
+        throw new Error('gesperrt');
+      },
+      setItem: () => {
+        throw new Error('voll');
+      },
+      removeItem: () => undefined,
+    };
+    expect(loadStore(broken)).toEqual(defaultStore());
+    expect(saveStore(defaultStore(), broken)).toBe(false);
+    expect(loadStore(null)).toEqual(defaultStore());
   });
 });

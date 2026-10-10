@@ -12,11 +12,11 @@ import { computeColors, evaluateGlass, FIELDS, isOverexposed, rateCrosstalk, RED
 import { cleanProfileName, exportProfiles, findProfile, importProfiles, isStartProfile, makeProfile, mergeProfiles, paletteOf, startProfileFor, type ColorProfile } from '../calibration/profiles';
 import { paletteFromTuning, tuningFromPalette, TUNING_RANGE, type Tuning } from '../calibration/tuning';
 import type { Settings } from '../data/settings';
-import { Engine } from '../game/engine';
-import { level01 } from '../levels/level01';
+import { makeRng } from '../games/common';
+import { buildPath, FIELD_H, FIELD_W } from '../games/nachzeichnen/path';
 import { t } from '../texts';
 import { filterOf, fullColorOf, NEUTRAL_LEVEL, rgbCss, secondFilter, toHex, type Glasses, type Palette, type RGB, type VisionSettings } from '../vision/color';
-import { fitLayout, renderScene } from '../vision/renderer';
+import { renderItems, type Item } from '../vision/renderer';
 import { Choice, de, download, Screen } from './common';
 import { ProfileSwatch } from './ProfilePicker';
 
@@ -312,10 +312,20 @@ function PhotoPanel({ id, title, photo, onPhoto, sym }: { id: string; title: str
   );
 }
 
-/** Vorschau der Feinabstimmung: rotes Quadrat, Kreis in Zweitfarbe, daneben ein Ausschnitt aus Level 1 */
+/** Vorschau der Feinabstimmung: rotes Quadrat, Kreis in Zweitfarbe, daneben ein Pfad wie im Spiel „Nachzeichnen“ */
 function FinePreview({ vis }: { vis: VisionSettings }) {
   const ref = useRef<HTMLCanvasElement>(null);
-  const scene = useMemo(() => new Engine(level01).scene(), []);
+  const items = useMemo((): Item[] => {
+    const path = buildPath(makeRng(11), { points: 6, spread: 0.7 });
+    const cut = Math.floor(path.pts.length / 2);
+    return [
+      { shape: { t: 'poly', pts: path.pts.slice(0, cut + 1), w: 16 }, eye: 'AMBLYOPIC', k: 1 },
+      { shape: { t: 'poly', pts: path.pts.slice(cut), w: 16 }, eye: 'FELLOW', k: 1 },
+      { shape: { t: 'poly', pts: path.pts.slice(0, Math.floor(cut * 0.7)), w: 6 }, eye: 'BOTH', k: 1, layer: 1 },
+      { shape: { t: 'disc', x: path.start.x, y: path.start.y, r: 13 }, eye: 'BOTH', k: 1, layer: 1 },
+      { shape: { t: 'ring', x: path.goal.x, y: path.goal.y, r: 26, w: 7 }, eye: 'BOTH', k: 1, layer: 1 },
+    ];
+  }, []);
   useEffect(() => {
     const cv = ref.current;
     if (!cv) return;
@@ -343,15 +353,17 @@ function FinePreview({ vis }: { vis: VisionSettings }) {
       g.textAlign = 'center';
       g.fillText(t.calPreviewRed, left * 0.28, h * 0.45 + r + 20);
       g.fillText(t.calPreviewSecond, left * 0.72, h * 0.45 + r + 20);
-      // Ausschnitt aus einem echten Spielfeld (Kristalle in grauer Erde, Plattform, Schalter)
+      // Ausschnitt wie im Spiel „Nachzeichnen“ (Pfad in beiden Farben, graue Linie, Start und Ziel)
       g.save();
       g.beginPath();
       g.rect(left, 0, w - left, h);
       g.clip();
       g.translate(left, 0);
-      const l = fitLayout(scene.cols, scene.rows, w - left, h, { x: 12, y: 3 });
-      renderScene(g, scene, vis, l, { view: 'BINOCULAR' });
+      const sc = Math.min((w - left) / FIELD_W, h / FIELD_H);
+      g.setTransform(dpr * sc, 0, 0, dpr * sc, dpr * (left + (w - left - FIELD_W * sc) / 2), dpr * ((h - FIELD_H * sc) / 2));
+      renderItems(g, items, vis, { view: 'BINOCULAR' });
       g.restore();
+      g.setTransform(dpr, 0, 0, dpr, 0, 0);
       g.strokeStyle = '#333';
       g.lineWidth = 1;
       g.beginPath();

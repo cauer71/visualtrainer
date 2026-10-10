@@ -2,8 +2,6 @@ import { describe, expect, it } from 'vitest';
 import { adviceFor, checkShows, EMPTY_RESULTS, isComplete, normalizeCalibration } from '../../src/binokular/calibration/calibration';
 import { paletteOf, START_PROFILES, startProfileFor } from '../../src/binokular/calibration/profiles';
 import { visionOf, DEFAULT_SETTINGS } from '../../src/binokular/data/settings';
-import { Engine } from '../../src/binokular/game/engine';
-import { level01 } from '../../src/binokular/levels/level01';
 import {
   colorKind,
   deltaOf,
@@ -24,7 +22,7 @@ import {
   type RGB,
   type VisionSettings,
 } from '../../src/binokular/vision/color';
-import { cellAt, fitLayout } from '../../src/binokular/vision/renderer';
+import { itemColor, renderItems, shapeBounds, type Item } from '../../src/binokular/vision/renderer';
 
 const RC = paletteOf(startProfileFor('RED_CYAN'));
 const RG = paletteOf(startProfileFor('RED_GREEN'));
@@ -190,19 +188,6 @@ describe('sRGB, Hex und Prüfung', () => {
   });
 });
 
-describe('Spiellogik kennt keine Farben', () => {
-  it('Szene enthält nur eyeVisibility/contrast, alle drei Klassen kommen vor', () => {
-    const scene = new Engine(level01).scene();
-    const classes = new Set(scene.objects.map((o) => o.eyeVisibility));
-    expect([...classes].sort()).toEqual(['AMBLYOPIC', 'BOTH', 'FELLOW']);
-    for (const o of scene.objects) {
-      expect(o.contrast).toBeGreaterThanOrEqual(0);
-      expect(o.contrast).toBeLessThanOrEqual(1);
-      expect(JSON.stringify(o)).not.toMatch(/\brgb\(|"#[0-9a-f]{3,6}"|\bred\b|\bcyan\b|\bgreen\b/i);
-    }
-  });
-});
-
 describe('Kontrolle der Zuordnung', () => {
   it('Schritte: linkes Auge, rechtes Auge, gemeinsames Objekt', () => {
     expect(checkShows('leftEye')).toBe('LEFT');
@@ -228,13 +213,102 @@ describe('Kontrolle der Zuordnung', () => {
   });
 });
 
-describe('Layout und Treffer', () => {
-  it('Raster zentriert, Feld unter dem Zeiger', () => {
-    const l = fitLayout(16, 7, 1180, 760);
-    expect(l.cell).toBe(73);
-    expect(cellAt(l, 16, 7, l.ox + 3.5 * l.cell, l.oy + 1.5 * l.cell)).toEqual({ x: 3, y: 1 });
-    expect(cellAt(l, 16, 7, 1, 1)).toBeNull();
-    // Handy quer: Felder bleiben groß genug zum Antippen
-    expect(fitLayout(16, 7, 844, 340).cell).toBeGreaterThanOrEqual(48);
+describe('Renderer: Zeichenobjekte und Farben', () => {
+  /** Attrappe eines 2D-Kontexts: protokolliert Füllfarben und Zeichenoperationen */
+  function fakeCtx() {
+    const log: { op: string; style: string; comp: string }[] = [];
+    const g = {
+      canvas: { width: 100, height: 100 },
+      fillStyle: '',
+      strokeStyle: '',
+      lineWidth: 1,
+      lineJoin: '',
+      lineCap: '',
+      globalAlpha: 1,
+      globalCompositeOperation: 'source-over',
+      font: '',
+      textAlign: '',
+      textBaseline: '',
+      save() {},
+      restore() {},
+      beginPath() {},
+      moveTo() {},
+      lineTo() {},
+      arc() {},
+      closePath() {},
+      setLineDash() {},
+      getTransform: () => ({ a: 1, b: 0, c: 0, d: 1, e: 0, f: 0 }),
+      setTransform() {},
+      clearRect() {},
+      drawImage() {},
+      fillRect() {
+        log.push({ op: 'fillRect', style: String(g.fillStyle), comp: g.globalCompositeOperation });
+      },
+      strokeRect() {
+        log.push({ op: 'strokeRect', style: String(g.strokeStyle), comp: g.globalCompositeOperation });
+      },
+      fill() {
+        log.push({ op: 'fill', style: String(g.fillStyle), comp: g.globalCompositeOperation });
+      },
+      stroke() {
+        log.push({ op: 'stroke', style: String(g.strokeStyle), comp: g.globalCompositeOperation });
+      },
+      fillText() {
+        log.push({ op: 'fillText', style: String(g.fillStyle), comp: g.globalCompositeOperation });
+      },
+    };
+    return { g: g as unknown as CanvasRenderingContext2D, log };
+  }
+  const css = (c: RGB) => `rgb(${c.r},${c.g},${c.b})`;
+  const items: Item[] = [
+    { shape: { t: 'poly', pts: [{ x: 1, y: 1 }, { x: 50, y: 20 }], w: 16 }, eye: 'AMBLYOPIC', k: 1 },
+    { shape: { t: 'disc', x: 20, y: 20, r: 12 }, eye: 'FELLOW', k: 1, layer: 1 },
+    { shape: { t: 'frame', x: 0, y: 0, w: 100, h: 100, lw: 10 }, eye: 'BOTH', k: 0.8, layer: 9 },
+  ];
+  it('Hintergrund = Profilhintergrund (ganze Fläche), nie fest codiert', () => {
+    for (const palette of [RC, RG]) {
+      const { g, log } = fakeCtx();
+      renderItems(g, [], { ...base, palette }, { view: 'BINOCULAR' });
+      expect(log[0]).toEqual({ op: 'fillRect', style: css(palette.background), comp: 'source-over' });
+    }
+  });
+  it('Augenobjekte nur als Abweichung vom Hintergrund (difference/lighter), Rückmeldung grau', () => {
+    const { g, log } = fakeCtx();
+    renderItems(g, items, base, { view: 'BINOCULAR' });
+    // BOTH-Rahmen: grau (R = G = B) und deckend
+    const frame = log.find((l) => l.op === 'strokeRect');
+    expect(frame).toBeDefined();
+    const m = /rgb\((\d+),(\d+),(\d+)\)/.exec(frame!.style)!;
+    expect(m[1]).toBe(m[2]);
+    expect(m[2]).toBe(m[3]);
+    expect(Number(m[1])).toBeLessThanOrEqual(NEUTRAL_LEVEL);
+    expect(frame!.comp).toBe('source-over');
+    // Augenobjekte nur mit difference/lighter, nie deckend
+    const eyeOps = log.filter((l) => l.op === 'stroke' || l.op === 'fill').filter((l) => l.comp !== 'source-over');
+    expect(eyeOps.length).toBeGreaterThan(0);
+    for (const l of eyeOps) expect(['difference', 'lighter']).toContain(l.comp);
+  });
+  it('Objektfarben stammen aus dem Profil: amblyop rot, dominant Zweitfarbe, beide grau', () => {
+    expect(itemColor(items[0], base)).toEqual(resolveColor('AMBLYOPIC', 1, base));
+    expect(itemColor(items[0], { ...base, amblyopicContrast: 100 })).toEqual(RC.red);
+    expect(itemColor({ ...items[1], k: 1 }, { ...base, fellowEyeContrast: 100 })).toEqual(RC.second);
+    const grey = itemColor(items[2], base);
+    expect(grey.r === grey.g && grey.g === grey.b).toBe(true);
+  });
+  it('Debug-Ansichten blenden die Klassen aus', () => {
+    const count = (view: 'AMBLYOPIC_ONLY' | 'FELLOW_ONLY') => {
+      const { g, log } = fakeCtx();
+      renderItems(g, items, base, { view });
+      return log.filter((l) => l.comp !== 'source-over').length;
+    };
+    expect(count('AMBLYOPIC_ONLY')).toBeGreaterThan(0);
+    expect(count('FELLOW_ONLY')).toBeGreaterThan(0);
+  });
+  it('Zweitfarbe: Linien mindestens 4 px; Begrenzungsrahmen enthält die Form', () => {
+    const b = shapeBounds({ t: 'disc', x: 10, y: 10, r: 5 });
+    expect(b.x0).toBeLessThan(5);
+    expect(b.x1).toBeGreaterThan(15);
+    expect(isSecondColor('FELLOW', base)).toBe(true);
+    expect(isSecondColor('AMBLYOPIC', base)).toBe(false);
   });
 });

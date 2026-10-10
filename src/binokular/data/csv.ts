@@ -1,48 +1,33 @@
 /**
  * CSV-Export der Sessions: eine Zeile je Session, Trennzeichen Semikolon, Dezimalkomma (deutsches Excel),
- * UTF-8 mit BOM. Listen (Kontrastverlauf, Kontrollen, Reaktionszeiten, Pausen) stehen kompakt in einer Zelle.
+ * UTF-8 mit BOM. Spielspezifische Werte stehen kompakt in einer Zelle („schluessel=wert“).
  */
-import type { LevelAttempt, SessionRecord } from '../therapy/session';
+import type { SessionRecord } from '../therapy/session';
 
 export const CSV_COLUMNS = [
   'Session-ID',
   'Patient-ID',
+  'Spiel',
   'Datum',
   'Startzeit',
   'Dauer (min)',
   'Aktive Spielzeit (min)',
   'Pausenzeit (min)',
   'Pausen',
-  'Level gespielt',
-  'Level abgeschlossen',
-  'Höchstes Level',
-  'Sterne',
-  'Erfolgsrate (%)',
-  'Fehler (Fehlversuche)',
+  'Punkte',
+  'Fehler',
+  'Farbwechsel',
+  'Spiel beendet (Ziel erreicht)',
+  'Spielwerte',
   'Kontrast amblyopes Auge (%)',
-  'Kontrast dominantes Auge Start (%)',
-  'Kontrast dominantes Auge Ende (%)',
-  'Kontrastverlauf',
-  'Suppressionskontrollen',
-  'Kontrollen richtig (%)',
-  'Protokollhinweis',
-  'Reaktionszeiten (ms)',
-  'Mittlere Reaktionszeit (ms)',
+  'Kontrast dominantes Auge (%)',
   'Amblyopes Auge',
   'Brille',
   'Filter links',
-  'Geplante Dauer (min)',
   'Ende',
-  'Level-Details',
 ] as const;
 
-const RESULT_DE: Record<LevelAttempt['result'], string> = { completed: 'geschafft', timeout: 'Zeit um', restarted: 'neu gestartet', aborted: 'abgebrochen' };
-
-/** ein Levelversuch kompakt: „L2 geschafft, 3 Sterne, 0 Fehler, 95 s“ */
-export function attemptText(a: LevelAttempt): string {
-  return `L${a.levelNumber} ${RESULT_DE[a.result] ?? a.result}, ${a.stars} Sterne, ${a.failures} Fehler, ${Math.round(a.activeMs / 1000)} s`;
-}
-
+const GAME_DE: Record<string, string> = { nachzeichnen: 'Nachzeichnen', pong: 'Farbwechsel-Pong' };
 const SEP = ';';
 
 /** Zahl mit Dezimalkomma */
@@ -59,39 +44,36 @@ export function csvCell(v: string): string {
 }
 
 const min = (ms: number) => deNum(ms / 60000, 1);
-const pct = (x: number | null) => (x === null ? '' : deNum(x * 100, 0));
+
+/** spielspezifische Werte kompakt: „accuracy=93,5 paths=1“ */
+export function detailsText(d: Record<string, number>): string {
+  return Object.entries(d)
+    .map(([k, v]) => `${k}=${Number.isInteger(v) ? String(v) : deNum(v, 1)}`)
+    .join(' ');
+}
 
 export function sessionRow(s: SessionRecord): string[] {
   return [
     s.id,
     s.patientId,
+    GAME_DE[s.gameId] ?? s.gameId,
     s.date,
     s.startTime,
     min(s.durationMs),
     min(s.activeMs),
     min(s.pauseMs),
-    String(s.pauses.length),
-    String(s.levelsPlayed),
-    String(s.levelsCompleted),
-    String(s.highestLevel),
-    String(s.stars),
-    pct(s.successRate),
+    String(s.pauses),
+    String(s.points),
     String(s.errors),
+    String(s.colorChanges),
+    s.completed ? 'ja' : 'nein',
+    detailsText(s.details),
     deNum(s.amblyopicContrast),
-    deNum(s.fellowContrastStart),
-    deNum(s.fellowContrastEnd),
-    s.contrastHistory.map((p) => deNum(p.value)).join(' > '),
-    s.suppressionChecks.map((c) => `${c.shape}:${c.answer ?? '-'}`).join(' '),
-    pct(s.suppressionAccuracy),
-    s.suppressionNote,
-    s.reactionTimesMs.join(' '),
-    s.meanReactionMs === null ? '' : String(s.meanReactionMs),
+    deNum(s.fellowEyeContrast),
     s.amblyopicEye === 'LEFT' ? 'links' : 'rechts',
     s.glasses === 'RED_CYAN' ? 'Rot/Cyan' : 'Rot/Grün',
     s.leftLens === 'RED' ? 'Rot' : s.glasses === 'RED_CYAN' ? 'Cyan' : 'Grün',
-    String(s.plannedMinutes),
     s.endReason,
-    s.attempts.map(attemptText).join(' | '),
   ];
 }
 

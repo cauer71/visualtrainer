@@ -11,7 +11,7 @@ export default defineConfig({
     sourcemap: false,
     assetsInlineLimit: 8192,
     // zweite Seite: VR-Labor (/vr/) – three.js wird nur dort geladen;
-    // dritte Seite: Prototyp „Binocular Mine“ (/binokular/), unabhängig von der Haupt-App
+    // dritte Seite: Prototyp „Binokular – Sehspiele“ (/binokular/), unabhängig von der Haupt-App
     rollupOptions: {
       input: {
         main: 'index.html',

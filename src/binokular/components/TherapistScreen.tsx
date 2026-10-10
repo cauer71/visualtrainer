@@ -2,10 +2,8 @@
 import { useState } from 'preact/hooks';
 import type { Volume } from '../audio';
 import { sessionsToCsv } from '../data/csv';
-import { chooseLevel, defaultProgress, unlockAll } from '../data/progress';
 import { cleanPatientId, type Settings } from '../data/settings';
-import { LEVELS } from '../levels';
-import { activeProfile, type Store } from '../data/storage';
+import { activeProfile, defaultGameSettings, type GameSettingsMap, type Store } from '../data/storage';
 import { mergeProfiles } from '../calibration/profiles';
 import { secondFilter } from '../vision/color';
 import { ProfilePicker } from './ProfilePicker';
@@ -13,6 +11,8 @@ import { exportSettings, importSettings } from '../data/transfer';
 import { changePin, checkPin } from '../therapy/pin';
 import { t } from '../texts';
 import { Choice, download, NumberField, SafetyNotice, Screen, Toggle } from './common';
+import { normalizeNach, type NachSettings } from '../games/nachzeichnen/settings';
+import { normalizePong, type PongSettings } from '../games/pong/settings';
 
 type Props = {
   store: Store;
@@ -31,6 +31,10 @@ export function TherapistScreen({ store, update, onBack, onHistory }: Props) {
   const s = store.settings;
   const set = (patch: Partial<Settings>) => {
     update((st) => ({ ...st, settings: { ...st.settings, ...patch } }));
+    setNote(t.saved);
+  };
+  const setGame = (patch: Partial<GameSettingsMap>) => {
+    update((st) => ({ ...st, games: { ...st.games, ...patch } }));
     setNote(t.saved);
   };
   const profile = activeProfile(store);
@@ -145,61 +149,16 @@ export function TherapistScreen({ store, update, onBack, onHistory }: Props) {
           <h2>{t.secContrast}</h2>
           <NumberField id="f-ac" label={t.amblyopicContrast} value={s.amblyopicContrast} min={0} max={100} step={0.1} onChange={(v) => set({ amblyopicContrast: v })} />
           <NumberField id="f-fc" label={t.fellowEyeContrast} value={s.fellowEyeContrast} min={0} max={100} step={0.1} onChange={(v) => set({ fellowEyeContrast: v })} />
-          <NumberField id="f-sfc" label={t.startFellowEyeContrast} value={s.startFellowEyeContrast} min={0} max={100} step={0.1} onChange={(v) => set({ startFellowEyeContrast: v })} />
-          <Toggle id="f-adaptive" label={t.adaptiveContrast} checked={s.adaptiveContrast} onChange={(v) => set({ adaptiveContrast: v })} />
-          <Choice
-            name="t-mode"
-            label={t.contrastMode}
-            value={s.contrastMode}
-            options={(['PERCENTUAL', 'LINEAR', 'MANUAL'] as const).map((m) => ({ value: m, label: t.modes[m] }))}
-            onChange={(v) => set({ contrastMode: v })}
-          />
-          <p class="bm-muted">{t.adaptiveHint}</p>
-        </section>
-        <section class="bm-card">
-          <h2>{t.secSession}</h2>
-          <NumberField id="f-sm" label={t.sessionMinutes} value={s.sessionMinutes} min={5} max={90} onChange={(v) => set({ sessionMinutes: Math.round(v) })} />
-          <NumberField id="f-lm" label={t.maxLevelMinutes} value={s.maxLevelMinutes} min={2} max={15} onChange={(v) => set({ maxLevelMinutes: Math.round(v) })} />
-          <NumberField id="f-os" label={t.objectSize} value={s.objectSizePercent} min={50} max={150} step={5} onChange={(v) => set({ objectSizePercent: Math.round(v / 5) * 5 })} />
-          <Choice
-            name="t-diff"
-            label={t.difficulty}
-            value={s.difficulty}
-            options={(['EASY', 'MEDIUM', 'HARD'] as const).map((d) => ({ value: d, label: t.difficulties[d] }))}
-            onChange={(v) => set({ difficulty: v })}
-          />
-          <p class="bm-muted">{t.difficultyHint}</p>
-          <Toggle id="f-pause" label={t.pauseOffer} checked={s.pauseOffer} onChange={(v) => set({ pauseOffer: v })} />
-          <Toggle id="f-supp" label={t.suppressionChecks} checked={s.suppressionChecks} onChange={(v) => set({ suppressionChecks: v })} />
-          <Toggle id="f-red" label={t.reduceFellow} checked={s.reduceFellowOnSuppression} onChange={(v) => set({ reduceFellowOnSuppression: v })} />
+          <p class="bm-muted">{t.contrastHint}</p>
           <Toggle id="f-debug" label={t.debugMode} checked={s.debugMode} onChange={(v) => set({ debugMode: v })} />
         </section>
-        <section class="bm-card">
-          <h2>{t.secLevels}</h2>
-          <p class="bm-muted" id="unlocked-info">
-            {store.progress.unlocked >= LEVELS.length ? t.allUnlocked : t.unlockedInfo(store.progress.unlocked, LEVELS.length)}
-          </p>
-          <Choice
-            name="t-start-level"
-            label={t.startLevel}
-            value={String(store.progress.level)}
-            options={LEVELS.map((lv) => ({ value: String(lv.number), label: String(lv.number) }))}
-            onChange={(v) => {
-              update((st) => ({ ...st, progress: chooseLevel(st.progress, Number(v), LEVELS.length, true) }));
-              setNote(t.saved);
-            }}
-          />
-          <button
-            class="bm-btn"
-            id="bm-unlock-all"
-            disabled={store.progress.unlocked >= LEVELS.length}
-            onClick={() => {
-              update((st) => ({ ...st, progress: unlockAll(st.progress, LEVELS.length) }));
-              setNote(t.allUnlocked);
-            }}
-          >
-            {t.unlockAll}
-          </button>
+        <section class="bm-card" id="sec-nach">
+          <h2>{t.secGameNach}</h2>
+          <NachForm value={store.games.nachzeichnen} onChange={(v) => setGame({ nachzeichnen: v })} />
+        </section>
+        <section class="bm-card" id="sec-pong">
+          <h2>{t.secGamePong}</h2>
+          <PongForm value={store.games.pong} onChange={(v) => setGame({ pong: v })} />
         </section>
         <section class="bm-card">
           <h2>{t.secSound}</h2>
@@ -231,7 +190,7 @@ export function TherapistScreen({ store, update, onBack, onHistory }: Props) {
             <button class="bm-btn" id="bm-export-csv" onClick={() => download(`binokular-sessions-${new Date().toISOString().slice(0, 10)}.csv`, sessionsToCsv(store.sessions), 'text/csv;charset=utf-8')}>
               {t.exportCsv}
             </button>
-            <button class="bm-btn" id="bm-export-json" onClick={() => download('binokular-einstellungen.json', exportSettings({ settings: store.settings, calibration: store.calibration, profiles: store.profiles, activeProfileId: store.activeProfileId }), 'application/json')}>
+            <button class="bm-btn" id="bm-export-json" onClick={() => download('binokular-einstellungen.json', exportSettings({ settings: store.settings, games: store.games, calibration: store.calibration, profiles: store.profiles, activeProfileId: store.activeProfileId }), 'application/json')}>
               {t.exportJson}
             </button>
             <label class="bm-btn bm-file">
@@ -252,7 +211,7 @@ export function TherapistScreen({ store, update, onBack, onHistory }: Props) {
                   }
                   update((st) => {
                     const profiles = mergeProfiles(st.profiles, r.profiles);
-                    return { ...st, settings: r.settings, calibration: r.calibration, profiles, activeProfileId: profiles.some((x) => x.id === r.activeProfileId) ? r.activeProfileId : st.activeProfileId };
+                    return { ...st, settings: r.settings, games: r.games, calibration: r.calibration, profiles, activeProfileId: profiles.some((x) => x.id === r.activeProfileId) ? r.activeProfileId : st.activeProfileId };
                   });
                   setNote(t.imported);
                 }}
@@ -266,9 +225,6 @@ export function TherapistScreen({ store, update, onBack, onHistory }: Props) {
                 update((st) => ({
                   ...st,
                   sessions: [],
-                  activeSession: null,
-                  settings: { ...st.settings, fellowEyeContrast: st.settings.startFellowEyeContrast },
-                  progress: defaultProgress(),
                 }));
                 setNote(t.resetDone);
               }}
@@ -309,5 +265,49 @@ export function TherapistScreen({ store, update, onBack, onHistory }: Props) {
         </section>
       </div>
     </Screen>
+  );
+}
+
+function NachForm({ value: v, onChange }: { value: NachSettings; onChange: (v: NachSettings) => void }) {
+  const set = (patch: Partial<NachSettings>) => onChange(normalizeNach({ ...v, ...patch }));
+  const n = t.nachSet;
+  return (
+    <>
+      <NumberField id="n-width" label={n.pathWidth} value={v.pathWidth} min={8} max={40} onChange={(x) => set({ pathWidth: x })} />
+      <NumberField id="n-points" label={n.curvePoints} value={v.curvePoints} min={4} max={10} onChange={(x) => set({ curvePoints: x })} />
+      <NumberField id="n-spread" label={n.curveSpread} value={v.curveSpread} min={20} max={100} step={5} onChange={(x) => set({ curveSpread: x })} />
+      <NumberField id="n-interval" label={n.intervalS} value={v.intervalS} min={0.5} max={6} step={0.1} onChange={(x) => set({ intervalS: x })} />
+      <NumberField id="n-distance" label={n.distancePx} value={v.distancePx} min={40} max={400} step={10} onChange={(x) => set({ distancePx: x })} />
+      <Toggle id="n-only" label={n.onlyDistance} checked={v.onlyDistance} onChange={(x) => set({ onlyDistance: x })} />
+      <Choice name="n-mode" label={n.changeMode} value={v.changeMode} options={(['HARD', 'FADE'] as const).map((m) => ({ value: m, label: n.modes[m] }))} onChange={(x) => set({ changeMode: x })} />
+      <NumberField id="n-fade" label={n.fadeS} value={v.fadeS} min={0.2} max={3} step={0.1} onChange={(x) => set({ fadeS: x })} />
+      <NumberField id="n-errdist" label={n.errorDist} value={v.errorDist} min={16} max={80} onChange={(x) => set({ errorDist: x })} />
+      <NumberField id="n-errlimit" label={n.errorLimit} value={v.errorLimit} min={0} max={20} onChange={(x) => set({ errorLimit: x })} />
+      <p class="bm-muted">{n.hint}</p>
+      <button class="bm-btn" id="n-defaults" onClick={() => onChange(defaultGameSettings().nachzeichnen)}>
+        {t.gameDefaults}
+      </button>
+    </>
+  );
+}
+
+function PongForm({ value: v, onChange }: { value: PongSettings; onChange: (v: PongSettings) => void }) {
+  const set = (patch: Partial<PongSettings>) => onChange(normalizePong({ ...v, ...patch }));
+  const n = t.pongSet;
+  return (
+    <>
+      <NumberField id="p-ball" label={n.ballRadius} value={v.ballRadius} min={12} max={40} onChange={(x) => set({ ballRadius: x })} />
+      <NumberField id="p-speed" label={n.startSpeed} value={v.startSpeed} min={300} max={900} step={10} onChange={(x) => set({ startSpeed: x })} />
+      <NumberField id="p-paddle" label={n.paddleWidth} value={v.paddleWidth} min={80} max={260} step={5} onChange={(x) => set({ paddleWidth: x })} />
+      <NumberField id="p-opp" label={n.opponent} value={v.opponent} min={1} max={5} onChange={(x) => set({ opponent: x })} />
+      <Toggle id="p-flight" label={n.flightChange} checked={v.flightChange} onChange={(x) => set({ flightChange: x })} />
+      <Toggle id="p-two" label={n.twoPlayer} checked={v.twoPlayer} onChange={(x) => set({ twoPlayer: x })} />
+      <NumberField id="p-gain" label={n.gain} value={v.gain} min={0.5} max={3} step={0.1} onChange={(x) => set({ gain: x })} />
+      <NumberField id="p-target" label={n.targetScore} value={v.targetScore} min={1} max={21} onChange={(x) => set({ targetScore: x })} />
+      <p class="bm-muted">{n.hint}</p>
+      <button class="bm-btn" id="p-defaults" onClick={() => onChange(defaultGameSettings().pong)}>
+        {t.gameDefaults}
+      </button>
+    </>
   );
 }
