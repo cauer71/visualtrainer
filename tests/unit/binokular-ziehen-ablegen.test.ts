@@ -9,6 +9,7 @@ import { sessionRow } from '../../src/binokular/data/csv';
 import { paletteOf, startProfileFor } from '../../src/binokular/calibration/profiles';
 import { normalizeSession } from '../../src/binokular/therapy/session';
 import {
+  GRAB_PAD,
   adapt,
   eyeClassesFor,
   FB_MS,
@@ -44,7 +45,7 @@ const vis = (p: Partial<VisionSettings> = {}): VisionSettings => ({
 /** Runde per Ziehen beenden: Ball genau in den Ring (hit) oder weit daneben (miss) */
 function play(c: ZaCore, hit: boolean): void {
   const f = { x: hit ? c.ring.x : c.ring.x + c.geo.R * 3, y: (hit ? c.ring.y : c.ring.y) + c.geo.offset };
-  c.pointerDown(f.x - 80, f.y);
+  c.pointerDown(c.rest.x, c.rest.y);
   c.step(300);
   c.pointerMove(f.x, f.y);
   c.pointerUp(f.x, f.y);
@@ -104,6 +105,38 @@ describe('Ziehen & Ablegen: Maße und Ring', () => {
   });
 });
 
+describe('Ziehen & Ablegen: Auswahl des kleinen Balls', () => {
+  it('Berührung neben dem Ball wählt nichts aus und startet kein Ziehen', () => {
+    const c = new ZaCore(cfg({ rounds: 0 }), makeRng(11));
+    const far = { x: c.rest.x + c.geo.ballR + GRAB_PAD + 20, y: c.rest.y };
+    expect(c.pointerDown(far.x, far.y).map((e) => e.type)).toEqual(['notball']);
+    expect(c.phase).toBe('wait');
+    expect(c.selected).toBe(false);
+    expect(c.pointerUp(far.x, far.y)).toEqual([]);
+    expect(c.rounds).toBe(0);
+  });
+
+  it('Greifzone um den Ball wählt aus; danach startet das Ziehen überall', () => {
+    const c = new ZaCore(cfg({ rounds: 0 }), makeRng(12));
+    const near = { x: c.rest.x + c.geo.ballR + GRAB_PAD - 2, y: c.rest.y };
+    expect(c.pointerDown(near.x, near.y).map((e) => e.type)).toEqual(['select', 'touch']);
+    expect(c.selected).toBe(true);
+    expect(c.pointerUp(near.x, near.y)).toEqual([]);
+    expect(c.selected).toBe(true);
+    expect(c.pointerDown(5, 5).map((e) => e.type)).toEqual(['touch']);
+    expect(c.phase).toBe('drag');
+  });
+
+  it('neue Runde: Auswahl zurückgesetzt; Tastatur wählt aus', () => {
+    const c = new ZaCore(cfg({ rounds: 0 }), makeRng(13));
+    c.keyMove(1, 0, 0.1);
+    expect(c.selected).toBe(true);
+    c.keyDrop();
+    next(c);
+    expect(c.selected).toBe(false);
+  });
+});
+
 describe('Ziehen & Ablegen: Treffer, Fehler, Zeit', () => {
   it('Treffertest: Ballmitte im Ring', () => {
     expect(hitTest({ x: 100, y: 100 }, { x: 110, y: 100 }, 20)).toBe(true);
@@ -114,7 +147,8 @@ describe('Ziehen & Ablegen: Treffer, Fehler, Zeit', () => {
     const c = new ZaCore(cfg({ rounds: 0 }), makeRng(1));
     const fx = c.ring.x;
     const fy = c.ring.y + c.geo.offset;
-    expect(c.pointerDown(fx - 100, fy)[0].type).toBe('touch');
+    expect(c.pointerDown(c.rest.x, c.rest.y).map((e) => e.type)).toEqual(['select', 'touch']);
+    expect(c.selected).toBe(true);
     c.step(250);
     c.pointerMove(fx, fy);
     expect(c.ball.x).toBeCloseTo(fx, 3);
@@ -130,10 +164,11 @@ describe('Ziehen & Ablegen: Treffer, Fehler, Zeit', () => {
 
   it('daneben = Fehler; nur Antippen zählt nicht', () => {
     const c = new ZaCore(cfg({ rounds: 0 }), makeRng(2));
-    c.pointerDown(300, 300);
-    expect(c.pointerUp(300, 300)).toEqual([]);
+    c.pointerDown(c.rest.x, c.rest.y);
+    expect(c.pointerUp(c.rest.x, c.rest.y)).toEqual([]);
     expect(c.phase).toBe('wait');
     expect(c.rounds).toBe(0);
+    expect(c.selected).toBe(true);
     play(c, false);
     expect(c.misses).toBe(1);
     expect(c.outcome).toBe('miss');
@@ -149,7 +184,7 @@ describe('Ziehen & Ablegen: Treffer, Fehler, Zeit', () => {
     expect(c.late).toBe(1);
     expect(c.misses).toBe(1);
     next(c);
-    c.pointerDown(100, 400);
+    c.pointerDown(c.rest.x, c.rest.y);
     c.step(c.geo.limitMs + 1);
     expect(c.outcome).toBe('late');
     expect(c.pointerUp(100, 400)).toEqual([]);
@@ -158,7 +193,7 @@ describe('Ziehen & Ablegen: Treffer, Fehler, Zeit', () => {
 
   it('Abbruch des Ziehens (Pause) lässt die Runde offen', () => {
     const c = new ZaCore(cfg({ rounds: 0 }), makeRng(5));
-    c.pointerDown(100, 400);
+    c.pointerDown(c.rest.x, c.rest.y);
     c.cancelDrag();
     expect(c.phase).toBe('wait');
   });

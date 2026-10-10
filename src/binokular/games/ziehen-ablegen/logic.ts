@@ -131,13 +131,16 @@ export function ballBounds(ballR: number): Bounds {
   return span(ballR + MARGIN, W - ballR - MARGIN, ballR + MARGIN, H - ballR - MARGIN);
 }
 
+/** Zusätzliche Greifzone um den kleinen Ball (px), damit er mit dem Finger sicher getroffen wird */
+export const GRAB_PAD = 36;
+
 export const hitTest = (ball: Pt, ring: Pt, R: number): boolean => inContainer(ball, ring, R);
 
 // --- Spielkern --------------------------------------------------------------------------------------
 
 export type Outcome = 'hit' | 'miss' | 'late';
 export type Phase = 'wait' | 'drag' | 'fb' | 'done';
-export type ZaEvent = { type: 'touch' } | { type: 'hit' } | { type: 'miss' } | { type: 'late' } | { type: 'swap' } | { type: 'end' };
+export type ZaEvent = { type: 'touch' } | { type: 'select' } | { type: 'notball' } | { type: 'hit' } | { type: 'miss' } | { type: 'late' } | { type: 'swap' } | { type: 'end' };
 
 export class ZaCore {
   level: number;
@@ -169,6 +172,8 @@ export class ZaCore {
   private dragStart: Pt = { x: 0, y: 0 };
   /** Tastatur wurde benutzt (Ablegen mit Leertaste erst danach) */
   private kbMoved = false;
+  /** Der kleine Ball wurde zuerst berührt (ausgewählt); erst danach kann er abgelegt werden */
+  selected = false;
 
   constructor(
     readonly cfg: ZaSettings,
@@ -215,6 +220,7 @@ export class ZaCore {
     this.fbMs = 0;
     this.dragMs = 0;
     this.kbMoved = false;
+    this.selected = false;
     this.nextTurnMs = 800;
   }
 
@@ -280,11 +286,14 @@ export class ZaCore {
 
   pointerDown(x: number, y: number): ZaEvent[] {
     if (this.phase !== 'wait') return [];
+    const first = !this.selected;
+    if (first && Math.hypot(x - this.rest.x, y - this.rest.y) > this.geo.ballR + GRAB_PAD) return [{ type: 'notball' }];
+    this.selected = true;
     this.phase = 'drag';
     this.finger = { x, y };
     this.dragStart = { x, y };
     this.dragMs = 0;
-    return [{ type: 'touch' }];
+    return first ? [{ type: 'select' }, { type: 'touch' }] : [{ type: 'touch' }];
   }
 
   pointerMove(x: number, y: number): void {
@@ -319,6 +328,7 @@ export class ZaCore {
     const r = this.geo.ballR;
     this.rest = { x: Math.min(W - r, Math.max(r, this.rest.x + dx * KEY_SPEED * dtS)), y: Math.min(H - r, Math.max(r, this.rest.y + dy * KEY_SPEED * dtS)) };
     this.kbMoved = true;
+    this.selected = true;
   }
 
   /** Tastatur: Ball ablegen (erst nach einer Bewegung mit den Pfeiltasten) */

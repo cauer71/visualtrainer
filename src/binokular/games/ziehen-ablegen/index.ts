@@ -3,8 +3,8 @@
  * Ring dem anderen – nur beide Augen zusammen erkennen, ob der Ball im Ring liegt. Rahmen, Level und Hinweise sind
  * grau. Logik: logic.ts (Spielkern ohne DOM). Farben nur über `vision/color.ts`, Feedback nur grau, Ton, Vibration.
  *
- * Steuerung: Touch/Stift und Maus (Taste gedrückt halten): irgendwo berühren → der Ball erscheint versetzt über dem
- * Finger (relative Steuerung, der Finger verdeckt ihn nie), in den Ring ziehen, loslassen. Tastatur: Pfeiltasten bewegen
+ * Steuerung: Touch/Stift und Maus (Taste gedrückt halten): zuerst den kleinen Ball berühren (er wird grau hervorgehoben =
+ * ausgewählt), dann hängt er versetzt über dem Finger (der Finger verdeckt ihn nie): in den Ring ziehen, loslassen. Tastatur: Pfeiltasten bewegen
  * den Ball, Leertaste/Eingabe legt ihn ab.
  */
 import { t } from '../../texts';
@@ -24,6 +24,7 @@ class ZaInstance implements GameInstance {
   private pointerId: number | null = null;
   private keys = { l: false, r: false, u: false, d: false };
   private flashAt = -1e9;
+  private notBallAt = -1e9;
   private done = false;
   private readonly onDown = (e: PointerEvent) => this.down(e);
   private readonly onMove = (e: PointerEvent) => this.move(e);
@@ -92,6 +93,10 @@ class ZaInstance implements GameInstance {
     const p = this.stage.toInternal(e.clientX, e.clientY);
     const ev = this.core.pointerDown(p.x, p.y);
     if (ev.length === 0) return;
+    if (ev[0].type === 'notball') {
+      this.notBallAt = performance.now();
+      return;
+    }
     this.pointerId = e.pointerId;
     capturePointer(this.canvas, e.pointerId);
     this.handle(ev);
@@ -149,7 +154,7 @@ class ZaInstance implements GameInstance {
 
   private handle(events: ZaEvent[]): void {
     for (const e of events) {
-      if (e.type === 'touch') this.ctx.play('select');
+      if (e.type === 'select') this.ctx.play('select');
       else if (e.type === 'hit') {
         this.flashAt = performance.now();
         this.ctx.play('hit');
@@ -180,6 +185,11 @@ class ZaInstance implements GameInstance {
     // Ball: gefüllte Scheibe im anderen Auge
     const b = c.ball;
     out.push({ shape: { t: 'disc', x: b.x, y: b.y, r: c.geo.ballR }, eye: cls.ball, k: 1, layer: 2 });
+    // Auswahl: grauer, pulsierender Ring um den Ball (für beide Augen sichtbar)
+    if (c.selected && c.phase !== 'fb') {
+      const pulse = 0.5 + 0.5 * Math.sin(now / 160);
+      out.push({ shape: { t: 'ring', x: b.x, y: b.y, r: c.geo.ballR + 12 + 4 * pulse, w: 5 }, eye: 'BOTH', k: 0.9, layer: 3 });
+    }
     const f = flashItem(now - this.flashAt, W, H);
     if (f) out.push(f);
     return out;
@@ -189,7 +199,8 @@ class ZaInstance implements GameInstance {
     const c = this.core;
     let message = '';
     if (c.phase === 'fb') message = c.outcome === 'hit' ? t.za.fbHit : c.outcome === 'late' ? t.za.fbLate : t.za.fbMiss;
-    else if (c.rounds === 0 && c.phase !== 'drag') message = `${t.za.hintStart} ${t.za.hintKeys}`;
+    else if (c.phase !== 'drag' && !c.selected && (c.rounds === 0 || performance.now() - this.notBallAt < 2500)) message = `${t.za.hintStart} ${t.za.hintKeys}`;
+    else if (c.phase === 'wait' && c.selected && c.rounds === 0) message = t.za.hintSelected;
     return {
       hud: [
         { id: 'level', label: t.za.hudLevel, value: String(c.phase === 'fb' ? c.roundLevelNow : c.level) },
@@ -214,6 +225,7 @@ class ZaInstance implements GameInstance {
       game: 'ziehen-ablegen',
       seed: this.seed,
       phase: c.phase,
+      selected: c.selected,
       outcome: c.outcome,
       ring: { x: c.ring.x, y: c.ring.y, R: c.geo.R, stroke: RING_STROKE },
       ball: { ...c.ball, r: c.geo.ballR },

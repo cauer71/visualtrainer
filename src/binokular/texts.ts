@@ -244,8 +244,9 @@ const de = {
     hudHits: 'Treffer',
     hudMisses: 'Fehler',
     hudRound: 'Runde',
-    hintStart: 'Bildschirm berühren: Der Ball erscheint über dem Finger. In den Ring ziehen und loslassen.',
-    hintKeys: 'Tasten: Pfeile bewegen den Ball, Leertaste oder Eingabe legt ihn ab.',
+    hintStart: 'Zuerst den kleinen Ball berühren – er wird hervorgehoben. Dann in den Ring ziehen und loslassen.',
+    hintSelected: 'Ball ausgewählt: jetzt in den Ring ziehen und loslassen.',
+    hintKeys: 'Tasten: Pfeile wählen und bewegen den Ball, Leertaste oder Eingabe legt ihn ab.',
     fbHit: 'Treffer',
     fbMiss: 'Daneben',
     fbLate: 'Zu spät',
@@ -384,7 +385,7 @@ const de = {
     speedScale: 'Tempo (%)',
     timeScale: 'Zeitfenster (%)',
     offset: 'Ball-Offset über dem Finger (px, 0 = automatisch)',
-    hint: 'Touch oder Maus: irgendwo berühren, der Ball erscheint über dem Finger; in den Ring ziehen und loslassen. Tasten: Pfeile bewegen den Ball, Leertaste oder Eingabe legt ihn ab. Das Level steigt nach 3 Treffern in Folge und sinkt nach 2 Fehlern in Folge.',
+    hint: 'Touch oder Maus: zuerst den kleinen Ball berühren (er wird grau hervorgehoben = ausgewählt), dann hängt er über dem Finger; in den Ring ziehen und loslassen. Tasten: Pfeile wählen und bewegen den Ball, Leertaste oder Eingabe legt ihn ab. Das Level steigt nach 3 Treffern in Folge und sinkt nach 2 Fehlern in Folge.',
   },
 };
 

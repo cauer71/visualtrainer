@@ -234,9 +234,11 @@ dort unverändert). Querformat 1280 × 720. Ein **Ball** (gefüllte Scheibe, Rad
 AMBLYOPIC/FELLOW, die Farbe kommt nur aus `vision/color.ts`). Nur beide Augen zusammen erkennen, ob der Ball im Ring liegt.
 Rahmen, Level, Zähler und Hinweise sind grau (BOTH).
 
-- **Steuerung:** irgendwo berühren (Touch, Stift oder Maus mit gedrückter Taste) → der Ball erscheint **versetzt über dem
-  Finger** (relative Steuerung, der Finger verdeckt ihn nie); in den Ring ziehen und loslassen. Treffer = Ballmitte im Ring.
-  Nur Antippen zählt nicht. Tastatur: Pfeiltasten bewegen den Ball, Leertaste oder Eingabe legt ihn ab.
+- **Steuerung:** zuerst den **kleinen Ball berühren** (Greifzone Ballradius + 36 px; Touch, Stift oder Maus mit gedrückter
+  Taste). Er ist dann **ausgewählt** (grauer, pulsierender Ring, Ton) und hängt **versetzt über dem Finger** (relative
+  Steuerung, der Finger verdeckt ihn nie); in den Ring ziehen und loslassen. Eine Berührung neben dem Ball tut nichts
+  (grauer Hinweis). Bleibt es bei einem Antippen, bleibt der Ball ausgewählt und das Ziehen beginnt danach überall.
+  Treffer = Ballmitte im Ring. Tastatur: Pfeiltasten wählen und bewegen den Ball, Leertaste oder Eingabe legt ihn ab.
 - **Runde:** Ring wandert (Tempo und Kurven je Level, prallt am Rand ab; der Finger bleibt immer auf dem Bildschirm).
   Zeitfenster je Level (6,5 s → 3,2 s); danach „zu spät“ = Fehler. Rückmeldung nur grau: kurzer grauer Rahmen, Ton
   (`hit`/`error`), Vibration; bei „wechselnd“ zusätzlich Ton `colorChange` beim Rollenwechsel.

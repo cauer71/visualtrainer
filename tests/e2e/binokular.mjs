@@ -908,7 +908,7 @@ for (const sz of sizes) {
   check((await p.locator('#hud-level').innerText()).includes('1') && (await p.locator('#hud-hits').count()) === 1 && (await p.locator('#hud-misses').count()) === 1 && (await p.locator('#hud-round').innerText()).includes('1/4'), tag('Live-Anzeige: Level, Treffer, Fehler, Runde'));
   const zhud = await p.locator('#hud-level').evaluate((el) => getComputedStyle(el).color);
   check(zhud === 'rgb(136, 136, 136)', tag(`Level-Anzeige grau (${zhud})`));
-  check((await p.locator('#bm-msg').innerText()).includes('Bildschirm berühren'), tag('Hinweis zu Beginn (grau)'));
+  check((await p.locator('#bm-msg').innerText()).includes('kleinen Ball berühren'), tag('Hinweis zu Beginn (grau)'));
   // Pixel: Ball und Ring in den Profilfarben ihrer Augenklassen (Spiel kurz anhalten, Positionen setzen)
   await p.keyboard.press('Escape');
   await p.waitForSelector('#pause-overlay');
@@ -931,8 +931,9 @@ for (const sz of sizes) {
 
   const gx = async (tx, ty, mode) => {
     // Finger so setzen, dass die Ballmitte bei (tx, ty) liegt: Finger = Ball + Offset nach unten
-    const off = (await S(p)).offset;
-    const a = zm(tx - 160, ty + off + 20);
+    const st0 = await S(p);
+    const off = st0.offset;
+    const a = zm(st0.ball.x, st0.ball.y); // zuerst den kleinen Ball berühren (Auswahl)
     const bb = zm(tx, ty + off);
     if (mode === 'mouse') {
       await p.mouse.move(a.x, a.y);
@@ -957,11 +958,22 @@ for (const sz of sizes) {
 
   // Runde 1: Treffer mit der Maus (Ball folgt dem Finger mit Versatz nach oben)
   await freeze();
-  const f0 = zm(300, 600);
+  // erst neben den Ball tippen: keine Auswahl, kein Ziehen
+  const miss0 = zm(900, 640);
+  await p.mouse.move(miss0.x, miss0.y);
+  await p.mouse.down();
+  z = await S(p);
+  check(z.phase === 'wait' && z.selected === false, tag('Berührung neben dem Ball wählt nichts aus'));
+  await p.mouse.up();
+  const restBall = (await S(p)).ball;
+  const f0 = zm(restBall.x, restBall.y);
   await p.mouse.move(f0.x, f0.y);
   await p.mouse.down();
   z = await S(p);
-  check(z.phase === 'drag' && Math.abs(z.ball.x - 300) < 1.5 && Math.abs(z.ball.y - (600 - z.offset)) < 1.5, tag(`Ball erscheint ${z.offset} px über dem Finger`));
+  check(z.phase === 'drag' && z.selected === true && Math.abs(z.ball.x - restBall.x) < 1.5 && Math.abs(z.ball.y - (restBall.y - z.offset)) < 1.5, tag(`Ball berührt = ausgewählt, hängt ${z.offset} px über dem Finger`));
+  const selPix = zm(z.ball.x + z.ball.r + 14, z.ball.y);
+  const selGray = await waitPixel(p, selPix.x, selPix.y, (d) => Math.abs(d[0] - d[1]) <= 2 && Math.abs(d[1] - d[2]) <= 2 && d[0] >= 0x50, 600);
+  check(selGray !== null, tag('Auswahl: grauer Ring um den Ball sichtbar'));
   const f1 = zm(520, 600);
   const f2 = zm(640, 330 + z.offset);
   await p.mouse.move(f1.x, f1.y);
