@@ -44,7 +44,6 @@ function CardIcon({ id }: { id: GameId }) {
 }
 
 export function StartScreen(props: {
-  calibratedAt: string | null;
   profileName: string;
   audio: AudioPrefs;
   onAudio: (a: AudioPrefs) => void;
@@ -53,7 +52,6 @@ export function StartScreen(props: {
   onHistory: () => void;
   onTherapist: () => void;
 }) {
-  const cal = props.calibratedAt ? new Date(props.calibratedAt).toLocaleString('de-DE', { dateStyle: 'medium', timeStyle: 'short' }) : null;
   return (
     <div class="bm-screen bm-start">
       <header class="bm-hero">
@@ -77,30 +75,22 @@ export function StartScreen(props: {
           </button>
         ))}
       </div>
-      <div class="bm-actions">
-        <button class="bm-btn" id="bm-calibrate" onClick={props.onCalibrate}>
+      <p class="bm-muted bm-start-hint" id="start-hint">
+        {t.startHint(props.profileName)}
+      </p>
+      <div class="bm-actions bm-actions-secondary">
+        <button class="bm-btn bm-btn-small" id="bm-calibrate" onClick={props.onCalibrate}>
           {t.calibrate}
         </button>
-        <button class="bm-btn" id="bm-history" onClick={props.onHistory}>
+        <button class="bm-btn bm-btn-small" id="bm-history" onClick={props.onHistory}>
           {t.history}
         </button>
-        <button class="bm-btn" id="bm-therapist" onClick={props.onTherapist}>
+        <button class="bm-btn bm-btn-small" id="bm-therapist" onClick={props.onTherapist}>
           {t.therapist}
         </button>
       </div>
-      <p class="bm-muted" id="start-calibration">
-        {cal ? t.lastCalibration(cal) : t.notCalibrated} · <span id="start-profile">{t.activeProfile(props.profileName)}</span>
-      </p>
       <SoundControls audio={props.audio} onAudio={props.onAudio} />
-      <section class="bm-card">
-        <h2>{t.howTitle}</h2>
-        <ul>
-          {t.how.map((x) => (
-            <li key={x}>{x}</li>
-          ))}
-        </ul>
-        <p class="bm-muted">{t.glassesHint}</p>
-      </section>
+      <p class="bm-muted">{t.glassesHint}</p>
     </div>
   );
 }

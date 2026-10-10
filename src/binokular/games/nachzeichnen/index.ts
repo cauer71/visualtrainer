@@ -6,15 +6,19 @@
 import { t } from '../../texts';
 import type { Item } from '../../vision/renderer';
 import { capturePointer, flashItem, makeRng, randomSeed, Stage } from '../common';
-import type { GameContext, GameInstance, GameModule, GameSnapshot, GameSummary } from '../types';
+import type { GameCard, GameContext, GameInstance, GameModule, GameSnapshot, GameSummary, LevelStat } from '../types';
 import { colorK, newSchedule, stepSchedule, type ScheduleConfig, type ScheduleState } from './colorSchedule';
-import { buildPath, FIELD_H, FIELD_W, type TracePath } from './path';
+import { buildLevelPath, clampLevel, MAX_LEVEL, type Complexity } from './levels';
+import { FIELD_H, FIELD_W, type TracePath } from './path';
 import { DEFAULT_NACH, GOAL_RADIUS, normalizeNach, RESUME_RADIUS, START_RADIUS, type NachSettings } from './settings';
 import { accuracyOf, avgDeviationOf, clearLine, newTrace, penDown, penMove, penUp, toleranceOf, type TraceConfig, type TraceEvent, type TraceState } from './trace';
 
 /** Breite der grauen Spielerlinie (px) */
 const LINE_W = 6;
 const HINT_MS = 2200;
+
+/** mm:ss */
+const clock = (ms: number): string => `${String(Math.floor(ms / 60000)).padStart(2, '0')}:${String(Math.floor(ms / 1000) % 60).padStart(2, '0')}`;
 
 export function scheduleConfigOf(s: NachSettings): ScheduleConfig {
   return { intervalMs: s.intervalS * 1000, distancePx: s.distancePx, onlyDistance: s.onlyDistance, mode: s.changeMode, fadeMs: s.fadeS * 1000 };
@@ -40,6 +44,16 @@ class NachInstance implements GameInstance {
   private readonly cfg: ScheduleConfig;
   private readonly tcfg: TraceConfig;
   private path!: TracePath;
+  private level: number;
+  private maxReached: number;
+  private complexity!: Complexity;
+  private curls = 0;
+  /** Spielzeit der laufenden Runde (ms, ohne Pausen und ohne Wartezeit auf die Karte) */
+  private roundMs = 0;
+  private roundLogged = false;
+  private levelStats: LevelStat[] = [];
+  /** Runde zu Ende, die Karte wartet auf eine Wahl */
+  private awaiting: null | 'goal' | 'limit' = null;
   private trace: TraceState = newTrace();
   private sched!: ScheduleState;
   private carry: Carry = { errors: 0, samples: 0, inTolerance: 0, devSum: 0, changes: 0, paths: 0 };
@@ -67,6 +81,8 @@ class NachInstance implements GameInstance {
     this.rng = makeRng(this.seed);
     this.cfg = scheduleConfigOf(s);
     this.tcfg = traceConfigOf(s);
+    this.level = clampLevel(s.startLevel);
+    this.maxReached = this.level;
     this.newRound();
     this.stage = new Stage(
       canvas,
@@ -83,7 +99,17 @@ class NachInstance implements GameInstance {
   }
 
   private newRound(): void {
-    this.path = buildPath(this.rng, { points: this.s.curvePoints, spread: this.s.curveSpread / 100 });
+    const lp = buildLevelPath(this.rng, this.level, {
+      pathWidth: this.s.pathWidth,
+      errorDist: this.s.errorDist,
+      pointsDelta: this.s.curvePoints - DEFAULT_NACH.curvePoints,
+      spreadScale: this.s.curveSpread / DEFAULT_NACH.curveSpread,
+    });
+    this.path = lp.path;
+    this.complexity = lp.complexity;
+    this.curls = lp.curls;
+    this.roundMs = 0;
+    this.roundLogged = false;
     this.trace = newTrace();
     this.sched = newSchedule(this.rng() < 0.5 ? 'AMBLYOPIC' : 'FELLOW');
     this.lastDrawn = 0;
@@ -148,11 +174,26 @@ class NachInstance implements GameInstance {
       } else if (e.type === 'goal') {
         this.carry.paths++;
         this.ctx.play('goal');
-        this.finish('goal');
+        this.logRound(true);
+        this.awaiting = 'goal';
+        this.releasePen();
       } else if (e.type === 'limit') {
-        this.finish('limit');
+        this.logRound(false);
+        this.awaiting = 'limit';
+        this.releasePen();
       }
     }
+  }
+
+  /** Ergebnis der laufenden Runde in die Levelliste der Session schreiben (einmal je Runde) */
+  private logRound(completed: boolean): void {
+    if (this.roundLogged) return;
+    this.roundLogged = true;
+    this.levelStats.push(this.currentStat(completed));
+  }
+
+  private currentStat(completed: boolean): LevelStat {
+    return { level: this.level, ms: Math.round(this.roundMs), errors: this.trace.errors, accuracy: Math.round(accuracyOf(this.trace) * 10) / 10, completed };
   }
 
   private finish(reason: 'goal' | 'limit'): void {
@@ -163,7 +204,7 @@ class NachInstance implements GameInstance {
   }
 
   private down(e: PointerEvent): void {
-    if (this.done || !this.stage.running || (e.pointerType === 'mouse' && e.button !== 0)) return;
+    if (this.done || this.awaiting || !this.stage.running || (e.pointerType === 'mouse' && e.button !== 0)) return;
     if (this.pointerId !== null) return;
     e.preventDefault();
     this.pointerId = e.pointerId;
@@ -172,7 +213,7 @@ class NachInstance implements GameInstance {
   }
 
   private move(e: PointerEvent): void {
-    if (e.pointerId !== this.pointerId || this.done || !this.stage.running) return;
+    if (e.pointerId !== this.pointerId || this.done || this.awaiting || !this.stage.running) return;
     e.preventDefault();
     this.handle(penMove(this.trace, this.path, this.tcfg, this.stage.toInternal(e.clientX, e.clientY)));
   }
@@ -184,7 +225,8 @@ class NachInstance implements GameInstance {
 
   private frame(dtMs: number): void {
     const tr = this.trace;
-    if (tr.status === 'ready' || this.done) return;
+    if (tr.status === 'ready' || this.done || this.awaiting) return;
+    this.roundMs += dtMs;
     const drawn = tr.drawnPx - this.lastDrawn;
     this.lastDrawn = tr.drawnPx;
     const r = stepSchedule(this.sched, this.cfg, dtMs, drawn);
@@ -229,12 +271,41 @@ class NachInstance implements GameInstance {
     }
     return {
       hud: [
+        { id: 'level', label: t.nach.hudLevel, value: String(this.level) },
         { id: 'accuracy', label: t.nach.hudAccuracy, value: `${n(acc)} %` },
         { id: 'deviation', label: t.nach.hudDeviation, value: `${n(dev, 1)} px` },
         { id: 'errors', label: t.nach.hudErrors, value: String(tot.errors) },
         { id: 'changes', label: t.nach.hudChanges, value: String(this.carry.changes) },
       ],
-      message,
+      message: this.awaiting ? '' : message,
+      card: this.card(),
+    };
+  }
+
+  private card(): GameCard | null {
+    if (!this.awaiting) return null;
+    const stat = this.levelStats[this.levelStats.length - 1];
+    const lines = stat ? [t.nach.cardStats(stat.level, clock(stat.ms), stat.errors, stat.accuracy.toLocaleString('de-DE'))] : [];
+    if (this.awaiting === 'goal') {
+      const up = this.s.autoLevel && this.level < MAX_LEVEL;
+      return {
+        id: 'goal',
+        title: up ? t.nach.cardNext(this.level + 1) : t.nach.cardDone,
+        lines: up ? lines : [...lines, t.nach.cardSameLevel(this.level)],
+        buttons: [
+          { id: 'next', label: t.nach.cardContinue, primary: true },
+          { id: 'quit', label: t.endGame },
+        ],
+      };
+    }
+    return {
+      id: 'limit',
+      title: t.nach.cardLimit,
+      lines: [...lines, t.nach.cardSameLevel(this.level)],
+      buttons: [
+        { id: 'retry', label: t.nach.cardRetry, primary: true },
+        { id: 'quit', label: t.endGame },
+      ],
     };
   }
 
@@ -246,17 +317,45 @@ class NachInstance implements GameInstance {
       points: this.carry.paths,
       errors: tot.errors,
       colorChanges: this.carry.changes,
-      details: { accuracy: Math.round(acc * 10) / 10, avgDeviation: Math.round(dev * 10) / 10, paths: this.carry.paths },
+      details: { accuracy: Math.round(acc * 10) / 10, avgDeviation: Math.round(dev * 10) / 10, paths: this.carry.paths, level: this.level, maxLevel: this.maxReached },
       completed: this.carry.paths > 0,
+      levels: this.allStats(),
     };
+  }
+
+  /** Liste der Runden: abgeschlossene plus die laufende, falls schon gezeichnet wurde */
+  private allStats(): LevelStat[] {
+    const out = this.levelStats.map((l) => ({ ...l }));
+    if (!this.roundLogged && this.trace.samples > 0) out.push(this.currentStat(false));
+    return out;
+  }
+
+  /** Neue Runde (Pfad) im aktuellen Level; die alte wird, falls angefangen, in die Liste übernommen */
+  private nextRound(): void {
+    if (!this.roundLogged && this.trace.samples > 0) this.logRound(false);
+    this.bank();
+    this.newRound();
   }
 
   runAction(id: string): void {
     if (this.done) return;
+    if (this.awaiting) {
+      const was = this.awaiting;
+      if (id === 'quit') this.finish(was);
+      else if ((id === 'next' && was === 'goal') || (id === 'retry' && was === 'limit')) {
+        if (was === 'goal' && this.s.autoLevel && this.level < MAX_LEVEL) {
+          this.level++;
+          this.maxReached = Math.max(this.maxReached, this.level);
+        }
+        this.awaiting = null;
+        this.nextRound();
+        this.ctx.play('select');
+      }
+      return;
+    }
     this.releasePen();
     if (id === 'newPath') {
-      this.bank();
-      this.newRound();
+      this.nextRound();
     } else if (id === 'clear') {
       clearLine(this.trace);
       this.lastDrawn = this.trace.drawnPx;
@@ -269,6 +368,15 @@ class NachInstance implements GameInstance {
     return {
       game: 'nachzeichnen',
       seed: this.seed,
+      level: this.level,
+      maxLevel: this.maxReached,
+      complexity: { ...this.complexity },
+      curls: this.curls,
+      awaiting: this.awaiting,
+      roundMs: Math.round(this.roundMs),
+      levels: this.allStats(),
+      ctrl: this.path.ctrl.map((p) => [Math.round(p.x), Math.round(p.y)]),
+      pathLength: this.path.length,
       width: this.s.pathWidth,
       path: this.path.pts.map((p) => [Math.round(p.x * 10) / 10, Math.round(p.y * 10) / 10]),
       start: this.path.start,
@@ -309,6 +417,7 @@ export const nachzeichnen: GameModule<NachSettings> = {
   normalize: normalizeNach,
   create: (canvas, ctx, settings) => new NachInstance(canvas, ctx, settings),
   rows: (sum) => [
+    { label: t.nach.sumLevel, value: String(sum.details.maxLevel ?? 1) },
     { label: t.nach.sumPaths, value: String(sum.details.paths ?? 0) },
     { label: t.nach.hudAccuracy, value: `${(sum.details.accuracy ?? 0).toLocaleString('de-DE')} %` },
     { label: t.nach.hudDeviation, value: `${(sum.details.avgDeviation ?? 0).toLocaleString('de-DE')} px` },

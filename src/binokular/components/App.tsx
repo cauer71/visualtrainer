@@ -1,11 +1,10 @@
 /**
- * Bildschirmfolge: Start (Spielkarten) → Kalibrierung (nur bis ein Profil gespeichert oder „Mit Startwerten
- * spielen“ gewählt ist) → Augen/Farben (mit Profilauswahl) → Spiel (GameShell) → Zusammenfassung → Verlauf;
- * Therapeutenbereich. Der Ton (Audio-Modul) wird bei der ersten Nutzergeste freigeschaltet.
+ * Bildschirmfolge: Start (nur die zwei Spielkarten) → Spiel (GameShell) → Zusammenfassung → Verlauf. Ein Tipp auf die
+ * Karte startet das Spiel sofort mit dem aktiven Farbprofil (ohne Kalibrierung – die gibt es nur über ihren Knopf);
+ * Profil, Auge und Zuordnung stehen im Therapeutenbereich und in der Kalibrierung. Der Ton (Audio-Modul) wird bei der ersten Nutzergeste freigeschaltet.
  */
 import { useCallback, useEffect, useMemo, useState } from 'preact/hooks';
 import { SoundPlayer, type AudioPrefs } from '../audio';
-import { startProfileFor } from '../calibration/profiles';
 import type { Settings } from '../data/settings';
 import { activeProfile, audioPrefsOf, loadStore, MAX_SESSIONS, saveStore, type Store } from '../data/storage';
 import { GAMES, type GameId } from '../games';
@@ -15,11 +14,10 @@ import { CalibrationScreen } from './CalibrationScreen';
 import { EndScreen } from './EndScreen';
 import { GameShell } from './GameShell';
 import { HistoryScreen } from './HistoryScreen';
-import { SetupScreen } from './SetupScreen';
 import { StartScreen } from './StartScreen';
 import { TherapistScreen } from './TherapistScreen';
 
-type ScreenName = 'start' | 'calibration' | 'setup' | 'game' | 'end' | 'history' | 'therapist';
+type ScreenName = 'start' | 'calibration' | 'game' | 'end' | 'history' | 'therapist';
 
 export interface AppParams {
   debug: boolean;
@@ -64,7 +62,11 @@ export function App({ params }: { params: AppParams }) {
   const setAudio = (a: AudioPrefs) => update((s) => ({ ...s, audio: a }));
   const onEnd = useCallback(
     (rec: SessionRecord, sum: GameSummary) => {
-      update((s) => ({ ...s, sessions: [...s.sessions, rec].slice(-MAX_SESSIONS) }));
+      update((s) => ({
+        ...s,
+        sessions: [...s.sessions, rec].slice(-MAX_SESSIONS),
+        nachMaxLevel: rec.gameId === 'nachzeichnen' ? Math.max(s.nachMaxLevel, Math.min(12, Math.round(rec.details.maxLevel ?? 1))) : s.nachMaxLevel,
+      }));
       setLast({ rec, sum });
       setScreen('end');
     },
@@ -80,18 +82,16 @@ export function App({ params }: { params: AppParams }) {
     setGameKey((k) => k + 1);
     open('game');
   };
-  /** Spielkarte gewählt: ohne Kalibrierung zuerst dorthin, sonst Augen/Farben */
+  /** Spielkarte gewählt: sofort spielen (nie automatisch Kalibrierung) */
   const choose = (id: GameId) => {
     setGameId(id);
-    if (store.calibration.completedAt || store.calibration.startValuesAccepted) open('setup');
-    else open('calibration');
+    play();
   };
 
   return (
     <main class="bm-app">
       {screen === 'start' && (
         <StartScreen
-          calibratedAt={store.calibration.completedAt}
           profileName={activeProfile(store).name}
           audio={audioPrefsOf(store)}
           onAudio={(a) => {
@@ -115,24 +115,8 @@ export function App({ params }: { params: AppParams }) {
           onSettings={setSettings}
           onProfiles={setProfiles}
           onCalibration={(c) => update((s) => ({ ...s, calibration: c }))}
-          onDone={() => open('setup', 'calibration')}
-          onPlayDefaults={(mode) => {
-            update((s) => ({ ...s, activeProfileId: startProfileFor(mode).id, calibration: { ...s.calibration, startValuesAccepted: true } }));
-            open('setup', 'calibration');
-          }}
+          onDone={() => open('start')}
           onBack={() => open('start')}
-        />
-      )}
-      {screen === 'setup' && (
-        <SetupScreen
-          gameTitle={GAMES[gameId].title}
-          settings={store.settings}
-          profiles={store.profiles}
-          activeProfileId={store.activeProfileId}
-          onProfile={(id) => update((s) => ({ ...s, activeProfileId: id }))}
-          onSettings={setSettings}
-          onBack={() => open('start')}
-          onPlay={play}
         />
       )}
       {screen === 'game' && <GameShell key={gameKey} module={GAMES[gameId]} store={store} sound={sound} onAudio={setAudio} params={{ debug: params.debug, seed: params.seed }} onEnd={onEnd} />}

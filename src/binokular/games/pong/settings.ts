@@ -1,5 +1,8 @@
 /** Einstellungen „Farbwechsel-Pong“ (Therapeutenbereich). Strenge Prüfung, auch beim Import. */
-import { bool, num } from '../../data/settings';
+import { bool, num, pick } from '../../data/settings';
+
+export type FlightFreq = 'rare' | 'normal' | 'often';
+export const FLIGHT_FREQS: readonly FlightFreq[] = ['rare', 'normal', 'often'];
 
 export interface PongSettings {
   /** Radius des Balls (px, Spielkoordinaten; Durchmesser ≥ 24 px) */
@@ -10,8 +13,10 @@ export interface PongSettings {
   paddleWidth: number;
   /** Stärke des Computergegners 1–5 */
   opponent: number;
-  /** Farbwechsel im Flug (zusätzlich zum Wechsel bei Schlägerkontakt) */
+  /** Farbwechsel im Flug (null bis zwei Wechsel je Flug, zusätzlich zum Wechsel bei Schlägerkontakt) */
   flightChange: boolean;
+  /** Häufigkeit der Flugwechsel: selten / normal / häufig (Gewichte für 0, 1, 2 Wechsel je Flug) */
+  flightFreq: FlightFreq;
   /** Zwei-Spieler-Modus: obere und untere Bildschirmhälfte steuern je einen Schläger */
   twoPlayer: boolean;
   /** Verstärkungsfaktor der relativen Touch-Steuerung */
@@ -25,7 +30,8 @@ export const DEFAULT_PONG: PongSettings = {
   startSpeed: 520,
   paddleWidth: 150,
   opponent: 3,
-  flightChange: false,
+  flightChange: true,
+  flightFreq: 'normal',
   twoPlayer: false,
   gain: 1.3,
   targetScore: 7,
@@ -40,6 +46,7 @@ export function normalizePong(x: unknown): PongSettings {
     paddleWidth: num(o.paddleWidth, 80, 260, d.paddleWidth, 5),
     opponent: num(o.opponent, 1, 5, d.opponent),
     flightChange: bool(o.flightChange, d.flightChange),
+    flightFreq: pick(o.flightFreq, FLIGHT_FREQS, d.flightFreq),
     twoPlayer: bool(o.twoPlayer, d.twoPlayer),
     gain: num(o.gain, 0.5, 3, d.gain, 0.1),
     targetScore: num(o.targetScore, 1, 21, d.targetScore),
