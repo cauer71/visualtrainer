@@ -230,6 +230,27 @@ const de = {
     sumScore: 'Punkte (du : Gegner)',
     sumRally: 'Längster Ballwechsel',
   },
+  // Spiel Ziehen & Ablegen
+  za: {
+    title: 'Ziehen & Ablegen',
+    description: 'Ball in den wandernden Ring ziehen – Ball und Ring sehen verschiedene Augen.',
+    hudLevel: 'Level',
+    hudHits: 'Treffer',
+    hudMisses: 'Fehler',
+    hudRound: 'Runde',
+    hintStart: 'Bildschirm berühren: Der Ball erscheint über dem Finger. In den Ring ziehen und loslassen.',
+    hintKeys: 'Tasten: Pfeile bewegen den Ball, Leertaste oder Eingabe legt ihn ab.',
+    fbHit: 'Treffer',
+    fbMiss: 'Daneben',
+    fbLate: 'Zu spät',
+    sumPoints: 'Punkte',
+    sumHits: 'Treffer',
+    sumMisses: 'Fehler (daneben oder zu spät)',
+    sumRounds: 'Runden',
+    sumMaxLevel: 'Höchstes Level',
+    sumAvgTime: 'Mittlere Zeit je Runde',
+    sumSwaps: 'Rollenwechsel',
+  },
   // Ton
   sound: 'Ton',
   soundOn: 'Ton an',
@@ -317,6 +338,7 @@ const de = {
   // Spieleinstellungen (Therapeut)
   secGameNach: 'Nachzeichnen',
   secGamePong: 'Farbwechsel-Pong',
+  secGameZa: 'Ziehen & Ablegen',
   gameDefaults: 'Standardwerte',
   nachSet: {
     pathWidth: 'Pfadbreite (px)',
@@ -342,6 +364,17 @@ const de = {
     gain: 'Verstärkungsfaktor Touch-Steuerung',
     targetScore: 'Punkte bis Spielende',
     hint: 'Touch: Der Schläger folgt der waagerechten Bewegung eines Fingers irgendwo auf dem Bildschirm. Maus: direkt. Tasten: Pfeile links/rechts (unten), A/D (oben, Zwei-Spieler-Modus).',
+  },
+  zaSet: {
+    startLevel: 'Startlevel (1–16)',
+    roles: 'Rollen von Ball und Ring',
+    roleOptions: { ALTERNATE: 'wechselnd (nach jeder Runde)', RED_BALL: 'Ball rot, Ring Zweitfarbe', SECOND_BALL: 'Ball Zweitfarbe, Ring rot' } as Record<string, string>,
+    rounds: 'Runden pro Sitzung (0 = unbegrenzt)',
+    ringScale: 'Ringgröße (%)',
+    speedScale: 'Tempo (%)',
+    timeScale: 'Zeitfenster (%)',
+    offset: 'Ball-Offset über dem Finger (px, 0 = automatisch)',
+    hint: 'Touch oder Maus: irgendwo berühren, der Ball erscheint über dem Finger; in den Ring ziehen und loslassen. Tasten: Pfeile bewegen den Ball, Leertaste oder Eingabe legt ihn ab. Das Level steigt nach 3 Treffern in Folge und sinkt nach 2 Fehlern in Folge.',
   },
 };
 

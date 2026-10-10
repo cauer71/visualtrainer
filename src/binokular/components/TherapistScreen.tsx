@@ -13,6 +13,7 @@ import { t } from '../texts';
 import { Choice, download, NumberField, SafetyNotice, Screen, Toggle } from './common';
 import { normalizeNach, type NachSettings } from '../games/nachzeichnen/settings';
 import { normalizePong, type PongSettings } from '../games/pong/settings';
+import { normalizeZa, ROLE_MODES, type ZaSettings } from '../games/ziehen-ablegen/settings';
 
 type Props = {
   store: Store;
@@ -160,6 +161,10 @@ export function TherapistScreen({ store, update, onBack, onHistory }: Props) {
           <h2>{t.secGamePong}</h2>
           <PongForm value={store.games.pong} onChange={(v) => setGame({ pong: v })} />
         </section>
+        <section class="bm-card" id="sec-za">
+          <h2>{t.secGameZa}</h2>
+          <ZaForm value={store.games['ziehen-ablegen']} onChange={(v) => setGame({ 'ziehen-ablegen': v })} />
+        </section>
         <section class="bm-card">
           <h2>{t.secSound}</h2>
           <Toggle
@@ -306,6 +311,26 @@ function PongForm({ value: v, onChange }: { value: PongSettings; onChange: (v: P
       <NumberField id="p-target" label={n.targetScore} value={v.targetScore} min={1} max={21} onChange={(x) => set({ targetScore: x })} />
       <p class="bm-muted">{n.hint}</p>
       <button class="bm-btn" id="p-defaults" onClick={() => onChange(defaultGameSettings().pong)}>
+        {t.gameDefaults}
+      </button>
+    </>
+  );
+}
+
+function ZaForm({ value: v, onChange }: { value: ZaSettings; onChange: (v: ZaSettings) => void }) {
+  const set = (patch: Partial<ZaSettings>) => onChange(normalizeZa({ ...v, ...patch }));
+  const n = t.zaSet;
+  return (
+    <>
+      <NumberField id="z-level" label={n.startLevel} value={v.startLevel} min={1} max={16} onChange={(x) => set({ startLevel: x })} />
+      <Choice name="z-roles" label={n.roles} value={v.roles} options={ROLE_MODES.map((m) => ({ value: m, label: n.roleOptions[m] }))} onChange={(x) => set({ roles: x })} />
+      <NumberField id="z-rounds" label={n.rounds} value={v.rounds} min={0} max={200} onChange={(x) => set({ rounds: x })} />
+      <NumberField id="z-ring" label={n.ringScale} value={v.ringScale} min={70} max={150} step={5} onChange={(x) => set({ ringScale: x })} />
+      <NumberField id="z-speed" label={n.speedScale} value={v.speedScale} min={70} max={150} step={5} onChange={(x) => set({ speedScale: x })} />
+      <NumberField id="z-time" label={n.timeScale} value={v.timeScale} min={70} max={150} step={5} onChange={(x) => set({ timeScale: x })} />
+      <NumberField id="z-offset" label={n.offset} value={v.offset} min={0} max={200} onChange={(x) => set({ offset: x })} />
+      <p class="bm-muted">{n.hint}</p>
+      <button class="bm-btn" id="z-defaults" onClick={() => onChange(defaultGameSettings()['ziehen-ablegen'])}>
         {t.gameDefaults}
       </button>
     </>

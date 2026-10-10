@@ -304,9 +304,10 @@ for (const sz of sizes) {
   check((await p.locator('[data-testid="safety-notice"]').first().innerText()).trim() === SAFETY, tag('Start: Sicherheitshinweis im Wortlaut'));
   check((await p.title()) === 'Binokular – Sehspiele', tag('Seitentitel „Binokular – Sehspiele“'));
   check((await p.locator('h1').first().innerText()).trim() === 'Binokular – Sehspiele', tag('Start: Produktname'));
-  check((await p.locator('#game-cards .bm-gamecard').count()) === 2, tag('Start: zwei Spielkarten'));
+  check((await p.locator('#game-cards .bm-gamecard').count()) === 3, tag('Start: drei Spielkarten'));
   const cardTexts = await p.locator('#game-cards .bm-gamecard-title').allInnerTexts();
-  check(cardTexts.join('|') === 'Nachzeichnen|Farbwechsel-Pong', tag(`Start: Karten ${cardTexts.join(', ')}`));
+  check(cardTexts.join('|') === 'Nachzeichnen|Farbwechsel-Pong|Ziehen & Ablegen', tag(`Start: Karten ${cardTexts.join(', ')}`));
+  check((await p.locator('#bm-game-ziehen-ablegen .bm-gamecard-text').innerText()).includes('Ball in den wandernden Ring ziehen'), tag('Start: Karte Ziehen & Ablegen mit Kurztext'));
   const body = await p.locator('body').innerText();
   check(!/Level|Kristall|Roboter|Binocular Mine|Mine\b|Schlüssel/i.test(body), tag('Start: keine Reste des früheren Spiels'));
   check((await p.locator('#bm-calibrate, #bm-history, #bm-therapist').count()) === 3, tag('Start: Kalibrierung, Verlauf, Therapeutenbereich'));
@@ -742,6 +743,151 @@ for (const sz of sizes) {
   await dl.saveAs(csvPath);
   const csv = fs.readFileSync(csvPath, 'utf8');
   check(csv.split('\r\n').filter(Boolean).length === 6 && csv.includes('Farbwechsel') && csv.includes('Nachzeichnen') && csv.includes('accuracy='), tag('CSV-Export: Kopf + 5 Sessions'));
+
+
+  // ============ 9 Ziehen & Ablegen (zwei Farben) ============
+  await p.goto(url, { waitUntil: 'networkidle' });
+  await p.click('#bm-therapist');
+  await p.fill('#bm-pin-input', '726');
+  await p.click('#bm-pin-ok');
+  await p.waitForSelector('#therapist-form');
+  check((await p.locator('#sec-za').count()) === 1, tag('Therapeutenbereich: Abschnitt „Ziehen & Ablegen“'));
+  check((await store(p)).games['ziehen-ablegen'].rounds === 20 && (await store(p)).games['ziehen-ablegen'].roles === 'ALTERNATE', tag('Standard: 20 Runden, Rollen wechselnd'));
+  await p.fill('#z-ring', '999');
+  await p.locator('#z-ring').blur();
+  check((await store(p)).games['ziehen-ablegen'].ringScale === 150, tag('Ringgröße 999 % wird auf 150 begrenzt'));
+  await p.fill('#z-ring', '100');
+  await p.locator('#z-ring').blur();
+  await p.fill('#z-rounds', '4');
+  await p.locator('#z-rounds').blur();
+  check((await store(p)).games['ziehen-ablegen'].rounds === 4 && (await store(p)).games['ziehen-ablegen'].ringScale === 100, tag('Runden pro Sitzung: 4'));
+  await p.click('.bm-head .bm-btn-ghost');
+  await p.waitForSelector('#game-cards');
+  await openGame(p, 'ziehen-ablegen', tag);
+  await noHScroll(p, tag('Ziehen & Ablegen'));
+  st = await store(p);
+  let z = await S(p);
+  const zm = await mapper(p, 1280, 720);
+  const zcv = p.locator('#bm-canvas');
+  check(z.game === 'ziehen-ablegen' && z.seed === SEED && z.phase === 'wait' && z.level === 1 && z.total === 4, tag(`Ziehen & Ablegen: Level ${z.level}, Seed ${z.seed}`));
+  check(z.ball.r >= 22 && z.ring.stroke >= 8 && z.offset > z.ball.r, tag(`Maße: Ball ${z.ball.r} px, Ringlinie ${z.ring.stroke} px, Offset ${z.offset} px`));
+  check(z.roles.ball !== z.roles.ring && ['AMBLYOPIC', 'FELLOW'].includes(z.roles.ball) && ['AMBLYOPIC', 'FELLOW'].includes(z.roles.ring), tag(`Ball (${z.roles.ball}) und Ring (${z.roles.ring}) in verschiedenen Augenfarben`));
+  check((await p.locator('#hud-level').innerText()).includes('1') && (await p.locator('#hud-hits').count()) === 1 && (await p.locator('#hud-misses').count()) === 1 && (await p.locator('#hud-round').innerText()).includes('1/4'), tag('Live-Anzeige: Level, Treffer, Fehler, Runde'));
+  const zhud = await p.locator('#hud-level').evaluate((el) => getComputedStyle(el).color);
+  check(zhud === 'rgb(136, 136, 136)', tag(`Level-Anzeige grau (${zhud})`));
+  check((await p.locator('#bm-msg').innerText()).includes('Bildschirm berühren'), tag('Hinweis zu Beginn (grau)'));
+  // Pixel: Ball und Ring in den Profilfarben ihrer Augenklassen (Spiel kurz anhalten, Positionen setzen)
+  await p.keyboard.press('Escape');
+  await p.waitForSelector('#pause-overlay');
+  await p.evaluate(() => window.__binokular.set({ ring: { x: 640, y: 330 }, rest: { x: 220, y: 520 }, speed: 0 }));
+  await p.waitForTimeout(200);
+  z = await S(p);
+  const ballPix = zm(z.ball.x, z.ball.y);
+  const ringPix = zm(z.ring.x + z.ring.R, z.ring.y);
+  const zbox = await zcv.boundingBox();
+  const zbg = await pixelAt(p, zbox.x + 1, zbox.y + 1);
+  const zBallPx = await pixelAt(p, ballPix.x, ballPix.y);
+  const zRingPx = await pixelAt(p, ringPix.x, ringPix.y);
+  check(near(zbg, bgOf(st), 1), tag(`Hintergrund-Pixel ${hexOf(zbg)}`));
+  check(near(zBallPx, expectedColor(st, z.roles.ball), 8), tag(`Ball-Pixel ${hexOf(zBallPx)} = Farbe ${z.roles.ball} ${hexOf(expectedColor(st, z.roles.ball))}`));
+  check(near(zRingPx, expectedColor(st, z.roles.ring), 8), tag(`Ring-Pixel ${hexOf(zRingPx)} = Farbe ${z.roles.ring} ${hexOf(expectedColor(st, z.roles.ring))}`));
+  check(!near(zBallPx, zRingPx, 20), tag('Ball und Ring haben verschiedene Farben'));
+  await shot('10-ziehen-ablegen');
+  await p.click('#bm-resume');
+  await p.waitForTimeout(100);
+
+  const gx = async (tx, ty, mode) => {
+    // Finger so setzen, dass die Ballmitte bei (tx, ty) liegt: Finger = Ball + Offset nach unten
+    const off = (await S(p)).offset;
+    const a = zm(tx - 160, ty + off + 20);
+    const bb = zm(tx, ty + off);
+    if (mode === 'mouse') {
+      await p.mouse.move(a.x, a.y);
+      await p.mouse.down();
+      await p.mouse.move((a.x + bb.x) / 2, (a.y + bb.y) / 2);
+      await p.mouse.move(bb.x, bb.y);
+      await p.waitForTimeout(60);
+      await p.mouse.up();
+    } else {
+      await touch('touchStart', [[1, a.x, a.y]]);
+      await touch('touchMove', [[1, (a.x + bb.x) / 2, (a.y + bb.y) / 2]]);
+      await touch('touchMove', [[1, bb.x, bb.y]]);
+      await p.waitForTimeout(60);
+      await touch('touchEnd', []);
+    }
+  };
+  const nextRound = (n) => p.waitForFunction((n) => window.__binokular.state().phase === 'wait' && window.__binokular.state().rounds === n, n, { timeout: 4000 });
+  const freeze = async (x = 640, y = 330) => {
+    await p.evaluate(([x, y]) => window.__binokular.set({ ring: { x, y }, speed: 0 }), [x, y]);
+  };
+  const role0 = z.roles.ball;
+
+  // Runde 1: Treffer mit der Maus (Ball folgt dem Finger mit Versatz nach oben)
+  await freeze();
+  const f0 = zm(300, 600);
+  await p.mouse.move(f0.x, f0.y);
+  await p.mouse.down();
+  z = await S(p);
+  check(z.phase === 'drag' && Math.abs(z.ball.x - 300) < 1.5 && Math.abs(z.ball.y - (600 - z.offset)) < 1.5, tag(`Ball erscheint ${z.offset} px über dem Finger`));
+  const f1 = zm(520, 600);
+  const f2 = zm(640, 330 + z.offset);
+  await p.mouse.move(f1.x, f1.y);
+  await p.mouse.move(f2.x, f2.y);
+  await p.waitForTimeout(260);
+  await p.mouse.up();
+  z = await S(p);
+  check(z.phase === 'fb' && z.rounds === 1 && z.hits === 1 && z.outcome === 'hit' && z.points > 0, tag(`Treffer gezählt (Punkte ${z.points})`));
+  const edge = zm(5, 360);
+  const gray = (d) => Math.abs(d[0] - d[1]) <= 2 && Math.abs(d[1] - d[2]) <= 2 && d[0] >= 0x70 && d[0] <= 0x90;
+  const zflash = await waitPixel(p, edge.x, edge.y, gray, 700);
+  check(zflash.ok, tag(`Treffer: grauer Rahmen (${hexOf(zflash.px)})`));
+  await p.waitForTimeout(400);
+  check((await p.locator('#hud-hits').innerText()).includes('1'), tag('Live-Anzeige: Treffer 1'));
+  await nextRound(1);
+  z = await S(p);
+  check(z.roleSwaps === 1 && z.roles.ball !== role0, tag(`Rollenwechsel nach der Runde: Ball ${role0} → ${z.roles.ball}`));
+  check(z.level === 1 && z.phase === 'wait', tag('nächste Runde bereit, Level 1'));
+
+  // Runde 2: daneben (Maus)
+  await freeze();
+  await gx(1100, 560, 'mouse');
+  z = await S(p);
+  check(z.rounds === 2 && z.misses === 1 && z.outcome === 'miss' && z.hits === 1, tag('Fehlwurf: Fehler gezählt'));
+  const mflash = await waitPixel(p, edge.x, edge.y, gray, 700);
+  check(mflash.ok, tag(`Fehler: grauer Rahmen (${hexOf(mflash.px)})`));
+  const dm = await p.waitForFunction(() => (document.querySelector('#bm-msg')?.textContent ?? '').includes('Daneben'), null, { timeout: 1500 }).then(() => true, () => false);
+  check(dm, tag('Hinweis „Daneben“ (grau)'));
+  await nextRound(2);
+  z = await S(p);
+  check(z.roleSwaps === 2 && z.roles.ball === role0, tag('zweiter Rollenwechsel: wieder die Ausgangsrolle'));
+
+  // Runde 3: zu spät
+  await freeze();
+  await p.evaluate(() => window.__binokular.set({ elapsedMs: window.__binokular.state().limitMs - 30 }));
+  await p.waitForFunction(() => window.__binokular.state().rounds === 3, null, { timeout: 3000 });
+  z = await S(p);
+  check(z.outcome === 'late' && z.misses === 2 && z.late === 1, tag('Zeitfenster überschritten: Fehler „zu spät“'));
+  await nextRound(3);
+
+  // Runde 4: Treffer per Touch (CDP) → Spielende nach 4 Runden
+  await freeze(700, 300);
+  await gx(700, 300, 'touch');
+  await p.waitForSelector('#end-facts', { timeout: 6000 });
+  const zf = await p.locator('#end-facts').innerText();
+  check(/Ziehen & Ablegen/.test(zf) && /Runden\s*4/.test(zf) && /Treffer\s*2/.test(zf) && /Höchstes Level\s*1/.test(zf) && /Rollenwechsel\s*3/.test(zf) && /Mittlere Zeit/.test(zf), tag(`Zusammenfassung: ${zf.replace(/\s+/g, ' ').slice(0, 160)}`));
+  st = await store(p);
+  const nz = st.sessions[st.sessions.length - 1];
+  check(nz.gameId === 'ziehen-ablegen' && nz.endReason === 'goal' && nz.completed && nz.errors === 2 && nz.points > 0 && nz.details.hits === 2 && nz.details.rounds === 4 && nz.details.late === 1 && nz.details.roleSwaps === 3 && nz.colorChanges === 3, tag(`Session gespeichert: ${JSON.stringify(nz.details)}`));
+  await shot('11-ziehen-ablegen-ende');
+  await noHScroll(p, tag('Zusammenfassung Ziehen & Ablegen'));
+  await p.click('#bm-to-history');
+  await p.waitForSelector('#history-table');
+  const gz = await p.locator('#history-table tbody tr td:nth-child(3)').allInnerTexts();
+  check(gz.includes('Ziehen & Ablegen'), tag('Verlauf: Ziehen & Ablegen'));
+  const [dl2] = await Promise.all([p.waitForEvent('download'), p.click('#bm-csv')]);
+  await dl2.saveAs(`${out}/${sz.name}-sessions2.csv`);
+  const csv2 = fs.readFileSync(`${out}/${sz.name}-sessions2.csv`, 'utf8');
+  check(csv2.includes('Ziehen & Ablegen') && csv2.includes('maxLevel=1'), tag('CSV: Ziehen & Ablegen mit Spielwerten'));
 
   // ============ 8 Auflösung: devicePixelRatio höchstens 2 ============
   if (first) {

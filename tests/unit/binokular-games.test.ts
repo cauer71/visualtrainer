@@ -23,8 +23,8 @@ const BANNED = new RegExp(['Dig' + ' Rush', 'Ubi' + 'soft', 'cf' + 'at_', 'cf' +
 const vis = (glasses: 'RED_CYAN' | 'RED_GREEN'): VisionSettings => ({ amblyopicEye: 'LEFT', glasses, leftLens: 'RED', amblyopicContrast: 100, fellowEyeContrast: 100, palette: paletteOf(startProfileFor(glasses)) });
 
 describe('Spielregister', () => {
-  it('zwei Spiele mit gemeinsamer Schnittstelle', () => {
-    expect(GAME_IDS).toEqual(['nachzeichnen', 'pong']);
+  it('drei Spiele mit gemeinsamer Schnittstelle', () => {
+    expect(GAME_IDS).toEqual(['nachzeichnen', 'pong', 'ziehen-ablegen']);
     for (const id of GAME_IDS) {
       const m = GAMES[id];
       expect(m.id).toBe(id);

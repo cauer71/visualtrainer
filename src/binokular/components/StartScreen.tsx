@@ -27,6 +27,14 @@ export function SoundControls({ audio, onAudio }: { audio: AudioPrefs; onAudio: 
 
 /** Vorschaubild der Spielkarte: neutrale Strichzeichnung (grau) */
 function CardIcon({ id }: { id: GameId }) {
+  if (id === 'ziehen-ablegen')
+    return (
+      <svg viewBox="0 0 120 64" aria-hidden="true" class="bm-card-icon" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round">
+        <circle cx="84" cy="30" r="22" stroke-width="6" />
+        <circle cx="30" cy="42" r="9" fill="currentColor" />
+        <path d="M38 34 C 52 20, 60 22, 72 28" stroke-dasharray="2 8" />
+      </svg>
+    );
   return id === 'nachzeichnen' ? (
     <svg viewBox="0 0 120 64" aria-hidden="true" class="bm-card-icon" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round">
       <path d="M10 44 C 30 4, 50 60, 70 30 S 100 14, 110 20" />

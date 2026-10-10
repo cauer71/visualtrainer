@@ -27,7 +27,7 @@ export const CSV_COLUMNS = [
   'Ende',
 ] as const;
 
-const GAME_DE: Record<string, string> = { nachzeichnen: 'Nachzeichnen', pong: 'Farbwechsel-Pong' };
+const GAME_DE: Record<string, string> = { nachzeichnen: 'Nachzeichnen', pong: 'Farbwechsel-Pong', 'ziehen-ablegen': 'Ziehen & Ablegen' };
 const SEP = ';';
 
 /** Zahl mit Dezimalkomma */
