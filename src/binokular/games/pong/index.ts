@@ -226,7 +226,7 @@ class PongInstance implements GameInstance {
       phase: s.phase,
       colorChanges: s.colorChanges,
       hits: s.hits,
-      flightY: s.flightY,
+      flightYs: [...s.flightYs],
       winner: s.winner,
       gain: this.cfg.gain,
       twoPlayer: this.cfg.twoPlayer,
@@ -237,7 +237,8 @@ class PongInstance implements GameInstance {
 
   /** nur für Tests: Ball und Schläger direkt setzen (z. B. Ball vor den Schläger legen) */
   debugSet(p: Record<string, unknown>): void {
-    const patch = p as { ball?: Partial<PongState['ball']>; speed?: number; bottom?: number; top?: number };
+    const patch = p as { ball?: Partial<PongState['ball']>; speed?: number; bottom?: number; top?: number; flightYs?: number[] };
+    if (Array.isArray(patch.flightYs)) this.s.flightYs = patch.flightYs.filter((y) => Number.isFinite(y));
     if (patch.ball) Object.assign(this.s.ball, patch.ball);
     if (patch.speed !== undefined) this.s.speed = patch.speed;
     if (patch.bottom !== undefined) this.s.bottom = patch.bottom;

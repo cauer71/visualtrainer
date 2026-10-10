@@ -5,7 +5,7 @@
  * Werte (Zahlen), Kontrasteinstellungen. Keine Diagnose, keine automatische Bewertung.
  */
 import type { Eye, Glasses, LeftLens } from '../vision/color';
-import type { FinishReason, GameId, GameSummary } from '../games/types';
+import type { FinishReason, GameId, GameSummary, LevelStat } from '../games/types';
 import { GAME_IDS } from '../games/types';
 
 export type EndReason = FinishReason;
@@ -32,6 +32,8 @@ export interface SessionRecord {
   completed: boolean;
   /** spielspezifische Zahlen (z. B. accuracy, avgDeviation, hits) */
   details: Record<string, number>;
+  /** Runden/Level der Session (Nachzeichnen), sonst nicht vorhanden */
+  levels?: LevelStat[];
   amblyopicContrast: number;
   fellowEyeContrast: number;
   amblyopicEye: Eye;
@@ -114,6 +116,7 @@ export class SessionRecorder {
       colorChanges: sum.colorChanges,
       completed: sum.completed,
       details: { ...sum.details },
+      ...(sum.levels && sum.levels.length ? { levels: sum.levels.map((l) => ({ ...l })) } : {}),
       amblyopicContrast: this.start.amblyopicContrast,
       fellowEyeContrast: this.start.fellowEyeContrast,
       amblyopicEye: this.start.amblyopicEye,
@@ -126,6 +129,19 @@ export class SessionRecorder {
 
 const fin = (v: unknown, fallback = 0): number => (typeof v === 'number' && Number.isFinite(v) ? v : fallback);
 
+function normalizeLevelStat(x: unknown): LevelStat | null {
+  if (!x || typeof x !== 'object') return null;
+  const o = x as Record<string, unknown>;
+  if (typeof o.level !== 'number' || !Number.isFinite(o.level)) return null;
+  return {
+    level: Math.min(12, Math.max(1, Math.round(o.level))),
+    ms: Math.max(0, fin(o.ms)),
+    errors: Math.max(0, Math.round(fin(o.errors))),
+    accuracy: Math.min(100, Math.max(0, fin(o.accuracy, 100))),
+    completed: o.completed === true,
+  };
+}
+
 /**
  * Gespeicherten Datensatz prüfen und bereinigen. Datensätze aus früheren Fassungen (ohne `gameId`, mit Leveln) lassen
  * sich nicht sinnvoll abbilden und entfallen (`null`).
@@ -136,6 +152,7 @@ export function normalizeSession(x: unknown): SessionRecord | null {
   if (typeof o.id !== 'string' || typeof o.date !== 'string' || !GAME_IDS.includes(o.gameId as GameId)) return null;
   const details: Record<string, number> = {};
   if (o.details && typeof o.details === 'object') for (const [k, v] of Object.entries(o.details as Record<string, unknown>)) if (typeof v === 'number' && Number.isFinite(v)) details[k] = v;
+  const levels = Array.isArray(o.levels) ? o.levels.map(normalizeLevelStat).filter((x): x is LevelStat => x !== null).slice(0, 100) : [];
   return {
     id: o.id.slice(0, 40),
     gameId: o.gameId as GameId,
@@ -152,6 +169,7 @@ export function normalizeSession(x: unknown): SessionRecord | null {
     colorChanges: Math.max(0, fin(o.colorChanges)),
     completed: o.completed === true,
     details,
+    ...(levels.length ? { levels } : {}),
     amblyopicContrast: Math.min(100, Math.max(0, fin(o.amblyopicContrast, 100))),
     fellowEyeContrast: Math.min(100, Math.max(0, fin(o.fellowEyeContrast, 20))),
     amblyopicEye: o.amblyopicEye === 'RIGHT' ? 'RIGHT' : 'LEFT',

@@ -1,12 +1,14 @@
-// E2E „Binokular – Sehspiele“ (/binokular/): Startbildschirm mit zwei Spielkarten (keine Reste des früheren Spiels) →
-// Kalibrierung (Messbild, zwei synthetische Fotos, Regler, Profil speichern, Kontrolle; nur in der ersten Größe, sonst
-// „Mit Startwerten spielen“) → Augen/Farben → „Nachzeichnen“ (Pfad über den Testzugriff `window.__binokular`:
-// Start, Ziehen entlang des Pfads, Farbwechsel, genau EIN Fehler je Ausflug, Rückkehrradius, graues Aufblitzen, Ziel →
-// Zusammenfassung) → „Farbwechsel-Pong“ (Ball bewegt sich, relative Touch-Steuerung mit Verstärkung per CDP-Touch,
+// E2E „Binokular – Sehspiele“ (/binokular/): Startbildschirm mit zwei Spielkarten (keine Reste des früheren Spiels),
+// Tipp auf eine Karte startet das Spiel sofort (nie automatisch Kalibrierung) → Kalibrierung nur per Knopf (Messbild,
+// zwei synthetische Fotos, Regler, Profil speichern, Kontrolle; nur in der ersten Größe) → Therapeutenbereich: amblyopes
+// Auge → „Nachzeichnen“ (Pfad über den Testzugriff `window.__binokular`: Start, Ziehen entlang des Pfads, Farbwechsel,
+// genau EIN Fehler je Ausflug, Rückkehrradius, graues Aufblitzen, Ziel → Karte „Geschafft – weiter zu Level 2“ → Enter →
+// anderer, komplexerer Pfad, Level 2 geschafft → Beenden → Zusammenfassung mit Levelliste) → „Farbwechsel-Pong“ (Ball bewegt sich, relative Touch-Steuerung mit Verstärkung per CDP-Touch,
 // Maus absolut, Pfeiltasten, Farbwechsel beim Schlägerkontakt, Pause bei Wechsel der Sichtbarkeit, Wake Lock) →
 // Therapeutenbereich (PIN 726: Spieleinstellungen ändern, Export) → Nachzeichnen mit Fade (nie zwei Farben zugleich,
-// Zähler stehen) und Fehlerlimit → Pong mit Zwei-Spieler-Modus (zwei gleichzeitige Touchpunkte), Farbwechsel im Flug,
-// Spielende nach Punkten → Verlauf (Tabelle, CSV).
+// Zähler stehen) und Fehlerlimit („Nochmal“ bleibt im Level, „Beenden“) → Pong mit Zwei-Spieler-Modus (zwei gleichzeitige
+// Touchpunkte), Farbwechsel im Flug (null bis zwei Linien je Flug), Spielende nach Punkten → Level 4 mit Schleifen ohne
+// Level-Automatik → Verlauf (Tabelle, CSV).
 // Pixelprüfungen: Hintergrund = Profilhintergrund, Pfad/Ball = Profilfarbe des Auges, Rückmeldung und Linie grau.
 // Größen: Tablet quer, Tablet hoch, Handy quer, Handy hoch. Keine Konsolenfehler, kein waagrechtes Scrollen.
 // Voraussetzung: `npm run build && npx vite preview` (Port 4173). Aufruf: node tests/e2e/binokular.mjs
@@ -225,19 +227,11 @@ async function mapper(p, w, h) {
   return m;
 }
 
-/** vom Startbildschirm in ein Spiel: Karte → (Kalibrierung) → Augen/Farben (amblyopes Auge rechts) → Spiel starten */
-async function openGame(p, id, tag, opts = {}) {
+/** vom Startbildschirm in ein Spiel: ein Tipp auf die Karte startet sofort (keine Kalibrierung, kein Zwischenschritt) */
+async function openGame(p, id, tag) {
   await p.click(`#bm-game-${id}`);
-  await p.waitForSelector('#cal-play-defaults, #setup-summary, #cal-profiles');
-  if (await p.locator('#cal-profiles').count()) {
-    if (opts.fullCalibration) opts.saved = await opts.fullCalibration();
-    else await p.click('#cal-play-defaults');
-  }
-  await p.waitForSelector('#setup-summary');
-  await p.click('label.bm-chip:has(input[name="amb-eye"][value="RIGHT"])');
-  if (opts.afterSetup) await opts.afterSetup();
-  await p.click('#bm-play');
   await p.waitForSelector(`.bm-game[data-game="${id}"]`);
+  check((await p.locator('#cal-profiles').count()) === 0, tag(`${id}: Kartentipp startet das Spiel ohne Kalibrierung`));
   await p.waitForFunction(() => window.__binokular && window.__binokular.state().game);
   // Leiste ist vollständig (Live-Anzeige, Knöpfe) und die Bühne hat ihre endgültige Größe
   await p.waitForSelector('.bm-hud-item[id^="hud-"]:not(#hud-time)');
@@ -310,7 +304,9 @@ for (const sz of sizes) {
   const body = await p.locator('body').innerText();
   check(!/Level|Kristall|Roboter|Binocular Mine|Mine\b|Schlüssel/i.test(body), tag('Start: keine Reste des früheren Spiels'));
   check((await p.locator('#bm-calibrate, #bm-history, #bm-therapist').count()) === 3, tag('Start: Kalibrierung, Verlauf, Therapeutenbereich'));
-  check((await p.locator('#start-profile').innerText()).includes('Startwerte Rot-Cyan'), tag('Start: aktives Profil angezeigt'));
+  const hint0 = await p.locator('#start-hint').innerText();
+  check(hint0.includes('Startwerte Rot-Cyan') && hint0.includes('Kalibrierung per Taste'), tag(`Start: graue Zeile mit Profil und Hinweis „${hint0}“`));
+  check((await p.locator('#bm-calibrate').innerText()) === 'Kalibrierung' && (await p.locator('#setup-summary, #bm-play').count()) === 0, tag('Start: Kalibrierung nur per Knopf, kein Zwischenbildschirm'));
   check((await p.locator('#sound-controls input[name="bm-volume"]').count()) === 3 && (await p.locator('#bm-sound-on').isChecked()), tag('Start: Ton an, drei Lautstärken'));
   await p.click('#sound-controls label:has(input[value="LOW"])');
   check((await store(p)).audio?.volume === 'LOW', tag('Start: Lautstärke gespeichert'));
@@ -319,14 +315,33 @@ for (const sz of sizes) {
   await noHScroll(p, tag('Start'));
   await shot('01-start');
 
+  // Spielstart ohne jede Kalibrierung (frischer Speicher): Karte → Spiel; ohne Beenden wird keine Session gespeichert
+  await openGame(p, 'nachzeichnen', tag);
+  check((await store(p)).sessions.length === 0, tag('Start ohne Kalibrierung: Spiel läuft mit dem aktiven Profil'));
+  await p.goto(url, { waitUntil: 'networkidle' });
+  await p.waitForSelector('#game-cards');
+
+  // Kalibrierung nur auf Knopfdruck (erste Größe), danach zurück zum Start
+  if (first) {
+    await p.click('#bm-calibrate');
+    await fullCalibration(p, tag, shot);
+    await p.waitForSelector('#game-cards');
+    check((await p.locator('#start-hint').innerText()).includes('E2E Brille'), tag('Start: neues Profil in der grauen Zeile'));
+  }
+  // Therapeutenbereich: amblyopes Auge rechts (Profil, Auge und Zuordnung sind dort wählbar)
+  await p.click('#bm-therapist');
+  await p.fill('#bm-pin-input', '726');
+  await p.click('#bm-pin-ok');
+  await p.waitForSelector('#therapist-form');
+  check((await p.locator('#t-profile-info').count()) === 1 && (await p.locator('input[name="t-profile"]').count()) >= 2 && (await p.locator('input[name="t-lens"]').count()) === 2, tag('Therapeutenbereich: Profil, Auge, Zuordnung wählbar'));
+  await p.click('label.bm-chip:has(input[name="t-amb"][value="RIGHT"])');
+  check((await p.locator('#t-summary').innerText()).includes('amblyope Auge (rechts)'), tag('Therapeutenbereich: amblyopes Auge rechts'));
+  check((await p.locator('#n-maxlevel').innerText()).includes('Level 1 von 12'), tag('Therapeutenbereich: höchstes Level 1'));
+  await p.click('.bm-head .bm-btn-ghost');
+  await p.waitForSelector('#game-cards');
+
   // ============ 2 Nachzeichnen (hart) ============
-  let saved = null;
-  await openGame(p, 'nachzeichnen', tag, {
-    fullCalibration: first ? () => fullCalibration(p, tag, shot) : null,
-    afterSetup: async () => {
-      check((await p.locator('#setup-summary').innerText()).includes('amblyope Auge (rechts)'), tag('Setup: amblyopes Auge rechts'));
-    },
-  });
+  await openGame(p, 'nachzeichnen', tag);
   let st = await store(p);
   const fineBg = bgOf(st);
   await p.waitForTimeout(300);
@@ -349,7 +364,8 @@ for (const sz of sizes) {
   await shot('02-nachzeichnen');
 
   let s = await S(p);
-  check(s.game === 'nachzeichnen' && s.seed === SEED && s.path.length > 200 && s.status === 'ready' && s.width === 16, tag(`Pfad aus Seed ${SEED}: ${s.path.length} Punkte, Breite ${s.width}`));
+  check(s.game === 'nachzeichnen' && s.seed === SEED && s.path.length > 200 && s.status === 'ready' && s.width === 16 && s.level === 1 && s.curls === 0, tag(`Pfad aus Seed ${SEED}: ${s.path.length} Punkte, Breite ${s.width}, Level ${s.level}`));
+  check((await p.locator('#hud-level').innerText()).includes('1'), tag('Live-Anzeige: Level 1 (grau)'));
   const P = s.path;
   const m = await mapper(p, 1280, 720);
   check(P[0][0] < P[P.length - 1][0] && P[0][0] < 200 && P[P.length - 1][0] > 1080, tag('Pfad von links nach rechts'));
@@ -383,7 +399,14 @@ for (const sz of sizes) {
   const lastP = s.lastValid;
   const lc = m(lastP.x, lastP.y);
   await p.waitForTimeout(80);
-  const linePx = await pixelAt(p, lc.x, lc.y);
+  let linePx = await pixelAt(p, lc.x, lc.y);
+  if (m.scale < 0.6) {
+    // kleine Bühne: die Linie ist nur ein bis zwei Pixel breit – im Umkreis von 1,5 px den grauesten Punkt nehmen
+    for (const [dx, dy2] of [[1.5, 0], [-1.5, 0], [0, 1.5], [0, -1.5], [1, 1], [-1, -1]]) {
+      const c = await pixelAt(p, lc.x + dx, lc.y + dy2);
+      if (c[1] > linePx[1]) linePx = c;
+    }
+  }
   check(m.scale >= 0.6 ? isGray(linePx) : linePx[1] >= 0x50 && linePx[2] >= 0x50, tag(`gezeichnete Linie grau (${hexOf(linePx)})`));
   // Ausflug: weit weg vom Pfad → genau EIN Fehler
   const dy = lastP.y > 360 ? -130 : 130;
@@ -418,16 +441,45 @@ for (const sz of sizes) {
   check(s.status === 'drawing' && s.errors === 1, tag(`Rückkehrradius: zeichnet weiter, Fehler bleiben ${s.errors}`));
   // bis zum Ziel
   await dragAlong(p, m, P, Math.max(0, s.progress), P.length - 1);
-  await p.waitForSelector('#end-facts', { timeout: 5000 });
+  await p.waitForSelector('#game-card[data-card="goal"]', { timeout: 5000 });
   await p.mouse.up();
-  check((await p.locator('h1').first().innerText()) === 'Spiel beendet', tag('Ziel erreicht → Zusammenfassung'));
+  const cardTitle = await p.locator('#game-card-title').innerText();
+  check(cardTitle === 'Geschafft – weiter zu Level 2', tag(`Ziel erreicht → Karte „${cardTitle}“ (die Sitzung läuft weiter)`));
+  check((await p.locator('#bm-card-next').innerText()) === 'Weiter' && (await p.locator('#bm-card-quit').innerText()) === 'Beenden', tag('Karte: „Weiter“ und „Beenden“'));
+  check((await p.locator('#end-facts').count()) === 0 && (await p.locator('#game-card .bm-modal-card').evaluate((el) => getComputedStyle(el).color)) === 'rgb(136, 136, 136)', tag('Karte grau, kein Spielende'));
+  await shot('03-nachzeichnen-karte');
+  const lvl1 = await S(p);
+  check(lvl1.awaiting === 'goal' && lvl1.level === 1 && lvl1.levels.length === 1 && lvl1.levels[0].completed, tag('Zustand: Level 1 geschafft, wartet auf Weiter'));
+  // Enter (Tastatur) geht weiter: Level 2, anderer Pfad, mehr Stützpunkte
+  await p.keyboard.press('Enter');
+  await p.waitForFunction(() => window.__binokular.state().level === 2, null, { timeout: 3000 });
+  const lvl2 = await S(p);
+  check(JSON.stringify(lvl2.path) !== JSON.stringify(lvl1.path) && lvl2.complexity.points > lvl1.complexity.points && lvl2.ctrl.length > lvl1.ctrl.length && lvl2.awaiting === null && lvl2.status === 'ready', tag(`Level 2: anderer Pfad, ${lvl2.complexity.points} statt ${lvl1.complexity.points} Stützpunkte`));
+  check((await p.locator('#hud-level').innerText()).includes('2') && (await p.locator('#game-card').count()) === 0, tag('Live-Anzeige: Level 2, Karte weg'));
+  check(lvl2.errors === 1 && lvl2.maxLevel === 2, tag('Werte der Sitzung laufen weiter (Fehler 1), höchstes Level 2'));
+  await shot('03-nachzeichnen-level2');
+  // Level 2 fehlerfrei zeichnen, dann „Beenden“ auf der Karte
+  const P2a = lvl2.path;
+  const sc2a = m(P2a[0][0], P2a[0][1]);
+  await p.mouse.move(sc2a.x, sc2a.y);
+  await p.mouse.down();
+  await dragAlong(p, m, P2a, 4, P2a.length - 1);
+  await p.waitForSelector('#game-card[data-card="goal"]', { timeout: 5000 });
+  await p.mouse.up();
+  check((await p.locator('#game-card-title').innerText()) === 'Geschafft – weiter zu Level 3', tag('Level 2 geschafft → Karte „weiter zu Level 3“'));
+  await p.click('#bm-card-quit');
+  await p.waitForSelector('#end-facts', { timeout: 5000 });
+  check((await p.locator('h1').first().innerText()) === 'Spiel beendet', tag('Beenden auf der Karte → Zusammenfassung'));
   const facts = await p.locator('#end-facts').innerText();
-  check(/Nachzeichnen/.test(facts) && /Geschaffte Pfade\s*1/.test(facts) && /Fehler\s*1/.test(facts) && /Genauigkeit/.test(facts) && /Abweichung/.test(facts) && /Farbwechsel/.test(facts) && /Spielzeit/.test(facts), tag('Zusammenfassung: Zeit, Genauigkeit, Abweichung, Fehler, Farbwechsel'));
+  check(/Nachzeichnen/.test(facts) && /Höchstes Level\s*2/.test(facts) && /Geschaffte Pfade\s*2/.test(facts) && /Fehler\s*1/.test(facts) && /Genauigkeit/.test(facts) && /Abweichung/.test(facts) && /Farbwechsel/.test(facts) && /Spielzeit/.test(facts), tag(`Zusammenfassung: ${facts.replace(/\s+/g, ' ').slice(0, 120)}`));
+  const levelRows = await p.locator('#end-levels tbody tr').allInnerTexts();
+  check(levelRows.length === 2 && /^1\s/.test(levelRows[0]) && /^2\s/.test(levelRows[1]) && levelRows.every((r) => r.includes('geschafft')), tag(`Zusammenfassung: Levelliste (${levelRows.map((r) => r.replace(/\s+/g, ' ')).join(' | ')})`));
   await shot('03-nachzeichnen-ende');
   await noHScroll(p, tag('Zusammenfassung'));
   st = await store(p);
   const n1 = st.sessions[st.sessions.length - 1];
-  check(st.sessions.length === 1 && n1.gameId === 'nachzeichnen' && n1.endReason === 'goal' && n1.points === 1 && n1.errors === 1 && n1.colorChanges >= 2 && n1.details.accuracy > 0, tag(`Session gespeichert: ${JSON.stringify(n1.details)}`));
+  check(st.sessions.length === 1 && n1.gameId === 'nachzeichnen' && n1.endReason === 'goal' && n1.points === 2 && n1.errors === 1 && n1.colorChanges >= 2 && n1.details.accuracy > 0 && n1.levels.length === 2 && n1.details.maxLevel === 2, tag(`Session gespeichert: ${JSON.stringify(n1.details)}`));
+  check(st.nachMaxLevel === 2, tag(`Höchstes Level gespeichert: ${st.nachMaxLevel}`));
   await toStart(p);
 
   // ============ 3 Pong (Grundstufe) ============
@@ -497,7 +549,7 @@ for (const sz of sizes) {
   await p.waitForTimeout(250);
   await p.keyboard.up('ArrowLeft');
   check((await S(p)).bottom < bk0 - 80, tag('Pfeiltaste links bewegt den Schläger'));
-  // Farbwechsel bei Schlägerkontakt: genau ein Wechsel, kein Flugwechsel (Grundstufe)
+  // Farbwechsel bei Schlägerkontakt: genau ein Wechsel (Flugwechsel sind standardmäßig an: Linien noch nicht gekreuzt)
   await p.keyboard.press('Escape');
   await p.waitForSelector('#pause-overlay');
   await p.evaluate(() => window.__binokular.set({ bottom: 360, ball: { x: 380, y: 1060, vx: 0, vy: 500 }, speed: 520 }));
@@ -505,7 +557,7 @@ for (const sz of sizes) {
   await p.click('#bm-resume');
   await p.waitForFunction((h) => window.__binokular.state().hits > h, pre.hits, { timeout: 4000 });
   const post = await S(p);
-  check(post.colorChanges === pre.colorChanges + 1 && post.eye !== pre.eye && post.flightY === null, tag(`Schlägerkontakt: Farbe ${pre.eye} → ${post.eye}, genau 1 Wechsel`));
+  check(post.colorChanges === pre.colorChanges + 1 && post.eye !== pre.eye && post.flightYs.length <= 2 && post.flightYs.every((y) => y > 300 && y < 980), tag(`Schlägerkontakt: Farbe ${pre.eye} → ${post.eye}, genau 1 Wechsel, ${post.flightYs.length} Flugwechsel geplant`));
   check(post.speed > 520 && post.speed <= 520 * 1.04 + 0.01, tag(`Geschwindigkeit nach dem Schlag ${Math.round(post.speed)} (×1,04)`));
   await p.waitForTimeout(350);
   check((await p.locator('#hud-changes').innerText()).includes(String((await S(p)).colorChanges)) && (await p.locator('#hud-hits').innerText()).includes('1'), tag('Live-Anzeige: Schläge, Farbwechsel'));
@@ -573,15 +625,22 @@ for (const sz of sizes) {
   await p.click('#sec-nach label.bm-chip:has(input[name="n-mode"][value="FADE"])');
   await setNum('#n-fade', 0.6);
   await setNum('#n-errlimit', 1);
+  await setNum('#n-startlevel', 99);
+  check((await store(p)).games.nachzeichnen.startLevel === 12, tag('Startlevel 99 wird auf 12 begrenzt'));
+  await setNum('#n-startlevel', 3);
+  check(await p.locator('#n-auto').isChecked(), tag('Level steigen automatisch: Standard an'));
   await setNum('#p-gain', 99);
   check((await store(p)).games.pong.gain === 3, tag('Verstärkung 99 wird auf 3 begrenzt'));
   await setNum('#p-gain', 2);
   await setNum('#p-target', 2);
   await p.click('#p-two');
-  await p.click('#p-flight');
+  check(await p.locator('input[name="p-flight"][value="normal"]').isChecked(), tag('Pong: Farbwechsel im Flug standardmäßig „normal“'));
+  await p.click('label.bm-chip:has(input[name="p-flight"][value="OFF"])');
+  check((await store(p)).games.pong.flightChange === false, tag('Pong: Farbwechsel im Flug „aus“ gespeichert'));
+  await p.click('label.bm-chip:has(input[name="p-flight"][value="often"])');
   st = await store(p);
   check(
-    st.games.nachzeichnen.pathWidth === 24 && st.games.nachzeichnen.changeMode === 'FADE' && st.games.nachzeichnen.fadeS === 0.6 && st.games.nachzeichnen.errorLimit === 1 && st.games.pong.gain === 2 && st.games.pong.targetScore === 2 && st.games.pong.twoPlayer && st.games.pong.flightChange,
+    st.games.nachzeichnen.pathWidth === 24 && st.games.nachzeichnen.changeMode === 'FADE' && st.games.nachzeichnen.fadeS === 0.6 && st.games.nachzeichnen.errorLimit === 1 && st.games.pong.gain === 2 && st.games.pong.targetScore === 2 && st.games.pong.twoPlayer && st.games.pong.flightChange && st.games.pong.flightFreq === 'often' && st.games.nachzeichnen.startLevel === 3,
     tag(`Spieleinstellungen gespeichert: ${JSON.stringify(st.games.nachzeichnen)}`),
   );
   await shot('06-therapeut');
@@ -647,21 +706,39 @@ for (const sz of sizes) {
     if (a.ch === c.ch || a.phase === c.phase) if (a.phase !== 'steady' && c.phase !== 'steady' && (a.e !== c.e || a.d !== c.d)) frozen = false;
   }
   check(frozen, tag('Fade: Wechsel-Zähler stehen während des Fades'));
-  // Fehlerlimit 1: ein Ausflug beendet die Runde mit Zusammenfassung
-  s = await S(p);
-  await dragAlong(p, m2, P2, 4, 60);
-  s = await S(p);
-  const lp = s.lastValid;
-  for (let k = 1; k <= 8; k++) {
-    const c = m2(lp.x, lp.y + (lp.y > 360 ? -1 : 1) * (k * 20));
-    await p.mouse.move(c.x, c.y);
-  }
+  // Fehlerlimit 1: ein Ausflug beendet die Runde → Karte „Nochmal“ / „Beenden“ (Level bleibt gleich)
+  const provoke = async (PP, mm) => {
+    await dragAlong(p, mm, PP, 4, 60);
+    const sx = await S(p);
+    const lp = sx.lastValid;
+    for (let k = 1; k <= 8; k++) {
+      const c = mm(lp.x, lp.y + (lp.y > 360 ? -1 : 1) * (k * 20));
+      await p.mouse.move(c.x, c.y);
+    }
+    await p.waitForSelector('#game-card[data-card="limit"]', { timeout: 4000 });
+    await p.mouse.up();
+  };
+  check(s.level === 3 && s.complexity.curls === 0, tag(`Startlevel 3 aus dem Therapeutenbereich (Level ${s.level})`));
+  await provoke(P2, m2);
+  check((await p.locator('#game-card-title').innerText()) === 'Fehlerlimit erreicht' && (await p.locator('#bm-card-retry').innerText()) === 'Nochmal' && (await p.locator('#bm-card-quit').innerText()) === 'Beenden', tag('Fehlerlimit: Karte „Nochmal“ / „Beenden“'));
+  const lim1 = await S(p);
+  check(lim1.awaiting === 'limit' && lim1.level === 3 && lim1.errors === 1 && lim1.levels.length === 1 && !lim1.levels[0].completed, tag('Fehlerlimit: Runde zu Ende, Level 3 bleibt'));
+  await p.click('#bm-card-retry');
+  await p.waitForFunction(() => window.__binokular.state().awaiting === null, null, { timeout: 3000 });
+  const retry = await S(p);
+  check(retry.level === 3 && JSON.stringify(retry.path) !== JSON.stringify(lim1.path) && retry.status === 'ready' && retry.errors === 1, tag('Nochmal: gleiches Level, neuer Pfad, Fehler der Sitzung bleiben'));
+  const P3 = retry.path;
+  const m3 = await mapper(p, 1280, 720);
+  const sc3 = m3(P3[0][0], P3[0][1]);
+  await p.mouse.move(sc3.x, sc3.y);
+  await p.mouse.down();
+  await provoke(P3, m3);
+  await p.click('#bm-card-quit');
   await p.waitForSelector('#end-facts', { timeout: 4000 });
-  await p.mouse.up();
-  check(/Fehler\s*1/.test(await p.locator('#end-facts').innerText()), tag('Fehlerlimit: Runde beendet, Zusammenfassung mit 1 Fehler'));
+  check(/Fehler\s*2/.test(await p.locator('#end-facts').innerText()), tag('Fehlerlimit: Beenden → Zusammenfassung mit 2 Fehlern'));
   st = await store(p);
   const n3 = st.sessions[st.sessions.length - 1];
-  check(n3.gameId === 'nachzeichnen' && n3.endReason === 'limit' && n3.points === 0 && n3.colorChanges >= 2 && n3.errors === 1, tag('Session gespeichert: Fehlerlimit'));
+  check(n3.gameId === 'nachzeichnen' && n3.endReason === 'limit' && n3.points === 0 && n3.colorChanges >= 2 && n3.errors === 2 && n3.levels.length === 2 && n3.details.level === 3 && !n3.completed, tag('Session gespeichert: Fehlerlimit'));
   await toStart(p);
 
   // ============ 6 Pong: Zwei-Spieler-Modus, Flugwechsel, Spielende ============
@@ -701,10 +778,12 @@ for (const sz of sizes) {
   await p.click('#bm-resume');
   await p.waitForFunction((h) => window.__binokular.state().hits > h, pre2.hits, { timeout: 4000 });
   const afterHit = await S(p);
-  check(afterHit.colorChanges === pre2.colorChanges + 1 && afterHit.flightY !== null && afterHit.flightY > 100 && afterHit.flightY < 1190, tag(`Kontakt: Wechsel + Flugposition y = ${Math.round(afterHit.flightY)} geplant`));
-  await p.waitForFunction((c) => window.__binokular.state().colorChanges > c, afterHit.colorChanges, { timeout: 4000 });
+  check(afterHit.colorChanges === pre2.colorChanges + 1 && afterHit.flightYs.length <= 2 && afterHit.flightYs.every((y) => y > 300 && y < 980), tag(`Kontakt: Wechsel + ${afterHit.flightYs.length} Flugpositionen (${afterHit.flightYs.map(Math.round)}) geplant`));
+  // zwei Linien erzwingen: jede wechselt beim Überqueren genau einmal
+  await p.evaluate(() => window.__binokular.set({ flightYs: [880, 620] }));
+  await p.waitForFunction(() => window.__binokular.state().flightYs.length === 0, null, { timeout: 4000 });
   const afterFlight = await S(p);
-  check(afterFlight.colorChanges === afterHit.colorChanges + 1 && afterFlight.eye !== afterHit.eye && afterFlight.flightY === null, tag('Flug: genau ein zusätzlicher Wechsel beim Überqueren'));
+  check(afterFlight.colorChanges === afterHit.colorChanges + 2 && afterFlight.eye === afterHit.eye, tag('Flug: zwei Linien → genau zwei zusätzliche Wechsel (je Linie einmal)'));
   // Spielende nach Punkten (Ziel 2): oberer Schläger weg, Ball nach oben
   for (let i = 0; i < 2; i++) {
     await p.waitForFunction(() => !window.__binokular || window.__binokular.state().phase === 'play' || window.__binokular.state().phase === 'over', null, { timeout: 5000 });
@@ -742,6 +821,61 @@ for (const sz of sizes) {
   await dl.saveAs(csvPath);
   const csv = fs.readFileSync(csvPath, 'utf8');
   check(csv.split('\r\n').filter(Boolean).length === 6 && csv.includes('Farbwechsel') && csv.includes('Nachzeichnen') && csv.includes('accuracy='), tag('CSV-Export: Kopf + 5 Sessions'));
+
+  // ============ 7b Level 4 (Schleife) ohne Level-Automatik ============
+  await p.evaluate(() => {
+    const x = JSON.parse(localStorage.getItem('binokular:v1'));
+    Object.assign(x.games.nachzeichnen, { startLevel: 4, autoLevel: false, errorLimit: 0, pathWidth: 16, changeMode: 'HARD' });
+    localStorage.setItem('binokular:v1', JSON.stringify(x));
+  });
+  await p.goto(`${base}binokular/?game=nachzeichnen&debug=1&seed=11`, { waitUntil: 'networkidle' });
+  await p.waitForFunction(() => window.__binokular && window.__binokular.state().game);
+  await p.waitForTimeout(450);
+  const l4 = await S(p);
+  const crossings = (pts) => {
+    const out = [];
+    for (let i = 0; i < pts.length - 1; i++) {
+      for (let j = i + 20; j < pts.length - 1; j++) {
+        const [a, b2, c, d] = [pts[i], pts[i + 1], pts[j], pts[j + 1]];
+        const den = (b2[0] - a[0]) * (d[1] - c[1]) - (b2[1] - a[1]) * (d[0] - c[0]);
+        if (Math.abs(den) < 1e-12) continue;
+        const t = ((c[0] - a[0]) * (d[1] - c[1]) - (c[1] - a[1]) * (d[0] - c[0])) / den;
+        const u = ((c[0] - a[0]) * (b2[1] - a[1]) - (c[1] - a[1]) * (b2[0] - a[0])) / den;
+        if (t >= 0 && t <= 1 && u >= 0 && u <= 1) {
+          const x = a[0] + (b2[0] - a[0]) * t;
+          const y = a[1] + (b2[1] - a[1]) * t;
+          if (!out.some((o) => Math.hypot(o[0] - x, o[1] - y) < 12)) out.push([x, y]);
+        }
+      }
+    }
+    return out;
+  };
+  check(l4.level === 4 && l4.complexity.curls === 1 && l4.curls === 1 && crossings(l4.path).length === 1, tag(`Level 4: Pfad mit einer Schleife (${crossings(l4.path).length} Selbstkreuzung)`));
+  await shot('10-level4-schleife');
+  const m4 = await mapper(p, 1280, 720);
+  const sc4 = m4(l4.path[0][0], l4.path[0][1]);
+  await p.mouse.move(sc4.x, sc4.y);
+  await p.mouse.down();
+  await dragAlong(p, m4, l4.path, 4, l4.path.length - 1);
+  await p.waitForSelector('#game-card[data-card="goal"]', { timeout: 6000 });
+  await p.mouse.up();
+  const g4 = await S(p);
+  check(g4.errors === 0 && g4.levels[0].completed, tag('Level 4: ganze Schleife nachgezeichnet, kein Fehler (Fortschritt springt an der Kreuzung nicht)'));
+  check((await p.locator('#game-card-title').innerText()) === 'Geschafft' && (await p.locator('#game-card').innerText()).includes('neuen Pfad in Level 4'), tag('ohne Automatik: „Geschafft“, neuer Pfad im selben Level'));
+  await p.click('#bm-card-next');
+  await p.waitForFunction(() => window.__binokular.state().awaiting === null, null, { timeout: 3000 });
+  const n4b = await S(p);
+  check(n4b.level === 4 && JSON.stringify(n4b.path) !== JSON.stringify(l4.path), tag('Weiter ohne Automatik: Level 4 bleibt, neuer Pfad'));
+  await p.click('button[data-action="newPath"]');
+  const n4c = await S(p);
+  check(n4c.level === 4 && JSON.stringify(n4c.path) !== JSON.stringify(n4b.path), tag('„Neuer Pfad“: neuer Pfad desselben Levels'));
+  await p.keyboard.press('Escape');
+  await p.waitForSelector('#pause-overlay');
+  await p.click('#bm-end');
+  await p.waitForSelector('#end-levels');
+  const rows4 = await p.locator('#end-levels tbody tr').allInnerTexts();
+  check(rows4.length === 1 && /^4\s/.test(rows4[0]), tag(`Levelliste: ${rows4.map((r) => r.replace(/\s+/g, ' ')).join(' | ')}`));
+  check((await store(p)).nachMaxLevel === 4, tag('Höchstes Level 4 gespeichert'));
 
   // ============ 8 Auflösung: devicePixelRatio höchstens 2 ============
   if (first) {

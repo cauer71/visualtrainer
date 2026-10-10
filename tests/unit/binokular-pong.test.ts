@@ -17,6 +17,7 @@ import {
   MAX_ANGLE,
   newPong,
   nextSpeed,
+  planFlight,
   PADDLE_H,
   setPaddle,
   SPEED_FACTOR,
@@ -30,7 +31,7 @@ import {
 } from '../../src/binokular/games/pong/logic';
 import { DEFAULT_PONG, normalizePong, type PongSettings } from '../../src/binokular/games/pong/settings';
 
-const cfg: PongSettings = { ...DEFAULT_PONG };
+const cfg: PongSettings = { ...DEFAULT_PONG, flightChange: false };
 const noKeys = { keys: { top: 0, bottom: 0 } };
 
 /** Spielzustand mitten im Ballwechsel: Ball kurz vor dem unteren Schläger, fällt nach unten */
@@ -194,7 +195,7 @@ describe('Farbwechsel', () => {
     expect(ev.filter((e) => e.type === 'colorChange')).toEqual([{ type: 'colorChange', cause: 'contact' }]);
     expect(s.eye).not.toBe(start);
     expect(s.colorChanges).toBe(1);
-    expect(s.flightY).toBeNull();
+    expect(s.flightYs).toEqual([]);
     // Ohne Schlägerkontakt (Wandabprall) keine Änderung
     const w = newPong(makeRng(1));
     w.phase = 'play';
@@ -204,34 +205,87 @@ describe('Farbwechsel', () => {
     runUntil(w, cfg, makeRng(1), (e) => e.type === 'bounce');
     expect(w.eye).toBe(e0);
   });
-  it('Farbwechsel im Flug: nach dem Kontakt wird eine y-Position zwischen den Schlägern bestimmt; beim Überqueren genau ein Wechsel', () => {
-    const c: PongSettings = { ...cfg, flightChange: true };
+  it('Farbwechsel im Flug: geplante Linien liegen zwischen 20 und 80 % der Strecke, sind verschieden und in Flugrichtung sortiert; jede wechselt genau einmal', () => {
+    const c: PongSettings = { ...cfg, flightChange: true, flightFreq: 'often' };
+    const a = frontY('bottom');
+    const b = frontY('top');
+    const counts = [0, 0, 0];
+    for (let seed = 1; seed <= 300; seed++) {
+      const ys = planFlight('bottom', c, makeRng(seed));
+      counts[ys.length]++;
+      for (const y of ys) {
+        const f = (a - y) / (a - b);
+        expect(f).toBeGreaterThanOrEqual(0.2 - 1e-9);
+        expect(f).toBeLessThanOrEqual(0.8 + 1e-9);
+      }
+      for (let i = 1; i < ys.length; i++) expect(ys[i - 1] - ys[i]).toBeGreaterThan(0.1 * (a - b)); // Flug nach oben: fallende y
+      const down = planFlight('top', c, makeRng(seed));
+      for (let i = 1; i < down.length; i++) expect(down[i] - down[i - 1]).toBeGreaterThan(0.1 * (a - b));
+    }
+    expect(counts[0]).toBeGreaterThan(0);
+    expect(counts[1]).toBeGreaterThan(0);
+    expect(counts[2]).toBeGreaterThan(counts[0]); // „häufig“
+    // Ball fliegt nach dem Kontakt durch alle Linien: je Linie genau ein Wechsel
     const rng = makeRng(5);
     const s = falling(c, 20, rng);
-    const e0 = s.eye;
     runUntil(s, c, rng, (e) => e.type === 'hit');
-    expect(s.eye).not.toBe(e0);
-    expect(s.flightY).not.toBeNull();
-    const fy = s.flightY!;
-    expect(fy).toBeLessThan(frontY('bottom'));
-    expect(fy).toBeGreaterThan(frontY('top'));
+    const planned = s.flightYs.length;
     const afterContact = s.eye;
-    const ev: PongEvent[] = [];
-    let crossed = 0;
-    for (let i = 0; i < 4000 && s.phase === 'play' && s.ball.y > fy; i++) {
-      const ev2 = stepPong(s, c, noKeys, rng);
-      ev.push(...ev2);
-      if (ev2.some((e) => e.type === 'hit' || e.type === 'point')) break;
+    let flights = 0;
+    for (let i = 0; i < 4000 && s.phase === 'play'; i++) {
+      const ev = stepPong(s, c, noKeys, rng);
+      flights += ev.filter((e) => e.type === 'colorChange' && e.cause === 'flight').length;
+      if (ev.some((e) => e.type === 'hit' || e.type === 'point')) break;
+      if (!s.flightYs.length && s.ball.y < frontY('top') + 200) break;
     }
-    crossed = ev.filter((e) => e.type === 'colorChange' && e.cause === 'flight').length;
-    expect(crossed).toBe(1);
-    expect(s.eye).not.toBe(afterContact);
-    expect(s.flightY).toBeNull();
-    // weiter bis zum nächsten Kontakt: kein zweiter Flugwechsel
-    const more = runUntil(s, c, rng, (e) => e.type === 'hit' || e.type === 'point');
-    expect(more.filter((e) => e.type === 'colorChange' && e.cause === 'flight')).toHaveLength(0);
+    expect(flights).toBe(planned);
+    expect(s.flightYs).toEqual([]);
+    expect(s.eye).toBe(planned % 2 ? (afterContact === 'AMBLYOPIC' ? 'FELLOW' : 'AMBLYOPIC') : afterContact);
   });
-  it('Simulation: Flugwechsel genau einmal je Ballflug; Wechsel insgesamt = Kontakte + Flugwechsel', () => {
+  it('Häufigkeit: selten < normal < häufig (mittlere Anzahl Flugwechsel), „aus“ plant keine', () => {
+    const mean = (f: 'rare' | 'normal' | 'often') => {
+      let n = 0;
+      for (let seed = 0; seed < 600; seed++) n += planFlight('bottom', { ...cfg, flightChange: true, flightFreq: f }, makeRng(seed)).length;
+      return n / 600;
+    };
+    expect(mean('rare')).toBeLessThan(mean('normal'));
+    expect(mean('normal')).toBeLessThan(mean('often'));
+    for (let seed = 0; seed < 50; seed++) expect(planFlight('bottom', cfg, makeRng(seed))).toEqual([]);
+  });
+  /** Simulation mit zwei perfekten Schlägern (Zwei-Spieler-Modus): Farbe, mit der der Ball am unteren Schläger ankommt */
+  function arrivalColours(c: PongSettings, seed: number, hits: number): string[] {
+    const rng = makeRng(seed);
+    const s = newPong(rng);
+    const out: string[] = [];
+    for (let i = 0; i < 120 * 3000 && out.length < hits && s.phase !== 'over'; i++) {
+      if (s.phase === 'play') {
+        setPaddle(s, c, 'bottom', s.ball.x);
+        setPaddle(s, c, 'top', s.ball.x);
+      }
+      const before = s.eye;
+      if (stepPong(s, c, noKeys, rng).some((e) => e.type === 'hit' && e.side === 'bottom')) out.push(before);
+    }
+    return out;
+  }
+  it('Statistik: am Schläger des Spielers kommt der Ball in beiden Farben an (Flugwechsel an); aus: immer dieselbe Farbe', () => {
+    const on: PongSettings = { ...cfg, flightChange: true, flightFreq: 'normal', twoPlayer: true, targetScore: 21 };
+    const all: string[] = [];
+    for (let seed = 1; seed <= 10; seed++) all.push(...arrivalColours(on, seed, 20));
+    expect(all.length).toBe(200);
+    const share = all.filter((x) => x === 'AMBLYOPIC').length / all.length;
+    expect(share).toBeGreaterThan(0.3);
+    expect(share).toBeLessThan(0.7);
+    // Gegenprobe: ohne Flugwechsel konstant je Spiel (der Test misst also etwas)
+    const off: PongSettings = { ...on, flightChange: false };
+    for (let seed = 1; seed <= 10; seed++) {
+      const c = arrivalColours(off, seed, 20);
+      expect(c.length).toBe(20);
+      expect(new Set(c).size).toBe(1);
+    }
+    // mit Flugwechsel wechselt die Ankunftsfarbe je Spiel
+    for (let seed = 1; seed <= 10; seed++) expect(new Set(arrivalColours(on, seed, 20)).size).toBe(2);
+  });
+  it('Simulation: Wechsel insgesamt = Kontakte + Flugwechsel, Farbe folgt jedem Wechsel', () => {
     const c: PongSettings = { ...cfg, flightChange: true, targetScore: 21 };
     const rng = makeRng(99);
     const s = newPong(rng);
@@ -240,7 +294,6 @@ describe('Farbwechsel', () => {
     let flipsSeen = 0;
     let parity = s.eye;
     for (let i = 0; i < 120 * 120 && s.phase !== 'over'; i++) {
-      // eigener Schläger folgt dem Ball (gut, aber nicht perfekt)
       if (s.phase === 'play' && s.ball.vy > 0) setPaddle(s, c, 'bottom', s.ball.x);
       for (const e of stepPong(s, c, noKeys, rng)) {
         if (e.type === 'hit') contacts++;
@@ -253,10 +306,36 @@ describe('Farbwechsel', () => {
       expect(s.eye).toBe(parity);
     }
     expect(contacts).toBeGreaterThan(5);
-    expect(flights).toBeGreaterThanOrEqual(contacts - 1);
-    expect(flights).toBeLessThanOrEqual(contacts);
+    expect(flights).toBeGreaterThan(0);
+    expect(flights).toBeLessThanOrEqual(2 * contacts);
     expect(flipsSeen).toBe(contacts + flights);
     expect(s.colorChanges).toBe(flipsSeen);
+  });
+});
+
+describe('Computergegner verliert manchmal', () => {
+  it('mit Standardeinstellungen verfehlt der Computer gegen einen mittelmäßigen Spieler zumindest manchmal (und gewinnt nicht immer)', () => {
+    let aiMisses = 0;
+    let humanMisses = 0;
+    for (let seed = 1; seed <= 12; seed++) {
+      const rng = makeRng(seed);
+      const hrng = makeRng(seed + 1000);
+      const s = newPong(rng);
+      let offset = 0;
+      for (let i = 0; i < 120 * 600 && s.phase !== 'over'; i++) {
+        // „mittelmäßiger Mensch“: folgt dem Ball mit Fehler (neu gewürfelt je Schlag) und begrenzter Geschwindigkeit
+        if (s.phase === 'play' && s.ball.vy > 0) {
+          const d = Math.max(-380 * STEP_S, Math.min(380 * STEP_S, s.ball.x + offset - s.bottom));
+          setPaddle(s, DEFAULT_PONG, 'bottom', s.bottom + d);
+        }
+        for (const e of stepPong(s, DEFAULT_PONG, noKeys, rng)) {
+          if (e.type === 'hit' && e.side === 'top') offset = (hrng() * 2 - 1) * 80;
+          if (e.type === 'point') e.scorer === 'bottom' ? aiMisses++ : humanMisses++;
+        }
+      }
+    }
+    expect(aiMisses).toBeGreaterThan(0);
+    expect(humanMisses).toBeGreaterThan(0);
   });
 });
 
@@ -328,13 +407,16 @@ describe('Einstellungen Pong', () => {
   it('Standardwerte laut Spezifikation', () => {
     expect(DEFAULT_PONG.gain).toBe(1.3);
     expect(DEFAULT_PONG.targetScore).toBe(7);
-    expect(DEFAULT_PONG.flightChange).toBe(false);
+    expect(DEFAULT_PONG.flightChange).toBe(true);
+    expect(DEFAULT_PONG.flightFreq).toBe('normal');
     expect(DEFAULT_PONG.twoPlayer).toBe(false);
     expect(normalizePong(null)).toEqual(DEFAULT_PONG);
   });
   it('Werte streng begrenzt, ungültige Typen → Standard', () => {
     const n = normalizePong({ ballRadius: 999, startSpeed: 1, paddleWidth: 'breit', opponent: 9.4, flightChange: 1, twoPlayer: true, gain: 0, targetScore: 50.4 });
-    expect(n).toEqual({ ballRadius: 40, startSpeed: 300, paddleWidth: DEFAULT_PONG.paddleWidth, opponent: 5, flightChange: false, twoPlayer: true, gain: 0.5, targetScore: 21 });
+    expect(n).toEqual({ ballRadius: 40, startSpeed: 300, paddleWidth: DEFAULT_PONG.paddleWidth, opponent: 5, flightChange: true, flightFreq: 'normal', twoPlayer: true, gain: 0.5, targetScore: 21 });
+    expect(normalizePong({ flightFreq: 'oft' }).flightFreq).toBe('normal');
+    expect(normalizePong({ flightFreq: 'often' }).flightFreq).toBe('often');
     expect(normalizePong({ gain: NaN, startSpeed: Infinity }).gain).toBe(1.3);
     expect(normalizePong({ gain: 1.25 }).gain).toBe(1.3);
   });

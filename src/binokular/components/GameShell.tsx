@@ -60,6 +60,8 @@ export function GameShell({ module: mod, store, sound, onAudio, params, onEnd }:
   const viewRef = useRef<DebugView>('BINOCULAR');
   viewRef.current = view;
   const [snap, setSnap] = useState<GameSnapshot>({ hud: [], message: '' });
+  const snapRef = useRef(snap);
+  snapRef.current = snap;
   const [activeMs, setActiveMs] = useState(0);
   const [fs, setFs] = useState(false);
   const [portrait, setPortrait] = useState(false);
@@ -83,6 +85,16 @@ export function GameShell({ module: mod, store, sound, onAudio, params, onEnd }:
       }),
     [],
   );
+
+  /** Knopf einer Spielkarte: Spiel ausführen, Anzeige sofort auffrischen */
+  const runCard = (id: string) => {
+    const inst = instRef.current;
+    if (!inst || doneRef.current) return;
+    inst.runAction(id);
+    if (!doneRef.current) setSnap(inst.snapshot());
+  };
+  const runCardRef = useRef(runCard);
+  runCardRef.current = runCard;
 
   const finish = (reason: FinishReason) => {
     if (doneRef.current) return;
@@ -195,6 +207,15 @@ export function GameShell({ module: mod, store, sound, onAudio, params, onEnd }:
     };
     const onBlur = () => pauseRef.current(true);
     const onKey = (ev: KeyboardEvent) => {
+      const card = snapRef.current.card;
+      if (ev.key === 'Enter' && card && phaseRef.current === 'playing' && !(ev.target instanceof Element && ev.target.closest('#game-card'))) {
+        const primary = card.buttons.find((b) => b.primary);
+        if (primary) {
+          ev.preventDefault();
+          runCardRef.current(primary.id);
+        }
+        return;
+      }
       if (ev.key === 'Escape') {
         if (phaseRef.current === 'playing') pauseRef.current(false);
         else resumeRef.current();
@@ -254,7 +275,7 @@ export function GameShell({ module: mod, store, sound, onAudio, params, onEnd }:
         ))}
         <span class="bm-hud-spacer" />
         {instRef.current?.actions.map((a) => (
-          <button key={a.id} class="bm-btn bm-btn-small" data-action={a.id} disabled={phase !== 'playing'} onClick={() => instRef.current?.runAction(a.id)}>
+          <button key={a.id} class="bm-btn bm-btn-small" data-action={a.id} disabled={phase !== 'playing' || !!snap.card} onClick={() => instRef.current?.runAction(a.id)}>
             {a.label}
           </button>
         ))}
@@ -304,6 +325,27 @@ export function GameShell({ module: mod, store, sound, onAudio, params, onEnd }:
           <p class="bm-msg" role="status" aria-live="polite" id="bm-msg">
             {snap.message}
           </p>
+        )}
+        {snap.card && phase === 'playing' && (
+          <div class="bm-modal bm-card-overlay" role="dialog" aria-labelledby="game-card-title" id="game-card" data-card={snap.card.id}>
+            <div class="bm-modal-card">
+              <h2 id="game-card-title">{snap.card.title}</h2>
+              {snap.card.lines.map((l) => (
+                <p key={l} class="bm-card-line">
+                  {l}
+                </p>
+              ))}
+              <div class="bm-actions">
+                {snap.card.buttons.map((b) => (
+                  <button key={b.id} class={`bm-btn${b.primary ? ' bm-btn-primary' : ''}`} id={`bm-card-${b.id}`} data-card-action={b.id} ref={(el: HTMLButtonElement | null) => {
+                      if (el && b.primary) el.focus();
+                    }} onClick={() => runCard(b.id)}>
+                    {b.label}
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
         )}
         {phase === 'paused' && (
           <div class="bm-modal" role="dialog" aria-labelledby="pause-title" id="pause-overlay">

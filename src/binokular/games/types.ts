@@ -29,10 +29,32 @@ export interface GameAction {
   label: string;
 }
 
+/** Graue Karte über dem Spielfeld (z. B. „Geschafft – weiter zu Level 2“); Enter löst den Hauptknopf aus */
+export interface GameCard {
+  id: string;
+  title: string;
+  lines: string[];
+  buttons: { id: string; label: string; primary?: boolean }[];
+}
+
 export interface GameSnapshot {
   hud: HudItem[];
   /** grauer Hinweistext (leer = keiner) */
   message: string;
+  /** Karte, die das Spiel anhält und auf eine Wahl wartet (fehlt = keine) */
+  card?: GameCard | null;
+}
+
+/** Ergebnis einer Runde (Level) für die Liste in Zusammenfassung und Verlauf */
+export interface LevelStat {
+  level: number;
+  /** Spielzeit der Runde in ms */
+  ms: number;
+  errors: number;
+  /** Genauigkeit in % */
+  accuracy: number;
+  /** Pfad geschafft */
+  completed: boolean;
 }
 
 /** Zusammenfassung einer Spielrunde bzw. Session (Grundlage des Session-Datensatzes) */
@@ -44,6 +66,8 @@ export interface GameSummary {
   details: Record<string, number>;
   /** Spielziel erreicht bzw. Spiel regulär zu Ende gespielt */
   completed: boolean;
+  /** Runden/Level der Session (nur Spiele mit Leveln) */
+  levels?: LevelStat[];
 }
 
 /** Umgebung, die die Oberfläche einem Spiel gibt */

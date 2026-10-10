@@ -14,7 +14,7 @@ import { DEFAULT_NACH, normalizeNach, type NachSettings } from '../games/nachzei
 import { DEFAULT_PONG, normalizePong, type PongSettings } from '../games/pong/settings';
 import { DEFAULT_PIN, isValidPin } from '../therapy/pin';
 import { normalizeSession, type SessionRecord } from '../therapy/session';
-import { DEFAULT_SETTINGS, normalizeSettings, type Settings } from './settings';
+import { DEFAULT_SETTINGS, normalizeSettings, num, type Settings } from './settings';
 
 /** Einstellungen je Spiel (Therapeutenbereich) */
 export interface GameSettingsMap {
@@ -54,6 +54,8 @@ export interface Store {
   games: GameSettingsMap;
   sessions: SessionRecord[];
   pin: string;
+  /** höchstes in „Nachzeichnen“ erreichtes Level (1–12, global, nicht je Patient) */
+  nachMaxLevel: number;
   /** Toneinstellung der Person (null = Voreinstellung aus dem Therapeutenbereich) */
   audio: AudioPrefs | null;
 }
@@ -68,6 +70,7 @@ export function defaultStore(): Store {
     games: defaultGameSettings(),
     sessions: [],
     pin: DEFAULT_PIN,
+    nachMaxLevel: 1,
     audio: null,
   };
 }
@@ -118,6 +121,7 @@ export function normalizeStore(x: unknown): Store {
     games: normalizeGameSettings(o.games),
     sessions: Array.isArray(o.sessions) ? o.sessions.map(normalizeSession).filter((x): x is SessionRecord => x !== null).slice(-MAX_SESSIONS) : [],
     pin: typeof o.pin === 'string' && isValidPin(o.pin) ? o.pin : DEFAULT_PIN,
+    nachMaxLevel: num(o.nachMaxLevel, 1, 12, 1),
     audio: normalizeAudio(o.audio),
   };
 }

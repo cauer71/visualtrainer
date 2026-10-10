@@ -2,7 +2,7 @@
  * Spiellogik „Farbwechsel-Pong“ (rein, ohne DOM, mit festem Zeitschritt betrieben). Spielfeld: Hochformat 720 × 1280
  * (Innenkoordinaten). Unten der eigene Schläger, oben der Gegner (Computer oder, im Zwei-Spieler-Modus, die zweite
  * Person). Der Ball gehört immer genau einem Auge (`eye`: AMBLYOPIC oder FELLOW – welche Farbe das ist, bestimmt
- * `vision/color.ts`) und wechselt bei jedem Schlägerkontakt, optional zusätzlich einmal im Flug.
+ * `vision/color.ts`) und wechselt bei jedem Schlägerkontakt, optional zusätzlich null bis zwei Mal im Flug.
  */
 import { clamp, type Rng } from '../common';
 import { otherSlot, type EyeSlot } from '../nachzeichnen/colorSchedule';
@@ -50,8 +50,8 @@ export interface PongState {
   serveMs: number;
   /** Richtung des nächsten Anspiels: 1 = nach unten (zum unteren Schläger), −1 = nach oben */
   serveDir: 1 | -1;
-  /** y-Position im Flug, bei deren Überqueren der Ball die Farbe wechselt (null = keine geplant) */
-  flightY: number | null;
+  /** geplante y-Positionen im Flug (in Flugrichtung); jede wechselt die Farbe genau einmal beim Überqueren */
+  flightYs: number[];
   colorChanges: number;
   /** Schläge des unteren (eigenen) Schlägers insgesamt */
   hits: number;
@@ -73,7 +73,7 @@ export function newPong(rng: Rng): PongState {
     phase: 'serve',
     serveMs: SERVE_MS,
     serveDir: rng() < 0.5 ? 1 : -1,
-    flightY: null,
+    flightYs: [],
     colorChanges: 0,
     hits: 0,
     rally: 0,
@@ -134,19 +134,44 @@ function launch(s: PongState, cfg: PongSettings, rng: Rng, ev: PongEvent[]): voi
   s.ball.vy = s.serveDir * s.speed * Math.cos(ang);
   s.phase = 'play';
   s.rally = 0;
-  s.flightY = null;
+  s.flightYs = [];
   ev.push({ type: 'serve' });
 }
 
-/** Zufällige y-Position auf dem Weg vom getroffenen zum anderen Schläger (25–75 % der Strecke) */
-function planFlight(s: PongState, from: Side, cfg: PongSettings, rng: Rng): void {
-  if (!cfg.flightChange) {
-    s.flightY = null;
-    return;
+/** Gewichte für 0, 1 oder 2 Farbwechsel im Flug je Häufigkeitsstufe */
+export const FLIGHT_WEIGHTS: Record<'rare' | 'normal' | 'often', readonly [number, number, number]> = {
+  rare: [0.6, 0.3, 0.1],
+  normal: [0.25, 0.5, 0.25],
+  often: [0.1, 0.3, 0.6],
+};
+/** Flugwechsel nur zwischen 20 % und 80 % der Strecke, zwei Linien mindestens 12 % der Strecke auseinander */
+export const FLIGHT_MIN = 0.2;
+export const FLIGHT_MAX = 0.8;
+export const FLIGHT_GAP = 0.12;
+
+/** Anzahl geplanter Flugwechsel (0, 1, 2) aus einer Zufallszahl 0 … 1 */
+export function flightCount(freq: 'rare' | 'normal' | 'often', u: number): number {
+  const w = FLIGHT_WEIGHTS[freq];
+  return u < w[0] ? 0 : u < w[0] + w[1] ? 1 : 2;
+}
+
+/** Zufällige y-Positionen auf dem Weg vom getroffenen zum anderen Schläger (20–80 % der Strecke, in Flugrichtung sortiert) */
+export function planFlight(from: Side, cfg: PongSettings, rng: Rng): number[] {
+  if (!cfg.flightChange) return [];
+  const n = flightCount(cfg.flightFreq, rng());
+  const fr: number[] = [];
+  if (n >= 1) fr.push(FLIGHT_MIN + rng() * (FLIGHT_MAX - FLIGHT_MIN));
+  if (n >= 2) {
+    // zweite Linie mit Mindestabstand zur ersten (Anteil der erlaubten Fläche, dann hinter die Lücke geschoben)
+    const free = FLIGHT_MAX - FLIGHT_MIN - 2 * FLIGHT_GAP;
+    let u = FLIGHT_MIN + rng() * free;
+    if (u >= fr[0] - FLIGHT_GAP) u += 2 * FLIGHT_GAP;
+    fr.push(u);
   }
+  fr.sort((x, y) => x - y);
   const a = frontY(from);
   const b = frontY(from === 'bottom' ? 'top' : 'bottom');
-  s.flightY = a + (b - a) * (0.25 + rng() * 0.5);
+  return fr.map((f) => a + (b - a) * f);
 }
 
 function paddleHit(s: PongState, cfg: PongSettings, rng: Rng, side: Side, ev: PongEvent[]): void {
@@ -164,7 +189,7 @@ function paddleHit(s: PongState, cfg: PongSettings, rng: Rng, side: Side, ev: Po
   if (side === 'bottom') s.hits++;
   ev.push({ type: 'hit', side });
   flip(s, 'contact', ev);
-  planFlight(s, side, cfg, rng);
+  s.flightYs = planFlight(side, cfg, rng);
   if (side === 'bottom') s.aiOffset = (rng() * 2 - 1) * cfg.paddleWidth * 0.45 * (1 - (cfg.opponent - 1) / 5);
 }
 
@@ -173,7 +198,7 @@ function score(s: PongState, cfg: PongSettings, scorer: Side, ev: PongEvent[]): 
   ev.push({ type: 'point', scorer });
   s.ball = { x: W / 2, y: H / 2, vx: 0, vy: 0 };
   s.speed = 0;
-  s.flightY = null;
+  s.flightYs = [];
   s.rally = 0;
   if (s.score[scorer] >= cfg.targetScore) {
     s.phase = 'over';
@@ -225,9 +250,13 @@ export function stepPong(s: PongState, cfg: PongSettings, input: PongInput, rng:
     ev.push({ type: 'bounce' });
   }
   // Farbwechsel im Flug: genau einmal je Überquerung der geplanten Linie
-  if (s.flightY !== null && (py - s.flightY) * (b.y - s.flightY) <= 0 && py !== b.y) {
-    s.flightY = null;
-    flip(s, 'flight', ev);
+  if (s.flightYs.length && py !== b.y) {
+    const rest: number[] = [];
+    for (const fy of s.flightYs) {
+      if ((py - fy) * (b.y - fy) <= 0) flip(s, 'flight', ev);
+      else rest.push(fy);
+    }
+    s.flightYs = rest;
   }
   // Schlägerkontakt (Durchflug-sicher: Vorderkante zwischen altem und neuem Ort)
   if (b.vy > 0) {

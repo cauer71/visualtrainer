@@ -13,7 +13,7 @@ Farbzuordnung je Auge, Ton, Therapeutenbereich, Speicher, Verlauf).
 
 - **URL:** `https://visual.auer.page/binokular/` (eigene Test-URL, kein Link aus der Haupt-App, nicht in der Übungsliste;
   URL und Speicherschlüssel `binokular:v1` blieben unverändert)
-- **Stand:** Startbildschirm mit zwei Spielkarten, Kalibrierung mit Farbprofilen, gemeinsame Spielhülle (Vollbild, Pause,
+- **Stand:** Startbildschirm mit nur zwei Spielkarten (Tipp = Spiel startet sofort), Kalibrierung mit Farbprofilen, gemeinsame Spielhülle (Vollbild, Pause,
   Zeit, Wake Lock, Automatik-Pause), Therapeutenbereich mit Spieleinstellungen, Session-Verlauf mit CSV-Export, Debug-Modus,
   dezente Soundeffekte (Web Audio).
 
@@ -28,8 +28,8 @@ npm run build               # baut auch dist/binokular/index.html
 npx vite preview            # http://localhost:4173/binokular/
 ```
 
-URL-Parameter (nur Tests und Vorführung): `?game=nachzeichnen|pong` (direkt ins Spiel, ohne Kalibrierung und Augenwahl –
-es gilt das gespeicherte bzw. das Startprofil), `?seed=N` (fester Zufall: Pfad und Startfarbe bzw. Startfarbe und Anspiel),
+URL-Parameter (nur Tests und Vorführung): `?game=nachzeichnen|pong` (direkt ins Spiel – wie jeder Spielstart ohne
+Kalibrierung; es gilt das gespeicherte bzw. das Startprofil), `?seed=N` (fester Zufall: Pfad und Startfarbe bzw. Startfarbe und Anspiel),
 `?debug=1` (Debug-Ansichten und Testzugriff `window.__binokular`, siehe unten).
 
 **Technik:** TypeScript, Vite, Canvas 2D und **Preact** statt React (gleiche Komponenten-/Hook-API, ≈ 4 kB, im Repo schon
@@ -47,7 +47,7 @@ src/binokular/
              common.ts          Zufall mit Seed (mulberry32), Bühne (Canvas-Skalierung, Letterbox, Schleife, Debug-
                                 Ansichten), Zeigerabsicherung, graues Aufblitz-Feedback
              index.ts           Spielregister
-             nachzeichnen/      path.ts (Pfad, Spline), colorSchedule.ts (Farbwechsel), trace.ts (Zeichnen, Fehler,
+             nachzeichnen/      path.ts (Pfad, Spline), levels.ts (Level, Schleifen, Prüfung), colorSchedule.ts (Farbwechsel), trace.ts (Zeichnen, Fehler,
                                 Wertung), settings.ts, index.ts (Modul: Zeiger, Darstellung)
              pong/              logic.ts (Physik, Computergegner, Farbwechsel, Punkte), settings.ts, index.ts
   vision/    color.ts           Farbzuordnung je Auge/Glas/Kontrast aus der Profil-Palette, sRGB ↔ linear, Deltas
@@ -65,7 +65,7 @@ src/binokular/
              photometry.ts      Foto-Auswertung und Berechnung (rein, getestet)
              tuning.ts          Feinabstimmung: Regler ↔ Palette
              profiles.ts        Farbprofile (Startprofile, Prüfung, Export/Import, Zusammenführen)
-  components/                   Preact-Bildschirme: App, StartScreen (Spielkarten), CalibrationScreen, SetupScreen,
+  components/                   Preact-Bildschirme: App, StartScreen (Spielkarten), CalibrationScreen,
                                 GameShell (gemeinsame Spielhülle), EndScreen, HistoryScreen, TherapistScreen,
                                 ProfilePicker, charts
 ```
@@ -125,9 +125,49 @@ Scrollen – kein Scrollen oder Zoomen im Spiel. Auf kleinen Bildschirmen im fal
 
 ## Spiel „Nachzeichnen“
 
-Querformat 1280 × 720. Der **Grundpfad** ist eine dicke, glatte Kurve (Catmull-Rom-Spline durch ca. 6 zufällige
-Stützpunkte von links nach rechts, Standardbreite 16 px). Start (gefüllter Kreis) und Ziel (Ring) sind grau, die gezeichnete
-Linie der Person ist grau (6 px, für beide Augen sichtbar). Knöpfe „Neuer Pfad“ und „Linie löschen“.
+Querformat 1280 × 720. Der **Grundpfad** ist eine dicke, glatte Kurve (Spline durch zufällige Stützpunkte von links nach
+rechts, Standardbreite 16 px). Start (gefüllter Kreis) und Ziel (Ring) sind grau, die gezeichnete Linie der Person ist
+grau (6 px, für beide Augen sichtbar). Knöpfe „Neuer Pfad“ (neuer Pfad im aktuellen Level) und „Linie löschen“.
+
+### Level (zunehmende Pfadkomplexität)
+
+Die Sitzung läuft über mehrere Level; jeder geschaffte Pfad führt ins nächste Level (`levels.ts`, Level 1–12, danach bleibt
+es bei 12 mit neuen Zufallspfaden). `complexityFor(level)` liefert `{ points, spread, curls, curlRadius, wobble }`:
+
+| Level | Stützpunkte | Streuung | Schleifen | kleinster Schleifenradius | Wackeln |
+|---|---|---|---|---|---|
+| 1 | 5 | 45 % | 0 | – | 0 |
+| 2 | 6 | 60 % | 0 | – | 0 |
+| 3 | 7 | 75 % | 0 | – | 12 px |
+| 4 | 7 | 75 % | 1 | 80 px | 12 px |
+| 5–6 | 7–8 | 80 % | 1 | 72–64 px | 16–20 px |
+| 7–9 | 8–9 | 85–90 % | 2 | 60–52 px | 20–24 px |
+| 10–12 | 10–11 | 90–100 % | 3 | 50–46 px | 28–32 px |
+
+Alle Werte steigen nie ab (der Schleifenradius sinkt). „Kurvigkeit“ im Therapeutenbereich verschiebt Punktzahl und Streuung
+des Levels relativ zum Standard (6 Punkte, 60 %).
+
+- **Erzeugung** (mit festem Seed, `buildLevelPath`): Stützpunkte von links nach rechts, zu enge Wellen werden geglättet,
+  danach werden die Schleifen eingesetzt. Eine **Schleife** ist ein Ausschnitt einer verlängerten Zykloide mit waagerechten
+  Enden: Der Pfad läuft hinein, dreht eine Runde und **kreuzt sich dabei genau einmal selbst** (Kreuzungswinkel ≈ 42°). Der
+  engste Krümmungsradius ist mindestens `max(Tabelle, 1,8 × Fehlerabstand)`. Der Spline ist zentripetal (keine Spitzen).
+- **Prüfung** (`validatePath`, jeder Kandidat, sonst neu würfeln, im Notfall weniger Schleifen): alles im Feld mit Rand
+  (halbe Pfadbreite + 30 px), Bogenlänge 900–7000 px, Start links vom Ziel, kleinster Krümmungsradius ≥ 1,3 × Fehlerabstand,
+  genau so viele Selbstkreuzungen wie Schleifen (je ≥ 30°), und nicht benachbarte Pfadstücke ≥ 2,5 Pfadbreiten auseinander –
+  außer in der Nähe der Kreuzung. Bei sehr großem Fehlerabstand passen weniger Schleifen ins Feld; es werden nur so viele
+  eingesetzt, wie passen.
+- **Fortschritt an Kreuzungen:** Die Nächster-Punkt-Suche beschränkt sich auf ein Fenster um den bisherigen Fortschritt
+  (12 px zurück, 10 px vor). Am Kreuzungspunkt liegen zwei weit entfernte Pfadstellen übereinander, der Fortschritt kann aber
+  nicht auf die andere springen: Wer an der Kreuzung auf den anderen Ast abbiegt oder eine Gerade durch die Schleife zieht,
+  macht einen Fehler statt Fortschritt – die Schleife muss durchlaufen werden.
+- **Ablauf:** Pfad geschafft → graue Karte „Geschafft – weiter zu Level N+1“ mit „Weiter“ (auch Enter) und „Beenden“. Die
+  Sitzung läuft weiter (Werte summieren sich, je Runde ein Eintrag: Level, Zeit, Fehler, Genauigkeit). Ohne Level-Automatik
+  heißt die Karte „Geschafft“ und „Weiter“ gibt einen neuen Pfad im selben Level. Fehlerlimit erreicht → Karte „Nochmal“
+  (gleiches Level, neuer Pfad) und „Beenden“. Die Sitzung endet über „Beenden“ (Karte oder Pause) oder die Beschwerden-Taste;
+  die Zusammenfassung zeigt das höchste Level und die Levelliste. Die Live-Anzeige zeigt das Level (grau).
+- **Einstellungen:** Startlevel (1–12, Standard 1), „Level steigen automatisch“ (Standard an).
+- **Höchstes erreichtes Level** steht global im Speicher (`nachMaxLevel`, nicht je Patient), wird mit jedem Sitzungsende
+  nachgezogen, im Therapeutenbereich (Abschnitt Nachzeichnen) angezeigt und lässt sich dort zurücksetzen.
 
 - **Farbwechsel des Pfads:** Der Pfad wechselt ständig zwischen Rot und Zweitfarbe. Ein Wechsel erfolgt, sobald **eine**
   Bedingung erfüllt ist: Zeitintervall abgelaufen (Standard 2 s, 0,5–6 s) **oder** gezeichnete Strecke seit dem letzten
@@ -149,11 +189,11 @@ Linie der Person ist grau (6 px, für beide Augen sichtbar). Knöpfe „Neuer Pf
   Fehlerabstand vom Pfad entfernt (sonst gäbe es sofort einen zweiten Fehler). Optional **Fehlerlimit** je Runde (0 = aus):
   danach ist die Runde zu Ende, mit Zusammenfassung.
 - **Wertung (Live-Anzeige grau):** Genauigkeit in % (Anteil Punkte in der Toleranzzone), durchschnittliche Abweichung in
-  px, Fehler, Anzahl Farbwechsel. Ende: Zusammenfassung mit diesen Werten und der Zeit. „Neuer Pfad“ übernimmt die Werte der
+  px, Fehler, Anzahl Farbwechsel, Level. Ende: Zusammenfassung mit diesen Werten und der Zeit. „Neuer Pfad“ übernimmt die Werte der
   alten Runde in die Session; „Linie löschen“ beginnt die Linie neu (Fehlerzähler bleiben).
 - **Einstellbar (Therapeutenbereich):** Pfadbreite (8–40 px), Kurvigkeit (Anzahl 4–10 und Streuung 20–100 % der
   Stützpunkte), Zeitintervall, Wechselstrecke, „nur Strecke“, Wechselart, Fade-Dauer (0,2–3 s), Fehlerabstand (16–80 px,
-  mindestens halbe Pfadbreite + Rand + 2), Fehlerlimit (0–20).
+  mindestens halbe Pfadbreite + Rand + 2), Fehlerlimit (0–20), Startlevel, Level-Automatik.
 
 ## Spiel „Farbwechsel-Pong“
 
@@ -161,9 +201,13 @@ Hochformat 720 × 1280. Unten der eigene Schläger, oben der Gegner (Computer od
 Mittellinie und Punktestand sind grau. Der **Ball** (großer gefüllter Kreis, Radius 12–40 px, Standard 20) wechselt
 zwischen Rot und Zweitfarbe; die Startfarbe ist zufällig (aus dem Seed).
 
-- **Farbwechsel:** Grundstufe: bei jedem Schlägerkontakt. Option **„Farbwechsel im Flug“**: nach jedem Kontakt wird eine
-  zufällige y-Position zwischen den Schlägern bestimmt (25–75 % der Strecke); beim Überqueren wechselt der Ball zusätzlich
-  – genau einmal je Überquerung.
+- **Farbwechsel:** bei **jedem Schlägerkontakt** und standardmäßig zusätzlich **im Flug** (`flightChange` an, Einstellung
+  „Farbwechsel im Flug: aus / selten / normal / häufig“, Standard normal). Nach jedem Kontakt werden null, eins oder zwei
+  Wechsel geplant (Gewichte selten 60/30/10 %, normal 25/50/25 %, häufig 10/30/60 %), an zufälligen, verschiedenen
+  y-Positionen zwischen 20 und 80 % der Strecke zum anderen Schläger (mindestens 12 % Abstand, in Flugrichtung sortiert,
+  `flightYs`). Jede Linie wechselt die Farbe genau einmal beim Überqueren. Warum: Mit Wechseln nur beim Kontakt käme der Ball
+  am eigenen Schläger immer in derselben Farbe an; so ist die Ankunftsfarbe unvorhersehbar (Test: über 200 Ballwechsel
+  beide Farben, ohne Flugwechsel immer dieselbe).
 - **Steuerung:** Touch/Stift **relativ**: der Finger wischt irgendwo, der Schläger folgt der waagerechten Bewegung mit
   Verstärkungsfaktor (Standard 1,3), damit der Finger den Schläger nicht verdeckt. Maus: absolut (Schläger folgt der
   Mausposition). Tastatur: Pfeile links/rechts (unten), im Zwei-Spieler-Modus A/D (oben). **Zwei-Spieler-Modus:** obere
@@ -178,7 +222,9 @@ zwischen Rot und Zweitfarbe; die Startfarbe ist zufällig (aus dem Seed).
   des Punkts angespielt (nach 0,9 s). Live-Anzeige: Punkte, Schläge, Farbwechsel. Zusammenfassung: Punkte (du : Gegner),
   Schläge, längster Ballwechsel, Farbwechsel.
 - **Einstellbar:** Ballradius, Startgeschwindigkeit (300–900 px/s), Schlägerbreite (80–260 px), Gegnerstärke,
-  Farbwechsel im Flug, Zwei-Spieler-Modus, Verstärkungsfaktor (0,5–3), Punkte bis Spielende.
+  Farbwechsel im Flug (aus/selten/normal/häufig), Zwei-Spieler-Modus, Verstärkungsfaktor (0,5–3), Punkte bis Spielende.
+  Der Computergegner ist unverändert (begrenzte Geschwindigkeit, Ungenauigkeit je Schlag) und **verliert weiterhin
+  manchmal**; ein Test sichert das mit Standardeinstellungen gegen einen mittelmäßigen Spieler.
 
 ## Session und Datenerfassung
 
@@ -211,8 +257,10 @@ bleiben. Der Einstellungs-Export (Format `binokular-einstellungen`, Version 2) e
 
 ## Kalibrierung
 
-Eigener Bereich (Startbildschirm „Kalibrierung“; beim ersten Spielstart automatisch, dort auch „Mit Startwerten
-spielen“). Oben die **Profilleiste**: aktives Profil wählen, „Neue Kalibrierung“, umbenennen, löschen (Startprofile
+Eigener Bereich, nur über den kleinen Knopf „Kalibrierung“ auf dem Startbildschirm erreichbar. **Ein Spielstart öffnet nie
+automatisch die Kalibrierung:** Ohne kalibriertes Profil gilt das aktive Profil (die Startwerte der Brille). Auf dem
+Startbildschirm steht eine kleine graue Zeile „Farbprofil: … · Kalibrierung per Taste“. Das alte Feld
+`calibration.startValuesAccepted` wird beim Laden noch toleriert, hat aber keine Wirkung mehr. Oben die **Profilleiste**: aktives Profil wählen, „Neue Kalibrierung“, umbenennen, löschen (Startprofile
 nicht), Profile als JSON exportieren/importieren. Darunter Brillentyp und Zuordnung der Gläser, dann die Schritte:
 
 0. **Vorbereitung:** Nachtmodus, Blaulichtfilter, f.lux und HDR aus, Helligkeit fest; Raum abdunkeln, Vollbild.
@@ -252,7 +300,9 @@ werden bei jedem Laden aus den Konstanten erzeugt (nicht lösch- oder überschre
 und `activeProfileId` im Store `binokular:v1`; jeder Zugriff auf localStorage steht in try/catch, die App startet
 ohne gespeicherte Daten. Alte Speicherstände: Die früheren Grundfarben (`calibration.colors`) passen nicht zum neuen
 Modell und werden verworfen; der frühere Brillentyp wählt das passende Startprofil; Antworten der Augenkontrolle
-bleiben. **Auswahl beim Spielstart:** „Augen und Farben“ zeigt alle Profile mit Farbmustern. Export/Import der Profile
+bleiben. **Auswahl:** Aktives Profil, amblyopes Auge und Zuordnung der Gläser wählt man im Therapeutenbereich (Abschnitt „Augen und
+Brille“, mit Farbmustern und einer Zusammenfassung, welches Auge welche Farbe sieht) und die Profile in der Kalibrierung; es
+gibt keinen Zwischenbildschirm mehr vor dem Spiel. Export/Import der Profile
 als eigene JSON-Datei (`binokular-farbprofile`, Version 1) in der Kalibrierung; zusätzlich enthält der
 Einstellungs-Export im Therapeutenbereich (Version 2) die eigenen Profile und das aktive Profil – Dateien der Version 1
 werden weiter gelesen. Importierte Daten werden Feld für Feld geprüft (IDs, Modus, Farben, Hintergrund dunkel begrenzt,
@@ -289,7 +339,8 @@ idealem Rot- bzw. Cyan-/Grünfilter multipliziert: was jedes Auge sieht).
 
 Mit `?debug=1` gibt es zusätzlich den Testzugriff `window.__binokular` (`state()` = Zustand des Spiels, z. B. Pfadpunkte,
 Fortschritt, Fehler, Farbe und `k`, Ball und Schläger; `toClient(x, y)` = Spielkoordinaten → Bildschirm; `set(…)` = Ball
-und Schläger setzen, nur Pong; `shellPhase()`), zusammen mit `?seed=N` für einen festen Pfad. Das nutzt der E2E-Test.
+und Schläger sowie Flugwechsel-Linien setzen, nur Pong; `shellPhase()`; Nachzeichnen zusätzlich Level, Komplexität,
+Stützpunkte, Levelliste und `awaiting` = wartende Karte), zusammen mit `?seed=N` für einen festen Pfad. Das nutzt der E2E-Test.
 
 ## Tests
 
@@ -299,9 +350,16 @@ und Schläger setzen, nur Pong; `shellPhase()`), zusammen mit `?seed=N` für ein
     Rückkehrradius, Punkte außerhalb nicht gewertet, Fehlerlimit, Absetzen), Genauigkeit und Abweichung, Farbwechsel-Planer
     (Zeit **oder** Strecke, Zähler zurückgesetzt, „nur Strecke“, Fade nacheinander – nie zwei Farben, Zähler stehen im
     Fade, Zufallstest), Einstellungen.
+  - `binokular-nachzeichnen-levels.test.ts` – `complexityFor` (monoton, Schleifen ab Level 4, Radius ≥ 1,8 × Fehlerabstand),
+    gültige Pfade für viele Seeds × alle 12 Level (im Feld, Länge, Start links vom Ziel, Krümmung, Abstände, Schleifenzahl,
+    unabhängig nachgezählte Selbstkreuzungen), andere Pfadbreiten/Fehlerabstände, vollständiges Nachzeichnen jedes Pfads,
+    **Kreuzungen: Gerade durch die Schleife bzw. Abbiegen auf den anderen Ast überspringt die Schleife nicht**, Startlevel,
+    Level-Automatik, Höchstlevel im Speicher, Levelliste der Session.
   - `binokular-pong.test.ts` – Abprallwinkel nach Trefferposition, Geschwindigkeit × 1,04 mit Obergrenze, Computergegner
-    (Geschwindigkeit begrenzt, steigt mit dem Spielstand), Farbwechsel bei Kontakt und im Flug (genau einmal je
-    Überquerung, Simulation), Startfarbe aus dem Seed, Punkte und Spielende, Zwei-Spieler-Modus, Einstellungen.
+    (Geschwindigkeit begrenzt, steigt mit dem Spielstand; **verliert gegen einen mittelmäßigen Spieler manchmal**),
+    Farbwechsel bei Kontakt und im Flug (null bis zwei Linien je Flug, 20–80 %, sortiert, genau einmal je Überquerung,
+    Häufigkeitsstufen), **Statistik: über 200 Ballwechsel kommt der Ball am Schläger des Spielers in beiden Farben an, ohne
+    Flugwechsel immer in derselben**, Startfarbe aus dem Seed, Punkte und Spielende, Zwei-Spieler-Modus, Einstellungen.
   - `binokular-games.test.ts` – Register und Schnittstelle, Farbregeln (Spielcode ohne feste Farben, Rückmeldung grau),
     Migration alter Speicherstände, keine Reste des früheren Spiels, Textregeln.
   - `binokular-vision.test.ts` – Farbzuordnung (Kontrast Richtung Hintergrund, Grau #777–#888, Delta-Zerlegung), Renderer
@@ -311,7 +369,9 @@ und Schläger setzen, nur Pong; `shellPhase()`), zusammen mit `?seed=N` für ein
   - `binokular-therapy.test.ts` – Session-Log, CSV, PIN, Export/Import (inkl. strenger Prüfung der Spieleinstellungen),
     Speicher. `binokular-audio.test.ts` – Töne kurz und weich, stumm erzeugt nichts, Lautstärkegrenze, Start nach Geste.
 - `node tests/e2e/binokular.mjs` (Vorschau-Server auf Port 4173, sonst `BASE=…`; `SIZES=tablet,tabletP,phone,phoneP`):
-  Startbildschirm (zwei Karten, keine Reste des früheren Spiels) → Kalibrierung (nur in der ersten Größe) → Nachzeichnen
+  Startbildschirm (zwei Karten, Tipp startet das Spiel ohne Kalibrierung) → Kalibrierung per Knopf (nur in der ersten Größe)
+  → Therapeutenbereich (Auge) → Nachzeichnen (Level 1 → Karte → Enter → Level 2 anderer Pfad, Levelliste; Fehlerlimit mit
+  „Nochmal“; Level 4 mit Schleife ohne Automatik) →
   (Pfad per Testzugriff, Ziehen, Farbwechsel, genau ein Fehler, Rückkehrradius, graues Aufblitzen, Ziel →
   Zusammenfassung) → Pong (Ball bewegt sich, relative Touch-Steuerung mit Verstärkung über CDP-Touch, Maus, Pfeiltaste,
   Farbwechsel beim Kontakt, Pause bei `visibilitychange`, Wake Lock) → Therapeutenbereich (Spieleinstellungen, Export) →

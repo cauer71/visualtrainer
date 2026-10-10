@@ -6,9 +6,9 @@ export type ChangeMode = 'HARD' | 'FADE';
 export interface NachSettings {
   /** Breite des Grundpfads (px, Spielkoordinaten) */
   pathWidth: number;
-  /** Anzahl der Stützpunkte der Kurve (Kurvigkeit) */
+  /** Kurvigkeit: Anzahl der Stützpunkte – verschiebt die Punktzahl des Levels relativ zum Standard 6 */
   curvePoints: number;
-  /** Streuung der Stützpunkte in % (Kurvigkeit) */
+  /** Kurvigkeit: Streuung der Stützpunkte in % – skaliert die Streuung des Levels relativ zum Standard 60 % */
   curveSpread: number;
   /** Zeitintervall bis zum Farbwechsel (s) */
   intervalS: number;
@@ -23,6 +23,10 @@ export interface NachSettings {
   errorDist: number;
   /** Fehlerlimit je Runde, 0 = aus */
   errorLimit: number;
+  /** Startlevel 1–12 (Komplexität des Pfads, siehe levels.ts) */
+  startLevel: number;
+  /** nach geschafftem Pfad automatisch ins nächste Level (aus: neuer Pfad im selben Level) */
+  autoLevel: boolean;
 }
 
 /** Zusatzrand der Toleranzzone: Abstand ≤ halbe Pfadbreite + Rand zählt als genau (px) */
@@ -45,6 +49,8 @@ export const DEFAULT_NACH: NachSettings = {
   fadeS: 0.8,
   errorDist: 28,
   errorLimit: 0,
+  startLevel: 1,
+  autoLevel: true,
 };
 
 /** kleinster zulässiger Fehlerabstand zu einer Pfadbreite: Toleranzzone plus 2 px */
@@ -65,5 +71,7 @@ export function normalizeNach(x: unknown): NachSettings {
     fadeS: num(o.fadeS, 0.2, 3, d.fadeS, 0.1),
     errorDist: Math.max(minErrorDist(pathWidth), num(o.errorDist, 16, 80, d.errorDist)),
     errorLimit: num(o.errorLimit, 0, 20, d.errorLimit),
+    startLevel: num(o.startLevel, 1, 12, d.startLevel),
+    autoLevel: bool(o.autoLevel, d.autoLevel),
   };
 }

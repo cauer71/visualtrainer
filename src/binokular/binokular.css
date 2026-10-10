@@ -893,3 +893,13 @@ h2 {
 .bm-game .bm-modal-card .bm-btn:focus-visible {
   outline-color: #888;
 }
+
+/* Startbildschirm: nur die Spielkarten, alles andere klein und zurückhaltend */
+.bm-start-hint {
+  text-align: center;
+  margin: 10px 0 4px;
+}
+.bm-actions-secondary {
+  justify-content: center;
+  margin-top: 4px;
+}

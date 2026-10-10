@@ -5,12 +5,12 @@ import { sessionsToCsv } from '../data/csv';
 import { cleanPatientId, type Settings } from '../data/settings';
 import { activeProfile, defaultGameSettings, type GameSettingsMap, type Store } from '../data/storage';
 import { mergeProfiles } from '../calibration/profiles';
-import { secondFilter } from '../vision/color';
+import { colorKind, filterOf, fullColorOf, otherEye, secondFilter } from '../vision/color';
 import { ProfilePicker } from './ProfilePicker';
 import { exportSettings, importSettings } from '../data/transfer';
 import { changePin, checkPin } from '../therapy/pin';
 import { t } from '../texts';
-import { Choice, download, NumberField, SafetyNotice, Screen, Toggle } from './common';
+import { Choice, de, download, NumberField, SafetyNotice, Screen, Toggle } from './common';
 import { normalizeNach, type NachSettings } from '../games/nachzeichnen/settings';
 import { normalizePong, type PongSettings } from '../games/pong/settings';
 
@@ -39,6 +39,9 @@ export function TherapistScreen({ store, update, onBack, onHistory }: Props) {
   };
   const profile = activeProfile(store);
   const otherName = t.filterName[secondFilter(profile.mode)];
+  const lens = { glasses: profile.mode, leftLens: s.leftLens };
+  const eyeName = (e: 'LEFT' | 'RIGHT') => (e === 'LEFT' ? t.left : t.right);
+  const adj = (e: 'LEFT' | 'RIGHT') => t.colorAdj[colorKind(fullColorOf(filterOf(e, lens), profile))];
 
   if (!unlocked) {
     return (
@@ -144,6 +147,10 @@ export function TherapistScreen({ store, update, onBack, onHistory }: Props) {
             ]}
             onChange={(v) => set({ leftLens: v })}
           />
+          <p class="bm-summary" id="t-summary">
+            {t.setupSummary(eyeName(s.amblyopicEye), adj(s.amblyopicEye), eyeName(otherEye(s.amblyopicEye)), adj(otherEye(s.amblyopicEye)))}
+          </p>
+          <p class="bm-muted">{t.setupContrast(de(s.amblyopicContrast), de(s.fellowEyeContrast))}</p>
         </section>
         <section class="bm-card">
           <h2>{t.secContrast}</h2>
@@ -154,7 +161,15 @@ export function TherapistScreen({ store, update, onBack, onHistory }: Props) {
         </section>
         <section class="bm-card" id="sec-nach">
           <h2>{t.secGameNach}</h2>
-          <NachForm value={store.games.nachzeichnen} onChange={(v) => setGame({ nachzeichnen: v })} />
+          <NachForm
+            value={store.games.nachzeichnen}
+            onChange={(v) => setGame({ nachzeichnen: v })}
+            maxLevel={store.nachMaxLevel}
+            onResetLevel={() => {
+              update((st) => ({ ...st, nachMaxLevel: 1 }));
+              setNote(t.nach.maxLevelResetDone);
+            }}
+          />
         </section>
         <section class="bm-card" id="sec-pong">
           <h2>{t.secGamePong}</h2>
@@ -268,11 +283,20 @@ export function TherapistScreen({ store, update, onBack, onHistory }: Props) {
   );
 }
 
-function NachForm({ value: v, onChange }: { value: NachSettings; onChange: (v: NachSettings) => void }) {
+function NachForm({ value: v, onChange, maxLevel, onResetLevel }: { value: NachSettings; onChange: (v: NachSettings) => void; maxLevel: number; onResetLevel: () => void }) {
   const set = (patch: Partial<NachSettings>) => onChange(normalizeNach({ ...v, ...patch }));
   const n = t.nachSet;
   return (
     <>
+      <NumberField id="n-startlevel" label={n.startLevel} value={v.startLevel} min={1} max={12} onChange={(x) => set({ startLevel: x })} />
+      <Toggle id="n-auto" label={n.autoLevel} checked={v.autoLevel} onChange={(x) => set({ autoLevel: x })} />
+      <p class="bm-muted" id="n-maxlevel">
+        {t.nach.maxLevelTitle}: <strong>{t.nach.maxLevelValue(maxLevel)}</strong>
+      </p>
+      <button class="bm-btn" id="n-maxlevel-reset" onClick={onResetLevel}>
+        {t.nach.maxLevelReset}
+      </button>
+      <p class="bm-muted">{n.levelHint}</p>
       <NumberField id="n-width" label={n.pathWidth} value={v.pathWidth} min={8} max={40} onChange={(x) => set({ pathWidth: x })} />
       <NumberField id="n-points" label={n.curvePoints} value={v.curvePoints} min={4} max={10} onChange={(x) => set({ curvePoints: x })} />
       <NumberField id="n-spread" label={n.curveSpread} value={v.curveSpread} min={20} max={100} step={5} onChange={(x) => set({ curveSpread: x })} />
@@ -300,7 +324,13 @@ function PongForm({ value: v, onChange }: { value: PongSettings; onChange: (v: P
       <NumberField id="p-speed" label={n.startSpeed} value={v.startSpeed} min={300} max={900} step={10} onChange={(x) => set({ startSpeed: x })} />
       <NumberField id="p-paddle" label={n.paddleWidth} value={v.paddleWidth} min={80} max={260} step={5} onChange={(x) => set({ paddleWidth: x })} />
       <NumberField id="p-opp" label={n.opponent} value={v.opponent} min={1} max={5} onChange={(x) => set({ opponent: x })} />
-      <Toggle id="p-flight" label={n.flightChange} checked={v.flightChange} onChange={(x) => set({ flightChange: x })} />
+      <Choice
+        name="p-flight"
+        label={n.flightChange}
+        value={v.flightChange ? v.flightFreq : 'OFF'}
+        options={(['OFF', 'rare', 'normal', 'often'] as const).map((k) => ({ value: k, label: n.flightFreq[k] }))}
+        onChange={(x) => set(x === 'OFF' ? { flightChange: false } : { flightChange: true, flightFreq: x })}
+      />
       <Toggle id="p-two" label={n.twoPlayer} checked={v.twoPlayer} onChange={(x) => set({ twoPlayer: x })} />
       <NumberField id="p-gain" label={n.gain} value={v.gain} min={0.5} max={3} step={0.1} onChange={(x) => set({ gain: x })} />
       <NumberField id="p-target" label={n.targetScore} value={v.targetScore} min={1} max={21} onChange={(x) => set({ targetScore: x })} />

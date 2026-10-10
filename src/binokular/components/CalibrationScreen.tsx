@@ -31,7 +31,6 @@ type Props = {
   /** weiter zur Auswahl vor dem Spiel */
   onDone: () => void;
   /** „Mit Startwerten spielen“ (Startprofil des Brillentyps) */
-  onPlayDefaults: (mode: Glasses) => void;
   onBack: () => void;
 };
 
@@ -424,7 +423,7 @@ function CheckCanvas({ step, vis }: { step: (typeof CHECK_STEPS)[number]; vis: V
 
 // --- Bildschirm -------------------------------------------------------------------------------
 
-export function CalibrationScreen({ settings, calibration, profiles, activeProfileId, onSettings, onProfiles, onCalibration, onDone, onPlayDefaults, onBack }: Props) {
+export function CalibrationScreen({ settings, calibration, profiles, activeProfileId, onSettings, onProfiles, onCalibration, onDone, onBack }: Props) {
   const active = findProfile(profiles, activeProfileId);
   const [step, setStep] = useState(0);
   const [mode, setMode] = useState<Glasses>(active.mode);
@@ -551,13 +550,6 @@ export function CalibrationScreen({ settings, calibration, profiles, activeProfi
     >
       {showPattern && <PatternOverlay onClose={() => setShowPattern(false)} />}
       <p class="bm-lead">{t.calIntro}</p>
-      <div class="bm-actions">
-        <button class="bm-btn" id="cal-play-defaults" onClick={() => onPlayDefaults(mode)}>
-          {t.calPlayDefaults}
-        </button>
-      </div>
-      <p class="bm-muted">{t.calPlayDefaultsHint}</p>
-
       <section class="bm-card bm-profilebar" id="cal-profiles">
         <h2>{t.calProfiles}</h2>
         <div class="bm-profilebar-row">
