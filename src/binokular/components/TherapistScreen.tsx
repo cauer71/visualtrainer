@@ -5,7 +5,10 @@ import { sessionsToCsv } from '../data/csv';
 import { chooseLevel, defaultProgress, unlockAll } from '../data/progress';
 import { cleanPatientId, type Settings } from '../data/settings';
 import { LEVELS } from '../levels';
-import type { Store } from '../data/storage';
+import { activeProfile, type Store } from '../data/storage';
+import { mergeProfiles } from '../calibration/profiles';
+import { secondFilter } from '../vision/color';
+import { ProfilePicker } from './ProfilePicker';
 import { exportSettings, importSettings } from '../data/transfer';
 import { changePin, checkPin } from '../therapy/pin';
 import { t } from '../texts';
@@ -30,7 +33,8 @@ export function TherapistScreen({ store, update, onBack, onHistory }: Props) {
     update((st) => ({ ...st, settings: { ...st.settings, ...patch } }));
     setNote(t.saved);
   };
-  const otherName = s.glasses === 'RED_CYAN' ? t.calColorCyan : t.calColorGreen;
+  const profile = activeProfile(store);
+  const otherName = t.filterName[secondFilter(profile.mode)];
 
   if (!unlocked) {
     return (
@@ -114,16 +118,18 @@ export function TherapistScreen({ store, update, onBack, onHistory }: Props) {
             ]}
             onChange={(v) => set({ amblyopicEye: v })}
           />
-          <Choice
-            name="t-glasses"
-            label={t.glasses}
-            value={s.glasses}
-            options={[
-              { value: 'RED_CYAN', label: t.glassesRedCyan },
-              { value: 'RED_GREEN', label: t.glassesRedGreen },
-            ]}
-            onChange={(v) => set({ glasses: v })}
+          <ProfilePicker
+            name="t-profile"
+            profiles={store.profiles}
+            activeId={profile.id}
+            onPick={(id) => {
+              update((st) => ({ ...st, activeProfileId: id }));
+              setNote(t.saved);
+            }}
           />
+          <p class="bm-muted" id="t-profile-info">
+            {t.profileInfo(profile.name)}
+          </p>
           <Choice
             name="t-lens"
             label={t.mapping}
@@ -225,7 +231,7 @@ export function TherapistScreen({ store, update, onBack, onHistory }: Props) {
             <button class="bm-btn" id="bm-export-csv" onClick={() => download(`binokular-sessions-${new Date().toISOString().slice(0, 10)}.csv`, sessionsToCsv(store.sessions), 'text/csv;charset=utf-8')}>
               {t.exportCsv}
             </button>
-            <button class="bm-btn" id="bm-export-json" onClick={() => download('binokular-einstellungen.json', exportSettings(store.settings, store.calibration), 'application/json')}>
+            <button class="bm-btn" id="bm-export-json" onClick={() => download('binokular-einstellungen.json', exportSettings({ settings: store.settings, calibration: store.calibration, profiles: store.profiles, activeProfileId: store.activeProfileId }), 'application/json')}>
               {t.exportJson}
             </button>
             <label class="bm-btn bm-file">
@@ -244,7 +250,10 @@ export function TherapistScreen({ store, update, onBack, onHistory }: Props) {
                     setNote(t.importError[r.error]);
                     return;
                   }
-                  update((st) => ({ ...st, settings: r.settings, calibration: r.calibration }));
+                  update((st) => {
+                    const profiles = mergeProfiles(st.profiles, r.profiles);
+                    return { ...st, settings: r.settings, calibration: r.calibration, profiles, activeProfileId: profiles.some((x) => x.id === r.activeProfileId) ? r.activeProfileId : st.activeProfileId };
+                  });
                   setNote(t.imported);
                 }}
               />

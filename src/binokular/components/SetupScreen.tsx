@@ -1,14 +1,29 @@
-/** Auswahl amblyopes Auge und Rot/Cyan- bzw. Rot/Grün-Konfiguration vor dem Spiel */
+/** Vor dem Spiel: amblyopes Auge, Farbprofil (Brille + Bildschirm, mit Farbmustern) und Zuordnung der Gläser */
+import { findProfile, type ColorProfile } from '../calibration/profiles';
 import type { Settings } from '../data/settings';
 import { t } from '../texts';
-import { filterOf, otherEye } from '../vision/color';
+import { colorKind, filterOf, fullColorOf, otherEye, secondFilter } from '../vision/color';
 import { Choice, de, Screen } from './common';
+import { ProfilePicker } from './ProfilePicker';
 
-export function SetupScreen({ settings, onSettings, onPlay, onBack }: { settings: Settings; onSettings: (p: Partial<Settings>) => void; onPlay: () => void; onBack: () => void }) {
-  const otherName = settings.glasses === 'RED_CYAN' ? t.calColorCyan : t.calColorGreen;
+type Props = {
+  settings: Settings;
+  profiles: readonly ColorProfile[];
+  activeProfileId: string;
+  onProfile: (id: string) => void;
+  onSettings: (p: Partial<Settings>) => void;
+  onPlay: () => void;
+  onBack: () => void;
+};
+
+export function SetupScreen({ settings, profiles, activeProfileId, onProfile, onSettings, onPlay, onBack }: Props) {
+  const profile = findProfile(profiles, activeProfileId);
+  const lens = { glasses: profile.mode, leftLens: settings.leftLens };
+  const otherName = t.filterName[secondFilter(profile.mode)];
   const amb = settings.amblyopicEye;
   const fel = otherEye(amb);
   const eyeName = (e: 'LEFT' | 'RIGHT') => (e === 'LEFT' ? t.left : t.right);
+  const adj = (e: 'LEFT' | 'RIGHT') => t.colorAdj[colorKind(fullColorOf(filterOf(e, lens), profile))];
   return (
     <Screen title={t.setupTitle} onBack={onBack}>
       <section class="bm-card">
@@ -22,16 +37,8 @@ export function SetupScreen({ settings, onSettings, onPlay, onBack }: { settings
           ]}
           onChange={(v) => onSettings({ amblyopicEye: v })}
         />
-        <Choice
-          name="glasses"
-          label={t.calGlasses}
-          value={settings.glasses}
-          options={[
-            { value: 'RED_CYAN', label: t.glassesRedCyan },
-            { value: 'RED_GREEN', label: t.glassesRedGreen },
-          ]}
-          onChange={(v) => onSettings({ glasses: v })}
-        />
+        <ProfilePicker name="setup-profile" profiles={profiles} activeId={profile.id} onPick={onProfile} />
+        <p class="bm-muted">{t.setupProfileHint}</p>
         <Choice
           name="lens"
           label={t.calMapping}
@@ -43,7 +50,7 @@ export function SetupScreen({ settings, onSettings, onPlay, onBack }: { settings
           onChange={(v) => onSettings({ leftLens: v })}
         />
         <p class="bm-summary" id="setup-summary">
-          {t.setupSummary(eyeName(amb), t.colorAdj[filterOf(amb, settings)], eyeName(fel), t.colorAdj[filterOf(fel, settings)])}
+          {t.setupSummary(eyeName(amb), adj(amb), eyeName(fel), adj(fel))}
         </p>
         <p class="bm-muted">{t.setupContrast(de(settings.amblyopicContrast), de(settings.fellowEyeContrast))}</p>
       </section>

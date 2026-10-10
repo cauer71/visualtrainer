@@ -1,36 +1,45 @@
 import { describe, expect, it } from 'vitest';
-import { adviceFor, DEFAULT_CALIBRATION, EMPTY_RESULTS, isComplete, normalizeCalibration, stepShows } from '../../src/binokular/calibration/calibration';
+import { adviceFor, checkShows, EMPTY_RESULTS, isComplete, normalizeCalibration } from '../../src/binokular/calibration/calibration';
+import { paletteOf, START_PROFILES, startProfileFor } from '../../src/binokular/calibration/profiles';
+import { visionOf, DEFAULT_SETTINGS } from '../../src/binokular/data/settings';
 import { Engine } from '../../src/binokular/game/engine';
 import { level01 } from '../../src/binokular/levels/level01';
 import {
-  DEFAULT_COLORS,
+  colorKind,
+  deltaOf,
   eyeContrast,
   eyeOf,
   filterOf,
-  hsvToRgb,
+  isSecondColor,
+  linearToSrgb,
+  mixLinear,
   NEUTRAL_LEVEL,
+  NEUTRAL_MIN,
+  normalizeRgb,
+  parseHex,
   resolveColor,
-  rgbToHsv,
-  rgbToHsvKeep,
-  scaleLuminance,
   srgbToLinear,
   throughFilter,
+  toHex,
+  type RGB,
   type VisionSettings,
 } from '../../src/binokular/vision/color';
 import { cellAt, fitLayout } from '../../src/binokular/vision/renderer';
 
+const RC = paletteOf(startProfileFor('RED_CYAN'));
+const RG = paletteOf(startProfileFor('RED_GREEN'));
 const base: VisionSettings = {
   amblyopicEye: 'LEFT',
   glasses: 'RED_CYAN',
   leftLens: 'RED',
   amblyopicContrast: 100,
   fellowEyeContrast: 20,
-  colors: DEFAULT_COLORS,
+  palette: RC,
 };
-const lum = (c: { r: number; g: number; b: number }) => srgbToLinear(c.r) + srgbToLinear(c.g) + srgbToLinear(c.b);
+const lum = (c: RGB) => srgbToLinear(c.r) + srgbToLinear(c.g) + srgbToLinear(c.b);
 
 describe('Farbzuordnung je Auge (vision/color)', () => {
-  it('Filter je Auge folgt der Anaglyphen-Zuordnung', () => {
+  it('Glas je Auge folgt der Zuordnung', () => {
     expect(filterOf('LEFT', base)).toBe('RED');
     expect(filterOf('RIGHT', base)).toBe('CYAN');
     expect(filterOf('LEFT', { ...base, leftLens: 'OTHER' })).toBe('CYAN');
@@ -43,57 +52,141 @@ describe('Farbzuordnung je Auge (vision/color)', () => {
     expect(eyeOf('BOTH', base)).toBeNull();
     expect(eyeOf('AMBLYOPIC', { ...base, amblyopicEye: 'RIGHT' })).toBe('RIGHT');
   });
-  it('AMBLYOPIC nur im Kanal des amblyopen Auges (links Rot): reines Rot, volle Stärke', () => {
-    expect(resolveColor('AMBLYOPIC', 1, base)).toEqual({ r: 255, g: 0, b: 0 });
+  it('Startwerte laut Vorgabe: Rot-Cyan #FF0000 / #0000FF (reines Blau) / #160000, Rot-Grün #FF0000 / #009600 / #210000', () => {
+    expect([toHex(RC.red), toHex(RC.second), toHex(RC.background)]).toEqual(['#FF0000', '#0000FF', '#160000']);
+    expect([toHex(RG.red), toHex(RG.second), toHex(RG.background)]).toEqual(['#FF0000', '#009600', '#210000']);
+    expect(START_PROFILES.map((p) => p.mode)).toEqual(['RED_CYAN', 'RED_GREEN']);
   });
-  it('FELLOW nur im Cyan-Kanal, mit 20 % Leuchtdichte', () => {
-    const c = resolveColor('FELLOW', 1, base);
-    expect(c.r).toBe(0);
-    expect(c.g).toBe(c.b);
-    expect(srgbToLinear(c.g)).toBeCloseTo(0.2, 2);
-  });
-  it('vertauschte Zuordnung und rechtes amblyopes Auge', () => {
-    const s: VisionSettings = { ...base, amblyopicEye: 'RIGHT', leftLens: 'RED' };
-    expect(resolveColor('AMBLYOPIC', 1, s)).toEqual({ r: 0, g: 255, b: 255 });
-    expect(resolveColor('FELLOW', 1, s).g).toBe(0);
-    expect(resolveColor('FELLOW', 1, s).r).toBeGreaterThan(0);
+  it('volle Augenobjekte haben genau die Profilfarbe (amblyop rot, führend in der Zweitfarbe)', () => {
+    expect(resolveColor('AMBLYOPIC', 1, base)).toEqual(RC.red);
+    expect(resolveColor('FELLOW', 1, { ...base, fellowEyeContrast: 100 })).toEqual(RC.second);
+    const rg: VisionSettings = { ...base, glasses: 'RED_GREEN', palette: RG, fellowEyeContrast: 100 };
+    expect(resolveColor('FELLOW', 1, rg)).toEqual(RG.second);
     const swapped: VisionSettings = { ...base, leftLens: 'OTHER' };
-    expect(resolveColor('AMBLYOPIC', 1, swapped)).toEqual({ r: 0, g: 255, b: 255 });
+    expect(resolveColor('AMBLYOPIC', 1, swapped)).toEqual(RC.second);
   });
-  it('Rot/Grün-Brille: zweite Farbe ist Grün ohne Blau', () => {
-    const s: VisionSettings = { ...base, glasses: 'RED_GREEN', fellowEyeContrast: 100 };
-    expect(resolveColor('FELLOW', 1, s)).toEqual({ r: 0, g: 255, b: 0 });
-  });
-  it('BOTH neutral grau und durch beide Filter sichtbar', () => {
-    const c = resolveColor('BOTH', 1, base);
-    expect(c).toEqual({ r: NEUTRAL_LEVEL, g: NEUTRAL_LEVEL, b: NEUTRAL_LEVEL });
-    expect(lum(throughFilter(c, 'RED'))).toBeGreaterThan(0);
-    expect(lum(throughFilter(c, 'CYAN'))).toBeGreaterThan(0);
-  });
-  it('ideale Filter: AMBLYOPIC unsichtbar für das dominante Auge und umgekehrt', () => {
-    for (const s of [base, { ...base, amblyopicEye: 'RIGHT' as const }, { ...base, leftLens: 'OTHER' as const }, { ...base, glasses: 'RED_GREEN' as const }]) {
-      const amb = resolveColor('AMBLYOPIC', 1, s);
-      const fel = resolveColor('FELLOW', 1, { ...s, fellowEyeContrast: 100 });
-      const ambEye = s.amblyopicEye;
-      const felEye = ambEye === 'LEFT' ? 'RIGHT' : 'LEFT';
-      expect(lum(throughFilter(amb, filterOf(felEye, s)))).toBe(0);
-      expect(lum(throughFilter(fel, filterOf(ambEye, s)))).toBe(0);
-      expect(lum(throughFilter(amb, filterOf(ambEye, s)))).toBeGreaterThan(0);
-      expect(lum(throughFilter(fel, filterOf(felEye, s)))).toBeGreaterThan(0);
-    }
-  });
-  it('Kontrast: Augenkontrast × Objektkontrast, linear in der Leuchtdichte, Grenzen 0–100', () => {
+  it('Kontrast = Mischung zwischen Hintergrund und Vollfarbe in linearem Licht', () => {
+    const bg = RC.background;
+    // Kontrast 0: Objekt verschwindet im Hintergrund (für beide Augen)
+    expect(resolveColor('FELLOW', 1, { ...base, fellowEyeContrast: 0 })).toEqual(bg);
+    expect(resolveColor('AMBLYOPIC', 0, base)).toEqual(bg);
+    // 20 % führendes Auge: linearer Blauanteil 0,2, Rot geht von Hintergrund-Rot Richtung 0
+    const c = resolveColor('FELLOW', 1, base);
+    expect(srgbToLinear(c.b)).toBeCloseTo(0.2, 2);
+    expect(srgbToLinear(c.r)).toBeCloseTo(0.8 * srgbToLinear(bg.r), 3);
+    expect(c.g).toBe(0);
+    // Augenkontrast × Objektkontrast
+    const half = resolveColor('AMBLYOPIC', 0.5, { ...base, amblyopicContrast: 50 });
+    expect(srgbToLinear(half.r)).toBeCloseTo(srgbToLinear(bg.r) + 0.25 * (1 - srgbToLinear(bg.r)), 2);
     expect(eyeContrast('AMBLYOPIC', { amblyopicContrast: 140, fellowEyeContrast: 20 })).toBe(100);
     expect(eyeContrast('FELLOW', { amblyopicContrast: 100, fellowEyeContrast: -5 })).toBe(0);
-    expect(eyeContrast('BOTH', base)).toBe(100);
-    const half = resolveColor('AMBLYOPIC', 0.5, { ...base, amblyopicContrast: 50 });
-    expect(srgbToLinear(half.r)).toBeCloseTo(0.25, 2);
-    expect(resolveColor('FELLOW', 1, { ...base, fellowEyeContrast: 0 })).toEqual({ r: 0, g: 0, b: 0 });
-    expect(scaleLuminance({ r: 255, g: 255, b: 255 }, 1)).toEqual({ r: 255, g: 255, b: 255 });
   });
-  it('kalibrierte Farben werden verwendet (z. B. Rot mit etwas Blau gegen Übersprechen)', () => {
-    const s: VisionSettings = { ...base, colors: { ...DEFAULT_COLORS, red: { r: 230, g: 0, b: 30 } } };
-    expect(resolveColor('AMBLYOPIC', 1, s)).toEqual({ r: 230, g: 0, b: 30 });
+  it('BOTH neutral grau #777–#888 bei vollem Kontrast, nie heller; Abstufungen gehen zum Hintergrund', () => {
+    const full = resolveColor('BOTH', 1, base);
+    expect(full).toEqual({ r: NEUTRAL_LEVEL, g: NEUTRAL_LEVEL, b: NEUTRAL_LEVEL });
+    expect(NEUTRAL_LEVEL).toBeGreaterThanOrEqual(NEUTRAL_MIN);
+    expect(toHex(full)).toBe('#888888');
+    for (const k of [0, 0.16, 0.3, 0.5, 0.8, 1]) {
+      const c = resolveColor('BOTH', k, base);
+      expect(Math.max(c.r, c.g, c.b)).toBeLessThanOrEqual(NEUTRAL_LEVEL);
+      expect(c.r).toBeGreaterThanOrEqual(RC.background.r);
+    }
+    expect(resolveColor('BOTH', 0, base)).toEqual(RC.background);
+    expect(lum(throughFilter(full, 'RED'))).toBeGreaterThan(0);
+    expect(lum(throughFilter(full, 'CYAN'))).toBeGreaterThan(0);
+  });
+  it('Farben kommen nur aus der Palette (anderes Profil → andere Farben)', () => {
+    const custom: VisionSettings = { ...base, palette: { red: { r: 230, g: 0, b: 0 }, second: { r: 0, g: 64, b: 255 }, background: { r: 25, g: 0, b: 51 } } };
+    expect(resolveColor('AMBLYOPIC', 1, custom)).toEqual({ r: 230, g: 0, b: 0 });
+    expect(resolveColor('FELLOW', 1, { ...custom, fellowEyeContrast: 100 })).toEqual({ r: 0, g: 64, b: 255 });
+    expect(resolveColor('BOTH', 0, custom)).toEqual({ r: 25, g: 0, b: 51 });
+  });
+  it('visionOf: Brillentyp und Palette aus dem aktiven Profil', () => {
+    const v = visionOf(DEFAULT_SETTINGS, startProfileFor('RED_GREEN'));
+    expect(v.glasses).toBe('RED_GREEN');
+    expect(v.palette).toEqual(RG);
+  });
+  it('Zweitfarbe erkannt (für Mindest-Linienbreite)', () => {
+    expect(isSecondColor('AMBLYOPIC', base)).toBe(false);
+    expect(isSecondColor('FELLOW', base)).toBe(true);
+    expect(isSecondColor('BOTH', base)).toBe(false);
+    expect(isSecondColor('AMBLYOPIC', { ...base, leftLens: 'OTHER' })).toBe(true);
+  });
+});
+
+describe('Zeichnen als Abweichung vom Hintergrund (Deltas)', () => {
+  /** Simulation der Canvas-Verrechnung je Kanal: erst `difference` (minus), dann `lighter` (plus) */
+  const compose = (under: RGB, d: { plus: RGB; minus: RGB }): RGB => {
+    const ch = (u: number, m: number, p: number) => Math.min(255, Math.abs(u - m) + p);
+    return { r: ch(under.r, d.minus.r, d.plus.r), g: ch(under.g, d.minus.g, d.plus.g), b: ch(under.b, d.minus.b, d.plus.b) };
+  };
+  const cases: VisionSettings[] = [
+    base,
+    { ...base, fellowEyeContrast: 100 },
+    { ...base, amblyopicEye: 'RIGHT' },
+    { ...base, glasses: 'RED_GREEN', palette: RG },
+    { ...base, palette: { red: { r: 240, g: 0, b: 0 }, second: { r: 0, g: 64, b: 255 }, background: { r: 30, g: 0, b: 40 } } },
+    { ...base, glasses: 'RED_GREEN', palette: { red: { r: 255, g: 0, b: 0 }, second: { r: 0, g: 140, b: 0 }, background: { r: 45, g: 30, b: 0 } } },
+  ];
+  it('auf dem Hintergrund ergibt sich genau die Objektfarbe', () => {
+    for (const s of cases) {
+      for (const v of ['AMBLYOPIC', 'FELLOW'] as const) {
+        for (const k of [0.2, 0.5, 1]) {
+          const c = resolveColor(v, k, s);
+          expect(compose(s.palette.background, deltaOf(c, s.palette.background))).toEqual(c);
+        }
+      }
+    }
+  });
+  it('je Kanal nur plus ODER minus; minus nie größer als der Hintergrund bzw. graue Felder (Subtraktion gültig)', () => {
+    for (const s of cases) {
+      const bg = s.palette.background;
+      for (const v of ['AMBLYOPIC', 'FELLOW'] as const) {
+        const d = deltaOf(resolveColor(v, 1, s), bg);
+        for (const k of ['r', 'g', 'b'] as const) {
+          expect(d.plus[k] === 0 || d.minus[k] === 0).toBe(true);
+          expect(d.minus[k]).toBeLessThanOrEqual(bg[k]);
+          for (const tone of [0.16, 0.3, 0.5, 1]) expect(d.minus[k]).toBeLessThanOrEqual(resolveColor('BOTH', tone, s)[k]);
+        }
+      }
+    }
+  });
+  it('über Grau ändert ein Objekt nur die Kanäle, in denen es vom Hintergrund abweicht (kein Loch im Grau)', () => {
+    const s = { ...base, fellowEyeContrast: 100 };
+    const grey = resolveColor('BOTH', 0.3, s);
+    // reines Blau auf #160000: nur R sinkt um den Hintergrund-Rotanteil, B steigt; G (unbeteiligt) bleibt
+    const blue = compose(grey, deltaOf(resolveColor('FELLOW', 1, s), s.palette.background));
+    expect(blue.g).toBe(grey.g);
+    expect(blue.r).toBe(grey.r - s.palette.background.r);
+    expect(blue.b).toBeGreaterThan(grey.b);
+    // rotes Objekt über Grau: G und B bleiben (Hintergrund hat dort 0) → durch das zweite Glas unverändert
+    const red = compose(grey, deltaOf(resolveColor('AMBLYOPIC', 1, s), s.palette.background));
+    expect([red.g, red.b]).toEqual([grey.g, grey.b]);
+    expect(red.r).toBeGreaterThan(grey.r);
+  });
+});
+
+describe('sRGB, Hex und Prüfung', () => {
+  it('exakte sRGB-Formel, Rundreise', () => {
+    expect(srgbToLinear(0)).toBe(0);
+    expect(srgbToLinear(255)).toBe(1);
+    expect(srgbToLinear(10)).toBeCloseTo(10 / 255 / 12.92, 8);
+    for (const v of [0, 1, 10, 22, 100, 150, 200, 255]) expect(Math.round(linearToSrgb(srgbToLinear(v)))).toBe(v);
+    expect(Math.round(linearToSrgb(0.3))).toBe(149);
+    expect(mixLinear({ r: 0, g: 0, b: 0 }, { r: 255, g: 255, b: 255 }, 0.5).r).toBe(188);
+  });
+  it('Hex lesen/schreiben, RGB streng prüfen', () => {
+    expect(toHex({ r: 22, g: 0, b: 0 })).toBe('#160000');
+    expect(parseHex('#009600')).toEqual({ r: 0, g: 150, b: 0 });
+    expect(parseHex('#abc')).toEqual({ r: 170, g: 187, b: 204 });
+    expect(parseHex('rot')).toBeNull();
+    expect(normalizeRgb({ r: 300, g: -4, b: 12.6 }, { r: 1, g: 2, b: 3 })).toEqual({ r: 255, g: 0, b: 13 });
+    expect(normalizeRgb({ r: 'x', g: 0, b: 0 }, { r: 1, g: 2, b: 3 })).toEqual({ r: 1, g: 2, b: 3 });
+    expect(normalizeRgb('#0000ff', { r: 1, g: 2, b: 3 })).toEqual({ r: 0, g: 0, b: 255 });
+    expect(colorKind({ r: 0, g: 0, b: 255 })).toBe('BLUE');
+    expect(colorKind({ r: 0, g: 150, b: 0 })).toBe('GREEN');
+    expect(colorKind({ r: 0, g: 255, b: 255 })).toBe('CYAN');
+    expect(colorKind({ r: 255, g: 0, b: 0 })).toBe('RED');
   });
 });
 
@@ -110,43 +203,28 @@ describe('Spiellogik kennt keine Farben', () => {
   });
 });
 
-describe('Kalibrierung', () => {
-  it('RGB ↔ HSV', () => {
-    expect(rgbToHsv({ r: 255, g: 0, b: 0 })).toEqual({ h: 0, s: 100, v: 100 });
-    expect(rgbToHsv({ r: 0, g: 255, b: 255 })).toEqual({ h: 180, s: 100, v: 100 });
-    expect(hsvToRgb({ h: 120, s: 100, v: 100 })).toEqual({ r: 0, g: 255, b: 0 });
-    for (const c of [{ r: 230, g: 10, b: 40 }, { r: 0, g: 200, b: 180 }, { r: 12, g: 240, b: 30 }]) {
-      const back = hsvToRgb(rgbToHsv(c));
-      expect(Math.abs(back.r - c.r)).toBeLessThanOrEqual(3);
-      expect(Math.abs(back.g - c.g)).toBeLessThanOrEqual(3);
-      expect(Math.abs(back.b - c.b)).toBeLessThanOrEqual(3);
-    }
-  });
-  it('Werkswerte, Begrenzung und Rundung beim Laden', () => {
-    expect(DEFAULT_CALIBRATION.colors.red).toEqual({ r: 255, g: 0, b: 0 });
-    const c = normalizeCalibration({ colors: { red: { r: 300, g: -4, b: 12.6 }, cyan: 'x' }, results: { objectA: 'seen', leftEye: 'quatsch' }, completedAt: 'kein Datum' });
-    expect(c.colors.red).toEqual({ r: 255, g: 0, b: 13 });
-    expect(c.colors.cyan).toEqual(DEFAULT_COLORS.cyan);
-    expect(c.results.objectA).toBe('seen');
-    expect(c.results.leftEye).toBeNull();
-    expect(c.completedAt).toBeNull();
-  });
-  it('Schritte: A rot, B zweite Farbe, beide; dann linkes, rechtes Auge, gemeinsam', () => {
-    expect(stepShows('objectA').filters).toEqual(['RED']);
-    expect(stepShows('objectB').filters).toEqual(['SECOND']);
-    expect(stepShows('objectsBoth').filters).toEqual(['RED', 'SECOND']);
-    expect(stepShows('leftEye').eyes).toEqual(['LEFT']);
-    expect(stepShows('rightEye').eyes).toEqual(['RIGHT']);
-    expect(stepShows('commonObject').eyes).toEqual(['BOTH']);
+describe('Kontrolle der Zuordnung', () => {
+  it('Schritte: linkes Auge, rechtes Auge, gemeinsames Objekt', () => {
+    expect(checkShows('leftEye')).toBe('LEFT');
+    expect(checkShows('rightEye')).toBe('RIGHT');
+    expect(checkShows('commonObject')).toBe('BOTH');
   });
   it('Hinweise aus den Antworten (keine Bewertung der Person)', () => {
-    const ok = { objectA: 'seen', objectB: 'seen', objectsBoth: 'both', leftEye: 'left', rightEye: 'right', commonObject: 'both' } as const;
+    const ok = { leftEye: 'left', rightEye: 'right', commonObject: 'both' } as const;
     expect(isComplete(ok)).toBe(true);
     expect(isComplete(EMPTY_RESULTS)).toBe(false);
     expect(adviceFor(ok)).toBe('ok');
     expect(adviceFor({ ...ok, leftEye: 'right', rightEye: 'left' })).toBe('swapLenses');
     expect(adviceFor({ ...ok, rightEye: 'both' })).toBe('crosstalk');
-    expect(adviceFor({ ...ok, objectB: 'notSeen' })).toBe('notVisible');
+    expect(adviceFor({ ...ok, commonObject: 'none' })).toBe('notVisible');
+  });
+  it('alte Kalibrierung: Grundfarben verworfen, Augenantworten bleiben, alter Abschluss zählt nicht', () => {
+    const c = normalizeCalibration({ colors: { red: { r: 230, g: 0, b: 30 } }, results: { objectA: 'seen', leftEye: 'left', rightEye: 'quatsch' }, completedAt: '2026-10-05T10:00:00.000Z' });
+    expect(c).toEqual({ results: { leftEye: 'left', rightEye: null, commonObject: null }, completedAt: null, startValuesAccepted: false });
+    const n = normalizeCalibration({ results: {}, completedAt: '2026-10-08T10:00:00.000Z', startValuesAccepted: true });
+    expect(n.completedAt).toBe('2026-10-08T10:00:00.000Z');
+    expect(n.startValuesAccepted).toBe(true);
+    expect(normalizeCalibration({ completedAt: 'kein Datum' }).completedAt).toBeNull();
   });
 });
 
@@ -160,36 +238,3 @@ describe('Layout und Treffer', () => {
     expect(fitLayout(16, 7, 844, 340).cell).toBeGreaterThanOrEqual(48);
   });
 });
-
-describe('HSV-Regler der Kalibrierung: Farbton bleibt erhalten', () => {
-  it('Sättigung auf 0 und wieder hoch ergibt dieselbe Farbe (kein Sprung auf Rot)', () => {
-    let hsv = rgbToHsvKeep({ r: 0, g: 255, b: 255 }, null); // Cyan
-    expect(hsv).toEqual({ h: 180, s: 100, v: 100 });
-    hsv = { ...hsv, s: 0 };
-    const grey = hsvToRgb(hsv);
-    expect(grey).toEqual({ r: 255, g: 255, b: 255 });
-    hsv = rgbToHsvKeep(grey, hsv); // Neuzeichnen mit dem grauen RGB-Wert
-    expect(hsv.h).toBe(180);
-    expect(hsvToRgb({ ...hsv, s: 100 })).toEqual({ r: 0, g: 255, b: 255 });
-  });
-  it('Helligkeit auf 0 und wieder hoch behält Farbton und Sättigung', () => {
-    let hsv = rgbToHsvKeep({ r: 0, g: 255, b: 0 }, null);
-    hsv = rgbToHsvKeep(hsvToRgb({ ...hsv, v: 0 }), { ...hsv, v: 0 });
-    expect(hsv).toEqual({ h: 120, s: 100, v: 0 });
-    expect(hsvToRgb({ ...hsv, v: 100 })).toEqual({ r: 0, g: 255, b: 0 });
-  });
-  it('kleine Sättigung: Farbton driftet beim schrittweisen Hochziehen nicht', () => {
-    let hsv = rgbToHsvKeep({ r: 255, g: 0, b: 0 }, null);
-    hsv = { ...hsv, h: 350 };
-    for (let s = 1; s <= 100; s++) {
-      hsv = { ...hsv, s };
-      hsv = rgbToHsvKeep(hsvToRgb(hsv), hsv);
-      expect(hsv.h).toBe(350);
-    }
-  });
-  it('RGB-Regler von außen werden übernommen', () => {
-    const prev = { h: 180, s: 100, v: 100 };
-    expect(rgbToHsvKeep({ r: 255, g: 0, b: 0 }, prev)).toEqual({ h: 0, s: 100, v: 100 });
-  });
-});
-

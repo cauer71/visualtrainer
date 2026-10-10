@@ -1,6 +1,7 @@
 /*
  * Binocular Mine – dunkles, neutrales Erscheinungsbild.
- * Oberfläche nur in Grautönen/Weiß: Die dichoptischen Farben (Rot, Cyan, Grün) bleiben dem Spielfeld vorbehalten.
+ * Oberfläche nur in Grautönen/Weiß: Die dichoptischen Farben (Rot, Blau bzw. Grün) bleiben dem Spielfeld vorbehalten.
+ * Im Spiel selbst sind Texte und Symbole grau (#888), der Hintergrund kommt aus dem aktiven Farbprofil.
  * Keine Blitze, kein Flackern: Einblendungen weich (≥ 150 ms).
  */
 :root {
@@ -33,6 +34,8 @@ body {
 
 body {
   overflow-x: hidden;
+  /* kein Scroll-Anker: Beim Antippen der Fotofelder wachsen Tabellen darunter – das Foto darf nicht wegrutschen */
+  overflow-anchor: none;
 }
 
 h1 {
@@ -323,25 +326,6 @@ input:focus-visible {
   font-weight: 600;
   margin: 12px 0 0;
 }
-.bm-fine summary {
-  cursor: pointer;
-  font-weight: 600;
-  min-height: 48px;
-  display: flex;
-  align-items: center;
-}
-.bm-color-editor {
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  margin: 12px 0;
-  padding: 8px 12px 12px;
-}
-.bm-color-editor legend {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-weight: 600;
-}
 .bm-swatch {
   display: inline-block;
   width: 22px;
@@ -349,33 +333,6 @@ input:focus-visible {
   border-radius: 4px;
   border: 1px solid #555;
 }
-.bm-color-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 4px 16px;
-}
-@media (max-width: 760px) {
-  .bm-color-grid {
-    grid-template-columns: 1fr;
-  }
-}
-.bm-slider {
-  display: grid;
-  grid-template-columns: 1.6em 1fr 3em;
-  align-items: center;
-  gap: 8px;
-  min-height: 48px;
-}
-.bm-slider input {
-  width: 100%;
-  min-height: 32px;
-  accent-color: #d0d0d0;
-}
-.bm-slider output {
-  text-align: right;
-  font-variant-numeric: tabular-nums;
-}
-
 /* Spiel */
 .bm-game {
   position: fixed;
@@ -669,72 +626,6 @@ input:focus-visible {
   }
 }
 
-/* Feinkalibrierung per Auswahl: 3 × 3 Farbkästen auf Schwarz, Beschriftung neutral grau (für beide Augen sichtbar) */
-.bm-fine-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(10px, 2.5vw, 22px);
-  max-width: 560px;
-  margin: 12px 0;
-  padding: clamp(12px, 3vw, 24px);
-  background: #000;
-  border: 1px solid var(--line);
-  border-radius: 14px;
-}
-.bm-fine-box {
-  display: grid;
-  gap: 6px;
-  justify-items: center;
-  padding: 8px;
-  min-height: 48px;
-  background: #000;
-  border: 2px solid transparent;
-  border-radius: 12px;
-  color: #9a9a9a;
-  font: inherit;
-  cursor: pointer;
-}
-.bm-fine-box:focus-visible {
-  outline: 3px solid #9a9a9a;
-  outline-offset: 2px;
-}
-.bm-fine-box.is-marked {
-  border: 2px dashed #9a9a9a;
-}
-.bm-fine-box.is-dim {
-  opacity: 0.2;
-  cursor: default;
-}
-.bm-fine-swatch {
-  display: block;
-  width: 100%;
-  aspect-ratio: 1;
-  max-width: 120px;
-  min-width: 56px;
-  border-radius: 8px;
-}
-.bm-fine-nr {
-  font-weight: 700;
-  font-size: 0.95rem;
-}
-.bm-fine-tip {
-  font-size: 0.85rem;
-}
-.bm-fine-result {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-  margin: 8px 0 12px;
-}
-.bm-fine-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-.bm-fine-expert {
-  margin: 12px 0;
-}
-
 /* Levelauswahl: 10 Karten, neutral grau; gesperrte gedimmt, aktuelles Level mit hellem Rand */
 .bm-levels {
   list-style: none;
@@ -840,4 +731,244 @@ input:focus-visible {
   .bm-modal-wide .bm-level-name {
     display: none;
   }
+}
+
+/* Im Spiel: Texte und Symbole grau (für beide Augen sichtbar), keine weißen oder farbigen Flächen */
+.bm-game {
+  color: #888;
+}
+.bm-game .bm-hud,
+.bm-game .bm-debugbar {
+  border-bottom-color: #2a2a2a;
+}
+.bm-game .bm-hud .bm-btn,
+.bm-game .bm-check .bm-btn {
+  background: transparent;
+  color: #888;
+  border-color: #4a4a4a;
+}
+.bm-game .bm-hud .bm-btn:hover,
+.bm-game .bm-check .bm-btn:hover {
+  background: rgba(136, 136, 136, 0.12);
+}
+.bm-game .bm-hud .bm-btn-stop {
+  border: 2px solid #888;
+}
+.bm-game .bm-hud .bm-btn:focus-visible,
+.bm-game .bm-check .bm-btn:focus-visible {
+  outline-color: #888;
+}
+.bm-game .bm-msg {
+  color: #888;
+  background: rgba(0, 0, 0, 0.55);
+  border-color: #2a2a2a;
+}
+.bm-game .bm-check {
+  color: #888;
+  background: rgba(0, 0, 0, 0.88);
+  border-color: #3a3a3a;
+}
+
+/* Kalibrierung: Profilleiste, Schritte, Fotos, Messbild, Regler */
+.bm-field select {
+  min-height: 48px;
+  font: inherit;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--btn-line);
+  background: #0b0b0b;
+  color: var(--text);
+}
+.bm-profilebar-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 8px 16px;
+}
+.bm-profilebar-row .bm-field {
+  flex: 1 1 260px;
+  margin-bottom: 0;
+}
+.bm-profile-hex {
+  color: var(--muted);
+  font-size: 0.85rem;
+  overflow-wrap: anywhere;
+}
+.bm-pswatch {
+  position: relative;
+  display: inline-block;
+  flex: none;
+  width: 52px;
+  height: 32px;
+  border-radius: 6px;
+  border: 1px solid #555;
+}
+.bm-pswatch-red,
+.bm-pswatch-second {
+  position: absolute;
+  top: 7px;
+  width: 16px;
+  height: 16px;
+}
+.bm-pswatch-red {
+  left: 7px;
+}
+.bm-pswatch-second {
+  right: 7px;
+  border-radius: 50%;
+}
+.bm-profile {
+  gap: 10px;
+  text-align: left;
+}
+.bm-profile-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.bm-profile-name {
+  font-weight: 600;
+}
+.bm-chip.is-on .bm-profile-hex {
+  color: #333;
+}
+.bm-steps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 8px 0;
+}
+.bm-step {
+  min-height: 44px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--btn-line);
+  background: var(--btn);
+  color: var(--text);
+  font: inherit;
+  font-size: 0.92rem;
+  cursor: pointer;
+}
+.bm-step.is-on {
+  background: #f2f2f2;
+  color: #000;
+  border-color: #f2f2f2;
+  font-weight: 600;
+}
+.bm-step:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+}
+.bm-step-no {
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+}
+.bm-cal-step h3 {
+  font-size: 1rem;
+  margin: 16px 0 6px;
+}
+.bm-photo-canvas {
+  display: block;
+  width: 100%;
+  max-width: 1000px;
+  height: auto;
+  margin: 8px 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  cursor: crosshair;
+  touch-action: manipulation;
+}
+.bm-table tr.is-warn td {
+  font-weight: 700;
+}
+.bm-table tr.is-chosen td {
+  font-weight: 700;
+  color: var(--text);
+  background: #222;
+}
+.bm-result {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+  margin: 8px 0;
+}
+.bm-result-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.bm-range {
+  display: grid;
+  grid-template-columns: minmax(9em, 14em) 1fr 3.5em;
+  align-items: center;
+  gap: 8px 12px;
+  min-height: 48px;
+}
+.bm-range input {
+  width: 100%;
+  min-height: 32px;
+  accent-color: #d0d0d0;
+}
+.bm-range output {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+@media (max-width: 640px) {
+  .bm-range {
+    grid-template-columns: 1fr 3.5em;
+  }
+  .bm-range-label {
+    grid-column: 1 / -1;
+  }
+}
+.bm-fine-preview {
+  height: 260px;
+}
+.bm-fine-sliders {
+  margin: 12px 0;
+  max-width: 760px;
+}
+.bm-fine-steps {
+  margin: 8px 0;
+  padding-left: 1.4em;
+}
+.bm-cal-nav {
+  justify-content: flex-start;
+}
+.bm-pattern {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  background: #000;
+  cursor: pointer;
+}
+.bm-pattern-row {
+  display: flex;
+  justify-content: center;
+  gap: 3vw;
+}
+.bm-pattern-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  color: #808080;
+  font-size: 1rem;
+}
+.bm-pattern-field {
+  width: min(15vw, 55vh);
+  aspect-ratio: 1;
+}
+.bm-pattern-field.is-black {
+  border: 2px dashed #777;
+}
+.bm-pattern-hint {
+  margin: 0;
+  color: #555;
+  font-size: 0.9rem;
 }

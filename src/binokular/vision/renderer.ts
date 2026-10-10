@@ -1,19 +1,25 @@
 /**
  * Canvas-2D-Renderer der dichoptischen Darstellung.
  *
- * Er bekommt eine Szene (Felder + GameObjects mit eyeVisibility/contrast) und die Seh-Einstellungen und entscheidet
- * allein, welche Farbe gezeichnet wird (`resolveColor`). Reihenfolge:
- *  1. schwarzer Hintergrund,
- *  2. neutrale Ebene (BOTH): Fels, Erde, Leitern, Lampen – normal deckend,
- *  3. Augen-Ebenen (AMBLYOPIC, FELLOW) – ADDITIV (`lighter`), damit z. B. ein Kristall über grauer Erde für das
- *     andere Auge unsichtbar bleibt (das Grau ändert sich in dessen Kanal nicht).
+ * Er bekommt eine Szene (Felder + GameObjects mit eyeVisibility/contrast) und die Seh-Einstellungen samt Palette des
+ * aktiven Profils und entscheidet allein, welche Farbe gezeichnet wird (`resolveColor`). Reihenfolge:
+ *  1. Hintergrund in der Profilfarbe (dunkel, kompensiert – nie fest codiert),
+ *  2. neutrale Ebene (BOTH): Fels, Erde, Leitern, Lampen – grau (#777–#888 bei vollem Kontrast), deckend,
+ *  3. Augen-Ebenen (AMBLYOPIC, FELLOW) als ABWEICHUNG vom Hintergrund: Je Klasse wird die Abweichung
+ *     (Objektfarbe − Hintergrund, je Kanal) in zwei Durchgängen gezeichnet – erst der negative Teil mit
+ *     `difference` (wirkt als Subtraktion, solange der Untergrund mindestens so hell ist – auf Hintergrund und Grau
+ *     erfüllt), dann der positive Teil mit `lighter` (Addition). Auf dem Hintergrund ergibt das genau die Profilfarbe;
+ *     über grauen Feldern ändern sich nur die Kanäle des Objekts. So bleibt z. B. ein Kristall in grauer Erde für das
+ *     andere Auge unsichtbar (kein „Loch“ im Grau). Jede Klasse wird dafür zuerst auf eine Zwischenebene gezeichnet
+ *     (deckend untereinander), damit sich Füllung und Kontur desselben Objekts nicht doppelt addieren.
  * Formen sind flach; Details entstehen nur über Helligkeitsstufen derselben Farbe, nie über Schwarz.
+ * Objekte in der Zweitfarbe haben Linien von mindestens 4 px (besser sichtbar durch das dunklere zweite Glas).
  *
- * Debug-Ansichten (Entwicklermodus, Tasten 1–5): nur amblyopes Auge, nur dominantes Auge, Gesamtbild,
+ * Debug-Ansichten (Entwicklermodus, Tasten 1–5): nur amblyopes Auge, nur führendes Auge, Gesamtbild,
  * Anaglyphen-Simulation (was jedes Auge durch einen idealen Filter sieht, nebeneinander), Objektklassifikation.
  */
 import type { GameObject, Scene } from '../game/types';
-import { eyeOf, filterCss, filterOf, resolveColor, rgbCss, type Eye, type EyeVisibility, type VisionSettings } from './color';
+import { deltaOf, eyeOf, filterCss, filterOf, isSecondColor, resolveColor, rgbCss, type Eye, type EyeVisibility, type VisionSettings } from './color';
 
 export type DebugView = 'BINOCULAR' | 'AMBLYOPIC_ONLY' | 'FELLOW_ONLY' | 'ANAGLYPH_SIM' | 'CLASSES';
 /** Tasten 1–5 → Ansicht */
@@ -84,23 +90,98 @@ export function renderScene(g: Ctx, scene: Scene, vis: VisionSettings, l: Layout
   g.save();
   g.globalCompositeOperation = 'source-over';
   g.globalAlpha = 1;
-  g.fillStyle = '#000';
+  g.fillStyle = rgbCss(vis.palette.background);
   g.fillRect(0, 0, l.width, l.height);
   drawTiles(g, scene, vis, l);
   const layers = [scene.objects, opts.overlay ?? []].map((list) => list.filter((o) => visibleIn(opts.view, o.eyeVisibility)));
+  const neutral: ObjColor = (o, tone) => rgbCss(resolveColor(o.eyeVisibility, o.contrast, vis, tone));
   for (const list of layers) {
     // neutrale Objekte deckend
     g.globalCompositeOperation = 'source-over';
-    for (const o of list) if (o.eyeVisibility === 'BOTH') drawObject(g, o, vis, l);
-    // Augenobjekte additiv
-    g.globalCompositeOperation = 'lighter';
-    for (const o of list) if (o.eyeVisibility !== 'BOTH') drawObject(g, o, vis, l);
+    for (const o of list) if (o.eyeVisibility === 'BOTH') drawObject(g, o, vis, l, neutral);
+    // Augenobjekte als Abweichung vom Hintergrund
+    for (const cls of ['AMBLYOPIC', 'FELLOW'] as const) drawEyeClass(g, list.filter((o) => o.eyeVisibility === cls), vis, l);
   }
   g.globalCompositeOperation = 'source-over';
   g.globalAlpha = 1;
   if (opts.view === 'CLASSES') drawClasses(g, layers.flat(), l);
   drawEdgeHints(g, scene, vis, l);
   g.restore();
+}
+
+/** Farbe eines Objekts bei Abstufung `tone` (CSS) */
+type ObjColor = (o: GameObject, tone: number) => string;
+
+/** Zwischenebene je Ziel-Canvas (gleiche Pixelgröße) */
+const layerCache = new WeakMap<object, CanvasRenderingContext2D>();
+
+function layerFor(g: Ctx): Ctx | null {
+  const cv = g.canvas as HTMLCanvasElement | undefined;
+  if (!cv || typeof document === 'undefined') return null;
+  let lg = layerCache.get(cv) ?? null;
+  if (!lg) {
+    lg = document.createElement('canvas').getContext('2d');
+    if (!lg) return null;
+    layerCache.set(cv, lg);
+  }
+  if (lg.canvas.width !== cv.width || lg.canvas.height !== cv.height) {
+    lg.canvas.width = cv.width;
+    lg.canvas.height = cv.height;
+  }
+  return lg;
+}
+
+/**
+ * Augenobjekte einer Klasse: negativer Teil der Abweichung vom Hintergrund mit `difference`, positiver mit `lighter`.
+ * Jeder Teil wird erst deckend auf eine Zwischenebene gezeichnet und dann als Ganzes verrechnet.
+ */
+function drawEyeClass(g: Ctx, objs: GameObject[], vis: VisionSettings, l: Layout): void {
+  if (!objs.length) return;
+  const bg = vis.palette.background;
+  const lg = layerFor(g);
+  const tr = g.getTransform();
+  // betroffener Bereich (Gerätepixel), großzügig um alle Objekte
+  const c = l.cell;
+  let x0 = Infinity;
+  let y0 = Infinity;
+  let x1 = -Infinity;
+  let y1 = -Infinity;
+  for (const o of objs) {
+    x0 = Math.min(x0, l.ox + (o.x - 1.5) * c);
+    y0 = Math.min(y0, l.oy + (o.y - 2) * c);
+    x1 = Math.max(x1, l.ox + (o.x + o.w + 1.5) * c);
+    y1 = Math.max(y1, l.oy + (o.y + 2.5) * c);
+  }
+  const W = g.canvas.width;
+  const H = g.canvas.height;
+  const bx = Math.max(0, Math.floor(tr.a * x0 + tr.e));
+  const by = Math.max(0, Math.floor(tr.d * y0 + tr.f));
+  const bw = Math.min(W, Math.ceil(tr.a * x1 + tr.e)) - bx;
+  const bh = Math.min(H, Math.ceil(tr.d * y1 + tr.f)) - by;
+  if (bw <= 0 || bh <= 0) return;
+  for (const part of ['minus', 'plus'] as const) {
+    const color: ObjColor = (o, tone) => rgbCss(deltaOf(resolveColor(o.eyeVisibility, o.contrast, vis, tone), bg)[part]);
+    const op: GlobalCompositeOperation = part === 'plus' ? 'lighter' : 'difference';
+    if (!lg) {
+      // ohne Zwischenebene direkt (Füllung und Kontur können sich dann überlagern)
+      g.globalCompositeOperation = op;
+      for (const o of objs) drawObject(g, o, vis, l, color);
+      g.globalCompositeOperation = 'source-over';
+      continue;
+    }
+    lg.setTransform(1, 0, 0, 1, 0, 0);
+    lg.globalCompositeOperation = 'source-over';
+    lg.globalAlpha = 1;
+    lg.clearRect(bx, by, bw, bh);
+    lg.setTransform(tr);
+    for (const o of objs) drawObject(lg, o, vis, l, color);
+    g.save();
+    g.setTransform(1, 0, 0, 1, 0, 0);
+    g.globalAlpha = 1;
+    g.globalCompositeOperation = op;
+    g.drawImage(lg.canvas, bx, by, bw, bh, bx, by, bw, bh);
+    g.restore();
+  }
 }
 
 /** Kamera: dezente neutrale Pfeile an Rändern, hinter denen das Raster weitergeht */
@@ -129,7 +210,7 @@ function drawEdgeHints(g: Ctx, scene: Scene, vis: VisionSettings, l: Layout): vo
  */
 export function renderAnaglyphSim(g: Ctx, src: CanvasImageSource, srcW: number, srcH: number, vis: VisionSettings, l: Layout, labels: { left: string; right: string }): void {
   g.save();
-  g.fillStyle = '#000';
+  g.fillStyle = rgbCss(vis.palette.background);
   g.fillRect(0, 0, l.width, l.height);
   const halfW = l.width / 2;
   const scale = Math.min((halfW - 12) / srcW, (l.height - 36) / srcH);
@@ -198,12 +279,21 @@ function drawTiles(g: Ctx, scene: Scene, vis: VisionSettings, l: Layout): void {
 
 // --- Objekte ----------------------------------------------------------------------------------
 
-function drawObject(g: Ctx, o: GameObject, vis: VisionSettings, l: Layout): void {
+/** Mindest-Linienbreite/-Punktradius des gerade gezeichneten Objekts (Zweitfarbe: Linien ≥ 4 px) */
+let minLine = 0;
+let minDot = 0;
+const lw = (lo: number, v: number): number => Math.max(lo, minLine, v);
+const dot = (lo: number, v: number): number => Math.max(lo, minDot, v);
+
+function drawObject(g: Ctx, o: GameObject, vis: VisionSettings, l: Layout, color: ObjColor): void {
   const c = l.cell;
   const cx = l.ox + (o.x + 0.5) * c;
   const cy = l.oy + (o.y + 0.5) * c;
   const s = c * o.size;
-  const col = (tone = 1) => rgbCss(resolveColor(o.eyeVisibility, o.contrast, vis, tone));
+  const col = (tone = 1) => color(o, tone);
+  const second = isSecondColor(o.eyeVisibility, vis);
+  minLine = second ? 4 : 0;
+  minDot = second ? 2 : 0;
   g.globalAlpha = Math.max(0, Math.min(1, o.alpha));
   g.lineJoin = 'round';
   g.lineCap = 'round';
@@ -256,18 +346,18 @@ function drawObject(g: Ctx, o: GameObject, vis: VisionSettings, l: Layout): void
       break;
     case 'marker':
       g.strokeStyle = col(0.7);
-      g.lineWidth = Math.max(2, c * 0.05);
+      g.lineWidth = lw(2, c * 0.05);
       g.beginPath();
       g.arc(cx, l.oy + (o.y + 0.9) * c, c * 0.18, 0, Math.PI * 2);
       g.stroke();
       break;
     case 'probe':
       if (o.eyeVisibility === 'BOTH') {
-        // neutraler Rahmen der Kontrollaufgabe: schwarze Fläche, graue Kante (für beide Augen gleich)
-        g.fillStyle = '#000';
+        // neutraler Rahmen der Kontrollaufgabe: Fläche in Hintergrundfarbe, graue Kante (für beide Augen gleich)
+        g.fillStyle = rgbCss(vis.palette.background);
         g.fillRect(cx - s * 0.75, cy - s * 0.75, s * 1.5, s * 1.5);
         g.strokeStyle = col(0.5);
-        g.lineWidth = Math.max(2, c * 0.04);
+        g.lineWidth = lw(2, c * 0.04);
         g.strokeRect(cx - s * 0.75, cy - s * 0.75, s * 1.5, s * 1.5);
       } else drawProbe(g, cx, cy, s, col, String(o.flags?.shape ?? 'circle'));
       break;
@@ -279,7 +369,7 @@ type Col = (tone?: number) => string;
 
 function drawLadder(g: Ctx, x: number, y: number, c: number, col: Col): void {
   g.strokeStyle = col(0.55);
-  g.lineWidth = Math.max(2, c * 0.06);
+  g.lineWidth = lw(2, c * 0.06);
   g.beginPath();
   g.moveTo(x + c * 0.28, y);
   g.lineTo(x + c * 0.28, y + c);
@@ -294,7 +384,7 @@ function drawLadder(g: Ctx, x: number, y: number, c: number, col: Col): void {
 
 function drawLamp(g: Ctx, cx: number, top: number, c: number, col: Col): void {
   g.strokeStyle = col(0.5);
-  g.lineWidth = Math.max(1.5, c * 0.03);
+  g.lineWidth = lw(1.5, c * 0.03);
   g.beginPath();
   g.moveTo(cx, top);
   g.lineTo(cx, top + c * 0.22);
@@ -324,7 +414,7 @@ function drawRobot(g: Ctx, cx: number, cy: number, s: number, col: Col, selected
   }
   g.fill('evenodd');
   g.strokeStyle = col(1);
-  g.lineWidth = Math.max(2, s * 0.05);
+  g.lineWidth = lw(2, s * 0.05);
   g.beginPath();
   roundRect(g, bx, by, w, h, s * 0.08);
   g.stroke();
@@ -351,7 +441,7 @@ function drawRobot(g: Ctx, cx: number, cy: number, s: number, col: Col, selected
     }
   }
   if (selected) {
-    g.lineWidth = Math.max(2, s * 0.04);
+    g.lineWidth = lw(2, s * 0.04);
     g.strokeStyle = col(0.85);
     g.beginPath();
     g.ellipse(cx, cy + s * 0.02, s * 0.58, s * 0.56, 0, 0, Math.PI * 2);
@@ -361,7 +451,7 @@ function drawRobot(g: Ctx, cx: number, cy: number, s: number, col: Col, selected
 
 function drawKey(g: Ctx, cx: number, cy: number, s: number, col: Col, mark: number): void {
   g.strokeStyle = col(1);
-  g.lineWidth = Math.max(2.5, s * 0.09);
+  g.lineWidth = lw(2.5, s * 0.09);
   g.beginPath();
   g.arc(cx - s * 0.2, cy, s * 0.16, 0, Math.PI * 2);
   g.moveTo(cx - s * 0.04, cy);
@@ -382,14 +472,14 @@ function drawMarkDots(g: Ctx, cx: number, cy: number, r: number, mark: number, c
   g.fillStyle = col(1);
   for (let i = 0; i < m; i++) {
     g.beginPath();
-    g.arc(cx + (i - (m - 1) / 2) * r * 2.6, cy, Math.max(1.5, r), 0, Math.PI * 2);
+    g.arc(cx + (i - (m - 1) / 2) * r * 2.6, cy, dot(1.5, r), 0, Math.PI * 2);
     g.fill();
   }
 }
 
 function drawDoor(g: Ctx, x: number, y: number, c: number, col: Col, open: boolean, mark: number): void {
   const m = c * 0.1;
-  g.lineWidth = Math.max(2, c * 0.05);
+  g.lineWidth = lw(2, c * 0.05);
   if (open) {
     g.strokeStyle = col(0.45);
     g.strokeRect(x + m, y + m, c - 2 * m, c - m);
@@ -421,7 +511,7 @@ function drawPlate(g: Ctx, cx: number, floor: number, s: number, col: Col, press
   const h = pressed ? s * 0.06 : s * 0.12;
   g.fillStyle = col(0.55);
   g.strokeStyle = col(1);
-  g.lineWidth = Math.max(2, s * 0.05);
+  g.lineWidth = lw(2, s * 0.05);
   g.beginPath();
   roundRect(g, cx - w / 2, floor - h - s * 0.04, w, h + s * 0.04, s * 0.03);
   g.fill();
@@ -448,7 +538,7 @@ function drawDecoy(g: Ctx, cx: number, cy: number, s: number, col: Col): void {
   const by = cy + s * 0.08;
   g.fillStyle = col(0.45);
   g.strokeStyle = col(0.8);
-  g.lineWidth = Math.max(1.5, s * 0.04);
+  g.lineWidth = lw(1.5, s * 0.04);
   g.beginPath();
   pts.forEach(([px, py], i) => (i ? g.lineTo(cx + px * s, by + py * s) : g.moveTo(cx + px * s, by + py * s)));
   g.closePath();
@@ -459,7 +549,7 @@ function drawDecoy(g: Ctx, cx: number, cy: number, s: number, col: Col): void {
 /** Bahn der wandernden Gefahr: gestrichelte Linie knapp über dem Boden */
 function drawRail(g: Ctx, x: number, floor: number, c: number, col: Col): void {
   g.strokeStyle = col(1);
-  g.lineWidth = Math.max(2, c * 0.04);
+  g.lineWidth = lw(2, c * 0.04);
   g.setLineDash([c * 0.12, c * 0.1]);
   g.beginPath();
   g.moveTo(x, floor - c * 0.06);
@@ -474,7 +564,7 @@ function drawEmber(g: Ctx, cx: number, cy: number, s: number, col: Col): void {
   const by = cy + s * 0.1;
   g.fillStyle = col(0.6);
   g.strokeStyle = col(1);
-  g.lineWidth = Math.max(2, s * 0.05);
+  g.lineWidth = lw(2, s * 0.05);
   g.beginPath();
   g.arc(cx, by, r, 0, Math.PI * 2);
   g.fill();
@@ -491,14 +581,14 @@ function drawEmber(g: Ctx, cx: number, cy: number, s: number, col: Col): void {
 function drawSwitch(g: Ctx, cx: number, floor: number, s: number, col: Col, on: boolean): void {
   g.fillStyle = col(0.55);
   g.strokeStyle = col(1);
-  g.lineWidth = Math.max(2, s * 0.05);
+  g.lineWidth = lw(2, s * 0.05);
   g.beginPath();
   roundRect(g, cx - s * 0.3, floor - s * 0.18, s * 0.6, s * 0.18, s * 0.04);
   g.fill();
   g.stroke();
   const a = on ? Math.PI * 0.3 : -Math.PI * 0.3;
   const len = s * 0.5;
-  g.lineWidth = Math.max(3, s * 0.08);
+  g.lineWidth = lw(3, s * 0.08);
   g.beginPath();
   g.moveTo(cx, floor - s * 0.18);
   const ex = cx + Math.sin(a) * len;
@@ -519,7 +609,7 @@ function drawPlatform(g: Ctx, x: number, y: number, c: number, w: number, col: C
   g.fillStyle = col(0.5);
   g.fillRect(x0, y, x1 - x0, h);
   g.strokeStyle = col(1);
-  g.lineWidth = Math.max(2, c * 0.05);
+  g.lineWidth = lw(2, c * 0.05);
   g.strokeRect(x0, y, x1 - x0, h);
   g.beginPath();
   for (let i = 1; i < w * 2; i++) {
@@ -531,7 +621,7 @@ function drawPlatform(g: Ctx, x: number, y: number, c: number, w: number, col: C
   g.fillStyle = col(1);
   for (let i = 0; i < w * 2; i++) {
     g.beginPath();
-    g.arc(x + (i + 0.5) * (c / 2), y + h / 2, Math.max(1.5, c * 0.03), 0, Math.PI * 2);
+    g.arc(x + (i + 0.5) * (c / 2), y + h / 2, dot(1.5, c * 0.03), 0, Math.PI * 2);
     g.fill();
   }
 }
@@ -550,7 +640,7 @@ function drawCrystal(g: Ctx, cx: number, cy: number, s: number, col: Col, buried
   g.closePath();
   g.fill();
   g.strokeStyle = col(buried ? 0.75 : 1);
-  g.lineWidth = Math.max(2, s * 0.06);
+  g.lineWidth = lw(2, s * 0.06);
   g.stroke();
   g.beginPath();
   g.moveTo(cx - 0.3 * s, cy - 0.12 * s);
@@ -565,7 +655,7 @@ function drawBase(g: Ctx, cx: number, floor: number, s: number, col: Col, delive
   const h = s * 0.5;
   g.fillStyle = col(0.5);
   g.strokeStyle = col(1);
-  g.lineWidth = Math.max(2, s * 0.05);
+  g.lineWidth = lw(2, s * 0.05);
   g.beginPath();
   g.moveTo(cx - w / 2, floor);
   g.lineTo(cx - w / 2, floor - h);
@@ -592,7 +682,7 @@ function drawBase(g: Ctx, cx: number, floor: number, s: number, col: Col, delive
       g.fillStyle = col(1);
       g.fill();
     } else {
-      g.lineWidth = Math.max(1.5, s * 0.03);
+      g.lineWidth = lw(1.5, s * 0.03);
       g.stroke();
     }
   }
@@ -615,7 +705,7 @@ function drawHazard(g: Ctx, cx: number, cy: number, s: number, col: Col): void {
   g.closePath();
   g.fill();
   g.strokeStyle = col(1);
-  g.lineWidth = Math.max(2, s * 0.05);
+  g.lineWidth = lw(2, s * 0.05);
   g.stroke();
   g.beginPath();
   g.moveTo(cx - s * 0.4, by + s * 0.02);

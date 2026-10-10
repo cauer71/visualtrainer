@@ -26,6 +26,7 @@ export function SoundControls({ audio, onAudio }: { audio: AudioPrefs; onAudio: 
 
 export function StartScreen(props: {
   calibratedAt: string | null;
+  profileName: string;
   audio: AudioPrefs;
   onAudio: (a: AudioPrefs) => void;
   onStart: () => void;
@@ -61,7 +62,9 @@ export function StartScreen(props: {
           {t.therapist}
         </button>
       </div>
-      <p class="bm-muted">{cal ? t.lastCalibration(cal) : t.notCalibrated}</p>
+      <p class="bm-muted" id="start-calibration">
+        {cal ? t.lastCalibration(cal) : t.notCalibrated} · {t.activeProfile(props.profileName)}
+      </p>
       <SoundControls audio={props.audio} onAudio={props.onAudio} />
       <section class="bm-card">
         <h2>{t.howTitle}</h2>

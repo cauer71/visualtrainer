@@ -45,7 +45,7 @@ src/binokular/
              engine.ts          Spiellogik: tap(x, y), tick(dt), scene(), drainEvents(); ohne DOM, ohne Farben, ohne Ton
              stars.ts           Sterne aus Abschluss, Zeit, Fehlversuchen
              solver.ts          automatischer Löser mit begrenztem Wissen = Binokular-Prüfer, Autoplay
-  vision/    color.ts           Farbzuordnung je Auge/Filter/Kontrast, RGB/HSV-Umrechnung
+  vision/    color.ts           Farbzuordnung je Auge/Glas/Kontrast aus der Profil-Palette, sRGB ↔ linear, Deltas
              renderer.ts        Canvas-Renderer, Kamera für große Level, Debug-Ansichten, Anaglyphen-Simulation
   levels/    types.ts           Leveldaten und Schwierigkeitsparameter
              level01.ts … level10.ts   die zehn Level als Daten
@@ -62,10 +62,14 @@ src/binokular/
              progress.ts        Fortschritt, Freischaltung, Migration (rein, getestet)
              storage.ts         localStorage `binokular:v1`
              csv.ts             CSV-Export
-             transfer.ts        JSON-Export/-Import der Einstellungen
-  calibration/calibration.ts    Kalibrierschritte, Antworten, Hinweise, Grundfarben
-  components/                   Preact-Bildschirme (Start, Kalibrierung, Augen/Farben, Levelauswahl, Spiel, Ende,
-                                Verlauf, Therapeut)
+             transfer.ts        JSON-Export/-Import der Einstellungen (mit Farbprofilen, Version 2)
+  calibration/calibration.ts    Kalibrierschritte, Kontrolle der Zuordnung, Hinweise
+             photometry.ts      Foto-Auswertung und Berechnung (Box, sRGB → linear, Y, Kandidaten, Kompensation,
+                                Übersprechen) – rein, getestet
+             tuning.ts          Feinabstimmung: Regler ↔ Palette
+             profiles.ts        Farbprofile (Startprofile, Prüfung, Export/Import, Zusammenführen)
+  components/                   Preact-Bildschirme (Start, Kalibrierung, Augen/Farben mit Profilauswahl,
+                                Levelauswahl, Spiel, Ende, Verlauf, Therapeut), ProfilePicker
 ```
 
 **Trennung von Spiellogik, Darstellung und Ton:** Die Spiellogik (`game/`) erzeugt nur eine Szene aus `GameObject`s
@@ -75,23 +79,37 @@ dass die Szene in keinem Level Farbangaben enthält und jedes Objekt eine Augenk
 
 ## Funktionsweise der dichoptischen Darstellung
 
-- **Schwarzer Hintergrund, additive Farben.** Ein rotes Objekt auf Schwarz sieht nur das Auge hinter dem Rotfilter;
-  ein cyanfarbenes (bzw. grünes) nur das Auge hinter dem Cyan-/Grünfilter.
+- **Dunkler Hintergrund, kein Weiß.** Rote Objekte sieht nur das Auge hinter dem roten Glas, Objekte in der
+  **Zweitfarbe** (Blau bei Rot-Cyan, Grün bei Rot-Grün) nur das Auge hinter dem zweiten Glas. Graue Objekte
+  (#777–#888) sehen beide Augen (Fusionsanker: Fels, Erde, Leitern, Lampen, Rahmen). Keine weiteren Farben im Spielfeld;
+  Texte und Symbole im Spiel (HUD, Meldungen, Kontrollaufgabe) sind grau.
+- **Farben nur aus dem aktiven Profil** (`calibration/profiles.ts`, nie fest im Spielcode): Rot, Zweitfarbe, Hintergrund.
+  Startwerte: Rot-Cyan `#FF0000` / `#0000FF` (reines Blau, kein Cyan) / `#160000`; Rot-Grün `#FF0000` / `#009600` /
+  `#210000`. Die echten Werte kommen aus der Kalibrierung.
+- **Warum ein leicht farbiger Hintergrund?** Kein Glas filtert perfekt. Der Hintergrund wird so gemischt, dass er
+  durch das rote Glas genauso hell erscheint wie die Zweitfarbe und durch das zweite Glas genauso hell wie Rot – dann
+  verschwindet jedes Objekt für das Auge, das es nicht sehen soll.
 - **Objektklassen:**
-  - `AMBLYOPIC` → Farbe des Filters vor dem amblyopen Auge, Kontrast `amblyopicContrast`.
-  - `FELLOW` → Farbe des Filters vor dem dominanten Auge, Kontrast `fellowEyeContrast`.
-  - `BOTH` → neutrales Grau (Rot- und Grün/Blau-Anteil gleich), durch beide Filter sichtbar (Fels, Erde, Leitern,
-    Lampen, Anzeige, Erzbrocken als Ablenker).
+  - `AMBLYOPIC` → Farbe des Glases vor dem amblyopen Auge (Rot oder Zweitfarbe), Kontrast `amblyopicContrast`.
+  - `FELLOW` → Farbe des Glases vor dem dominanten (führenden) Auge, Kontrast `fellowEyeContrast`.
+  - `BOTH` → neutrales Grau, bei vollem Objektkontrast `#888888`; Abstufungen gehen Richtung Hintergrund, nie heller.
   - Neue Objektarten ab Level 2 haben ebenfalls `eyeVisibility` und `contrast`: Druckplatte (A), Bahn der wandernden
     Glut (A, halber Kontrast), wandernde Glut (A), Leitern nur für das amblyope Auge (A, Level 3 und 10),
     Erzbrocken (B), Kennzeichen an Schlüsseln/Türen (Punkte in der Farbe des Objekts).
-- **Zuordnung:** amblyopes Auge links/rechts; Filter links Rot / rechts Cyan (bzw. Grün) oder umgekehrt; Brillentyp Rot/Cyan oder Rot/Grün.
-- **Zeichenreihenfolge:** zuerst die neutrale Ebene deckend, danach die Augenobjekte **additiv** (`lighter`). Liegt ein
-  Kristall (dominantes Auge) über grauer Erde, ändert sich das Bild im Kanal des amblyopen Auges nicht – der Kristall
-  bleibt für dieses Auge unsichtbar. Details in Objekten entstehen nur über Helligkeitsstufen derselben Farbe, nie über Schwarz.
-- **Kontrast:** Auf schwarzem Hintergrund ist „Kontrast“ hier der Anteil der **Leuchtdichte** der kalibrierten Vollfarbe
-  (sRGB-Gammakurve berücksichtigt: 20 % bedeutet 20 % der linearen Lichtmenge, nicht 20 % des Zahlenwerts).
-  Endwert = Augenkontrast × Objektkontrast aus dem Level. Der Bildschirm ist nicht photometrisch kalibriert.
+- **Kontrast getrennt pro Auge, Richtung Hintergrund:** Farbe = Hintergrund + k · (Vollfarbe − Hintergrund), gerechnet
+  in linearem Licht (exakte sRGB-Formel), k = Augenkontrast × Objektkontrast × Abstufung. Das führende Auge wird
+  reduziert, das schwächere bleibt voll. Bei k = 0 verschwindet ein Objekt im Hintergrund – für beide Augen.
+  Der Bildschirm ist nicht photometrisch kalibriert.
+- **Zuordnung:** amblyopes Auge links/rechts; Glas links Rot / rechts Cyan (bzw. Grün) oder umgekehrt; der Brillentyp
+  folgt dem aktiven Profil (eine Quelle, nicht doppelt gespeichert).
+- **Zeichenreihenfolge (`vision/renderer.ts`):** Hintergrund in Profilfarbe, dann die graue Ebene deckend, dann je
+  Augenklasse die **Abweichung vom Hintergrund** (Objektfarbe − Hintergrund, je Kanal): erst der negative Teil mit
+  `difference` (wirkt als Subtraktion, weil Hintergrund und Grau in jedem Kanal mindestens so hell sind), dann der
+  positive Teil mit `lighter`. Auf dem Hintergrund ergibt das exakt die Profilfarbe; über grauer Erde ändern sich nur
+  die Kanäle des Objekts – ein Kristall in grauer Erde hinterlässt für das andere Auge kein „Loch“. Jede Klasse wird
+  dafür erst deckend auf eine Zwischenebene gezeichnet, damit sich Füllung und Kontur nicht doppelt verrechnen.
+- **Formen:** Objekte in der Zweitfarbe sind groß und gefüllt, ihre Linien mindestens 4 px breit (das zweite Glas ist
+  meist dunkler); rote Objekte dürfen feiner sein. Details nur über Helligkeitsstufen derselben Farbe, nie über Schwarz.
 - **Weich, ohne Flackern:** Einblendungen ≥ 150 ms (Plattform 700 ms, Roboter nach Fehlversuch 400 ms, Kontrollsymbol 300 ms),
   wandernde Glut gleitet in ≤ 600 ms von Feld zu Feld, keine Blitze.
 - **Kamera (große Level):** Felder (= Trefferflächen) sind immer mindestens 48 px groß. Passt das Raster so nicht
@@ -101,23 +119,52 @@ dass die Szene in keinem Level Farbangaben enthält und jedes Objekt eine Augenk
 
 ## Kalibrierung
 
-Erscheint vor dem ersten Spiel (danach über „Kalibrierung“ erneut):
+Eigener Bereich (Startbildschirm „Kalibrierung“; beim ersten Spielstart automatisch, dort auch „Mit Startwerten
+spielen“). Oben die **Profilleiste**: aktives Profil wählen, „Neue Kalibrierung“, umbenennen, löschen (Startprofile
+nicht), Profile als JSON exportieren/importieren. Darunter Brillentyp und Zuordnung der Gläser, dann die Schritte:
 
-1. **Farben:** Objekt A (nur Rot) – „Ich sehe Objekt A“; Objekt B (nur Cyan/Grün) – „Ich sehe Objekt B“;
-   beide zugleich – „Ich sehe beide“ (jeweils auch „Ich sehe nichts“ / „nur eins“).
-2. **Augen** (mit Brille, abwechselnd ein Auge zuhalten): Objekt nur für das linke Auge, nur für das rechte Auge,
-   gemeinsames Objekt – Antwort „linkes Auge / rechtes Auge / beide / keines“.
-3. **Hinweis** aus den Antworten (nur zur Einstellung, keine Bewertung der Person): Zuordnung vertauscht → „Zuordnung tauschen“;
-   ein Augenobjekt mit beiden Augen gesehen → Übersprechen, Farben fein einstellen; etwas nicht gesehen → Helligkeit prüfen.
-4. **Feinkalibrierung per Auswahl (statt Regler):** Für jede Grundfarbe (Rot, dann Cyan bzw. Grün) ein Raster
-   aus 3 × 3 Kästen – Farbton leicht verschoben (Spalten) × Helligkeit (Zeilen), Sättigung immer 100 %.
-   Schritt 1 „Verschwinden“: mit dem Auge hinter dem **anderen** Glas schauen und alle Kästen antippen, die man nicht
-   oder kaum sieht (wenig Übersprechen). Schritt 2 „Deutlich“: mit dem Auge hinter dem **passenden** Glas unter den
-   markierten den deutlichsten wählen. Runde 1 grob (±12°, 100/80/60 %), Runde 2 fein um die Wahl (±5°, ±8 %).
-   „Keiner verschwindet“ nimmt den dunkelsten Kasten der mittleren Spalte. Logik: `calibration/fine.ts`,
-   Oberfläche: `components/FineCalibration.tsx`. Für Fachleute bleiben die RGB-Werte unter „Experte“ direkt einstellbar.
+0. **Vorbereitung:** Nachtmodus, Blaulichtfilter, f.lux und HDR aus, Helligkeit fest; Raum abdunkeln, Vollbild.
+1. **Messbild:** fünf große quadratische Felder auf Schwarz – Weiß, Rot, Grün, Blau, Schwarz (gestrichelt umrandet),
+   graue Beschriftung; Vollbild, Antippen oder Esc schließt. Mit dem Handy zweimal fotografieren (durch das rote und
+   durch das zweite Glas, Glas direkt vor der Linse), Pro-Modus mit festem Weißabgleich/ISO/Belichtung, JPG statt HEIC,
+   Belichtung so niedrig, dass kein Feld ausfrisst.
+2. **/ 3. Fotos auswerten:** Foto wählen (nur im Browser, kein Upload), der Reihe nach Weiß, Rot, Grün, Blau, Schwarz
+   antippen (nummerierte Markierungen mit Messbox, „Zurücksetzen“). Je Tipp wird eine Box mit Kantenlänge
+   `round(0,024 · kürzere Bildseite)` **in voller Auflösung** ausgewertet: Pixel sRGB → linear (exakte Formel), dann
+   gemittelt. Warnung „überbelichtet“, wenn ein Feld außer Schwarz einen mittleren Rohwert ≥ 250 hat oder mehr als 10 %
+   seiner Pixel ausgefressen sind. Y = 0,2126 R + 0,7152 G + 0,0722 B (linear) minus Y(Schwarz). Ergebnis: rotes Glas
+   a_R, a_G, a_B, zweites Glas c_R, c_G, c_B. HEIC-Dateien (Name, Typ oder Dateikennung) bekommen eine verständliche Meldung.
+4. **Berechnung** (`calibration/photometry.ts`): Zweitfarbe linear (0, g, b). Rot-Cyan: Kandidaten mit max(g, b) = 1,
+   der andere Kanal 0 / 0,25 / 0,5 / 0,75 / 1; Rot-Grün: b = 0, g per Regler (Start 0,30 ≈ `#009600`). Je Kandidat
+   L = a_G·g + a_B·b (durchs rote Glas), C = c_G·g + c_B·b (durchs zweite Glas); gewählt wird unter allen Kandidaten
+   mit C/L ≥ 85 % des besten der mit dem größten C. **Hintergrund-Kompensation:** Hintergrund (r, t·g, t·b) mit
+   a_R·r + L·t = L und c_R·r + C·t = c_R; det = a_R·C − L·c_R, r = L·(C − c_R)/det, t = c_R·(a_R − L)/det, auf 0 … 1
+   begrenzt; bei det ≤ 0 oder nicht endlich gilt der Startwert (Hinweis). Dazu **Übersprechen** a_G/a_R, a_B/a_R und
+   c_R/max(c_G, c_B): unter ca. 1 % sehr gut, über 5 % schwierig. „Werte übernehmen“ → Schritt 5.
+5. **Feinabstimmung nach Auge (entscheidend):** Vorschau mit Hintergrundfläche, rotem Quadrat, Kreis in Zweitfarbe und
+   einem Ausschnitt aus Level 1 (mit dem echten Renderer). Regler: Hintergrund rot (0–70), Hintergrund Zweitfarbe
+   (0–40, im Verhältnis der Zweitfarbe), Helligkeit der Zweitfarbe, Rotwert (`calibration/tuning.ts`). Anleitung:
+   1. durchs zweite Glas: Rot noch sichtbar → „Hintergrund Zweitfarbe“ erhöhen; 2. durchs rote Glas: Zweitfarbe noch
+   sichtbar → erst ihre Helligkeit etwas senken, dann „Hintergrund rot“ erhöhen; 3. Objekte werden dunkle Löcher →
+   Hintergrund zurücknehmen; 4. abwechselnd 2–3 Mal. „Startwerte“ setzt auf die Berechnung bzw. die Startwerte zurück.
+   Name eingeben, **„Als Profil speichern“** – das Profil wird aktiv. Die Schritte 1–4 lassen sich überspringen
+   („Ohne Fotos direkt zur Feinabstimmung“).
+6. **Kontrolle der Zuordnung (optional):** Objekt nur für das linke, nur für das rechte Auge, gemeinsames Objekt – in den
+   Profilfarben auf dem Profilhintergrund; Hinweis bei vertauschter Zuordnung oder Übersprechen (keine Bewertung der Person).
 
-Alles wird lokal gespeichert.
+### Farbprofile
+
+Ein Profil (Brille + Monitor) enthält Name, Modus (Rot-Cyan/Rot-Grün), Rot, Zweitfarbe, Hintergrund, Zeitpunkt,
+Herkunft (Start/Foto/manuell) und gegebenenfalls die Messwerte a/c. Die zwei Startprofile sind immer vorhanden und
+werden bei jedem Laden aus den Konstanten erzeugt (nicht lösch- oder überschreibbar). Gespeichert werden `profiles`
+und `activeProfileId` im Store `binokular:v1`; jeder Zugriff auf localStorage steht in try/catch, die App startet
+ohne gespeicherte Daten. Alte Speicherstände: Die früheren Grundfarben (`calibration.colors`) passen nicht zum neuen
+Modell und werden verworfen; der frühere Brillentyp wählt das passende Startprofil; Antworten der Augenkontrolle
+bleiben. **Auswahl beim Spielstart:** „Augen und Farben“ zeigt alle Profile mit Farbmustern. Export/Import der Profile
+als eigene JSON-Datei (`binokular-farbprofile`, Version 1) in der Kalibrierung; zusätzlich enthält der
+Einstellungs-Export im Therapeutenbereich (Version 2) die eigenen Profile und das aktive Profil – Dateien der Version 1
+werden weiter gelesen. Importierte Daten werden Feld für Feld geprüft (IDs, Modus, Farben, Hintergrund dunkel begrenzt,
+Messwerte), gleiche IDs ersetzen vorhandene Profile.
 
 ## Adaptive Kontraststeuerung
 
@@ -177,7 +224,7 @@ geprüft und ist ein **leichter Schutz gegen versehentliches Verstellen**, keine
 | Patient-ID | Pseudonym, **keine Klarnamen**; nur lokal | leer |
 | Alter | Jahre, nur lokal | leer |
 | `amblyopicEye` | amblyopes Auge links/rechts | links |
-| Brillentyp | Rot/Cyan oder Rot/Grün | Rot/Cyan |
+| Farbprofil | bestimmt Brillentyp (Rot/Cyan oder Rot/Grün) und alle Farben; Profile entstehen in der Kalibrierung | Startwerte Rot-Cyan |
 | Anaglyphen-Zuordnung | links Rot / rechts Cyan (Grün) oder umgekehrt | links Rot |
 | `amblyopicContrast` | Kontrast amblyopes Auge, 0–100 % | 100 |
 | `fellowEyeContrast` | aktueller Kontrast dominantes Auge, 0–100 % (wird adaptiv verändert) | 20 |
@@ -197,7 +244,8 @@ geprüft und ist ein **leichter Schutz gegen versehentliches Verstellen**, keine
 | Ton (Voreinstellung) | an/aus und Lautstärke leise/mittel/laut; die Person kann im Startbildschirm und im Spiel umstellen, ihre Wahl gilt, bis hier wieder etwas eingestellt wird | an, mittel |
 
 Außerdem: **Training zurücksetzen** (Sessions löschen, Kontrast auf Startwert), **Export** (Sessions als CSV,
-Einstellungen samt Kalibrierung als JSON, ohne PIN), **Import** (JSON; Format/Version werden geprüft, Werte begrenzt).
+Einstellungen samt Kalibrierung und eigenen Farbprofilen als JSON, ohne PIN), **Import** (JSON; Format/Version werden
+geprüft, Werte begrenzt, Profile zusammengeführt). Unter „Augen und Brille“ wird das aktive Farbprofil gewählt.
 
 ## Spiel und Level
 
@@ -346,8 +394,14 @@ Bahn, Deko-Steine und Erzbrocken nur mit kleinem Buchstaben, damit die Ansicht r
 
 ## Tests
 
-- `npx vitest run tests/unit/binokular-*.test.ts` – Farbzuordnung, Kalibrierung, Kontraststeuerung, Binokular-Prüfer,
-  Sterne, Session-Log/CSV, Suppressions-Kontrolle, PIN, Export/Import, Speicher.
+- `npx vitest run tests/unit/binokular-*.test.ts` – Farbzuordnung (Kontrast Richtung Hintergrund, Grau #777–#888,
+  Delta-Zerlegung), Kontrolle der Zuordnung, Kontraststeuerung, Binokular-Prüfer, Sterne, Session-Log/CSV,
+  Suppressions-Kontrolle, PIN, Export/Import, Speicher.
+- `tests/unit/binokular-calibration.test.ts` – Foto-Auswertung (Box, linear mitteln, Y, Schwarz, Überbelichtung),
+  Kandidaten und 85-%-Regel, typische Rot-Cyan-Messung ergibt reines Blau, Kompensation erfüllt beide Gleichungen,
+  det-Schutz, Begrenzung, Rot-Grün mit wählbarem g, Übersprechen, Regler ↔ Palette, Profile (Prüfung, Startprofile,
+  Export/Import, Zusammenführen), Migration alter Speicherstände, App ohne bzw. mit gesperrtem localStorage,
+  Einstellungs-Export Version 2 und Import Version 1.
 - `tests/unit/binokular-levels.test.ts` – für **alle 10 Level**: Leveldaten gültig (Raster, Roboter auf festem Boden,
   Basis/Schalter/Platten erreichbar stehend, Bahn der Glut zusammenhängend), Schwierigkeitswerte stimmen und steigen
   wie dokumentiert, Binokular-Prüfer (beide Augen: 3 Sterne; je ein Auge – auch mit verratener Roboterposition bzw.
@@ -358,7 +412,9 @@ Bahn, Deko-Steine und Erzbrocken nur mit kleinem Buchstaben, damit die Ansicht r
 - `tests/unit/binokular-audio.test.ts` – jedes Ereignis hat einen Effekt, Töne kurz und weich, stumm erzeugt nichts,
   Lautstärkegrenze, Start erst nach Geste (AudioContext-Attrappe), keine Fehler ohne Audio-Unterstützung.
 - `node tests/e2e/binokular.mjs` (Vorschau-Server auf Port 4173, sonst `BASE=…`) – Start mit Ton-Einstellung →
-  Kalibrierung → Augen/Farben → Levelauswahl → Level 1 und „Nächstes Level“ 2 mit Autoplay (Session läuft weiter) →
+  Kalibrierung (Messbild, HEIC-Meldung, zwei im Browser erzeugte PNG-Fotos mit je fünf angetippten Feldern,
+  Zurücksetzen, Berechnung = reines Blau, Regler, Vorschau-Hintergrund, „Startwerte“, Profil speichern, Kontrolle) →
+  Augen/Farben mit Profilauswahl → Levelauswahl → Spielfeld-Hintergrund = Profilhintergrund, HUD grau → Level 1 und „Nächstes Level“ 2 mit Autoplay (Session läuft weiter) →
   Session-Ende → Verlauf/CSV → Therapeutenbereich mit PIN (alle Level freischalten, Ton-Voreinstellung) →
   Levelauswahl; danach **jedes der 10 Level** mit `?autoplay=1&level=N&sound=1` bis zum Abschluss (3 Sterne, Felder
   ≥ 48 px, mit Ton); Debug-Ansichten in Level 10, Kontrollaufgabe, Ton-Knopf, Beschwerden-Knopf; Kamera ziehen
@@ -389,9 +445,12 @@ Quellen (Titel und DOI per Crossref geprüft):
 
 ## Grenzen und offene Punkte
 
-- **Mit echter Brille ungetestet:** Übersprechen hängt von Brille, Bildschirm und Raumlicht ab; die Standardfarben sind
-  reine Primärfarben, die Feineinstellung muss am Gerät erfolgen. Neutrale BOTH-Objekte wirken durch die beiden Filter
-  unterschiedlich hell (Grau ist nicht für jede Brille gleich hell).
+- **Mit echter Brille ungetestet:** Übersprechen hängt von Brille, Bildschirm und Raumlicht ab; die Startwerte sind nur
+  ein Ausgangspunkt, Foto-Messung und vor allem die Feinabstimmung nach Auge müssen am Gerät erfolgen. Die Foto-Messung
+  setzt eine Handykamera mit festen Einstellungen voraus; Kamerakurve und Bildverarbeitung verfälschen die Werte etwas.
+  Neutrale BOTH-Objekte wirken durch die beiden Gläser unterschiedlich hell.
+- Die Verrechnung „Objekt minus Hintergrund“ über grauen Feldern geschieht in sRGB-Zahlenwerten (Canvas), nicht in
+  linearem Licht: Auf dem Hintergrund stimmt die Farbe exakt, über Grau ist die Kompensation nur näherungsweise.
 - Schwierigkeitswerte, Richtzeit und Kontrollaufgaben-Takt sind **geschätzt**. Leveldauer und Schwierigkeit der
   Level 2–10 sind **nur simuliert** (Löser + grobe Schätzformel), nicht mit Kindern oder Erwachsenen erprobt.
 - Töne sind nur im Browser ohne echte Lautsprecherprüfung getestet (Attrappe, Headless-Chromium); Lautstärke und

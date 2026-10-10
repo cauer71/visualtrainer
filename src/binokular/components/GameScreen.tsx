@@ -1,13 +1,14 @@
 /**
  * Spielbildschirm: verbindet Spiellogik (Engine), Darstellung (vision/renderer), Ton (audio/), Session-Protokoll,
  * adaptive Kontraststeuerung, Suppressions-Kontrollen, Pausen, Levelwechsel und Debug-Ansichten.
+ * Farben und Brillentyp kommen aus dem aktiven Farbprofil; Texte und Symbole im Spiel sind grau (für beide Augen).
  * Die Session läuft über Levelwechsel weiter; jedes Level wird einzeln protokolliert (Level, Sterne, Fehler, Zeit).
  */
 import { useEffect, useMemo, useRef, useState } from 'preact/hooks';
 import { playGameEvents, type AudioPrefs, type SoundPlayer, type Volume } from '../audio';
 import { afterLevel } from '../data/progress';
 import { DIFFICULTY_EFFECT, visionOf } from '../data/settings';
-import { audioPrefsOf, MAX_SESSIONS, type Store } from '../data/storage';
+import { activeProfile, audioPrefsOf, MAX_SESSIONS, type Store } from '../data/storage';
 import { Engine, type EngineOptions } from '../game/engine';
 import { applyCommand, BOTH_EYES, commandReady, solveLevel, type SolverCommand } from '../game/solver';
 import { calcStars, parTimeS } from '../game/stars';
@@ -27,7 +28,7 @@ import {
   type Shape,
 } from '../therapy/suppression';
 import { t } from '../texts';
-import { filterOf } from '../vision/color';
+import { filterOf, rgbCss } from '../vision/color';
 import { cellAt, DEBUG_KEYS, fitLayout, renderAnaglyphSim, renderScene, visibleCells, type DebugView, type Layout } from '../vision/renderer';
 import { clock, de, ShapeIcon, SpeakerIcon } from './common';
 import { LevelGrid } from './LevelSelect';
@@ -89,8 +90,8 @@ function nextAudio(a: AudioPrefs): AudioPrefs {
 export function GameScreen({ store, update, startLevel: initialLevel, sound, onAudio, autoplay, forceDebug, firstCheckS, onEnd }: Props) {
   const settingsRef = useRef(store.settings);
   settingsRef.current = store.settings;
-  const calRef = useRef(store.calibration);
-  calRef.current = store.calibration;
+  // Farben nur aus dem aktiven Profil (nie fest codiert); während der Session unverändert
+  const profile = useMemo(() => activeProfile(store), []);
   const progressRef = useRef(store.progress);
 
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -125,7 +126,7 @@ export function GameScreen({ store, update, startLevel: initialLevel, sound, onA
         amblyopicContrast: store.settings.amblyopicContrast,
         fellowEyeContrast: store.settings.fellowEyeContrast,
         amblyopicEye: store.settings.amblyopicEye,
-        glasses: store.settings.glasses,
+        glasses: profile.mode,
         leftLens: store.settings.leftLens,
         plannedMinutes: store.settings.sessionMinutes,
       }),
@@ -413,7 +414,7 @@ export function GameScreen({ store, update, startLevel: initialLevel, sound, onA
     // Kamera-Versatz für Tests sichtbar machen (ohne Neuzeichnen der Oberfläche)
     const cam = `${layout.ox},${layout.oy}`;
     if (stage.dataset.cam !== cam) stage.dataset.cam = cam;
-    const vis = visionOf(settingsRef.current, calRef.current);
+    const vis = visionOf(settingsRef.current, profile);
     const overlay: GameObject[] = [];
     const c = checkRef.current;
     if (phaseRef.current === 'check' && c) {
@@ -524,7 +525,7 @@ export function GameScreen({ store, update, startLevel: initialLevel, sound, onA
   const lastDone = result?.completed && result.number >= total;
 
   return (
-    <div class="bm-game" data-phase={phase} data-level={hud.level}>
+    <div class="bm-game" data-phase={phase} data-level={hud.level} data-profile={profile.id} style={{ background: rgbCss(profile.background) }}>
       <header class="bm-hud" role="toolbar">
         <span class="bm-hud-item bm-hud-session" id="hud-session">
           {t.session} {clock(hud.sessionMs)} / {clock(planned)}

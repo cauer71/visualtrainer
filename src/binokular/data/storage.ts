@@ -8,6 +8,8 @@
  */
 import type { AudioPrefs } from '../audio/player';
 import { DEFAULT_CALIBRATION, normalizeCalibration, type Calibration } from '../calibration/calibration';
+import { DEFAULT_PROFILE_ID, findProfile, normalizeProfiles, startProfileFor, type ColorProfile } from '../calibration/profiles';
+import type { Glasses } from '../vision/color';
 import { LEVELS } from '../levels';
 import { DEFAULT_PIN, isValidPin } from '../therapy/pin';
 import type { SessionRecord } from '../therapy/session';
@@ -18,7 +20,9 @@ export type { Progress } from './progress';
 
 /**
  * Der Schlüssel bleibt `binokular:v1`: Mit den Leveln 2–10 kamen nur Felder dazu (`progress.unlocked`, `audio`,
- * Ton-Voreinstellungen). Ältere Daten werden beim Laden ergänzt (`normalizeStore`, getestet).
+ * Ton-Voreinstellungen), mit dem neuen Farbmodell `profiles` und `activeProfileId`. Ältere Daten werden beim Laden
+ * ergänzt (`normalizeStore`, getestet): Alte Grundfarben (`calibration.colors`) passen nicht zum neuen Modell und
+ * werden verworfen; der alte Brillentyp (`settings.glasses`) wählt das passende Startprofil.
  */
 export const STORAGE_KEY = 'binokular:v1';
 /** Obergrenze gespeicherter Sessions (älteste fallen weg) */
@@ -28,6 +32,10 @@ export interface Store {
   version: 1;
   settings: Settings;
   calibration: Calibration;
+  /** Farbprofile: zwei Startprofile (immer vorhanden) + eigene */
+  profiles: ColorProfile[];
+  /** aktives Profil – liefert Brillentyp und alle Farben des Spielfelds */
+  activeProfileId: string;
   sessions: SessionRecord[];
   pin: string;
   progress: Progress;
@@ -42,12 +50,24 @@ export function defaultStore(): Store {
     version: 1,
     settings: { ...DEFAULT_SETTINGS },
     calibration: structuredCloneSafe(DEFAULT_CALIBRATION),
+    profiles: normalizeProfiles([]),
+    activeProfileId: DEFAULT_PROFILE_ID,
     sessions: [],
     pin: DEFAULT_PIN,
     progress: defaultProgress(),
     activeSession: null,
     audio: null,
   };
+}
+
+/** aktives Farbprofil (fällt auf das erste Startprofil zurück) */
+export function activeProfile(s: Pick<Store, 'profiles' | 'activeProfileId'>): ColorProfile {
+  return findProfile(s.profiles, s.activeProfileId);
+}
+
+/** Brillentyp = Modus des aktiven Profils */
+export function glassesOf(s: Pick<Store, 'profiles' | 'activeProfileId'>): Glasses {
+  return activeProfile(s).mode;
 }
 
 /** wirksame Toneinstellung: Wahl der Person, sonst Voreinstellung */
@@ -77,10 +97,17 @@ export function normalizeStore(x: unknown): Store {
   const d = defaultStore();
   if (!x || typeof x !== 'object') return d;
   const o = x as Record<string, unknown>;
+  const profiles = normalizeProfiles(o.profiles);
+  const oldSettings = (o.settings && typeof o.settings === 'object' ? o.settings : {}) as Record<string, unknown>;
+  // alter Speicherstand ohne Profile: Brillentyp aus den alten Einstellungen → passendes Startprofil
+  const legacyMode: Glasses = oldSettings.glasses === 'RED_GREEN' ? 'RED_GREEN' : 'RED_CYAN';
+  const wanted = typeof o.activeProfileId === 'string' ? o.activeProfileId : startProfileFor(legacyMode).id;
   return {
     version: 1,
     settings: normalizeSettings(o.settings),
     calibration: normalizeCalibration(o.calibration),
+    profiles,
+    activeProfileId: findProfile(profiles, wanted).id,
     sessions: Array.isArray(o.sessions) ? o.sessions.filter(isSession).slice(-MAX_SESSIONS) : [],
     pin: typeof o.pin === 'string' && isValidPin(o.pin) ? o.pin : DEFAULT_PIN,
     progress: normalizeProgress(o.progress, LEVELS.length),

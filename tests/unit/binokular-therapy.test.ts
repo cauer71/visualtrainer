@@ -4,6 +4,7 @@ import { DEFAULT_SETTINGS, normalizeSettings } from '../../src/binokular/data/se
 import { defaultStore, loadStore, normalizeStore, saveStore, STORAGE_KEY, type KeyValue } from '../../src/binokular/data/storage';
 import { exportSettings, importSettings } from '../../src/binokular/data/transfer';
 import { DEFAULT_CALIBRATION } from '../../src/binokular/calibration/calibration';
+import { normalizeProfiles } from '../../src/binokular/calibration/profiles';
 import { adaptContrast, decreaseContrast, increaseContrast, outcomeOf } from '../../src/binokular/therapy/contrast';
 import { changePin, checkPin, DEFAULT_PIN, isValidPin } from '../../src/binokular/therapy/pin';
 import { minutesPerDay, SessionRecorder } from '../../src/binokular/therapy/session';
@@ -192,13 +193,14 @@ describe('Therapeuten-PIN', () => {
 
 describe('Einstellungen: Export/Import und Speicher', () => {
   it('Rundreise Export → Import ergibt dieselben Einstellungen und Kalibrierung', () => {
-    const settings = { ...DEFAULT_SETTINGS, patientId: 'P-12', age: 9, amblyopicEye: 'RIGHT' as const, glasses: 'RED_GREEN' as const, leftLens: 'OTHER' as const, fellowEyeContrast: 33.3, contrastMode: 'LINEAR' as const, adaptiveContrast: false, sessionMinutes: 20, difficulty: 'MEDIUM' as const };
-    const calibration = { ...DEFAULT_CALIBRATION, colors: { ...DEFAULT_CALIBRATION.colors, red: { r: 240, g: 0, b: 20 } }, completedAt: '2026-10-05T10:00:00.000Z' };
-    const r = importSettings(exportSettings(settings, calibration));
+    const settings = { ...DEFAULT_SETTINGS, patientId: 'P-12', age: 9, amblyopicEye: 'RIGHT' as const, leftLens: 'OTHER' as const, fellowEyeContrast: 33.3, contrastMode: 'LINEAR' as const, adaptiveContrast: false, sessionMinutes: 20, difficulty: 'MEDIUM' as const };
+    const calibration = { ...DEFAULT_CALIBRATION, completedAt: '2026-10-05T10:00:00.000Z' };
+    const r = importSettings(exportSettings({ settings, calibration, profiles: normalizeProfiles([]), activeProfileId: 'start-red-green' }));
     expect(r.ok).toBe(true);
     if (!r.ok) return;
     expect(r.settings).toEqual(settings);
     expect(r.calibration).toEqual(calibration);
+    expect(r.activeProfileId).toBe('start-red-green');
   });
   it('Import prüft Format und bringt Werte in gültige Bereiche; PIN wird nicht exportiert', () => {
     expect(importSettings('{kaputt')).toEqual({ ok: false, error: 'json' });
@@ -212,7 +214,7 @@ describe('Einstellungen: Export/Import und Speicher', () => {
     expect(r.settings.amblyopicEye).toBe('LEFT');
     expect(r.settings.sessionMinutes).toBe(90);
     expect(r.settings.patientId).toBe('bMaxb');
-    expect(exportSettings(DEFAULT_SETTINGS, DEFAULT_CALIBRATION)).not.toContain('726');
+    expect(exportSettings({ settings: DEFAULT_SETTINGS, calibration: DEFAULT_CALIBRATION, profiles: normalizeProfiles([]), activeProfileId: 'start-red-cyan' })).not.toContain('726');
   });
   it('Standardwerte laut Spezifikation', () => {
     expect(DEFAULT_SETTINGS.amblyopicContrast).toBe(100);

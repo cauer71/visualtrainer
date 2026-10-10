@@ -3,8 +3,8 @@
  */
 import type { ContrastMode } from '../therapy/contrast';
 import { clampContrast } from '../therapy/contrast';
-import type { Eye, Glasses, LeftLens, VisionSettings } from '../vision/color';
-import type { Calibration } from '../calibration/calibration';
+import type { Eye, LeftLens, VisionSettings } from '../vision/color';
+import { paletteOf, type ColorProfile } from '../calibration/profiles';
 import type { Volume } from '../audio/player';
 
 export type Difficulty = 'EASY' | 'MEDIUM' | 'HARD';
@@ -14,8 +14,10 @@ export interface Settings {
   patientId: string;
   age: number | null;
   amblyopicEye: Eye;
-  glasses: Glasses;
-  /** Anaglyphen-Zuordnung: Filter vor dem linken Auge (RED = links Rot / rechts Cyan bzw. Grün) */
+  /**
+   * Anaglyphen-Zuordnung: Glas vor dem linken Auge (RED = links Rot / rechts Cyan bzw. Grün).
+   * Der Brillentyp selbst steht nicht hier, sondern kommt aus dem aktiven Farbprofil (eine Quelle).
+   */
   leftLens: LeftLens;
   /** 0–100 %, Standard 100 */
   amblyopicContrast: number;
@@ -50,7 +52,6 @@ export const DEFAULT_SETTINGS: Settings = {
   patientId: '',
   age: null,
   amblyopicEye: 'LEFT',
-  glasses: 'RED_CYAN',
   leftLens: 'RED',
   amblyopicContrast: 100,
   fellowEyeContrast: 20,
@@ -99,7 +100,6 @@ export function normalizeSettings(x: unknown): Settings {
     patientId: cleanPatientId(o.patientId),
     age: age === null || Number.isNaN(age) ? null : age,
     amblyopicEye: pick(o.amblyopicEye, ['LEFT', 'RIGHT'] as const, d.amblyopicEye),
-    glasses: pick(o.glasses, ['RED_CYAN', 'RED_GREEN'] as const, d.glasses),
     leftLens: pick(o.leftLens, ['RED', 'OTHER'] as const, d.leftLens),
     amblyopicContrast: typeof o.amblyopicContrast === 'number' ? clampContrast(o.amblyopicContrast) : d.amblyopicContrast,
     fellowEyeContrast: typeof o.fellowEyeContrast === 'number' ? clampContrast(o.fellowEyeContrast) : d.fellowEyeContrast,
@@ -120,14 +120,14 @@ export function normalizeSettings(x: unknown): Settings {
   };
 }
 
-/** Sehbezogene Einstellungen für den Renderer */
-export function visionOf(s: Settings, c: Calibration): VisionSettings {
+/** Sehbezogene Einstellungen für den Renderer: Brillentyp und Farben aus dem aktiven Profil */
+export function visionOf(s: Settings, p: ColorProfile): VisionSettings {
   return {
     amblyopicEye: s.amblyopicEye,
-    glasses: s.glasses,
+    glasses: p.mode,
     leftLens: s.leftLens,
     amblyopicContrast: s.amblyopicContrast,
     fellowEyeContrast: s.fellowEyeContrast,
-    colors: c.colors,
+    palette: paletteOf(p),
   };
 }

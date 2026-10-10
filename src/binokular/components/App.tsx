@@ -1,13 +1,14 @@
 /**
- * Bildschirmfolge: Start → Kalibrierung → Augen/Farben → Levelauswahl → Spiel → Session-Ende → Verlauf;
+ * Bildschirmfolge: Start → Kalibrierung (nur bis ein Profil gespeichert oder „Mit Startwerten spielen“ gewählt ist) →
+ * Augen/Farben (mit Profilauswahl) → Levelauswahl → Spiel → Session-Ende → Verlauf;
  * Therapeutenbereich. Der Ton (Audio-Modul) wird bei der ersten Nutzergeste freigeschaltet.
  */
 import { useCallback, useEffect, useMemo, useState } from 'preact/hooks';
 import { SoundPlayer, type AudioPrefs } from '../audio';
-import { isComplete } from '../calibration/calibration';
+import { startProfileFor } from '../calibration/profiles';
 import { chooseLevel } from '../data/progress';
 import type { Settings } from '../data/settings';
-import { audioPrefsOf, loadStore, saveStore, type Store } from '../data/storage';
+import { activeProfile, audioPrefsOf, loadStore, saveStore, type Store } from '../data/storage';
 import { LEVELS } from '../levels';
 import type { SessionRecord } from '../therapy/session';
 import { t } from '../texts';
@@ -65,6 +66,7 @@ export function App({ params }: { params: AppParams }) {
     });
   }, []);
   const setSettings = (patch: Partial<Settings>) => update((s) => ({ ...s, settings: { ...s.settings, ...patch } }));
+  const setProfiles = (profiles: Store['profiles'], activeProfileId: string) => update((s) => ({ ...s, profiles, activeProfileId }));
   const setAudio = (a: AudioPrefs) => update((s) => ({ ...s, audio: a }));
   const onEnd = useCallback((rec: SessionRecord) => {
     setLast(rec);
@@ -93,6 +95,7 @@ export function App({ params }: { params: AppParams }) {
         {screen === 'start' && (
           <StartScreen
             calibratedAt={store.calibration.completedAt}
+            profileName={activeProfile(store).name}
             audio={audioPrefsOf(store)}
             onAudio={(a) => {
               setAudio(a);
@@ -100,7 +103,7 @@ export function App({ params }: { params: AppParams }) {
               sound.unlock();
               sound.play('select');
             }}
-            onStart={() => (isComplete(store.calibration.results) && store.calibration.completedAt ? open('setup') : open('calibration'))}
+            onStart={() => (store.calibration.completedAt || store.calibration.startValuesAccepted ? open('setup') : open('calibration'))}
             onCalibrate={() => open('calibration')}
             onHistory={() => open('history')}
             onTherapist={() => open('therapist')}
@@ -110,15 +113,25 @@ export function App({ params }: { params: AppParams }) {
           <CalibrationScreen
             settings={store.settings}
             calibration={store.calibration}
+            profiles={store.profiles}
+            activeProfileId={store.activeProfileId}
             onSettings={setSettings}
+            onProfiles={setProfiles}
             onCalibration={(c) => update((s) => ({ ...s, calibration: c }))}
             onDone={() => open('setup', 'calibration')}
+            onPlayDefaults={(mode) => {
+              update((s) => ({ ...s, activeProfileId: startProfileFor(mode).id, calibration: { ...s.calibration, startValuesAccepted: true } }));
+              open('setup', 'calibration');
+            }}
             onBack={() => open('start')}
           />
         )}
         {screen === 'setup' && (
           <SetupScreen
             settings={store.settings}
+            profiles={store.profiles}
+            activeProfileId={store.activeProfileId}
+            onProfile={(id) => update((s) => ({ ...s, activeProfileId: id }))}
             onSettings={setSettings}
             onBack={() => open('start')}
             onPlay={() => (params.level ? play(params.level, true) : open('levels', 'setup'))}
