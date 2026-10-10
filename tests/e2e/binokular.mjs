@@ -293,7 +293,8 @@ for (const sz of sizes) {
   const SEED = 7;
   const url = `${base}binokular/?debug=1&seed=${SEED}`;
 
-  // ============ 1 Startbildschirm =====  await p.goto(url, { waitUntil: 'networkidle' });
+  // ============ 1 Startbildschirm ============
+  await p.goto(url, { waitUntil: 'networkidle' });
   check((await p.locator('[data-testid="safety-notice"]').first().innerText()).trim() === SAFETY, tag('Start: Sicherheitshinweis im Wortlaut'));
   check((await p.title()) === 'Binokular – Sehspiele', tag('Seitentitel „Binokular – Sehspiele“'));
   check((await p.locator('h1').first().innerText()).trim() === 'Binokular – Sehspiele', tag('Start: Produktname'));
@@ -876,7 +877,6 @@ for (const sz of sizes) {
   const rows4 = await p.locator('#end-levels tbody tr').allInnerTexts();
   check(rows4.length === 1 && /^4\s/.test(rows4[0]), tag(`Levelliste: ${rows4.map((r) => r.replace(/\s+/g, ' ')).join(' | ')}`));
   check((await store(p)).nachMaxLevel === 4, tag('Höchstes Level 4 gespeichert'));
-=======
 
   // ============ 9 Ziehen & Ablegen (zwei Farben) ============
   await p.goto(url, { waitUntil: 'networkidle' });
