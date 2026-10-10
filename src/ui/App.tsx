@@ -6,6 +6,7 @@ import { getExercise } from '../exercises/registry';
 import { OPT } from '../i18n/optiker';
 import { detectLang, type Lang } from '../i18n/lang';
 import { UI } from '../i18n/ui';
+import { feedbackStore } from '../feedback/store';
 import { AppCtx, type AppState } from './app-context';
 import { Footer, Header } from './components/Chrome';
 import { ExercisePage } from './pages/ExercisePage';
@@ -13,6 +14,7 @@ import { Calibrate } from './pages/Calibrate';
 import { Catalog, CatalogEntry } from './pages/Catalog';
 import { Developer } from './pages/Developer';
 import { Home } from './pages/Home';
+import { MyRatings } from './pages/MyRatings';
 import { OpticianPage } from './pages/OpticianPage';
 import { RoleGate } from './components/RoleGate';
 import { Science } from './pages/Science';
@@ -46,6 +48,16 @@ export function App() {
   useEffect(() => {
     setSoundEnabled(sound);
   }, [sound]);
+
+  // Trainer: Antworten und „verbessert“-Meldungen holen, nicht gesendete Bewertungen nachsenden (ohne Schnittstelle bleibt alles lokal)
+  const trainerView = role === 'optiker' || role === 'entwickler';
+  useEffect(() => {
+    if (!trainerView) return;
+    void feedbackStore.refresh();
+    const again = () => void feedbackStore.refresh();
+    window.addEventListener('online', again);
+    return () => window.removeEventListener('online', again);
+  }, [trainerView]);
 
   const state = useMemo<AppState>(
     () => ({
@@ -90,6 +102,7 @@ export function App() {
   else if (route.name === 'catalog' && isOptician) page = <Catalog />;
   else if (route.name === 'catalogEntry' && route.id && isOptician) page = <CatalogEntry nr={route.id} />;
   else if (route.name === 'optiker' && isOptician) page = <OpticianPage />;
+  else if (route.name === 'mine' && isOptician) page = <MyRatings />;
   // Entwickler-Bereich: das Passwort prüft der Server (Rückmeldungen der Trainer)
   else if (route.name === 'developer') page = <Developer />;
   // Kalibrierung: Sache der Person am Gerät, kein Login und keine Optiker-Ansicht nötig

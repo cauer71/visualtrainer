@@ -54,8 +54,9 @@ describe('buildExportText', () => {
     expect(text).toContain('Exportiert am 03.10.2026 14:05 · 4 Kommentare zu 3 Übungen');
     expect(text).toContain('=== Übung 905 – 4-Ziele-Wechsel (Kennung: vier) ===');
     expect(text).toContain('=== Übung ohne Katalognummer – lab (Kennung: lab) ===');
-    expect(text).toContain('- (4 von 5) Zeile eins\n  Zeile zwei');
-    expect(text).toContain('- (5 von 5, Trainer AB) noch einer');
+    expect(text).toContain('- [#2] Übung 905 – 4-Ziele-Wechsel (4 von 5): Zeile eins\n  Zeile zwei');
+    expect(text).toContain('- [#4] Übung 905 – 4-Ziele-Wechsel (5 von 5, Trainer AB): noch einer');
+    expect(text).toContain('- [#3] Allgemein (ohne Sterne): allgemein');
     expect(text).toContain('Bewertung: Ø 4,5 von 5 Sternen (2 Bewertungen)');
     const order = ['Allgemein (keine', 'Übung 905', 'ohne Katalognummer'].map((k) => text.indexOf(k));
     expect(order).toEqual([...order].sort((a, b) => a - b));

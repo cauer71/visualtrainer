@@ -1,8 +1,12 @@
 import { useEffect, useRef, useState } from 'preact/hooks';
-import { savedTrainer, sendFeedback } from '../../feedback/client';
+import { savedTrainer, saveTrainer as saveTrainerName } from '../../feedback/client';
 import { MAX_COMMENT, MAX_TRAINER } from '../../feedback/logic';
+import { buildThread } from '../../feedback/own';
+import { feedbackStore } from '../../feedback/store';
 import { useApp } from '../app-context';
+import { useFeedbackView } from '../feedback-view';
 import { Icon } from './Icon';
+import { Thread } from './Thread';
 
 /** Knopf „Bewerten“ (nur in der Trainer-Ansicht): öffnet den Dialog mit Sternen und Kommentar. */
 export function FeedbackButton({ exercise, name, class: cls = 'btn btn-ghost btn-sm' }: { exercise: string; name: string; class?: string }) {
@@ -18,10 +22,12 @@ export function FeedbackButton({ exercise, name, class: cls = 'btn btn-ghost btn
   );
 }
 
-type Phase = 'edit' | 'sending' | 'done';
+type Phase = 'edit' | 'sending' | 'done' | 'queued';
 
 export function FeedbackDialog({ exercise, name, onClose }: { exercise: string; name: string; onClose: () => void }) {
   const { opt, lang } = useApp();
+  const fb = useFeedbackView();
+  const thread = fb.enabled ? buildThread(fb.own, fb.remote, exercise) : [];
   const [stars, setStars] = useState<number | null>(null);
   const [trainer, setTrainer] = useState(() => savedTrainer());
   const [comment, setComment] = useState('');
@@ -44,8 +50,10 @@ export function FeedbackDialog({ exercise, name, onClose }: { exercise: string; 
     setPhase('sending');
     setError(null);
     try {
-      await sendFeedback({ exercise, stars, comment, trainer, lang });
-      setPhase('done');
+      // zuerst lokal gesichert; ohne Verbindung bleibt die Bewertung als „nicht gesendet“ erhalten
+      const res = await feedbackStore.submit({ exercise, stars, comment, trainer, lang });
+      saveTrainerName(trainer);
+      setPhase(res.status === 'sent' ? 'done' : 'queued');
     } catch {
       setPhase('edit');
       setError(opt.fbError);
@@ -56,11 +64,16 @@ export function FeedbackDialog({ exercise, name, onClose }: { exercise: string; 
     <div class="role-gate" role="dialog" aria-modal="true" aria-labelledby="fb-title">
       <div class="role-card fb-card">
         <h2 id="fb-title">{opt.fbTitle(name)}</h2>
-        {phase === 'done' ? (
+        {phase === 'done' || phase === 'queued' ? (
           <>
             <p class="lead fb-thanks">
               <Icon name="check" size={22} stroke={3} /> {opt.fbThanks}
             </p>
+            {phase === 'queued' ? (
+              <p class="notice notice-info fb-queued" role="status">
+                {opt.fbQueued}
+              </p>
+            ) : null}
             <button type="button" class="btn btn-primary" onClick={onClose}>
               {opt.fbClose}
             </button>
@@ -68,6 +81,13 @@ export function FeedbackDialog({ exercise, name, onClose }: { exercise: string; 
         ) : (
           <>
             <p class="muted">{opt.fbLead}</p>
+            {thread.length ? (
+              <section class="fb-history" aria-label={opt.fbLast}>
+                <h3>{opt.fbLast}</h3>
+                <Thread items={thread.slice(-6)} />
+                <p class="muted small">{opt.fbRateAgain}</p>
+              </section>
+            ) : null}
             <div class="fb-stars" role="radiogroup" aria-label={opt.fbStars}>
               {[1, 2, 3, 4, 5].map((n) => (
                 <button

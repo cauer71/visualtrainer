@@ -1,6 +1,6 @@
 /** Browser-Seite der Rückmeldungen: Kürzel, Senden und Entwickler-Abfragen. */
 import { brand } from '../config/brand';
-import { cleanTrainer, type FeedbackRow, type Submission } from './logic';
+import { cleanTrainer, normalizeImprovements, normalizeReplies, type FeedbackRow, type Improvement, type ReplyRow, type Submission } from './logic';
 
 const TRAINER_KEY = `${brand.storageKey}:trainer`;
 const PASSWORD_KEY = `${brand.storageKey}:dev`;
@@ -56,13 +56,34 @@ async function call<T>(path: string, init?: RequestInit): Promise<T> {
   return data as T;
 }
 
-export async function sendFeedback(input: Submission): Promise<void> {
-  await call('/api/feedback', {
+/** Sendet eine Rückmeldung; liefert die Nummer auf dem Server (null, falls der Server keine nennt) */
+export async function sendFeedback(input: Submission): Promise<number | null> {
+  const res = await call<{ id?: unknown }>('/api/feedback', {
     method: 'POST',
     headers: { 'content-type': 'application/json' },
     body: JSON.stringify(input),
   });
   saveTrainer(input.trainer);
+  return typeof res.id === 'number' ? res.id : null;
+}
+
+/** Antworten und Exportstatus eigener Rückmeldungen (nur die angefragten Nummern) */
+export async function loadMine(ids: number[]): Promise<Array<{ id: number; exported: boolean; replies: ReplyRow[] }>> {
+  if (!ids.length) return [];
+  const res = await call<{ items?: unknown }>(`/api/feedback/mine?ids=${ids.join(',')}`);
+  if (!Array.isArray(res.items)) return [];
+  const out: Array<{ id: number; exported: boolean; replies: ReplyRow[] }> = [];
+  for (const it of res.items as Array<Record<string, unknown>>) {
+    if (typeof it?.id !== 'number') continue;
+    out.push({ id: it.id, exported: it.exported === true, replies: normalizeReplies(it.replies).map((r) => ({ ...r, feedbackId: it.id as number })) });
+  }
+  return out;
+}
+
+/** Neueste „Übung verbessert“-Meldung je Übung */
+export async function loadImprovements(): Promise<Improvement[]> {
+  const res = await call<{ items?: unknown }>('/api/improvements');
+  return normalizeImprovements(res.items);
 }
 
 // ---------------------------------------------------------------- Entwickler
@@ -76,11 +97,25 @@ export const devPassword = {
 
 const auth = (pw: string) => ({ authorization: `Bearer ${pw}` });
 
-export async function loadFeedback(pw: string): Promise<FeedbackRow[]> {
-  return (await call<{ rows: FeedbackRow[] }>('/api/admin/feedback', { headers: auth(pw) })).rows;
+export async function loadFeedback(pw: string): Promise<{ rows: FeedbackRow[]; improvements: Improvement[] }> {
+  const res = await call<{ rows: FeedbackRow[]; improvements?: Improvement[] }>('/api/admin/feedback?includeExported=1', { headers: auth(pw) });
+  return { rows: res.rows, improvements: res.improvements ?? [] };
 }
 
-/** Löscht die Kommentare der angegebenen Zeilen (die Sterne bleiben). */
-export async function clearComments(pw: string, ids: number[]): Promise<void> {
-  await call('/api/admin/clear', { method: 'POST', headers: { ...auth(pw), 'content-type': 'application/json' }, body: JSON.stringify({ ids }) });
+const post = (pw: string, path: string, body: unknown) =>
+  call<Record<string, unknown>>(path, { method: 'POST', headers: { ...auth(pw), 'content-type': 'application/json' }, body: JSON.stringify(body) });
+
+/** Markiert Kommentare als exportiert (Archiv: der Text bleibt erhalten). */
+export async function markExported(pw: string, ids: number[]): Promise<void> {
+  await post(pw, '/api/admin/export', { ids });
+}
+
+/** Antwort schreiben (an einen Kommentar oder, ohne `feedbackId`, an alle exportierten unbeantworteten der Übung). */
+export async function sendReply(pw: string, input: { exerciseId: string; text: string; improved: boolean; feedbackId?: number }): Promise<{ replies: number }> {
+  return (await post(pw, '/api/admin/reply', input)) as { replies: number };
+}
+
+/** Löscht EINEN Eintrag endgültig (Sterne, Kommentar, Antworten) – nur nach ausdrücklicher Bestätigung. */
+export async function deleteFeedback(pw: string, id: number): Promise<void> {
+  await post(pw, '/api/admin/delete', { id, confirm: true });
 }

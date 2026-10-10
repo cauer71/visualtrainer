@@ -165,3 +165,190 @@
   font-size: 0.85rem;
   color: var(--muted);
 }
+
+/* ------------------------------------------------------------------ Abzeichen, Gespräch, Meine Bewertungen */
+
+.badge.badge-rated,
+.badge.badge-improved {
+  display: inline-flex;
+  width: auto;
+  height: auto;
+  min-height: 22px;
+  padding: 1px 9px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.4;
+  gap: 4px;
+  align-items: center;
+}
+.badge-rated {
+  background: var(--primary-soft);
+  color: var(--primary-dark);
+  border: 1px solid var(--primary);
+}
+.badge-improved {
+  background: var(--warn-soft);
+  color: var(--warn);
+  border: 1px solid var(--warn);
+}
+.badge-improved.is-new {
+  background: var(--warn);
+  color: #fff;
+  box-shadow: 0 0 0 3px var(--warn-soft);
+}
+.ex-card-badges {
+  display: inline-flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+.improved-note {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin: 8px 0;
+}
+.improved-text {
+  flex-basis: 100%;
+}
+.rated-filter {
+  margin-top: 8px;
+}
+.fb-history {
+  margin: 12px 0;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+}
+.fb-history h3 {
+  margin: 0 0 8px;
+  font-size: 17px;
+}
+.fb-queued {
+  margin: 8px 0;
+}
+
+.thread {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+.bubble {
+  max-width: 90%;
+  padding: 8px 12px;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+}
+.bubble p {
+  margin: 4px 0 0;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.bubble-meta {
+  font-size: 13px;
+  color: var(--muted);
+}
+.bubble-own {
+  justify-self: end;
+  background: var(--primary-soft);
+  border-color: var(--primary);
+}
+.bubble-dev {
+  justify-self: start;
+  background: var(--surface);
+}
+.bubble-unsent {
+  color: var(--warn);
+}
+
+.nav-dot {
+  display: inline-grid;
+  place-items: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  margin-left: 4px;
+  border-radius: 999px;
+  background: var(--warn);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 800;
+}
+.mine-list {
+  list-style: none;
+  margin: 16px 0;
+  padding: 0;
+  display: grid;
+  gap: 16px;
+}
+.mine-item {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  background: var(--surface);
+}
+.mine-item h3 {
+  margin: 0 0 4px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+.mine-nr {
+  color: var(--muted);
+  font-weight: 600;
+}
+.mine-status {
+  margin: 8px 0 0;
+}
+.mine-improved {
+  list-style: none;
+  margin: 8px 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.dev-reply {
+  display: grid;
+  gap: 8px;
+  margin-top: 8px;
+}
+.dev-reply textarea {
+  min-height: 72px;
+}
+.dev-replies {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 6px;
+}
+.dev-replies li {
+  padding: 6px 10px;
+  border-left: 3px solid var(--primary);
+  background: var(--primary-soft);
+  border-radius: 4px;
+}
+.dev-tag {
+  display: inline-block;
+  padding: 0 8px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  font-size: 12px;
+  margin-left: 6px;
+}
+.dev-box {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 12px;
+  margin: 12px 0;
+}
+.dev-danger {
+  color: #b91c1c;
+}

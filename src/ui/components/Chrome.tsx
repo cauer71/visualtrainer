@@ -5,6 +5,7 @@ import { LANGS } from '../../i18n/lang';
 import { UI } from '../../i18n/ui';
 import { useApp } from '../app-context';
 import { fullscreenSupported, initFullscreenPreference, isFullscreen, toggleFullscreen } from '../immersive';
+import { useFeedbackView } from '../feedback-view';
 import { flags, href } from '../router';
 import { Icon } from './Icon';
 
@@ -29,6 +30,7 @@ function FullscreenButton() {
 
 export function Header() {
   const { ui, lang, setLang, opt, isOptician, role, askRole } = useApp();
+  const fb = useFeedbackView();
   const roleLabel = role === 'entwickler' ? opt.roleDeveloperShort : isOptician ? opt.roleOpticianShort : opt.roleCustomerShort;
   const logo = brand.logoUrl ? <img class="brand-logo" src={brand.logoUrl} alt={brand.opticianName || brand.appName} /> : <BrandMark />;
   return (
@@ -47,6 +49,15 @@ export function Header() {
               <a class="nav-link hide-sm" href={href('/optiker')} title={opt.navOptician}>
                 <Icon name="eye" size={20} />
                 <span>{opt.navOptician}</span>
+              </a>
+              <a class="nav-link" href={href('/meine')} title={opt.navMine} data-nav="mine">
+                <Icon name="trophy" size={20} />
+                <span class="hide-sm">{opt.navMine}</span>
+                {fb.count ? (
+                  <span class="nav-dot" role="status" aria-label={opt.navMineNew(fb.count)}>
+                    {fb.count}
+                  </span>
+                ) : null}
               </a>
               <a class="nav-link hide-sm" href={href('/katalog')} title={opt.navCatalog}>
                 <Icon name="sparkle" size={20} />

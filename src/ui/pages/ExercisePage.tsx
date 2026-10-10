@@ -15,6 +15,8 @@ import { CalibNotice, ExerciseParams } from '../components/ExerciseParams';
 import { ColorCheck } from '../components/ColorCheck';
 import { ArtIcon, Icon } from '../components/Icon';
 import { FeedbackButton } from '../components/FeedbackDialog';
+import { ImprovedNote, RatedBadge } from '../components/FeedbackBadges';
+import { useFeedbackView } from '../feedback-view';
 import { LaborBadge } from '../components/LaborBadge';
 import { LiveBar } from '../components/LiveBar';
 import { Sparkline } from '../components/Sparkline';
@@ -77,6 +79,7 @@ export function ExercisePage({ id, query }: { id: string; query: URLSearchParams
 
 function Intro({ def, series, onStart }: { def: ExerciseDefinition; series: Series | null; onStart: () => void }) {
   const { ui, lang, isOptician } = useApp();
+  const fb = useFeedbackView(true);
   const tx = def.texts[lang];
   const meta = categoryMeta(def.category);
   const rec = getRecord(def.id);
@@ -112,6 +115,16 @@ function Intro({ def, series, onStart }: { def: ExerciseDefinition; series: Seri
             </div>
           </div>
           <p class="intro-tagline">{tx.tagline}</p>
+          {fb.enabled ? (
+            <>
+              <ImprovedNote fb={fb} exercise={def.id} />
+              {fb.rated.has(def.id) ? (
+                <p>
+                  <RatedBadge fb={fb} exercise={def.id} />
+                </p>
+              ) : null}
+            </>
+          ) : null}
           <ol class="intro-steps" aria-label={ui.intro.howTo}>
             {tx.steps.map((s, i) => (
               <li key={i}>

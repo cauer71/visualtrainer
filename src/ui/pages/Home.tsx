@@ -1,3 +1,4 @@
+import { useEffect } from 'preact/hooks';
 import { createFormatter } from '../../core/format';
 import { bestFor, countToday, currentVariant, daysThisWeek, doneToday, getRecord, WEEK_GOAL } from '../../core/storage';
 import type { ExerciseDefinition } from '../../core/types';
@@ -10,13 +11,31 @@ import { TagFilterChips } from '../components/TagFilter';
 import { metricText } from '../metrics';
 import { exerciseHref, href } from '../router';
 import { useTagFilter } from '../tag-filter';
+import { matchesRatedFilter, type RatedFilter } from '../../feedback/own';
+import { feedbackStore } from '../../feedback/store';
+import { ImprovedBadge, RatedBadge, RatedFilterChips } from '../components/FeedbackBadges';
+import { useFeedbackView, useRatedFilter, type FeedbackView } from '../feedback-view';
 
 export function Home() {
   const { ui, lang, dataVersion, isOptician, customerIds, opt } = useApp();
   void dataVersion;
   // Filter „Alle · Labor · Ohne Labor“ (nur Optiker-Ansicht; die Wahl bleibt in sessionStorage, ?tag=labor setzt sie)
   const [tagFilter, setTagFilter] = useTagFilter();
-  const filtered = (cat: (typeof CATEGORIES)[number]) => byCategory(cat.id).filter((d) => matchesTagFilter(d, tagFilter));
+  // Trainer: zusätzlich nach eigenen Bewertungen / Verbesserungen filtern („Neu verbessert“ bleibt in dieser Ansicht sichtbar)
+  const fb = useFeedbackView(true);
+  const [ratedFilter, setRatedFilter] = useRatedFilter();
+  const activeRated: RatedFilter = fb.enabled ? ratedFilter : 'all';
+  useEffect(() => {
+    if (fb.enabled && ratedFilter === 'improved') feedbackStore.markSeen('improvements');
+  }, [fb.enabled, ratedFilter, fb.improved.size]);
+  const ratedCounts: Record<RatedFilter, number> = {
+    all: EXERCISES.length,
+    rated: EXERCISES.filter((d) => fb.rated.has(d.id)).length,
+    unrated: EXERCISES.filter((d) => !fb.rated.has(d.id)).length,
+    improved: EXERCISES.filter((d) => fb.improved.has(d.id)).length,
+  };
+  const filtered = (cat: (typeof CATEGORIES)[number]) =>
+    byCategory(cat.id).filter((d) => matchesTagFilter(d, tagFilter) && matchesRatedFilter(activeRated, d.id, fb.rated, fb.improved));
   const filterCounts: Record<TagFilter, number> = {
     all: EXERCISES.length,
     labor: EXERCISES.filter((d) => matchesTagFilter(d, 'labor')).length,
@@ -113,7 +132,7 @@ export function Home() {
           <div class="card-grid">
             {daily.map((id) => {
               const def = getExercise(id);
-              return def ? <ExerciseCard key={def.id} def={def} /> : null;
+              return def ? <ExerciseCard key={def.id} def={def} fb={fb} /> : null;
             })}
           </div>
         </section>
@@ -124,6 +143,10 @@ export function Home() {
           <a class="btn btn-ghost btn-sm" href={href('/optiker')}>
             {opt.navOptician}
           </a>{' '}
+          <a class="btn btn-ghost btn-sm" href={href('/meine')}>
+            {opt.navMine}
+            {fb.count ? <span class="nav-dot">{fb.count}</span> : null}
+          </a>{' '}
           <a class="btn btn-ghost btn-sm" href={href('/katalog')}>
             {opt.shortcutCatalog}
           </a>
@@ -133,6 +156,7 @@ export function Home() {
       {isOptician ? (
         <section class="filter-bar" aria-label={ui.tagFilter.label}>
           <TagFilterChips value={tagFilter} onChange={setTagFilter} counts={filterCounts} />
+          <RatedFilterChips value={ratedFilter} onChange={setRatedFilter} counts={ratedCounts} />
         </section>
       ) : null}
       {isOptician && !anyShown ? <p class="muted filter-empty">{ui.tagFilter.empty}</p> : null}
@@ -154,7 +178,7 @@ export function Home() {
             </div>
             <div class="card-grid">
               {list.map((def) => (
-                <ExerciseCard key={def.id} def={def} />
+                <ExerciseCard key={def.id} def={def} fb={fb} />
               ))}
             </div>
           </section>
@@ -164,7 +188,7 @@ export function Home() {
   );
 }
 
-function ExerciseCard({ def }: { def: ExerciseDefinition }) {
+function ExerciseCard({ def, fb }: { def: ExerciseDefinition; fb: FeedbackView }) {
   const { ui, lang } = useApp();
   const tx = def.texts[lang];
   const rec = getRecord(def.id);
@@ -191,6 +215,8 @@ function ExerciseCard({ def }: { def: ExerciseDefinition }) {
         <span class="ex-card-tagline">{tx.tagline}</span>
         <span class="ex-card-meta">
           <LaborBadge def={def} />
+          <RatedBadge fb={fb} exercise={def.id} />
+          <ImprovedBadge fb={fb} exercise={def.id} />
           <span class="chip chip-sm">
             <Icon name="clock" size={14} /> {ui.home.minutes(def.minutes)}
           </span>

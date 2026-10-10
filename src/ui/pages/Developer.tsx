@@ -1,49 +1,71 @@
 import { useCallback, useEffect, useMemo, useState } from 'preact/hooks';
-import { ApiError, clearComments, devPassword, loadFeedback } from '../../feedback/client';
-import { buildExportText, formatAvg, formatStamp, GENERAL_ID, summarize, type ExerciseInfo, type FeedbackRow } from '../../feedback/logic';
+import { ApiError, deleteFeedback, devPassword, loadFeedback, markExported, sendReply } from '../../feedback/client';
+import { loadCatalogNumbers } from '../../feedback/catalog-numbers';
+import { buildExportText, formatAvg, formatStamp, GENERAL_ID, MAX_COMMENT, pendingExport, summarize, type ExerciseInfo, type FeedbackRow, type Improvement } from '../../feedback/logic';
 import { EXERCISES, getExercise } from '../../exercises/registry';
 import { useApp } from '../app-context';
 import { Icon } from '../components/Icon';
 import { href } from '../router';
 
-/** Entwickler-Bereich (nur Deutsch): Tabelle der Bewertungen, Kommentare, Export als Textdatei. Das Passwort prüft der Server. */
-
-let catalogNumbers: Promise<Map<string, number[]>> | null = null;
-function loadCatalogNumbers(): Promise<Map<string, number[]>> {
-  catalogNumbers ??= fetch('./katalog/index.json')
-    .then((r) => (r.ok ? (r.json() as Promise<{ items: { nr: number; blickfit: string | null }[] }>) : Promise.reject(new Error(String(r.status)))))
-    .then((d) => {
-      const m = new Map<string, number[]>();
-      for (const it of d.items) if (it.blickfit) m.set(it.blickfit, [...(m.get(it.blickfit) ?? []), it.nr].sort((a, b) => a - b));
-      return m;
-    })
-    .catch(() => {
-      catalogNumbers = null;
-      return new Map<string, number[]>();
-    });
-  return catalogNumbers;
-}
+/**
+ * Entwickler-Bereich (nur Deutsch): Tabelle der Bewertungen, Kommentare, Export als Textdatei, Antworten an die Trainer.
+ * Das Passwort prüft der Server. Nichts wird beim Export gelöscht: exportierte Kommentare bleiben als Archiv erhalten.
+ */
 
 const stars = (n: number | null) => (n === null ? '–' : '★'.repeat(n) + '☆'.repeat(5 - n));
+
+/** Antwortfeld mit Haken „Übung wurde verbessert“ (für einen Kommentar oder als Sammelantwort einer Übung) */
+function ReplyBox({ label, button, busy, onSend }: { label: string; button: string; busy: boolean; onSend: (text: string, improved: boolean) => Promise<boolean> }) {
+  const [text, setText] = useState('');
+  const [improved, setImproved] = useState(false);
+  const submit = async () => {
+    if (!text.trim()) return;
+    if (await onSend(text, improved)) {
+      setText('');
+      setImproved(false);
+    }
+  };
+  return (
+    <div class="dev-reply">
+      <label class="fb-label">
+        {label}
+        <textarea class="input" rows={3} maxLength={MAX_COMMENT} value={text} onInput={(e) => setText((e.target as HTMLTextAreaElement).value)} />
+      </label>
+      <label class="dev-check">
+        <input type="checkbox" checked={improved} onChange={(e) => setImproved((e.target as HTMLInputElement).checked)} /> Übung wurde verbessert
+      </label>
+      <div>
+        <button type="button" class="btn btn-primary btn-sm" disabled={busy || !text.trim()} onClick={submit}>
+          {button}
+        </button>
+      </div>
+    </div>
+  );
+}
 
 export function Developer() {
   const { opt } = useApp();
   const [pw, setPw] = useState<string | null>(() => devPassword.get());
   const [input, setInput] = useState('');
   const [rows, setRows] = useState<FeedbackRow[] | null>(null);
+  const [improvements, setImprovements] = useState<Improvement[]>([]);
   const [error, setError] = useState<string | null>(null);
+  const [notice, setNotice] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
   const [numbers, setNumbers] = useState<Map<string, number[]>>(new Map());
   const [open, setOpen] = useState<string | null>(null);
   const [onlyRated, setOnlyRated] = useState(true);
-  /** Zeilen der letzten Exportdatei, die noch gelöscht werden können */
+  const [showExported, setShowExported] = useState(false);
+  /** Zeilen der letzten Exportdatei, die noch als exportiert markiert werden können */
   const [exported, setExported] = useState<number[] | null>(null);
 
   const refresh = useCallback(async (password: string) => {
     setBusy(true);
     setError(null);
     try {
-      setRows(await loadFeedback(password));
+      const data = await loadFeedback(password);
+      setRows(data.rows);
+      setImprovements(data.improvements);
     } catch (e) {
       if (e instanceof ApiError && (e.status === 401 || e.status === 429)) {
         devPassword.clear();
@@ -70,14 +92,16 @@ export function Developer() {
     [numbers, opt],
   );
   const summary = useMemo(() => summarize(rows ?? []), [rows]);
+  const visibleComments = useCallback((id: string) => (summary.get(id)?.comments ?? []).filter((c) => showExported || !c.exportedAt), [summary, showExported]);
   const table = useMemo(() => {
     const ids = [GENERAL_ID, ...EXERCISES.map((d) => d.id)];
     for (const id of summary.keys()) if (!ids.includes(id)) ids.push(id); // Übungen, die es nicht mehr gibt
     const list = ids.map((id) => ({ id, ...info(id), s: summary.get(id) }));
-    const shown = onlyRated ? list.filter((r) => r.s && (r.s.count || r.s.comments.length)) : list;
+    const shown = onlyRated ? list.filter((r) => r.s && (r.s.count || visibleComments(r.id).length)) : list;
     return shown.sort((a, b) => (a.id === GENERAL_ID ? -1 : b.id === GENERAL_ID ? 1 : (a.numbers[0] ?? 1e6) - (b.numbers[0] ?? 1e6) || a.id.localeCompare(b.id)));
-  }, [summary, info, onlyRated]);
-  const commentRows = useMemo(() => (rows ?? []).filter((r) => r.comment), [rows]);
+  }, [summary, info, onlyRated, visibleComments]);
+  const pending = useMemo(() => pendingExport(rows ?? []), [rows]);
+  const archived = useMemo(() => (rows ?? []).filter((r) => r.comment && r.exportedAt).length, [rows]);
 
   const login = (e: Event) => {
     e.preventDefault();
@@ -88,11 +112,10 @@ export function Developer() {
     setPw(v);
   };
 
-  const exportAll = () => {
-    const withComment = commentRows;
-    if (!withComment.length) return;
+  const exportNew = () => {
+    if (!pending.length) return;
     const now = new Date();
-    const text = buildExportText(withComment, info, now);
+    const text = buildExportText(pending, info, now);
     const blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
@@ -103,21 +126,46 @@ export function Developer() {
     a.click();
     a.remove();
     setTimeout(() => URL.revokeObjectURL(url), 10_000);
-    setExported(withComment.map((r) => r.id));
+    setExported(pending.map((r) => r.id));
   };
 
-  const clear = async (ids: number[]) => {
-    if (!pw || !ids.length) return;
+  /** Führt eine Aktion mit Ladeanzeige und Fehlermeldung aus; gibt zurück, ob sie geklappt hat */
+  const act = async (fn: () => Promise<void>, failure: string): Promise<boolean> => {
+    if (!pw) return false;
     setBusy(true);
     setError(null);
+    setNotice(null);
     try {
-      await clearComments(pw, ids);
-      setExported(null);
+      await fn();
       await refresh(pw);
-    } catch {
-      setError('Löschen hat nicht geklappt. Bitte noch einmal versuchen.');
+      return true;
+    } catch (e) {
+      setError(e instanceof ApiError && e.message && e.status !== 0 ? `${failure} (${e.message})` : failure);
       setBusy(false);
+      return false;
     }
+  };
+
+  const markDone = async (ids: number[]) => {
+    if (!pw || !ids.length) return;
+    if (await act(() => markExported(pw, ids), 'Das Markieren hat nicht geklappt. Bitte noch einmal versuchen.')) setExported(null);
+  };
+
+  const reply = (exerciseId: string, feedbackId: number | undefined) => async (text: string, improved: boolean) => {
+    if (!pw) return false;
+    let count = 0;
+    const ok = await act(async () => {
+      count = (await sendReply(pw, { exerciseId, text, improved, feedbackId })).replies;
+    }, 'Die Antwort konnte nicht gesendet werden.');
+    if (ok) setNotice(feedbackId ? 'Antwort gespeichert.' : count ? `Antwort an ${count} Kommentar${count === 1 ? '' : 'e'} gespeichert.` : 'Keine exportierten, unbeantworteten Kommentare gefunden. Die Verbesserung wurde trotzdem gemeldet, falls angehakt.');
+    return ok;
+  };
+
+  const hardDelete = async (c: FeedbackRow) => {
+    if (!pw) return;
+    const label = `${stars(c.stars)}${c.comment ? ` – „${c.comment.slice(0, 80)}${c.comment.length > 80 ? '…' : ''}“` : ''}`;
+    if (!window.confirm(`Eintrag #${c.id} ENDGÜLTIG löschen (Sterne, Kommentar und Antworten)? Das lässt sich nicht rückgängig machen.\n\n${label}`)) return;
+    await act(() => deleteFeedback(pw, c.id), 'Löschen hat nicht geklappt. Bitte noch einmal versuchen.');
   };
 
   const logout = () => {
@@ -151,6 +199,7 @@ export function Developer() {
   }
 
   const total = rows?.length ?? 0;
+  const dateOf = (iso: string) => formatStamp(new Date(iso));
   return (
     <main class="container dev" id="main">
       <a class="back-link" href={href('/optiker')}>
@@ -158,11 +207,13 @@ export function Developer() {
       </a>
       <h1>{opt.fbDeveloper}</h1>
       <p class="lead">
-        {rows === null ? 'Wird geladen …' : `${total} ${total === 1 ? 'Eintrag' : 'Einträge'}, davon ${commentRows.length} ${commentRows.length === 1 ? 'Kommentar' : 'Kommentare'} noch nicht exportiert/gelöscht.`}
+        {rows === null
+          ? 'Wird geladen …'
+          : `${total} ${total === 1 ? 'Eintrag' : 'Einträge'}, davon ${pending.length} ${pending.length === 1 ? 'Kommentar' : 'Kommentare'} noch nicht exportiert und ${archived} im Archiv.`}
       </p>
       <div class="dev-actions">
-        <button type="button" class="btn btn-primary" disabled={!commentRows.length || busy} onClick={exportAll}>
-          Kommentare exportieren (.txt)
+        <button type="button" class="btn btn-primary" disabled={!pending.length || busy} onClick={exportNew}>
+          Neue Kommentare exportieren (.txt)
         </button>
         <button type="button" class="btn btn-ghost" disabled={busy} onClick={() => pw && refresh(pw)}>
           <Icon name="refresh" size={18} /> Aktualisieren
@@ -173,11 +224,19 @@ export function Developer() {
         <label class="dev-check">
           <input type="checkbox" checked={onlyRated} onChange={(e) => setOnlyRated((e.target as HTMLInputElement).checked)} /> nur Übungen mit Rückmeldung
         </label>
+        <label class="dev-check">
+          <input type="checkbox" checked={showExported} onChange={(e) => setShowExported((e.target as HTMLInputElement).checked)} /> Exportierte anzeigen
+        </label>
       </div>
 
       {error ? (
         <p class="fb-error" role="alert">
           {error}
+        </p>
+      ) : null}
+      {notice ? (
+        <p class="notice notice-info" role="status">
+          {notice}
         </p>
       ) : null}
 
@@ -187,14 +246,14 @@ export function Developer() {
             <strong>
               {exported.length} {exported.length === 1 ? 'Kommentar' : 'Kommentare'} exportiert.
             </strong>{' '}
-            Jetzt löschen, damit sie beim nächsten Export nicht noch einmal in der Datei stehen? Die Sterne bleiben erhalten.
+            Jetzt als exportiert markieren, damit sie beim nächsten Export nicht noch einmal in der Datei stehen? Nichts wird gelöscht: Kommentare und Sterne bleiben im Archiv (unter „Exportierte anzeigen“).
           </p>
           <div class="dev-actions">
-            <button type="button" class="btn btn-primary" disabled={busy} onClick={() => clear(exported)}>
-              <Icon name="trash" size={18} /> Ja, Kommentare löschen
+            <button type="button" class="btn btn-primary" disabled={busy} onClick={() => markDone(exported)}>
+              <Icon name="check" size={18} /> Als exportiert markieren
             </button>
             <button type="button" class="btn btn-ghost" disabled={busy} onClick={() => setExported(null)}>
-              Nein, behalten
+              Nein, noch nicht
             </button>
           </div>
         </div>
@@ -221,13 +280,14 @@ export function Developer() {
                 </tr>
               ) : null}
               {table.map((r) => {
-                const n = r.s?.comments.length ?? 0;
+                const list = visibleComments(r.id);
+                const n = list.length;
                 const isOpen = open === r.id;
                 return [
                   <tr key={r.id} class={isOpen ? 'is-open' : undefined}>
                     <td>{r.numbers.length ? r.numbers.join(', ') : '–'}</td>
                     <th scope="row">
-                      <button type="button" class="dev-row-btn" aria-expanded={isOpen} disabled={!n} onClick={() => setOpen(isOpen ? null : r.id)}>
+                      <button type="button" class="dev-row-btn" aria-expanded={isOpen} disabled={!n && !isOpen} onClick={() => setOpen(isOpen ? null : r.id)}>
                         {r.name}
                       </button>
                       <span class="dev-id">{r.id}</span>
@@ -251,18 +311,47 @@ export function Developer() {
                     <tr key={`${r.id}-c`} class="dev-comments-row">
                       <td colSpan={5}>
                         <ul class="dev-comments">
-                          {r.s.comments.map((c) => (
-                            <li key={c.id}>
-                              <span class="dev-meta">
-                                {stars(c.stars)} · {formatStamp(new Date(c.createdAt))} · {c.lang.toUpperCase()}{c.trainer ? ` · ${c.trainer}` : ''}
-                              </span>
-                              <p>{c.comment}</p>
-                              <button type="button" class="btn btn-ghost btn-sm" disabled={busy} onClick={() => clear([c.id])}>
-                                <Icon name="trash" size={16} /> Kommentar löschen
-                              </button>
-                            </li>
-                          ))}
+                          {list.map((c) => {
+                            const replies = c.replies ?? [];
+                            return (
+                              <li key={c.id} data-comment={c.id}>
+                                <span class="dev-meta">
+                                  #{c.id} · {stars(c.stars)} · {dateOf(c.createdAt)} · {c.lang.toUpperCase()}
+                                  {c.trainer ? ` · ${c.trainer}` : ''}
+                                  {c.parentId ? <span class="dev-tag">Folgekommentar zu #{c.parentId}</span> : null}
+                                  {c.exportedAt ? <span class="dev-tag">exportiert {dateOf(c.exportedAt)}</span> : <span class="dev-tag">neu</span>}
+                                </span>
+                                <p>{c.comment}</p>
+                                {replies.length ? (
+                                  <ul class="dev-replies">
+                                    {replies.map((rp) => (
+                                      <li key={rp.id}>
+                                        <span class="dev-meta">
+                                          Antwort · {dateOf(rp.createdAt)}
+                                          {rp.improved ? ' · Übung verbessert' : ''}
+                                        </span>
+                                        <p>{rp.text}</p>
+                                      </li>
+                                    ))}
+                                  </ul>
+                                ) : null}
+                                <ReplyBox label="Antwort / was wurde verbessert" button="Antwort senden" busy={busy} onSend={reply(r.id, c.id)} />
+                                <button type="button" class="btn btn-ghost btn-sm dev-danger" disabled={busy} onClick={() => hardDelete(c)}>
+                                  <Icon name="trash" size={16} /> Endgültig löschen
+                                </button>
+                              </li>
+                            );
+                          })}
                         </ul>
+                        <div class="dev-box">
+                          <strong>Sammelantwort</strong>
+                          <ReplyBox
+                            label="Für alle exportierten, noch unbeantworteten Kommentare dieser Übung antworten"
+                            button="Antwort an alle senden"
+                            busy={busy}
+                            onSend={reply(r.id, undefined)}
+                          />
+                        </div>
                       </td>
                     </tr>
                   ) : null,
@@ -271,6 +360,24 @@ export function Developer() {
             </tbody>
           </table>
         </div>
+      ) : null}
+
+      {rows !== null ? (
+        <section class="dev-box" aria-labelledby="dev-improvements">
+          <h2 id="dev-improvements">Verbesserte Übungen</h2>
+          {improvements.length === 0 ? <p class="muted">Noch keine Verbesserung gemeldet.</p> : null}
+          <ul class="dev-replies">
+            {improvements.map((i, idx) => (
+              <li key={`${i.exercise}-${i.createdAt}-${idx}`}>
+                <span class="dev-meta">
+                  {info(i.exercise).numbers.length ? `${info(i.exercise).numbers.join(', ')} · ` : ''}
+                  {info(i.exercise).name} · {dateOf(i.createdAt)}
+                </span>
+                <p>{i.text}</p>
+              </li>
+            ))}
+          </ul>
+        </section>
       ) : null}
     </main>
   );

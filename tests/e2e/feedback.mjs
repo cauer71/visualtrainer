@@ -51,23 +51,43 @@ ok(tableText.includes('Blitzreaktion') && tableText.includes('Allgemein'), 'Tabe
 ok(/4,0/.test(tableText), 'Ø 4,0 in der Tabelle');
 await p.screenshot({ path: process.env.SHOT ?? '/tmp/dev.png' });
 
-// Export + Löschen
-const [dl] = await Promise.all([p.waitForEvent('download'), p.click('button:has-text("Kommentare exportieren")')]);
+// Export + Archiv (nichts wird gelöscht)
+const [dl] = await Promise.all([p.waitForEvent('download'), p.click('button:has-text("Neue Kommentare exportieren")')]);
 const file = '/tmp/export-test.txt';
 await dl.saveAs(file);
 const txt = fs.readFileSync(file, 'utf8');
 console.log('--- Exportdatei ---\n' + txt + '--- Ende ---');
 ok(txt.includes('Trainer CA'), 'Export nennt das Kürzel');
 ok(/Kennung: blitzreaktion/.test(txt) && /Übung 101/.test(txt) && txt.includes('Zu schnell am Anfang.\n  Zweite Zeile.'), 'Export enthält Nummer, Kennung, Kritik');
+ok(/\[#\d+\] Übung 101/.test(txt) && txt.includes('$ADMIN_PASSWORD') && txt.includes('https://visual.auer.page/api/admin/reply') && !txt.includes('726'), 'Export: Kommentarnummern, Antwort-Anleitung, kein Passwort');
 await p.waitForSelector('.dev-exported');
-await p.click('button:has-text("Nein, behalten")');
-ok((await p.locator('.dev-exported').count()) === 0, 'Nein, behalten schließt die Frage');
-await Promise.all([p.waitForEvent('download'), p.click('button:has-text("Kommentare exportieren")')]);
-await p.click('button:has-text("Ja, Kommentare löschen")');
-await p.waitForFunction(() => document.querySelector('.lead')?.textContent?.includes('0 Kommentare') || document.querySelector('.lead')?.textContent?.includes('0 Kommentar'));
-ok(await p.locator('button:has-text("Kommentare exportieren")').isDisabled(), 'nach dem Löschen nichts mehr zu exportieren');
-const after = await p.textContent('.dev-table');
-ok(/4,0/.test(after), 'Sterne bleiben nach dem Löschen erhalten');
+await p.click('button:has-text("Nein, noch nicht")');
+ok((await p.locator('.dev-exported').count()) === 0, 'Nein, noch nicht schließt die Frage');
+await Promise.all([p.waitForEvent('download'), p.click('button:has-text("Neue Kommentare exportieren")')]);
+await p.click('button:has-text("Als exportiert markieren")');
+await p.waitForFunction(() => /0 Kommentare noch nicht exportiert/.test(document.querySelector('.lead')?.textContent ?? ''));
+ok(await p.locator('button:has-text("Neue Kommentare exportieren")').isDisabled(), 'nach dem Markieren nichts Neues mehr zu exportieren');
+ok(/4,0/.test(await p.textContent('.dev-table')), 'Sterne bleiben nach dem Markieren erhalten');
+
+// Archiv: Text bleibt sichtbar, Antwort an alle exportierten Kommentare einer Übung inkl. „verbessert“
+await p.click('text=nur Übungen mit Rückmeldung >> input').catch(() => {});
+await p.click('label:has-text("Exportierte anzeigen") input');
+await p.click('.dev-row-btn:has-text("Blitzreaktion")');
+ok((await p.textContent('.dev-comments')).includes('Zu schnell am Anfang.'), 'exportierter Kommentar bleibt im Archiv lesbar');
+await p.fill('.dev-box textarea', 'Tempo am Anfang gesenkt.');
+await p.click('.dev-box label:has-text("Übung wurde verbessert") input');
+await p.click('button:has-text("Antwort an alle senden")');
+await p.waitForSelector('.dev-replies');
+ok((await p.textContent('.dev-comments')).includes('Tempo am Anfang gesenkt.'), 'Antwort erscheint unter dem Kommentar');
+ok((await p.textContent('#dev-improvements + *, section.dev-box')).includes('Tempo am Anfang gesenkt.'), 'Verbesserung steht in der Liste');
+const pub = await p.evaluate(async () => (await (await fetch('/api/improvements')).json()).items);
+ok(pub.length === 1 && pub[0].exerciseId === 'blitzreaktion', 'öffentliche Schnittstelle nennt die Verbesserung');
+
+// Endgültig löschen nur ausdrücklich (Bestätigung)
+p.once('dialog', (d) => d.accept());
+await p.click('button:has-text("Endgültig löschen")');
+await p.waitForFunction(() => !document.querySelector('.dev-comments li'));
+ok(true, 'Endgültig löschen entfernt genau diesen Eintrag');
 
 // Reload: Passwort bleibt in der Sitzung
 await p.reload({ waitUntil: 'networkidle' });

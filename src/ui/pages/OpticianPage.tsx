@@ -9,10 +9,13 @@ import { LaborBadge } from '../components/LaborBadge';
 import { TagFilterChips } from '../components/TagFilter';
 import { href } from '../router';
 import { useTagFilter } from '../tag-filter';
+import { ImprovedBadge, RatedBadge } from '../components/FeedbackBadges';
+import { useFeedbackView } from '../feedback-view';
 
 export function OpticianPage() {
   const { opt, ui, lang, customerIds, setCustomerIds } = useApp();
   const [saved, setSaved] = useState(false);
+  const fb = useFeedbackView(true);
   // dieselbe Filterwahl wie auf der Startseite (sessionStorage, ?tag=labor)
   const [tagFilter, setTagFilter] = useTagFilter();
   const shown = EXERCISES.filter((d) => matchesTagFilter(d, tagFilter));
@@ -47,6 +50,18 @@ export function OpticianPage() {
             <span class="ex-card-body">
               <span class="ex-card-title">{opt.shortcutScience}</span>
               <span class="ex-card-tagline">{opt.shortcutScienceText}</span>
+            </span>
+          </a>
+          <a class="ex-card" href={href('/meine')}>
+            <span class="ex-card-icon">
+              <Icon name="trophy" size={30} />
+            </span>
+            <span class="ex-card-body">
+              <span class="ex-card-title">
+                {opt.navMine}
+                {fb.count ? <span class="nav-dot">{fb.count}</span> : null}
+              </span>
+              <span class="ex-card-tagline">{opt.mineLead}</span>
             </span>
           </a>
           <a class="ex-card" href={href('/katalog')}>
@@ -111,7 +126,7 @@ export function OpticianPage() {
                   <span class="pick-text">
                     <strong>{def.texts[lang].title}</strong>
                     <span class="muted">
-                      {ui.categories[def.category].title} <LaborBadge def={def} />
+                      {ui.categories[def.category].title} <LaborBadge def={def} /> <RatedBadge fb={fb} exercise={def.id} /> <ImprovedBadge fb={fb} exercise={def.id} />
                     </span>
                   </span>
                 </label>

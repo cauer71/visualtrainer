@@ -5,6 +5,10 @@ import { useApp } from '../app-context';
 import { Icon } from '../components/Icon';
 import { renderMarkdown } from '../markdown';
 import { exerciseHref, href } from '../router';
+import { matchesRatedFilter } from '../../feedback/own';
+import { feedbackStore } from '../../feedback/store';
+import { ImprovedBadge, RatedBadge, RatedFilterChips } from '../components/FeedbackBadges';
+import { useFeedbackView, useRatedFilter } from '../feedback-view';
 
 interface Item {
   nr: number;
@@ -66,17 +70,28 @@ export function Catalog() {
   const [q, setQ] = useState('');
   const [chapter, setChapter] = useState('');
   const [onlyPlayable, setOnlyPlayable] = useState(false);
+  const fb = useFeedbackView(true);
+  const [ratedFilter, setRatedFilter] = useRatedFilter();
+  const activeRated = fb.enabled ? ratedFilter : 'all';
+  useEffect(() => {
+    if (fb.enabled && ratedFilter === 'improved') feedbackStore.markSeen('improvements');
+  }, [fb.enabled, ratedFilter, fb.improved.size]);
   const chapters = useMemo(() => [...new Set((items ?? []).map((i) => i.kapitel))], [items]);
   const list = useMemo(() => {
     const t = q.trim().toLowerCase();
     return (items ?? []).filter((i) => {
       if (chapter && i.kapitel !== chapter) return false;
       if (onlyPlayable && !playable(i)) return false;
+      // Filter nach eigener Bewertung gilt für die spielbaren Übungen (nur diese lassen sich bewerten)
+      if (activeRated !== 'all') {
+        const id = playable(i);
+        if (!id || !matchesRatedFilter(activeRated, id, fb.rated, fb.improved)) return false;
+      }
       if (!t) return true;
       const hay = `${i.nr} ${i.name} ${i.kurz} ${i.ziel.map((z) => PROFIL_LABEL[z] ?? z).join(' ')}`.toLowerCase();
       return hay.includes(t);
     });
-  }, [items, q, chapter, onlyPlayable]);
+  }, [items, q, chapter, onlyPlayable, activeRated, fb.rated, fb.improved]);
 
   useEffect(() => window.scrollTo(0, 0), []);
 
@@ -102,6 +117,7 @@ export function Catalog() {
         </label>
         {items ? <span class="chip chip-sm">{opt.catalogCount(list.length)}</span> : null}
       </div>
+      {fb.enabled ? <RatedFilterChips value={ratedFilter} onChange={setRatedFilter} /> : null}
       {error ? <p class="notice notice-info">{opt.catalogError}</p> : null}
       {!items && !error ? <p class="muted">{opt.catalogLoading}</p> : null}
       <ul class="catalog-list">
@@ -120,6 +136,8 @@ export function Catalog() {
                   ))}
                   <span class={`chip chip-sm tablet-${i.tablet}`}>{TABLET_LABEL[i.tablet] ?? i.tablet}</span>
                   {playable(i) ? <span class="chip chip-sm chip-good">{opt.catalogPlayable}</span> : null}
+                  {playable(i) ? <RatedBadge fb={fb} exercise={playable(i)!} /> : null}
+                  {playable(i) ? <ImprovedBadge fb={fb} exercise={playable(i)!} /> : null}
                 </span>
               </span>
             </a>
