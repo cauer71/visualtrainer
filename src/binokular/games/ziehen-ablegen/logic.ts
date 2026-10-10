@@ -1,6 +1,6 @@
 /**
  * „Ziehen & Ablegen“ (zwei Farben) – reine Logik ohne DOM. Maße und Kurven stammen aus der Haupt-App
- * (`exercises/ziehen-ablegen/logic.ts`), hier mit Einheit U = 10 px im Spielfeld 1280 × 720.
+ * (`exercises/ziehen-ablegen/logic.ts`), hier mit Einheit U = 7,2 px (1 % der kurzen Seite, wie u in der Haupt-App) im Spielfeld 1280 × 720.
  * Ball und Ring gehören je einem Auge (AMBLYOPIC / FELLOW); welches die Farbe Rot hat, bestimmt das Farbprofil.
  */
 import {
@@ -31,7 +31,7 @@ export { MAX_LEVEL, MIN_LEVEL };
 export const W = 1280;
 export const H = 720;
 /** Einheit der Maße aus der Haupt-App (px im Spielfeld) */
-export const U = 10;
+export const U = 7.2;
 /** Ringlinie (px; Zweitfarbe-Objekte brauchen kräftige Linien) */
 export const RING_STROKE = 14;
 export const FB_MS = 700;

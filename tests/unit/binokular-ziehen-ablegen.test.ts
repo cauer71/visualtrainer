@@ -62,7 +62,7 @@ describe('Ziehen & Ablegen: Maße und Ring', () => {
     expect(geometryFor(16, DEFAULT_ZA).R).toBeLessThan(geometryFor(1, DEFAULT_ZA).R);
     expect(geometryFor(16, DEFAULT_ZA).speed).toBeGreaterThan(geometryFor(1, DEFAULT_ZA).speed);
     expect(geometryFor(16, DEFAULT_ZA).limitMs).toBeLessThan(geometryFor(1, DEFAULT_ZA).limitMs);
-    expect(U).toBe(10);
+    expect(U).toBe(7.2);
   });
 
   it('Faktoren skalieren Ringgröße, Tempo und Zeitfenster', () => {
