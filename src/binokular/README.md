@@ -6,14 +6,14 @@
 > (Knopf „Beschwerden – beenden“, im Spiel jederzeit sichtbar).
 
 Browserbasierte Prototypen für **dichoptisches Binokulartraining** mit Rot/Cyan- oder Rot/Grün-Anaglyphenbrille:
-zwei einfache Spiele mit großen Flächen und kurzen Regeln – **„Nachzeichnen“** und **„Farbwechsel-Pong“**. Das frühere,
+drei einfache Spiele mit großen Flächen und kurzen Regeln – **„Nachzeichnen“**, **„Farbwechsel-Pong“** und **„Ziehen & Ablegen“**. Das frühere,
 umfangreichere Grabungsspiel (zehn Level mit Levelauswahl, Lösungsprüfer, Sternen, adaptivem Kontrast und Kontrollaufgaben)
 war zu kompliziert und wurde **entfernt**; die spielunabhängigen Teile blieben erhalten (Farbprofile und Kalibrierung,
 Farbzuordnung je Auge, Ton, Therapeutenbereich, Speicher, Verlauf).
 
 - **URL:** `https://visual.auer.page/binokular/` (eigene Test-URL, kein Link aus der Haupt-App, nicht in der Übungsliste;
   URL und Speicherschlüssel `binokular:v1` blieben unverändert)
-- **Stand:** Startbildschirm mit nur zwei Spielkarten (Tipp = Spiel startet sofort), Kalibrierung mit Farbprofilen, gemeinsame Spielhülle (Vollbild, Pause,
+- **Stand:** Startbildschirm mit drei Spielkarten (Tipp = Spiel startet sofort), Kalibrierung mit Farbprofilen, gemeinsame Spielhülle (Vollbild, Pause,
   Zeit, Wake Lock, Automatik-Pause), Therapeutenbereich mit Spieleinstellungen, Session-Verlauf mit CSV-Export, Debug-Modus,
   dezente Soundeffekte (Web Audio).
 
@@ -226,6 +226,36 @@ zwischen Rot und Zweitfarbe; die Startfarbe ist zufällig (aus dem Seed).
   Der Computergegner ist unverändert (begrenzte Geschwindigkeit, Ungenauigkeit je Schlag) und **verliert weiterhin
   manchmal**; ein Test sichert das mit Standardeinstellungen gegen einen mittelmäßigen Spieler.
 
+## Spiel „Ziehen & Ablegen“ (zwei Farben)
+
+Dichoptische Variante der Übung „Ziehen & Ablegen“ der Haupt-App (Maße und Kurven aus `exercises/ziehen-ablegen/logic.ts`,
+dort unverändert). Querformat 1280 × 720. Ein **Ball** (gefüllte Scheibe, Radius ≥ 22 px) und ein **wandernder Ring**
+(Linie 14 px) gehören **verschiedenen Augen**: einer ist Rot, der andere die Zweitfarbe des aktiven Profils (Augenklasse
+AMBLYOPIC/FELLOW, die Farbe kommt nur aus `vision/color.ts`). Nur beide Augen zusammen erkennen, ob der Ball im Ring liegt.
+Rahmen, Level, Zähler und Hinweise sind grau (BOTH).
+
+- **Steuerung:** irgendwo berühren (Touch, Stift oder Maus mit gedrückter Taste) → der Ball erscheint **versetzt über dem
+  Finger** (relative Steuerung, der Finger verdeckt ihn nie); in den Ring ziehen und loslassen. Treffer = Ballmitte im Ring.
+  Nur Antippen zählt nicht. Tastatur: Pfeiltasten bewegen den Ball, Leertaste oder Eingabe legt ihn ab.
+- **Runde:** Ring wandert (Tempo und Kurven je Level, prallt am Rand ab; der Finger bleibt immer auf dem Bildschirm).
+  Zeitfenster je Level (6,5 s → 3,2 s); danach „zu spät“ = Fehler. Rückmeldung nur grau: kurzer grauer Rahmen, Ton
+  (`hit`/`error`), Vibration; bei „wechselnd“ zusätzlich Ton `colorChange` beim Rollenwechsel.
+- **Level 1–16:** adaptiv, nach 3 Treffern in Folge +1, nach 2 Fehlern in Folge −1 (Ringgröße, Tempo, Zeitfenster, Kurvenrate
+  und Punkte je Treffer wachsen mit dem Level). Das Level steht grau in der Live-Anzeige.
+- **Rollen:** „wechselnd“ (Standard; Start zufällig aus dem Seed, danach nach jeder Runde getauscht, damit beide Augen
+  abwechselnd den Ball führen), „Ball rot / Ring Zweitfarbe“ oder „Ball Zweitfarbe / Ring rot“.
+- **Einstellungen** (Therapeutenbereich, streng begrenzt): Startlevel 1–16, Rollen, Runden pro Sitzung (Standard 20,
+  0 = unbegrenzt), Ringgröße-, Tempo- und Zeitfenster-Faktor je 70–150 %, Ball-Offset über dem Finger (0 = automatisch,
+  sonst 40–200 px). Gespeichert unter `games['ziehen-ablegen']`. Nicht umgesetzt: „Ball verschwindet kurz“.
+- **Session:** `points`, `errors` (= Fehler: daneben oder zu spät), `colorChanges` (= Rollenwechsel), `details`: `hits`,
+  `misses`, `late`, `rounds`, `maxLevel`, `avgRoundMs`, `roleSwaps`, `targetRounds`; erscheinen in Zusammenfassung, Verlauf
+  und CSV. Ältere Sessions und Einstellungen laden unverändert (fehlende Einstellung → Standard).
+- **Testzugriff** (`?game=ziehen-ablegen&seed=N&debug=1`): `window.__binokular.state()` liefert Ring (`x`, `y`, `R`), Ball,
+  Rollen (`roles.ball`, `roles.ring` als Augenklasse), Level, Treffer, Fehler, Runden; `set({ ring, rest, speed, elapsedMs })`
+  setzt Ring/Ruheplatz des Balls, hält den Ring an (`speed: 0`) bzw. verschiebt die Rundenzeit.
+- Code: `games/ziehen-ablegen/` (`logic.ts` Spielkern ohne DOM, `settings.ts`, `index.ts`); Tests
+  `tests/unit/binokular-ziehen-ablegen.test.ts` und Abschnitt 9 von `tests/e2e/binokular.mjs`.
+
 ## Session und Datenerfassung
 
 Je Spielsitzung ein Datensatz (`therapy/session.ts`): Spiel, Datum, Startzeit, Gesamtdauer, aktive Spielzeit, Pausen,
@@ -369,7 +399,7 @@ Stützpunkte, Levelliste und `awaiting` = wartende Karte), zusammen mit `?seed=N
   - `binokular-therapy.test.ts` – Session-Log, CSV, PIN, Export/Import (inkl. strenger Prüfung der Spieleinstellungen),
     Speicher. `binokular-audio.test.ts` – Töne kurz und weich, stumm erzeugt nichts, Lautstärkegrenze, Start nach Geste.
 - `node tests/e2e/binokular.mjs` (Vorschau-Server auf Port 4173, sonst `BASE=…`; `SIZES=tablet,tabletP,phone,phoneP`):
-  Startbildschirm (zwei Karten, Tipp startet das Spiel ohne Kalibrierung) → Kalibrierung per Knopf (nur in der ersten Größe)
+  Startbildschirm (drei Karten, Tipp startet das Spiel ohne Kalibrierung) → Kalibrierung per Knopf (nur in der ersten Größe)
   → Therapeutenbereich (Auge) → Nachzeichnen (Level 1 → Karte → Enter → Level 2 anderer Pfad, Levelliste; Fehlerlimit mit
   „Nochmal“; Level 4 mit Schleife ohne Automatik) →
   (Pfad per Testzugriff, Ziehen, Farbwechsel, genau ein Fehler, Rückkehrradius, graues Aufblitzen, Ziel →

@@ -10,8 +10,8 @@ import type { SoundEvent } from '../audio';
 import type { VisionSettings } from '../vision/color';
 import type { DebugView } from '../vision/renderer';
 
-export type GameId = 'nachzeichnen' | 'pong';
-export const GAME_IDS: readonly GameId[] = ['nachzeichnen', 'pong'];
+export type GameId = 'nachzeichnen' | 'pong' | 'ziehen-ablegen';
+export const GAME_IDS: readonly GameId[] = ['nachzeichnen', 'pong', 'ziehen-ablegen'];
 
 /** Warum eine Spielrunde/Session endete */
 export type FinishReason = 'goal' | 'limit' | 'score' | 'user' | 'complaints' | 'interrupted';

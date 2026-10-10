@@ -12,6 +12,7 @@ import { DEFAULT_PROFILE_ID, findProfile, normalizeProfiles, startProfileFor, ty
 import type { Glasses } from '../vision/color';
 import { DEFAULT_NACH, normalizeNach, type NachSettings } from '../games/nachzeichnen/settings';
 import { DEFAULT_PONG, normalizePong, type PongSettings } from '../games/pong/settings';
+import { DEFAULT_ZA, normalizeZa, type ZaSettings } from '../games/ziehen-ablegen/settings';
 import { DEFAULT_PIN, isValidPin } from '../therapy/pin';
 import { normalizeSession, type SessionRecord } from '../therapy/session';
 import { DEFAULT_SETTINGS, normalizeSettings, num, type Settings } from './settings';
@@ -20,16 +21,17 @@ import { DEFAULT_SETTINGS, normalizeSettings, num, type Settings } from './setti
 export interface GameSettingsMap {
   nachzeichnen: NachSettings;
   pong: PongSettings;
+  'ziehen-ablegen': ZaSettings;
 }
 
 export function defaultGameSettings(): GameSettingsMap {
-  return { nachzeichnen: { ...DEFAULT_NACH }, pong: { ...DEFAULT_PONG } };
+  return { nachzeichnen: { ...DEFAULT_NACH }, pong: { ...DEFAULT_PONG }, 'ziehen-ablegen': { ...DEFAULT_ZA } };
 }
 
 /** Einstellungen aller Spiele streng prüfen (fehlend/ungültig → Standard) */
 export function normalizeGameSettings(x: unknown): GameSettingsMap {
   const o = (x && typeof x === 'object' ? x : {}) as Record<string, unknown>;
-  return { nachzeichnen: normalizeNach(o.nachzeichnen), pong: normalizePong(o.pong) };
+  return { nachzeichnen: normalizeNach(o.nachzeichnen), pong: normalizePong(o.pong), 'ziehen-ablegen': normalizeZa(o['ziehen-ablegen']) };
 }
 
 /**

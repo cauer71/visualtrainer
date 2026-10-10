@@ -1,5 +1,5 @@
 /**
- * Bildschirmfolge: Start (nur die zwei Spielkarten) → Spiel (GameShell) → Zusammenfassung → Verlauf. Ein Tipp auf die
+ * Bildschirmfolge: Start (die drei Spielkarten) → Spiel (GameShell) → Zusammenfassung → Verlauf. Ein Tipp auf die
  * Karte startet das Spiel sofort mit dem aktiven Farbprofil (ohne Kalibrierung – die gibt es nur über ihren Knopf);
  * Profil, Auge und Zuordnung stehen im Therapeutenbereich und in der Kalibrierung. Der Ton (Audio-Modul) wird bei der ersten Nutzergeste freigeschaltet.
  */

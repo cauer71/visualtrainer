@@ -1,6 +1,6 @@
 /**
  * Einstieg „Binokular – Sehspiele“ (/binokular/) – eigenständig, unabhängig von der Haupt-App.
- * URL-Parameter (nur Tests/Vorführung): ?game=nachzeichnen|pong (direkt ins Spiel, ohne Kalibrierung),
+ * URL-Parameter (nur Tests/Vorführung): ?game=nachzeichnen|pong|ziehen-ablegen (direkt ins Spiel, ohne Kalibrierung),
  * ?seed=N (fester Zufall: Pfad, Startfarbe), ?debug=1 (Debug-Ansichten und Testzugriff `window.__binokular`).
  */
 import { render } from 'preact';
