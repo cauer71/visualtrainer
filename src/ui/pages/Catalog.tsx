@@ -9,6 +9,7 @@ import { matchesRatedFilter } from '../../feedback/own';
 import { feedbackStore } from '../../feedback/store';
 import { ImprovedBadge, RatedBadge, RatedFilterChips } from '../components/FeedbackBadges';
 import { useFeedbackView, useRatedFilter } from '../feedback-view';
+import { matchesTerms, normalizeSearch, searchTerms } from '../catalog-search';
 
 interface Item {
   nr: number;
@@ -77,8 +78,20 @@ export function Catalog() {
     if (fb.enabled && ratedFilter === 'improved') feedbackStore.markSeen('improvements');
   }, [fb.enabled, ratedFilter, fb.improved.size]);
   const chapters = useMemo(() => [...new Set((items ?? []).map((i) => i.kapitel))], [items]);
+  // Suchtext je Eintrag einmal vorbereiten: Nummer, Name, Kapitel, Beschreibung, Ziele, Eignung und – falls spielbar –
+  // Titel und Untertitel der Übung in der App (DE und IT)
+  const haystacks = useMemo(() => {
+    const m = new Map<number, string>();
+    for (const i of items ?? []) {
+      const ex = i.blickfit ? getExercise(i.blickfit) : undefined;
+      const app = ex ? Object.values(ex.texts).flatMap((tx) => [tx.title, tx.tagline]) : [];
+      const parts = [String(i.nr), i.name, i.kapitel, i.kurz, ...i.ziel.map((z) => `${PROFIL_LABEL[z] ?? z} ${z}`), ...(i.geeignet ?? []), ...app];
+      m.set(i.nr, normalizeSearch(parts.join(' ')));
+    }
+    return m;
+  }, [items]);
   const list = useMemo(() => {
-    const t = q.trim().toLowerCase();
+    const terms = searchTerms(q);
     return (items ?? []).filter((i) => {
       if (chapter && i.kapitel !== chapter) return false;
       if (onlyPlayable && !playable(i)) return false;
@@ -87,11 +100,10 @@ export function Catalog() {
         const id = playable(i);
         if (!id || !matchesRatedFilter(activeRated, id, fb.rated, fb.improved)) return false;
       }
-      if (!t) return true;
-      const hay = `${i.nr} ${i.name} ${i.kurz} ${i.ziel.map((z) => PROFIL_LABEL[z] ?? z).join(' ')}`.toLowerCase();
-      return hay.includes(t);
+      if (!terms.length) return true;
+      return matchesTerms(haystacks.get(i.nr) ?? '', terms);
     });
-  }, [items, q, chapter, onlyPlayable, activeRated, fb.rated, fb.improved]);
+  }, [items, haystacks, q, chapter, onlyPlayable, activeRated, fb.rated, fb.improved]);
 
   useEffect(() => window.scrollTo(0, 0), []);
 
