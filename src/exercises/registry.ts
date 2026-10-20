@@ -91,6 +91,7 @@ import { musterNachzeichnen } from './muster-nachzeichnen';
 import { richtungWort } from './richtung-wort';
 import { seiteErkennen } from './seite-erkennen';
 import { zahlBuchstabeWirbel } from './zahl-buchstabe-wirbel';
+import { zahlenkreisel } from './zahlenkreisel';
 import { vierZieleWechsel } from './vier-ziele-wechsel';
 import { pendelball } from './pendelball';
 import { laborSpotTouch } from './labor-spot-touch';
@@ -212,6 +213,7 @@ export const EXERCISES: ExerciseDefinition[] = [
   richtungWort,
   seiteErkennen,
   zahlBuchstabeWirbel,
+  zahlenkreisel,
   vierZieleWechsel,
   pendelball,
   laborSpotTouch,

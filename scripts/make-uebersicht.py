@@ -9,7 +9,7 @@ ab = {'ja': 'ja', 'mit_anpassung': 'Anpassung', 'nein': 'nein'}
 e = {'stark': 's', 'mittel': 'm', 'schwach': 'w', 'fehlend': 'f', 'unklar': '?'}
 kap = []
 for m in d:
-    if not kap or kap[-1] != m['kapitel']:
+    if m['kapitel'] not in kap:
         kap.append(m['kapitel'])
 n_play = sum(1 for m in d if m.get('blickfit_umsetzung') and m['blickfit_umsetzung'].get('kennung'))
 L = ['# Übersicht aller Übungen', '',

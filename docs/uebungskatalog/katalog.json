@@ -1,6 +1,6 @@
 {
  "stand": "2026-09-29",
- "anzahl": 115,
+ "anzahl": 116,
  "uebungen": [
   {
    "nr": 101,
@@ -17022,6 +17022,150 @@
     "kein Ersatz für die Untersuchung"
    ],
    "datei": "uebungen/934-labor-projektion.md"
+  },
+  {
+   "nr": 935,
+   "kennung": "zahlenkreisel",
+   "name": "Zahlenkreisel (Zahlen der Reihe nach auf gegenläufig drehenden Ringen antippen)",
+   "name_original": "– (eigene Blickfit-Übung, aus der Literatur zur visuellen Suche hergeleitet)",
+   "kapitel": "Eigene Blickfit-Übungen",
+   "kapitel_original": "",
+   "unterkapitel_original": "",
+   "quelle_url": "",
+   "blickfit_umsetzung": {
+    "kennung": "zahlenkreisel",
+    "name": "Zahlenkreisel",
+    "unterschiede": "Eigene Umsetzung als Touch-Übung: Zahlen 1 bis N (Standard 40, einstellbar 20 bis 40) auf konzentrischen Ringen, die langsam starr um die Mitte drehen, benachbarte Ringe gegenläufig und unterschiedlich schnell; die Ziffern bleiben aufrecht und schaukeln nur leicht (bis 12°, mit Einstellung „Stark“ bis 18°). Antippen in aufsteigender Folge, Stoppuhr mm:ss,hh, oben nur „Gesucht: N“ (die nächste Zahl wird im Feld nie hervorgehoben); gefundene Zahlen bleiben unverändert sichtbar und bekommen einen kleinen Punkt. Mindestabstand so, dass sich Zahlen und Trefferflächen zu keinem Zeitpunkt überlappen (Trefferfläche ≥ 44 px, am Tablet etwa 76 px). Stufen 1 bis 8 (Tempo, Unterschied der Ringe, Schaukeln), eine Scheibe je Sitzung. Hauptwert Stufe; Gesamtzeit, Zeit pro Zahl, Fehltipps nur im Vergleich mit sich selbst. Keine Normen."
+   },
+   "stand": "2026-10-20",
+   "kurzbeschreibung": "Die Zahlen 1 bis 40 stehen auf mehreren Ringen um eine gemeinsame Mitte. Die Ringe drehen sich langsam, benachbarte gegeneinander; die Ziffern bleiben aufrecht und schaukeln leicht. Man tippt die Zahlen so zügig wie möglich der Reihe nach an, eine Uhr läuft mit. Gefundene Zahlen bleiben sichtbar und bekommen nur einen Punkt.",
+   "ziel_funktionen": [
+    "visuelle_suche",
+    "sakkaden",
+    "selektive_aufmerksamkeit",
+    "verarbeitungsgeschwindigkeit"
+   ],
+   "eingabe": [
+    "touch",
+    "maus"
+   ],
+   "tablet_geeignet": "ja",
+   "dauer_sekunden": 90,
+   "schwierigkeit_anpassung": "8 Stufen (Tabelle LEVELS in src/exercises/zahlenkreisel/logic.ts), eine Scheibe je Sitzung: Bahngeschwindigkeit am äußeren Ring 2,0 → 8,0 u/s (u = 1 % der kürzeren Bühnenseite; am Tablet etwa 0,5 → 1,8°/s bei 40 cm), Unterschied der Ringe 0 → ±35 %, Schaukeln 4° → 12° bei 0,25 → 0,40 Hz. Geschafft = Zeit je Zahl ≤ (600 + 25·N) ms · (1,30 − 0,04·(Stufe − 1)) und höchstens 5 % Fehltipps → nächste Sitzung eine Stufe höher; über dem 1,5-Fachen oder mehr als 15 % Fehltipps → eine tiefer; sonst gleich. Einstellungen (eigene Variante für Vergleiche): Anzahl Zahlen 20–40, Drehtempo 50–150 %, Gegenläufig an/aus, Schaukeln aus/leicht/normal/stark.",
+   "messgroessen": [
+    "Hauptwert: geschaffte Stufe (sonst eine darunter)",
+    "Gesamtzeit vom Erscheinen bis zum letzten richtigen Tipp (Stoppuhr)",
+    "Zeit pro Zahl (Median der Abstände, ohne die erste Zahl)",
+    "Fehltipps (andere, noch nicht gefundene Zahl; Tipps daneben zählen nicht)",
+    "Zeit je Zehnerblock (Tabelle)",
+    "keine Messung des Blicks; keine Normwerte"
+   ],
+   "anforderungsprofil": {
+    "visuell": {
+     "sehschaerfe_detail": 2,
+     "kontrast": 0,
+     "farbunterscheidung": 0,
+     "stereosehen": 0,
+     "peripheres_sehen": 1,
+     "nutzbares_sehfeld": 2,
+     "blickfolge": 1,
+     "sakkaden": 3,
+     "fixation": 1,
+     "bewegungswahrnehmung": 2,
+     "visuelle_suche": 3,
+     "visuelle_verarbeitungsgeschwindigkeit": 2,
+     "zeitliche_aufloesung": 0,
+     "naharbeit_dauer": 1
+    },
+    "kognitiv": {
+     "daueraufmerksamkeit": 2,
+     "selektive_aufmerksamkeit": 3,
+     "inhibition": 2,
+     "geteilte_aufmerksamkeit": 0,
+     "kognitive_flexibilitaet": 0,
+     "arbeitsgedaechtnis": 2,
+     "kurzzeitgedaechtnis_verbal": 0,
+     "kurzzeitgedaechtnis_visuell_raeumlich": 1,
+     "verarbeitungsgeschwindigkeit": 3,
+     "antizipation": 1,
+     "entscheidung_wahlreaktion": 0,
+     "lesen_sprache": 1,
+     "schlussfolgern": 0
+    },
+    "motorisch": {
+     "einfache_reaktion": 0,
+     "auge_hand_koordination": 2,
+     "zielbewegung_tempo": 1,
+     "zielbewegung_praezision": 1,
+     "kontinuierliche_steuerung": 0,
+     "ruhige_hand": 0,
+     "fingergeschwindigkeit": 0,
+     "fingersequenz_bimanual": 0,
+     "ganzkoerper": 0,
+     "gleichgewicht": 0,
+     "ausdauer_belastung": 0
+    }
+   },
+   "belastung": {
+    "zeitdruck": 2,
+    "flimmern_lichtreize": 0,
+    "bewegungsreize_schwindel": 2,
+    "koerperliche_belastung": 0,
+    "sturzrisiko": 0,
+    "sprachabhaengigkeit": 0
+   },
+   "voraussetzungen": [
+    "Zahlen bis 40 sicher lesen und der Reihe nach kennen",
+    "Ziffern von etwa 1° Höhe am Tablet in 40 cm (am Handy kleiner, etwa 0,5°) auch in langsamer Bewegung erkennen",
+    "Mit dem Finger Trefferflächen von mindestens 44 px treffen (am Tablet etwa 76 px)",
+    "Ruhig gestelltes Gerät, Brille bzw. Nahbrille wie im Alltag"
+   ],
+   "vorsicht_bei": [
+    "schwindel_vestibulaer",
+    "reisekrankheit",
+    "nystagmus",
+    "sehbehinderung_niedriger_visus",
+    "presbyopie_gleitsicht",
+    "kopfschmerz_asthenopie",
+    "aufmerksamkeitsprobleme",
+    "kinder_unter_6"
+   ],
+   "geeignet_fuer": [
+    "Geordnetes Suchen in einer bewegten Szene üben: Zahlen der Reihe nach finden, während sich die Ringe gegeneinander drehen",
+    "Fortsetzung der ruhenden Zahlentafel (Zahlenjagd), wenn diese sicher gelingt: gleiche Aufgabe, aber bewegte Suchmenge und ablenkende Gegenbewegung",
+    "Vergleich mit sich selbst: Stufe, Gesamtzeit und Fehltipps über mehrere Sitzungen mit gleichen Einstellungen auf demselben Gerät",
+    "Fein einstellbare Bewegung (Drehtempo, Gegenlauf, Schaukeln), z. B. erst ruhig, dann schrittweise mehr Bewegung"
+   ],
+   "weniger_geeignet_fuer": [
+    "Messung oder Beurteilung von Blicksprüngen, Gesichtsfeld oder peripherem Sehen: die App misst den Blick nicht",
+    "Normvergleich, Diagnose oder Leistungsfeststellung (nicht vorgesehen)",
+    "Menschen, denen bewegte Bildschirminhalte Schwindel oder Übelkeit bereiten (dann Bewegung reduzieren oder andere Übung)",
+    "Menschen, die Zahlen bis 40 nicht sicher lesen"
+   ],
+   "evidenz": {
+    "uebungseffekt": "mittel",
+    "naher_transfer": "schwach",
+    "alltag_transfer": "fehlend",
+    "kommentar": "Für Zahlen der Reihe nach in einer ruhenden Tafel (Schulte-Tafel, Trail Making A) sind deutliche Übungseffekte bei Wiederholung belegt (Buck et al. 2008); für Suchaufgaben schnelles Wahrnehmungslernen mit teils begrenzter Übertragung (Sireteanu & Rettenbach 1995, 2000). Die Fassung mit gegenläufig drehenden Ringen ist nicht untersucht. Übertragung von Gehirntraining auf Alltagsaufgaben ist nicht belegt (Simons et al. 2016)."
+   },
+   "aehnliche_uebungen": [
+    204,
+    103,
+    904,
+    106
+   ],
+   "stichworte": [
+    "Zahlen der Reihe nach",
+    "Zahlentafel in Bewegung",
+    "gegenläufige Ringe",
+    "visuelle Suche",
+    "Blicksprünge",
+    "dynamische Sehschärfe",
+    "Stoppuhr",
+    "Crowding",
+    "kein Eye-Tracking"
+   ],
+   "datei": "uebungen/935-zahlenkreisel.md"
   }
  ]
 }
