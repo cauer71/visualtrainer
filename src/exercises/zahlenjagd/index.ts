@@ -95,7 +95,9 @@ interface Layout {
   gx: number;
   gy: number;
   cell: number;
-  gap: number;
+  /** Abstand der Zellmitten waagrecht / senkrecht (Tafel füllt die ganze Fläche) */
+  px: number;
+  py: number;
 }
 
 /** Platz, den die Bildunterschrift im Intro-Film unten braucht (wie im Runner berechnet) */
@@ -251,29 +253,26 @@ class Zahlenjagd implements Exercise {
     const availW = Math.max(1, w - 2 * side);
     const availH = Math.max(1, h - fieldTop - bottom);
     const n = this.n;
-    const pitch = Math.min(availW, availH) / n;
-    // Große Tafeln nicht unnötig aufblähen: höchstens 130 px pro Zelle
-    const p = Math.min(pitch, 130);
-    const gap = Math.max(4, p * 0.1);
-    const size = p * n;
-    // Anzeige „Nächste“ direkt über dem Raster, beides zusammen senkrecht mittig
-    const spare = Math.max(0, availH - size);
-    const shift = spare * 0.5;
+    // Die Tafel nutzt die ganze Fläche (Breite und Höhe getrennt): Die Zahlen liegen weit auseinander, damit die
+    // Augen wirklich wandern müssen. Die Felder bleiben quadratisch und dürfen groß werden.
+    const px = availW / n;
+    const py = availH / n;
+    const cell = Math.min(Math.min(px, py) * 0.86, 180);
     return {
-      pillCy: top + shift + pillH / 2,
+      pillCy: top + pillH / 2,
       pillH,
-      gx: (w - size) / 2 + gap / 2,
-      gy: fieldTop + shift + gap / 2,
-      cell: p - gap,
-      gap,
+      gx: side + (px - cell) / 2,
+      gy: fieldTop + (py - cell) / 2,
+      cell,
+      px,
+      py,
     };
   }
 
   private cellRect(i: number): { x: number; y: number; s: number; cx: number; cy: number } {
     const L = this.lay!;
-    const p = L.cell + L.gap;
-    const x = L.gx + (i % this.n) * p;
-    const y = L.gy + Math.floor(i / this.n) * p;
+    const x = L.gx + (i % this.n) * L.px;
+    const y = L.gy + Math.floor(i / this.n) * L.py;
     return { x, y, s: L.cell, cx: x + L.cell / 2, cy: y + L.cell / 2 };
   }
 
@@ -358,9 +357,8 @@ class Zahlenjagd implements Exercise {
   pointerDown(p: PointerInfo): void {
     if (this.phase !== 'play' || this.onset < 0 || !this.lay) return;
     const L = this.lay;
-    const pitch = L.cell + L.gap;
-    const col = Math.floor((p.x - L.gx + L.gap / 2) / pitch);
-    const row = Math.floor((p.y - L.gy + L.gap / 2) / pitch);
+    const col = Math.floor((p.x - L.gx + (L.px - L.cell) / 2) / L.px);
+    const row = Math.floor((p.y - L.gy + (L.py - L.cell) / 2) / L.py);
     if (col < 0 || row < 0 || col >= this.n || row >= this.n) return;
     const i = row * this.n + col;
     // Doppel-Tipp auf dieselbe Zelle ignorieren

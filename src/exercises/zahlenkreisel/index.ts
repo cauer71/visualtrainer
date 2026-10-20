@@ -55,6 +55,7 @@ import {
   levelSpec,
   makeSway,
   newRun,
+  PRE_FOUND,
   nextLevelAfter,
   perNumberMs,
   pickTap,
@@ -86,6 +87,8 @@ const MISS_MS = 500;
 
 const ACCENT = '#7A5195';
 const MARK = '#C9A6E4';
+/** Gefundene Zahlen (auch die vorgegebene 1): rot */
+const FOUND = '#FF4D4F';
 const FIELD_BG = '#101C31';
 const RING_LINE = 'rgba(255,255,255,0.07)';
 
@@ -188,6 +191,8 @@ class Zahlenkreisel implements Exercise {
     this.roundT0 = t;
     this.lastT = t;
     this.run = newRun(this.items.length, t);
+    // Die 1 ist schon gefunden (rot) – gesucht wird ab der 2
+    for (const it of this.items) if (it.num < this.run.next) it.done = true;
     this.autoAt = t + 900;
     this.syncItems(t);
     if (this.e2e) this.exposeE2E();
@@ -379,14 +384,14 @@ class Zahlenkreisel implements Exercise {
 
   private demoCaptions(): void {
     const { hud, texts } = this.ctx;
-    const found = this.run.next - 1;
+    const found = this.run.next - 1 - PRE_FOUND;
     if (found === 1) hud.caption(texts.captions.order);
     else if (found === 2) hud.caption(texts.captions.sway);
     else if (found === 3) hud.caption(texts.captions.marked);
     else if (found === 4) hud.caption(texts.captions.watch);
   }
 
-  /** Intro-Film: die Hand tippt 1, 2, 3 … dem drehenden Ring voraus, nach DEMO_TAPS Zahlen ist Schluss */
+  /** Intro-Film: die Hand tippt 2, 3, 4 … (die 1 ist vorgegeben) dem drehenden Ring voraus, nach DEMO_TAPS Zahlen ist Schluss */
   private demoStep(t: number): void {
     const { ghost, stage } = this.ctx;
     if (!ghost.idle || this.plannedFor === this.run.next) return;
@@ -487,11 +492,11 @@ class Zahlenkreisel implements Exercise {
       g.globalAlpha = appear * (clear ? 0.85 : 1);
       g.translate(it.x, it.y);
       g.rotate(it.tilt);
-      g.fillStyle = C.fg;
+      g.fillStyle = it.done ? FOUND : C.fg;
       g.fillText(it.label, 0, F * 0.04);
       g.restore();
       if (it.done) {
-        // Kleiner Punkt oben rechts: gefunden – die Zahl selbst bleibt unverändert
+        // Gefunden: Zahl rot und zusätzlich ein kleiner Punkt oben rechts (nicht nur über die Farbe erkennbar)
         const r = Math.max(3.5, F * 0.1);
         const half = (it.label.length === 1 ? 0.3 : 0.58) * F;
         g.globalAlpha = appear * 0.95;

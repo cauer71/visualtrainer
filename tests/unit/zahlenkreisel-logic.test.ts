@@ -258,7 +258,10 @@ describe('Antippen und Ablauf', () => {
   });
 
   it('Zustand: richtige Folge, Fehltipps zählen, schon gefundene und daneben zählen nicht', () => {
-    const s = L.newRun(4, 1000);
+    const pre = L.newRun(4, 1000);
+    expect(pre.next).toBe(2);
+    expect(L.registerTap(pre, 1, 1100)).toBe('old');
+    const s = L.newRun(4, 1000, 0);
     expect(L.registerTap(s, 2, 1500)).toBe('wrong');
     expect(s.errors).toBe(1);
     expect(L.registerTap(s, 1, 2000)).toBe('target');
@@ -463,7 +466,7 @@ describe('Übung ohne Canvas durchgespielt', () => {
       expect(itTexts.metrics[m.key]).toBeTruthy();
     }
     expect(de.tips[r.tip ?? 'great']).toBeTruthy();
-    expect(hn.calls.tap).toBe(40);
+    expect(hn.calls.tap).toBe(39);
   });
 
   it('Fehltipps zählen (mit Ton), Tipps ins Leere und auf gefundene Zahlen nicht', () => {

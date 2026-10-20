@@ -8,11 +8,11 @@ kapitel: "Eigene Blickfit-Übungen"
 kapitel_original: ""
 unterkapitel_original: ""
 quelle_url: ""
-blickfit_umsetzung: {kennung: "zahlenkreisel", name: "Zahlenkreisel", unterschiede: "Eigene Umsetzung als Touch-Übung: Zahlen 1 bis N (Standard 40, einstellbar 20 bis 40) auf konzentrischen Ringen, die langsam starr um die Mitte drehen, benachbarte Ringe gegenläufig und unterschiedlich schnell; die Ziffern bleiben aufrecht und schaukeln nur leicht (bis 12°, mit Einstellung „Stark“ bis 18°). Antippen in aufsteigender Folge, Stoppuhr mm:ss,hh, oben nur „Gesucht: N“ (die nächste Zahl wird im Feld nie hervorgehoben); gefundene Zahlen bleiben unverändert sichtbar und bekommen einen kleinen Punkt. Mindestabstand so, dass sich Zahlen und Trefferflächen zu keinem Zeitpunkt überlappen (Trefferfläche ≥ 44 px, am Tablet etwa 76 px). Stufen 1 bis 8 (Tempo, Unterschied der Ringe, Schaukeln), eine Scheibe je Sitzung. Hauptwert Stufe; Gesamtzeit, Zeit pro Zahl, Fehltipps nur im Vergleich mit sich selbst. Keine Normen."}
+blickfit_umsetzung: {kennung: "zahlenkreisel", name: "Zahlenkreisel", unterschiede: "Eigene Umsetzung als Touch-Übung: Zahlen 1 bis N (Standard 40, einstellbar 20 bis 40) auf konzentrischen Ringen, die langsam starr um die Mitte drehen, benachbarte Ringe gegenläufig und unterschiedlich schnell; die Ziffern bleiben aufrecht und schaukeln nur leicht (bis 12°, mit Einstellung „Stark“ bis 18°). Antippen in aufsteigender Folge, Stoppuhr mm:ss,hh, oben nur „Gesucht: N“ (die nächste Zahl wird im Feld nie hervorgehoben); die 1 ist von Anfang an rot markiert (Start bei der 2); gefundene Zahlen bleiben sichtbar, werden rot und bekommen zusätzlich einen kleinen Punkt. Mindestabstand so, dass sich Zahlen und Trefferflächen zu keinem Zeitpunkt überlappen (Trefferfläche ≥ 44 px, am Tablet etwa 76 px). Stufen 1 bis 8 (Tempo, Unterschied der Ringe, Schaukeln), eine Scheibe je Sitzung. Hauptwert Stufe; Gesamtzeit, Zeit pro Zahl, Fehltipps nur im Vergleich mit sich selbst. Keine Normen."}
 stand: 2026-10-20
 
 # ===== Überblick =====
-kurzbeschreibung: "Die Zahlen 1 bis 40 stehen auf mehreren Ringen um eine gemeinsame Mitte. Die Ringe drehen sich langsam, benachbarte gegeneinander; die Ziffern bleiben aufrecht und schaukeln leicht. Man tippt die Zahlen so zügig wie möglich der Reihe nach an, eine Uhr läuft mit. Gefundene Zahlen bleiben sichtbar und bekommen nur einen Punkt."
+kurzbeschreibung: "Die Zahlen 1 bis 40 stehen auf mehreren Ringen um eine gemeinsame Mitte. Die Ringe drehen sich langsam, benachbarte gegeneinander; die Ziffern bleiben aufrecht und schaukeln leicht. Man tippt die Zahlen so zügig wie möglich der Reihe nach an, eine Uhr läuft mit. Die 1 ist schon rot markiert, man beginnt mit der 2. Gefundene Zahlen bleiben sichtbar, werden rot und bekommen einen Punkt."
 ziel_funktionen: [visuelle_suche, sakkaden, selektive_aufmerksamkeit, verarbeitungsgeschwindigkeit]
 eingabe: [touch, maus]
 tablet_geeignet: ja
@@ -91,7 +91,7 @@ stichworte: ["Zahlen der Reihe nach", "Zahlentafel in Bewegung", "gegenläufige 
 
 ## 1. Kurzbeschreibung
 
-Die Zahlen 1 bis 40 (einstellbar 20 bis 40) stehen weiß auf dunklem Grund auf mehreren konzentrischen Ringen; die Ringlinien sind kaum sichtbar. Jeder Ring dreht sich langsam um die gemeinsame Mitte, benachbarte Ringe drehen gegeneinander und unterschiedlich schnell. Die Ziffern drehen nicht mit, sondern bleiben aufrecht und schaukeln nur leicht um die eigene Achse. Man tippt die Zahlen so zügig wie möglich in aufsteigender Folge an; oben stehen die gesuchte Zahl und eine Stoppuhr. Gefundene Zahlen bleiben unverändert sichtbar und bekommen nur einen kleinen Punkt, damit die Suche nicht mit jeder Zahl leichter wird. Gegenüber einer ruhenden Zahlentafel bewegt sich die Suchmenge: Eine Zahl, die man schon gesehen hat, steht beim nächsten Blick woanders, und die Gegenbewegung der Ringe lenkt ab.
+Die Zahlen 1 bis 40 (einstellbar 20 bis 40) stehen weiß auf dunklem Grund auf mehreren konzentrischen Ringen; die Ringlinien sind kaum sichtbar. Jeder Ring dreht sich langsam um die gemeinsame Mitte, benachbarte Ringe drehen gegeneinander und unterschiedlich schnell. Die Ziffern drehen nicht mit, sondern bleiben aufrecht und schaukeln nur leicht um die eigene Achse. Man tippt die Zahlen so zügig wie möglich in aufsteigender Folge an; oben stehen die gesuchte Zahl und eine Stoppuhr. Die 1 ist von Anfang an rot markiert, man beginnt mit der 2. Gefundene Zahlen bleiben sichtbar (damit die Suchmenge gleich groß bleibt), werden rot und bekommen einen kleinen Punkt. Gegenüber einer ruhenden Zahlentafel bewegt sich die Suchmenge: Eine Zahl, die man schon gesehen hat, steht beim nächsten Blick woanders, und die Gegenbewegung der Ringe lenkt ab.
 
 ## 2. Ablauf der Blickfit-Übung (Mechanik aus dem Code)
 
@@ -102,7 +102,7 @@ Quelle: `index.ts` und `logic.ts` in `src/exercises/zahlenkreisel/` (Stand 20.10
 - **Zuordnung:** Die Zahlen werden jede Runde neu auf die Plätze gemischt; aufeinanderfolgende Zahlen stehen nie direkt nebeneinander im selben Ring.
 - **Bewegung:** Winkel eines Platzes θ(t) = φ₀ + 2πj/n + ω·t. Bahngeschwindigkeit am äußeren Ring v₀ = speedU · u · Drehtempo; Ring mit Radius r: v₀ · √(r/r_außen) · (1 ± ringVar), Richtung abwechselnd (außen im Uhrzeigersinn) oder bei „Gegenläufig aus“ alle gleich. Schaukeln je Zahl: α(t) = A · sin(2πf·t + ψ) mit eigener Phase ψ und f = Stufenwert ± 20 %; A = Stufenwert × Faktor (aus 0, leicht 0,5, normal 1, stark 1,5), höchstens 18°. Alles ist eine reine Funktion der (in der Pause stehenden) Zeit.
 - **Stufen 1–8:** speedU 2,0 / 2,8 / 3,6 / 4,4 / 5,2 / 6,0 / 7,0 / 8,0 u/s; ringVar 0 bis 0,35; Schaukeln 4° bis 12° bei 0,25 bis 0,40 Hz. Bewertung nach der Scheibe (siehe `schwierigkeit_anpassung`); die Startstufe der nächsten Sitzung ist das Ergebnis dieser Bewertung.
-- **Eingabe:** Treffer = nächste Mitte, deren Trefferkreis den Finger enthält, berechnet für den Zeitpunkt des Tipps. Gesuchte Zahl → kurzes weiches ✓, Punkt an der Zahl, Ton. Andere, noch nicht gefundene Zahl → weiches ✗ am Ort, Ton, Fehltipp, keine Zeitstrafe. Schon gefundene Zahl → ignoriert. Daneben → blasser Ring, zählt nicht. Doppel-Tipps innerhalb von 80 ms werden ignoriert.
+- **Eingabe:** Treffer = nächste Mitte, deren Trefferkreis den Finger enthält, berechnet für den Zeitpunkt des Tipps. Gesuchte Zahl → kurzes weiches ✓, Zahl wird rot, Punkt an der Zahl, Ton. Andere, noch nicht gefundene Zahl → weiches ✗ am Ort, Ton, Fehltipp, keine Zeitstrafe. Schon gefundene Zahl → ignoriert. Daneben → blasser Ring, zählt nicht. Doppel-Tipps innerhalb von 80 ms werden ignoriert.
 - **Ergebnis:** Hauptwert Stufe; Gesamtzeit, Zeit pro Zahl (Median der Abstände ohne die erste Zahl), Fehltipps; Tabelle „Zeit je Zehnerblock“. Punkte: 2 + Stufe je Zahl, 10 × Stufe für eine geschaffte Scheibe.
 - **Bewegung reduzieren:** Ringe und Ziffern stehen still (runde Zahlentafel).
 - **Test-Zugang:** Mit `?e2e=1` liest `window.__zahlenkreisel` die aktuellen Plätze (nur Ende-zu-Ende-Tests).
@@ -124,7 +124,7 @@ Quelle: `index.ts` und `logic.ts` in `src/exercises/zahlenkreisel/` (Stand 20.10
 - **Dynamische Sehschärfe:** Zeichen auf bewegten Zielen werden schlechter erkannt als auf ruhenden, umso mehr, je schneller sie sich bewegen (Ludvigh & Miller 1958). Bei den hier gewählten Tempi ist der Unterschied klein; er wächst mit Stufe und Drehtempo.
 - **Crowding:** Der kritische Abstand für ungestörtes Erkennen liegt grob bei der halben Exzentrizität (Bouma 1970; Pelli & Tillman 2008). Der feste Mindestabstand begrenzt die gegenseitige Störung, hebt sie im Randbereich aber nicht auf.
 - **Brillenträger und Nähe:** Gleitsicht hat einen schmalen scharfen Zwischenbereich; das Feld ist rund und mittig, Kopfbewegungen sind kaum nötig (Hutchings et al. 2007). Am Bildschirm sinkt die Lidschlagrate (Patel et al. 1991); eine Sitzung dauert etwa 1–2 Minuten.
-- **Farbe:** spielt keine Rolle (weiße Ziffern, Rückmeldung immer auch über Form: ✓, ✗, Punkt).
+- **Farbe:** spielt keine Rolle (weiße Ziffern, gefundene rot; Rückmeldung immer auch über Form: ✓, ✗, Punkt).
 
 ## 5. Neurowissenschaftliche Grundlagen
 

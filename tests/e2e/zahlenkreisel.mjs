@@ -104,7 +104,11 @@ for (const lang of ['de', 'it']) {
       await page.touchscreen.tap(wrong.px, wrong.py);
       await page.waitForTimeout(200);
       if (shots) await page.screenshot({ path: `${shots}/${lang}-${vp.name}-fehltipp.png` });
-      for (let n = 1; n <= v.total; n++) {
+      // Die 1 ist vorgegeben (rot), gesucht wird ab der 2
+      if (v.next !== 2) throw new Error(`Start sollte bei 2 sein, ist ${v.next}`);
+      const one = v.items.find((q) => q.num === 1);
+      if (!one || !one.done) throw new Error('Die 1 ist nicht als gefunden markiert');
+      for (let n = 2; n <= v.total; n++) {
         const cur = await view(page);
         if (!cur || cur.next !== n) throw new Error(`gesucht wäre ${n}, Anzeige sagt ${cur?.next}`);
         const it = cur.items.find((q) => q.num === n);

@@ -483,7 +483,12 @@ export interface RunState {
   lastT: number;
 }
 
-export const newRun = (total: number, t0: number): RunState => ({ total, next: 1, errors: 0, intervals: [], t0, lastT: t0 });
+/** Die 1 ist von Anfang an gefunden (rot), gesucht wird ab der 2 */
+export const PRE_FOUND = 1;
+export const newRun = (total: number, t0: number, preFound = PRE_FOUND): RunState => {
+  const pre = Math.max(0, Math.min(total, Math.floor(preFound)));
+  return { total, next: pre + 1, errors: 0, intervals: new Array<number>(pre).fill(0), t0, lastT: t0 };
+};
 export const isDone = (s: RunState): boolean => s.next > s.total;
 
 /** Tipp auf Zahl `num` (null = daneben) zur Zeit t; schon gefundene Zahlen zählen nicht */
@@ -545,9 +550,10 @@ export function blockTimes(intervals: readonly number[], size = 10): Array<{ fro
   return out;
 }
 
-/** Zeit pro Zahl: Median der Abstände ohne die erste Zahl (die enthält das erste Orientieren) */
+/** Zeit pro Zahl: Median der Abstände ohne die vorgegebene 1 und ohne die erste gesuchte Zahl (die enthält das erste Orientieren) */
 export function perNumberMs(intervals: readonly number[]): number {
-  const xs = intervals.length > 1 ? intervals.slice(1) : intervals;
+  const skip = PRE_FOUND + 1;
+  const xs = intervals.length > skip ? intervals.slice(skip) : intervals.slice(Math.min(PRE_FOUND, intervals.length));
   return xs.length ? median(xs) : NaN;
 }
 

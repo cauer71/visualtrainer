@@ -4,7 +4,7 @@ export const de: ExerciseTexts = {
   title: 'Zahlenkreisel',
   tagline: 'Finde die Zahlen der Reihe nach – während sich die Ringe gegeneinander drehen.',
   steps: [
-    'Tippe die Zahlen der Reihe nach an: 1, 2, 3 … bis zur letzten.',
+    'Die 1 ist schon rot markiert – du beginnst mit der 2. Tippe die Zahlen der Reihe nach an: 2, 3, 4 … bis zur letzten.',
     'Die Ringe drehen sich langsam, benachbarte gegeneinander. Die Zahlen schaukeln leicht, bleiben aber aufrecht.',
     'Oben steht, welche Zahl gesucht ist, daneben läuft die Uhr.',
   ],
@@ -13,9 +13,9 @@ export const de: ExerciseTexts = {
   goodFor: ['Suchen, wenn sich alles bewegt', 'Übersicht behalten', 'Geordnet suchen'],
   captions: {
     rings: 'Die Ringe drehen sich gegeneinander',
-    order: 'Tippe 1, 2, 3 … der Reihe nach',
+    order: 'Die 1 ist rot – weiter mit 2, 3, 4 …',
     sway: 'Die Zahlen schaukeln, bleiben aber aufrecht',
-    marked: 'Gefundene bekommen nur einen kleinen Punkt',
+    marked: 'Gefundene werden rot und bekommen einen Punkt',
     watch: 'Oben: gesuchte Zahl und Uhr',
   },
   metrics: {
@@ -72,7 +72,7 @@ export const it: ExerciseTexts = {
   title: 'Carosello dei numeri',
   tagline: 'Trova i numeri in ordine – mentre gli anelli girano in senso opposto.',
   steps: [
-    'Tocca i numeri in ordine: 1, 2, 3 … fino all’ultimo.',
+    'L’1 è già segnato in rosso – inizi dal 2. Tocca i numeri in ordine: 2, 3, 4 … fino all’ultimo.',
     'Gli anelli girano lentamente, quelli vicini in senso opposto. I numeri oscillano un po’, ma restano sempre dritti.',
     'In alto vedi quale numero cercare, accanto scorre il cronometro.',
   ],
@@ -81,9 +81,9 @@ export const it: ExerciseTexts = {
   goodFor: ['Cercare quando tutto si muove', 'Mantenere la visione d’insieme', 'Cercare con ordine'],
   captions: {
     rings: 'Gli anelli girano in senso opposto',
-    order: 'Tocca 1, 2, 3 … in ordine',
+    order: 'L’1 è rosso – continua con 2, 3, 4 …',
     sway: 'I numeri oscillano, ma restano dritti',
-    marked: 'Quelli trovati ricevono solo un puntino',
+    marked: 'Quelli trovati diventano rossi con un puntino',
     watch: 'In alto: numero cercato e cronometro',
   },
   metrics: {
